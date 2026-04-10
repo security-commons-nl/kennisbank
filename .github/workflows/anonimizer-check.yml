@@ -1,0 +1,77 @@
+name: "Adviserende Anonimizer Check"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "**/*.md"
+      - "**/*.txt"
+
+jobs:
+  scan:
+    name: Scan Documenten
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout kennisbank (PR)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout anonimizer
+        uses: actions/checkout@v4
+        with:
+          repository: security-commons-nl/anonimizer
+          path: anonimizer-tool
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r anonimizer-tool/requirements.txt
+
+      - name: Scan gewijzigde bestanden
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_BASE: ${{ vars.AI_API_BASE || 'https://api.mistral.ai/v1' }}
+          AI_MODEL_NAME: ${{ vars.AI_MODEL_NAME || 'mistral-small-latest' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep -E '\.(md|txt)$' || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "Geen relevante bestanden gevonden."
+            exit 0
+          fi
+
+          REPORT="anonimizer_report.md"
+          echo "## Automatische Privacy Scan" > "$REPORT"
+          echo "" >> "$REPORT"
+          echo "De volgende bestanden zijn gescand op potentieel gevoelige informatie:" >> "$REPORT"
+          echo "" >> "$REPORT"
+
+          FOUND=false
+
+          # Run scanner from anonimizer-tool directory so imports resolve correctly
+          cd anonimizer-tool
+          for file in $CHANGED; do
+            if [ -f "../$file" ]; then
+              OUTPUT=$(python ci_scanner.py "../$file" 2>/dev/null)
+              if [ -n "$OUTPUT" ]; then
+                echo "$OUTPUT" >> "../$REPORT"
+                FOUND=true
+              fi
+            fi
+          done
+          cd ..
+
+          if [ "$FOUND" = "true" ]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file "$REPORT"
+          fi
