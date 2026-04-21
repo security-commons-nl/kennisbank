@@ -22,6 +22,10 @@ npm-debug.log*
 *.swo
 *~
 
+# AI tooling
+.claude/
+.codesight/
+
 # OS
 .DS_Store
 Thumbs.db
