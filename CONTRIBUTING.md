@@ -1,41 +1,50 @@
-# Bijdragen aan security-commons-nl
+# Bijdragen aan de kennisbank
 
-Welkom. Dit is een kenniscommons voor CISO's en ISO's in de publieke sector. Iedereen die werkende kennis wil delen of verbeteren is welkom.
+Dit is een commons voor CISO's en ISO's in de publieke sector. Iedereen die werkende kennis wil delen of verbeteren is welkom.
 
-## Drie manieren om bij te dragen
+## 1. Iets aanbieden of melden — geen Git-ervaring nodig
 
-### 1. Issue openen
-Heb je een document, aanpak of idee, maar weet je niet precies hoe je het moet indienen? Open een issue. We helpen je verder.
+→ [**Bijdrage aanbieden**](https://github.com/security-commons-nl/kennisbank/issues/new?template=bijdrage-aanbieden.md)
+  Een document, aanpak of ervaring die je met anderen wilt delen.
 
-→ Gebruik de template **"Bijdrage aanbieden"** als je iets wilt toevoegen.
-→ Gebruik **"Fout of verbetering"** als iets niet klopt of beter kan.
+→ [**Fout of verbetering**](https://github.com/security-commons-nl/kennisbank/issues/new?template=fout-of-verbetering.md)
+  Iets klopt niet, is verouderd, of kan beter.
 
-### 2. Pull Request
-Heb je een bestand klaarstaan? Fork de repo, voeg je bestand toe op de juiste plek, en stuur een pull request.
+Vul alleen de vragen in die voor jou relevant zijn — we helpen je met de rest.
 
-**Mapstructuur kennisbank:**
+**Geen GitHub-account?** [Maak er gratis een](https://github.com/signup) (2 minuten), of vraag iemand in je netwerk om namens jou te posten.
+
+## 2. Meediscussiëren
+
+→ [**Discussions**](https://github.com/orgs/security-commons-nl/discussions)
+
+Voor vragen, ervaringen en ideeën zonder directe actie.
+
+## 3. Voor auteurs — direct een document indienen
+
+### Mapstructuur
+
 ```
 kennisbank/
-├── security/    ← informatiebeveiliging (BIO, ISO 27001, etc.)
+├── security/    ← informatiebeveiliging (BIO, ISO 27001, NIS2)
 ├── privacy/     ← privacy en gegevensbescherming (AVG, ISO 27701)
-├── bcm/         ← bedrijfscontinuïteit (ISO 22301, BIA, etc.)
+├── bcm/         ← bedrijfscontinuïteit (ISO 22301, BIA)
 └── overig/      ← aanbestedingen, governance, overige kennis
 ```
 
-**Bestandsnaamgeving:** beschrijvend en zonder spaties, bijv. `bia-template-gemeente.docx` of `privacybeleid-voorbeeld.pdf`.
+### Vóór indienen
 
-**Anonimiseren:** zorg dat je document geen namen, emailadressen of andere persoonsgegevens bevat. Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer) als die beschikbaar is, of vervang handmatig door functieomschrijvingen.
+- **Anonimiseer** het document: geen namen, e-mailadressen, interne systeem-URLs of andere persoonsgegevens. Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer) of vervang handmatig door functieomschrijvingen.
+- **Naamgeving**: beschrijvend, zonder spaties, bv. `bia-template-gemeente.docx` of `privacybeleid-voorbeeld.pdf`.
+- **Plaatsing**: in de juiste map (zie hierboven).
 
-### 3. Meediscussiëren
-Ga naar [Discussions](../../discussions) voor vragen, ervaringen en ideeën. Geen git-kennis vereist.
+### Fork → PR
 
-## Review
-
-Pull requests worden beoordeeld door de maintainers. We kijken naar:
+Standaard GitHub-flow. Maintainers beoordelen op:
 - Inhoudelijke relevantie
 - Anonimisering (geen persoonsgegevens)
 - Plaatsing in de juiste map
 
-## Vragen?
+---
 
-Open een issue of start een discussie. We reageren zo snel mogelijk.
+**Organisatiebrede richtlijnen**: [security-commons-nl/.github](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md)
