@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Alleen github-actions — kennisbank is een content-repo zonder code-deps.
+  # De anonimizer-check workflow gebruikt wél Actions die bijgehouden moeten.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"
+      - "ci"
