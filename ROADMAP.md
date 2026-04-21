@@ -23,12 +23,6 @@ Basisstructuur aanwezig (security, privacy, bcm, overig). CI-scanner actief: PRs
 - [ ] Indexpagina per sectie op basis van metadata
 - [ ] Zoekbare index via statische sitegeneratie (bijv. mkdocs of docsify)
 
-## Fase 3 — Koppeling met tooling
-
-- [ ] Kennisbank als RAG-bron voor cisochat
-- [ ] Kennisbank als normatieve bron voor beleid-assistent
-- [ ] Automatische kwaliteitscheck bij PR: volledigheid metadata, anonimisering
-
 ---
 
 ## Bijdragen
