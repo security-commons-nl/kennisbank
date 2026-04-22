@@ -1,6 +1,6 @@
 # kennisbank
 
-Gedeelde kennis van CISO's en ISO's in de publieke sector.
+Werkende kennis uit de publieke sector — security, privacy, continuïteit en alles wat er tussen zit.
 
 [![Bijdragen](https://img.shields.io/badge/📝_Bijdragen-238636?style=for-the-badge)](../../issues/new/choose)&nbsp;&nbsp;&nbsp;&nbsp;[![Meepraten](https://img.shields.io/badge/💬_Meepraten-0969da?style=for-the-badge)](../../discussions)
 
