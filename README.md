@@ -2,6 +2,10 @@
 
 Gedeelde kennis van CISO's en ISO's in de publieke sector.
 
+[![Bijdragen](https://img.shields.io/badge/📝_Bijdragen-Open_een_bericht-238636?style=for-the-badge)](../../issues/new/choose) [![Discussions](https://img.shields.io/badge/💬_Discussions-Meepraten-0969da?style=for-the-badge)](../../discussions)
+
+👉 **Iets delen, feedback geven of een vraag stellen?** Klik op een van de knoppen hierboven — geen Git-ervaring nodig. Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor meer opties.
+
 ## Wat staat hier
 
 Werkende kennis die geanonimiseerd is gedeeld door professionals: memos, rapportages, aanpakken, trainingen, voorstellen. Geen theorie — materiaal dat al gebruikt is in echte organisaties.
