@@ -4,18 +4,18 @@ Herbruikbaar, **fictief** lespakket: zo zet je zelf een dreigingsgericht, tijdel
 interventie-team ("blue team") op — náást je reguliere IV-lijn.
 
 Ontstaan bij de demo *"Praten met jouw security-data"* (3 juni 2026) voor CISO's van
-gemeenten en waterschappen. De casus, cijfers en namen in het pakket zijn **verzonnen voor
-lesdoeleinden**; het is een blauwdruk, geen weergave van een bestaande organisatie.
+gemeenten en waterschappen. De casus, cijfers en namen zijn **verzonnen voor lesdoeleinden**;
+het is een blauwdruk, geen weergave van een bestaande organisatie.
 
 ## Inhoud
 
-- **`aegis-blue-team-in-een-doos.html`** — het lespakket: wat Aegis is · plan van aanpak ·
-  de werkwijze (7 stappen + coverage-heatmap) · mandaatprotocol (model) · zelf opzetten ·
-  memo's per gremium met een **sector-schakelaar gemeente ⇄ waterschap** (telkens een
-  voorbeeld + een invulbaar sjabloon) · FAQ & weerstand · bronnen.
+Eén zelfstandig lespakket — **`index.html`** (8 tabbladen): wat Aegis is · plan van aanpak ·
+de werkwijze (7 stappen + coverage-heatmap) · mandaatprotocol (model) · zelf opzetten ·
+memo's per gremium met een **sector-schakelaar gemeente ⇄ waterschap** (telkens een voorbeeld
++ een invulbaar sjabloon) · FAQ & weerstand · bronnen.
 
-Het bestand is zelfstandig: offline te openen, geen externe afhankelijkheden.
-Klik-en-open (via GitHub Pages): open `index.html`.
+Offline te openen, geen externe afhankelijkheden. Via GitHub Pages opent de map-URL direct
+het lespakket.
 
 ## Auteurs
 
