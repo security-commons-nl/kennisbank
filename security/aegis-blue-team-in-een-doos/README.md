@@ -13,10 +13,8 @@ lesdoeleinden**; het is een blauwdruk, geen weergave van een bestaande organisat
   de werkwijze (7 stappen + coverage-heatmap) · mandaatprotocol (model) · zelf opzetten ·
   memo's per gremium met een **sector-schakelaar gemeente ⇄ waterschap** (telkens een
   voorbeeld + een invulbaar sjabloon) · FAQ & weerstand · bronnen.
-- **`praten-met-je-data-zonder-jargon.html`** — de bijbehorende presentatie in gewone taal,
-  zonder jargon.
 
-Beide bestanden zijn zelfstandig: offline te openen, geen externe afhankelijkheden.
+Het bestand is zelfstandig: offline te openen, geen externe afhankelijkheden.
 Klik-en-open (via GitHub Pages): open `index.html`.
 
 ## Auteurs
