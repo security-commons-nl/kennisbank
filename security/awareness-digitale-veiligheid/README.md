@@ -52,7 +52,7 @@ opleiding en training op het gebied van informatiebeveiliging.
 
 ## Auteur
 
-Bas Stevens. (Co-presentator naar keuze in te vullen.)
+Bas Stevens.
 
 ## Licentie
 
