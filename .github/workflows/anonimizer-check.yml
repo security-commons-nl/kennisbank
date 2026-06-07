@@ -37,13 +37,19 @@ jobs:
         run: pip install -r anonimizer-tool/requirements.txt
 
       - name: Scan gewijzigde bestanden
+        # Adviserende check: mag de PR nooit blokkeren of stil sneuvelen.
+        continue-on-error: true
+        # Geen 'set -e' (default Actions-shell heeft dat wel): een non-zero van de scanner
+        # of van 'gh pr comment' mag de job niet halverwege afbreken.
+        shell: bash --noprofile --norc -o pipefail {0}
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_API_BASE: ${{ vars.AI_API_BASE || 'https://api.mistral.ai/v1' }}
           AI_MODEL_NAME: ${{ vars.AI_MODEL_NAME || 'mistral-small-latest' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          git fetch origin main
+          git fetch origin main || true
           CHANGED=$(git diff --name-only origin/main...HEAD | grep -E '\.(md|txt)$' || true)
 
           if [ -z "$CHANGED" ]; then
@@ -52,26 +58,51 @@ jobs:
           fi
 
           REPORT="anonimizer_report.md"
-          echo "## Automatische Privacy Scan" > "$REPORT"
-          echo "" >> "$REPORT"
-          echo "De volgende bestanden zijn gescand op potentieel gevoelige informatie:" >> "$REPORT"
-          echo "" >> "$REPORT"
+          {
+            echo "## Automatische Privacy Scan"
+            echo ""
+            echo "De volgende bestanden zijn gescand op potentieel gevoelige informatie:"
+            echo ""
+          } > "$REPORT"
 
           FOUND=false
+          SCAN_ERROR=false
 
-          # Run scanner from anonimizer-tool directory so imports resolve correctly
-          cd anonimizer-tool
           for file in $CHANGED; do
-            if [ -f "../$file" ]; then
-              OUTPUT=$(python ci_scanner.py "../$file" 2>/dev/null)
+            [ -f "$file" ] || continue
+            # Scanner draait vanuit anonimizer-tool (imports), maar mag de job NIET killen.
+            # stderr naar een bestand i.p.v. /dev/null, zodat echte fouten zichtbaar worden.
+            if OUTPUT=$(cd anonimizer-tool && python ci_scanner.py "../$file" 2>/tmp/scan_err.txt); then
               if [ -n "$OUTPUT" ]; then
-                echo "$OUTPUT" >> "../$REPORT"
+                printf '%s\n' "$OUTPUT" >> "$REPORT"
                 FOUND=true
               fi
+            else
+              SCAN_ERROR=true
+              {
+                echo "> ⚠️ De scanner kon \`$file\` niet verwerken — scan voor dit bestand overgeslagen."
+                echo '> ```'
+                tail -n 5 /tmp/scan_err.txt 2>/dev/null
+                echo '> ```'
+                echo ""
+              } >> "$REPORT"
+              echo "::warning file=$file::anonimizer-scanner faalde voor $file (zie job-samenvatting)"
             fi
           done
-          cd ..
 
-          if [ "$FOUND" = "true" ]; then
-            gh pr comment "${{ github.event.pull_request.number }}" --body-file "$REPORT"
+          # Bevindingen én scannerfouten ALTIJD zichtbaar maken in de job-samenvatting
+          # (werkt ook als er geen comment geplaatst kan worden).
+          if [ "$FOUND" = "true" ] || [ "$SCAN_ERROR" = "true" ]; then
+            cat "$REPORT" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "✅ Geen potentieel gevoelige informatie gevonden in gewijzigde .md/.txt-bestanden." >> "$GITHUB_STEP_SUMMARY"
           fi
+
+          # Een PR-comment is 'nice to have'. Faalt het (bijv. token-rechten), val terug op de samenvatting.
+          if [ "$FOUND" = "true" ] && [ -n "${PR_NUMBER:-}" ]; then
+            if ! gh pr comment "$PR_NUMBER" --body-file "$REPORT"; then
+              echo "::notice::Kon geen PR-comment plaatsen (waarschijnlijk token-rechten); rapport staat in de job-samenvatting."
+            fi
+          fi
+
+          exit 0
