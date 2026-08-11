@@ -21,10 +21,21 @@ resultaat te delen in plaats van in een la te leggen.
 
 | Bestand | Inhoud |
 |---|---|
+| **`index.html`** | **De leesbare weergave.** Open het bestand in je browser, of via GitHub Pages direct de map-URL. Vijf visualisaties, een filterbaar overzicht van alle partijen, en de bronverantwoording. Offline te openen, geen externe afhankelijkheden |
 | `data/partijen.json` | 82 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
 | `data/diensten.json` | 19 concrete diensten met wie ze levert, inclusief 4 diensten die **niemand** levert |
 
-Beide bestanden bevatten een `meta`-blok met het vocabulaire, zodat de codes zelfverklarend zijn.
+Beide JSON-bestanden bevatten een `meta`-blok met het vocabulaire, zodat de codes zelfverklarend zijn.
+
+### De vijf weergaven in `index.html`
+
+| | Wat het laat zien |
+|---|---|
+| **A · Functie bij bestuurslaag** | Matrix van functies tegen bestuurslagen. Meerdere partijen in een cel is overlap, een lege cel is een gat |
+| **B · Lagenmodel** | Het stelsel als bevelslijn van Brussel naar de gemeente. Laat zien hoeveel schakels er tussen een Europese richtlijn en een gemeentelijke maatregel zitten |
+| **C · Relatiegraaf** | Wie stuurt wie aan, wie betaalt wie, wie informeert wie |
+| **E · Waar zit welke overlap** | Per concrete dienst wie hem levert, gesorteerd van druk naar leeg, met de gaten onderaan. De kleuren tonen de mandaatsoort, en dat is het halve verhaal |
+| **F · Wie is wiens dubbelganger** | Dezelfde data omgedraaid: hoeveel concrete diensten twee partijen allebei leveren |
 
 ### Waarom twee bestanden
 
