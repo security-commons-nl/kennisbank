@@ -228,15 +228,15 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 <section class="panel on" id="p-kaart">
   <div class="lead">Vijf manieren om hetzelfde veld te bekijken. De matrix laat zien waar het druk is en waar niemand
   staat. Het lagenmodel legt de bevelslijn bloot. De relatiegraaf toont wie wie aanstuurt, betaalt of informeert.
-  <b>E en F zijn de overlapplaten</b> en horen bij elkaar: E toont per concrete dienst <i>waar</i> de overlap zit,
-  F draait dezelfde data om en toont <i>wie elkaars dubbelganger is</i>.</div>
+  <b>De laatste twee horen bij elkaar</b>: de eerste toont per concrete dienst <i>waar</i> de overlap zit,
+  de tweede draait dezelfde data om en toont <i>wie elkaars dubbelganger is</i>.</div>
 
   <div class="fmt" role="group">
-    <button aria-pressed="true" data-v="mx">A &middot; Functie bij bestuurslaag</button>
-    <button aria-pressed="false" data-v="lagen">B &middot; Lagenmodel</button>
-    <button aria-pressed="false" data-v="graaf">C &middot; Relatiegraaf</button>
-    <button aria-pressed="false" data-v="band">E &middot; Waar zit welke overlap</button>
-    <button aria-pressed="false" data-v="hm">F &middot; Wie is wiens dubbelganger</button>
+    <button aria-pressed="true" data-v="mx">Functie bij bestuurslaag</button>
+    <button aria-pressed="false" data-v="lagen">Lagenmodel</button>
+    <button aria-pressed="false" data-v="graaf">Relatiegraaf</button>
+    <button aria-pressed="false" data-v="band">Waar zit welke overlap</button>
+    <button aria-pressed="false" data-v="hm">Wie is wiens dubbelganger</button>
   </div>
 
   <div class="legend">
@@ -250,7 +250,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 
   <!-- A: matrix -->
   <div class="viz on" id="v-mx">
-    <div class="vizhead"><b>Format A.</b> Rijen zijn functies die het stelsel moet vervullen, kolommen zijn bestuurslagen.
+    <div class="vizhead"><b>Functie bij bestuurslaag.</b> Rijen zijn functies die het stelsel moet vervullen, kolommen zijn bestuurslagen.
     Meerdere partijen in een cel betekent overlap. Een rode cel betekent dat niemand die functie op dat niveau belegt.
     Dit is het enige format waarin overlap en gaten tegelijk hard aanwijsbaar zijn.</div>
     <div class="scroll"><table class="mx" id="mx"></table></div>
@@ -268,12 +268,12 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
     <div class="card" style="margin-top:14px"><b>Waar het het drukst is.</b> Normstelling op rijksniveau telt 14 partijen,
     dreigingsinformatie op sectoraal niveau 8, en kennisdeling is de enige functie die op alle vijf de lagen door vijf of
     meer partijen wordt opgepakt. Dat is de goedkoopste functie om je aan te verbinden en de moeilijkste om je op te
-    onderscheiden. Of dat erg is hangt af van de mandaatsoort: zie de kleuren in format E.</div>
+    onderscheiden. Of dat erg is hangt af van de mandaatsoort: zie de kleuren in de overlapplaat.</div>
   </div>
 
   <!-- B: lagen -->
   <div class="viz" id="v-lagen">
-    <div class="vizhead"><b>Format B.</b> Het stelsel als bevelslijn van Brussel naar de Breestraat. Sterk voor uitleg aan
+    <div class="vizhead"><b>Lagenmodel.</b> Het stelsel als bevelslijn van Brussel naar de Breestraat. Sterk voor uitleg aan
     bestuurders, want het maakt zichtbaar hoeveel schakels er tussen een Europese richtlijn en een gemeentelijke maatregel zitten.
     Zwakker in het tonen van overlap.</div>
     <div id="lagen"></div>
@@ -281,7 +281,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 
   <!-- C: graaf -->
   <div class="viz" id="v-graaf">
-    <div class="vizhead"><b>Format C.</b> Wie stuurt wie aan, wie betaalt wie, en wie informeert wie. De dichtheid rond het
+    <div class="vizhead"><b>Relatiegraaf.</b> Wie stuurt wie aan, wie betaalt wie, en wie informeert wie. De dichtheid rond het
     NCSC laat zien hoe sterk het stelsel sinds de fusie naar een knooppunt is getrokken. De dunne lijnen naar de gemeente
     laten zien hoe smal de aansluiting daar is.</div>
     <div id="graaf"></div>
@@ -289,7 +289,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 
   <!-- E: dienstenband -->
   <div class="viz" id="v-band">
-    <div class="vizhead"><b>Format E.</b> De andere formats ordenen op <i>functie</i>, en dat is een containerbegrip:
+    <div class="vizhead"><b>Waar zit welke overlap.</b> De andere weergaven ordenen op <i>functie</i>, en dat is een containerbegrip:
     NCSC-advisories en het PvIB-magazine vallen daar allebei onder "kennisdeling" terwijl ze niets met elkaar te maken
     hebben. Dat levert schijn-overlap op, en het verbergt echte overlap (de EASM van de IBD en ThreatMatcher van
     Connect2Trust zijn hetzelfde product maar staan in verschillende cellen). Deze band ordent daarom op
@@ -304,7 +304,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 
   <!-- F: heatmap -->
   <div class="viz" id="v-hm">
-    <div class="vizhead"><b>Format F.</b> Dezelfde dienstenlaag als E, maar omgedraaid. Waar E laat zien <i>waar</i> de
+    <div class="vizhead"><b>Wie is wiens dubbelganger.</b> Dezelfde dienstenlaag als E, maar omgedraaid. Waar E laat zien <i>waar</i> de
     overlap zit, laat F zien <i>wie elkaars dubbelganger is</i>. Elke cel telt hoeveel concrete diensten twee partijen
     allebei leveren. Alleen partijen die minstens twee diensten leveren staan erin, want met een enkele dienst kun je
     per definitie niet structureel overlappen. Wijs een cel aan om te zien om welke diensten het gaat.</div>
