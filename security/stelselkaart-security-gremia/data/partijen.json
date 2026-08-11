@@ -1,0 +1,1230 @@
+{
+  "meta": {
+    "titel": "Stelselkaart security-gremia",
+    "omschrijving": "Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden die partijen zich tot elkaar.",
+    "peildatum": "2026-08-11",
+    "licentie": "EUPL-1.2",
+    "herkomst": "Samengesteld vanuit een gemeentelijke CISO-praktijk, op basis van openbare bronnen. Zie README voor de onderzoeksverantwoording en de open punten.",
+    "waarschuwing": "Momentopname. Het stelsel verandert snel: de Cyberbeveiligingswet trad in werking op 15 augustus 2026 en meerdere aanwijzingen waren op de peildatum nog niet rond. Corrigeer via een issue.",
+    "vocabulaire": {
+      "lagen": {
+        "eu": "EU",
+        "rijk": "Rijk / nationaal",
+        "sec": "Sectoraal",
+        "dec": "Decentraal collectief",
+        "reg": "Regionaal"
+      },
+      "functies": {
+        "norm": "Normstelling en kaders",
+        "toez": "Toezicht en verantwoording",
+        "cert": "CERT en incidentrespons",
+        "det": "Dreigingsinfo en detectie",
+        "kenn": "Kennisdeling",
+        "inko": "Inkoop en collectivisering",
+        "cris": "Crisis en ontwrichting",
+        "opl": "Opleiden, trainen, oefenen"
+      },
+      "mandaat": {
+        "wet": "wettelijk mandaat",
+        "convenant": "convenant of programma",
+        "vereniging": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+        "informeel": "informeel of vrijwillig",
+        "weg": "opgeheven of vervallen"
+      },
+      "toegang_gemeente": {
+        "direct": "een gemeente kan hier zelf terecht, lid worden of een dienst afnemen",
+        "indirect": "alleen via een koepel of schakelorganisatie, meestal de IBD",
+        "gesloten": "niet toegankelijk voor een gemeente"
+      }
+    }
+  },
+  "aantal": 82,
+  "partijen": [
+    {
+      "id": "enisa",
+      "naam": "ENISA",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm",
+        "kenn"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "EU-agentschap onder de Cybersecurity Act. NL in de Management Board via de directeur van NCSC-NL, dat ook National Liaison Officer is.",
+      "toelichting": "Bruikbaar: NIS360 als externe benchmark, de EUVD-kwetsbaarhedendatabase, en de lopende consultatie over certificering van Managed Security Services die je als SOC-inkoper raakt."
+    },
+    {
+      "id": "niscg",
+      "naam": "NIS Cooperation Group",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Strategisch platform onder NIS2 artikel 14. NL langs de ministeriele lijn, JenV coordinerend, BZK voor digitale overheid.",
+      "toelichting": "Het compendium over verkiezingsbeveiliging is direct bruikbaar, want gemeenten voeren verkiezingen uit."
+    },
+    {
+      "id": "csirtnet",
+      "naam": "CSIRTs Network",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cert",
+        "det"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Netwerk van nationale CSIRTs plus CERT-EU. NL is NCSC-NL.",
+      "toelichting": "Keten naar de gemeente: CSIRTs Network, NCSC-NL, IBD, gemeente."
+    },
+    {
+      "id": "cyclone",
+      "naam": "EU-CyCLONe",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Crisis-liaisonlaag tussen het technische CSIRTs Network en de politieke Raad. NL is de NCTV.",
+      "toelichting": "Nationale koppeling is het Landelijk Crisisplan Digitaal, dat nog op versie 2022 staat."
+    },
+    {
+      "id": "eccc",
+      "naam": "ECCC en NCC-NL",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Europees competentiecentrum met nationale coordinatiecentra. NCC-NL wordt uitgevoerd door RVO, gefinancierd door EZ en de EU.",
+      "toelichting": "Doelgroep is mkb, start-ups en kennisinstellingen. Een gemeente komt alleen binnen als consortiumpartner. Let op de naamsverwarring met NCSC-NL."
+    },
+    {
+      "id": "certeu",
+      "naam": "CERT-EU",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cert"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Cybersecuritydienst voor de EU-instellingen, ruim 90 constituenten.",
+      "toelichting": "Bedient uitdrukkelijk geen nationale of lokale overheden. Alleen de publieke advisories zijn bruikbaar."
+    },
+    {
+      "id": "ec3",
+      "naam": "Europol EC3",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "European Cybercrime Centre, gevestigd in Den Haag sinds 2013.",
+      "toelichting": "Voor een gemeente loopt de lijn via de nationale politie, niet via EC3."
+    },
+    {
+      "id": "gfce",
+      "naam": "GFCE",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Global Forum on Cyber Expertise, opgericht 2015 in Den Haag op mede-Nederlands initiatief.",
+      "toelichting": "Beleidsmatig relevant, geen operationele lijn."
+    },
+    {
+      "id": "first",
+      "naam": "FIRST",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "kenn",
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Wereldwijde koepel van incident-responseteams, 871 teams, 10 Nederlandse.",
+      "toelichting": "De IBD is geen lid, terwijl CERT-WM en Z-CERT dat wel zijn. Wel bruikbaar: de standaarden CVSS, TLP en EPSS."
+    },
+    {
+      "id": "ti",
+      "naam": "TF-CSIRT en Trusted Introducer",
+      "laag": "eu",
+      "laag_label": "EU",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "norm",
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Europese vertrouwensinfrastructuur voor CSIRTs, met het SIM3-volwassenheidsmodel.",
+      "toelichting": "De IBD is Certification Candidate sinds 6 februari 2024. De SIM3-self-check is publiek en bruikbaar als onafhankelijke meetlat naast BIO2."
+    },
+    {
+      "id": "ncsc",
+      "naam": "NCSC",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cert",
+        "det",
+        "kenn",
+        "cris",
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Nationaal CSIRT, sectoraal CSIRT, kennis- en adviescentrum en uitvoeringscoordinator in een. Sinds 1 januari 2026 gefuseerd met DTC. Ruim 400 fte, doelgroep 2,4 miljoen organisaties.",
+      "toelichting": "Per 15 augustus 2026 ook het feitelijke CSIRT voor gemeenten, voorlopig. Registratie en melding via MijnNCSC. Aansturing sinds 2025 via meervoudig opdrachtgeverschap met de NCTV als coordinerend opdrachtgever."
+    },
+    {
+      "id": "nctv",
+      "naam": "NCTV",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm",
+        "cris"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Directoraat-generaal binnen JenV, stelsel- en kaderstellend. Stelt de kaders waarbinnen het NCSC werkt.",
+      "toelichting": "Eigenaar van het Landelijk Crisisplan Digitaal (nog versie 2022) en van het Cybersecuritybeeld Nederland. Nationaal Crisiscentrum valt hieronder."
+    },
+    {
+      "id": "csr",
+      "naam": "Cyber Security Raad",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Onafhankelijk adviesorgaan van kabinet en bedrijfsleven, publiek-privaat samengesteld.",
+      "toelichting": "Raamt 690 miljoen euro structureel en adviseert het aantal publiek-private samenwerkingen te beperken. Noemt gemeenten in geen enkele onderzochte adviesbrief."
+    },
+    {
+      "id": "nbv",
+      "naam": "NBV (AIVD)",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Nationaal Bureau voor Verbindingsbeveiliging, onderdeel van de Unit Weerbaarheid van de AIVD. Evalueert en keurt beveiligingsproducten goed.",
+      "toelichting": "Doelgroep expliciet ook gemeenten. De lijst geevalueerde producten is een inkoopfilter zodra je met Departementaal Vertrouwelijk of hoger werkt. Let op: een inzetadvies geldt per productversie."
+    },
+    {
+      "id": "aivd",
+      "naam": "AIVD, MIVD en JSCU",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Inlichtingendiensten met een gezamenlijke technische eenheid (JSCU). Leveren dreigingsinformatie en dragen bij aan het CSBN.",
+      "toelichting": "Nemen deel aan het Nationaal Detectie Netwerk en Cyclotron."
+    },
+    {
+      "id": "ndn",
+      "naam": "Nationaal Detectie Netwerk",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Gedeeld en verrijkt dreigingsbeeld van NCSC, AIVD, MIVD, rijksorganisaties en vitale aanbieders.",
+      "toelichting": "Deelname staat open voor rijksoverheid en vitale sectoren, niet voor gemeenten. De route loopt via de IBD als schakelorganisatie."
+    },
+    {
+      "id": "cyclotron",
+      "naam": "Cyclotron",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "det",
+        "kenn"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Publiek-privaat analyse- en duidingsplatform. Convenant getekend 30 september 2025 door 28 partijen, inmiddels circa veertig organisaties.",
+      "toelichting": "Deelnemers zijn diensten en securityleveranciers. Hier wordt de nationale duiding gemaakt die via NCSC en IBD jouw kant op komt."
+    },
+    {
+      "id": "hoc",
+      "naam": "House of Cyber",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn",
+        "opl"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Fysiek samenwerkingsgebouw in Den Haag Mariahoeve, het voormalige Aegon-hoofdkantoor. NCSC, Defensie, politie, NFI, HSD en TNO.",
+      "toelichting": "Geen juridische entiteit met eigen mandaat. Realisatie naar verwachting binnen enkele jaren, geen openingsdatum."
+    },
+    {
+      "id": "rdi",
+      "naam": "RDI",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "toez"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.",
+      "toelichting": "Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Bevoegde autoriteit voor de sector overheid is BZK."
+    },
+    {
+      "id": "ilt",
+      "naam": "ILT",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "toez"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Toezichthouder onder de Cbw voor de waterschappen.",
+      "toelichting": "Relevant omdat gemeenten met waterschappen in de afvalwaterketen samenwerken en daar dus twee toezichtregimes samenkomen."
+    },
+    {
+      "id": "ap",
+      "naam": "Autoriteit Persoonsgegevens",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "toez"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Toezichthouder op de AVG. Bij een incident met persoonsgegevens loopt hier een eigen meldstroom naast de Cbw-melding.",
+      "toelichting": "Derde spoor naast NCSC-melding en aangifte bij de politie."
+    },
+    {
+      "id": "bzk",
+      "naam": "BZK",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm",
+        "kenn",
+        "opl"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Stelselverantwoordelijk voor BIO en ENSIA, bevoegde autoriteit voor de sector overheid, medeondertekenaar van het Bestuurlijk Convenant.",
+      "toelichting": "Concreet af te nemen: de Overheidsbrede Cyberoefening op 2 november 2026 (scenario gemeente Waaldam: regenval, IT-uitval en desinformatie) en 15 gratis webinars per jaar via ICTU."
+    },
+    {
+      "id": "ciorijk",
+      "naam": "CIO Rijk en CIO-beraad",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Sinds 1 januari 2026 heeft CIO Rijk de bevoegdheid bindende kaders vast te stellen en zelfstandig te besluiten bij gebrek aan consensus.",
+      "toelichting": "Gesloten circuit voor het Rijk, maar het contrast is bruikbaar: het Rijk heeft de vrijblijvendheid voor zichzelf opgeheven, de decentrale laag niet."
+    },
+    {
+      "id": "cisorijk",
+      "naam": "CISO Rijk",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Rijksbrede CISO-functie. Aart Jochem vertrok per 1 januari 2026, Martijn de Hamer nam waar.",
+      "toelichting": "Opdrachtgever van het VSSR namens het CIO-beraad."
+    },
+    {
+      "id": "vssr",
+      "naam": "VSSR",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "cert",
+        "det"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Versterkt SOC-Stelsel Rijk, sinds begin 2025 belegd bij het NCSC. De basis waarop NDS-versneller 5.2 voortbouwt.",
+      "toelichting": "Formeel Rijk-only, geen aansluitrecht. Wel herbruikbaar: de SOC Readiness QuickScan en de DUCK-kennisbank met detectietechnieken en use cases."
+    },
+    {
+      "id": "abro",
+      "naam": "ABRO 2026",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Algemene Beveiligingseisen voor Rijksoverheidsopdrachten, geldig vanaf 1 januari 2026, gepubliceerd 5 februari 2026. Vijf hoofdstukken, twee jaar implementatietijd.",
+      "toelichting": "Bindt gemeenten niet, maar is een bruikbaar eisenkader voor leveranciers met risico's voor de nationale veiligheid. Verankert de TBB-systematiek bij BVA en ABRO."
+    },
+    {
+      "id": "logius",
+      "naam": "Logius",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm",
+        "toez"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Uitvoeringsorganisatie van BZK: DigiD, PKIoverheid, Digipoort, MijnOverheid.",
+      "toelichting": "Levert de hardste jaarlijkse verplichting die je hebt: het ICT-beveiligingsassessment DigiD tegen Normenkader 3.0."
+    },
+    {
+      "id": "forum",
+      "naam": "Forum Standaardisatie",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Beheert de lijst verplichte open standaarden met het pas-toe-of-leg-uit-regime voor alle overheden.",
+      "toelichting": "Concreet toetsbaar: DNSSEC, SPF, DKIM, DMARC, RPKI, TLS 1.3 en 1.2, HTTPS en HSTS, security.txt. Circa zes van de tien overheidsdomeinen voldoet."
+    },
+    {
+      "id": "ndd",
+      "naam": "Nederlandse Digitale Dienst",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Nieuwe expertorganisatie, van start zomer 2026 na het eindadvies van de NDS-Raad. Doorbraakfunctie, standaarden afdwingen, moderne ontwikkelrichtlijnen.",
+      "toelichting": "Definitieve positionering, mandaat en financiering worden pas in 2027 besloten. Voorlopig een bestuurlijk fenomeen om te volgen, geen loket."
+    },
+    {
+      "id": "digilab",
+      "naam": "Digilab",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "norm",
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Innovatiewerkplaats bij BZK, host van het Codeplatform. Beheert de standaarden FSC, FTV en LDV uit het Federatief Datastelsel.",
+      "toelichting": "Die drie standaarden raken veilige koppelvlakken, autorisatie en logging, en landen op termijn in gemeentelijke koppelvlakken en Common Ground."
+    },
+    {
+      "id": "politie",
+      "naam": "Politie: THTC en regionale cybercrimeteams",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Sinds 2024 zit cybercrime bij de Eenheid Landelijke Opsporing en Interventies. Elke regionale eenheid heeft een eigen cybercrimeteam.",
+      "toelichting": "Het regionale cybercrimeteam is je feitelijke aanspreekpunt, niet het THTC. Stel sporen veilig voordat je herstelt."
+    },
+    {
+      "id": "om",
+      "naam": "Openbaar Ministerie",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Cybercrime-officieren bij de parketten, met een landelijk operationeel cybercrime-overleg.",
+      "toelichting": "Stem publicatiemomenten af zodra er een strafrechtelijk onderzoek loopt."
+    },
+    {
+      "id": "melissa",
+      "naam": "Convenant Melissa",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Samenwerking OM, politie, NCSC en private cybersecuritypartijen, specifiek op ransomware.",
+      "toelichting": "De brug tussen het strafrechtelijke en het weerbaarheidsspoor."
+    },
+    {
+      "id": "nipv",
+      "naam": "NIPV",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "opl",
+        "cris"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Kennis- en opleidingsinstituut voor de 25 veiligheidsregio's. Faciliteert de VR-ISAC.",
+      "toelichting": "Het leerblok Cybergevolgbestrijding en digitale ontwrichting staat expliciet ook open voor gemeentemedewerkers. Eigen onderzoek stelt vast dat de cyberkennis bij veiligheidsregio's beperkt is."
+    },
+    {
+      "id": "cwn",
+      "naam": "Cyberweerbaarheidsnetwerk",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "det",
+        "cert",
+        "kenn",
+        "opl"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Opvolger van het Landelijk Dekkend Stelsel, uitvoering sinds 1 januari 2026 volledig bij het NCSC. Vijf functies.",
+      "toelichting": "De OKTT-status vervalt met de Cbw en de opvolging is nog niet uitgewerkt. Aansluiting loopt vooralsnog via schakelorganisaties. Contact cwn@ncsc.nl."
+    },
+    {
+      "id": "ibd",
+      "naam": "IBD",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "cert",
+        "det",
+        "kenn",
+        "norm",
+        "opl"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Informatiebeveiligingsdienst voor gemeenten, onderdeel van de VNG, gefinancierd uit het GGU-fonds. Tien jaar de facto CERT voor gemeenten.",
+      "toelichting": "24/7 op 070 204 55 11, reactie binnen 30 minuten. EASM, BIO2-ondersteuningspakket, Samen Controleren. Beoogd sectoraal CSIRT maar per 15 augustus 2026 niet aangewezen. Onderbenut: collectieven aanmelden via info@IBDgemeenten.nl en de roulerende CISO-plek."
+    },
+    {
+      "id": "ibdraad",
+      "naam": "IBD-adviesraad",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Adviesorgaan van de IBD, waar bepaald wordt wat de IBD voor gemeenten doet.",
+      "toelichting": "Hier wordt bepaald waar de IBD haar capaciteit op inzet. Relevante toetsroute op het moment dat de rol en de informatiepositie van de IBD in beweging zijn."
+    },
+    {
+      "id": "zcert",
+      "naam": "Z-CERT",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "cert"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Zelfstandige stichting sinds 2017, formeel aangewezen sectoraal CSIRT voor de zorg. Circa 400 deelnemers.",
+      "toelichting": "Referentiemodel: wettelijke CSIRT-taken zijn gratis, extra diensten worden per 2026 betaald. Toezichthouder is de IGJ."
+    },
+    {
+      "id": "certwm",
+      "naam": "CERT-WM",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "cert"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "CSIRT van de waterschappen, ondergebracht in Het Waterschapshuis, een openbaar lichaam. Formeel aangewezen per 13 juli 2026.",
+      "toelichting": "Het contrast met de IBD is het scherpst bruikbare argument: een publiekrechtelijke inbedding levert wel een aanwijzing op."
+    },
+    {
+      "id": "surf",
+      "naam": "SURFcert en SURFsoc",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "cert",
+        "det"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "CSIRT en SOC-dienst van cooperatie SURF voor onderwijs en onderzoek. Beoogd sectoraal CSIRT, aanwijzing verwacht maart 2027.",
+      "toelichting": "De Cbw geldt nog niet voor hoger onderwijs. Zorgplicht pas drie jaar na aanwijzing."
+    },
+    {
+      "id": "isac",
+      "naam": "ISAC's (sectoraal)",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Sectorale kringen voor vertrouwelijke uitwisseling onder NDA en Traffic Light Protocol, gefaciliteerd door het NCSC.",
+      "toelichting": "Er is een Rijks-ISAC maar geen gemeente-ISAC. Voor gemeenten loopt informatiedeling via de IBD-Community en de rollen VCIB en ACIB."
+    },
+    {
+      "id": "vrisac",
+      "naam": "VR-ISAC",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "det",
+        "cris"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "ISAC van de 25 veiligheidsregio's, eigendom van het Veiligheidsberaad, gefaciliteerd door het NIPV. Twee personen per regio, veelal de CISO's.",
+      "toelichting": "Niet zelf toetreedbaar. De ingang is de CISO van Veiligheidsregio Hollands Midden. Publieke documentatie stopt bij 2024."
+    },
+    {
+      "id": "nrn",
+      "naam": "Nationaal Respons Netwerk",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "cert"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Convenant uit 2020 waarin IBD, Belastingdienst, SURF, Defensie, Rijkswaterstaat en NCSC elkaar bijstaan bij incidentrespons.",
+      "toelichting": "Geen zichtbare eigen activiteit meer; opgegaan in de CWN-functie Incidentafhandeling. De IBD is convenantpartij namens alle gemeenten."
+    },
+    {
+      "id": "adc",
+      "naam": "Anti-DDoS-Coalitie",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det",
+        "opl"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Consortium van overheden, providers, internet exchanges en banken. Secretariaat bij ECP. DDoS Clearing House en een jaarlijkse live oefening waarin rode en blauwe teams elkaar aanvallen.",
+      "toelichting": "Een gemeente kan lid worden via antiddoscoalitie@ecp.nl. Let op: de website nomoreddos.org is sinds medio 2026 offline terwijl de coalitie nog als actief op ncsc.nl staat."
+    },
+    {
+      "id": "nbip",
+      "naam": "NBIP en NaWas",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Collectieve non-profit DDoS-scrubbing voor providers, ruim 200 aangesloten organisaties. OKTT-schakelorganisatie voor internetproviders.",
+      "toelichting": "Niet rechtstreeks toegankelijk: een eigen AS-nummer is voorwaarde. Vraag je ISP en hoster schriftelijk of jouw prefixen onder de NaWas vallen."
+    },
+    {
+      "id": "c2t",
+      "naam": "Connect2Trust",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Stichting met OKTT-status sinds 2021. ThreatMatcher pusht 24/7 gefilterde meldingen op je domeinen, IP-ranges en AS-nummers.",
+      "toelichting": "Rechtstreeks toegankelijk voor een gemeente, zilver is kosteloos. Gemeente Den Haag is al partner. De registratie is werk dat je onder de Cbw toch moet doen."
+    },
+    {
+      "id": "divd",
+      "naam": "DIVD",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Stichting Dutch Institute for Vulnerability Disclosure, vrijwilligers, gratis, eigen CSIRT en CVE Numbering Authority.",
+      "toelichting": "Meldingen over gemeentelijke systemen komen via de IBD binnen. Regel dat traject vooraf in je CVD-beleid."
+    },
+    {
+      "id": "abuseix",
+      "naam": "Abuse Information Exchange",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "weg",
+      "mandaat_label": "opgeheven of vervallen",
+      "functies": [
+        "det"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "AbuseHUB, opgericht 2012, opgeheven op 17 april 2024 omdat leden eigen systemen hadden en de overheid alternatieven biedt.",
+      "toelichting": "Kom je dit in oude documentatie of leverancierscontracten tegen, dan is die verwijzing dood."
+    },
+    {
+      "id": "vng",
+      "naam": "VNG en VNG Realisatie",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "norm",
+        "kenn",
+        "inko"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Vereniging van alle gemeenten. Bepaalt via de GGU de collectieve agenda en het geld. Agenda Digitale Veiligheid 2024-2028 met jaarplan.",
+      "toelichting": "Het Jaarplan 2026 is een bruikbare kapstok voor je eigen jaarplan: OT-baselines, quantum, leveranciersmanagement, ISMS. Bij bijna elk thema staat verkennen en uitwerken collectiviseringsvoorstellen."
+    },
+    {
+      "id": "vngkbg",
+      "naam": "VNG-klankbordgroep Digitale Veiligheid",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "kenn",
+        "inko"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Opgezet door de VNG in het kader van de NDS en collectivisering, om af te stemmen over generiek te ontwikkelen en toe te passen zaken.",
+      "toelichting": "Hier zijn middelen te claimen voor gezamenlijk te ontwikkelen producten. Let op: er bestaat ook een gelijknamige interbestuurlijke klankbordgroep met IBD, NIPV, veiligheidsregio's, CCV, BZK en politie."
+    },
+    {
+      "id": "cominfo",
+      "naam": "VNG-commissie Informatiesamenleving",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "Bestuurlijke commissie, 16 leden, voorzitter Peter Snijders (burgemeester Zwolle).",
+      "toelichting": "Bestuurlijk bezet. Je route loopt via je eigen burgemeester of gemeentesecretaris."
+    },
+    {
+      "id": "ggi",
+      "naam": "GGI-Veilig, SCG en Bizob",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "inko"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Collectieve inkoopmantel. De oorspronkelijke percelen zijn afgelopen; opvolgers zijn Monitoring en Response en Cyberweerbaarheid, dat laatste live sinds 1 december 2025.",
+      "toelichting": "Snelste route naar SOC, pentesten, red teaming en tijdelijke expertise zonder eigen aanbesteding. Deelnemers en leveranciers zijn niet publiek: bel SCG."
+    },
+    {
+      "id": "ensia",
+      "naam": "ENSIA",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "toez"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Jaarlijks verantwoordingsstelsel over informatiebeveiliging en datakwaliteit, beheerd door de VNG, stelselverantwoordelijke BZK.",
+      "toelichting": "Vanaf verantwoordingsjaar 2026 alleen nog 3000D voor DigiD en Suwinet. Suwinet vraagt vanaf 2027 aantoonbare werking van zeven controls, en dat kost een jaar bewijsvoering."
+    },
+    {
+      "id": "bio",
+      "naam": "BIO2 en de interbestuurlijke werkgroep",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "wet",
+      "mandaat_label": "wettelijk mandaat",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "BZK is eigenaar, CIP beheert, de interbestuurlijke werkgroep onder BZK-voorzitterschap onderhoudt.",
+      "toelichting": "Gemeenten zitten formeel nog op BIO1 v1.04zv terwijl de Cbw-zorgplicht naar BIO2 wijst. Implementeer BIO2, verantwoord voorlopig via BIO1, en leg die keuze vast."
+    },
+    {
+      "id": "cip",
+      "naam": "CIP",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm",
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Publiek-private netwerkorganisatie, circa 1.000 organisaties en 5.000 professionals. Beheert de BIO namens BZK. Kernparticipanten UWV, SVB, DUO en Belastingdienst.",
+      "toelichting": "Werkmodel is werkgroepen: je doet mee door mensen te leveren. Negen BIO Thema-uitwerkingen op de SIVA-methodiek, Privacy Baseline, Grip op SSD, ICO-Wizard. Evaluatie loopt, volgende BIO2-versie beoogd eind 2027."
+    },
+    {
+      "id": "g4",
+      "naam": "G4-CISO-overleg",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "De vier grote gemeenten werken samen, met ruim 100 security-collega's. De G4 is zelfstandig ondertekenaar van het Bestuurlijk Convenant.",
+      "toelichting": "Publiek niet gedocumenteerd als formeel gremium met eigen statuten, wel bevestigd als bestaande samenwerking."
+    },
+    {
+      "id": "kringen",
+      "naam": "IBD-collectieven en regionale CISO-kringen",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "De IBD nodigt expliciet uit om regionale CISO-kringen als collectief aan te melden, en draait sinds 2025 een pilot met vier kringen in een gedeelde Teams-omgeving.",
+      "toelichting": "Laagste drempel met de hoogste opbrengst. Evaluatie stond gepland voor begin 2026, uitkomst niet publiek."
+    },
+    {
+      "id": "commons",
+      "naam": "security-commons",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn",
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Initiatief van gemeentelijke CISO's: groepjes die samen herbruikbare producten maken en onderhouden, open source, maintainer-model.",
+      "toelichting": "Bewust een doe-club naast de gremia, geen tweede IBD. Landingsroutes: G4, VNG-klankbordgroep en IBD-adviesraad."
+    },
+    {
+      "id": "codepf",
+      "naam": "Codeplatform",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Soeverein overheidsbreed codeplatform op Forgejo, gehost bij Digilab. Publiceren, samenwerken en op termijn bouwen met ingebouwde compliance.",
+      "toelichting": "Relevant zodra de regio code publiceert: SBOM's, kwetsbaarheden- en licentiechecks via project Zenshin."
+    },
+    {
+      "id": "ipo",
+      "naam": "IPO en het interprovinciaal CSIRT",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "cert"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Provincies moeten zich onder de Cbw organiseren in een eigen CSIRT om vertrouwelijke NCSC-informatie te ontvangen. Project bij BIJ12.",
+      "toelichting": "Besluitvorming in de eindfase: aansluiten bij een bestaand CSIRT of zelf bouwen. De uitkomst is voorspellend voor het gemeentelijke vraagstuk."
+    },
+    {
+      "id": "uvw",
+      "naam": "Unie van Waterschappen en Het Waterschapshuis",
+      "laag": "dec",
+      "laag_label": "Decentraal collectief",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "inko",
+        "cert"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Koepel en gezamenlijke uitvoeringsorganisatie van de 21 waterschappen. Het Waterschapshuis is een openbaar lichaam met een gedeelde SOC.",
+      "toelichting": "Ketenpartner in de regio bij digitale ontwrichting, en het model dat wel een CSIRT-aanwijzing kreeg."
+    },
+    {
+      "id": "nds",
+      "naam": "NDS",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "norm",
+        "inko"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Nederlandse Digitaliseringsstrategie, interbestuurlijk, sinds 23 februari 2026 bij EZ onder staatssecretaris Aerdts. Zes prioriteiten en drie interventies.",
+      "toelichting": "Stuurt via aanjaagteams, niet via kernteams; kernteam is de werkgroep per versneller. Draait op bestaande budgetten, geen extra middelen. De NDS-Raad is opgeheven, Nathan Ducastel is ambassadeur."
+    },
+    {
+      "id": "nds52",
+      "naam": "NDS 5.2 Federatief SOC-stelsel",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "inko",
+        "det"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Doorontwikkeling van het VSSR tot een overheidsbreed samenwerkingsmodel van SOC's. Penvoerder Robert Portegies (BZK).",
+      "toelichting": "Bij de pre-kickoff ontbraken de IBD en de waterschappen, en was de gemeentelijke en regionale laag nauwelijks vertegenwoordigd. Budgetclaim 2027."
+    },
+    {
+      "id": "nds53",
+      "naam": "NDS 5.3 Continuiteit en BCM",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Versterken van continuiteit en wendbaarheid van kritieke dienstverlening, ISO 22301 gekoppeld aan ISO 27001 en de Cbw. Lead Marianne van den Boogaart (BZK).",
+      "toelichting": "Kernteam is Rijk-zwaar: BZK, IenW, UWV, P-Direkt. Kleinere organisaties met beperkte expertise zijn expliciet doelgroep, en dat zijn de gemeenten."
+    },
+    {
+      "id": "nds54",
+      "naam": "NDS 5.4 Inzicht kritieke dienstverlening",
+      "laag": "rijk",
+      "laag_label": "Rijk / nationaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Overheidsbreed inzicht in kritieke dienstverlening en de digitale bouwstenen, inclusief legacy. Penvoerder Robert Portegies (BZK).",
+      "toelichting": "Expliciet geen centraal register in scope. Werksessies 26 augustus, 9 en 16 september, afsluiting 21 september."
+    },
+    {
+      "id": "rsiv",
+      "naam": "RSIV Den Haag",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "cris",
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag.",
+      "toelichting": "Cybercrime is een van de vijf prioriteiten in het regionaal beleidsplan 2023-2026. Alle gemeenten in die politie-eenheid vallen eronder, van de bollenstreek tot de Krimpenerwaard. Invalshoek is openbare orde, dus de aansluiting loopt via OOV, niet via IV. Account aanvragen via rsiv@zoetermeer.nl."
+    },
+    {
+      "id": "pvo",
+      "naam": "PVO Regio Den Haag",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Platform Veilig Ondernemen, gefinancierd door JenV, bedient dezelfde 27 gemeenten. Doelgroep is het mkb.",
+      "toelichting": "De gemeente is medefinancier en partner, niet afnemer. Kanaal om lokale ondernemers te bereiken."
+    },
+    {
+      "id": "vrhm",
+      "naam": "Veiligheidsregio Hollands Midden",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "cris"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Gemeenschappelijke regeling van gemeenten. Stelt elke vier jaar risicoprofiel, beleidsplan en crisisplan op.",
+      "toelichting": "Opgenomen als voorbeeld van de 25 veiligheidsregio's. Veiligheidsregio's vallen buiten de Cyberbeveiligingswet terwijl gemeenten er wel onder vallen, wat een gat achterlaat op de naad van de crisisorganisatie. De vierjaarlijkse planvorming (risicoprofiel, beleidsplan, crisisplan) is het moment waarop een gemeente de cyberdimensie kan inbrengen."
+    },
+    {
+      "id": "hr",
+      "naam": "Holland Rijnland",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "vereniging",
+      "mandaat_label": "ledenmandaat (vereniging, cooperatie, gemeenschappelijke regeling)",
+      "functies": [
+        "inko"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Regionaal samenwerkingsorgaan van vijftien gemeenten. Geen security-uitvoeringsorganisatie.",
+      "toelichting": "Servicepunt71 is per 1 januari 2023 opgeheven en de bedrijfsvoering is overgegaan naar een centrumgemeente-constructie. Zo'n overgang verschuift de Cbw-entiteitsgrens: waar eerder de gemeenschappelijke regeling mogelijk zelfstandig entiteit was, ligt het gewicht daarna bij de gastheergemeente."
+    },
+    {
+      "id": "ccv",
+      "naam": "Netwerk Lokale Weerbaarheid Cybercrime en CCV",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Opvolger van de City Deal Lokale Weerbaarheid Cybercrime, die op 31 december 2025 formeel is afgerond. Kennisbeheer bij het CCV.",
+      "toelichting": "Producten: Lokale Cyberwegenkaart en Cyberpraatplaat. Kwartaalsessies worden verspreid door het land gehouden. Ligt binnen een gemeente meestal bij OOV, niet bij de CISO."
+    },
+    {
+      "id": "cwc",
+      "naam": "Regionale cyberweerbaarheidscentra",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "det",
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Ferm Zeehavens, Cyber Weerbaarheidscentrum Brainport, Maakindustrie Zuid-Holland, CW Greenport, Cyber Network Drechtsteden.",
+      "toelichting": "Vrijwel allemaal sectoraal-regionaal en op het bedrijfsleven gericht. Lang niet elke regio heeft een eigen centrum; grote delen van het land vallen buiten deze structuren."
+    },
+    {
+      "id": "ecp",
+      "naam": "ECP",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Publiek-privaat platform met secretariaatsrol voor coalities. Achter Veiliginternetten.nl, het Platform Internetstandaarden (internet.nl), de Anti-DDoS-Coalitie en de Online Trust Coalitie.",
+      "toelichting": "Geen normerende rol, wel het knooppunt waar veel coalities hun secretariaat hebben."
+    },
+    {
+      "id": "otc",
+      "naam": "Online Trust Coalitie",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Ruim twintig organisaties uit overheid, bedrijfsleven en wetenschap, secretariaat bij ECP. Uniforme, lichte methodes waarmee cloudleveranciers betrouwbaarheid kunnen aantonen.",
+      "toelichting": "Direct bruikbaar in gemeentelijke cloud-inkoop en leveranciersassurance."
+    },
+    {
+      "id": "hsd",
+      "naam": "Security Delta (HSD)",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn",
+        "opl"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "Clusterorganisatie met ruim 300 partijen. Founding partners zijn Provincie Zuid-Holland, Gemeente Den Haag, Economic Board Zuid-Holland en InnovationQuarter.",
+      "toelichting": "Zuid-Hollandse ophanging maakt het regionaal relevant. Vooral waardevol voor arbeidsmarkt en talent, minder voor operationele dreigingsinformatie. Voert het cyberweerbaarheidsinitiatief van de provincie uit."
+    },
+    {
+      "id": "cvd",
+      "naam": "Centrum voor Veiligheid en Digitalisering",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "opl"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Samenwerkingsverband in Apeldoorn van Universiteit Twente, Saxion, Politieacademie, Aventus, NIPV en de gemeente. Sinds 29 juni 2026 samenwerkingsovereenkomst met HSD.",
+      "toelichting": "Opleiding, onderzoek en arbeidsmarkt, niet operationeel."
+    },
+    {
+      "id": "sdv",
+      "naam": "Samen Digitaal Veilig",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "83 brancheorganisaties met MKB-Nederland, gesubsidieerd door JenV en EZ. Bereik ruim 140.000 bedrijven, startversie gratis.",
+      "toelichting": "Bruikbaar als doorverwijzing naar lokaal mkb en als voorbeeldmateriaal voor bewustwording."
+    },
+    {
+      "id": "dcypher",
+      "naam": "dcypher",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "weg",
+      "mandaat_label": "opgeheven of vervallen",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Kennis- en innovatieplatform, per 1 september 2025 gestopt nadat EZ de ondersteuning beeindigde. Tweede keer na een eerdere stop in 2020.",
+      "toelichting": "Activiteiten overgedragen aan NCC-NL. Verwijzingen naar dcypher als levend platform zijn achterhaald."
+    },
+    {
+      "id": "cs4nl",
+      "naam": "CS4NL",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "weg",
+      "mandaat_label": "opgeheven of vervallen",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "Vijfjarig onderzoeksprogramma van dcypher en Topsector ICT, voortijdig gestopt.",
+      "toelichting": "Gaat op in de Actieagenda Cybersecurity Technologies onder de Nationale Technologiestrategie."
+    },
+    {
+      "id": "cvn",
+      "naam": "Cyberveilig Nederland",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "RANDPARTIJ. Brancheorganisatie van de cybersecuritysector sinds 2018, met OKTT-status.",
+      "toelichting": "Relevant als leverancierskader. Directeur Petra Oldengarm is auteur van het rapport Cyberweerbaarheid binnen gemeentegrenzen."
+    },
+    {
+      "id": "nldig",
+      "naam": "NLdigital",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "norm"
+      ],
+      "toegang_gemeente": "gesloten",
+      "omschrijving": "RANDPARTIJ. Brancheorganisatie van de digitale sector.",
+      "toelichting": "Relevant omdat de NLdigital Voorwaarden in veel gemeentelijke IT-contracten staan."
+    },
+    {
+      "id": "pvib",
+      "naam": "PvIB",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "kenn"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "RANDPARTIJ. Platform voor InformatieBeveiliging, kennisplatform en beroepsnetwerk. Contributie 2026 is 259 euro regulier.",
+      "toelichting": "Goedkoopste individuele kennisnetwerk voor een CISO. Persoonsgebonden, dus niet organisatiegebonden."
+    },
+    {
+      "id": "norea",
+      "naam": "NOREA",
+      "laag": "sec",
+      "laag_label": "Sectoraal",
+      "mandaat": "informeel",
+      "mandaat_label": "informeel of vrijwillig",
+      "functies": [
+        "toez"
+      ],
+      "toegang_gemeente": "direct",
+      "omschrijving": "RANDPARTIJ. Beroepsorganisatie van IT-auditors, circa 1.800 geregistreerde RE's, ondergebracht bij de NBA.",
+      "toelichting": "De 3000D-route voor DigiD en Suwinet vereist een bij NOREA geregistreerde RE."
+    }
+  ]
+}
