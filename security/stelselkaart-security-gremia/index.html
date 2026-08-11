@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stelselkaart security-gremia · wie organiseert de digitale weerbaarheid van de Nederlandse overheid</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#1a1d21; --muted:#5c6570; --line:#dfe3e8;
+  --accent:#1f4e79; --accent2:#2e7d68;
+  --wet:#1f4e79; --wet-bg:#e8f0f7;
+  --conv:#6b4fa0; --conv-bg:#f0ebf8;
+  --ver:#2e7d68; --ver-bg:#e6f2ee;
+  --inf:#a06a2c; --inf-bg:#faf1e3;
+  --weg:#8b1a1a; --weg-bg:#fbeaea;
+  --gap:#b3261e; --gap-bg:#fdecea;
+  --tafel:#0b6b3a; --aangeb:#a8620a; --haal:#1f4e79; --indir:#6b7280; --geen:#9aa2ad;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 20px 80px}
+header.top{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:4px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:13.5px}
+.badge{display:inline-block;background:var(--gap-bg);color:var(--gap);border:1px solid #f3c2bd;
+  border-radius:4px;padding:2px 8px;font-size:12px;font-weight:600;margin-left:6px}
+
+/* tabs */
+nav.tabs{display:flex;flex-wrap:wrap;gap:2px;margin:18px 0 0;border-bottom:1px solid var(--line)}
+nav.tabs button{background:none;border:none;border-bottom:3px solid transparent;padding:10px 14px;
+  font:inherit;font-size:14px;color:var(--muted);cursor:pointer;border-radius:5px 5px 0 0}
+nav.tabs button:hover{background:#eceff3;color:var(--ink)}
+nav.tabs button[aria-selected=true]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600;background:#fff}
+section.panel{display:none;padding-top:22px}
+section.panel.on{display:block}
+
+h2{font-size:19px;margin:28px 0 10px;letter-spacing:-.2px}
+h2:first-child{margin-top:0}
+h3{font-size:15.5px;margin:20px 0 7px}
+p{margin:0 0 11px}
+.lead{font-size:16px;color:#33383e;border-left:3px solid var(--accent);padding-left:14px;margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:14px}
+.note{background:#fffbe9;border:1px solid #ecd98a;border-radius:6px;padding:11px 14px;font-size:13.5px;margin:12px 0}
+.warn{background:var(--gap-bg);border:1px solid #f3c2bd;border-radius:6px;padding:11px 14px;font-size:13.5px;margin:12px 0}
+.ok{background:#e9f5ee;border:1px solid #a8d5bd;border-radius:6px;padding:11px 14px;font-size:13.5px;margin:12px 0}
+small.src{color:var(--muted);font-size:12px}
+
+/* format switch */
+.fmt{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.fmt button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;
+  font:inherit;font-size:13px;cursor:pointer;color:var(--muted)}
+.fmt button:hover{border-color:var(--accent);color:var(--accent)}
+.fmt button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.viz{display:none}
+.viz.on{display:block}
+.vizhead{font-size:13.5px;color:var(--muted);margin-bottom:14px;max-width:80ch}
+
+/* dienstenband */
+.band{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.dr{display:grid;grid-template-columns:190px 46px 1fr;gap:0;border-bottom:1px solid var(--line);
+  position:relative}
+.dr:last-child{border-bottom:none}
+.dr:hover{background:#fafbfc}
+.dr .dn{padding:11px 12px;font-size:13px;font-weight:600;line-height:1.35;background:#f7f9fb;
+  border-right:1px solid var(--line);display:flex;align-items:center}
+.dr .dc{display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;
+  color:var(--accent);border-right:1px solid var(--line)}
+.dr .dp{padding:9px 12px;min-width:0}
+.dr .dd{grid-column:1 / -1;padding:0 12px 10px 12px;font-size:12.5px;color:var(--muted);
+  border-top:1px dashed #eceff3;margin-top:0;padding-top:8px}
+.dr.gap{background:var(--gap-bg)}
+.dr.gap .dn{background:#f9dedb;color:var(--gap)}
+.dr.gap .dc{color:var(--gap)}
+.dr.gap .dp{display:flex;align-items:center;color:var(--gap);font-weight:600;font-size:13px}
+.dr.gap .dd{border-top-color:#f3c2bd}
+.dr.hot .dc{color:var(--gap)}
+.bar{position:absolute;left:236px;top:0;bottom:0;background:linear-gradient(90deg,rgba(31,78,121,.055),rgba(31,78,121,0));
+  pointer-events:none}
+.bandkop{display:grid;grid-template-columns:190px 46px 1fr;background:#eef1f5;font-size:12px;
+  color:var(--muted);border-bottom:1px solid var(--line)}
+.bandkop div{padding:7px 12px}
+.bandkop div:nth-child(2){text-align:center}
+
+/* heatmap partij bij partij */
+table.hm{border-collapse:separate;border-spacing:2px;font-size:11px;background:#fff}
+table.hm th{font-weight:600;color:var(--muted);font-size:11px;padding:2px 5px;white-space:nowrap}
+table.hm th.rh{text-align:right;position:sticky;left:0;background:#fff;z-index:2;max-width:160px;
+  overflow:hidden;text-overflow:ellipsis}
+table.hm th.ch{height:168px;vertical-align:bottom;padding:0 0 5px 0}
+table.hm th.ch span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);
+  max-height:160px;overflow:hidden}
+table.hm td{width:26px;height:26px;text-align:center;border-radius:3px;color:#fff;font-weight:600;
+  background:#f2f4f7;color:#c3c9d1;cursor:default}
+table.hm td.d{background:#3a4046;color:#fff}
+table.hm td.v1{background:#d6e4f0;color:#3d5f7d} table.hm td.v2{background:#a9c8e2;color:#123f66}
+table.hm td.v3{background:#6f9fc9;color:#fff} table.hm td.v4{background:#38709f;color:#fff}
+table.hm td.v5{background:#b3261e;color:#fff}
+table.hm tr:hover td.d{outline:2px solid var(--accent)}
+.hmleg{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted);margin:12px 0}
+.hmleg i{display:inline-block;width:22px;height:14px;border-radius:3px;margin-right:3px;vertical-align:-2px}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;font-size:12.5px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:5px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+
+/* chips */
+.chip{display:inline-block;border-radius:4px;padding:2px 7px;margin:2px 3px 2px 0;font-size:12px;
+  line-height:1.5;border:1px solid;cursor:default;max-width:100%;overflow-wrap:anywhere}
+.m-wet{background:var(--wet-bg);border-color:#b9d0e4;color:var(--wet)}
+.m-convenant{background:var(--conv-bg);border-color:#cfc0e8;color:var(--conv)}
+.m-vereniging{background:var(--ver-bg);border-color:#b3ddcd;color:var(--ver)}
+.m-informeel{background:var(--inf-bg);border-color:#e8d0a8;color:var(--inf)}
+.m-weg{background:var(--weg-bg);border-color:#e8b4b4;color:var(--weg);text-decoration:line-through}
+.chip.dim{opacity:.42}
+.chip.me{box-shadow:0 0 0 2px #0b6b3a inset;font-weight:600}
+
+/* matrix */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px;background:#fff}
+table.mx{border-collapse:collapse;width:100%;min-width:1080px}
+table.mx th,table.mx td{border:1px solid var(--line);vertical-align:top;padding:8px 9px}
+table.mx thead th{background:#eef1f5;font-size:12.5px;text-align:left;position:sticky;top:0;z-index:2}
+table.mx th.rh{background:#f7f9fb;font-size:12.5px;width:150px;text-align:left;font-weight:600}
+table.mx th.rh small{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px}
+table.mx td{background:#fff}
+table.mx td.empty{background:var(--gap-bg)}
+table.mx td.empty::after{content:"geen partij";color:var(--gap);font-size:11.5px;font-style:italic}
+table.mx td.thin{background:#fff8f2}
+
+/* lagen */
+.lane{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:9px;padding:11px 14px}
+.lane h4{margin:0 0 7px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.lane.eu h4{color:#6b4fa0}
+.lane.regio h4{color:var(--accent2)}
+.flow{text-align:center;color:var(--muted);font-size:12px;margin:-4px 0 5px}
+
+/* graaf */
+svg.graph{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:8px}
+svg.graph text{font:11px -apple-system,"Segoe UI",Arial,sans-serif}
+svg.graph .nl{font-size:10.5px;fill:#fff;font-weight:600}
+svg.graph .el{font-size:9.5px;fill:#4a525c;stroke:#fff;stroke-width:3px;paint-order:stroke fill}
+
+/* ring */
+.rings{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
+.ring{border:2px dashed #cfd6de;border-radius:14px;padding:14px;margin-bottom:0}
+.ring>h4{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ring.r1{border-color:#0b6b3a;background:#f2f9f5}
+.ring.r1>h4{color:#0b6b3a}
+.ring.r2{border-color:#a8620a;background:#fdf7ef}
+.ring.r2>h4{color:#a8620a}
+.ring.r3{border-color:#1f4e79;background:#f3f7fb}
+.ring.r3>h4{color:#1f4e79}
+.ring.r4{border-color:#c0c7d0;background:#fafbfc}
+
+/* partijen */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center}
+.filters select,.filters input{font:inherit;font-size:13px;padding:6px 9px;border:1px solid var(--line);
+  border-radius:6px;background:#fff;color:var(--ink)}
+.count{font-size:12.5px;color:var(--muted);margin-left:auto}
+.plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:11px}
+.p{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;border-left-width:4px}
+.p.m-wet{border-left-color:var(--wet)} .p.m-convenant{border-left-color:var(--conv)}
+.p.m-vereniging{border-left-color:var(--ver)} .p.m-informeel{border-left-color:var(--inf)}
+.p.m-weg{border-left-color:var(--weg);opacity:.72}
+.p h4{margin:0 0 3px;font-size:14.5px}
+.p .meta{font-size:11.5px;color:var(--muted);margin-bottom:6px}
+.p .txt{font-size:13px;margin-bottom:7px}
+.p .tag{display:inline-block;font-size:11px;border-radius:3px;padding:1px 6px;margin:0 4px 3px 0;
+  background:#eef1f5;color:var(--muted);border:1px solid var(--line)}
+.p .acc{font-size:12px;font-weight:600}
+.acc-tafel{color:var(--tafel)} .acc-aangeboden{color:var(--aangeb)} .acc-haal{color:var(--haal)}
+.acc-indirect{color:var(--indir)} .acc-geen{color:var(--geen)}
+
+table.t{border-collapse:collapse;width:100%;background:#fff;font-size:13.5px}
+table.t th,table.t td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.t th{background:#eef1f5;font-size:12.5px}
+table.t tbody tr:nth-child(even) td{background:#fafbfc}
+
+ul.tight{margin:0 0 12px;padding-left:20px}
+ul.tight li{margin-bottom:5px}
+.k{font-weight:600}
+.q{border-left:3px solid #cfd6de;padding-left:12px;color:#3a4046;font-style:italic;margin:10px 0}
+
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  nav.tabs,.fmt,.filters{display:none!important}
+  section.panel{display:block!important;page-break-before:always;padding-top:0}
+  section.panel:first-of-type{page-break-before:avoid}
+  .viz{display:block!important;page-break-inside:avoid;margin-bottom:20px}
+  .card,.p,.lane,.ring{page-break-inside:avoid}
+  .scroll{overflow:visible}
+  table.mx{min-width:0;font-size:9px}
+  .plist{grid-template-columns:1fr 1fr}
+  @page{size:A4 landscape;margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Stelselkaart security-gremia</h1>
+  <div class="sub">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden ze zich tot elkaar
+  &middot; peildatum 11 augustus 2026 &middot; samengesteld vanuit een gemeentelijke CISO-praktijk
+  <span class="badge" style="background:#e9f5ee;color:#0b6b3a;border-color:#a8d5bd">open dataset &middot; EUPL-1.2</span></div>
+</header>
+
+<div class="note" style="margin:16px 0 0">
+  <b>Open dataset uit de kennisbank van security-commons-nl.</b> 82 partijen en 19 concrete diensten die samen de
+  digitale weerbaarheid van de Nederlandse overheid organiseren. <b>Peildatum 11 augustus 2026</b>, vier dagen voor
+  inwerkingtreding van de Cyberbeveiligingswet: meerdere aanwijzingen waren toen nog niet rond. Klopt er iets niet
+  meer, of mist er een partij? <a href="../../../../issues/new/choose">Open een issue</a> of corrigeer een regel in
+  <a href="data/partijen.json">de JSON</a>. De analyse van onnodige overlap en concurrentie is bewust nog niet
+  gepubliceerd: feiten zijn van iedereen, een oordeel over het stelsel is sterker als het van meer dan een
+  gemeente komt. <a href="README.md">Meer daarover in de README</a>.
+</div>
+<nav class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" data-t="kaart">Kaart</button>
+  <button role="tab" aria-selected="false" data-t="partijen">Partijen</button>
+  <button role="tab" aria-selected="false" data-t="bronnen">Verantwoording</button>
+</nav>
+
+<!-- ============ KAART ============ -->
+<section class="panel on" id="p-kaart">
+  <div class="lead">Vijf manieren om hetzelfde veld te bekijken. De matrix laat zien waar het druk is en waar niemand
+  staat. Het lagenmodel legt de bevelslijn bloot. De relatiegraaf toont wie wie aanstuurt, betaalt of informeert.
+  <b>E en F zijn de overlapplaten</b> en horen bij elkaar: E toont per concrete dienst <i>waar</i> de overlap zit,
+  F draait dezelfde data om en toont <i>wie elkaars dubbelganger is</i>.</div>
+
+  <div class="fmt" role="group">
+    <button aria-pressed="true" data-v="mx">A &middot; Functie bij bestuurslaag</button>
+    <button aria-pressed="false" data-v="lagen">B &middot; Lagenmodel</button>
+    <button aria-pressed="false" data-v="graaf">C &middot; Relatiegraaf</button>
+    <button aria-pressed="false" data-v="band">E &middot; Waar zit welke overlap</button>
+    <button aria-pressed="false" data-v="hm">F &middot; Wie is wiens dubbelganger</button>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw" style="background:var(--wet-bg);border-color:#b9d0e4"></i> wettelijk mandaat</span>
+    <span><i class="sw" style="background:var(--conv-bg);border-color:#cfc0e8"></i> convenant of programma</span>
+    <span><i class="sw" style="background:var(--ver-bg);border-color:#b3ddcd"></i> ledenmandaat (vereniging, cooperatie, GR)</span>
+    <span><i class="sw" style="background:var(--inf-bg);border-color:#e8d0a8"></i> informeel of vrijwillig</span>
+    <span><i class="sw" style="background:var(--weg-bg);border-color:#e8b4b4"></i> opgeheven of vervallen</span>
+    <span><i class="sw" style="background:var(--gap-bg);border-color:#f3c2bd"></i> lege cel = gat</span>
+      </div>
+
+  <!-- A: matrix -->
+  <div class="viz on" id="v-mx">
+    <div class="vizhead"><b>Format A.</b> Rijen zijn functies die het stelsel moet vervullen, kolommen zijn bestuurslagen.
+    Meerdere partijen in een cel betekent overlap. Een rode cel betekent dat niemand die functie op dat niveau belegt.
+    Dit is het enige format waarin overlap en gaten tegelijk hard aanwijsbaar zijn.</div>
+    <div class="scroll"><table class="mx" id="mx"></table></div>
+    <div class="warn" style="margin-top:14px"><b>Lees de matrix op twee manieren.</b> Een lege cel is het duidelijkste
+    signaal, maar niet altijd het belangrijkste. Sommige cellen zijn leeg omdat dat logisch is: de EU houdt geen toezicht
+    op gemeenten en organiseert geen gemeentelijke inkoop. Drie lege cellen zijn wel betekenisvol:
+    <b>crisis en ontwrichting op decentraal niveau</b> (het gemeentelijke collectief van IBD, VNG, GGI-Veilig en ENSIA doet
+    niets aan de warme fase), en <b>normstelling en opleiden in de eigen regio</b> (alles wat de regio doet komt van elders).
+    <br><br>
+    <b>En let op de cel die gevuld lijkt maar dat niet is.</b> CERT en incidentrespons op decentraal niveau bevat de IBD,
+    maar met een ledenmandaat en niet met een wettelijk mandaat. De IBD is beoogd sectoraal CSIRT en per 15 augustus 2026
+    niet aangewezen; het NCSC vult de rol voorlopig in, naar eigen zeggen tot in ieder geval eind 2026. Voor waterschappen
+    (CERT-WM) en zorg (Z-CERT) is diezelfde cel wel wettelijk gevuld. Een cel met de verkeerde kleur is in dit stelsel
+    gevaarlijker dan een lege cel, want een lege cel ziet iedereen.</div>
+    <div class="card" style="margin-top:14px"><b>Waar het het drukst is.</b> Normstelling op rijksniveau telt 14 partijen,
+    dreigingsinformatie op sectoraal niveau 8, en kennisdeling is de enige functie die op alle vijf de lagen door vijf of
+    meer partijen wordt opgepakt. Dat is de goedkoopste functie om je aan te verbinden en de moeilijkste om je op te
+    onderscheiden. Of dat erg is hangt af van de mandaatsoort: zie de kleuren in format E.</div>
+  </div>
+
+  <!-- B: lagen -->
+  <div class="viz" id="v-lagen">
+    <div class="vizhead"><b>Format B.</b> Het stelsel als bevelslijn van Brussel naar de Breestraat. Sterk voor uitleg aan
+    bestuurders, want het maakt zichtbaar hoeveel schakels er tussen een Europese richtlijn en een gemeentelijke maatregel zitten.
+    Zwakker in het tonen van overlap.</div>
+    <div id="lagen"></div>
+  </div>
+
+  <!-- C: graaf -->
+  <div class="viz" id="v-graaf">
+    <div class="vizhead"><b>Format C.</b> Wie stuurt wie aan, wie betaalt wie, en wie informeert wie. De dichtheid rond het
+    NCSC laat zien hoe sterk het stelsel sinds de fusie naar een knooppunt is getrokken. De dunne lijnen naar de gemeente
+    laten zien hoe smal de aansluiting daar is.</div>
+    <div id="graaf"></div>
+  </div>
+
+  <!-- E: dienstenband -->
+  <div class="viz" id="v-band">
+    <div class="vizhead"><b>Format E.</b> De andere formats ordenen op <i>functie</i>, en dat is een containerbegrip:
+    NCSC-advisories en het PvIB-magazine vallen daar allebei onder "kennisdeling" terwijl ze niets met elkaar te maken
+    hebben. Dat levert schijn-overlap op, en het verbergt echte overlap (de EASM van de IBD en ThreatMatcher van
+    Connect2Trust zijn hetzelfde product maar staan in verschillende cellen). Deze band ordent daarom op
+    <b>concrete dienst</b>, gesorteerd van druk naar leeg. Bovenaan staan de hotspots, onderaan de gaten.</div>
+    <div class="band" id="band"></div>
+    <div class="note" style="margin-top:14px"><b>De kleur is het halve verhaal.</b> Zes partijen die allemaal informeel
+    zijn is een ander probleem dan zes partijen waarvan drie wettelijk. Bij collectieve inkoop is geen enkele partij
+    wettelijk bevoegd, en dat verklaart waarom er zes naast elkaar zijn ontstaan: niemand kon het afdwingen, dus
+    iedereen begon zelf. Bij normstelling is het omgekeerd: vijf partijen, vier met wettelijk mandaat, en dan is
+    meervoud geen versnippering maar arbeidsdeling.</div>
+  </div>
+
+  <!-- F: heatmap -->
+  <div class="viz" id="v-hm">
+    <div class="vizhead"><b>Format F.</b> Dezelfde dienstenlaag als E, maar omgedraaid. Waar E laat zien <i>waar</i> de
+    overlap zit, laat F zien <i>wie elkaars dubbelganger is</i>. Elke cel telt hoeveel concrete diensten twee partijen
+    allebei leveren. Alleen partijen die minstens twee diensten leveren staan erin, want met een enkele dienst kun je
+    per definitie niet structureel overlappen. Wijs een cel aan om te zien om welke diensten het gaat.</div>
+    <div class="hmleg">
+      <span><i style="background:#3a4046"></i> diagonaal = eigen aantal diensten</span>
+      <span><i style="background:#d6e4f0"></i>1</span><span><i style="background:#a9c8e2"></i>2</span>
+      <span><i style="background:#6f9fc9"></i>3</span><span><i style="background:#38709f"></i>4</span>
+      <span><i style="background:#b3261e"></i>5 of meer</span>
+      <span><i style="background:#f2f4f7"></i> geen gedeelde dienst</span>
+    </div>
+    <div class="scroll" style="padding:10px"><table class="hm" id="hm"></table></div>
+    <div id="hmtop"></div>
+  </div>
+
+</section>
+
+<!-- ============ PARTIJEN ============ -->
+<section class="panel" id="p-partijen">
+  <div class="lead">Alle partijen die het stelsel dragen, publiek en publiek-privaat. Randpartijen zijn brancheorganisaties en
+  beroepsverenigingen die geen deel van het stelsel zijn maar er wel vaste gesprekspartner van zijn. Puur commerciele partijen
+  staan hier niet; die horen in het dossier Partijen en diensten.</div>
+
+  <div class="filters">
+    <select id="f-laag"><option value="">Alle lagen</option></select>
+    <select id="f-fn"><option value="">Alle functies</option></select>
+    <select id="f-acc"><option value="">Alle toegang</option></select>
+    <input id="f-q" type="search" placeholder="Zoek op naam of trefwoord" size="26">
+    <span class="count" id="cnt"></span>
+  </div>
+  <div class="plist" id="plist"></div>
+</section>
+
+
+
+
+<!-- ============ BRONNEN ============ -->
+<section class="panel" id="p-bronnen">
+  <div class="lead">Deze kaart is opgebouwd uit twee analyses: wat er in de eigen dossiers al bekend was, en zes
+  parallelle online onderzoeksronden. Waar bronnen elkaar tegenspreken is dat hieronder expliciet benoemd in plaats van
+  gladgestreken.</div>
+
+  <h2>Waar de gegevens vandaan komen</h2>
+  <div class="scroll"><table class="t">
+    <thead><tr><th style="width:34%">Bestand in <code>bronnen\</code></th><th>Inhoud</th></tr></thead>
+    <tbody>
+      <tr><td>01 Analyse intern - eigen dossiers</td><td>Volledige lezing van <code>Samenwerkingen CISO\</code> (199 bestanden, 13 dossiermappen), de dossier-catalogus van het werk-brein en de bordkaarten</td></tr>
+      <tr><td>02 Cluster gemeentelijk en decentraal</td><td>IBD, VNG, GGI-Veilig, ENSIA, BIO2-governance, CISO-netwerken, regionale samenwerking, IPO, Unie van Waterschappen, NIPV, BZK</td></tr>
+      <tr><td>03 Cluster NDS, EU en stelselkritiek</td><td>NDS-governance, de Europese laag, en de stelselkritiek van CSR, Raad van State, WRR, Algemene Rekenkamer, ROB, het Oldengarm-rapport en de VNG-consultatiereactie</td></tr>
+      <tr><td>04 Cluster operationele coalities</td><td>Cyberweerbaarheidsnetwerk, NRN, Anti-DDoS-Coalitie, NBIP en NaWas, Connect2Trust, Abuse Information Exchange, FIRST, Trusted Introducer</td></tr>
+      <tr><td>05 Analyse - overlap, concurrentie en gaten</td><td>De analyselaag onder het conclusie-tabblad</td></tr>
+      <tr><td>06 Cluster nationaal</td><td>NCSC organisatorisch, NCTV, NBV en de diensten, NDN, Cyclotron, House of Cyber, CIO Rijk en VSSR, NDD en Digilab, Logius en Forum Standaardisatie, politie en OM</td></tr>
+      <tr><td>07 Cluster sectoraal, platforms en regionaal</td><td>Z-CERT, SURF, de CSIRT-aanwijzingen, het ISAC-stelsel, CIP, ECP, HSD, CVD, de regionale cyberweerbaarheidscentra, RSIV, PVO en de randpartijen</td></tr>
+    </tbody>
+  </table></div>
+  <p><small class="src">Elk clusterbestand bevat de volledige bronvermeldingen met URL en datum van raadpleging.
+  Peildatum van alle online bronnen: 10 en 11 augustus 2026.</small></p>
+
+  <h2>Tegenstrijdigheden tussen officiele bronnen</h2>
+
+  <div class="ok"><h3 style="margin-top:0">1. Wie is per 15 augustus het CSIRT voor gemeenten &middot; BESLECHT</h3>
+  <p><b>Het NCSC is het CSIRT voor de sector overheid, tijdelijk.</b> Vastgesteld op 11 augustus 2026.
+  De VNG-pagina (bijgewerkt 24 juli 2026) en de RDI-pagina noemen nog de IBD, maar het bericht van Digitale Overheid van
+  6 augustus 2026 is recenter en gezaghebbender: over de aanwijzing en de daarvoor benodigde waarborgen loopt nog
+  besluitvorming, en het NCSC levert de CSIRT-dienstverlening voorlopig, in ieder geval tot eind 2026.</p>
+  <p style="margin-bottom:0"><b>Consequentie voor de praktijk:</b> het incidentdraaiboek noemt het NCSC als CSIRT en de
+  IBD als adviseur op zorgplicht, informatiebeveiliging en privacy. De openstaande vraag is niet meer wie het nu is, maar
+  wat er na eind 2026 gebeurt, en of de IBD alsnog wordt aangewezen.</p></div>
+
+  <div class="warn"><h3 style="margin-top:0">2. Wanneer 3000D voor DigiD verplicht wordt</h3>
+  <p>De ENSIA-notitie van de VNG verwijst naar een besluit van het Strategisch overleg ENSIA van 19 juni 2025, waarin
+  gemeenten zich vanaf verantwoordingsjaar 2026 alleen nog volgens 3000D kunnen verantwoorden. De Logius-mededelingen
+  stellen dat voor de indieningsperiode van 1 januari tot 1 mei 2026, over boekjaar 2025, nog gekozen mag worden, en dat
+  3000D verplicht is vanaf de indieningsperiode 2027, over boekjaar 2026.</p>
+  <p style="margin-bottom:0"><b>Waarschijnlijk hetzelfde besluit, verschillend uitgedrukt</b> (verantwoordingsjaar versus
+  indieningsperiode). Als dat klopt is boekjaar 2026 het eerste verplichte 3000D-jaar, en dat loopt nu. Te verifieren
+  voordat hierop wordt gepland.</p></div>
+
+  <div class="note"><h3 style="margin-top:0">3. Waarom de IBD niet is aangewezen</h3>
+  <p style="margin-bottom:0">De Regeling nadere eisen CSIRT's van 5 juli 2026 verplicht elk CSIRT tot minimaal
+  SIM3-niveau intermediate. Het is verleidelijk daarin de blokkade te zien, maar Z-CERT staat op hetzelfde Trusted
+  Introducer-niveau als de IBD en CERT-WM op een lager niveau, en beide zijn wel aangewezen. De juridische vorm is de
+  sterkere hypothese. Beide blijven een hypothese tot BZK het uitspreekt.</p></div>
+
+  <div class="note"><h3 style="margin-top:0">4. Achterhaalde tijdlijnen in officiele stukken</h3>
+  <p style="margin-bottom:0">Zowel de ENSIA-notitie van juni 2026 als het VNG-jaarplan 2026 gaan uit van inwerkingtreding
+  van de Cbw in het tweede kwartaal van 2026. Dat is 15 augustus 2026 geworden. Wie op die documenten plant, heeft een
+  verkeerde tijdlijn. Ook onjuist in de vakpers: dat het NCSC toezicht houdt op naleving van de Cbw. Het NCSC beheert het
+  register en is CSIRT, de RDI is toezichthouder.</p></div>
+
+  <h2>Partijen die zijn gestopt of stil gevallen</h2>
+  <p>Bij een overzicht als dit is het even belangrijk te weten wat er niet meer is. Verwijzingen hiernaar in beleidsstukken,
+  procedures of leverancierscontracten zijn dood en horen eruit.</p>
+  <div class="scroll"><table class="t">
+    <thead><tr><th style="width:26%">Partij</th><th style="width:18%">Status</th><th>Toelichting</th></tr></thead>
+    <tbody>
+      <tr><td>Abuse Information Exchange (AbuseHUB)</td><td class="k" style="color:var(--weg)">Opgeheven 17 april 2024</td>
+        <td>Leden hadden eigen systemen en de overheid biedt alternatieven. ECP is vereffenaar.</td></tr>
+      <tr><td>dcypher</td><td class="k" style="color:var(--weg)">Gestopt 1 september 2025</td>
+        <td>EZ beeindigde de ondersteuning, voor de tweede keer. Activiteiten naar NCC-NL.</td></tr>
+      <tr><td>CS4NL</td><td class="k" style="color:var(--weg)">Voortijdig beeindigd</td>
+        <td>Gaat op in de Actieagenda Cybersecurity Technologies.</td></tr>
+      <tr><td>NDS-Raad</td><td class="k" style="color:var(--weg)">Opgeheven voorjaar 2026</td>
+        <td>Advisering wordt anders vormgegeven. Nathan Ducastel is sinds 26 mei 2026 NDS-ambassadeur.</td></tr>
+      <tr><td>Nederlands Security Meldpunt</td><td class="k" style="color:var(--inf)">Non-actief sinds 30 april 2024</td>
+        <td>Het NCSC pakte de slachtoffer- en doelwitnotificatie zelf op. Gemeenten waren hier via de IBD op aangesloten.</td></tr>
+      <tr><td>Anti-DDoS-Coalitie</td><td class="k" style="color:var(--inf)">Status onduidelijk</td>
+        <td>De website nomoreddos.org resolveert sinds medio 2026 naar localhost en weigert verbindingen, terwijl de
+        coalitie nog als actief samenwerkingsverband op ncsc.nl staat. Navragen bij ECP of het NCSC.</td></tr>
+      <tr><td>Nationaal Respons Netwerk</td><td class="k" style="color:var(--inf)">Slapend</td>
+        <td>Geen eigen vindplaats meer op ncsc.nl, wel nog genoemd in het CWN-bouwplan van september 2025. Opgegaan in
+        de CWN-functie Incidentafhandeling.</td></tr>
+      <tr><td>Anti Abuse Netwerk (abuse.nl)</td><td class="k" style="color:var(--inf)">Slapend</td>
+        <td>Laatste nieuwsbericht dateert van december 2021.</td></tr>
+      <tr><td>Servicepunt71</td><td class="k" style="color:var(--weg)">Opgeheven 1 januari 2023</td>
+        <td>De bedrijfsvoering ging over naar een centrumgemeente-constructie. Dat verschuift de Cbw-entiteitsgrens.</td></tr>
+      <tr><td>City Deal Lokale Weerbaarheid Cybercrime</td><td class="k" style="color:var(--inf)">Afgerond 31 december 2025</td>
+        <td>Opvolger is het Netwerk Lokale Weerbaarheid Cybercrime, kennisbeheer bij het CCV.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Wat niet is vastgesteld</h2>
+  <p>De volgende punten zijn met opzet als open gemarkeerd. Ze zijn niet geverifieerd, en niet-gevonden betekent hier niet
+  bewezen-afwezig.</p>
+  <ul class="tight">
+    <li>Wanneer en of de IBD formeel wordt aangewezen, en wat er gebeurt als dat er eind 2026 nog niet is.</li>
+    <li>Welke gemeenschappelijke regelingen zelfstandig onder de Cbw vallen, en waar de entiteitsgrens precies ligt bij
+    een centrumgemeente-constructie. Dit speelt in elke regio waar een shared service organisatie is opgeheven.</li>
+    <li>Wanneer BIO2 verplichtende zelfregulering wordt voor gemeenten, en hoe het ENSIA-overgangsmodel eruitziet.</li>
+    <li>Hoe het aangekondigde nieuwe toezichtstelsel binnen de ENSIA-systematiek met de RDI eruit gaat zien.</li>
+    <li>De uitkomst van de evaluatie van de IBD-pilot met vier regionale CISO-kringen (stond gepland voor begin 2026).</li>
+    <li>De uitkomst van de businesscase voor het interprovinciaal CSIRT, die als precedent geldt.</li>
+    <li>Of er een nationale evaluatie van de Wbni bestaat, en of er een uitvoeringstoets bij de NCSC-fusie is gedaan.</li>
+    <li>Of de Anti-DDoS-Coalitie nog bestaat, en wat de jaarlijkse contributie bedraagt.</li>
+    <li>Of enige Nederlandse gemeente NaWas-deelnemer is, en of de eigen prefixen daaronder vallen.</li>
+    <li>De actuele Connect2Trust-tarieven; de gevonden bedragen dateren uit 2023.</li>
+    <li>Of de VR-ISAC in 2026 nog actief is; publieke documentatie stopt bij 2024.</li>
+    <li>Wat CIP-participatie kost voor een gemeente, en in welke werkgroepen de gemeentelijke laag nu vertegenwoordigd is.</li>
+    <li>Wie de definitieve CISO Rijk is, en of er een geactualiseerd Landelijk Crisisplan Digitaal komt.</li>
+  </ul>
+
+  <h2>Methodische kanttekeningen</h2>
+  <ul class="tight">
+    <li>Twee onderzoeksronden liepen tegen zoekbudgetten aan en zijn deels via directe URL-fetches, sitemap-analyse en
+    archiefopnames gedaan. Waar archiefmateriaal is gebruikt, staat de opnamedatum in het clusterbestand.</li>
+    <li>De Trusted Introducer-statussen zijn de stand van 19 januari 2025; de live directory was niet bereikbaar.</li>
+    <li>De telling van 29 organisaties over 7 ministeries komt uit onderzoek van de Universiteit Leiden en is geciteerd via
+    het nieuwsbericht van 19 mei 2026; de onderliggende publicatie is niet geverifieerd.</li>
+    <li>Waar een uitspraak een interpretatie is en geen feit, staat dat in de tekst benoemd.</li>
+  </ul>
+</section>
+
+<footer>
+  Stelselkaart security-gremia &middot; peildatum 11 augustus 2026 &middot; onderdeel van de
+  <a href="../../">kennisbank van security-commons-nl</a> &middot; licentie
+  <a href="../../LICENSE">EUPL-1.2</a> &middot; de onderliggende data staat als JSON in
+  <a href="data/partijen.json">data/partijen.json</a> en <a href="data/diensten.json">data/diensten.json</a>.
+  <b>Klopt er iets niet meer? Open een <a href="../../../../issues/new/choose">issue</a>.</b>
+  Opgesteld met AI-ondersteuning, feiten geverifieerd op de vermelde bronnen; waar bronnen elkaar tegenspreken is dat expliciet benoemd.
+</footer>
+</div>
+
+<script>
+/* ---------- DATA ---------- */
+const FN={norm:"Normstelling en kaders",toez:"Toezicht en verantwoording",cert:"CERT en incidentrespons",
+det:"Dreigingsinfo en detectie",kenn:"Kennisdeling",inko:"Inkoop en collectivisering",
+cris:"Crisis en ontwrichting",opl:"Opleiden, trainen, oefenen"};
+const LG={eu:"EU",rijk:"Rijk / nationaal",sec:"Sectoraal",dec:"Decentraal collectief",reg:"Regionaal"};
+const AC={tafel:"Zit aan tafel",aangeboden:"Deur staat open",haal:"Hier haal je iets",
+indirect:"Alleen via een ander",geen:"Niet toegankelijk"};
+
+/* p(id, naam, laag, mandaat, functies, toegang, kort, extra) */
+const P=[
+// ---- EU ----
+["enisa","ENISA","eu","wet",["norm","kenn"],"indirect","EU-agentschap onder de Cybersecurity Act. NL in de Management Board via de directeur van NCSC-NL, dat ook National Liaison Officer is.","Bruikbaar: NIS360 als externe benchmark, de EUVD-kwetsbaarhedendatabase, en de lopende consultatie over certificering van Managed Security Services die je als SOC-inkoper raakt."],
+["niscg","NIS Cooperation Group","eu","wet",["norm"],"indirect","Strategisch platform onder NIS2 artikel 14. NL langs de ministeriele lijn, JenV coordinerend, BZK voor digitale overheid.","Het compendium over verkiezingsbeveiliging is direct bruikbaar, want gemeenten voeren verkiezingen uit."],
+["csirtnet","CSIRTs Network","eu","wet",["cert","det"],"indirect","Netwerk van nationale CSIRTs plus CERT-EU. NL is NCSC-NL.","Keten naar de gemeente: CSIRTs Network, NCSC-NL, IBD, gemeente."],
+["cyclone","EU-CyCLONe","eu","wet",["cris"],"indirect","Crisis-liaisonlaag tussen het technische CSIRTs Network en de politieke Raad. NL is de NCTV.","Nationale koppeling is het Landelijk Crisisplan Digitaal, dat nog op versie 2022 staat."],
+["eccc","ECCC en NCC-NL","eu","wet",["kenn"],"geen","Europees competentiecentrum met nationale coordinatiecentra. NCC-NL wordt uitgevoerd door RVO, gefinancierd door EZ en de EU.","Doelgroep is mkb, start-ups en kennisinstellingen. Een gemeente komt alleen binnen als consortiumpartner. Let op de naamsverwarring met NCSC-NL."],
+["certeu","CERT-EU","eu","wet",["cert"],"geen","Cybersecuritydienst voor de EU-instellingen, ruim 90 constituenten.","Bedient uitdrukkelijk geen nationale of lokale overheden. Alleen de publieke advisories zijn bruikbaar."],
+["ec3","Europol EC3","eu","wet",["cris"],"geen","European Cybercrime Centre, gevestigd in Den Haag sinds 2013.","Voor een gemeente loopt de lijn via de nationale politie, niet via EC3."],
+["gfce","GFCE","eu","informeel",["kenn"],"geen","Global Forum on Cyber Expertise, opgericht 2015 in Den Haag op mede-Nederlands initiatief.","Beleidsmatig relevant, geen operationele lijn."],
+["first","FIRST","eu","vereniging",["kenn","norm"],"geen","Wereldwijde koepel van incident-responseteams, 871 teams, 10 Nederlandse.","De IBD is geen lid, terwijl CERT-WM en Z-CERT dat wel zijn. Wel bruikbaar: de standaarden CVSS, TLP en EPSS."],
+["ti","TF-CSIRT en Trusted Introducer","eu","vereniging",["norm","kenn"],"haal","Europese vertrouwensinfrastructuur voor CSIRTs, met het SIM3-volwassenheidsmodel.","De IBD is Certification Candidate sinds 6 februari 2024. De SIM3-self-check is publiek en bruikbaar als onafhankelijke meetlat naast BIO2."],
+// ---- Rijk ----
+["ncsc","NCSC","rijk","wet",["cert","det","kenn","cris","norm"],"haal","Nationaal CSIRT, sectoraal CSIRT, kennis- en adviescentrum en uitvoeringscoordinator in een. Sinds 1 januari 2026 gefuseerd met DTC. Ruim 400 fte, doelgroep 2,4 miljoen organisaties.","Per 15 augustus 2026 ook het feitelijke CSIRT voor gemeenten, voorlopig. Registratie en melding via MijnNCSC. Aansturing sinds 2025 via meervoudig opdrachtgeverschap met de NCTV als coordinerend opdrachtgever."],
+["nctv","NCTV","rijk","wet",["norm","cris"],"indirect","Directoraat-generaal binnen JenV, stelsel- en kaderstellend. Stelt de kaders waarbinnen het NCSC werkt.","Eigenaar van het Landelijk Crisisplan Digitaal (nog versie 2022) en van het Cybersecuritybeeld Nederland. Nationaal Crisiscentrum valt hieronder."],
+["csr","Cyber Security Raad","rijk","informeel",["norm"],"indirect","Onafhankelijk adviesorgaan van kabinet en bedrijfsleven, publiek-privaat samengesteld.","Raamt 690 miljoen euro structureel en adviseert het aantal publiek-private samenwerkingen te beperken. Noemt gemeenten in geen enkele onderzochte adviesbrief."],
+["nbv","NBV (AIVD)","rijk","wet",["norm"],"haal","Nationaal Bureau voor Verbindingsbeveiliging, onderdeel van de Unit Weerbaarheid van de AIVD. Evalueert en keurt beveiligingsproducten goed.","Doelgroep expliciet ook gemeenten. De lijst geevalueerde producten is een inkoopfilter zodra je met Departementaal Vertrouwelijk of hoger werkt. Let op: een inzetadvies geldt per productversie."],
+["aivd","AIVD, MIVD en JSCU","rijk","wet",["det"],"geen","Inlichtingendiensten met een gezamenlijke technische eenheid (JSCU). Leveren dreigingsinformatie en dragen bij aan het CSBN.","Nemen deel aan het Nationaal Detectie Netwerk en Cyclotron."],
+["ndn","Nationaal Detectie Netwerk","rijk","convenant",["det"],"indirect","Gedeeld en verrijkt dreigingsbeeld van NCSC, AIVD, MIVD, rijksorganisaties en vitale aanbieders.","Deelname staat open voor rijksoverheid en vitale sectoren, niet voor gemeenten. De route loopt via de IBD als schakelorganisatie."],
+["cyclotron","Cyclotron","rijk","convenant",["det","kenn"],"indirect","Publiek-privaat analyse- en duidingsplatform. Convenant getekend 30 september 2025 door 28 partijen, inmiddels circa veertig organisaties.","Deelnemers zijn diensten en securityleveranciers. Hier wordt de nationale duiding gemaakt die via NCSC en IBD jouw kant op komt."],
+["hoc","House of Cyber","rijk","informeel",["kenn","opl"],"geen","Fysiek samenwerkingsgebouw in Den Haag Mariahoeve, het voormalige Aegon-hoofdkantoor. NCSC, Defensie, politie, NFI, HSD en TNO.","Geen juridische entiteit met eigen mandaat. Realisatie naar verwachting binnen enkele jaren, geen openingsdatum."],
+["rdi","RDI","rijk","wet",["toez"],"indirect","Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.","Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Bevoegde autoriteit voor de sector overheid is BZK."],
+["ilt","ILT","rijk","wet",["toez"],"geen","Toezichthouder onder de Cbw voor de waterschappen.","Relevant omdat gemeenten met waterschappen in de afvalwaterketen samenwerken en daar dus twee toezichtregimes samenkomen."],
+["ap","Autoriteit Persoonsgegevens","rijk","wet",["toez"],"haal","Toezichthouder op de AVG. Bij een incident met persoonsgegevens loopt hier een eigen meldstroom naast de Cbw-melding.","Derde spoor naast NCSC-melding en aangifte bij de politie."],
+["bzk","BZK","rijk","wet",["norm","kenn","opl"],"haal","Stelselverantwoordelijk voor BIO en ENSIA, bevoegde autoriteit voor de sector overheid, medeondertekenaar van het Bestuurlijk Convenant.","Concreet af te nemen: de Overheidsbrede Cyberoefening op 2 november 2026 (scenario gemeente Waaldam: regenval, IT-uitval en desinformatie) en 15 gratis webinars per jaar via ICTU."],
+["ciorijk","CIO Rijk en CIO-beraad","rijk","wet",["norm"],"geen","Sinds 1 januari 2026 heeft CIO Rijk de bevoegdheid bindende kaders vast te stellen en zelfstandig te besluiten bij gebrek aan consensus.","Gesloten circuit voor het Rijk, maar het contrast is bruikbaar: het Rijk heeft de vrijblijvendheid voor zichzelf opgeheven, de decentrale laag niet."],
+["cisorijk","CISO Rijk","rijk","wet",["norm"],"geen","Rijksbrede CISO-functie. Aart Jochem vertrok per 1 januari 2026, Martijn de Hamer nam waar.","Opdrachtgever van het VSSR namens het CIO-beraad."],
+["vssr","VSSR","rijk","convenant",["cert","det"],"haal","Versterkt SOC-Stelsel Rijk, sinds begin 2025 belegd bij het NCSC. De basis waarop NDS-versneller 5.2 voortbouwt.","Formeel Rijk-only, geen aansluitrecht. Wel herbruikbaar: de SOC Readiness QuickScan en de DUCK-kennisbank met detectietechnieken en use cases."],
+["abro","ABRO 2026","rijk","wet",["norm"],"haal","Algemene Beveiligingseisen voor Rijksoverheidsopdrachten, geldig vanaf 1 januari 2026, gepubliceerd 5 februari 2026. Vijf hoofdstukken, twee jaar implementatietijd.","Bindt gemeenten niet, maar is een bruikbaar eisenkader voor leveranciers met risico's voor de nationale veiligheid. Verankert de TBB-systematiek bij BVA en ABRO."],
+["logius","Logius","rijk","wet",["norm","toez"],"haal","Uitvoeringsorganisatie van BZK: DigiD, PKIoverheid, Digipoort, MijnOverheid.","Levert de hardste jaarlijkse verplichting die je hebt: het ICT-beveiligingsassessment DigiD tegen Normenkader 3.0."],
+["forum","Forum Standaardisatie","rijk","wet",["norm"],"haal","Beheert de lijst verplichte open standaarden met het pas-toe-of-leg-uit-regime voor alle overheden.","Concreet toetsbaar: DNSSEC, SPF, DKIM, DMARC, RPKI, TLS 1.3 en 1.2, HTTPS en HSTS, security.txt. Circa zes van de tien overheidsdomeinen voldoet."],
+["ndd","Nederlandse Digitale Dienst","rijk","informeel",["norm"],"geen","Nieuwe expertorganisatie, van start zomer 2026 na het eindadvies van de NDS-Raad. Doorbraakfunctie, standaarden afdwingen, moderne ontwikkelrichtlijnen.","Definitieve positionering, mandaat en financiering worden pas in 2027 besloten. Voorlopig een bestuurlijk fenomeen om te volgen, geen loket."],
+["digilab","Digilab","rijk","convenant",["norm","kenn"],"haal","Innovatiewerkplaats bij BZK, host van het Codeplatform. Beheert de standaarden FSC, FTV en LDV uit het Federatief Datastelsel.","Die drie standaarden raken veilige koppelvlakken, autorisatie en logging, en landen op termijn in gemeentelijke koppelvlakken en Common Ground."],
+["politie","Politie: THTC en regionale cybercrimeteams","rijk","wet",["cris"],"haal","Sinds 2024 zit cybercrime bij de Eenheid Landelijke Opsporing en Interventies. Elke regionale eenheid heeft een eigen cybercrimeteam.","Het regionale cybercrimeteam is je feitelijke aanspreekpunt, niet het THTC. Stel sporen veilig voordat je herstelt."],
+["om","Openbaar Ministerie","rijk","wet",["cris"],"haal","Cybercrime-officieren bij de parketten, met een landelijk operationeel cybercrime-overleg.","Stem publicatiemomenten af zodra er een strafrechtelijk onderzoek loopt."],
+["melissa","Convenant Melissa","rijk","convenant",["det"],"geen","Samenwerking OM, politie, NCSC en private cybersecuritypartijen, specifiek op ransomware.","De brug tussen het strafrechtelijke en het weerbaarheidsspoor."],
+["nipv","NIPV","rijk","convenant",["opl","cris"],"haal","Kennis- en opleidingsinstituut voor de 25 veiligheidsregio's. Faciliteert de VR-ISAC.","Het leerblok Cybergevolgbestrijding en digitale ontwrichting staat expliciet ook open voor gemeentemedewerkers. Eigen onderzoek stelt vast dat de cyberkennis bij veiligheidsregio's beperkt is."],
+// ---- Sectoraal ----
+["cwn","Cyberweerbaarheidsnetwerk","sec","wet",["det","cert","kenn","opl"],"indirect","Opvolger van het Landelijk Dekkend Stelsel, uitvoering sinds 1 januari 2026 volledig bij het NCSC. Vijf functies.","De OKTT-status vervalt met de Cbw en de opvolging is nog niet uitgewerkt. Aansluiting loopt vooralsnog via schakelorganisaties. Contact cwn@ncsc.nl."],
+["ibd","IBD","dec","vereniging",["cert","det","kenn","norm","opl"],"haal","Informatiebeveiligingsdienst voor gemeenten, onderdeel van de VNG, gefinancierd uit het GGU-fonds. Tien jaar de facto CERT voor gemeenten.","24/7 op 070 204 55 11, reactie binnen 30 minuten. EASM, BIO2-ondersteuningspakket, Samen Controleren. Beoogd sectoraal CSIRT maar per 15 augustus 2026 niet aangewezen. Onderbenut: collectieven aanmelden via info@IBDgemeenten.nl en de roulerende CISO-plek."],
+["ibdraad","IBD-adviesraad","dec","vereniging",["norm"],"aangeboden","Adviesorgaan van de IBD, waar bepaald wordt wat de IBD voor gemeenten doet.","Hier wordt bepaald waar de IBD haar capaciteit op inzet. Relevante toetsroute op het moment dat de rol en de informatiepositie van de IBD in beweging zijn."],
+["zcert","Z-CERT","sec","informeel",["cert"],"geen","Zelfstandige stichting sinds 2017, formeel aangewezen sectoraal CSIRT voor de zorg. Circa 400 deelnemers.","Referentiemodel: wettelijke CSIRT-taken zijn gratis, extra diensten worden per 2026 betaald. Toezichthouder is de IGJ."],
+["certwm","CERT-WM","sec","wet",["cert"],"geen","CSIRT van de waterschappen, ondergebracht in Het Waterschapshuis, een openbaar lichaam. Formeel aangewezen per 13 juli 2026.","Het contrast met de IBD is het scherpst bruikbare argument: een publiekrechtelijke inbedding levert wel een aanwijzing op."],
+["surf","SURFcert en SURFsoc","sec","vereniging",["cert","det"],"geen","CSIRT en SOC-dienst van cooperatie SURF voor onderwijs en onderzoek. Beoogd sectoraal CSIRT, aanwijzing verwacht maart 2027.","De Cbw geldt nog niet voor hoger onderwijs. Zorgplicht pas drie jaar na aanwijzing."],
+["isac","ISAC's (sectoraal)","sec","informeel",["det"],"geen","Sectorale kringen voor vertrouwelijke uitwisseling onder NDA en Traffic Light Protocol, gefaciliteerd door het NCSC.","Er is een Rijks-ISAC maar geen gemeente-ISAC. Voor gemeenten loopt informatiedeling via de IBD-Community en de rollen VCIB en ACIB."],
+["vrisac","VR-ISAC","sec","convenant",["det","cris"],"indirect","ISAC van de 25 veiligheidsregio's, eigendom van het Veiligheidsberaad, gefaciliteerd door het NIPV. Twee personen per regio, veelal de CISO's.","Niet zelf toetreedbaar. De ingang is de CISO van Veiligheidsregio Hollands Midden. Publieke documentatie stopt bij 2024."],
+["nrn","Nationaal Respons Netwerk","sec","convenant",["cert"],"indirect","Convenant uit 2020 waarin IBD, Belastingdienst, SURF, Defensie, Rijkswaterstaat en NCSC elkaar bijstaan bij incidentrespons.","Geen zichtbare eigen activiteit meer; opgegaan in de CWN-functie Incidentafhandeling. De IBD is convenantpartij namens alle gemeenten."],
+["adc","Anti-DDoS-Coalitie","sec","informeel",["det","opl"],"aangeboden","Consortium van overheden, providers, internet exchanges en banken. Secretariaat bij ECP. DDoS Clearing House en een jaarlijkse live oefening waarin rode en blauwe teams elkaar aanvallen.","Een gemeente kan lid worden via antiddoscoalitie@ecp.nl. Let op: de website nomoreddos.org is sinds medio 2026 offline terwijl de coalitie nog als actief op ncsc.nl staat."],
+["nbip","NBIP en NaWas","sec","informeel",["det"],"indirect","Collectieve non-profit DDoS-scrubbing voor providers, ruim 200 aangesloten organisaties. OKTT-schakelorganisatie voor internetproviders.","Niet rechtstreeks toegankelijk: een eigen AS-nummer is voorwaarde. Vraag je ISP en hoster schriftelijk of jouw prefixen onder de NaWas vallen."],
+["c2t","Connect2Trust","sec","informeel",["det"],"aangeboden","Stichting met OKTT-status sinds 2021. ThreatMatcher pusht 24/7 gefilterde meldingen op je domeinen, IP-ranges en AS-nummers.","Rechtstreeks toegankelijk voor een gemeente, zilver is kosteloos. Gemeente Den Haag is al partner. De registratie is werk dat je onder de Cbw toch moet doen."],
+["divd","DIVD","sec","informeel",["det"],"indirect","Stichting Dutch Institute for Vulnerability Disclosure, vrijwilligers, gratis, eigen CSIRT en CVE Numbering Authority.","Meldingen over gemeentelijke systemen komen via de IBD binnen. Regel dat traject vooraf in je CVD-beleid."],
+["abuseix","Abuse Information Exchange","sec","weg",["det"],"geen","AbuseHUB, opgericht 2012, opgeheven op 17 april 2024 omdat leden eigen systemen hadden en de overheid alternatieven biedt.","Kom je dit in oude documentatie of leverancierscontracten tegen, dan is die verwijzing dood."],
+// ---- Decentraal ----
+["vng","VNG en VNG Realisatie","dec","vereniging",["norm","kenn","inko"],"haal","Vereniging van alle gemeenten. Bepaalt via de GGU de collectieve agenda en het geld. Agenda Digitale Veiligheid 2024-2028 met jaarplan.","Het Jaarplan 2026 is een bruikbare kapstok voor je eigen jaarplan: OT-baselines, quantum, leveranciersmanagement, ISMS. Bij bijna elk thema staat verkennen en uitwerken collectiviseringsvoorstellen."],
+["vngkbg","VNG-klankbordgroep Digitale Veiligheid","dec","vereniging",["kenn","inko"],"aangeboden","Opgezet door de VNG in het kader van de NDS en collectivisering, om af te stemmen over generiek te ontwikkelen en toe te passen zaken.","Hier zijn middelen te claimen voor gezamenlijk te ontwikkelen producten. Let op: er bestaat ook een gelijknamige interbestuurlijke klankbordgroep met IBD, NIPV, veiligheidsregio's, CCV, BZK en politie."],
+["cominfo","VNG-commissie Informatiesamenleving","dec","vereniging",["norm"],"indirect","Bestuurlijke commissie, 16 leden, voorzitter Peter Snijders (burgemeester Zwolle).","Bestuurlijk bezet. Je route loopt via je eigen burgemeester of gemeentesecretaris."],
+["ggi","GGI-Veilig, SCG en Bizob","dec","vereniging",["inko"],"haal","Collectieve inkoopmantel. De oorspronkelijke percelen zijn afgelopen; opvolgers zijn Monitoring en Response en Cyberweerbaarheid, dat laatste live sinds 1 december 2025.","Snelste route naar SOC, pentesten, red teaming en tijdelijke expertise zonder eigen aanbesteding. Deelnemers en leveranciers zijn niet publiek: bel SCG."],
+["ensia","ENSIA","dec","wet",["toez"],"haal","Jaarlijks verantwoordingsstelsel over informatiebeveiliging en datakwaliteit, beheerd door de VNG, stelselverantwoordelijke BZK.","Vanaf verantwoordingsjaar 2026 alleen nog 3000D voor DigiD en Suwinet. Suwinet vraagt vanaf 2027 aantoonbare werking van zeven controls, en dat kost een jaar bewijsvoering."],
+["bio","BIO2 en de interbestuurlijke werkgroep","dec","wet",["norm"],"indirect","BZK is eigenaar, CIP beheert, de interbestuurlijke werkgroep onder BZK-voorzitterschap onderhoudt.","Gemeenten zitten formeel nog op BIO1 v1.04zv terwijl de Cbw-zorgplicht naar BIO2 wijst. Implementeer BIO2, verantwoord voorlopig via BIO1, en leg die keuze vast."],
+["cip","CIP","sec","informeel",["norm","kenn"],"tafel","Publiek-private netwerkorganisatie, circa 1.000 organisaties en 5.000 professionals. Beheert de BIO namens BZK. Kernparticipanten UWV, SVB, DUO en Belastingdienst.","Werkmodel is werkgroepen: je doet mee door mensen te leveren. Negen BIO Thema-uitwerkingen op de SIVA-methodiek, Privacy Baseline, Grip op SSD, ICO-Wizard. Evaluatie loopt, volgende BIO2-versie beoogd eind 2027."],
+["g4","G4-CISO-overleg","dec","informeel",["kenn"],"aangeboden","De vier grote gemeenten werken samen, met ruim 100 security-collega's. De G4 is zelfstandig ondertekenaar van het Bestuurlijk Convenant.","Publiek niet gedocumenteerd als formeel gremium met eigen statuten, wel bevestigd als bestaande samenwerking."],
+["kringen","IBD-collectieven en regionale CISO-kringen","dec","vereniging",["kenn"],"haal","De IBD nodigt expliciet uit om regionale CISO-kringen als collectief aan te melden, en draait sinds 2025 een pilot met vier kringen in een gedeelde Teams-omgeving.","Laagste drempel met de hoogste opbrengst. Evaluatie stond gepland voor begin 2026, uitkomst niet publiek."],
+["commons","security-commons","dec","informeel",["kenn","norm"],"tafel","Initiatief van gemeentelijke CISO's: groepjes die samen herbruikbare producten maken en onderhouden, open source, maintainer-model.","Bewust een doe-club naast de gremia, geen tweede IBD. Landingsroutes: G4, VNG-klankbordgroep en IBD-adviesraad."],
+["codepf","Codeplatform","rijk","convenant",["kenn"],"haal","Soeverein overheidsbreed codeplatform op Forgejo, gehost bij Digilab. Publiceren, samenwerken en op termijn bouwen met ingebouwde compliance.","Relevant zodra de regio code publiceert: SBOM's, kwetsbaarheden- en licentiechecks via project Zenshin."],
+["ipo","IPO en het interprovinciaal CSIRT","dec","vereniging",["cert"],"geen","Provincies moeten zich onder de Cbw organiseren in een eigen CSIRT om vertrouwelijke NCSC-informatie te ontvangen. Project bij BIJ12.","Besluitvorming in de eindfase: aansluiten bij een bestaand CSIRT of zelf bouwen. De uitkomst is voorspellend voor het gemeentelijke vraagstuk."],
+["uvw","Unie van Waterschappen en Het Waterschapshuis","dec","vereniging",["inko","cert"],"geen","Koepel en gezamenlijke uitvoeringsorganisatie van de 21 waterschappen. Het Waterschapshuis is een openbaar lichaam met een gedeelde SOC.","Ketenpartner in de regio bij digitale ontwrichting, en het model dat wel een CSIRT-aanwijzing kreeg."],
+// ---- NDS ----
+["nds","NDS","rijk","convenant",["norm","inko"],"tafel","Nederlandse Digitaliseringsstrategie, interbestuurlijk, sinds 23 februari 2026 bij EZ onder staatssecretaris Aerdts. Zes prioriteiten en drie interventies.","Stuurt via aanjaagteams, niet via kernteams; kernteam is de werkgroep per versneller. Draait op bestaande budgetten, geen extra middelen. De NDS-Raad is opgeheven, Nathan Ducastel is ambassadeur."],
+["nds52","NDS 5.2 Federatief SOC-stelsel","rijk","convenant",["inko","det"],"tafel","Doorontwikkeling van het VSSR tot een overheidsbreed samenwerkingsmodel van SOC's. Penvoerder Robert Portegies (BZK).","Bij de pre-kickoff ontbraken de IBD en de waterschappen, en was de gemeentelijke en regionale laag nauwelijks vertegenwoordigd. Budgetclaim 2027."],
+["nds53","NDS 5.3 Continuiteit en BCM","rijk","convenant",["cris"],"tafel","Versterken van continuiteit en wendbaarheid van kritieke dienstverlening, ISO 22301 gekoppeld aan ISO 27001 en de Cbw. Lead Marianne van den Boogaart (BZK).","Kernteam is Rijk-zwaar: BZK, IenW, UWV, P-Direkt. Kleinere organisaties met beperkte expertise zijn expliciet doelgroep, en dat zijn de gemeenten."],
+["nds54","NDS 5.4 Inzicht kritieke dienstverlening","rijk","convenant",["norm"],"tafel","Overheidsbreed inzicht in kritieke dienstverlening en de digitale bouwstenen, inclusief legacy. Penvoerder Robert Portegies (BZK).","Expliciet geen centraal register in scope. Werksessies 26 augustus, 9 en 16 september, afsluiting 21 september."],
+// ---- Regio ----
+["rsiv","RSIV Den Haag","reg","convenant",["cris","kenn"],"aangeboden","Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag.","Cybercrime is een van de vijf prioriteiten in het regionaal beleidsplan 2023-2026. Alle gemeenten in die politie-eenheid vallen eronder, van de bollenstreek tot de Krimpenerwaard. Invalshoek is openbare orde, dus de aansluiting loopt via OOV, niet via IV. Account aanvragen via rsiv@zoetermeer.nl."],
+["pvo","PVO Regio Den Haag","reg","convenant",["kenn"],"geen","Platform Veilig Ondernemen, gefinancierd door JenV, bedient dezelfde 27 gemeenten. Doelgroep is het mkb.","De gemeente is medefinancier en partner, niet afnemer. Kanaal om lokale ondernemers te bereiken."],
+["vrhm","Veiligheidsregio Hollands Midden","reg","vereniging",["cris"],"tafel","Gemeenschappelijke regeling van gemeenten. Stelt elke vier jaar risicoprofiel, beleidsplan en crisisplan op.","Opgenomen als voorbeeld van de 25 veiligheidsregio's. Veiligheidsregio's vallen buiten de Cyberbeveiligingswet terwijl gemeenten er wel onder vallen, wat een gat achterlaat op de naad van de crisisorganisatie. De vierjaarlijkse planvorming (risicoprofiel, beleidsplan, crisisplan) is het moment waarop een gemeente de cyberdimensie kan inbrengen."],
+["hr","Holland Rijnland","reg","vereniging",["inko"],"geen","Regionaal samenwerkingsorgaan van vijftien gemeenten. Geen security-uitvoeringsorganisatie.","Servicepunt71 is per 1 januari 2023 opgeheven en de bedrijfsvoering is overgegaan naar een centrumgemeente-constructie. Zo'n overgang verschuift de Cbw-entiteitsgrens: waar eerder de gemeenschappelijke regeling mogelijk zelfstandig entiteit was, ligt het gewicht daarna bij de gastheergemeente."],
+["ccv","Netwerk Lokale Weerbaarheid Cybercrime en CCV","reg","convenant",["kenn"],"haal","Opvolger van de City Deal Lokale Weerbaarheid Cybercrime, die op 31 december 2025 formeel is afgerond. Kennisbeheer bij het CCV.","Producten: Lokale Cyberwegenkaart en Cyberpraatplaat. Kwartaalsessies worden verspreid door het land gehouden. Ligt binnen een gemeente meestal bij OOV, niet bij de CISO."],
+["cwc","Regionale cyberweerbaarheidscentra","reg","informeel",["det","kenn"],"geen","Ferm Zeehavens, Cyber Weerbaarheidscentrum Brainport, Maakindustrie Zuid-Holland, CW Greenport, Cyber Network Drechtsteden.","Vrijwel allemaal sectoraal-regionaal en op het bedrijfsleven gericht. Lang niet elke regio heeft een eigen centrum; grote delen van het land vallen buiten deze structuren."],
+// ---- Platforms ----
+["ecp","ECP","sec","informeel",["kenn"],"haal","Publiek-privaat platform met secretariaatsrol voor coalities. Achter Veiliginternetten.nl, het Platform Internetstandaarden (internet.nl), de Anti-DDoS-Coalitie en de Online Trust Coalitie.","Geen normerende rol, wel het knooppunt waar veel coalities hun secretariaat hebben."],
+["otc","Online Trust Coalitie","sec","informeel",["norm"],"haal","Ruim twintig organisaties uit overheid, bedrijfsleven en wetenschap, secretariaat bij ECP. Uniforme, lichte methodes waarmee cloudleveranciers betrouwbaarheid kunnen aantonen.","Direct bruikbaar in gemeentelijke cloud-inkoop en leveranciersassurance."],
+["hsd","Security Delta (HSD)","sec","informeel",["kenn","opl"],"haal","Clusterorganisatie met ruim 300 partijen. Founding partners zijn Provincie Zuid-Holland, Gemeente Den Haag, Economic Board Zuid-Holland en InnovationQuarter.","Zuid-Hollandse ophanging maakt het regionaal relevant. Vooral waardevol voor arbeidsmarkt en talent, minder voor operationele dreigingsinformatie. Voert het cyberweerbaarheidsinitiatief van de provincie uit."],
+["cvd","Centrum voor Veiligheid en Digitalisering","sec","informeel",["opl"],"geen","Samenwerkingsverband in Apeldoorn van Universiteit Twente, Saxion, Politieacademie, Aventus, NIPV en de gemeente. Sinds 29 juni 2026 samenwerkingsovereenkomst met HSD.","Opleiding, onderzoek en arbeidsmarkt, niet operationeel."],
+["sdv","Samen Digitaal Veilig","sec","informeel",["kenn"],"geen","83 brancheorganisaties met MKB-Nederland, gesubsidieerd door JenV en EZ. Bereik ruim 140.000 bedrijven, startversie gratis.","Bruikbaar als doorverwijzing naar lokaal mkb en als voorbeeldmateriaal voor bewustwording."],
+["dcypher","dcypher","sec","weg",["kenn"],"geen","Kennis- en innovatieplatform, per 1 september 2025 gestopt nadat EZ de ondersteuning beeindigde. Tweede keer na een eerdere stop in 2020.","Activiteiten overgedragen aan NCC-NL. Verwijzingen naar dcypher als levend platform zijn achterhaald."],
+["cs4nl","CS4NL","sec","weg",["kenn"],"geen","Vijfjarig onderzoeksprogramma van dcypher en Topsector ICT, voortijdig gestopt.","Gaat op in de Actieagenda Cybersecurity Technologies onder de Nationale Technologiestrategie."],
+// ---- Randpartijen ----
+["cvn","Cyberveilig Nederland","sec","informeel",["norm"],"geen","RANDPARTIJ. Brancheorganisatie van de cybersecuritysector sinds 2018, met OKTT-status.","Relevant als leverancierskader. Directeur Petra Oldengarm is auteur van het rapport Cyberweerbaarheid binnen gemeentegrenzen."],
+["nldig","NLdigital","sec","informeel",["norm"],"geen","RANDPARTIJ. Brancheorganisatie van de digitale sector.","Relevant omdat de NLdigital Voorwaarden in veel gemeentelijke IT-contracten staan."],
+["pvib","PvIB","sec","informeel",["kenn"],"haal","RANDPARTIJ. Platform voor InformatieBeveiliging, kennisplatform en beroepsnetwerk. Contributie 2026 is 259 euro regulier.","Goedkoopste individuele kennisnetwerk voor een CISO. Persoonsgebonden, dus niet organisatiegebonden."],
+["norea","NOREA","sec","informeel",["toez"],"haal","RANDPARTIJ. Beroepsorganisatie van IT-auditors, circa 1.800 geregistreerde RE's, ondergebracht bij de NBA.","De 3000D-route voor DigiD en Suwinet vereist een bij NOREA geregistreerde RE."]
+];
+const MYTABLE=[];
+
+/* ---------- HELPERS ---------- */
+const byId=Object.fromEntries(P.map(r=>[r[0],r]));
+const nm=id=>byId[id]?byId[id][1]:id;
+const chip=(id,extra="")=>{const r=byId[id];if(!r)return"";
+  const me=MYTABLE.includes(id)?" me":"";
+  return `<span class="chip m-${r[3]}${me} ${extra}" title="${r[6].replace(/"/g,"&quot;")}">${r[1]}</span>`;};
+
+/* ---------- A: MATRIX ---------- */
+(function(){
+  const rows=Object.keys(FN), cols=Object.keys(LG);
+  let h='<thead><tr><th class="rh">Functie</th>'+cols.map(c=>`<th>${LG[c]}</th>`).join('')+'</tr></thead><tbody>';
+  const hint={norm:"wie stelt de norm",toez:"wie controleert",cert:"wie helpt bij een incident",
+    det:"wie waarschuwt je",kenn:"wie deelt kennis",inko:"wie bundelt inkoop",
+    cris:"wie doet de warme fase",opl:"wie laat je oefenen"};
+  rows.forEach(fn=>{
+    h+=`<tr><th class="rh">${FN[fn]}<small>${hint[fn]}</small></th>`;
+    cols.forEach(lg=>{
+      const hits=P.filter(r=>r[2]===lg&&r[4].includes(fn)&&r[3]!=="weg");
+      if(!hits.length){h+='<td class="empty"></td>';}
+      else{const cls=hits.length===1?' class="thin"':'';
+        h+=`<td${cls}>`+hits.map(r=>chip(r[0])).join('')+'</td>';}
+    });
+    h+='</tr>';
+  });
+  document.getElementById('mx').innerHTML=h+'</tbody>';
+})();
+
+/* ---------- B: LAGEN ---------- */
+(function(){
+  const order=[["eu","EU"],["rijk","Rijk en nationaal"],["sec","Sectoraal en publiek-privaat"],
+    ["dec","Decentraal collectief"],["reg","Regionaal"]];
+  const flow=["richtlijn wordt wet","wet wordt kader","kader wordt dienst","dienst wordt praktijk"];
+  let h='';
+  order.forEach((o,i)=>{
+    const [k,label]=o;
+    const hits=P.filter(r=>r[2]===k).sort((a,b)=>a[3].localeCompare(b[3]));
+    h+=`<div class="lane ${k}"><h4>${label}</h4>`+hits.map(r=>chip(r[0])).join('')+'</div>';
+    if(flow[i])h+=`<div class="flow">&#9660; ${flow[i]}</div>`;
+  });
+  document.getElementById('lagen').innerHTML=h;
+})();
+
+/* ---------- C: GRAAF ---------- */
+(function(){
+  const N=[
+    {id:"eu",l:"EU",s:"ENISA, NIS-CG, CSIRTs Network",x:400,y:34,w:190,h:36,c:"#6b4fa0"},
+    {id:"jenv",l:"JenV / NCTV",s:"kaderstellend",x:170,y:120,w:140,h:36,c:"#1f4e79"},
+    {id:"bzk",l:"BZK",s:"stelsel BIO en ENSIA",x:620,y:120,w:150,h:36,c:"#1f4e79"},
+    {id:"ncsc",l:"NCSC",s:"CSIRT, detectie, CWN",x:150,y:212,w:180,h:42,c:"#123f66"},
+    {id:"rdi",l:"RDI",s:"toezicht",x:390,y:212,w:110,h:36,c:"#8a4b00"},
+    {id:"cip",l:"CIP",s:"beheer BIO2",x:640,y:212,w:130,h:36,c:"#2e7d68"},
+    {id:"nds",l:"NDS prioriteit 5",s:"versnellers 5.2 tot 5.4",x:830,y:120,w:170,h:36,c:"#6b4fa0"},
+    {id:"vng",l:"VNG",s:"GGU, agenda, geld",x:560,y:300,w:150,h:38,c:"#2e7d68"},
+    {id:"ibd",l:"IBD",s:"CERT, kennis, EASM",x:250,y:300,w:160,h:42,c:"#2e7d68"},
+    {id:"ensia",l:"ENSIA",s:"verantwoording",x:800,y:300,w:130,h:36,c:"#2e7d68"},
+    {id:"c2t",l:"Connect2Trust",s:"OKTT, gratis",x:40,y:300,w:145,h:36,c:"#a06a2c"},
+    {id:"ggi",l:"GGI-Veilig",s:"inkoopmantel",x:800,y:384,w:130,h:36,c:"#2e7d68"},
+    {id:"vrhm",l:"VRHM",s:"buiten de Cbw",x:60,y:384,w:130,h:36,c:"#8b1a1a"},
+    {id:"rsiv",l:"RSIV Den Haag",s:"27 gemeenten, OOV",x:250,y:384,w:160,h:36,c:"#a06a2c"},
+    {id:"gem",l:"Gemeente en regio",s:"essentiele entiteit",x:430,y:472,w:220,h:44,c:"#0b6b3a"}
+  ];
+  const E=[
+    ["eu","jenv","stuurt"],["eu","bzk","stuurt"],
+    ["jenv","ncsc","stuurt"],["jenv","rdi","toezicht"],
+    ["bzk","cip","beheer"],["bzk","vng","betaalt"],["bzk","nds","trekt"],
+    ["ncsc","ibd","informeert"],["ncsc","c2t","informeert"],["ncsc","gem","CSIRT sinds 15-08"],
+    ["cip","vng","normen"],["vng","ibd","eigenaar"],["vng","ensia","beheert"],["vng","ggi","mantel"],
+    ["ibd","gem","advies"],["c2t","gem","dreigingsinfo"],["ggi","gem","diensten"],
+    ["ensia","gem","verantwoording"],["rdi","gem","toezicht"],["nds","gem","versnellers"],
+    ["vrhm","gem","warme fase"],["rsiv","gem","openbare orde"]
+  ];
+  const pos=Object.fromEntries(N.map(n=>[n.id,n]));
+  const cx=n=>n.x+n.w/2, cy=n=>n.y+n.h/2;
+  const dash={"betaalt":"5 3","informeert":"2 3","dreigingsinfo":"2 3","advies":"2 3","normen":"2 3","versnellers":"2 3"};
+  let s=`<svg class="graph" viewBox="0 0 1020 550" role="img" aria-label="Relatiegraaf van het stelsel">`;
+  s+=`<defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#8a94a0"/></marker></defs>`;
+  E.forEach(([a,b,lab])=>{
+    const A=pos[a],B=pos[b];
+    const d=dash[lab]?`stroke-dasharray="${dash[lab]}"`:"";
+    let x1,y1,x2,y2,path,lx,ly;
+    if(Math.abs(A.y-B.y)<30){                       /* zelfde rij: zijkant naar zijkant */
+      const rechts=cx(A)<cx(B);
+      x1=rechts?A.x+A.w:A.x; y1=cy(A);
+      x2=rechts?B.x:B.x+B.w; y2=cy(B);
+      path=`M${x1},${y1} L${x2},${y2}`;
+      lx=(x1+x2)/2; ly=y1-5;
+    }else{                                          /* verticaal: onderkant naar bovenkant */
+      x1=cx(A); y1=A.y+A.h; x2=cx(B); y2=B.y;
+      const my=(y1+y2)/2;
+      path=`M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}`;
+      lx=x1+(x2-x1)*0.42; ly=y1+(y2-y1)*0.42;
+    }
+    s+=`<path d="${path}" fill="none" stroke="#8a94a0" stroke-width="1.2" ${d} marker-end="url(#ar)"/>`;
+    s+=`<text class="el" x="${lx}" y="${ly}" text-anchor="middle">${lab}</text>`;
+  });
+  N.forEach(n=>{
+    s+=`<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="6" fill="${n.c}"/>`;
+    s+=`<text class="nl" x="${cx(n)}" y="${n.y+16}" text-anchor="middle">${n.l}</text>`;
+    s+=`<text x="${cx(n)}" y="${n.y+29}" text-anchor="middle" font-size="9" fill="#dbe4ec">${n.s}</text>`;
+  });
+  s+=`<text x="16" y="540" class="el">doorgetrokken lijn: aansturing of toezicht &#183; stippellijn: informatie of geld</text>`;
+  s+=`</svg>`;
+  document.getElementById('graaf').innerHTML=s;
+})();
+
+
+/* ---------- E: DIENSTENBAND ---------- */
+/* [naam, [partij-ids], duiding] · lege lijst = gat */
+const D=[
+["Kennisbijeenkomsten en community",["ibd","cip","ecp","hsd","cvd","pvib","c2t","cwc"],
+ "De goedkoopste functie om op te pakken en de moeilijkste om je op te onderscheiden. Acht aanbieders voor grotendeels dezelfde persoon, die er hooguit twee kan volgen. Zeven van de acht hebben geen wettelijke basis, dus niemand kan hier opruimen."],
+["Crisisoefening aanbieden",["bzk","nctv","adc","vng","nipv","ibd"],
+ "Het Oldengarm-rapport noemt dit zelf wildgroei. Oefencapaciteit is de schaarste: een gemeente maakt het crisisteam twee tot drie keer per jaar vrij. Zes aanbieders die om dezelfde dagdelen concurreren leveren netto minder geoefende organisaties op, niet meer."],
+["Collectieve security-inkoop",["ggi","vng","nds","nds52","g4","uvw"],
+ "Geen enkele partij heeft hier een wettelijk mandaat. Dat verklaart het meervoud: niemand kon het afdwingen, dus begon iedereen zelf. Bovendien zijn de deelnemerslijsten van GGI-Veilig niet publiek, dus je kunt niet eens zien met wie je zou kunnen bundelen."],
+["Handreikingen en templates",["ibd","cip","vng","ncsc","bzk","commons"],
+ "Dezelfde onderwerpen worden zes keer uitgeschreven, met verschillende begrippen. De ISMS-handreiking, de thema-uitwerkingen en de syllabi gaan alle drie over BIO2, en het is aan de lezer om te bepalen welke leidend is."],
+["Normstelling en kaders",["bio","cip","forum","logius","abro"],
+ "Hier is meervoud geen versnippering maar arbeidsdeling: vier van de vijf hebben een wettelijk mandaat en een eigen domein (baseline, open standaarden, DigiD, rijksopdrachten). De uitzondering is CIP, dat beheert namens BZK en dus afgeleid gezag heeft."],
+["Situationeel dreigingsbeeld",["ncsc","ndn","cyclotron","isac","ibd"],
+ "Vier van de vijf zijn voor een gemeente niet toegankelijk: het NDN staat alleen open voor Rijk en vitale sectoren, Cyclotron voor diensten en securityleveranciers, en er is geen gemeente-ISAC. Wat overblijft is wat de IBD doorgeeft."],
+["Toezicht en verantwoording",["rdi","ensia","ap","ilt","logius"],
+ "Vijf stromen over deels dezelfde maatregelen, plus de gemeenteraad en de provincie. ENSIA is in 2017 juist opgericht om dit te bundelen (Single Information, Single Audit) en dat principe is binnen negen jaar weer ondergesneeuwd."],
+["Dreigingsinfo op je eigen assets",["ncsc","ibd","c2t","divd"],
+ "Vier kanalen, dezelfde registratielogica: domeinen, IP-ranges en AS-nummers. Het risico is hier niet de overlap maar het omgekeerde: de IBD laat haar EASM-contract aflopen en kijkt nog hoe haar informatiepositie geborgd blijft. Je kunt tegelijk dubbel bediend en onbediend raken."],
+["Volwassenheidsmeting",["vssr","ti","ensia","ibd"],
+ "Vier meetlatten die elkaar niet kennen: SOC-CMM uit het VSSR, SIM3 van Trusted Introducer, de ENSIA-verantwoording en de gap-analyse van de IBD. Geen enkele daarvan levert een landelijk vergelijkbaar beeld op."],
+["Ketenmethodiek kritieke diensten",["nds54","ibd","abro","nctv"],
+ "Vier systematieken naast elkaar: de NDS-versneller, de IBD-methodiek voor gemeenten, de TBB-lijn via ABRO en BVA, en de aanpak vitaal. Precies daarom is het eerste product van versneller 5.4 een begrippenkader geworden en geen register."],
+["BIO2 naar praktijk vertalen",["cip","ibd","vng"],
+ "Drie vertaallagen op hetzelfde kader. De praktijk heeft hier al gekozen zonder dat het stelsel dat heeft geformaliseerd: in de onderzochte gemeentelijke praktijk wordt de BIO2-Excel van CIP intensief gebruikt, terwijl de thema-uitwerkingen en de SIVA-methodiek in de dossiers nergens voorkomen."],
+["CSIRT en incidentbijstand",["ncsc","ibd","nrn"],
+ "De duurste onopgeloste vraag van het hele overzicht. Het NCSC heeft het wettelijke mandaat maar tijdelijk, de IBD heeft de praktijk en de relaties maar geen aanwijzing, en het NRN is als opschalingsroute feitelijk stil gevallen."],
+["Bestuurdertraining Cbw",["vng","ibd","bzk"],
+ "Drie aanbieders plus een commerciele markt, voor een verplichting die per 15 augustus 2028 aantoonbaar moet zijn voor elk collegelid. Hier is overlap minder erg dan elders, want de doelgroep is groot en de capaciteit schaars."],
+["Kwetsbaarheidsmelding en CVD",["divd","ncsc","ibd"],
+ "Het Nederlands Security Meldpunt, waar de IBD sinds juni 2023 op aangesloten was, staat sinds april 2024 op non-actief. Artikel 17 Cbw wijst bij AMvB een coordinerend CSIRT aan. Openstaande vraag: via welk kanaal komt een melding na 15 augustus binnen, en wie leest dat?"],
+["DDoS-bescherming",["nbip","adc","ncsc"],
+ "Drie partijen, drie verschillende rollen: NaWas scrubt maar vereist een eigen AS-nummer, de coalitie deelt fingerprints en oefent, het NCSC waarschuwt. Voor een gemeente loopt de scrubbing dus via de provider, en dat is een vraag die zelden gesteld wordt."],
+["OT-normering",[],
+ "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. De VNG noemt dit letterlijk een normatief gat en werkt zelf aan baselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer."],
+["Landelijke weerbaarheidsmeting gemeenten",[],
+ "De Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen landelijk beeld, en ENSIA levert verantwoordingsdata maar geen analyse. Verzwarend: het Samenhangend Inspectiebeeld is in april 2025 voor twee jaar gepauzeerd."],
+["Ketenregie tussen organisaties",[],
+ "De voorzitter van het NDS-aanjaagteam prioriteit 5 zegt zelf dat de kwetsbaarheden vooral in de ketens tussen organisaties zitten. De WRR schreef dat in 2019 al. Versneller 5.4 is de eerste serieuze poging en heeft expliciet geen centraal register in scope."],
+["Opvolging van de OKTT-status",[],
+ "De OKTT-status was de wettelijke haak waarmee het NCSC informatie mocht delen buiten Rijk en vitaal. Die vervalt met de Cbw. Connect2Trust, NBIP, Ferm Zeehavens, CWB Brainport en Cyberveilig Nederland hangen eraan, en het CWN-bouwplan stelt vast dat de opvolging nog niet is uitgewerkt."]
+];
+(function(){
+  const max=Math.max(...D.map(d=>d[1].length));
+  let h='<div class="bandkop"><div>Concrete dienst</div><div>#</div><div>Wie het levert</div></div>';
+  D.forEach(d=>{
+    const n=d[1].length, gap=n===0, hot=n>=5;
+    const w=gap?0:Math.round(n/max*100);
+    const bg=gap?'':` style="background:linear-gradient(90deg,rgba(31,78,121,.07) ${w}%,rgba(31,78,121,0) ${w}%)"`;
+    h+=`<div class="dr${gap?' gap':''}${hot?' hot':''}">`;
+    h+=`<div class="dn">${d[0]}</div><div class="dc">${gap?'✖':n}</div>`;
+    h+=`<div class="dp"${bg}>${gap?'geen enkele partij belegt dit':d[1].map(id=>chip(id)).join('')}</div>`;
+    h+=`<div class="dd">${d[2]}</div></div>`;
+  });
+  document.getElementById('band').innerHTML=h;
+})();
+
+/* ---------- F: HEATMAP partij bij partij ---------- */
+(function(){
+  /* per partij: welke diensten levert die */
+  const per={};
+  D.forEach((d,i)=>d[1].forEach(id=>{(per[id]=per[id]||[]).push(i)}));
+  /* alleen partijen met 2 of meer diensten, gesorteerd op aantal */
+  const ids=Object.keys(per).filter(id=>per[id].length>=2&&byId[id])
+    .sort((a,b)=>per[b].length-per[a].length||nm(a).localeCompare(nm(b)));
+  const gedeeld=(a,b)=>per[a].filter(x=>per[b].includes(x));
+
+  let h='<thead><tr><th class="rh"></th>'+ids.map(id=>
+    `<th class="ch"><span>${nm(id)}</span></th>`).join('')+'</tr></thead><tbody>';
+  ids.forEach(a=>{
+    h+=`<tr><th class="rh" title="${nm(a)}">${nm(a)}</th>`;
+    ids.forEach(b=>{
+      if(a===b){h+=`<td class="d" title="${nm(a)} levert ${per[a].length} van de ${D.length} diensten">${per[a].length}</td>`;return}
+      const g=gedeeld(a,b), n=g.length;
+      if(!n){h+='<td></td>';return}
+      const cls='v'+Math.min(n,5);
+      const t=`${nm(a)} en ${nm(b)} delen ${n} dienst${n>1?'en':''}: `+g.map(i=>D[i][0]).join(' · ');
+      h+=`<td class="${cls}" title="${t.replace(/"/g,'&quot;')}">${n}</td>`;
+    });
+    h+='</tr>';
+  });
+  document.getElementById('hm').innerHTML=h+'</tbody>';
+
+  /* top-lijst eronder */
+  const paren=[];
+  for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++){
+    const g=gedeeld(ids[i],ids[j]); if(g.length>=2)paren.push([ids[i],ids[j],g]);
+  }
+  paren.sort((x,y)=>y[2].length-x[2].length);
+  /* hoe vaak komt elke partij voor in de top-paren */
+  const vaak={}; paren.forEach(p=>{vaak[p[0]]=(vaak[p[0]]||0)+1;vaak[p[1]]=(vaak[p[1]]||0)+1});
+  const spil=Object.entries(vaak).sort((a,b)=>b[1]-a[1])[0];
+  let t='<h2>De dubbelgangers, op een rij</h2><div class="scroll"><table class="t"><thead><tr>'+
+    '<th style="width:60px">Aantal</th><th style="width:34%">Paar</th><th>Welke diensten</th></tr></thead><tbody>';
+  paren.slice(0,14).forEach(p=>{
+    t+=`<tr><td class="k" style="text-align:center;font-size:16px;color:${p[2].length>=5?'var(--gap)':'var(--accent)'}">${p[2].length}</td>`+
+       `<td>${chip(p[0])} ${chip(p[1])}</td><td style="font-size:12.5px">${p[2].map(i=>D[i][0]).join(' &middot; ')}</td></tr>`;
+  });
+  t+='</tbody></table></div>';
+  t+=`<div class="warn" style="margin-top:14px"><b>Het scherpste getal uit het hele overzicht.</b>
+    <b>${nm(spil[0])}</b> komt voor in ${spil[1]} van de ${paren.length} paren die twee of meer diensten delen.
+    Dat verklaart twee dingen tegelijk die elders in dit stuk los van elkaar staan. Ten eerste waarom elk nieuw
+    initiatief automatisch als concurrentie wordt gelezen: je kunt er nauwelijks omheen bouwen. Ten tweede waarom
+    het CSIRT-vraagstuk zo zwaar weegt: de partij die feitelijk de spil van het gemeentelijke stelsel is, is precies
+    de partij zonder wettelijk mandaat. En de zwaarste dubbeling in het veld, IBD en NCSC met vijf gedeelde diensten,
+    is per 15 augustus 2026 nog niet verdeeld.</div>`;
+  document.getElementById('hmtop').innerHTML=t;
+})();
+
+/* ---------- PARTIJEN ---------- */
+(function(){
+  const fl=document.getElementById('f-laag'),ff=document.getElementById('f-fn'),
+        fa=document.getElementById('f-acc'),fq=document.getElementById('f-q');
+  Object.entries(LG).forEach(([k,v])=>fl.add(new Option(v,k)));
+  Object.entries(FN).forEach(([k,v])=>ff.add(new Option(v,k)));
+  Object.entries(AC).forEach(([k,v])=>fa.add(new Option(v,k)));
+  const MAN={wet:"wettelijk mandaat",convenant:"convenant of programma",vereniging:"ledenmandaat",
+    informeel:"informeel",weg:"opgeheven"};
+  function render(){
+    const L=fl.value,F=ff.value,A=fa.value,Q=fq.value.toLowerCase().trim();
+    const hits=P.filter(r=>(!L||r[2]===L)&&(!F||r[4].includes(F))&&(!A||r[5]===A)&&
+      (!Q||(r[1]+" "+r[6]+" "+(r[7]||"")).toLowerCase().includes(Q)));
+    document.getElementById('cnt').textContent=hits.length+" van "+P.length+" partijen";
+    document.getElementById('plist').innerHTML=hits.map(r=>{
+      const me=MYTABLE.includes(r[0])?' &#9733;':'';
+      return `<div class="p m-${r[3]}">
+        <h4>${r[1]}${me}</h4>
+        <div class="meta">${LG[r[2]]} &middot; ${MAN[r[3]]}</div>
+        <div class="txt">${r[6]}</div>
+        <div class="txt" style="color:#4a525c">${r[7]||""}</div>
+        <div>${r[4].map(f=>`<span class="tag">${FN[f]}</span>`).join('')}</div>
+        <div class="acc acc-${r[5]}">${AC[r[5]]}</div>
+      </div>`;}).join('');
+  }
+  [fl,ff,fa].forEach(e=>e.onchange=render); fq.oninput=render; render();
+})();
+
+/* ---------- TABS ---------- */
+document.querySelectorAll('nav.tabs button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('nav.tabs button').forEach(x=>x.setAttribute('aria-selected','false'));
+    b.setAttribute('aria-selected','true');
+    document.querySelectorAll('section.panel').forEach(p=>p.classList.remove('on'));
+    document.getElementById('p-'+b.dataset.t).classList.add('on');
+    window.scrollTo({top:0,behavior:'instant'});
+  };
+});
+document.querySelectorAll('.fmt button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.fmt button').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    document.querySelectorAll('.viz').forEach(v=>v.classList.remove('on'));
+    document.getElementById('v-'+b.dataset.v).classList.add('on');
+  };
+});
+</script>
+</body>
+</html>
