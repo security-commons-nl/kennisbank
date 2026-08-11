@@ -31,11 +31,11 @@ Beide JSON-bestanden bevatten een `meta`-blok met het vocabulaire, zodat de code
 
 | | Wat het laat zien |
 |---|---|
-| **A · Functie bij bestuurslaag** | Matrix van functies tegen bestuurslagen. Meerdere partijen in een cel is overlap, een lege cel is een gat |
-| **B · Lagenmodel** | Het stelsel als bevelslijn van Brussel naar de gemeente. Laat zien hoeveel schakels er tussen een Europese richtlijn en een gemeentelijke maatregel zitten |
-| **C · Relatiegraaf** | Wie stuurt wie aan, wie betaalt wie, wie informeert wie |
-| **E · Waar zit welke overlap** | Per concrete dienst wie hem levert, gesorteerd van druk naar leeg, met de gaten onderaan. De kleuren tonen de mandaatsoort, en dat is het halve verhaal |
-| **F · Wie is wiens dubbelganger** | Dezelfde data omgedraaid: hoeveel concrete diensten twee partijen allebei leveren |
+| **Functie bij bestuurslaag** | Matrix van functies tegen bestuurslagen. Meerdere partijen in een cel is overlap, een lege cel is een gat |
+| **Lagenmodel** | Het stelsel als bevelslijn van Brussel naar de gemeente. Laat zien hoeveel schakels er tussen een Europese richtlijn en een gemeentelijke maatregel zitten |
+| **Relatiegraaf** | Wie stuurt wie aan, wie betaalt wie, wie informeert wie |
+| **Waar zit welke overlap** | Per concrete dienst wie hem levert, gesorteerd van druk naar leeg, met de gaten onderaan. De kleuren tonen de mandaatsoort, en dat is het halve verhaal |
+| **Wie is wiens dubbelganger** | Dezelfde data omgedraaid: hoeveel concrete diensten twee partijen allebei leveren |
 
 ### Waarom twee bestanden
 
