@@ -1,13 +1,22 @@
 # Stelselkaart security-gremia
 
 Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden die partijen
-zich tot elkaar? Deze map bevat een **open dataset** van 82 partijen en 19 concrete diensten:
+zich tot elkaar? Deze map bevat een **open dataset** van 83 partijen en 19 concrete diensten:
 van designated clubs als de IBD tot publiek-private platforms, plus de Europese laag als context.
 
 > **Peildatum 11 augustus 2026.** Dit is een momentopname van een stelsel dat op dat moment hard in
 > beweging was. De Cyberbeveiligingswet trad op 15 augustus 2026 in werking, meerdere CSIRT-aanwijzingen
 > waren nog niet rond, en de OKTT-status stond op het punt te vervallen. **Kloppen er dingen niet meer?
-> Open een [issue](../../../issues/new/choose).** Dat is precies waarvoor deze dataset open is.
+> Open een [issue](https://github.com/security-commons-nl/kennisbank/issues/new/choose).** Dat is precies
+> waarvoor deze dataset open is.
+
+> **Bijgewerkt 13 augustus 2026, na de eerste externe review uit de sector.** Drie aanscherpingen:
+> de vier gaten in de dienstentabel maken nu onderscheid tussen *niets belegd* en *wel aan gewerkt, en
+> door wie* (een nul betekende hier ten onrechte dat er niets gebeurde) · bij de RDI staat nu in de
+> omschrijving zelf dat BZK de bevoegde autoriteit is en de RDI het toezicht uitvoert · **regionale
+> samenwerkingsverbanden** zijn als categorie opgenomen, met RSIV Den Haag als uitgewerkt voorbeeld,
+> omdat er landelijk meer van zulke verbanden bestaan dan dat ene. Wat nog ontbreekt is het landelijke
+> beeld: welke verbanden er zijn en welke gemeenten erbuiten vallen.
 
 ## Waarom dit bestaat
 
@@ -22,8 +31,8 @@ resultaat te delen in plaats van in een la te leggen.
 | Bestand | Inhoud |
 |---|---|
 | **`index.html`** | **De leesbare weergave.** Open het bestand in je browser, of via GitHub Pages direct de map-URL. Vijf visualisaties, een filterbaar overzicht van alle partijen, en de bronverantwoording. Offline te openen, geen externe afhankelijkheden |
-| `data/partijen.json` | 82 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
-| `data/diensten.json` | 19 concrete diensten met wie ze levert, inclusief 4 diensten die **niemand** levert |
+| `data/partijen.json` | 83 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
+| `data/diensten.json` | 19 concrete diensten met wie ze levert, inclusief **4 gaten**. Per gat staat in `gat_soort` of er niets is belegd of dat er wel aan gewerkt wordt, en in dat laatste geval staat in `werk_in_uitvoering` door wie |
 
 Beide JSON-bestanden bevatten een `meta`-blok met het vocabulaire, zodat de codes zelfverklarend zijn.
 
@@ -60,8 +69,16 @@ wordt overlap hard aanwijsbaar, en worden de gaten zichtbaar.
 | 6 | Collectieve security-inkoop | **0** |
 | 6 | Handreikingen en templates | 2 |
 
-**De vier gaten, waar niemand staat:** OT-normering · een landelijke weerbaarheidsmeting van gemeenten ·
-ketenregie tussen organisaties · de opvolging van de OKTT-status.
+**De vier gaten, in twee soorten.** Waar helemaal niets is belegd: een landelijke weerbaarheidsmeting van
+gemeenten (de Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen
+landelijk beeld, ENSIA levert data maar geen analyse) en de opvolging van de OKTT-status (vervalt met de
+Cbw, opvolging niet uitgewerkt). Waar geen kader is vastgesteld maar wel aan gewerkt wordt: **OT-normering**
+(IBD en VNG maken objectbaselines voor de 23 meest voorkomende OT-objecten; tijdpad en vorm nog niet
+publiek) en **ketenregie tussen organisaties** (NDS-versneller 5.4 levert een begrippenkader, een centraal
+register staat expliciet niet in scope).
+
+Dat onderscheid is er sinds 13 augustus 2026 en het is geen detail: een nul in een tabel leest als "niemand
+doet iets", en dat deed het werk van anderen tekort.
 
 **Drie observaties die uit de data volgen:**
 
@@ -87,7 +104,7 @@ CIP en Connect2Trust ook, terwijl ze in de functie-indeling in dezelfde categori
 Het veld `toegang_gemeente` geeft aan of je er als gemeente zelf bij kunt:
 
 - **`direct`** (38 partijen) — zelf terecht, lid worden of een dienst afnemen
-- **`indirect`** (16 partijen) — alleen via een koepel of schakelorganisatie, meestal de IBD
+- **`indirect`** (17 partijen) — alleen via een koepel of schakelorganisatie, meestal de IBD
 - **`gesloten`** (28 partijen) — niet toegankelijk voor een gemeente
 
 Dat laatste getal is op zichzelf een bevinding: ruim een derde van het stelsel is voor een gemeente
@@ -116,8 +133,11 @@ door iedereen gecorrigeerd worden. De duiding, met de volledige analyse van over
 concurrentie en gaten, volgt zodra er een tweede maintainer meetekent. Dat is geen slag om de arm maar
 een principe: een oordeel over het stelsel is sterker als het van meer dan één gemeente komt.
 
-**Meedoen?** Open een [issue](../../../issues/new/choose) of een discussion. Corrigeren van één regel in
-een JSON-bestand is genoeg om bij te dragen; je hoeft geen visualisatie te bouwen.
+**Meedoen?** Open een [issue](https://github.com/security-commons-nl/kennisbank/issues/new/choose) of een
+discussion, of wijzig direct
+[een regel in de dataset](https://github.com/security-commons-nl/kennisbank/edit/main/security/stelselkaart-security-gremia/data/partijen.json).
+Dat laatste werkt ook zonder schrijfrechten: GitHub maakt er automatisch een voorstel van. Eén regel
+corrigeren is genoeg om bij te dragen, je hoeft geen visualisatie te bouwen.
 
 ## Hergebruik
 
@@ -131,5 +151,6 @@ Bas Stevens.
 
 ## Licentie
 
-[EUPL-1.2](../../LICENSE) — vrij te hergebruiken en aan te passen. Feedback en verbeteringen welkom via
-de [kennisbank](../../).
+[EUPL-1.2](https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE), vrij te hergebruiken en
+aan te passen. Feedback en verbeteringen welkom via de
+[kennisbank](https://github.com/security-commons-nl/kennisbank).

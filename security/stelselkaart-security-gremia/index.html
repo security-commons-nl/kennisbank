@@ -210,10 +210,13 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 </header>
 
 <div class="note" style="margin:16px 0 0">
-  <b>Open dataset uit de kennisbank van security-commons-nl.</b> 82 partijen en 19 concrete diensten die samen de
+  <b>Open dataset uit de kennisbank van security-commons-nl.</b> 83 partijen en 19 concrete diensten die samen de
   digitale weerbaarheid van de Nederlandse overheid organiseren. <b>Peildatum 11 augustus 2026</b>, vier dagen voor
-  inwerkingtreding van de Cyberbeveiligingswet: meerdere aanwijzingen waren toen nog niet rond. Klopt er iets niet
-  meer, mist er een partij, of wordt er al aan iets gewerkt dat hier als leeg staat?
+  inwerkingtreding van de Cyberbeveiligingswet: meerdere aanwijzingen waren toen nog niet rond. <b>Bijgewerkt
+  13 augustus 2026</b> na de eerste externe review uit de sector: de dienstentabel onderscheidt nu of iets
+  <i>niet is vastgesteld</i> of dat er <i>wel aan gewerkt wordt</i>, en regionale samenwerkingsverbanden staan er
+  als categorie in. Klopt er iets niet meer, mist er een partij, of wordt er al aan iets gewerkt dat hier als
+  leeg staat?
   <b>Twee routes:</b> <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">open een issue</a> (kan met een paar regels, geen kennis van de
   data nodig) of <a href="https://github.com/security-commons-nl/kennisbank/edit/main/security/stelselkaart-security-gremia/data/partijen.json">wijzig een regel in de dataset</a> (GitHub maakt daar automatisch een
   voorstel van, jij hoeft geen schrijfrechten te hebben). De analyse van onnodige overlap en concurrentie is bewust
@@ -509,7 +512,7 @@ const P=[
 ["ndn","Nationaal Detectie Netwerk","rijk","convenant",["det"],"indirect","Gedeeld en verrijkt dreigingsbeeld van NCSC, AIVD, MIVD, rijksorganisaties en vitale aanbieders.","Deelname staat open voor rijksoverheid en vitale sectoren, niet voor gemeenten. De route loopt via de IBD als schakelorganisatie."],
 ["cyclotron","Cyclotron","rijk","convenant",["det","kenn"],"indirect","Publiek-privaat analyse- en duidingsplatform. Convenant getekend 30 september 2025 door 28 partijen, inmiddels circa veertig organisaties.","Deelnemers zijn diensten en securityleveranciers. Hier wordt de nationale duiding gemaakt die via NCSC en IBD jouw kant op komt."],
 ["hoc","House of Cyber","rijk","informeel",["kenn","opl"],"geen","Fysiek samenwerkingsgebouw in Den Haag Mariahoeve, het voormalige Aegon-hoofdkantoor. NCSC, Defensie, politie, NFI, HSD en TNO.","Geen juridische entiteit met eigen mandaat. Realisatie naar verwachting binnen enkele jaren, geen openingsdatum."],
-["rdi","RDI","rijk","wet",["toez"],"indirect","Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.","Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Bevoegde autoriteit voor de sector overheid is BZK."],
+["rdi","RDI","rijk","wet",["toez"],"indirect","Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies, namens BZK: BZK is de bevoegde autoriteit voor de sector overheid, de RDI voert het toezicht uit. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.","Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Dat de bevoegdheid bij BZK ligt en de uitvoering bij de RDI is bepalend voor waar een gemeente een vraag of melding kwijt kan."],
 ["ilt","ILT","rijk","wet",["toez"],"geen","Toezichthouder onder de Cbw voor de waterschappen.","Relevant omdat gemeenten met waterschappen in de afvalwaterketen samenwerken en daar dus twee toezichtregimes samenkomen."],
 ["ap","Autoriteit Persoonsgegevens","rijk","wet",["toez"],"haal","Toezichthouder op de AVG. Bij een incident met persoonsgegevens loopt hier een eigen meldstroom naast de Cbw-melding.","Derde spoor naast NCSC-melding en aangifte bij de politie."],
 ["bzk","BZK","rijk","wet",["norm","kenn","opl"],"haal","Stelselverantwoordelijk voor BIO en ENSIA, bevoegde autoriteit voor de sector overheid, medeondertekenaar van het Bestuurlijk Convenant.","Concreet af te nemen: de Overheidsbrede Cyberoefening op 2 november 2026 (scenario gemeente Waaldam: regenval, IT-uitval en desinformatie) en 15 gratis webinars per jaar via ICTU."],
@@ -560,7 +563,8 @@ const P=[
 ["nds53","NDS 5.3 Continuiteit en BCM","rijk","convenant",["cris"],"haal","Versterken van continuiteit en wendbaarheid van kritieke dienstverlening, ISO 22301 gekoppeld aan ISO 27001 en de Cbw. Lead Marianne van den Boogaart (BZK).","Kernteam is Rijk-zwaar: BZK, IenW, UWV, P-Direkt. Kleinere organisaties met beperkte expertise zijn expliciet doelgroep, en dat zijn de gemeenten."],
 ["nds54","NDS 5.4 Inzicht kritieke dienstverlening","rijk","convenant",["norm"],"haal","Overheidsbreed inzicht in kritieke dienstverlening en de digitale bouwstenen, inclusief legacy. Penvoerder Robert Portegies (BZK).","Expliciet geen centraal register in scope. Werksessies 26 augustus, 9 en 16 september, afsluiting 21 september."],
 // ---- Regio ----
-["rsiv","RSIV Den Haag","reg","convenant",["cris","kenn"],"haal","Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag.","Cybercrime is een van de vijf prioriteiten in het regionaal beleidsplan 2023-2026. Alle gemeenten in die politie-eenheid vallen eronder, van de bollenstreek tot de Krimpenerwaard. Invalshoek is openbare orde, dus de aansluiting loopt via OOV, niet via IV. Account aanvragen via rsiv@zoetermeer.nl."],
+["rsv","Regionale samenwerkingsverbanden (categorie)","reg","convenant",["cris","kenn"],"indirect","De categorie waar RSIV Den Haag een voorbeeld van is: regionale samenwerking tussen gemeenten rond integrale veiligheid en cyber, meestal op de schaal van een politie-eenheid (tien landelijk) of een veiligheidsregio (25).","Welke verbanden er precies bestaan, hoe ze heten en welke gemeenten erbuiten vallen is niet centraal in kaart gebracht; dit overzicht werkt er een uit en noemt de categorie als zodanig. Twee gevolgen: een gemeente kan niet nagaan of zij ergens bij hoort zonder het zelf uit te zoeken, en er is geen landelijk beeld van de dekking. Signaal uit de sector, augustus 2026: de dekking is breder dan het ene uitgewerkte verband."],
+["rsiv","RSIV Den Haag","reg","convenant",["cris","kenn"],"haal","Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag. Uitgewerkt voorbeeld van de categorie regionale samenwerkingsverbanden.","Cybercrime is een van de vijf prioriteiten in het regionaal beleidsplan 2023-2026. Alle gemeenten in die politie-eenheid vallen eronder, van de bollenstreek tot de Krimpenerwaard. Invalshoek is openbare orde, dus de aansluiting loopt via OOV, niet via IV. Account aanvragen via rsiv@zoetermeer.nl."],
 ["pvo","PVO Regio Den Haag","reg","convenant",["kenn"],"geen","Platform Veilig Ondernemen, gefinancierd door JenV, bedient dezelfde 27 gemeenten. Doelgroep is het mkb.","De gemeente is medefinancier en partner, niet afnemer. Kanaal om lokale ondernemers te bereiken."],
 ["vrhm","Veiligheidsregio Hollands Midden","reg","vereniging",["cris"],"haal","Gemeenschappelijke regeling van gemeenten. Stelt elke vier jaar risicoprofiel, beleidsplan en crisisplan op.","Opgenomen als voorbeeld van de 25 veiligheidsregio's. Veiligheidsregio's vallen buiten de Cyberbeveiligingswet terwijl gemeenten er wel onder vallen, wat een gat achterlaat op de naad van de crisisorganisatie. De vierjaarlijkse planvorming (risicoprofiel, beleidsplan, crisisplan) is het moment waarop een gemeente de cyberdimensie kan inbrengen."],
 ["hr","Holland Rijnland","reg","vereniging",["inko"],"geen","Regionaal samenwerkingsorgaan van vijftien gemeenten. Geen security-uitvoeringsorganisatie.","Servicepunt71 is per 1 januari 2023 opgeheven en de bedrijfsvoering is overgegaan naar een centrumgemeente-constructie. Zo'n overgang verschuift de Cbw-entiteitsgrens: waar eerder de gemeenschappelijke regeling mogelijk zelfstandig entiteit was, ligt het gewicht daarna bij de gastheergemeente."],
@@ -723,11 +727,11 @@ const D=[
 ["DDoS-bescherming",["nbip","adc","ncsc"],
  "Drie partijen, drie verschillende rollen: NaWas scrubt maar vereist een eigen AS-nummer, de coalitie deelt fingerprints en oefent, het NCSC waarschuwt. Voor een gemeente loopt de scrubbing dus via de provider, en dat is een vraag die zelden gesteld wordt."],
 ["OT-normering",[],
- "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. De VNG noemt dit letterlijk een normatief gat en werkt zelf aan baselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer."],
+ "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. Er is dus geen vastgesteld kader, maar er wordt wel aan gewerkt: IBD en VNG maken objectbaselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer. Tijdpad en vorm (baseline per objecttype of annex op de BIO) zijn nog niet publiek.",["ibd","vng"]],
 ["Landelijke weerbaarheidsmeting gemeenten",[],
  "De Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen landelijk beeld, en ENSIA levert verantwoordingsdata maar geen analyse. Verzwarend: het Samenhangend Inspectiebeeld is in april 2025 voor twee jaar gepauzeerd."],
 ["Ketenregie tussen organisaties",[],
- "De voorzitter van het NDS-aanjaagteam prioriteit 5 zegt zelf dat de kwetsbaarheden vooral in de ketens tussen organisaties zitten. De WRR schreef dat in 2019 al. Versneller 5.4 is de eerste serieuze poging en heeft expliciet geen centraal register in scope."],
+ "De voorzitter van het NDS-aanjaagteam prioriteit 5 zegt zelf dat de kwetsbaarheden vooral in de ketens tussen organisaties zitten. De WRR schreef dat in 2019 al. Niemand belegt de regie, maar versneller 5.4 is de eerste serieuze poging en levert een begrippenkader; een centraal register staat expliciet niet in scope.",["nds54"]],
 ["Opvolging van de OKTT-status",[],
  "De OKTT-status was de wettelijke haak waarmee het NCSC informatie mocht delen buiten Rijk en vitaal. Die vervalt met de Cbw. Connect2Trust, NBIP, Ferm Zeehavens, CWB Brainport en Cyberveilig Nederland hangen eraan, en het CWN-bouwplan stelt vast dat de opvolging nog niet is uitgewerkt."]
 ];
@@ -735,12 +739,12 @@ const D=[
   const max=Math.max(...D.map(d=>d[1].length));
   let h='<div class="bandkop"><div>Concrete dienst</div><div>#</div><div>Wie het levert</div></div>';
   D.forEach(d=>{
-    const n=d[1].length, gap=n===0, hot=n>=5;
+    const n=d[1].length, gap=n===0, hot=n>=5, wip=d[3]||[];
     const w=gap?0:Math.round(n/max*100);
     const bg=gap?'':` style="background:linear-gradient(90deg,rgba(31,78,121,.07) ${w}%,rgba(31,78,121,0) ${w}%)"`;
     h+=`<div class="dr${gap?' gap':''}${hot?' hot':''}">`;
     h+=`<div class="dn">${d[0]}</div><div class="dc">${gap?'✖':n}</div>`;
-    h+=`<div class="dp"${bg}>${gap?'geen enkele partij belegt dit':d[1].map(id=>chip(id)).join('')}</div>`;
+    h+=`<div class="dp"${bg}>${gap?(wip.length?'niets vastgesteld, in ontwikkeling bij '+wip.map(id=>chip(id)).join(''):'geen enkele partij belegt dit'):d[1].map(id=>chip(id)).join('')}</div>`;
     h+=`<div class="dd">${d[2]}</div></div>`;
   });
   document.getElementById('band').innerHTML=h;

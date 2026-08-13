@@ -54,6 +54,8 @@
       ],
       "aantal": 8,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "De goedkoopste functie om op te pakken en de moeilijkste om je op te onderscheiden. Acht aanbieders voor grotendeels dezelfde persoon, die er hooguit twee kan volgen. Zeven van de acht hebben geen wettelijke basis, dus niemand kan hier opruimen."
     },
     {
@@ -68,6 +70,8 @@
       ],
       "aantal": 6,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Het Oldengarm-rapport noemt dit zelf wildgroei. Oefencapaciteit is de schaarste: een gemeente maakt het crisisteam twee tot drie keer per jaar vrij. Zes aanbieders die om dezelfde dagdelen concurreren leveren netto minder geoefende organisaties op, niet meer."
     },
     {
@@ -82,6 +86,8 @@
       ],
       "aantal": 6,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Geen enkele partij heeft hier een wettelijk mandaat. Dat verklaart het meervoud: niemand kon het afdwingen, dus begon iedereen zelf. Bovendien zijn de deelnemerslijsten van GGI-Veilig niet publiek, dus je kunt niet eens zien met wie je zou kunnen bundelen."
     },
     {
@@ -96,6 +102,8 @@
       ],
       "aantal": 6,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Dezelfde onderwerpen worden zes keer uitgeschreven, met verschillende begrippen. De ISMS-handreiking, de thema-uitwerkingen en de syllabi gaan alle drie over BIO2, en het is aan de lezer om te bepalen welke leidend is."
     },
     {
@@ -109,6 +117,8 @@
       ],
       "aantal": 5,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Hier is meervoud geen versnippering maar arbeidsdeling: vier van de vijf hebben een wettelijk mandaat en een eigen domein (baseline, open standaarden, DigiD, rijksopdrachten). De uitzondering is CIP, dat beheert namens BZK en dus afgeleid gezag heeft."
     },
     {
@@ -122,6 +132,8 @@
       ],
       "aantal": 5,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Vier van de vijf zijn voor een gemeente niet toegankelijk: het NDN staat alleen open voor Rijk en vitale sectoren, Cyclotron voor diensten en securityleveranciers, en er is geen gemeente-ISAC. Wat overblijft is wat de IBD doorgeeft."
     },
     {
@@ -135,6 +147,8 @@
       ],
       "aantal": 5,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Vijf stromen over deels dezelfde maatregelen, plus de gemeenteraad en de provincie. ENSIA is in 2017 juist opgericht om dit te bundelen (Single Information, Single Audit) en dat principe is binnen negen jaar weer ondergesneeuwd."
     },
     {
@@ -147,6 +161,8 @@
       ],
       "aantal": 4,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Vier kanalen, dezelfde registratielogica: domeinen, IP-ranges en AS-nummers. Het risico is hier niet de overlap maar het omgekeerde: de IBD laat haar EASM-contract aflopen en kijkt nog hoe haar informatiepositie geborgd blijft. Je kunt tegelijk dubbel bediend en onbediend raken."
     },
     {
@@ -159,6 +175,8 @@
       ],
       "aantal": 4,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Vier meetlatten die elkaar niet kennen: SOC-CMM uit het VSSR, SIM3 van Trusted Introducer, de ENSIA-verantwoording en de gap-analyse van de IBD. Geen enkele daarvan levert een landelijk vergelijkbaar beeld op."
     },
     {
@@ -171,6 +189,8 @@
       ],
       "aantal": 4,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Vier systematieken naast elkaar: de NDS-versneller, de IBD-methodiek voor gemeenten, de TBB-lijn via ABRO en BVA, en de aanpak vitaal. Precies daarom is het eerste product van versneller 5.4 een begrippenkader geworden en geen register."
     },
     {
@@ -182,6 +202,8 @@
       ],
       "aantal": 3,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Drie vertaallagen op hetzelfde kader. De praktijk heeft hier al gekozen zonder dat het stelsel dat heeft geformaliseerd: in de onderzochte gemeentelijke praktijk wordt de BIO2-Excel van CIP intensief gebruikt, terwijl de thema-uitwerkingen en de SIVA-methodiek in de dossiers nergens voorkomen."
     },
     {
@@ -193,6 +215,8 @@
       ],
       "aantal": 3,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "De duurste onopgeloste vraag van het hele overzicht. Het NCSC heeft het wettelijke mandaat maar tijdelijk, de IBD heeft de praktijk en de relaties maar geen aanwijzing, en het NRN is als opschalingsroute feitelijk stil gevallen."
     },
     {
@@ -204,6 +228,8 @@
       ],
       "aantal": 3,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Drie aanbieders plus een commerciele markt, voor een verplichting die per 15 augustus 2028 aantoonbaar moet zijn voor elk collegelid. Hier is overlap minder erg dan elders, want de doelgroep is groot en de capaciteit schaars."
     },
     {
@@ -215,6 +241,8 @@
       ],
       "aantal": 3,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Het Nederlands Security Meldpunt, waar de IBD sinds juni 2023 op aangesloten was, staat sinds april 2024 op non-actief. Artikel 17 Cbw wijst bij AMvB een coordinerend CSIRT aan. Openstaande vraag: via welk kanaal komt een melding na 15 augustus binnen, en wie leest dat?"
     },
     {
@@ -226,6 +254,8 @@
       ],
       "aantal": 3,
       "is_gat": false,
+      "gat_soort": null,
+      "werk_in_uitvoering": [],
       "duiding": "Drie partijen, drie verschillende rollen: NaWas scrubt maar vereist een eigen AS-nummer, de coalitie deelt fingerprints en oefent, het NCSC waarschuwt. Voor een gemeente loopt de scrubbing dus via de provider, en dat is een vraag die zelden gesteld wordt."
     },
     {
@@ -233,13 +263,20 @@
       "partijen": [],
       "aantal": 0,
       "is_gat": true,
-      "duiding": "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. De VNG noemt dit letterlijk een normatief gat en werkt zelf aan baselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer."
+      "gat_soort": "werk_in_uitvoering",
+      "werk_in_uitvoering": [
+        "ibd",
+        "vng"
+      ],
+      "duiding": "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. Er is dus geen vastgesteld kader, maar er wordt wel aan gewerkt: IBD en VNG maken objectbaselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer. Tijdpad en vorm (baseline per objecttype of annex op de BIO) zijn nog niet publiek."
     },
     {
       "dienst": "Landelijke weerbaarheidsmeting gemeenten",
       "partijen": [],
       "aantal": 0,
       "is_gat": true,
+      "gat_soort": "niets_belegd",
+      "werk_in_uitvoering": [],
       "duiding": "De Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen landelijk beeld, en ENSIA levert verantwoordingsdata maar geen analyse. Verzwarend: het Samenhangend Inspectiebeeld is in april 2025 voor twee jaar gepauzeerd."
     },
     {
@@ -247,13 +284,19 @@
       "partijen": [],
       "aantal": 0,
       "is_gat": true,
-      "duiding": "De voorzitter van het NDS-aanjaagteam prioriteit 5 zegt zelf dat de kwetsbaarheden vooral in de ketens tussen organisaties zitten. De WRR schreef dat in 2019 al. Versneller 5.4 is de eerste serieuze poging en heeft expliciet geen centraal register in scope."
+      "gat_soort": "werk_in_uitvoering",
+      "werk_in_uitvoering": [
+        "nds54"
+      ],
+      "duiding": "De voorzitter van het NDS-aanjaagteam prioriteit 5 zegt zelf dat de kwetsbaarheden vooral in de ketens tussen organisaties zitten. De WRR schreef dat in 2019 al. Niemand belegt de regie, maar versneller 5.4 is de eerste serieuze poging en levert een begrippenkader; een centraal register staat expliciet niet in scope."
     },
     {
       "dienst": "Opvolging van de OKTT-status",
       "partijen": [],
       "aantal": 0,
       "is_gat": true,
+      "gat_soort": "niets_belegd",
+      "werk_in_uitvoering": [],
       "duiding": "De OKTT-status was de wettelijke haak waarmee het NCSC informatie mocht delen buiten Rijk en vitaal. Die vervalt met de Cbw. Connect2Trust, NBIP, Ferm Zeehavens, CWB Brainport en Cyberveilig Nederland hangen eraan, en het CWN-bouwplan stelt vast dat de opvolging nog niet is uitgewerkt."
     }
   ]

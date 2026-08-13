@@ -38,7 +38,7 @@
       }
     }
   },
-  "aantal": 82,
+  "aantal": 83,
   "partijen": [
     {
       "id": "enisa",
@@ -314,8 +314,8 @@
         "toez"
       ],
       "toegang_gemeente": "indirect",
-      "omschrijving": "Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.",
-      "toelichting": "Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Bevoegde autoriteit voor de sector overheid is BZK."
+      "omschrijving": "Toezichthouder onder de Cyberbeveiligingswet voor gemeenten en provincies, namens BZK: BZK is de bevoegde autoriteit voor de sector overheid, de RDI voert het toezicht uit. Organiseert dat als interbestuurlijk toezicht: stelselgericht, leunend op ENSIA en BIO.",
+      "toelichting": "Geen wettelijke overgangstermijn: handhaving kan juridisch vanaf dag een. Dat de bevoegdheid bij BZK ligt en de uitvoering bij de RDI is bepalend voor waar een gemeente een vraag of melding kwijt kan."
     },
     {
       "id": "ilt",
@@ -986,6 +986,21 @@
       "toelichting": "Expliciet geen centraal register in scope. Werksessies 26 augustus, 9 en 16 september, afsluiting 21 september."
     },
     {
+      "id": "rsv",
+      "naam": "Regionale samenwerkingsverbanden (categorie)",
+      "laag": "reg",
+      "laag_label": "Regionaal",
+      "mandaat": "convenant",
+      "mandaat_label": "convenant of programma",
+      "functies": [
+        "cris",
+        "kenn"
+      ],
+      "toegang_gemeente": "indirect",
+      "omschrijving": "De categorie waar RSIV Den Haag een voorbeeld van is: regionale samenwerking tussen gemeenten rond integrale veiligheid en cyber, meestal op de schaal van een politie-eenheid (tien landelijk) of een veiligheidsregio (25).",
+      "toelichting": "Welke verbanden er precies bestaan, hoe ze heten en welke gemeenten erbuiten vallen is niet centraal in kaart gebracht; dit overzicht werkt er een uit en noemt de categorie als zodanig. Twee gevolgen: een gemeente kan niet nagaan of zij ergens bij hoort zonder het zelf uit te zoeken, en er is geen landelijk beeld van de dekking. Signaal uit de sector, augustus 2026: de dekking is breder dan het ene uitgewerkte verband."
+    },
+    {
       "id": "rsiv",
       "naam": "RSIV Den Haag",
       "laag": "reg",
@@ -997,7 +1012,7 @@
         "kenn"
       ],
       "toegang_gemeente": "direct",
-      "omschrijving": "Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag.",
+      "omschrijving": "Regionaal Samenwerkingsverband Integrale Veiligheid van 27 gemeenten in politie-eenheid Den Haag, plus OM en politie, onder de vlag Veiligheidscoalitie Den Haag. Uitgewerkt voorbeeld van de categorie regionale samenwerkingsverbanden.",
       "toelichting": "Cybercrime is een van de vijf prioriteiten in het regionaal beleidsplan 2023-2026. Alle gemeenten in die politie-eenheid vallen eronder, van de bollenstreek tot de Krimpenerwaard. Invalshoek is openbare orde, dus de aansluiting loopt via OOV, niet via IV. Account aanvragen via rsiv@zoetermeer.nl."
     },
     {
