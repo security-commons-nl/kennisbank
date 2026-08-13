@@ -351,7 +351,13 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
   <div class="lead">Deze kaart is opgebouwd uit zes parallelle onderzoeksronden, elk over een eigen deel van het
   veld, plus een toets vanuit de dagelijkse praktijk van een gemeentelijke CISO: klopt het beeld met hoe het er van
   binnenuit uitziet. Waar bronnen elkaar tegenspreken is dat hieronder expliciet benoemd in plaats van
-  gladgestreken.</div>
+  gladgestreken.<br><br><b>Scope.</b> Dit gaat over wie de digitale weerbaarheid van de overheid organiseert.
+  <b>Privacy is bewust buiten scope gehouden</b>, ook al doen meerdere partijen hier beide: het meenemen van dat
+  domein vraagt om de toezichthouder, de FG-netwerken en de beroepsorganisaties erbij, en dat maakt er een ander
+  overzicht van. Waar een partij ook een privacytaak heeft, staat dat in de toelichting bij die partij.<br><br>
+  <b>Opgesteld met AI-ondersteuning</b>, met de feiten geverifieerd op de bronnen die per partij vermeld staan.
+  De dataset en de leesbare weergave worden gegenereerd uit één bron, zodat cijfers en tekst niet uit elkaar
+  kunnen lopen.</div>
 
   <h2>Hoe dit is samengesteld</h2>
   <p>Het onderzoek liep in zes parallelle ronden, elk over een eigen deel van het veld, plus een ronde over de
@@ -645,17 +651,18 @@ const chip=(id,extra="")=>{const r=byId[id];if(!r)return"";
     {id:"ggi",l:"GGI-Veilig",s:"inkoopmantel",x:800,y:384,w:130,h:36,c:"#2e7d68"},
     {id:"vrhm",l:"VRHM",s:"buiten de Cbw",x:60,y:384,w:130,h:36,c:"#8b1a1a"},
     {id:"rsiv",l:"RSIV Den Haag",s:"27 gemeenten, OOV",x:250,y:384,w:160,h:36,c:"#a06a2c"},
-    {id:"gem",l:"Gemeente en regio",s:"essentiele entiteit",x:430,y:472,w:220,h:44,c:"#0b6b3a"}
+    {id:"gem",l:"Gemeente en regio",s:"essentiele entiteit",x:390,y:472,w:220,h:44,c:"#0b6b3a"},
+    {id:"gr",l:"Gemeenschappelijke regelingen",s:"eigen entiteit? niet uitgewerkt",x:680,y:472,w:240,h:44,c:"#8b1a1a"}
   ];
   const E=[
     ["eu","jenv","stuurt"],["eu","bzk","stuurt"],
     ["jenv","ncsc","stuurt"],["jenv","rdi","toezicht"],
-    ["bzk","cip","beheer"],["bzk","vng","betaalt"],["bzk","nds","trekt"],
+    ["bzk","cip","beheer"],["bzk","vng","betaalt"],["bzk","nds","trekt"],["bzk","rdi","bevoegd gezag"],
     ["ncsc","ibd","informeert"],["ncsc","c2t","informeert"],["ncsc","gem","CSIRT sinds 15-08"],
     ["cip","vng","normen"],["vng","ibd","eigenaar"],["vng","ensia","beheert"],["vng","ggi","mantel"],
     ["ibd","gem","advies"],["c2t","gem","dreigingsinfo"],["ggi","gem","diensten"],
     ["ensia","gem","verantwoording"],["rdi","gem","toezicht"],["nds","gem","versnellers"],
-    ["vrhm","gem","warme fase"],["rsiv","gem","openbare orde"]
+    ["vrhm","gem","warme fase"],["rsiv","gem","openbare orde"],["gem","gr","taken belegd"]
   ];
   const pos=Object.fromEntries(N.map(n=>[n.id,n]));
   const cx=n=>n.x+n.w/2, cy=n=>n.y+n.h/2;
@@ -727,7 +734,7 @@ const D=[
 ["DDoS-bescherming",["nbip","adc","ncsc"],
  "Drie partijen, drie verschillende rollen: NaWas scrubt maar vereist een eigen AS-nummer, de coalitie deelt fingerprints en oefent, het NCSC waarschuwt. Voor een gemeente loopt de scrubbing dus via de provider, en dat is een vraag die zelden gesteld wordt."],
 ["OT-normering",[],
- "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. Er is dus geen vastgesteld kader, maar er wordt wel aan gewerkt: IBD en VNG maken objectbaselines voor de 23 meest voorkomende OT-objecten. Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer. Tijdpad en vorm (baseline per objecttype of annex op de BIO) zijn nog niet publiek.",["ibd","vng"]],
+ "CSIR 3.0 is niet verplicht gesteld, terecht want disproportioneel, en ISO 27001, 27002 en BIO2 zijn te generiek voor procesautomatisering. Er is dus geen vastgesteld kader, maar er wordt wel aan gewerkt: een expertgroep OT voor gemeenten, getrokken vanuit de IBD, heeft een opzet voor objectbaselines in review liggen voor de 23 meest voorkomende OT-objecten. Duidelijkheid wordt verwacht rond eind september 2026 (opgave van de trekkers, augustus 2026). Raakt gemalen, bruggen, sluizen, verkeersregelinstallaties en gebouwbeheer.",["ibd","vng"]],
 ["Landelijke weerbaarheidsmeting gemeenten",[],
  "De Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen landelijk beeld, en ENSIA levert verantwoordingsdata maar geen analyse. Verzwarend: het Samenhangend Inspectiebeeld is in april 2025 voor twee jaar gepauzeerd."],
 ["Ketenregie tussen organisaties",[],
