@@ -17,6 +17,14 @@ van designated clubs als de IBD tot publiek-private platforms, plus de Europese 
 > samenwerkingsverbanden** zijn als categorie opgenomen, met RSIV Den Haag als uitgewerkt voorbeeld,
 > omdat er landelijk meer van zulke verbanden bestaan dan dat ene. Wat nog ontbreekt is het landelijke
 > beeld: welke verbanden er zijn en welke gemeenten erbuiten vallen.
+>
+> **Tweede ronde, dezelfde dag, na doorvragen op de plaat zelf.** De relatiegraaf miste een lijn van **BZK
+> naar de RDI**, terwijl de tekst al zei dat BZK bevoegd gezag is en de RDI het toezicht uitvoert; die staat
+> er nu in. **Gemeenschappelijke regelingen** ontbraken volledig als entiteitstype en staan nu als eigen blok
+> naast gemeente en regio, met hun Cbw-status als open vraag: een GR met eigen rechtspersoonlijkheid kan zelf
+> entiteit zijn, maar dat is nergens uitgewerkt terwijl een groot deel van de gemeentelijke uitvoering er zit.
+> **Privacy is bewust buiten scope gehouden**, ook al doen meerdere partijen hier beide; dat staat nu expliciet
+> in de verantwoording in plaats van dat het onbenoemd ontbreekt.
 
 ## Waarom dit bestaat
 
@@ -73,9 +81,10 @@ wordt overlap hard aanwijsbaar, en worden de gaten zichtbaar.
 gemeenten (de Algemene Rekenkamer heeft geen mandaat over gemeenten, lokale rekenkamers leveren geen
 landelijk beeld, ENSIA levert data maar geen analyse) en de opvolging van de OKTT-status (vervalt met de
 Cbw, opvolging niet uitgewerkt). Waar geen kader is vastgesteld maar wel aan gewerkt wordt: **OT-normering**
-(IBD en VNG maken objectbaselines voor de 23 meest voorkomende OT-objecten; tijdpad en vorm nog niet
-publiek) en **ketenregie tussen organisaties** (NDS-versneller 5.4 levert een begrippenkader, een centraal
-register staat expliciet niet in scope).
+(een expertgroep OT voor gemeenten vanuit de IBD heeft een opzet voor objectbaselines voor de 23 meest
+voorkomende OT-objecten in review; duidelijkheid verwacht rond eind september 2026) en **ketenregie tussen
+organisaties** (NDS-versneller 5.4 levert een begrippenkader, een centraal register staat expliciet niet in
+scope).
 
 Dat onderscheid is er sinds 13 augustus 2026 en het is geen detail: een nul in een tabel leest als "niemand
 doet iets", en dat deed het werk van anderen tekort.
