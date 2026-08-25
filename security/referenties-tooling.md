@@ -18,6 +18,30 @@ architectuurdiagrammen plus documentatie van risico's, zonder externe diensten o
 MIT-licentie. Laagdrempelig alternatief voor zwaardere threat-modeling-suites; sluit aan op de
 commons-principes (open source, geen cloud-afhankelijkheid, auditbaar).
 
+## FinalRecon · web-reconnaissance in één CLI
+
+Open-source Python-CLI die losse recon-stappen bundelt achter één target-URL: HTTP- en security-headers,
+WHOIS met domeinverloopdatum, SSL-certificaatinformatie, ruim veertig DNS-recordtypes, subdomeinen uit
+vijftien bronnen, interne en externe links, JavaScript, images, `robots.txt` en sitemaps, directory- en
+file-enumeratie, de top duizend poorten, en URL's uit de Wayback Machine. De poster claimt dat het tot
+50.000 historische URL's ophaalt en die triageert op wat de moeite van het bekijken waard is.
+
+**Verhouding tot SCOPTIX hieronder.** Beide komen via Meisam Eslahi (LinkedIn) en beide doen passieve
+verkenning, maar ze zitten op een ander niveau. SCOPTIX is een zelf-hostbare webapplicatie met
+asset-categorisatie en scan-vergelijking, gericht op doorlopend beheer van het aanvalsoppervlak. FinalRecon
+is een losse CLI voor één doelwit op één moment: sneller in te zetten, geen state, geen historie. Voor CTEM
+is SCOPTIX de logische keus; FinalRecon past bij een gerichte eenmalige verkenning of als tweede bron naast
+een bestaande scan.
+
+⚠️ **Twee dingen om te wegen.** Het gaat verder dan passief: directory- en file-enumeratie en een
+poortscan raken het doelwit actief, dus dit hoort alleen ingezet te worden met aantoonbare autorisatie.
+En de subdomein- en Wayback-bronnen zijn externe diensten, dus dezelfde soevereiniteitsweging geldt als
+bij SCOPTIX.
+
+Gevonden 10-08-2026 via een LinkedIn-post van Meisam Eslahi. De post verwees door via een verkorte
+`lnkd.in`-link die niet is geresolved, dus **de repo-URL is nog niet geverifieerd**; controleer die vóór
+gebruik.
+
 ## SCOPTIX · github.com/Omnitarium/scoptix
 
 Passieve-reconnaissance- en exposure-discovery-tool (Apache-2.0, TypeScript/Next.js, zelf-hostbaar via
