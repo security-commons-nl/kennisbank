@@ -2,6 +2,8 @@
 
 Werkende kennis uit de publieke sector — security, privacy, continuïteit en alles wat er tussen zit.
 
+> **Lees de kennisbank online:** [security-commons-nl.github.io/kennisbank](https://security-commons-nl.github.io/kennisbank/)
+
 [![Bijdragen](https://img.shields.io/badge/📝_Bijdragen-238636?style=for-the-badge)](../../issues/new/choose)&nbsp;&nbsp;&nbsp;&nbsp;[![Meepraten](https://img.shields.io/badge/💬_Meepraten-0969da?style=for-the-badge)](../../discussions)
 
 👉 **Iets delen, feedback geven of een vraag stellen?** Klik op een van de knoppen hierboven — geen Git-ervaring nodig. Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor meer opties.
