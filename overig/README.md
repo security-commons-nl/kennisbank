@@ -6,6 +6,7 @@ Kennis die niet specifiek onder security, privacy of BCM valt, maar wel waardevo
 
 - Aanbestedingstips en ervaringen
 - Governance-aanpakken
+- Beleidsstukken die niet onder security, privacy of BCM vallen (zie [beleid/](beleid/)), zoals AI-beleid
 - Managementrapportages
 - Bestuurlijke presentaties
 - Wet- en regelgeving

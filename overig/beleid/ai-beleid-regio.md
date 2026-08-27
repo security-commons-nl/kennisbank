@@ -1,0 +1,1091 @@
+# AI-beleid DE REGIO
+
+> **Geanonimiseerd voorbeelddocument.** Organisatienamen, rolhouders, procesnamen en contactgegevens
+> zijn vervangen door placeholders in hoofdletters (`DE REGIO`, `VOORBEELDGEMEENTE`, `GEMEENTE B` tot en
+> met `GEMEENTE D`). Het stuk is bedoeld om hergebruikt te worden: zoek de placeholders op en vul je
+> eigen organisatie in. Zie het
+> [README](https://github.com/security-commons-nl/kennisbank/tree/main/overig/beleid) voor de herkomst
+> en de vertaalsleutel.
+
+| | |
+|---|---|
+| **Organisaties** | VOORBEELDGEMEENTE, GEMEENTE B, GEMEENTE C en GEMEENTE D, hierna samen: DE REGIO |
+| **Versie** | 1.0 |
+| **Status** | Concept |
+| **Versiedatum** | VASTSTELLINGSDATUM |
+| **Eigenaar, ambtelijk** | Gemeentesecretaris |
+| **Eigenaar, bestuurlijk** | College van burgemeester en wethouders |
+
+## Versiebeheer
+
+| Versie | Beschrijving |
+|---|---|
+| 0.6 | Input verzameld in werksessies |
+| 0.7 | Verzamelde informatie omgezet in conceptbeleid |
+| 0.8 | Opmerkingen externe adviseur en deelnemers werksessie |
+| 0.9 | Opmerkingen verwerkt |
+| 1.0 | Concept ter vaststelling |
+
+---
+
+## 1. Inleiding
+
+Dit beleid heeft betrekking op het ontwerp, de ontwikkeling en het gebruik van kunstmatige intelligentie
+door de organisaties van DE REGIO en haar medewerkers. DE REGIO omvat de gemeenten VOORBEELDGEMEENTE,
+GEMEENTE B, GEMEENTE C en GEMEENTE D, hierna samen te noemen de regio.
+
+In DE REGIO praten we over AI, een afkorting van de Engelse term voor kunstmatige intelligentie:
+Artificial Intelligence. Dit hoofdstuk beschrijft waarom dit beleid er is, voor wie het geldt, hoe het
+zich verhoudt tot bestaand beleid, en welke uitgangspunten DE REGIO hanteert. Alle overige hoofdstukken
+vloeien voort uit de kaders die hier worden gesteld.
+
+Het AI-beleid is opgesteld voor de organisaties in DE REGIO. Daarin zit ook ruimte om lokale afwegingen
+te maken wat betreft de hoofdstukken 2, 6, 7 en 8. Bijvoorbeeld: VOORBEELDGEMEENTE heeft een bepaalde
+visie op dienstverlening, waar GEMEENTE C een andere invulling aan geeft. Dat kan voor VOORBEELDGEMEENTE
+leiden tot een andere lokale afweging of uitvoering. Dat geldt ook voor de maatschappelijke opgaven die
+per organisatie kunnen verschillen, evenals de duurzaamheidsambities. Die kunnen invloed hebben op de
+keuzes die gemaakt worden voor bepaalde AI-toepassingen.
+
+Naast dit beleid wordt ook een plan van aanpak opgesteld. Daarin is opgenomen welke stappen DE REGIO nog
+moet ondernemen om volgens dit AI-beleid te werken.
+
+### 1.1 Aanleiding en doel
+
+AI ontwikkelt zich in hoog tempo en heeft steeds meer impact op het werk in DE REGIO. Medewerkers
+gebruiken AI-systemen in hun dagelijks werk en de behoefte aan duidelijke kaders groeit. Begin 2024 heeft
+DE REGIO een handreiking AI uitgebracht. Deze handreiking bood een eerste oriëntatie, maar de organisatie
+heeft behoefte aan concretere afspraken.
+
+DE REGIO wil daarom meer houvast bieden aan de organisatie en haar medewerkers, zodat zij verantwoord en
+effectief gebruik kunnen maken van AI. Dit beleid biedt dat houvast en geeft de organisatie voldoende
+grip om zich verder te kunnen ontwikkelen.
+
+Het doel van dit beleid is drieledig:
+
+- **Duidelijkheid scheppen** voor medewerkers, leidinggevenden en bestuur over hoe de regio omgaat met AI.
+- **Een concreet handelingsperspectief bieden**: medewerkers weten wat zij met AI kunnen en mogen doen,
+  waar zij terecht kunnen met vragen, en welke verantwoordelijkheden zij hebben.
+- **Verantwoording mogelijk maken** richting bestuur, inwoners en toezichthouders over de wijze waarop
+  DE REGIO AI inzet.
+
+De ontwikkelingen rondom AI gaan erg snel. Dit beleid biedt daarom ook ruimte om te experimenteren en te
+leren, mits dat verantwoord en effectief gebeurt. DE REGIO ziet het als goed werkgeverschap om
+medewerkers actief mee te nemen in de ontwikkelingen rondom AI. DE REGIO wil daarbij zoveel mogelijk
+aansluiten op landelijke initiatieven, zoals de Nederlandse Digitaliseringsstrategie (NDS) en de
+initiatieven vanuit de Vereniging van Nederlandse Gemeenten (VNG).
+
+### 1.2 Definities
+
+Voor dit beleid worden de volgende definities gehanteerd, in lijn met landelijke en Europese standaarden.
+
+**AI-systeem (conform de AI Act)**
+: Een op een machine gebaseerd systeem dat is ontworpen om met verschillende niveaus van autonomie te
+werken en dat na inzet aanpassingsvermogen kan vertonen, en dat voor expliciete of impliciete
+doelstellingen uit ontvangen input afleidt hoe output te genereren zoals voorspellingen, inhoud,
+aanbevelingen of beslissingen die van invloed kunnen zijn op fysieke of virtuele omgevingen.
+
+**Algoritme (conform de Algemene Rekenkamer)**
+: Sets van regels en instructies die een computer geautomatiseerd volgt bij het maken van berekeningen om
+een probleem op te lossen of een vraag te beantwoorden.
+
+Naast deze twee definities is in bijlage 2 een begrippenlijst opgenomen.
+
+### 1.3 Doelgroep en reikwijdte
+
+Dit AI-beleid geldt voor alle onderdelen van de organisatie van DE REGIO. De doelgroep omvat alle
+medewerkers, inclusief externen en inhuur.
+
+Het beleid is ook relevant voor AI-systemen die gericht zijn op inwoners. Hiervoor gelden aanvullende
+eisen, met name op het gebied van transparantie. Dit is verder uitgewerkt in hoofdstuk 7.
+
+Het beleid is van toepassing op alle vormen van AI-gebruik, zowel generatieve AI (zoals taalmodellen) als
+klassieke AI-systemen (zoals machine learning en patroonherkenning). DE REGIO kiest er bewust voor om de
+scope breed te houden. Daarom is het beleid van toepassing op beide vormen.
+
+### 1.4 Relatie met bestaand regionaal beleid
+
+Het AI-beleid staat niet op zichzelf, maar sluit aan op bestaande regionale beleidskaders binnen
+DE REGIO. De belangrijkste beleidskaders waarmee dit AI-beleid samenhangt zijn: het privacybeleid, het
+informatiebeveiligingsbeleid, de architectuurprincipes en het ondertekende Manifest Maatschappelijk
+Verantwoord Opdrachtgeven en Inkopen (MVOI).
+
+### 1.5 Uitgangspunten en principes
+
+Bij de toepassing van dit AI-beleid zijn de volgende uitgangspunten leidend:
+
+- **Verantwoord en effectief.** AI wordt ingezet op een manier die uitlegbaar, doelmatig en ethisch
+  verantwoord is en bijdraagt aan de doelen van de organisatie.
+- **Mensgerichte aanpak.** Het beleid is geschreven vanuit het perspectief van de medewerker. Het biedt
+  houvast en vertrouwen, niet alleen regels en beperkingen.
+- **Flexibiliteit en leren.** AI-ontwikkelingen gaan snel. Het beleid kent een gelaagde opzet: een stabiel
+  algemeen kader dat door het college wordt vastgesteld, en daaronder uitwerkingen die flexibeler kunnen
+  worden aangepast. De governance is gericht op de leercurve. Dat wil zeggen dat de governance de
+  leercurve ondersteunt door ruimte te bieden om te experimenteren en actief te sturen op reflectie en
+  kennisdelen, zonder telkens toestemming te halen in de hiërarchie van besluitvorming. De organisatie
+  leert hierdoor stap voor stap wat werkt en wat niet, en past haar werkwijze daarop aan.
+- **Dienstverlening en maatschappelijke opgaven.** De inzet van AI wordt gestuurd vanuit de visie op
+  dienstverlening aan inwoners en ondernemers en vanuit de maatschappelijke opgaven van de verschillende
+  organisaties van DE REGIO.
+- **Transparantie.** DE REGIO is open over haar AI-gebruik, zowel intern als extern. Ervaringen en
+  besluiten worden vastgelegd zodat de organisatie ervan kan leren.
+
+### 1.6 Beleidsstatus, evaluatie en uitzonderingen
+
+Dit AI-beleid is bindend voor de hele regio en geeft richting aan hoe we werken met AI. Afwijken is in
+beginsel niet toegestaan. Afwijken kan alleen in uitzonderlijke situaties en in overleg met de
+AI-compliance officer, zodat de juiste afwegingen plaatsvinden.
+
+Het beleid wordt jaarlijks geëvalueerd en indien nodig aangepast. Omdat AI zich voortdurend en snel
+ontwikkelt, kunnen we ook tussentijds bijsturen. Het algemene kader blijft daarbij relatief stabiel,
+terwijl de afspraken over de uitvoering bewust flexibel zijn. De CIO kan binnen bestaande procedures
+wijzigingen doorvoeren, zodat niet elke aanpassing het volledige bestuurlijke besluitvormingsproces hoeft
+te doorlopen.
+
+### 1.7 Vragen over AI en dit beleid
+
+Verzoeken tot inzet van AI-systemen en wensen op dit vlak verlopen via het portfolioproces. Het
+portfolioproces staat voor multidisciplinair samenwerken: een informatiemanager bespreekt en prioriteert
+samen met het cluster een verzoek of wens. Voor overige vragen over AI en dit beleid kun je mailen naar
+AI@REGIO.nl.
+
+### 1.8 Leeswijzer
+
+In dit beleid wordt een raamwerk geschetst dat de inzet van AI binnen DE REGIO zowel veilig als
+verantwoord maakt. De kernprincipes (mensgerichtheid, non-discriminatie, transparantie, duurzaamheid en
+soevereiniteit) worden in hoofdstuk 2 uiteengezet. De juridische context, waaronder relevante wet- en
+regelgeving zoals de AI Act, is beschreven in hoofdstuk 3. Hoofdstuk 4 beschrijft governancestructuren,
+rollen en verantwoordelijkheden. Het uitvoeren van risicoanalyses, monitoring en incidentmanagement wordt
+in hoofdstuk 5 uitgewerkt. De praktische toepassing van AI, inclusief toegestaan en verboden gebruik,
+datakwaliteit en de gebruikte tools, staat in hoofdstuk 6. Hoofdstuk 7 gaat dieper in op zowel externe
+als interne transparantie en de vereiste documentatie in het algoritmeregister. Tot slot biedt
+hoofdstuk 8 handvatten voor AI-geletterdheid, opleiding en de culturele transitie die nodig is om AI op
+een verantwoorde manier in te zetten.
+
+---
+
+## 2. Waarden
+
+Niet alles wat technisch mogelijk is met AI, is ook wenselijk. Dit hoofdstuk beschrijft de waarden die
+richting geven aan alle AI-keuzes van DE REGIO. Het fungeert als moreel en maatschappelijk kompas.
+Waarden zijn in dit beleid de overtuigingen en principes die bepalen wat DE REGIO nastreeft en hoe zij
+handelt.
+
+De vijf waarden die dit beleid raken zijn:
+
+- Mensgerichtheid en menselijke autonomie (2.1)
+- Gelijkwaardigheid, non-discriminatie en inclusie (2.2)
+- Transparantie en uitlegbaarheid (2.3)
+- Duurzaamheid en maatschappelijke verantwoordelijkheid (2.4)
+- Soevereiniteit en democratische waarden (2.5)
+
+In paragraaf 2.6 wordt toegelicht hoe DE REGIO hier in de praktijk mee omgaat.
+
+### 2.1 Mensgerichtheid en menselijke autonomie
+
+De mens staat centraal bij de inzet van AI, zowel de inwoner als de medewerker. AI is een hulpmiddel dat
+mensen ondersteunt, maar nooit het doel of de beslissing op zich. Dit uitgangspunt raakt direct aan de
+beginselen van behoorlijk bestuur uit de Algemene wet bestuursrecht (zie hoofdstuk 3) en aan het
+privacybeleid. Daarin is vastgelegd dat DE REGIO nooit volledig geautomatiseerde besluiten neemt die
+gericht zijn op mensen. Dit betekent dat bij besluitmomenten met impact op inwoners of medewerkers
+menselijke tussenkomst verplicht is (human-in-the-loop). Inwoners moeten altijd een menselijk contact
+kunnen leggen met de organisaties van DE REGIO; AI mag dat contact niet volledig vervangen.
+
+Medewerkers moeten in staat worden gesteld om kritisch te kijken naar AI-uitkomsten en deze te beoordelen
+op basis van hun eigen vakkennis. De mens blijft de expert, AI ondersteunt. Medewerkers betrekken indien
+nodig collega's met vakkennis. Uitgangspunt is dat DE REGIO altijd kan uitleggen hoe besluiten tot stand
+zijn gekomen en dat de autonomie van de mens over dat proces wordt geborgd.
+
+De inzet van AI raakt ook aan werkzekerheid en de positie van medewerkers. DE REGIO stelt sociaal
+werkgeverschap centraal en borgt het vakmanschap en de vakkennis van haar medewerkers. HR en de
+ondernemingsraad worden actief betrokken bij het in kaart brengen van effecten op werk en werkzekerheid.
+
+### 2.2 Gelijkwaardigheid, non-discriminatie en inclusie
+
+Het gebruik van AI mag niet leiden tot directe of indirecte discriminatie of ongelijkwaardigheid. Dit is
+onderdeel van het ondertekende MVOI-manifest.
+
+Om bias en discriminatie te voorkomen zet de organisatie in op meerdere sporen:
+
+1. **Kennis en bewustwording.** Medewerkers moeten weten wat bias is, hoe het in AI-systemen kan ontstaan,
+   en hoe het herkend kan worden. Het opleiden van personeel wordt verder uitgewerkt in hoofdstuk 8.
+2. **Expertise betrekken.** Medewerkers met expertise worden betrokken bij het ontwerp en de toetsing van
+   AI-systemen. Zo wordt een ethische dialoogtafel ingericht. Dit is verder uitgewerkt in hoofdstuk 4 over
+   de governance.
+3. **Risicoanalyses.** Indien nodig worden risicoanalyses uitgevoerd zoals beschreven in hoofdstuk 5. AI
+   wordt niet ingezet bij processen en beslismomenten waarin DE REGIO een hoog risico op discriminatie en
+   bias heeft vastgesteld dat niet kan worden weggenomen door het nemen van maatregelen.
+4. **Inkoop.** Inkoop van AI wordt volgens de MVOI-richtlijn gedaan, waarin aandacht wordt besteed aan
+   inclusiviteit.
+
+### 2.3 Transparantie en uitlegbaarheid
+
+Transparantie is essentieel voor het vertrouwen van inwoners in de overheid. Het uitgangspunt is: zo
+transparant en open mogelijk over de inzet en ontwikkeling van AI binnen DE REGIO en over de
+onzekerheden door de snelle ontwikkelingen. Hoe meer transparantie er in de processen bestaat, hoe meer
+de organisatie kan leren van de feedback van inwoners en van medewerkers onderling. Transparantie is
+daarmee niet alleen een verantwoordingsplicht, maar ook een leermiddel, in lijn met het leerprincipe uit
+hoofdstuk 1.
+
+Tegelijkertijd moet transparantie over AI-inzet zelf geen nieuwe risico's creëren. Informatie over de
+werking van AI-systemen kan relevant zijn vanuit een cybersecurityperspectief. De afweging tussen
+openheid en veiligheid wordt per toepassing gemaakt. Deze afweging wordt verder uitgewerkt en meegenomen
+in het governancemodel. Hoe DE REGIO omgaat met transparantie en uitlegbaarheid is verder uitgewerkt in
+hoofdstuk 7.
+
+De controleerbaarheid van het overheidshandelen en de uitlegbaarheid van besluiten vormen samen met
+transparantie de kern van deze waarde. Dit sluit direct aan op de juridische verplichtingen uit de
+Algemene wet bestuursrecht en de Wet open overheid. DE REGIO moet altijd kunnen uitleggen hoe een besluit
+tot stand is gekomen, dus ook als AI daarbij heeft ondersteund.
+
+### 2.4 Duurzaamheid en maatschappelijke verantwoordelijkheid
+
+DE REGIO werkt aan een duurzame toekomst, in lijn met het Klimaatakkoord van Parijs (2016), de
+Sustainable Development Goals, het MVOI-manifest en de eigen duurzaamheidsambities. De inzet van AI heeft
+impact op deze doelstellingen: het trainen en gebruiken van AI-modellen gaat gepaard met energieverbruik,
+waterverbruik, grondstoffengebruik en CO2-uitstoot.
+
+Daarom wordt duurzaamheid meegenomen in de afweging bij nieuwe AI-systemen. Het streven is om AI-systemen
+te gebruiken die transparant zijn opgebouwd en bijdragen aan de duurzaamheidsdoelen van de organisatie.
+Omdat inzichten en meetmethoden zich nog ontwikkelen, groeit de organisatie hierin stapsgewijs mee.
+DE REGIO houdt rekening met welk model wordt gebruikt, of dat in verhouding staat tot het doel waarvoor
+het wordt gebruikt, en of er een vorm van compensatie van de milieu-impact mogelijk is. Waar mogelijk
+wordt de milieu-impact gemeten en gemonitord. Dat doen we in ieder geval bij eigen lokale taalmodellen.
+
+De duurzaamheidswaarde heeft ook een opleidingscomponent. Medewerkers moeten zich bewust zijn van de
+milieu-impact van AI en weten hoe zij AI zo duurzaam mogelijk kunnen gebruiken. Dit gaat onder meer over:
+
+- Bewust een keuze maken of de inzet van AI nodig is bij het te bereiken doel. Bijvoorbeeld of het
+  gebruiken van een reguliere zoekmachine ook mogelijk is voor het beantwoorden van een simpele vraag in
+  plaats van het gebruiken van AI.
+- Het schrijven van goede, doelgerichte prompts, zodat er niet onnodig veel vragen worden gesteld.
+- Het vermijden van onnodig genereren van afbeeldingen en video's.
+
+De concrete uitwerking hiervan wordt opgenomen in het opleidingsprogramma zoals beschreven in hoofdstuk 8.
+
+### 2.5 Soevereiniteit en democratische waarden
+
+DE REGIO wil zelf de regie houden over haar eigen gegevens en digitale systemen. Dat noemen we
+soevereiniteit. Daarnaast is het belangrijk dat AI de democratie ondersteunt en niet verzwakt. Dit
+betekent:
+
+- Bij de keuze voor AI-systemen en leveranciers beoordeelt de organisatie in hoeverre zij de regie
+  behoudt. DE REGIO beperkt waar mogelijk de afhankelijkheid van grote internationale aanbieders en geeft
+  voorkeur aan oplossingen die voldoen aan Europese normen voor gegevensopslag en -verwerking. Gegevens
+  worden opgeslagen binnen de Europese Economische Ruimte (EER). Dit sluit aan bij de kaders van de
+  Nederlandse Digitaliseringsstrategie (NDS).
+- In contracten en aanbestedingen worden afspraken gemaakt over wat er gebeurt bij het beëindigen van een
+  contract. Daarbij worden de standaard inkoopvoorwaarden (GIBIT) gebruikt. Als een samenwerking stopt,
+  moet de leverancier alle gegevens veilig en in een bruikbaar formaat teruggeven. Hierdoor zorgen we
+  ervoor dat we niet te afhankelijk worden van een leverancier (vendor lock-in) en dat we altijd kunnen
+  overstappen naar alternatieve oplossingen. Voor kritieke processen wordt daarnaast een fallbackscenario
+  vastgelegd: als een AI-systeem uitvalt, moet het werkproces door kunnen gaan.
+- AI neemt nooit een beslissing voor een bestuurder die democratisch gekozen of aangesteld is. Dat wil
+  zeggen dat besluiten die inwoners raken de verantwoordelijkheid van het college en de raad blijven. AI
+  kan helpen met het verzamelen van informatie, maar een mens controleert dit altijd en neemt altijd de
+  uiteindelijke beslissing.
+
+### 2.6 Toepassing in de praktijk
+
+#### Beoordeling van de waarden voorafgaand aan implementatie van een AI-systeem
+
+Waarden hebben alleen betekenis als zij worden toegepast. Om te voorkomen dat de waarden uit dit
+hoofdstuk abstract blijven, worden zij gekoppeld aan een verplicht beslismoment. Ieder AI-systeem dat via
+de intakeprocedure wordt ingebracht, moet langs een vaste set vragen voordat het project start. Daarnaast
+wordt een ethische dialoogtafel ingericht om het gesprek te voeren over de genoemde waarden uit dit
+beleid. Zo wordt geborgd dat deze waarden al in de eerste fase worden meegewogen.
+
+Als tijdens de ethische dialoogtafel blijkt dat de beoogde AI-inzet in strijd is met deze waarden, kan de
+beslissing worden genomen om de inzet niet door te zetten, ook al zou de AI technisch en financieel
+haalbaar zijn. Deze beslissing wordt, volgens het governancemodel, genomen door de proceseigenaar. De
+ethische dialoogtafel is daarbij adviserend.
+
+#### Tegenstrijdige waarden
+
+Bij de inzet van AI kunnen waarden met elkaar botsen. Efficiëntie kan op gespannen voet staan met
+zorgvuldigheid, transparantie met veiligheid, duurzaamheid met kwaliteit. Bij elk nieuw AI-systeem
+beschrijven we welke waarden met elkaar in conflict zijn. Dit zorgt ervoor dat niemand deze spanningen
+over het hoofd ziet en iedereen ervan op de hoogte is. Daarbij wordt gemotiveerd welke afweging is
+gemaakt en waarom. Deze motivering wordt onderdeel van de besluitvorming en wordt vastgelegd, zodat de
+organisatie ervan kan leren.
+
+#### Periodieke waardentoetsing
+
+Na implementatie monitoren we AI-systemen en voeren we periodiek, minimaal jaarlijks, een evaluatie uit.
+Daarin beoordelen we of de toepassing nog steeds aansluit bij de waarden uit dit beleid. Dit wordt verder
+uitgewerkt in het governancemodel.
+
+---
+
+## 3. Juridische kaders
+
+Dit hoofdstuk beschrijft de juridische kaders die van toepassing zijn op het gebruik van AI binnen
+DE REGIO. Het uitgangspunt is helder: AI wordt altijd ingezet in overeenstemming met de geldende wet- en
+regelgeving. Dit hoofdstuk is daarom bewust compact gehouden. Het doel is niet om elke wet uitputtend te
+beschrijven, maar om de belangrijkste kaders te benoemen.
+
+In dit hoofdstuk wordt beschreven:
+
+- Welke wetten van toepassing zijn (3.1)
+- Verplichtingen uit de AI Act (3.2)
+
+### 3.1 Welke wetten zijn van toepassing?
+
+De volgende wet- en regelgeving is relevant voor het AI-beleid van DE REGIO:
+
+- de AI Act (Europese AI-verordening)
+- de Algemene verordening gegevensbescherming (AVG)
+- de NIS2-richtlijn (cybersecurity); daarbij geldt het informatiebeveiligingsbeleid van de regio
+- de Algemene wet bestuursrecht (Awb)
+- de Archiefwet
+- de Wet open overheid
+- de regels rondom auteursrecht en intellectueel eigendom
+
+We lichten er drie kort toe:
+
+1. **AVG.** Hier geldt één hard uitgangspunt: DE REGIO deelt geen persoonsgegevens met
+   niet-geautoriseerde AI-systemen. Er komt een AI-register met geautoriseerde AI-systemen. Het
+   privacybeleid van DE REGIO bevat al een hoofdstuk over de samenloop van persoonsgegevens en AI, waarin
+   de nadere regels zijn uitgewerkt.
+2. **Awb.** De beginselen van behoorlijk bestuur, zoals zorgvuldigheid, motivering en uitlegbaarheid,
+   zijn onverkort van toepassing wanneer AI wordt ingezet bij besluitvorming die inwoners raakt.
+3. **Auteursrecht.** Bij de output van AI-systemen kan sprake zijn van schending van auteursrechten.
+   Auteursrecht is een onderdeel van intellectueel eigendom en beschermt het werk van makers van teksten,
+   afbeeldingen en andere content. Feitelijk mag je dit werk niet zonder toestemming van de maker
+   gebruiken. DE REGIO hanteert een duidelijk uitgangspunt: medewerkers die AI gebruiken om content te
+   genereren, controleren of de output geen inbreuk maakt op auteursrechten. Dit betekent in de praktijk
+   dat medewerkers de bronnen van AI-gegenereerde content verifiëren en de output in eigen woorden
+   herformuleren, zodat het resultaat een eigen creatieve bijdrage is. De praktische uitwerking en tips
+   zijn opgenomen in de handreiking AI.
+
+### 3.2 Verplichtingen AI Act
+
+De AI Act is de Europese verordening die het juridisch kader vormt voor de ontwikkeling, het op de markt
+brengen en het gebruik van AI-systemen binnen de Europese Unie. Daarom lichten we deze in een aparte
+paragraaf verder toe.
+
+De kern van de verordening is een risicogebaseerde benadering: hoe groter het risico van een AI-systeem
+voor fundamentele rechten, veiligheid of maatschappelijke belangen, hoe zwaarder de wettelijke
+verplichtingen.
+
+De AI Act onderscheidt vier risicocategorieën:
+
+| Categorie | Wat het betekent |
+|---|---|
+| **Onaanvaardbaar risico** (verboden AI-praktijken) | AI-systemen die een onaanvaardbaar risico vormen voor fundamentele rechten of veiligheid zijn verboden. Denk aan social scoring door de overheid of het inzetten van manipulatieve technieken die het gedrag van mensen wezenlijk verstoren. |
+| **Hoog risico** | Toegestaan, maar onderworpen aan strikte eisen. Het betreft onder meer de inzet van AI bij het evalueren van sollicitaties of het bepalen of iemand in aanmerking komt voor essentiële publieke diensten, zoals een uitkering. Bij de inzet van hoog-risico-AI-systemen komen veel verplichtingen kijken. De verplichtingen voor DE REGIO bij hoog-risico-AI worden uitgewerkt in een apart onderliggend document, niet in dit beleid. |
+| **Beperkt risico** (transparantieverplichtingen) | Hiervoor gelden met name transparantieverplichtingen. Gebruikers moeten worden geïnformeerd dat zij met een AI-systeem communiceren (bijvoorbeeld met een chatbot) en AI-gegenereerde content moet als zodanig herkenbaar zijn. |
+| **Minimaal risico** | AI-systemen die niet in een van de bovenstaande categorieën vallen, worden niet gereguleerd vanuit de AI Act. Denk aan het gebruik van AI als spamfilter. |
+
+#### AI-geletterdheid
+
+Een belangrijke verplichting uit de AI Act is het bevorderen van AI-geletterdheid. Dit houdt in dat alle
+medewerkers die in DE REGIO werken met AI voldoende kennis en inzicht moeten hebben om verantwoord
+gebruik te kunnen maken van deze technologie. DE REGIO definieert wat AI-geletterdheid concreet inhoudt
+voor de eigen organisatie. De nadere invulling hiervan staat in hoofdstuk 8.
+
+---
+
+## 4. Governance, rollen en organisatorische inrichting
+
+Dit hoofdstuk beschrijft hoe DE REGIO de verantwoordelijkheden voor AI belegt in de organisatie. Het doel
+is helder: op elk niveau, van medewerker tot bestuurder, moet duidelijk zijn wie waarvoor
+verantwoordelijk is, waar je met welke vraag terecht kunt en hoe besluiten over AI worden genomen.
+
+De governance sluit aan op het VNG AI-governancekader voor gemeenten en bouwt voort op bestaande
+structuren binnen DE REGIO, zoals het mandaatregister, de dienstverleningsovereenkomsten tussen
+VOORBEELDGEMEENTE en de deelnemende gemeenten, het portfolioproces en de ICT-procesorganisatie. Het
+uitgangspunt is: we sluiten zoveel mogelijk aan bij bestaande processen en voegen alleen toe wat
+specifiek voor de inzet van AI nodig is. DE REGIO werkt dit nog uit naar een governancemodel. Dit kader
+is van toepassing op de inkoop van AI-systemen, maar ook op de ontwikkeling en het gebruik van eigen
+AI-systemen.
+
+In dit hoofdstuk komen de volgende onderwerpen aan bod:
+
+- Governancestructuur (4.1)
+- Rollen en verantwoordelijkheden (4.2)
+- Toezicht en verantwoording (4.3)
+
+### 4.1 Governancestructuur
+
+- De governance voor AI is geen apart besturingsmodel, maar een samenspel van bestaande disciplines en
+  rollen. AI-behoeften worden ingebracht via het bestaande portfolioproces, waarin de informatiemanager
+  samen met betrokken disciplines beoordeelt of en hoe een AI-systeem wordt opgepakt.
+- Sommige rollen die voortkomen uit het VNG-governancekader zijn nieuw voor de organisatie, zoals de
+  AI-compliance officer en de ethisch adviseur. Het uitgangspunt is dat zoveel mogelijk wordt ingericht in
+  lijn met werkzaamheden van bestaande functionarissen. De implementatie van deze rollen en het
+  governancemodel wordt verder uitgewerkt in een plan van aanpak.
+- In DE REGIO is een intern AI-kennisnetwerk opgericht. Het doel van het AI-kennisnetwerk is kennisdeling
+  en het actief mee kunnen denken over AI. Iedereen kan zich voor dit netwerk aanmelden. Ook is er een
+  AI-kernteam. Het AI-kernteam speelt een grote rol bij het bepalen van de AI-strategie en de stappen die
+  de organisatie zet. Het organiseert periodieke bijeenkomsten en betrekt het AI-kennisnetwerk voor input
+  bij de stappen die de organisatie moet zetten. Het AI-kernteam heeft een tijdelijk karakter en zal op
+  termijn overgaan in de lijn. Het AI-kennisnetwerk heeft een permanent karakter. Meer informatie over het
+  AI-kennisnetwerk is te vinden op het interne portaal.
+- De governance is van toepassing op de gehele regio. De deelnemende gemeenten hebben eigen
+  bestuursorganen en mogelijk een afwijkende governance-inrichting, omdat namen van bepaalde rollen kunnen
+  afwijken. Dit wordt verder uitgewerkt in het hiervoor genoemde plan van aanpak.
+- DE REGIO wil niet afhankelijk zijn van externe kennis. Daarom is het doel om kennis en expertise te
+  bundelen binnen DE REGIO. Hoe dit vorm wordt gegeven en welke expertises hiervoor nodig zijn, wordt
+  verder uitgewerkt in het plan van aanpak.
+- Om de waarden uit hoofdstuk 2 te borgen gaat DE REGIO werken met een ethische dialoogtafel. De invulling
+  hiervan wordt verder uitgewerkt in het plan van aanpak.
+
+### 4.2 Rollen en verantwoordelijkheden
+
+De verantwoordelijkheden in de levenscyclus van een AI-systeem zijn expliciet belegd. De rolverdeling is
+gebaseerd op het VNG AI-governancekader, waarin op dit moment 30 rollen zijn beschreven. In aanvulling
+daarop heeft DE REGIO een AI-kennisnetwerk. Dit is vooral bedoeld als plek om kennis uit te wisselen. In
+bijlage 1 is een totaaloverzicht van alle rollen opgenomen. Hieronder worden de voor de eigen context
+meest relevante en nieuwe rollen beschreven:
+
+- **Het college van burgemeester en wethouders** is bestuurlijk eindverantwoordelijk voor de verantwoorde
+  inzet van AI. Iedere wethouder is binnen het eigen taakgebied verantwoordelijk voor AI-systemen die daar
+  worden ingezet.
+- **De gemeentesecretaris** is ambtelijk eindverantwoordelijk en kan zich laten adviseren door
+  directeuren.
+- **De proceseigenaar** (directeur of afdelingsmanager) is de opdrachtgever binnen het werkproces. De
+  proceseigenaar is verantwoordelijk voor het besluit om AI in te zetten en voor de impact van de
+  uitkomsten.
+- **De CIO** is verantwoordelijk voor de inrichting en het onderhoud van de governancestructuur. Wanneer
+  wetgeving, technologische ontwikkelingen of praktijkervaring daarom vragen, kan de CIO in overleg met
+  het directieteam het model aanpassen.
+- **De AI-compliance officer** ziet toe op de naleving van de AI Act en aanverwante wet- en regelgeving.
+  Deze rol is nieuw en wordt belegd bij een bestaande of nieuwe functionaris. De AI-compliance officer
+  fungeert als schakel tussen verschillende afdelingen om integratie en samenwerking te bevorderen en
+  zorgt ervoor dat AI-projecten aansluiten bij gemeentelijke doelen. Deze rol omvat het ontwikkelen en
+  bewaken van beleid rondom het verantwoord gebruik van AI en algoritmen, inclusief ethische overwegingen,
+  transparantie, en naleving van wet- en regelgeving.
+- **De ethisch adviseur** adviseert over morele en maatschappelijke gevolgen van AI-systemen. De ethisch
+  adviseur sluit aan bij de ethische dialoogtafel en adviseert een proceseigenaar over ethische
+  vraagstukken.
+- **De medewerker** behoudt altijd de professionele autonomie. Is verplicht AI-uitkomsten kritisch te
+  beoordelen en houdt zich aan de regels uit dit beleid en de handreiking AI. In hoofdstuk 6 wordt verder
+  uitgewerkt wat wel en niet is toegestaan bij het gebruik van AI.
+
+Bij hoog-risicotoepassingen of toepassingen met een impact die het werkproces van de proceseigenaar
+overstijgt, komt de besluitvorming op een hoger niveau te liggen. De proceseigenaar beslist binnen het
+eigen mandaat; bij domeinoverstijgende risico's beslist de gemeentesecretaris in overleg met het
+directieteam. Bij organisatieoverstijgende vraagstukken beslist het gemeentesecretarissenoverleg.
+
+### 4.3 Toezicht en verantwoording
+
+Toezicht op AI is nodig om te waarborgen dat de inzet van AI binnen de gestelde kaders blijft. Daarbij
+hanteert DE REGIO het Three Lines Model. Dit is een systeem met drie lagen die elkaar controleren, zodat
+een organisatie goed bestuurd wordt en risico's worden voorkomen. Intern vervullen de Functionaris
+Gegevensbescherming (FG) en de Chief Information Security Officer (CISO) een toezichthoudende rol bij
+AI-systemen. Extern houdt de Autoriteit Persoonsgegevens toezicht op het naleven van de AI Act.
+
+Elk AI-systeem dat besluitvorming met rechtsgevolgen ondersteunt of impact heeft op onze inwoners, wordt
+vóór ingebruikname geregistreerd in het landelijke Algoritmeregister. De proceseigenaar is
+verantwoordelijk voor de inhoudelijke juistheid van de gepubliceerde informatie; de AI-compliance officer
+en de eventuele leverancier ondersteunen bij de technische aanlevering van informatie. Daarnaast houdt de
+regio intern een AI-register bij van alle AI-systemen, breder dan het verplichte Algoritmeregister,
+inclusief de bijbehorende risicobeoordelingen en beheersmaatregelen. Hoe dit AI-register er precies uit
+komt te zien, wordt verder uitgewerkt in het plan van aanpak.
+
+Het college informeert de gemeenteraden in DE REGIO jaarlijks, via de reguliere rapportagecyclus, over de
+inzet van AI, opgetreden incidenten en de maatschappelijke impact. Hiermee wordt de democratische
+controle op AI-gebruik geborgd.
+
+Uitkomsten van audits en incidenten worden omgezet in leerpunten die worden verwerkt in aanpassingen van
+dit beleid en in het opleidingsprogramma (hoofdstuk 8). Zo functioneert het toezicht niet alleen als
+controlemechanisme, maar ook als leermiddel.
+
+---
+
+## 5. Veiligheid, risicobeheersing en incidentmanagement
+
+AI introduceert risico's die anders zijn dan klassieke ICT-dreigingen. Waar traditionele
+informatiebeveiliging zich richt op de vertrouwelijkheid, integriteit en beschikbaarheid van data en
+systemen, voegt AI daar een laag aan toe: het gedrag van het systeem zelf is niet altijd voorspelbaar of
+verklaarbaar. Dit hoofdstuk beschrijft hoe DE REGIO deze risico's herkent, beoordeelt, beheerst en, waar
+nodig, optreedt bij incidenten.
+
+In dit hoofdstuk komen de volgende onderwerpen aan bod:
+
+- AI-specifieke risico's (5.1)
+- Risicobeoordelingen (5.2)
+- Monitoring en beheer gedurende de levenscyclus (5.3)
+- Incidentmanagement (5.4)
+- Exit-strategie (5.5)
+
+### 5.1 AI-specifieke risico's
+
+DE REGIO onderkent dat AI specifieke risico's met zich meebrengt. Belangrijke aandachtspunten zijn onder
+meer de volgende categorieën:
+
+- **Betrouwbaarheid van uitkomsten.** AI-systemen kunnen resultaten genereren die overtuigend lijken,
+  maar feitelijk onjuist, onvolledig of contextloos zijn. Dit vergroot het risico dat medewerkers te veel
+  op de technologie vertrouwen en onvoldoende verantwoordelijkheid nemen voor het uiteindelijke besluit.
+- **Discriminatie en bias.** AI-systemen kunnen bestaande vooroordelen in data versterken, met als gevolg
+  ongelijke behandeling van inwoners.
+- **Privacy en datalekken.** AI verwerkt vaak grote hoeveelheden persoonsgegevens. Medewerkers kunnen
+  bewust of onbewust vertrouwelijke informatie invoeren in externe systemen. Onzorgvuldig databeheer kan
+  de privacy van inwoners schaden. Ook bestaat het risico op prompt injection: een aanval waarbij iemand
+  verborgen instructies in een bericht verstopt om een AI-systeem te misleiden en iets anders te laten
+  doen dan bedoeld.
+- **Juridische en compliancerisico's.** Onzorgvuldig gebruik van AI kan in strijd zijn met
+  privacywetgeving, auteursrecht en regels rondom discriminatie, zoals de Grondwet en de Algemene wet
+  gelijke behandeling.
+- **Organisatorische impact.** Werkprocessen veranderen, functies verschuiven en nieuwe vaardigheden
+  worden vereist. Zonder aandacht hiervoor kan vakkennis verloren gaan.
+
+DE REGIO herkent en classificeert risico's via een verplichte risicobeoordeling voorafgaand aan de inzet
+van elk AI-systeem. De uitkomsten worden vastgelegd in het AI-register.
+
+### 5.2 Risicobeoordelingen
+
+De proceseigenaar zorgt ervoor dat er een risicobeoordeling wordt uitgevoerd voordat een AI-systeem wordt
+ontwikkeld, aangeschaft of ingezet. Het type beoordeling hangt af van de aard van het systeem, de
+gebruikte gegevens en de mogelijke impact. Naast de wettelijke verplichtingen toetst de organisatie
+altijd de waarden, zoals beschreven in hoofdstuk 2, en de rechtmatigheid. De rollen en verantwoordelijken
+sluiten hierbij aan bij het governancemodel uit hoofdstuk 4.
+
+Een risicobeoordeling is wettelijk verplicht wanneer een AI-systeem valt onder de categorie hoog risico
+volgens de AI Act, of wanneer er een mogelijk hoog privacyrisico is volgens de AVG. In het eerste geval
+wordt het systeem getoetst aan de eisen van de AI Act door middel van het Impact Assessment
+Mensenrechten en Algoritmen (IAMA). In het tweede geval voert DE REGIO een Data Protection Impact
+Assessment (DPIA) uit.
+
+In een vroeg stadium van de aanschaf van een AI-systeem gebruikt de organisatie een korte intake
+(AI-quickscan) om te bepalen of een uitgebreidere beoordeling nodig is. Daarin wordt ook een
+risicoclassificatie van het AI-systeem gemaakt om te beoordelen in welke categorie uit de AI Act de
+toepassing valt.
+
+### 5.3 Monitoring en beheer gedurende de levenscyclus
+
+Een risicobeoordeling is niet eenmalig. Na ingebruikname monitort de proceseigenaar, met ondersteuning
+van de AI-compliance officer, periodiek (uitgangspunt minimaal jaarlijks) het AI-systeem. Daarbij wordt
+onder andere gekeken naar eventuele veranderingen in het gebruik van AI, wat de meerwaarde van AI was, of
+er fouten in de output zijn geweest en of er verbeteringen moeten worden doorgevoerd. DE REGIO monitort
+daarnaast ook het gebruik van generatieve AI in de organisatie.
+
+Bij inkoop van AI-systemen worden contractueel afspraken gemaakt over monitoring en het omgaan met nieuwe
+versies. De leverancier informeert DE REGIO als er een nieuw model wordt gebruikt. Dit wordt standaard
+afgesproken in de Service Level Agreement (SLA). Bij nieuwe versies, ook bij eigen ontwikkeling,
+informeert de proceseigenaar de AI-compliance officer. De AI-compliance officer beoordeelt of er een
+nieuwe risicoclassificatie of risicobeoordeling moet worden uitgevoerd. Als er dusdanig grote
+onaanvaardbare risico's ontstaan, gelden de bepalingen uit paragraaf 5.5 (exit-strategie).
+
+Het beheer sluit aan op de bestaande ITIL-procesorganisatie. In het plan van aanpak wordt aandacht
+besteed aan het implementeren van inbeheername van AI-systemen in de bestaande processen.
+
+### 5.4 Incidentmanagement
+
+Een AI-incident is iedere verstoring of afwijking waarbij een AI-systeem onjuiste, discriminerende of
+onrechtmatige uitkomsten produceert, gegevens onjuist verwerkt of de informatiebeveiliging of privacy in
+gevaar brengt. Medewerkers melden AI-incidenten via een apart meldpunt in de servicedesk. De
+AI-compliance officer behandelt deze incidenten. Wanneer een AI-incident ook een datalek betreft, geldt
+aanvullend de bestaande datalekprocedure. DE REGIO evalueert AI-incidenten periodiek: oorzaken worden
+geanalyseerd, beheersmaatregelen worden aangepast en leerpunten worden verwerkt.
+
+De stappen die worden genomen, worden verder uitgewerkt in een incidentproces. Dit proces sluit zoveel
+mogelijk aan bij de staande processen rondom beveiligingsincidenten en datalekken.
+
+### 5.5 Exit-strategie
+
+De eigenaar van een AI-systeem kan het systeem beëindigen wanneer de publieke meerwaarde ontbreekt of
+wanneer risico's niet langer aanvaardbaar zijn. Dit kan zowel de functioneel eigenaar van een applicatie
+zijn waarin AI wordt gebruikt, als de verantwoordelijke ICT-dienst. Daarbij wordt aangesloten bij het
+beleid gedeelde verantwoordelijkheid applicaties.
+
+Bij beëindiging voert DE REGIO een uitfasering uit. De organisatie stopt het gebruik van het model,
+beëindigt datastromen en contracten, en archiveert of verwijdert gegevens volgens geldende wet- en
+regelgeving (AVG en Archiefwet). Contracten met leveranciers bevatten afspraken over de overdracht van
+gegevens: bij beëindiging draagt de leverancier alle gegevens volledig, veilig en in een bruikbaar
+formaat over aan DE REGIO. Dit is een standaardonderdeel van de GIBIT-voorwaarden.
+
+DE REGIO evalueert beëindigingen. Bevindingen worden schriftelijk vastgelegd en verbetermaatregelen
+worden doorgevoerd, zodat de organisatie blijvend leert van de inzet van AI.
+
+---
+
+## 6. Gebruik van AI binnen de organisatie
+
+Dit hoofdstuk beschrijft de kaders voor het dagelijkse gebruik van AI door medewerkers, bestuurders en
+leveranciers. De uitgangspunten zijn helder: iedereen mag AI gebruiken, mits dat gebeurt binnen de kaders
+van dit beleid en de handreiking AI. Het doel is om innovatie te stimuleren door voldoende veilige en
+bruikbare alternatieven te bieden, zodat ongeautoriseerd gebruik wordt voorkomen. Tegelijkertijd zorgen
+we ervoor dat medewerkers zich niet hoeven bezig te houden met complexe risicoafwegingen: zij mogen erop
+vertrouwen dat de beschikbaar gestelde tools de belangrijkste risico's ondervangen.
+
+In dit hoofdstuk komen de volgende onderwerpen aan bod:
+
+- Voorwaarden voor gebruik (6.1)
+- Verboden en ongewenst gebruik (6.2)
+- Datakwaliteit, persoonsgegevens en inputnormen (6.3)
+- Tools en platformen (6.4)
+- Toepassingsgebieden en innovatie (6.5)
+
+### 6.1 Voorwaarden voor gebruik
+
+Het gebruik van AI binnen DE REGIO is in principe toegestaan voor alle medewerkers en bestuurders, mits
+dit plaatsvindt binnen de vastgestelde kaders. De professionele verantwoordelijkheid blijft altijd bij de
+mens; AI neemt die nooit over. Collega's blijven zelf de expert, of zorgen dat collega's met expertise
+meekijken. De regio gaat in gesprek met leveranciers om medewerkers ook in staat te stellen om zelf de
+expert te blijven. Dat wil zeggen dat het mogelijk moet zijn om uitkomsten te controleren en de genomen
+stappen van AI te volgen. Het gebruik van AI moet in overeenstemming zijn met de waarden die zijn
+geformuleerd in hoofdstuk 2.
+
+Bij het gebruik van AI maken we onderscheid tussen twee vormen. Enerzijds is er generieke AI: brede tools
+zoals een AI-assistent voor tekst, samenvatting of vertaling. Hiervoor gelden strengere eisen,
+bijvoorbeeld dat er nooit persoonsgegevens en vertrouwelijke informatie worden gedeeld. Anderzijds is er
+taakspecifieke AI die is geïntegreerd in applicaties, zoals samenvattingen in een zaaksysteem. Deze
+AI-systemen moeten altijd worden beoordeeld volgens het vaste governanceproces zoals beschreven in
+hoofdstuk 4. Als alles in orde is, zijn dit geautoriseerde AI-systemen.
+
+DE REGIO hanteert de volgende voorwaarden:
+
+- **Ambtelijke organisatie en bestuur.** Alle medewerkers en bestuurders mogen AI gebruiken als zij werken
+  volgens dit beleid. Daarbij geldt dat ze AI-geletterd moeten zijn zoals beschreven in hoofdstuk 8.
+- **Inwoners en organisaties.** In hun interactie met DE REGIO worden zij uitsluitend ondersteund door
+  geautoriseerde platformen die door de regio beschikbaar zijn gesteld.
+- **Leveranciers.** Leveranciers die AI inzetten in diensten aan DE REGIO moeten kunnen uitleggen welk
+  model zij gebruiken, hoe het is getraind en waarvoor het wordt ingezet. Ook worden contractuele
+  afspraken gemaakt zoals beschreven in hoofdstuk 5. De verwerking van persoonsgegevens verloopt via de
+  reguliere verwerkersovereenkomsten. Leveranciers houden zich aan de uitgangspunten uit dit AI-beleid en
+  nemen bijvoorbeeld geen geautomatiseerde besluiten met AI.
+
+Voor de gebruiker moet duidelijk zijn wanneer AI wordt ingezet binnen een applicatie en op basis waarvan
+een uitkomst tot stand is gekomen. Het AI-register is voor medewerkers toegankelijk, zodat zij altijd
+kunnen zien welke AI-tools beschikbaar en geautoriseerd zijn.
+
+### 6.2 Verboden en ongewenst gebruik
+
+Naast de expliciete verboden uit de AI Act hanteert DE REGIO een aantal eigen gebruiksregels. Het doel is
+niet om medewerkers te bestraffen, maar om duidelijke grenzen te stellen en tegelijkertijd veilige
+alternatieven te bieden.
+
+De volgende handelingen zijn niet toegestaan:
+
+- Het gebruiken van vertrouwelijke informatie of persoonsgegevens buiten de geautoriseerde AI-platformen.
+- Het laten nemen van besluiten die directe impact hebben op de rechten of plichten van inwoners zonder
+  wezenlijke menselijke tussenkomst. Bij iedere AI-ondersteunde beslissing is er altijd een mens die het
+  besluit neemt en daarvoor verantwoordelijk is.
+- De toepassingen die op grond van de AI Act als verboden zijn aangemerkt (zie hoofdstuk 3).
+
+DE REGIO streeft naar het beschikbaar stellen van voldoende geautoriseerde alternatieven. Dat is de
+belangrijkste maatregel tegen ongeautoriseerd gebruik. Wanneer een medewerker een niet-geautoriseerde
+tool blijkt te gebruiken, is de insteek corrigerend: de medewerker wordt gewezen op de beschikbare
+geautoriseerde alternatieven. De basishouding van DE REGIO is er een van vertrouwen in medewerkers,
+gecombineerd met een transparant klimaat waarin het vanzelfsprekend is om de geautoriseerde tools te
+gebruiken.
+
+### 6.3 Datakwaliteit, persoonsgegevens en inputnormen
+
+Wat medewerkers in een AI-systeem invoeren is bepalend voor de veiligheid en de kwaliteit van de
+uitkomsten. De kwaliteit van AI-output is direct afhankelijk van de kwaliteit van de inputdata. DE REGIO
+hanteert hiervoor de volgende uitgangspunten:
+
+- De datakwaliteit wordt bij de bron gecontroleerd, niet pas bij de output van het AI-model. Bij
+  AI-systemen die structureel gevoed worden met organisatiedata is de data-eigenaar verantwoordelijk voor
+  de kwaliteit van de aangeleverde gegevens. Bij fouten in de output als gevolg van onjuiste inputdata is
+  de proceseigenaar verantwoordelijk voor de afweging of het risico acceptabel is.
+- Het is belangrijk om per AI-systeem een beeld te hebben van de invloed die datakwaliteit heeft op het
+  resultaat. Bij een generieke AI-assistent die een intern document samenvat is de impact van een typefout
+  beperkt; bij een AI-systeem dat structureel besluiten ondersteunt op basis van inwonerdossiers kan
+  onvolledige data ernstige gevolgen hebben. De mate van controle op datakwaliteit hangt daarmee samen met
+  de risicoclassificatie en wordt meegenomen in de risicobeoordeling uit hoofdstuk 5.
+- Voor de invoer van gegevens in AI-systemen geldt een onderscheid naar het type platform. Bij publieke
+  AI-diensten (vrij toegankelijke tools op het internet) mogen uitsluitend openbare, niet-persoonsgebonden
+  gegevens worden ingevoerd. Bij private AI-diensten (afgeschermde omgevingen specifiek voor DE REGIO) en
+  lokale AI-systemen kunnen onder voorwaarden ook gevoelige persoonsgegevens worden verwerkt. Per
+  AI-systeem wordt vastgelegd welke gegevens wel en niet mogen worden ingevoerd. Dit wordt opgenomen in
+  het AI-register.
+
+### 6.4 Tools en platformen
+
+Zonder strak beheer groeit het aantal AI-tools in de organisatie ongemerkt. DE REGIO hanteert een
+drielagenmodel om overzicht te houden en tegelijkertijd ruimte te bieden voor innovatie:
+
+| Laag | Wat is toegestaan |
+|---|---|
+| **Verboden (blacklist)** | AI-diensten waarvan vaststaat dat zij niet voldoen aan de minimale eisen op het gebied van privacy, beveiliging of betrouwbaarheid. Het gebruik hiervan is niet toegestaan. |
+| **Ongeautoriseerd, niet verboden** | AI-diensten die niet op de blacklist staan maar ook nog niet formeel zijn goedgekeurd. Medewerkers mogen hiermee beperkt experimenteren, mits zij zich houden aan de regels uit dit beleid en de handreiking AI. Er mogen geen persoonsgegevens of vertrouwelijke gegevens worden ingevoerd. |
+| **Geautoriseerd en geclassificeerd** | AI-diensten die het autorisatieproces hebben doorlopen. Per tool is vastgelegd welke gegevens mogen worden ingevoerd (classificatie). |
+
+DE REGIO kiest bewust niet voor één enkele geautoriseerde AI. Mede vanuit het oogpunt van digitale
+soevereiniteit bieden we meerdere geautoriseerde alternatieven aan, zodat de meest voorkomende
+gebruiksscenario's goed worden ondersteund. Er wordt een keuzehulp beschikbaar gesteld waarmee
+medewerkers worden geadviseerd welke tool het beste past bij hun vraag.
+
+Tools en applicaties van derden worden uitsluitend geautoriseerd als zij voldoen aan de aanvullende
+inkoopvoorwaarden voor AI-systemen. Deze voorwaarden worden opgesteld als addendum op het bestaande
+inkoopbeleid en de GIBIT-voorwaarden, en bevatten eisen over transparantie van het model, de verwerking
+van gegevens en de exit-strategie. Inkoop en contractmanagement hebben hierin een vroege en actieve rol.
+Niet alleen bij de aanschaf, maar ook wanneer een leverancier gedurende de contractperiode AI aan een
+bestaand product toevoegt.
+
+### 6.5 Toepassingsgebieden en innovatie
+
+Met uitzondering van de verboden praktijken uit paragraaf 6.2 sluit DE REGIO geen domeinen of
+werkgebieden op voorhand uit voor de inzet van AI. Of AI passend is, hangt niet af van het domein, maar
+van de risicoclassificatie van de specifieke toepassing, de gegevens die worden verwerkt en de mate van
+menselijke controle die geborgd is. De risicobeheersing uit hoofdstuk 5 is hiervoor leidend.
+
+In aansluiting op de waarde mensgerichtheid en menselijke autonomie uit hoofdstuk 2 geldt dat het al dan
+niet inzetten van AI nooit alleen een bedrijfseconomische afweging is. De organisatie weegt altijd ook
+sociale factoren mee, waaronder goed werkgeverschap. In het bijzonder geldt dit voor werkzaamheden die
+zijn toegewezen aan medewerkers met een afstand tot de arbeidsmarkt. DE REGIO ontwikkelt samen met de
+ondernemingsraden een afwegingskader voor de inzet van AI in relatie tot werkgelegenheidseffecten.
+
+Innovatie met AI wordt actief gestimuleerd. Daarom komt er een duidelijk proces van idee tot
+implementatie. Dit wordt uitgewerkt in het lokale governancemodel zoals beschreven in hoofdstuk 4. Het
+uitgangspunt bij innovatie is dat AI geen doel op zich is, maar een middel om een concreet vraagstuk op
+te lossen. De organisatie gaat niet op zoek naar een toepassing voor een technologie, maar bekijkt bij
+een werkproces of AI waarde kan toevoegen.
+
+---
+
+## 7. Transparantie en uitlegbaarheid
+
+DE REGIO wil open en eerlijk zijn over het gebruik van AI, zowel richting inwoners als binnen de eigen
+organisatie. Transparantie en uitlegbaarheid zijn voorwaarden voor vertrouwen: inwoners moeten kunnen
+begrijpen wanneer en hoe AI een rol speelt in hun contact met DE REGIO, en medewerkers moeten de
+uitkomsten van AI-systemen kunnen verifiëren en verantwoorden.
+
+In dit hoofdstuk komen de volgende onderwerpen aan bod:
+
+- Transparantie richting inwoners en externen (7.1)
+- Interne transparantie en leercultuur (7.2)
+- Uitlegbaarheid van AI-systemen (7.3)
+- Documentatie en algoritmeregister (7.4)
+
+### 7.1 Transparantie richting inwoners en externen
+
+DE REGIO is transparant over het gebruik van AI in haar dienstverlening. Niet elk AI-gebruik vraagt echter
+om actieve communicatie. DE REGIO hanteert de volgende uitgangspunten:
+
+- Wanneer een inwoner direct contact heeft met een AI-systeem, zoals een chatbot, is transparantie
+  wettelijk verplicht. De AI Act schrijft voor dat personen altijd worden geïnformeerd wanneer zij
+  communiceren met een AI-systeem in plaats van een mens. Hetzelfde geldt voor hoog-risico-AI-systemen:
+  DE REGIO informeert betrokkenen dat AI is ingezet en hoe het systeem heeft bijgedragen aan de uitkomst.
+- Als medewerkers AI als ondersteuning gebruiken in hun werk, hoeven ze dit niet elke keer te benoemen in
+  een brief of opgesteld document. Medewerkers blijven namelijk zelf de expert en zijn verantwoordelijk
+  voor het laten controleren van de uitkomsten van AI. Ook zetten medewerkers teksten om in hun eigen
+  woorden, zodat er geen auteursrechten worden geschonden. Wél informeert DE REGIO actief hoe gebruik
+  wordt gemaakt van AI en hoe dit verantwoord wordt gedaan, bijvoorbeeld via de website.
+
+### 7.2 Interne transparantie en leercultuur
+
+Transparantie begint binnen de eigen organisatie. DE REGIO stimuleert een open cultuur waarin medewerkers
+ervaringen met AI actief delen, zowel successen als fouten. Het doel is niet om fouten te bestraffen,
+maar om ervan te leren en de organisatie als geheel slimmer te maken in het gebruik van AI.
+
+Het AI-kennisnetwerk speelt hierin een centrale rol. Via dit netwerk worden ervaringen, best practices en
+aandachtspunten gedeeld tussen teams en clusters. Medewerkers worden aangemoedigd om nieuwe toepassingen
+te melden en om open te zijn over situaties waarin AI niet het gewenste resultaat opleverde. Deze kennis
+wordt gebundeld en beschikbaar gesteld via het interne portaal.
+
+Daarnaast wordt gewerkt met een communicatieplan voor de interne uitrol van AI-beleid en AI-tools. Dit
+plan zorgt ervoor dat medewerkers tijdig en volledig worden geïnformeerd over nieuwe mogelijkheden,
+gewijzigde kaders en beschikbare ondersteuning.
+
+### 7.3 Uitlegbaarheid van AI-systemen
+
+AI-systemen die worden ingezet bij besluitondersteuning moeten in staat zijn om hun redenering inzichtelijk
+te maken. DE REGIO accepteert geen volledige black box bij toepassingen die direct van invloed zijn op
+besluiten over inwoners. Black box betekent dat niet duidelijk is hoe de uitkomst tot stand is gekomen.
+De algemene beginselen van behoorlijk bestuur vereisen dat besluiten gemotiveerd en navolgbaar zijn; dit
+geldt ook wanneer AI ondersteunend is geweest bij de totstandkoming ervan.
+
+De eis van uitlegbaarheid stelt concrete eisen aan de systemen die DE REGIO inzet. Systemen moeten de
+mogelijkheid bieden om de redenering achter een advies of uitkomst te tonen. De medewerker moet altijd
+kunnen controleren of de informatie klopt. Wanneer dit niet mogelijk is, wordt de uitkomst door de
+medewerker niet gebruikt als basis voor een besluit. Een medewerker kan hierover altijd advies inwinnen
+bij de AI-compliance officer. Uitlegbaarheid is dan ook een vast onderdeel van de toetsing bij de
+aanschaf of inzet van een nieuw AI-systeem.
+
+Voor grote generieke taalmodellen geldt een genuanceerder beeld. Deze modellen zijn inherent minder
+transparant in hun werking en kunnen hallucineren. DE REGIO accepteert een beperkte mate van black box
+bij het ondersteunend gebruik van taalmodellen, mits de medewerker de output altijd controleert en
+bronnen verifieert. Is dit niet mogelijk, dan wordt de informatie niet gebruikt.
+
+Bij ieder besluit waarin AI ondersteunend is geweest, moet voor de inwoner een duidelijke en
+laagdrempelige manier bestaan om in contact te komen met een medewerker. DE REGIO beschouwt deze feedback
+als onderdeel van haar leersysteem: signalen van inwoners helpen om AI-systemen te verbeteren en
+mogelijke fouten te identificeren.
+
+### 7.4 Documentatie en algoritmeregister
+
+DE REGIO registreert haar AI-systemen op twee niveaus. Impactvolle algoritmes en wettelijk verplichte
+hoog-risico-AI-systemen worden gepubliceerd in het landelijk Algoritmeregister. Een impactvol algoritme is
+een algoritme dat wordt ingezet in een proces met gevolgen voor mensen, waarbij het algoritme een grote
+invloed heeft op de uitkomst van het proces. DE REGIO sluit hierbij aan bij de Handreiking
+algoritmeregister van het Ministerie van Binnenlandse Zaken. Dit register is publiek toegankelijk en
+biedt inwoners inzicht in welke AI DE REGIO inzet en waarvoor. Daarnaast houdt DE REGIO een intern
+AI-register bij van alle AI-systemen.
+
+Bij de introductie van een nieuw AI-systeem geldt als uitgangspunt dat altijd wordt getoetst of een
+vergelijkbaar initiatief al elders in het land bestaat. DE REGIO sluit bij voorkeur aan bij bestaande
+initiatieven van andere gemeenten of landelijke samenwerkingsverbanden, om dubbel werk te voorkomen en
+kennis te delen.
+
+Het beheer van het algoritmeregister is in de huidige fase belegd bij de privacy officers. Bij verdere
+professionalisering zal dit worden overgedragen, bij voorkeur naar de AI-compliance officer. De
+verantwoordelijkheid voor de publicatie in het algoritmeregister ligt bij de proceseigenaar van het
+desbetreffende AI-systeem.
+
+---
+
+## 8. AI-geletterdheid, opleiding en adoptie
+
+De AI Act verplicht organisaties om medewerkers AI-geletterd te maken. Voor DE REGIO betekent dit dat
+iedere medewerker over voldoende kennis en vaardigheden moet beschikken om verantwoord met AI om te gaan.
+We kiezen hierbij voor een mensgerichte benadering: leren, zowel individueel als collectief, staat
+centraal.
+
+In dit hoofdstuk komen de volgende onderwerpen aan bod:
+
+- Bewustwording (8.1)
+- Opleiding en AI-geletterdheid (8.2)
+- Onboarding en nieuwe medewerkers (8.3)
+- Organisatiecultuur en veranderopgave (8.4)
+
+Waar eerdere hoofdstukken beschrijven *wat* medewerkers wel en niet mogen en *hoe* de regio
+verantwoording aflegt, beschrijft dit hoofdstuk hoe medewerkers worden toegerust om AI daadwerkelijk
+verantwoord en effectief te kunnen gebruiken.
+
+### 8.1 Bewustwording
+
+Een belangrijk onderdeel van verantwoorde omgang met AI is bewustzijn. Iedere medewerker moet weten wat
+AI is, wat het kan en wat de risico's zijn. Zonder die basiskennis kunnen medewerkers het beleid niet
+naleven. DE REGIO richt AI-bewustwording daarom structureel in als doorlopend onderdeel van de
+organisatiecultuur, niet als eenmalige campagne.
+
+De bewustwording richt zich op twee pijlers. Enerzijds kennis van de risico's, zoals het onbedoeld delen
+van privacy- of politiekgevoelige informatie, het feit dat AI fouten kan maken, het risico op schending
+van auteursrechten en het gevaar van discriminatie of bias. Anderzijds kennis van de kansen, zoals
+verhoogde productiviteit, tijdwinst bij het verwerken van grote hoeveelheden informatie, verbeterde
+leesbaarheid van teksten, ondersteuning bij besluitvorming en inspiratie voor procesinnovatie.
+
+DE REGIO differentieert de bewustwordingsaanpak naar doelgroep. Uitvoerende medewerkers leren vooral wat
+AI voor hun dagelijks werk betekent en welke tools beschikbaar zijn. Leidinggevenden worden toegerust om
+het gesprek over AI te voeren in werkoverleggen en functioneringsgesprekken, ondersteund door een toolkit.
+Voor inhoudelijk experts is er de mogelijkheid om verdiepende kennis op te doen.
+
+De effectiviteit van de bewustwordingsaanpak wordt periodiek gemeten als vervolg op de in 2025 uitgevoerde
+nulmeting. Aan de hand van kwantitatieve en kwalitatieve indicatoren wordt beoordeeld of het kennisniveau
+voldoende is en waar bijsturing nodig is. Deze meting wordt jaarlijks herhaald. In eerste instantie ligt
+deze verantwoordelijkheid bij het AI-kernteam, maar zal daarna overgaan naar de eigenaar van het
+L&O-aanbod en de AI-compliance officer.
+
+### 8.2 Opleiding en AI-geletterdheid
+
+Het opleidingsaanbod is opgebouwd vanuit drie perspectieven. Het eerste perspectief betreft bestuurders
+en leidinggevenden: zij moeten voldoende kennis hebben om te sturen op verantwoord AI-gebruik en het
+gesprek hierover te kunnen voeren met hun teams. Het tweede perspectief betreft medewerkers: zij moeten
+de vaardigheden bezitten om AI effectief en binnen de kaders van dit beleid en de handreiking AI te
+gebruiken. Leidinggevenden bewaken dat medewerkers beschikken over het voor hun rol vereiste
+kennisniveau. Het derde perspectief betreft de inhoudelijk experts: zij moeten voldoende verdiepende
+kennis hebben om de organisatie te kunnen adviseren en ondersteunen.
+
+Concreet betekent dit dat iedere medewerker, zowel intern als extern, een verplichte basistraining volgt
+over wat AI is. De medewerkers die met AI gaan werken volgen een training over hoe je er verantwoord mee
+werkt, bijvoorbeeld voordat ze gaan werken met een applicatie waar AI in zit. Voor inhoudelijk experts
+komt er de mogelijkheid om verdiepende kennis op te doen. Het leeraanbod wordt beschikbaar gesteld via de
+interne opleidingsacademie. Daarnaast is er een specifiek aanbod voor leidinggevenden.
+
+De concrete invulling van het opleidingsaanbod is uitgewerkt in een separaat opleidingsplan. Dit plan
+wordt periodiek getoetst en geactualiseerd op basis van nieuwe ontwikkelingen in wetgeving, technologie
+en de behoeften van de organisatie.
+
+De HR-afdeling en de ICT-afdeling zijn, in samenwerking met inhoudelijke experts, gezamenlijk
+verantwoordelijk voor de ontwikkeling en uitvoering van het leeraanbod. De CIO is, zoals beschreven in
+hoofdstuk 4, in zijn rol als verantwoordelijke voor de digitaliseringsopgave eigenaar van het
+opleidingsplan.
+
+### 8.3 Onboarding en nieuwe medewerkers
+
+Nieuwe medewerkers, zowel in vaste dienst als externe inhuur en stagiairs, moeten vanaf dag één weten
+welke AI-kaders gelden binnen DE REGIO. DE REGIO borgt dat iedere nieuwe medewerker beschikt over
+basiskennis van AI als onderdeel van het onboardingprogramma.
+
+Het verplichte onderdeel bij indiensttreding omvat de basistraining (wat is AI en hoe werk je er
+verantwoord mee) en een instructie over het AI-beleid van DE REGIO en de geldende gebruiksregels.
+
+Voor de huidige populatie medewerkers die nog niet is opgeleid, wordt een inhaalactie georganiseerd.
+Jaarlijks wordt een herhalings- of verdiepingstraining aangeboden om kennis actueel te houden. De
+HR-afdeling is eigenaar van het onboardingprogramma en zorgt in samenwerking met de ICT-afdeling voor de
+actualisering van de inhoud van het programma.
+
+### 8.4 Organisatiecultuur en veranderopgave
+
+Beleid op papier verandert geen gedrag, dat doet cultuur. De inzet van AI binnen de regio vraagt om een
+lerende organisatie waarin innovatie en zorgvuldigheid hand in hand gaan. DE REGIO stimuleert verantwoord
+experimenteren binnen het kader van dit beleid, waarbij leren en verantwoording centraal staan.
+Ervaringen en experimenten worden gedeeld via het AI-kennisnetwerk, zodat de organisatie als geheel leert
+en verbetert.
+
+Leidinggevenden vervullen een voorbeeldrol in verantwoord AI-gebruik. Zij worden toegerust om AI
+bespreekbaar te maken in hun teams en om publieke waarden leidend te laten blijven boven technologische
+mogelijkheden. Zij voeren het gesprek over AI in werkoverleggen en functioneringsgesprekken, ondersteund
+door de toolkit die hiervoor wordt ontwikkeld.
+
+Het leren wordt gefaciliteerd via het formele opleidingsaanbod, maar ook via werkplekleren en sociaal
+leren. Medewerkers zijn zelf medeverantwoordelijk voor hun eigen ontwikkeling op het gebied van AI en
+worden ondersteund met tools zoals de e-learnings (via de interne opleidingsacademie), het promptplatform,
+het AI-kennisnetwerk en georganiseerde challenges. Leidinggevenden kunnen medewerkers aanspreken als zij
+een e-learning niet hebben gevolgd. DE REGIO beschouwt het opleiden van medewerkers in AI-bewustzijn niet
+alleen als een organisatiebelang, maar ook als een maatschappelijke verantwoordelijkheid: medewerkers
+worden toegerust met kennis en vaardigheden die ook buiten de organisatie van waarde zijn voor hun
+duurzame inzetbaarheid.
+
+---
+
+## Bijlage 1: Overzicht rollen VNG AI-Governancekader
+
+Overgenomen uit *Welke rollen krijgen te maken met AI en algoritmen?* van het VNG AI-Governancekader. De
+raadpleegdatum is bij anonimisering verwijderd.
+
+| Rol | Type | Beschrijving |
+|---|---|---|
+| **AI-compliance officer** | Geraadpleegd | Fungeert als schakel tussen verschillende afdelingen om integratie en samenwerking te bevorderen en zorgt ervoor dat AI-projecten aansluiten bij gemeentelijke doelen. Deze rol omvat het ontwikkelen en bewaken van beleid rondom het verantwoord gebruik van AI en algoritmen, inclusief ethische overwegingen, transparantie, en naleving van wet- en regelgeving. Voert bijvoorbeeld de (pré-)IAMA uit in AI-ontwikkeltrajecten. Het is een onafhankelijke rol, net als de Functionaris Gegevensbescherming, en kan beslissingen aanvechten, risico's escaleren en gebreken signaleren zonder belangenverstrengeling. Bij kleinere organisaties kan de rol gecombineerd worden met die van ethisch adviseur, privacy officer of jurist. Rolcombinaties kunnen leiden tot belangenconflicten en tegenstrijdige adviezen vanuit de verschillende rollen. Het is daarom van belang om per situatie expliciet te maken vanuit welke rol er geadviseerd wordt. |
+| **Burgemeester en wethouders** | Eindverantwoordelijk | Iedere wethouder heeft een eigen taakgebied, bijvoorbeeld onderwijs of financiën. Als wethouder ben je bestuurlijk verantwoordelijk voor de verantwoorde ontwikkeling en inzet van AI en algoritmen binnen het taakgebied. Het college ontwikkelt richtlijnen of een beleidskader voor AI en algoritmen en draagt hierover verantwoording af aan de gemeenteraad. |
+| **Chief Data Officer (CDO)** | Geraadpleegd | Verantwoordelijk voor het implementeren van en toezicht houden op databeleid binnen de gemeente. Databeleid is idealiter in samenhang met het AI-beleid van de gemeente, omdat data een belangrijke grondstof is voor AI- en algoritmesystemen. Denk hierbij aan het voldoen aan de vereiste kwaliteit van data, duiding van data (begrippen, definities, datamodellen) en het automatiseren van datastromen van bron naar AI-toepassing. De CDO werkt nauw samen met de AI-compliance officer, CISO, CIO en Functionaris Gegevensbescherming (FG) om te garanderen dat AI-toepassingen verantwoord worden ingezet. |
+| **Chief Information Officer (CIO)** | Geraadpleegd | Geeft leiding aan diverse adviseurs die samen de CIO-office vormen. Een CIO is een onafhankelijk persoon die zorgt voor het goed functioneren van het digitale informatieproces en de informatievoorziening. De CIO speelt een sleutelrol in het strategisch inzetten van informatie en ICT binnen de overheid en bij het vormgeven van verantwoorde AI-toepassingen. In de context van AI waarborgt de CIO dat technologieën aansluiten bij beleidsdoelen, publieke waarden respecteren en zorgvuldig worden ingebed in de bestaande informatievoorziening. Daarbij stuurt de CIO op samenhang, risicobeheersing en governance, en zorgt voor de juiste randvoorwaarden zodat AI niet als losstaande innovatie, maar als integraal onderdeel van de digitale transformatie wordt ingezet. |
+| **Chief Information Security Officer (CISO)** | Geraadpleegd | Verantwoordelijk voor het implementeren van en toezicht houden op informatiebeveiligingsbeleid binnen de gemeente, ook voor de beveiliging van AI- en algoritmesystemen. Dit omvat het opstellen en implementeren van beveiligingsprotocollen, het uitvoeren van risicoanalyses, en het waarborgen van de integriteit en vertrouwelijkheid van data. De CISO werkt nauw samen met de AI-compliance officer en de Functionaris Gegevensbescherming (FG) om te garanderen dat AI-toepassingen niet alleen efficiënt, maar ook veilig en privacybewust zijn. |
+| **Directie of afdelingshoofd** | Eindverantwoordelijk | In de ambtelijke uitvoering is de directie eindverantwoordelijk. De directie of het afdelingshoofd is binnen de gemeente vaak opdrachtgever voor de ontwikkeling of inkoop van AI en algoritmen voor gebruik binnen de processen waar deze persoon verantwoordelijk voor is. Tevens vervult het afdelingshoofd vaak de rol van proceseigenaar. In kleinere organisaties komt het soms voor dat het afdelingshoofd daarnaast ook projectleider is voor een AI-project. Daarbij is het belangrijk om ervoor te zorgen dat deze persoon voorzien wordt van advies vanuit diverse disciplines, om een situatie te voorkomen waarbij één en dezelfde persoon zowel opdrachtgever, verantwoordelijke als uitvoerend of adviserend is. |
+| **Ethische commissie** | Geraadpleegd | Diverse Nederlandse gemeenten hebben een georganiseerd orgaan voor ethiek rondom data en technologie. Het instellen van een ethische commissie komt voort uit een groeiende urgentie om de kwaliteit van techno-ethische besluitvorming te verbeteren. Een ethische commissie kan bestaan uit externe deskundigen, burgers of experts uit de eigen organisatie of het netwerk. Een hybride vorm is ook mogelijk. Het is belangrijk om in een ethische commissie diversiteit en verschillende perspectieven te vertegenwoordigen. Sommige gemeenten kiezen voor een ethische commissie die advies geeft aan de organisatie in concrete projecten; ook kunnen ethische commissies advies geven aan het gemeentebestuur of de gemeenteraad. Ethische commissies geven vaak gevraagd en ongevraagd advies, geven richting en kunnen dienen als klankbord of als poortwachter. |
+| **Functionaris Gegevensbescherming (FG)** | Geraadpleegd | Houdt toezicht op naleving van privacywetgeving (AVG, UAVG, Wpg) van de AI- en algoritmetoepassingen. De FG adviseert over (de noodzaak van) risicoanalyses, zoals Data Protection Impact Assessments (DPIA's), en over privacyaspecten bij AI-gebruik, en geeft advies naar aanleiding van uitgevoerde DPIA's of enige andere gegevensbeschermingsgerelateerde risicoanalyse (zoals risicoanalyses ten aanzien van de toepassing van algoritmen of geautomatiseerde besluitvorming). Daarnaast rapporteert de FG over de naleving van privacyregels aan het verantwoordelijke bestuur en management, en geeft tevens gevraagd en ongevraagd advies aan bestuur en management. |
+| **Gemeenteraad** | Geïnformeerd | De gemeenteraad is kaderstellend en heeft een sturende rol als het gaat om handelingskaders of richtlijnen voor AI-gebruik. |
+| **Architect** | Geraadpleegd | De project- of businessarchitect maakt een functioneel architectuur- of ontwerpdocument van de AI-toepassing in geval van een nieuwe innovatie, op basis van de businessanalyse (usecasebeschrijving), rekening houdend met de gemeentelijke (AI-)architectuurrichtlijnen en beleidskaders. De functionele architectuur bevat ook een beschrijving van de datastromen. De architect toetst de solution-architectuur van de interne of externe leverancier en de realisatie van de AI-oplossing, of het voldoet aan de gestelde kaders en het ontwerp. De project- of businessarchitect en de solution-architect werken nauw samen. De solution-architect maakt een technisch architectuurontwerp van de AI-toepassing op basis van het functionele architectuurontwerp van de businessarchitect en toetst de realisatie. De security officer gebruikt het functionele architectuurontwerp voor de privacy risk assessment. |
+| **Beleidsadviseur** | Geraadpleegd | De domeinexpert van de maatschappelijke opgave waarbinnen AI en algoritmen worden toegepast. De beleidsadviseur zorgt ervoor dat AI-initiatieven aansluiten bij beleidsdoelen en maatschappelijke opgaven, en dat de toepassing een balans vindt tussen innovatie en verantwoordelijkheid. |
+| **Ethisch adviseur** | Geraadpleegd | Adviseert over de morele en maatschappelijke gevolgen van AI en algoritmen. Deze rol omvat het beoordelen van de ethische implicaties van AI-projecten, ondersteunen bij besluitvorming rondom maatschappelijke impact, en het opstellen van ethische richtlijnen voor verantwoord gebruik. De ethisch adviseur bevordert transparantie en is een aanspreekpunt voor ethische dilemma's binnen de organisatie. |
+| **Griffie** | Geraadpleegd | Ondersteunt de gemeenteraad bij zijn kaderstellende taak en is daarom belangrijk in het borgen van democratische legitimiteit bij AI-implementaties. In de context van verantwoord AI-gebruik zorgt de griffie ervoor dat raadsleden goed geïnformeerd zijn over kansen en risico's van AI bij maatschappelijke opgaven. De griffie helpt bij het agenderen van het onderwerp, stelt kritische vragen over transparantie, uitlegbaarheid en verantwoording, en faciliteert het gesprek over de randvoorwaarden waarbinnen AI in de gemeente toegepast mag worden. |
+| **HR-adviseur** | Geraadpleegd | Ondersteunt de implementatie van AI door het ontwikkelen van beleid en trainingen voor medewerkers. Dit omvat het faciliteren van bewustwordingssessies over AI, ethiek en algoritmische besluitvorming. De HR-adviseur speelt ook een rol in het managen van de impact van AI op de werkgelegenheid en zorgt voor bij- en omscholingsprogramma's, zodat medewerkers voorbereid zijn op veranderingen in hun taken. |
+| **Informatiemanager** | Geraadpleegd | Coördineert de initiatieven en beheert de informatiestromen die AI en algoritmen voeden. Dit omvat het coördineren van datakwaliteit en gegevensbeheer, en ervoor zorgen dat gegevens op een verantwoorde en efficiënte manier worden gebruikt. De informatiemanager bewaakt daarnaast de interoperabiliteit tussen systemen en processen, en werkt samen met de CISO en FG om databeveiliging en privacy te waarborgen. |
+| **Proceseigenaar** | Verantwoordelijk | Verantwoordelijk voor de algoritmen en AI-toepassingen die binnen zijn, haar of hun verantwoordelijkheid worden ingezet. Het is niet altijd duidelijk wie de proceseigenaar is; daarom is het van belang dat dit expliciet wordt gemaakt in de beginfase van de ontwikkeling en dat deze persoon zich bewust is van de verantwoordelijkheden. Vaak is dit een teamleider of afdelingshoofd. Bijvoorbeeld: het afdelingshoofd van een afdeling is verantwoordelijk voor het betreffende proces; als er binnen dit proces AI of algoritmen worden ingezet, is deze persoon verantwoordelijk voor naleving van wet- en regelgeving en intern beleid. Op basis van de risicoclassificatie uit de AI-verordening moet de proceseigenaar als gebruiker voldoen aan de verplichtingen. |
+| **Risicomanager** | Geraadpleegd | Speelt een rol bij het verantwoord inzetten van AI door risico's in kaart te brengen die samenhangen met technologiegebruik, zoals bias, datakwaliteit, privacy en bestuurlijke afhankelijkheden. In het kader van maatschappelijke opgaven helpt de risicomanager bij het vooraf identificeren en beheersbaar maken van ethische, juridische en operationele risico's. Zo draagt de risicomanager bij aan transparante besluitvorming, continue toetsing van AI-toepassingen aan publieke waarden, en het opzetten van passende beheersmaatregelen gedurende de hele levenscyclus van een AI-systeem. |
+| **Technical Information Security Officer (TISO)** | Geraadpleegd | Zorgt voor het waarborgen van de veiligheid en privacy van gegevens die door gemeenten worden verwerkt of gebruikt, zo ook voor AI-toepassingen en algoritmen. |
+| **Communicatieadviseur** | Geraadpleegd | Speelt een belangrijke rol bij het verbinden van technologie met gebruikers en stakeholders. Zorgt ervoor dat er heldere, effectieve communicatie is tussen gebruikers en andere betrokkenen rondom AI en algoritmen, met oog voor niveau en behoeften van diverse doelgroepen. Verzorgt ook externe communicatie over het gebruik van AI in de gemeente. |
+| **Data engineer** | Geraadpleegd | Zorgt voor de toegankelijkheid van data door de automatisering en optimalisatie van gegevenspijplijnen van bronsystemen naar de AI-toepassing. Hieronder vallen onder andere de verzameling, het beheer en het omzetten van ruwe data in bruikbare informatie voor de data scientist of de leverancier die AI ontwikkelt. De data engineer toetst de datakwaliteit en geeft advies ter verbetering aan de databroneigenaren, ter voorkoming van bias, hallucinaties dan wel slechte resultaten van het algoritme. |
+| **Data scientist** | Geraadpleegd | Verantwoordelijk voor de technische werking van het algoritme of de AI-toepassing, op basis van het solution-architectuurontwerp. Bij de ontwikkeling zorgt de data scientist dat deze technisch voldoet aan wet- en regelgeving en intern beleid. Bij de interne ontwikkeling van AI en algoritmen vervult de data scientist vanuit de AI-verordening de rol van leverancier. Op basis van de risicoclassificatie uit de AI-verordening moet de data scientist voldoen aan de bijbehorende verplichtingen. De data scientist zorgt ook voor de monitoring van de toepassing op kwaliteit (zoals bias, drift en hallucinaties) en neemt tijdig maatregelen in afstemming met de opdrachtgever. |
+| **Functioneel beheerder** | Geraadpleegd | Ondersteunt de frontendsystemen waar men mee werkt en is de schakel tussen de gebruikers en de technische kant (de IT-afdeling binnen de organisatie of de externe leverancier). Deze rol omvat het monitoren van systeemprestaties, het bieden van technische ondersteuning en het zorgen dat toepassingen correct functioneren binnen de operationele omgeving; daarbij hoort ook naleving van service level agreements (SLA). |
+| **Informatieadviseur** | Geraadpleegd | Adviseert over de aansluiting van de AI- en algoritmetoepassingen bij de bestaande (of benodigde) informatiehuishouding van de organisatie. Dit omvat het ophalen van de informatiebehoefte van de organisatie, het beheren van datastromen en het waarborgen van datakwaliteit. Als informatieadviseur stem je de AI-oplossingen af op de informatiebehoeften van de organisatie en werk je nauw samen met de informatiemanager en andere stakeholders om optimale datatoegang te faciliteren. |
+| **Information Security Officer (ISO)** | Geraadpleegd | Zorgt dat een privacy risk assessment (PRA) en eventueel een Data Protection Impact Assessment (DPIA) wordt opgesteld, toetst dit en geeft advies over de informatiebeveiliging van AI- en algoritmetoepassingen, en voegt het resultaat toe aan het afwegingskader. Optioneel, in geval er nog geen AI-compliance officer is, kan de ISO een (pré-)IAMA uitvoeren. De ISO zorgt dat de beveiligingsmaatregelen die voortvloeien uit de PRA en de (pré-)IAMA worden opgenomen in het ontwerp en de realisatie van AI- en algoritmetoepassingen. |
+| **Inkoper** | Geraadpleegd | Stelt de AI-inkoopvoorwaarden op van het AI-systeem, zodat wordt voldaan aan de wet- en regelgeving en het interne gemeentelijke beleid voor verantwoorde inzet van AI. De proceseigenaar is opdrachtgever voor de inkoop en eindverantwoordelijk voor de toepassing die wordt ingekocht. De inkoper neemt de verplichtingen op in de inkoopvoorwaarden die voortvloeien uit de AI-risk assessment. De inkoper stelt tevens afspraken op ten aanzien van beheer en regulier monitoren van de AI-systeemprestaties (ter voorkoming van bias, hallucinaties dan wel slechte resultaten), het bieden van support en systeemverbeteringen. |
+| **Jurist** | Geraadpleegd | Betrokken bij het opstellen van contracten en geeft advies over relevante wetgeving en beleid (zoals de AI-verordening, AVG en Awb). De jurist heeft tevens een rol in de afhandeling van Woo-verzoeken en bezwaar- en klachtenprocedures rondom AI en algoritmen. |
+| **Leverancier** | Verantwoordelijk | Ontwikkelt en beheert de AI-toepassing, die moet voldoen aan het functionele en technische ontwerp, de verplichtingen die voortvloeien uit de AI-risk assessment en de gestelde eisen vanuit de Privacy Risk Assessment (PRA) en wet- en regelgeving. De leverancier is ervoor verantwoordelijk dat de technische werking van het algoritme of de AI-toepassing gedurende de levenscyclus blijft werken op basis van het functionele en solution-architectuurontwerp en de gestelde verplichtingen. De leverancier zorgt voor monitoring van de AI-toepassing op kwaliteit, bias, drift en hallucinaties, en neemt tijdig maatregelen in afstemming met de opdrachtgever. |
+| **Medewerker uitvoering** | Geraadpleegd | Gebruikt AI en algoritmen voor de uitvoering van de dagelijkse werkzaamheden, bijvoorbeeld door integratie in een procesapplicatie. Voor de medewerker in de uitvoering is het van belang dat deze weet dat AI en algoritmen worden ingezet en hoe deze werken, op zo'n manier dat de medewerker aan inwoners kan uitleggen op welke manier AI of algoritmen het keuzeproces beïnvloeden. Een voorbeeld hiervan is een Wmo-consulent die AI inzet voor het transcriberen van keukentafelgesprekken in het kader van de Wmo. Ook kun je denken aan een werkcoach die een algoritme gebruikt voor het matchen van vaardigheden en interesses van werkzoekenden met dagbestedings- en werkplekken. Deze medewerkers in de uitvoering zijn gebruikers van AI en algoritmen en staan direct in contact met inwoners. |
+| **Privacy officer (PO)** | Geraadpleegd | Geeft uitvoerend advies aan de organisatie over privacybeleid en -ontwikkelingen. Ook is de PO betrokken bij het trainen van medewerkers in privacybewustzijn rondom AI en algoritmen. De PO coördineert privacy-impacttoetsen in opdracht van de proceseigenaar en werkt daarbij samen met het ontwikkelteam om te zorgen dat de verwerking van persoonsgegevens voldoet aan de AVG en andere relevante wetgeving. In kleinere organisaties kunnen de rollen van jurist, security officer en privacy officer gecombineerd worden. Ook kan de rol van PO gecombineerd worden met de AI-compliance officer; deze rollen hebben overlap in onder andere naleving van wet- en regelgeving, risicobeheersing, transparantie en dataverwerking. |
+| **Projectleider** | Geraadpleegd | Faciliteert de ontwikkeling van AI en algoritmen en geeft terugkoppeling aan de opdrachtgever (in de praktijk vaak: wethouder, afdelingshoofd of teamleider). De projectleider zorgt hierbij dat wet- en regelgeving en intern beleid worden nageleefd, maar is hiervoor niet verantwoordelijk; dat is de proceseigenaar. |
+
+---
+
+## Bijlage 2: Begrippenlijst
+
+**AI (Artificial Intelligence)**
+: Technologie waarmee systemen taken uitvoeren die normaal menselijke intelligentie vereisen, zoals
+analyseren, voorspellen, classificeren of adviseren.
+
+**AI Act**
+: Europese verordening die regels stelt aan de ontwikkeling en inzet van AI-systemen binnen de EU.
+
+**AI-behoeften**
+: Situaties waarbij collega's willen dat AI hen ergens mee helpt, of waar ze denken dat AI nuttig kan
+zijn. Bijvoorbeeld in een applicatie.
+
+**AI-systeem**
+: Hiervoor gebruiken we de definitie zoals deze in het AI-beleid en in de AI Act staat. Simpel uitgelegd:
+een AI-systeem is een computerprogramma dat kan leren van gegevens en zelfstandig taken kan uitvoeren of
+beslissingen kan nemen die normaal gesproken door een mens worden uitgevoerd. Denk hierbij bijvoorbeeld
+aan AI die in een applicatie wordt gebruikt om een tekst samen te vatten.
+
+**AI-risicoclassificatie**
+: Beoordeling van een AI-toepassing op basis van risico voor grondrechten, veiligheid en maatschappelijke
+impact.
+
+**Algoritme**
+: Sets van regels en instructies die een computer geautomatiseerd volgt bij het maken van berekeningen om
+een probleem op te lossen of een vraag te beantwoorden.
+
+**Algoritmeregister**
+: Openbaar register waarin de gemeente vastlegt welke algoritmen en hoog-risico-AI-systemen worden
+ingezet, met informatie over doel, werking, gebruikte data, risicoclassificatie en verantwoordelijke
+organisatieonderdelen.
+
+**AVG**
+: Algemene verordening gegevensbescherming; Europese wetgeving voor bescherming van persoonsgegevens.
+
+**Bias**
+: Systematische vertekening in data of algoritmen die leidt tot ongelijke of discriminerende uitkomsten.
+
+**Black box**
+: Een systeem waarvan we weten wat erin en eruit gaat, maar waarvan we niet kunnen zien of begrijpen hoe
+het intern tot zijn beslissingen komt.
+
+**Digitale autonomie**
+: Vermogen van de gemeente om regie te houden over eigen data, systemen en technologische keuzes.
+
+**Digitale soevereiniteit**
+: Borging dat data en digitale infrastructuur onder Europese of nationale juridische controle vallen.
+
+**Discriminatie**
+: Het ongelijk behandelen, achterstellen of uitsluiten van mensen op basis van persoonlijke kenmerken
+zonder dat deze behandeling te rechtvaardigen is.
+
+**Europese Economische Ruimte (EER)**
+: Samenwerkingsgebied van EU-lidstaten en enkele andere landen met gemeenschappelijke regelgeving,
+bijvoorbeeld op het gebied van AI en privacy.
+
+**Governance**
+: De manier waarop een organisatie wordt bestuurd en gecontroleerd. Met andere woorden: de regels,
+processen en verantwoordelijkheden die bepalen hoe beslissingen worden genomen en hoe erop wordt
+toegezien dat alles eerlijk en correct gebeurt.
+
+**Hoog-risico-AI-systeem**
+: AI-toepassing die volgens de AI Act aanvullende eisen kent vanwege mogelijke impact op grondrechten of
+veiligheid.
+
+**Human-in-the-loop**
+: Principe waarbij een mens actief betrokken is bij besluitvorming en AI-uitkomsten beoordeelt voordat
+deze definitief worden.
+
+**IAMA**
+: Impact Assessment Mensenrechten en Algoritmen; instrument om mensenrechtelijke risico's van algoritmen
+te beoordelen.
+
+**Impactvol algoritme**
+: Een werkproces met gevolgen voor mensen waarbij een algoritme wordt gebruikt. Het algoritme heeft een
+grote invloed op de uitkomst van dat werkproces.
+
+**Lifecycle management**
+: Gestructureerd beheer van een AI-systeem gedurende ontwerp, ontwikkeling, gebruik, monitoring en
+uitfasering.
+
+**Menselijk toezicht (human oversight)**
+: Het structureel borgen van menselijke controle over AI-systemen, inclusief de bevoegdheid om uitkomsten
+te beoordelen, te corrigeren of het systeem buiten werking te stellen.
+
+**Modeldrift**
+: Verschijnsel waarbij een AI-model na verloop van tijd minder betrouwbaar wordt doordat data of
+omstandigheden veranderen.
+
+**Modelvalidatie**
+: Het systematisch toetsen van een AI-model op juistheid, betrouwbaarheid, bias en geschiktheid voor het
+doel, zowel vóór ingebruikname als periodiek tijdens de levenscyclus.
+
+**MVOI**
+: Maatschappelijk Verantwoord Opdrachtgeven en Inkopen. Dit betekent dat organisaties bij het kopen van
+producten of diensten (en het geven van opdrachten aan leveranciers) niet alleen kijken naar prijs, maar
+ook naar maatschappelijke en milieuvraagstukken.
+
+**Portfolioproces**
+: Multidisciplinair samenwerken. Het proces waarbij een informatiemanager met een cluster alle wensen en
+ideeën op het gebied van informatievoorziening verkent, prioriteert en uitvoert. Het idee is om wensen om
+gebruik te maken van AI-systemen ook via dit proces te laten verlopen.
+
+**Prompt injection**
+: Een aanval waarbij iemand verborgen instructies in een bericht verstopt om een AI-systeem te misleiden
+en iets anders te laten doen dan bedoeld.
+
+**Three Lines Model**
+: Een systeem met drie lagen die elkaar controleren, zodat een organisatie goed bestuurd wordt en risico's
+worden voorkomen. De drie lijnen zijn: (1) de werknemers en managers die dagelijks het werk doen en zelf
+controleren of het goed gaat; (2) de afdeling compliance of risicomanagement, die controleert of de eerste
+lijn alles correct doet; (3) de interne audit, die onafhankelijk controleert of beide andere lijnen hun
+werk goed doen.
+
+**Vendor lock-in**
+: Afhankelijkheid van één leverancier waardoor overstappen moeilijk of kostbaar wordt.
