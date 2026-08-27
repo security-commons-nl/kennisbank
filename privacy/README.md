@@ -2,6 +2,8 @@
 
 Rapportages, beleidsstukken, procedures, templates en aanpakken op het gebied van privacy en gegevensbescherming.
 
+> **Bekijk deze sectie online:** [security-commons-nl.github.io/kennisbank/privacy](https://security-commons-nl.github.io/kennisbank/privacy/)
+
 ## Wat hoort hier
 
 - Privacybeleid en -reglementen

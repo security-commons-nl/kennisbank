@@ -4,6 +4,8 @@ Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe ver
 zich tot elkaar? Deze map bevat een **open dataset** van 83 partijen en 19 concrete diensten:
 van designated clubs als de IBD tot publiek-private platforms, plus de Europese laag als context.
 
+> **Bekijk de stelselkaart online:** [security-commons-nl.github.io/kennisbank/security/stelselkaart-security-gremia](https://security-commons-nl.github.io/kennisbank/security/stelselkaart-security-gremia/)
+
 > **Peildatum 11 augustus 2026.** Dit is een momentopname van een stelsel dat op dat moment hard in
 > beweging was. De Cyberbeveiligingswet trad op 15 augustus 2026 in werking, meerdere CSIRT-aanwijzingen
 > waren nog niet rond, en de OKTT-status stond op het punt te vervallen. **Kloppen er dingen niet meer?
@@ -38,7 +40,7 @@ resultaat te delen in plaats van in een la te leggen.
 
 | Bestand | Inhoud |
 |---|---|
-| **`index.html`** | **De leesbare weergave.** Open het bestand in je browser, of via GitHub Pages direct de map-URL. Vijf visualisaties, een filterbaar overzicht van alle partijen, en de bronverantwoording. Offline te openen, geen externe afhankelijkheden |
+| **`index.html`** | **De leesbare weergave.** Open het bestand in je browser, of lees hem [online](https://security-commons-nl.github.io/kennisbank/security/stelselkaart-security-gremia/). Vijf visualisaties, een filterbaar overzicht van alle partijen, en de bronverantwoording. Offline te openen, geen externe afhankelijkheden |
 | `data/partijen.json` | 83 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
 | `data/diensten.json` | 19 concrete diensten met wie ze levert, inclusief **4 gaten**. Per gat staat in `gat_soort` of er niets is belegd of dat er wel aan gewerkt wordt, en in dat laatste geval staat in `werk_in_uitvoering` door wie |
 

@@ -2,6 +2,8 @@
 
 Kennis die niet specifiek onder security, privacy of BCM valt, maar wel waardevol is voor CISO's en ISO's.
 
+> **Bekijk deze sectie online:** [security-commons-nl.github.io/kennisbank/overig](https://security-commons-nl.github.io/kennisbank/overig/)
+
 ## Wat hoort hier
 
 - Aanbestedingstips en ervaringen

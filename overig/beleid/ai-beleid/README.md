@@ -3,11 +3,13 @@
 Vastgestelde en concept-beleidsstukken die als voorbeeld of vertrekpunt bruikbaar zijn voor andere
 publieke organisaties. Geanonimiseerd, met placeholders op de plek van de eigen organisatie.
 
+> **Lees het AI-beleid online:** [security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid](https://security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid/)
+
 ## Wat je hier vindt
 
 | Bestand | Inhoud |
 |---|---|
-| **[`index.html`](index.html)** | **De leesbare weergave.** Open het bestand in je browser, of via GitHub Pages direct de map-URL. Offline te openen, geen externe afhankelijkheden |
+| **[`index.html`](index.html)** | **De leesbare weergave.** Open het bestand in je browser, of lees hem [online](https://security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid/). Offline te openen, geen externe afhankelijkheden |
 | [`ai-beleid-regio.md`](ai-beleid-regio.md) | Dezelfde tekst als markdown, om uit te knippen, aan te passen of te diffen |
 
 ---

@@ -3,6 +3,8 @@
 Herbruikbaar, **fictief** lespakket: zo zet je zelf een dreigingsgericht, tijdelijk
 interventie-team ("blue team") op — náást je reguliere IV-lijn.
 
+> **Open het lespakket online:** [security-commons-nl.github.io/kennisbank/security/aegis-blue-team-in-een-doos](https://security-commons-nl.github.io/kennisbank/security/aegis-blue-team-in-een-doos/)
+
 Ontstaan bij de demo *"Praten met jouw security-data"* (3 juni 2026) voor CISO's van
 gemeenten en waterschappen. De casus, cijfers en namen zijn **verzonnen voor lesdoeleinden**;
 het is een blauwdruk, geen weergave van een bestaande organisatie.
@@ -14,8 +16,8 @@ de werkwijze (7 stappen + coverage-heatmap) · mandaatprotocol (model) · zelf o
 memo's per gremium met een **sector-schakelaar gemeente ⇄ waterschap** (telkens een voorbeeld
 + een invulbaar sjabloon) · FAQ & weerstand · bronnen.
 
-Offline te openen, geen externe afhankelijkheden. Via GitHub Pages opent de map-URL direct
-het lespakket.
+Offline te openen, geen externe afhankelijkheden. Of lees het
+[online](https://security-commons-nl.github.io/kennisbank/security/aegis-blue-team-in-een-doos/).
 
 ## Auteurs
 

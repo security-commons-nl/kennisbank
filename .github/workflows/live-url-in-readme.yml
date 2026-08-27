@@ -1,0 +1,76 @@
+name: Live-URL in README
+
+# Regel: elke map met een index.html heeft een live pagina op GitHub Pages.
+# Die URL moet bovenin de README.md van diezelfde map staan, anders is de
+# pagina online onvindbaar voor wie via de repo binnenkomt.
+#
+# Twee knoppen om aan te draaien:
+#   BASIS_URL  - wijzigt mee als de repo of organisatie hernoemd wordt
+#   MAX_REGEL  - tot welke regel de URL nog als "bovenin" telt
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  controle:
+    name: Elke live pagina staat in zijn eigen README
+    runs-on: ubuntu-latest
+    env:
+      BASIS_URL: https://security-commons-nl.github.io/kennisbank
+      MAX_REGEL: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Controleer live-URL's
+        shell: bash
+        run: |
+          set -uo pipefail
+          fouten=0
+          gecontroleerd=0
+
+          while IFS= read -r html; do
+            map=$(dirname "$html")
+            rel="${map#./}"
+            if [ "$rel" = "." ]; then
+              url="${BASIS_URL}/"
+              readme="README.md"
+            else
+              url="${BASIS_URL}/${rel}/"
+              readme="${map}/README.md"
+            fi
+            gecontroleerd=$((gecontroleerd + 1))
+
+            if [ ! -f "$readme" ]; then
+              echo "::error file=${html}::De map '${rel}' heeft een index.html maar geen README.md. Voeg er een toe met bovenin: ${url}"
+              fouten=$((fouten + 1))
+              continue
+            fi
+
+            regel=$(grep -nF -- "$url" "$readme" | head -n 1 | cut -d: -f1)
+
+            if [ -z "$regel" ]; then
+              echo "::error file=${readme}::De live-URL ontbreekt in deze README. Voeg bovenin toe: ${url}"
+              fouten=$((fouten + 1))
+              continue
+            fi
+
+            if [ "$regel" -gt "$MAX_REGEL" ]; then
+              echo "::error file=${readme},line=${regel}::De live-URL staat pas op regel ${regel}, dat is niet bovenin. Verplaats hem naar de eerste ${MAX_REGEL} regels."
+              fouten=$((fouten + 1))
+              continue
+            fi
+
+            echo "ok  ${readme} (regel ${regel})  ->  ${url}"
+          done < <(find . -name index.html -not -path './.git/*' | sort)
+
+          echo ""
+          echo "${gecontroleerd} live pagina('s) gecontroleerd, ${fouten} fout(en)."
+
+          if [ "$gecontroleerd" -eq 0 ]; then
+            echo "::warning::Geen enkele index.html gevonden. Klopt dat?"
+          fi
+
+          exit $(( fouten > 0 ? 1 : 0 ))

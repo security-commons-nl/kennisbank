@@ -2,6 +2,8 @@
 
 Rapportages, beleidsstukken, procedures, templates en aanpakken op het gebied van informatiebeveiliging.
 
+> **Bekijk deze sectie online:** [security-commons-nl.github.io/kennisbank/security](https://security-commons-nl.github.io/kennisbank/security/)
+
 ## Wat hoort hier
 
 - Informatiebeveiligingsbeleid

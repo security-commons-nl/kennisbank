@@ -2,6 +2,8 @@
 
 Rapportages, beleidsstukken, procedures, templates en aanpakken op het gebied van bedrijfscontinuïteit.
 
+> **Bekijk deze sectie online:** [security-commons-nl.github.io/kennisbank/bcm](https://security-commons-nl.github.io/kennisbank/bcm/)
+
 ## Wat hoort hier
 
 - BCM-beleid en -strategie
