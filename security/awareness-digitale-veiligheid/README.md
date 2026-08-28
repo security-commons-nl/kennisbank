@@ -7,7 +7,6 @@ normen:
 type: trainingsmateriaal
 doelgroep: leidinggevenden / managers, publieke sector
 versiedatum: 2026-06
-auteur: vakgenoot, publieke sector
 licentie: EUPL-1.2
 status: geanonimiseerd sjabloon
 ---

@@ -12,7 +12,7 @@ type: contractbijlage / sjabloon
 doelgroep: CISO's, ISO's, inkoop en contractmanagement in de publieke sector
 versie: 1.3 (herzien BIO2)
 versiedatum: 2026-08
-auteur: vakgenoot (CISO van een Nederlandse gemeente), gedeeld met toestemming
+herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 licentie: EUPL-1.2
 status: sjabloon met invulvelden
 ---
@@ -68,7 +68,7 @@ Het doel is een volwassen partnership: open over kwetsbaarheden en risico's, lev
 
 ## Herkomst en licentie
 
-- Opgesteld door een vakgenoot, CISO van een Nederlandse gemeente, en daar in gebruik. Versie 1.3, herzien op BIO2, augustus 2026.
+- Opgesteld door de CISO-organisatie van een Nederlandse gemeente en daar in gebruik. Versie 1.3, herzien op BIO2, augustus 2026.
 - Gedeeld met toestemming van de auteur, op diens verzoek met de risicogedreven toelichting hierboven. Organisatie- en persoonsgegevens zijn verwijderd of vervangen door invulvelden.
 - Licentie: EUPL-1.2, zoals de hele kennisbank.
 

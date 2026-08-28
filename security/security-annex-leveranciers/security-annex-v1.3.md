@@ -12,7 +12,7 @@ type: contractbijlage / sjabloon
 doelgroep: CISO's, ISO's, inkoop en contractmanagement in de publieke sector
 versie: 1.3 (herzien BIO2)
 versiedatum: 2026-08
-auteur: vakgenoot (CISO van een Nederlandse gemeente), gedeeld met toestemming
+herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 licentie: EUPL-1.2
 status: sjabloon met invulvelden
 ---
