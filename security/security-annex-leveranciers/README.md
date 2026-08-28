@@ -37,6 +37,8 @@ De overige artikelen (normenkader, cloudsoevereiniteit, assurance, continuïteit
 
 **Zelftest van de auteur:** log je zelf nog in op gemeentelijke systemen met MFA via een pushnotificatie of een tweecijferige number match? Dan ben je vatbaar voor moderne AiTM-phishing. Precies daarom staat phishing-resistente authenticatie zo hoog.
 
+Hoe je die overstap zelf organisatiebreed maakt, staat in [Passkeys invoeren](../passkeys-invoeren/): dezelfde maatregel, aan de eigen kant van de keten.
+
 ## Geen vinklijst maar een gesprek
 
 De Annex is nadrukkelijk geen statisch lijstje met vinkjes. Dreigingen veranderen, techniek verandert, en daarmee ook de maatregelen die het zwaarst wegen.
