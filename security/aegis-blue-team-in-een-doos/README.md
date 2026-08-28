@@ -1,3 +1,14 @@
+---
+titel: Aegis, blue team in een doos
+vakgebied: security
+type: lesmateriaal
+normen: [BIO2]
+versie: 2026-06
+herkomst: eigen ontwikkeling security-commons-nl; casus, cijfers en namen verzonnen voor lesdoeleinden
+status: in gebruik
+samenvatting: Fictief lespakket. Zo zet je zelf een dreigingsgericht, tijdelijk interventieteam op naast je reguliere IV-lijn. Acht tabbladen, met mandaatprotocol, coverage-heatmap en memo's per gremium, en een sector-schakelaar voor gemeente en waterschap.
+---
+
 # Aegis — Blue Team in een doos
 
 Herbruikbaar, **fictief** lespakket: zo zet je zelf een dreigingsgericht, tijdelijk

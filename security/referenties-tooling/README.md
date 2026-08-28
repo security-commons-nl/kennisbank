@@ -1,3 +1,14 @@
+---
+titel: Externe referenties: security-tooling en kennisbanken
+vakgebied: security
+type: referentie
+normen: []
+peildatum: 2026-08-28
+herkomst: verzameld door de commons-community; geen eigen werk van security-commons-nl
+status: in gebruik
+samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak. Per bron kort wat het is en wanneer je het inzet.
+---
+
 # Externe referenties: security-tooling & kennisbanken
 
 Verwijzingen naar open resources met een specifiek, afgebakend doel. Geen eigen werk van
@@ -38,7 +49,7 @@ poortscan raken het doelwit actief, dus dit hoort alleen ingezet te worden met a
 En de subdomein- en Wayback-bronnen zijn externe diensten, dus dezelfde soevereiniteitsweging geldt als
 bij SCOPTIX.
 
-Gevonden 10-08-2026 via LinkedIn. De post verwees door via een verkorte
+Via LinkedIn. De post verwees door via een verkorte
 `lnkd.in`-link die niet is geresolved, dus **de repo-URL is nog niet geverifieerd**; controleer die vóór
 gebruik.
 
@@ -51,7 +62,7 @@ en scan-vergelijking. Nuttig als startpunt voor attack surface management / cont
 management (CTEM) en als input voor verdere handmatige of AI-ondersteunde assessments. Identificeert
 alleen; valideert of exploiteert niets. **Let op de soevereiniteitsweging:** leunt op externe API's
 (VirusTotal-key vereist, freemium/gerate-limit; Wayback Machine; optioneel Wappalyzer + NVD/CVE-correlatie)
-in plaats van puur lokaal te draaien. Via LinkedIn, gevonden 23-07-2026.
+in plaats van puur lokaal te draaien. Via LinkedIn.
 
 ## darknetlist · darknetlist.is
 
@@ -70,8 +81,7 @@ publieke internet die niet geïndexeerd is.
 niet wat er over jóu staat. Bronvermelding, licentie en exploitant zijn niet gedocumenteerd, dus
 geldt hier dezelfde peildatum-eis als bij tooldirectory's in het algemeen: **een directory is een
 vindkanaal, nooit een bron.** Tor-verkeer vanaf een gemeentelijk netwerk is bovendien een eigen
-afweging, geen technische vanzelfsprekendheid. Via LinkedIn, "blue team energy only",
-gevonden 10-08-2026.
+afweging, geen technische vanzelfsprekendheid. Via LinkedIn, "blue team energy only".
 
 ## ScanZeker · scanzeker.nl
 
@@ -116,4 +126,4 @@ geen opslag van resultaten, alleen geanonimiseerde statistiek over welke domeine
 (4) Bevindingen op gedeelde infrastructuur (IP met meer dan tien domeinen) zijn volgens de
 methodologie minder betrouwbaar; lees de exposure-module dan met die bril.
 
-Methodologie en bronnenlijst staan open op `scanzeker.nl/methodologie`. Opgenomen 28-08-2026.
+Methodologie en bronnenlijst staan open op `scanzeker.nl/methodologie`. 

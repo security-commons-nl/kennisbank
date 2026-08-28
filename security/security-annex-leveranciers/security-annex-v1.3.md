@@ -1,20 +1,12 @@
 ---
-titel: Security Annex Informatiebeveiliging (leveranciers), risicogedreven, verankerd in BIO2
-sector: security
-normen:
-  - BIO2 (Baseline Informatiebeveiliging Overheid, versie 2)
-  - ISO/IEC 27001
-  - NIS2 / Cyberbeveiligingswet
-  - Cyber Resilience Act (CRA)
-  - AI Act (2024/1689)
-  - GIBIT 2025
-type: contractbijlage / sjabloon
-doelgroep: CISO's, ISO's, inkoop en contractmanagement in de publieke sector
-versie: 1.3 (herzien BIO2)
-versiedatum: 2026-08
+titel: Security Annex Informatiebeveiliging, versie 1.3 (herzien BIO2)
+vakgebied: security
+type: sjabloon
+normen: [BIO2, ISO 27001, NIS2, CRA, AI Act, GIBIT 2025]
+versie: 1.3 (herzien BIO2), 2026-08
 herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
-licentie: EUPL-1.2
-status: sjabloon met invulvelden
+status: sjabloon
+samenvatting: De volledige tekst van de Security Annex, 20 artikelen met BIO2-verwijzingen per artikel. Invulvelden staan tussen [ ]. Lees eerst de README voor de risicogedreven leeswijzer.
 ---
 
 > **Lees eerst de [README](README.md).** Deze Annex is vanuit risico's opgebouwd, niet vanuit de norm. De BIO2-verwijzingen per artikel zijn de verankering, niet het vertrekpunt.

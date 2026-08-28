@@ -1,0 +1,48 @@
+name: "Redactiestatuut: controleren en indexpagina's bouwen"
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**/index.html"
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Controleer regels en bouw index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
+      - name: Controleer (PR)
+        if: github.event_name == 'pull_request'
+        run: python tools/build.py --check
+
+      # Op main: controleren én bouwen; gewijzigde indexpagina's terugcommitten.
+      - name: Controleer en bouw (main)
+        if: github.event_name == 'push'
+        run: python tools/build.py
+
+      - name: Commit gegenereerde indexpagina's
+        if: github.event_name == 'push'
+        run: |
+          if git diff --quiet -- index.html '*/index.html'; then
+            echo "Indexpagina's ongewijzigd."
+            exit 0
+          fi
+          git config user.name "kennisbank-bot"
+          git config user.email "kennisbank-bot@users.noreply.github.com"
+          git add index.html '*/index.html'
+          git commit -m "index: gegenereerd door tools/build.py"
+          git push

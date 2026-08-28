@@ -1,15 +1,26 @@
+---
+titel: AI-beleid van een regionale samenwerking
+vakgebied: governance
+type: beleid
+normen: [AI Act, AVG, BIO2]
+versie: concept 1.0, 2026-08
+herkomst: samenwerkingsverband van vier gemeenten, geanonimiseerd met vertaalsleutel
+status: concept
+samenvatting: Compleet AI-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. Waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, AI-geletterdheid. Acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen.
+---
+
 # Beleid
 
 Vastgestelde en concept-beleidsstukken die als voorbeeld of vertrekpunt bruikbaar zijn voor andere
 publieke organisaties. Geanonimiseerd, met placeholders op de plek van de eigen organisatie.
 
-> **Lees het AI-beleid online:** [security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid](https://security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid/)
+> **Lees het AI-beleid online:** [security-commons-nl.github.io/kennisbank/governance/ai-beleid](https://security-commons-nl.github.io/kennisbank/governance/ai-beleid/)
 
 ## Wat je hier vindt
 
 | Bestand | Inhoud |
 |---|---|
-| **[`index.html`](index.html)** | **De leesbare weergave.** Open het bestand in je browser, of lees hem [online](https://security-commons-nl.github.io/kennisbank/overig/beleid/ai-beleid/). Offline te openen, geen externe afhankelijkheden |
+| **[`index.html`](index.html)** | **De leesbare weergave.** Open het bestand in je browser, of lees hem [online](https://security-commons-nl.github.io/kennisbank/governance/ai-beleid/). Offline te openen, geen externe afhankelijkheden |
 | [`ai-beleid-regio.md`](ai-beleid-regio.md) | Dezelfde tekst als markdown, om uit te knippen, aan te passen of te diffen |
 
 ---

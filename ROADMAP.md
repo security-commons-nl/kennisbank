@@ -6,7 +6,7 @@
 
 ## Huidige staat
 
-Basisstructuur aanwezig (security, privacy, bcm, overig). CI-scanner actief: PRs worden automatisch gecontroleerd op privacygevoelige informatie (adviserende check via anonimizer).
+Basisstructuur aanwezig (security, privacy, bcm, governance). CI-scanner actief: PRs worden automatisch gecontroleerd op privacygevoelige informatie (adviserende check via anonimizer).
 
 ---
 

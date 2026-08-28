@@ -1,3 +1,14 @@
+---
+titel: Stelselkaart security-gremia
+vakgebied: security
+type: dataset
+normen: [NIS2, Cyberbeveiligingswet]
+peildatum: 2026-08-11
+herkomst: eigen ontwikkeling security-commons-nl, na externe review uit de sector
+status: in gebruik
+samenvatting: Wie organiseert de digitale weerbaarheid van de Nederlandse overheid? Open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. Machineleesbaar, zodat je er je eigen weergave op kunt bouwen.
+---
+
 # Stelselkaart security-gremia
 
 Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden die partijen

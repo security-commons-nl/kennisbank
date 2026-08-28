@@ -1,14 +1,12 @@
 ---
-titel: Learning digitale veiligheid (voor managers) — awareness-sessie datalekken & social engineering
-sector: security
-normen:
-  - BIO 2.0
-  - "ISO 27002:2022 — beheersmaatregel 6.3 (bewustwording, opleiding en training)"
-type: trainingsmateriaal
-doelgroep: leidinggevenden / managers, publieke sector
-versiedatum: 2026-06
-licentie: EUPL-1.2
-status: geanonimiseerd sjabloon
+titel: Learning digitale veiligheid voor managers
+vakgebied: security
+type: lesmateriaal
+normen: [BIO2, ISO 27002]
+versie: 2026-06
+herkomst: awareness-sessie zoals gegeven in een gemeentelijke organisatie, generiek gemaakt
+status: sjabloon
+samenvatting: Kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. Hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. Publiek bekende casussen, invulbare placeholders.
 ---
 
 # Learning digitale veiligheid — voor managers
