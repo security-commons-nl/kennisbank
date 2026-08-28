@@ -19,10 +19,6 @@ memo's per gremium met een **sector-schakelaar gemeente ⇄ waterschap** (telken
 Offline te openen, geen externe afhankelijkheden. Of lees het
 [online](https://security-commons-nl.github.io/kennisbank/security/aegis-blue-team-in-een-doos/).
 
-## Auteurs
-
-Bas Stevens & Ralph Wagter.
-
 ## Licentie
 
 [EUPL-1.2](../../LICENSE) — vrij te hergebruiken en aan te passen. Feedback en verbeteringen

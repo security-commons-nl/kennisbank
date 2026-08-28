@@ -26,7 +26,7 @@ vijftien bronnen, interne en externe links, JavaScript, images, `robots.txt` en 
 file-enumeratie, de top duizend poorten, en URL's uit de Wayback Machine. De poster claimt dat het tot
 50.000 historische URL's ophaalt en die triageert op wat de moeite van het bekijken waard is.
 
-**Verhouding tot SCOPTIX hieronder.** Beide komen via Meisam Eslahi (LinkedIn) en beide doen passieve
+**Verhouding tot SCOPTIX hieronder.** Beide komen via dezelfde LinkedIn-bron en beide doen passieve
 verkenning, maar ze zitten op een ander niveau. SCOPTIX is een zelf-hostbare webapplicatie met
 asset-categorisatie en scan-vergelijking, gericht op doorlopend beheer van het aanvalsoppervlak. FinalRecon
 is een losse CLI voor één doelwit op één moment: sneller in te zetten, geen state, geen historie. Voor CTEM
@@ -38,7 +38,7 @@ poortscan raken het doelwit actief, dus dit hoort alleen ingezet te worden met a
 En de subdomein- en Wayback-bronnen zijn externe diensten, dus dezelfde soevereiniteitsweging geldt als
 bij SCOPTIX.
 
-Gevonden 10-08-2026 via een LinkedIn-post van Meisam Eslahi. De post verwees door via een verkorte
+Gevonden 10-08-2026 via een LinkedIn-post van een vakgenoot. De post verwees door via een verkorte
 `lnkd.in`-link die niet is geresolved, dus **de repo-URL is nog niet geverifieerd**; controleer die vóór
 gebruik.
 
@@ -51,7 +51,7 @@ en scan-vergelijking. Nuttig als startpunt voor attack surface management / cont
 management (CTEM) en als input voor verdere handmatige of AI-ondersteunde assessments. Identificeert
 alleen; valideert of exploiteert niets. **Let op de soevereiniteitsweging:** leunt op externe API's
 (VirusTotal-key vereist, freemium/gerate-limit; Wayback Machine; optioneel Wappalyzer + NVD/CVE-correlatie)
-in plaats van puur lokaal te draaien. Via Meisam Eslahi (LinkedIn), gevonden 23-07-2026.
+in plaats van puur lokaal te draaien. Via een LinkedIn-post van een vakgenoot, gevonden 23-07-2026.
 
 ## darknetlist · darknetlist.is
 
@@ -70,7 +70,7 @@ publieke internet die niet geïndexeerd is.
 niet wat er over jóu staat. Bronvermelding, licentie en exploitant zijn niet gedocumenteerd, dus
 geldt hier dezelfde peildatum-eis als bij tooldirectory's in het algemeen: **een directory is een
 vindkanaal, nooit een bron.** Tor-verkeer vanaf een gemeentelijk netwerk is bovendien een eigen
-afweging, geen technische vanzelfsprekendheid. Via Meisam Eslahi (LinkedIn), "blue team energy only",
+afweging, geen technische vanzelfsprekendheid. Via een LinkedIn-post van een vakgenoot, "blue team energy only",
 gevonden 10-08-2026.
 
 ## ScanZeker · scanzeker.nl
@@ -116,5 +116,4 @@ geen opslag van resultaten, alleen geanonimiseerde statistiek over welke domeine
 (4) Bevindingen op gedeelde infrastructuur (IP met meer dan tien domeinen) zijn volgens de
 methodologie minder betrouwbaar; lees de exposure-module dan met die bril.
 
-Methodologie en bronnenlijst staan open op `scanzeker.nl/methodologie`. Aangedragen door Bas Stevens,
-opgenomen 28-08-2026.
+Methodologie en bronnenlijst staan open op `scanzeker.nl/methodologie`. Aangedragen door een vakgenoot, opgenomen 28-08-2026.

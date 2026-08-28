@@ -7,7 +7,7 @@ normen:
 type: trainingsmateriaal
 doelgroep: leidinggevenden / managers, publieke sector
 versiedatum: 2026-06
-auteur: Bas Stevens
+auteur: vakgenoot, publieke sector
 licentie: EUPL-1.2
 status: geanonimiseerd sjabloon
 ---
@@ -57,10 +57,6 @@ publieke-casus-aanpak aan: gebruik bekende, gepubliceerde incidenten, nooit inte
 
 Sluit aan op **BIO 2.0** en **ISO 27002:2022 beheersmaatregel 6.3** — bewustwording,
 opleiding en training op het gebied van informatiebeveiliging.
-
-## Auteur
-
-Bas Stevens.
 
 ## Licentie
 

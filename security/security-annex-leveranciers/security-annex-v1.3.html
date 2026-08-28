@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Security Annex Informatiebeveiliging v1.3</title><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:18pt;margin-top:1.4em;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}
+h2{font-size:13.5pt;margin-top:1.4em;color:#1f4e79}
+p{margin:.5em 0} ul{margin:.3em 0 .6em 1.4em} li{margin:.15em 0}
+em{color:#555} blockquote{margin:.5em 0 .5em 1em;padding-left:.8em;border-left:3px solid #ccc}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2{page-break-after:avoid}}
+</style></head>
+<body><div class="kop"><b>Security Annex Informatiebeveiliging, versie 1.3 (herzien BIO2)</b><br>
+Opgesteld door een vakgenoot, CISO van een Nederlandse gemeente. Gedeeld via security-commons-nl onder EUPL-1.2, met toestemming van de auteur.<br>
+Sjabloon: invulvelden staan tussen [ ]. Lees de bijbehorende README: de Annex is vanuit risico's opgebouwd, de BIO2-verwijzingen zijn de verankering.</div>
+<blockquote>
+<p><strong>Lees eerst de <a href="README.md">README</a>.</strong> Deze
+Annex is vanuit risico's opgebouwd, niet vanuit de norm. De
+BIO2-verwijzingen per artikel zijn de verankering, niet het vertrekpunt.
+Invulvelden staan tussen <code>[ ]</code>. Overzicht van de invulpunten:
+zie README.</p>
+</blockquote>
+<h1 id="security-annex-informatiebeveiliging">Security Annex
+Informatiebeveiliging</h1>
+<p><em>Samen werken aan digitaal vertrouwen</em></p>
+<p>Inwoners mogen erop vertrouwen dat hun gegevens veilig zijn. Dat
+geldt voor ons als gemeente, maar net zo goed voor de leveranciers
+waarmee wij samenwerken. Want digitale dienstverlening stopt niet bij de
+muren van het gemeentehuis.</p>
+<p>Daarom werken wij met een Security Annex.</p>
+<p>Niet om samenwerking ingewikkeld te maken, maar omdat de realiteit
+daarom vraagt. Vrijwel dagelijks verschijnen berichten over datalekken,
+ransomware of digitale verstoringen. De vraag is allang niet meer óf
+organisaties risico lopen, maar hoe serieus zij omgaan met het
+beschermen van gegevens en dienstverlening.</p>
+<p>Wij geloven daarbij in openheid en samenwerking. Niet in gesloten
+deuren of een cultuur waarin risico’s worden weggestopt. Sterke
+beveiliging begint juist met transparantie: eerlijk zijn over
+verbeterpunten, risico’s bespreekbaar maken en samen kijken hoe we
+digitale weerbaarheid verhogen.</p>
+<p>Van leveranciers verwachten wij daarom dat informatiebeveiliging een
+vast onderdeel is van de bedrijfsvoering. Niet alleen vanuit wet- en
+regelgeving, maar vanuit intrinsieke motivatie. De gegevens van inwoners
+verdienen die zorgvuldigheid.</p>
+<p>Uiteindelijk werken we aan hetzelfde doel: betrouwbare en veilige
+dienstverlening waar inwoners op kunnen vertrouwen. Dat vraagt om
+partners die willen meedenken, willen verbeteren en samen met ons
+verantwoordelijkheid nemen voor een veilige digitale keten.</p>
+<h1 id="deel-a-basismaatregelen">Deel A: Basismaatregelen</h1>
+<h2 id="1-toepasselijkheid-en-normenkader">1. Toepasselijkheid en
+normenkader</h2>
+<p><em>(BIO2: 5.01.01, 5.02.01, 5.19.01, 5.20.01 en ISO/IEC
+27001)</em></p>
+<p>1.1 Leverancier verklaart dat de dienstverlening gedurende de gehele
+looptijd van de overeenkomst, tot en met overdracht, afwikkeling en
+aantoonbare vernietiging van data, voldoet aan de eisen uit deze
+Security Annex en aantoonbaar in lijn is met de voor de dienstverlening
+relevante beveiligingsmaatregelen uit de geldende versie van de Baseline
+Informatiebeveiliging Overheid (BIO), dan wel opvolgende versies, of dat
+aantoonbaar gelijkwaardige maatregelen zijn getroffen, passend bij de
+aard van de dienstverlening, de verwerkte gegevens en het
+risicoprofiel.</p>
+<p>1.2 Leverancier beschikt over een werkend en gecertificeerd
+Information Security Management System (ISMS) conform de laatst geldende
+en actuele versie van NEN-EN-ISO/IEC 27001 of een opvolgende norm,
+waarbij expliciet is geborgd dat de relevante BIO-maatregelen onderdeel
+vormen van scope, risicoanalyse, beheersmaatregelen en audits.</p>
+<p>1.3 Leverancier verklaart te voldoen aan alle op de dienstverlening
+toepasselijke geldende en toekomstige wet- en regelgeving op het gebied
+van informatiebeveiliging, cybersecurity, gegevensbescherming en
+archivering, waaronder begrepen maar niet beperkt tot:</p>
+<ul>
+<li><p>de Baseline Informatiebeveiliging Overheid in de geldende
+versie;</p></li>
+<li><p>de Cyberbeveiligingswet (NIS2) en het Cyberbeveiligingsbesluit,
+alsmede opvolgende wetgeving;</p></li>
+<li><p>de bijbehorende uitvoeringsregelgeving, waaronder
+Uitvoeringsverordening (EU) 2024/2690 en opvolgende
+verordeningen;</p></li>
+<li><p>de Algemene Verordening Gegevensbescherming (AVG);</p></li>
+<li><p>de Archiefwet en onderliggende regelgeving;</p></li>
+<li><p>de Cyber Resilience Act (CRA);</p></li>
+<li><p>de Europese AI Act (2024/1689);</p></li>
+<li><p>overige toepasselijke nationale en Europese wet- en regelgeving,
+zoals deze van tijd tot tijd wordt gewijzigd of aangevuld.</p></li>
+</ul>
+<p>1.4 Leverancier verplicht zich de dienstverlening gedurende de
+looptijd van de overeenkomst in te richten en aangepast te houden
+conform:</p>
+<ul>
+<li><p>de van toepassing zijnde BIO-overheidsmaatregelen in de geldende
+versie;</p></li>
+<li><p>de geldende bepalingen uit de Cyberbeveiligingswet en het
+Cyberbeveiligingsbesluit;</p></li>
+<li><p>toepasselijke privacy- en archiefwetgeving, alsmede opvolgende of
+gewijzigde regelgeving.</p></li>
+</ul>
+<p>1.5 Wijzigingen in wet- en regelgeving of normenkaders die gedurende
+de looptijd van de overeenkomst van toepassing worden, worden door
+Leverancier onverwijld geïmplementeerd, zonder dat hiervoor een
+wijziging van deze overeenkomst noodzakelijk is.</p>
+<h2 id="2-cloud-governance-en-csp-beleid">2. Cloud governance en
+CSP-beleid</h2>
+<p><em>(BIO2: 5.23.01, 5.20.06)</em></p>
+<p>2.1 Leverancier hanteert een aantoonbaar vastgesteld en
+geïmplementeerd beleid voor:</p>
+<ul>
+<li><p>selectie en inrichting van cloudomgevingen;</p></li>
+<li><p>beheer van datalocaties;</p></li>
+<li><p>beëindiging en exit van clouddiensten.</p></li>
+</ul>
+<p>2.2 In het contract worden expliciet situaties benoemd die aanleiding
+vormen tot ontbinding, waaronder:</p>
+<ul>
+<li><p>structurele niet-naleving van beveiligingseisen;</p></li>
+<li><p>wezenlijke wijzigingen in eigendom, zeggenschap of
+jurisdictie;</p></li>
+<li><p>verlies van relevante certificeringen.</p></li>
+</ul>
+<h2 id="3-cloudsoevereiniteit-en-europese-zeggenschap">3.
+Cloudsoevereiniteit en Europese zeggenschap</h2>
+<p><em>(BIO2: 5.19, 5.20, 5.21.02, 5.21.03, 5.21.05 en 5.23.01)</em></p>
+<p>3.1 Gegevens van Opdrachtgever worden uitsluitend verwerkt binnen de
+Europese Economische Ruimte (EER), tenzij voorafgaand schriftelijk
+anders overeengekomen.</p>
+<p>3.2 Leverancier levert de dienstverlening uitsluitend vanuit een
+soevereine cloudomgeving binnen de Europese Unie, waarbij geldt dat:</p>
+<ul>
+<li><p>alle primaire, secundaire en back-uplocaties zich binnen de EU
+bevinden;</p></li>
+<li><p>beheer-, onderhouds- en ondersteuningsactiviteiten uitsluitend
+vanuit de EU worden uitgevoerd;</p></li>
+<li><p>cryptografische sleutels uitsluitend binnen de EU worden
+beheerd;</p></li>
+<li><p>geen structurele afhankelijkheid bestaat van niet-EU
+beheersorganisaties voor de uitvoering van de dienstverlening.</p></li>
+</ul>
+<p>3.3 Leverancier waarborgt dat de dienstverlening wordt uitgevoerd
+door rechtspersonen gevestigd binnen de EU of EER en dat gegevens
+uitsluitend worden verwerkt onder toepasselijk Europees recht.</p>
+<p>3.4 Leverancier treft passende technische, organisatorische en
+juridische maatregelen om ongeautoriseerde toegang door derde landen tot
+gegevens van Opdrachtgever te voorkomen.</p>
+<p>3.5 Leverancier verklaart dat:</p>
+<ul>
+<li><p>de dienstverlenende rechtspersoon is gevestigd binnen de EU of
+EER;</p></li>
+<li><p>de uiteindelijke moedermaatschappij is gevestigd binnen de EU of
+EER;</p></li>
+<li><p>de uiteindelijke zeggenschap over Leverancier uitsluitend berust
+bij natuurlijke personen, rechtspersonen of publieke organisaties
+gevestigd binnen de EU of EER;</p></li>
+<li><p>geen directe of indirecte zeggenschap wordt uitgeoefend door een
+entiteit gevestigd buiten de EU of EER.</p></li>
+</ul>
+<p>3.6 Onder zeggenschap als bedoeld in artikel 3.5 wordt verstaan
+iedere vorm van directe of indirecte beslissende invloed, waaronder:</p>
+<ul>
+<li><p>het direct of indirect beschikken over 25% of meer van de
+aandelen;</p></li>
+<li><p>het direct of indirect beschikken over 25% of meer van de
+stemrechten;</p></li>
+<li><p>het recht om bestuurders, commissarissen of toezichthouders te
+benoemen of te ontslaan;</p></li>
+<li><p>iedere andere vorm van feitelijke beslissende invloed op de
+bedrijfsvoering, strategie of governance van Leverancier.</p></li>
+</ul>
+<p>3.7 Leverancier waarborgt dat de dienstverlening niet direct of
+indirect onderworpen is aan wet- of regelgeving van derde landen die
+toegang tot gegevens van Opdrachtgever kunnen afdwingen buiten het
+Europese rechtsstelsel om.</p>
+<p>3.8 De strategische besluitvorming, governance, financiering en
+operationele aansturing van de dienstverlening vinden plaats binnen de
+EU of EER. Leverancier maakt daarbij geen gebruik van een
+concernstructuur waarbij een niet-EU/EER-entiteit directe of indirecte
+invloed kan uitoefenen op de dienstverlening, gegevensverwerking of
+beveiligingsmaatregelen.</p>
+<p>3.9 Leverancier meldt iedere voorgenomen of gerealiseerde wijziging
+in eigendom, zeggenschap, governance, financiering, fusie, overname of
+investering die leidt of kan leiden tot directe of indirecte invloed van
+een niet-EU/EER-entiteit onverwijld schriftelijk aan Opdrachtgever.</p>
+<p>3.10 Opdrachtgever heeft in geval van een wijziging als bedoeld in
+artikel 3.9 het recht aanvullende maatregelen te verlangen, een
+herbeoordeling uit te voeren of de overeenkomst geheel of gedeeltelijk
+te beëindigen overeenkomstig de bepalingen van deze Overeenkomst.</p>
+<p>3.11 Leverancier maakt uitsluitend gebruik van subverwerkers
+gevestigd binnen de EU of EER, tenzij Opdrachtgever hiervoor voorafgaand
+schriftelijk toestemming heeft verleend.</p>
+<h2 id="4-change-of-contract-en-wijzigingsclausule">4.
+Change-of-contract en wijzigingsclausule</h2>
+<p><em>(BIO2: 5.20.04, 5.23.01, 5.21.04)</em></p>
+<p>4.1 Leverancier meldt voorgenomen wijzigingen die impact hebben
+op:</p>
+<ul>
+<li><p>het overeengekomen beveiligingsniveau van de dienstverlening,
+waaronder het verminderen, uitschakelen of optioneel maken van bestaande
+beveiligingsmaatregelen;</p></li>
+<li><p>datalocatie;</p></li>
+<li><p>subverwerkers;</p></li>
+<li><p>jurisdictie;</p></li>
+<li><p>eigendomsstructuur;</p></li>
+<li><p>kritieke beveiligingsmaatregelen.</p></li>
+</ul>
+<p>ten minste negentig (90) dagen voorafgaand schriftelijk aan
+Opdrachtgever.</p>
+<p>4.2 Opdrachtgever heeft het recht:</p>
+<ul>
+<li><p>aanvullende risicobeoordelingen uit te voeren;</p></li>
+<li><p>aanvullende eisen te stellen;</p></li>
+<li><p>de overeenkomst kosteloos te ontbinden indien het restrisico door
+de gemeente als onacceptabel wordt bevonden.</p></li>
+</ul>
+<h2 id="5-assurance-audits-en-toetsing">5. Assurance, audits en
+toetsing</h2>
+<p><em>(BIO2: 5.20.01, 5.20.03, 5.20.04, 5.22.01, 6.01.01, 6.02.01,
+6.03.01 en 6.03.02)</em></p>
+<p>5.1 Leverancier levert jaarlijks een passende combinatie van
+onafhankelijke assurance-informatie aan waarvan de scope de
+gecontracteerde dienstverlening dekt. Afhankelijk van aard en
+risicoprofiel kan dit bestaan uit:</p>
+<ul>
+<li><p>ISO 27001-certificaat inclusief de relevante Verklaring van
+Toepasselijkheid (VvT) en een samenvatting of verklaring waaruit blijkt
+dat de directiebeoordeling is uitgevoerd;</p></li>
+<li><p>SOC 2 Type II, ISAE 3402 of ISAE 3000, voor zover passend bij de
+aard van de dienstverlening;</p></li>
+<li><p>ISO/IEC 27017, wanneer clouddienstverlening binnen de scope
+valt.</p></li>
+</ul>
+<p>5.2 Eisen uit deze Security Annex en relevante
+beveiligingsmaatregelen uit de BIO maken aantoonbaar onderdeel uit
+van:</p>
+<ul>
+<li><p>audit-scope;</p></li>
+<li><p>beheersmaatregelen;</p></li>
+<li><p>managementverklaring.</p></li>
+</ul>
+<p>5.3 Gedurende minimaal de volledige contractduur blijven de Security
+Annex en relevante beveiligingsmaatregelen uit de BIO onderdeel van de
+assurance-audits.</p>
+<p>5.4 Leverancier past de ingezette assurance-vormen aan indien
+wijziging van normenkaders, wet- en regelgeving of toezichtpraktijk
+daartoe aanleiding geeft, zodat de verstrekte assurance blijvend
+aansluit bij de geldende eisen en risico’s.</p>
+<p>5.4a Leverancier werkt jaarlijks mee aan een risicogerichte
+leveranciersreview door Opdrachtgever. De review beperkt zich in
+beginsel tot reeds beschikbare en passende bewijsstukken, openstaande
+relevante bevindingen, incidenten, ketenwijzigingen en de voortgang van
+overeengekomen verbetermaatregelen. Aanvullend onderzoek wordt alleen
+verlangd bij verhoogd risico, een incident of gerede twijfel over
+naleving.</p>
+<p>5.5 Opdrachtgever behoudt het recht:</p>
+<ul>
+<li><p>aanvullende audits uit te voeren;</p></li>
+<li><p>third-party audits te laten uitvoeren;</p></li>
+<li><p>gerichte audits uit te (laten) voeren bij incidenten of verhoogd
+risico.</p></li>
+</ul>
+<p>5.6 Indien uit audits, onderzoeken of assessments blijkt dat
+Leverancier niet voldoet aan de overeengekomen beveiligingseisen,
+wettelijke verplichtingen of deze Security Annex, komen alle kosten die
+voortvloeien uit het herstellen van deze bevindingen volledig voor
+rekening van Leverancier.</p>
+<p>5.7 Onder deze kosten worden mede begrepen:</p>
+<ul>
+<li><p>kosten voor herstelmaatregelen en verbeteracties;</p></li>
+<li><p>kosten voor aanvullende audits of hertoetsingen;</p></li>
+<li><p>kosten voor externe deskundigen die noodzakelijk zijn voor
+verificatie van herstel.</p></li>
+</ul>
+<p>5.8 Leverancier bespreekt de voorgenomen herstelmaatregelen, planning
+en prioritering vooraf met Opdrachtgever. Herstel vindt plaats na
+instemming van Opdrachtgever.</p>
+<p>5.9 Indien herstelmaatregelen naar het oordeel van Opdrachtgever een
+zodanige doorlooptijd hebben dat een vastgesteld risico te lang open
+blijft staan en dit risico niet acceptabel is voor Opdrachtgever, kan de
+opdrachtgever besluiten om de overeenkomst kosteloos en zonder
+schadevergoeding te ontbinden.</p>
+<p>5.10 Personele screening en betrouwbaarheid</p>
+<ul>
+<li><p>Leverancier borgt dat alle medewerkers en ingehuurde derden die
+toegang hebben tot systemen, gegevens of omgevingen van Opdrachtgever,
+voorafgaand aan die toegang aantoonbaar zijn gescreend.</p></li>
+<li><p>Deze screening omvat minimaal een geldige Verklaring Omtrent het
+Gedrag (VOG) of een aantoonbaar gelijkwaardige
+screeningmaatregel.</p></li>
+<li><p>Voor functies met verhoogde bevoegdheden of toegang tot gevoelige
+gegevens past Leverancier aanvullende, risicogebaseerde screening toe,
+indien wettelijk vereist of voortvloeiend uit de risicoanalyse.</p></li>
+<li><p>Leverancier herhaalt de screening periodiek en bij
+functiewijzigingen die leiden tot uitgebreidere of gewijzigde
+toegangsrechten.</p></li>
+<li><p>Opdrachtgever heeft het recht om op verzoek inzage te krijgen in
+het beleid en de procedures voor personele screening, zonder dat daarbij
+privacygevoelige persoonsgegevens worden verstrekt.</p></li>
+</ul>
+<h2 id="6-continuïteit-rto-en-rpo">6. Continuïteit, RTO en RPO</h2>
+<p><em>(BIO2: 5.30.01, 8.13.02, 8.13.04)</em></p>
+<p>6.1 Leverancier borgt contractueel vastgelegde hersteldoelstellingen
+voor alle kritieke diensten.</p>
+<p>6.2 Voor deze dienst worden de volgende hersteldoelstellingen
+vastgelegd:</p>
+<ul>
+<li><p>Recovery Time Objective (RTO) conform GIBIT 2025;</p></li>
+<li><p>Recovery Point Objective (RPO) conform GIBIT 2025.</p></li>
+</ul>
+<p>6.3 Leverancier test deze hersteldoelstellingen minimaal jaarlijks en
+verstrekt de testresultaten op verzoek aan Opdrachtgever.</p>
+<p>6.4 Niet-naleving van afgesproken RTO- en RPO-waarden geldt als
+toerekenbare tekortkoming.</p>
+<p>6.5 Leverancier is volledig verantwoordelijk voor:</p>
+<ul>
+<li><p>het maken van tijdige, in lijn met de RPO eisen, volledige en
+consistente back-ups van alle relevante gegevens;</p></li>
+<li><p>de technische en functionele juistheid van deze
+back-ups;</p></li>
+<li><p>de beveiliging, beschikbaarheid en integriteit van de
+back-upvoorzieningen.</p></li>
+</ul>
+<p>6.6 Leverancier controleert periodiek, maar minimaal 1 keer per jaar,
+en aantoonbaar de bruikbaarheid en volledigheid van back-ups door middel
+van:</p>
+<ul>
+<li><p>steekproefsgewijze verificatie;</p></li>
+<li><p>periodieke hersteltesten.</p></li>
+</ul>
+<p>6.7 Leverancier draagt zelf de volledige verantwoordelijkheid voor de
+juistheid, volledigheid en herstelbaarheid van back-ups. Deze
+verantwoordelijkheid kan nimmer bij Opdrachtgever worden gelegd.</p>
+<p>6.8 Het ontbreken van juiste, volledige of herstelbare back-ups geldt
+als een toerekenbare tekortkoming van Leverancier.</p>
+<p>6.9 Opdrachtgever behoudt het recht audits uit te voeren op de
+back-upvoorzieningen en herstelprocedures met betrekking tot zijn
+gegevens.</p>
+<p>6.10 Beschikbaarheid en uptime</p>
+<ul>
+<li><p>Leverancier borgt de beschikbaarheid van de
+dienstverlening;</p></li>
+<li><p>De minimale beschikbaarheid bedraagt minimaal 99,9%;</p></li>
+<li><p>De beschikbaarheid wordt gemeten over een kalendermaand,
+exclusief vooraf aangekondigd onderhoud dat schriftelijk is afgestemd
+met Opdrachtgever;</p></li>
+<li><p>Niet‑naleving van de afgesproken uptime‑percentages geldt als een
+toerekenbare tekortkoming in de zin van hoofdstuk 12 van deze Security
+Annex.</p></li>
+</ul>
+<h2 id="7-penetratietesten-en-red-teaming">7. Penetratietesten en red
+teaming</h2>
+<p><em>(BIO2: 8.08.04, 8.08.05)</em></p>
+<p>7.1 Leverancier laat minimaal jaarlijks een whitebox penetratietest
+uitvoeren op:</p>
+<ul>
+<li>[ scope invullen, bijvoorbeeld: volledige applicatie en
+onderliggende omgeving ]</li>
+</ul>
+<p>7.2 De penetratietest wordt uitgevoerd door een onafhankelijke , CCV
+Keurmerk pentesten gekwalificeerde partij.</p>
+<p>7.3 Het volledige penetratietestrapport en opvolging van bevindingen
+worden met de Opdrachtgever gedeeld.</p>
+<p>7.4 Leverancier voert minimaal eens per twee jaar een red
+teaming-oefening uit op de eigen organisatie en de geleverde cloud- en
+hostingomgeving of relevante delen daarvan.</p>
+<p>7.5 De scope van de red teaming-oefening omvat minimaal:</p>
+<ul>
+<li><p>aanvalspaden richting kernsysteemomgevingen en klantomgevingen,
+waaronder begrepen de omgevingen waarin de kritieke infrastructuur,
+beheersystemen en overige kroonjuwelen van Leverancier en Opdrachtgever
+zijn ondergebracht;</p></li>
+<li><p>misbruik van identiteiten en beheeraccounts;</p></li>
+<li><p>laterale beweging binnen de organisatie, beheerdomeinen en cloud-
+en hostingomgevingen.</p></li>
+</ul>
+<p>7.6 De bevindingen worden gedeeld met de Opdrachtgever en zijn
+beoordeeld op ernst, impact en risico voor de dienstverlening.</p>
+<p>7.7 Indien bevindingen door Opdrachtgever als onacceptabel risico
+worden aangemerkt, worden deze vastgelegd in het verbeterplan met
+bijbehorende herstelmaatregelen en tijdslijnen. Zolang deze bevindingen
+niet zijn hersteld, mag de betreffende functionaliteit of omgeving niet
+productief worden ingezet, tenzij Opdrachtgever hiervoor expliciet en
+schriftelijk toestemming verleent.</p>
+<p>7.8 Indien herstelmaatregelen naar het oordeel van Opdrachtgever een
+zodanige doorlooptijd hebben dat een vastgesteld risico te lang open
+blijft staan en dit risico niet acceptabel is voor Opdrachtgever, kan de
+opdrachtgever besluiten om de overeenkomst kosteloos en zonder
+schadevergoeding te ontbinden.</p>
+<h2 id="8-leveranciersketen-en-subverwerkers">8. Leveranciersketen en
+subverwerkers</h2>
+<p><em>(BIO2: 5.20.03, 5.21.02, 5.21.03, 5.21.04, 5.21.05 en
+5.22.01)</em></p>
+<p>8.1 Leverancier blijft volledig verantwoordelijk voor naleving van
+deze Security Annex door alle subverwerkers.</p>
+<p>8.2 Leverancier verstrekt vooraf inzicht in:</p>
+<ul>
+<li><p>ketenstructuur;</p></li>
+<li><p>betrokken subverwerkers;</p></li>
+<li><p>datalocaties;</p></li>
+<li><p>relevante risico’s.</p></li>
+</ul>
+<p>8.3 Wijzigingen of structurele niet nalevingen in de keten worden
+onverwijld gemeld, inclusief impactanalyse.</p>
+<p>8.4 Leverancier legt de relevante eisen uit deze Security Annex
+onverkort op aan subleveranciers en subverwerkers, tenzij een eis
+aantoonbaar niet relevant is voor hun aandeel in de dienstverlening.
+Uitsluitingen worden onderbouwd en op verzoek aan Opdrachtgever
+verstrekt.</p>
+<p>8.5 Leverancier beoordeelt minimaal jaarlijks de
+beveiligingsprestaties en relevante risico’s van kritieke
+subleveranciers en betrekt de uitkomsten bij de assurance-informatie en
+de leveranciersreview.</p>
+<h2 id="9-incidentmelding-en-transparantie">9. Incidentmelding en
+transparantie</h2>
+<p><em>(BIO2: 5.20.05, 5.24.01, 5.24.02, 5.24.07, 5.26.02, 5.27.01,
+5.28.01, 8.15.01 t/m 8.15.06 en 8.16.01 t/m 8.16.04)</em></p>
+<p>9.1 Leverancier meldt beveiligingsincidenten die mogelijk impact
+hebben op de dienstverlening:</p>
+<ul>
+<li><p>onverwijld;</p></li>
+<li><p>door middel van een eerste early-warning melding uiterlijk binnen
+4 uur na ontdekking, waarin minimaal de aard van het incident en de
+vermoedelijke impact worden aangegeven;</p></li>
+<li><p>en met een volledige incidentmelding uiterlijk binnen 24 uur na
+ontdekking.</p></li>
+</ul>
+<p>9.2 Meldingen bevatten minimaal:</p>
+<ul>
+<li><p>aard en omvang;</p></li>
+<li><p>getroffen systemen en gegevens;</p></li>
+<li><p>genomen en geplande maatregelen;</p></li>
+<li><p>impact op beschikbaarheid, integriteit en
+vertrouwelijkheid.</p></li>
+</ul>
+<p>9.3 Leverancier verleent volledige medewerking aan wettelijke
+meldplichten en toezichthouders.</p>
+<p>9.4 Indien Leverancier op grond van toepasselijke wet- en
+regelgeving, waaronder de NIS2 en/of de Cyberbeveiligingswet, zelf
+meldplichtig is, draagt Leverancier zorg voor tijdige en correcte
+melding aan de bevoegde toezichthouders en instanties.</p>
+<p>9.5 Indien Opdrachtgever meldplichtig is, verstrekt Leverancier
+onverwijld alle informatie en ondersteuning die noodzakelijk is om
+Opdrachtgever in staat te stellen tijdig en volledig aan zijn
+meldverplichtingen te voldoen.</p>
+<p>9.6 Beveiligingsmonitoring en log‑export</p>
+<ul>
+<li><p>Leverancier borgt dat beveiligingsrelevante loggegevens,
+waaronder audit‑, toegangs‑ en beheerderslogs, beschikbaar zijn voor
+Opdrachtgever.</p></li>
+<li><p>Deze loggegevens zijn:</p>
+<ul>
+<li><p>exporteerbaar in een gangbaar en machineleesbaar
+formaat;</p></li>
+<li><p>conform de eisen zoals gesteld in BIO2 8.15.01;</p></li>
+<li><p>minimaal twaalf (12) maanden beschikbaar, tenzij wet‑ of
+regelgeving een langere termijn vereist.</p></li>
+</ul></li>
+<li><p>Loggegevens zijn beschermd tegen ongeautoriseerde wijziging en
+verwijdering en geschikt voor forensisch onderzoek.</p></li>
+</ul>
+<p>9.7 Leverancier bewaart het incidentdossier, inclusief relevante
+logging, analyse, besluitvorming, herstelmaatregelen en communicatie,
+minimaal drie (3) jaar na afsluiting van het incident, tenzij een
+langere wettelijke bewaartermijn geldt.</p>
+<p>9.8 Leverancier beschikt over passende detectie- en
+responsevoorzieningen voor de omgevingen die de dienstverlening
+ondersteunen. Manipulatie of verwijdering van beveiligingsloggegevens
+wordt gedetecteerd en als beveiligingsincident behandeld.</p>
+<h2 id="10-exit-datateruggave-en-vernietiging">10. Exit, datateruggave
+en vernietiging</h2>
+<p><em>(BIO2: 5.20.06, 8.13.01, 8.13.03)</em></p>
+<p>10.1 Op de beëindiging van de overeenkomst en de uitvoering van
+exit-werkzaamheden is artikel 29 van de GIBIT 2025 onverkort van
+toepassing.</p>
+<p>10.2 In aanvulling op artikel 29 GIBIT geldt dat:</p>
+<ul>
+<li><p>gegevens worden aangeleverd in open, gangbare en machineleesbare
+formaten;</p></li>
+<li><p>Leverancier schriftelijk verklaart dat alle gegevens, restkopieën
+en back-ups van Opdrachtgever zijn verwijderd overeenkomstig
+overeengekomen bewaartermijnen;</p></li>
+<li><p>Leverancier op verzoek een vernietigingsverklaring of
+vernietigingscertificaat verstrekt conform een internationaal erkende
+norm voor gegevensvernietiging.</p></li>
+</ul>
+<h2 id="11-prevalentie-van-deze-security-annex">11. Prevalentie van deze
+Security Annex</h2>
+<p><em>(BIO2: 5.20.01, 5.20.02)</em></p>
+<p>11.1 Bij tegenstrijdigheden tussen deze Security Annex en andere
+contractdocumenten, algemene voorwaarden, SLA’s of bijlagen, prevaleert
+deze Security Annex.</p>
+<p>11.2 Afwijkingen van deze Security Annex zijn uitsluitend geldig
+indien deze expliciet en schriftelijk door Opdrachtgever zijn
+goedgekeurd.</p>
+<h2 id="12-sancties-boetes-en-ontbinding">12. Sancties, boetes en
+ontbinding</h2>
+<p><em>(BIO2: 5.20.02, 5.23.01)</em></p>
+<p>12.1 Niet-naleving van de verplichtingen uit deze Security Annex
+en/of de in de Overeenkomst opgenomen
+informatiebeveiligingsverplichtingen wordt aangemerkt als een
+tekortkoming in de nakoming van de Overeenkomst.</p>
+<p>12.2 Indien Leverancier tekortschiet in de naleving van de
+verplichtingen uit deze Security Annex, is Opdrachtgever gerechtigd
+Leverancier te verplichten passende corrigerende maatregelen te treffen
+binnen een redelijke, door Opdrachtgever gestelde termijn.</p>
+<p>12.3 Indien Leverancier nalaat de vereiste maatregelen tijdig of
+volledig uit te voeren, dan wel sprake is van een ernstige of
+voortdurende tekortkoming, zijn de rechtsmiddelen, sancties,
+aansprakelijkheids- en ontbindingsmogelijkheden van toepassing zoals
+opgenomen in artikel 27 van de GIBIT 2025, onverminderd eventuele
+overige rechten die Opdrachtgever op grond van de Overeenkomst of
+toepasselijke wet- en regelgeving toekomen.</p>
+<p>12.4 Voor zover deze Security Annex aanvullende
+informatiebeveiligingsverplichtingen bevat ten opzichte van de
+Overeenkomst, worden deze verplichtingen voor de toepassing van artikel
+27 van de GIBIT 2025 geacht integraal onderdeel uit te maken van de
+contractuele verplichtingen van Leverancier.</p>
+<h1 id="deel-b-verdiepende-maatregelen">Deel B: Verdiepende
+maatregelen</h1>
+<h2 id="13-contact-communicatie-en-beveiligingskanalen">13. Contact,
+communicatie en beveiligingskanalen</h2>
+<p><em>(BIO2: 5.20.05, 5.24.01, 5.24.02, 8.08.06)</em></p>
+<p>13.1 Bij alle communicatie met betrekking tot informatiebeveiliging,
+waaronder begrepen maar niet beperkt tot:</p>
+<ul>
+<li><p>incidentmeldingen en early warnings;</p></li>
+<li><p>audit- en assurance-rapportages;</p></li>
+<li><p>meldingen van kwetsbaarheden;</p></li>
+<li><p>wijzigingen met beveiligingsimpact;</p></li>
+<li><p>herstelplannen en verbetertrajecten;</p></li>
+</ul>
+<p>neemt Leverancier altijd het adres <strong>[ e-mailadres
+security-contact Opdrachtgever ]</strong> op als vast contactpunt.</p>
+<p>13.2 Leverancier wijst [ aantal en rol invullen ] vaste
+contactpersonen aan voor informatiebeveiliging en incidentafhandeling en
+zorgt dat deze 24/7 bereikbaar zijn voor Opdrachtgever.</p>
+<p><em>(CRA)</em> 13.3 Leverancier hanteert een <em>Coordinated
+Vulnerability Disclosure‑beleid (CVD)</em> voor het ontvangen,
+beoordelen en verhelpen van gemelde beveiligingskwetsbaarheden.</p>
+<p>Dit beleid beschrijft ten minste:</p>
+<ul>
+<li><p>hoe kwetsbaarheden op verantwoorde wijze kunnen worden
+gemeld;</p></li>
+<li><p>hoe meldingen worden beoordeeld en opgevolgd;</p></li>
+<li><p>hoe afstemming plaatsvindt met melders en betrokken
+partijen;</p></li>
+<li><p>op welke wijze en op welk moment communicatie over verholpen
+kwetsbaarheden plaatsvindt.</p></li>
+</ul>
+<p>Leverancier stelt als onderdeel van dit beleid een duidelijk en
+openbaar toegankelijk contactpunt beschikbaar voor het melden van
+kwetsbaarheden. Het CVD‑beleid is openbaar toegankelijk en wordt op
+verzoek aan Opdrachtgever verstrekt.</p>
+<h2 id="14-authenticatie-en-accounts">14. Authenticatie en accounts</h2>
+<p><em>(BIO2: 5.17.01, 5.18.01, 8.18.01)</em></p>
+<p>14.1 Alle beheer- en administratieve accounts worden uitsluitend
+gebruikt met wachtwoordloze, phishing-bestendige authenticatie op basis
+van de FIDO2-standaard of een gelijkwaardige non-phishable
+authenticatiemethode.</p>
+<p>14.2 Het gebruik van wachtwoorden, sms-codes of app-gebaseerde
+push-notificaties voor accounts is niet toegestaan, tenzij Opdrachtgever
+hiervoor expliciet en schriftelijk toestemming verleent op basis van een
+risicoafweging.</p>
+<p>14.3 De door Opdrachtnemer geleverde systemen, diensten en
+applicaties ondersteunen naadloos (seamless) Single Sign-On (SSO) op
+basis van federatieve identity-standaarden (zoals SAML 2.0 of OpenID
+Connect) en zijn volledig compatibel met de door Opdrachtgever gebruikte
+identityprovider, zijnde [ identity provider (e.g. MS Entra) van
+Opdrachtgever ].</p>
+<p>Authenticatie dient wachtwoordloos en phishing-resistent plaats te
+vinden via FIDO2/passkeys, zonder fallback naar minder veilige methoden
+(zoals wachtwoorden of legacy MFA), tenzij expliciet en schriftelijk
+overeengekomen met Opdrachtgever.</p>
+<p>De oplossing ondersteunt het afdwingen van phishing-resistente
+authenticatiesterkte en maakt gebruik van moderne
+authenticatiemechanismen die integreren met het Conditional
+Access-beleid van Opdrachtgever.</p>
+<p>14.4 Voor overige accounts wordt bij voorkeur gebruikgemaakt van
+FIDO2-gebaseerde authenticatie of een gelijkwaardige phishing-bestendige
+methode. Leverancier zorgt ervoor dat deze methode uiterlijk binnen
+twaalf (12) maanden na ingangsdatum van de overeenkomst beschikbaar is
+en structureel wordt toegepast en afgedwongen voor alle accounts.</p>
+<h2 id="15-werkplekken-en-toegangsvoorzieningen">15. Werkplekken en
+toegangsvoorzieningen</h2>
+<p><em>(BIO2: 5.15.01, 5.17.01, 8.01.01)</em></p>
+<p>15.1 Leverancier werkt vanaf beheerde, beveiligde werkplekken, welke
+beperkt zijn in het installeren van ongeautoriseerde software, voorzien
+van actuele hardening, patching en endpoint-beveiliging.</p>
+<p>15.2 Beheerhandelingen mogen niet worden uitgevoerd vanaf werkplekken
+waarop de gebruiker standaard beschikt over lokale
+administratorrechten.</p>
+<h2 id="16-toekenning-en-gebruik-van-administratieve-rechten">16.
+Toekenning en gebruik van administratieve rechten</h2>
+<p><em>(BIO2: 5.18.01, 5.18.02, 8.02.01)</em></p>
+<p>16.1 Administratieve rechten worden nooit standaard of permanent
+toegekend.</p>
+<p>16.2 Alle verhoogde rechten worden uitsluitend verleend op basis van
+het just-in-time principe, waarbij:</p>
+<ul>
+<li><p>rechten tijdelijk en taakgericht worden toegekend;</p></li>
+<li><p>rechten automatisch vervallen na afloop van de taak;</p></li>
+<li><p>gebruik wordt gelogd en gemonitord.</p></li>
+</ul>
+<p>16.3 Leverancier maakt hiervoor gebruik van een voorziening voor
+Privileged Identity Management (PIM) of een gelijkwaardige
+oplossing.</p>
+<h2 id="17-tenant-brede-en-hoogste-beheerdersrechten">17. Tenant-brede
+en hoogste beheerdersrechten</h2>
+<p><em>(BIO2: 5.18.01, 8.18.01)</em></p>
+<p>17.1 Tenant-brede administratieve rollen met volledige bevoegdheden,
+waaronder begrepen maar niet beperkt tot rollen zoals Global
+Administrator, Tenant Owner of gelijkwaardige hoogste beheerdersrollen,
+worden tot een minimum beperkt.</p>
+<p>17.2 Deze rollen worden uitsluitend toegekend:</p>
+<ul>
+<li><p>op basis van het just-in-time principe;</p></li>
+<li><p>met verplichte FIDO2-authenticatie;</p></li>
+<li><p>met aanvullende logging en monitoring.</p></li>
+</ul>
+<h2 id="18-secure-software-development-lifecycle-ssdlc">18. Secure
+Software Development Lifecycle (SSDLC)</h2>
+<p><em>(BIO2: 8.27.01, 8.28, 8.29.01, 8.30.01, 8.31.01, 8.31.02, 8.32.01
+en 8.32.02)</em></p>
+<p>18.1 Leverancier ontwikkelt software conform een Secure Software
+Development Lifecycle (SSDLC), waarbij beveiliging vanaf het ontwerp
+structureel is ingebed (Security-by-Design en Security-by-Default).</p>
+<p>Voorafgaand aan iedere (door)ontwikkeling wordt een risicoanalyse
+uitgevoerd. De uitkomsten hiervan worden aantoonbaar verwerkt in het
+ontwerp en de implementatie. De risicoanalyse is op verzoek van
+Opdrachtgever opvraagbaar.</p>
+<p>18.2 Alleen geautoriseerde personen hebben toegang tot ontwikkel-,
+test- en productieomgevingen.</p>
+<p>De scheiding tussen ontwikkel-, test- en productieomgevingen is
+verplicht en aantoonbaar ingericht.</p>
+<p>Ontwikkel- en testomgevingen bevatten geen productiegegevens en zijn
+niet gekoppeld aan productiesystemen.</p>
+<p>18.3 Leverancier beschikt over procedures voor:</p>
+<ul>
+<li><p>het beoordelen van broncode (bijvoorbeeld via peer
+reviews);</p></li>
+<li><p>het borgen van het vier-ogen-principe bij wijzigingen in kritieke
+code;</p></li>
+<li><p>het documenteren en opvolgen van bevindingen uit
+codebeoordelingen.</p></li>
+</ul>
+<p>18.4 Leverancier voert aantoonbaar beveiligingstests uit gedurende de
+gehele softwareontwikkelcyclus, waaronder minimaal:</p>
+<ul>
+<li><p>statische codeanalyse (SAST);</p></li>
+<li><p>dynamische analyse (DAST);</p></li>
+<li><p>dependency- en kwetsbaarheidsscans.</p></li>
+</ul>
+<p>SAST, DAST en overige geautomatiseerde beveiligingscontroles zijn
+geïntegreerd in de ontwikkel- en releasepipeline en worden uitgevoerd
+voorafgaand aan iedere productie-uitrol.</p>
+<p>Daarnaast voert Leverancier penetratietests uit die voldoen aan het
+CCV-keurmerk Pentesten, mede gebaseerd op de OWASP Top 10. Deze
+penetratietests worden uitgevoerd:</p>
+<ul>
+<li><p>voorafgaand aan majeure releases;</p></li>
+<li><p>bij significante functionele wijzigingen met een hoger
+risico.</p></li>
+</ul>
+<p>Kritieke en hoge bevindingen worden hersteld vóór productiegang.</p>
+<p>18.5 Leverancier maakt uitsluitend gebruik van bekende en veilige
+softwarecomponenten, zoals libraries en frameworks.</p>
+<p>Er is een ingericht proces voor:</p>
+<ul>
+<li><p>dependency scanning;</p></li>
+<li><p>het detecteren van kwetsbaarheden in externe
+componenten;</p></li>
+<li><p>het tijdig patchen of vervangen van kwetsbare
+afhankelijkheden.</p></li>
+</ul>
+<p>Het gebruik van componenten met bekende kritieke kwetsbaarheden is
+niet toegestaan.</p>
+<p>18.6 Software Bill of Materials (SBOM) <em>(CRA)</em></p>
+<p>Leverancier voldoet aan artikel 25 van de GIBIT 2025 inzake Software
+Bill of Materials (SBOM). De actuele SBOM wordt op verzoek onverwijld
+aan Opdrachtgever verstrekt.</p>
+<p>Leverancier beschikt over een ingericht proces om op basis van de
+SBOM kwetsbaarheden tijdig te identificeren, de impact daarvan te
+beoordelen en passende mitigerende maatregelen te treffen.</p>
+<p>Indien kritieke kwetsbaarheden worden vastgesteld in gebruikte
+componenten informeert Leverancier Opdrachtgever onverwijld, inclusief
+impactanalyse, herstelmaatregelen en hersteltermijn.</p>
+<p>18.7 Software is zodanig ontworpen dat deze eenvoudig en veilig kan
+worden geüpdatet.</p>
+<p>Leverancier beschikt over procedures voor:</p>
+<ul>
+<li><p>het snel patchen van kwetsbaarheden;</p></li>
+<li><p>het gecontroleerd uitrollen van beveiligingsupdates; deze mogen
+niet worden uitgesteld door functionele wijzigingen. Ze kunnen wél apart
+worden uitgerold (CRA);</p></li>
+<li><p>het informeren van Opdrachtgever over kritieke kwetsbaarheden en
+patches.</p></li>
+</ul>
+<blockquote>
+<p>Leverancier informeert, indien van toepassing, op transparante wijze
+over verholpen beveiligingskwetsbaarheden zodra een beveiligingsupdate
+beschikbaar is gesteld (CRA)</p>
+<p>Beveiligingsupdates voor kritieke en hoge kwetsbaarheden worden
+onverwijld beschikbaar gesteld en uitgerold, zonder aanvullende kosten
+voor Opdrachtgever. Voor maatwerkproducten kunnen hierover afwijkende
+afspraken worden gemaakt, op voorwaarde dat deze vooraf schriftelijk
+zijn vastgelegd (CRA).</p>
+</blockquote>
+<p>18.8 Ontwikkelde software is adequaat en actueel gedocumenteerd,
+zodanig dat deze:</p>
+<ul>
+<li><p>overdraagbaar is aan andere ontwikkelaars of teams;</p></li>
+<li><p>onderhoudbaar is zonder afhankelijkheid van specifieke
+personen.</p></li>
+</ul>
+<h2 id="19-kunstmatige-intelligentie-ai">19. Kunstmatige intelligentie
+(AI)</h2>
+<p><em>(AI Act)</em></p>
+<p>19.1 Toepasselijkheid Leverancier meldt voorafgaand schriftelijk
+indien binnen de dienstverlening gebruik wordt gemaakt van kunstmatige
+intelligentie (AI) of andere algoritmes, waaronder begrepen maar niet
+beperkt tot:</p>
+<ul>
+<li><p>generatieve AI;</p></li>
+<li><p>large language models (LLM's);</p></li>
+<li><p>machine learning;</p></li>
+<li><p>AI-functionaliteiten van derden;</p></li>
+<li><p>AI-functionaliteiten die inhoud genereren, analyseren,
+classificeren, voorspellen of geautomatiseerde besluitvorming
+ondersteunen.</p></li>
+</ul>
+<p>19.2 Leverancier beschikt over aantoonbaar ingerichte governance voor
+het beheersen van risico's die voortvloeien uit het gebruik van AI
+binnen de dienstverlening.</p>
+<p>Deze governance omvat ten minste:</p>
+<ul>
+<li><p>verantwoordelijkheden en eigenaarschap;</p></li>
+<li><p>risicobeoordeling;</p></li>
+<li><p>wijzigingsbeheer;</p></li>
+<li><p>toezicht op AI-functionaliteiten;</p></li>
+<li><p>periodieke evaluatie van risico's en beheersmaatregelen.</p></li>
+</ul>
+<p>Leverancier verstrekt op verzoek inzicht in de inrichting van deze
+governance.</p>
+<p>19.3 Gegevens van Opdrachtgever worden niet gebruikt voor:</p>
+<ul>
+<li><p>training;</p></li>
+<li><p>hertraining;</p></li>
+<li><p>fine-tuning;</p></li>
+<li><p>validatie;</p></li>
+<li><p>evaluatie.</p></li>
+</ul>
+<p>van AI-modellen, tenzij Opdrachtgever hiervoor vooraf expliciet
+schriftelijk toestemming heeft verleend.</p>
+<p>19.4 Leverancier verstrekt op verzoek inzicht in:</p>
+<ul>
+<li><p>toegepaste AI-functionaliteiten;</p></li>
+<li><p>de doeleinden waarvoor AI wordt ingezet;</p></li>
+<li><p>betrokken AI-leveranciers;</p></li>
+<li><p>verwerkte gegevenscategorieën;</p></li>
+<li><p>locaties waar gegevens worden verwerkt;</p></li>
+<li><p>getroffen beveiligingsmaatregelen.</p></li>
+</ul>
+<p>19.5 Leverancier meldt voorgenomen wijzigingen in
+AI-functionaliteiten ten minste negentig (90) dagen voorafgaand
+schriftelijk aan Opdrachtgever indien deze wijzigingen invloed kunnen
+hebben op:</p>
+<ul>
+<li><p>de verwerking van gegevens;</p></li>
+<li><p>de beveiliging van de dienstverlening;</p></li>
+<li><p>de functionaliteit van de oplossing;</p></li>
+<li><p>de toepasselijke risico's.</p></li>
+</ul>
+<p>Opdrachtgever behoudt het recht om naar aanleiding van dergelijke
+wijzigingen een aanvullende risicobeoordeling uit te voeren.</p>
+<p>19.6 Indien AI-functionaliteiten worden ingezet voor het ondersteunen
+van processen of besluitvorming, borgt Leverancier dat uitkomsten
+controleerbaar, navolgbaar en door een mens worden beoordeeld en kunnen
+worden gecorrigeerd.</p>
+<h2 id="20-technisch-beveiligingsbeheer">20. Technisch
+beveiligingsbeheer</h2>
+<p><em>(BIO2: 5.14.01, 8.07.01, 8.07.03, 8.07.04, 8.08.01 t/m 8.08.03,
+8.19.01, 8.20.02, 8.21.01, 8.21.02, 8.21.04 en 8.24.01 t/m
+8.24.04)</em></p>
+<p>20.1 Leverancier beschikt over een aantoonbaar proces voor
+kwetsbaarheden- en patchmanagement voor alle componenten die de
+dienstverlening ondersteunen. Bij kwetsbaarheden met een hoge kans op
+misbruik en hoge potentiële schade worden passende maatregelen zo snel
+mogelijk, maar uiterlijk binnen één week getroffen. Als structureel
+herstel niet binnen deze termijn mogelijk is, worden direct tijdelijke
+mitigerende maatregelen getroffen en wordt Opdrachtgever geïnformeerd
+over risico, maatregel en herstelplanning.</p>
+<p>20.2 De omgevingen en beheerde werkplekken die de dienstverlening
+ondersteunen zijn voorzien van actuele bescherming tegen malware en
+ongeautoriseerde software. Ontvangen en gedownloade bestanden worden
+vóór uitvoering of opslag passend gecontroleerd.</p>
+<p>20.3 Beheerinterfaces en beheersegmenten zijn logisch gescheiden van
+gebruikersnetwerken. Verkeer tussen vertrouwde en externe of
+onvertrouwde zones wordt bewaakt op verdacht verkeer en beschermd tegen
+aanvallen die beschikbaarheid, integriteit of vertrouwelijkheid kunnen
+aantasten.</p>
+<p>20.4 Gegevens van Opdrachtgever worden tijdens transport en opslag
+versleuteld met actuele, algemeen aanvaarde cryptografische standaarden.
+Leverancier heeft verantwoordelijkheden voor sleutelbeheer vastgelegd,
+houdt een actueel overzicht van toegepaste cryptografie bij en volgt
+voor algoritmen en sleutelsterktes de actuele adviezen van het NCSC en,
+waar relevant, het NBV van de AIVD.</p>
+<p>20.5 Internetgerichte systemen en e-mailvoorzieningen die onderdeel
+zijn van de dienstverlening voldoen aan de toepasselijke verplichte
+standaarden van het Forum Standaardisatie. Leverancier kan de actuele
+toepassing daarvan op verzoek toelichten.</p>
+</body></html>

@@ -156,10 +156,6 @@ De dataset is bewust machineleesbaar zodat je er je eigen weergave op kunt bouwe
 eigen bestuur, een filter op alleen de partijen waar je zelf bij kunt, of een koppeling aan je eigen
 stakeholderregister. Alle codes staan in het `meta`-blok van beide bestanden.
 
-## Auteur
-
-Bas Stevens.
-
 ## Licentie
 
 [EUPL-1.2](https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE), vrij te hergebruiken en

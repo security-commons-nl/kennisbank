@@ -35,6 +35,7 @@ kennisbank/
 ### Vóór indienen
 
 - **Anonimiseer** het document: geen namen, e-mailadressen, interne systeem-URLs of andere persoonsgegevens. Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer) of vervang handmatig door functieomschrijvingen.
+- **Geen persoonsnamen, ook niet van de inzender.** De kennisbank kent geen auteursvermelding op naam: niet in frontmatter, niet in een kopje "Auteur", niet in een bronverwijzing ("via X op LinkedIn"). Schrijf **vakgenoot**, eventueel met rol en sector ("vakgenoot, CISO van een gemeente"). Organisatienamen alleen als de organisatie zelf publiceert of instemt. Wie iets wil delen, hoeft daar zijn naam niet aan te verbinden; dat verlaagt de drempel voor iedereen.
 - **Naamgeving**: beschrijvend, zonder spaties, bv. `bia-template-gemeente.docx` of `privacybeleid-voorbeeld.pdf`.
 - **Plaatsing**: in de juiste map (zie hierboven).
 
