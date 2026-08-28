@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Passkeys invoeren</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style></head>
+<body><div class="kop"><b>Passkeys invoeren</b> · handleiding, versie 2026-08 · security-commons-nl, EUPL-1.2<br>Bijlagen (directiememo, managersmail, FAQ, herstelprocedure) staan als markdown in dezelfde map op GitHub.</div><h1 id="passkeys-invoeren">Passkeys invoeren</h1>
+<p>Als je digitale dreiging platslaat, komt het meestal neer op drie
+dingen: iemand probeert je inloggegevens te stelen (phishing,
+adversary-in-the-middle, credential theft), iemand probeert je iets te
+laten uitvoeren (malware, misbruik van gebruikersacties), of je hebt
+zelf iets openstaan wat kwetsbaar is. De eerste categorie is in de
+praktijk nog steeds de meest effectieve ingang. Het is ook de plek waar
+je het snelst impact maakt: wachtwoorden loslaten en overstappen op
+phishing-resistente authenticatie.</p>
+<p>Deze handleiding beschrijft hoe een gemeente dat organisatiebreed
+heeft gedaan, welke keuzes daarbij zijn gemaakt en waar het in de
+praktijk tegenzat. Geen theorie; handvatten om zelf aan de slag te gaan.
+De sjablonen die bij de uitrol zijn gebruikt, staan als bijlagen in deze
+map:</p>
+<table>
+<thead>
+<tr>
+<th>Bestand</th>
+<th>Wat het is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="directiememo.md"><code>directiememo.md</code></a></td>
+<td>Memo aan directie of MT, ter kennisgeving vóór de overstap</td>
+</tr>
+<tr>
+<td><a href="mail-managers.md"><code>mail-managers.md</code></a></td>
+<td>Mail aan leidinggevenden: wat hun rol is in de uitrol</td>
+</tr>
+<tr>
+<td><a
+href="faq-medewerkers.md"><code>faq-medewerkers.md</code></a></td>
+<td>Veelgestelde vragen voor het intranet, 25 stuks</td>
+</tr>
+<tr>
+<td><a
+href="herstelprocedure-tap.md"><code>herstelprocedure-tap.md</code></a></td>
+<td>De enige herstelroute na de overstap: Temporary Access Pass</td>
+</tr>
+<tr>
+<td><a href="index.html"><code>index.html</code></a></td>
+<td>Deze handleiding als leesversie, plakbaar in Word</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waarom-je-huidige-mfa-niet-genoeg-is">Waarom je huidige MFA niet
+genoeg is</h2>
+<p>Push-notificaties en number matching zijn "MFA" op papier, maar beide
+vertrouwen op je sessie en je aandacht. Een aanvaller die een proxy
+tussen jou en de echte inlogpagina zet (adversary-in-the-middle), laat
+jou zelf de goedkeuring geven; hij logt in vóór jou, of lokt je akkoord
+uit. Vrijwel alle phishingcampagnes richten zich op de
+Microsoft-loginflow. Wie daar nog met push of number matching inlogt, is
+voor die campagnes vatbaar.</p>
+<p>Een passkey werkt anders. Het is een cryptografisch sleutelpaar op de
+FIDO2-standaard: de privésleutel staat op je apparaat en verlaat dat
+apparaat niet, de publieke sleutel staat bij de identity provider.
+Inloggen is een lokale handeling (pincode, vingerafdruk, gezicht) die
+alleen werkt voor het echte domein. Een nepsite krijgt geen geldige
+handtekening, hoe overtuigend hij ook is.</p>
+<p>In de praktijk: op een beheerde laptop met Windows Hello for Business
+gebruik je dit principe al en log je in zonder telefoon. Op telefoon of
+tablet gebruik je de Microsoft Authenticator. Log je in op een ander
+apparaat (een privé-pc), dan scan je een QR-code met de Authenticator;
+die legt via bluetooth kort contact om te bevestigen dat je fysiek in de
+buurt bent. Op afstand inloggen met jouw account kan dan niet meer,
+omdat jouw apparaat er letterlijk bij moet zijn.</p>
+<h2 id="de-aanpak-in-negen-stappen">De aanpak in negen stappen</h2>
+<h3 id="1-inzicht-en-keuze">1. Inzicht en keuze</h3>
+<p>Begin niet met techniek maar met begrijpen waar je staat.</p>
+<ul>
+<li>Draait je identity centraal via Microsoft Entra ID, en zijn je
+kritieke applicaties via SSO gekoppeld? Of is het versnipperd: alleen
+Microsoft centraal, de rest losse logins?</li>
+<li>Maak een overzicht van applicaties zonder SSO en zonder
+FIDO2-ondersteuning.</li>
+<li>Werk je met beheerde devices waar Windows Hello for Business al op
+staat?</li>
+<li>Bepaal je doel: passkeys naast de bestaande login, of
+passkey-only.</li>
+</ul>
+<p>Vanuit dat startpunt bepaal je de route. Ga je puur voor passkeys, of
+gebruik je het moment om alles richting SSO te trekken? De gemeente uit
+deze handleiding koos bewust voor passkeys zelf, met vooraf het
+landschap in kaart zodat duidelijk was waar risico's zouden blijven.
+Voor de leveranciersscope werkte een afbakening op de kritieke
+processen: alle leveranciers die onderdeel zijn van een kritiek proces,
+aan SSO.</p>
+<h3 id="2-bestuurlijke-aftrap">2. Bestuurlijke aftrap</h3>
+<p>Zorg dat dit een organisatiebesluit wordt. Het verhaal aan de
+directie was simpel: makkelijker inloggen, geen wachtwoorden meer om te
+vergeten, minder druk op het shared service center, meer productiviteit.
+Met als bijvangst dat een hele categorie phishing- en AiTM-aanvallen
+wegvalt.</p>
+<p>Haal een concreet besluit op: wat, met wie, wanneer. Maak de impact
+duidelijk (het inloggen verandert, tijdelijke druk op ondersteuning) en
+vraag akkoord op richting, globale planning en benodigde capaciteit.
+Zonder bestuurlijke steun strandt de uitrol vroeg of laat omdat het "te
+lastig" is of "de business door moet". De <a
+href="directiememo.md">directiememo</a> is het sjabloon.</p>
+<h3 id="3-projectteam">3. Projectteam</h3>
+<p>Stel een team samen met IT, informatiebeveiliging én het shared
+service center: niet alleen techniek, maar juist de mensen die dagelijks
+met gebruikers werken. Spreek rollen af (techniek, communicatie,
+support) en neem het team mee in wat passkeys zijn en wat er voor
+gebruikers verandert.</p>
+<h3 id="4-technische-basis">4. Technische basis</h3>
+<ul>
+<li>Zet passkey-registratie aan in de Microsoft Authenticator.</li>
+<li>Richt een TAP-procedure in (Temporary Access Pass): dat wordt de
+vervanger van "wachtwoord vergeten".</li>
+<li>Bouw het Conditional Access-beleid: phishing-resistente
+authenticatie voorbereiden, legacy authenticatie in kaart brengen.</li>
+<li>Zet FIDO2-restricties aan en houd het aantal toegestane methodes
+klein: alleen de Microsoft Authenticator en hardwaresleutels zoals een
+YubiKey (via toegestane AAGUID's).</li>
+</ul>
+<p><strong>Nog niet afdwingen.</strong> In veel handleidingen gaat
+Conditional Access vrij snel aan; in de praktijk breek je dan je eigen
+omgeving omdat gebruikers nog niet klaar zijn. Eerst registratie, dan
+gebruik, pas daarna afdwingen.</p>
+<h3 id="5-pilot">5. Pilot</h3>
+<p>Test niet alleen of het werkt, maar hoe het voelt in dagelijks
+gebruik. Begin met een kleine testgroep en breid uit met key users uit
+verschillende afdelingen. Test de scenario's laptop (Windows Hello),
+mobiel en privé-device. Verzamel wat stukloopt: applicaties die niet
+werken, devices zonder bluetooth, leveranciers.</p>
+<p>Wat er in de pilot naar boven kwam: leveranciers met SSO die niet
+goed omgaan met passkeys, cloud-pc's zonder Windows Hello, devices
+zonder bluetooth, en mobiele apps met halfwerkende webviews waardoor de
+authenticatieflow stukloopt.</p>
+<h3 id="6-keuzes-en-uitzonderingen">6. Keuzes en uitzonderingen</h3>
+<p>Hier maak je het verschil tussen theorie en praktijk.</p>
+<ul>
+<li><strong>Fallback tijdens registratie: nee.</strong> De bootstrap- en
+recovery-flow loopt volledig via TAP. Sta je wachtwoord plus
+Authenticator toe als registratieroute, dan kunnen gebruikers na de
+omzetting via die weg passkeys blijven registreren en val je nooit
+helemaal wachtwoordloos.</li>
+<li><strong>Apps zonder FIDO2-ondersteuning:</strong> uitzonderingen op
+applicatie-, gebruikers- of groepsniveau, waar nodig beperkt met IP- of
+device-restricties. Niet generiek, wel gericht. Niet mooi, wel
+gecontroleerd.</li>
+<li><strong>Leg vast welke uitzonderingen tijdelijk zijn en wanneer je
+ze afbouwt.</strong></li>
+</ul>
+<h3 id="7-voorbereiding-uitrol">7. Voorbereiding uitrol</h3>
+<p>Zorg dat de organisatie klaar is voordat je afdwingt. Informeer
+managers en laat hen hun teams activeren (de <a
+href="mail-managers.md">managersmail</a>). Publiceer uitleg op het
+intranet met korte video's en een <a href="faq-medewerkers.md">FAQ</a>.
+Organiseer inloopsessies en ga langs dagstarts. Bereid het shared
+service center voor op veelgestelde vragen en registratiehulp.</p>
+<p>In deze periode loopt het shared service center vol. Niet omdat het
+misgaat, maar omdat mensen het spannend vinden en geholpen willen
+worden. Daar moet je capaciteit op plannen.</p>
+<h3 id="8-gefaseerde-uitrol-en-afdwingen">8. Gefaseerde uitrol en
+afdwingen</h3>
+<p>Verdeel de organisatie in groepen (per afdeling) en zet Conditional
+Access gefaseerd aan. Kies het moment slim: 's avonds omzetten, want de
+meeste mensen loggen 's ochtends in, de sessie verloopt 's avonds, en je
+ziet dus die ochtend meteen of het werkt. Zorg dat SSC en IT stand-by
+staan; monitor wie faalt op de policies. Begeleid kritieke gebruikers
+(directie, college) persoonlijk: samen zitten, instellen, dan pas
+omzetten.</p>
+<p>Vanaf het moment dat je afdwingt, verandert er iets fundamenteels:
+registratie via wachtwoord en MFA kan niet meer. De TAP-procedure, via
+een interne pagina alleen toegankelijk voor SSC en IT, is dan de enige
+manier om nog een passkey te registreren. Zie de <a
+href="herstelprocedure-tap.md">herstelprocedure</a>.</p>
+<p>Uiteindelijk is iedereen om. Medewerkers loggen in op hun beheerde
+device met Windows Hello for Business, of via hun telefoon met een
+passkey in de Authenticator. Toegang verlies je alleen nog als je je
+device kwijt bent of je toegangscode niet meer weet. Dat is een heel
+ander risicoprofiel.</p>
+<h3 id="9-borging-en-doorontwikkeling">9. Borging en
+doorontwikkeling</h3>
+<p>Na livegang begint het echte werk: eisen richting leveranciers (SSO
+verplicht, FIDO2 ondersteunen), uitzonderingen afbouwen, gebruik en
+incidenten monitoren. Wat na de eigen organisatie overblijft, zijn de
+leveranciers, en daar zit vaak het grootste gat. Hun incidenten eindigen
+vaak alsnog bij jou. Neem passkey-eisen op in je programma van eisen en
+je architectuur; de <a href="../security-annex-leveranciers/">Security
+Annex voor leveranciers</a> in deze kennisbank doet precies dat (artikel
+14).</p>
+<h2 id="keuzes-die-het-verschil-maken">Keuzes die het verschil
+maken</h2>
+<p><strong>Alleen je Microsoft-omgeving, of alles via SSO?</strong>
+Idealiter werkt elke applicatie via SSO, maar dat lukt niet altijd,
+omdat je organisatie er nog niet aan toe is of je leverancier niet. Twee
+risico's spelen: phishing en de wildgroei aan losse inloggegevens.
+Vrijwel alle phishing richt zich op de Microsoft-loginpagina; custom
+phishing op leveranciersportalen is in de praktijk zeldzaam. Door alleen
+al op dat front passkeys af te dwingen, mitigeer je een hoog risico. De
+versnippering van logins blijft de reden om leveranciers alsnog aan SSO
+te krijgen.</p>
+<p><strong>Bootstrap en recovery: alleen TAP.</strong> In een
+veelgebruikte publieke blueprint (het blog "You shall not passkey" van
+een Microsoft-identity-specialist) mag ook wachtwoord plus Authenticator
+als registratieroute, om bestaande gebruikers makkelijker te laten
+upgraden. Dat is handig tijdens de uitrol, maar laat na de omzetting een
+achterdeur open. De strakke variant: registratie uitsluitend via
+TAP.</p>
+<p><strong>FIDO2-instellingen: key restrictions aan.</strong> Beperk
+welke apparaten en software passkeys mogen registreren tot specifieke
+AAGUID's: de Authenticator-app en een aantal hardwaresleutels. De
+sleutel moet device-bound zijn en het apparaat niet kunnen verlaten.
+Leveranciers vroegen om cloudopslag toe te staan (1Password en
+dergelijke); daarmee creëer je een nieuw risico, omdat de sleutel dan
+deelbaar is en vanaf elk device bruikbaar. Ook voor
+niet-geprivilegieerde accounts: niet syncable maken. Je identity is je
+goud; verklein de blast radius.</p>
+<p><strong>Fysieke sleutels of digitaal?</strong> Een YubiKey voelt
+tastbaar en dus "extra veilig", maar de veiligheid zit in de combinatie
+van factoren. Een device-bound passkey of Windows Hello for Business
+vraagt ook fysiek bezit van het device én ontgrendeling met pincode of
+biometrie; een aanvaller moet jouw laptop of telefoon stelen én erin
+komen. Losse fysieke sleutels verdwijnen in de praktijk juist in
+broekzakken en bureaulades. Voor hoog-risico-accounts en
+beheerdersrollen kan een dedicated hardwaretoken passend zijn; voor de
+brede organisatie levert een device-bound passkey op een beheerd device
+al een zeer hoog niveau, zonder de adoptie te verliezen.</p>
+<p><strong>Je IT-leverancier.</strong> Ben je nog niet overgezet door je
+IT-leverancier, dan kan dat een veelzeggend signaal zijn.
+IT-leveranciers hebben dit vaak nog niet voorhanden en maken het
+daardoor onnodig ingewikkeld en duur.</p>
+<h2 id="wat-er-in-de-praktijk-tegenzat">Wat er in de praktijk
+tegenzat</h2>
+<ul>
+<li><strong>Printers en apps met een webview.</strong> Een printer
+waarop je moet inloggen maar die geen bluetooth heeft, breekt de
+verificatieslag. Mobiele apps die via een brakke webview inloggen,
+ondersteunen de flow niet. Een webview die onderwater via Graph
+aanmeldt, kun je niet uitzonderen op applicatie-ID; dan blijft
+onderscheid op netwerk (een vaste uitgaande IP) over. Voor die gevallen:
+zeer specifieke Conditional Access-regels op systeem, persoon of groep,
+met strakke limitaties op netwerk of device. Legacy MFA bleef daar
+nodig, maar zo dichtgetimmerd dat het risico klein is.</li>
+<li><strong>Cloud-pc's zonder Windows Hello en devices zonder
+bluetooth.</strong></li>
+<li><strong>Weerstand is geen onwil.</strong> Medewerkers vonden de
+overstap spannend en wilden persoonlijke hulp. Afdelingen verschilden in
+adoptiesnelheid. Wat werkte: managers vooraf informeren, korte video's,
+dagstarts langs, en hulptroepen op de vloer in de week van de
+omzetting.</li>
+<li><strong>Externe inhuur met een eigen laptop</strong> logt in via de
+Authenticator op de telefoon; een passkey op de laptop van hun werkgever
+kan niet.</li>
+<li><strong>Windows Hello is niet hetzelfde als een passkey</strong>, en
+dat moet je uitleggen: Windows Hello beveiligt het device, de passkey
+beveiligt je accounts. Wie alleen Windows Hello heeft, is veilig op de
+laptop, maar niet automatisch op de telefoon of een onbeheerd apparaat.
+De FAQ (vraag 25) heeft de uitleg.</li>
+</ul>
+<h2 id="wat-het-oplevert">Wat het oplevert</h2>
+<p>Het lijkt een enorme technische exercitie, maar de kern is verrassend
+simpel: registratie mogelijk maken, Conditional Access goed inrichten,
+gebruikers registreren, gefaseerd afdwingen, goed begeleiden. De
+praktijk verschilt per organisatie en leveranciers, legacy en mobiele
+apps kunnen het weerbarstig maken. Maar zelfs als je alleen je Microsoft
+365-omgeving phishing-resistent maakt, haal je een van de grootste
+aanvalsroutes van dit moment grotendeels onderuit. Perfect bestaat niet;
+accounts fundamenteel moeilijker overneembaar maken is op dit moment een
+van de meest effectieve maatregelen die je kunt nemen.</p>
+<p>BIO2-verankering: maatregel 5.17.01 (authenticatie-informatie) vraagt
+sterke, moderne authenticatiemiddelen. Passkeys zijn daarvan op dit
+moment de veiligste en meest toekomstbestendige vorm.</p>
+<h2 id="bronnen">Bronnen</h2>
+<ul>
+<li><a
+href="https://learn.microsoft.com/nl-nl/entra/identity/authentication/how-to-register-passkey-authenticator">Passkeys
+registreren in de Microsoft Authenticator (Microsoft Learn)</a></li>
+<li><a
+href="https://support.microsoft.com/nl-nl/windows/windows-hello-configureren-dae28983-8242-bb2a-d3d1-87c9d265a5f0">Windows
+Hello configureren (Microsoft Support)</a></li>
+<li><a
+href="https://support.yubico.com/s/article/YubiKey-hardware-FIDO2-AAGUIDs">FIDO2
+AAGUID's van YubiKey-hardware (Yubico)</a></li>
+<li>De blueprint "You shall not passkey" van een
+Microsoft-identity-specialist (publiek blog) is als vertrekpunt
+gebruikt, met de afwijkingen die hierboven staan.</li>
+</ul>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>, vrij te hergebruiken en aan te
+passen. Feedback en verbeteringen welkom via een <a
+href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">issue</a>.</p>
+</body></html>
