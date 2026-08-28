@@ -11,6 +11,8 @@ samenvatting: Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoev
 
 # Security Annex voor leveranciers
 
+> **Lees de Annex online:** [security-commons-nl.github.io/kennisbank/security/security-annex-leveranciers](https://security-commons-nl.github.io/kennisbank/security/security-annex-leveranciers/)
+
 Een contractbijlage die vastlegt wat een gemeente van een leverancier verwacht op het gebied van informatiebeveiliging: 20 artikelen, van normenkader en cloudsoevereiniteit tot FIDO2, SSDLC en AI. Ontwikkeld door en in gebruik bij een Nederlandse gemeente, hier gedeeld als sjabloon.
 
 **Bestand:** [`security-annex-v1.3.md`](security-annex-v1.3.md) (bron) en [`index.html`](index.html) (plakbaar in Word).

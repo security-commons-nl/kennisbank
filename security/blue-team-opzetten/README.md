@@ -11,6 +11,8 @@ samenvatting: Handleiding in acht stappen voor de CISO of ISO die een tijdelijk,
 
 # Een blue team opzetten
 
+> **Lees de handleiding online:** [security-commons-nl.github.io/kennisbank/security/blue-team-opzetten](https://security-commons-nl.github.io/kennisbank/security/blue-team-opzetten/)
+
 Een blue team is hier een **tijdelijk interventieteam** dat in een afgebakend venster de meest urgente
 gaten in je cyberweerbaarheid dicht, detectie inricht en de reactie oefent. Het staat náást je reguliere
 IV-lijn, werkt in fix-modus en heeft een vooraf belegd mandaat om snel te handelen. Het is defensief:
