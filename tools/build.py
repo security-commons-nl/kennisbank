@@ -164,6 +164,9 @@ def bepaal_weergave(vak: str, map_: Path) -> tuple[str, str]:
         return "live", f"{vak}/{map_.name}/"
     htmls = sorted(p for p in map_.glob("*.html"))
     if htmls:
+        # Een HTML-leesversie moet index.html heten, anders geeft de map-URL een 404
+        # op GitHub Pages en lopen sitemap en llms.txt stuk (statuut B3).
+        fout(htmls[0], "B3", "HTML-leesversie moet index.html heten, anders geeft de map-URL een 404")
         return "live", f"{vak}/{map_.name}/{htmls[0].name}"
     if any(p.suffix == ".md" and p.name != "README.md" for p in map_.iterdir()):
         return "markdown", f"{REPO}/tree/main/{vak}/{map_.name}"

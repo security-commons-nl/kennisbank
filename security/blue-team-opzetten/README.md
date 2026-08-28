@@ -24,7 +24,7 @@ waarin je ze in de praktijk tegenkomt. De sjablonen en een uitgewerkt voorbeeld 
 | [`mandaatprotocol-model.md`](mandaatprotocol-model.md) | Modelprotocol met voorbeeldclausules; door je eigen bestuur of CIO vast te stellen |
 | [`memos-per-gremium.md`](memos-per-gremium.md) | Per gremium een voorbeeldmemo en een invulbaar sjabloon, voor gemeente en waterschap |
 | [`voorbeeldcasus.md`](voorbeeldcasus.md) | Een verzonnen nulmeting en coverage-heatmap, om te zien hoe het eruitziet als je het invult |
-| [`een-blue-team-opzetten.html`](een-blue-team-opzetten.html) | Deze handleiding als leesversie, plakbaar in Word |
+| [`index.html`](index.html) | Deze handleiding als leesversie, plakbaar in Word |
 
 ## Wanneer wel, wanneer niet
 
