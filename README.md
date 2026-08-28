@@ -14,7 +14,7 @@ Werkende kennis die geanonimiseerd is gedeeld door professionals: memos, rapport
 
 ## Bijdragen
 
-Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor hoe je iets kan delen, melden of verbeteren — met of zonder Git-ervaring. Tip: gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer) om je documenten te scrubben voordat je ze deelt.
+Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor hoe je iets kan delen, melden of verbeteren — met of zonder Git-ervaring. Tip: gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer-local) om je documenten te scrubben voordat je ze deelt.
 ---
 
 ## Principes

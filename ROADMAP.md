@@ -27,4 +27,4 @@ Basisstructuur aanwezig (security, privacy, bcm, governance). CI-scanner actief:
 
 ## Bijdragen
 
-Documenten aanleveren? Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer) om ze te anonimiseren voor je een PR opent. Zie [CONTRIBUTING.md](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md).
+Documenten aanleveren? Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer-local) om ze te anonimiseren voor je een PR opent. Zie [CONTRIBUTING.md](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md).
