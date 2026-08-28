@@ -72,3 +72,49 @@ geldt hier dezelfde peildatum-eis als bij tooldirectory's in het algemeen: **een
 vindkanaal, nooit een bron.** Tor-verkeer vanaf een gemeentelijk netwerk is bovendien een eigen
 afweging, geen technische vanzelfsprekendheid. Via Meisam Eslahi (LinkedIn), "blue team energy only",
 gevonden 10-08-2026.
+
+## ScanZeker · scanzeker.nl
+
+Gratis Nederlandse externe-exposure-scanner van Secure Audit (IT-audit- en compliancebureau,
+Eindhoven). Je voert een domein of IP in en krijgt binnen ongeveer een minuut een rapport over
+twaalf modules, zonder account: SSL/TLS-configuratie (via Qualys SSL Labs), security-headers (direct,
+via echte browser en via Mozilla Observatory), e-mailbeveiliging (SPF, DKIM, DMARC, MTA-STS, TLS-RPT),
+server-exposure (open poorten via Shodan, verrijkt met CVE's uit de NVD), datalekken (Have I Been
+Pwned en HudsonRock Cavalier), subdomeinen en takeover-risico (Certificate Transparency, Certspotter,
+AlienVault OTX), DNS (DNSSEC, CAA, RPKI), certificaathistorie, technologie-stack, cookies vóór consent,
+WHOIS/RDAP en reputatie (Google Safe Browsing, Spamhaus, SURBL, URIBL, SpamCop e.a.). Bevindingen
+worden gecombineerd tot mogelijke aanvalspaden (account takeover, phishing, server-exploitatie), met
+de eigen kanttekening dat dit "scenario's op basis van observeerbare signalen" zijn, "geen bevestigde
+kwetsbaarheden".
+
+Twee lagen die het onderscheiden van de losse scanners hierboven. De **Risicokaart** zet dezelfde
+scan om in een interactieve kaart: subdomeinen als knooppunten ingedeeld naar functie (mail, beheer,
+api, externe platformen), per host de poorten, technologie en TLS-stand, en de belangrijkste
+risicopaden als keten eronder. Het **Compliance-overzicht** projecteert de scan op de controls van
+ISO 27001, NEN 7510, NIS2/Cbw, AVG en DigiD en laat per norm zien welke controls een passieve scan
+kan raken en waar bevindingen zitten. De site is er zelf helder over: "indicatief", "geen bewijs
+van (non-)conformiteit", en governance- en procesmaatregelen blijven buiten beeld.
+
+**Waarom het hier staat.** Voor gemeenten en hun ketenpartners is dit een snel nulpunt naast de
+bekende internet.nl-test: die dekt standaarden (IPv6, DNSSEC, TLS, mailauthenticatie), ScanZeker legt
+er exposure, datalekken en aanvalspaden naast en spreekt de taal van de normen waar de CISO op wordt
+aangesproken. Bruikbaar als eerste blik op een leverancier vóór een gesprek, als check na een wijziging
+in DNS of mailrouting, en als laagdrempelige manier om een bestuurder of collega te laten zíen wat er
+van buiten zichtbaar is. Verhouding tot SCOPTIX en FinalRecon: die zijn zelf te hosten of te draaien en
+geven meer controle en historie; ScanZeker is een dienst zonder installatie, met de normprojectie als
+onderscheidende laag.
+
+⚠️ **Wegingen vóór gebruik.** (1) Het is een SaaS van een commerciële partij, geen open source; de
+gratis scan is de etalage van hun auditdiensten en het "maandrapport" is een betaald vervolg.
+(2) Grotendeels passief, maar niet volledig: de methodologie beschrijft een lichte actieve
+TCP-handshake op poorten die Shodan al rapporteert (maximaal twintig) en een headless browser als een
+WAF de gewone request blokkeert. Scan dus alleen domeinen waarvoor je verantwoordelijk bent of
+toestemming hebt; de site zelf stelt daar geen voorwaarden aan. (3) Soevereiniteitsweging als bij
+SCOPTIX: de scan leunt op een reeks externe API's (Shodan, HIBP, SSL Labs, OTX, Safe Browsing), je
+domeinnaam gaat dus langs die partijen. De privacybelofte is expliciet: geen registratie, geen cookies,
+geen opslag van resultaten, alleen geanonimiseerde statistiek over welke domeinen worden gescand.
+(4) Bevindingen op gedeelde infrastructuur (IP met meer dan tien domeinen) zijn volgens de
+methodologie minder betrouwbaar; lees de exposure-module dan met die bril.
+
+Methodologie en bronnenlijst staan open op `scanzeker.nl/methodologie`. Aangedragen door Bas Stevens,
+opgenomen 28-08-2026.
