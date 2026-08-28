@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Een blue team opzetten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style></head>
+<body><div class="kop"><b>Een blue team opzetten</b> · handleiding, versie 2026-08 · security-commons-nl, EUPL-1.2<br>Bijlagen (mandaatprotocol, memo's per gremium, voorbeeldcasus) staan als markdown in dezelfde map op GitHub.</div><h1 id="een-blue-team-opzetten">Een blue team opzetten</h1>
+<p>Een blue team is hier een <strong>tijdelijk interventieteam</strong>
+dat in een afgebakend venster de meest urgente gaten in je
+cyberweerbaarheid dicht, detectie inricht en de reactie oefent. Het
+staat náást je reguliere IV-lijn, werkt in fix-modus en heeft een vooraf
+belegd mandaat om snel te handelen. Het is defensief: eigen zwakke
+plekken zichtbaar maken en dichten. Geen red teaming, geen
+tegenaanvallen.</p>
+<p>Deze handleiding is geschreven voor de CISO of ISO die het moet gaan
+doen. Acht stappen, in de volgorde waarin je ze in de praktijk
+tegenkomt. De sjablonen en een uitgewerkt voorbeeld staan in de
+bijlagen:</p>
+<table>
+<thead>
+<tr>
+<th>Bestand</th>
+<th>Wat het is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="mandaatprotocol-model.md"><code>mandaatprotocol-model.md</code></a></td>
+<td>Modelprotocol met voorbeeldclausules; door je eigen bestuur of CIO
+vast te stellen</td>
+</tr>
+<tr>
+<td><a
+href="memos-per-gremium.md"><code>memos-per-gremium.md</code></a></td>
+<td>Per gremium een voorbeeldmemo en een invulbaar sjabloon, voor
+gemeente en waterschap</td>
+</tr>
+<tr>
+<td><a href="voorbeeldcasus.md"><code>voorbeeldcasus.md</code></a></td>
+<td>Een verzonnen nulmeting en coverage-heatmap, om te zien hoe het
+eruitziet als je het invult</td>
+</tr>
+<tr>
+<td><a
+href="een-blue-team-opzetten.html"><code>een-blue-team-opzetten.html</code></a></td>
+<td>Deze handleiding als leesversie, plakbaar in Word</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Een blue team is geen nieuwe afdeling en geen vervanging van je
+IV-operatie of verbeterprogramma. Het is wel:</p>
+<ul>
+<li><strong>tijdelijk</strong>, met een einddatum en een
+evaluatiemoment;</li>
+<li><strong>aanvullend</strong>: het leent mensen uit de lijn, de
+lijnverantwoordelijkheid blijft waar die is;</li>
+<li><strong>defensief</strong>: eigen kwetsbaarheden vinden en
+dichten;</li>
+<li><strong>gericht op tempo en eigenaarschap</strong> binnen het
+venster.</li>
+</ul>
+<p>Het is niet: een audit, een compliance-exercitie, een
+beleidsherschrijving, of een permanente structuur. Herken je jezelf in
+"we weten wat de gaten zijn, maar het komt er in de lijn niet van", dan
+is dit het instrument. Is het probleem dat je de gaten niet kent, begin
+dan bij stap 1 en stop mogelijk daar: een goede nulmeting kan al genoeg
+zijn om de lijn in beweging te krijgen.</p>
+<h2 id="stap-1-een-trigger-en-een-eerlijke-foto">Stap 1. Een trigger en
+een eerlijke foto</h2>
+<p>Een interventieteam verdien je niet met "het zou kunnen". Je hebt
+twee dingen nodig: een aantoonbare externe trigger en een nuchter beeld
+van je eigen stand.</p>
+<p><strong>De trigger.</strong> Een dreiging die groot genoeg is om
+buiten de gewone route te rechtvaardigen en concreet genoeg om een
+venster aan te hangen. Denk aan een waarschuwing van het nationale CSIRT
+of je sector-CERT, een bevestigde exploited-in-the-wild-melding op iets
+wat jij in huis hebt, of een verschuiving in het dreigingslandschap die
+meerdere autoriteiten onafhankelijk benoemen. Leg de bron vast; je gaat
+hem in elke memo citeren.</p>
+<p><strong>De nulmeting.</strong> Dit is "praten met je data": stel per
+bron een paar concrete vragen en schrijf de antwoorden op.</p>
+<table>
+<thead>
+<tr>
+<th>Bron</th>
+<th>Vragen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identiteit (AD, Entra)</td>
+<td>Wie heeft admin, direct én via geneste groepen? Welke accounts
+hebben geen MFA? Welke accounts zijn stale (&gt; 90 dagen geen login)?
+Welke service-accounts met hoge rechten is iedereen vergeten?</td>
+</tr>
+<tr>
+<td>Netwerk (firewall, config)</td>
+<td>Welke paden bestaan er écht? Is DNS-filtering actief? Zijn
+beheerpaden gescheiden van de werkplek? Staan er end-of-life-componenten
+in de keten?</td>
+</tr>
+<tr>
+<td>Kwetsbaarheden (scanner, CMDB)</td>
+<td>Hoeveel zijn direct exploiteerbaar en internet-facing? Hoeveel
+CRITICAL staan langer dan 60 dagen open? Welke systemen zijn
+end-of-life?</td>
+</tr>
+<tr>
+<td>Back-up en continuïteit</td>
+<td>Voldoe je aan 3-2-1-1-0? Is er immutable opslag? Wanneer is een
+restore voor het laatst écht getest?</td>
+</tr>
+<tr>
+<td>Pentest</td>
+<td>Wat was de laatste uitkomst? Hoe snel was Domain Admin bereikt,
+hoeveel hashes gekraakt?</td>
+</tr>
+</tbody>
+</table>
+<p>De categorieën zijn generiek, de waarden blijven intern. Een ingevuld
+voorbeeld met verzonnen cijfers staat in <a
+href="voorbeeldcasus.md"><code>voorbeeldcasus.md</code></a>; daar zie je
+ook hoe hard zo'n foto binnenkomt bij een directie.</p>
+<h2 id="stap-2-eén-opdracht-en-een-einddatum">Stap 2. Eén opdracht en
+een einddatum</h2>
+<p>Formuleer de opdracht in één zin: <em>de meest urgente gaten dicht,
+detectie ingericht en reactie geoefend vóór het venster sluit.</em> Meer
+hoeft niet. Alles wat je erbij zet, wordt een reden om het niet te
+doen.</p>
+<p>Maak de tijdelijkheid expliciet: een einddatum, en een verlengings-,
+afbouw- of overgangsbesluit dat ruim vóór die datum op de agenda staat.
+Zonder einddatum wordt het een afdeling; zonder gepland besluit wordt
+het een stille dood.</p>
+<p>Drie dingen die het team doet, en niets anders:</p>
+<ol type="1">
+<li><strong>Gaten dichten.</strong> Bekende, aantoonbare gaten: MFA,
+patching, segmentatie van beheerpaden, DNS- en webfiltering,
+back-uphygiëne.</li>
+<li><strong>Detectie inrichten.</strong> Zichtbaar maken wat nu niet
+gezien wordt (netwerkflows, egress, detectieregels) en dat netjes
+overdragen aan de SOC- of MDR-partner.</li>
+<li><strong>Reactie oefenen.</strong> Reactieroutes activeren en
+beproeven, zodat "kunnen ingrijpen" geen papier is.</li>
+</ol>
+<h2 id="stap-3-een-team-op-kunnen-niet-op-positie">Stap 3. Een team op
+kunnen, niet op positie</h2>
+<p>Selecteer op kennis, lef en netwerk, niet op functieprofiel. Een
+klein team dat mag, doet meer dan een groot team dat moet afstemmen.</p>
+<table>
+<thead>
+<tr>
+<th>Laag</th>
+<th>Omvang</th>
+<th>Wie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kern</td>
+<td>ongeveer 6</td>
+<td>Multidisciplinair, in fix-modus: overzicht en techniek,
+incidentervaring, operationele security, crisis en continuïteit,
+omgevingskennis, en iemand die de brug slaat tussen risico en
+uitvoering</td>
+</tr>
+<tr>
+<td>Schil</td>
+<td>ongeveer 4</td>
+<td>Service manager (spil naar leveranciers en SOC), manager
+IV-operatie, hoofd IV-projecten (voor de latente bevindingen),
+bedrijfsvoering (voor de impactweging)</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>5 rollen</td>
+<td>Opdrachtgever · beslisser en budgethouder · facilitator · tweede
+lijn (risico-advies, geen veto) · derde lijn (onafhankelijke toets)</td>
+</tr>
+</tbody>
+</table>
+<p>Het team leent mensen. Spreek per persoon af hoeveel tijd, voor hoe
+lang, en wie in de lijn dat weet. Dedicated capaciteit plus een
+WIP-limiet is wat het team beschermt tegen "kun je dit er even bij
+doen".</p>
+<h2 id="stap-4-het-mandaat-op-één-a4">Stap 4. Het mandaat op één A4</h2>
+<p>Dit is de stap die het verschil maakt tussen een werkgroep en een
+interventieteam. Het mandaat regelt vooraf wat het team mag zonder
+akkoord per geval. Drie handelingen:</p>
+<ol type="1">
+<li>kritieke patches uitrollen buiten de change-vensters, ook bij
+tijdelijke dienstimpact;</li>
+<li>een dienst of systeem tijdelijk afschakelen bij een actieve dreiging
+(bij OT: altijd met de proceseigenaar en een veilige terugval);</li>
+<li>externe partijen raadplegen zonder aparte opdracht.</li>
+</ol>
+<p>Met vier voorwaarden die altijd gelden:</p>
+<ul>
+<li><strong>Trigger:</strong> alleen bij een Rood-score (zie stap 6),
+dus relevant, direct bereikbaar en zonder dekking.</li>
+<li><strong>Vier ogen:</strong> minstens twee kernteamleden zijn het
+eens dat het Rood is.</li>
+<li><strong>Melding:</strong> de beslisser hoort het zo snel mogelijk,
+niet achteraf.</li>
+<li><strong>Register:</strong> binnen 24 uur in het besluitenregister:
+datum, besluit, onderbouwing, hersteltijd, betrokkenen, bewijslink. Ook
+de mandaat-bypass gaat gewoon door de reguliere change- of
+incidentregistratie.</li>
+</ul>
+<p>Voeg een financieel mandaat toe met drie drempels (team beslist ·
+beslisser vooraf akkoord · formeel akkoord), en drie escalatieniveaus
+(kernteam · beslisser/CIO · calamiteitenteam). De uitwerking met
+voorbeeldclausules staat in <a
+href="mandaatprotocol-model.md"><code>mandaatprotocol-model.md</code></a>.
+Laat het vaststellen door je bestuur of CIO vóór de eerste ingreep; een
+mandaat dat achteraf wordt betwist, is geen mandaat.</p>
+<p>Geen register is hetzelfde gat als bij elk incident dat "geen
+eenduidige oorzaak" had. Het hoeft geen systeem te zijn; een lijst die
+iedereen kan vinden, volstaat.</p>
+<h2 id="stap-5-de-organisatie-meenemen">Stap 5. De organisatie
+meenemen</h2>
+<p>Een team met mandaat schrikt mensen af als ze het niet zien aankomen.
+Informeer daarom vooraf, per gremium, met dezelfde kern en een eigen
+invalshoek. De volgorde is niet toevallig: eerst wie het groen licht
+geeft, dan wie het gaat merken.</p>
+<table>
+<thead>
+<tr>
+<th>Gremium</th>
+<th>Wat ze moeten weten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemeentesecretaris of secretaris-directeur</td>
+<td>Scharnier naar het bestuur; hoort het vooraf en wijst één vast
+aanspreekpunt aan</td>
+</tr>
+<tr>
+<td>College en burgemeester, of dagelijks bestuur en dijkgraaf</td>
+<td>Er handelt tijdelijk een team buiten de reguliere route; het bestuur
+kent het risico, de openbare-orde-lijn is aangesloten, woordvoering is
+vooraf afgesproken</td>
+</tr>
+<tr>
+<td>Directieteam of MT</td>
+<td>Wie de mensen uitleent, wat de WIP-limiet is, wat er na het venster
+gebeurt</td>
+</tr>
+<tr>
+<td>IB&amp;P</td>
+<td>Op onderwerp overlap, op rol niet: IB&amp;P zet het kader, het team
+dicht acuut en draagt structurele bevindingen over</td>
+</tr>
+<tr>
+<td>Bedrijfsvoering</td>
+<td>Impactweging bij ingrepen, terugvalroutes (balie, telefoon)</td>
+</tr>
+<tr>
+<td>Privacy en FG</td>
+<td>Geen gedragsmonitoring, read-only en geaggregeerd waar het kan, geen
+inhoud van mailboxen; alles via de FG en het register</td>
+</tr>
+<tr>
+<td>Leveranciers en infrastructuurpartners</td>
+<td>Wat het mandaat voor hen betekent, wie ze bellen, wat ze mogen
+verwachten bij een afschakeling</td>
+</tr>
+<tr>
+<td>OT en procesautomatisering (waterschap)</td>
+<td>Veiligheid vóór snelheid; alleen handelen met de proceseigenaar</td>
+</tr>
+</tbody>
+</table>
+<p>Per gremium staat in <a
+href="memos-per-gremium.md"><code>memos-per-gremium.md</code></a> een
+voorbeeldmemo en een sjabloon, voor gemeente en waterschap. Elke memo
+heeft dezelfde bouw: aanleiding, wat we doen, waarom het u raakt, wat
+dit concreet kan betekenen (drie scenario's), waarborgen, wat wij u
+vragen, wat u van ons krijgt. Vul de scenario's in met jouw diensten;
+abstracte memo's overtuigen niemand.</p>
+<h2 id="stap-6-eén-dreiging-van-begin-tot-eind">Stap 6. Eén dreiging van
+begin tot eind</h2>
+<p>De werkwijze is een herhaalbaar recept: één concrete dreiging als
+drager, langs zeven stappen. Draai hem de eerste keer helemaal uit
+voordat je opschaalt; daar leer je het meest van.</p>
+<ol type="1">
+<li><strong>Scenario kiezen.</strong> Neem één concreet dreigingsrapport
+(nationaal CSIRT, MDR-partner, publieke threat intelligence) mét TTP's
+en indicatoren. Leg rapport en bron vast.</li>
+<li><strong>TTP's op de kill chain mappen.</strong> Vertaal naar
+aanvalstechnieken (MITRE ATT&amp;CK) en bepaal welke chokepoints in
+welke zones geraakt worden. Filter op je kroonjuwelen.</li>
+<li><strong>D/R/P beoordelen.</strong> Per geraakte cel: kunnen we het
+<strong>D</strong>etecteren, weten we hoe te <strong>R</strong>eageren,
+houden we het <strong>P</strong>reventief tegen? Volgorde D &gt; R &gt;
+P: eerst zien, dan handelen, dan voorkomen.</li>
+<li><strong>R/E/C scoren, bewijs, opdrachten.</strong> Scoor elk gat op
+urgentie, leg bewijs vast bij wat groen heet, maak per gat een kaart met
+de kleur als prioriteit. Rood vereist vier ogen.</li>
+<li><strong>"Set en forget" voorkomen.</strong> Laat groen automatisch
+degraderen als het bewijs te oud is; detecteer drift. Een status
+"actief" zonder bewijs is een leugen op je dashboard.</li>
+<li><strong>Variant-run.</strong> Dezelfde techniek, andere ingang of
+zone. Zo test je de robuustheid.</li>
+<li><strong>Herhalen.</strong> Geen project met einddatum maar een
+ritme: een lopende reeks runs, gekoppeld aan de sprintcyclus.</li>
+</ol>
+<p><strong>R/E/C</strong> is de urgentiescore per bevinding:</p>
+<ul>
+<li><strong>R</strong>elevance: maakt deze zwakte minstens één
+kill-chain-stap aantoonbaar makkelijker? (ja / deels / nee)</li>
+<li><strong>E</strong>xposure: bereikbaar vanaf een plausibel startpunt?
+(direct / indirect / niet)</li>
+<li><strong>C</strong>ontrol gap: wat blijft over als je maatregelen hun
+werk doen? (niets / deels / stopt)</li>
+</ul>
+<p>R is de poort: geen relevance, dan niet urgent.</p>
+<table>
+<thead>
+<tr>
+<th>Uitslag</th>
+<th>Betekenis</th>
+<th>Actie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rood</td>
+<td>relevant, direct, geen dekking</td>
+<td>mandaat-actie; vier ogen; binnen 24 uur in het register; beslisser
+binnen een uur gemeld</td>
+</tr>
+<tr>
+<td>Oranje</td>
+<td>serieus risico op minstens één as</td>
+<td>deze of eerstvolgende sprint, normale change-procedure</td>
+</tr>
+<tr>
+<td>Geel</td>
+<td>latent of structureel</td>
+<td>naar de lijn of projecten, of parkeren</td>
+</tr>
+<tr>
+<td>Groen</td>
+<td>laag risico</td>
+<td>loggen en sluiten</td>
+</tr>
+</tbody>
+</table>
+<p>De uitkomst van stap 3 zet je in een
+<strong>coverage-heatmap</strong>: zones (werkplek, identiteit,
+datacenter, cloud, OT, keten) tegen D/R/P, met een percentage per cel.
+Eén oogopslag laat zien waar de aandacht heen moet, en dat is de zwakste
+cel, niet de sterkste. Een verzonnen voorbeeld staat in <a
+href="voorbeeldcasus.md"><code>voorbeeldcasus.md</code></a>.</p>
+<p><strong>De gouden regel: bewijs stuurt status.</strong> Een groen
+vinkje is een gekoppelde, actieve detectieregel én een
+beproevingsverslag. Twee vormen van bewijs: bestaan (export, contract,
+playbook) én beproeving (oefenverslag, test). Geen bewijs, dan geen
+groen.</p>
+<h2 id="stap-7-ritme-en-bord">Stap 7. Ritme en bord</h2>
+<p>Kies een werkvorm die je al kent. Een eenvoudig bord en een vast
+ritme zijn genoeg; gebruik wat er al is.</p>
+<table>
+<thead>
+<tr>
+<th>Stapel</th>
+<th>Bedoeling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nieuw</td>
+<td>nog te bekijken</td>
+</tr>
+<tr>
+<td>Nu mee bezig</td>
+<td>het urgente werk van deze week, met WIP-limiet</td>
+</tr>
+<tr>
+<td>Wacht of later</td>
+<td>wacht op iets, of gaat naar de lijn of projecten</td>
+</tr>
+<tr>
+<td>Controle</td>
+<td>hertest of verificatie loopt</td>
+</tr>
+</tbody>
+</table>
+<p>Eén tip die zich terugbetaalt: leg besluiten en bewijs vast op de
+kaart zelf, niet in een chatkanaal.</p>
+<p>Vóór je een kaart "klaar" noemt, loop je vier vragen langs: is de
+actie echt gedaan en heb ik er bewijs van? Heeft een tweede persoon
+meegekeken? Weet ik hoe ik het terugdraai? Wie moest het weten, en is
+die ingelicht? Geen verplichte afvinklijst, wel de vragen die voorkomen
+dat "klaar" niet echt klaar is.</p>
+<p>Voor een ingreep buiten de normale route helpt een geheugensteun van
+zes regels: wat is er aan de hand en waar weet je dat vandaan · wat
+raakt het (systemen, processen, mensen) · hoe urgent is het echt (laag,
+serieus, acuut) · wie beslist mee · hoe draai je het terug · wie moet
+het weten en wie schrijft het op.</p>
+<h2 id="stap-8-opschalen-en-afbouwen">Stap 8. Opschalen en afbouwen</h2>
+<p>Hoe groter de impact, hoe hoger je het optilt. Koppel de drie niveaus
+aan wat je al hebt; niet elke organisatie heeft een apart digitaal
+calamiteitenteam, en dat hoeft ook niet.</p>
+<table>
+<thead>
+<tr>
+<th>Zwaarte</th>
+<th>Ongeveer wanneer</th>
+<th>Waar leg je het neer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Licht</td>
+<td>bekend probleem, beperkte impact, binnen je mandaat</td>
+<td>het team beslist zelf (met een tweede paar ogen) en legt het
+vast</td>
+</tr>
+<tr>
+<td>Zwaarder</td>
+<td>langere of bredere impact, ketenpartner merkbaar geraakt, of buiten
+het mandaat</td>
+<td>naar je leidinggevende of CIO; opdrachtgever op de hoogte</td>
+</tr>
+<tr>
+<td>Zwaar</td>
+<td>bevestigde aanval, datalek met meldplicht, onduidelijke scope</td>
+<td>naar je bestaande crisis- of calamiteitenroute, plus toezichthouder
+of CSIRT waar verplicht</td>
+</tr>
+</tbody>
+</table>
+<p>Heb je geen formele crisisstructuur? Spreek dan vooraf één ding af:
+wie je belt als het echt groot is, en wie dan de leiding neemt. Dat is
+het minimum.</p>
+<p><strong>Afbouwen</strong> is een besluit, geen gebeurtenis. Ruim vóór
+de einddatum kies je: afbouwen, overdragen aan de lijn, of verlengen als
+de context erom vraagt. Wat je overdraagt: het register, de openstaande
+gele kaarten met eigenaar, de detectieregels bij de SOC-partner, en een
+eindbeeld van de heatmap naast de nulmeting. Dat laatste is je
+verantwoording naar het bestuur.</p>
+<h2 id="de-weerstand-die-je-krijgt-en-je-antwoord">De weerstand die je
+krijgt, en je antwoord</h2>
+<table>
+<thead>
+<tr>
+<th>Bezwaar</th>
+<th>Antwoord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Waarom een nieuw team? We hebben de lijn toch al?</td>
+<td>Het vervangt niets en is tijdelijk. De lijn en het verbeterprogramma
+lopen door; het team leent mensen en voegt tempo en eigenaarschap
+toe.</td>
+</tr>
+<tr>
+<td>Overlapt dit niet met IB&amp;P, de IV-operatie, het programma?</td>
+<td>Op onderwerp wel, op rol niet. IB&amp;P zet het kader, de operatie
+beheert, het programma verbetert structureel. Het team dicht acuut en
+draagt structurele bevindingen over.</td>
+</tr>
+<tr>
+<td>Is dit red teaming?</td>
+<td>Nee. Defensief: eigen zwakke plekken zichtbaar maken en dichten.
+Pentesten blijven bij externe partijen.</td>
+</tr>
+<tr>
+<td>Mogen jullie echt buiten de change-vensters patchen?</td>
+<td>Ja, alleen bij Rood, met vier ogen, met melding aan de beslisser en
+binnen 24 uur in het register. Het mandaat is vooraf belegd, niet per
+geval.</td>
+</tr>
+<tr>
+<td>En als een afschakeling schade doet?</td>
+<td>Vóór elke ingreep een rollback-pad, een impactafweging en het juiste
+beslisniveau. Bij OT gaat veiligheid vóór snelheid. Bij twijfel niet
+doen, eerst opschalen.</td>
+</tr>
+<tr>
+<td>Wie houdt toezicht?</td>
+<td>Opdrachtgever (periodiek), tweede lijn (risico-advies),
+onafhankelijke derde lijn (steekproef). Plus het register: elke
+mandaat-inzet is achteraf navolgbaar.</td>
+</tr>
+<tr>
+<td>Gaat dit niet ten koste van het reguliere werk?</td>
+<td>Dedicated capaciteit en een WIP-limiet. Latente bevindingen gaan
+naar de lijn of projecten, niet op het bord van het team.</td>
+</tr>
+<tr>
+<td>Wat gebeurt er na het venster?</td>
+<td>Ruim vóór de einddatum een besluit: afbouwen, overdragen of
+verlengen. Geen open einde.</td>
+</tr>
+<tr>
+<td>Wat betekent dit voor privacy?</td>
+<td>Geen gedragsmonitoring, read-only en geaggregeerd waar het kan, geen
+inhoud van mailboxen of bestanden. Alles via de FG en het register.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uit-de-praktijk">Uit de praktijk</h2>
+
+<p><strong>Het mandaat was de helft van het werk.</strong> De technische
+gaten waren in een week bekend; het duurde langer om vast te leggen wie
+mocht besluiten om buiten het change-venster te patchen. Begin met stap
+4 zodra de trigger er is, niet pas als de eerste Rood-kaart op het bord
+staat.</p>
+<p><strong>De keten was de zwakste cel, en de minst zichtbare.</strong>
+In de coverage-heatmap scoorde de zone leveranciers en keten op alle
+drie de assen het laagst. Dat verraste niemand in het team en iedereen
+daarbuiten. Zet die zone bewust in de eerste run.</p>
+<p><strong>Groen zonder bewijs kwam meer voor dan rood.</strong> Bij de
+eerste run bleek een deel van wat "actief" heette niet beproefd. De
+regel "bewijs stuurt status" is geen formaliteit; hij haalt de vinkjes
+van het dashboard die je een vals gevoel van veiligheid gaven.</p>
+<p><strong>De memo aan het bestuur ging niet over techniek.</strong> Wat
+het college wilde weten: wie beslist, wat merken inwoners, wie doet
+woordvoering. De drie scenario's (spoedpatch 's avonds, een dienst een
+dag stil, een externe partij op locatie) deden meer dan elke tabel.</p>
+<h2 id="begrippen">Begrippen</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kill chain</td>
+<td>De stappen die een aanvaller doorloopt; nuttig om te zien waar je
+hem kunt stoppen</td>
+</tr>
+<tr>
+<td>Chokepoint</td>
+<td>Een plek in je omgeving waar je een aanvalsstap kunt zien of
+tegenhouden</td>
+</tr>
+<tr>
+<td>TTP</td>
+<td>Tactics, Techniques and Procedures: hoe een aanvaller te werk gaat
+(MITRE ATT&amp;CK)</td>
+</tr>
+<tr>
+<td>D/R/P</td>
+<td>Detect, Respond, Prevent: kunnen we het zien, weten we wat te doen,
+houden we het tegen</td>
+</tr>
+<tr>
+<td>R/E/C</td>
+<td>Relevance, Exposure, Control gap: de urgentiescore per
+bevinding</td>
+</tr>
+<tr>
+<td>Vier ogen</td>
+<td>Een besluit dat minstens twee mensen samen nemen</td>
+</tr>
+<tr>
+<td>SOC, MDR</td>
+<td>(Externe) bewaking van je systemen die op signalen reageert</td>
+</tr>
+<tr>
+<td>OT, SCADA</td>
+<td>Operationele techniek: de systemen die fysieke processen aansturen
+(gemalen, sluizen, zuivering)</td>
+</tr>
+<tr>
+<td>WIP-limiet</td>
+<td>Maximum aantal kaarten dat tegelijk "in bewerking" mag zijn</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bronnen-en-tooling">Bronnen en tooling</h2>
+<ul>
+<li><strong>MITRE ATT&amp;CK</strong> (attack.mitre.org): het
+referentiekader voor TTP's in stap 6.</li>
+<li><strong>Atomic Red Team</strong>
+(github.com/redcanaryco/atomic-red-team): open-source aanvalstests
+gekoppeld aan ATT&amp;CK, om je eigen detectie te beproeven. Van
+dezelfde MDR-leverancier komt een jaarlijks Threat Detection Report dat
+als scenario-bron kan dienen.</li>
+<li><strong>security-commons-nl</strong>
+(github.com/security-commons-nl): de tooling rond "praten met je data"
+die bij deze aanpak hoort, waaronder <code>kill-chain-analysis</code>
+(stap 2 en 3), <code>security-posture-tool</code> (de heatmap) en
+<code>dreigingsanalyse</code> (scenario's). In ontwikkeling; richting en
+voorbeeld, nog geen afgeronde producten.</li>
+</ul>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>, vrij te hergebruiken en aan te
+passen. Feedback en verbeteringen welkom via een <a
+href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">issue</a>.</p>
+</body></html>
