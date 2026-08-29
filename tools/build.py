@@ -328,6 +328,8 @@ def pagina(titel: str, beschrijving: str, canonical: str, body: str, kruimels: l
 <title>{e(titel)}</title>
 <meta name="description" content="{e(beschrijving)}">
 <link rel="canonical" href="{canonical}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" sizes="32x32">
 <style>{CSS}</style>
 </head>
 <body>
@@ -454,11 +456,26 @@ def verwijder_zelflink(tekst: str, eigen_url: str) -> str:
     return patroon.sub("", tekst)
 
 
+FAVICON_START = "<!-- favicon -->"
+FAVICON_EIND = "<!-- /favicon -->"
+FAVICON = (FAVICON_START
+           + '<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+           + '<link rel="alternate icon" href="/favicon.ico" sizes="32x32">'
+           + FAVICON_EIND)
+
+
+def zet_favicon(tekst: str) -> str:
+    """Verwijs naar het favicon in de </head>; zonder dit vraagt elke browser /favicon.ico op."""
+    if FAVICON_START in tekst:
+        return re.sub(re.escape(FAVICON_START) + ".*?" + re.escape(FAVICON_EIND), FAVICON, tekst, flags=re.S)
+    return tekst.replace("</head>", FAVICON + "</head>", 1)
+
+
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
-    """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad. Idempotent."""
+    """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad en een favicon. Idempotent."""
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
-    tekst = verwijder_zelflink(origineel, eigen)
+    tekst = zet_favicon(verwijder_zelflink(origineel, eigen))
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie verwijst naar zichzelf; draai python tools/build.py")
         return False
