@@ -171,11 +171,11 @@ Statuskleuren: groen = ingericht · oranje = deels/aandacht · rood = nog niet i
 
 ### Volgorde
 
-1. **Meet de werkplek** (het hoofdstuk hierboven). Daar is de meeste telemetrie en de meeste laaghangende winst.
-2. **Toets de Microsoft-configuratie** (02, 03). Onderscheid "aan" van "gekoppeld en actief".
-3. **Analyseer netwerk en firewall uit data** (04). Brede regels, beheertoegang, zicht op verkeer, segmentatie.
-4. **Leg de killchain naast je controls** (05). Waar knijp je de aanval, waar zit nog een gat.
-5. **Beleg regie** (06) en **kies een strategie** (07).
+1. **[Meet de werkplek](#werkplekanalyse-op-het-microsoft-platform-e5).** Daar is de meeste telemetrie en de meeste laaghangende winst.
+2. **Toets de configuratie** op [de werkplek](#werkplekanalyse-op-het-microsoft-platform-e5) en bij [identiteit en e-mail](#identiteit-en-e-mail). Onderscheid "aan" van "gekoppeld en actief".
+3. **[Analyseer netwerk en firewall uit data](#netwerk-firewall-en-core-routers-analyseren-uit-data).** Brede regels, beheertoegang, zicht op verkeer, segmentatie.
+4. **[Leg de killchain naast je controls](#killchain-en-chokepoints-clickfix).** Waar knijp je de aanval, waar zit nog een gat.
+5. **[Beleg regie](#regie-en-accountability)** en **[kies een strategie](#veilig-faciliteren-als-langetermijnstrategie)**.
 
 ### Aantoonbaarheid en herijking
 
