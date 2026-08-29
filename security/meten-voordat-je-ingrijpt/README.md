@@ -13,10 +13,18 @@ samenvatting: Verhoog je security posture met data uit je eigen omgeving in plaa
 
 > **Lees dit stuk online:** [security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt](https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/)
 
-Een praktische, herbruikbare aanpak om als publieke organisatie je security posture te verhogen op basis
-van feiten in plaats van aannames. Vertrekpunt is een aanvalsvorm die je nu tegenkomt, ClickFix, maar de
-werkwijze is breder toepasbaar: van de werkplek tot het netwerk, en van detectie tot de vraag wat er in je
-omgeving feitelijk gebeurt.
+**De aanval waar dit mee begon.** Bij ClickFix laat een nagemaakte pagina de gebruiker zelf een commando
+plakken en uitvoeren, meestal via Win+R of PowerShell. Geen exploit, geen bijlage: de gebruiker doet het
+werk. Wat daarna komt is een infostealer of remote access tool, en uiteindelijk exfiltratie.
+
+De verleiding is dan om meteen te blokkeren: Win+R uit, PowerShell dicht. Dat is precies waar dit stuk
+tegen waarschuwt. Bij een gemeentelijke organisatie bleek van miljoenen PowerShell-starts in een maand
+bijna 99 procent machine-automatisering, waaronder de sensor van de eigen endpointbescherming. Een botte
+blokkade had de eigen beveiliging gebroken.
+
+Vandaar de aanpak: meet eerst wat er feitelijk draait, bepaal dan wat je afdwingt. ClickFix is het
+vertrekpunt, maar de werkwijze is breder toepasbaar: van de werkplek tot het netwerk, en van detectie tot
+de vraag wat er in je omgeving feitelijk gebeurt.
 
 Dit stuk is deels bestuurlijk (regie, strategie, besluitvorming) en deels technisch (analyses op het
 Microsoft-platform, configuratie-analyse van firewalls en core-routers, herbruikbare query's). Lees de

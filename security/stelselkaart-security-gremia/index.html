@@ -203,7 +203,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
 <div class="wrap">
 
 <header class="top">
-  <h1>Stelselkaart security-gremia</h1>
+  <h1>Stelselkaart security-gremia</h1><!-- inhoudsopgave --><style>@media (min-width:1450px){.inhoud{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font:12px/1.5 system-ui,'Segoe UI',Arial,sans-serif;padding-right:.5em}.inhoud ol{margin:.4em 0 0;padding-left:1.6em}.inhoud li{margin:.3em 0}}@media (max-width:1449px){.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding-left:1.4em;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#hoe-dit-is-samengesteld">Hoe dit is samengesteld</a></li><li><a href="#tegenstrijdigheden-tussen-officiele-bronnen">Tegenstrijdigheden tussen officiele bronnen</a></li><li><a href="#partijen-die-zijn-gestopt-of-stil-gevallen">Partijen die zijn gestopt of stil gevallen</a></li><li><a href="#wat-niet-is-vastgesteld">Wat niet is vastgesteld</a></li><li><a href="#methodische-kanttekeningen">Methodische kanttekeningen</a></li><li><a href="#de-dubbelgangers-op-een-rij">De dubbelgangers, op een rij</a></li></ol></nav><!-- /inhoudsopgave -->
   <div class="sub">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden ze zich tot elkaar
   &middot; peildatum 11 augustus 2026 &middot; samengesteld vanuit een gemeentelijke CISO-praktijk
   <span class="badge" style="background:#e9f5ee;color:#0b6b3a;border-color:#a8d5bd">open dataset &middot; EUPL-1.2</span></div>
@@ -359,7 +359,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
   De dataset en de leesbare weergave worden gegenereerd uit één bron, zodat cijfers en tekst niet uit elkaar
   kunnen lopen.</div>
 
-  <h2>Hoe dit is samengesteld</h2>
+  <h2 id="hoe-dit-is-samengesteld">Hoe dit is samengesteld</h2>
   <p>Het onderzoek liep in zes parallelle ronden, elk over een eigen deel van het veld, plus een ronde over de
   eigen praktijk als toets of het beeld klopt met hoe het er van binnenuit uitziet:</p>
   <ul class="tight">
@@ -383,7 +383,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
   <p><small class="src">Waar een uitspraak een interpretatie is en geen feit, staat dat in de tekst benoemd.
   Waar officiele bronnen elkaar tegenspraken is dat hieronder expliciet gemaakt in plaats van gladgestreken.</small></p>
 
-  <h2>Tegenstrijdigheden tussen officiele bronnen</h2>
+  <h2 id="tegenstrijdigheden-tussen-officiele-bronnen">Tegenstrijdigheden tussen officiele bronnen</h2>
 
   <div class="ok"><h3 style="margin-top:0">1. Wie is per 15 augustus het CSIRT voor gemeenten &middot; BESLECHT</h3>
   <p><b>Het NCSC is het CSIRT voor de sector overheid, tijdelijk.</b> Vastgesteld op 11 augustus 2026.
@@ -415,7 +415,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
   verkeerde tijdlijn. Ook onjuist in de vakpers: dat het NCSC toezicht houdt op naleving van de Cbw. Het NCSC beheert het
   register en is CSIRT, de RDI is toezichthouder.</p></div>
 
-  <h2>Partijen die zijn gestopt of stil gevallen</h2>
+  <h2 id="partijen-die-zijn-gestopt-of-stil-gevallen">Partijen die zijn gestopt of stil gevallen</h2>
   <p>Bij een overzicht als dit is het even belangrijk te weten wat er niet meer is. Verwijzingen hiernaar in beleidsstukken,
   procedures of leverancierscontracten zijn dood en horen eruit.</p>
   <div class="scroll"><table class="t">
@@ -446,7 +446,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
     </tbody>
   </table></div>
 
-  <h2>Wat niet is vastgesteld</h2>
+  <h2 id="wat-niet-is-vastgesteld">Wat niet is vastgesteld</h2>
   <p>De volgende punten zijn met opzet als open gemarkeerd. Ze zijn niet geverifieerd, en niet-gevonden betekent hier niet
   bewezen-afwezig.</p>
   <ul class="tight">
@@ -466,7 +466,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
     <li>Wie de definitieve CISO Rijk is, en of er een geactualiseerd Landelijk Crisisplan Digitaal komt.</li>
   </ul>
 
-  <h2>Methodische kanttekeningen</h2>
+  <h2 id="methodische-kanttekeningen">Methodische kanttekeningen</h2>
   <ul class="tight">
     <li>Twee onderzoeksronden liepen tegen zoekbudgetten aan en zijn deels via directe URL-fetches, sitemap-analyse en
     archiefopnames gedaan. Waar archiefmateriaal is gebruikt, staat de opnamedatum bij de betreffende partij vermeld.</li>
@@ -792,7 +792,7 @@ const D=[
   /* hoe vaak komt elke partij voor in de top-paren */
   const vaak={}; paren.forEach(p=>{vaak[p[0]]=(vaak[p[0]]||0)+1;vaak[p[1]]=(vaak[p[1]]||0)+1});
   const spil=Object.entries(vaak).sort((a,b)=>b[1]-a[1])[0];
-  let t='<h2>De dubbelgangers, op een rij</h2><div class="scroll"><table class="t"><thead><tr>'+
+  let t='<h2 id="de-dubbelgangers-op-een-rij">De dubbelgangers, op een rij</h2><div class="scroll"><table class="t"><thead><tr>'+
     '<th style="width:60px">Aantal</th><th style="width:34%">Paar</th><th>Welke diensten</th></tr></thead><tbody>';
   paren.slice(0,14).forEach(p=>{
     t+=`<tr><td class="k" style="text-align:center;font-size:16px;color:${p[2].length>=5?'var(--gap)':'var(--accent)'}">${p[2].length}</td>`+

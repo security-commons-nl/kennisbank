@@ -179,12 +179,28 @@
   @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Meten voordat je ingrijpt</span></nav><!-- /kruimelpad -->
-<h1 id="meten-voordat-je-ingrijpt">Meten voordat je ingrijpt</h1>
-<p>Een praktische, herbruikbare aanpak om als publieke organisatie je
-security posture te verhogen op basis van feiten in plaats van aannames.
-Vertrekpunt is een aanvalsvorm die je nu tegenkomt, ClickFix, maar de
-werkwijze is breder toepasbaar: van de werkplek tot het netwerk, en van
-detectie tot de vraag wat er in je omgeving feitelijk gebeurt.</p>
+<h1 id="meten-voordat-je-ingrijpt">Meten voordat je ingrijpt</h1><!-- inhoudsopgave --><style>@media (min-width:1450px){.inhoud{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font:12px/1.5 system-ui,'Segoe UI',Arial,sans-serif;padding-right:.5em}.inhoud ol{margin:.4em 0 0;padding-left:1.6em}.inhoud li{margin:.3em 0}}@media (max-width:1449px){.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding-left:1.4em;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#wat-je-hier-vindt">Wat je hier vindt</a></li><li><a href="#drie-uitgangspunten">Drie uitgangspunten</a></li><li><a href="#volgorde-van-aanpak">Volgorde van aanpak</a></li><li><a href="#managementsamenvatting">Managementsamenvatting</a></li><li><a href="#de-methode-evidence-based-posture-verhogen">De methode:
+evidence-based posture verhogen</a></li><li><a href="#werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse op
+het Microsoft-platform (E5)</a></li><li><a href="#identiteit-en-e-mail">Identiteit en e-mail</a></li><li><a href="#netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk,
+firewall en core-routers analyseren uit data</a></li><li><a href="#killchain-en-chokepoints-clickfix">Killchain en chokepoints
+(ClickFix)</a></li><li><a href="#regie-en-accountability">Regie en accountability</a></li><li><a href="#veilig-faciliteren-als-langetermijnstrategie">Veilig faciliteren
+als langetermijnstrategie</a></li><li><a href="#herbruikbare-querys">Herbruikbare query's</a></li><li><a href="#werken-met-een-llm">Werken met een LLM</a></li><li><a href="#hoe-dit-samenhangt-met-de-andere-stukken">Hoe dit samenhangt met
+de andere stukken</a></li><li><a href="#herkomst">Herkomst</a></li><li><a href="#licentie">Licentie</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><strong>De aanval waar dit mee begon.</strong> Bij ClickFix laat een
+nagemaakte pagina de gebruiker zelf een commando plakken en uitvoeren,
+meestal via Win+R of PowerShell. Geen exploit, geen bijlage: de
+gebruiker doet het werk. Wat daarna komt is een infostealer of remote
+access tool, en uiteindelijk exfiltratie.</p>
+<p>De verleiding is dan om meteen te blokkeren: Win+R uit, PowerShell
+dicht. Dat is precies waar dit stuk tegen waarschuwt. Bij een
+gemeentelijke organisatie bleek van miljoenen PowerShell-starts in een
+maand bijna 99 procent machine-automatisering, waaronder de sensor van
+de eigen endpointbescherming. Een botte blokkade had de eigen
+beveiliging gebroken.</p>
+<p>Vandaar de aanpak: meet eerst wat er feitelijk draait, bepaal dan wat
+je afdwingt. ClickFix is het vertrekpunt, maar de werkwijze is breder
+toepasbaar: van de werkplek tot het netwerk, en van detectie tot de
+vraag wat er in je omgeving feitelijk gebeurt.</p>
 <p>Dit stuk is deels bestuurlijk (regie, strategie, besluitvorming) en
 deels technisch (analyses op het Microsoft-platform,
 configuratie-analyse van firewalls en core-routers, herbruikbare

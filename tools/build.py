@@ -25,6 +25,10 @@ HOOFDPAGINA = "https://security-commons-nl.github.io/"
 # Kruimelpad (statuut B10). In de gegenereerde indexpagina's zit het in de opmaak; in een
 # item-leesversie wordt het tussen deze markeringen gezet, zodat herhaald bouwen niets stapelt.
 KRUIMEL_START = "<!-- kruimelpad -->"
+INHOUD_START = "<!-- inhoudsopgave -->"
+INHOUD_EIND = "<!-- /inhoudsopgave -->"
+# Vanaf hier is scrollen zonder overzicht vervelend; korte stukken krijgen geen inhoudsopgave.
+INHOUD_VANAF_WOORDEN = 2500
 KRUIMEL_EIND = "<!-- /kruimelpad -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
@@ -482,11 +486,81 @@ def zet_favicon(tekst: str) -> str:
     return tekst.replace("</head>", FAVICON + "</head>", 1)
 
 
+INHOUD_CSS = (
+    # De tekst is 19cm breed en staat gecentreerd; een zijbalk van 8cm past er pas naast vanaf
+    # ongeveer 1450px. Daaronder staat de inhoudsopgave als blok bovenaan.
+    "@media (min-width:1450px){"
+    ".inhoud{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;"
+    "font:12px/1.5 system-ui,'Segoe UI',Arial,sans-serif;padding-right:.5em}"
+    ".inhoud ol{margin:.4em 0 0;padding-left:1.6em}"
+    ".inhoud li{margin:.3em 0}"
+    "}"
+    "@media (max-width:1449px){"
+    ".inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;"
+    "border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}"
+    ".inhoud ol{margin:.4em 0 0;padding-left:1.4em;columns:2;column-gap:1.5em}"
+    ".inhoud li{margin:.25em 0;break-inside:avoid}"
+    "}"
+    ".inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}"
+    ".inhoud a{color:#1f4e79;text-decoration:none}"
+    ".inhoud a:hover{text-decoration:underline}"
+    "@media print{.inhoud{display:none}}"
+)
+
+
+def zorg_voor_ids(tekst: str) -> str:
+    """Geef elke h2 zonder id er een, afgeleid van de koptekst. Idempotent en botsingsvrij."""
+    gebruikt = set(re.findall(r'id="([^"]+)"', tekst))
+
+    def slug(kop: str) -> str:
+        s = re.sub(r"<[^>]+>", "", kop).lower().strip()
+        s = re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "sectie"
+        basis, n = s, 2
+        while s in gebruikt:
+            s = f"{basis}-{n}"
+            n += 1
+        gebruikt.add(s)
+        return s
+
+    return re.sub(r"<h2(?![^>]*\bid=)([^>]*)>(.*?)</h2>",
+                  lambda m: f'<h2 id="{slug(m.group(2))}"{m.group(1)}>{m.group(2)}</h2>',
+                  tekst, flags=re.S)
+
+
+def inhoudsopgave(tekst: str) -> str:
+    """Een lijst met de h2-koppen van de leesversie, als navigatie naast de tekst."""
+    koppen = re.findall(r'<h2 id="([^"]+)"[^>]*>(.*?)</h2>', tekst, re.S)
+    if not koppen:
+        return ""
+    items = "".join(
+        f'<li><a href="#{h}">{re.sub(r"<[^>]+>", "", k).strip()}</a></li>' for h, k in koppen
+    )
+    return (INHOUD_START + f"<style>{INHOUD_CSS}</style>"
+            + '<nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b>'
+            + f"<ol>{items}</ol></nav>" + INHOUD_EIND)
+
+
+def zet_inhoudsopgave(tekst: str) -> str:
+    """Zet of vernieuw de inhoudsopgave, maar alleen bij een lang stuk."""
+    zonder = re.sub(r"<[^>]+>", " ", tekst)
+    lang = len(zonder.split()) >= INHOUD_VANAF_WOORDEN
+    blok = inhoudsopgave(tekst) if lang else ""
+    if INHOUD_START in tekst:
+        return re.sub(re.escape(INHOUD_START) + ".*?" + re.escape(INHOUD_EIND), blok, tekst, flags=re.S)
+    if not blok:
+        return tekst
+    m = re.search(r"<h1[^>]*>.*?</h1>", tekst, re.S)
+    if not m:
+        return tekst
+    return tekst[: m.end()] + blok + tekst[m.end():]
+
+
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad en een favicon. Idempotent."""
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
-    tekst = zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))
+    tekst = zet_inhoudsopgave(zorg_voor_ids(
+        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))))
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie verwijst naar zichzelf; draai python tools/build.py")
         return False
