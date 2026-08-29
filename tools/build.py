@@ -464,6 +464,17 @@ FAVICON = (FAVICON_START
            + FAVICON_EIND)
 
 
+def verwijder_dubbele_titel(tekst: str) -> str:
+    """Haal de titelkop weg die pandoc bij --standalone toevoegt als de tekst zelf al een h1 heeft.
+
+    Anders staat de titel twee keer boven elkaar: een keer uit de metadata, een keer uit de markdown.
+    """
+    m = re.search(r"<header id=\"title-block-header\">.*?</header>\s*", tekst, re.S)
+    if m and re.search(r"<h1\b", tekst[m.end():]):
+        return tekst[: m.start()] + tekst[m.end():]
+    return tekst
+
+
 def zet_favicon(tekst: str) -> str:
     """Verwijs naar het favicon in de </head>; zonder dit vraagt elke browser /favicon.ico op."""
     if FAVICON_START in tekst:
@@ -475,7 +486,7 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad en een favicon. Idempotent."""
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
-    tekst = zet_favicon(verwijder_zelflink(origineel, eigen))
+    tekst = zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie verwijst naar zichzelf; draai python tools/build.py")
         return False
