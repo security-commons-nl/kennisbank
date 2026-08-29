@@ -11,6 +11,8 @@ samenvatting: Kant-en-klare awareness-sessie van veertig minuten voor leidinggev
 
 # Learning digitale veiligheid — voor managers
 
+> **Lees de sessie online:** [security-commons-nl.github.io/kennisbank/security/awareness-digitale-veiligheid](https://security-commons-nl.github.io/kennisbank/security/awareness-digitale-veiligheid/)
+
 Kant-en-klare **awareness-sessie** (±40 minuten), toegesneden op **leidinggevenden / managers**
 in de publieke sector. Onderwerp: hoe hacks en datalekken écht beginnen — bij een mens die
 klikt, plakt, belt of goedkeurt — en wat je er zelf én als team tegen doet.

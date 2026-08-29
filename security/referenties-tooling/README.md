@@ -11,6 +11,8 @@ samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgeb
 
 # Externe referenties: security-tooling & kennisbanken
 
+> **Lees de referenties online:** [security-commons-nl.github.io/kennisbank/security/referenties-tooling](https://security-commons-nl.github.io/kennisbank/security/referenties-tooling/)
+
 Verwijzingen naar open resources met een specifiek, afgebakend doel. Geen eigen werk van
 security-commons-nl; wel de moeite waard voor publieke-sector-teams.
 
