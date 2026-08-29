@@ -551,20 +551,24 @@ def zet_favicon(tekst: str) -> str:
     return tekst.replace("</head>", FAVICON + "</head>", 1)
 
 
+# De standaard leesopmaak van een leesversie: Calibri in een kolom van 19cm, gecentreerd. Alleen daar
+# past een zijbalk naast. Pagina's met een eigen, bredere opmaak krijgen het blok bovenaan.
+LEESKOLOM = "font-family:Calibri"
+
 INHOUD_CSS = (
-    # De tekst is 19cm breed en staat gecentreerd; een zijbalk van 8cm past er pas naast vanaf
-    # ongeveer 1450px. Daaronder staat de inhoudsopgave als blok bovenaan.
-    "@media (min-width:1450px){"
-    ".inhoud{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;"
-    "font:12px/1.5 system-ui,'Segoe UI',Arial,sans-serif;padding-right:.5em}"
-    ".inhoud ol{margin:.4em 0 0;padding:0;list-style:none}"
-    ".inhoud li{margin:.3em 0}"
-    "}"
-    "@media (max-width:1449px){"
+    # Blok bovenaan: werkt op elke pagina en op elke breedte.
     ".inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;"
     "border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}"
     ".inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}"
     ".inhoud li{margin:.25em 0;break-inside:avoid}"
+    # Zwevend naast de tekst, maar alleen bij de standaard leeskolom en genoeg ruimte ernaast:
+    # 19cm tekst plus twee keer 8cm marge is ongeveer 1450px.
+    "@media (min-width:1450px){"
+    ".inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;"
+    "overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;"
+    "padding:0 .5em 0 0}"
+    ".inhoud.zijbalk ol{columns:auto}"
+    ".inhoud.zijbalk li{margin:.3em 0}"
     "}"
     ".inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}"
     ".inhoud a{color:#1f4e79;text-decoration:none}"
@@ -600,18 +604,23 @@ def inhoudsopgave(tekst: str) -> str:
     items = "".join(
         f'<li><a href="#{h}">{re.sub(r"<[^>]+>", "", k).strip()}</a></li>' for h, k in koppen
     )
+    klasse = "inhoud zijbalk" if LEESKOLOM in tekst else "inhoud"
     return (INHOUD_START + f"<style>{INHOUD_CSS}</style>"
-            + '<nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b>'
+            + f'<nav class="{klasse}" aria-label="Inhoudsopgave"><b>Op deze pagina</b>'
             + f"<ol>{items}</ol></nav>" + INHOUD_EIND)
 
 
 def zet_inhoudsopgave(tekst: str) -> str:
-    """Zet of vernieuw de inhoudsopgave, maar alleen bij een lang stuk."""
+    """Zet of vernieuw de inhoudsopgave, maar alleen bij een lang stuk.
+
+    Een bestaand blok wordt eerst weggehaald en daarna opnieuw geplaatst. Anders blijft het staan
+    waar een vorige versie het zette, ook als de plaatsingsregel intussen beter is geworden.
+    """
+    tekst = re.sub(re.escape(INHOUD_START) + ".*?" + re.escape(INHOUD_EIND), "", tekst, flags=re.S)
     zonder = re.sub(r"<[^>]+>", " ", tekst)
-    lang = len(zonder.split()) >= INHOUD_VANAF_WOORDEN
-    blok = inhoudsopgave(tekst) if lang else ""
-    if INHOUD_START in tekst:
-        return re.sub(re.escape(INHOUD_START) + ".*?" + re.escape(INHOUD_EIND), blok, tekst, flags=re.S)
+    if len(zonder.split()) < INHOUD_VANAF_WOORDEN:
+        return tekst
+    blok = inhoudsopgave(tekst)
     if not blok:
         return tekst
     m = re.search(r"<h1[^>]*>.*?</h1>", tekst, re.S)
