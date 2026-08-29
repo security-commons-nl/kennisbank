@@ -32,6 +32,16 @@ Vier stappen, in één dag te zetten. Bijlagen in deze map:
 | [`voorbeeld.md`](voorbeeld.md) | Een ingevulde matrix van een verzonnen gemeente, om te zien hoe het eruitziet |
 | [`index.html`](index.html) | Deze methode als leesversie, plakbaar in Word |
 
+## Eerst een uur, dan een dag
+
+Deze methode kost een dag en je hebt de lijn erbij nodig. Wil je eerst weten waar je moet kijken, dan is
+er de **[zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/)**: achttien routes, ongeveer 44 vragen, in een uur alleen te doen.
+Hij draait in je browser en verstuurt niets. De uitkomst zegt welke paden openstaan; deze methode zet die
+uitkomst om in risico's met een maatregel, een eigenaar en een termijn.
+
+Het verschil zit in het bewijs. In de zelfcheck antwoord je zelf, en dat is genoeg om te bepalen waar je
+moet kijken. Hier telt een antwoord niet: een cel wordt pas groen als er een artefact onder ligt.
+
 ## De som
 
 > **risico = aanvalspad (begaanbaar?) × kroonjuweel (wat raakt het?) × dekking (zien we het, kunnen we reageren, houden we het tegen?)**
@@ -156,7 +166,7 @@ Deze methode is de leeswijzer over de commons heen. Elke stap heeft een project 
 | Stap | Wat helpt |
 |---|---|
 | 1. Kroonjuwelen | [procescheck](https://github.com/security-commons-nl/procescheck) (BIA/BIV), [blast-radius](https://github.com/security-commons-nl/blast-radius) (wat valt om) |
-| 2. Aanvalspaden | de bijlage bij deze methode; pad 2 uitgewerkt in [Handelingsperspectief](https://security-commons-nl.github.io/Handelingsperspectief/) |
+| 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Handelingsperspectief](https://security-commons-nl.github.io/Handelingsperspectief/) |
 | 3. Dekking met bewijs | [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool), [iamscan](https://github.com/security-commons-nl/iamscan) (pad 5 op Linux) |
 | 4. Risicolijst en gesprek | naar leveranciers: [Security Annex](../security-annex-leveranciers/) (pad 4 als contract); naar binnen: [Een blue team opzetten](../blue-team-opzetten/) (de rode cellen dichten met mandaat) |
 

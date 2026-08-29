@@ -1,12 +1,188 @@
 <!DOCTYPE html>
-<html lang="nl"><head><meta charset="utf-8"><title>Risicoanalyse langs aanvalspaden</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
-h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
-h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
-blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #1f4e79;background:#f3f6fa}code{font-size:10pt}
-.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
-@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style></head>
-<body><div class="kop"><b>Risicoanalyse langs aanvalspaden</b> · methode, versie 2026-08 (concept) · security-commons-nl, EUPL-1.2<br>Bijlagen (de vijf aanvalspaden, invulmatrix, verzonnen voorbeeld) staan als markdown in dezelfde map op GitHub.</div><h1 id="risicoanalyse-langs-aanvalspaden">Risicoanalyse langs
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Risicoanalyse langs aanvalspaden</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+  h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+  h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+  table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+  blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #1f4e79;background:#f3f6fa}code{font-size:10pt}
+  .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+  @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Risicoanalyse langs aanvalspaden</h1>
+</header>
+<h1 id="risicoanalyse-langs-aanvalspaden">Risicoanalyse langs
 aanvalspaden</h1>
 <blockquote>
 <p><strong>Lees de methode online:</strong> <a
@@ -54,6 +230,17 @@ eruitziet</td>
 </tr>
 </tbody>
 </table>
+<h2 id="eerst-een-uur-dan-een-dag">Eerst een uur, dan een dag</h2>
+<p>Deze methode kost een dag en je hebt de lijn erbij nodig. Wil je
+eerst weten waar je moet kijken, dan is er de <strong><a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a></strong>: achttien routes, ongeveer 44 vragen, in een
+uur alleen te doen. Hij draait in je browser en verstuurt niets. De
+uitkomst zegt welke paden openstaan; deze methode zet die uitkomst om in
+risico's met een maatregel, een eigenaar en een termijn.</p>
+<p>Het verschil zit in het bewijs. In de zelfcheck antwoord je zelf, en
+dat is genoeg om te bepalen waar je moet kijken. Hier telt een antwoord
+niet: een cel wordt pas groen als er een artefact onder ligt.</p>
 <h2 id="de-som">De som</h2>
 <blockquote>
 <p><strong>risico = aanvalspad (begaanbaar?) × kroonjuweel (wat raakt
@@ -250,7 +437,10 @@ href="https://github.com/security-commons-nl/blast-radius">blast-radius</a>
 </tr>
 <tr>
 <td>2. Aanvalspaden</td>
-<td>de bijlage bij deze methode; pad 2 uitgewerkt in <a
+<td>de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck</a>
+(een uur, achttien routes) en de bijlage bij deze methode; pad 2
+uitgewerkt in <a
 href="https://security-commons-nl.github.io/Handelingsperspectief/">Handelingsperspectief</a></td>
 </tr>
 <tr>
@@ -280,4 +470,5 @@ opgegaan.</p>
 <p><a href="../../LICENSE">EUPL-1.2</a>, vrij te hergebruiken en aan te
 passen. Feedback en verbeteringen welkom via een <a
 href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">issue</a>.</p>
-</body></html>
+</body>
+</html>
