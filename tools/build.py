@@ -20,6 +20,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://security-commons-nl.github.io/kennisbank"
 REPO = "https://github.com/security-commons-nl/kennisbank"
+HOOFDPAGINA = "https://security-commons-nl.github.io/"
+
+# Kruimelpad (statuut B10). In de gegenereerde indexpagina's zit het in de opmaak; in een
+# item-leesversie wordt het tussen deze markeringen gezet, zodat herhaald bouwen niets stapelt.
+KRUIMEL_START = "<!-- kruimelpad -->"
+KRUIMEL_EIND = "<!-- /kruimelpad -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage"]
@@ -222,9 +228,10 @@ CSS = """
 body{margin:0;background:var(--bg);color:var(--ink);
   font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 .wrap{max-width:960px;margin:0 auto;padding:24px 20px 80px}
-.backlink{font-size:13px;margin:0 0 14px}
+.backlink{font-size:13px;margin:0 0 14px;color:var(--muted)}
 .backlink a{color:var(--muted);text-decoration:none}
-.backlink a:hover{color:var(--accent)}
+.backlink a:hover{color:var(--accent);text-decoration:underline}
+.backlink span{color:var(--muted)}
 header.top{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:22px}
 h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
 .sub{color:var(--muted);font-size:13.5px}
@@ -299,8 +306,17 @@ def kaart(fm: dict, basis: str, met_vak: bool) -> str:
 """
 
 
-def pagina(titel: str, beschrijving: str, canonical: str, body: str, backlink: bool) -> str:
-    terug = '<p class="backlink"><a href="../">← Kennisbank</a></p>\n\n' if backlink else ""
+def kruimels_html(kruimels: list[tuple[str, str]], klasse: str = "backlink") -> str:
+    """Kruimelpad: elk paar is (tekst, href); een lege href is de huidige pagina."""
+    delen = []
+    for tekst, href in kruimels:
+        delen.append(f'<a href="{href}">{e(tekst)}</a>' if href else f"<span>{e(tekst)}</span>")
+    binnen = " \u203a ".join(delen)
+    return f'<nav class="{klasse}" aria-label="Kruimelpad">{binnen}</nav>'
+
+
+def pagina(titel: str, beschrijving: str, canonical: str, body: str, kruimels: list[tuple[str, str]]) -> str:
+    terug = kruimels_html(kruimels) + "\n\n" if kruimels else ""
     return f"""<!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -351,7 +367,8 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
 <ul class="hoort">
 {hoort}</ul>
 <p><a class="cta" href="{REPO}/issues/new/choose">Bijdrage aanbieden</a></p>"""
-    return pagina(f"{sectie['titel']} · Kennisbank · Security Commons NL", sectie["lead"], f"{SITE}/{vak}/", body, True)
+    return pagina(f"{sectie['titel']} · Kennisbank · Security Commons NL", sectie["lead"], f"{SITE}/{vak}/", body,
+                  [("Security Commons NL", HOOFDPAGINA), ("Kennisbank", "../"), (sectie["titel"], "")])
 
 
 def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
@@ -407,7 +424,46 @@ schrijfrechten: GitHub maakt van je wijziging automatisch een voorstel.</p>
 </div>"""
     return pagina("Kennisbank · Security Commons NL",
                   "Werkende kennis uit de publieke sector: security, privacy, continuïteit en governance. Open herbruikbaar onder EUPL-1.2.",
-                  f"{SITE}/", body, False)
+                  f"{SITE}/", body,
+                  [("Security Commons NL", HOOFDPAGINA), ("Kennisbank", "")])
+
+
+KRUIMEL_CSS = (
+    ".kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}"
+    ".kruimel a{color:#1f4e79;text-decoration:none}"
+    ".kruimel a:hover{text-decoration:underline}"
+)
+
+
+def kruimelblok(kruimels: list[tuple[str, str]]) -> str:
+    return (KRUIMEL_START + f"<style>{KRUIMEL_CSS}</style>"
+            + kruimels_html(kruimels, "kruimel") + KRUIMEL_EIND)
+
+
+def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
+    """Zet het kruimelpad boven in een item-leesversie. Idempotent; geeft terug of er iets wijzigde."""
+    tekst = pad.read_text(encoding="utf-8")
+    blok = kruimelblok(kruimels)
+    if KRUIMEL_START in tekst:
+        nieuw = re.sub(re.escape(KRUIMEL_START) + ".*?" + re.escape(KRUIMEL_EIND), blok, tekst, flags=re.S)
+    else:
+        m = re.search(r"<body[^>]*>", tekst)
+        if not m:
+            fout(pad, "B10", "geen <body> gevonden; kruimelpad kan er niet in")
+            return False
+        nieuw = tekst[: m.end()] + blok + tekst[m.end():]
+    if nieuw == tekst:
+        return False
+    if alleen_check:
+        fout(pad, "B10", "kruimelpad ontbreekt of is verouderd; draai python tools/build.py")
+        return False
+    pad.write_text(nieuw, encoding="utf-8", newline="\n")
+    return True
+
+
+def kruimels_van_item(fm: dict, sectie: dict) -> list[tuple[str, str]]:
+    return [("Security Commons NL", HOOFDPAGINA), ("Kennisbank", "../../"),
+            (sectie["titel"], "../"), (str(fm["titel"]), "")]
 
 
 def schrijf(pad: Path, inhoud: str) -> bool:
@@ -429,10 +485,25 @@ def main() -> int:
         print("\nRegels: https://github.com/security-commons-nl/.github/blob/main/REDACTIESTATUUT.md")
         return 1
     totaal = sum(len(v) for v in items.values())
+
+    # Kruimelpad in elke item-leesversie (B10). In --check wordt een ontbrekend of verouderd
+    # kruimelpad een fout; bij bouwen wordt het geschreven.
+    kruimel_gewijzigd = []
+    for vak in VAKGEBIEDEN:
+        for fm in items[vak]:
+            html_pad = fm["_map"] / "index.html"
+            if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]), alleen_check):
+                kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
+    if fouten:
+        print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
+        for f in fouten:
+            print("  " + f)
+        return 1
+
     print(f"Redactiestatuut: geen overtredingen ({totaal} items).")
     if alleen_check:
         return 0
-    gewijzigd = []
+    gewijzigd = list(kruimel_gewijzigd)
     for vak in VAKGEBIEDEN:
         if schrijf(ROOT / vak / "index.html", bouw_sectie(vak, secties[vak], items[vak])):
             gewijzigd.append(f"{vak}/index.html")
