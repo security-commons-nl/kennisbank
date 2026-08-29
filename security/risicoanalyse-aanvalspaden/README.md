@@ -13,6 +13,11 @@ samenvatting: Methode om als CISO of ISO in één dag tot de grootste risico's t
 
 > **Lees de methode online:** [security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden](https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/)
 
+**Eerst een uur, dan een dag.** Deze methode kost een dag en je hebt de lijn erbij nodig. Wil je eerst
+weten waar een aanvaller bij jou ruimte heeft, doe dan de
+**[zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/)**: achttien routes,
+ongeveer 44 vragen, in een uur alleen te doen, in je browser en zonder dat er iets wordt verstuurd.
+
 Een risicoanalyse hoort te eindigen in een korte lijst: dit zijn de risico's die er nu toe doen, dit is
 de maatregel, dit is de eigenaar. De klassieke aanpak (asset voor asset, kans maal impact uit de duim)
 eindigt zelden daar. Hij eindigt in een spreadsheet met "ransomware: hoog" die niemand kan toetsen en
@@ -27,7 +32,7 @@ Vier stappen, in één dag te zetten. Bijlagen in deze map:
 
 | Bestand | Wat het is |
 |---|---|
-| [`aanvalspaden.md`](aanvalspaden.md) | De vijf generieke aanvalspaden voor lokale overheid, elk een halve pagina: hoe binnen, chokepoints, bewijsvragen |
+| [`aanvalspaden.md`](aanvalspaden.md) | Bijlage bij stap 2: de vijf generieke aanvalspaden op papier, elk een halve pagina met hoe binnen, chokepoints en bewijsvragen. Dit is de bijlage, niet de zelfcheck hierboven |
 | [`sjabloon-matrix.md`](sjabloon-matrix.md) | De matrix kroonjuwelen × aanvalspaden om in te vullen, plus de risicolijst die eruit volgt |
 | [`voorbeeld.md`](voorbeeld.md) | Een ingevulde matrix van een verzonnen gemeente, om te zien hoe het eruitziet |
 | [`index.html`](index.html) | Deze methode als leesversie, plakbaar in Word |
