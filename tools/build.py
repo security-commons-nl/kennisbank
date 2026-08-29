@@ -440,24 +440,42 @@ def kruimelblok(kruimels: list[tuple[str, str]]) -> str:
             + kruimels_html(kruimels, "kruimel") + KRUIMEL_EIND)
 
 
+def verwijder_zelflink(tekst: str, eigen_url: str) -> str:
+    """Haal een blockquote weg die naar de eigen pagina verwijst.
+
+    In de README wijst die regel de lezer naar de leesversie, en een workflow bewaakt dat hij er
+    staat. In de leesversie zelf is het een link naar de pagina waar je al bent.
+    """
+    kern = re.escape(eigen_url.rstrip("/"))
+    patroon = re.compile(r"<blockquote>(?:(?!</blockquote>).)*?" + kern + r"/?\"(?:(?!</blockquote>).)*?</blockquote>\s*", re.S)
+    return patroon.sub("", tekst)
+
+
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
-    """Zet het kruimelpad boven in een item-leesversie. Idempotent; geeft terug of er iets wijzigde."""
-    tekst = pad.read_text(encoding="utf-8")
+    """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad. Idempotent."""
+    origineel = pad.read_text(encoding="utf-8")
+    eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
+    tekst = verwijder_zelflink(origineel, eigen)
+    if tekst != origineel and alleen_check:
+        fout(pad, "B3", "leesversie verwijst naar zichzelf; draai python tools/build.py")
+        return False
+
     blok = kruimelblok(kruimels)
     if KRUIMEL_START in tekst:
-        nieuw = re.sub(re.escape(KRUIMEL_START) + ".*?" + re.escape(KRUIMEL_EIND), blok, tekst, flags=re.S)
+        tekst = re.sub(re.escape(KRUIMEL_START) + ".*?" + re.escape(KRUIMEL_EIND), blok, tekst, flags=re.S)
     else:
         m = re.search(r"<body[^>]*>", tekst)
         if not m:
             fout(pad, "B10", "geen <body> gevonden; kruimelpad kan er niet in")
             return False
-        nieuw = tekst[: m.end()] + blok + tekst[m.end():]
-    if nieuw == tekst:
+        tekst = tekst[: m.end()] + blok + tekst[m.end():]
+
+    if tekst == origineel:
         return False
     if alleen_check:
         fout(pad, "B10", "kruimelpad ontbreekt of is verouderd; draai python tools/build.py")
         return False
-    pad.write_text(nieuw, encoding="utf-8", newline="\n")
+    pad.write_text(tekst, encoding="utf-8", newline="\n")
     return True
 
 
