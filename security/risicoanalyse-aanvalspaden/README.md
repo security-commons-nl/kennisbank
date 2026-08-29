@@ -32,12 +32,10 @@ Vier stappen, in één dag te zetten. Bijlagen in deze map:
 | [`voorbeeld.md`](voorbeeld.md) | Een ingevulde matrix van een verzonnen gemeente, om te zien hoe het eruitziet |
 | [`index.html`](index.html) | Deze methode als leesversie, plakbaar in Word |
 
-## Eerst een uur, dan een dag
+## Het verschil met de zelfcheck
 
-Deze methode kost een dag en je hebt de lijn erbij nodig. Wil je eerst weten waar je moet kijken, dan is
-er de **[zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/)**: achttien routes, ongeveer 44 vragen, in een uur alleen te doen.
-Hij draait in je browser en verstuurt niets. De uitkomst zegt welke paden openstaan; deze methode zet die
-uitkomst om in risico's met een maatregel, een eigenaar en een termijn.
+De [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) zegt welke aanvalspaden openstaan;
+deze methode zet die uitkomst om in risico's met een maatregel, een eigenaar en een termijn.
 
 Het verschil zit in het bewijs. In de zelfcheck antwoord je zelf, en dat is genoeg om te bepalen waar je
 moet kijken. Hier telt een antwoord niet: een cel wordt pas groen als er een artefact onder ligt.
