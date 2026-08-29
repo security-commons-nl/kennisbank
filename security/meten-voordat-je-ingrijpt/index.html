@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Meten voordat je ingrijpt</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+  h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+  h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+  table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+  blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+  .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+  @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Meten voordat je ingrijpt</span></nav><!-- /kruimelpad -->
+<h1 id="meten-voordat-je-ingrijpt">Meten voordat je ingrijpt</h1>
+<p>Een praktische, herbruikbare aanpak om als publieke organisatie je
+security posture te verhogen op basis van feiten in plaats van aannames.
+Vertrekpunt is een aanvalsvorm die je nu tegenkomt, ClickFix, maar de
+werkwijze is breder toepasbaar: van de werkplek tot het netwerk, en van
+detectie tot de vraag wat er in je omgeving feitelijk gebeurt.</p>
+<p>Dit stuk is deels bestuurlijk (regie, strategie, besluitvorming) en
+deels technisch (analyses op het Microsoft-platform,
+configuratie-analyse van firewalls en core-routers, herbruikbare
+query's). Lees de managementsamenvatting als je het eerste wilt, en de
+hoofdstukken erna als je het tweede doet.</p>
+<blockquote>
+<p>Gegeneraliseerd uit een concrete casus. Pas de voorbeelden aan op je
+eigen organisatie, leveranciers en tenant. Let bij maatregelen die
+verkeer of gebruik inzichtelijk maken (zoals TLS-decryptie of
+script-logging) op privacy, BIO2 en eventuele
+medezeggenschapstrajecten.</p>
+</blockquote>
+<h2 id="wat-je-hier-vindt">Wat je hier vindt</h2>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Voor wie</th>
+<th>Waarover</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#managementsamenvatting">Managementsamenvatting</a></td>
+<td>Bestuur, CISO</td>
+<td>Kernboodschap, lagenmodel, strategie in het kort</td>
+</tr>
+<tr>
+<td><a href="#de-methode-evidence-based-posture-verhogen">De
+methode</a></td>
+<td>Allen</td>
+<td>De werkwijze: IST naar SOLL, meten, aantoonbaarheid</td>
+</tr>
+<tr>
+<td><a
+href="#werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse</a></td>
+<td>Security, beheer</td>
+<td>Analyses op het Microsoft-platform met KQL</td>
+</tr>
+<tr>
+<td><a href="#identiteit-en-e-mail">Identiteit en e-mail</a></td>
+<td>Security, beheer</td>
+<td>MDO, MDI, Conditional Access, PIM, app-consent</td>
+</tr>
+<tr>
+<td><a
+href="#netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk en
+firewall</a></td>
+<td>Security, netwerk</td>
+<td>Firewalls en core-routers analyseren uit data</td>
+</tr>
+<tr>
+<td><a href="#killchain-en-chokepoints-clickfix">Killchain en
+chokepoints</a></td>
+<td>Security</td>
+<td>De ClickFix-keten naast je controls, met MITRE-fasen</td>
+</tr>
+<tr>
+<td><a href="#regie-en-accountability">Regie en accountability</a></td>
+<td>Management, CISO</td>
+<td>Resultaatverplichting, RACI, leveranciers</td>
+</tr>
+<tr>
+<td><a href="#veilig-faciliteren-als-langetermijnstrategie">Veilig
+faciliteren</a></td>
+<td>Bestuur, CISO</td>
+<td>Langetermijnstrategie in plaats van lockdown</td>
+</tr>
+<tr>
+<td><a href="data/"><code>data/</code></a></td>
+<td>Beheer, security</td>
+<td>Zes herbruikbare KQL-query's voor Advanced Hunting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="drie-uitgangspunten">Drie uitgangspunten</h2>
+<ol type="1">
+<li><strong>Meet voordat je ingrijpt.</strong> Stel het feitelijke
+gebruik vast voordat je iets beperkt. Dat voorkomt uitval en laat zien
+hoe groot de impact werkelijk is, meestal kleiner dan gedacht.</li>
+<li><strong>Vertrouw op data, niet op tekeningen.</strong> Een
+netwerktekening of een "we hebben het aanstaan" is een aanname. Toets de
+werkelijkheid: rule-hits, configuratie-export, telemetrie.</li>
+<li><strong>Aangezet is niet hetzelfde als beheerd.</strong> Een tool
+met standaardconfiguratie die niemand bijhoudt, beschermt niet
+aantoonbaar. Leg bestaan, opzet, werking en eigenaarschap vast.</li>
+</ol>
+<h2 id="volgorde-van-aanpak">Volgorde van aanpak</h2>
+<ol type="1">
+<li>Meet de werkplek: wat draait er echt, wie gebruikt wat.</li>
+<li>Toets de configuratie op het Microsoft-platform: aan staan is niet
+hetzelfde als gekoppeld en actief.</li>
+<li>Analyseer netwerk en firewall uit data: brede regels, beheertoegang,
+zicht, segmentatie.</li>
+<li>Leg de killchain naast je controls: waar knijp je, waar zit een
+gat.</li>
+<li>Beleg regie en resultaatverplichting, en kies een strategie.</li>
+</ol>
+<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<h3 id="waarom-dit-onderwerp">Waarom dit onderwerp</h3>
+<p>ClickFix is een social-engineering-aanval waarbij de gebruiker zélf -
+misleid via een nep-melding of nep-CAPTCHA - een geplakt commando
+uitvoert, vrijwel altijd via de Windows Run-dialoog (Win+R) en
+PowerShell. Dat leidt tot tot een nieuwe ransomware, vaak een
+infostealers, remote-access-tools en in het ergste geval ransomware en
+datalekken.</p>
+<p>Een publiek voorbeeld is de aanval op een Nederlandse gemeente in
+maart 2026, waarbij na een ClickFix-uitvoering binnen twee dagen
+honderdduizenden bestanden werden weggesluisd / geëxfiltreerd.</p>
+<p>Het punt is breder dan ClickFix: de werkplek is de primaire ingang,
+maar één maatregel houdt een aanvaller niet tegen. De lagen sámen
+wel.</p>
+<h3 id="het-lagenmodel-defense-in-depth">Het lagenmodel
+(defense-in-depth)</h3>
+<p>Gebruik dit als kapstok. Elke laag vangt op wat de vorige
+doorlaat.</p>
+<ol type="1">
+<li><strong>Werkplek &amp; e-mail</strong> - waar de aanval
+binnenkomt.</li>
+<li><strong>Identiteit &amp; toegang</strong> - wie mag wat.</li>
+<li><strong>Netwerk</strong> - beweging tussen werkplek en
+datacenter.</li>
+<li><strong>Servers &amp; applicaties</strong> - het hart van de
+systemen.</li>
+<li><strong>Data &amp; detectie</strong> - back-up, herstel en
+meekijken.</li>
+</ol>
+<h3 id="de-terugkerende-bevinding">De terugkerende bevinding</h3>
+<p>In de praktijk is het probleem zelden dat de middelen ontbreken.
+Vrijwel elke gemeente heeft Microsoft 365 E5, endpointbescherming,
+firewalls en een of meer beheerpartners. Het gat zit in
+<strong>inrichting, afdwinging en eigenaarschap</strong>:</p>
+<ul>
+<li>een beveiligingsregel die wel bestaat maar niet aan de juiste groep
+is gekoppeld (en dus niet werkt);</li>
+<li>een tool met standaardconfiguratie die niemand bijhoudt;</li>
+<li>een netwerktekening die niet overeenkomt met het verkeer dat de
+firewall daadwerkelijk ziet.</li>
+<li>een IT-Gap in de IT-afdeling zelf omdat "ze van het management
+luisteren" of "ze van de techniek neit begrijpen compromissen erbij
+horen"</li>
+</ul>
+<p>De boodschap voor besluitvorming: <strong>eerst afmaken en
+aantoonbaar maken wat er al is, daarna uitbreiden.</strong></p>
+<h3
+id="strategische-keuze-reguleren-lockdown-of-veilig-faciliteren">Strategische
+keuze: reguleren (lockdown) of veilig faciliteren</h3>
+<p>Er zijn grofweg twee richtingen. Reguleren (lockdown: het apparaat
+zoveel mogelijk beheersen/beperken) en veilig faciliteren (de
+bescherming in het platform leggen en de grens verschuiven van het
+apparaat naar data en identiteit).</p>
+<p>Voor een politiek-ambtelijke organisatie is veilig faciliteren vaak
+duurzamer, omdat het minder leunt op "nee" en daardoor minder
+uitzonderingen en schaduw-IT uitlokt. Tegen ClickFix is het, mits goed
+ingericht, ook gerichter - <strong>een laptop in lockdown stopt ClickFix
+niet</strong>, omdat de aanval in gebruikerscontext draait.</p>
+<p>De eerlijke voorwaarde: veilig faciliteren is operationeel
+<strong>zwaarder</strong>, niet lichter. Het ruilt eenmalige restrictie
+in voor continu beheer. Het is alleen duurzaam als de eigen capaciteit
+of regiecapaciteit (bij uitbestede ICT) er werkelijk is. Ontbreekt die,
+dan verdient een striktere aanpak een serieuze afweging. Zie <a
+href="#veilig-faciliteren-als-langetermijnstrategie">veilig
+faciliteren</a>.</p>
+<h3 id="regie-en-resultaatverplichting">Regie en
+resultaatverplichting</h3>
+<p>De analyse moet landen in eigenaarschap. Beleg per onderwerp wie
+binnen de organisatie de regie voert en accountable is voor het
+resultaat. Werk met een <strong>resultaatverplichting</strong>, geen
+inspanningsverplichting: een onderwerp is pas klaar als de maatregel
+aantoonbaar werkt. Zie <a href="#regie-en-accountability">regie en
+accountability</a>.</p>
+<h2 id="de-methode-evidence-based-posture-verhogen">De methode:
+evidence-based posture verhogen</h2>
+<p>Deze aanpak is opzettelijk nuchter. Geen catchy oneliners, wel
+toetsbare stappen.</p>
+<h3 id="drie-principes">Drie principes</h3>
+<h4 id="1-meet-voordat-je-ingrijpt">1. Meet voordat je ingrijpt</h4>
+<p>Voordat je een maatregel afdwingt (Win+R uit, PowerShell beperken,
+een firewallregel versmallen), stel je het feitelijke gebruik vast. Dat
+doet twee dingen: het laat de werkelijke impact zien (meestal kleiner
+dan gevreesd) en het voorkomt dat je legitiem werk of beheer breekt. Een
+voorbeeld uit de praktijk: van miljoenen PowerShell-starts in een maand
+bleek bij een gemeente bijna 99% machine-automatisering - waaronder de
+eigen sensor van de endpointbescherming. Een botte blokkade had de eigen
+beveiliging gebroken.</p>
+<h4 id="2-vertrouw-op-data-niet-op-tekeningen">2. Vertrouw op data, niet
+op tekeningen</h4>
+<p>Een netwerktekening toont de bedoeling, niet de werkelijkheid. "We
+hebben ASR aanstaan" is een aanname totdat je de koppeling aan een
+gebruikersgroep hebt geverifieerd. Toets met:</p>
+<ul>
+<li>telemetrie (Advanced Hunting, logs);</li>
+<li>configuratie-export (firewallregels, hit-counts,
+routeringstabellen);</li>
+<li>de daadwerkelijke koppeling/scope van een beleidsregel.</li>
+</ul>
+<h4 id="3-aangezet-is-niet-hetzelfde-als-beheerd">3. Aangezet is niet
+hetzelfde als beheerd</h4>
+<p>Toets elke maatregel op vier niveaus van oplopende zekerheid:</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Vraag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bestaan</strong></td>
+<td>Is de maatregel aanwezig?</td>
+</tr>
+<tr>
+<td><strong>Opzet</strong></td>
+<td>Is hij correct ingericht volgens norm?</td>
+</tr>
+<tr>
+<td><strong>Werking</strong></td>
+<td>Is hij aantoonbaar effectief in de praktijk?</td>
+</tr>
+<tr>
+<td><strong>Config beschikbaar</strong></td>
+<td>Kunnen wíj de instelling zelf inzien?</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="managed-dienstverlening-is-meer-dan-de-aanknop-indrukken">Managed
+dienstverlening is meer dan de aanknop indrukken</h3>
+<p>Een "managed" dienst omvat gedurende de hele levenscyclus: bijhouden
+(updates, dreigingsinfo), beheren (configuratie, afwijkingen,
+prestaties), optimaliseren, functionaliteit aanpassen, en verantwoorden
+(rapportage, eigenaarschap). Een tool installeren met
+standaardinstellingen is daarvan alleen de eerste stap. Als de
+dienstverlening managed is gecontracteerd dan is de optielijst klein,
+een fireall waar de regelset niet periodiek wordt gevalideerd en
+voorzien wordt van een risicoletter aan de klant waar nodig is
+<strong>geen managed</strong> dienst.</p>
+<h3 id="ist--soll-als-werkvorm">IST → SOLL als werkvorm</h3>
+<p>Beschrijf per component de huidige stand (IST) en de gewenste stand
+(SOLL), met een statuskleur en een actiehouder. Houd de SOLL-ambitie
+expliciet: een verdedigbare ondergrens (richting BIO2 en audit) is iets
+anders dan "best-practice". Maak die keuze bewust, anders overvraag je
+de organisatie.</p>
+<p>Sjabloon:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>IST (stand + bewijs)</th>
+<th>SOLL</th>
+<th>Statuskleur</th>
+<th>Actiehouder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>bijv. ASR-regels</em></td>
+<td><em>2 regels, niet gekoppeld</em></td>
+<td><em>block-modus, juiste groep, incl. LSASS</em></td>
+<td>rood</td>
+<td><em>beheerpartner werkplek</em></td>
+</tr>
+</tbody>
+</table>
+<p>Statuskleuren: groen = ingericht · oranje = deels/aandacht · rood =
+nog niet ingericht · grijs = te bevestigen.</p>
+<h3 id="volgorde">Volgorde</h3>
+<ol type="1">
+<li><strong>Meet de werkplek</strong> (het hoofdstuk hierboven). Daar is
+de meeste telemetrie en de meeste laaghangende winst.</li>
+<li><strong>Toets de Microsoft-configuratie</strong> (02, 03).
+Onderscheid "aan" van "gekoppeld en actief".</li>
+<li><strong>Analyseer netwerk en firewall uit data</strong> (04). Brede
+regels, beheertoegang, zicht op verkeer, segmentatie.</li>
+<li><strong>Leg de killchain naast je controls</strong> (05). Waar knijp
+je de aanval, waar zit nog een gat.</li>
+<li><strong>Beleg regie</strong> (06) en <strong>kies een
+strategie</strong> (07).</li>
+</ol>
+<h3 id="aantoonbaarheid-en-herijking">Aantoonbaarheid en herijking</h3>
+<p>Leg vast wat je hebt gemeten en wanneer. Een maatregel die ooit
+aanstond kan weer afvallen (drift). Plan periodieke herijking en, waar
+mogelijk, een gecontroleerde aanvalssimulatie om detectie en preventie
+te toetsen - niet aannemen dat het werkt, maar het laten zien.</p>
+<h2 id="werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse op
+het Microsoft-platform (E5)</h2>
+<p>Vrijwel elke gemeente heeft Microsoft 365 E5 en daarmee Defender for
+Endpoint (MDE) en Advanced Hunting. Dit hoofdstuk beschrijft welke
+analyses je daarmee kunt doen, en hoe je "aan" onderscheidt van
+"actief".</p>
+<p>De query's staan in <a href="data/"><code>data/</code></a>. Pas de
+parent-processen en uitsluitingen aan op je eigen omgeving.</p>
+<p>Je werkplekken moeten natuurlijk wel via Intune beheerst zijn zodat
+de telemetrie in het defender portal land. Sta je nog onbeheerde BYOD
+zonder enige vorm van regelset toe (zogenaamde MaM en CA) dan is er echt
+nog heel veel werk aan de winkel. Start dan zeker hier, maar besef je
+dat je een groot blind gat hebt.</p>
+<h3 id="a-configuratie-verifiëren-aan--gekoppeld-en-actief">A.
+Configuratie verifiëren (aan ≠ gekoppeld en actief)</h3>
+<p>Loop deze punten langs. Het zijn veelvoorkomende blinde vlekken in
+Endpoint Detection.</p>
+<ul>
+<li><strong>ASR (Attack Surface Reduction).</strong> Bestaan er regels,
+staan ze in <strong>block</strong>-modus, en zijn ze gekoppeld aan de
+<strong>juiste gebruikersgroep</strong>? Het komt voor dat er regels
+bestaan die aan geen of een verkeerde groep hangen en dus niets doen.
+Controleer specifiek of er een regel is tegen <em>credential stealing
+from LSASS</em>. De configuratiestatus is per device zichtbaar via
+<code>DeviceTvmSecureConfigurationAssessment</code> in het security
+portal.</li>
+<li><strong>AMSI.</strong> Script scanning staat standaard aan, maar
+wordt vaak niet bewust ingericht of geverifieerd. Bevestig en leg
+vast.</li>
+<li><strong>LSA protection.</strong> Vaak niet geconfigureerd. Zet aan
+en zorg dat misbruik een signaal oplevert.</li>
+<li><strong>Script-block-logging (EID 4104).</strong> Vaak niet
+ingericht. Voeg toe als aanvullende bron naar de SIEM; MDE heeft bekende
+blinde vlekken die je hiermee afdekt.</li>
+<li><strong>Autorun/autoplay op endpoints.</strong> Controleer de
+feitelijke stand (niet de aanname). Op servers is dit vaak uit via een
+hardening-baseline; op endpoints staat het regelmatig nog op
+default=aan.</li>
+</ul>
+<h3 id="b-powershell---meet-voordat-je-beperkt">B. PowerShell - meet
+voordat je beperkt</h3>
+<p>PowerShell wil je beheersen, niet bot blokkeren. De reden blijkt vaak
+uit de data.</p>
+<ol type="1">
+<li>Draai <a
+href="data/powershell-totaal-categorisatie.kql"><code>data/powershell-totaal-categorisatie.kql</code></a>.
+Dit geeft de <strong>exacte</strong> verhouding automatisering vs.
+interactief (server-side geaggregeerd, dus zonder exportlimiet).
+Verwacht beeld: het overgrote deel is automatisering -
+Intune/remediation, de eigen Defender-sensor, overige SYSTEM-processen.
+Interactief mensgebruik is doorgaans een fractie van een procent.</li>
+<li>Draai <a
+href="data/powershell-interactief.kql"><code>data/powershell-interactief.kql</code></a>
+om de ruis weg te filteren en te zien wíe interactief gebruikt. Vaak is
+dat een kleine groep ontwikkelaars met moderne tooling (terminals,
+editors, AI-assistenten) die op de achtergrond PowerShell
+aanroepen.</li>
+</ol>
+<p><strong>Advies:</strong> beheers PowerShell met <strong>Constrained
+Language Mode (CLM), afgedwongen via WDAC</strong>, in plaats van een
+procesblokkade. CLM laat PowerShell draaien maar ontneemt scripts de
+bouwstenen (reflectie, willekeurige code laden, directe API-aanroepen)
+die aanvalspayloads nodig hebben. Een trustmodel (ondertekening + WDAC)
+beslist automatisch of een script volledig of beperkt draait, in plaats
+van een handmatige uitzonderingenlijst. Geef de ontwikkelaarsgroep één
+afgebakende, tijdelijke uitzondering. Begin in
+<strong>auditmodus</strong>.</p>
+<h3 id="c-winr-run-dialooghet-utivoeren-venster">C. Win+R
+(Run-dialoog/het utivoeren venster)</h3>
+<p>Draai <a
+href="data/winr-runmru-top.kql"><code>data/winr-runmru-top.kql</code></a>
+en <a
+href="data/winr-categorisatie.kql"><code>data/winr-categorisatie.kql</code></a>.
+Deze lezen de RunMRU-registersleutel uit: wat typen gebruikers werkelijk
+in Win+R.</p>
+<p>Verwacht beeld: een laag volume, vrijwel uitsluitend beheer- en
+power-usergebruik (beheerconsoles, netwerkshares, applicaties). Veel van
+de gebruikers zullen het niet leuk vinden maar er breekt vaak niets als
+je het uitzet maar het <strong>voorkomt</strong> een essentiele stap die
+ClickFix nodig heeft om voeten aan de grond te krijgen.</p>
+<p><strong>Advies:</strong> schakel Win+R uit via beleid (NoRun, via
+Intune of GPO). Stem vooraf af met beheer of er workflows zijn die op
+Win+R leunen (bijvoorbeeld het springen naar
+uitrol-/softwaremappen).</p>
+<h3 id="d-mshta">D. mshta</h3>
+<p>Draai <a
+href="data/mshta-gebruik.kql"><code>data/mshta-gebruik.kql</code></a>.
+mshta is een veelgebruikt ClickFix-kanaal en in moderne
+kantooromgevingen zelden nog nodig. Vaak vind je nul of een handvol
+goedaardige events.</p>
+<p><strong>Advies:</strong> blokkeer mshta via AppLocker of WDAC (beide
+paden, 32- en 64-bits), met een detectieregel als achtervang. De impact
+is doorgaans verwaarloosbaar.</p>
+<h3 id="e-detectie-op-clickfix">E. Detectie op ClickFix</h3>
+<p>Draai <a
+href="data/clickfix-detectie.kql"><code>data/clickfix-detectie.kql</code></a>.
+Deze correleert een verdacht commando in de Run-dialoog met een kort
+daarna gestart proces (PowerShell, mshta, cmd, curl) vanuit
+explorer.exe.</p>
+<p>Let op de bewuste beperkingen: de detectie ziet alleen het Win+R-pad,
+alleen de genoemde binaries en alleen een explorer-parent. Verbreed de
+binary-lijst (rundll32, regsvr32, wscript/cscript, certutil, bitsadmin)
+en overweeg een lichtere variant die alléén op de verdachte
+RunMRU-waarde alarmeert, als aanvulling.</p>
+<h3 id="interpretatiehulp">Interpretatiehulp</h3>
+<ul>
+<li><strong>Filter automatisering weg voordat je conclusies
+trekt.</strong> Intune/remediation-scripts, de Defender-sensor en
+installers domineren het beeld. Zonder filtering lijkt er veel
+"interactief" gebruik dat er niet is.</li>
+<li><strong>Ontwikkeltooling veroorzaakt veel tellingen, weinig
+personen.</strong> Een AI-assistent of editor die elke handeling met een
+korte PowerShell-controle valideert, telt zwaar maar betreft een handvol
+gebruikers.</li>
+</ul>
+<h2 id="identiteit-en-e-mail">Identiteit en e-mail</h2>
+<p>Twee lagen die met E5 grotendeels afgedekt kunnen worden, maar in de
+praktijk vaak op standaard of "deels" staan. Het incidentbeeld
+onderstreept hun belang: in veel gemeenten komt het merendeel van de
+incidenten via e-mail en identiteit binnen, niet via de
+werkplek-uitvoering zelf.</p>
+<h3 id="e-mail---defender-for-office-365-mdo">E-mail - Defender for
+Office 365 (MDO)</h3>
+<p>Controleer of MDO meer doet dan de standaard:</p>
+<ul>
+<li><strong>Preset security policies (Standard/Strict)</strong> of een
+gelijkwaardig eigen beleid actief - niet alleen defaults met losse Safe
+Links/Safe Attachments.</li>
+<li><strong>Anti-phishing</strong> met impersonation- en
+spoofbescherming.</li>
+<li><strong>Quarantine-notificaties</strong> ingericht.</li>
+</ul>
+<p>Omdat e-mail vaak de grootste instroom van incidenten is, is dit
+doorgaans de <strong>hoogste hefboom</strong>. Toets de feitelijke
+inrichting; "we hebben MDO" zegt niets over het beleid dat actief
+is.</p>
+<h3 id="identiteit---entra-id-en-defender-for-identity-mdi">Identiteit -
+Entra ID en Defender for Identity (MDI)</h3>
+<p>Loop deze punten langs:</p>
+<ul>
+<li><strong>MFA-dekking.</strong> Voor álle gebruikers, niet "voor
+sommige". Controleer ook break-glass-accounts. Overweeg sterk
+passkeys</li>
+<li><strong>Legacy authentication.</strong> Geblokkeerd, niet alleen
+"report only".</li>
+<li><strong>Conditional Access.</strong> Met device-compliance en
+<strong>token binding</strong>. Dit is de tegenmaatregel tegen
+AitM-cookiereplay (gestolen sessietokens), een veelgebruikte vervolgstap
+na credential-diefstal. n.b. gebruikers worden steeds vaker naar
+malafide MS inlogpagina's geleidt. Nederlandse security leverancier
+zoals <a href="https://zolder.io">https://zolder.io</a> bieden gratis
+bescherminsdiensten hiervoor aan.</li>
+<li><strong>Privileged Identity Management (PIM).</strong> Just-in-time
+verhoogde rechten in plaats van staande rechten. Let op het aantal
+global admins; staande beheerrechten zonder PIM zijn een veelvoorkomend
+risico.</li>
+<li><strong>Defender for Cloud Apps (MDCA).</strong> Minimaal voor
+OAuth-/app-consentmisbruik en sowieso handig om schaduw Cloud-app
+gebruik inzichtelijk te maken. Afhankelijk van de keuze "reguleren
+(lockdown)" of "veilig faciliteren" blokkeer je app gebruik of ga je
+kijken naar de voorwaardes die nodig zijn de apps veilig te
+ondersteunen.</li>
+<li><strong>User-consent voor non-verified apps.</strong> Zet op "do not
+allow user consent". Dit is een eenvoudige, effectieve maatregel tegen
+malafide software die zich langdurig toegang tot de M365 wilt
+verschaffen.</li>
+<li><strong>MDI-sensors.</strong> Op domain controllers, en waar van
+toepassing op ADCS en ADFS, voor detectie van verdachte AD-recon
+(BloodHound-achtige collectie, complete groepsdumps).</li>
+</ul>
+<h3 id="adcs-active-directory-certificate-services">ADCS (Active
+Directory Certificate Services)</h3>
+<p>Detectie van certificaatmisbruik (de ESC1–ESC8-technieken) zit
+<strong>niet</strong> standaard in MDE/EDR. Zonder teveel in detail te
+gaan is dit een populaire aanval om (snel) beheerrechten te verkrijgen
+op een n=lokale infrastructuur. Ga niet uit van de aanname dat dit "door
+de endpointbescherming gedekt is" - verifieer het, en richt aanvullende
+logging in op de interne CA als die er is.</p>
+<h3 id="wat-goed-eruitziet">Wat "goed" eruitziet</h3>
+<ul>
+<li>E-mailbeleid actief en aantoonbaar effectief, niet op standaard
+instellingen.</li>
+<li>MFA overal, of nog liever, werken met passkeys. Legacy auth dicht,
+Conditional Access met device-compliance en token binding.</li>
+<li>Privileged access just-in-time (PIM), beperkt aantal vaste
+beheerders.</li>
+<li>App-consent beperkt; MDCA actief voor consent en forwarding.</li>
+<li>MDI-sensors uitgerold en AD-recon-detectie aantoonbaar.</li>
+</ul>
+<h2 id="netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk,
+firewall en core-routers analyseren uit data</h2>
+<p>Het kernprincipe van dit hoofdstuk: <strong>vertrouw niet op de
+tekening, maar op de configuratie en het verkeer.</strong> Een
+netwerkdiagram toont de bedoeling. Of het netwerk werkelijk segmenteert,
+of beheertoegang werkelijk beperkt is, en welke regels werkelijk
+gebruikt worden, blijkt uit de data - niet uit het plaatje.</p>
+<p>Dit is defensieve configuratie-analyse: je zoekt naar te brede
+toegang, ontbrekend zicht en ontbrekende beperking, om die te
+verkleinen. De aanpak is vendor-neutraal; voorbeelden zijn
+indicatief.</p>
+<h3 id="wat-je-exporteert-en-analyseert">Wat je exporteert en
+analyseert</h3>
+<h4 id="1-regels-op-feitelijk-gebruik-hit-counts">1. Regels op feitelijk
+gebruik (hit-counts)</h4>
+<p>Exporteer de regelset met <strong>hit-counters</strong> en, indien
+beschikbaar, applicatie-identificatie (bijv. App-ID / Apps-Seen). Doel:
+vind brede of "any"-achtige regels en rangschik ze op gebruik.</p>
+<ul>
+<li>Zoek naar regels met zeer hoge hit-counts en brede
+bron/bestemming/poort (een "full-access"- of any-any-regel is een
+klassiek voorbeeld). Die is bijna altijd te breed ontworpen.</li>
+<li>Indicatief: Palo Alto <code>show rule-hit-count</code>, traffic-logs
+met App-ID; Cisco <code>show access-list</code> met hit-counts,
+NetFlow/IPFIX voor het werkelijke verkeer.</li>
+</ul>
+<h4 id="2-werkplek--datacenter-beweegt-verkeer-langs-de-firewall">2.
+Werkplek → datacenter: beweegt verkeer langs de firewall?</h4>
+<p>Toets of oost-west-verkeer (dat is verkeer in je interne netwerk,
+bijvoorbeeld tussen onderdelen in he datacenter of tussen locaties)
+tussen netwerkdelen daadwerkelijk <strong>langs</strong> de firewall
+gaat, of er onderling omheen beweegt. Vergelijk de
+<strong>routeringstabellen</strong> en flow-/sessielogs met de bedoelde
+segmentatie. Verkeerdat niet langs de firewall komt, kan de firewall
+niet zien of tegenhouden - dat is het pad waarover lateral movement na
+een besmetting verloopt. <strong>Citrix nog in gebruik</strong> directe
+aandacht of in het datacenter deze als een onvetrouwde securityzone is
+ingericht, helaas komt het 9/10 keer voor dat deze omgeving direct
+toegang heeft tot applicatieservers,
+<strong>levensgevaarlijk</strong>.</p>
+<blockquote>
+<p>Dus: een kantoor-/Citrix-omgeving die niet met een firewall is
+gescheiden is een grote rode vlag. Maar let op, een Citrix omgeving die
+met een <strong>L4</strong>-firewall &gt;(poort/protocol) van de servers
+is gescheiden in plaats van <strong>L7</strong> (applicatie/identiteit)
+is ook een risico. Toets dit; ga niet uit van "het is gescheiden".</p>
+</blockquote>
+<h4 id="3-beheertoegang-tot-firewall-en-core">3. Beheertoegang tot
+firewall en core</h4>
+<ul>
+<li><strong>MFA op beheeraccounts.</strong> Tel de beheeraccounts en
+controleer of álle een MFA-/SAML-/RADIUS-koppeling hebben. Het komt voor
+dat alle beheeraccounts zónder MFA werken - dat is een directe,
+eenvoudig te dichten bevinding. MFA kan ook geregeld worden met
+persoonlijke certificaten (netwerkapparatuur werken hier mee en daar wil
+je ook niet een afhankelijkheid van een Authenticatorapp)</li>
+<li><strong>Out-of-band (OoB) beheer.</strong> Loopt beheer van firewall
+en core-interfaces via een apart beheernetwerk, of via het
+productienetwerk? Ook wel, kan je vanaf een gewone werkplek direct bij
+de firewall dan heb je een giga probleem. Ook technisch maar nog meer in
+de cultuur bij de beheerders!</li>
+<li><strong>Superuser-/break-glass-accounts</strong>, 4-ogen op
+regelwijzigingen, en een audit-log naar een onafhankelijke
+bestemming.</li>
+</ul>
+<h4 id="4-zicht-op-versleuteld-verkeer">4. Zicht op versleuteld
+verkeer</h4>
+<p>Is er <strong>TLS-decryptie/IPS</strong> op de uitgaande werkplek en
+server verkeer? Zonder decryptie blijft veel moderne malware- en
+C2-verkeer (versleuteld over 443) onzichtbaar. Overleg waar nodig met de
+Privacyafdeling hoe dit in te zetten want er wordt geaumtatiseerd
+gekeken in de data. Dit moet onderbouwd zijn met een DPIA waarin met
+name het doel duidelijk moet zijn, namelijk geen controle op de
+inhoudelijke data maar bescherming van oa persoonsgegevens tegen
+cyberaanvallen, de AP heeft hier meerdere opinies over gepubliceerd.</p>
+<h4 id="5-core-routers-en-switches-vaak-een-blinde-vlek">5. Core-routers
+en switches (vaak een blinde vlek)</h4>
+<p>Deze laag wordt in analyses vaak op "te bevestigen" gelaten. Toets
+actief:</p>
+<ul>
+<li>firmware/OS-versies en bekende kwetsbaarheden van switch en
+router;</li>
+<li>exposure van de beheer/management-netwrken vanuit werkplek
+netwerken;</li>
+<li>poortbeveiliging en technieken zoals <strong>802.1X</strong>, en of
+routering verkeer langs de firewall dwingt.</li>
+</ul>
+<h4 id="6-egress-hygiëne-richting-derden">6. Egress-hygiëne richting
+derden</h4>
+<p>Brede uitgaande regels naar keten- en leveranciersnetwerken. Het
+eigen risico is vaak laag, maar het is slordig ontwerp; versmal , in
+eigen tempo, in dialoog met de ketenpartners.</p>
+<h4 id="7-onbeheerde-paden">7. Onbeheerde paden</h4>
+<p>Let op werkplekken of VPN-/extern-toegangsroutes die wél routering
+naar het datacenter kennen maar niet in beheer zijn. Stel de
+bewegingsvrijheid vast met een gerichte scan vanaf zo'n device; neem het
+niet aan. Zorg dat laverancier voor regulier beheer
+<strong>altijd</strong> via een PAM oplossing gaan. Accepteer
+<strong>nooit</strong> een directe RDP via een eigen VPN zonder
+restricties!</p>
+<h3 id="hoe-je-brede-regels-veilig-versmalt">Hoe je brede regels veilig
+versmalt</h3>
+<p>Hetzelfde principe als bij de werkplek: <strong>meet voordat je
+ingrijpt.</strong> Zet brede regels niet blind dicht.</p>
+<ol type="1">
+<li>Lees per brede regel uit wat er werkelijk overheen gaat
+(App-ID/Apps-Seen, flow-logs).</li>
+<li>Bouw <strong>schaduwregels</strong> (specifieker, log-only) naast de
+brede regel.</li>
+<li>Monitor of de schaduwregels het verkeer dekken.</li>
+<li>Knijp daarna pas de brede regel dicht, met een terugrolplan en in
+een onderhoudsvenster.</li>
+</ol>
+<p>Houd het <strong>break-risk</strong> per wijziging expliciet. Brede
+regels waar productie overheen rijdt, hebben een hoog break-risk;
+beheer-/zicht-maatregelen (MFA op beheer, decryptie-besluit) zijn
+meestal onafhankelijk door te voeren met laag risico.</p>
+<h3 id="volgorde-1">Volgorde</h3>
+<ol type="1">
+<li><strong>Nu, laag risico:</strong> MFA/passkey op alle
+beheeraccounts; OoB-beheer; besluit over TLS-decryptie.</li>
+<li><strong>Nu, hoog break-risk, data-gedreven:</strong>
+brede/any-regels versmallen via meten en schaduwregels.</li>
+<li><strong>Parallel:</strong> core/switch-laag in beeld brengen
+(firmware, MGT-VLAN, 802.1X).</li>
+<li><strong>Langere termijn:</strong> segmentatiebeleid vaststellen; L7
+tussen de meest kritische segmenten.</li>
+</ol>
+<h2 id="killchain-en-chokepoints-clickfix">Killchain en chokepoints
+(ClickFix)</h2>
+<p>Leg je controls naast de aanvalsketen. Per fase is er een chokepoint:
+een plek waar je de aanval kunt knijpen of zichtbaar maken. Niet elke
+fase hoeft preventief afgedekt; detectie + herstel kan volstaan voor de
+restrisico's. Maak bewust zichtbaar wat je (nog) niet afdekt.</p>
+<p>De keten hieronder volgt ClickFix → infostealer/RAT → exfiltratie,
+met MITRE ATT&amp;CK-fasen. Per fase: het chokepoint, en of het om
+preventie of detectie gaat.</p>
+<table>
+<thead>
+<tr>
+<th>Fase (MITRE)</th>
+<th>Voorbeeld</th>
+<th>Chokepoint</th>
+<th>Preventie / detectie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Access</td>
+<td>ClickFix via e-mail/website</td>
+<td>Webproxy/SWG (URL-filter, Mark-of-the-Web), e-mailfilter</td>
+<td>Preventie</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td><code>powershell -enc</code>, <code>mshta</code> via Win+R</td>
+<td>EDR · AMSI · script-block-logging · PowerShell CLM · Win+R uit</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Persistence (endpoint)</td>
+<td>Run-key, scheduled task, startup-folder</td>
+<td>EDR/autoruns · Sysmon (EID 13)</td>
+<td>Detectie</td>
+</tr>
+<tr>
+<td>Persistence (M365)</td>
+<td>OAuth-consent, mailbox-forwarding</td>
+<td>App-consent beperken · MDCA · Entra audit</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Privilege Escalation</td>
+<td>UAC-bypass (fodhelper/sdclt), loaders</td>
+<td>EDR · LSA protection · ASR LSASS-regel</td>
+<td>Preventie</td>
+</tr>
+<tr>
+<td>Defense Evasion</td>
+<td>Obfuscatie, LOLBins (regsvr32, msbuild, mshta)</td>
+<td>ASR-regels · EDR LOLBin-detectie</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Credential Access</td>
+<td>Browser-SQLite, DPAPI, LSASS</td>
+<td>ASR LSASS · browser-hardening · beheerde password manager</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Discovery (AD)</td>
+<td><code>net group /domain</code>, BloodHound-collectie</td>
+<td>Defender for Identity (AD-recon-detectie)</td>
+<td>Detectie</td>
+</tr>
+<tr>
+<td>Lateral Movement</td>
+<td>SMB/WMI/RDP met gestolen creds, cookie-replay</td>
+<td>Segmentatie · LAPS · Conditional Access (token binding) · SIEM</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Collection</td>
+<td>Browser-profielen, fileshare-mount</td>
+<td>Audit-logging op shares (EID 4663) · DLP/UEBA</td>
+<td>Detectie</td>
+</tr>
+<tr>
+<td>Exfiltration</td>
+<td>HTTPS POST naar C2, WebDAV-variant</td>
+<td>Firewall-egress · TLS-inspectie · ASR 'block WebDAV'</td>
+<td>Beide</td>
+</tr>
+<tr>
+<td>Command &amp; Control</td>
+<td>Dead-drop resolvers, HTTPS C2</td>
+<td>DNS-filter · domain-reputation in SIEM</td>
+<td>Detectie</td>
+</tr>
+<tr>
+<td>Impact</td>
+<td>Datadiefstal + leaksite</td>
+<td>Immutable back-up · geteste restore (incl. DC) · IR-runbook ·
+crisisplan</td>
+<td>Herstel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preventie-versus-detectie">Preventie versus detectie</h3>
+<ul>
+<li><strong>Preventie</strong> stopt de stap (ASR, CLM, segmentatie,
+egress-block).</li>
+<li><strong>Detectie</strong> ziet de stap en maakt opvolging mogelijk
+(SIEM-regels, EDR, MDI, DNS-reputatie).</li>
+<li><strong>Herstel</strong> vangt op wat doorkomt (back-up/restore,
+runbook).</li>
+</ul>
+<p>Een gezonde posture heeft op het kritieke pad
+<strong>meerdere</strong> chokepoints, zodat het uitvallen van één laag
+niet meteen de hele keten opent.</p>
+<h3 id="restrisicos-die-je-bewust-accepteert">Restrisico's die je bewust
+accepteert</h3>
+<p>Niet alles is realistisch af te dekken. Maak deze expliciet in plaats
+van ze te verzwijgen:</p>
+<ul>
+<li><strong>Geavanceerde C2/exfiltratie via DNS</strong> is lastig
+volledig te blokkeren; leun hier op detectie en reputatie.</li>
+<li><strong>Oost-west-verkeer binnen het datacenter</strong> valt vaak
+buiten de scope van een NDR rond de campus/access-laag. Beleg expliciet
+wie dit afdekt.</li>
+</ul>
+<h3 id="impact-anker">Impact-anker</h3>
+<p>Het scenario dat je wilt voorkomen is publiek geïllustreerd door de
+aanval op een Nederlandse gemeente in maart 2026: na een
+ClickFix-uitvoering werden binnen twee dagen honderdduizenden bestanden
+geëxfiltreerd. Eén geslaagde keten kan dus een groot incident worden -
+de business case voor deze maatregelen is risicogebaseerd, niet
+gebaseerd op het aantal incidenten.</p>
+<h3 id="bronnen-publiek">Bronnen (publiek)</h3>
+<ul>
+<li>MITRE ATT&amp;CK: T1204.004 (Malicious Copy and Paste), T1059.001
+(PowerShell), T1219 (Remote Access Software), T1566.002 (Spearphishing
+Link).</li>
+<li>Publieke threat-intelligence over ClickFix en infostealers (o.a.
+Microsoft Threat Intelligence).</li>
+<li>Publieke berichtgeving over de gemeentelijke ClickFix-casus (maart
+2026).</li>
+</ul>
+<blockquote>
+<p><strong>Verhouding tot de zelfcheck aanvalspaden.</strong> De tabel
+hierboven volgt de volledige keten van een aanval, met alle MITRE-fasen.
+De <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck</a>
+toetst per pad een handvol barrieres; ClickFix is daar AP09, met
+application control en ASR, browserhardening, lokale
+administratorrechten en EDR als chokepoints. Deze tabel is dus de
+uitgewerkte keten, de zelfcheck de snelle toets. Wijzigt de bron
+<code>paden.json</code>, dan volgt de zelfcheck; deze tabel is een
+eigen, gedetailleerdere snit en wordt met de hand onderhouden.</p>
+</blockquote>
+<h2 id="regie-en-accountability">Regie en accountability</h2>
+<p>De analyse heeft pas waarde als ze landt in eigenaarschap. Dit
+hoofdstuk beschrijft hoe je de regie belegt en hoe je leveranciers
+stuurt op resultaat.</p>
+<h3
+id="resultaatverplichting-geen-inspanningsverplichting">Resultaatverplichting,
+geen inspanningsverplichting</h3>
+<p>Het uitgangspunt: een onderwerp is pas afgerond als de maatregel
+<strong>aantoonbaar werkt</strong> - niet als de leverancier "ermee
+bezig is geweest". Dat verandert hoe je opdrachten formuleert en
+afsluit.</p>
+<h4 id="de-regie-discipline-geldt-voor-elk-onderwerp">De
+regie-discipline (geldt voor elk onderwerp)</h4>
+<ol type="1">
+<li><strong>Definition of Done vooraf.</strong> De leverancier levert
+per change een meetbaar eindresultaat. De regievoerder accepteert die
+DoD voordat de change start.</li>
+<li><strong>Resultaat controleren, niet aannemen.</strong> "Klaar"
+volgens de leverancier is niet hetzelfde als aantoonbaar werkend. De
+regievoerder verifieert zelf, met bewijs (telemetrie, config-export, een
+test).</li>
+<li><strong>Post-change check.</strong> Na het doorvoeren: werkt de
+maatregel én is er niets gebroken? Leg het bewijs vast.</li>
+<li><strong>Aantoonbaarheid en herijking.</strong> Bestaan, opzet,
+werking en config-beschikbaarheid vastgelegd, en periodiek herijkt - een
+maatregel die ooit aanstond kan weer afvallen.</li>
+</ol>
+<h3 id="regie-beleggen-voorbeeldindeling">Regie beleggen
+(voorbeeldindeling)</h3>
+<p>Beleg de regie intern; de uitvoering ligt steeds vaker bij
+beheerpartners. Intern beheer van deze componenten zorg voor een goede
+3e lijns functie!</p>
+<p>Een werkbare indeling:</p>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Interne regie (accountable)</th>
+<th>Uitvoering (voorbeeld)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Werkplek en e-mail (MDO)</td>
+<td>Servicemanagement + technisch applicatiebeheer (M365-beheer)</td>
+<td>Beheerpartner werkplek</td>
+</tr>
+<tr>
+<td>Identiteit en toegang</td>
+<td>Security + M365-beheer</td>
+<td>Beheerpartner</td>
+</tr>
+<tr>
+<td>Netwerk en firewall</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner netwerk</td>
+</tr>
+<tr>
+<td>Servers en hardening</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner datacenter</td>
+</tr>
+<tr>
+<td>SOC/SIEM en detectie</td>
+<td>Security</td>
+<td>SOC-partner</td>
+</tr>
+<tr>
+<td>Recovery en back-up</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner datacenter</td>
+</tr>
+</tbody>
+</table>
+<p>Pas dit aan op je eigen organisatie. Markeer wat nog niet formeel
+belegd is expliciet als voorstel, en laat het bevestigen door de
+CISO/het MT - dat maakt de accountability sluitend.</p>
+<h3 id="raci--en-resultaat-sjabloon">RACI- en resultaat-sjabloon</h3>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Regie (accountable)</th>
+<th>Uitvoering</th>
+<th>Resultaatverplichting (concreet)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>bijv. werkplek</em></td>
+<td><em>M365-beheer</em></td>
+<td><em>beheerpartner</em></td>
+<td><em>ASR actief op alle endpoints, CLM in productie met
+dev-uitzondering, aantoonbaar</em></td>
+</tr>
+</tbody>
+</table>
+<p>Formuleer de resultaatverplichting altijd als een toetsbare
+eindtoestand, niet als een activiteit.</p>
+<h3 id="leveranciers-en-de-naad-ertussen">Leveranciers en de naad
+ertussen</h3>
+<p>In veel gemeenten is security verdeeld over meerdere partijen:
+bijvoorbeeld een partij voor het datacenter en de
+server-endpointdetectie, en een andere voor de SOC/SIEM en de
+netwerk-/campusdetectie (NDR). Dat is werkbaar, maar er ontstaat een
+<strong>naad</strong> die je actief moet beheren:</p>
+<ul>
+<li><strong>Continuïteit bij overdracht.</strong> Gaat de SOC/SIEM over
+naar een andere partij, borg dan dat bestaande detectieregels meegaan en
+getest worden - neem het niet aan.</li>
+<li><strong>Dekking over de naad.</strong> Zorg dat geen enkel gebied
+tussen wal en schip valt (bijvoorbeeld oost-west-verkeer in het
+datacenter dat buiten de campus-NDR valt).</li>
+<li><strong>Concentratie versus regie.</strong> Eén partij die meerdere
+rollen vervult (bijvoorbeeld firewallbeheer én SOC) is acceptabel
+<strong>mits</strong> je strak regie voert: functiescheiding waar
+mogelijk, break-glass, 4-ogen op wijzigingen, audit-logging naar een
+onafhankelijke bestemming, periodieke access-reviews, KPI's en een
+exit-scenario.</li>
+</ul>
+<h3 id="sturen-op-de-managed-norm">Sturen op de managed-norm</h3>
+<p>Vraag van een SOC-/beheerpartner expliciet de vijf elementen van een
+managed dienst: bijhouden, beheren, optimaliseren, functionaliteit
+aanpassen en verantwoorden (rapportage). Toets met een periodieke
+aanvalssimulatie of detectie en preventie werkelijk dekken wat is
+afgesproken - laat het zien, neem het niet aan.</p>
+<h2 id="veilig-faciliteren-als-langetermijnstrategie">Veilig faciliteren
+als langetermijnstrategie</h2>
+<h3 id="twee-richtingen">Twee richtingen</h3>
+<p>Er zijn grofweg twee manieren om het aanvalsoppervlak van de werkplek
+te verkleinen:</p>
+<ul>
+<li><strong>Reguleren (lockdown)</strong> - het apparaat beperken: geen
+local admin, geen BYOD, een vaste set software.</li>
+<li><strong>Veilig faciliteren</strong> - de bescherming in het platform
+leggen en toegang sturen op data en identiteit in plaats van op het
+apparaat.</li>
+</ul>
+<p>Beide modellen komen in de praktijk voor en zijn verdedigbaar; de
+keuze hangt af van de organisatie en de beschikbare beheercapaciteit
+(zie hieronder). Voor de ClickFix-casus is één technisch punt van
+belang: een vergrendelde laptop beschermt op zichzelf niet tegen
+ClickFix, omdat die aanval in gebruikerscontext draait en geen
+installatie of adminrechten nodig heeft. De maatregelen die ClickFix wél
+raken (ASR, PowerShell CLM, Conditional Access, EDR, segmentatie) passen
+in beide modellen. Het verschil tussen de modellen zit dus in de mate
+van gebruikersvrijheid, niet in de bescherming tegen deze
+aanvalsvorm.</p>
+<h3 id="uitgangspunten-van-veilig-faciliteren">Uitgangspunten van veilig
+faciliteren</h3>
+<ol type="1">
+<li><strong>Afdwingen via configuratie, niet via
+gebruikersdiscipline.</strong> Maatregelen zoals ASR-regels, PowerShell
+Constrained Language Mode en het uitschakelen van Win+R werken
+onafhankelijk van het gedrag van de gebruiker.</li>
+<li><strong>Toegang op basis van data en identiteit.</strong>
+Device-compliance en identiteitsrisico bepalen de toegang. Daarmee is
+BYOD mogelijk zonder het volledige apparaat te beheren.</li>
+<li><strong>Bruikbare alternatieven bieden.</strong> Een self-service
+softwarecatalogus, een beheerde browser en een password manager
+verkleinen de aanleiding om beperkingen te omzeilen en daarmee het
+risico op schaduw-IT.</li>
+<li><strong>Uitzonderingen tijdelijk en gelogd.</strong> Just-in-time
+elevatie in plaats van staande rechten: tijdgebonden, gelogd,
+automatisch vervallend en vastgelegd in een register.</li>
+<li><strong>Elke maatregel heeft een eigenaar en aantoonbare
+werking.</strong> Bestaan, opzet en werking zijn vastgelegd
+(configuratie-export, telemetrie), inclusief de afspraken met
+leveranciers.</li>
+<li><strong>Detectie en herstel voor wat overblijft.</strong> Niet alles
+is te blokkeren. Daarom meerdere chokepoints in de killchain, detectie,
+en geteste recovery (inclusief domain controllers).</li>
+</ol>
+<h3 id="byod">BYOD</h3>
+<p>BYOD is te beveiligen, maar niet met uitgefaseerde middelen. Windows
+Information Protection (WIP) is door Microsoft deprecated; bouw daar
+geen nieuw beleid op. Bruikbare alternatieven:</p>
+<ul>
+<li><strong>App Protection Policies (MAM)</strong> voor mobiel -
+corporate data blijft binnen een beheerde app-context, gescheiden van
+het privé-apparaat.</li>
+<li><strong>Conditional Access</strong> met device-compliance en, voor
+onbeheerde Windows-apparaten, app-/sessiebeheer (bijvoorbeeld via een
+cloud-app-securityoplossing) in plaats van beheer van het volledige
+device.</li>
+</ul>
+<h3 id="randvoorwaarde-beheercapaciteit">Randvoorwaarde:
+beheercapaciteit</h3>
+<p>Veilig faciliteren vraagt meer doorlopend beheer dan een
+lockdown-model. Het vervangt eenmalige restrictie door continue
+configuratie, monitoring en uitzonderingsbeheer. Het model werkt alleen
+als die regiecapaciteit er aantoonbaar is.</p>
+<p>Een bruikbare toets: staan basismaatregelen die op papier "aan" staan
+ook werkelijk aan, gekoppeld aan de juiste groepen (bijvoorbeeld
+ASR-regels)? Zo niet, dan is de regie de bottleneck. In dat geval hoort
+een striktere lockdown als alternatief expliciet op tafel - als bewuste
+keuze, niet als situatie die stilzwijgend ontstaat.</p>
+<h3 id="verhouding-tot-een-lockdown-model">Verhouding tot een
+lockdown-model</h3>
+<p>De modellen sluiten elkaar niet uit. Ook bij veilig faciliteren geldt
+een verdedigbare basis die uit het lockdown-model bekend is: een beheerd
+device, geen staande local-adminrechten, een beheerde browser en
+beheerde tijdelijke uitzonderingen. Dat is basishygiëne die BIO2 en de
+Cyberbeveiligingswet afdwingbaar en auditbaar verwachten.</p>
+<p>Het verschil zit in twee punten: BYOD blijft mogelijk via MAM en
+Conditional Access in plaats van te worden beëindigd, en vrijheid wordt
+alleen weggenomen waar dat aantoonbaar risico verkleint. Per control is
+de afweging: centraal afdwingen of aan het oordeel van de gebruiker
+laten - en is die keuze uitlegbaar aan een auditor.</p>
+<h2 id="herbruikbare-querys">Herbruikbare query's</h2>
+<p>In <a href="data/"><code>data/</code></a> staan zes KQL-query's voor
+Advanced Hunting, als startpunt voor je eigen analyses:</p>
+<table>
+<thead>
+<tr>
+<th>Bestand</th>
+<th>Waarvoor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="data/clickfix-detectie.kql"><code>clickfix-detectie.kql</code></a></td>
+<td>Detectie op het ClickFix-patroon</td>
+</tr>
+<tr>
+<td><a
+href="data/winr-runmru-top.kql"><code>winr-runmru-top.kql</code></a></td>
+<td>Wat gebruikers via Win+R starten</td>
+</tr>
+<tr>
+<td><a
+href="data/winr-categorisatie.kql"><code>winr-categorisatie.kql</code></a></td>
+<td>Dat gebruik gecategoriseerd</td>
+</tr>
+<tr>
+<td><a
+href="data/powershell-totaal-categorisatie.kql"><code>powershell-totaal-categorisatie.kql</code></a></td>
+<td>Alle PowerShell-starts naar categorie</td>
+</tr>
+<tr>
+<td><a
+href="data/powershell-interactief.kql"><code>powershell-interactief.kql</code></a></td>
+<td>Alleen het interactieve deel</td>
+</tr>
+<tr>
+<td><a
+href="data/mshta-gebruik.kql"><code>mshta-gebruik.kql</code></a></td>
+<td>Waar mshta nog wordt gebruikt</td>
+</tr>
+</tbody>
+</table>
+<p>Pas de parent-processen en uitsluitingen aan op je eigen omgeving; de
+aantallen zeggen pas iets als de ruis eruit is.</p>
+<h2 id="werken-met-een-llm">Werken met een LLM</h2>
+<p>Dit stuk is geschreven om mee te werken in een taalmodel. Neem de
+tekst en de query's mee als context, en laat het model je helpen bij het
+categoriseren van je eigen meetresultaten en het invullen van de
+IST/SOLL- en RACI-sjablonen.</p>
+<p>Weeg wel af wat je waar doet. Kun je het zelf, prima. Heb je een
+lokaal model op geschikte hardware, doe het daarin. Anders is het een
+risicoafweging: wat is het risico van het niet gebruiken van een model
+tegen het risico dat je meetgegevens bij een aanbieder terechtkomen? Zet
+je meetresultaten liever geanonimiseerd in, en houd de uitkomsten onder
+versiebeheer zodat de verbetering aantoonbaar en herhaalbaar blijft.</p>
+<h2 id="hoe-dit-samenhangt-met-de-andere-stukken">Hoe dit samenhangt met
+de andere stukken</h2>
+<table>
+<thead>
+<tr>
+<th>Wil je</th>
+<th>Ga naar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weten welke aanvalspaden bij jou openstaan, in een uur</td>
+<td><a
+href="https://security-commons-nl.github.io/aanvalspaden/">Zelfcheck
+aanvalspaden</a></td>
+</tr>
+<tr>
+<td>Die uitkomst omzetten in een risicolijst met eigenaar</td>
+<td><a href="../risicoanalyse-aanvalspaden/">Risicoanalyse langs
+aanvalspaden</a></td>
+</tr>
+<tr>
+<td>De rode cellen structureel dichten met mandaat</td>
+<td><a href="../blue-team-opzetten/">Een blue team opzetten</a></td>
+</tr>
+<tr>
+<td>AI-gebruik in je organisatie feitelijk meten</td>
+<td><a
+href="https://security-commons-nl.github.io/ai-gebruik-in-beeld/">AI-gebruik
+in beeld</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="herkomst">Herkomst</h2>
+<p>Gegeneraliseerd uit een concrete casus bij een gemeentelijke
+organisatie, ingebracht in de commons. De voorbeelden en aantallen komen
+uit die casus; de aanpak is bedoeld om over te nemen, niet om na te
+doen.</p>
+<h2 id="licentie">Licentie</h2>
+<p>EUPL-1.2, zie de <a href="../../LICENSE">licentie van de
+kennisbank</a>.</p>
+</body>
+</html>

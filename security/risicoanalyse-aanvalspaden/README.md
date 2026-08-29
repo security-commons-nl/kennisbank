@@ -113,7 +113,7 @@ vanzelf degraderen, anders wordt de matrix een dashboard dat liegt.
 Waar het bewijs vandaan komt, staat per pad in de bijlage. Voor wie het gestructureerd wil doen: de
 [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool) leest exports
 (Entra, nmap, Nessus, firewall-configuraties, SIEM-regels) en legt het bewijs onder de bevinding;
-[Handelingsperspectief](https://security-commons-nl.github.io/Handelingsperspectief/) werkt pad 2
+[Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) werkt pad 2
 helemaal uit tot aan de query's.
 
 Uitkomst: vijftig cellen, elk groen, geel of rood, met per groene cel een bewijslink.
@@ -169,7 +169,7 @@ Deze methode is de leeswijzer over de commons heen. Elke stap heeft een project 
 | Stap | Wat helpt |
 |---|---|
 | 1. Kroonjuwelen | [procescheck](https://github.com/security-commons-nl/procescheck) (BIA/BIV), [blast-radius](https://github.com/security-commons-nl/blast-radius) (wat valt om) |
-| 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Handelingsperspectief](https://security-commons-nl.github.io/Handelingsperspectief/) |
+| 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) |
 | 3. Dekking met bewijs | [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool), [iamscan](https://github.com/security-commons-nl/iamscan) (pad 5 op Linux) |
 | 4. Risicolijst en gesprek | naar leveranciers: [Security Annex](../security-annex-leveranciers/) (pad 4 als contract); naar binnen: [Een blue team opzetten](../blue-team-opzetten/) (de rode cellen dichten met mandaat) |
 

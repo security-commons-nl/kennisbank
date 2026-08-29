@@ -92,7 +92,7 @@ als de echte foutmeldingen die mensen dagelijks wegklikken.
   ASR-regels aan, en is dat te zien in een export?
 
 Dit pad is volledig uitgewerkt, tot aan de query's, in
-[Handelingsperspectief](https://security-commons-nl.github.io/Handelingsperspectief/).
+[Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/).
 
 ---
 
