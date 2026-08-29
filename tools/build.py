@@ -174,6 +174,9 @@ def bepaal_weergave(vak: str, map_: Path) -> tuple[str, str]:
         # op GitHub Pages en lopen sitemap en llms.txt stuk (statuut B3).
         fout(htmls[0], "B3", "HTML-leesversie moet index.html heten, anders geeft de map-URL een 404")
         return "live", f"{vak}/{map_.name}/{htmls[0].name}"
+    # B3: elk tekstitem hoort een leesversie te hebben. Zonder index.html heeft het item geen
+    # live URL, staat het niet in de sitemap en loopt een verwijzing ernaartoe dood op een 404.
+    fout(map_, "B3", "geen index.html; elk tekstitem heeft een self-contained HTML-leesversie")
     if any(p.suffix == ".md" and p.name != "README.md" for p in map_.iterdir()):
         return "markdown", f"{REPO}/tree/main/{vak}/{map_.name}"
     if any(p.suffix in (".pptx", ".docx", ".xlsx", ".pdf", ".zip") for p in map_.iterdir()):
