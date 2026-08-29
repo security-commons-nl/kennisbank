@@ -52,8 +52,8 @@ resultaat te delen in plaats van in een la te leggen.
 | Bestand | Inhoud |
 |---|---|
 | **`index.html`** | **De leesbare weergave.** Open het bestand in je browser, of lees hem [online](https://security-commons-nl.github.io/kennisbank/security/stelselkaart-security-gremia/). Vijf visualisaties, een filterbaar overzicht van alle partijen, en de bronverantwoording. Offline te openen, geen externe afhankelijkheden |
-| `data/partijen.json` | 83 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
-| `data/diensten.json` | 19 concrete diensten met wie ze levert, inclusief **4 gaten**. Per gat staat in `gat_soort` of er niets is belegd of dat er wel aan gewerkt wordt, en in dat laatste geval staat in `werk_in_uitvoering` door wie |
+| [`data/partijen.json`](data/partijen.json) | 83 partijen met laag, mandaatsoort, functies, toegankelijkheid voor een gemeente, omschrijving en toelichting |
+| [`data/diensten.json`](data/diensten.json) | 19 concrete diensten met wie ze levert, inclusief **4 gaten**. Per gat staat in `gat_soort` of er niets is belegd of dat er wel aan gewerkt wordt, en in dat laatste geval staat in `werk_in_uitvoering` door wie |
 
 Beide JSON-bestanden bevatten een `meta`-blok met het vocabulaire, zodat de codes zelfverklarend zijn.
 

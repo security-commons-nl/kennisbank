@@ -30,6 +30,9 @@ INHOUD_EIND = "<!-- /inhoudsopgave -->"
 # Vanaf hier is scrollen zonder overzicht vervelend; korte stukken krijgen geen inhoudsopgave.
 INHOUD_VANAF_WOORDEN = 2500
 KRUIMEL_EIND = "<!-- /kruimelpad -->"
+# Bronvoet (statuut B10): de regel onderaan een leesversie die naar de bronbestanden wijst.
+BRON_START = "<!-- bronvoet -->"
+BRON_EIND = "<!-- /bronvoet -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage"]
@@ -123,6 +126,66 @@ def controleer_tekst(pad: Path) -> None:
             fout(pad, "B4", f"r.{nr}: geneste <a>; een kaart of link mag geen link bevatten")
 
 
+# Een verwijzing in markdown: [tekst](doel). En in HTML: href="doel".
+LINK_MD = re.compile(r"\]\(([^)\s]+)\)")
+LINK_HTML = re.compile(r'href="([^"]+)"')
+
+
+def links_in(pad: Path) -> set[str]:
+    tekst = pad.read_text(encoding="utf-8", errors="replace")
+    patroon = LINK_HTML if pad.suffix == ".html" else LINK_MD
+    return {m.group(1) for m in patroon.finditer(tekst)}
+
+
+def bereikbaar(doel: str, links: set[str]) -> bool:
+    """Telt een doel als gelinkt? Ook als de link naar een anker in dat bestand wijst."""
+    return any(link == doel or link.startswith(doel + "#") for link in links)
+
+
+def controleer_bestandslinks(map_: Path, readme: Path) -> None:
+    """Statuut B3: wat naast de README in de map staat, is bereikbaar vanaf de README en de pagina.
+
+    De README is de bron, de leesversie is wat een lezer op de site ziet. Noemt die een bijlage
+    alleen als code, dan staat het bestand er wel maar kan niemand erbij. Dat overkwam de pptx van
+    de awareness-sessie: de hele inhoud van het item, nergens klikbaar.
+    """
+    pagina_pad = map_ / "index.html"
+    bronnen = [readme] + ([pagina_pad] if pagina_pad.exists() else [])
+    links = {pad: links_in(pad) for pad in bronnen}
+    for bestand in sorted(map_.rglob("*")):
+        if not bestand.is_file() or bestand.name.startswith("."):
+            continue
+        rel = bestand.relative_to(map_).as_posix()
+        if rel in ("README.md", "index.html"):
+            continue
+        for pad in bronnen:
+            if not bereikbaar(rel, links[pad]):
+                waar = "de README" if pad.suffix == ".md" else "de leesversie"
+                fout(pad, "B3", f"'{rel}' staat in de map maar nergens als link in {waar}; "
+                                "op de site kan een lezer er dan niet bij")
+
+
+def controleer_dode_links(map_: Path) -> None:
+    """Statuut B3: een link naar een bestand in de kennisbank wijst naar iets dat bestaat.
+
+    Hernoemen is de valkuil: de README werd bijgewerkt, de leesversie niet, en de pagina hield een
+    link naar een bestandsnaam die niet meer bestond.
+    """
+    for pad in sorted(map_.glob("*.md")) + sorted(map_.glob("*.html")):
+        for doel in sorted(links_in(pad)):
+            kaal = doel.split("#")[0].split("?")[0]
+            if not kaal or kaal.startswith(("http://", "https://", "mailto:", "data:")):
+                continue
+            if kaal.startswith("/"):
+                continue  # wortel van de site, niet van deze repo (bijvoorbeeld /favicon.svg)
+            plek = (pad.parent / kaal).resolve()
+            if not plek.exists():
+                fout(pad, "B3", f"link naar '{doel}' wijst naar een bestand dat niet bestaat")
+            elif ROOT not in plek.parents and plek != ROOT:
+                fout(pad, "B3", f"link naar '{doel}' wijst buiten de kennisbank; "
+                                "op de site loopt dat dood")
+
+
 def controleer_item(vak: str, map_: Path) -> dict | None:
     if not SLUG.match(map_.name):
         fout(map_, "B1", "mapnaam: alleen kleine letters, cijfers en koppeltekens")
@@ -162,6 +225,8 @@ def controleer_item(vak: str, map_: Path) -> dict | None:
     for bestand in map_.rglob("*"):
         if bestand.suffix in (".md", ".html", ".txt", ".json"):
             controleer_tekst(bestand)
+    controleer_bestandslinks(map_, readme)
+    controleer_dode_links(map_)
     fm["_map"] = map_
     fm["_vak"] = vak
     fm["_weergave"], fm["_link"] = bepaal_weergave(vak, map_)
@@ -492,13 +557,13 @@ INHOUD_CSS = (
     "@media (min-width:1450px){"
     ".inhoud{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;"
     "font:12px/1.5 system-ui,'Segoe UI',Arial,sans-serif;padding-right:.5em}"
-    ".inhoud ol{margin:.4em 0 0;padding-left:1.6em}"
+    ".inhoud ol{margin:.4em 0 0;padding:0;list-style:none}"
     ".inhoud li{margin:.3em 0}"
     "}"
     "@media (max-width:1449px){"
-    ".inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;"
+    ".inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;"
     "border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}"
-    ".inhoud ol{margin:.4em 0 0;padding-left:1.4em;columns:2;column-gap:1.5em}"
+    ".inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}"
     ".inhoud li{margin:.25em 0;break-inside:avoid}"
     "}"
     ".inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}"
@@ -552,17 +617,63 @@ def zet_inhoudsopgave(tekst: str) -> str:
     m = re.search(r"<h1[^>]*>.*?</h1>", tekst, re.S)
     if not m:
         return tekst
-    return tekst[: m.end()] + blok + tekst[m.end():]
+    # Staat de titel in een paginakop met eigen opmaak, dan hoort het blok daar niet in: het krijgt
+    # de kleuren van die kop en breekt hem doormidden. Dan pas na de kop.
+    kop = re.search(r"<header\b[^>]*>.*?</header>", tekst, re.S)
+    plek = kop.end() if kop and kop.start() < m.start() < kop.end() else m.end()
+    return tekst[:plek] + blok + tekst[plek:]
+
+
+BRON_CSS = (
+    ".bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;"
+    "font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}"
+    ".bronvoet a{color:#1f4e79}"
+    "@media print{.bronvoet{display:none}}"
+)
+
+
+def bronvoet(vak: str, item: str) -> str:
+    """De afsluiting van een leesversie: waar de bronbestanden staan, onder welke licentie.
+
+    De gegenereerde indexpagina's hebben zo'n voet al; leesversies komen uit pandoc en hadden hem
+    niet. Daardoor was een itempagina een doodlopend eind: wel de tekst, geen route naar de map
+    met de bijlagen.
+    """
+    map_url = f"{REPO}/tree/main/{vak}/{item}"
+    return (BRON_START + f"<style>{BRON_CSS}</style>"
+            + '<footer class="bronvoet"><p>Onderdeel van '
+            + f'<a href="{HOOFDPAGINA}">Security Commons NL</a> \u00b7 '
+            + f'Bronbestanden van dit item: <a href="{map_url}">{vak}/{item}</a> \u00b7 '
+            + f'Licentie <a href="{REPO}/blob/main/LICENSE">EUPL-1.2</a> \u00b7 '
+            + f'<a href="{REPO}/issues/new/choose">Verbetering voorstellen</a>'
+            + "</p></footer>" + BRON_EIND)
+
+
+def zet_bronvoet(tekst: str, vak: str, item: str) -> str:
+    """Zet of vernieuw de bronvoet vlak voor </body>. Idempotent."""
+    blok = bronvoet(vak, item)
+    if BRON_START in tekst:
+        return re.sub(re.escape(BRON_START) + ".*?" + re.escape(BRON_EIND),
+                      lambda _: blok, tekst, flags=re.S)
+    if "</body>" not in tekst:
+        return tekst
+    return tekst.replace("</body>", blok + "</body>", 1)
 
 
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
-    """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad en een favicon. Idempotent."""
+    """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad, favicon,
+    inhoudsopgave bij een lang stuk en een bronvoet. Idempotent."""
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
-    tekst = zet_inhoudsopgave(zorg_voor_ids(
-        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))))
+    vak, item = pad.parent.parent.name, pad.parent.name
+    tekst = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(
+        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))), vak, item)
+    if BRON_START not in tekst:
+        fout(pad, "B10", "geen </body> gevonden; de bronvoet kan er niet in")
+        return False
     if tekst != origineel and alleen_check:
-        fout(pad, "B3", "leesversie verwijst naar zichzelf; draai python tools/build.py")
+        fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
+                          "inhoudsopgave of bronvoet); draai python tools/build.py")
         return False
 
     blok = kruimelblok(kruimels)

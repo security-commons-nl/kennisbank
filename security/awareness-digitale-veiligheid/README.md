@@ -23,9 +23,11 @@ spreker en organisatie staan als invulbare placeholders (`[Naam spreker]`, `[tel
 `[e-mailadres]`), en de cluster-/dreigingsvoorbeelden beschrijven *een* gemeente in het
 algemeen — geen specifieke organisatie. Vul je eigen context in vóór gebruik.
 
+**Download de sessie:** [`Learning_digitale_veiligheid_voor_managers.pptx`](Learning_digitale_veiligheid_voor_managers.pptx) (PowerPoint, 26 slides).
+
 ## Inhoud
 
-Eén bestand — **`Learning_digitale_veiligheid_voor_managers.pptx`** (26 slides, 6 acts):
+Eén bestand, [`Learning_digitale_veiligheid_voor_managers.pptx`](Learning_digitale_veiligheid_voor_managers.pptx), met 26 slides in zes acts:
 
 - **Act 1 — Het gebeurt overal én dichtbij:** waarom jij hier zit, de icebreaker-vraag,
   het Odido-datalek, de aanval op gemeente Epe (met forensische cijfers), en het patroon

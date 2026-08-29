@@ -94,5 +94,5 @@ anonimisering verwijderd. Raadpleeg de VNG-bron voor de actuele versie.
 
 ## Licentie
 
-[EUPL-1.2](../../../LICENSE), vrij te hergebruiken en aan te passen. Feedback en verbeteringen welkom via de
-[kennisbank](../../../).
+[EUPL-1.2](../../LICENSE), vrij te hergebruiken en aan te passen. Feedback en verbeteringen welkom via de
+[kennisbank](../../).

@@ -24,6 +24,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      # De controles zelf hebben ook tests; die draaien altijd, PR en push.
+      - name: Tests van het bouwscript
+        run: python tools/test_build.py
+
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)
         if: github.event_name == 'pull_request'
