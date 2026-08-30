@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Onveranderbare
+back-ups</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Onveranderbare back-ups</span></nav><!-- /kruimelpad -->
+<h1 id="onveranderbare-back-ups">Onveranderbare back-ups</h1>
+<blockquote>
+<p><strong>Barriere:</strong> bescherm back-ups met onveranderbaarheid
+en gescheiden beheer. Back-ups staan buiten het bereik van een
+aanvaller, write-once, offline of in een apart vertrouwensdomein, zodat
+ze ransomware en sabotage overleven.</p>
+</blockquote>
+<p>Back-ups staan in dezelfde vertrouwensgrens als productie. Een
+aanvaller met beheerrechten kan ze versleutelen of vernietigen, en doet
+dat ook, als eerste stap voor ransomware. Een back-up die in een aanval
+geraakt wordt, is geen back-up.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Altijd zinvol, voor elke organisatie waar dienstverlening afhangt van
+digitale data. Wanneer niet als losse stap: zonder geoefend herstel weet
+niemand of de back-up bruikbaar is wanneer je hem nodig hebt.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<p>Back-ups worden geschreven naar opslag die geen wijziging of
+verwijdering toestaat gedurende de retentieperiode (immutable,
+write-once, object lock). Eén exemplaar staat in een ander
+vertrouwensdomein (offline, andere cloud, ander beheer). De
+back-up-keten heeft eigen credentials, niet die van productie.</p>
+<ol type="1">
+<li>Inventariseer welke data en configuratie kritiek is voor herstel
+(RPO per systeem).</li>
+<li>Kies een back-upoplossing met immutability/object-lock op de
+doel-opslag.</li>
+<li>Plaats minimaal één kopie in een ander vertrouwensdomein (offline of
+andere cloud).</li>
+<li>Scheid back-up-credentials van productie-beheer-credentials.</li>
+<li>Test technisch herstel, niet alleen of de back-up bestaat, of hij
+ook restoret.</li>
+<li>Monitor back-up-status en alarmeer bij wijzigingen op de
+back-up-keten.</li>
+</ol>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: midden.</p>
+<p><strong>Wat het oplevert</strong></p>
+<ul>
+<li>Ransomware en sabotage overleven dit type back-up niet, fundamentele
+weerbaarheid.</li>
+<li>Sluit aan op de NIS2-eis voor bedrijfscontinuïteit en herstel.</li>
+<li>Levert ook bescherming tegen 'gewone' beheerfouten.</li>
+</ul>
+<p><strong>Waar je op moet letten</strong></p>
+<ul>
+<li>Hogere opslagkosten dan reguliere back-ups.</li>
+<li>Immutability betekent dat je tijdens de retentieperiode niet kunt
+opruimen, capaciteit moet vooraf geregeld.</li>
+<li>Vereist discipline om kopieën daadwerkelijk in een ander
+vertrouwensdomein te zetten.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>De configuratie waaruit blijkt dat back-ups onveranderbaar zijn, met
+de bewaartermijn van die onveranderbaarheid.</li>
+<li>De scheiding van beheer: welk account beheert de back-ups, en waarom
+kan een gecompromitteerd domeinbeheeraccount daar niet bij.</li>
+<li>De dekking: welke kritieke systemen en data zitten erin, en welke
+niet.</li>
+<li>Een test waarin is geprobeerd een back-up te wijzigen of te
+verwijderen, met de uitkomst.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> Een aanvaller versleutelt de
+productie én de back-up als die binnen handbereik is. Immutable en
+offline back-ups maken dat onmogelijk, fundamentele voorwaarde voor
+herstel na een groot incident.</p>
+<p><strong>Aan de informatiemanager.</strong> Inpassing op het
+back-up-platform en de opslag. Vraagt een tweede locatie of een ander
+vertrouwensdomein, met eigen credentials.</p>
+<p><strong>Aan het MT.</strong> Het back-up-beheer wordt strikter;
+herstel-oefeningen worden onderdeel van het ritme. Reken op periodiek
+geoefend herstel als reguliere taak.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij barriere <code>backup</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
+Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>Een back-up is pas een back-up als je hebt teruggezet: zie <a
+href="../hersteltest/">Hersteltest tegen RTO en RPO</a>.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/onveranderbare-backups">security/onveranderbare-backups</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

@@ -105,9 +105,16 @@ class Handleiding(Basis):
         self.maak(extra="barrieres: [soc]\nrol: hoofdgerecht\n")
         self.assertIn("rol", self.meldingen)
 
-    def test_barrieres_bij_een_ander_type_is_een_fout(self):
-        self.maak(type_="aanpak", extra="barrieres: [soc]\n")
-        self.assertIn("alleen bij type handleiding", self.meldingen)
+    def test_barrieres_bij_een_aanpak_mag(self):
+        # De passkeys-aanpak en de Security Annex richten net zo goed een maatregel in; alleen de vorm
+        # verschilt. Het type blijft dan zeggen wat de lezer krijgt, dus de koppen Bewijs en Zo leg je
+        # het uit blijven een eis voor alleen de handleiding.
+        self.maak(type_="aanpak", extra="barrieres: [soc]\nrol: fundering\n")
+        self.assertEqual("", self.meldingen)
+
+    def test_barrieres_bij_een_beleidsstuk_is_een_fout(self):
+        self.maak(type_="beleid", extra="barrieres: [soc]\n")
+        self.assertIn("veld 'barrieres' hoort bij type", self.meldingen)
 
     def test_pijler_moet_bestaan(self):
         self.maak(extra="barrieres: [soc]\npijler: bestaat-niet\n")

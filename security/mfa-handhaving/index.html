@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>MFA afdwingen en
+zwakke routes
+saneren</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>MFA afdwingen en zwakke routes saneren</span></nav><!-- /kruimelpad -->
+<h1 id="mfa-afdwingen-en-zwakke-routes-saneren">MFA afdwingen en zwakke
+routes saneren</h1>
+<blockquote>
+<p><strong>Barriere:</strong> verwijder zwakke fallback- en
+herstelroutes; blokkeer legacy authentication. De sluiproutes dichten
+die elke MFA-verplichting ondermijnen: bypass-groepen,
+zelfbediening-verwijdering van MFA, en het ontbreken van zicht op
+MFA-wijzigingen.</p>
+</blockquote>
+<p>Een MFA- of passkey-verplichting is alleen zo sterk als de routes
+eromheen. In de praktijk ondermijnen drie structurele lekken de
+handhaving: dynamische uitzonderingsgroepen die ongemerkt groeien, een
+zelfbedieningspagina waar gebruikers hun eigen sterke methode kunnen
+verwijderen, en het volledig ontbreken van zicht, niemand merkt het
+wanneer de MFA-status van een account verandert. Nieuwe
+authenticatietechniek bovenop deze lekken levert nieuwe techniek en
+dezelfde gaten.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Altijd nodig, naast elk van de andere twee patronen. Het sluiten van
+de lekken hoort in dezelfde opdracht als het invoeren van
+phishingbestendige authenticatie, niet als losse vervolgstap. Wanneer
+niet als zelfstandige eindstap: lekken dichten zonder ook de
+authenticatiemethode te versterken laat de phishbare methode in
+stand.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<p>Drie maatregelen. Dynamische uitzonderingsgroepen worden vervangen
+door een statisch beheerde lijst met per account een eigenaar, motivatie
+en einddatum, en een vaste reviewcyclus. De zelfbedieningspagina wordt
+zo ingericht dat een gebruiker een sterke methode niet kan verwijderen
+zonder eerst een vervangende sterke methode te registreren. En de
+identity-provider stuurt gebeurtenissen over MFA-statuswijzigingen naar
+de centrale logverzameling, met een alert wanneer een phishingbestendige
+methode wordt verwijderd.</p>
+<ol type="1">
+<li>Inventariseer de bestaande uitzonderings- en bypass-groepen;
+beoordeel elk lidmaatschap op nut en eigenaar.</li>
+<li>Vervang dynamische uitzonderingsgroepen door een statisch beheerde
+lijst: per account eigenaar, motivatie en einddatum.</li>
+<li>Richt een vaste reviewcyclus in voor de uitzonderingenlijst,
+gezamenlijk door beheer en de IB-functie.</li>
+<li>Pas de zelfbedieningspagina aan: een sterke methode verwijderen kan
+alleen na registratie van een vervangende sterke methode.</li>
+<li>Laat de identity-provider gebeurtenissen over MFA-statuswijzigingen
+naar de centrale logverzameling sturen.</li>
+<li>Richt een alert in op het verwijderen of verzwakken van een
+phishingbestendige methode.</li>
+<li>Rapporteer de MFA- en passkey-dekking periodiek, zodat erosie
+zichtbaar wordt.</li>
+</ol>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: laag.</p>
+<p><strong>Wat het oplevert</strong></p>
+<ul>
+<li>Maakt elke MFA- of passkey-verplichting daadwerkelijk
+afdwingbaar.</li>
+<li>Het systeem produceert voortaan zelf een signaal bij erosie, geen
+blind vertrouwen meer.</li>
+<li>Lage drempel: vooral configuratie en governance, geen nieuwe
+techniek.</li>
+<li>Voorkomt dat een nieuwe authenticatiemethode op oude gaten wordt
+gebouwd.</li>
+</ul>
+<p><strong>Waar je op moet letten</strong></p>
+<ul>
+<li>Vraagt discipline: een statische uitzonderingenlijst moet ook echt
+periodiek herzien worden.</li>
+<li>Het strakker zetten van de zelfbedieningspagina kan tot meer
+supportvragen leiden.</li>
+<li>Levert op zichzelf geen sterkere authenticatie op, het is een
+randvoorwaarde, geen eindstap.</li>
+<li>Vereist dat centrale logverzameling op orde is om de wijzigingen te
+kunnen opvangen.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>Het beleid dat verouderde authenticatie blokkeert, in afdwingstand
+en niet in report-only, met de uitzonderingen.</li>
+<li>Een overzicht van accounts die nog zonder sterke methode kunnen
+inloggen, idealiter leeg.</li>
+<li>De herstel- en registratieroutes: hoe komt iemand weer binnen na
+verlies van zijn middel, en waarom is dat geen zwakkere ingang.</li>
+<li>De dekking van de sterke methode als teller en noemer.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> Een verplichting tot sterke
+authenticatie is waardeloos als er sluiproutes omheen liggen. Deze
+maatregel dicht die routes en zorgt dat het systeem voortaan zelf
+waarschuwt wanneer de bescherming afbrokkelt. Lage kosten, en een
+voorwaarde voor het slagen van de andere stappen.</p>
+<p><strong>Aan de informatiemanager.</strong> Het raakt de
+uitzonderingsgroepen, de zelfbedieningsinstellingen en de koppeling met
+de centrale logverzameling. Belangrijk: het eigenaarschap van de
+uitzonderingenlijst hoort bij een aanwijsbare interne rol, niet bij een
+uitvoerende beheerpartij.</p>
+<p><strong>Aan het MT.</strong> Het strakker afdwingen kan kortdurend
+meer vragen opleveren. Er is een vaste, terugkerende reviewtaak nodig,
+gezamenlijk belegd bij beheer en de IB-functie.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij de barrieres <code>fallback</code>,
+<code>legacy</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
+Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>De fundering is <a href="../passkeys-invoeren/">Passkeys
+invoeren</a>; deze handleiding gaat over wat daarnaast nog open kan
+staan.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/mfa-handhaving">security/mfa-handhaving</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

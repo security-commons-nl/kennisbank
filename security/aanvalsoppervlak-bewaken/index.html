@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Je aanvalsoppervlak
+in beeld
+houden</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Je aanvalsoppervlak in beeld houden</span></nav><!-- /kruimelpad -->
+<h1 id="je-aanvalsoppervlak-in-beeld-houden">Je aanvalsoppervlak in
+beeld houden</h1>
+<blockquote>
+<p><strong>Barriere:</strong> ontdek en bewaak het externe
+aanvalsoppervlak. Continue ontdekking van wat de gemeente vanaf het
+internet aan diensten en assets aanbiedt, bekende én vergeten, met
+inzicht in wat aanvallers daar zien.</p>
+</blockquote>
+<p>Niemand weet meer wat er allemaal aanstaat op het internet onder de
+gemeentelijke domeinen. Een oude testserver, een vergeten subdomain, een
+verlaten cloud-account, elk is een aanvalsoppervlak dat niet in audits
+zit.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Past voor elke organisatie met substantiële externe footprint.
+Wanneer niet zonder opvolging: een ASM-rapport zonder opruim-actie wordt
+cynisch.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<p>Een ASM-tool of -dienst scant continu vanaf het internet voor alles
+wat onder de gemeentelijke domeinen, IP-ranges, ASN's of cloud-accounts
+hoort. Vindt vergeten assets, verkeerd geconfigureerde diensten en
+blootgestelde gegevens.</p>
+<ol type="1">
+<li>Identificeer de 'attack surface domains' (DNS-zones, IP-ranges,
+cloud-tenants).</li>
+<li>Kies een ASM-tool/dienst (commercieel of open-source als
+amass).</li>
+<li>Voer een eerste discovery uit; review bevindingen.</li>
+<li>Beleg eigenaarschap per bevinding-type (DNS-team,
+applicatie-team).</li>
+<li>Stel een proces in voor opruimen van vergeten assets.</li>
+<li>Houd een externe-footprint-register bij dat doorlopend wordt
+geüpdatet.</li>
+</ol>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: midden.</p>
+<p><strong>Wat het oplevert</strong></p>
+<ul>
+<li>Vergeten assets komen aan het licht, vaak het meest kwetsbaar.</li>
+<li>Geeft het perspectief van de aanvaller: wat zien zij?</li>
+<li>Sluit aan op kwetsbaarheidsbeheer en exposure management.</li>
+</ul>
+<p><strong>Waar je op moet letten</strong></p>
+<ul>
+<li>Eerste discovery levert vaak verrassend veel op, opruim-werk.</li>
+<li>Sommige bevindingen zijn van legacy partners, opruimen is
+afstemming.</li>
+<li>Tool-keuze niet triviaal; gratis tools dekken niet alles.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>Een actueel overzicht van alles wat vanaf internet bereikbaar is,
+met per dienst een eigenaar.</li>
+<li>De frequentie waarmee dat overzicht wordt ververst, en hoe: passief,
+actief scannen of via een dienst.</li>
+<li>Wat er is gevonden dat niemand kende, en wat daarmee is
+gebeurd.</li>
+<li>De koppeling naar kwetsbaarhedenbeheer: nieuwe diensten komen
+automatisch in scope.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> Wat heeft de gemeente eigenlijk
+aanstaan op het internet? Daar krijgen we vandaag geen scherp antwoord
+op. ASM levert dat, en vindt regelmatig vergeten assets die aanvallers
+anders eerder vinden.</p>
+<p><strong>Aan de informatiemanager.</strong> DNS, IP,
+cloud-tenant-administratie als scope-input. Bevindingen lopen langs
+domein-eigenaren.</p>
+<p><strong>Aan het MT.</strong> Eigenaren van applicaties en netwerken
+krijgen periodieke opruim-acties uit ASM-rapportage.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij barriere <code>assets</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
+Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>Voedt <a href="../kwetsbaarheden-scannen/">Kwetsbaarheden
+scannen</a>: de scan is niet meer waard dan de volledigheid van de
+lijst.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/aanvalsoppervlak-bewaken">security/aanvalsoppervlak-bewaken</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

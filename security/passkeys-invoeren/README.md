@@ -7,6 +7,8 @@ versie: 2026-08
 herkomst: CISO-organisatie van een Nederlandse gemeente die organisatiebreed is overgestapt op wachtwoordloos inloggen; gedeeld met toestemming
 status: in gebruik
 samenvatting: Handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (FIDO2). Waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, TAP als enige herstelroute) en wat er in de praktijk tegenzat. Met directiememo, FAQ, managersmail en herstelprocedure als sjablonen.
+barrieres: [pr, fallback, legacy]
+rol: fundering
 ---
 
 # Passkeys invoeren

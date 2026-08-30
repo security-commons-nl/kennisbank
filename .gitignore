@@ -49,3 +49,6 @@ crash.log
 
 # Wordt in CI uitgecheckt voor de barrieres; lokaal staat de repo ernaast.
 _aanvalspaden/
+
+# Testtooling
+.pytest_cache/

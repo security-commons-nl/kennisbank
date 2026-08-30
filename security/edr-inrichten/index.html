@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>EDR inrichten met
+dekking en
+isolatie</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>EDR inrichten met dekking en isolatie</span></nav><!-- /kruimelpad -->
+<h1 id="edr-inrichten-met-dekking-en-isolatie">EDR inrichten met dekking
+en isolatie</h1>
+<blockquote>
+<p><strong>Barriere:</strong> borg EDR, tamper protection en snelle
+endpointisolatie. Op elke werkplek en server draait een endpoint
+detection &amp; response-agent die verdacht gedrag detecteert, isoleert
+en aan de centrale logverzameling rapporteert.</p>
+</blockquote>
+<p>Antivirus alleen ziet bekende signatures. Moderne malware en
+living-off-the-land-technieken (PowerShell, WMI, scheduled tasks)
+blijven onder de radar. Zonder gedrags-detectie merkt niemand wat er
+draait.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Past zodra werkplekken beheerd zijn (eerste patroon). Wanneer niet
+zonder centrale logging of SOC-respons, een EDR die signalen produceert
+die niemand opvolgt is een dure ruisbron.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<p>Een agent op het endpoint observeert proces-, netwerk- en
+bestandsacties, correleert gedrag tegen aanvalspatronen en kan
+automatisch reageren (isoleren, proces stoppen). Telemetrie gaat naar
+een centraal platform of naar de centrale logverzameling.</p>
+<ol type="1">
+<li>Kies een EDR/XDR-product dat aansluit op het werkplekbeheer en de
+identity-provider.</li>
+<li>Rol de agent uit naar alle werkplekken en servers (inclusief beheer-
+en server-tier).</li>
+<li>Configureer de basis-detectieregels en het isolatie-beleid voor
+verdachte processen.</li>
+<li>Sluit aan op de centrale logverzameling of het SIEM-platform.</li>
+<li>Stem alert-afhandeling af met de SOC-functie (eigen of
+uitbesteed).</li>
+<li>Beoordeel detectiedekking en regels periodiek.</li>
+</ol>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: midden.</p>
+<p><strong>Wat het oplevert</strong></p>
+<ul>
+<li>Detectie op gedrag, niet alleen op signature, vangt
+living-off-the-land en onbekende malware.</li>
+<li>Actieve respons: een besmet endpoint kan binnen seconden geïsoleerd
+worden.</li>
+<li>Levert telemetrie voor threat hunting en incidentonderzoek.</li>
+</ul>
+<p><strong>Waar je op moet letten</strong></p>
+<ul>
+<li>Premium licentiekosten per endpoint.</li>
+<li>Tuning vraagt aandacht; slecht afgestemd geeft alertmoeheid.</li>
+<li>Vereist een SOC-functie die de signalen opvolgt, anders zonde van de
+investering.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>De dekking: op hoeveel beheerde endpoints draait de EDR, van hoeveel
+in totaal, en welke ontbreken.</li>
+<li>Dat tamper protection aanstaat, zodat een aanvaller de sensor niet
+kan uitzetten.</li>
+<li>Een testverslag van endpointisolatie: hoe lang duurde het voordat
+een apparaat daadwerkelijk was afgesloten.</li>
+<li>Het playbook voor malware en infostealers, en wanneer het voor het
+laatst is gebruikt of geoefend.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> Klassieke antivirus zit op de eind
+van zijn leven; aanvallen verlopen via legitieme tools en gedrag.
+EDR/XDR ziet dat gedrag en kan automatisch ingrijpen, voorwaarde voor
+moderne detectie.</p>
+<p><strong>Aan de informatiemanager.</strong> Inpassing op alle
+endpoints en servers, koppeling met de centrale logverzameling en de
+SOC-functie. Tuning is een doorlopende activiteit.</p>
+<p><strong>Aan het MT.</strong> De SOC-functie krijgt signalen die
+opgevolgd moeten worden. Reken op een afstemmoment over isolatie-mandaat
+(mag de tool zelf een laptop isoleren?).</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij barriere <code>edr</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
+Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>De configuratiecontrole hoort bij <a
+href="../werkplekanalyse-e5/">Werkplekanalyse op het
+Microsoft-platform</a>: aan is niet hetzelfde als gekoppeld en
+actief.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/edr-inrichten">security/edr-inrichten</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

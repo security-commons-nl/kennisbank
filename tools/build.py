@@ -41,10 +41,14 @@ STATUSSEN = ["concept", "in gebruik", "sjabloon", "gearchiveerd"]
 VERPLICHT = ["titel", "vakgebied", "type", "normen", "herkomst", "status", "samenvatting"]
 TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie", "barrieres", "rol", "pijler"}
 ROLLEN = ["fundering", "alternatief", "verdieping"]
+# Types die aan een barriere uit de zelfcheck mogen hangen. Een handleiding moet het, een aanpak of
+# sjabloon mag het: die richten net zo goed een maatregel in, alleen in een andere vorm.
+MET_BARRIERES = {"handleiding", "aanpak", "sjabloon"}
 NL = chr(10)
 
-# Mappen op root die geen vakgebied zijn maar wel mogen bestaan.
-ROOT_MAPPEN_OK = {".git", ".github", ".codesight", "tools", "_aanvalspaden"}
+# Mappen die op de root mogen staan naast de vakgebieden. Alles wat met een punt begint is
+# tooling (.git, .pytest_cache, .venv) en telt nooit als inhoud.
+ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
                      ".nojekyll", "handelingsperspectief.json"}
 
@@ -222,29 +226,39 @@ def controleer_handleiding(vak: str, readme: Path, fm: dict) -> None:
     Zonder `barrieres:` is een handleiding niet vindbaar vanaf de zelfcheck, en dat is precies waarvoor
     hij bestaat. Zonder de kop Bewijs mist de lezer wat hij aan het eind kan laten zien; dat is de
     scheidslijn tussen een antwoord en bewijs die de hele keten aanhoudt.
+
+    Een aanpak of een sjabloon mag ook aan een barriere hangen: de passkeys-aanpak en de Security Annex
+    richten net zo goed een maatregel in. Het `type` blijft dan zeggen wat de lezer krijgt, want een
+    contractbijlage voer je anders uit dan een inrichtingshandleiding.
     """
-    if fm.get("barrieres") is not None and fm.get("type") != "handleiding":
-        fout(readme, "B2", "veld 'barrieres' hoort alleen bij type handleiding")
-    if fm.get("type") != "handleiding":
+    if fm.get("barrieres") is not None and fm.get("type") not in MET_BARRIERES:
+        fout(readme, "B2", f"veld 'barrieres' hoort bij type {' of '.join(sorted(MET_BARRIERES))}")
+    if fm.get("type") not in MET_BARRIERES:
         return
 
     bar = fm.get("barrieres")
-    if not isinstance(bar, list) or not bar:
+    if fm.get("type") == "handleiding" and (not isinstance(bar, list) or not bar):
         fout(readme, "B2", "type handleiding vereist barrieres: [vraag_id, ...] uit paden.json")
-    else:
-        bekend = barrieres()
-        if not bekend:
-            fout(readme, "B2", "paden.json niet gevonden; zet de aanvalspaden-repo ernaast of in _aanvalspaden")
+    elif bar is not None:
+        if not isinstance(bar, list) or not bar:
+            fout(readme, "B2", "barrieres is een niet-lege lijst met vraag_id's uit paden.json")
         else:
-            for b in bar:
-                if b not in bekend:
-                    fout(readme, "B2", f"barriere '{b}' bestaat niet in paden.json")
+            bekend = barrieres()
+            if not bekend:
+                fout(readme, "B2", "paden.json niet gevonden; zet de aanvalspaden-repo ernaast of in _aanvalspaden")
+            else:
+                for b in bar:
+                    if b not in bekend:
+                        fout(readme, "B2", f"barriere '{b}' bestaat niet in paden.json")
 
     if fm.get("rol") is not None and fm["rol"] not in ROLLEN:
         fout(readme, "B2", f"rol '{fm['rol']}' moet een van {ROLLEN} zijn")
 
     if fm.get("pijler") and not (ROOT / vak / str(fm["pijler"]) / "README.md").is_file():
         fout(readme, "B2", f"pijler '{fm['pijler']}' bestaat niet in {vak}/")
+
+    if fm.get("type") != "handleiding":
+        return
 
     body = lees_frontmatter(readme.read_text(encoding="utf-8"))[1].lower()
     for kop, naam in (("## bewijs", "Bewijs"), ("## zo leg je het uit", "Zo leg je het uit")):
@@ -371,7 +385,8 @@ def controleer_alles() -> dict[str, list[dict]]:
     items: dict[str, list[dict]] = {v: [] for v in VAKGEBIEDEN}
     for kind in ROOT.iterdir():
         if kind.is_dir():
-            if kind.name not in VAKGEBIEDEN and kind.name not in ROOT_MAPPEN_OK:
+            if (kind.name not in VAKGEBIEDEN and kind.name not in ROOT_MAPPEN_OK
+                    and not kind.name.startswith(".")):
                 fout(kind, "B1", f"map op root is geen vakgebied {VAKGEBIEDEN}")
         elif kind.name not in ROOT_BESTANDEN_OK:
             fout(kind, "B1", "los bestand op root; hoort in een item-map")
@@ -851,7 +866,7 @@ def schrijf_handelingsperspectief(items: dict[str, list[dict]]) -> bool:
     hl = []
     for vak in VAKGEBIEDEN:
         for fm in items[vak]:
-            if fm.get("type") != "handleiding":
+            if not fm.get("barrieres"):
                 continue
             for b in fm["barrieres"]:
                 hl.append({

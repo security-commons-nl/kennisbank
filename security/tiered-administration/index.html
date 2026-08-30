@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beheerrechten
+scheiden in
+tiers</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Beheerrechten scheiden in tiers</span></nav><!-- /kruimelpad -->
+<h1 id="beheerrechten-scheiden-in-tiers">Beheerrechten scheiden in
+tiers</h1>
+<blockquote>
+<p><strong>Barriere:</strong> scheid privileged access technisch van
+dagelijks gebruik. Beheerders krijgen aparte accounts per beheer-tier
+(tier-0/1/2). Een account uit één tier kan niet inloggen op een lagere
+tier.</p>
+</blockquote>
+<p>Eén beheerder heeft vaak één account dat overal mag, van het
+werkstation tot identity-beheer tot tenant-admin. Een compromittering op
+de laagste tier (dagelijks werkstation) levert direct het hoogste
+niveau. Laterale beweging is gratis.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Past in organisaties met een herkenbare beheer-hiërarchie
+(workstations, servers, identity). Wanneer niet: als de organisatie zo
+klein is dat één persoon alles doet, dan is JIT effectiever dan strakke
+tiering.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<p>Het beheer wordt opgedeeld in tiers: tier-0 (identity, kroonjuwelen),
+tier-1 (servers, infra), tier-2 (workstations). Elke beheerder krijgt
+aparte accounts per tier. Een tier-0-account mag alleen op
+tier-0-systemen inloggen, een tier-2-account kan geen
+identity-beheer.</p>
+<ol type="1">
+<li>Definieer de tiers en welke systemen in elke tier vallen.</li>
+<li>Maak per beheerder de benodigde tier-accounts aan, met aparte
+naamgeving.</li>
+<li>Configureer logon-beperkingen: tier-0-accounts inloggen alleen op
+tier-0-systemen.</li>
+<li>Pas Conditional Access aan: tier-0 verplicht via PAW en met
+JIT.</li>
+<li>Train beheerders op het juiste account voor de juiste taak.</li>
+<li>Monitor logins van tier-accounts op niet-passende systemen.</li>
+</ol>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: laag.</p>
+<p><strong>Wat het oplevert</strong></p>
+<ul>
+<li>Een compromittering op de werkplek-tier komt niet automatisch bij
+identity-beheer.</li>
+<li>Maakt de scope van een incident inschatbaar: welke tier is
+geraakt.</li>
+<li>Sluit aan op de gangbare tier-modellen (Microsoft, ISACA).</li>
+</ul>
+<p><strong>Waar je op moet letten</strong></p>
+<ul>
+<li>Vereist meerdere accounts per beheerder, extra registratie en
+beheer.</li>
+<li>Bij krap bezet IT-team voelt het bureaucratisch.</li>
+<li>Strak afdwingen vraagt configuratie van de identity-provider die
+niet triviaal is.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>De tierindeling met per tier de systemen die erin vallen.</li>
+<li>De logon-beperkingen per tier, als configuratie-export, met de
+uitzonderingen en hun reden.</li>
+<li>Een overzicht van beheerders met hun accounts per tier, zodat
+zichtbaar is dat niemand een gecombineerd account houdt.</li>
+<li>Monitoring op inlogpogingen van een tier-account op een systeem uit
+een andere tier.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> Eén beheerder, één account dat
+overal mag, dat is het breekpunt waar elke aanvaller op rekent. Beheer
+in lagen knippen beperkt de schade van een gecompromitteerd account tot
+één laag.</p>
+<p><strong>Aan de informatiemanager.</strong> Past binnen het bestaande
+identity-platform en sluit aan op het tier-model. Vraagt inrichting van
+logon-restricties en accountnaamgeving.</p>
+<p><strong>Aan het MT.</strong> Beheerders krijgen meerdere accounts en
+moeten leren welk account voor welke taak. Een korte handleiding en
+oefening lossen het meeste op.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij barriere <code>model</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
+Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>De volgende stap na tiering is de beheerwerkplek zelf: zie <a
+href="../beheerwerkplek/">Beheerwerkplek voor administratieve taken</a>
+en <a href="../just-in-time-beheerrechten/">Just-in-time
+beheerrechten</a>.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/tiered-administration">security/tiered-administration</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
