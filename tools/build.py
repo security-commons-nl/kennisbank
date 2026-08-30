@@ -253,6 +253,14 @@ def bepaal_weergave(vak: str, map_: Path) -> tuple[str, str]:
     return "markdown", f"{REPO}/tree/main/{vak}/{map_.name}"
 
 
+def lees_volgorde(tekst: str) -> list[str]:
+    """De mapnamen onder '## Volgorde' in de README van een sectie, in de volgorde van de lijst."""
+    if "## Volgorde" not in tekst:
+        return []
+    blok = tekst.split("## Volgorde", 1)[1].split("\n## ")[0]
+    return [m.group(1).rstrip("/") for m in re.finditer(r"^\s*\d+\.\s*\[[^\]]+\]\(([^)]+)\)", blok, re.M)]
+
+
 def lees_sectie(vak: str) -> dict:
     readme = ROOT / vak / "README.md"
     if not readme.exists():
@@ -264,7 +272,32 @@ def lees_sectie(vak: str) -> dict:
     hoort = re.findall(r"^- (.+)$", tekst.split("## Wat hoort hier")[-1].split("\n## ")[0], re.M) if "## Wat hoort hier" in tekst else []
     controleer_tekst(readme)
     return {"titel": titel.group(1).strip() if titel else vak.title(),
-            "lead": lead.group(1).strip().replace("\n", " ") if lead else "", "hoort": hoort}
+            "lead": lead.group(1).strip().replace("\n", " ") if lead else "", "hoort": hoort,
+            "volgorde": lees_volgorde(tekst)}
+
+
+def zet_op_volgorde(vak: str, items: list[dict], sectie: dict) -> list[dict]:
+    """Statuut B4: de volgorde is redactioneel en staat in de README van de sectie.
+
+    Alfabetisch sorteren zet toevallige mapnamen bovenaan; deze lijst zet er een oordeel in. Wat in
+    de lijst ontbreekt of niet bestaat, blokkeert de build: stil onderaan belanden is erger dan een
+    rode melding.
+    """
+    if not items:
+        return items
+    readme = ROOT / vak / "README.md"
+    lijst = sectie.get("volgorde") or []
+    if not lijst:
+        fout(readme, "B4", "geen '## Volgorde' met de items van deze sectie; de volgorde is redactioneel")
+        return items
+    op_naam = {fm["_map"].name: fm for fm in items}
+    for naam in lijst:
+        if naam not in op_naam:
+            fout(readme, "B4", f"'{naam}' staat in de volgorde maar is geen item in deze sectie")
+    for naam in sorted(op_naam):
+        if naam not in lijst:
+            fout(readme, "B4", f"'{naam}' ontbreekt in de volgorde; zet het item op zijn plek in de lijst")
+    return [op_naam[n] for n in lijst if n in op_naam] + [fm for n, fm in sorted(op_naam.items()) if n not in lijst]
 
 
 def controleer_alles() -> dict[str, list[dict]]:
@@ -721,6 +754,8 @@ def main() -> int:
     alleen_check = "--check" in sys.argv
     items = controleer_alles()
     secties = {v: lees_sectie(v) for v in VAKGEBIEDEN if (ROOT / v).is_dir()}
+    for vak, sectie in secties.items():
+        items[vak] = zet_op_volgorde(vak, items[vak], sectie)
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
         for f in fouten:

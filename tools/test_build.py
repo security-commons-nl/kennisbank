@@ -145,6 +145,61 @@ class DodeLinks(Basis):
         self.assertEqual(build.fouten, [])
 
 
+class Volgorde(Basis):
+    """Statuut B4: de volgorde van de items staat in de README van de sectie, niet in het alfabet."""
+
+    README = """# Security
+
+## Volgorde
+
+1. [Derde](derde/)
+2. [Eerste](eerste/)
+3. [Tweede](tweede/)
+
+## Bijdragen
+"""
+
+    def items(self, *namen: str) -> list[dict]:
+        return [{"_map": self.map / n} for n in namen]
+
+    def test_leest_de_mapnamen_in_de_volgorde_van_de_lijst(self):
+        self.assertEqual(build.lees_volgorde(self.README), ["derde", "eerste", "tweede"])
+
+    def test_zonder_lijst_leeg(self):
+        self.assertEqual(build.lees_volgorde("# Security\n\n## Bijdragen\n"), [])
+
+    def test_items_volgen_de_lijst(self):
+        uit = build.zet_op_volgorde("security", self.items("eerste", "tweede", "derde"),
+                                    {"volgorde": ["derde", "eerste", "tweede"]})
+        self.assertEqual([fm["_map"].name for fm in uit], ["derde", "eerste", "tweede"])
+        self.assertEqual(build.fouten, [])
+
+    def test_item_dat_niet_in_de_lijst_staat_is_een_fout(self):
+        (self.map / "security").mkdir(parents=True, exist_ok=True)
+        (self.map / "security" / "README.md").write_text("x", encoding="utf-8")
+        uit = build.zet_op_volgorde("security", self.items("eerste", "vergeten"),
+                                    {"volgorde": ["eerste"]})
+        self.assertIn("vergeten", self.meldingen)
+        # Vergeten items verdwijnen niet: ze staan achteraan zodat de pagina compleet blijft.
+        self.assertEqual([fm["_map"].name for fm in uit], ["eerste", "vergeten"])
+
+    def test_naam_in_de_lijst_die_niet_bestaat_is_een_fout(self):
+        (self.map / "security").mkdir(parents=True, exist_ok=True)
+        (self.map / "security" / "README.md").write_text("x", encoding="utf-8")
+        build.zet_op_volgorde("security", self.items("eerste"), {"volgorde": ["eerste", "spook"]})
+        self.assertIn("spook", self.meldingen)
+
+    def test_sectie_zonder_lijst_is_een_fout(self):
+        (self.map / "security").mkdir(parents=True, exist_ok=True)
+        (self.map / "security" / "README.md").write_text("x", encoding="utf-8")
+        build.zet_op_volgorde("security", self.items("eerste"), {"volgorde": []})
+        self.assertIn("Volgorde", self.meldingen)
+
+    def test_lege_sectie_hoeft_geen_lijst(self):
+        self.assertEqual(build.zet_op_volgorde("privacy", [], {"volgorde": []}), [])
+        self.assertEqual(build.fouten, [])
+
+
 class EchteKennisbank(unittest.TestCase):
     """De controle over de echte inhoud; dit is het net onder alle regels samen."""
 
