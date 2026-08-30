@@ -14,6 +14,8 @@ pijler: meten-voordat-je-ingrijpt
 
 # Werkplekanalyse op het Microsoft-platform
 
+> **Lees de handleiding online:** [security-commons-nl.github.io/kennisbank/security/werkplekanalyse-e5](https://security-commons-nl.github.io/kennisbank/security/werkplekanalyse-e5/)
+
 > **Barriere:** beperk software- en scriptuitvoering met application control en ASR. Deze handleiding
 > laat zien hoe je eerst meet wat er draait, zodat je daarna kunt beperken zonder legitiem werk te breken.
 

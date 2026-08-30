@@ -14,6 +14,8 @@ pijler: meten-voordat-je-ingrijpt
 
 # Identiteit en e-mail meten voordat je afdwingt
 
+> **Lees de handleiding online:** [security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten](https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/)
+
 > **Barrieres:** een sterke e-mailbaseline, legacy authentication blokkeren, tokenmisbruik beperken en
 > app-toestemming beheersen. Deze handleiding toetst wat er feitelijk aanstaat, want "we hebben E5" zegt
 > niets over het beleid dat actief is.

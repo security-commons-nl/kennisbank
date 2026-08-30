@@ -98,6 +98,8 @@ De koppen **Bewijs** en **Zo leg je het uit** zijn verplicht; de build blokkeert
 ```markdown
 # <Titel, gelijk aan de frontmatter>
 
+> **Lees de handleiding online:** [security-commons-nl.github.io/kennisbank/security/<mapnaam>](https://security-commons-nl.github.io/kennisbank/security/<mapnaam>/)
+
 > **Barriere:** <titel van de barriere>. <Een zin over wat deze handleiding oplost.>
 
 ## Wanneer wel, wanneer niet
@@ -137,3 +139,10 @@ overschrijf die alleen als je hebt gekeken wat je kwijtraakt.
 
 Zet de nieuwe map daarna in de lijst onder `## Volgorde` in `security/README.md`; de build blokkeert als
 een item daar ontbreekt.
+
+Twee dingen die een aparte workflow controleert en die de build zelf niet vangt:
+
+- De regel met de **live-URL** moet binnen de eerste twintig regels van de README staan. De workflow
+  *Live-URL in README* faalt anders, nadat de build al groen was.
+- De **leesversie** moet na elke wijziging opnieuw: eerst `leesversie.py`, dan `build.py`. Wijzig je
+  alleen de README, dan meldt de build dat de leesversie achterloopt.
