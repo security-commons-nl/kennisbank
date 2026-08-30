@@ -614,6 +614,8 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
 {kaarten_live}
 </div>
 
+<p class="h2sub">Handleidingen per barriere uit de zelfcheck staan bij <a href="security/#handleidingen">Security</a>, en met de alternatieven ernaast op <a href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van aanvalspad naar norm</a>.</p>
+
 <h2>Secties</h2>
 <p class="h2sub">De kennisbank is ingedeeld op vakgebied. Elke sectie beschrijft wat er thuishoort.</p>
 
