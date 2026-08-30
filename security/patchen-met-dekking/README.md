@@ -7,7 +7,7 @@ versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
 samenvatting: Patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. Met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs.
-barrieres: [patch]
+barrieres: [patch, localadmin, unmanaged]
 rol: fundering
 ---
 
@@ -55,6 +55,8 @@ Kosten: laag.
 - De patchdekking als percentage met de teller en de noemer erbij: hoeveel apparaten zijn bij, van hoeveel in totaal.
 - De achterblijverslijst: welke apparaten missen updates, hoe lang al, en waarom.
 - De afgesproken termijnen per risicoklasse, en de gemeten realisatie.
+- Het aantal gebruikers met lokale beheerrechten, met per uitzondering de reden en de termijn.
+- De voorwaarde dat toegang alleen vanaf een beheerd en compliant apparaat mag, met de dekking en de apparaten die er nog buiten vallen.
 - De procedure voor versnelde uitrol bij actief misbruik, met een voorbeeld.
 
 ## Zo leg je het uit

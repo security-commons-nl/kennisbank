@@ -163,6 +163,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/mfa-handhaving/"
     },
     {
+      "barriere": "localadmin",
+      "item": "security/patchen-met-dekking",
+      "titel": "Werkplekken beheerd, gehard en gepatcht",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/patchen-met-dekking/"
+    },
+    {
       "barriere": "mail",
       "item": "security/identiteit-en-mail-meten",
       "titel": "Identiteit en e-mail meten voordat je afdwingt",
@@ -231,13 +238,6 @@
       "titel": "Leveranciersbeoordeling met vaste cyclus",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/leveranciersbeoordeling/"
-    },
-    {
-      "barriere": "review",
-      "item": "security/security-annex-leveranciers",
-      "titel": "Security Annex voor leveranciers",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/security-annex-leveranciers/"
     },
     {
       "barriere": "segment",
@@ -317,6 +317,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/pentest-en-exit-bij-leveranciers/"
     },
     {
+      "barriere": "unmanaged",
+      "item": "security/patchen-met-dekking",
+      "titel": "Werkplekken beheerd, gehard en gepatcht",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/patchen-met-dekking/"
+    },
+    {
       "barriere": "upstream",
       "item": "security/ddos-scrubbing",
       "titel": "DDoS-scrubbing en robuuste DNS",
@@ -352,10 +359,8 @@
     "devicecode",
     "dmarc",
     "elevation",
-    "localadmin",
     "origin",
     "owner",
-    "treatment",
-    "unmanaged"
+    "treatment"
   ]
 }

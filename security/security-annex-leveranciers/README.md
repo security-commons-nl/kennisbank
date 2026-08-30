@@ -7,7 +7,7 @@ versie: 1.3 (herzien BIO2), 2026-08
 herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 status: in gebruik
 samenvatting: Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico's die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.
-barrieres: [technicalvendor, review, residual]
+barrieres: [technicalvendor, residual]
 rol: fundering
 ---
 
