@@ -1,13 +1,48 @@
 {
   "versie": "gegenereerd door kennisbank/tools/build.py; wijzig de frontmatter van de items, niet dit bestand",
-  "handleidingen": [],
+  "handleidingen": [
+    {
+      "barriere": "consent",
+      "item": "security/identiteit-en-mail-meten",
+      "titel": "Identiteit en e-mail meten voordat je afdwingt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "execution",
+      "item": "security/werkplekanalyse-e5",
+      "titel": "Werkplekanalyse op het Microsoft-platform",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/werkplekanalyse-e5/"
+    },
+    {
+      "barriere": "legacy",
+      "item": "security/identiteit-en-mail-meten",
+      "titel": "Identiteit en e-mail meten voordat je afdwingt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "mail",
+      "item": "security/identiteit-en-mail-meten",
+      "titel": "Identiteit en e-mail meten voordat je afdwingt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "session",
+      "item": "security/identiteit-en-mail-meten",
+      "titel": "Identiteit en e-mail meten voordat je afdwingt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    }
+  ],
   "zonder_handleiding": [
     "adminhard",
     "adminmonitor",
     "assets",
     "backup",
     "browser",
-    "consent",
     "crisis",
     "critical",
     "ddosresponse",
@@ -16,16 +51,13 @@
     "dmarc",
     "edr",
     "elevation",
-    "execution",
     "exploitresponse",
     "fallback",
     "idresponse",
     "jit",
     "key",
     "l7",
-    "legacy",
     "localadmin",
-    "mail",
     "mailresponse",
     "model",
     "origin",
@@ -38,7 +70,6 @@
     "restore",
     "review",
     "segment",
-    "session",
     "soc",
     "technicalvendor",
     "treatment",

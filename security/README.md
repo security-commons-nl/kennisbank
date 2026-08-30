@@ -28,6 +28,8 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 6. [Stelselkaart security-gremia](stelselkaart-security-gremia/)
 7. [Learning digitale veiligheid voor managers](awareness-digitale-veiligheid/)
 8. [Externe referenties: security-tooling en kennisbanken](referenties-tooling/)
+9. [Werkplekanalyse op het Microsoft-platform](werkplekanalyse-e5/)
+10. [Identiteit en e-mail meten voordat je afdwingt](identiteit-en-mail-meten/)
 
 ## Bijdragen
 

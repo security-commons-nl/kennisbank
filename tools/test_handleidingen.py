@@ -159,7 +159,6 @@ class GeenDodeVerwijzingen(unittest.TestCase):
     Draait op de echte kennisbank, niet op een tijdelijke map: dit gaat over de inhoud die live staat.
     """
 
-    @unittest.expectedFailure  # Taak 2 repareert de laatste verwijzing; daarna deze regel weghalen.
     def test_geen_link_naar_gearchiveerde_repos(self):
         root = Path(__file__).resolve().parent.parent
         fout = []

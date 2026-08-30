@@ -1,187 +1,17 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Meten voordat je ingrijpt</title>
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
-  h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
-  h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-  table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
-  blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
-  .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
-  @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<html lang="nl"><head><meta charset="utf-8"><title>Meten voordat je
+ingrijpt</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Meten voordat je ingrijpt</span></nav><!-- /kruimelpad -->
 <h1 id="meten-voordat-je-ingrijpt">Meten voordat je ingrijpt</h1><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#wat-je-hier-vindt">Wat je hier vindt</a></li><li><a href="#drie-uitgangspunten">Drie uitgangspunten</a></li><li><a href="#volgorde-van-aanpak">Volgorde van aanpak</a></li><li><a href="#managementsamenvatting">Managementsamenvatting</a></li><li><a href="#de-methode-evidence-based-posture-verhogen">De methode:
-evidence-based posture verhogen</a></li><li><a href="#werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse op
-het Microsoft-platform (E5)</a></li><li><a href="#identiteit-en-e-mail">Identiteit en e-mail</a></li><li><a href="#netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk,
+evidence-based posture verhogen</a></li><li><a href="#werkplekanalyse-op-het-microsoft-platform">Werkplekanalyse op
+het Microsoft-platform</a></li><li><a href="#identiteit-en-e-mail">Identiteit en e-mail</a></li><li><a href="#netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk,
 firewall en core-routers analyseren uit data</a></li><li><a href="#killchain-en-chokepoints-clickfix">Killchain en chokepoints
 (ClickFix)</a></li><li><a href="#regie-en-accountability">Regie en accountability</a></li><li><a href="#veilig-faciliteren-als-langetermijnstrategie">Veilig faciliteren
 als langetermijnstrategie</a></li><li><a href="#herbruikbare-querys">Herbruikbare query's</a></li><li><a href="#werken-met-een-llm">Werken met een LLM</a></li><li><a href="#hoe-dit-samenhangt-met-de-andere-stukken">Hoe dit samenhangt met
@@ -235,15 +65,15 @@ methode</a></td>
 <td>De werkwijze: IST naar SOLL, meten, aantoonbaarheid</td>
 </tr>
 <tr>
-<td><a
-href="#werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse</a></td>
+<td><a href="../werkplekanalyse-e5/">Werkplekanalyse</a></td>
 <td>Security, beheer</td>
-<td>Analyses op het Microsoft-platform met KQL</td>
+<td>Eigen handleiding: analyses op het Microsoft-platform met KQL</td>
 </tr>
 <tr>
-<td><a href="#identiteit-en-e-mail">Identiteit en e-mail</a></td>
+<td><a href="../identiteit-en-mail-meten/">Identiteit en e-mail</a></td>
 <td>Security, beheer</td>
-<td>MDO, MDI, Conditional Access, PIM, app-consent</td>
+<td>Eigen handleiding: MDO, MDI, Conditional Access, PIM,
+app-consent</td>
 </tr>
 <tr>
 <td><a
@@ -270,9 +100,9 @@ faciliteren</a></td>
 <td>Langetermijnstrategie in plaats van lockdown</td>
 </tr>
 <tr>
-<td><a href="data/"><code>data/</code></a></td>
+<td><a href="../werkplekanalyse-e5/data/">Zes KQL-query's</a></td>
 <td>Beheer, security</td>
-<td>Zes herbruikbare KQL-query's voor Advanced Hunting</td>
+<td>Verhuisd naar de handleiding Werkplekanalyse</td>
 </tr>
 </tbody>
 </table>
@@ -492,195 +322,24 @@ een strategie</a></strong>.</li>
 aanstond kan weer afvallen (drift). Plan periodieke herijking en, waar
 mogelijk, een gecontroleerde aanvalssimulatie om detectie en preventie
 te toetsen - niet aannemen dat het werkt, maar het laten zien.</p>
-<h2 id="werkplekanalyse-op-het-microsoft-platform-e5">Werkplekanalyse op
-het Microsoft-platform (E5)</h2>
-<p>Vrijwel elke gemeente heeft Microsoft 365 E5 en daarmee Defender for
-Endpoint (MDE) en Advanced Hunting. Dit hoofdstuk beschrijft welke
-analyses je daarmee kunt doen, en hoe je "aan" onderscheidt van
-"actief".</p>
-<p>De query's staan in <a href="data/"><code>data/</code></a>. Pas de
-parent-processen en uitsluitingen aan op je eigen omgeving.</p>
-<p>Je werkplekken moeten natuurlijk wel via Intune beheerst zijn zodat
-de telemetrie in het defender portal land. Sta je nog onbeheerde BYOD
-zonder enige vorm van regelset toe (zogenaamde MaM en CA) dan is er echt
-nog heel veel werk aan de winkel. Start dan zeker hier, maar besef je
-dat je een groot blind gat hebt.</p>
-<h3 id="a-configuratie-verifiëren-aan--gekoppeld-en-actief">A.
-Configuratie verifiëren (aan ≠ gekoppeld en actief)</h3>
-<p>Loop deze punten langs. Het zijn veelvoorkomende blinde vlekken in
-Endpoint Detection.</p>
-<ul>
-<li><strong>ASR (Attack Surface Reduction).</strong> Bestaan er regels,
-staan ze in <strong>block</strong>-modus, en zijn ze gekoppeld aan de
-<strong>juiste gebruikersgroep</strong>? Het komt voor dat er regels
-bestaan die aan geen of een verkeerde groep hangen en dus niets doen.
-Controleer specifiek of er een regel is tegen <em>credential stealing
-from LSASS</em>. De configuratiestatus is per device zichtbaar via
-<code>DeviceTvmSecureConfigurationAssessment</code> in het security
-portal.</li>
-<li><strong>AMSI.</strong> Script scanning staat standaard aan, maar
-wordt vaak niet bewust ingericht of geverifieerd. Bevestig en leg
-vast.</li>
-<li><strong>LSA protection.</strong> Vaak niet geconfigureerd. Zet aan
-en zorg dat misbruik een signaal oplevert.</li>
-<li><strong>Script-block-logging (EID 4104).</strong> Vaak niet
-ingericht. Voeg toe als aanvullende bron naar de SIEM; MDE heeft bekende
-blinde vlekken die je hiermee afdekt.</li>
-<li><strong>Autorun/autoplay op endpoints.</strong> Controleer de
-feitelijke stand (niet de aanname). Op servers is dit vaak uit via een
-hardening-baseline; op endpoints staat het regelmatig nog op
-default=aan.</li>
-</ul>
-<h3 id="b-powershell---meet-voordat-je-beperkt">B. PowerShell - meet
-voordat je beperkt</h3>
-<p>PowerShell wil je beheersen, niet bot blokkeren. De reden blijkt vaak
-uit de data.</p>
-<ol type="1">
-<li>Draai <a
-href="data/powershell-totaal-categorisatie.kql"><code>data/powershell-totaal-categorisatie.kql</code></a>.
-Dit geeft de <strong>exacte</strong> verhouding automatisering vs.
-interactief (server-side geaggregeerd, dus zonder exportlimiet).
-Verwacht beeld: het overgrote deel is automatisering -
-Intune/remediation, de eigen Defender-sensor, overige SYSTEM-processen.
-Interactief mensgebruik is doorgaans een fractie van een procent.</li>
-<li>Draai <a
-href="data/powershell-interactief.kql"><code>data/powershell-interactief.kql</code></a>
-om de ruis weg te filteren en te zien wíe interactief gebruikt. Vaak is
-dat een kleine groep ontwikkelaars met moderne tooling (terminals,
-editors, AI-assistenten) die op de achtergrond PowerShell
-aanroepen.</li>
-</ol>
-<p><strong>Advies:</strong> beheers PowerShell met <strong>Constrained
-Language Mode (CLM), afgedwongen via WDAC</strong>, in plaats van een
-procesblokkade. CLM laat PowerShell draaien maar ontneemt scripts de
-bouwstenen (reflectie, willekeurige code laden, directe API-aanroepen)
-die aanvalspayloads nodig hebben. Een trustmodel (ondertekening + WDAC)
-beslist automatisch of een script volledig of beperkt draait, in plaats
-van een handmatige uitzonderingenlijst. Geef de ontwikkelaarsgroep één
-afgebakende, tijdelijke uitzondering. Begin in
-<strong>auditmodus</strong>.</p>
-<h3 id="c-winr-run-dialooghet-utivoeren-venster">C. Win+R
-(Run-dialoog/het utivoeren venster)</h3>
-<p>Draai <a
-href="data/winr-runmru-top.kql"><code>data/winr-runmru-top.kql</code></a>
-en <a
-href="data/winr-categorisatie.kql"><code>data/winr-categorisatie.kql</code></a>.
-Deze lezen de RunMRU-registersleutel uit: wat typen gebruikers werkelijk
-in Win+R.</p>
-<p>Verwacht beeld: een laag volume, vrijwel uitsluitend beheer- en
-power-usergebruik (beheerconsoles, netwerkshares, applicaties). Veel van
-de gebruikers zullen het niet leuk vinden maar er breekt vaak niets als
-je het uitzet maar het <strong>voorkomt</strong> een essentiele stap die
-ClickFix nodig heeft om voeten aan de grond te krijgen.</p>
-<p><strong>Advies:</strong> schakel Win+R uit via beleid (NoRun, via
-Intune of GPO). Stem vooraf af met beheer of er workflows zijn die op
-Win+R leunen (bijvoorbeeld het springen naar
-uitrol-/softwaremappen).</p>
-<h3 id="d-mshta">D. mshta</h3>
-<p>Draai <a
-href="data/mshta-gebruik.kql"><code>data/mshta-gebruik.kql</code></a>.
-mshta is een veelgebruikt ClickFix-kanaal en in moderne
-kantooromgevingen zelden nog nodig. Vaak vind je nul of een handvol
-goedaardige events.</p>
-<p><strong>Advies:</strong> blokkeer mshta via AppLocker of WDAC (beide
-paden, 32- en 64-bits), met een detectieregel als achtervang. De impact
-is doorgaans verwaarloosbaar.</p>
-<h3 id="e-detectie-op-clickfix">E. Detectie op ClickFix</h3>
-<p>Draai <a
-href="data/clickfix-detectie.kql"><code>data/clickfix-detectie.kql</code></a>.
-Deze correleert een verdacht commando in de Run-dialoog met een kort
-daarna gestart proces (PowerShell, mshta, cmd, curl) vanuit
-explorer.exe.</p>
-<p>Let op de bewuste beperkingen: de detectie ziet alleen het Win+R-pad,
-alleen de genoemde binaries en alleen een explorer-parent. Verbreed de
-binary-lijst (rundll32, regsvr32, wscript/cscript, certutil, bitsadmin)
-en overweeg een lichtere variant die alléén op de verdachte
-RunMRU-waarde alarmeert, als aanvulling.</p>
-<h3 id="interpretatiehulp">Interpretatiehulp</h3>
-<ul>
-<li><strong>Filter automatisering weg voordat je conclusies
-trekt.</strong> Intune/remediation-scripts, de Defender-sensor en
-installers domineren het beeld. Zonder filtering lijkt er veel
-"interactief" gebruik dat er niet is.</li>
-<li><strong>Ontwikkeltooling veroorzaakt veel tellingen, weinig
-personen.</strong> Een AI-assistent of editor die elke handeling met een
-korte PowerShell-controle valideert, telt zwaar maar betreft een handvol
-gebruikers.</li>
-</ul>
+<h2 id="werkplekanalyse-op-het-microsoft-platform">Werkplekanalyse op
+het Microsoft-platform</h2>
+<p>Deze analyses zijn een eigen handleiding geworden: <strong><a
+href="../werkplekanalyse-e5/">Werkplekanalyse op het
+Microsoft-platform</a></strong>. Daar staat hoe je met Defender for
+Endpoint en Advanced Hunting meet wat er feitelijk draait (PowerShell,
+Win+R, mshta, ClickFix), hoe je "aan" onderscheidt van "gekoppeld en
+actief", en waarom je PowerShell beter beheerst met Constrained Language
+Mode dan met een procesblokkade. De zes KQL-query's staan daar in
+<code>data/</code>.</p>
 <h2 id="identiteit-en-e-mail">Identiteit en e-mail</h2>
-<p>Twee lagen die met E5 grotendeels afgedekt kunnen worden, maar in de
-praktijk vaak op standaard of "deels" staan. Het incidentbeeld
-onderstreept hun belang: in veel gemeenten komt het merendeel van de
-incidenten via e-mail en identiteit binnen, niet via de
-werkplek-uitvoering zelf.</p>
-<h3 id="e-mail---defender-for-office-365-mdo">E-mail - Defender for
-Office 365 (MDO)</h3>
-<p>Controleer of MDO meer doet dan de standaard:</p>
-<ul>
-<li><strong>Preset security policies (Standard/Strict)</strong> of een
-gelijkwaardig eigen beleid actief - niet alleen defaults met losse Safe
-Links/Safe Attachments.</li>
-<li><strong>Anti-phishing</strong> met impersonation- en
-spoofbescherming.</li>
-<li><strong>Quarantine-notificaties</strong> ingericht.</li>
-</ul>
-<p>Omdat e-mail vaak de grootste instroom van incidenten is, is dit
-doorgaans de <strong>hoogste hefboom</strong>. Toets de feitelijke
-inrichting; "we hebben MDO" zegt niets over het beleid dat actief
-is.</p>
-<h3 id="identiteit---entra-id-en-defender-for-identity-mdi">Identiteit -
-Entra ID en Defender for Identity (MDI)</h3>
-<p>Loop deze punten langs:</p>
-<ul>
-<li><strong>MFA-dekking.</strong> Voor álle gebruikers, niet "voor
-sommige". Controleer ook break-glass-accounts. Overweeg sterk
-passkeys</li>
-<li><strong>Legacy authentication.</strong> Geblokkeerd, niet alleen
-"report only".</li>
-<li><strong>Conditional Access.</strong> Met device-compliance en
-<strong>token binding</strong>. Dit is de tegenmaatregel tegen
-AitM-cookiereplay (gestolen sessietokens), een veelgebruikte vervolgstap
-na credential-diefstal. n.b. gebruikers worden steeds vaker naar
-malafide MS inlogpagina's geleidt. Nederlandse security leverancier
-zoals <a href="https://zolder.io">https://zolder.io</a> bieden gratis
-bescherminsdiensten hiervoor aan.</li>
-<li><strong>Privileged Identity Management (PIM).</strong> Just-in-time
-verhoogde rechten in plaats van staande rechten. Let op het aantal
-global admins; staande beheerrechten zonder PIM zijn een veelvoorkomend
-risico.</li>
-<li><strong>Defender for Cloud Apps (MDCA).</strong> Minimaal voor
-OAuth-/app-consentmisbruik en sowieso handig om schaduw Cloud-app
-gebruik inzichtelijk te maken. Afhankelijk van de keuze "reguleren
-(lockdown)" of "veilig faciliteren" blokkeer je app gebruik of ga je
-kijken naar de voorwaardes die nodig zijn de apps veilig te
-ondersteunen.</li>
-<li><strong>User-consent voor non-verified apps.</strong> Zet op "do not
-allow user consent". Dit is een eenvoudige, effectieve maatregel tegen
-malafide software die zich langdurig toegang tot de M365 wilt
-verschaffen.</li>
-<li><strong>MDI-sensors.</strong> Op domain controllers, en waar van
-toepassing op ADCS en ADFS, voor detectie van verdachte AD-recon
-(BloodHound-achtige collectie, complete groepsdumps).</li>
-</ul>
-<h3 id="adcs-active-directory-certificate-services">ADCS (Active
-Directory Certificate Services)</h3>
-<p>Detectie van certificaatmisbruik (de ESC1–ESC8-technieken) zit
-<strong>niet</strong> standaard in MDE/EDR. Zonder teveel in detail te
-gaan is dit een populaire aanval om (snel) beheerrechten te verkrijgen
-op een n=lokale infrastructuur. Ga niet uit van de aanname dat dit "door
-de endpointbescherming gedekt is" - verifieer het, en richt aanvullende
-logging in op de interne CA als die er is.</p>
-<h3 id="wat-goed-eruitziet">Wat "goed" eruitziet</h3>
-<ul>
-<li>E-mailbeleid actief en aantoonbaar effectief, niet op standaard
-instellingen.</li>
-<li>MFA overal, of nog liever, werken met passkeys. Legacy auth dicht,
-Conditional Access met device-compliance en token binding.</li>
-<li>Privileged access just-in-time (PIM), beperkt aantal vaste
-beheerders.</li>
-<li>App-consent beperkt; MDCA actief voor consent en forwarding.</li>
-<li>MDI-sensors uitgerold en AD-recon-detectie aantoonbaar.</li>
-</ul>
+<p>Ook deze laag is een eigen handleiding geworden: <strong><a
+href="../identiteit-en-mail-meten/">Identiteit en e-mail meten voordat
+je afdwingt</a></strong>. Daar staat wat je toetst in Defender for
+Office, Entra ID, Conditional Access, app-consent en ADCS, met per punt
+wat "goed" eruitziet. In veel gemeenten komt het merendeel van de
+incidenten via deze twee lagen binnen, niet via de werkplek-uitvoering
+zelf; het is daarmee doorgaans de hoogste hefboom.</p>
 <h2 id="netwerk-firewall-en-core-routers-analyseren-uit-data">Netwerk,
 firewall en core-routers analyseren uit data</h2>
 <p>Het kernprincipe van dit hoofdstuk: <strong>vertrouw niet op de
@@ -1171,50 +830,12 @@ alleen weggenomen waar dat aantoonbaar risico verkleint. Per control is
 de afweging: centraal afdwingen of aan het oordeel van de gebruiker
 laten - en is die keuze uitlegbaar aan een auditor.</p>
 <h2 id="herbruikbare-querys">Herbruikbare query's</h2>
-<p>In <a href="data/"><code>data/</code></a> staan zes KQL-query's voor
-Advanced Hunting, als startpunt voor je eigen analyses:</p>
-<table>
-<thead>
-<tr>
-<th>Bestand</th>
-<th>Waarvoor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a
-href="data/clickfix-detectie.kql"><code>clickfix-detectie.kql</code></a></td>
-<td>Detectie op het ClickFix-patroon</td>
-</tr>
-<tr>
-<td><a
-href="data/winr-runmru-top.kql"><code>winr-runmru-top.kql</code></a></td>
-<td>Wat gebruikers via Win+R starten</td>
-</tr>
-<tr>
-<td><a
-href="data/winr-categorisatie.kql"><code>winr-categorisatie.kql</code></a></td>
-<td>Dat gebruik gecategoriseerd</td>
-</tr>
-<tr>
-<td><a
-href="data/powershell-totaal-categorisatie.kql"><code>powershell-totaal-categorisatie.kql</code></a></td>
-<td>Alle PowerShell-starts naar categorie</td>
-</tr>
-<tr>
-<td><a
-href="data/powershell-interactief.kql"><code>powershell-interactief.kql</code></a></td>
-<td>Alleen het interactieve deel</td>
-</tr>
-<tr>
-<td><a
-href="data/mshta-gebruik.kql"><code>mshta-gebruik.kql</code></a></td>
-<td>Waar mshta nog wordt gebruikt</td>
-</tr>
-</tbody>
-</table>
-<p>Pas de parent-processen en uitsluitingen aan op je eigen omgeving; de
-aantallen zeggen pas iets als de ruis eruit is.</p>
+<p>De zes KQL-query's voor Advanced Hunting staan bij de handleiding
+waar ze bij horen: <a href="../werkplekanalyse-e5/">Werkplekanalyse op
+het Microsoft-platform</a>. Daar staat per query waarvoor hij dient
+(ClickFix-detectie, Win+R-gebruik, PowerShell-categorisatie, mshta) en
+hoe je de parent-processen en uitsluitingen op je eigen omgeving
+aanpast.</p>
 <h2 id="werken-met-een-llm">Werken met een LLM</h2>
 <p>Dit stuk is geschreven om mee te werken in een taalmodel. Neem de
 tekst en de query's mee als context, en laat het model je helpen bij het
@@ -1267,5 +888,4 @@ doen.</p>
 <h2 id="licentie">Licentie</h2>
 <p>EUPL-1.2, zie de <a href="../../LICENSE">licentie van de
 kennisbank</a>.</p>
-<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/meten-voordat-je-ingrijpt">security/meten-voordat-je-ingrijpt</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body>
-</html>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/meten-voordat-je-ingrijpt">security/meten-voordat-je-ingrijpt</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

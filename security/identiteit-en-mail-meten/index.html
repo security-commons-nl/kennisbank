@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Identiteit en e-mail
+meten voordat je
+afdwingt</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Identiteit en e-mail meten voordat je afdwingt</span></nav><!-- /kruimelpad -->
+<h1 id="identiteit-en-e-mail-meten-voordat-je-afdwingt">Identiteit en
+e-mail meten voordat je afdwingt</h1>
+<blockquote>
+<p><strong>Barrieres:</strong> een sterke e-mailbaseline, legacy
+authentication blokkeren, tokenmisbruik beperken en app-toestemming
+beheersen. Deze handleiding toetst wat er feitelijk aanstaat, want "we
+hebben E5" zegt niets over het beleid dat actief is.</p>
+</blockquote>
+<p>Twee lagen die met E5 grotendeels afgedekt kunnen worden, maar in de
+praktijk vaak op standaard of "deels" staan. Het incidentbeeld
+onderstreept hun belang: in veel gemeenten komt het merendeel van de
+incidenten via e-mail en identiteit binnen, niet via de
+werkplek-uitvoering zelf.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Altijd, en bij voorkeur voordat je in de werkplek gaat ingrijpen.
+E-mail is doorgaans de grootste instroom van incidenten en daarmee de
+hoogste hefboom.</p>
+<p>Deze handleiding is een <strong>toets</strong>, geen inrichtingsplan.
+Hij vertelt je wat je moet controleren en wat goed eruitziet; het
+invoeren van passkeys staat in <a href="../passkeys-invoeren/">Passkeys
+invoeren</a>, en de methode achter deze aanpak in <a
+href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<h3 id="e-mail-defender-for-office-365-mdo">E-mail: Defender for Office
+365 (MDO)</h3>
+<p>Controleer of MDO meer doet dan de standaard:</p>
+<ul>
+<li><strong>Preset security policies (Standard of Strict)</strong> of
+een gelijkwaardig eigen beleid actief, niet alleen defaults met losse
+Safe Links en Safe Attachments.</li>
+<li><strong>Anti-phishing</strong> met impersonation- en
+spoofbescherming.</li>
+<li><strong>Quarantine-notificaties</strong> ingericht.</li>
+</ul>
+<p>Omdat e-mail vaak de grootste instroom van incidenten is, is dit
+doorgaans de <strong>hoogste hefboom</strong>. Toets de feitelijke
+inrichting; "we hebben MDO" zegt niets over het beleid dat actief
+is.</p>
+<h3 id="identiteit-entra-id-en-defender-for-identity-mdi">Identiteit:
+Entra ID en Defender for Identity (MDI)</h3>
+<p>Loop deze punten langs:</p>
+<ul>
+<li><strong>MFA-dekking.</strong> Voor alle gebruikers, niet "voor
+sommige". Controleer ook break-glass-accounts. Overweeg sterk
+passkeys.</li>
+<li><strong>Legacy authentication.</strong> Geblokkeerd, niet alleen
+"report only".</li>
+<li><strong>Conditional Access.</strong> Met device-compliance en
+<strong>token binding</strong>. Dit is de tegenmaatregel tegen
+AitM-cookiereplay (gestolen sessietokens), een veelgebruikte vervolgstap
+na credential-diefstal. Gebruikers worden steeds vaker naar malafide
+inlogpagina's geleid; er zijn Nederlandse securityleveranciers die daar
+gratis beschermingsdiensten voor aanbieden.</li>
+<li><strong>Privileged Identity Management (PIM).</strong> Just-in-time
+verhoogde rechten in plaats van staande rechten. Let op het aantal
+global admins; staande beheerrechten zonder PIM zijn een veelvoorkomend
+risico.</li>
+<li><strong>Defender for Cloud Apps (MDCA).</strong> Minimaal voor
+OAuth- en app-consentmisbruik, en sowieso handig om schaduwgebruik van
+cloud-apps inzichtelijk te maken. Afhankelijk van de keuze tussen
+reguleren (lockdown) en veilig faciliteren blokkeer je app-gebruik, of
+kijk je naar de voorwaarden die nodig zijn om de apps veilig te
+ondersteunen.</li>
+<li><strong>User-consent voor niet-geverifieerde apps.</strong> Zet op
+"do not allow user consent". Dit is een eenvoudige, effectieve maatregel
+tegen malafide software die zich langdurig toegang tot Microsoft 365 wil
+verschaffen.</li>
+<li><strong>MDI-sensors.</strong> Op domain controllers, en waar van
+toepassing op ADCS en ADFS, voor detectie van verdachte AD-recon
+(BloodHound-achtige collectie, complete groepsdumps).</li>
+</ul>
+<h3 id="adcs-active-directory-certificate-services">ADCS (Active
+Directory Certificate Services)</h3>
+<p>Detectie van certificaatmisbruik (de ESC1 tot en met ESC8-technieken)
+zit <strong>niet</strong> standaard in MDE of EDR. Zonder te veel in
+detail te gaan: dit is een populaire aanval om snel beheerrechten te
+verkrijgen op een lokale infrastructuur. Ga niet uit van de aanname dat
+dit door de endpointbescherming gedekt is. Verifieer het, en richt
+aanvullende logging in op de interne CA als die er is.</p>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>De toets zelf kost een dagdeel per laag. Het aanzetten van preset
+security policies en het blokkeren van legacy authentication is
+goedkoop; token binding en het intrekken van staande beheerrechten
+kosten meer afstemming, omdat je daar mensen in hun werk raakt.</p>
+<p>Wat "goed" eruitziet:</p>
+<ul>
+<li>E-mailbeleid actief en aantoonbaar effectief, niet op
+standaardinstellingen.</li>
+<li>MFA overal, of nog liever werken met passkeys. Legacy auth dicht,
+Conditional Access met device-compliance en token binding.</li>
+<li>Privileged access just-in-time (PIM), beperkt aantal vaste
+beheerders.</li>
+<li>App-consent beperkt; MDCA actief voor consent en forwarding.</li>
+<li>MDI-sensors uitgerold en AD-recon-detectie aantoonbaar.</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<p>Export of configuratie waaruit blijkt dat de maatregel technisch is
+afgedwongen, met de dekking en de uitzonderingen erbij. Concreet per
+barriere:</p>
+<ul>
+<li><strong>E-mail:</strong> de actieve MDO-policy met het
+beschermingsniveau, en het aantal postbussen dat eronder valt tegenover
+het totaal.</li>
+<li><strong>Legacy authentication:</strong> het Conditional
+Access-beleid in <em>enforce</em> (niet report-only), met de
+uitzonderingen en hun reden.</li>
+<li><strong>Sessies:</strong> het beleid met device-compliance en token
+binding, en het aantal gebruikers dat eronder valt.</li>
+<li><strong>App-consent:</strong> de instelling voor user-consent, plus
+de lijst met bestaande toestemmingen die je hebt beoordeeld en
+opgeschoond.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> De meeste incidenten komen binnen
+via e-mail en gestolen inloggegevens, niet via de werkplek. Wij
+controleren of de bescherming die we al betalen ook echt aanstaat, en
+zetten aan wat op standaard bleef staan.</p>
+<p><strong>Aan de informatiemanager.</strong> Dit is grotendeels
+configuratie in producten die we al hebben. De zwaarste ingrepen zijn
+het blokkeren van legacy authentication en het beperken van
+app-toestemming; beide vragen een inventarisatie van wat er nu op
+leunt.</p>
+<p><strong>Aan het MT.</strong> Medewerkers merken hier weinig van,
+behalve dat ze soms een app niet meer zelf kunnen goedkeuren. Die
+aanvraag loopt dan via een korte route bij beheer.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij de barrieres <code>mail</code>,
+<code>legacy</code>, <code>session</code> en <code>consent</code> uit de
+<a href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>, en is een uitwerking van de methode <a
+href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>. Voor
+het invoeren van phishingbestendige authenticatie zelf is er <a
+href="../passkeys-invoeren/">Passkeys invoeren</a>. Wat je hiermee
+aantoont in BIO 2.0, NIST CSF, het Wpg-kader en de AVG staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/identiteit-en-mail-meten">security/identiteit-en-mail-meten</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

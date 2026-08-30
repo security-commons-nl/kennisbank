@@ -40,13 +40,13 @@ managementsamenvatting als je het eerste wilt, en de hoofdstukken erna als je he
 |---|---|---|
 | [Managementsamenvatting](#managementsamenvatting) | Bestuur, CISO | Kernboodschap, lagenmodel, strategie in het kort |
 | [De methode](#de-methode-evidence-based-posture-verhogen) | Allen | De werkwijze: IST naar SOLL, meten, aantoonbaarheid |
-| [Werkplekanalyse](#werkplekanalyse-op-het-microsoft-platform-e5) | Security, beheer | Analyses op het Microsoft-platform met KQL |
-| [Identiteit en e-mail](#identiteit-en-e-mail) | Security, beheer | MDO, MDI, Conditional Access, PIM, app-consent |
+| [Werkplekanalyse](../werkplekanalyse-e5/) | Security, beheer | Eigen handleiding: analyses op het Microsoft-platform met KQL |
+| [Identiteit en e-mail](../identiteit-en-mail-meten/) | Security, beheer | Eigen handleiding: MDO, MDI, Conditional Access, PIM, app-consent |
 | [Netwerk en firewall](#netwerk-firewall-en-core-routers-analyseren-uit-data) | Security, netwerk | Firewalls en core-routers analyseren uit data |
 | [Killchain en chokepoints](#killchain-en-chokepoints-clickfix) | Security | De ClickFix-keten naast je controls, met MITRE-fasen |
 | [Regie en accountability](#regie-en-accountability) | Management, CISO | Resultaatverplichting, RACI, leveranciers |
 | [Veilig faciliteren](#veilig-faciliteren-als-langetermijnstrategie) | Bestuur, CISO | Langetermijnstrategie in plaats van lockdown |
-| [`data/`](data/) | Beheer, security | Zes herbruikbare KQL-query's voor Advanced Hunting |
+| [Zes KQL-query's](../werkplekanalyse-e5/data/) | Beheer, security | Verhuisd naar de handleiding Werkplekanalyse |
 
 ## Drie uitgangspunten
 
@@ -191,142 +191,21 @@ Leg vast wat je hebt gemeten en wanneer. Een maatregel die ooit aanstond kan wee
 periodieke herijking en, waar mogelijk, een gecontroleerde aanvalssimulatie om detectie en preventie te
 toetsen - niet aannemen dat het werkt, maar het laten zien.
 
-## Werkplekanalyse op het Microsoft-platform (E5)
+## Werkplekanalyse op het Microsoft-platform
 
-Vrijwel elke gemeente heeft Microsoft 365 E5 en daarmee Defender for Endpoint (MDE) en Advanced Hunting.
-Dit hoofdstuk beschrijft welke analyses je daarmee kunt doen, en hoe je "aan" onderscheidt van "actief".
-
-De query's staan in [`data/`](data/). Pas de parent-processen en uitsluitingen aan op je eigen omgeving.
-
-Je werkplekken moeten natuurlijk wel via Intune beheerst zijn zodat de telemetrie in het defender portal land.
-Sta je nog onbeheerde BYOD zonder enige vorm van regelset toe (zogenaamde MaM en CA) dan is er echt nog heel veel
-werk aan de winkel. Start dan zeker hier, maar besef je dat je een groot blind gat hebt.
-
-### A. Configuratie verifiëren (aan ≠ gekoppeld en actief)
-
-Loop deze punten langs. Het zijn veelvoorkomende blinde vlekken in Endpoint Detection.
-
-- **ASR (Attack Surface Reduction).** Bestaan er regels, staan ze in **block**-modus, en zijn ze gekoppeld aan
-  de **juiste gebruikersgroep**? Het komt voor dat er regels bestaan die aan geen of een verkeerde groep hangen
-  en dus niets doen. Controleer specifiek of er een regel is tegen *credential stealing from LSASS*. De
-  configuratiestatus is per device zichtbaar via `DeviceTvmSecureConfigurationAssessment` in het security portal.
-- **AMSI.** Script scanning staat standaard aan, maar wordt vaak niet bewust ingericht of geverifieerd.
-  Bevestig en leg vast.
-- **LSA protection.** Vaak niet geconfigureerd. Zet aan en zorg dat misbruik een signaal oplevert.
-- **Script-block-logging (EID 4104).** Vaak niet ingericht. Voeg toe als aanvullende bron naar de SIEM; MDE
-  heeft bekende blinde vlekken die je hiermee afdekt.
-- **Autorun/autoplay op endpoints.** Controleer de feitelijke stand (niet de aanname). Op servers is dit vaak
-  uit via een hardening-baseline; op endpoints staat het regelmatig nog op default=aan.
-
-### B. PowerShell - meet voordat je beperkt
-
-PowerShell wil je beheersen, niet bot blokkeren. De reden blijkt vaak uit de data.
-
-1. Draai [`data/powershell-totaal-categorisatie.kql`](data/powershell-totaal-categorisatie.kql). Dit geeft
-   de **exacte** verhouding automatisering vs. interactief (server-side geaggregeerd, dus zonder exportlimiet).
-   Verwacht beeld: het overgrote deel is automatisering - Intune/remediation, de eigen Defender-sensor, overige
-   SYSTEM-processen. Interactief mensgebruik is doorgaans een fractie van een procent.
-2. Draai [`data/powershell-interactief.kql`](data/powershell-interactief.kql) om de ruis weg te filteren en
-   te zien wíe interactief gebruikt. Vaak is dat een kleine groep ontwikkelaars met moderne tooling
-   (terminals, editors, AI-assistenten) die op de achtergrond PowerShell aanroepen.
-
-**Advies:** beheers PowerShell met **Constrained Language Mode (CLM), afgedwongen via WDAC**, in plaats van een
-procesblokkade. CLM laat PowerShell draaien maar ontneemt scripts de bouwstenen (reflectie, willekeurige code
-laden, directe API-aanroepen) die aanvalspayloads nodig hebben. Een trustmodel (ondertekening + WDAC) beslist
-automatisch of een script volledig of beperkt draait, in plaats van een handmatige uitzonderingenlijst. Geef de
-ontwikkelaarsgroep één afgebakende, tijdelijke uitzondering. Begin in **auditmodus**.
-
-### C. Win+R (Run-dialoog/het utivoeren venster)
-
-Draai [`data/winr-runmru-top.kql`](data/winr-runmru-top.kql) en
-[`data/winr-categorisatie.kql`](data/winr-categorisatie.kql). Deze lezen de RunMRU-registersleutel uit:
-wat typen gebruikers werkelijk in Win+R.
-
-Verwacht beeld: een laag volume, vrijwel uitsluitend beheer- en power-usergebruik (beheerconsoles,
-netwerkshares, applicaties). Veel van de gebruikers zullen het niet leuk vinden maar er breekt vaak niets
-als je het uitzet maar het **voorkomt** een essentiele stap die ClickFix nodig heeft om voeten aan de grond
-te krijgen.
-
-**Advies:** schakel Win+R uit via beleid (NoRun, via Intune of GPO). Stem vooraf af met beheer of er
-workflows zijn die op Win+R leunen (bijvoorbeeld het springen naar uitrol-/softwaremappen).
-
-### D. mshta
-
-Draai [`data/mshta-gebruik.kql`](data/mshta-gebruik.kql). mshta is een veelgebruikt ClickFix-kanaal en in
-moderne kantooromgevingen zelden nog nodig. Vaak vind je nul of een handvol goedaardige events.
-
-**Advies:** blokkeer mshta via AppLocker of WDAC (beide paden, 32- en 64-bits), met een detectieregel als
-achtervang. De impact is doorgaans verwaarloosbaar.
-
-### E. Detectie op ClickFix
-
-Draai [`data/clickfix-detectie.kql`](data/clickfix-detectie.kql). Deze correleert een verdacht commando in
-de Run-dialoog met een kort daarna gestart proces (PowerShell, mshta, cmd, curl) vanuit explorer.exe.
-
-Let op de bewuste beperkingen: de detectie ziet alleen het Win+R-pad, alleen de genoemde binaries en alleen
-een explorer-parent. Verbreed de binary-lijst (rundll32, regsvr32, wscript/cscript, certutil, bitsadmin) en
-overweeg een lichtere variant die alléén op de verdachte RunMRU-waarde alarmeert, als aanvulling.
-
-### Interpretatiehulp
-
-- **Filter automatisering weg voordat je conclusies trekt.** Intune/remediation-scripts, de Defender-sensor en
-  installers domineren het beeld. Zonder filtering lijkt er veel "interactief" gebruik dat er niet is.
-- **Ontwikkeltooling veroorzaakt veel tellingen, weinig personen.** Een AI-assistent of editor die elke
-  handeling met een korte PowerShell-controle valideert, telt zwaar maar betreft een handvol gebruikers.
+Deze analyses zijn een eigen handleiding geworden:
+**[Werkplekanalyse op het Microsoft-platform](../werkplekanalyse-e5/)**. Daar staat hoe je met Defender
+for Endpoint en Advanced Hunting meet wat er feitelijk draait (PowerShell, Win+R, mshta, ClickFix), hoe je
+"aan" onderscheidt van "gekoppeld en actief", en waarom je PowerShell beter beheerst met Constrained
+Language Mode dan met een procesblokkade. De zes KQL-query's staan daar in `data/`.
 
 ## Identiteit en e-mail
 
-Twee lagen die met E5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of "deels"
-staan. Het incidentbeeld onderstreept hun belang: in veel gemeenten komt het merendeel van de incidenten via
-e-mail en identiteit binnen, niet via de werkplek-uitvoering zelf.
-
-### E-mail - Defender for Office 365 (MDO)
-
-Controleer of MDO meer doet dan de standaard:
-
-- **Preset security policies (Standard/Strict)** of een gelijkwaardig eigen beleid actief - niet alleen
-  defaults met losse Safe Links/Safe Attachments.
-- **Anti-phishing** met impersonation- en spoofbescherming.
-- **Quarantine-notificaties** ingericht.
-
-Omdat e-mail vaak de grootste instroom van incidenten is, is dit doorgaans de **hoogste hefboom**. Toets de
-feitelijke inrichting; "we hebben MDO" zegt niets over het beleid dat actief is.
-
-### Identiteit - Entra ID en Defender for Identity (MDI)
-
-Loop deze punten langs:
-
-- **MFA-dekking.** Voor álle gebruikers, niet "voor sommige". Controleer ook break-glass-accounts. Overweeg sterk passkeys
-- **Legacy authentication.** Geblokkeerd, niet alleen "report only".
-- **Conditional Access.** Met device-compliance en **token binding**. Dit is de tegenmaatregel tegen
-  AitM-cookiereplay (gestolen sessietokens), een veelgebruikte vervolgstap na credential-diefstal.
-  n.b. gebruikers worden steeds vaker naar malafide MS inlogpagina's geleidt. Nederlandse security
-  leverancier zoals https://zolder.io bieden gratis bescherminsdiensten hiervoor aan. 
-- **Privileged Identity Management (PIM).** Just-in-time verhoogde rechten in plaats van staande rechten.
-  Let op het aantal global admins; staande beheerrechten zonder PIM zijn een veelvoorkomend risico.
-- **Defender for Cloud Apps (MDCA).** Minimaal voor OAuth-/app-consentmisbruik en sowieso handig om schaduw Cloud-app gebruik
-  inzichtelijk te maken. Afhankelijk van de keuze "reguleren (lockdown)" of "veilig faciliteren" blokkeer je app gebruik of ga je
-  kijken naar de voorwaardes die nodig zijn de apps veilig te ondersteunen.
-- **User-consent voor non-verified apps.** Zet op "do not allow user consent". Dit is een eenvoudige,
-  effectieve maatregel tegen malafide software die zich langdurig toegang tot de M365 wilt verschaffen.
-- **MDI-sensors.** Op domain controllers, en waar van toepassing op ADCS en ADFS, voor detectie van
-  verdachte AD-recon (BloodHound-achtige collectie, complete groepsdumps).
-
-### ADCS (Active Directory Certificate Services)
-
-Detectie van certificaatmisbruik (de ESC1–ESC8-technieken) zit **niet** standaard in MDE/EDR. Zonder teveel
-in detail te gaan is dit een populaire aanval om (snel) beheerrechten te verkrijgen op een n=lokale infrastructuur.
-Ga niet uit van de aanname dat dit "door de endpointbescherming gedekt is" - verifieer het, en richt aanvullende logging in op
-de interne CA als die er is.
-
-### Wat "goed" eruitziet
-
-- E-mailbeleid actief en aantoonbaar effectief, niet op standaard instellingen.
-- MFA overal, of nog liever, werken met passkeys. Legacy auth dicht, Conditional Access met
-  device-compliance en token binding.
-- Privileged access just-in-time (PIM), beperkt aantal vaste beheerders.
-- App-consent beperkt; MDCA actief voor consent en forwarding.
-- MDI-sensors uitgerold en AD-recon-detectie aantoonbaar.
+Ook deze laag is een eigen handleiding geworden:
+**[Identiteit en e-mail meten voordat je afdwingt](../identiteit-en-mail-meten/)**. Daar staat wat je
+toetst in Defender for Office, Entra ID, Conditional Access, app-consent en ADCS, met per punt wat "goed"
+eruitziet. In veel gemeenten komt het merendeel van de incidenten via deze twee lagen binnen, niet via de
+werkplek-uitvoering zelf; het is daarmee doorgaans de hoogste hefboom.
 
 ## Netwerk, firewall en core-routers analyseren uit data
 
@@ -617,19 +496,10 @@ laten - en is die keuze uitlegbaar aan een auditor.
 
 ## Herbruikbare query's
 
-In [`data/`](data/) staan zes KQL-query's voor Advanced Hunting, als startpunt voor je eigen analyses:
-
-| Bestand | Waarvoor |
-|---|---|
-| [`clickfix-detectie.kql`](data/clickfix-detectie.kql) | Detectie op het ClickFix-patroon |
-| [`winr-runmru-top.kql`](data/winr-runmru-top.kql) | Wat gebruikers via Win+R starten |
-| [`winr-categorisatie.kql`](data/winr-categorisatie.kql) | Dat gebruik gecategoriseerd |
-| [`powershell-totaal-categorisatie.kql`](data/powershell-totaal-categorisatie.kql) | Alle PowerShell-starts naar categorie |
-| [`powershell-interactief.kql`](data/powershell-interactief.kql) | Alleen het interactieve deel |
-| [`mshta-gebruik.kql`](data/mshta-gebruik.kql) | Waar mshta nog wordt gebruikt |
-
-Pas de parent-processen en uitsluitingen aan op je eigen omgeving; de aantallen zeggen pas iets als de
-ruis eruit is.
+De zes KQL-query's voor Advanced Hunting staan bij de handleiding waar ze bij horen:
+[Werkplekanalyse op het Microsoft-platform](../werkplekanalyse-e5/). Daar staat per query waarvoor hij
+dient (ClickFix-detectie, Win+R-gebruik, PowerShell-categorisatie, mshta) en hoe je de parent-processen en
+uitsluitingen op je eigen omgeving aanpast.
 
 ## Werken met een LLM
 

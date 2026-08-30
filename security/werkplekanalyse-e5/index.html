@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Werkplekanalyse op
+het
+Microsoft-platform</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Werkplekanalyse op het Microsoft-platform</span></nav><!-- /kruimelpad -->
+<h1 id="werkplekanalyse-op-het-microsoft-platform">Werkplekanalyse op
+het Microsoft-platform</h1>
+<blockquote>
+<p><strong>Barriere:</strong> beperk software- en scriptuitvoering met
+application control en ASR. Deze handleiding laat zien hoe je eerst meet
+wat er draait, zodat je daarna kunt beperken zonder legitiem werk te
+breken.</p>
+</blockquote>
+<p>Vrijwel elke gemeente heeft Microsoft 365 E5 en daarmee Defender for
+Endpoint (MDE) en Advanced Hunting. Deze handleiding beschrijft welke
+analyses je daarmee doet, en hoe je "aan" onderscheidt van "gekoppeld en
+actief".</p>
+<p>De query's staan in <a href="data/"><code>data/</code></a>. Pas de
+parent-processen en uitsluitingen aan op je eigen omgeving.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<p>Altijd zinvol als je werkplekken via Intune beheerd zijn, zodat de
+telemetrie in het Defender-portaal landt. Sta je nog onbeheerde BYOD toe
+zonder enige regelset (MAM en conditional access), dan is er echt nog
+veel werk aan de winkel. Start dan zeker hier, maar besef dat je een
+groot blind gat hebt.</p>
+<p>Deze handleiding hoort bij de methode <a
+href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>: meet
+eerst, grijp daarna pas in. Sla je het meten over en zet je alles in
+blokkeerstand, dan breek je werk dat er wel toe doet en draai je de
+maatregel binnen een week weer terug.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<h3 id="a-configuratie-verifieren-aan-is-niet-gekoppeld-en-actief">A.
+Configuratie verifieren (aan is niet gekoppeld en actief)</h3>
+<p>Loop deze punten langs. Het zijn veelvoorkomende blinde vlekken in
+endpoint-detectie.</p>
+<ul>
+<li><strong>ASR (Attack Surface Reduction).</strong> Bestaan er regels,
+staan ze in <strong>block</strong>-modus, en zijn ze gekoppeld aan de
+<strong>juiste gebruikersgroep</strong>? Het komt voor dat er regels
+bestaan die aan geen of een verkeerde groep hangen en dus niets doen.
+Controleer specifiek of er een regel is tegen <em>credential stealing
+from LSASS</em>. De configuratiestatus is per device zichtbaar via
+<code>DeviceTvmSecureConfigurationAssessment</code> in het
+security-portaal.</li>
+<li><strong>AMSI.</strong> Script scanning staat standaard aan, maar
+wordt vaak niet bewust ingericht of geverifieerd. Bevestig en leg
+vast.</li>
+<li><strong>LSA protection.</strong> Vaak niet geconfigureerd. Zet aan
+en zorg dat misbruik een signaal oplevert.</li>
+<li><strong>Script-block-logging (EID 4104).</strong> Vaak niet
+ingericht. Voeg toe als aanvullende bron naar de SIEM; MDE heeft bekende
+blinde vlekken die je hiermee afdekt.</li>
+<li><strong>Autorun en autoplay op endpoints.</strong> Controleer de
+feitelijke stand, niet de aanname. Op servers is dit vaak uit via een
+hardening-baseline; op endpoints staat het regelmatig nog op default
+aan.</li>
+</ul>
+<h3 id="b-powershell-meet-voordat-je-beperkt">B. PowerShell, meet
+voordat je beperkt</h3>
+<p>PowerShell wil je beheersen, niet bot blokkeren. De reden blijkt vaak
+uit de data.</p>
+<ol type="1">
+<li>Draai <a
+href="data/powershell-totaal-categorisatie.kql"><code>data/powershell-totaal-categorisatie.kql</code></a>.
+Dit geeft de <strong>exacte</strong> verhouding automatisering tegenover
+interactief (server-side geaggregeerd, dus zonder exportlimiet).
+Verwacht beeld: het overgrote deel is automatisering, namelijk Intune en
+remediation, de eigen Defender-sensor en overige SYSTEM-processen.
+Interactief mensgebruik is doorgaans een fractie van een procent.</li>
+<li>Draai <a
+href="data/powershell-interactief.kql"><code>data/powershell-interactief.kql</code></a>
+om de ruis weg te filteren en te zien wie interactief gebruikt. Vaak is
+dat een kleine groep ontwikkelaars met moderne tooling (terminals,
+editors, AI-assistenten) die op de achtergrond PowerShell
+aanroepen.</li>
+</ol>
+<p><strong>Advies:</strong> beheers PowerShell met <strong>Constrained
+Language Mode (CLM), afgedwongen via WDAC</strong>, in plaats van een
+procesblokkade. CLM laat PowerShell draaien maar ontneemt scripts de
+bouwstenen (reflectie, willekeurige code laden, directe API-aanroepen)
+die aanvalspayloads nodig hebben. Een trustmodel (ondertekening plus
+WDAC) beslist automatisch of een script volledig of beperkt draait, in
+plaats van een handmatige uitzonderingenlijst. Geef de
+ontwikkelaarsgroep een afgebakende, tijdelijke uitzondering. Begin in
+<strong>auditmodus</strong>.</p>
+<h3 id="c-winr-het-uitvoeren-venster">C. Win+R, het
+uitvoeren-venster</h3>
+<p>Draai <a
+href="data/winr-runmru-top.kql"><code>data/winr-runmru-top.kql</code></a>
+en <a
+href="data/winr-categorisatie.kql"><code>data/winr-categorisatie.kql</code></a>.
+Deze lezen de RunMRU-registersleutel uit: wat typen gebruikers werkelijk
+in Win+R.</p>
+<p>Verwacht beeld: een laag volume, vrijwel uitsluitend beheer- en
+power-usergebruik (beheerconsoles, netwerkshares, applicaties). Veel
+gebruikers zullen het niet leuk vinden, maar er breekt vaak niets als je
+het uitzet, terwijl het wel een essentiele stap
+<strong>voorkomt</strong> die ClickFix nodig heeft om voet aan de grond
+te krijgen.</p>
+<p><strong>Advies:</strong> schakel Win+R uit via beleid (NoRun, via
+Intune of GPO). Stem vooraf af met beheer of er workflows zijn die op
+Win+R leunen, bijvoorbeeld het springen naar uitrol- of
+softwaremappen.</p>
+<h3 id="d-mshta">D. mshta</h3>
+<p>Draai <a
+href="data/mshta-gebruik.kql"><code>data/mshta-gebruik.kql</code></a>.
+mshta is een veelgebruikt ClickFix-kanaal en in moderne
+kantooromgevingen zelden nog nodig. Vaak vind je nul of een handvol
+goedaardige events.</p>
+<p><strong>Advies:</strong> blokkeer mshta via AppLocker of WDAC (beide
+paden, 32- en 64-bits), met een detectieregel als achtervang. De impact
+is doorgaans verwaarloosbaar.</p>
+<h3 id="e-detectie-op-clickfix">E. Detectie op ClickFix</h3>
+<p>Draai <a
+href="data/clickfix-detectie.kql"><code>data/clickfix-detectie.kql</code></a>.
+Deze correleert een verdacht commando in de Run-dialoog met een kort
+daarna gestart proces (PowerShell, mshta, cmd, curl) vanuit
+explorer.exe.</p>
+<p>Let op de bewuste beperkingen: de detectie ziet alleen het Win+R-pad,
+alleen de genoemde binaries en alleen een explorer-parent. Verbreed de
+binary-lijst (rundll32, regsvr32, wscript en cscript, certutil,
+bitsadmin) en overweeg een lichtere variant die alleen op de verdachte
+RunMRU-waarde alarmeert, als aanvulling.</p>
+<h3 id="interpretatiehulp">Interpretatiehulp</h3>
+<ul>
+<li><strong>Filter automatisering weg voordat je conclusies
+trekt.</strong> Intune- en remediation-scripts, de Defender-sensor en
+installers domineren het beeld. Zonder filtering lijkt er veel
+interactief gebruik dat er niet is.</li>
+<li><strong>Ontwikkeltooling veroorzaakt veel tellingen, weinig
+personen.</strong> Een AI-assistent of editor die elke handeling met een
+korte PowerShell-controle valideert, telt zwaar maar betreft een handvol
+gebruikers.</li>
+</ul>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>De analyses zelf kosten alleen tijd: de query's draaien op telemetrie
+die je al hebt. De uitvoering kost meer, vooral het WDAC-trustmodel;
+begin daarom in auditmodus en pak Win+R en mshta eerst, want die zijn
+goedkoop en breken zelden iets.</p>
+<p>Wat het oplevert is dat je maatregelen kunt verdedigen. Niet "wij
+blokkeren PowerShell", maar "van de uitvoeringen is 99,4 procent
+automatisering, het interactieve deel komt van zes ontwikkelaars, en die
+houden een afgebakende uitzondering". Dat is een gesprek dat je
+wint.</p>
+<h2 id="bewijs">Bewijs</h2>
+<p>Export of configuratie waaruit blijkt dat de maatregel technisch is
+afgedwongen, met de dekking en de uitzonderingen erbij. Concreet:</p>
+<ul>
+<li>De ASR-regelstatus per device uit
+<code>DeviceTvmSecureConfigurationAssessment</code>, met het aantal
+devices in block-modus tegenover het totaal, en de gebruikersgroep
+waaraan de regels hangen.</li>
+<li>De WDAC- of AppLocker-configuratie met de uitzonderingen, en de
+auditbevindingen van voor de omzetting naar blokkeren.</li>
+<li>Het beleid dat Win+R uitschakelt en de blokkade van mshta, elk met
+de dekking.</li>
+<li>De uitkomst van de categorisatie-query's als onderbouwing waarom de
+uitzonderingen zijn wat ze zijn.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p><strong>Aan de directie.</strong> ClickFix en soortgelijke aanvallen
+beginnen bijna altijd met een gebruiker die zelf een commando plakt of
+uitvoert. We meten eerst wat er echt gebeurt en sluiten daarna de routes
+die niemand nodig heeft. Zo halen we een aanvalsroute weg zonder het
+werk te breken.</p>
+<p><strong>Aan de informatiemanager.</strong> De analyse draait op
+telemetrie die er al is; er komt geen nieuw product bij. De ingrepen
+(Win+R uit, mshta blokkeren, PowerShell in Constrained Language Mode)
+raken een klein aantal gebruikers, en die krijgen een afgebakende
+uitzondering.</p>
+<p><strong>Aan het MT.</strong> Een handvol ontwikkelaars merkt hier
+iets van en krijgt een uitzondering met een termijn. Voor de rest van de
+organisatie verandert er niets zichtbaars.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Deze handleiding hoort bij barriere <code>execution</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>, en is een uitwerking van de methode <a
+href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>. Wat
+je hiermee aantoont in BIO 2.0, NIST CSF, het Wpg-kader en de AVG staat
+op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van
+aanvalspad naar norm</a>.</p>
+<p>De ClickFix-killchain waar deze analyses op aansluiten, staat in de
+pijler onder <em>Killchain en chokepoints</em>.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/werkplekanalyse-e5">security/werkplekanalyse-e5</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
