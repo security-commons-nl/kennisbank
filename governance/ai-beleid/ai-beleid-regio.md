@@ -4,7 +4,7 @@
 > zijn vervangen door placeholders in hoofdletters (`DE REGIO`, `VOORBEELDGEMEENTE`, `GEMEENTE B` tot en
 > met `GEMEENTE D`). Het stuk is bedoeld om hergebruikt te worden: zoek de placeholders op en vul je
 > eigen organisatie in. Zie het
-> [README](https://github.com/security-commons-nl/kennisbank/tree/main/overig/beleid/ai-beleid) voor de herkomst
+> [README](https://github.com/security-commons-nl/kennisbank/tree/main/governance/ai-beleid) voor de herkomst
 > en de vertaalsleutel.
 
 | | |
