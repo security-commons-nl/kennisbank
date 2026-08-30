@@ -53,3 +53,87 @@ Standaard GitHub-flow. Maintainers beoordelen op:
 ---
 
 **Organisatiebrede richtlijnen**: [security-commons-nl/.github](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md)
+
+## 4. Een handleiding toevoegen
+
+Een **handleiding** is een instructie: hoe richt je één maatregel in. Hij hoort bij een of meer
+*barrieres* uit de [zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/), zodat
+iemand die de zelfcheck heeft gedaan meteen ziet hoe hij een openstaande barriere aanpakt. Een `aanpak`
+is iets anders: dat is een methode of een verhaal, die lees je; een handleiding voer je uit.
+
+De koppeling is niet vrijblijvend. Elke handleiding is de bron van *Hoe pak ik het aan* op
+[Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/); `tools/build.py`
+exporteert dat naar `handelingsperspectief.json` en de aanvalspaden-repo kopieert dat bestand.
+
+### Frontmatter
+
+```yaml
+---
+titel: Richt centrale logverzameling in
+vakgebied: security
+type: handleiding
+normen: [BIO2]
+versie: 2026-09
+herkomst: <waar het vandaan komt, als rol of organisatietype>
+status: concept
+samenvatting: <twee tot vier zinnen: welke barriere, wat je aan het eind hebt staan, welk bewijs dat oplevert>
+barrieres: [soc]
+rol: fundering
+---
+```
+
+- **`barrieres`** is verplicht en bevat `vraag_id`'s uit `paden.json` van de aanvalspaden-repo. De build
+  controleert of ze bestaan; een verzonnen id blokkeert. Zet die repo naast de kennisbank (in CI gebeurt
+  dat vanzelf).
+- **`rol`** is `fundering`, `alternatief` of `verdieping`. Meerdere handleidingen mogen dezelfde barriere
+  dekken: één fundering, daarnaast alternatieven (vijf manieren om detectie te organiseren) of
+  verdiepingen (microsegmentatie naast segmentatie).
+- **`pijler`** is optioneel: de mapnaam van het item waar deze handleiding uit voortkomt, bijvoorbeeld
+  `meten-voordat-je-ingrijpt`.
+
+### Vaste koppen
+
+De koppen **Bewijs** en **Zo leg je het uit** zijn verplicht; de build blokkeert als ze ontbreken.
+
+```markdown
+# <Titel, gelijk aan de frontmatter>
+
+> **Barriere:** <titel van de barriere>. <Een zin over wat deze handleiding oplost.>
+
+## Wanneer wel, wanneer niet
+
+## Zo richt je het in
+
+## Wat het kost en wat het oplevert
+
+## Bewijs
+Wat je aan het eind kunt laten zien: welke export, rapportage of configuratie. Begin bij het `bewijs`-veld
+van de barriere in `paden.json`.
+
+## Zo leg je het uit
+**Aan de directie.** ...
+**Aan de informatiemanager.** ...
+**Aan het MT.** ...
+
+## Hoe dit samenhangt
+Verwijs naar de zelfcheck, naar de normverankering, en naar eventuele alternatieven voor dezelfde barriere.
+
+## Licentie
+[EUPL-1.2](../../LICENSE).
+```
+
+*Bewijs* is er omdat de hele keten op één scheidslijn rust: een antwoord is geen bewijs. *Zo leg je het
+uit* is er omdat een CISO een maatregel zelden alleen technisch hoeft te verdedigen.
+
+### Bouwen
+
+```bash
+python tools/leesversie.py security/<mapnaam>   # maakt index.html uit README.md
+python tools/build.py                           # controleert, bouwt de indexpagina's en de export
+```
+
+`leesversie.py` is bedoeld voor nieuwe items. Een paar bestaande leesversies zijn met de hand gemaakt;
+overschrijf die alleen als je hebt gekeken wat je kwijtraakt.
+
+Zet de nieuwe map daarna in de lijst onder `## Volgorde` in `security/README.md`; de build blokkeert als
+een item daar ontbreekt.

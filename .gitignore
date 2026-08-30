@@ -46,3 +46,6 @@ crash.log
 *.bak
 *.backup
 *.log
+
+# Wordt in CI uitgecheckt voor de barrieres; lokaal staat de repo ernaast.
+_aanvalspaden/

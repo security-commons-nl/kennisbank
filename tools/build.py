@@ -13,6 +13,7 @@ Alleen standaardbibliotheek; geen pip nodig.
 from __future__ import annotations
 
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -35,14 +36,43 @@ BRON_START = "<!-- bronvoet -->"
 BRON_EIND = "<!-- /bronvoet -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
-TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage"]
+TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage", "handleiding"]
 STATUSSEN = ["concept", "in gebruik", "sjabloon", "gearchiveerd"]
 VERPLICHT = ["titel", "vakgebied", "type", "normen", "herkomst", "status", "samenvatting"]
-TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie"}
+TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie", "barrieres", "rol", "pijler"}
+ROLLEN = ["fundering", "alternatief", "verdieping"]
+NL = chr(10)
 
 # Mappen op root die geen vakgebied zijn maar wel mogen bestaan.
-ROOT_MAPPEN_OK = {".git", ".github", ".codesight", "tools"}
-ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore", ".nojekyll"}
+ROOT_MAPPEN_OK = {".git", ".github", ".codesight", "tools", "_aanvalspaden"}
+ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
+                     ".nojekyll", "handelingsperspectief.json"}
+
+# De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
+# naar _aanvalspaden uitgecheckt. Een handleiding mag alleen naar een barriere verwijzen die bestaat,
+# anders belooft de site een koppeling die nergens op uitkomt.
+PADEN_KANDIDATEN = (ROOT.parent / "aanvalspaden" / "paden.json", ROOT / "_aanvalspaden" / "paden.json")
+_barrieres_cache: dict[str, str] | None = None
+
+
+def barrieres() -> dict[str, str]:
+    """vraag_id -> titel, uit paden.json. Leeg als het bestand nergens staat; de aanroeper meldt dat."""
+    global _barrieres_cache
+    if _barrieres_cache is not None:
+        return _barrieres_cache
+    for pad in PADEN_KANDIDATEN:
+        if pad.is_file():
+            data = json.loads(pad.read_text(encoding="utf-8"))
+            uit: dict[str, str] = {}
+            for blad in data["bladeren"]:
+                for cp in blad["chokepoints"]:
+                    uit.setdefault(cp["vraag_id"], cp["titel"])
+            for rv in data.get("randvoorwaarden", []):
+                uit.setdefault(rv["vraag_id"], rv["titel"])
+            _barrieres_cache = uit
+            return uit
+    _barrieres_cache = {}
+    return _barrieres_cache
 
 SOCIALE_MEDIA = re.compile(r"https?://(?:[a-z0-9-]+\.)*(linkedin\.com|x\.com|twitter\.com|substack\.com|medium\.com|facebook\.com|instagram\.com|threads\.net|tiktok\.com)", re.I)
 EMAIL = re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b")
@@ -186,6 +216,42 @@ def controleer_dode_links(map_: Path) -> None:
                                 "op de site loopt dat dood")
 
 
+def controleer_handleiding(vak: str, readme: Path, fm: dict) -> None:
+    """Een handleiding hoort bij een barriere en zegt welk bewijs hij oplevert.
+
+    Zonder `barrieres:` is een handleiding niet vindbaar vanaf de zelfcheck, en dat is precies waarvoor
+    hij bestaat. Zonder de kop Bewijs mist de lezer wat hij aan het eind kan laten zien; dat is de
+    scheidslijn tussen een antwoord en bewijs die de hele keten aanhoudt.
+    """
+    if fm.get("barrieres") is not None and fm.get("type") != "handleiding":
+        fout(readme, "B2", "veld 'barrieres' hoort alleen bij type handleiding")
+    if fm.get("type") != "handleiding":
+        return
+
+    bar = fm.get("barrieres")
+    if not isinstance(bar, list) or not bar:
+        fout(readme, "B2", "type handleiding vereist barrieres: [vraag_id, ...] uit paden.json")
+    else:
+        bekend = barrieres()
+        if not bekend:
+            fout(readme, "B2", "paden.json niet gevonden; zet de aanvalspaden-repo ernaast of in _aanvalspaden")
+        else:
+            for b in bar:
+                if b not in bekend:
+                    fout(readme, "B2", f"barriere '{b}' bestaat niet in paden.json")
+
+    if fm.get("rol") is not None and fm["rol"] not in ROLLEN:
+        fout(readme, "B2", f"rol '{fm['rol']}' moet een van {ROLLEN} zijn")
+
+    if fm.get("pijler") and not (ROOT / vak / str(fm["pijler"]) / "README.md").is_file():
+        fout(readme, "B2", f"pijler '{fm['pijler']}' bestaat niet in {vak}/")
+
+    body = lees_frontmatter(readme.read_text(encoding="utf-8"))[1].lower()
+    for kop, naam in (("## bewijs", "Bewijs"), ("## zo leg je het uit", "Zo leg je het uit")):
+        if kop not in body:
+            fout(readme, "B3", f"een handleiding heeft de kop '{naam}' nodig")
+
+
 def controleer_item(vak: str, map_: Path) -> dict | None:
     if not SLUG.match(map_.name):
         fout(map_, "B1", "mapnaam: alleen kleine letters, cijfers en koppeltekens")
@@ -222,6 +288,7 @@ def controleer_item(vak: str, map_: Path) -> dict | None:
         fout(readme, "B2", "normen moet een lijst zijn (mag leeg: [])")
     if isinstance(fm.get("samenvatting"), str) and len(fm["samenvatting"]) < 60:
         fout(readme, "B2", "samenvatting te kort; twee tot vier zinnen, dit wordt de kaarttekst")
+    controleer_handleiding(vak, readme, fm)
     for bestand in map_.rglob("*"):
         if bestand.suffix in (".md", ".html", ".txt", ".json"):
             controleer_tekst(bestand)
@@ -351,6 +418,7 @@ a.item{display:block;background:var(--card);border:1px solid var(--line);border-
   padding:16px 18px;text-decoration:none;color:inherit;transition:border-color .12s,box-shadow .12s}
 a.item:hover{border-color:var(--accent);box-shadow:0 1px 6px rgba(31,78,121,.10)}
 .itemtop{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px}
+h3.groep{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px}
 .itemtitle{font-size:15.5px;font-weight:600;color:var(--accent);letter-spacing:-.1px}
 .itemdesc{font-size:13.5px;color:#3c434b;margin:0}
 .meta{font-size:12px;color:var(--muted);margin-top:8px}
@@ -394,6 +462,13 @@ def meta_regel(fm: dict, met_vak: bool) -> str:
     elif "peildatum" in fm:
         delen.append(f"peildatum {fm['peildatum']}")
     delen.append(fm["status"])
+    # Bij een handleiding is de barriere het belangrijkste etiket: daarmee vindt een lezer hem terug
+    # vanuit de zelfcheck. De rol zegt of het de basis is of een alternatief ernaast.
+    if fm.get("barrieres"):
+        bekend = barrieres()
+        delen.append("barriere: " + ", ".join(bekend.get(b, b) for b in fm["barrieres"]))
+    if fm.get("rol"):
+        delen.append(fm["rol"])
     return " · ".join(e(d) for d in delen)
 
 
@@ -455,8 +530,23 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
         telling += " Alle openen direct in de browser." if n > 1 else " Opent direct in de browser."
     elif live:
         telling += f" {live} {'openen' if live > 1 else 'opent'} direct in de browser."
-    kaarten = "".join(kaart(i, "", False).replace(f'href="{vak}/', 'href="') for i in items)
-    grid = f'<div class="grid">\n\n{kaarten}\n</div>' if items else '<p class="h2sub">Nog geen stukken. Heb je iets liggen? Zie hieronder.</p>'
+    def blok(kop, sub, anker=""):
+        """Een groep kaarten met een kopje erboven; een leeg blok levert niets op."""
+        if not sub:
+            return ""
+        ks = "".join(kaart(x, "", False).replace(f'href="{vak}/', 'href="') for x in sub)
+        id_attr = f' id="{anker}"' if anker else ""
+        return f'<h3 class="groep"{id_attr}>{e(kop)}</h3>' + NL + f'<div class="grid">{NL}{NL}{ks}{NL}</div>' + NL
+
+    # Handleidingen apart: dat worden er straks meer dan al het andere bij elkaar, en het is een ander
+    # soort stuk. Een methode lees je, een handleiding voer je uit.
+    handleidingen = [x for x in items if x.get("type") == "handleiding"]
+    overig = [x for x in items if x.get("type") != "handleiding"]
+    grid = (blok("Aanpakken, sjablonen en naslag", overig)
+            + blok("Handleidingen: een maatregel inrichten, per barriere uit de zelfcheck",
+                   handleidingen, "handleidingen"))
+    if not items:
+        grid = '<p class="h2sub">Nog geen stukken. Heb je iets liggen? Zie hieronder.</p>'
     hoort = "".join(f"  <li>{e(h)}</li>\n" for h in sectie["hoort"])
     body = f"""<header class="top">
   <h1>{e(sectie['titel'])}</h1>
@@ -750,6 +840,37 @@ def schrijf(pad: Path, inhoud: str) -> bool:
     return True
 
 
+def schrijf_handelingsperspectief(items: dict[str, list[dict]]) -> bool:
+    """De kennisbank is de bron: per handleiding de barrieres en de rol. aanvalspaden kopieert dit.
+
+    Zo staat een handleiding op een plek. Zou aanvalspaden de koppeling zelf bijhouden, dan loopt die
+    lijst achter zodra hier een artikel bijkomt, en dat is precies het probleem dat de normverankering
+    voor de kaders al heeft opgelost.
+    """
+    bekend = barrieres()
+    hl = []
+    for vak in VAKGEBIEDEN:
+        for fm in items[vak]:
+            if fm.get("type") != "handleiding":
+                continue
+            for b in fm["barrieres"]:
+                hl.append({
+                    "barriere": b,
+                    "item": f"{vak}/{fm['_map'].name}",
+                    "titel": fm["titel"],
+                    "rol": fm.get("rol", "fundering"),
+                    "url": f"{SITE}/{vak}/{fm['_map'].name}/",
+                })
+    hl.sort(key=lambda h: (h["barriere"], ROLLEN.index(h["rol"]), h["titel"]))
+    gedekt = {h["barriere"] for h in hl}
+    data = {
+        "versie": "gegenereerd door kennisbank/tools/build.py; wijzig de frontmatter van de items, niet dit bestand",
+        "handleidingen": hl,
+        "zonder_handleiding": sorted(b for b in bekend if b not in gedekt),
+    }
+    return schrijf(ROOT / "handelingsperspectief.json", json.dumps(data, ensure_ascii=False, indent=2) + NL)
+
+
 def main() -> int:
     alleen_check = "--check" in sys.argv
     items = controleer_alles()
@@ -787,6 +908,8 @@ def main() -> int:
             gewijzigd.append(f"{vak}/index.html")
     if schrijf(ROOT / "index.html", bouw_root(secties, items)):
         gewijzigd.append("index.html")
+    if schrijf_handelingsperspectief(items):
+        gewijzigd.append("handelingsperspectief.json")
     print("Gebouwd: " + (", ".join(gewijzigd) if gewijzigd else "niets gewijzigd"))
     return 0
 

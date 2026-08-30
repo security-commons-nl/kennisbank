@@ -20,6 +20,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      # De barrieres komen uit paden.json in de aanvalspaden-repo. Een handleiding verwijst ernaar en
+      # dat wordt gecontroleerd; zonder deze checkout zou een verkeerd vraag_id er stil doorheen komen.
+      - uses: actions/checkout@v6
+        with:
+          repository: security-commons-nl/aanvalspaden
+          path: _aanvalspaden
+
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -27,6 +34,9 @@ jobs:
       # De controles zelf hebben ook tests; die draaien altijd, PR en push.
       - name: Tests van het bouwscript
         run: python tools/test_build.py
+
+      - name: Tests van de handleidingen en de export
+        run: python tools/test_handleidingen.py
 
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)

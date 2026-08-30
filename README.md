@@ -35,5 +35,12 @@ EUPL-1.2, zie [LICENSE](LICENSE).
 ## Wat staat hier
 Werkende kennis die geanonimiseerd is gedeeld door professionals: memos, rapportages, aanpakken, trainingen, voorstellen. Geen theorie - materiaal dat al gebruikt is in echte organisaties.
 
+**Handleidingen** zijn een eigen soort: een instructie voor het inrichten van een maatregel, gekoppeld aan
+een barriere uit de [zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/). Ze
+dragen het veld `barrieres:` en zijn de bron van *Hoe pak ik het aan* op
+[Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/): daar staat per
+barriere welke handleiding er is, en waar er nog geen is. Zie [CONTRIBUTING.md](CONTRIBUTING.md) voor de
+vorm.
+
 ## Principes
 Dit project volgt de [architectuur- en communityprincipes](https://github.com/security-commons-nl/.github/blob/main/PRINCIPLES.md) van security-commons-nl: EU-soevereiniteit, AI altijd adviserend, auditbaarheid by design, least privilege en open source als standaard.
