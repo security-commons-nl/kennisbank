@@ -35,6 +35,41 @@
       "titel": "Identiteit en e-mail meten voordat je afdwingt",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "soc",
+      "item": "security/centrale-logverzameling",
+      "titel": "Richt centrale logverzameling in",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/centrale-logverzameling/"
+    },
+    {
+      "barriere": "soc",
+      "item": "security/uitbestede-soc",
+      "titel": "Besteed monitoring uit aan een MSSP",
+      "rol": "alternatief",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/uitbestede-soc/"
+    },
+    {
+      "barriere": "soc",
+      "item": "security/regionaal-soc",
+      "titel": "Deel een SOC met andere organisaties",
+      "rol": "alternatief",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/regionaal-soc/"
+    },
+    {
+      "barriere": "soc",
+      "item": "security/co-managed-siem",
+      "titel": "Kies voor een co-managed SIEM",
+      "rol": "alternatief",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/co-managed-siem/"
+    },
+    {
+      "barriere": "soc",
+      "item": "security/mdr-dienst",
+      "titel": "Neem een MDR-dienst met een handelingsmandaat",
+      "rol": "alternatief",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/mdr-dienst/"
     }
   ],
   "zonder_handleiding": [
@@ -70,7 +105,6 @@
     "restore",
     "review",
     "segment",
-    "soc",
     "technicalvendor",
     "treatment",
     "unmanaged",

@@ -30,6 +30,11 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 8. [Externe referenties: security-tooling en kennisbanken](referenties-tooling/)
 9. [Werkplekanalyse op het Microsoft-platform](werkplekanalyse-e5/)
 10. [Identiteit en e-mail meten voordat je afdwingt](identiteit-en-mail-meten/)
+11. [Richt centrale logverzameling in](centrale-logverzameling/)
+12. [Kies voor een co-managed SIEM](co-managed-siem/)
+13. [Besteed monitoring uit aan een MSSP](uitbestede-soc/)
+14. [Neem een MDR-dienst met een handelingsmandaat](mdr-dienst/)
+15. [Deel een SOC met andere organisaties](regionaal-soc/)
 
 ## Bijdragen
 
