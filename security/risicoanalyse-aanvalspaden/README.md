@@ -160,7 +160,10 @@ Dit is geen jaarlijkse exercitie maar een matrix die je bijhoudt:
 - **Geen dreigingsbeeld.** De vijf paden zijn een gedeelde, stabiele set, geen maandelijkse
   nieuwsbrief. Een dreigingsbeeld vertelt wat er gebeurt; deze methode vertelt wat dat voor jou betekent.
 - **Geen audit.** Groen betekent "bewijs aanwezig en beproefd", niet "conform norm X". De vertaling naar
-  normen doe je daarna, met de matrix als onderbouwing.
+  normen doe je daarna, met de matrix als onderbouwing. Daarvoor is er
+  [Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/): per barriere
+  welke maatregel uit BIO 2.0, ISO 27001 of het Wpg-toetsingskader ermee aantoonbaar wordt, en, minstens
+  zo bruikbaar, welke maatregelen buiten het bereik van deze methode vallen.
 
 ## Hoe dit samenhangt met de andere stukken
 
@@ -172,6 +175,7 @@ Deze methode is de leeswijzer over de commons heen. Elke stap heeft een project 
 | 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) |
 | 3. Dekking met bewijs | [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool), [iamscan](https://github.com/security-commons-nl/iamscan) (pad 5 op Linux) |
 | 4. Risicolijst en gesprek | naar leveranciers: [Security Annex](../security-annex-leveranciers/) (pad 4 als contract); naar binnen: [Een blue team opzetten](../blue-team-opzetten/) (de rode cellen dichten met mandaat) |
+| 5. Vertaling naar de norm | [Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/): wat je bewijs aantoont in BIO 2.0, ISO 27001 en het Wpg-toetsingskader, en waar het ophoudt |
 
 ## Herkomst
 
