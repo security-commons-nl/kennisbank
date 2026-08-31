@@ -4,8 +4,6 @@ Werkende kennis uit de publieke sector: security, privacy, continuiteit en alles
 
 Status: in gebruik. Draait live en wordt gebruikt; nieuwe stukken komen erbij.
 
-Status: in gebruik. Draait live en wordt gebruikt; nieuwe stukken komen erbij.
-
 > **Lees de kennisbank online:** [security-commons-nl.github.io/kennisbank](https://security-commons-nl.github.io/kennisbank/)
 
 [![Bijdragen](https://img.shields.io/badge/📝_Bijdragen-238636?style=for-the-badge)](../../issues/new/choose)&nbsp;&nbsp;&nbsp;&nbsp;[![Meepraten](https://img.shields.io/badge/💬_Meepraten-0969da?style=for-the-badge)](../../discussions)
@@ -21,8 +19,6 @@ Security-, privacy- en continuiteitsprofessionals bij publieke organisaties.
 Lees de kennisbank op https://security-commons-nl.github.io/kennisbank/. Bijdragen doe je met een issue.
 
 ## Bijdragen
-
-Zie de [CONTRIBUTING](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md) van de organisatie: daar staat per project een formulier, ook zonder Git-ervaring.
 
 Zie de [CONTRIBUTING](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md) van de organisatie: daar staat per project een formulier, ook zonder Git-ervaring.
 
