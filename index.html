@@ -52,14 +52,14 @@ ul.hoort li{margin-bottom:3px}
 .grid[hidden]{display:none}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .filters[hidden]{display:none}
-.filterbtn{font:inherit;font-size:13.5px;line-height:1;cursor:pointer;background:var(--card);color:var(--ink);
-  border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;
-  gap:7px;transition:border-color .12s,background .12s,color .12s}
-.filterbtn:hover{border-color:var(--accent);color:var(--accent)}
-.filterbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.filterbtn .n{font-size:11.5px;font-weight:600;opacity:.7;font-variant-numeric:tabular-nums}
-.filterbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.filters input,.filters select{font:inherit;font-size:14px;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.filters input{flex:1 1 260px;min-width:0}
+.filters select{flex:0 1 auto;max-width:100%}
+.filters input:focus,.filters select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.filters .telling{flex-basis:100%;font-size:13px;color:var(--muted);margin:0}
 a.item[hidden]{display:none}
+.visueel-verborgen{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;font-size:12.5px;color:var(--muted)}
 footer a{color:var(--muted)}
 @media (max-width:600px){.cta.alt{margin-left:0;margin-top:8px}}
@@ -81,17 +81,55 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
 <h2>Direct te lezen</h2>
 <p class="h2sub">Publicaties met een eigen pagina. Openen in de browser, geen installatie, geen externe afhankelijkheden.</p>
 
-<div class="filters" id="filters" role="group" aria-label="Filter op vakgebied" hidden>
-  <button type="button" class="filterbtn" data-filter="alles" aria-pressed="true">Alles <span class="n">51</span></button>
-  <button type="button" class="filterbtn" data-filter="security" aria-pressed="false">Security <span class="n">48</span></button>
-  <button type="button" class="filterbtn" data-filter="privacy" aria-pressed="false">Privacy <span class="n">0</span></button>
-  <button type="button" class="filterbtn" data-filter="bcm" aria-pressed="false">BCM <span class="n">2</span></button>
-  <button type="button" class="filterbtn" data-filter="governance" aria-pressed="false">Governance <span class="n">1</span></button>
+<div class="filters" id="filters" hidden>
+  <label class="visueel-verborgen" for="zoek">Zoeken</label>
+  <input type="search" id="zoek" placeholder="Zoek op onderwerp, bijvoorbeeld logboek of leverancier" autocomplete="off">
+  <label class="visueel-verborgen" for="barriere">Barriere</label>
+  <select id="barriere">
+  <option value="">Alle barrieres</option>
+  <option value="review">Beoordeel kritieke leveranciers periodiek en risicogestuurd (1)</option>
+  <option value="consent">Beperk app-toestemming en richt gecontroleerde admin consent in (3)</option>
+  <option value="segment">Beperk lateral movement met segmentatie en minimale rechten (3)</option>
+  <option value="execution">Beperk software- en scriptuitvoering met application control en ASR (3)</option>
+  <option value="session">Beperk tokenmisbruik met apparaatbinding en sessiebeleid (2)</option>
+  <option value="backup">Bescherm back-ups met onveranderbaarheid en gescheiden beheer (1)</option>
+  <option value="legacy">Blokkeer legacy authentication (3)</option>
+  <option value="soc">Borg 24/7 opvolging en escalatie van kritieke meldingen (5)</option>
+  <option value="vuln">Borg continu kwetsbaarhedenbeheer en spoedpatching (2)</option>
+  <option value="edr">Borg EDR, tamper protection en snelle endpointisolatie (2)</option>
+  <option value="patch">Borg OS- en third-party-patching met controle op dekking (1)</option>
+  <option value="upstream">Borg upstream DDoS-mitigatie en robuuste DNS (1)</option>
+  <option value="dependencies">Breng kritieke systemen en leveranciers in samenhang in beeld (1)</option>
+  <option value="mail">Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming (1)</option>
+  <option value="pr">Dwing phishingbestendige authenticatie af (1)</option>
+  <option value="unmanaged">Dwing toegang vanaf beheerde, compliant laptops af (1)</option>
+  <option value="adminhard">Hard de beheerwerkplek en dwing de toegestane toegang af (1)</option>
+  <option value="pentest">Laat extern pentesten en verifieer herstel van bevindingen (1)</option>
+  <option value="residual">Maak significante leveranciersrestrisico’s expliciet (1)</option>
+  <option value="adminmonitor">Monitor privileged activiteiten en rolwijzigingen (1)</option>
+  <option value="crisis">Oefen het ransomware- en crisisherstelplan (3)</option>
+  <option value="assets">Ontdek en bewaak het externe aanvalsoppervlak (1)</option>
+  <option value="l7">Richt WAF, rate limiting en Layer-7-bescherming in (1)</option>
+  <option value="model">Scheid privileged access technisch van dagelijks gebruik (1)</option>
+  <option value="remote">Scherm publieke beheerinterfaces af (1)</option>
+  <option value="critical">Stel kritieke processen en herstelprioriteiten vast (1)</option>
+  <option value="exploitresponse">Test detectie en response op externe exploits (1)</option>
+  <option value="restore">Test herstel tegen de afgesproken RTO en RPO (1)</option>
+  <option value="mailresponse">Test mail-remediation en het phishing/BEC-playbook (1)</option>
+  <option value="idresponse">Test response op identity- en app-compromise (1)</option>
+  <option value="webtest">Test web/API-beveiliging en herstel kwetsbaarheden (1)</option>
+  <option value="technicalvendor">Toets technische maatregelen van kritieke leveranciers (2)</option>
+  <option value="key">Vereis een aparte fysieke FIDO2-key voor elevation (1)</option>
+  <option value="localadmin">Verwijder lokale administratorrechten (1)</option>
+  <option value="jit">Verwijder permanente rollen en gebruik PIM/JIT (1)</option>
+  <option value="fallback">Verwijder zwakke fallback- en herstelroutes (2)</option>
+  </select>
+  <p class="telling" id="telling" aria-live="polite">51 stukken</p>
 </div>
 
 <div class="grid" id="direct-te-lezen">
 
-  <a class="item" href="security/meten-voordat-je-ingrijpt/" data-vak="security">
+  <a class="item" href="security/meten-voordat-je-ingrijpt/" data-vak="security" data-zoek="meten voordat je ingrijpt de methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. dit stuk geeft de drie uitgangspunten, de werkwijze van ist naar soll en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen. aanpak security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Meten voordat je ingrijpt</span>
       <span class="tag tag-live">live</span>
@@ -99,7 +137,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik</div>
   </a>
-  <a class="item" href="security/sturen-op-weerbaarheid/" data-vak="security">
+  <a class="item" href="security/sturen-op-weerbaarheid/" data-vak="security" data-zoek="sturen op weerbaarheid in plaats van op maatregelen voor bestuur, directie en ciso: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. met het lagenmodel, een raci-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting. aanpak security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Sturen op weerbaarheid in plaats van op maatregelen</span>
       <span class="tag tag-live">live</span>
@@ -107,7 +145,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Voor bestuur, directie en CISO: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. Met het lagenmodel, een RACI-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting.</p>
     <div class="meta">security · aanpak · versie 2026-09 · in gebruik · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="security/risicoanalyse-aanvalspaden/" data-vak="security">
+  <a class="item" href="security/risicoanalyse-aanvalspaden/" data-vak="security" data-zoek="risicoanalyse langs aanvalspaden methode om als ciso of iso in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. de rode cellen zijn de risicolijst. met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen. aanpak security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Risicoanalyse langs aanvalspaden</span>
       <span class="tag tag-live">live</span>
@@ -115,7 +153,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Methode om als CISO of ISO in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. Niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. De rode cellen zijn de risicolijst. Met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen.</p>
     <div class="meta">security · aanpak · versie 2026-08 · concept</div>
   </a>
-  <a class="item" href="security/security-annex-leveranciers/" data-vak="security">
+  <a class="item" href="security/security-annex-leveranciers/" data-vak="security" data-zoek="security annex voor leveranciers contractbijlage informatiebeveiliging, 20 artikelen. van cloudsoevereiniteit en assurance tot fido2, just-in-time beheer, ssdlc en ai. opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in bio2. sjabloon met invulvelden, plakbaar in word. sjabloon security" data-barrieres="technicalvendor residual">
     <span class="itemtop">
       <span class="itemtitle">Security Annex voor leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -123,7 +161,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.</p>
     <div class="meta">security · sjabloon · versie 1.3 (herzien BIO2), 2026-08 · in gebruik · barriere: Toets technische maatregelen van kritieke leveranciers, Maak significante leveranciersrestrisico’s expliciet · fundering</div>
   </a>
-  <a class="item" href="security/passkeys-invoeren/" data-vak="security">
+  <a class="item" href="security/passkeys-invoeren/" data-vak="security" data-zoek="passkeys invoeren handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (fido2). waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, tap als enige herstelroute) en wat er in de praktijk tegenzat. met directiememo, faq, managersmail en herstelprocedure als sjablonen. aanpak security" data-barrieres="pr fallback legacy">
     <span class="itemtop">
       <span class="itemtitle">Passkeys invoeren</span>
       <span class="tag tag-live">live</span>
@@ -131,7 +169,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (FIDO2). Waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, TAP als enige herstelroute) en wat er in de praktijk tegenzat. Met directiememo, FAQ, managersmail en herstelprocedure als sjablonen.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik · barriere: Dwing phishingbestendige authenticatie af, Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · fundering</div>
   </a>
-  <a class="item" href="security/blue-team-opzetten/" data-vak="security">
+  <a class="item" href="security/blue-team-opzetten/" data-vak="security" data-zoek="een blue team opzetten handleiding in acht stappen voor de ciso of iso die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere iv-lijn. trigger en nulmeting, team op kunnen, mandaat op één a4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. met mandaatprotocol, memo&#x27;s per gremium en een uitgewerkte voorbeeldcasus als bijlagen. aanpak security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Een blue team opzetten</span>
       <span class="tag tag-live">live</span>
@@ -139,7 +177,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Handleiding in acht stappen voor de CISO of ISO die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere IV-lijn. Trigger en nulmeting, team op kunnen, mandaat op één A4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. Met mandaatprotocol, memo&#x27;s per gremium en een uitgewerkte voorbeeldcasus als bijlagen.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik</div>
   </a>
-  <a class="item" href="security/stelselkaart-security-gremia/" data-vak="security">
+  <a class="item" href="security/stelselkaart-security-gremia/" data-vak="security" data-zoek="stelselkaart security-gremia wie organiseert de digitale weerbaarheid van de nederlandse overheid? open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. machineleesbaar, zodat je er je eigen weergave op kunt bouwen. dataset security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Stelselkaart security-gremia</span>
       <span class="tag tag-live">live</span>
@@ -147,7 +185,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid? Open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. Machineleesbaar, zodat je er je eigen weergave op kunt bouwen.</p>
     <div class="meta">security · dataset · peildatum 2026-08-11 · in gebruik</div>
   </a>
-  <a class="item" href="security/awareness-digitale-veiligheid/" data-vak="security">
+  <a class="item" href="security/awareness-digitale-veiligheid/" data-vak="security" data-zoek="learning digitale veiligheid voor managers kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. publiek bekende casussen, invulbare placeholders. lesmateriaal security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Learning digitale veiligheid voor managers</span>
       <span class="tag tag-live">live</span>
@@ -155,7 +193,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. Hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. Publiek bekende casussen, invulbare placeholders.</p>
     <div class="meta">security · lesmateriaal · versie 2026-06 · sjabloon</div>
   </a>
-  <a class="item" href="security/referenties-tooling/" data-vak="security">
+  <a class="item" href="security/referenties-tooling/" data-vak="security" data-zoek="externe referenties: security-tooling en kennisbanken verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één html-bestand, web-reconnaissance, extern aanvalsoppervlak. per bron kort wat het is en wanneer je het inzet. referentie security" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">Externe referenties: security-tooling en kennisbanken</span>
       <span class="tag tag-live">live</span>
@@ -163,7 +201,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak. Per bron kort wat het is en wanneer je het inzet.</p>
     <div class="meta">security · referentie · peildatum 2026-08-28 · in gebruik</div>
   </a>
-  <a class="item" href="security/werkplekanalyse-e5/" data-vak="security">
+  <a class="item" href="security/werkplekanalyse-e5/" data-vak="security" data-zoek="werkplekanalyse op het microsoft-platform meet met defender for endpoint en advanced hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. met zes kql-query&#x27;s voor powershell, win+r, mshta en clickfix, een configuratiecheck die &quot;aan&quot; onderscheidt van &quot;gekoppeld en actief&quot;, en het advies om powershell te beheersen met constrained language mode in plaats van te blokkeren. handleiding security" data-barrieres="execution">
     <span class="itemtop">
       <span class="itemtitle">Werkplekanalyse op het Microsoft-platform</span>
       <span class="tag tag-live">live</span>
@@ -171,7 +209,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Meet met Defender for Endpoint en Advanced Hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. Met zes KQL-query&#x27;s voor PowerShell, Win+R, mshta en ClickFix, een configuratiecheck die &quot;aan&quot; onderscheidt van &quot;gekoppeld en actief&quot;, en het advies om PowerShell te beheersen met Constrained Language Mode in plaats van te blokkeren.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR · fundering · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="security/identiteit-en-mail-meten/" data-vak="security">
+  <a class="item" href="security/identiteit-en-mail-meten/" data-vak="security" data-zoek="identiteit en e-mail meten voordat je afdwingt twee lagen die met microsoft 365 e5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of &quot;deels&quot; staan. toets de feitelijke inrichting van defender for office, conditional access, app-consent en legacy authentication, met per punt wat &quot;goed&quot; eruitziet. in veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek. handleiding security" data-barrieres="mail legacy session consent">
     <span class="itemtop">
       <span class="itemtitle">Identiteit en e-mail meten voordat je afdwingt</span>
       <span class="tag tag-live">live</span>
@@ -179,7 +217,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Twee lagen die met Microsoft 365 E5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of &quot;deels&quot; staan. Toets de feitelijke inrichting van Defender for Office, Conditional Access, app-consent en legacy authentication, met per punt wat &quot;goed&quot; eruitziet. In veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming, Blokkeer legacy authentication, Beperk tokenmisbruik met apparaatbinding en sessiebeleid, Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="security/centrale-logverzameling/" data-vak="security">
+  <a class="item" href="security/centrale-logverzameling/" data-vak="security" data-zoek="richt centrale logverzameling in logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest. handleiding security" data-barrieres="soc">
     <span class="itemtop">
       <span class="itemtitle">Richt centrale logverzameling in</span>
       <span class="tag tag-live">live</span>
@@ -187,7 +225,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. Dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. Met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · fundering</div>
   </a>
-  <a class="item" href="security/co-managed-siem/" data-vak="security">
+  <a class="item" href="security/co-managed-siem/" data-vak="security" data-zoek="kies voor een co-managed siem een siem die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. past bij organisaties die zelf securitycapaciteit hebben of opbouwen. met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security" data-barrieres="soc">
     <span class="itemtop">
       <span class="itemtitle">Kies voor een co-managed SIEM</span>
       <span class="tag tag-live">live</span>
@@ -195,7 +233,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Een SIEM die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. Past bij organisaties die zelf securitycapaciteit hebben of opbouwen. Met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="security/uitbestede-soc/" data-vak="security">
+  <a class="item" href="security/uitbestede-soc/" data-vak="security" data-zoek="besteed monitoring uit aan een mssp monitoring en detectie volledig uitbesteden aan een managed security service provider, wanneer een eigen securityteam er niet is en ook niet snel komt. snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. met de scope-eisen, de sla-afspraken en het bewijs dat de opvolgtijden gehaald worden. handleiding security" data-barrieres="soc">
     <span class="itemtop">
       <span class="itemtitle">Besteed monitoring uit aan een MSSP</span>
       <span class="tag tag-live">live</span>
@@ -203,7 +241,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Monitoring en detectie volledig uitbesteden aan een Managed Security Service Provider, wanneer een eigen securityteam er niet is en ook niet snel komt. Snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. Met de scope-eisen, de SLA-afspraken en het bewijs dat de opvolgtijden gehaald worden.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="security/mdr-dienst/" data-vak="security">
+  <a class="item" href="security/mdr-dienst/" data-vak="security" data-zoek="neem een mdr-dienst met een handelingsmandaat managed detection and response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. de snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt. handleiding security" data-barrieres="soc">
     <span class="itemtop">
       <span class="itemtitle">Neem een MDR-dienst met een handelingsmandaat</span>
       <span class="tag tag-live">live</span>
@@ -211,7 +249,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Managed Detection and Response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. De snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. Met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="security/regionaal-soc/" data-vak="security">
+  <a class="item" href="security/regionaal-soc/" data-vak="security" data-zoek="deel een soc met andere organisaties meerdere organisaties delen een soc: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. past bij kleine en middelgrote organisaties die al samenwerken of dat willen. met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security" data-barrieres="soc">
     <span class="itemtop">
       <span class="itemtitle">Deel een SOC met andere organisaties</span>
       <span class="tag tag-live">live</span>
@@ -219,7 +257,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Meerdere organisaties delen een SOC: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. Past bij kleine en middelgrote organisaties die al samenwerken of dat willen. Met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="security/tiered-administration/" data-vak="security">
+  <a class="item" href="security/tiered-administration/" data-vak="security" data-zoek="beheerrechten scheiden in tiers beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen. handleiding security" data-barrieres="model">
     <span class="itemtop">
       <span class="itemtitle">Beheerrechten scheiden in tiers</span>
       <span class="tag tag-live">live</span>
@@ -227,7 +265,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. Een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. Met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Scheid privileged access technisch van dagelijks gebruik · fundering</div>
   </a>
-  <a class="item" href="security/beheerwerkplek/" data-vak="security">
+  <a class="item" href="security/beheerwerkplek/" data-vak="security" data-zoek="beheerwerkplek voor administratieve taken beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen. handleiding security" data-barrieres="adminhard">
     <span class="itemtop">
       <span class="itemtitle">Beheerwerkplek voor administratieve taken</span>
       <span class="tag tag-live">live</span>
@@ -235,7 +273,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. Met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Hard de beheerwerkplek en dwing de toegestane toegang af · fundering</div>
   </a>
-  <a class="item" href="security/just-in-time-beheerrechten/" data-vak="security">
+  <a class="item" href="security/just-in-time-beheerrechten/" data-vak="security" data-zoek="just-in-time beheerrechten permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. met de uitfasering, de noodaccounts en het activeringslogboek als bewijs. handleiding security" data-barrieres="jit">
     <span class="itemtop">
       <span class="itemtitle">Just-in-time beheerrechten</span>
       <span class="tag tag-live">live</span>
@@ -243,7 +281,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. Zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. Met de uitfasering, de noodaccounts en het activeringslogboek als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Verwijder permanente rollen en gebruik PIM/JIT · fundering</div>
   </a>
-  <a class="item" href="security/fido2-voor-beheerders/" data-vak="security">
+  <a class="item" href="security/fido2-voor-beheerders/" data-vak="security" data-zoek="phishingbestendige mfa voor beheeraccounts een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. de zwaarste vorm van authenticatie op de zwaarste rechten. met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen. handleiding security" data-barrieres="key">
     <span class="itemtop">
       <span class="itemtitle">Phishingbestendige MFA voor beheeraccounts</span>
       <span class="tag tag-live">live</span>
@@ -251,7 +289,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. De zwaarste vorm van authenticatie op de zwaarste rechten. Met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Vereis een aparte fysieke FIDO2-key voor elevation · fundering</div>
   </a>
-  <a class="item" href="security/mfa-handhaving/" data-vak="security">
+  <a class="item" href="security/mfa-handhaving/" data-vak="security" data-zoek="mfa afdwingen en zwakke routes saneren de zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. een sterke voordeur naast een open achterdeur is geen maatregel. met de sanering en het bewijs dat er geen omweg meer is. handleiding security" data-barrieres="fallback legacy">
     <span class="itemtop">
       <span class="itemtitle">MFA afdwingen en zwakke routes saneren</span>
       <span class="tag tag-live">live</span>
@@ -259,7 +297,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">De zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. Een sterke voordeur naast een open achterdeur is geen maatregel. Met de sanering en het bewijs dat er geen omweg meer is.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · verdieping</div>
   </a>
-  <a class="item" href="security/sessiebescherming/" data-vak="security">
+  <a class="item" href="security/sessiebescherming/" data-vak="security" data-zoek="sessies beschermen tegen tokendiefstal sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. met de inrichting, de gebruikersimpact en het bewijs van dekking. handleiding security" data-barrieres="session">
     <span class="itemtop">
       <span class="itemtitle">Sessies beschermen tegen tokendiefstal</span>
       <span class="tag tag-live">live</span>
@@ -267,7 +305,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. Dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. Met de inrichting, de gebruikersimpact en het bewijs van dekking.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk tokenmisbruik met apparaatbinding en sessiebeleid · fundering</div>
   </a>
-  <a class="item" href="security/cloudportalen-harden/" data-vak="security">
+  <a class="item" href="security/cloudportalen-harden/" data-vak="security" data-zoek="cloud-beheerportalen dichtzetten de beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. met de inrichting en het bewijs dat de beperking geldt. handleiding security" data-barrieres="consent">
     <span class="itemtop">
       <span class="itemtitle">Cloud-beheerportalen dichtzetten</span>
       <span class="tag tag-live">live</span>
@@ -275,7 +313,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">De beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. Een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. Met de inrichting en het bewijs dat de beperking geldt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · fundering</div>
   </a>
-  <a class="item" href="security/least-privilege-cloud/" data-vak="security">
+  <a class="item" href="security/least-privilege-cloud/" data-vak="security" data-zoek="rechten in de cloud terugbrengen tot gebruik rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. verdieping op het beheersen van toegang tot cloudportalen. met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn. handleiding security" data-barrieres="consent">
     <span class="itemtop">
       <span class="itemtitle">Rechten in de cloud terugbrengen tot gebruik</span>
       <span class="tag tag-live">live</span>
@@ -283,7 +321,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. Verdieping op het beheersen van toegang tot cloudportalen. Met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping</div>
   </a>
-  <a class="item" href="security/logging-en-retentie/" data-vak="security">
+  <a class="item" href="security/logging-en-retentie/" data-vak="security" data-zoek="bewaartermijnen voor logging en forensiek beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. zonder deze laag is achteraf niet vast te stellen wie wat deed. met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest. handleiding security" data-barrieres="adminmonitor">
     <span class="itemtop">
       <span class="itemtitle">Bewaartermijnen voor logging en forensiek</span>
       <span class="tag tag-live">live</span>
@@ -291,7 +329,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. Zonder deze laag is achteraf niet vast te stellen wie wat deed. Met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Monitor privileged activiteiten en rolwijzigingen · fundering</div>
   </a>
-  <a class="item" href="security/bastion-hosts/" data-vak="security">
+  <a class="item" href="security/bastion-hosts/" data-vak="security" data-zoek="beheertoegang via een bastion host beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is. handleiding security" data-barrieres="remote">
     <span class="itemtop">
       <span class="itemtitle">Beheertoegang via een bastion host</span>
       <span class="tag tag-live">live</span>
@@ -299,7 +337,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. Zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. Met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Scherm publieke beheerinterfaces af · fundering</div>
   </a>
-  <a class="item" href="security/aanvalsoppervlak-bewaken/" data-vak="security">
+  <a class="item" href="security/aanvalsoppervlak-bewaken/" data-vak="security" data-zoek="je aanvalsoppervlak in beeld houden ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. wat je niet weet dat bestaat, patch je niet. met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft. handleiding security" data-barrieres="assets">
     <span class="itemtop">
       <span class="itemtitle">Je aanvalsoppervlak in beeld houden</span>
       <span class="tag tag-live">live</span>
@@ -307,7 +345,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. Wat je niet weet dat bestaat, patch je niet. Met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Ontdek en bewaak het externe aanvalsoppervlak · fundering</div>
   </a>
-  <a class="item" href="security/kwetsbaarheden-scannen/" data-vak="security">
+  <a class="item" href="security/kwetsbaarheden-scannen/" data-vak="security" data-zoek="kwetsbaarheden scannen en opvolgen continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. een jaarlijkse scan is geen kwetsbaarhedenbeheer. met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan. handleiding security" data-barrieres="vuln">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden scannen en opvolgen</span>
       <span class="tag tag-live">live</span>
@@ -315,7 +353,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. Een jaarlijkse scan is geen kwetsbaarhedenbeheer. Met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · fundering</div>
   </a>
-  <a class="item" href="security/exposure-management/" data-vak="security">
+  <a class="item" href="security/exposure-management/" data-vak="security" data-zoek="kwetsbaarheden wegen op werkelijke blootstelling niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. verdieping bovenop scannen. met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is. handleiding security" data-barrieres="vuln">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden wegen op werkelijke blootstelling</span>
       <span class="tag tag-live">live</span>
@@ -323,7 +361,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. Verdieping bovenop scannen. Met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · verdieping</div>
   </a>
-  <a class="item" href="security/patchen-met-dekking/" data-vak="security">
+  <a class="item" href="security/patchen-met-dekking/" data-vak="security" data-zoek="werkplekken beheerd, gehard en gepatcht patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs. handleiding security" data-barrieres="patch localadmin unmanaged">
     <span class="itemtop">
       <span class="itemtitle">Werkplekken beheerd, gehard en gepatcht</span>
       <span class="tag tag-live">live</span>
@@ -331,7 +369,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. Met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg OS- en third-party-patching met controle op dekking, Verwijder lokale administratorrechten, Dwing toegang vanaf beheerde, compliant laptops af · fundering</div>
   </a>
-  <a class="item" href="security/periodiek-pentesten/" data-vak="security">
+  <a class="item" href="security/periodiek-pentesten/" data-vak="security" data-zoek="periodiek pentesten met hertest risicogestuurd extern laten pentesten, met herstel van de relevante bevindingen en een hertest die aantoont dat ze dicht zijn. een test zonder opvolging levert een rapport op, geen beveiliging. met de scopekeuze, de opvolging en de hertest als bewijs. handleiding security" data-barrieres="pentest">
     <span class="itemtop">
       <span class="itemtitle">Periodiek pentesten met hertest</span>
       <span class="tag tag-live">live</span>
@@ -339,7 +377,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Risicogestuurd extern laten pentesten, met herstel van de relevante bevindingen en een hertest die aantoont dat ze dicht zijn. Een test zonder opvolging levert een rapport op, geen beveiliging. Met de scopekeuze, de opvolging en de hertest als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Laat extern pentesten en verifieer herstel van bevindingen · fundering</div>
   </a>
-  <a class="item" href="security/web-en-api-testen/" data-vak="security">
+  <a class="item" href="security/web-en-api-testen/" data-vak="security" data-zoek="web en api testen in de ontwikkelketen beveiliging van webapplicaties en api-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel. handleiding security" data-barrieres="webtest">
     <span class="itemtop">
       <span class="itemtitle">Web en API testen in de ontwikkelketen</span>
       <span class="tag tag-live">live</span>
@@ -347,7 +385,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Beveiliging van webapplicaties en API-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. Met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test web/API-beveiliging en herstel kwetsbaarheden · fundering</div>
   </a>
-  <a class="item" href="security/edr-inrichten/" data-vak="security">
+  <a class="item" href="security/edr-inrichten/" data-vak="security" data-zoek="edr inrichten met dekking en isolatie endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. een edr die op de helft van de apparaten draait, is geen dekking. met de uitrol, de dekkingsmeting en de isolatietest als bewijs. handleiding security" data-barrieres="edr">
     <span class="itemtop">
       <span class="itemtitle">EDR inrichten met dekking en isolatie</span>
       <span class="tag tag-live">live</span>
@@ -355,7 +393,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. Een EDR die op de helft van de apparaten draait, is geen dekking. Met de uitrol, de dekkingsmeting en de isolatietest als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg EDR, tamper protection en snelle endpointisolatie · fundering</div>
   </a>
-  <a class="item" href="security/killchain-naast-je-controls/" data-vak="security">
+  <a class="item" href="security/killchain-naast-je-controls/" data-vak="security" data-zoek="de killchain naast je controls leggen leg je controls naast de volledige aanvalsketen, van clickfix via infostealer tot exfiltratie, met de mitre-fasen erbij. per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico&#x27;s je bewust accepteert. handleiding security" data-barrieres="edr execution">
     <span class="itemtop">
       <span class="itemtitle">De killchain naast je controls leggen</span>
       <span class="tag tag-live">live</span>
@@ -363,7 +401,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Leg je controls naast de volledige aanvalsketen, van ClickFix via infostealer tot exfiltratie, met de MITRE-fasen erbij. Per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. Maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico&#x27;s je bewust accepteert.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Borg EDR, tamper protection en snelle endpointisolatie, Beperk software- en scriptuitvoering met application control en ASR · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="security/application-control/" data-vak="security">
+  <a class="item" href="security/application-control/" data-vak="security" data-zoek="application- en scriptcontrol alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. met de auditfase, de uitrol en het bewijs van dekking. handleiding security" data-barrieres="execution">
     <span class="itemtop">
       <span class="itemtitle">Application- en scriptcontrol</span>
       <span class="tag tag-live">live</span>
@@ -371,7 +409,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. Verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. Met de auditfase, de uitrol en het bewijs van dekking.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk software- en scriptuitvoering met application control en ASR · verdieping</div>
   </a>
-  <a class="item" href="security/netwerksegmentatie/" data-vak="security">
+  <a class="item" href="security/netwerksegmentatie/" data-vak="security" data-zoek="netwerksegmentatie het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. zo komt een aanvaller die binnen is niet vanzelf overal. met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst. handleiding security" data-barrieres="segment">
     <span class="itemtop">
       <span class="itemtitle">Netwerksegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -379,7 +417,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. Zo komt een aanvaller die binnen is niet vanzelf overal. Met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · fundering</div>
   </a>
-  <a class="item" href="security/microsegmentatie/" data-vak="security">
+  <a class="item" href="security/microsegmentatie/" data-vak="security" data-zoek="microsegmentatie segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. verdieping voor wie de zones al op orde heeft. met de aanpak, de valkuilen en het bewijs van de afgedwongen regels. handleiding security" data-barrieres="segment">
     <span class="itemtop">
       <span class="itemtitle">Microsegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -387,7 +425,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. Verdieping voor wie de zones al op orde heeft. Met de aanpak, de valkuilen en het bewijs van de afgedwongen regels.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping</div>
   </a>
-  <a class="item" href="security/netwerkanalyse-uit-data/" data-vak="security">
+  <a class="item" href="security/netwerkanalyse-uit-data/" data-vak="security" data-zoek="netwerk en firewall analyseren uit data vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien. handleiding security" data-barrieres="segment">
     <span class="itemtop">
       <span class="itemtitle">Netwerk en firewall analyseren uit data</span>
       <span class="tag tag-live">live</span>
@@ -395,7 +433,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. Stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. Met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="security/waf-en-virtual-patching/" data-vak="security">
+  <a class="item" href="security/waf-en-virtual-patching/" data-vak="security" data-zoek="waf en virtual patching een web application firewall met rate limiting en layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking. handleiding security" data-barrieres="l7">
     <span class="itemtop">
       <span class="itemtitle">WAF en virtual patching</span>
       <span class="tag tag-live">live</span>
@@ -403,7 +441,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Een web application firewall met rate limiting en Layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. Met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Richt WAF, rate limiting en Layer-7-bescherming in · fundering</div>
   </a>
-  <a class="item" href="security/ddos-scrubbing/" data-vak="security">
+  <a class="item" href="security/ddos-scrubbing/" data-vak="security" data-zoek="ddos-scrubbing en robuuste dns volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante dns eronder. zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is. handleiding security" data-barrieres="upstream">
     <span class="itemtop">
       <span class="itemtitle">DDoS-scrubbing en robuuste DNS</span>
       <span class="tag tag-live">live</span>
@@ -411,7 +449,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante DNS eronder. Zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. Met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg upstream DDoS-mitigatie en robuuste DNS · fundering</div>
   </a>
-  <a class="item" href="security/onveranderbare-backups/" data-vak="security">
+  <a class="item" href="security/onveranderbare-backups/" data-vak="security" data-zoek="onveranderbare back-ups back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. de aanvaller zoekt tegenwoordig eerst de back-up. met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen. handleiding security" data-barrieres="backup">
     <span class="itemtop">
       <span class="itemtitle">Onveranderbare back-ups</span>
       <span class="tag tag-live">live</span>
@@ -419,7 +457,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. De aanvaller zoekt tegenwoordig eerst de back-up. Met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Bescherm back-ups met onveranderbaarheid en gescheiden beheer · fundering</div>
   </a>
-  <a class="item" href="security/hersteltest/" data-vak="security">
+  <a class="item" href="security/hersteltest/" data-vak="security" data-zoek="hersteltest tegen rto en rpo periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. een back-up die nooit is teruggezet, is een aanname. met de opzet van de test, de rto en rpo uit de bia, en het testverslag als bewijs. handleiding security" data-barrieres="restore">
     <span class="itemtop">
       <span class="itemtitle">Hersteltest tegen RTO en RPO</span>
       <span class="tag tag-live">live</span>
@@ -427,7 +465,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. Een back-up die nooit is teruggezet, is een aanname. Met de opzet van de test, de RTO en RPO uit de BIA, en het testverslag als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test herstel tegen de afgesproken RTO en RPO · fundering</div>
   </a>
-  <a class="item" href="security/crisisoefening/" data-vak="security">
+  <a class="item" href="security/crisisoefening/" data-vak="security" data-zoek="crisisoefening voor ransomware en uitval het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. met de opzet van de tabletop, de rollen en het oefenverslag als bewijs. handleiding security" data-barrieres="crisis">
     <span class="itemtop">
       <span class="itemtitle">Crisisoefening voor ransomware en uitval</span>
       <span class="tag tag-live">live</span>
@@ -435,7 +473,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. Een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. Met de opzet van de tabletop, de rollen en het oefenverslag als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · fundering</div>
   </a>
-  <a class="item" href="security/crisiscommunicatie/" data-vak="security">
+  <a class="item" href="security/crisiscommunicatie/" data-vak="security" data-zoek="cyber-crisiscommunicatie vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. verdieping op de crisisoefening. met de rollen, de kanalen en het bewijs dat het is geoefend. handleiding security" data-barrieres="crisis">
     <span class="itemtop">
       <span class="itemtitle">Cyber-crisiscommunicatie</span>
       <span class="tag tag-live">live</span>
@@ -443,7 +481,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. Verdieping op de crisisoefening. Met de rollen, de kanalen en het bewijs dat het is geoefend.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · verdieping</div>
   </a>
-  <a class="item" href="security/incident-response-procedures/" data-vak="security">
+  <a class="item" href="security/incident-response-procedures/" data-vak="security" data-zoek="incidentprocedures die je hebt geoefend vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of bec-melding, en misbruik van een externe kwetsbaarheid. met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt. handleiding security" data-barrieres="mailresponse idresponse exploitresponse">
     <span class="itemtop">
       <span class="itemtitle">Incidentprocedures die je hebt geoefend</span>
       <span class="tag tag-live">live</span>
@@ -451,7 +489,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of BEC-melding, en misbruik van een externe kwetsbaarheid. Met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test mail-remediation en het phishing/BEC-playbook, Test response op identity- en app-compromise, Test detectie en response op externe exploits · fundering</div>
   </a>
-  <a class="item" href="security/ketenafhankelijkheden/" data-vak="security">
+  <a class="item" href="security/ketenafhankelijkheden/" data-vak="security" data-zoek="ketenafhankelijkheden in beeld in beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. uit bronnen die je vaak al hebt. met de opbouw, het actueel houden en het overzicht als bewijs. handleiding security" data-barrieres="dependencies">
     <span class="itemtop">
       <span class="itemtitle">Ketenafhankelijkheden in beeld</span>
       <span class="tag tag-live">live</span>
@@ -459,7 +497,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">In beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. Uit bronnen die je vaak al hebt. Met de opbouw, het actueel houden en het overzicht als bewijs.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Breng kritieke systemen en leveranciers in samenhang in beeld · fundering</div>
   </a>
-  <a class="item" href="security/leveranciersbeoordeling/" data-vak="security">
+  <a class="item" href="security/leveranciersbeoordeling/" data-vak="security" data-zoek="leveranciersbeoordeling met vaste cyclus kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt. handleiding security" data-barrieres="review">
     <span class="itemtop">
       <span class="itemtitle">Leveranciersbeoordeling met vaste cyclus</span>
       <span class="tag tag-live">live</span>
@@ -467,7 +505,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. Met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beoordeel kritieke leveranciers periodiek en risicogestuurd · fundering</div>
   </a>
-  <a class="item" href="security/pentest-en-exit-bij-leveranciers/" data-vak="security">
+  <a class="item" href="security/pentest-en-exit-bij-leveranciers/" data-vak="security" data-zoek="pentest- en exitverplichtingen bij leveranciers de technische maatregelen van kritieke leveranciers toetsen in plaats van aannemen, met pentest- en exitverplichtingen in het contract. verdieping op de leveranciersbeoordeling. met de eisen, de exitafspraken en het bewijs dat er getoetst is. handleiding security" data-barrieres="technicalvendor">
     <span class="itemtop">
       <span class="itemtitle">Pentest- en exitverplichtingen bij leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -475,7 +513,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">De technische maatregelen van kritieke leveranciers toetsen in plaats van aannemen, met pentest- en exitverplichtingen in het contract. Verdieping op de leveranciersbeoordeling. Met de eisen, de exitafspraken en het bewijs dat er getoetst is.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Toets technische maatregelen van kritieke leveranciers · verdieping</div>
   </a>
-  <a class="item" href="bcm/kritieke-processen-vaststellen/" data-vak="bcm">
+  <a class="item" href="bcm/kritieke-processen-vaststellen/" data-vak="bcm" data-zoek="kritieke processen en herstelprioriteiten vaststellen hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert. handleiding bcm" data-barrieres="critical">
     <span class="itemtop">
       <span class="itemtitle">Kritieke processen en herstelprioriteiten vaststellen</span>
       <span class="tag tag-live">live</span>
@@ -483,7 +521,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. Met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert.</p>
     <div class="meta">bcm · handleiding · peildatum 2026-08-31 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast · fundering</div>
   </a>
-  <a class="item" href="bcm/calamiteitenteam-digitaal-opzetten/" data-vak="bcm">
+  <a class="item" href="bcm/calamiteitenteam-digitaal-opzetten/" data-vak="bcm" data-zoek="een digitaal calamiteitenteam opzetten startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit bestrijdt. rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij. te beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen. handleiding bcm" data-barrieres="crisis">
     <span class="itemtop">
       <span class="itemtitle">Een digitaal calamiteitenteam opzetten</span>
       <span class="tag tag-live">live</span>
@@ -491,7 +529,7 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
     <p class="itemdesc">Startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit bestrijdt. Rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij. Te beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen.</p>
     <div class="meta">bcm · handleiding · peildatum 2026-08-31 · sjabloon · barriere: Oefen het ransomware- en crisisherstelplan · alternatief</div>
   </a>
-  <a class="item" href="governance/ai-beleid/" data-vak="governance">
+  <a class="item" href="governance/ai-beleid/" data-vak="governance" data-zoek="ai-beleid van een regionale samenwerking compleet ai-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, ai-geletterdheid. acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. beleid governance" data-barrieres="">
     <span class="itemtop">
       <span class="itemtitle">AI-beleid van een regionale samenwerking</span>
       <span class="tag tag-live">live</span>
@@ -502,8 +540,9 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
 
 </div>
 
-<p class="h2sub" id="filter-leeg" hidden>Onder <strong class="vak"></strong> staat nog niets.
-Heb je hier iets liggen? <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Eén stuk delen</a> is genoeg om te beginnen.</p>
+<p class="h2sub" id="filter-leeg" hidden>Niets gevonden. Probeer een ander woord, of zet de barriere terug op
+alle. Zoek je iets dat er niet is? <a href="https://github.com/security-commons-nl/.github/discussions">Vraag het
+in Halen en brengen</a>; je naam en je organisatie hoeven daar niet bij.</p>
 
 <p class="h2sub">Handleidingen per barriere uit de zelfcheck staan bij <a href="security/#handleidingen">Security</a>, en met de alternatieven ernaast op <a href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van aanvalspad naar norm</a>.</p>
 
@@ -561,38 +600,35 @@ schrijfrechten: GitHub maakt van je wijziging automatisch een voorstel.</p>
   var balk = document.getElementById('filters');
   var grid = document.getElementById('direct-te-lezen');
   if (!balk || !grid) return;
-  var knoppen = [].slice.call(balk.querySelectorAll('.filterbtn'));
-  var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+  var zoek = document.getElementById('zoek');
+  var keuze = document.getElementById('barriere');
+  var telling = document.getElementById('telling');
   var leeg = document.getElementById('filter-leeg');
-  var namen = {};
-  knoppen.forEach(function (k) { namen[k.dataset.filter] = k.textContent.replace(/\s*\d+\s*$/, '').trim(); });
+  var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
 
-  function toon(vak) {
+  function pas() {
+    var term = (zoek.value || '').trim().toLowerCase();
+    var bar = keuze.value;
     var n = 0;
     kaarten.forEach(function (kaart) {
-      var mee = vak === 'alles' || kaart.getAttribute('data-vak') === vak;
+      var tekst = kaart.getAttribute('data-zoek') || '';
+      var barrieres = ' ' + (kaart.getAttribute('data-barrieres') || '') + ' ';
+      var mee = (term === '' || tekst.indexOf(term) !== -1) &&
+                (bar === '' || barrieres.indexOf(' ' + bar + ' ') !== -1);
       kaart.hidden = !mee;
       if (mee) n++;
     });
-    knoppen.forEach(function (k) { k.setAttribute('aria-pressed', String(k.dataset.filter === vak)); });
     grid.hidden = n === 0;
-    if (leeg) {
-      leeg.hidden = n !== 0;
-      if (n === 0) leeg.querySelector('.vak').textContent = namen[vak] || vak;
-    }
+    if (leeg) leeg.hidden = n !== 0;
+    telling.textContent = n === kaarten.length
+      ? kaarten.length + ' stukken'
+      : n + ' van de ' + kaarten.length + ' stukken';
   }
 
-  knoppen.forEach(function (k) {
-    k.addEventListener('click', function () {
-      var vak = k.dataset.filter;
-      toon(vak);
-      history.replaceState(null, '', vak === 'alles' ? location.pathname : '#' + vak);
-    });
-  });
-
+  zoek.addEventListener('input', pas);
+  keuze.addEventListener('change', pas);
   balk.hidden = false;
-  var start = location.hash.slice(1);
-  toon(namen[start] ? start : 'alles');
+  pas();
 })();
 </script>
 

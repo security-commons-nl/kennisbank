@@ -52,14 +52,14 @@ ul.hoort li{margin-bottom:3px}
 .grid[hidden]{display:none}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .filters[hidden]{display:none}
-.filterbtn{font:inherit;font-size:13.5px;line-height:1;cursor:pointer;background:var(--card);color:var(--ink);
-  border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;
-  gap:7px;transition:border-color .12s,background .12s,color .12s}
-.filterbtn:hover{border-color:var(--accent);color:var(--accent)}
-.filterbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.filterbtn .n{font-size:11.5px;font-weight:600;opacity:.7;font-variant-numeric:tabular-nums}
-.filterbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.filters input,.filters select{font:inherit;font-size:14px;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.filters input{flex:1 1 260px;min-width:0}
+.filters select{flex:0 1 auto;max-width:100%}
+.filters input:focus,.filters select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.filters .telling{flex-basis:100%;font-size:13px;color:var(--muted);margin:0}
 a.item[hidden]{display:none}
+.visueel-verborgen{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;font-size:12.5px;color:var(--muted)}
 footer a{color:var(--muted)}
 @media (max-width:600px){.cta.alt{margin-left:0;margin-top:8px}}
@@ -83,7 +83,7 @@ footer a{color:var(--muted)}
 <h3 class="groep" id="handleidingen">Handleidingen: een maatregel inrichten, per barriere uit de zelfcheck</h3>
 <div class="grid">
 
-  <a class="item" href="kritieke-processen-vaststellen/" data-vak="bcm">
+  <a class="item" href="kritieke-processen-vaststellen/" data-vak="bcm" data-zoek="kritieke processen en herstelprioriteiten vaststellen hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert. handleiding bcm" data-barrieres="critical">
     <span class="itemtop">
       <span class="itemtitle">Kritieke processen en herstelprioriteiten vaststellen</span>
       <span class="tag tag-live">live</span>
@@ -91,7 +91,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. Met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert.</p>
     <div class="meta">handleiding · peildatum 2026-08-31 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast · fundering</div>
   </a>
-  <a class="item" href="calamiteitenteam-digitaal-opzetten/" data-vak="bcm">
+  <a class="item" href="calamiteitenteam-digitaal-opzetten/" data-vak="bcm" data-zoek="een digitaal calamiteitenteam opzetten startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit bestrijdt. rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij. te beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen. handleiding bcm" data-barrieres="crisis">
     <span class="itemtop">
       <span class="itemtitle">Een digitaal calamiteitenteam opzetten</span>
       <span class="tag tag-live">live</span>
