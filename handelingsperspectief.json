@@ -59,6 +59,13 @@
     },
     {
       "barriere": "crisis",
+      "item": "bcm/calamiteitenteam-digitaal-opzetten",
+      "titel": "Een digitaal calamiteitenteam opzetten",
+      "rol": "alternatief",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/"
+    },
+    {
+      "barriere": "crisis",
       "item": "security/crisiscommunicatie",
       "titel": "Cyber-crisiscommunicatie",
       "rol": "verdieping",
