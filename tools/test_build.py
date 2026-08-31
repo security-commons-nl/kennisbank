@@ -147,6 +147,46 @@ class DodeLinks(Basis):
         self.assertEqual(build.fouten, [])
 
 
+
+class Filter(Basis):
+    """De filterbalk op de landingspagina: dezelfde indeling als de repo, met de aantallen erbij."""
+
+    def secties(self) -> dict:
+        return {v: {"titel": v.upper(), "lead": "lead", "hoort": []} for v in build.VAKGEBIEDEN}
+
+    def live(self, **per_vak: int) -> list[dict]:
+        uit = []
+        for vak, aantal in per_vak.items():
+            uit += [{"_vak": vak, "_weergave": "live"} for _ in range(aantal)]
+        return uit
+
+    def test_een_knop_per_vakgebied_plus_alles(self):
+        balk = build.filterbalk(self.secties(), self.live(security=3))
+        for vak in build.VAKGEBIEDEN:
+            self.assertIn(f'data-filter="{vak}"', balk)
+        self.assertIn('data-filter="alles"', balk)
+
+    def test_telt_per_vakgebied_en_totaal(self):
+        balk = build.filterbalk(self.secties(), self.live(security=3, governance=1))
+        self.assertIn('data-filter="alles" aria-pressed="true">Alles <span class="n">4</span>', balk)
+        self.assertIn('>SECURITY <span class="n">3</span>', balk)
+        self.assertIn('>GOVERNANCE <span class="n">1</span>', balk)
+
+    def test_leeg_vakgebied_krijgt_gewoon_een_knop(self):
+        """Nul tonen is de bedoeling: een bezoeker mag zien dat er nog niets is en kan iets sturen."""
+        balk = build.filterbalk(self.secties(), self.live(security=2))
+        self.assertIn('>PRIVACY <span class="n">0</span>', balk)
+        self.assertNotIn("disabled", balk)
+
+    def test_balk_staat_uit_tot_het_script_hem_aanzet(self):
+        """Zonder JavaScript blijft alles zichtbaar in plaats van dat er dode knoppen staan."""
+        self.assertIn("hidden>", build.filterbalk(self.secties(), self.live(security=1)))
+
+    def test_kaart_draagt_zijn_vakgebied(self):
+        fm = {"titel": "Titel", "samenvatting": "Samenvatting.", "type": "aanpak", "status": "in gebruik",
+              "_vak": "security", "_link": "een-item/", "_weergave": "live"}
+        self.assertIn('data-vak="security"', build.kaart(fm, "", True))
+
 class Volgorde(Basis):
     """Statuut B4: de volgorde van de items staat in de README van de sectie, niet in het alfabet."""
 
