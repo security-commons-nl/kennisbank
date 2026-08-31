@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Kritieke processen en herstelprioriteiten vaststellen</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <span>Kritieke processen en herstelprioriteiten vaststellen</span></nav><!-- /kruimelpad -->
+<h1>Kritieke processen en herstelprioriteiten vaststellen</h1>
+<p>Vraag tien mensen in een publieke organisatie welke processen kritiek zijn en je krijgt tien lijsten. Vraag
+het aan de staf en je krijgt er een die klopt maar die niemand kent. Dat tweede is het echte probleem: een
+lijst kritieke processen die niet van de lijn is, stuurt niets aan. Hij komt tevoorschijn bij een audit en
+verdwijnt daarna weer.</p>
+<p>Deze handleiding gaat over hoe je zo'n lijst maakt met de lijn in plaats van voor de lijn, welke eisen je
+eraan hangt, en hoe je hem overleeft als de organisatie op de schop gaat. Dat laatste is het deel waar de
+meeste aanpakken zwijgen, en het is precies waar een lijst gewoonlijk sneuvelt.</p>
+<h2 id="begin-bij-ontwrichting-niet-bij-systemen">Begin bij ontwrichting, niet bij systemen</h2>
+<p>De verleiding is om te beginnen bij de applicatielijst. Dat levert een inventarisatie op, geen prioritering,
+want techniek zegt niets over maatschappelijke gevolgen.</p>
+<p>Begin bij deze vraag: <strong>welke processen mogen niet uitvallen omdat inwoners er direct last van hebben, of
+omdat er een wettelijke termijn op zit?</strong> Denk aan uitkeringen die betaald moeten worden, een overlijden dat
+geregistreerd moet worden, een telefoonlijn die het moet doen, een besluit dat binnen een termijn valt.</p>
+<p>Twee dingen om vast te houden bij die eerste ronde:</p>
+<ul>
+<li><strong>Kritiek is niet hetzelfde als groot.</strong> Een proces dat een keer per jaar draait kan kritieker zijn dan
+  een proces dat dagelijks draait, als het moment vastligt en niet verplaatst kan worden.</li>
+<li><strong>Het moment telt.</strong> Dezelfde uitval is op een dinsdagochtend iets anders dan tijdens een betaalronde,
+  een verkiezing of een piek in de paspoortuitgifte. Noteer dus niet alleen het proces maar ook wanneer het
+  pijn doet.</li>
+</ul>
+<p>Een werkbare startomvang is twintig processen. Meer wordt niet onderhouden, minder mist te veel.</p>
+<h2 id="zeven-vragen-per-proces">Zeven vragen per proces</h2>
+<p>Voor elk proces dat de lijst haalt, loop je langs zeven assen. Ze staan uitgewerkt in
+<a href="vuistregels-per-proces.md">vuistregels-per-proces.md</a>, met per as wat er geregeld hoort te zijn.</p>
+<table>
+<thead>
+<tr>
+<th>As</th>
+<th>De vraag die je stelt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mensen</strong></td>
+<td>Zonder wie kan dit proces niet draaien of hersteld worden, en is daar vervanging voor?</td>
+</tr>
+<tr>
+<td><strong>Apparatuur</strong></td>
+<td>Wat valt om als een apparaat kapot gaat, en is het dubbel uitgevoerd of analoog te bedienen?</td>
+</tr>
+<tr>
+<td><strong>Programmatuur</strong></td>
+<td>Welke servicelevels zijn afgesproken, en wordt daarop gemonitord en gerapporteerd?</td>
+</tr>
+<tr>
+<td><strong>Gegevens</strong></td>
+<td>Zijn de gegevens gedefinieerd en geclassificeerd, en bij clouddiensten: kun je eruit?</td>
+</tr>
+<tr>
+<td><strong>Organisatie</strong></td>
+<td>Wie is waarvoor verantwoordelijk, aanwijsbaar en niet in algemene termen?</td>
+</tr>
+<tr>
+<td><strong>Omgeving</strong></td>
+<td>Wat heb je nodig aan gebouw, stroom en ruimte, en wat als dat wegvalt?</td>
+</tr>
+<tr>
+<td><strong>Diensten</strong></td>
+<td>Welke leveringen zijn nodig, en ligt er een exitplan voor de kritische?</td>
+</tr>
+</tbody>
+</table>
+<p>De vuistregel bij <strong>mensen</strong> is de nuttigste van de zeven en tegelijk de meest genegeerde: <strong>drie personen
+per onmisbare functie.</strong> Met drie vang je verloop, verlof en ziekte tegelijk op. Met twee niet, want dan is
+één vakantie plus één ziekmelding genoeg. Tel dat eerlijk na en je vindt in elke organisatie processen die
+op één persoon draaien.</p>
+<p>De vuistregel bij <strong>diensten</strong> is de politiek lastigste: een exitplan voor kritische leveranciers. Niet
+omdat je van plan bent te vertrekken, maar omdat je zonder dat plan niet gelijkwaardig kunt onderhandelen.</p>
+<h2 id="drie-eisen-en-de-derde-wordt-vergeten">Drie eisen, en de derde wordt vergeten</h2>
+<p>Per kritiek proces leg je vast:</p>
+<ol>
+<li><strong>Maximale uitvalsduur.</strong> Binnen welke termijn moet het proces weer draaien na een calamiteit.</li>
+<li><strong>Maximaal gegevensverlies.</strong> Hoeveel werk mag er verloren gaan, uitgedrukt in tijd tussen de calamiteit
+   en het laatste moment waarop gegevens veiliggesteld waren.</li>
+<li><strong>Het minimumniveau.</strong> Op welk niveau kan de dienstverlening tijdens de verstoring doorgaan. Aangepaste
+   servicenormen, een tijdelijk hogere foutmarge, een handmatige route.</li>
+</ol>
+<p>Die derde is de belangrijkste en staat het minst vaak ingevuld. De eerste twee gaan over herstel, en herstel
+duurt altijd langer dan je hoopt. Het minimumniveau gaat over de uren of dagen daartussen, en dat is precies
+de periode waarin je organisatie in de krant komt. Wie geen plan B heeft afgesproken, improviseert er een op
+het slechtste moment.</p>
+<h2 id="herstelprioriteit-is-een-verdelingsvraag">Herstelprioriteit is een verdelingsvraag</h2>
+<p>Als alles tegelijk uitvalt, kun je niet alles tegelijk herstellen. Er moet dus een volgorde zijn, en die
+volgorde is geen technisch besluit.</p>
+<p>Dat is de kern: <strong>de volgorde bepaalt wie langer wacht.</strong> Als de uitkeringsrun voorgaat op de
+vergunningverlening, dan is dat een keuze over welke inwoner eerst geholpen wordt. Zo'n keuze hoort bij de
+directie, niet bij een beheerder om drie uur 's nachts.</p>
+<p>Werkwijze die standhoudt: laat de lijn de volgorde vaststellen als een besluit, met de motivering erbij, en
+leg vast wat er expliciet níet in de eerste ronde zit. Dat laatste voorkomt de discussie tijdens de
+calamiteit, want dan is iedereen ervan overtuigd dat zijn proces vooraan stond.</p>
+<h2 id="houdbaar-houden-als-de-organisatie-verandert">Houdbaar houden als de organisatie verandert</h2>
+<p>Hier sneuvelt het gewoonlijk. Een lijst die is vastgesteld onder de oude afdelingsindeling is na een
+reorganisatie onbruikbaar: processen heten anders, eigenaren zijn vertrokken, en niemand voelt zich
+verantwoordelijk voor bijwerken. Vier dingen die dat vertragen.</p>
+<p><strong>Hang het aan het proces, niet aan de afdeling.</strong> Afdelingen worden hernoemd en samengevoegd, processen
+blijven bestaan. Noteer bij elk proces de wettelijke of dienstverlenende grondslag, niet de organisatorische
+plek. Dan is een reorganisatie een verhuizing in plaats van een herbouw.</p>
+<p><strong>Maak de eigenaar een rol, geen naam.</strong> "De proceseigenaar van burgerzaken" overleeft een vertrek,
+"J. Jansen" niet. Wie de rol overneemt, erft de lijst.</p>
+<p><strong>Laat verandering zelf de trigger zijn.</strong> Een jaarlijkse herijking loopt altijd achter, want reorganisaties
+volgen geen jaarritme. Spreek af dat een organisatiewijziging, een nieuwe aanbesteding of een uitbesteding
+automatisch een herijking van de geraakte processen vraagt. Dat is een afspraak van een regel en het scheelt
+maanden achterstand.</p>
+<p><strong>Koppel de jaarlijkse toets aan iets dat toch al gebeurt.</strong> Een losse jaarlijkse ronde wordt uitgesteld. Een
+toets die meelift op de planning-en-controlcyclus of op de managementrapportage gebeurt wel, want daar staat
+een datum op die niemand mist.</p>
+<p>En één dat vaak wordt overgeslagen: <strong>leg vast wat er níet geregeld is en waarom.</strong> Wijkt een proceseigenaar
+af van de vuistregels, dan is dat prima, maar dan moet er staan wat er dan wél is geregeld en waarom hij dat
+afdoende vindt. Dat is de enige manier waarop een lijst een gesprek blijft in plaats van een norm waar
+iedereen omheen werkt.</p>
+<h2 id="wat-er-in-deze-map-staat">Wat er in deze map staat</h2>
+<ul>
+<li><a href="vuistregels-per-proces.md">vuistregels-per-proces.md</a> — de zeven assen uitgewerkt, met per as wat er
+  geregeld hoort te zijn en welke uitgangspunten daaronder liggen</li>
+</ul>
+<h2 id="bewijs">Bewijs</h2>
+<p>Wat je aan het eind kunt laten zien:</p>
+<ul>
+<li>Een <strong>vastgestelde lijst kritieke processen</strong>, met een besluit van de lijn eronder en niet alleen een
+  stafnotitie.</li>
+<li>Per proces de <strong>drie continuiteitseisen</strong> ingevuld, inclusief het minimumniveau.</li>
+<li>Een <strong>herstelvolgorde</strong> die als besluit is genomen, met de motivering en met wat er bewust buiten de
+  eerste ronde valt.</li>
+<li>Per onmisbare functie een <strong>bezettingstelling</strong>, waaruit blijkt welke processen op minder dan drie
+  personen draaien.</li>
+<li>Een <strong>herijkingsafspraak</strong> met een trigger die niet aan een kalender hangt maar aan gebeurtenissen, plus
+  de datum van de laatste herijking.</li>
+<li>De <strong>afwijkingen met motivering</strong>: waar een proceseigenaar van de vuistregels afwijkt en wat hij in plaats
+  daarvan heeft geregeld.</li>
+</ul>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<p>Tegen een directie die vraagt waarom dit nodig is, terwijl er toch back-ups zijn:</p>
+<blockquote>
+<p>"Een back-up zegt dat we de gegevens terugkrijgen. Hij zegt niets over de volgorde waarin we weer gaan
+draaien, en dat is de vraag die op tafel ligt als er iets ligt. Als we die volgorde niet vooraf bepalen,
+bepaalt de toevalligheid van dat moment hem, of degene die het hardst roept."</p>
+</blockquote>
+<p>Tegen een proceseigenaar die dit als extra werk ziet:</p>
+<blockquote>
+<p>"Ik kom niet vragen of jouw proces belangrijk is. Ik kom vragen wat er gebeurt als het drie dagen stilligt,
+en of jij daar dan mee kunt leven. Als het antwoord ja is, zijn we in vijf minuten klaar."</p>
+</blockquote>
+<p>De kortste versie: <strong>niet alles kan tegelijk terug, dus iemand kiest de volgorde. De vraag is alleen of dat
+vooraf gebeurt of tijdens de calamiteit.</strong></p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/kritieke-processen-vaststellen">bcm/kritieke-processen-vaststellen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

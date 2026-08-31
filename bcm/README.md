@@ -20,7 +20,8 @@ De volgorde op de sitepagina is redactioneel en staat hier: wat je morgen kunt t
 naslag in het midden, verwijzingen naar het werk van anderen onderaan. `tools/build.py` volgt deze
 lijst en blokkeert als een item ontbreekt of niet bestaat.
 
-1. [Een digitaal calamiteitenteam opzetten](calamiteitenteam-digitaal-opzetten/)
+1. [Kritieke processen en herstelprioriteiten vaststellen](kritieke-processen-vaststellen/)
+2. [Een digitaal calamiteitenteam opzetten](calamiteitenteam-digitaal-opzetten/)
 
 ## Bijdragen
 
