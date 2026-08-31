@@ -6,7 +6,7 @@ normen: [BIO2]
 versie: 2026-08
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
-samenvatting: Verhoog je security posture met data uit je eigen omgeving in plaats van met aannames. Meet eerst wat er feitelijk draait (PowerShell, Win+R, mshta, firewallregels) en bepaal daarna pas wat je afdwingt; dat voorkomt dat je legitiem werk breekt en laat de echte impact zien. ClickFix is de casus, de aanpak werkt breder: van werkplek en identiteit tot netwerk, regie en strategie. Met herbruikbare KQL-query's voor Advanced Hunting.
+samenvatting: De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen.
 ---
 
 # Meten voordat je ingrijpt
@@ -36,17 +36,17 @@ managementsamenvatting als je het eerste wilt, en de hoofdstukken erna als je he
 
 ## Wat je hier vindt
 
-| Onderdeel | Voor wie | Waarover |
+Dit stuk bevat de methode. De uitwerking per laag staat in eigen stukken, zodat je kunt lezen wat voor
+jou geldt zonder de rest door te hoeven.
+
+| Wil je dit | Voor wie | Ga naar |
 |---|---|---|
-| [Managementsamenvatting](#managementsamenvatting) | Bestuur, CISO | Kernboodschap, lagenmodel, strategie in het kort |
-| [De methode](#de-methode-evidence-based-posture-verhogen) | Allen | De werkwijze: IST naar SOLL, meten, aantoonbaarheid |
-| [Werkplekanalyse](../werkplekanalyse-e5/) | Security, beheer | Eigen handleiding: analyses op het Microsoft-platform met KQL |
-| [Identiteit en e-mail](../identiteit-en-mail-meten/) | Security, beheer | Eigen handleiding: MDO, MDI, Conditional Access, PIM, app-consent |
-| [Netwerk en firewall](#netwerk-firewall-en-core-routers-analyseren-uit-data) | Security, netwerk | Firewalls en core-routers analyseren uit data |
-| [Killchain en chokepoints](#killchain-en-chokepoints-clickfix) | Security | De ClickFix-keten naast je controls, met MITRE-fasen |
-| [Regie en accountability](#regie-en-accountability) | Management, CISO | Resultaatverplichting, RACI, leveranciers |
-| [Veilig faciliteren](#veilig-faciliteren-als-langetermijnstrategie) | Bestuur, CISO | Langetermijnstrategie in plaats van lockdown |
-| [Zes KQL-query's](../werkplekanalyse-e5/data/) | Beheer, security | Verhuisd naar de handleiding Werkplekanalyse |
+| De werkwijze begrijpen: meten, IST naar SOLL, aantoonbaarheid | Allen | [De methode](#de-methode-evidence-based-posture-verhogen), hieronder |
+| Meten wat er feitelijk draait op de werkplek, met KQL | Security, beheer | [Werkplekanalyse op het Microsoft-platform](../werkplekanalyse-e5/) |
+| Identiteit en e-mail toetsen voordat je afdwingt | Security, beheer | [Identiteit en e-mail meten](../identiteit-en-mail-meten/) |
+| Uit de data zien of je netwerk werkelijk segmenteert | Security, netwerk | [Netwerk en firewall analyseren uit data](../netwerkanalyse-uit-data/) |
+| Je controls naast de volledige aanvalsketen leggen | Security | [De killchain naast je controls](../killchain-naast-je-controls/) |
+| Weten waarop je stuurt: regie, RACI, lockdown of faciliteren | Bestuur, directie, CISO | [Sturen op weerbaarheid](../sturen-op-weerbaarheid/) |
 
 ## Drie uitgangspunten
 
@@ -60,10 +60,15 @@ managementsamenvatting als je het eerste wilt, en de hoofdstukken erna als je he
 ## Volgorde van aanpak
 
 1. Meet de werkplek: wat draait er echt, wie gebruikt wat.
-2. Toets de configuratie op het Microsoft-platform: aan staan is niet hetzelfde als gekoppeld en actief.
+   [Werkplekanalyse](../werkplekanalyse-e5/).
+2. Toets identiteit en e-mail: aan staan is niet hetzelfde als gekoppeld en actief.
+   [Identiteit en e-mail meten](../identiteit-en-mail-meten/).
 3. Analyseer netwerk en firewall uit data: brede regels, beheertoegang, zicht, segmentatie.
+   [Netwerk en firewall analyseren uit data](../netwerkanalyse-uit-data/).
 4. Leg de killchain naast je controls: waar knijp je, waar zit een gat.
+   [De killchain naast je controls](../killchain-naast-je-controls/).
 5. Beleg regie en resultaatverplichting, en kies een strategie.
+   [Sturen op weerbaarheid](../sturen-op-weerbaarheid/).
 
 ## De methode: evidence-based posture verhogen
 
@@ -119,47 +124,17 @@ Statuskleuren: groen = ingericht · oranje = deels/aandacht · rood = nog niet i
 
 ### Volgorde
 
-1. **[Meet de werkplek](#werkplekanalyse-op-het-microsoft-platform-e5).** Daar is de meeste telemetrie en de meeste laaghangende winst.
-2. **Toets de configuratie** op [de werkplek](#werkplekanalyse-op-het-microsoft-platform-e5) en bij [identiteit en e-mail](#identiteit-en-e-mail). Onderscheid "aan" van "gekoppeld en actief".
-3. **[Analyseer netwerk en firewall uit data](#netwerk-firewall-en-core-routers-analyseren-uit-data).** Brede regels, beheertoegang, zicht op verkeer, segmentatie.
-4. **[Leg de killchain naast je controls](#killchain-en-chokepoints-clickfix).** Waar knijp je de aanval, waar zit nog een gat.
-5. **[Beleg regie](#regie-en-accountability)** en **[kies een strategie](#veilig-faciliteren-als-langetermijnstrategie)**.
+1. **[Meet de werkplek](../werkplekanalyse-e5/).** Daar is de meeste telemetrie en de meeste laaghangende winst.
+2. **Toets de configuratie** op [de werkplek](../werkplekanalyse-e5/) en bij [identiteit en e-mail](../identiteit-en-mail-meten/). Onderscheid "aan" van "gekoppeld en actief".
+3. **[Analyseer netwerk en firewall uit data](../netwerkanalyse-uit-data/).** Brede regels, beheertoegang, zicht op verkeer, segmentatie.
+4. **[Leg de killchain naast je controls](../killchain-naast-je-controls/).** Waar knijp je de aanval, waar zit nog een gat.
+5. **[Beleg regie en kies een strategie](../sturen-op-weerbaarheid/).**
 
 ### Aantoonbaarheid en herijking
 
 Leg vast wat je hebt gemeten en wanneer. Een maatregel die ooit aanstond kan weer afvallen (drift). Plan
 periodieke herijking en, waar mogelijk, een gecontroleerde aanvalssimulatie om detectie en preventie te
 toetsen - niet aannemen dat het werkt, maar het laten zien.
-
-## Werkplekanalyse op het Microsoft-platform
-
-Deze analyses zijn een eigen handleiding geworden:
-**[Werkplekanalyse op het Microsoft-platform](../werkplekanalyse-e5/)**. Daar staat hoe je met Defender
-for Endpoint en Advanced Hunting meet wat er feitelijk draait (PowerShell, Win+R, mshta, ClickFix), hoe je
-"aan" onderscheidt van "gekoppeld en actief", en waarom je PowerShell beter beheerst met Constrained
-Language Mode dan met een procesblokkade. De zes KQL-query's staan daar in `data/`.
-
-## Identiteit en e-mail
-
-Ook deze laag is een eigen handleiding geworden:
-**[Identiteit en e-mail meten voordat je afdwingt](../identiteit-en-mail-meten/)**. Daar staat wat je
-toetst in Defender for Office, Entra ID, Conditional Access, app-consent en ADCS, met per punt wat "goed"
-eruitziet. In veel gemeenten komt het merendeel van de incidenten via deze twee lagen binnen, niet via de
-werkplek-uitvoering zelf; het is daarmee doorgaans de hoogste hefboom.
-
-## Netwerk, firewall en core-routers analyseren uit data
-
-Ook deze laag is een eigen handleiding geworden:
-**[Netwerk en firewall analyseren uit data](../netwerkanalyse-uit-data/)**. Daar staat wat je exporteert
-en analyseert (hit-counts, routeringstabellen, beheertoegang, zicht op versleuteld verkeer) en hoe je
-brede regels veilig versmalt met schaduwregels in plaats van ze blind dicht te zetten.
-
-## Killchain en chokepoints (ClickFix)
-
-Ook dit hoofdstuk is een eigen handleiding geworden:
-**[De killchain naast je controls leggen](../killchain-naast-je-controls/)**. Daar staat de volledige
-keten van ClickFix tot exfiltratie met de MITRE-fasen, per fase het chokepoint en of het om preventie,
-detectie of herstel gaat, plus de restrisico's die je bewust accepteert.
 
 ## Herbruikbare query's
 
@@ -187,6 +162,7 @@ in, en houd de uitkomsten onder versiebeheer zodat de verbetering aantoonbaar en
 | Die uitkomst omzetten in een risicolijst met eigenaar | [Risicoanalyse langs aanvalspaden](../risicoanalyse-aanvalspaden/) |
 | De rode cellen structureel dichten met mandaat | [Een blue team opzetten](../blue-team-opzetten/) |
 | AI-gebruik in je organisatie feitelijk meten | [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/) |
+| Weten wat je met dit alles aantoont in BIO 2.0, NIST CSF, Wpg of AVG | [Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/) |
 
 ## Herkomst
 
