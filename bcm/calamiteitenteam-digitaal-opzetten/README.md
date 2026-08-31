@@ -6,15 +6,16 @@ normen: [NIS2, BIO2, ISO 22301]
 peildatum: 2026-08-31
 herkomst: in gebruik bij de crisisorganisatie van een gemeente
 status: sjabloon
-samenvatting: Een startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit
-  bestrijdt. Rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij.
-  Bewust binnen de eigen bedrijfsvoering te beleggen, zodat je volgende week kunt beginnen zonder eerst
-  de crisisorganisatie te hoeven veranderen.
+samenvatting: Startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit
+  bestrijdt. Rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij. Te
+  beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen.
 barrieres: [crisis]
 rol: alternatief
 ---
 
 # Een digitaal calamiteitenteam opzetten
+
+> **Lees deze handleiding online:** [security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten](https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/)
 
 Als er morgen ransomware in je netwerk zit, wie zit er dan om tafel? Bij veel publieke organisaties is
 het antwoord: dat zoeken we op dat moment uit. Er is een crisisorganisatie voor een brand of een
