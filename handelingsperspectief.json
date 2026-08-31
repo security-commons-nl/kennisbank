@@ -72,6 +72,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/crisiscommunicatie/"
     },
     {
+      "barriere": "critical",
+      "item": "bcm/kritieke-processen-vaststellen",
+      "titel": "Kritieke processen en herstelprioriteiten vaststellen",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/kritieke-processen-vaststellen/"
+    },
+    {
       "barriere": "dependencies",
       "item": "security/ketenafhankelijkheden",
       "titel": "Ketenafhankelijkheden in beeld",
@@ -382,7 +389,6 @@
   ],
   "zonder_handleiding": [
     "browser",
-    "critical",
     "ddosresponse",
     "devicecode",
     "dmarc",
