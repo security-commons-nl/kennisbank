@@ -6,6 +6,10 @@
 > eigen organisatie in. Zie het
 > [README](https://github.com/security-commons-nl/kennisbank/tree/main/governance/ai-beleid) voor de herkomst
 > en de vertaalsleutel.
+>
+> Wil je eerst vaststellen wat er in je eigen organisatie feitelijk aan AI draait voordat je dit beleid
+> overneemt, gebruik dan het draaiboek
+> [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/).
 
 | | |
 |---|---|
