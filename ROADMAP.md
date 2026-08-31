@@ -2,29 +2,37 @@
 
 > Gedeelde kennisbank voor CISO's en ISO's in de publieke sector.
 
----
-
-## Huidige staat
-
-Basisstructuur aanwezig (security, privacy, bcm, governance). CI-scanner actief: PRs worden automatisch gecontroleerd op privacygevoelige informatie (adviserende check via anonimizer).
+Peildatum: 31 augustus 2026. Loopt deze datum ver achter op wat de site laat zien, dan is dit stuk aan
+herziening toe.
 
 ---
 
-## Fase 1 — Vullen met geanonimiseerde documenten
+## Waar het staat
 
-- [ ] Beleidsdocumenten anonimiseren via anonimizer CLI en toevoegen
-- [ ] Startset: informatiebeveiliging, AVG/privacy, business continuïteit
-- [ ] Naamgevingsconventie vastleggen voor bestandsnamen en mapstructuur
-- [ ] README per sectie met uitleg over bijdragen
+Negenenveertig items, waarvan negenendertig handleidingen. De vorm ligt vast in het
+[redactiestatuut](https://github.com/security-commons-nl/.github/blob/main/REDACTIESTATUUT.md) en wordt
+gehandhaafd door `tools/build.py`: frontmatter (B2), map per stuk (B1), gegenereerde indexpagina's (B4)
+en de anonimizer-check op elke pull request. Wat vroeger op deze lijst stond als plan, staat nu in de
+controle.
 
-## Fase 2 — Gestructureerde metadata
+## Wat open staat
 
-- [ ] Frontmatter per document: sector, norm(en), type (beleid/procedure/template), versiedatum
-- [ ] Indexpagina per sectie op basis van metadata
-- [ ] Zoekbare index via statische sitegeneratie (bijv. mkdocs of docsify)
+**De handleidingen afmaken.** Vijfendertig van de vierenveertig barrieres uit `paden.json` hebben een
+handleiding. De negen die nog niets hebben staan met een schrijfopdracht in
+`aanvalspaden/mappingen/gevraagd.json`; die lijst is afgeleid, dus hij loopt niet achter.
+
+**Privacy en BCM vullen.** Van de vier vakgebieden zijn er twee gevuld: achtenveertig items onder
+`security`, één onder `governance`. `privacy` en `bcm` staan leeg terwijl de voorpagina ze wel belooft.
+Dit is de scheefste plek in de kennisbank en het makkelijkste om aan bij te dragen: één sjabloon, één
+aanpak of één rapportage is genoeg om te beginnen.
+
+**Meer dan één herkomst.** Vrijwel alles komt nu uit dezelfde hoek. Een commons met kennis uit één
+organisatie is een archief, geen commons.
 
 ---
 
 ## Bijdragen
 
-Documenten aanleveren? Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer-local) om ze te anonimiseren voor je een PR opent. Zie [CONTRIBUTING.md](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md).
+Documenten aanleveren? Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer-local)
+om ze te anonimiseren voor je een PR opent. Zie
+[CONTRIBUTING.md](https://github.com/security-commons-nl/.github/blob/main/CONTRIBUTING.md) voor de vorm.
