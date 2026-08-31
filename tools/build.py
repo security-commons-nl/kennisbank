@@ -464,14 +464,14 @@ ul.hoort li{margin-bottom:3px}
 .grid[hidden]{display:none}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .filters[hidden]{display:none}
-.filterbtn{font:inherit;font-size:13.5px;line-height:1;cursor:pointer;background:var(--card);color:var(--ink);
-  border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;
-  gap:7px;transition:border-color .12s,background .12s,color .12s}
-.filterbtn:hover{border-color:var(--accent);color:var(--accent)}
-.filterbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.filterbtn .n{font-size:11.5px;font-weight:600;opacity:.7;font-variant-numeric:tabular-nums}
-.filterbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.filters input,.filters select{font:inherit;font-size:14px;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.filters input{flex:1 1 260px;min-width:0}
+.filters select{flex:0 1 auto;max-width:100%}
+.filters input:focus,.filters select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.filters .telling{flex-basis:100%;font-size:13px;color:var(--muted);margin:0}
 a.item[hidden]{display:none}
+.visueel-verborgen{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;font-size:12.5px;color:var(--muted)}
 footer a{color:var(--muted)}
 @media (max-width:600px){.cta.alt{margin-left:0;margin-top:8px}}
@@ -542,7 +542,10 @@ def meta_regel(fm: dict, met_vak: bool) -> str:
 def kaart(fm: dict, basis: str, met_vak: bool) -> str:
     link = fm["_link"] if fm["_link"].startswith("http") else basis + fm["_link"]
     tag = {"live": ("tag-live", "live"), "markdown": ("tag-repo", "markdown"), "download": ("tag-repo", "download")}[fm["_weergave"]]
-    return f"""  <a class="item" href="{e(link)}" data-vak="{e(fm['_vak'])}">
+    # data-zoek is de tekst waarop het zoekvak vergelijkt, data-barrieres de sleutel van de zelfcheck.
+    zoek = " ".join(str(fm.get(v, "")) for v in ("titel", "samenvatting", "type", "_vak")).lower()
+    bar = " ".join(fm.get("barrieres") or [])
+    return f"""  <a class="item" href="{e(link)}" data-vak="{e(fm['_vak'])}" data-zoek="{e(zoek)}" data-barrieres="{e(bar)}">
     <span class="itemtop">
       <span class="itemtitle">{e(fm['titel'])}</span>
       <span class="tag {tag[0]}">{tag[1]}</span>
@@ -589,64 +592,69 @@ def pagina(titel: str, beschrijving: str, canonical: str, body: str, kruimels: l
 """
 
 
-def filterbalk(secties: dict[str, dict], live: list[dict]) -> str:
-    """Knoppen om 'Direct te lezen' op vakgebied te filteren, met het aantal erbij.
+def zoekbalk(items: list[dict]) -> str:
+    """Een zoekvak en een keuzelijst met barrieres. Geen vakgebiedfilter meer.
 
-    Dezelfde indeling als de repo (statuut B1), zodat wie de mappen op GitHub kent de site herkent.
-    Een leeg vakgebied krijgt geen uitgeschakelde knop maar een uitnodiging: dat het er niet is, is
-    precies wat een bezoeker mag weten en waar hij iets aan kan doen.
+    Filteren op vakgebied, type of norm onderscheidt niets: die zitten allemaal in een hoek (48 van de
+    51 items onder security, 41 handleidingen, BIO2 op 49). De barriere spreidt wel, en het is dezelfde
+    sleutel die de zelfcheck gebruikt, dus wie daarvandaan komt herkent hem.
     """
-    per = {v: sum(1 for i in live if i["_vak"] == v) for v in VAKGEBIEDEN}
-    knoppen = [f'  <button type="button" class="filterbtn" data-filter="alles" aria-pressed="true">'
-               f'Alles <span class="n">{len(live)}</span></button>']
-    for vak in VAKGEBIEDEN:
-        knoppen.append(f'  <button type="button" class="filterbtn" data-filter="{vak}" aria-pressed="false">'
-                       f'{e(secties[vak]["titel"])} <span class="n">{per[vak]}</span></button>')
-    return ('<div class="filters" id="filters" role="group" aria-label="Filter op vakgebied" hidden>' + NL
-            + NL.join(knoppen) + NL + "</div>")
+    bekend = barrieres()
+    tellingen: dict[str, int] = {}
+    for fm in items:
+        for b in fm.get("barrieres") or []:
+            tellingen[b] = tellingen.get(b, 0) + 1
+    opties = ['  <option value="">Alle barrieres</option>']
+    for b in sorted(tellingen, key=lambda x: bekend.get(x, x).lower()):
+        opties.append(f'  <option value="{e(b)}">{e(bekend.get(b, b))} ({tellingen[b]})</option>')
+    return ('<div class="filters" id="filters" hidden>' + NL
+            + '  <label class="visueel-verborgen" for="zoek">Zoeken</label>' + NL
+            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp, bijvoorbeeld logboek of leverancier"'
+            + ' autocomplete="off">' + NL
+            + '  <label class="visueel-verborgen" for="barriere">Barriere</label>' + NL
+            + '  <select id="barriere">' + NL + NL.join(opties) + NL + '  </select>' + NL
+            + f'  <p class="telling" id="telling" aria-live="polite">{len(items)} stukken</p>' + NL
+            + '</div>')
 
 
-# Zonder JavaScript blijft de balk verborgen en staat alles er gewoon; het script haalt hem tevoorschijn.
-# De keuze staat in de hash, zodat /kennisbank/#privacy een deelbare link is.
+# Zonder JavaScript blijft de balk verborgen en staat gewoon alles er; het script haalt hem tevoorschijn.
 FILTER_JS = """
 (function () {
   var balk = document.getElementById('filters');
   var grid = document.getElementById('direct-te-lezen');
   if (!balk || !grid) return;
-  var knoppen = [].slice.call(balk.querySelectorAll('.filterbtn'));
-  var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+  var zoek = document.getElementById('zoek');
+  var keuze = document.getElementById('barriere');
+  var telling = document.getElementById('telling');
   var leeg = document.getElementById('filter-leeg');
-  var namen = {};
-  knoppen.forEach(function (k) { namen[k.dataset.filter] = k.textContent.replace(/\\s*\\d+\\s*$/, '').trim(); });
+  var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
 
-  function toon(vak) {
+  function pas() {
+    var term = (zoek.value || '').trim().toLowerCase();
+    var bar = keuze.value;
     var n = 0;
     kaarten.forEach(function (kaart) {
-      var mee = vak === 'alles' || kaart.getAttribute('data-vak') === vak;
+      var tekst = kaart.getAttribute('data-zoek') || '';
+      var barrieres = ' ' + (kaart.getAttribute('data-barrieres') || '') + ' ';
+      var mee = (term === '' || tekst.indexOf(term) !== -1) &&
+                (bar === '' || barrieres.indexOf(' ' + bar + ' ') !== -1);
       kaart.hidden = !mee;
       if (mee) n++;
     });
-    knoppen.forEach(function (k) { k.setAttribute('aria-pressed', String(k.dataset.filter === vak)); });
     grid.hidden = n === 0;
-    if (leeg) {
-      leeg.hidden = n !== 0;
-      if (n === 0) leeg.querySelector('.vak').textContent = namen[vak] || vak;
-    }
+    if (leeg) leeg.hidden = n !== 0;
+    telling.textContent = n === kaarten.length
+      ? kaarten.length + ' stukken'
+      : n + ' van de ' + kaarten.length + ' stukken';
   }
 
-  knoppen.forEach(function (k) {
-    k.addEventListener('click', function () {
-      var vak = k.dataset.filter;
-      toon(vak);
-      history.replaceState(null, '', vak === 'alles' ? location.pathname : '#' + vak);
-    });
-  });
-
+  zoek.addEventListener('input', pas);
+  keuze.addEventListener('change', pas);
   balk.hidden = false;
-  var start = location.hash.slice(1);
-  toon(namen[start] ? start : 'alles');
+  pas();
 })();
 """
+
 
 def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
     n = len(items)
@@ -697,7 +705,7 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
 def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
     live = [i for v in VAKGEBIEDEN for i in items[v] if i["_weergave"] == "live"]
     kaarten_live = "".join(kaart(i, "", True) for i in live)
-    balk = filterbalk(secties, live)
+    balk = zoekbalk(live)
     kaarten_secties = ""
     for vak in VAKGEBIEDEN:
         n = len(items[vak])
@@ -728,8 +736,9 @@ organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles her
 {kaarten_live}
 </div>
 
-<p class="h2sub" id="filter-leeg" hidden>Onder <strong class="vak"></strong> staat nog niets.
-Heb je hier iets liggen? <a href="{REPO}/issues/new/choose">Eén stuk delen</a> is genoeg om te beginnen.</p>
+<p class="h2sub" id="filter-leeg" hidden>Niets gevonden. Probeer een ander woord, of zet de barriere terug op
+alle. Zoek je iets dat er niet is? <a href="https://github.com/security-commons-nl/.github/discussions">Vraag het
+in Halen en brengen</a>; je naam en je organisatie hoeven daar niet bij.</p>
 
 <p class="h2sub">Handleidingen per barriere uit de zelfcheck staan bij <a href="security/#handleidingen">Security</a>, en met de alternatieven ernaast op <a href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van aanvalspad naar norm</a>.</p>
 

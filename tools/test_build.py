@@ -175,44 +175,55 @@ class Frontmatter(unittest.TestCase):
         self.assertEqual(fm["barrieres"], ["crisis", "critical"])
 
 
-class Filter(Basis):
-    """De filterbalk op de landingspagina: dezelfde indeling als de repo, met de aantallen erbij."""
+class Zoeken(Basis):
+    """Het zoekvak en het barrierefilter op de landingspagina.
 
-    def secties(self) -> dict:
-        return {v: {"titel": v.upper(), "lead": "lead", "hoort": []} for v in build.VAKGEBIEDEN}
+    Het vakgebiedfilter is hier weggehaald: 48 van de 51 items staan onder security, dus dat filter
+    onderscheidde niets meer. De barriere spreidt wel (36 verschillende) en is dezelfde sleutel als de
+    zelfcheck.
+    """
 
-    def live(self, **per_vak: int) -> list[dict]:
-        uit = []
-        for vak, aantal in per_vak.items():
-            uit += [{"_vak": vak, "_weergave": "live"} for _ in range(aantal)]
-        return uit
+    def kaartje(self, **velden) -> dict:
+        basis = {"titel": "Titel", "samenvatting": "Samenvatting.", "type": "handleiding",
+                 "status": "in gebruik", "_vak": "security", "_link": "een-item/", "_weergave": "live"}
+        basis.update(velden)
+        return basis
 
-    def test_een_knop_per_vakgebied_plus_alles(self):
-        balk = build.filterbalk(self.secties(), self.live(security=3))
-        for vak in build.VAKGEBIEDEN:
-            self.assertIn(f'data-filter="{vak}"', balk)
-        self.assertIn('data-filter="alles"', balk)
+    def test_kaart_draagt_zoektekst_en_barrieres(self):
+        html = build.kaart(self.kaartje(titel="Passkeys invoeren", barrieres=["pr", "fallback"]), "", True)
+        self.assertIn('data-barrieres="pr fallback"', html)
+        self.assertIn("passkeys invoeren", html)  # kleine letters, want daar wordt op vergeleken
 
-    def test_telt_per_vakgebied_en_totaal(self):
-        balk = build.filterbalk(self.secties(), self.live(security=3, governance=1))
-        self.assertIn('data-filter="alles" aria-pressed="true">Alles <span class="n">4</span>', balk)
-        self.assertIn('>SECURITY <span class="n">3</span>', balk)
-        self.assertIn('>GOVERNANCE <span class="n">1</span>', balk)
+    def test_zoektekst_bevat_titel_en_samenvatting(self):
+        html = build.kaart(self.kaartje(titel="Logboek", samenvatting="Vastleggen tijdens een calamiteit."), "", True)
+        for woord in ("logboek", "calamiteit"):
+            self.assertIn(woord, html)
 
-    def test_leeg_vakgebied_krijgt_gewoon_een_knop(self):
-        """Nul tonen is de bedoeling: een bezoeker mag zien dat er nog niets is en kan iets sturen."""
-        balk = build.filterbalk(self.secties(), self.live(security=2))
-        self.assertIn('>PRIVACY <span class="n">0</span>', balk)
-        self.assertNotIn("disabled", balk)
+    def test_kaart_zonder_barrieres_krijgt_een_leeg_veld(self):
+        """Zo'n kaart hoort te verdwijnen zodra er een barriere gekozen wordt, en niet te blijven staan."""
+        self.assertIn('data-barrieres=""', build.kaart(self.kaartje(), "", True))
 
     def test_balk_staat_uit_tot_het_script_hem_aanzet(self):
-        """Zonder JavaScript blijft alles zichtbaar in plaats van dat er dode knoppen staan."""
-        self.assertIn("hidden>", build.filterbalk(self.secties(), self.live(security=1)))
+        """Zonder JavaScript blijft alles zichtbaar in plaats van dat er een dood zoekvak staat."""
+        self.assertIn("hidden>", build.zoekbalk([self.kaartje()]))
 
-    def test_kaart_draagt_zijn_vakgebied(self):
-        fm = {"titel": "Titel", "samenvatting": "Samenvatting.", "type": "aanpak", "status": "in gebruik",
-              "_vak": "security", "_link": "een-item/", "_weergave": "live"}
-        self.assertIn('data-vak="security"', build.kaart(fm, "", True))
+    def test_de_keuzelijst_telt_per_barriere(self):
+        balk = build.zoekbalk([self.kaartje(barrieres=["crisis"]), self.kaartje(barrieres=["crisis"]),
+                               self.kaartje(barrieres=["critical"])])
+        self.assertIn('<option value="">Alle barrieres</option>', balk)
+        self.assertIn('value="crisis"', balk)
+        self.assertIn("(2)", balk)
+        self.assertIn("(1)", balk)
+
+    def test_alleen_barrieres_die_voorkomen_staan_in_de_lijst(self):
+        """Een keuzelijst met barrieres zonder stuk erachter levert alleen lege uitkomsten op."""
+        balk = build.zoekbalk([self.kaartje(barrieres=["crisis"])])
+        self.assertIn('value="crisis"', balk)
+        self.assertNotIn('value="critical"', balk)
+
+    def test_de_telling_noemt_het_totaal(self):
+        self.assertIn("3 stukken", build.zoekbalk([self.kaartje(), self.kaartje(), self.kaartje()]))
+
 
 class Volgorde(Basis):
     """Statuut B4: de volgorde van de items staat in de README van de sectie, niet in het alfabet."""
