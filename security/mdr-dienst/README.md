@@ -9,6 +9,7 @@ status: concept
 samenvatting: Managed Detection and Response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. De snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. Met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt.
 barrieres: [soc]
 rol: alternatief
+pijler: centrale-logverzameling
 ---
 
 # Neem een MDR-dienst met een handelingsmandaat

@@ -6,7 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
-samenvatting: Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, met kloksynchronisatie zodat tijdlijnen over bronnen heen kloppen. Dit is de fundering onder elke vorm van detectie en onder 24/7 opvolging: zonder verzamelde logs is er niets om op te triageren. Met de zeven stappen, de retentievraag en het bewijs dat een auditor wil zien.
+samenvatting: Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. Dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. Met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest.
 barrieres: [soc]
 rol: fundering
 ---
@@ -83,16 +83,30 @@ standaardiseren van logbronnen en formaten loont, juist met het oog op de vervol
 **Aan het MT.** De lijnteams moeten hun logbronnen aanleveren en aangesloten houden. Dat is een
 terugkerende beheertaak, geen eenmalige actie.
 
+## Kiezen tussen de routes
+
+Logverzameling heb je in elke vorm nodig. Wat je erop bouwt is een keuze uit vier routes die elkaar
+uitsluiten: je organiseert de opvolging op een van deze manieren, niet op meer tegelijk. Wat elke route
+van je vraagt en oplevert staat in het eigen stuk; hieronder staat waarin ze verschillen, zodat je niet
+vier pagina's naast elkaar hoeft te leggen.
+
+| Route | Wie draait de dienst | Wat je zelf in huis moet hebben | Waar de regie ligt | Wanneer dit de logische keuze is |
+|---|---|---|---|---|
+| [Co-managed SIEM](../co-managed-siem/) | jij, met een leverancier ernaast | eigen analisten, geheel of deels | volledig bij jou; eigen data en detectieregels | middelgroot tot groot, en je wilt eigen detectievermogen opbouwen |
+| [Uitbestede SOC](../uitbestede-soc/) | een externe partij | opdrachtgeverschap en opvolging van meldingen | bij de leverancier; jij stuurt op afspraken | geen eigen SOC te bouwen, en detectie moet snel geregeld zijn |
+| [MDR-dienst](../mdr-dienst/) | een externe partij, die ook ingrijpt | een mandaat dat je durft weg te geven | bij de leverancier, inclusief handelen | snelle actieve respons nodig; de duurste van de vier |
+| [Regionaal of gedeeld SOC](../regionaal-soc/) | jullie samen | bestuurlijke bereidheid om governance te delen | gedeeld en publiek | klein tot middelgroot, en er is al een samenwerkingsverband |
+
+Twee dingen die de keuze in de praktijk bepalen. Ten eerste: een SIEM zonder mensen die hem bedienen en
+tunen levert vooral ruis op, en die ruis kost meer dan hij oplevert. Ten tweede: bij een regionaal SOC is
+de techniek zelden het probleem, maar het delen van governance wel.
+
 ## Hoe dit samenhangt
 
 Deze handleiding hoort bij barriere `soc` uit de
 [zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/) en is daarvan de
-**fundering**. Wat je erop bouwt is een keuze; er zijn vier manieren om de opvolging te organiseren:
-
-- [Co-managed SIEM](../co-managed-siem/), regie zelf houden met een leverancier ernaast
-- [Uitbestede SOC](../uitbestede-soc/), de dienst volledig bij een externe partij
-- [MDR-dienst](../mdr-dienst/), detectie en response als dienst, inclusief ingrijpen
-- [Regionaal of gedeeld SOC](../regionaal-soc/), samen met andere organisaties
+**fundering**. Welke vorm je erop bouwt is een keuze; zie [Kiezen tussen de routes](#kiezen-tussen-de-routes)
+hierboven.
 
 Wat je hiermee aantoont in BIO 2.0, NIST CSF, het Wpg-kader en de AVG staat op
 [Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/).

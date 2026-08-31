@@ -9,6 +9,7 @@ status: concept
 samenvatting: Een SIEM die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. Past bij organisaties die zelf securitycapaciteit hebben of opbouwen. Met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.
 barrieres: [soc]
 rol: alternatief
+pijler: centrale-logverzameling
 ---
 
 # Kies voor een co-managed SIEM

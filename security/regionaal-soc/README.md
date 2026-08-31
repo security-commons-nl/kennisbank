@@ -9,6 +9,7 @@ status: concept
 samenvatting: Meerdere organisaties delen een SOC: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. Past bij kleine en middelgrote organisaties die al samenwerken of dat willen. Met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.
 barrieres: [soc]
 rol: alternatief
+pijler: centrale-logverzameling
 ---
 
 # Deel een SOC met andere organisaties
