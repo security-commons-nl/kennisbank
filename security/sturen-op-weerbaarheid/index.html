@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sturen op
+weerbaarheid in plaats van op
+maatregelen</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Sturen op weerbaarheid in plaats van op maatregelen</span></nav><!-- /kruimelpad -->
+<h1 id="sturen-op-weerbaarheid-in-plaats-van-op-maatregelen">Sturen op
+weerbaarheid in plaats van op maatregelen</h1>
+<p>Dit stuk is voor bestuur, directie en de CISO die hen adviseert. Het
+beantwoordt drie vragen: waarom dit onderwerp nu op tafel ligt, wie
+waarvoor verantwoordelijk is als het misgaat, en of je kiest voor
+dichtzetten of voor veilig faciliteren.</p>
+<p>Het hangt aan geen enkele barriere uit de zelfcheck, en dat is geen
+omissie. "Kies tussen lockdown en veilig faciliteren" is een bestuurlijk
+gesprek, geen maatregel die je inricht en waarvan je bewijs overlegt. De
+maatregelen zelf staan in de handleidingen; hier staat waarop je
+stuurt.</p>
+<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<h3 id="waarom-dit-onderwerp">Waarom dit onderwerp</h3>
+<p>ClickFix is een social-engineering-aanval waarbij de gebruiker zélf -
+misleid via een nep-melding of nep-CAPTCHA - een geplakt commando
+uitvoert, vrijwel altijd via de Windows Run-dialoog (Win+R) en
+PowerShell. Dat leidt tot tot een nieuwe ransomware, vaak een
+infostealers, remote-access-tools en in het ergste geval ransomware en
+datalekken.</p>
+<p>Een publiek voorbeeld is de aanval op een Nederlandse gemeente in
+maart 2026, waarbij na een ClickFix-uitvoering binnen twee dagen
+honderdduizenden bestanden werden weggesluisd / geëxfiltreerd.</p>
+<p>Het punt is breder dan ClickFix: de werkplek is de primaire ingang,
+maar één maatregel houdt een aanvaller niet tegen. De lagen sámen
+wel.</p>
+<h3 id="het-lagenmodel-defense-in-depth">Het lagenmodel
+(defense-in-depth)</h3>
+<p>Gebruik dit als kapstok. Elke laag vangt op wat de vorige
+doorlaat.</p>
+<ol type="1">
+<li><strong>Werkplek &amp; e-mail</strong> - waar de aanval
+binnenkomt.</li>
+<li><strong>Identiteit &amp; toegang</strong> - wie mag wat.</li>
+<li><strong>Netwerk</strong> - beweging tussen werkplek en
+datacenter.</li>
+<li><strong>Servers &amp; applicaties</strong> - het hart van de
+systemen.</li>
+<li><strong>Data &amp; detectie</strong> - back-up, herstel en
+meekijken.</li>
+</ol>
+<h3 id="de-terugkerende-bevinding">De terugkerende bevinding</h3>
+<p>In de praktijk is het probleem zelden dat de middelen ontbreken.
+Vrijwel elke gemeente heeft Microsoft 365 E5, endpointbescherming,
+firewalls en een of meer beheerpartners. Het gat zit in
+<strong>inrichting, afdwinging en eigenaarschap</strong>:</p>
+<ul>
+<li>een beveiligingsregel die wel bestaat maar niet aan de juiste groep
+is gekoppeld (en dus niet werkt);</li>
+<li>een tool met standaardconfiguratie die niemand bijhoudt;</li>
+<li>een netwerktekening die niet overeenkomt met het verkeer dat de
+firewall daadwerkelijk ziet.</li>
+<li>een IT-Gap in de IT-afdeling zelf omdat "ze van het management
+luisteren" of "ze van de techniek neit begrijpen compromissen erbij
+horen"</li>
+</ul>
+<p>De boodschap voor besluitvorming: <strong>eerst afmaken en
+aantoonbaar maken wat er al is, daarna uitbreiden.</strong></p>
+<h3
+id="strategische-keuze-reguleren-lockdown-of-veilig-faciliteren">Strategische
+keuze: reguleren (lockdown) of veilig faciliteren</h3>
+<p>Er zijn grofweg twee richtingen. Reguleren (lockdown: het apparaat
+zoveel mogelijk beheersen/beperken) en veilig faciliteren (de
+bescherming in het platform leggen en de grens verschuiven van het
+apparaat naar data en identiteit).</p>
+<p>Voor een politiek-ambtelijke organisatie is veilig faciliteren vaak
+duurzamer, omdat het minder leunt op "nee" en daardoor minder
+uitzonderingen en schaduw-IT uitlokt. Tegen ClickFix is het, mits goed
+ingericht, ook gerichter - <strong>een laptop in lockdown stopt ClickFix
+niet</strong>, omdat de aanval in gebruikerscontext draait.</p>
+<p>De eerlijke voorwaarde: veilig faciliteren is operationeel
+<strong>zwaarder</strong>, niet lichter. Het ruilt eenmalige restrictie
+in voor continu beheer. Het is alleen duurzaam als de eigen capaciteit
+of regiecapaciteit (bij uitbestede ICT) er werkelijk is. Ontbreekt die,
+dan verdient een striktere aanpak een serieuze afweging. Zie <a
+href="#veilig-faciliteren-als-langetermijnstrategie">veilig
+faciliteren</a>.</p>
+<h3 id="regie-en-resultaatverplichting">Regie en
+resultaatverplichting</h3>
+<p>De analyse moet landen in eigenaarschap. Beleg per onderwerp wie
+binnen de organisatie de regie voert en accountable is voor het
+resultaat. Werk met een <strong>resultaatverplichting</strong>, geen
+inspanningsverplichting: een onderwerp is pas klaar als de maatregel
+aantoonbaar werkt. Zie <a href="#regie-en-accountability">regie en
+accountability</a>.</p>
+<h2 id="regie-en-accountability">Regie en accountability</h2>
+<p>De analyse heeft pas waarde als ze landt in eigenaarschap. Dit
+hoofdstuk beschrijft hoe je de regie belegt en hoe je leveranciers
+stuurt op resultaat.</p>
+<h3
+id="resultaatverplichting-geen-inspanningsverplichting">Resultaatverplichting,
+geen inspanningsverplichting</h3>
+<p>Het uitgangspunt: een onderwerp is pas afgerond als de maatregel
+<strong>aantoonbaar werkt</strong> - niet als de leverancier "ermee
+bezig is geweest". Dat verandert hoe je opdrachten formuleert en
+afsluit.</p>
+<h4 id="de-regie-discipline-geldt-voor-elk-onderwerp">De
+regie-discipline (geldt voor elk onderwerp)</h4>
+<ol type="1">
+<li><strong>Definition of Done vooraf.</strong> De leverancier levert
+per change een meetbaar eindresultaat. De regievoerder accepteert die
+DoD voordat de change start.</li>
+<li><strong>Resultaat controleren, niet aannemen.</strong> "Klaar"
+volgens de leverancier is niet hetzelfde als aantoonbaar werkend. De
+regievoerder verifieert zelf, met bewijs (telemetrie, config-export, een
+test).</li>
+<li><strong>Post-change check.</strong> Na het doorvoeren: werkt de
+maatregel én is er niets gebroken? Leg het bewijs vast.</li>
+<li><strong>Aantoonbaarheid en herijking.</strong> Bestaan, opzet,
+werking en config-beschikbaarheid vastgelegd, en periodiek herijkt - een
+maatregel die ooit aanstond kan weer afvallen.</li>
+</ol>
+<h3 id="regie-beleggen-voorbeeldindeling">Regie beleggen
+(voorbeeldindeling)</h3>
+<p>Beleg de regie intern; de uitvoering ligt steeds vaker bij
+beheerpartners. Intern beheer van deze componenten zorg voor een goede
+3e lijns functie!</p>
+<p>Een werkbare indeling:</p>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Interne regie (accountable)</th>
+<th>Uitvoering (voorbeeld)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Werkplek en e-mail (MDO)</td>
+<td>Servicemanagement + technisch applicatiebeheer (M365-beheer)</td>
+<td>Beheerpartner werkplek</td>
+</tr>
+<tr>
+<td>Identiteit en toegang</td>
+<td>Security + M365-beheer</td>
+<td>Beheerpartner</td>
+</tr>
+<tr>
+<td>Netwerk en firewall</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner netwerk</td>
+</tr>
+<tr>
+<td>Servers en hardening</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner datacenter</td>
+</tr>
+<tr>
+<td>SOC/SIEM en detectie</td>
+<td>Security</td>
+<td>SOC-partner</td>
+</tr>
+<tr>
+<td>Recovery en back-up</td>
+<td>Security + architectuur</td>
+<td>Beheerpartner datacenter</td>
+</tr>
+</tbody>
+</table>
+<p>Pas dit aan op je eigen organisatie. Markeer wat nog niet formeel
+belegd is expliciet als voorstel, en laat het bevestigen door de
+CISO/het MT - dat maakt de accountability sluitend.</p>
+<h3 id="raci--en-resultaat-sjabloon">RACI- en resultaat-sjabloon</h3>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Regie (accountable)</th>
+<th>Uitvoering</th>
+<th>Resultaatverplichting (concreet)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>bijv. werkplek</em></td>
+<td><em>M365-beheer</em></td>
+<td><em>beheerpartner</em></td>
+<td><em>ASR actief op alle endpoints, CLM in productie met
+dev-uitzondering, aantoonbaar</em></td>
+</tr>
+</tbody>
+</table>
+<p>Formuleer de resultaatverplichting altijd als een toetsbare
+eindtoestand, niet als een activiteit.</p>
+<h3 id="leveranciers-en-de-naad-ertussen">Leveranciers en de naad
+ertussen</h3>
+<p>In veel gemeenten is security verdeeld over meerdere partijen:
+bijvoorbeeld een partij voor het datacenter en de
+server-endpointdetectie, en een andere voor de SOC/SIEM en de
+netwerk-/campusdetectie (NDR). Dat is werkbaar, maar er ontstaat een
+<strong>naad</strong> die je actief moet beheren:</p>
+<ul>
+<li><strong>Continuïteit bij overdracht.</strong> Gaat de SOC/SIEM over
+naar een andere partij, borg dan dat bestaande detectieregels meegaan en
+getest worden - neem het niet aan.</li>
+<li><strong>Dekking over de naad.</strong> Zorg dat geen enkel gebied
+tussen wal en schip valt (bijvoorbeeld oost-west-verkeer in het
+datacenter dat buiten de campus-NDR valt).</li>
+<li><strong>Concentratie versus regie.</strong> Eén partij die meerdere
+rollen vervult (bijvoorbeeld firewallbeheer én SOC) is acceptabel
+<strong>mits</strong> je strak regie voert: functiescheiding waar
+mogelijk, break-glass, 4-ogen op wijzigingen, audit-logging naar een
+onafhankelijke bestemming, periodieke access-reviews, KPI's en een
+exit-scenario.</li>
+</ul>
+<h3 id="sturen-op-de-managed-norm">Sturen op de managed-norm</h3>
+<p>Vraag van een SOC-/beheerpartner expliciet de vijf elementen van een
+managed dienst: bijhouden, beheren, optimaliseren, functionaliteit
+aanpassen en verantwoorden (rapportage). Toets met een periodieke
+aanvalssimulatie of detectie en preventie werkelijk dekken wat is
+afgesproken - laat het zien, neem het niet aan.</p>
+<h2 id="veilig-faciliteren-als-langetermijnstrategie">Veilig faciliteren
+als langetermijnstrategie</h2>
+<h3 id="twee-richtingen">Twee richtingen</h3>
+<p>Er zijn grofweg twee manieren om het aanvalsoppervlak van de werkplek
+te verkleinen:</p>
+<ul>
+<li><strong>Reguleren (lockdown)</strong> - het apparaat beperken: geen
+local admin, geen BYOD, een vaste set software.</li>
+<li><strong>Veilig faciliteren</strong> - de bescherming in het platform
+leggen en toegang sturen op data en identiteit in plaats van op het
+apparaat.</li>
+</ul>
+<p>Beide modellen komen in de praktijk voor en zijn verdedigbaar; de
+keuze hangt af van de organisatie en de beschikbare beheercapaciteit
+(zie hieronder). Voor de ClickFix-casus is één technisch punt van
+belang: een vergrendelde laptop beschermt op zichzelf niet tegen
+ClickFix, omdat die aanval in gebruikerscontext draait en geen
+installatie of adminrechten nodig heeft. De maatregelen die ClickFix wél
+raken (ASR, PowerShell CLM, Conditional Access, EDR, segmentatie) passen
+in beide modellen. Het verschil tussen de modellen zit dus in de mate
+van gebruikersvrijheid, niet in de bescherming tegen deze
+aanvalsvorm.</p>
+<h3 id="uitgangspunten-van-veilig-faciliteren">Uitgangspunten van veilig
+faciliteren</h3>
+<ol type="1">
+<li><strong>Afdwingen via configuratie, niet via
+gebruikersdiscipline.</strong> Maatregelen zoals ASR-regels, PowerShell
+Constrained Language Mode en het uitschakelen van Win+R werken
+onafhankelijk van het gedrag van de gebruiker.</li>
+<li><strong>Toegang op basis van data en identiteit.</strong>
+Device-compliance en identiteitsrisico bepalen de toegang. Daarmee is
+BYOD mogelijk zonder het volledige apparaat te beheren.</li>
+<li><strong>Bruikbare alternatieven bieden.</strong> Een self-service
+softwarecatalogus, een beheerde browser en een password manager
+verkleinen de aanleiding om beperkingen te omzeilen en daarmee het
+risico op schaduw-IT.</li>
+<li><strong>Uitzonderingen tijdelijk en gelogd.</strong> Just-in-time
+elevatie in plaats van staande rechten: tijdgebonden, gelogd,
+automatisch vervallend en vastgelegd in een register.</li>
+<li><strong>Elke maatregel heeft een eigenaar en aantoonbare
+werking.</strong> Bestaan, opzet en werking zijn vastgelegd
+(configuratie-export, telemetrie), inclusief de afspraken met
+leveranciers.</li>
+<li><strong>Detectie en herstel voor wat overblijft.</strong> Niet alles
+is te blokkeren. Daarom meerdere chokepoints in de killchain, detectie,
+en geteste recovery (inclusief domain controllers).</li>
+</ol>
+<h3 id="byod">BYOD</h3>
+<p>BYOD is te beveiligen, maar niet met uitgefaseerde middelen. Windows
+Information Protection (WIP) is door Microsoft deprecated; bouw daar
+geen nieuw beleid op. Bruikbare alternatieven:</p>
+<ul>
+<li><strong>App Protection Policies (MAM)</strong> voor mobiel -
+corporate data blijft binnen een beheerde app-context, gescheiden van
+het privé-apparaat.</li>
+<li><strong>Conditional Access</strong> met device-compliance en, voor
+onbeheerde Windows-apparaten, app-/sessiebeheer (bijvoorbeeld via een
+cloud-app-securityoplossing) in plaats van beheer van het volledige
+device.</li>
+</ul>
+<h3 id="randvoorwaarde-beheercapaciteit">Randvoorwaarde:
+beheercapaciteit</h3>
+<p>Veilig faciliteren vraagt meer doorlopend beheer dan een
+lockdown-model. Het vervangt eenmalige restrictie door continue
+configuratie, monitoring en uitzonderingsbeheer. Het model werkt alleen
+als die regiecapaciteit er aantoonbaar is.</p>
+<p>Een bruikbare toets: staan basismaatregelen die op papier "aan" staan
+ook werkelijk aan, gekoppeld aan de juiste groepen (bijvoorbeeld
+ASR-regels)? Zo niet, dan is de regie de bottleneck. In dat geval hoort
+een striktere lockdown als alternatief expliciet op tafel - als bewuste
+keuze, niet als situatie die stilzwijgend ontstaat.</p>
+<h3 id="verhouding-tot-een-lockdown-model">Verhouding tot een
+lockdown-model</h3>
+<p>De modellen sluiten elkaar niet uit. Ook bij veilig faciliteren geldt
+een verdedigbare basis die uit het lockdown-model bekend is: een beheerd
+device, geen staande local-adminrechten, een beheerde browser en
+beheerde tijdelijke uitzonderingen. Dat is basishygiëne die BIO2 en de
+Cyberbeveiligingswet afdwingbaar en auditbaar verwachten.</p>
+<p>Het verschil zit in twee punten: BYOD blijft mogelijk via MAM en
+Conditional Access in plaats van te worden beëindigd, en vrijheid wordt
+alleen weggenomen waar dat aantoonbaar risico verkleint. Per control is
+de afweging: centraal afdwingen of aan het oordeel van de gebruiker
+laten - en is die keuze uitlegbaar aan een auditor.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Dit stuk hoort bij <a href="../meten-voordat-je-ingrijpt/">Meten
+voordat je ingrijpt</a>: daar staat de methode, hier staat waarop je
+stuurt terwijl je hem uitvoert. De maatregelen zelf staan als
+handleidingen in de <a href="../">kennisbank</a>, elk gekoppeld aan een
+barriere uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>.</p>
+<p>Voert u het gesprek met college of directie, dan is de <a
+href="https://security-commons-nl.github.io/weerbaarheid-game/">weerbaarheidsgame</a>
+een werkvorm die dezelfde vragen op tafel legt zonder dat er techniek
+aan te pas komt.</p>
+<h2 id="herkomst">Herkomst</h2>
+<p>Gegeneraliseerd uit een casus bij een gemeentelijke organisatie. Alle
+herleidbare gegevens zijn verwijderd; wat overblijft is de
+werkwijze.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/sturen-op-weerbaarheid">security/sturen-op-weerbaarheid</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
