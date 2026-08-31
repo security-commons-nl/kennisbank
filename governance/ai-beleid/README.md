@@ -92,6 +92,18 @@ Het rollenoverzicht in bijlage 1 komt uit *Welke rollen krijgen te maken met AI 
 VNG AI-Governancekader. Het is hier opgenomen omdat het beleid ernaar verwijst; de raadpleegdatum is bij
 anonimisering verwijderd. Raadpleeg de VNG-bron voor de actuele versie.
 
+## Hoe dit samenhangt met de andere stukken
+
+Beleid vaststellen is een ding, weten wat er feitelijk draait is een ander. Het drielagenmodel in
+paragraaf 6.4 (verboden, ongeautoriseerd-maar-niet-verboden, geautoriseerd-en-geclassificeerd)
+veronderstelt dat je weet welke tools er in de organisatie gebruikt worden. Zonder feitenbeeld is die
+middelste laag een aanname.
+
+| Wil je | Ga naar |
+|---|---|
+| AI-gebruik in je organisatie feitelijk meten voordat je beleid vaststelt | [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/) |
+| De methode achter dat meten: eerst vaststellen, dan pas afdwingen | [Meten voordat je ingrijpt](../../security/meten-voordat-je-ingrijpt/) |
+
 ## Licentie
 
 [EUPL-1.2](../../LICENSE), vrij te hergebruiken en aan te passen. Feedback en verbeteringen welkom via de
