@@ -126,6 +126,13 @@ def lees_frontmatter(tekst: str) -> tuple[dict | None, str]:
                 data[sleutel] = []
             data[sleutel].append(regel.strip()[2:].strip().strip('"\''))
             continue
+        if regel.startswith((" ", "	")) and sleutel:
+            # Vervolgregel van een waarde over meerdere regels. Zonder dit viel alles na de eerste
+            # regel stil weg (een samenvatting werd afgekapt), en een vervolgregel met een dubbele
+            # punt erin werd als een verzonnen veld gelezen en dan geweigerd door B2.
+            if isinstance(data.get(sleutel), str):
+                data[sleutel] = (data[sleutel] + " " + regel.strip()).strip()
+            continue
         if ":" not in regel:
             continue
         sleutel, _, waarde = regel.partition(":")

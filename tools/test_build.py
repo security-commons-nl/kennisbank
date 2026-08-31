@@ -148,6 +148,33 @@ class DodeLinks(Basis):
 
 
 
+
+class Frontmatter(unittest.TestCase):
+    """Een waarde mag over meerdere regels lopen; dat is gewone YAML en het gebeurt bij samenvattingen."""
+
+    @staticmethod
+    def blok(*regels: str) -> str:
+        return "\n".join(("---", *regels, "---", "# Kop", ""))
+
+    def test_vervolgregels_horen_bij_de_waarde(self):
+        fm, _ = build.lees_frontmatter(self.blok(
+            "titel: Een titel", "samenvatting: Eerste regel", "  tweede regel", "  derde regel"))
+        self.assertEqual(fm["samenvatting"], "Eerste regel tweede regel derde regel")
+
+    def test_een_dubbele_punt_in_een_vervolgregel_is_geen_nieuw_veld(self):
+        """De val: 'bestrijdt: en meer' op een vervolgregel werd een eigen veld en dan weigerde B2 het."""
+        fm, _ = build.lees_frontmatter(self.blok(
+            "titel: T", "samenvatting: Een team dat een calamiteit", "  bestrijdt: en meer."))
+        self.assertNotIn("bestrijdt", fm)
+        self.assertIn("bestrijdt: en meer.", fm["samenvatting"])
+
+    def test_lijsten_blijven_lijsten(self):
+        fm, _ = build.lees_frontmatter(self.blok(
+            "normen: [BIO2, NIS2]", "barrieres:", "  - crisis", "  - critical"))
+        self.assertEqual(fm["normen"], ["BIO2", "NIS2"])
+        self.assertEqual(fm["barrieres"], ["crisis", "critical"])
+
+
 class Filter(Basis):
     """De filterbalk op de landingspagina: dezelfde indeling als de repo, met de aantallen erbij."""
 

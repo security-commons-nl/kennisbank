@@ -1,0 +1,73 @@
+name: "Aankondigen in Discussions"
+
+# Kondigt een nieuw kennisbankitem aan in de categorie Aankondigingen van de organisatie.
+# De tekst wordt afgeleid uit de frontmatter (statuut B2), die build.py al heeft gecontroleerd.
+#
+# BEWUST HANDMATIG. Een aankondiging is publiek en permanent, en er komt geen mens meer tussen als dit
+# vanzelf draait. Draai hem eerst een paar keer met de hand, kijk wat eruit komt, en zet daarna pas het
+# push-blok onderaan aan.
+#
+# Vereist het geheim AANKONDIG_TOKEN: een token dat discussions mag aanmaken in security-commons-nl/.github.
+# Het standaard workflow-token werkt hier niet, dat mag alleen in deze repo zelf.
+
+on:
+  workflow_dispatch:
+    inputs:
+      items:
+        description: "Itemmappen, spatiegescheiden. Leeg = alles wat sinds de vorige commit is toegevoegd."
+        required: false
+        default: ""
+      alleen_tonen:
+        description: "Alleen tonen, niets plaatsen"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  aankondigen:
+    name: Aankondiging opstellen en plaatsen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2 # genoeg voor --nieuw-sinds HEAD~1
+
+      # Voor de namen van de barrieres in de aankondiging.
+      - uses: actions/checkout@v6
+        with:
+          repository: security-commons-nl/aanvalspaden
+          path: _aanvalspaden
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Aankondiging opstellen
+        env:
+          AANKONDIG_TOKEN: ${{ secrets.AANKONDIG_TOKEN }}
+        run: |
+          set -euo pipefail
+          argumenten=""
+          if [ -n "${{ inputs.items }}" ]; then
+            argumenten="${{ inputs.items }}"
+          else
+            argumenten="--nieuw-sinds HEAD~1"
+          fi
+          if [ "${{ inputs.alleen_tonen }}" = "true" ]; then
+            argumenten="$argumenten --toon"
+          elif [ -z "${AANKONDIG_TOKEN:-}" ]; then
+            echo "::error::AANKONDIG_TOKEN ontbreekt; zonder dat geheim kan er niets geplaatst worden."
+            exit 1
+          fi
+          python tools/aankondigen.py $argumenten | tee $GITHUB_STEP_SUMMARY
+
+# Zet dit aan zodra de handmatige runs bevallen. Dan kondigt elk nieuw item zichzelf aan bij een push
+# naar main. Let op: alleen toevoegingen worden gemeld, wijzigingen niet, anders wordt het ruis.
+#
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - "*/*/README.md"
