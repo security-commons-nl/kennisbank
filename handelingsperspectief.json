@@ -254,6 +254,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/microsegmentatie/"
     },
     {
+      "barriere": "segment",
+      "item": "security/netwerkanalyse-uit-data",
+      "titel": "Netwerk en firewall analyseren uit data",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/netwerkanalyse-uit-data/"
+    },
+    {
       "barriere": "session",
       "item": "security/sessiebescherming",
       "titel": "Sessies beschermen tegen tokendiefstal",
