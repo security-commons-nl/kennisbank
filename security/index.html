@@ -49,6 +49,17 @@ ul.hoort li{margin-bottom:3px}
 .cta:hover{background:#17608f}
 .cta.alt{background:#fff;color:var(--accent);border:1px solid var(--line);margin-left:8px}
 .cta.alt:hover{border-color:var(--accent)}
+.grid[hidden]{display:none}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.filters[hidden]{display:none}
+.filterbtn{font:inherit;font-size:13.5px;line-height:1;cursor:pointer;background:var(--card);color:var(--ink);
+  border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;
+  gap:7px;transition:border-color .12s,background .12s,color .12s}
+.filterbtn:hover{border-color:var(--accent);color:var(--accent)}
+.filterbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.filterbtn .n{font-size:11.5px;font-weight:600;opacity:.7;font-variant-numeric:tabular-nums}
+.filterbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a.item[hidden]{display:none}
 footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;font-size:12.5px;color:var(--muted)}
 footer a{color:var(--muted)}
 @media (max-width:600px){.cta.alt{margin-left:0;margin-top:8px}}
@@ -72,7 +83,7 @@ footer a{color:var(--muted)}
 <h3 class="groep">Aanpakken, sjablonen en naslag</h3>
 <div class="grid">
 
-  <a class="item" href="meten-voordat-je-ingrijpt/">
+  <a class="item" href="meten-voordat-je-ingrijpt/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Meten voordat je ingrijpt</span>
       <span class="tag tag-live">live</span>
@@ -80,7 +91,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen.</p>
     <div class="meta">aanpak · versie 2026-08 · in gebruik</div>
   </a>
-  <a class="item" href="sturen-op-weerbaarheid/">
+  <a class="item" href="sturen-op-weerbaarheid/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Sturen op weerbaarheid in plaats van op maatregelen</span>
       <span class="tag tag-live">live</span>
@@ -88,7 +99,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Voor bestuur, directie en CISO: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. Met het lagenmodel, een RACI-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting.</p>
     <div class="meta">aanpak · versie 2026-09 · in gebruik · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="risicoanalyse-aanvalspaden/">
+  <a class="item" href="risicoanalyse-aanvalspaden/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Risicoanalyse langs aanvalspaden</span>
       <span class="tag tag-live">live</span>
@@ -96,7 +107,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Methode om als CISO of ISO in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. Niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. De rode cellen zijn de risicolijst. Met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen.</p>
     <div class="meta">aanpak · versie 2026-08 · concept</div>
   </a>
-  <a class="item" href="security-annex-leveranciers/">
+  <a class="item" href="security-annex-leveranciers/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Security Annex voor leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -104,7 +115,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.</p>
     <div class="meta">sjabloon · versie 1.3 (herzien BIO2), 2026-08 · in gebruik · barriere: Toets technische maatregelen van kritieke leveranciers, Maak significante leveranciersrestrisico’s expliciet · fundering</div>
   </a>
-  <a class="item" href="passkeys-invoeren/">
+  <a class="item" href="passkeys-invoeren/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Passkeys invoeren</span>
       <span class="tag tag-live">live</span>
@@ -112,7 +123,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (FIDO2). Waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, TAP als enige herstelroute) en wat er in de praktijk tegenzat. Met directiememo, FAQ, managersmail en herstelprocedure als sjablonen.</p>
     <div class="meta">aanpak · versie 2026-08 · in gebruik · barriere: Dwing phishingbestendige authenticatie af, Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · fundering</div>
   </a>
-  <a class="item" href="blue-team-opzetten/">
+  <a class="item" href="blue-team-opzetten/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Een blue team opzetten</span>
       <span class="tag tag-live">live</span>
@@ -120,7 +131,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Handleiding in acht stappen voor de CISO of ISO die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere IV-lijn. Trigger en nulmeting, team op kunnen, mandaat op één A4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. Met mandaatprotocol, memo&#x27;s per gremium en een uitgewerkte voorbeeldcasus als bijlagen.</p>
     <div class="meta">aanpak · versie 2026-08 · in gebruik</div>
   </a>
-  <a class="item" href="stelselkaart-security-gremia/">
+  <a class="item" href="stelselkaart-security-gremia/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Stelselkaart security-gremia</span>
       <span class="tag tag-live">live</span>
@@ -128,7 +139,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid? Open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. Machineleesbaar, zodat je er je eigen weergave op kunt bouwen.</p>
     <div class="meta">dataset · peildatum 2026-08-11 · in gebruik</div>
   </a>
-  <a class="item" href="awareness-digitale-veiligheid/">
+  <a class="item" href="awareness-digitale-veiligheid/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Learning digitale veiligheid voor managers</span>
       <span class="tag tag-live">live</span>
@@ -136,7 +147,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. Hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. Publiek bekende casussen, invulbare placeholders.</p>
     <div class="meta">lesmateriaal · versie 2026-06 · sjabloon</div>
   </a>
-  <a class="item" href="referenties-tooling/">
+  <a class="item" href="referenties-tooling/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Externe referenties: security-tooling en kennisbanken</span>
       <span class="tag tag-live">live</span>
@@ -149,7 +160,7 @@ footer a{color:var(--muted)}
 <h3 class="groep" id="handleidingen">Handleidingen: een maatregel inrichten, per barriere uit de zelfcheck</h3>
 <div class="grid">
 
-  <a class="item" href="werkplekanalyse-e5/">
+  <a class="item" href="werkplekanalyse-e5/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Werkplekanalyse op het Microsoft-platform</span>
       <span class="tag tag-live">live</span>
@@ -157,7 +168,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Meet met Defender for Endpoint en Advanced Hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. Met zes KQL-query&#x27;s voor PowerShell, Win+R, mshta en ClickFix, een configuratiecheck die &quot;aan&quot; onderscheidt van &quot;gekoppeld en actief&quot;, en het advies om PowerShell te beheersen met Constrained Language Mode in plaats van te blokkeren.</p>
     <div class="meta">handleiding · versie 2026-09 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR · fundering · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="identiteit-en-mail-meten/">
+  <a class="item" href="identiteit-en-mail-meten/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Identiteit en e-mail meten voordat je afdwingt</span>
       <span class="tag tag-live">live</span>
@@ -165,7 +176,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Twee lagen die met Microsoft 365 E5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of &quot;deels&quot; staan. Toets de feitelijke inrichting van Defender for Office, Conditional Access, app-consent en legacy authentication, met per punt wat &quot;goed&quot; eruitziet. In veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek.</p>
     <div class="meta">handleiding · versie 2026-09 · in gebruik · barriere: Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming, Blokkeer legacy authentication, Beperk tokenmisbruik met apparaatbinding en sessiebeleid, Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="centrale-logverzameling/">
+  <a class="item" href="centrale-logverzameling/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Richt centrale logverzameling in</span>
       <span class="tag tag-live">live</span>
@@ -173,7 +184,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. Dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. Met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · fundering</div>
   </a>
-  <a class="item" href="co-managed-siem/">
+  <a class="item" href="co-managed-siem/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Kies voor een co-managed SIEM</span>
       <span class="tag tag-live">live</span>
@@ -181,7 +192,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Een SIEM die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. Past bij organisaties die zelf securitycapaciteit hebben of opbouwen. Met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="uitbestede-soc/">
+  <a class="item" href="uitbestede-soc/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Besteed monitoring uit aan een MSSP</span>
       <span class="tag tag-live">live</span>
@@ -189,7 +200,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Monitoring en detectie volledig uitbesteden aan een Managed Security Service Provider, wanneer een eigen securityteam er niet is en ook niet snel komt. Snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. Met de scope-eisen, de SLA-afspraken en het bewijs dat de opvolgtijden gehaald worden.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="mdr-dienst/">
+  <a class="item" href="mdr-dienst/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Neem een MDR-dienst met een handelingsmandaat</span>
       <span class="tag tag-live">live</span>
@@ -197,7 +208,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Managed Detection and Response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. De snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. Met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="regionaal-soc/">
+  <a class="item" href="regionaal-soc/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Deel een SOC met andere organisaties</span>
       <span class="tag tag-live">live</span>
@@ -205,7 +216,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Meerdere organisaties delen een SOC: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. Past bij kleine en middelgrote organisaties die al samenwerken of dat willen. Met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
   </a>
-  <a class="item" href="tiered-administration/">
+  <a class="item" href="tiered-administration/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Beheerrechten scheiden in tiers</span>
       <span class="tag tag-live">live</span>
@@ -213,7 +224,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. Een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. Met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Scheid privileged access technisch van dagelijks gebruik · fundering</div>
   </a>
-  <a class="item" href="beheerwerkplek/">
+  <a class="item" href="beheerwerkplek/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Beheerwerkplek voor administratieve taken</span>
       <span class="tag tag-live">live</span>
@@ -221,7 +232,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. Met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Hard de beheerwerkplek en dwing de toegestane toegang af · fundering</div>
   </a>
-  <a class="item" href="just-in-time-beheerrechten/">
+  <a class="item" href="just-in-time-beheerrechten/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Just-in-time beheerrechten</span>
       <span class="tag tag-live">live</span>
@@ -229,7 +240,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. Zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. Met de uitfasering, de noodaccounts en het activeringslogboek als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Verwijder permanente rollen en gebruik PIM/JIT · fundering</div>
   </a>
-  <a class="item" href="fido2-voor-beheerders/">
+  <a class="item" href="fido2-voor-beheerders/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Phishingbestendige MFA voor beheeraccounts</span>
       <span class="tag tag-live">live</span>
@@ -237,7 +248,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. De zwaarste vorm van authenticatie op de zwaarste rechten. Met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Vereis een aparte fysieke FIDO2-key voor elevation · fundering</div>
   </a>
-  <a class="item" href="mfa-handhaving/">
+  <a class="item" href="mfa-handhaving/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">MFA afdwingen en zwakke routes saneren</span>
       <span class="tag tag-live">live</span>
@@ -245,7 +256,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">De zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. Een sterke voordeur naast een open achterdeur is geen maatregel. Met de sanering en het bewijs dat er geen omweg meer is.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · verdieping</div>
   </a>
-  <a class="item" href="sessiebescherming/">
+  <a class="item" href="sessiebescherming/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Sessies beschermen tegen tokendiefstal</span>
       <span class="tag tag-live">live</span>
@@ -253,7 +264,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. Dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. Met de inrichting, de gebruikersimpact en het bewijs van dekking.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk tokenmisbruik met apparaatbinding en sessiebeleid · fundering</div>
   </a>
-  <a class="item" href="cloudportalen-harden/">
+  <a class="item" href="cloudportalen-harden/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Cloud-beheerportalen dichtzetten</span>
       <span class="tag tag-live">live</span>
@@ -261,7 +272,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">De beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. Een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. Met de inrichting en het bewijs dat de beperking geldt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · fundering</div>
   </a>
-  <a class="item" href="least-privilege-cloud/">
+  <a class="item" href="least-privilege-cloud/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Rechten in de cloud terugbrengen tot gebruik</span>
       <span class="tag tag-live">live</span>
@@ -269,7 +280,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. Verdieping op het beheersen van toegang tot cloudportalen. Met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping</div>
   </a>
-  <a class="item" href="logging-en-retentie/">
+  <a class="item" href="logging-en-retentie/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Bewaartermijnen voor logging en forensiek</span>
       <span class="tag tag-live">live</span>
@@ -277,7 +288,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. Zonder deze laag is achteraf niet vast te stellen wie wat deed. Met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Monitor privileged activiteiten en rolwijzigingen · fundering</div>
   </a>
-  <a class="item" href="bastion-hosts/">
+  <a class="item" href="bastion-hosts/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Beheertoegang via een bastion host</span>
       <span class="tag tag-live">live</span>
@@ -285,7 +296,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. Zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. Met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Scherm publieke beheerinterfaces af · fundering</div>
   </a>
-  <a class="item" href="aanvalsoppervlak-bewaken/">
+  <a class="item" href="aanvalsoppervlak-bewaken/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Je aanvalsoppervlak in beeld houden</span>
       <span class="tag tag-live">live</span>
@@ -293,7 +304,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. Wat je niet weet dat bestaat, patch je niet. Met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Ontdek en bewaak het externe aanvalsoppervlak · fundering</div>
   </a>
-  <a class="item" href="kwetsbaarheden-scannen/">
+  <a class="item" href="kwetsbaarheden-scannen/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden scannen en opvolgen</span>
       <span class="tag tag-live">live</span>
@@ -301,7 +312,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. Een jaarlijkse scan is geen kwetsbaarhedenbeheer. Met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · fundering</div>
   </a>
-  <a class="item" href="exposure-management/">
+  <a class="item" href="exposure-management/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden wegen op werkelijke blootstelling</span>
       <span class="tag tag-live">live</span>
@@ -309,7 +320,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. Verdieping bovenop scannen. Met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · verdieping</div>
   </a>
-  <a class="item" href="patchen-met-dekking/">
+  <a class="item" href="patchen-met-dekking/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Werkplekken beheerd, gehard en gepatcht</span>
       <span class="tag tag-live">live</span>
@@ -317,7 +328,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. Met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg OS- en third-party-patching met controle op dekking, Verwijder lokale administratorrechten, Dwing toegang vanaf beheerde, compliant laptops af · fundering</div>
   </a>
-  <a class="item" href="periodiek-pentesten/">
+  <a class="item" href="periodiek-pentesten/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Periodiek pentesten met hertest</span>
       <span class="tag tag-live">live</span>
@@ -325,7 +336,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Risicogestuurd extern laten pentesten, met herstel van de relevante bevindingen en een hertest die aantoont dat ze dicht zijn. Een test zonder opvolging levert een rapport op, geen beveiliging. Met de scopekeuze, de opvolging en de hertest als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Laat extern pentesten en verifieer herstel van bevindingen · fundering</div>
   </a>
-  <a class="item" href="web-en-api-testen/">
+  <a class="item" href="web-en-api-testen/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Web en API testen in de ontwikkelketen</span>
       <span class="tag tag-live">live</span>
@@ -333,7 +344,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Beveiliging van webapplicaties en API-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. Met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Test web/API-beveiliging en herstel kwetsbaarheden · fundering</div>
   </a>
-  <a class="item" href="edr-inrichten/">
+  <a class="item" href="edr-inrichten/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">EDR inrichten met dekking en isolatie</span>
       <span class="tag tag-live">live</span>
@@ -341,7 +352,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. Een EDR die op de helft van de apparaten draait, is geen dekking. Met de uitrol, de dekkingsmeting en de isolatietest als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg EDR, tamper protection en snelle endpointisolatie · fundering</div>
   </a>
-  <a class="item" href="killchain-naast-je-controls/">
+  <a class="item" href="killchain-naast-je-controls/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">De killchain naast je controls leggen</span>
       <span class="tag tag-live">live</span>
@@ -349,7 +360,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Leg je controls naast de volledige aanvalsketen, van ClickFix via infostealer tot exfiltratie, met de MITRE-fasen erbij. Per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. Maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico&#x27;s je bewust accepteert.</p>
     <div class="meta">handleiding · versie 2026-09 · in gebruik · barriere: Borg EDR, tamper protection en snelle endpointisolatie, Beperk software- en scriptuitvoering met application control en ASR · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="application-control/">
+  <a class="item" href="application-control/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Application- en scriptcontrol</span>
       <span class="tag tag-live">live</span>
@@ -357,7 +368,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. Verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. Met de auditfase, de uitrol en het bewijs van dekking.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk software- en scriptuitvoering met application control en ASR · verdieping</div>
   </a>
-  <a class="item" href="netwerksegmentatie/">
+  <a class="item" href="netwerksegmentatie/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Netwerksegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -365,7 +376,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. Zo komt een aanvaller die binnen is niet vanzelf overal. Met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · fundering</div>
   </a>
-  <a class="item" href="microsegmentatie/">
+  <a class="item" href="microsegmentatie/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Microsegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -373,7 +384,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. Verdieping voor wie de zones al op orde heeft. Met de aanpak, de valkuilen en het bewijs van de afgedwongen regels.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping</div>
   </a>
-  <a class="item" href="netwerkanalyse-uit-data/">
+  <a class="item" href="netwerkanalyse-uit-data/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Netwerk en firewall analyseren uit data</span>
       <span class="tag tag-live">live</span>
@@ -381,7 +392,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. Stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. Met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien.</p>
     <div class="meta">handleiding · versie 2026-09 · in gebruik · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping · hoort bij: Meten voordat je ingrijpt</div>
   </a>
-  <a class="item" href="waf-en-virtual-patching/">
+  <a class="item" href="waf-en-virtual-patching/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">WAF en virtual patching</span>
       <span class="tag tag-live">live</span>
@@ -389,7 +400,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Een web application firewall met rate limiting en Layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. Met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Richt WAF, rate limiting en Layer-7-bescherming in · fundering</div>
   </a>
-  <a class="item" href="ddos-scrubbing/">
+  <a class="item" href="ddos-scrubbing/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">DDoS-scrubbing en robuuste DNS</span>
       <span class="tag tag-live">live</span>
@@ -397,7 +408,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante DNS eronder. Zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. Met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Borg upstream DDoS-mitigatie en robuuste DNS · fundering</div>
   </a>
-  <a class="item" href="onveranderbare-backups/">
+  <a class="item" href="onveranderbare-backups/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Onveranderbare back-ups</span>
       <span class="tag tag-live">live</span>
@@ -405,7 +416,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. De aanvaller zoekt tegenwoordig eerst de back-up. Met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Bescherm back-ups met onveranderbaarheid en gescheiden beheer · fundering</div>
   </a>
-  <a class="item" href="hersteltest/">
+  <a class="item" href="hersteltest/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Hersteltest tegen RTO en RPO</span>
       <span class="tag tag-live">live</span>
@@ -413,7 +424,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. Een back-up die nooit is teruggezet, is een aanname. Met de opzet van de test, de RTO en RPO uit de BIA, en het testverslag als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Test herstel tegen de afgesproken RTO en RPO · fundering</div>
   </a>
-  <a class="item" href="crisisoefening/">
+  <a class="item" href="crisisoefening/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Crisisoefening voor ransomware en uitval</span>
       <span class="tag tag-live">live</span>
@@ -421,7 +432,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. Een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. Met de opzet van de tabletop, de rollen en het oefenverslag als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · fundering</div>
   </a>
-  <a class="item" href="crisiscommunicatie/">
+  <a class="item" href="crisiscommunicatie/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Cyber-crisiscommunicatie</span>
       <span class="tag tag-live">live</span>
@@ -429,7 +440,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. Verdieping op de crisisoefening. Met de rollen, de kanalen en het bewijs dat het is geoefend.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · verdieping</div>
   </a>
-  <a class="item" href="incident-response-procedures/">
+  <a class="item" href="incident-response-procedures/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Incidentprocedures die je hebt geoefend</span>
       <span class="tag tag-live">live</span>
@@ -437,7 +448,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of BEC-melding, en misbruik van een externe kwetsbaarheid. Met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Test mail-remediation en het phishing/BEC-playbook, Test response op identity- en app-compromise, Test detectie en response op externe exploits · fundering</div>
   </a>
-  <a class="item" href="ketenafhankelijkheden/">
+  <a class="item" href="ketenafhankelijkheden/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Ketenafhankelijkheden in beeld</span>
       <span class="tag tag-live">live</span>
@@ -445,7 +456,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">In beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. Uit bronnen die je vaak al hebt. Met de opbouw, het actueel houden en het overzicht als bewijs.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Breng kritieke systemen en leveranciers in samenhang in beeld · fundering</div>
   </a>
-  <a class="item" href="leveranciersbeoordeling/">
+  <a class="item" href="leveranciersbeoordeling/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Leveranciersbeoordeling met vaste cyclus</span>
       <span class="tag tag-live">live</span>
@@ -453,7 +464,7 @@ footer a{color:var(--muted)}
     <p class="itemdesc">Kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. Met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt.</p>
     <div class="meta">handleiding · versie 2026-09 · concept · barriere: Beoordeel kritieke leveranciers periodiek en risicogestuurd · fundering</div>
   </a>
-  <a class="item" href="pentest-en-exit-bij-leveranciers/">
+  <a class="item" href="pentest-en-exit-bij-leveranciers/" data-vak="security">
     <span class="itemtop">
       <span class="itemtitle">Pentest- en exitverplichtingen bij leveranciers</span>
       <span class="tag tag-live">live</span>
