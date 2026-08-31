@@ -34,6 +34,10 @@ KRUIMEL_EIND = "<!-- /kruimelpad -->"
 # Bronvoet (statuut B10): de regel onderaan een leesversie die naar de bronbestanden wijst.
 BRON_START = "<!-- bronvoet -->"
 BRON_EIND = "<!-- /bronvoet -->"
+# Pijlerblok: op de leesversie van een pijler de stukken die eronder hangen. Zonder dit blok bestaat
+# het verband alleen in de frontmatter en komt de lezer het nooit tegen.
+PIJLER_START = "<!-- pijler-kinderen -->"
+PIJLER_EIND = "<!-- /pijler-kinderen -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage", "handleiding"]
@@ -463,6 +467,32 @@ FOOTER = f"""<footer>
 </footer>"""
 
 
+_pijlertitels: dict[tuple[str, str], str] = {}
+
+
+def titel_van_pijler(vak: str, mapnaam: str) -> str:
+    """De titel uit de frontmatter van het pijler-item; de mapnaam als die er niet is.
+
+    De mapnaam tonen zou werken maar leest als een pad, en de lezer moet een stuk herkennen aan hoe
+    het heet. Gecached omdat elke kaart ernaar vraagt.
+    """
+    sleutel = (vak, mapnaam)
+    if sleutel not in _pijlertitels:
+        readme = ROOT / vak / mapnaam / "README.md"
+        fm = lees_frontmatter(readme.read_text(encoding="utf-8"))[0] if readme.is_file() else None
+        _pijlertitels[sleutel] = str(fm["titel"]) if fm and fm.get("titel") else mapnaam
+    return _pijlertitels[sleutel]
+
+
+def kinderen_van(mapnaam: str, items: list[dict]) -> list[dict]:
+    """De stukken die onder deze pijler hangen, in de volgorde waarin ze binnenkomen.
+
+    Geef de lijst mee die `main` na `zet_op_volgorde` heeft; dan is de volgorde de redactionele uit
+    `<vak>/README.md` en niet het alfabet.
+    """
+    return [fm for fm in items if fm.get("pijler") == mapnaam]
+
+
 def e(s: object) -> str:
     return html.escape(str(s), quote=True)
 
@@ -484,6 +514,10 @@ def meta_regel(fm: dict, met_vak: bool) -> str:
         delen.append("barriere: " + ", ".join(bekend.get(b, b) for b in fm["barrieres"]))
     if fm.get("rol"):
         delen.append(fm["rol"])
+    # Een stuk dat onder een pijler hangt, zegt dat ook. Anders is het verband alleen zichtbaar voor
+    # wie de frontmatter leest, en dat is niemand.
+    if fm.get("pijler"):
+        delen.append("hoort bij: " + titel_van_pijler(str(fm["_vak"]), str(fm["pijler"])))
     return " · ".join(e(d) for d in delen)
 
 
@@ -809,20 +843,65 @@ def zet_bronvoet(tekst: str, vak: str, item: str) -> str:
     return tekst.replace("</body>", blok + "</body>", 1)
 
 
-def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool) -> bool:
+PIJLER_CSS = (
+    ".pijlerblok{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;padding:.9em 1.1em;"
+    "background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}"
+    ".pijlerblok b{display:block;margin-bottom:.4em;color:#1f4e79}"
+    ".pijlerblok ul{margin:0;padding-left:1.2em}"
+    ".pijlerblok li{margin:.2em 0}"
+    ".pijlerblok a{color:#1f4e79}"
+    ".pijlerblok .rol{color:#5a6675}"
+)
+
+
+def pijlerblok(kinderen: list[dict]) -> str:
+    """De stukken die onder deze pijler hangen, boven aan de leesversie van de pijler zelf."""
+    regels = "".join(
+        f'<li><a href="../{e(fm["_map"].name)}/">{e(fm["titel"])}</a>'
+        + (f' <span class="rol">{e(fm["rol"])}</span>' if fm.get("rol") else "")
+        + "</li>"
+        for fm in kinderen
+    )
+    return (PIJLER_START + f"<style>{PIJLER_CSS}</style>"
+            + '<aside class="pijlerblok"><b>Hieronder hangen deze stukken</b>'
+            + f"<ul>{regels}</ul></aside>" + PIJLER_EIND)
+
+
+def zet_pijlerblok(tekst: str, kinderen: list[dict]) -> str:
+    """Zet, vernieuw of verwijder het pijlerblok onder de titel. Idempotent.
+
+    Geen kinderen betekent geen blok: een pijler die er geen heeft, is gewoon een stuk. Zonder deze
+    regel blijft een leeg kader staan zodra het laatste kind van pijler wisselt.
+    """
+    tekst = re.sub(re.escape(PIJLER_START) + ".*?" + re.escape(PIJLER_EIND), "", tekst, flags=re.S)
+    if not kinderen:
+        return tekst
+    m = re.search(r"</h1>", tekst)
+    if not m:
+        return tekst
+    return tekst[: m.end()] + pijlerblok(kinderen) + tekst[m.end():]
+
+
+def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool,
+                   kinderen: list[dict] | None = None) -> bool:
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad, favicon,
-    inhoudsopgave bij een lang stuk en een bronvoet. Idempotent."""
+    inhoudsopgave bij een lang stuk, een pijlerblok bij een pijler en een bronvoet. Idempotent.
+
+    Alles in een functie omdat er een schrijfmoment per bestand moet zijn: twee functies die na
+    elkaar hetzelfde bestand bijwerken, melden in --check dezelfde pagina twee keer als fout.
+    """
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
     vak, item = pad.parent.parent.name, pad.parent.name
     tekst = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(
         zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))), vak, item)
+    tekst = zet_pijlerblok(tekst, kinderen or [])
     if BRON_START not in tekst:
         fout(pad, "B10", "geen </body> gevonden; de bronvoet kan er niet in")
         return False
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
-                          "inhoudsopgave of bronvoet); draai python tools/build.py")
+                          "inhoudsopgave, pijlerblok of bronvoet); draai python tools/build.py")
         return False
 
     blok = kruimelblok(kruimels)
@@ -908,7 +987,9 @@ def main() -> int:
     for vak in VAKGEBIEDEN:
         for fm in items[vak]:
             html_pad = fm["_map"] / "index.html"
-            if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]), alleen_check):
+            kinderen = kinderen_van(fm["_map"].name, items[vak])
+            if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]),
+                                                    alleen_check, kinderen):
                 kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")

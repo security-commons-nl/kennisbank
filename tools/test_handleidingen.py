@@ -160,6 +160,65 @@ class Export(Basis):
         self.assertEqual(sorted(d["zonder_handleiding"]), ["pr", "soc"])
 
 
+class Pijler(Basis):
+    """Een pijler toont zijn stukken, een stuk toont zijn pijler.
+
+    Zonder deze weergave bestaat het verband alleen in de frontmatter, en dan komt geen enkele lezer
+    het ooit tegen. Dat was precies de reden om het te bouwen.
+    """
+
+    def fm(self, naam: str, **extra) -> dict:
+        basis = {"titel": naam.replace("-", " ").capitalize(), "type": "handleiding",
+                 "status": "concept", "samenvatting": "Kort.", "_vak": "security",
+                 "_map": self.map / "security" / naam, "_link": f"{naam}/", "_weergave": "live"}
+        basis.update(extra)
+        return basis
+
+    def schrijf_pijler(self, mapnaam: str, titel: str) -> None:
+        map_ = self.map / "security" / mapnaam
+        map_.mkdir(parents=True, exist_ok=True)
+        (map_ / "README.md").write_text(f"---\ntitel: {titel}\n---\n\n# {titel}\n", encoding="utf-8")
+
+    def test_een_stuk_toont_bij_welke_pijler_het_hoort(self):
+        self.schrijf_pijler("meten-voordat-je-ingrijpt", "Meten voordat je ingrijpt")
+        build._pijlertitels.clear()
+        regel = build.meta_regel(self.fm("werkplekanalyse-e5", pijler="meten-voordat-je-ingrijpt"), False)
+        self.assertIn("hoort bij: Meten voordat je ingrijpt", regel,
+                      "de titel van de pijler, niet de mapnaam")
+
+    def test_zonder_pijler_geen_label(self):
+        self.assertNotIn("hoort bij", build.meta_regel(self.fm("los-stuk"), False))
+
+    def test_kinderen_staan_in_de_redactionele_volgorde(self):
+        # De lijst komt binnen zoals main hem na zet_op_volgorde heeft: dat is de volgorde uit
+        # README.md. Alfabetisch sorteren zou hier b voor a zetten.
+        items = [self.fm("zzz-eerst", pijler="p"), self.fm("aaa-later", pijler="p"),
+                 self.fm("ander-stuk", pijler="andere-pijler"), self.fm("zonder-pijler")]
+        self.assertEqual([fm["_map"].name for fm in build.kinderen_van("p", items)],
+                         ["zzz-eerst", "aaa-later"])
+
+    def test_een_pijler_zonder_kinderen_krijgt_geen_leeg_blok(self):
+        html = "<body><h1>Titel</h1><p>Tekst.</p></body>"
+        self.assertEqual(build.zet_pijlerblok(html, []), html)
+
+    def test_het_blok_komt_onder_de_titel_en_stapelt_niet(self):
+        html = "<body><h1>Titel</h1><p>Tekst.</p></body>"
+        kinderen = [self.fm("werkplekanalyse-e5", rol="fundering")]
+        een = build.zet_pijlerblok(html, kinderen)
+        self.assertIn("</h1><!-- pijler-kinderen -->", een, "het blok hoort direct onder de titel")
+        self.assertIn("../werkplekanalyse-e5/", een)
+        self.assertIn("fundering", een)
+        twee = build.zet_pijlerblok(een, kinderen)
+        self.assertEqual(een, twee, "opnieuw bouwen mag het blok niet stapelen")
+        self.assertEqual(twee.count(build.PIJLER_START), 1)
+
+    def test_het_blok_verdwijnt_als_het_laatste_kind_weg_is(self):
+        html = "<body><h1>Titel</h1><p>Tekst.</p></body>"
+        met = build.zet_pijlerblok(html, [self.fm("werkplekanalyse-e5", rol="fundering")])
+        self.assertEqual(build.zet_pijlerblok(met, []), html,
+                         "een leeg kader blijven tonen is erger dan geen kader")
+
+
 class GeenDodeVerwijzingen(unittest.TestCase):
     """Geen enkele pagina verwijst nog naar een gearchiveerde repo.
 
