@@ -79,6 +79,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/edr-inrichten/"
     },
     {
+      "barriere": "edr",
+      "item": "security/killchain-naast-je-controls",
+      "titel": "De killchain naast je controls leggen",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/killchain-naast-je-controls/"
+    },
+    {
       "barriere": "execution",
       "item": "security/werkplekanalyse-e5",
       "titel": "Werkplekanalyse op het Microsoft-platform",
@@ -91,6 +98,13 @@
       "titel": "Application- en scriptcontrol",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/application-control/"
+    },
+    {
+      "barriere": "execution",
+      "item": "security/killchain-naast-je-controls",
+      "titel": "De killchain naast je controls leggen",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/killchain-naast-je-controls/"
     },
     {
       "barriere": "exploitresponse",
