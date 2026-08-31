@@ -18,7 +18,8 @@ De volgorde op de sitepagina is redactioneel en staat hier: wat je morgen kunt t
 naslag in het midden, verwijzingen naar het werk van anderen onderaan. `tools/build.py` volgt deze
 lijst en blokkeert als een item ontbreekt of niet bestaat.
 
-1. [AI-beleid van een regionale samenwerking](ai-beleid/)
+1. [Val ik onder de Cbw?](val-ik-onder-de-cbw/)
+2. [AI-beleid van een regionale samenwerking](ai-beleid/)
 
 ## Bijdragen
 

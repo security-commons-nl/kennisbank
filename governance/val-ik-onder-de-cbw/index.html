@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Val ik onder de Cbw?</title>
+<meta name="description" content="Klikbare toets voor gemeenschappelijke regelingen en zbo's: val ik als overheidsinstantie onder de Cyberbeveiligingswet? Rekent in je browser en levert een dossier in plaats van een oordeel.">
+<style>
+:root{--inkt:#16202b;--zacht:#5a6675;--lijn:#d7dee7;--vlak:#f5f8fb;--wit:#fff;--accent:#1f4e79;
+--open:#b3261e;--let:#b26a00;--goed:#1f7a4d;--koel:#1f6f8b}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.55;
+color:var(--inkt);background:var(--vlak)}
+header,.voet{background:var(--wit);border-bottom:1px solid var(--lijn)}
+.voet{border-bottom:0;border-top:1px solid var(--lijn);margin-top:2rem}
+header .binnen,.voet .binnen,main{max-width:54rem;margin:0 auto;padding:1rem 1.25rem}
+.kruimel{font-size:.8rem;color:var(--zacht);margin-bottom:.3rem}
+.kruimel a{color:var(--accent);text-decoration:none}
+.kruimel a:hover{text-decoration:underline}
+header .naam{font-weight:700}
+header .sub,.voet .binnen,.privacy{color:var(--zacht);font-size:.85rem}
+.voet a{color:var(--accent)}
+.voet .bronvoet{border-top:0;margin-top:0;padding-top:0}
+.kaart{background:var(--wit);border:1px solid var(--lijn);border-radius:10px;padding:1.5rem;margin:1.25rem 0}
+h1{font-size:1.9rem;line-height:1.2;margin:.2rem 0 .6rem}
+h2{font-size:1.3rem;margin:.2rem 0 .7rem}
+h3{font-size:1.02rem;margin:1.3rem 0 .35rem}
+p{margin:.6rem 0}
+.label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--zacht);margin:0 0 .2rem}
+.lead{font-size:1.05rem}
+.uitleg,.hint,.voortgang{color:var(--zacht);font-size:.9rem}
+.let{background:#fffbe9;border-left:3px solid #e0b400;padding:.7rem .95rem;margin:1rem 0;font-size:.95rem}
+.let strong{color:#7a5c00}
+.knoppen{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1.4rem 0 .2rem}
+button{font:inherit;padding:.55rem 1rem;border:1px solid var(--lijn);border-radius:7px;background:var(--wit);
+color:var(--inkt);cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--accent)}
+button.primair{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primair:hover{background:#173e60;color:#fff}
+.vraag{border-top:1px solid var(--lijn);padding:1.1rem 0 .3rem}
+.vraag:first-of-type{border-top:0;padding-top:.2rem}
+.vraag .nr{font-size:.75rem;color:var(--zacht);font-weight:700;letter-spacing:.06em}
+.vraag .tekst{margin:.15rem 0 .6rem}
+.opties{display:flex;flex-wrap:wrap;gap:.5rem}
+.opt{display:inline-flex}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt span{display:inline-block;padding:.4rem .9rem;border:1px solid var(--lijn);border-radius:20px;
+background:var(--wit);cursor:pointer;font-size:.92rem}
+.opt input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.bewijs{margin:.6rem 0 0}
+.bewijs label{display:block;font-size:.8rem;color:var(--zacht);margin-bottom:.2rem}
+.bewijs input{width:100%;font:inherit;font-size:.92rem;padding:.45rem .6rem;border:1px solid var(--lijn);
+border-radius:6px;background:var(--wit);color:var(--inkt)}
+.bewijs input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.balk{height:5px;background:var(--lijn);border-radius:3px;overflow:hidden;margin:.2rem 0 1.1rem}
+.balk i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.uitslag{border-left:5px solid var(--zacht);padding-left:1rem}
+.uitslag.wel{border-color:var(--open)}
+.uitslag.niet{border-color:var(--goed)}
+.uitslag.jurist{border-color:var(--let)}
+.uitslag.centrum{border-color:var(--koel)}
+.uitslag h2{margin-top:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.93rem}
+th,td{border:1px solid var(--lijn);padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--vlak);font-size:.85rem}
+.stand-ja{color:var(--goed);font-weight:700}
+.stand-nee{color:var(--open);font-weight:700}
+.stand-open{color:var(--let);font-weight:700}
+ul{margin:.4rem 0 .6rem 1.3rem;padding:0}
+li{margin:.25rem 0}
+.dossier{white-space:pre-wrap;font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:.8rem;
+background:var(--vlak);border:1px solid var(--lijn);border-radius:8px;padding:.9rem;max-height:22rem;
+overflow:auto;margin:.8rem 0}
+.melding{font-size:.88rem;color:var(--goed);margin-left:.3rem}
+@media print{
+ body{background:#fff}
+ header,.voet,.knoppen,.dossier{display:none}
+ .kaart{border:0;padding:0;margin:0 0 1rem}
+ @page{size:A4;margin:2cm}
+}
+</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon -->
+</head>
+<body>
+<header><div class="binnen">
+<!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <span>Val ik onder de Cbw?</span></nav><!-- /kruimelpad -->
+<div class="naam">Val ik onder de Cbw?</div>
+<div class="sub">Rekent in je browser &middot; je antwoorden blijven op dit apparaat</div>
+</div></header>
+
+<main id="app">
+<noscript><section class="kaart"><h1>Val ik onder de Cbw?</h1>
+<p>Deze toets rekent in je browser, zodat je antwoorden nergens heen gaan. Daarvoor is JavaScript nodig.
+De criteria en de toelichting staan ook in <code>README.md</code> in de repository, dus je kunt de toets
+ook met de hand doorlopen.</p></section></noscript>
+</main>
+
+<div class="voet"><div class="binnen">
+<p class="privacy">Geen account, geen server, geen telemetrie. Deze uitkomst komt uit je eigen antwoorden en is geen juridisch oordeel.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/val-ik-onder-de-cbw">governance/val-ik-onder-de-cbw</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet -->
+</div></div>
+
+<script>
+"use strict";
+
+var SLEUTEL = "cbw-toets-v1";
+
+var CRITERIA = [
+ {id:"c1", titel:"Algemeen belang, geen commercieel karakter",
+  kern:"De organisatie is opgericht om te voorzien in behoeften van algemeen belang en heeft geen industrieel of commercieel karakter.",
+  vragen:[
+   {nr:"1.1", type:"jnu", tekst:"Is de regeling opgericht om publieke taken uit te voeren of publieke belangen te behartigen?"},
+   {nr:"1.2", type:"jnu", tekst:"Ontbreekt een winstoogmerk, en zijn eventuele commerciele nevenactiviteiten ondergeschikt aan de publieke taak?",
+    hint:"Voor vrijwel elke publieke samenwerking is dit een ja. Twijfel ontstaat alleen bij regelingen die zich als marktpartij gedragen: afvalinzameling of ICT-dienstverlening met externe klanten en eigen commercieel risico."}
+  ]},
+ {id:"c2", titel:"Rechtspersoonlijkheid, of bevoegd namens een ander",
+  kern:"De organisatie heeft rechtspersoonlijkheid, of mag volgens de wet namens een andere entiteit met rechtspersoonlijkheid optreden.",
+  vragen:[
+   {nr:"2.1", type:"keuze", tekst:"Welke vorm heeft de regeling?",
+    opties:["openbaar lichaam","bedrijfsvoeringsorganisatie","gemeenschappelijk orgaan","centrumregeling","regeling zonder meer","weet ik niet"],
+    hint:"Een openbaar lichaam en een bedrijfsvoeringsorganisatie hebben rechtspersoonlijkheid. Bij een centrumregeling ligt de scope bij de centrumgemeente, en die valt als gemeente sowieso onder de wet."},
+   {nr:"2.2", type:"jnu", tekst:"Mag de organisatie op grond van een wettelijke basis namens een deelnemer optreden, vastgelegd in mandaat-, volmacht- of delegatiebesluiten?",
+    hint:"Het ontbreken van eigen rechtspersoonlijkheid is op zichzelf geen grond om buiten de reikwijdte te vallen. Het gaat om een entiteit met eigen rechtspersoonlijkheid of om een entiteit die volgens de wet namens een andere entiteit met rechtspersoonlijkheid mag optreden.",
+    alsVorm:["gemeenschappelijk orgaan","regeling zonder meer","weet ik niet"]}
+  ]},
+ {id:"c3", titel:"Financiering, toezicht of benoeming door de overheid",
+  kern:"Drie alternatieve routes. Een ja volstaat, maar documenteer ze alle drie: dit is goedkoop bewijs dat een toezichthouder later kan opvragen.",
+  vragen:[
+   {nr:"3.1", type:"jnu", tekst:"Bestaat meer dan de helft van de baten uit bijdragen van deelnemende gemeenten of andere overheden?",
+    hint:"Subsidies en rijksbijdragen tellen mee."},
+   {nr:"3.2", type:"jnu", tekst:"Houden de deelnemers beheerstoezicht? Denk aan zienswijzerecht op de begroting, de regeling kunnen wijzigen of opheffen, en verantwoording aan de deelnemende raden."},
+   {nr:"3.3", type:"jnu", tekst:"Worden meer dan de helft van de bestuursleden aangewezen door de gemeenteraden of colleges?"}
+  ]},
+ {id:"c4", titel:"Besluiten die rechten van burgers of bedrijven raken",
+  kern:"Het beslissende criterium. Hier scheiden strategische samenwerkingsverbanden zich van uitvoeringsorganisaties. Beantwoord dit per taak, niet voor de organisatie als geheel.",
+  vragen:[
+   {nr:"4.1", type:"jnu", tekst:"Neemt de organisatie besluiten in de zin van de Awb richting burgers of bedrijven?",
+    hint:"Vergunningen, ontheffingen, indicaties, verklaringen, subsidies, bestuurlijke sancties of handhavingsbesluiten. Maak hiervoor een uitputtende lijst per taak."},
+   {nr:"4.2", type:"keuze", tekst:"Hoe is die bevoegdheid belegd?",
+    opties:["gedelegeerd","in mandaat","deels gedelegeerd, deels in mandaat","geen van beide","weet ik niet"],
+    hint:"Mandaat is geen grond om buiten de reikwijdte te blijven: de bevoegdheid telt ook mee wanneer zij is gemandateerd. Leg wel per taak vast namens wie wordt besloten en onder welk briefhoofd het naar buiten gaat.",
+    alsVorig:{nr:"4.1", waarde:["ja","onbekend"]}},
+   {nr:"4.3", type:"jnu", tekst:"Ligt er per taak EU-regelgeving aan ten grondslag, of raken de besluiten rechten die uit EU-recht voortvloeien?",
+    hint:"Noem de verordening of richtlijn met artikel, of leg vast dat die er na onderzoek niet is. Dit deel wordt in de praktijk hard getoetst.",
+    alsVorig:{nr:"4.1", waarde:["ja","onbekend"]}},
+   {nr:"4.4", type:"jnu", tekst:"Is het niet uitgesloten dat de besluiten gevolgen hebben voor personen of rechtspersonen buiten Nederland?",
+    hint:"Deze en de vorige vraag zijn cumulatief: aan het tweede deel van dit criterium is alleen voldaan wanneer beide gelden.",
+    alsVorig:{nr:"4.1", waarde:["ja","onbekend"]}},
+   {nr:"4.5", type:"jnu", tekst:"Is de takenlijst waarop je deze vragen beantwoordt uitputtend?",
+    hint:"De conclusie reikt niet verder dan de lijst. Bron: de tekst van de regeling, het mandaatregister en de begrotingsprogramma's. Laat de volledigheid intern bevestigen."}
+  ]},
+ {id:"c5", titel:"Uitzondering",
+  kern:"Ook als alle vier de criteria zijn voldaan, kan een uitzondering gelden. Die is smal.",
+  vragen:[
+   {nr:"5.1", type:"jnu", tekst:"Voert de organisatie hoofdzakelijk activiteiten uit op het gebied van nationale veiligheid, openbare veiligheid, defensie of rechtshandhaving?",
+    hint:"Organisaties die deze terreinen zijdelings raken vallen wel onder de wet. Voor uitgezonderde organisaties geldt bovendien nog steeds de norm dat zij een minstens gelijkwaardig weerbaarheidsniveau nastreven."}
+  ]}
+];
+
+var JNU = ["ja","nee","onbekend"];
+var antwoord = {};
+var bewijs = {};
+var stap = -1;
+var app = document.getElementById("app");
+
+function laad(){
+ try{
+  var r = window.localStorage.getItem(SLEUTEL);
+  if(r){ var d = JSON.parse(r); antwoord = d.antwoord || {}; bewijs = d.bewijs || {}; }
+ }catch(e){ /* geen opslag beschikbaar; de toets werkt gewoon door */ }
+}
+function bewaar(){
+ try{ window.localStorage.setItem(SLEUTEL, JSON.stringify({antwoord:antwoord, bewijs:bewijs})); }
+ catch(e){ /* idem */ }
+}
+function wis(){
+ antwoord = {}; bewijs = {}; stap = -1;
+ try{ window.localStorage.removeItem(SLEUTEL); }catch(e){}
+ toon();
+}
+
+function vraagZichtbaar(v){
+ if(v.alsVorm){ return v.alsVorm.indexOf(antwoord["2.1"]) !== -1; }
+ if(v.alsVorig){ return v.alsVorig.waarde.indexOf(antwoord[v.alsVorig.nr]) !== -1; }
+ return true;
+}
+function zichtbareVragen(c){
+ var uit = [];
+ for(var i=0;i<c.vragen.length;i++){ if(vraagZichtbaar(c.vragen[i])) uit.push(c.vragen[i]); }
+ return uit;
+}
+function compleet(c){
+ var vs = zichtbareVragen(c);
+ for(var i=0;i<vs.length;i++){ if(!antwoord[vs[i].nr]) return false; }
+ return true;
+}
+function tekst(t){ var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+function hoofd(t){ return t.charAt(0).toUpperCase() + t.slice(1); }
+
+function toon(){
+ if(stap < 0){ toonIntro(); }
+ else if(stap < CRITERIA.length){ toonCriterium(CRITERIA[stap]); }
+ else { toonUitslag(); }
+ window.scrollTo(0,0);
+}
+
+function toonIntro(){
+ var bezig = Object.keys(antwoord).length > 0;
+ app.innerHTML =
+  '<section class="kaart">' +
+  '<p class="label">Cyberbeveiligingswet</p>' +
+  '<h1>Val ik onder de Cbw?</h1>' +
+  '<p class="lead">Voor de sector overheid kent de Cyberbeveiligingswet geen omvangscriterium. Gemeenten, ' +
+  'provincies, waterschappen en ministeries vallen automatisch onder de wet. Gemeenschappelijke regelingen ' +
+  'en zbo&rsquo;s niet: die vallen eronder voor zover zij aan vier cumulatieve criteria voldoen. Deze toets ' +
+  'loopt ze met je langs.</p>' +
+  '<div class="let"><strong>Begin hier niet.</strong> Registreren gaat met eHerkenning op niveau EH2+ op de ' +
+  'dienst MijnNCSC. Zo&rsquo;n middel aanvragen of uitbreiden kost dagen tot weken. Dat is in de praktijk ' +
+  'het kritieke pad, niet de juridische analyse. Zet die aanvraag in gang voordat je hieraan begint: blijkt ' +
+  'de regeling niet in scope, dan heb je een ongebruikt middel, en blijkt zij wel in scope zonder middel, ' +
+  'dan sta je stil.</div>' +
+  '<h3>Wat je krijgt</h3>' +
+  '<p>Geen uitslag maar een <strong>dossier</strong>: per criterium je antwoord, het bewijsstuk dat je erbij ' +
+  'noemt en de punten die open blijven. Dat is met opzet. Wat je bij toezicht nodig hebt is niet het ' +
+  'antwoord, maar de onderbouwing waarmee je het verdedigt. De registratie sluit af met een verklaring naar ' +
+  'waarheid, dus die onderbouwing moet er zijn.</p>' +
+  '<p class="uitleg">Dertien vragen, ongeveer een kwartier als de stukken erbij liggen. Je antwoorden ' +
+  'blijven in deze browser staan en gaan nergens heen.</p>' +
+  '<div class="knoppen">' +
+  '<button class="primair" id="start">' + (bezig ? "Verder waar je was" : "Start de toets") + '</button>' +
+  (bezig ? '<button id="opnieuw">Opnieuw beginnen</button>' : '') +
+  '</div></section>';
+ document.getElementById("start").onclick = function(){ stap = 0; toon(); };
+ var o = document.getElementById("opnieuw");
+ if(o){ o.onclick = wis; }
+}
+
+function toonCriterium(c){
+ var vs = zichtbareVragen(c);
+ var h = '<section class="kaart">' +
+  '<p class="label">Criterium ' + (stap+1) + ' van ' + CRITERIA.length + '</p>' +
+  '<div class="balk"><i style="width:' + Math.round((stap/CRITERIA.length)*100) + '%"></i></div>' +
+  '<h2 id="tekst-c-titel">' + tekst(c.titel) + '</h2>' +
+  '<p class="uitleg">' + tekst(c.kern) + '</p>';
+ for(var i=0;i<vs.length;i++){
+  var v = vs[i];
+  h += '<div class="vraag"><div class="nr">' + v.nr + '</div>' +
+       '<div class="tekst">' + tekst(v.tekst) + '</div>';
+  if(v.hint){ h += '<p class="hint">' + tekst(v.hint) + '</p>'; }
+  var opties = v.type === "keuze" ? v.opties : JNU;
+  h += '<div class="opties">';
+  for(var j=0;j<opties.length;j++){
+   var val = opties[j];
+   var aan = antwoord[v.nr] === val ? " checked" : "";
+   h += '<label class="opt"><input type="radio" name="v' + v.nr + '" value="' + tekst(val) + '"' + aan +
+        '><span>' + tekst(hoofd(val)) + '</span></label>';
+  }
+  h += '</div><div class="bewijs">' +
+       '<label for="b' + v.nr + '">Bewijsstuk: documentnaam, artikelnummer, datum</label>' +
+       '<input id="b' + v.nr + '" type="text" value="' + tekst(bewijs[v.nr] || "") + '"></div></div>';
+ }
+ h += '<div class="knoppen">' +
+      '<button id="vorige">Vorige</button>' +
+      '<button class="primair" id="volgende">' +
+      (stap === CRITERIA.length-1 ? "Naar de uitkomst" : "Volgende") + '</button>' +
+      '<span class="voortgang" id="mist"></span></div></section>';
+ app.innerHTML = h;
+
+ for(var k=0;k<vs.length;k++){
+  (function(v){
+   var radios = app.querySelectorAll('input[name="v' + v.nr + '"]');
+   for(var r=0;r<radios.length;r++){
+    radios[r].onchange = function(){
+     antwoord[v.nr] = this.value;
+     bewaar();
+     if(v.nr === "2.1" || v.nr === "4.1"){ toonCriterium(c); return; }
+     melding();
+    };
+   }
+   var inp = document.getElementById("b" + v.nr);
+   inp.oninput = function(){ bewijs[v.nr] = this.value; bewaar(); };
+  })(vs[k]);
+ }
+ function melding(){
+  var m = document.getElementById("mist");
+  if(!m){ return; }
+  m.textContent = compleet(c) ? "" :
+   "Nog niet alles beantwoord. Doorgaan mag; onbeantwoorde vragen komen als open punt terug.";
+ }
+ melding();
+ document.getElementById("vorige").onclick = function(){ stap--; toon(); };
+ document.getElementById("volgende").onclick = function(){ stap++; toon(); };
+}
+
+function standC1(){
+ if(antwoord["1.1"] === "ja" && antwoord["1.2"] === "ja"){ return "ja"; }
+ if(antwoord["1.1"] === "nee" || antwoord["1.2"] === "nee"){ return "nee"; }
+ return "open";
+}
+function standC2(){
+ var vorm = antwoord["2.1"];
+ if(vorm === "openbaar lichaam" || vorm === "bedrijfsvoeringsorganisatie"){ return "ja"; }
+ if(vorm === "centrumregeling"){ return "centrum"; }
+ if(antwoord["2.2"] === "ja"){ return "ja"; }
+ if(antwoord["2.2"] === "nee"){ return "nee"; }
+ return "open";
+}
+function standC3(){
+ var a = [antwoord["3.1"], antwoord["3.2"], antwoord["3.3"]];
+ if(a.indexOf("ja") !== -1){ return "ja"; }
+ if(a[0] === "nee" && a[1] === "nee" && a[2] === "nee"){ return "nee"; }
+ return "open";
+}
+function standC4(){
+ if(antwoord["4.1"] === "nee"){ return "nee"; }
+ if(antwoord["4.1"] !== "ja"){ return "open"; }
+ if(antwoord["4.3"] === "nee" || antwoord["4.4"] === "nee"){ return "nee"; }
+ if(antwoord["4.3"] === "ja" && antwoord["4.4"] === "ja"){ return "ja"; }
+ return "open";
+}
+function standC5(){
+ if(antwoord["5.1"] === "ja"){ return "ja"; }
+ if(antwoord["5.1"] === "nee"){ return "nee"; }
+ return "open";
+}
+
+function openPunten(){
+ var uit = [];
+ for(var i=0;i<CRITERIA.length;i++){
+  var vs = zichtbareVragen(CRITERIA[i]);
+  for(var j=0;j<vs.length;j++){
+   var v = vs[j];
+   var a = antwoord[v.nr];
+   if(!a){ uit.push(v.nr + " is niet beantwoord: " + v.tekst); }
+   else if(a === "onbekend" || a === "weet ik niet"){ uit.push(v.nr + " staat op onbekend: " + v.tekst); }
+   else if(!bewijs[v.nr]){ uit.push(v.nr + " heeft geen bewijsstuk genoteerd."); }
+  }
+ }
+ if(antwoord["4.5"] === "nee"){
+  uit.push("De takenlijst is niet uitputtend. De conclusie reikt niet verder dan de lijst; vul die eerst aan.");
+ }
+ if(antwoord["4.2"] === "deels gedelegeerd, deels in mandaat"){
+  uit.push("Gemengd beeld bij 4.2: sommige taken gedelegeerd, andere in mandaat. Leg per taak vast namens wie wordt besloten.");
+ }
+ return uit;
+}
+
+function bepaalUitkomst(s, punten){
+ if(s.c2 === "centrum"){
+  return {soort:"centrum",
+   kop:"De scope ligt bij de centrumgemeente",
+   verhaal:"Bij een centrumregeling voert een centrumgemeente de taken uit, en die valt als gemeente sowieso onder de wet. De toets voor een zelfstandige overheidsinstantie loopt hier dood. Leg vast welke gemeente de centrumgemeente is en welke taken daaronder vallen, en maak afspraken over hoe zij haar verplichtingen invult voor de taken die zij voor de anderen doet."};
+ }
+ if(s.c1 === "nee" || s.c2 === "nee" || s.c3 === "nee" || s.c4 === "nee"){
+  return {soort:"niet",
+   kop:"Dit wijst op: niet in scope",
+   verhaal:"Ten minste een van de vier cumulatieve criteria is niet voldaan, en daarmee is de organisatie geen overheidsinstantie in de zin van de wet. Leg de analyse en de onderbouwing vast zodat de uitkomst reproduceerbaar is, en zet een jaarlijkse hertoets in de planning: nieuwe taken, een gewijzigde regeling of een omzetting van mandaat naar delegatie kunnen dit kantelen. Verwacht daarnaast vragen van de deelnemers, want die vallen zelf wel onder de wet."};
+ }
+ if(punten.length > 0 || s.c1 !== "ja" || s.c2 !== "ja" || s.c3 !== "ja" || s.c4 !== "ja" || s.c5 !== "nee"){
+  return {soort:"jurist",
+   kop:"Hier moet een jurist naar kijken",
+   verhaal:"De toets komt niet tot een eenduidig beeld. Dat is geen tekortkoming van de organisatie maar de normale uitkomst bij een criterium dat per taak moet worden uitgewerkt. Neem de open punten hieronder mee naar het juridisch advies; ze zijn zo geformuleerd dat ze los beantwoord kunnen worden."};
+ }
+ return {soort:"wel",
+  kop:"Dit wijst op: wel in scope",
+  verhaal:"Alle vier de criteria zijn voldaan en er geldt geen uitzondering. De organisatie valt zelfstandig onder de wet; de deelnemende gemeenten zijn niet verantwoordelijk voor haar naleving. Laat deze conclusie juridisch tegenlezen en begin met registreren, want daar zit het langste pad."};
+}
+
+function stand(){
+ return {c1:standC1(), c2:standC2(), c3:standC3(), c4:standC4(), c5:standC5()};
+}
+
+function toonUitslag(){
+ var s = stand();
+ var punten = openPunten();
+ var u = bepaalUitkomst(s, punten);
+ var soort = u.soort, kop = u.kop, verhaal = u.verhaal;
+
+ var namen = {c1:"1. Algemeen belang, niet commercieel",
+  c2:"2. Rechtspersoonlijkheid of namens ander",
+  c3:"3. Financiering, toezicht of benoeming",
+  c4:"4. Besluitbevoegdheid",
+  c5:"5. Uitzondering"};
+ var woord = {ja:"Voldaan", nee:"Niet voldaan", open:"Nader onderzoek", centrum:"Centrumregeling"};
+ var klas = {ja:"stand-ja", nee:"stand-nee", open:"stand-open", centrum:"stand-open"};
+
+ var h = '<section class="kaart"><div class="uitslag ' + soort + '">' +
+  '<p class="label">Uitkomst</p><h2 id="tekst-kop">' + tekst(kop) + '</h2><p>' + tekst(verhaal) + '</p></div>' +
+  '<table><thead><tr><th>Criterium</th><th>Stand</th><th>Bewijsstukken</th></tr></thead><tbody>';
+ var volg = ["c1","c2","c3","c4","c5"];
+ for(var i=0;i<volg.length;i++){
+  var id = volg[i];
+  var stg, w;
+  if(id === "c5"){
+   stg = s.c5 === "ja" ? "open" : s.c5 === "nee" ? "ja" : "open";
+   w = s.c5 === "ja" ? "Uitzondering mogelijk" : s.c5 === "nee" ? "Geen uitzondering" : "Nader onderzoek";
+  } else {
+   stg = s[id];
+   w = woord[s[id]];
+  }
+  var bs = [];
+  var vs = zichtbareVragen(CRITERIA[i]);
+  for(var j=0;j<vs.length;j++){ if(bewijs[vs[j].nr]){ bs.push(vs[j].nr + ": " + bewijs[vs[j].nr]); } }
+  h += '<tr><td>' + tekst(namen[id]) + '</td><td class="' + klas[stg] + '">' + tekst(w) + '</td><td>' +
+       (bs.length ? tekst(bs.join(" · ")) : '<span class="hint">niet genoteerd</span>') + '</td></tr>';
+ }
+ h += '</tbody></table>';
+
+ if(punten.length){
+  h += '<h3>Open punten voor het juridisch advies</h3><ul>';
+  for(var p=0;p<punten.length;p++){ h += '<li>' + tekst(punten[p]) + '</li>'; }
+  h += '</ul>';
+ }
+
+ h += '<div class="let"><strong>Dit is geen juridisch oordeel.</strong> De toets structureert en ' +
+  'documenteert de analyse. De organisatie is zelf verantwoordelijk voor het oordeel of zij onder de ' +
+  'Cyberbeveiligingswet valt, en dat oordeel hoort juridisch te worden gevalideerd.</div>' +
+  '<h3>Meenemen naar je eigen dossier</h3>' +
+  '<div class="dossier" id="dossier"></div>' +
+  '<div class="knoppen"><button class="primair" id="kopieer">Kopieer als markdown</button>' +
+  '<button id="print">Print of sla op als pdf</button>' +
+  '<button id="terug">Terug naar de vragen</button>' +
+  '<button id="opnieuw2">Opnieuw beginnen</button>' +
+  '<span class="melding" id="gekopieerd"></span></div></section>';
+ app.innerHTML = h;
+
+ var md = maakDossier(kop, punten);
+ document.getElementById("dossier").textContent = md;
+ document.getElementById("print").onclick = function(){ window.print(); };
+ document.getElementById("terug").onclick = function(){ stap = CRITERIA.length-1; toon(); };
+ document.getElementById("opnieuw2").onclick = wis;
+ document.getElementById("kopieer").onclick = function(){
+  var klaar = function(){ document.getElementById("gekopieerd").textContent = "Gekopieerd."; };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+   navigator.clipboard.writeText(md).then(klaar, selecteer);
+  } else {
+   selecteer();
+  }
+ };
+ function selecteer(){
+  var d = document.getElementById("dossier");
+  var r = document.createRange();
+  r.selectNodeContents(d);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(r);
+  document.getElementById("gekopieerd").textContent = "Geselecteerd, kopieer met Ctrl+C.";
+ }
+}
+
+function maakDossier(kop, punten){
+ var r = [];
+ r.push("# Toets Cyberbeveiligingswet");
+ r.push("");
+ r.push("Uitkomst: " + kop);
+ r.push("Ingevuld op: " + new Date().toLocaleDateString("nl-NL"));
+ r.push("");
+ r.push("Deze toets structureert en documenteert de analyse. Hij vervangt geen juridisch advies.");
+ r.push("");
+ for(var i=0;i<CRITERIA.length;i++){
+  var c = CRITERIA[i];
+  r.push("## " + (i+1) + ". " + c.titel);
+  var vs = zichtbareVragen(c);
+  for(var j=0;j<vs.length;j++){
+   var v = vs[j];
+   r.push("");
+   r.push("**" + v.nr + "** " + v.tekst);
+   r.push("- Antwoord: " + (antwoord[v.nr] || "niet beantwoord"));
+   r.push("- Bewijsstuk: " + (bewijs[v.nr] || "niet genoteerd"));
+  }
+  r.push("");
+ }
+ if(punten.length){
+  r.push("## Open punten voor het juridisch advies");
+  r.push("");
+  for(var p=0;p<punten.length;p++){ r.push("- " + punten[p]); }
+  r.push("");
+ }
+ r.push("## Vaststelling");
+ r.push("");
+ r.push("- Vastgesteld door:");
+ r.push("- Datum:");
+ r.push("- Juridisch getoetst door:");
+ return r.join("\n");
+}
+
+laad();
+toon();
+</script>
+</body>
+</html>

@@ -38,6 +38,15 @@ jobs:
       - name: Tests van de handleidingen en de export
         run: python tools/test_handleidingen.py
 
+      # De Cbw-toets rekent in de browser, dus die logica is JavaScript. Zonder deze stap zou een
+      # herschrijving van de criteria er ongemerkt doorheen komen.
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Tests van de Cbw-toets
+        run: node tools/test_toets_cbw.js
+
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)
         if: github.event_name == 'pull_request'
