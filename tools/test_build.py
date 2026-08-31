@@ -23,7 +23,9 @@ spec.loader.exec_module(build)
 class Basis(unittest.TestCase):
     def setUp(self) -> None:
         build.fouten.clear()
-        self.map = Path(tempfile.mkdtemp())
+        # resolve(): op Windows levert mkdtemp() de korte 8.3-vorm en build.ROOT de lange, waardoor
+        # een bestand binnen de map buiten de kennisbank lijkt te vallen.
+        self.map = Path(tempfile.mkdtemp()).resolve()
         self.oude_root = build.ROOT
         build.ROOT = self.map
 
