@@ -26,9 +26,9 @@ Vandaar de aanpak: meet eerst wat er feitelijk draait, bepaal dan wat je afdwing
 vertrekpunt, maar de werkwijze is breder toepasbaar: van de werkplek tot het netwerk, en van detectie tot
 de vraag wat er in je omgeving feitelijk gebeurt.
 
-Dit stuk is deels bestuurlijk (regie, strategie, besluitvorming) en deels technisch (analyses op het
-Microsoft-platform, configuratie-analyse van firewalls en core-routers, herbruikbare query's). Lees de
-managementsamenvatting als je het eerste wilt, en de hoofdstukken erna als je het tweede doet.
+Dit stuk bevat de methode: waarom je eerst meet, en in welke volgorde. De uitwerking per laag staat in
+eigen stukken die hierboven staan opgesomd, en het bestuurlijke deel (regie, strategie, besluitvorming)
+in [Sturen op weerbaarheid](../sturen-op-weerbaarheid/).
 
 > Gegeneraliseerd uit een concrete casus. Pas de voorbeelden aan op je eigen organisatie, leveranciers en
 > tenant. Let bij maatregelen die verkeer of gebruik inzichtelijk maken (zoals TLS-decryptie of
