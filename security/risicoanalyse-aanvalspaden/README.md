@@ -69,9 +69,8 @@ enige stuk waar je de lijn bij nodig hebt, en het is bewust klein.
   uitkeringsapplicatie, het financiële systeem en de identiteitsvoorziening eronder zijn waar het pad
   op uitkomt.
 - **Heb je al een BIA of BIV-classificatie?** Dan is dit een selectie, geen nieuw werk. Een tool als
-  [procescheck](https://github.com/security-commons-nl/procescheck) levert de lijst;
-  [blast-radius](https://github.com/security-commons-nl/blast-radius) laat zien welke componenten
-  eronder meerdere kroonjuwelen tegelijk raken.
+  [procescheck](https://security-commons-nl.github.io/procescheck/) levert de lijst als uitdraai, en
+  zijn tab *Blast radius* laat zien welke componenten eronder meerdere kroonjuwelen tegelijk raken.
 
 Uitkomst: tien regels, elk met een eigenaar en de twee of drie systemen eronder.
 
@@ -173,7 +172,7 @@ Deze methode is de leeswijzer over de commons heen. Elke stap heeft een project 
 
 | Stap | Wat helpt |
 |---|---|
-| 1. Kroonjuwelen | [procescheck](https://github.com/security-commons-nl/procescheck) (BIA/BIV), [blast-radius](https://github.com/security-commons-nl/blast-radius) (wat valt om) |
+| 1. Kroonjuwelen | [procescheck](https://security-commons-nl.github.io/procescheck/) (BIA/BIV, kroonjuwelenlijst in de uitdraai, en wat valt om onder *Blast radius*) |
 | 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) |
 | 3. Dekking met bewijs | [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool), [iamscan](https://github.com/security-commons-nl/iamscan) (pad 5 op Linux) |
 | 4. Risicolijst en gesprek | naar leveranciers: [Security Annex](../security-annex-leveranciers/) (pad 4 als contract); naar binnen: [Een blue team opzetten](../blue-team-opzetten/) (de rode cellen dichten met mandaat) |
