@@ -27,7 +27,7 @@ jobs:
       BASIS_URL: https://security-commons-nl.github.io/kennisbank
       MAX_REGEL: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Controleer live-URL's
         shell: bash

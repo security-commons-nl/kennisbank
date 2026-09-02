@@ -30,12 +30,12 @@ jobs:
     name: Aankondiging opstellen en plaatsen
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 2 # genoeg voor --nieuw-sinds HEAD~1
 
       # Voor de namen van de barrieres in de aankondiging.
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: security-commons-nl/aanvalspaden
           path: _aanvalspaden
