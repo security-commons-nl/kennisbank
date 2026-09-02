@@ -6,6 +6,8 @@ normen: [BIO2, ISO 27001, NIS2]
 versie: 2026-08
 herkomst: ontwikkeld door twee CISO's van gemeenten; bouwt op een eerder ontwerp voor een open dreigingsbeeld voor lokale overheid
 status: concept
+barrieres: [owner, treatment]
+rol: fundering
 samenvatting: Methode om als CISO of ISO in één dag tot de grootste risico's te komen, en tot de maatregel en eigenaar per risico. Niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. De rode cellen zijn de risicolijst. Met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen.
 ---
 

@@ -219,6 +219,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/tiered-administration/"
     },
     {
+      "barriere": "owner",
+      "item": "security/risicoanalyse-aanvalspaden",
+      "titel": "Risicoanalyse langs aanvalspaden",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
+    },
+    {
       "barriere": "patch",
       "item": "security/patchen-met-dekking",
       "titel": "Werkplekken beheerd, gehard en gepatcht",
@@ -352,6 +359,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/pentest-en-exit-bij-leveranciers/"
     },
     {
+      "barriere": "treatment",
+      "item": "security/risicoanalyse-aanvalspaden",
+      "titel": "Risicoanalyse langs aanvalspaden",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
+    },
+    {
       "barriere": "unmanaged",
       "item": "security/patchen-met-dekking",
       "titel": "Werkplekken beheerd, gehard en gepatcht",
@@ -393,8 +407,6 @@
     "devicecode",
     "dmarc",
     "elevation",
-    "origin",
-    "owner",
-    "treatment"
+    "origin"
   ]
 }
