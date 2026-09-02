@@ -21,10 +21,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Volledige naam, geen redirect. De repo heette ooit 'anonimizer'; die naam bestaat
+      # niet meer en GitHub stuurde het stil door. Maakt iemand ooit een nieuwe repo met
+      # die naam, dan checkt deze stap ongemerkt andere code uit.
       - name: Checkout anonimizer
         uses: actions/checkout@v7
         with:
-          repository: security-commons-nl/anonimizer
+          repository: security-commons-nl/anonimizer-local
           path: anonimizer-tool
 
       - name: Setup Python
