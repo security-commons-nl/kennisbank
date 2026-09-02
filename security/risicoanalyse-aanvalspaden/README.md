@@ -157,8 +157,8 @@ Dit is geen jaarlijkse exercitie maar een matrix die je bijhoudt:
 
 - **Geen vervanging van je ISMS.** De matrix voedt de risicoregistratie van je managementsysteem; ze
   vervangt hem niet. Voor de formele kant (BIO2, ISO 27001, NIS2-zorgplicht) blijft het
-  managementsysteem het kader, en een platform als [grc-platform](https://github.com/security-commons-nl/grc-platform)
-  de plek waar controls en bewijs formeel landen.
+  managementsysteem het kader, en je eigen managementsysteem de plek waar controls en bewijs formeel
+  landen. De commons houdt geen register bij; deze matrix is wat je erin meeneemt.
 - **Geen dreigingsbeeld.** De vijf paden zijn een gedeelde, stabiele set, geen maandelijkse
   nieuwsbrief. Een dreigingsbeeld vertelt wat er gebeurt; deze methode vertelt wat dat voor jou betekent.
 - **Geen audit.** Groen betekent "bewijs aanwezig en beproefd", niet "conform norm X". De vertaling naar
