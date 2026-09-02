@@ -35,6 +35,9 @@ p{margin:.6rem 0}
 button{font:inherit;padding:.55rem 1rem;border:1px solid var(--lijn);border-radius:7px;background:var(--wit);
 color:var(--inkt);cursor:pointer}
 button:hover{border-color:var(--accent);color:var(--accent)}
+a.knop{display:inline-block;padding:.55rem 1rem;border:1px solid var(--lijn);border-radius:7px;background:var(--wit);color:var(--accent);text-decoration:none}
+a.knop:hover{border-color:var(--accent)}
+.toelichting h2{margin-top:1.4rem}.toelichting h2:first-of-type{margin-top:.2rem}.toelichting li{margin:.3rem 0}
 button.primair{background:var(--accent);border-color:var(--accent);color:#fff}
 button.primair:hover{background:#173e60;color:#fff}
 .vraag{border-top:1px solid var(--lijn);padding:1.1rem 0 .3rem}
@@ -89,15 +92,56 @@ overflow:auto;margin:.8rem 0}
 <div class="sub">Rekent in je browser &middot; je antwoorden blijven op dit apparaat</div>
 </div></header>
 
-<main id="app">
-<noscript><section class="kaart"><h1>Val ik onder de Cbw?</h1>
+<main>
+<div id="app">
+<noscript><section class="kaart"><h1>Val ik onder de Cbw?</h1><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#waar-de-toets-op-rust">Waar de toets op rust</a></li><li><a href="#t-begin-niet-hier">Begin niet hier</a></li><li><a href="#t-wat-de-toets-doet">Wat de toets doet</a></li><li><a href="#t-drie-plekken-waar-het-misgaat">Drie plekken waar het misgaat</a></li><li><a href="#t-wat-je-erbij-nodig-hebt">Wat je erbij nodig hebt</a></li><li><a href="#t-daarna">Daarna</a></li><li><a href="#t-bronnen">Bronnen</a></li><li><a href="#tekst-c-titel">' + tekst(c.titel) + '</a></li><li><a href="#tekst-kop">' + tekst(kop) + '</a></li></ol></nav><!-- /inhoudsopgave -->
 <p>Deze toets rekent in je browser, zodat je antwoorden nergens heen gaan. Daarvoor is JavaScript nodig.
-De criteria en de toelichting staan ook in <code>README.md</code> in de repository, dus je kunt de toets
-ook met de hand doorlopen.</p></section></noscript>
+De criteria en de toelichting staan hieronder en in <code>README.md</code> in de repository, dus je kunt de
+toets ook met de hand doorlopen.</p></section></noscript>
+</div>
+<section class="kaart toelichting" id="toelichting">
+<p class="label">Toelichting</p>
+<h2 id="waar-de-toets-op-rust">Waar de toets op rust</h2>
+<p class="uitleg">Dezelfde tekst als de <code>README.md</code> in de repository; de toets hierboven is er de klikbare vorm van.</p>
+<p>Voor de sector overheid kent de Cyberbeveiligingswet geen omvangscriterium: aantal medewerkers, omzet en balanstotaal doen niet ter zake. Ministeries, provincies, gemeenten en waterschappen vallen automatisch onder de wet. <strong>Gemeenschappelijke regelingen en zbo’s niet.</strong> Die vallen eronder voor zover zij voldoen aan de vier criteria voor overheidsinstanties, en dat verschilt per geval. Elke regeling moet die toets zelf doen en de uitkomst kunnen verantwoorden.</p>
+<p>Een regeling die aan de criteria voldoet, valt zelfstandig onder de wet. De deelnemende gemeenten zijn niet verantwoordelijk voor de naleving door de regeling.</p>
+<h2 id="t-begin-niet-hier">Begin niet hier</h2>
+<p>Registreren gaat via het portaal van het NCSC met eHerkenning op niveau EH2+, op de dienst MijnNCSC. Het aanvragen of uitbreiden van zo’n middel kost dagen tot weken, afhankelijk van de leverancier en de interne route. <strong>Dat is in de praktijk het kritieke pad, niet de juridische analyse.</strong> Zet die aanvraag in gang voordat je aan deze toets begint. Blijkt de regeling niet in scope, dan heb je een ongebruikt middel. Blijkt zij wel in scope en heb je niets, dan sta je stil.</p>
+<h2 id="t-wat-de-toets-doet">Wat de toets doet</h2>
+<p>De vier criteria zijn <strong>cumulatief</strong>: pas als alle vier met ja worden beantwoord, is sprake van een overheidsinstantie in de zin van de wet.</p>
+<ol type="1">
+<li><strong>Algemeen belang, geen commercieel karakter.</strong> Opgericht voor publieke taken, zonder winstoogmerk.</li>
+<li><strong>Rechtspersoonlijkheid, of bevoegd namens een ander op te treden.</strong> De vorm van de regeling is bepalend, maar het ontbreken van eigen rechtspersoonlijkheid sluit niets uit.</li>
+<li><strong>Financiering, toezicht of benoeming door de overheid.</strong> Drie alternatieve routes; een ja volstaat.</li>
+<li><strong>Bevoegdheid tot besluiten die rechten van burgers of bedrijven raken.</strong> Het beslissende criterium, en het criterium waar de meeste toetsen stranden of juist kantelen.</li>
+</ol>
+<p>De toets geeft <strong>geen uitslag maar een dossier</strong>: per criterium je antwoord, het bewijsstuk dat je erbij noemt, en de punten die open blijven. Dat is met opzet. Wat een organisatie bij toezicht nodig heeft, is niet het antwoord maar de onderbouwing waarmee ze het antwoord verdedigt. De registratie sluit af met een verklaring naar waarheid.</p>
+<h2 id="t-drie-plekken-waar-het-misgaat">Drie plekken waar het misgaat</h2>
+<p><strong>Mandaat is geen ontsnapping.</strong> Een entiteit heeft de bevoegdheid om besluiten te nemen niet alleen wanneer die is geattribueerd of gedelegeerd, maar ook wanneer die is gemandateerd. Wat blijft staan: leg per taak vast namens wie wordt besloten en onder welk briefhoofd het naar buiten gaat. Bij een gemengd beeld, sommige taken gedelegeerd en andere in mandaat, ligt “wel in scope” voor de hand.</p>
+<p><strong>De zinsnede over grensoverschrijdend verkeer is strenger dan hij oogt.</strong> Die komt uit artikel 6, onderdeel 35 van de NIS2-richtlijn en moet ruim worden uitgelegd, maar de uitzonderingsclausule bevat de eigenlijke toets. Daaraan is alleen voldaan wanneer <strong>beide</strong> voorwaarden gelden: de entiteit brengt EU-recht ten uitvoer dat aan een van de vier vrijheden raakt, én het is niet uitgesloten dat haar besluiten gevolgen hebben voor personen of rechtspersonen buiten Nederland. In de praktijk wordt de eerste voorwaarde hard getoetst: welke EU-verordening of -richtlijn ligt aan de taak ten grondslag?</p>
+<p>Let op de lezing die daarmee vervalt: dat het bestaan van Awb-besluiten mét bezwaar en beroep aan dit criterium laat voldoen. Dat hoort bij het eerste deel van het criterium en is een noodzakelijke, geen voldoende voorwaarde. Er zijn regelingen die Awb-besluiten nemen mét bezwaar en beroep en tóch buiten scope vielen, omdat er geen EU-grondslag onder de taken lag.</p>
+<p><strong>De conclusie reikt niet verder dan de takenlijst.</strong> Beantwoord criterium 4 per taak, niet voor de organisatie als geheel, en laat intern bevestigen dat de lijst uitputtend is. Bron: de tekst van de regeling, het mandaatregister en de begrotingsprogramma’s.</p>
+<h2 id="t-wat-je-erbij-nodig-hebt">Wat je erbij nodig hebt</h2>
+<p>De regeling zelf inclusief wijzigingen · alle mandaat-, volmacht- en delegatiebesluiten · begroting en jaarrekening · reglementen van bestuur · dienstverleningsovereenkomsten met deelnemers · een actueel overzicht van uitvoeringstaken met hun wettelijke grondslag · eventuele correspondentie met het ministerie over de wet.</p>
+<h2 id="t-daarna">Daarna</h2>
+<p><strong>Wel in scope:</strong> registreren bij het NCSC, de zorgplicht inrichten via een gap-analyse tegen BIO2, de meldplicht operationeel maken met de termijnen van 24 en 72 uur, risicobeheer en ketenbeheersing actualiseren, en de wet bestuurlijk verankeren. Bestuurders hebben onder de wet een eigen rol, inclusief een kennis- en opleidingsplicht. Stel ook vast of de organisatie als essentiële of als belangrijke entiteit wordt aangemerkt, want dat bepaalt het toezichtregime.</p>
+<p><strong>Niet in scope:</strong> leg de analyse en de onderbouwing vast, zodat de uitkomst reproduceerbaar is. Herbeoordeel bij verandering, want nieuwe taken of een omzetting van mandaat naar delegatie kunnen de uitkomst kantelen; zet een jaarlijkse hertoets in de planning. Maak ketenafspraken met de deelnemers: die vallen zelf wél onder de wet en zullen vanuit hun eigen zorgplicht eisen stellen aan de regeling als ketenpartner of leverancier.</p>
+<p>Een antwoord van een beleidsloket is bruikbaar als onderbouwing, maar het is geen beschikking en geen vrijwaring. Bewaar de wisseling integraal en noteer welke vraag er precies beantwoord is, en op welke aannames het antwoord rust.</p>
+<h2 id="t-bronnen">Bronnen</h2>
+<ul>
+<li>Cyberbeveiligingswet, in het bijzonder art. 43, 44 en 98 (registratie en termijnen) en art. 92 en 93 (bestuurlijke boete en last onder dwangsom)</li>
+<li>NIS2-richtlijn, artikel 6 onderdeel 35 (definitie overheidsinstantie) en bijlage I</li>
+<li>Cyberbeveiligingsregeling sector overheid, Stcrt. 2026-27679, 5 augustus 2026</li>
+<li>Digitale Overheid, “Voor welke overheidsorganisaties geldt de Cyberbeveiligingswet”</li>
+<li>Brief van het ministerie van BZK over verificatie van gemeenschappelijke regelingen in scope, 17 december 2025, met bijlage I: de overheidscriteria met toelichting uit de memorie van toelichting</li>
+<li>Aanknopingspunten voor het EU-spoor bij veelvoorkomende taken: Verordening (EU) 492/2011 art. 10 bij leerplicht; HvJ EU <em>Libert e.a.</em>, C-197/11 bij woonruimteverdeling en urgentie; PSO-verordening (EG) 1370/2007 bij doelgroepenvervoer, al raakt die eerder de inkoopkant dan besluiten richting burgers</li>
+</ul>
+<p>Deze toets structureert en documenteert de analyse. Hij vervangt geen juridisch advies. De organisatie is zelf verantwoordelijk voor het oordeel of zij onder de Cyberbeveiligingswet valt.</p>
+</section>
 </main>
 
 <div class="voet"><div class="binnen">
-<p class="privacy">Geen account, geen server, geen telemetrie. Deze uitkomst komt uit je eigen antwoorden en is geen juridisch oordeel.</p>
+<p class="privacy">Geen account, geen server, geen telemetrie. Deze uitkomst komt uit je eigen antwoorden en is geen juridisch oordeel. Offline gebruiken? Sla deze pagina op met Ctrl+S; alles zit erin.</p>
 <!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/val-ik-onder-de-cbw">governance/val-ik-onder-de-cbw</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet -->
 </div></div>
 
@@ -230,6 +274,7 @@ function toonIntro(){
   '<div class="knoppen">' +
   '<button class="primair" id="start">' + (bezig ? "Verder waar je was" : "Start de toets") + '</button>' +
   (bezig ? '<button id="opnieuw">Opnieuw beginnen</button>' : '') +
+  '<a class="knop" href="#toelichting">Lees eerst de toelichting</a>' +
   '</div></section>';
  document.getElementById("start").onclick = function(){ stap = 0; toon(); };
  var o = document.getElementById("opnieuw");

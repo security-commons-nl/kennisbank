@@ -146,3 +146,27 @@ Twee dingen die een aparte workflow controleert en die de build zelf niet vangt:
   *Live-URL in README* faalt anders, nadat de build al groen was.
 - De **leesversie** moet na elke wijziging opnieuw: eerst `leesversie.py`, dan `build.py`. Wijzig je
   alleen de README, dan meldt de build dat de leesversie achterloopt.
+
+## 5. Een instrument toevoegen
+
+Een item mag ook iets zijn dat je *doet* in plaats van leest: een klikbare toets, een rekenhulp, een
+zelfcheck. Zo'n instrument is de `index.html` van het item; `tools/build.py` genereert die pagina niet
+maar zet er wel het kruimelpad, de bronvoet en het favicon in, en houdt rekening met een eigen opmaak.
+Voorbeeld: [Val ik onder de Cbw?](governance/val-ik-onder-de-cbw/).
+
+Drie eisen bovenop de gewone regels:
+
+- **De README is en blijft de bron.** Daar staat waar het instrument op rust: de criteria, de nuances,
+  de bronnen. Die tekst staat óók op de pagina, onder het instrument, zodat de pagina een leesversie
+  blijft (statuut B3) en niet alleen knoppen bevat. Wie via een zoekmachine binnenkomt ziet dan beide.
+- **Self-contained en zonder server.** Geen externe scripts, fonts of API's; antwoorden blijven in de
+  browser. Zeg dat op de pagina, en zeg ook dat de pagina met Ctrl+S offline te bewaren is.
+- **Geen oordeel waar een oordeel niet kan.** Een instrument dat over een wettelijke reikwijdte of een
+  juridische vraag gaat, levert een ingevuld dossier met open punten, geen uitslag. De lezer moet zien
+  wat hij nog moet uitzoeken, niet wat de pagina voor hem heeft besloten.
+
+Type is meestal `sjabloon` (de gebruiker vult het in) of `aanpak`. Heeft de beslislogica meer dan een paar
+regels, zet er dan een test bij in `tools/` en laat die in CI meedraaien; de build controleert de
+inhoud van een `index.html` niet. Draai voor een instrument géén `leesversie.py`: dat script
+overschrijft de pagina met een leesversie van de README. Zet de README-tekst zelf onder het
+instrument (pandoc doet het omzetten) en draai daarna gewoon `build.py`.
