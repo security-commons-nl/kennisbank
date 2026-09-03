@@ -3,6 +3,7 @@ titel: Meten voordat je ingrijpt
 vakgebied: security
 type: aanpak
 normen: [BIO2]
+barrieres: [execution, mail, legacy, session, consent, segment, edr]
 versie: 2026-08
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
@@ -29,6 +30,12 @@ de vraag wat er in je omgeving feitelijk gebeurt.
 Dit stuk bevat de methode: waarom je eerst meet, en in welke volgorde. De uitwerking per laag staat in
 eigen stukken die hierboven staan opgesomd, en het bestuurlijke deel (regie, strategie, besluitvorming)
 in [Sturen op weerbaarheid](../sturen-op-weerbaarheid/).
+
+Een deel van dit meetwerk is inmiddels gereedschap. De
+[meting](https://security-commons-nl.github.io/aanvalspaden/meting/) leest exports die je al hebt
+(firewallconfig, nmap, Nessus, Entra, backup, een Linux-dump) en toetst ze aan 41 regels, in je eigen
+browser. Wat daar niet uit te halen is, heet daar een witte vlek; dat is precies waar dit stuk over
+gaat, want die vlekken vul je met de werkwijze hieronder en niet met een aanname.
 
 > Gegeneraliseerd uit een concrete casus. Pas de voorbeelden aan op je eigen organisatie, leveranciers en
 > tenant. Let bij maatregelen die verkeer of gebruik inzichtelijk maken (zoals TLS-decryptie of
@@ -159,6 +166,7 @@ in, en houd de uitkomsten onder versiebeheer zodat de verbetering aantoonbaar en
 | Wil je | Ga naar |
 |---|---|
 | Weten welke aanvalspaden bij jou openstaan, in een uur | [Zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/) |
+| Dit meten in plaats van invullen: 41 regels op exports die je al hebt | [Meting](https://security-commons-nl.github.io/aanvalspaden/meting/) |
 | Die uitkomst omzetten in een risicolijst met eigenaar | [Risicoanalyse langs aanvalspaden](../risicoanalyse-aanvalspaden/) |
 | De rode cellen structureel dichten met mandaat | [Een blue team opzetten](../blue-team-opzetten/) |
 | AI-gebruik in je organisatie feitelijk meten | [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/) |
