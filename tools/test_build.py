@@ -10,6 +10,7 @@ naar de bron. De laatste test draait de echte kennisbank door de controle heen.
 from __future__ import annotations
 
 import importlib.util
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -293,6 +294,49 @@ class EchteKennisbank(unittest.TestCase):
             with self.subTest(pagina=str(pagina)):
                 self.assertIn(build.BRON_START, pagina.read_text(encoding="utf-8"))
 
+
+
+class Voorpagina(unittest.TestCase):
+    """De indeling van de gebouwde voorpagina (index.html in de repo-root).
+
+    De vier vakgebieden zijn orientatie en horen boven de publicaties te staan. Ze stonden onderaan
+    onder het kopje "Secties", waar niemand ze zag, terwijl "is hier iets voor mij?" juist de eerste
+    vraag is van een FG of een BCM-coordinator (Bas, 03-09-2026). Geen filter op vakgebied: 48 van de
+    52 stukken staan onder security en privacy is leeg, dus filteren zou vier stukken verbergen of
+    een lege pagina geven. Een tegel met de telling erin, ook als die nul is, zegt hetzelfde
+    eerlijker en nodigt uit om iets in te brengen.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        pad = build.ROOT / "index.html"
+        if not pad.exists():
+            raise unittest.SkipTest("index.html is nog niet gebouwd; draai tools/build.py")
+        cls.html = pad.read_text(encoding="utf-8")
+
+    def test_vakgebieden_staan_boven_de_kaarten(self) -> None:
+        self.assertIn('<div class="vakken">', self.html)
+        self.assertLess(self.html.index("Waar zoek je in?"), self.html.index("Direct te lezen"))
+        self.assertLess(self.html.index('class="vakken"'), self.html.index('id="direct-te-lezen"'))
+        self.assertNotIn("<h2>Secties</h2>", self.html)
+        for vak in ("security", "privacy", "bcm", "governance"):
+            self.assertIn('href="%s/"' % vak, self.html)
+        self.assertIn("nog leeg", self.html)
+
+    def test_filter_blijft_zoeken_en_barriere(self) -> None:
+        """Geen vakgebiedfilter erbij: dat onderscheidt niets en zou op privacy een lege lijst geven."""
+        self.assertIn('id="zoek"', self.html)
+        self.assertIn('id="barriere"', self.html)
+        self.assertNotIn('id="vakgebied"', self.html)
+
+    def test_tegeltekst_is_kort_en_heel(self) -> None:
+        begin = self.html.index('<div class="vakken">')
+        blok = self.html[begin:self.html.index("</div>", begin)]
+        teksten = re.findall(r'itemdesc">([^<]*)<', blok)
+        self.assertEqual(len(teksten), 4, teksten)
+        for tekst in teksten:
+            self.assertTrue(0 < len(tekst) <= 72, tekst)
+            self.assertFalse(tekst.endswith(("-", ",", ";")), tekst)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -357,14 +357,20 @@ def lees_sectie(vak: str) -> dict:
     readme = ROOT / vak / "README.md"
     if not readme.exists():
         fout(ROOT / vak, "B1", "vakgebied zonder README.md")
-        return {"titel": vak.title(), "lead": "", "hoort": []}
+        return {"titel": vak.title(), "lead": "", "kort": "", "hoort": []}
     tekst = readme.read_text(encoding="utf-8")
     titel = re.search(r"^# ([^\n]+)$", tekst, re.M)
     lead = re.search(r"^# [^\n]+\n\n((?:[^\n]+\n?)+?)\n\n", tekst)
     hoort = re.findall(r"^- (.+)$", tekst.split("## Wat hoort hier")[-1].split("\n## ")[0], re.M) if "## Wat hoort hier" in tekst else []
     controleer_tekst(readme)
+    tekst_lead = lead.group(1).strip().replace("\n", " ") if lead else ""
+    kort = tekst_lead.split("op het gebied van ", 1)[-1].split(".")[0].split(":")[0].strip()
+    if not kort:
+        kort = tekst_lead.split(".")[0].strip()
+    if len(kort) > 72:
+        kort = kort[:72].rsplit(" ", 1)[0].rstrip(",;")
     return {"titel": titel.group(1).strip() if titel else vak.title(),
-            "lead": lead.group(1).strip().replace("\n", " ") if lead else "", "hoort": hoort,
+            "lead": tekst_lead, "kort": kort[:1].upper() + kort[1:], "hoort": hoort,
             "volgorde": lees_volgorde(tekst)}
 
 
@@ -462,6 +468,11 @@ ul.hoort li{margin-bottom:3px}
 .cta.alt{background:#fff;color:var(--accent);border:1px solid var(--line);margin-left:8px}
 .cta.alt:hover{border-color:var(--accent)}
 .grid[hidden]{display:none}
+.vakken{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 8px}
+.vakken a.item{padding:11px 13px}
+.vakken .itemtop{margin-bottom:2px}
+.vakken .itemtitle{font-size:14.5px}
+.vakken .itemdesc{font-size:12.5px;color:var(--muted)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .filters[hidden]{display:none}
 .filters input,.filters select{font:inherit;font-size:14px;color:var(--ink);background:var(--card);
@@ -715,7 +726,7 @@ def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
       <span class="itemtitle">{e(secties[vak]['titel'])}</span>
       {tag}
     </span>
-    <p class="itemdesc">{e(secties[vak]['lead'])}</p>
+    <p class="itemdesc">{e(secties[vak]['kort'])}</p>
   </a>
 """
     body = f"""<header class="top">
@@ -725,6 +736,15 @@ def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
 
 <p class="lead">Memo's, rapportages, aanpakken, trainingen en datasets die al gebruikt zijn in echte
 organisaties, geanonimiseerd gedeeld door professionals. Geen theorie. Alles herbruikbaar onder EUPL-1.2.</p>
+
+<h2>Waar zoek je in?</h2>
+<p class="h2sub">Vier vakgebieden. De telling is de stand van vandaag; staat er "nog leeg",
+dan is dat een uitnodiging en geen fout.</p>
+
+<div class="vakken">
+
+{kaarten_secties}
+</div>
 
 <h2>Direct te lezen</h2>
 <p class="h2sub">Publicaties met een eigen pagina. Openen in de browser, geen installatie, geen externe afhankelijkheden.</p>
@@ -741,14 +761,6 @@ alle. Zoek je iets dat er niet is? <a href="https://github.com/security-commons-
 in Halen en brengen</a>; je naam en je organisatie hoeven daar niet bij.</p>
 
 <p class="h2sub">Handleidingen per barriere uit de zelfcheck staan bij <a href="security/#handleidingen">Security</a>, en met de alternatieven ernaast op <a href="https://security-commons-nl.github.io/aanvalspaden/normen/">Van aanvalspad naar norm</a>.</p>
-
-<h2>Secties</h2>
-<p class="h2sub">De kennisbank is ingedeeld op vakgebied. Elke sectie beschrijft wat er thuishoort.</p>
-
-<div class="grid">
-
-{kaarten_secties}
-</div>
 
 <h2>Meedoen</h2>
 <p>Eén regel corrigeren is genoeg om bij te dragen, je hoeft geen visualisatie te bouwen. Ook zonder
