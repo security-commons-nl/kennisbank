@@ -112,8 +112,9 @@ FIDO2 afdwingen wel. Geen bewijs, dan geel. Bewijs ouder dan een half jaar, dan 
 vanzelf degraderen, anders wordt de matrix een dashboard dat liegt.
 
 Waar het bewijs vandaan komt, staat per pad in de bijlage. Voor wie het gestructureerd wil doen: de
-[security-posture-tool](https://github.com/security-commons-nl/security-posture-tool) leest exports
-(Entra, nmap, Nessus, firewall-configuraties, SIEM-regels) en legt het bewijs onder de bevinding;
+[meting](https://security-commons-nl.github.io/aanvalspaden/meting/) leest exports (Entra, nmap, Nessus,
+firewall-configuraties, SIEM-regels, backup-rapportages) en een uitgepakte Linux-hostdump, en legt het
+bewijs onder de bevinding. Ze draait in je browser, dus de exports blijven bij jou;
 [Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) werkt pad 2
 helemaal uit tot aan de query's.
 
@@ -174,7 +175,7 @@ Deze methode is de leeswijzer over de commons heen. Elke stap heeft een project 
 |---|---|
 | 1. Kroonjuwelen | [procescheck](https://security-commons-nl.github.io/procescheck/) (BIA/BIV, kroonjuwelenlijst in de uitdraai, en wat valt om onder *Blast radius*) |
 | 2. Aanvalspaden | de [zelfcheck](https://security-commons-nl.github.io/aanvalspaden/) (een uur, achttien routes) en de bijlage bij deze methode; pad 2 uitgewerkt in [Meten voordat je ingrijpt](../meten-voordat-je-ingrijpt/) |
-| 3. Dekking met bewijs | [security-posture-tool](https://github.com/security-commons-nl/security-posture-tool), [iamscan](https://github.com/security-commons-nl/iamscan) (pad 5 op Linux) |
+| 3. Dekking met bewijs | de [meting](https://security-commons-nl.github.io/aanvalspaden/meting/): 41 items uit exports en hostdumps, per barriere het bewijs, met de witte vlekken erbij |
 | 4. Risicolijst en gesprek | naar leveranciers: [Security Annex](../security-annex-leveranciers/) (pad 4 als contract); naar binnen: [Een blue team opzetten](../blue-team-opzetten/) (de rode cellen dichten met mandaat) |
 | 5. Vertaling naar de norm | [Van aanvalspad naar norm](https://security-commons-nl.github.io/aanvalspaden/normen/): wat je bewijs aantoont in BIO 2.0, ISO 27001 en het Wpg-toetsingskader, en waar het ophoudt |
 
