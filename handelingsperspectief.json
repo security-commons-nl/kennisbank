@@ -38,17 +38,17 @@
     },
     {
       "barriere": "consent",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "consent",
       "item": "security/identiteit-en-mail-meten",
       "titel": "Identiteit en e-mail meten voordat je afdwingt",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "consent",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
       "barriere": "consent",
@@ -101,23 +101,16 @@
     },
     {
       "barriere": "edr",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "edr",
       "item": "security/killchain-naast-je-controls",
       "titel": "De killchain naast je controls leggen",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/killchain-naast-je-controls/"
     },
     {
-      "barriere": "execution",
+      "barriere": "edr",
       "item": "security/meten-voordat-je-ingrijpt",
       "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
+      "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
@@ -140,6 +133,13 @@
       "titel": "De killchain naast je controls leggen",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/killchain-naast-je-controls/"
+    },
+    {
+      "barriere": "execution",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
       "barriere": "exploitresponse",
@@ -192,13 +192,6 @@
     },
     {
       "barriere": "legacy",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "legacy",
       "item": "security/passkeys-invoeren",
       "titel": "Passkeys invoeren",
       "rol": "fundering",
@@ -219,6 +212,13 @@
       "url": "https://security-commons-nl.github.io/kennisbank/security/mfa-handhaving/"
     },
     {
+      "barriere": "legacy",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
+    },
+    {
       "barriere": "localadmin",
       "item": "security/patchen-met-dekking",
       "titel": "Werkplekken beheerd, gehard en gepatcht",
@@ -227,17 +227,17 @@
     },
     {
       "barriere": "mail",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "mail",
       "item": "security/identiteit-en-mail-meten",
       "titel": "Identiteit en e-mail meten voordat je afdwingt",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "mail",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
       "barriere": "mailresponse",
@@ -311,17 +311,17 @@
     },
     {
       "barriere": "segment",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "segment",
       "item": "security/netwerksegmentatie",
       "titel": "Netwerksegmentatie",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/netwerksegmentatie/"
+    },
+    {
+      "barriere": "segment",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
       "barriere": "segment",
@@ -339,13 +339,6 @@
     },
     {
       "barriere": "session",
-      "item": "security/meten-voordat-je-ingrijpt",
-      "titel": "Meten voordat je ingrijpt",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
-    },
-    {
-      "barriere": "session",
       "item": "security/sessiebescherming",
       "titel": "Sessies beschermen tegen tokendiefstal",
       "rol": "fundering",
@@ -357,6 +350,13 @@
       "titel": "Identiteit en e-mail meten voordat je afdwingt",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/"
+    },
+    {
+      "barriere": "session",
+      "item": "security/meten-voordat-je-ingrijpt",
+      "titel": "Meten voordat je ingrijpt",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/"
     },
     {
       "barriere": "soc",

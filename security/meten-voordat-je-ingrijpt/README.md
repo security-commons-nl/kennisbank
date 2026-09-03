@@ -4,6 +4,7 @@ vakgebied: security
 type: aanpak
 normen: [BIO2]
 barrieres: [execution, mail, legacy, session, consent, segment, edr]
+rol: verdieping
 versie: 2026-08
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
