@@ -38,6 +38,10 @@ BRON_EIND = "<!-- /bronvoet -->"
 # het verband alleen in de frontmatter en komt de lezer het nooit tegen.
 PIJLER_START = "<!-- pijler-kinderen -->"
 PIJLER_EIND = "<!-- /pijler-kinderen -->"
+# Normenregel: het veld `normen` boven aan een leesversie. Het is een verplicht veld (B2), maar het
+# kwam nergens op een pagina terecht; wie op NIS2 of de Cbw zocht, vond het stuk alleen bij toeval.
+NORM_START = "<!-- normen -->"
+NORM_EIND = "<!-- /normen -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage", "handleiding"]
@@ -48,6 +52,22 @@ ROLLEN = ["fundering", "alternatief", "verdieping"]
 # Types die aan een barriere uit de zelfcheck mogen hangen. Een handleiding moet het, een aanpak of
 # sjabloon mag het: die richten net zo goed een maatregel in, alleen in een andere vorm.
 MET_BARRIERES = {"handleiding", "aanpak", "sjabloon"}
+# Twee schrijfwijzen voor dezelfde norm zijn onzichtbaar zolang het veld nergens getoond wordt; zodra
+# het op de kaart staat en meetelt bij het zoeken, splitst het de vindbaarheid. Dit is geen gesloten
+# register: een norm die hier niet in staat mag gewoon, alleen een bekende variant wordt afgekeurd.
+NORM_ALIAS = {
+    "cyberbeveiligingswet": "Cbw",
+    "cbw 2025": "Cbw",
+    "bio 2.0": "BIO2",
+    "bio2.0": "BIO2",
+    "bio 2": "BIO2",
+    "nis 2": "NIS2",
+    "nis-2": "NIS2",
+    "avg/gdpr": "AVG",
+    "gdpr": "AVG",
+    "iso27001": "ISO 27001",
+    "iso 27001:2022": "ISO 27001",
+}
 NL = chr(10)
 
 # Mappen die op de root mogen staan naast de vakgebieden. Alles wat met een punt begint is
@@ -311,6 +331,12 @@ def controleer_item(vak: str, map_: Path) -> dict | None:
         fout(readme, "B2", f"status '{fm.get('status')}' niet in {STATUSSEN}")
     if not isinstance(fm.get("normen"), list):
         fout(readme, "B2", "normen moet een lijst zijn (mag leeg: [])")
+    else:
+        for norm in fm["normen"]:
+            juist = NORM_ALIAS.get(str(norm).strip().lower())
+            if juist and str(norm) != juist:
+                fout(readme, "B2", f"norm '{norm}' is een variant van '{juist}'; schrijf hem overal "
+                                   "hetzelfde, anders vindt de zoeker maar de helft")
     if isinstance(fm.get("samenvatting"), str) and len(fm["samenvatting"]) < 60:
         fout(readme, "B2", "samenvatting te kort; twee tot vier zinnen, dit wordt de kaarttekst")
     controleer_handleiding(vak, readme, fm)
@@ -459,6 +485,9 @@ h3.groep{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(
 .tag-live{background:#e6f2ee;color:var(--accent2);border-color:#a8d5bd}
 .tag-repo{background:#eef1f5;color:var(--muted);border-color:var(--line)}
 .tag-leeg{background:#f7f8fa;color:#9aa2ad;border-color:var(--line)}
+.normen{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.norm{font-size:11px;line-height:1.5;color:var(--muted);background:#eef1f5;border:1px solid var(--line);
+  border-radius:4px;padding:1px 7px;white-space:nowrap}
 ul.hoort{margin:0 0 14px;padding-left:20px;color:#3c434b;font-size:14px}
 ul.hoort li{margin-bottom:3px}
 .note{background:#fffbe9;border:1px solid #ecd98a;border-radius:6px;padding:11px 14px;font-size:13.5px;margin:16px 0}
@@ -550,11 +579,23 @@ def meta_regel(fm: dict, met_vak: bool) -> str:
     return " · ".join(e(d) for d in delen)
 
 
+def normbadges(fm: dict) -> str:
+    """De normen als losse etiketten onder de metaregel; leeg veld levert niets op."""
+    normen = [str(n) for n in (fm.get("normen") or [])]
+    if not normen:
+        return ""
+    binnen = "".join(f'<span class="norm">{e(n)}</span>' for n in normen)
+    return f'{NL}    <div class="normen">{binnen}</div>'
+
+
 def kaart(fm: dict, basis: str, met_vak: bool) -> str:
     link = fm["_link"] if fm["_link"].startswith("http") else basis + fm["_link"]
     tag = {"live": ("tag-live", "live"), "markdown": ("tag-repo", "markdown"), "download": ("tag-repo", "download")}[fm["_weergave"]]
     # data-zoek is de tekst waarop het zoekvak vergelijkt, data-barrieres de sleutel van de zelfcheck.
+    # De normen tellen mee in data-zoek: zonder dat vindt wie op NIS2 zoekt alleen de stukken die het
+    # woord toevallig in de titel of samenvatting hebben staan.
     zoek = " ".join(str(fm.get(v, "")) for v in ("titel", "samenvatting", "type", "_vak")).lower()
+    zoek = (zoek + " " + " ".join(str(n) for n in (fm.get("normen") or [])).lower()).strip()
     bar = " ".join(fm.get("barrieres") or [])
     return f"""  <a class="item" href="{e(link)}" data-vak="{e(fm['_vak'])}" data-zoek="{e(zoek)}" data-barrieres="{e(bar)}">
     <span class="itemtop">
@@ -562,7 +603,7 @@ def kaart(fm: dict, basis: str, met_vak: bool) -> str:
       <span class="tag {tag[0]}">{tag[1]}</span>
     </span>
     <p class="itemdesc">{e(fm['samenvatting'])}</p>
-    <div class="meta">{meta_regel(fm, met_vak)}</div>
+    <div class="meta">{meta_regel(fm, met_vak)}</div>{normbadges(fm)}
   </a>
 """
 
@@ -609,6 +650,10 @@ def zoekbalk(items: list[dict]) -> str:
     Filteren op vakgebied, type of norm onderscheidt niets: die zitten allemaal in een hoek (48 van de
     51 items onder security, 41 handleidingen, BIO2 op 49). De barriere spreidt wel, en het is dezelfde
     sleutel die de zelfcheck gebruikt, dus wie daarvandaan komt herkent hem.
+
+    Een norm blijft daarom een zoekterm en geen keuzelijst: BIO2 staat op 49 van de 52 items en zegt
+    dus niets, terwijl de staart (NIS2 op 6, de rest op 1 of 2) precies is wat iemand zoekt. Die staart
+    zit in `data-zoek` van elke kaart.
     """
     bekend = barrieres()
     tellingen: dict[str, int] = {}
@@ -620,7 +665,7 @@ def zoekbalk(items: list[dict]) -> str:
         opties.append(f'  <option value="{e(b)}">{e(bekend.get(b, b))} ({tellingen[b]})</option>')
     return ('<div class="filters" id="filters" hidden>' + NL
             + '  <label class="visueel-verborgen" for="zoek">Zoeken</label>' + NL
-            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp, bijvoorbeeld logboek of leverancier"'
+            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp of norm, bijvoorbeeld logboek of NIS2"'
             + ' autocomplete="off">' + NL
             + '  <label class="visueel-verborgen" for="barriere">Barriere</label>' + NL
             + '  <select id="barriere">' + NL + NL.join(opties) + NL + '  </select>' + NL
@@ -960,6 +1005,21 @@ PIJLER_CSS = (
 )
 
 
+def na_de_titel(tekst: str) -> int | None:
+    """Positie vlak na de eerste </h1> die echt op de pagina staat, of None.
+
+    Een instrument bouwt zijn kop met JavaScript; de enige </h1> in de bron staat dan in het
+    <noscript>-blok of in een sjabloon binnen een <script>. Daar iets invoegen levert een etiket op
+    dat niemand ziet, of erger, het komt midden in de code terecht. Zo'n pagina krijgt geen blok.
+    """
+    verboden = [(m.start(), m.end())
+                for m in re.finditer(r"<(script|noscript)\b[^>]*>.*?</\1>", tekst, re.S | re.I)]
+    for m in re.finditer(r"</h1>", tekst):
+        if not any(a < m.start() < b for a, b in verboden):
+            return m.end()
+    return None
+
+
 def pijlerblok(kinderen: list[dict]) -> str:
     """De stukken die onder deze pijler hangen, boven aan de leesversie van de pijler zelf."""
     regels = "".join(
@@ -982,14 +1042,48 @@ def zet_pijlerblok(tekst: str, kinderen: list[dict]) -> str:
     tekst = re.sub(re.escape(PIJLER_START) + ".*?" + re.escape(PIJLER_EIND), "", tekst, flags=re.S)
     if not kinderen:
         return tekst
-    m = re.search(r"</h1>", tekst)
-    if not m:
+    plek = na_de_titel(tekst)
+    if plek is None:
         return tekst
-    return tekst[: m.end()] + pijlerblok(kinderen) + tekst[m.end():]
+    return tekst[:plek] + pijlerblok(kinderen) + tekst[plek:]
+
+
+NORM_CSS = (
+    ".normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}"
+    ".normenregel b{color:#1f4e79;font-weight:600}"
+    ".normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;"
+    "padding:0 7px;margin-left:5px;white-space:nowrap}"
+)
+
+
+def normenregel(normen: list[str]) -> str:
+    """De normen van dit stuk, onder de titel van de leesversie.
+
+    Het veld is verplicht (statuut B2) en wordt bij elk item ingevuld, maar het stond alleen in de
+    frontmatter. Wie wil weten of een stuk iets met NIS2 te maken heeft, moest de bron openen.
+    """
+    etiketten = "".join(f'<span class="norm">{e(n)}</span>' for n in normen)
+    return (NORM_START + f"<style>{NORM_CSS}</style>"
+            + f'<p class="normenregel"><b>Normen</b>{etiketten}</p>' + NORM_EIND)
+
+
+def zet_normen(tekst: str, normen: list[str]) -> str:
+    """Zet, vernieuw of verwijder de normenregel onder de titel. Idempotent.
+
+    Een leeg veld levert geen regel op; anders blijft er een kop zonder inhoud staan zodra de laatste
+    norm van een stuk verdwijnt.
+    """
+    tekst = re.sub(re.escape(NORM_START) + ".*?" + re.escape(NORM_EIND), "", tekst, flags=re.S)
+    if not normen:
+        return tekst
+    plek = na_de_titel(tekst)
+    if plek is None:
+        return tekst
+    return tekst[:plek] + normenregel(normen) + tekst[plek:]
 
 
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool,
-                   kinderen: list[dict] | None = None) -> bool:
+                   kinderen: list[dict] | None = None, normen: list[str] | None = None) -> bool:
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad, favicon,
     inhoudsopgave bij een lang stuk, een pijlerblok bij een pijler en een bronvoet. Idempotent.
 
@@ -1001,13 +1095,16 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     vak, item = pad.parent.parent.name, pad.parent.name
     tekst = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(
         zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))), vak, item)
+    # Eerst het pijlerblok, dan de normenregel: beide gaan vlak achter </h1>, dus wat als laatste
+    # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.
     tekst = zet_pijlerblok(tekst, kinderen or [])
+    tekst = zet_normen(tekst, [str(n) for n in (normen or [])])
     if BRON_START not in tekst:
         fout(pad, "B10", "geen </body> gevonden; de bronvoet kan er niet in")
         return False
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
-                          "inhoudsopgave, pijlerblok of bronvoet); draai python tools/build.py")
+                          "inhoudsopgave, pijlerblok, normenregel of bronvoet); draai python tools/build.py")
         return False
 
     blok = kruimelblok(kruimels)
@@ -1095,7 +1192,7 @@ def main() -> int:
             html_pad = fm["_map"] / "index.html"
             kinderen = kinderen_van(fm["_map"].name, items[vak])
             if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]),
-                                                    alleen_check, kinderen):
+                                                    alleen_check, kinderen, fm.get("normen") or []):
                 kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")

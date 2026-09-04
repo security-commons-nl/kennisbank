@@ -2,7 +2,7 @@
 titel: Stelselkaart security-gremia
 vakgebied: security
 type: dataset
-normen: [NIS2, Cyberbeveiligingswet]
+normen: [NIS2, Cbw]
 peildatum: 2026-08-11
 herkomst: eigen ontwikkeling security-commons-nl, na externe review uit de sector
 status: in gebruik

@@ -226,6 +226,128 @@ class Zoeken(Basis):
         self.assertIn("3 stukken", build.zoekbalk([self.kaartje(), self.kaartje(), self.kaartje()]))
 
 
+class Normen(Basis):
+    """Het veld `normen` op de pagina en in het zoekvak (issue #43).
+
+    Het veld is verplicht (B2) en build.py valideerde het al, maar het kwam nergens terecht: wie op
+    NIS2 of de Cbw zocht vond een stuk alleen als het woord toevallig in de titel of de samenvatting
+    stond. Geen keuzelijst erbij: BIO2 staat op 49 van de 52 items en onderscheidt dus niets.
+    """
+
+    def kaartje(self, **velden) -> dict:
+        basis = {"titel": "Titel", "samenvatting": "Samenvatting.", "type": "handleiding",
+                 "status": "in gebruik", "_vak": "security", "_link": "een-item/", "_weergave": "live"}
+        basis.update(velden)
+        return basis
+
+    def maak_item(self, normen: str) -> Path:
+        """Een compleet item op schijf, leesversie erbij: zonder die meldt B3 iets anders."""
+        map_ = self.map / "security" / "een-stuk"
+        map_.mkdir(parents=True)
+        (map_ / "README.md").write_text(
+            "---\n"
+            "titel: Een stuk\nvakgebied: security\ntype: aanpak\n"
+            f"normen: {normen}\n"
+            "herkomst: gemeente\nstatus: in gebruik\npeildatum: 2026-09\n"
+            "samenvatting: Een samenvatting die lang genoeg is om de controle op zestig tekens "
+            "te halen.\n---\n\n# Een stuk\n", encoding="utf-8")
+        (map_ / "index.html").write_text("<html><body><h1>Een stuk</h1></body></html>", encoding="utf-8")
+        return map_
+
+    def test_de_normen_staan_als_etiket_op_de_kaart(self):
+        html = build.kaart(self.kaartje(normen=["BIO2", "NIS2"]), "", True)
+        self.assertIn('<div class="normen">', html)
+        self.assertIn('<span class="norm">NIS2</span>', html)
+
+    def test_de_normen_tellen_mee_bij_het_zoeken(self):
+        """Dit is de kern: het stuk noemt NIS2 alleen in de frontmatter, en is er toch op te vinden."""
+        html = build.kaart(self.kaartje(titel="Calamiteitenteam", samenvatting="Opzetten en oefenen.",
+                                        normen=["BIO2", "NIS2"]), "", True)
+        zoek = re.search(r'data-zoek="([^"]*)"', html).group(1)
+        self.assertIn("nis2", zoek)
+        self.assertIn("calamiteitenteam", zoek)
+
+    def test_een_leeg_veld_levert_geen_leeg_blok_op(self):
+        html = build.kaart(self.kaartje(normen=[]), "", True)
+        self.assertNotIn('class="normen"', html)
+
+    def test_de_regel_staat_onder_de_titel_van_de_leesversie(self):
+        uit = build.zet_normen("<html><body><h1>Kop</h1><p>tekst</p></body></html>", ["BIO2", "NIS2"])
+        self.assertLess(uit.index(build.NORM_START), uit.index("<p>tekst</p>"))
+        self.assertGreater(uit.index(build.NORM_START), uit.index("</h1>"))
+        self.assertIn("NIS2", uit)
+
+    def test_stapelt_niet_bij_opnieuw_bouwen(self):
+        een = build.zet_normen("<html><body><h1>Kop</h1>t</body></html>", ["BIO2"])
+        twee = build.zet_normen(een, ["BIO2"])
+        self.assertEqual(een, twee)
+        self.assertEqual(twee.count(build.NORM_START), 1)
+
+    def test_een_gewijzigde_norm_vervangt_de_oude_regel(self):
+        oud = build.zet_normen("<html><body><h1>Kop</h1>t</body></html>", ["BIO2"])
+        nieuw = build.zet_normen(oud, ["AVG"])
+        self.assertIn("AVG", nieuw)
+        self.assertNotIn("BIO2", nieuw)
+
+    def test_zonder_normen_verdwijnt_de_regel(self):
+        """Anders blijft er een kop 'Normen' zonder etiketten staan zodra het veld leeggemaakt wordt."""
+        oud = build.zet_normen("<html><body><h1>Kop</h1>t</body></html>", ["BIO2"])
+        self.assertNotIn(build.NORM_START, build.zet_normen(oud, []))
+
+    def test_zonder_h1_geen_regel(self):
+        # Dan is het geen leesversie; stil ergens invoegen zou de pagina stukmaken.
+        self.assertNotIn(build.NORM_START, build.zet_normen("<p>los fragment</p>", ["BIO2"]))
+
+    def test_een_kop_in_noscript_telt_niet(self):
+        """Precies wat er misging: bij val-ik-onder-de-cbw landde de regel in het noscript-blok.
+
+        Een instrument bouwt zijn kop met JavaScript. De enige </h1> in de bron staat dan in de
+        terugvalsectie, en daar ziet een bezoeker met JavaScript aan niets van.
+        """
+        tool = ("<html><body><header><div class=\"naam\">Val ik onder de Cbw?</div></header>"
+                "<noscript><section><h1>Val ik onder de Cbw?</h1><p>Zet JavaScript aan.</p></section>"
+                "</noscript><div id=\"app\"></div></body></html>")
+        self.assertIsNone(build.na_de_titel(tool))
+        self.assertNotIn(build.NORM_START, build.zet_normen(tool, ["Cbw", "NIS2"]))
+
+    def test_een_kop_in_een_script_telt_niet(self):
+        sjabloon = "<html><body><script>var t = '<h1>Kop</h1>';</script><p>tekst</p></body></html>"
+        self.assertIsNone(build.na_de_titel(sjabloon))
+
+    def test_een_echte_kop_naast_een_noscript_telt_wel(self):
+        pagina = "<html><body><noscript><h1>Terugval</h1></noscript><h1>Echte kop</h1><p>t</p></body></html>"
+        uit = build.zet_normen(pagina, ["BIO2"])
+        self.assertLess(uit.index("Echte kop"), uit.index(build.NORM_START))
+        self.assertLess(uit.index(build.NORM_START), uit.index("<p>t</p>"))
+
+    def test_de_regel_staat_boven_het_pijlerblok(self):
+        """Volgorde zoals build.py hem zet: eerst het etiket bij de titel, dan het kader eronder."""
+        tekst = build.zet_pijlerblok("<html><body><h1>Kop</h1>t</body></html>",
+                                     [{"_map": Path("een-kind"), "titel": "Kind"}])
+        tekst = build.zet_normen(tekst, ["BIO2"])
+        self.assertLess(tekst.index(build.NORM_START), tekst.index(build.PIJLER_START))
+
+    def test_beide_blokken_stapelen_niet_over_elkaar_heen(self):
+        def pas(t: str) -> str:
+            return build.zet_normen(build.zet_pijlerblok(t, [{"_map": Path("kind"), "titel": "Kind"}]), ["BIO2"])
+        een = pas("<html><body><h1>Kop</h1>t</body></html>")
+        self.assertEqual(een, pas(een))
+
+    def test_een_bekende_variant_van_een_norm_wordt_gemeld(self):
+        """Cbw en Cyberbeveiligingswet naast elkaar splitsen de vindbaarheid van hetzelfde onderwerp."""
+        build.controleer_item("security", self.maak_item("[Cyberbeveiligingswet]"))
+        self.assertIn("variant van 'Cbw'", self.meldingen)
+
+    def test_de_juiste_schrijfwijze_geeft_geen_melding(self):
+        build.controleer_item("security", self.maak_item("[Cbw, NIS2]"))
+        self.assertEqual(build.fouten, [], self.meldingen)
+
+    def test_een_onbekende_norm_mag_gewoon(self):
+        """Geen gesloten register: een nieuw kader tegenhouden zou het veld onbruikbaar maken."""
+        build.controleer_item("security", self.maak_item("[DORA]"))
+        self.assertEqual(build.fouten, [], self.meldingen)
+
+
 class Volgorde(Basis):
     """Statuut B4: de volgorde van de items staat in de README van de sectie, niet in het alfabet."""
 
@@ -294,6 +416,26 @@ class EchteKennisbank(unittest.TestCase):
             with self.subTest(pagina=str(pagina)):
                 self.assertIn(build.BRON_START, pagina.read_text(encoding="utf-8"))
 
+    def test_elke_leesversie_toont_de_normen_die_hij_draagt(self):
+        """Een stuk zonder normen krijgt geen lege regel (referenties-tooling), en een instrument
+        dat zijn kop met JavaScript bouwt krijgt er geen: daar zou hij onzichtbaar zijn."""
+        geteld = 0
+        for pagina in sorted(build.ROOT.glob("*/*/index.html")):
+            fm, _ = build.lees_frontmatter((pagina.parent / "README.md").read_text(encoding="utf-8"))
+            if fm is None:
+                continue
+            normen = fm.get("normen") or []
+            tekst = pagina.read_text(encoding="utf-8")
+            with self.subTest(pagina=str(pagina)):
+                if normen and build.na_de_titel(tekst) is not None:
+                    geteld += 1
+                    self.assertIn(build.NORM_START, tekst)
+                    for norm in normen:
+                        self.assertIn(f'<span class="norm">{norm}</span>', tekst)
+                else:
+                    self.assertNotIn(build.NORM_START, tekst)
+        self.assertGreater(geteld, 40, "vrijwel elke leesversie hoort zijn normen te tonen")
+
 
 
 class Voorpagina(unittest.TestCase):
@@ -328,6 +470,13 @@ class Voorpagina(unittest.TestCase):
         self.assertIn('id="zoek"', self.html)
         self.assertIn('id="barriere"', self.html)
         self.assertNotIn('id="vakgebied"', self.html)
+
+    def test_de_normen_staan_op_de_gebouwde_kaarten(self) -> None:
+        """Op de echte voorpagina, niet alleen in de functie: NIS2 is er van buiten af op te vinden."""
+        self.assertIn('<span class="norm">NIS2</span>', self.html)
+        treffers = [z for z in re.findall(r'data-zoek="([^"]*)"', self.html) if "nis2" in z]
+        self.assertGreaterEqual(len(treffers), 5, "NIS2 staat op zes stukken")
+        self.assertIn("of norm", self.html)  # de tekst in het zoekvak zegt dat het kan
 
     def test_tegeltekst_is_kort_en_heel(self) -> None:
         begin = self.html.index('<div class="vakken">')
