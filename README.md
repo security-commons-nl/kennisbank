@@ -31,6 +31,12 @@ EUPL-1.2, zie [LICENSE](LICENSE).
 ## Wat staat hier
 Werkende kennis die geanonimiseerd is gedeeld door professionals: memos, rapportages, aanpakken, trainingen, voorstellen. Geen theorie - materiaal dat al gebruikt is in echte organisaties.
 
+**Zoeken.** De [leesversie](https://security-commons-nl.github.io/kennisbank/) is ingedeeld op vakgebied en
+heeft een zoekvak dat titel, samenvatting, type en de normen van elk stuk meeneemt (zoek op `NIS2` of `Cbw`
+en je krijgt precies de stukken die daaraan hangen), plus een keuzelijst op barriere uit de zelfcheck. Elk
+stuk toont zijn normen als etiket op de kaart en onder de titel. Voor systemen die de hele lijst willen lezen
+is er [`llms.txt`](https://security-commons-nl.github.io/kennisbank/llms.txt), gegenereerd bij elke build.
+
 **Handleidingen** zijn een eigen soort: een instructie voor het inrichten van een maatregel, gekoppeld aan
 een barriere uit de [zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/). Ze
 dragen het veld `barrieres:` en zijn de bron van *Hoe pak ik het aan* op

@@ -348,6 +348,45 @@ class Normen(Basis):
         self.assertEqual(build.fouten, [], self.meldingen)
 
 
+class Llms(unittest.TestCase):
+    """llms.txt: de hele kennisbank als lijst, uit dezelfde frontmatter als de kaarten.
+
+    De root-site hield met de hand een lijst van veertien stukken bij naast een kennisbank van 52.
+    Deze lijst wordt gegenereerd en kan dus niet achterlopen.
+    """
+
+    def stuk(self, **velden) -> dict:
+        basis = {"titel": "Passkeys invoeren", "samenvatting": "Een  samenvatting\n over twee regels.",
+                 "normen": ["BIO2", "NIS2"], "_link": "security/passkeys-invoeren/", "_vak": "security"}
+        basis.update(velden)
+        return basis
+
+    def test_elk_stuk_een_regel_met_link_samenvatting_en_normen(self):
+        tekst = build.llms_tekst({"security": {"titel": "Security"}}, {"security": [self.stuk()]})
+        self.assertIn("## Security", tekst)
+        self.assertIn(f"- [Passkeys invoeren]({build.SITE}/security/passkeys-invoeren/): "
+                      "Een samenvatting over twee regels. Normen: BIO2, NIS2.", tekst)
+
+    def test_zonder_normen_geen_lege_staart(self):
+        tekst = build.llms_tekst({"security": {"titel": "Security"}}, {"security": [self.stuk(normen=[])]})
+        self.assertNotIn("Normen:", tekst)
+
+    def test_een_leeg_vakgebied_krijgt_geen_kop(self):
+        tekst = build.llms_tekst({"security": {"titel": "Security"}, "privacy": {"titel": "Privacy"}},
+                                 {"security": [self.stuk()], "privacy": []})
+        self.assertNotIn("## Privacy", tekst)
+
+    def test_de_gebouwde_lijst_dekt_alle_stukken(self):
+        pad = build.ROOT / "llms.txt"
+        if not pad.exists():
+            self.skipTest("llms.txt is nog niet gebouwd; draai tools/build.py")
+        regels = [r for r in pad.read_text(encoding="utf-8").splitlines() if r.startswith("- [")]
+        self.assertEqual(len(regels), len(list(build.ROOT.glob("*/*/README.md"))))
+        # Zo ging het de eerste keer mis: _link draagt het vakgebied al, dus security/security/.
+        for vak in build.VAKGEBIEDEN:
+            self.assertNotIn(f"/{vak}/{vak}/", "\n".join(regels))
+
+
 class Volgorde(Basis):
     """Statuut B4: de volgorde van de items staat in de README van de sectie, niet in het alfabet."""
 

@@ -74,7 +74,7 @@ NL = chr(10)
 # tooling (.git, .pytest_cache, .venv) en telt nooit als inhoud.
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
-                     ".nojekyll", "handelingsperspectief.json"}
+                     ".nojekyll", "handelingsperspectief.json", "llms.txt"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
 # naar _aanvalspaden uitgecheckt. Een handleiding mag alleen naar een barriere verwijzen die bestaat,
@@ -1170,6 +1170,35 @@ def schrijf_handelingsperspectief(items: dict[str, list[dict]]) -> bool:
     return schrijf(ROOT / "handelingsperspectief.json", json.dumps(data, ensure_ascii=False, indent=2) + NL)
 
 
+def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
+    """De hele kennisbank als een lijst voor systemen die lezen in plaats van klikken.
+
+    De root-site had een handgeschreven lijst van veertien stukken naast een kennisbank van 52; wat
+    met de hand wordt bijgehouden loopt achter. Dit bestand komt uit dezelfde frontmatter als de
+    kaarten, dus het kan niet achterlopen. Per stuk de titel, de URL van de leesversie of de map, de
+    samenvatting en de normen.
+    """
+    regels = ["# Kennisbank van Security Commons NL", "",
+              "> Werkende kennis uit de publieke sector: security, privacy, continuiteit en governance,",
+              "> geanonimiseerd gedeeld door professionals. Alles herbruikbaar onder EUPL-1.2.", "",
+              "Gegenereerd door tools/build.py uit de frontmatter van elk stuk; niet met de hand bewerken.",
+              f"Bron: {REPO} . Overname en verwerking door AI-systemen is welkom; vermeld bij voorkeur de bron.", ""]
+    for vak in VAKGEBIEDEN:
+        lijst = items.get(vak) or []
+        if not lijst:
+            continue
+        regels += [f"## {secties[vak]['titel']}", ""]
+        for fm in lijst:
+            # _link draagt het vakgebied al ("security/passkeys-invoeren/"), net als op de root-index.
+            link = fm["_link"] if fm["_link"].startswith("http") else f"{SITE}/{fm['_link'].lstrip('/')}"
+            samenvatting = " ".join(str(fm["samenvatting"]).split())
+            normen = ", ".join(str(n) for n in (fm.get("normen") or []))
+            staart = f" Normen: {normen}." if normen else ""
+            regels.append(f"- [{fm['titel']}]({link}): {samenvatting}{staart}")
+        regels.append("")
+    return NL.join(regels)
+
+
 def main() -> int:
     alleen_check = "--check" in sys.argv
     items = controleer_alles()
@@ -1211,6 +1240,8 @@ def main() -> int:
         gewijzigd.append("index.html")
     if schrijf_handelingsperspectief(items):
         gewijzigd.append("handelingsperspectief.json")
+    if schrijf(ROOT / "llms.txt", llms_tekst(secties, items)):
+        gewijzigd.append("llms.txt")
     print("Gebouwd: " + (", ".join(gewijzigd) if gewijzigd else "niets gewijzigd"))
     return 0
 
