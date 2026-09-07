@@ -40,7 +40,7 @@ jobs:
 
       # De Cbw-toets rekent in de browser, dus die logica is JavaScript. Zonder deze stap zou een
       # herschrijving van de criteria er ongemerkt doorheen komen.
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
 
