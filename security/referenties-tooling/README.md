@@ -3,10 +3,10 @@ titel: Externe referenties: security-tooling en kennisbanken
 vakgebied: security
 type: referentie
 normen: []
-peildatum: 2026-08-28
+peildatum: 2026-09-09
 herkomst: verzameld door de commons-community; geen eigen werk van security-commons-nl
 status: in gebruik
-samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak. Per bron kort wat het is en wanneer je het inzet.
+samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak, en een landkaart van de digitale overheid als ordening van kaders en bouwstenen. Per bron kort wat het is en wanneer je het inzet.
 ---
 
 # Externe referenties: security-tooling & kennisbanken
@@ -15,6 +15,55 @@ samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgeb
 
 Verwijzingen naar open resources met een specifiek, afgebakend doel. Geen eigen werk van
 security-commons-nl; wel de moeite waard voor publieke-sector-teams.
+
+## Landkaart Digitalisering Nederlandse Overheid · LinkedIn-document, versie september 2026
+
+Een document van 22 pagina's, gedeeld op LinkedIn door een informatiemanager van een gemeente, dat de
+kaders en bouwstenen van de digitale overheid in één ordening zet. Bedoeld voor CIO's, informatiemanagers
+en andere professionals in de publieke sector. Het is geen normtekst maar een leeskaart: het zegt wat
+waar zit en hoe het zich tot elkaar verhoudt.
+
+De ordening werkt in zes lagen, van boven naar beneden:
+
+1. **Europa**: NIS2, CER, AI Act, Data Act, eIDAS 2.0, Interoperable Europe Act, Cyber Resilience Act en de
+   Europese agenda voor technologische autonomie.
+2. **Nederlandse koers**: de Nederlandse Digitaliseringsstrategie (NDS), de visie en routekaart digitale
+   autonomie, het Rijkscloudbeleid en de soevereine overheidscloud, de Cyberbeveiligingswet met BIO2, en de
+   Wet weerbaarheid kritieke entiteiten.
+3. **Interbestuurlijke sturing en architectuur**: GDI, ADO en NORA, de MIDO-governance (OBDO, PGDI,
+   Architectuurraad) en de open standaarden van het Forum Standaardisatie.
+4. **Veranderlandschappen**: cloud en sourcing, data met IBDS en het Federatief Datastelsel, gegevensuitwisseling
+   met Digikoppeling en FSC, en digitale weerbaarheid.
+5. **Gemeentelijke vertaling**: Common Ground, GEMMA, HAVEN, IBD en GGI-Veilig, en de collectivisering van
+   gemeentelijke digitalisering.
+6. **Eigen organisatie**: strategie, architectuur, portfolio, sourcing en beheer, telkens gekoppeld aan interne
+   bronnen zoals PSA's, de CMDB, het leveranciersregister en exitplannen.
+
+Dwars door die lagen lopen vijf veranderlijnen. De vijfde is **digitale weerbaarheid en continuïteit**:
+Cyberbeveiligingswet, BIO2, monitoring en respons, cyber recovery, crisisbeheersing, ketenrisico en de Wet
+weerbaarheid kritieke entiteiten. Dat is precies het werkveld van deze kennisbank; de andere vier lijnen
+(autonomie en sourcing, cloud, applicatiemodernisering, data en interoperabiliteit) geven de context waarin
+security-keuzes landen.
+
+**Waarom de moeite waard.** Het document maakt afbakeningen expliciet waar in de praktijk verwarring over is:
+de NDS is niet de moeder van alle andere ontwikkelingen; Common Ground is een beweging en GEMMA het
+instrumentarium; HAVEN is een hostingstandaard en geen IaaS; de Cyberbeveiligingswet en BIO2 zijn één opgave
+en geen twee compliance-trajecten; collectieve diensten als GGI-Veilig ontslaan een organisatie niet van
+eigen governance. Het geeft ook een volgorde van vragen bij een nieuwe ontwikkeling: eerst de functie, dan de
+kaders, dan wat er al generiek of collectief bestaat, dan de architectuur, en pas daarna leverancier en
+techniek.
+
+**Datumfeiten die eruit te halen zijn** (allemaal met verwijzing naar officiële bronnen): Cyberbeveiligingswet
+en Wet weerbaarheid kritieke entiteiten in werking op 15 augustus 2026; BIO2 versie 1.3 van maart 2026;
+Rijkscloudbeleid aangescherpt op 3 juli 2026; technisch ontwerp van de soevereine overheidscloud gepubliceerd
+op 31 augustus 2026; Afsprakenstelsel Federatief Datastelsel vastgesteld door het OBDO in februari 2026.
+
+⚠️ **Hergebruik.** Het document vermeldt geen licentie, dus geldt het gewone auteursrecht: verwijzen en kort
+citeren mag, overnemen van tekst of de kaart zelf niet. De ordening hierboven is in eigen woorden herbouwd.
+De 51 bronverwijzingen zijn zonder uitzondering officiële publicaties (EUR-Lex, Rijksoverheid, Digitale
+Overheid, NORA, Forum Standaardisatie, NCSC, VNG); die kun je rechtstreeks gebruiken. Laag 5 is alleen
+gemeentelijk ingevuld; provincies, waterschappen, zorg en onderwijs moeten die laag zelf invullen. Privacy en
+informatiehuishouding ontbreken als eigen lijn.
 
 ## LOLCreds · lolcreds.haxx.it
 
