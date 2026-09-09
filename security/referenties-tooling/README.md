@@ -18,8 +18,10 @@ security-commons-nl; wel de moeite waard voor publieke-sector-teams.
 
 ## Landkaart Digitalisering Nederlandse Overheid · LinkedIn-document, versie september 2026
 
-Een document van 22 pagina's, gedeeld op LinkedIn door een informatiemanager van een gemeente, dat de
-kaders en bouwstenen van de digitale overheid in één ordening zet. Bedoeld voor CIO's, informatiemanagers
+Een document van 22 pagina's, op 7 september 2026 op LinkedIn gedeeld door Jan Langkamp,
+informatiemanager bij de gemeente Hellendoorn (zoek op de titel; het document hangt aan de post en is
+met een LinkedIn-account te downloaden), dat de kaders en bouwstenen van de digitale overheid in één
+ordening zet. Bedoeld voor CIO's, informatiemanagers
 en andere professionals in de publieke sector. Het is geen normtekst maar een leeskaart: het zegt wat
 waar zit en hoe het zich tot elkaar verhoudt.
 
