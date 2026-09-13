@@ -48,13 +48,15 @@ validatie levert AI een altijd-rood-dashboard met betere zinnen. De curl-advisor
 
 Wie hiermee wil beginnen zonder te bouwen: er zijn open-source agent-skills die een AI-assistent
 bestaande tooling laten aansturen. Semgrep voor statische code-analyse
-([github.com/semgrep/semgrep-skill](https://github.com/semgrep/semgrep-skill)), een STRIDE-dreigingsmodel
-per systeem ([github.com/anthropics/threat-modeling-skill](https://github.com/anthropics/threat-modeling-skill)),
-MITRE ATT&CK-mapping voor detectie ([github.com/mitre-attack/attack-navigator-mcp](https://github.com/mitre-attack/attack-navigator-mcp))
-en PII-detectie en -redactie ([github.com/microsoft/presidio](https://github.com/microsoft/presidio)).
+([github.com/semgrep/skills](https://github.com/semgrep/skills)), een referentie-implementatie van de
+loop dreigingsmodel, scan, triage, patch
+([github.com/anthropics/defending-code-reference-harness](https://github.com/anthropics/defending-code-reference-harness),
+niet onderhouden, wel leesbaar als voorbeeld) en PII-detectie en -redactie
+([github.com/microsoft/presidio](https://github.com/microsoft/presidio)).
 Voorwaarden voordat je zo'n skill toegang geeft tot eigen code of systemen: lees de code, pin de versie,
-scan de skill zelf ([github.com/cisco/skill-scanner](https://github.com/cisco/skill-scanner)) en test hem
-eerst op iets dat niet gevoelig is. Een skill is code van een derde met de rechten van jouw assistent.
+scan de skill zelf ([github.com/cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner))
+en test hem eerst op iets dat niet gevoelig is. Een skill is code van een derde met de rechten van jouw
+assistent. Controleer ook de link zelf: van de overzichten die rondgaan klopt een deel van de repo-namen niet.
 
 ## Wat het kost en wat het oplevert
 
