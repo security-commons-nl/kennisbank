@@ -34,6 +34,30 @@ Een vulnerability-scanner (Tenable, Qualys, Rapid7, open-source als OpenVAS) dra
 5. Integreer met patch-management en exposure-management.
 6. Rapporteer periodiek aan CISO/MT op trends en achterstand.
 
+## AI-gestuurd zoeken naar kwetsbaarheden
+
+Scanners vinden bekende kwetsbaarheden (CVE's met een signatuur). AI-systemen beginnen ook onbekende te
+vinden, en de eerste les daaruit is dat systematiek wint van slimheid. Bij de curl-release 8.22.0 werden zes
+nieuwe kwetsbaarheden (alle laag) gepatcht die een gespecialiseerd AI-systeem had aangedragen, uit 29
+kandidaten, nadat de frontier-modellen van de grote aanbieders op dezelfde code niets nieuws meldden. Het
+systeem gebruikte geen duurder model, maar goedkope modellen die de hele codebase stukje voor stukje
+afwerkten, met een validatiestap voor elke kandidaat. De les voor wie dit inzet: de kwaliteit zit in de
+dekking en de triage, niet in het model. En 29 meldingen zijn geen 29 kwetsbaarheden; zonder eigen
+validatie levert AI een altijd-rood-dashboard met betere zinnen. De curl-advisories staan op
+[curl.se/docs/security.html](https://curl.se/docs/security.html).
+
+Wie hiermee wil beginnen zonder te bouwen: er zijn open-source agent-skills die een AI-assistent
+bestaande tooling laten aansturen. Semgrep voor statische code-analyse
+([github.com/semgrep/skills](https://github.com/semgrep/skills)), een referentie-implementatie van de
+loop dreigingsmodel, scan, triage, patch
+([github.com/anthropics/defending-code-reference-harness](https://github.com/anthropics/defending-code-reference-harness),
+niet onderhouden, wel leesbaar als voorbeeld) en PII-detectie en -redactie
+([github.com/microsoft/presidio](https://github.com/microsoft/presidio)).
+Voorwaarden voordat je zo'n skill toegang geeft tot eigen code of systemen: lees de code, pin de versie,
+scan de skill zelf ([github.com/cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner))
+en test hem eerst op iets dat niet gevoelig is. Een skill is code van een derde met de rechten van jouw
+assistent. Controleer ook de link zelf: van de overzichten die rondgaan klopt een deel van de repo-namen niet.
+
 ## Wat het kost en wat het oplevert
 
 Kosten: laag.
