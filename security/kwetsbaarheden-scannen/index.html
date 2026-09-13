@@ -41,6 +41,37 @@ etc.).</li>
 <li>Integreer met patch-management en exposure-management.</li>
 <li>Rapporteer periodiek aan CISO/MT op trends en achterstand.</li>
 </ol>
+<h2 id="ai-gestuurd-zoeken-naar-kwetsbaarheden">AI-gestuurd zoeken naar
+kwetsbaarheden</h2>
+<p>Scanners vinden bekende kwetsbaarheden (CVE's met een signatuur).
+AI-systemen beginnen ook onbekende te vinden, en de eerste les daaruit
+is dat systematiek wint van slimheid. Bij de curl-release 8.22.0 werden
+zes nieuwe kwetsbaarheden (alle laag) gepatcht die een gespecialiseerd
+AI-systeem had aangedragen, uit 29 kandidaten, nadat de
+frontier-modellen van de grote aanbieders op dezelfde code niets nieuws
+meldden. Het systeem gebruikte geen duurder model, maar goedkope
+modellen die de hele codebase stukje voor stukje afwerkten, met een
+validatiestap voor elke kandidaat. De les voor wie dit inzet: de
+kwaliteit zit in de dekking en de triage, niet in het model. En 29
+meldingen zijn geen 29 kwetsbaarheden; zonder eigen validatie levert AI
+een altijd-rood-dashboard met betere zinnen. De curl-advisories staan op
+<a
+href="https://curl.se/docs/security.html">curl.se/docs/security.html</a>.</p>
+<p>Wie hiermee wil beginnen zonder te bouwen: er zijn open-source
+agent-skills die een AI-assistent bestaande tooling laten aansturen.
+Semgrep voor statische code-analyse (<a
+href="https://github.com/semgrep/semgrep-skill">github.com/semgrep/semgrep-skill</a>),
+een STRIDE-dreigingsmodel per systeem (<a
+href="https://github.com/anthropics/threat-modeling-skill">github.com/anthropics/threat-modeling-skill</a>),
+MITRE ATT&amp;CK-mapping voor detectie (<a
+href="https://github.com/mitre-attack/attack-navigator-mcp">github.com/mitre-attack/attack-navigator-mcp</a>)
+en PII-detectie en -redactie (<a
+href="https://github.com/microsoft/presidio">github.com/microsoft/presidio</a>).
+Voorwaarden voordat je zo'n skill toegang geeft tot eigen code of
+systemen: lees de code, pin de versie, scan de skill zelf (<a
+href="https://github.com/cisco/skill-scanner">github.com/cisco/skill-scanner</a>)
+en test hem eerst op iets dat niet gevoelig is. Een skill is code van
+een derde met de rechten van jouw assistent.</p>
 <h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
 oplevert</h2>
 <p>Kosten: laag.</p>

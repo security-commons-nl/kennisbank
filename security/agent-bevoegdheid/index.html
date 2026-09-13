@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Wiens bevoegdheid
+gebruikt een
+AI-agent?</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Wiens bevoegdheid gebruikt een AI-agent?</span></nav><!-- /kruimelpad -->
+<h1 id="wiens-bevoegdheid-gebruikt-een-ai-agent">Wiens bevoegdheid
+gebruikt een AI-agent?</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span><span class="norm">AI Act</span></p><!-- /normen -->
+<p>Een medewerker vraagt een AI-agent om een dossier na te lopen. De
+agent leest het zaaksysteem, raadpleegt een externe bron en zet een
+concept klaar. Op wiens bevoegdheid deed hij dat? In de meeste
+inrichtingen van vandaag is het antwoord: op die van de medewerker, met
+alles wat die mag. Of erger: op die van een serviceaccount dat al drie
+jaar overal bij mag. In beide gevallen is achteraf niet te reconstrueren
+wie wat heeft gevraagd, wat de agent mocht en wie een gevoelige actie
+heeft goedgekeurd.</p>
+<p>Dit stuk beschrijft een ontwerpregel die dat oplost. Hij is niet
+nieuw voor wie zero trust kent, maar hij is zelden uitgeschreven voor
+agents, en precies daar gaat het mis.</p>
+<h2 id="de-regel-in-een-zin">De regel in een zin</h2>
+<p>Een agent werkt nooit op de bevoegdheid van de mens en nooit op een
+eigen staande bevoegdheid, maar op een <strong>gedelegeerde, begrensde
+en tijdgebonden taakbevoegdheid</strong>, met een menselijke
+goedkeuringsstap voor gevoelige of onomkeerbare acties en een audit die
+de hele keten kan navertellen.</p>
+<h2 id="zes-stappen">Zes stappen</h2>
+<ol type="1">
+<li><strong>Menselijke identiteit.</strong> De medewerker is
+geauthenticeerd (MFA), spreekt een intentie uit en delegeert een taak.
+De mens blijft aan het stuur.</li>
+<li><strong>Agent-identiteit.</strong> De agent heeft een eigen
+workload-identiteit, los van de mens, die bewijst welke instantie er
+handelt. Geen gedeeld serviceaccount, geen doorgegeven
+gebruikerstoken.</li>
+<li><strong>Gedelegeerde taakbevoegdheid.</strong> De delegatie is een
+object met zes velden (hieronder). Kortlevend, least privilege, precies
+voor deze taak.</li>
+<li><strong>Policy-beslissing.</strong> Elke aanroep gaat door een
+beslisregel. Laag risico en binnen de delegatie: door. Hoog risico of
+onomkeerbaar (verzenden, verwijderen, betalen, rechten wijzigen):
+step-up naar een mens die die ene actie beoordeelt en goedkeurt.</li>
+<li><strong>De aanroep zelf.</strong> De agent roept de API aan met de
+goedgekeurde bevoegdheid. Voor systemen op locatie loopt dat via OAuth,
+mTLS of Kerberos; legacy zonder moderne authenticatie gaat achter een
+gateway.</li>
+<li><strong>Audit.</strong> Elke stap is vastgelegd, van vraag tot
+uitkomst.</li>
+</ol>
+<h2 id="de-zes-velden-van-een-taakbevoegdheid">De zes velden van een
+taakbevoegdheid</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vraag</th>
+<th>Voorbeeld</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wie</td>
+<td>welke mens heeft gedelegeerd</td>
+<td>medewerker Burgerzaken, MFA-geverifieerd</td>
+</tr>
+<tr>
+<td>Welke agent</td>
+<td>welke workload-identiteit handelt</td>
+<td><code>agent-dossiercheck</code>, instantie 7</td>
+</tr>
+<tr>
+<td>Taak</td>
+<td>wat is het doel</td>
+<td>volledigheidscontrole op zaak 2026-01187</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>welke API's, welke data</td>
+<td>zaaksysteem lezen, alleen die zaak; geen BRP</td>
+</tr>
+<tr>
+<td>Limieten</td>
+<td>hoeveel, welke acties</td>
+<td>maximaal 50 aanroepen, geen schrijfacties</td>
+</tr>
+<tr>
+<td>Tijd</td>
+<td>geldig van en tot</td>
+<td>vandaag 09:00 tot 12:00</td>
+</tr>
+</tbody>
+</table>
+<p>Ontbreekt een veld, dan is de bevoegdheid niet compleet en weigert de
+policy-engine. Dat is de kern: niet "de agent mag lezen in het
+zaaksysteem", maar "deze agent mag namens deze medewerker voor deze taak
+dit deel van het zaaksysteem lezen, zo vaak, tot dat tijdstip".</p>
+<h2 id="de-vijf-auditvragen">De vijf auditvragen</h2>
+<p>Een logregel over een agent-actie is pas bruikbaar als hij deze vijf
+vragen beantwoordt:</p>
+<ol type="1">
+<li>Wie heeft het gevraagd?</li>
+<li>Welke agent heeft gehandeld?</li>
+<li>Wat was gedelegeerd?</li>
+<li>Welke actie is uitgevoerd?</li>
+<li>Wie heeft het goedgekeurd?</li>
+</ol>
+<p>Een logregel zonder antwoord op vraag 3 hoort een alarm te zijn: er
+handelde een agent zonder delegatie.</p>
+<h2 id="vertaling-naar-de-gemeentelijke-praktijk">Vertaling naar de
+gemeentelijke praktijk</h2>
+<p><strong>Microsoft-platform.</strong> Een Copilot-agent of een eigen
+agent in Azure krijgt een eigen identiteit in Entra (workload-identiteit
+of agent-identiteit), geen gebruikersaccount en geen gedeeld
+serviceaccount. Voorwaardelijke toegang geldt ook voor die identiteit.
+Rechten op Graph en op de eigen API's zijn per agent gescopeerd, en
+verhoogde rechten lopen via just-in-time-activering met een tijdvenster,
+precies zoals bij beheerders. De delegatie zelf (wie, taak, tijd) staat
+niet in Entra; die leg je vast in de orkestratielaag van de agent en je
+logt hem mee met elke aanroep.</p>
+<p><strong>MCP-koppelingen op eigen systemen.</strong> Een MCP-server
+die het zaaksysteem, de financiële administratie of de BRP-koppeling
+ontsluit is een API met een nieuwe deur. Regels: de server authenticeert
+de agent, niet de mens; elke tool op de server heeft een eigen scope;
+schrijvende tools staan standaard uit en gaan alleen aan met een
+goedkeuringsstap; de server logt de vijf vragen zelf, onafhankelijk van
+wat de agent logt.</p>
+<p><strong>Leveranciers.</strong> Vraag bij elk product met een
+agent-functie: krijgt de agent een eigen identiteit of leent hij die van
+de gebruiker? Kan ik scope, limieten en tijd per taak instellen? Waar
+zit de goedkeuringsstap voor onomkeerbare acties, en kan ik zelf bepalen
+welke acties dat zijn? Levert het product per actie de vijf auditvragen
+aan mijn centrale logverzameling? Een leverancier die op de eerste vraag
+"de gebruiker" antwoordt, heeft het model nog niet.</p>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert</h2>
+<p>Kosten: laag tot middel. De identiteiten en de voorwaardelijke
+toegang zitten in de licentie die je al hebt; het werk zit in het
+uitschrijven van de delegatie per agent-taak en in de
+goedkeuringsstap.</p>
+<p>Wat het oplevert: een agent die niet meer kan dan de taak vraagt, een
+keten die je aan een toezichthouder kunt laten zien, en een intrekbare
+bevoegdheid per taak in plaats van een serviceaccount dat je niet durft
+uit te zetten. Het is ook de praktische invulling van menselijk toezicht
+zoals de AI-verordening die vraagt: niet een mens die meekijkt, maar een
+mens die per gevoelige actie beslist.</p>
+<p>Waar je op moet letten: een goedkeuringsstap die bij elke actie vuurt
+wordt binnen een week weggeklikt. Bepaal per agent welke acties gevoelig
+zijn en laat de rest door; de audit vangt de rest op.</p>
+<h2 id="bewijs">Bewijs</h2>
+<ul>
+<li>Per agent een eigen identiteit in de identity-provider, met eigenaar
+en vervaldatum.</li>
+<li>Per agent-taak een uitgeschreven delegatie met de zes velden.</li>
+<li>De lijst acties die step-up vereisen, met een voorbeeld van een
+geweigerde en een goedgekeurde actie.</li>
+<li>Een logregel uit de centrale logverzameling waarin de vijf vragen
+beantwoord zijn.</li>
+</ul>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<p>Dit is het agent-hoofdstuk van <a
+href="../just-in-time-beheerrechten/">Just-in-time beheerrechten</a> en
+<a href="../least-privilege-cloud/">Rechten in de cloud terugbrengen tot
+gebruik</a>: dezelfde principes, nu voor een identiteit die geen mens
+is. De vijf auditvragen landen in <a
+href="../centrale-logverzameling/">Richt centrale logverzameling in</a>.
+Voor het meten van AI-gebruik voordat je agents toelaat: <a
+href="https://security-commons-nl.github.io/ai-gebruik-in-beeld/">AI-gebruik
+in beeld</a>.</p>
+<h2 id="licentie">Licentie</h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/agent-bevoegdheid">security/agent-bevoegdheid</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
