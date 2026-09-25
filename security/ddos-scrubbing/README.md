@@ -1,4 +1,5 @@
 ---
+
 titel: DDoS-scrubbing en robuuste DNS
 vakgebied: security
 type: handleiding
@@ -9,6 +10,7 @@ status: concept
 samenvatting: Volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante DNS eronder. Zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. Met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is.
 barrieres: [upstream]
 rol: fundering
+bronnen: [nbip-nawas, adc-nomoreddos, adc-github]
 ---
 
 # DDoS-scrubbing en robuuste DNS
