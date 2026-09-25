@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ben ik aanbieder onder de AI Act?</title>
+<meta name="description" content="Klikbare toets voor gemeenten: ben je per AI-toepassing aanbieder of gebruiksverantwoordelijke onder de AI Act, en is de toepassing hoog risico? Rekent in je browser en levert een classificatiebesluit met onderbouwing.">
+<style>
+:root{--inkt:#16202b;--zacht:#5a6675;--lijn:#d7dee7;--vlak:#f5f8fb;--wit:#fff;--accent:#1f4e79;
+--open:#b3261e;--let:#b26a00;--goed:#1f7a4d;--koel:#1f6f8b}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.55;
+color:var(--inkt);background:var(--vlak)}
+header,.voet{background:var(--wit);border-bottom:1px solid var(--lijn)}
+.voet{border-bottom:0;border-top:1px solid var(--lijn);margin-top:2rem}
+header .binnen,.voet .binnen,main{max-width:54rem;margin:0 auto;padding:1rem 1.25rem}
+header h1.naam{font-size:1rem;font-weight:700;margin:0;line-height:1.4}
+header .sub,.voet .binnen,.privacy{color:var(--zacht);font-size:.85rem}
+.voet a{color:var(--accent)}
+.voet .bronvoet{border-top:0;margin-top:0;padding-top:0}
+.kaart{background:var(--wit);border:1px solid var(--lijn);border-radius:10px;padding:1.5rem;margin:1.25rem 0}
+h2{font-size:1.3rem;margin:.2rem 0 .7rem}
+h2.groot{font-size:1.9rem;line-height:1.2;margin:.2rem 0 .6rem}
+h3{font-size:1.02rem;margin:1.3rem 0 .35rem}
+p{margin:.6rem 0}
+.label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--zacht);margin:0 0 .2rem}
+.lead{font-size:1.05rem}
+.uitleg,.hint,.voortgang{color:var(--zacht);font-size:.9rem}
+.let{background:#fffbe9;border-left:3px solid #e0b400;padding:.7rem .95rem;margin:1rem 0;font-size:.95rem}
+.let strong{color:#7a5c00}
+.knoppen{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1.4rem 0 .2rem}
+button{font:inherit;padding:.55rem 1rem;border:1px solid var(--lijn);border-radius:7px;background:var(--wit);
+color:var(--inkt);cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--accent)}
+a.knop{display:inline-block;padding:.55rem 1rem;border:1px solid var(--lijn);border-radius:7px;background:var(--wit);color:var(--accent);text-decoration:none}
+a.knop:hover{border-color:var(--accent)}
+.toelichting h2{margin-top:1.4rem}.toelichting h2:first-of-type{margin-top:.2rem}.toelichting li{margin:.3rem 0}
+button.primair{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primair:hover{background:#173e60;color:#fff}
+.vraag{border-top:1px solid var(--lijn);padding:1.1rem 0 .3rem}
+.vraag:first-of-type{border-top:0;padding-top:.2rem}
+.vraag .nr{font-size:.75rem;color:var(--zacht);font-weight:700;letter-spacing:.06em}
+.vraag .tekst{margin:.15rem 0 .6rem}
+.opties{display:flex;flex-wrap:wrap;gap:.5rem}
+.opt{display:inline-flex}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt span{display:inline-block;padding:.4rem .9rem;border:1px solid var(--lijn);border-radius:20px;
+background:var(--wit);cursor:pointer;font-size:.92rem}
+.opt input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.bewijs{margin:.6rem 0 0}
+.bewijs label{display:block;font-size:.8rem;color:var(--zacht);margin-bottom:.2rem}
+.bewijs input{width:100%;font:inherit;font-size:.92rem;padding:.45rem .6rem;border:1px solid var(--lijn);
+border-radius:6px;background:var(--wit);color:var(--inkt)}
+.bewijs input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.balk{height:5px;background:var(--lijn);border-radius:3px;overflow:hidden;margin:.2rem 0 1.1rem}
+.balk i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.uitslag{border-left:5px solid var(--zacht);padding-left:1rem}
+.uitslag.aanbieder-hoog{border-color:var(--open)}
+.uitslag.gebruiker-hoog{border-color:var(--let)}
+.uitslag.aanbieder-laag,.uitslag.gebruiker-laag,.uitslag.geenai{border-color:var(--goed)}
+.uitslag.jurist,.uitslag.uitzondering{border-color:var(--koel)}
+.uitslag h2{margin-top:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.93rem}
+th,td{border:1px solid var(--lijn);padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--vlak);font-size:.85rem}
+ul{margin:.4rem 0 .6rem 1.3rem;padding:0}
+li{margin:.25rem 0}
+.dossier{white-space:pre-wrap;font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:.8rem;
+background:var(--vlak);border:1px solid var(--lijn);border-radius:8px;padding:.9rem;max-height:22rem;
+overflow:auto;margin:.8rem 0}
+.melding{font-size:.88rem;color:var(--goed);margin-left:.3rem}
+@media print{
+ body{background:#fff}
+ header,.voet,.knoppen,.dossier{display:none}
+ .kaart{border:0;padding:0;margin:0 0 1rem}
+ @page{size:A4;margin:2cm}
+}
+</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body>
+<header><div class="binnen">
+<!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <span>Ben ik aanbieder onder de AI Act?</span></nav><!-- /kruimelpad -->
+<h1 class="naam">Ben ik aanbieder onder de AI Act?</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">AI Act</span></p><!-- /normen -->
+<div class="sub">Rekent in je browser &middot; je antwoorden blijven op dit apparaat</div>
+</div></header><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#waar-de-toets-op-rust">Waar de toets op rust</a></li><li><a href="#t-waarom-dat-ertoe-doet">Waarom dat ertoe doet</a></li><li><a href="#t-wat-de-toets-doet">Wat de toets doet</a></li><li><a href="#t-waar-het-kantelt">Waar het kantelt</a></li><li><a href="#t-wat-je-erbij-nodig-hebt">Wat je erbij nodig hebt</a></li><li><a href="#t-daarna">Daarna</a></li><li><a href="#t-bronnen">Bronnen</a></li></ol></nav><!-- /inhoudsopgave -->
+
+<main>
+<div id="app">
+<noscript><section class="kaart">
+<p>Deze toets rekent in je browser, zodat je antwoorden nergens heen gaan. Daarvoor is JavaScript nodig.
+De vragen en de toelichting staan hieronder en in <code>README.md</code> in de repository, dus je kunt de
+toets ook met de hand doorlopen.</p></section></noscript>
+</div>
+<section class="kaart toelichting" id="toelichting">
+<p class="label">Toelichting</p>
+<h2 id="waar-de-toets-op-rust">Waar de toets op rust</h2>
+<p class="uitleg">Dezelfde tekst als de <code>README.md</code> in de repository; de toets hierboven is er de klikbare vorm van.</p>
+<p>De AI Act kent twee hoofdrollen. De <strong>aanbieder</strong> ontwikkelt een AI-systeem, of laat het ontwikkelen, en brengt het onder eigen naam in de handel of in gebruik. De <strong>gebruiksverantwoordelijke</strong> gebruikt een AI-systeem onder eigen verantwoordelijkheid. De meeste gemeenten gaan er stilzwijgend van uit dat zij gebruiker zijn. Dat klopt zolang ze een product afnemen en gebruiken zoals de leverancier het bedoelt.</p>
+<p>Het kantelt zodra de gemeente zelf iets samenstelt. Een assistent op een ingekocht platform, met eigen instructies, een eigen kennisbron of een eigen agent, is een AI-systeem dat de gemeente heeft ontwikkeld. “In gebruik stellen” omvat ook gebruik door de eigen organisatie (art. 3 lid 11). Ook bij uitsluitend intern gebruik ben je dus aanbieder van wat je zelf samenstelt. Je rol hangt af van wat je op het platform bouwt, en niet van wie het platform levert.</p>
+<h2 id="t-waarom-dat-ertoe-doet">Waarom dat ertoe doet</h2>
+<p>Voor een toepassing zonder hoog risico is het verschil klein. Beide rollen hebben dan vooral de transparantieplicht (art. 50) en de plicht om AI-geletterdheid te ondersteunen (art. 4).</p>
+<p>Bij hoog risico is het verschil groot. Een <strong>gebruiksverantwoordelijke</strong> gebruikt het systeem volgens de instructies, organiseert menselijk toezicht, bewaart de logs, registreert als overheid het gebruik in de EU-databank en voert een grondrechteneffectbeoordeling uit (art. 26, 27 en 49). Een <strong>aanbieder</strong> heeft een kwaliteitsbeheersysteem en technische documentatie nodig, laat de conformiteit beoordelen, brengt een CE-markering aan, registreert het systeem in de EU-databank, houdt het na ingebruikname in de gaten en meldt ernstige incidenten (art. 16, 43, 49, 72 en 73). Reken op maanden werk per toepassing. Deel je de toepassing met andere gemeenten, dan ben je ook hun aanbieder, met de aansprakelijkheid die daarbij hoort.</p>
+<p>Voor systemen uit bijlage III gelden de hoog-risicoverplichtingen vanaf 2 december 2027. Die datum is in juli 2026 verschoven door Verordening (EU) 2026/1744. De transparantieplicht geldt al sinds 2 augustus 2026.</p>
+<h2 id="t-wat-de-toets-doet">Wat de toets doet</h2>
+<p>De toets loopt vijf stappen langs:</p>
+<ol type="1">
+<li><strong>Is het een AI-systeem?</strong> Een vaste rekenregel valt erbuiten, een taalmodel valt erbinnen.</li>
+<li><strong>Hoe komt de toepassing tot stand?</strong> Ongewijzigd ingekocht, zelf samengesteld op een platform of model, of zelf (laten) ontwikkeld. En: gaat hij ook naar andere organisaties?</li>
+<li><strong>Is hij hoog risico?</strong> Gemeenten raken vooral bijlage III punt 5 onder a (beoordelen of inwoners recht hebben op een uitkering, voorziening of dienst, en die toekennen, verlagen, intrekken of terugvorderen) en punt 4 (werving, selectie en beoordeling van medewerkers). De uitzondering van art. 6 lid 3 geldt voor een beperkte procedurele of voorbereidende taak, en nooit bij profilering.</li>
+<li><strong>Word je aanbieder van andermans systeem?</strong> Een ingekocht systeem wordt het jouwe als je er je eigen naam op zet, het wezenlijk wijzigt, of het doel zo verandert dat het hoog risico wordt (art. 25 lid 1). Denk aan een algemeen taalmodel dat je inzet om aanvragen te beoordelen.</li>
+<li><strong>Wie ziet de uitkomst?</strong> Hebben inwoners rechtstreeks met de toepassing te maken, of gaat wat zij maakt naar buiten, dan geldt de transparantieplicht van art. 50, bij elk risiconiveau.</li>
+</ol>
+<p>De toets levert een <strong>classificatiebesluit</strong>: rol, risiconiveau, de verplichtingen die daaruit volgen, per vraag je onderbouwing, en de punten die naar een jurist moeten. Leg dat besluit per toepassing vast en toets opnieuw als het doel van de toepassing verandert.</p>
+<h2 id="t-waar-het-kantelt">Waar het kantelt</h2>
+<p><strong>Intern of voor inwoners.</strong> Een subsidiewijzer die medewerkers helpt de juiste regeling te vinden, is laag risico. Dezelfde wijzer als chatbot die inwoners vertelt of zij in aanmerking komen, beoordeelt geschiktheid voor een publieke dienst en valt onder bijlage III. Het model en de code zijn gelijk; het doel is anders.</p>
+<p><strong>Voorbereiden of beslissen.</strong> Een samenvatting van een dossier voor de behandelaar is voorbereidend werk. Een advies “toekennen” of “afwijzen” dat de behandelaar meestal overneemt, beïnvloedt het besluit. De uitzondering van art. 6 lid 3 vraagt dat je dat verschil onderbouwt en vastlegt (art. 6 lid 4).</p>
+<p><strong>Samen bouwen.</strong> Een voorziening die meerdere gemeenten samen gebruiken, heeft één aanbieder nodig die de plichten draagt. Leg vast wie dat is voordat de eerste toepassing live gaat.</p>
+<h2 id="t-wat-je-erbij-nodig-hebt">Wat je erbij nodig hebt</h2>
+<p>Een beschrijving van de toepassing en het doel waarvoor hij wordt ingezet · de gebruikersgroep (medewerkers, inwoners, of beide) · het contract en de gebruiksvoorwaarden van leverancier of platform · een overzicht van wat de gemeente zelf heeft toegevoegd (instructies, kennisbronnen, koppelingen, agents) · het proces waarin de uitkomst wordt gebruikt en wie daarin beslist.</p>
+<h2 id="t-daarna">Daarna</h2>
+<p>Hoog risico en aanbieder: overweeg of je dit zelf wilt dragen. Een leverancier of een samenwerkingsverband dat de rol van aanbieder op zich neemt, kan dezelfde techniek leveren terwijl de zwaarste plichten bij hen liggen. Kies je er bewust voor, begroot dan de conformiteitsbeoordeling en het beheer erna.</p>
+<p>Laag risico: leg het classificatiebesluit vast en zet de toepassing in het algoritmeregister. Noteer wat hem hoog risico zou maken, zodat een wijziging van het doel opvalt.</p>
+<p>Voor de beveiliging van een zelf gebouwde voorziening: <a href="../../security/open-source-ai-binnenhalen/">Open-source AI binnenhalen onder de Cbw</a>. Voor de meldplicht bij incidenten: <a href="../../security/ai-incident-melden/">Wanneer meld je een AI-incident?</a>. Voor het beleid eromheen: <a href="../ai-beleid/">AI-beleid van een regionale samenwerking</a>.</p>
+<h2 id="t-bronnen">Bronnen</h2>
+<ul>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">AI Act, Verordening (EU) 2024/1689</a>, art. 3 lid 3, 4 en 11 (aanbieder, gebruiksverantwoordelijke, in gebruik stellen), art. 6 (classificatie en uitzondering), art. 25 lid 1 (verantwoordelijkheden in de keten), art. 26 en 27 (gebruiksverantwoordelijke en grondrechteneffectbeoordeling), art. 50 (transparantie), bijlage III punt 4 en 5</li>
+<li>Verordening (EU) 2026/1744 (digitale omnibus AI), in werking sinds 27 juli 2026: hoog-risicoverplichtingen voor bijlage III vanaf 2 december 2027, art. 4 omgezet in een inspanningsverplichting</li>
+</ul>
+<p>Deze toets structureert en documenteert de analyse. Hij vervangt geen juridisch advies.</p>
+</section>
+</main>
+
+<div class="voet"><div class="binnen">
+<p class="privacy">Geen account, geen server, geen telemetrie. Deze uitkomst komt uit je eigen antwoorden en is geen juridisch oordeel. Offline gebruiken? Sla deze pagina op met Ctrl+S; alles zit erin.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/aanbieder-onder-de-ai-act">governance/aanbieder-onder-de-ai-act</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet -->
+</div></div>
+
+<script>
+"use strict";
+
+var SLEUTEL = "aanbieder-ai-act-v1";
+
+var INGEKOCHT = "ingekocht, gebruikt zoals geleverd";
+var SAMENGESTELD = "zelf samengesteld op een platform of model";
+var ONTWIKKELD = "zelf ontwikkeld of laten ontwikkelen";
+
+var STAPPEN = [
+ {id:"s1", titel:"Is het een AI-systeem?",
+  kern:"De AI Act geldt alleen voor AI-systemen: systemen die uit hun invoer afleiden hoe ze output maken, met enige zelfstandigheid. Een vaste rekenregel valt erbuiten.",
+  vragen:[
+   {nr:"1.1", type:"jnu", tekst:"Leidt de toepassing uit de invoer zelf af welke tekst, voorspelling, aanbeveling of beslissing zij teruggeeft?",
+    hint:"Een taalmodel, beeldherkenning of een getraind voorspelmodel: ja. Een beslisboom of rekenregel die mensen volledig hebben uitgeschreven: nee. Een regelsysteem met een getraind onderdeel erin: onbekend, en laat het uitzoeken."}
+  ]},
+ {id:"s2", titel:"Hoe komt de toepassing tot stand?",
+  kern:"Wie een AI-systeem ontwikkelt of laat ontwikkelen en het onder eigen naam in gebruik stelt, is aanbieder. In gebruik stellen omvat ook gebruik door de eigen organisatie (art. 3 lid 11).",
+  vragen:[
+   {nr:"2.1", type:"keuze", tekst:"Hoe is de toepassing ontstaan?",
+    opties:[INGEKOCHT, SAMENGESTELD, ONTWIKKELD, "weet ik niet"],
+    hint:"Zelf samengesteld is bijvoorbeeld een assistent op een ingekocht chatplatform met eigen instructies, een eigen kennisbron, eigen koppelingen of een eigen agent. Het platform is van een ander; de toepassing is van jou."},
+   {nr:"2.2", type:"jnu", tekst:"Stelt de gemeente de toepassing ook beschikbaar aan andere organisaties, zoals andere gemeenten of een samenwerkingsverband, betaald of gratis?",
+    hint:"Dan ben je voor die organisaties de aanbieder, met de aansprakelijkheid die daarbij hoort.",
+    als:function(){ return antwoord["2.1"] === SAMENGESTELD || antwoord["2.1"] === ONTWIKKELD; }}
+  ]},
+ {id:"s3", titel:"Is de toepassing hoog risico?",
+  kern:"Beantwoord dit voor het doel waarvoor de gemeente de toepassing inzet, niet voor wat het onderliggende model in het algemeen kan.",
+  vragen:[
+   {nr:"3.1", type:"jnu", tekst:"Wordt de toepassing gebruikt om te beoordelen of inwoners recht hebben op een uitkering, voorziening of publieke dienst, of om die toe te kennen, te verlagen, in te trekken of terug te vorderen?",
+    hint:"Bijlage III punt 5 onder a. Let op het kantelpunt: een regelingenwijzer voor medewerkers valt hier meestal niet onder, dezelfde wijzer als chatbot die inwoners vertelt of zij in aanmerking komen wel."},
+   {nr:"3.2", type:"jnu", tekst:"Wordt de toepassing gebruikt bij werving en selectie, of bij besluiten over taken, beoordeling, promotie of ontslag van medewerkers?",
+    hint:"Bijlage III punt 4. Ook het filteren van sollicitaties en het volgen van prestaties valt hieronder."},
+   {nr:"3.3", type:"jnu", tekst:"Valt de toepassing onder een ander punt van bijlage III: biometrie, kritieke infrastructuur, onderwijs, rechtshandhaving, migratie, of rechtspraak en verkiezingen?",
+    hint:"Voor gemeenten kan dit spelen bij cameratoezicht met gezichtsherkenning, bij leerlingenzaken en bij handhaving."},
+   {nr:"3.4", type:"jnu", tekst:"Maakt de toepassing profielen van personen, dus beoordeelt zij automatisch persoonlijke aspecten zoals gedrag, betrouwbaarheid of situatie?",
+    hint:"Met profilering is een toepassing uit bijlage III altijd hoog risico. De uitzondering van de volgende vraag geldt dan niet.",
+    als:function(){ return bijlageKandidaat(); }},
+   {nr:"3.5", type:"jnu", tekst:"Doet de toepassing alleen een beperkte procedurele of voorbereidende taak, of verbetert zij alleen werk dat een mens al heeft afgerond, zonder het menselijk oordeel te vervangen of te beïnvloeden?",
+    hint:"Art. 6 lid 3. Een samenvatting van een dossier voor de behandelaar kan hieronder vallen. Een advies toekennen of afwijzen dat de behandelaar meestal volgt, valt er niet onder.",
+    als:function(){ return bijlageKandidaat() && antwoord["3.4"] !== "ja"; }}
+  ]},
+ {id:"s4", titel:"Word je aanbieder van andermans systeem?",
+  kern:"Een ingekocht hoog-risicosysteem wordt jouw verantwoordelijkheid als aanbieder als je er je eigen naam op zet of het doel zo verandert dat het hoog risico wordt (art. 25 lid 1).",
+  vragen:[
+   {nr:"4.1", type:"jnu", tekst:"Brengt de gemeente het systeem onder haar eigen naam of merk in gebruik?",
+    als:function(){ return antwoord["2.1"] === INGEKOCHT && bijlageKandidaat(); }},
+   {nr:"4.2", type:"jnu", tekst:"Zet de gemeente het systeem in voor een ander doel dan de leverancier opgeeft, bijvoorbeeld een algemeen taalmodel voor het beoordelen van aanvragen?",
+    hint:"Kijk in de gebruiksvoorwaarden en de instructies van de leverancier naar het beoogde doel.",
+    als:function(){ return antwoord["2.1"] === INGEKOCHT && bijlageKandidaat(); }}
+  ]},
+ {id:"s5", titel:"Wie ziet de uitkomst?",
+  kern:"De transparantieplicht van art. 50 geldt sinds 2 augustus 2026, voor elk risiconiveau.",
+  vragen:[
+   {nr:"5.1", type:"jnu", tekst:"Hebben inwoners of andere mensen buiten de organisatie rechtstreeks contact met de toepassing, of maakt zij tekst, beeld of geluid dat naar buiten gaat?",
+    hint:"Een chatbot op de website, een formulierhulp, of teksten die zonder redactie van een medewerker worden gepubliceerd."}
+  ]}
+];
+
+var JNU = ["ja","nee","onbekend"];
+var antwoord = {};
+var bewijs = {};
+var stap = -1;
+var app = document.getElementById("app");
+
+function laad(){
+ try{
+  var r = window.localStorage.getItem(SLEUTEL);
+  if(r){ var d = JSON.parse(r); antwoord = d.antwoord || {}; bewijs = d.bewijs || {}; }
+ }catch(e){ /* geen opslag beschikbaar; de toets werkt gewoon door */ }
+}
+function bewaar(){
+ try{ window.localStorage.setItem(SLEUTEL, JSON.stringify({antwoord:antwoord, bewijs:bewijs})); }
+ catch(e){ /* idem */ }
+}
+function wis(){
+ antwoord = {}; bewijs = {}; stap = -1;
+ try{ window.localStorage.removeItem(SLEUTEL); }catch(e){}
+ toon();
+}
+
+// Een van de bijlage III-vragen staat op ja of onbekend: dan doen profilering en de uitzondering ertoe.
+function bijlageKandidaat(){
+ var a = [antwoord["3.1"], antwoord["3.2"], antwoord["3.3"]];
+ return a.indexOf("ja") !== -1 || a.indexOf("onbekend") !== -1;
+}
+
+function vraagZichtbaar(v){
+ // Geen AI-systeem: de rest van de toets doet er niet toe.
+ if(v.nr !== "1.1" && antwoord["1.1"] === "nee"){ return false; }
+ if(v.als){ return v.als(); }
+ return true;
+}
+function zichtbareVragen(s){
+ var uit = [];
+ for(var i=0;i<s.vragen.length;i++){ if(vraagZichtbaar(s.vragen[i])) uit.push(s.vragen[i]); }
+ return uit;
+}
+function zichtbareStappen(){
+ var uit = [];
+ for(var i=0;i<STAPPEN.length;i++){ if(zichtbareVragen(STAPPEN[i]).length) uit.push(STAPPEN[i]); }
+ return uit;
+}
+function compleet(s){
+ var vs = zichtbareVragen(s);
+ for(var i=0;i<vs.length;i++){ if(!antwoord[vs[i].nr]) return false; }
+ return true;
+}
+function tekst(t){ var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+function hoofd(t){ return t.charAt(0).toUpperCase() + t.slice(1); }
+
+// ---- beslislogica ----
+
+function standAI(){
+ if(antwoord["1.1"] === "ja"){ return "ja"; }
+ if(antwoord["1.1"] === "nee"){ return "nee"; }
+ return "open";
+}
+
+// hoog · laag · uitzondering · open
+function standRisico(){
+ var a = [antwoord["3.1"], antwoord["3.2"], antwoord["3.3"]];
+ if(a.indexOf("ja") === -1){
+  if(a[0] === "nee" && a[1] === "nee" && a[2] === "nee"){ return "laag"; }
+  return "open";
+ }
+ if(antwoord["3.4"] === "ja"){ return "hoog"; }
+ if(antwoord["3.4"] !== "nee"){ return "open"; }
+ if(antwoord["3.5"] === "nee"){ return "hoog"; }
+ if(antwoord["3.5"] === "ja"){ return "uitzondering"; }
+ return "open";
+}
+
+// aanbieder · gebruiker · open, plus via welke route
+function standRol(){
+ var v = antwoord["2.1"];
+ if(v === SAMENGESTELD || v === ONTWIKKELD){ return {rol:"aanbieder", route:"eigen"}; }
+ if(v !== INGEKOCHT){ return {rol:"open", route:""}; }
+ // Art. 25 lid 1 maakt een gebruiker alleen aanbieder van een systeem dat hoog risico is.
+ if(standRisico() !== "hoog"){ return {rol:"gebruiker", route:""}; }
+ if(antwoord["4.1"] === "ja" || antwoord["4.2"] === "ja"){ return {rol:"aanbieder", route:"art25"}; }
+ if(antwoord["4.1"] === "nee" && antwoord["4.2"] === "nee"){ return {rol:"gebruiker", route:""}; }
+ return {rol:"open", route:""};
+}
+
+function stand(){
+ var r = standRol();
+ return {ai:standAI(), rol:r.rol, route:r.route, risico:standRisico(),
+         deelt:antwoord["2.2"] === "ja" && vraagZichtbaar(STAPPEN[1].vragen[1]),
+         transparantie:antwoord["5.1"] === "ja"};
+}
+
+function openPunten(){
+ var uit = [];
+ for(var i=0;i<STAPPEN.length;i++){
+  var vs = zichtbareVragen(STAPPEN[i]);
+  for(var j=0;j<vs.length;j++){
+   var v = vs[j];
+   var a = antwoord[v.nr];
+   if(!a){ uit.push(v.nr + " is niet beantwoord: " + v.tekst); }
+   else if(a === "onbekend" || a === "weet ik niet"){ uit.push(v.nr + " staat op onbekend: " + v.tekst); }
+   else if(!bewijs[v.nr]){ uit.push(v.nr + " heeft geen onderbouwing genoteerd."); }
+  }
+ }
+ return uit;
+}
+
+var PLICHTEN = {
+ aanbieder_hoog:[
+  "Kwaliteitsbeheersysteem en technische documentatie (art. 16, 17 en 11)",
+  "Conformiteitsbeoordeling en CE-markering (art. 43 en 48)",
+  "Registratie in de EU-databank (art. 49)",
+  "Monitoring na ingebruikname en melding van ernstige incidenten (art. 72 en 73)",
+  "Transparantie en AI-geletterdheid (art. 50 en 4)"],
+ gebruiker_hoog:[
+  "Gebruik volgens de instructies van de aanbieder, met menselijk toezicht door bevoegde mensen (art. 26)",
+  "Logs die het systeem maakt ten minste zes maanden bewaren (art. 26 lid 6)",
+  "Werknemers en hun vertegenwoordigers vooraf informeren bij inzet op de werkplek (art. 26 lid 7)",
+  "Het gebruik registreren in de EU-databank als overheid (art. 26 lid 8 en 49)",
+  "Grondrechteneffectbeoordeling voor ingebruikname (art. 27)",
+  "Ernstige incidenten aan de aanbieder melden (art. 26 lid 5)"],
+ laag:[
+  "Transparantie waar mensen met de toepassing te maken hebben (art. 50)",
+  "Maatregelen die AI-geletterdheid ondersteunen (art. 4)",
+  "Het classificatiebesluit vastleggen en opnieuw toetsen als het doel verandert"]
+};
+
+function bepaalUitkomst(s, punten){
+ if(s.ai === "nee"){
+  return {soort:"geenai", kop:"Geen AI-systeem in de zin van de AI Act",
+   verhaal:"De toepassing valt buiten de AI Act. De AVG en de afspraken over het algoritmeregister gelden wel. Toets opnieuw als er een getraind of lerend onderdeel bij komt.",
+   plichten:[]};
+ }
+ if(punten.length > 0 || s.ai !== "ja" || s.rol === "open" || s.risico === "open"){
+  return {soort:"jurist", kop:"Nog geen conclusie: hier moet een jurist naar kijken",
+   verhaal:"De toets komt niet tot een eenduidig beeld. Neem de open punten hieronder mee naar het juridisch advies; ze zijn zo geformuleerd dat ze los beantwoord kunnen worden. Zolang dit open staat: behandel een toepassing met een ja of onbekend op stap 3 als hoog risico.",
+   plichten:[]};
+ }
+ if(s.risico === "uitzondering"){
+  return {soort:"uitzondering", kop:"Mogelijk geen hoog risico, als je de uitzondering onderbouwt",
+   verhaal:(s.rol === "aanbieder"
+    ? "De toepassing valt onder bijlage III, maar doet volgens jouw antwoorden alleen een beperkte of voorbereidende taak. Als aanbieder moet je die beoordeling vastleggen voordat de toepassing in gebruik gaat (art. 6 lid 4). Laat haar juridisch toetsen; een toezichthouder kan haar opvragen."
+    : "De toepassing valt onder bijlage III, maar doet volgens jouw antwoorden alleen een beperkte of voorbereidende taak. Die beoordeling hoort de aanbieder vast te leggen (art. 6 lid 4). Vraag haar op bij de leverancier en controleer of zij klopt met hoe de gemeente de toepassing gebruikt."),
+   plichten:PLICHTEN.laag};
+ }
+ if(s.risico === "hoog" && s.rol === "aanbieder"){
+  return {soort:"aanbieder-hoog", kop:"Aanbieder van een hoog-risicosysteem",
+   verhaal:(s.route === "art25"
+    ? "De gemeente zet een ingekocht systeem onder eigen naam of voor een hoog-risicodoel in, en neemt daarmee de rol van aanbieder over (art. 25 lid 1). "
+    : "De gemeente heeft deze toepassing zelf samengesteld of ontwikkeld en zet haar in voor een doel uit bijlage III. ") +
+    "Vanaf 2 december 2027 gelden de volledige aanbiedersplichten. Reken op maanden werk. Overweeg of een leverancier of samenwerkingsverband de rol van aanbieder kan dragen; kies je er bewust voor, begroot dan de conformiteitsbeoordeling en het beheer erna.",
+   plichten:PLICHTEN.aanbieder_hoog};
+ }
+ if(s.risico === "hoog"){
+  return {soort:"gebruiker-hoog", kop:"Gebruiksverantwoordelijke van een hoog-risicosysteem",
+   verhaal:"De leverancier is aanbieder en draagt de zwaarste plichten. De gemeente heeft vanaf 2 december 2027 de plichten van een gebruiksverantwoordelijke, en als overheid ook de grondrechteneffectbeoordeling. Controleer dat de leverancier de conformiteit kan aantonen voordat je gaat gebruiken.",
+   plichten:PLICHTEN.gebruiker_hoog};
+ }
+ if(s.rol === "aanbieder"){
+  return {soort:"aanbieder-laag", kop:"Aanbieder, geen hoog risico",
+   verhaal:"De gemeente is aanbieder van deze toepassing, maar zij valt niet onder bijlage III. De plichten zijn beperkt. Leg vast wat de toepassing hoog risico zou maken, zodat een wijziging van het doel opvalt voordat hij live gaat.",
+   plichten:PLICHTEN.laag};
+ }
+ return {soort:"gebruiker-laag", kop:"Gebruiksverantwoordelijke, geen hoog risico",
+  verhaal:"De gemeente gebruikt een ingekocht systeem zoals het is bedoeld, voor een doel buiten bijlage III. De plichten zijn beperkt. Toets opnieuw als je het systeem voor een ander doel gaat inzetten.",
+  plichten:PLICHTEN.laag};
+}
+
+function extraRegels(s){
+ var uit = [];
+ if(s.deelt){ uit.push("De gemeente stelt de toepassing ook beschikbaar aan andere organisaties. Voor hen is zij de aanbieder, ook als het gratis is. Leg vast wie de plichten draagt voordat een andere organisatie gaat gebruiken."); }
+ if(s.transparantie){ uit.push("Transparantie (art. 50): mensen moeten weten dat ze met AI te maken hebben, en gegenereerde inhoud moet als zodanig herkenbaar zijn. Dit geldt sinds 2 augustus 2026."); }
+ return uit;
+}
+
+// ---- weergave ----
+
+function toon(){
+ var st = zichtbareStappen();
+ if(stap < 0){ toonIntro(); }
+ else if(stap < st.length){ toonStap(st[stap], st.length); }
+ else { toonUitslag(); }
+ window.scrollTo(0,0);
+}
+
+function toonIntro(){
+ var bezig = Object.keys(antwoord).length > 0;
+ app.innerHTML =
+  '<section class="kaart">' +
+  '<p class="label">AI Act</p>' +
+  '<h2 class="groot" id="intro">Ben ik aanbieder onder de AI Act?</h2>' +
+  '<p class="lead">Wie zelf een AI-toepassing samenstelt, is aanbieder. Dat geldt ook op een ingekocht ' +
+  'platform en ook als de toepassing alleen intern wordt gebruikt. Zolang de toepassing geen hoog risico ' +
+  'is, maakt dat weinig uit. Bij hoog risico wel: dan hoort er een conformiteitsbeoordeling met CE-markering ' +
+  'bij. Deze toets stelt per toepassing vast welke rol de gemeente heeft en of het om hoog risico gaat.</p>' +
+  '<h3>Wat je krijgt</h3>' +
+  '<p>Een <strong>classificatiebesluit</strong>: rol, risiconiveau, de plichten die daaruit volgen, per vraag ' +
+  'je onderbouwing en de punten die naar een jurist moeten. Vul de toets per toepassing in en bewaar het ' +
+  'besluit bij de toepassing.</p>' +
+  '<p class="uitleg">Hooguit tien vragen, tien minuten als de beschrijving van de toepassing erbij ligt. ' +
+  'Je antwoorden blijven in deze browser staan en gaan nergens heen.</p>' +
+  '<div class="knoppen">' +
+  '<button class="primair" id="start">' + (bezig ? "Verder waar je was" : "Start de toets") + '</button>' +
+  (bezig ? '<button id="opnieuw">Opnieuw beginnen</button>' : '') +
+  '<a class="knop" href="#toelichting">Lees eerst de toelichting</a>' +
+  '</div></section>';
+ document.getElementById("start").onclick = function(){ stap = 0; toon(); };
+ var o = document.getElementById("opnieuw");
+ if(o){ o.onclick = wis; }
+}
+
+function toonStap(s, totaal){
+ var vs = zichtbareVragen(s);
+ var h = '<section class="kaart">' +
+  '<p class="label">Stap ' + (stap+1) + ' van ' + totaal + '</p>' +
+  '<div class="balk"><i style="width:' + Math.round((stap/totaal)*100) + '%"></i></div>' +
+  '<h2 class="k" id="stapkop">' + tekst(s.titel) + '</h2>' +
+  '<p class="uitleg">' + tekst(s.kern) + '</p>';
+ for(var i=0;i<vs.length;i++){
+  var v = vs[i];
+  h += '<div class="vraag"><div class="nr">' + v.nr + '</div>' +
+       '<div class="tekst">' + tekst(v.tekst) + '</div>';
+  if(v.hint){ h += '<p class="hint">' + tekst(v.hint) + '</p>'; }
+  var opties = v.type === "keuze" ? v.opties : JNU;
+  h += '<div class="opties">';
+  for(var j=0;j<opties.length;j++){
+   var val = opties[j];
+   var aan = antwoord[v.nr] === val ? " checked" : "";
+   h += '<label class="opt"><input type="radio" name="v' + v.nr + '" value="' + tekst(val) + '"' + aan +
+        '><span>' + tekst(hoofd(val)) + '</span></label>';
+  }
+  h += '</div><div class="bewijs">' +
+       '<label for="b' + v.nr + '">Onderbouwing: document, passage of wie het bevestigde</label>' +
+       '<input id="b' + v.nr + '" type="text" value="' + tekst(bewijs[v.nr] || "") + '"></div></div>';
+ }
+ h += '<div class="knoppen">' +
+      '<button id="vorige">Vorige</button>' +
+      '<button class="primair" id="volgende">' +
+      (stap === totaal-1 ? "Naar de uitkomst" : "Volgende") + '</button>' +
+      '<span class="voortgang" id="mist"></span></div></section>';
+ app.innerHTML = h;
+
+ for(var k=0;k<vs.length;k++){
+  (function(v){
+   var radios = app.querySelectorAll('input[name="v' + v.nr + '"]');
+   for(var r=0;r<radios.length;r++){
+    radios[r].onchange = function(){
+     antwoord[v.nr] = this.value;
+     bewaar();
+     // Deze antwoorden bepalen welke vragen er verder zichtbaar zijn.
+     if(["1.1","2.1","3.1","3.2","3.3","3.4"].indexOf(v.nr) !== -1){ toonStap(s, zichtbareStappen().length); return; }
+     melding();
+    };
+   }
+   var inp = document.getElementById("b" + v.nr);
+   inp.oninput = function(){ bewijs[v.nr] = this.value; bewaar(); };
+  })(vs[k]);
+ }
+ function melding(){
+  var m = document.getElementById("mist");
+  if(!m){ return; }
+  m.textContent = compleet(s) ? "" :
+   "Nog niet alles beantwoord. Doorgaan mag; onbeantwoorde vragen komen als open punt terug.";
+ }
+ melding();
+ document.getElementById("vorige").onclick = function(){ stap--; toon(); };
+ document.getElementById("volgende").onclick = function(){ stap++; toon(); };
+}
+
+function toonUitslag(){
+ var s = stand();
+ var punten = openPunten();
+ var u = bepaalUitkomst(s, punten);
+ var extra = extraRegels(s);
+
+ var h = '<section class="kaart"><div class="uitslag ' + u.soort + '">' +
+  '<p class="label">Uitkomst</p><h2 class="k" id="uitkomst">' + tekst(u.kop) + '</h2><p>' + tekst(u.verhaal) + '</p></div>';
+ if(u.plichten.length){
+  h += '<h3>Wat daaruit volgt</h3><ul>';
+  for(var i=0;i<u.plichten.length;i++){ h += '<li>' + tekst(u.plichten[i]) + '</li>'; }
+  h += '</ul>';
+ }
+ for(var e=0;e<extra.length;e++){ h += '<p>' + tekst(extra[e]) + '</p>'; }
+ if(punten.length){
+  h += '<h3>Open punten voor het juridisch advies</h3><ul>';
+  for(var p=0;p<punten.length;p++){ h += '<li>' + tekst(punten[p]) + '</li>'; }
+  h += '</ul>';
+ }
+ h += '<div class="let"><strong>Dit is geen juridisch oordeel.</strong> De toets structureert en ' +
+  'documenteert de analyse. De gemeente is zelf verantwoordelijk voor de classificatie, en die hoort ' +
+  'juridisch te worden gevalideerd.</div>' +
+  '<h3>Meenemen naar je eigen dossier</h3>' +
+  '<div class="dossier" id="dossier"></div>' +
+  '<div class="knoppen"><button class="primair" id="kopieer">Kopieer als markdown</button>' +
+  '<button id="print">Print of sla op als pdf</button>' +
+  '<button id="terug">Terug naar de vragen</button>' +
+  '<button id="opnieuw2">Opnieuw beginnen</button>' +
+  '<span class="melding" id="gekopieerd"></span></div></section>';
+ app.innerHTML = h;
+
+ var md = maakDossier(u, extra, punten);
+ document.getElementById("dossier").textContent = md;
+ document.getElementById("print").onclick = function(){ window.print(); };
+ document.getElementById("terug").onclick = function(){ stap = zichtbareStappen().length-1; toon(); };
+ document.getElementById("opnieuw2").onclick = wis;
+ document.getElementById("kopieer").onclick = function(){
+  var klaar = function(){ document.getElementById("gekopieerd").textContent = "Gekopieerd."; };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+   navigator.clipboard.writeText(md).then(klaar, selecteer);
+  } else {
+   selecteer();
+  }
+ };
+ function selecteer(){
+  var d = document.getElementById("dossier");
+  var r = document.createRange();
+  r.selectNodeContents(d);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(r);
+  document.getElementById("gekopieerd").textContent = "Geselecteerd, kopieer met Ctrl+C.";
+ }
+}
+
+function maakDossier(u, extra, punten){
+ var r = [];
+ r.push("# Classificatiebesluit AI Act");
+ r.push("");
+ r.push("Toepassing:");
+ r.push("Uitkomst: " + u.kop);
+ r.push("Ingevuld op: " + new Date().toLocaleDateString("nl-NL"));
+ r.push("");
+ r.push(u.verhaal);
+ r.push("");
+ if(u.plichten.length){
+  r.push("## Wat daaruit volgt");
+  r.push("");
+  for(var i=0;i<u.plichten.length;i++){ r.push("- " + u.plichten[i]); }
+  r.push("");
+ }
+ for(var e=0;e<extra.length;e++){ r.push(extra[e]); r.push(""); }
+ for(var s=0;s<STAPPEN.length;s++){
+  var vs = zichtbareVragen(STAPPEN[s]);
+  if(!vs.length){ continue; }
+  r.push("## " + STAPPEN[s].titel);
+  for(var j=0;j<vs.length;j++){
+   var v = vs[j];
+   r.push("");
+   r.push("**" + v.nr + "** " + v.tekst);
+   r.push("- Antwoord: " + (antwoord[v.nr] || "niet beantwoord"));
+   r.push("- Onderbouwing: " + (bewijs[v.nr] || "niet genoteerd"));
+  }
+  r.push("");
+ }
+ if(punten.length){
+  r.push("## Open punten voor het juridisch advies");
+  r.push("");
+  for(var p=0;p<punten.length;p++){ r.push("- " + punten[p]); }
+  r.push("");
+ }
+ r.push("## Vaststelling");
+ r.push("");
+ r.push("- Vastgesteld door:");
+ r.push("- Datum:");
+ r.push("- Juridisch getoetst door:");
+ r.push("- Opnieuw toetsen bij: wijziging van doel, gebruikersgroep of leverancier");
+ return r.join("\n");
+}
+
+laad();
+toon();
+</script>
+</body>
+</html>

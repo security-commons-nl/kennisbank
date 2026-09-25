@@ -72,6 +72,8 @@ Deze handleiding hoort bij de barrieres `mailresponse`, `idresponse`, `exploitre
 
 Deze handleiding dekt drie barrieres tegelijk, omdat de procedures dezelfde zijn en alleen het scenario verschilt. De organisatievorm eromheen staat in [Een blue team opzetten](../blue-team-opzetten/).
 
+Voor incidenten met een AI-toepassing, en welke van de meldplichten uit Cbw, AVG en AI Act dan geldt: [Wanneer meld je een AI-incident?](../ai-incident-melden/).
+
 ## Licentie
 
 [EUPL-1.2](../../LICENSE).
