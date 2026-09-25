@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Een DPIA uitvoeren:
+wat er al
+ligt</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <span>Een DPIA uitvoeren: wat er al ligt</span></nav><!-- /kruimelpad -->
+<h1 id="een-dpia-uitvoeren-wat-er-al-ligt">Een DPIA uitvoeren: wat er al
+ligt</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">AVG</span></p><!-- /normen -->
+<p>Een gegevensbeschermingseffectbeoordeling (DPIA, artikel 35 AVG) is
+voor de meeste gemeentelijke verwerkingen geen nieuw terrein: het Rijk
+en de Informatiebeveiligingsdienst (IBD) hebben er allebei werk voor
+liggen dat vrij te gebruiken is. Dit stuk voegt daar geen eigen model
+aan toe. Het zegt welk stuk je op welk moment pakt, en wat je er wel en
+niet van mag verwachten. De adressen staan onderaan, bij <em>Wat anderen
+al hebben</em>.</p>
+<h2 id="1-moet-het-de-pre-scan">1. Moet het? De pre-scan</h2>
+<p>Begin met de <strong>pre-scan in de Invulhulpen van het
+Rijk</strong>. Die stelt 57 vragen in acht blokken en rekent zelf uit of
+een DPIA verplicht is (de lijst van de Autoriteit Persoonsgegevens, de
+criteria van de EDPB, nieuwe wetgeving, een risicoscore) of aanbevolen.
+Hij signaleert ook of een DTIA, KIA of IAMA in beeld komt. De invulhulp
+draait in de browser; het formulier zonder account, het samenwerken met
+een account. De IBD heeft een eigen <strong>sjabloon pre-DPIA</strong>
+in de handreiking (stap 2), als je liever in Word werkt.</p>
+<h2 id="2-hoe-pak-je-het-aan-twee-modellen-naast-elkaar">2. Hoe pak je
+het aan? Twee modellen naast elkaar</h2>
+<p>Er zijn twee modellen die allebei voldoen, en gemeenten gebruiken ze
+allebei:</p>
+<ul>
+<li><strong>Het Rijksmodel DPIA (versie 3.0), via de
+Invulhulpen.</strong> 210 vragen in 21 hoofdstukken, van beschrijving en
+rechtsgrond tot de acht rechten van betrokkenen, risico's en maatregelen
+met restrisico. De invulhulp exporteert een pdf en een JSON-dossier dat
+je later weer kunt inladen. De vragenlijsten staan als YAML in de repo
+<code>MinBZK/par-dpia-form</code>, onder EUPL-1.2, zodat je ze ook in je
+eigen tooling kunt gebruiken.</li>
+<li><strong>De DPIA-handreiking van de IBD, <em>Samen naar een
+kwalitatief goede DPIA</em>,</strong> met een sjabloon DPIA, een
+sjabloon pre-DPIA, een sjabloon werkproces, checklists, een stappenplan
+op een A4 en drie webinars. De stukken zijn van september 2024; de lijst
+<em>Must have DPIA's</em> van maart 2025.</li>
+</ul>
+<p>Kies het Rijksmodel als je wilt dat het dossier machineleesbaar is en
+aansluit bij wat het Rijk bijhoudt. Kies de IBD-handreiking als je
+organisatie al met IBD-sjablonen werkt of het werkproces eromheen nog
+moet inrichten. Wat je ook kiest: bij <em>Maatregelen</em> staat in
+beide een leeg vak. Daar zit het werk.</p>
+<h2 id="3-hoe-zag-het-er-elders-uit-de-collectieve-dpias">3. Hoe zag het
+er elders uit? De collectieve DPIA's</h2>
+<p>De IBD houdt een <strong>bibliotheek van uitgevoerde gemeentelijke
+DPIA's</strong> bij: op 25-09-2026 27 stuks, geanonimiseerd en ontdaan
+van gevoelige informatie, over onder meer jeugdhulp,
+schuldhulpverlening, handhaving Participatiewet, personeelsdossiers,
+bodycams, scanauto's, e-mailarchivering en de Wpg. De IBD zegt zelf wat
+je ermee mag: gemeenten kunnen de inhoud overnemen en bij bepaalde delen
+aanpassen en aanvullen, maar het is geen knip-en-plakwerk; de
+verwerkingsverantwoordelijke moet zorgen dat de DPIA klopt met het
+proces zoals het bij haar loopt. Gebruik ze dus als startpunt voor de
+risico's en maatregelen, niet als eindproduct.</p>
+<h2 id="4-zit-er-ai-of-een-algoritme-in">4. Zit er AI of een algoritme
+in?</h2>
+<p>Dan komen er twee stukken bij. De <strong>AI-specifieke toelichting
+voor DPIA's</strong> van de IBD (versie 1.0, augustus 2026) zegt per
+onderdeel van het standaardformat wat je extra nagaat als de verwerking
+een AI-component heeft. En de <strong>IAMA</strong> (Impact Assessment
+Mensenrechten en Algoritmes) zit als derde invulhulp in dezelfde
+omgeving van het Rijk als de pre-scan en de DPIA. Voor een concreet
+geval is de <strong>IBD-notitie DPIA Microsoft Copilot</strong> een
+voorbeeld van hoe die beoordeling uitpakt.</p>
+<h2 id="5-en-daarna-de-risicos-opvolgen">5. En daarna: de risico's
+opvolgen</h2>
+<p>Een DPIA levert maatregelen op; de meeste organisaties merken dat de
+opvolging daarvan het moeilijkste deel is. De <strong>handreiking
+privacy-risicomanagement</strong> van de IBD gaat precies daarover: een
+stappenplan voor het opvolgen van risico's, de verdeling van
+verantwoordelijkheden, en formats die aansluiten op de DPIA-handreiking,
+met een risicoregister erbij.</p>
+<h2 id="wat-hier-bewust-niet-staat">Wat hier bewust niet staat</h2>
+<p>Geen eigen model, geen eigen sjabloon en geen ingevulde DPIA's van
+een aanwijsbare organisatie. Wat de commons wel wil toevoegen is wat in
+geen van deze stukken staat: bij elke soort verwerking de risico's en
+maatregelen die in uitgevoerde DPIA's telkens terugkeren, als voorstel
+dat de gebruiker per regel bevestigt. Dat is het plan
+<code>dpiacheck</code>; zodra het er is, verwijst deze wegwijzer
+ernaar.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#1f4e79}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://invulhulpen.rijksapp.nl/">Invulhulpen voor pre-scan, DPIA en IAMA (Rijksmodel DPIA 3.0)</a> <span class="partij">· BZK</span></li><li><a href="https://github.com/MinBZK/par-dpia-form">Broncode en vragenlijsten van de Invulhulpen (MinBZK/par-dpia-form, EUPL-1.2)</a> <span class="partij">· BZK</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/dpia-handreiking-samen-naar-een-kwalitatief-goede-dpia/">DPIA-handreiking Samen naar een kwalitatief goede DPIA, met sjablonen en checklists</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/collectieve-dpias/">Collectieve DPIA&#x27;s: bibliotheek van uitgevoerde gemeentelijke DPIA&#x27;s</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/ai-specifieke-toelichting-voor-dpias/">AI-specifieke toelichting voor DPIA&#x27;s (versie 1.0, augustus 2026)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-dpia-microsoft-copilot/">IBD-notitie DPIA Microsoft Copilot</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-risicomanagement/">Handreiking privacy-risicomanagement: risico&#x27;s uit DPIA&#x27;s opvolgen, met risicoregister</a> <span class="partij">· IBD</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/privacy/dpia-uitvoeren">privacy/dpia-uitvoeren</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
