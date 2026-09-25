@@ -47,6 +47,11 @@ jobs:
         with:
           node-version: "22"
 
+      # Het zoekvak zoals een lezer het gebruikt, op de gebouwde voorpagina: vindt "vng beleid" het
+      # beleidssjabloon, tellen accenten en koppeltekens niet, vervuilt een zoekwoord niet.
+      - name: Tests van het zoekvak
+        run: node tools/test_zoeken.js
+
       - name: Tests van de Cbw-toets
         run: node tools/test_toets_cbw.js
 

@@ -1,5 +1,70 @@
 {
   "toelichting": "Register van stukken bij andere partijen waar kennisbankitems naar verwijzen (redactiestatuut B15). Een stuk staat hier een keer; een item noemt het id in het veld bronnen van zijn frontmatter. De partij is een id uit de stelselkaart security-gremia; haar adres is de terugval als het stuk verdwijnt. Velden per bron: titel, url, partij, toegang (open, inlog of onbekend), gezien (datum waarop een mens het stuk zag), en naar behoefte kring (verplicht bij inlog: wie er wel bij kan), archief (een archiefversie) en vervallen (datum waarop het stuk weg bleek; de leesversie wijst dan naar de partij). tools/build.py controleert dit bestand, tools/linkcheck.py loopt de adressen maandelijks na.",
+  "zoekwoorden": {
+    "ibd": [
+      "VNG"
+    ],
+    "bzk": [
+      "Binnenlandse Zaken",
+      "Rijksoverheid"
+    ]
+  },
+  "synoniemen": [
+    [
+      "cbw",
+      "cyberbeveiligingswet"
+    ],
+    [
+      "mfa",
+      "2fa",
+      "tweefactor",
+      "multifactor"
+    ],
+    [
+      "bcm",
+      "bedrijfscontinuiteit",
+      "business continuity",
+      "continuiteit"
+    ],
+    [
+      "awareness",
+      "bewustwording"
+    ],
+    [
+      "verwerkingsregister",
+      "register van verwerkingen"
+    ],
+    [
+      "dpia",
+      "gegevensbeschermingseffectbeoordeling"
+    ],
+    [
+      "avg",
+      "gdpr",
+      "gegevensbescherming"
+    ],
+    [
+      "bia",
+      "bedrijfsimpactanalyse",
+      "impactanalyse"
+    ],
+    [
+      "thuiswerken",
+      "telewerk"
+    ],
+    [
+      "pentest",
+      "penetratietest"
+    ],
+    [
+      "siem",
+      "security information"
+    ],
+    [
+      "kwetsbaarheid",
+      "kwetsbaarheden"
+    ]
+  ],
   "bronnen": {
     "do-cbw-welke-overheidsorganisaties": {
       "titel": "Voor welke overheidsorganisaties geldt de Cyberbeveiligingswet?",
@@ -89,6 +154,2638 @@
       "titel": "Handreiking privacy-risicomanagement: risico's uit DPIA's opvolgen, met risicoregister",
       "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-risicomanagement/",
       "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-fg-gesprekskaart-ai-en-algoritmen": {
+      "titel": "FG-gesprekskaart AI en algoritmen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/fg-gesprekskaart-ai-en-algoritmen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-stappenplan-voor-ai-incidenten": {
+      "titel": "Stappenplan voor AI-incidenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/stappenplan-voor-ai-incidenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handelingskader-voor-generatieve-ai": {
+      "titel": "Handelingskader voor generatieve AI",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handelingskader-voor-generatieve-ai/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-adviezen-aan-cisos-met-betrekking-tot-de-gemeenteraadsverkiezingen-18-maart-2026": {
+      "titel": "Factsheet Adviezen aan CISO’s met betrekking tot de Gemeenteraadsverkiezingen 18 maart 2026",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-adviezen-aan-cisos-met-betrekking-tot-de-gemeenteraadsverkiezingen-18-maart-2026/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-factsheet-uitleg-verschillende-analysemethodieken": {
+      "titel": "BIO2 Factsheet Uitleg verschillende analysemethodieken",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-factsheet-uitleg-verschillende-analysemethodieken/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-factsheet-informatiebeveiliging-en-de-lijnmanager": {
+      "titel": "BIO2 Factsheet Informatiebeveiliging en de lijnmanager",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-factsheet-informatiebeveiliging-en-de-lijnmanager/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2025-digitale-veiligheid-vraagt-om-samenwerking": {
+      "titel": "IBD Jaaroverzicht 2025: digitale veiligheid vraagt om samenwerking",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2025-digitale-veiligheid-vraagt-om-samenwerking/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-handreiking-realistische-implementatie-aanpak-bria": {
+      "titel": "BIO2 Handreiking Realistische Implementatie Aanpak (BRIA)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-realistische-implementatie-aanpak-bria/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-rasci-tabel-controls-informatieveiligheid-en-privacy": {
+      "titel": "BIO2 RASCI Tabel Controls Informatieveiligheid en Privacy",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-rasci-tabel-controls-informatieveiligheid-en-privacy/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid": {
+      "titel": "BIO2 Template Strategisch Informatiebeveiligings- en Privacybeleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-template-strategisch-informatiebeveiligings-en-privacybeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-handreiking-strategisch-informatiebeveiligings-en-privacybeleid": {
+      "titel": "BIO2 Handreiking Strategisch Informatiebeveiligings- en Privacybeleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-strategisch-informatiebeveiligings-en-privacybeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-risicoregister-inclusief-risicobehandelplan-en-dashboards": {
+      "titel": "Risicoregister (inclusief risicobehandelplan en dashboards)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/risicoregister-inclusief-risicobehandelplan-en-dashboards/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-avg-borgingsproduct-3-1-documentatie": {
+      "titel": "AVG Borgingsproduct 3.1 Documentatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-documentatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-avg-borgingsproduct-3-1-handreiking": {
+      "titel": "AVG Borgingsproduct 3.1 Handreiking",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-handreiking/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-avg-borgingsproduct-3-1-toetsingskader": {
+      "titel": "AVG Borgingsproduct 3.1 Toetsingskader",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-toetsingskader/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio-2-template-risicoanalyse-tabel": {
+      "titel": "BIO 2 Template Risicoanalyse tabel",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio-2-template-risicoanalyse-tabel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-business-model-canvas-uitwerkingen": {
+      "titel": "BIO2 Business Model Canvas uitwerkingen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-business-model-canvas-uitwerkingen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-lijst-met-borgingsproduct-criteria-ten-behoeve-van-het-inkoopproces": {
+      "titel": "Lijst met Borgingsproduct-criteria ten behoeve van het inkoopproces",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/lijst-met-borgingsproduct-criteria-ten-behoeve-van-het-inkoopproces/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-notitie-toegang-tot-suwinet-door-externe-medewerkers-en-commerciele-dienstverleners": {
+      "titel": "IBD Notitie Toegang tot Suwinet door externe medewerkers en commerciële dienstverleners",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-toegang-tot-suwinet-door-externe-medewerkers-en-commerciele-dienstverleners/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-handreiking-register-van-verwerkingen": {
+      "titel": "IBD Handreiking Register van Verwerkingen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-handreiking-register-van-verwerkingen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-factsheet-geautomatiseerde-individuele-besluitvorming": {
+      "titel": "IBD Factsheet Geautomatiseerde individuele besluitvorming",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-factsheet-geautomatiseerde-individuele-besluitvorming/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-factsheet-verstrekken-persoonsgegevens": {
+      "titel": "IBD Factsheet Verstrekken persoonsgegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-factsheet-verstrekken-persoonsgegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio-handreiking-risicomanagement-voor-gemeenten": {
+      "titel": "BIO2 Handreiking risicomanagement voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio-handreiking-risicomanagement-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2025-2026": {
+      "titel": "Dreigingsbeeld informatiebeveiliging Nederlandse gemeenten 2025/2026",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2025-2026/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-standpuntbepaling-en-stappenplan-ot": {
+      "titel": "Standpuntbepaling en stappenplan Operationele Technologie (OT)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/standpuntbepaling-en-stappenplan-ot/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-fg-jaarrapportage-2024": {
+      "titel": "FG Jaarrapportage 2024",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/fg-jaarrapportage-2024/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-handreiking-isms-proces-implementatie": {
+      "titel": "BIO2 Handreiking ISMS Proces implementatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-isms-proces-implementatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2024": {
+      "titel": "IBD Jaaroverzicht 2024",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2024/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-infographic-wat-is-een-isms": {
+      "titel": "BIO2 Infographic – Wat is een ISMS",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-infographic-wat-is-een-isms/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-voorbereiden-op-digitale-crisis": {
+      "titel": "Handreiking Voorbereiden op digitale crisis",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-voorbereiden-op-digitale-crisis/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-beschrijving-isms-verantwoordelijkheden-binnen-de-gemeente": {
+      "titel": "BIO2 Beschrijving ISMS verantwoordelijkheden binnen de gemeente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-beschrijving-isms-verantwoordelijkheden-binnen-de-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-format-projectplan-implementatie-nis2": {
+      "titel": "Format Projectplan implementatie NIS2",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/format-projectplan-implementatie-nis2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-gap-analyse": {
+      "titel": "BIO2 Gap-analyse",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-gap-analyse/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-kritieke-processen-gemeenten": {
+      "titel": "BIO2 Kritieke processen gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-kritieke-processen-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-kans-en-impact-tabellen-gemeenten": {
+      "titel": "BIO2 Kans en Impact tabellen gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-kans-en-impact-tabellen-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bio2-handreiking-isms": {
+      "titel": "BIO2 Handreiking ISMS",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-isms/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-voorbeeldaanpak-nis2-een-veilige-digitale-gemeente": {
+      "titel": "Voorbeeldaanpak NIS2 – een veilige (digitale) gemeente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/voorbeeldaanpak-nis2-een-veilige-digitale-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handleiding-mijnibd-omgeving": {
+      "titel": "Handleiding MijnIBD omgeving",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handleiding-mijnibd-omgeving/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-iacs": {
+      "titel": "Factsheet IACS",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-iacs/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-fg-jaarverslag-avg-en-wpg": {
+      "titel": "Handreiking FG Jaarverslag (AVG en WPG)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-fg-jaarverslag-avg-en-wpg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-nis2-en-avg": {
+      "titel": "Presentatie webinar NIS2 en AVG",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-nis2-en-avg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-overzicht-versiebeheer-standaard-verwerkersovereenkomst": {
+      "titel": "Overzicht versiebeheer Standaard Verwerkersovereenkomst",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/overzicht-versiebeheer-standaard-verwerkersovereenkomst/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-ai-en-algoritmen": {
+      "titel": "Handreiking AI en Algoritmen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-ai-en-algoritmen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-poster-hoe-richt-je-ib-en-p-goed-in-binnen-een-gemeente": {
+      "titel": "Poster Hoe richt je IB en P goed in binnen een gemeente?",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/poster-hoe-richt-je-ib-en-p-goed-in-binnen-een-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-functieprofielen-informatiebeveiliging": {
+      "titel": "Handreiking Functieprofielen informatiebeveiliging",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofielen-informatiebeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-team-op-sterkte": {
+      "titel": "Handreiking Team op sterkte",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-team-op-sterkte/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-avg-klachtenprocedure": {
+      "titel": "AVG Klachtenprocedure",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/avg-klachtenprocedure/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-adviezen-aan-cisos-met-betrekking-tot-de-verkiezingen-2025": {
+      "titel": "Factsheet Adviezen aan CISO’s met betrekking tot de Tweede Kamerverkiezingen 2025",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-adviezen-aan-cisos-met-betrekking-tot-de-verkiezingen-2025/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gesprekskaartjes-voor-de-gemeentesecretaris": {
+      "titel": "Gesprekskaartjes voor de Gemeentesecretaris",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gesprekskaartjes-voor-de-gemeentesecretaris/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-functieprofiel-privacy-officer-po": {
+      "titel": "Handreiking Functieprofiel Privacy Officer (PO)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofiel-privacy-officer-po/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-functieprofiel-functionaris-gegevensbescherming-fg": {
+      "titel": "Handreiking Functieprofiel Functionaris Gegevensbescherming (FG)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofiel-functionaris-gegevensbescherming-fg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-voorbeeld-privacybeleid": {
+      "titel": "Voorbeeld Privacybeleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-privacybeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-rasci-tabel-bio-controls-en-privacy-borgingsproduct-controls": {
+      "titel": "RASCI Tabel BIO controls en Privacy borgingsproduct controls",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/rasci-tabel-bio-controls-en-privacy-borgingsproduct-controls/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-voorbeeld-ibp-beleid": {
+      "titel": "Voorbeeld IB&P beleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-ibp-beleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-juni": {
+      "titel": "Presentatie Online (be)Spreekuur Privacy Actualiteiten voor gemeenten – juni",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-juni/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-praktische-back-up-aanpak": {
+      "titel": "Presentatie webinar “Praktische Back-up-aanpak”",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-back-up-aanpak/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-praktische-bcm-aanpak-gemeente-tilburg": {
+      "titel": "Presentatie webinar “Praktische BCM-aanpak” (gemeente Tilburg)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-bcm-aanpak-gemeente-tilburg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-praktische-bcm-aanpak-ibd": {
+      "titel": "Presentatie webinar “Praktische BCM-aanpak” (IBD)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-bcm-aanpak-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-overzicht-privacyproducten": {
+      "titel": "Overzicht privacyproducten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/overzicht-privacyproducten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-avg-borgingsproduct-3-0-rapportage-en-verbeterplan": {
+      "titel": "AVG Borgingsproduct 3.1 Rapportage en Verbeterplan",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-0-rapportage-en-verbeterplan/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-modelgegevensleveringsovereenkomst-voor-zelfstandige-verwerkingsverantwoordelijken": {
+      "titel": "Modelgegevensleveringsovereenkomst voor zelfstandige verwerkingsverantwoordelijken",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/modelgegevensleveringsovereenkomst-voor-zelfstandige-verwerkingsverantwoordelijken/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-dossiervorming-participatiewet": {
+      "titel": "Handreiking Dossiervorming Participatiewet",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-dossiervorming-participatiewet/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gespreksstarter-gebruik-social-media-door-gemeenten": {
+      "titel": "Gespreksstarter Gebruik social media door gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gespreksstarter-gebruik-social-media-door-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-gebruik-ib-signalen": {
+      "titel": "Handreiking Gebruik Inlichtingenbureau-signalen (IB-signalen)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-gebruik-ib-signalen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2022": {
+      "titel": "IBD Jaaroverzicht 2022",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2022/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-privacy-pubquiz-editie-2023": {
+      "titel": "Spelmateriaal Privacy Pubquiz – editie 2023",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-privacy-pubquiz-editie-2023/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-het-autorisatieproces-wet-politiegegevens": {
+      "titel": "Het autorisatieproces Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/het-autorisatieproces-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-regiobijeenkomst-informatiebeveiliging-najaar-2022-plenaire-opening": {
+      "titel": "Regiobijeenkomst Informatiebeveiliging Najaar 2022 Plenaire opening",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-informatiebeveiliging-najaar-2022-plenaire-opening/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-regiobijeenkomst-informatiebeveiliging-najaar-2022-workshop-betrekken-van-het-lijnmanagement": {
+      "titel": "Regiobijeenkomst Informatiebeveiliging Najaar 2022 Workshop Betrekken van het lijnmanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-informatiebeveiliging-najaar-2022-workshop-betrekken-van-het-lijnmanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-regiobijeenkomst-privacy-najaar-2022-workshop-avg-borgingsproduct-3-0": {
+      "titel": "Regiobijeenkomst Privacy Najaar 2022 Workshop AVG Borgingsproduct 3.0",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-privacy-najaar-2022-workshop-avg-borgingsproduct-3-0/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-regiobijeenkomst-privacy-najaar-2022-workshop-team-op-sterkte": {
+      "titel": "Regiobijeenkomst Privacy Najaar 2022 Workshop Team op Sterkte",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-privacy-najaar-2022-workshop-team-op-sterkte/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-december": {
+      "titel": "Presentatie Online (be)Spreekuur Privacy Actualiteiten voor gemeenten – december",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-december/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-beleid-wet-politiegegevens": {
+      "titel": "Beleid Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/beleid-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-digid-assessment-aanpak-digid-norm-b-01": {
+      "titel": "Handreiking DigiD-assessment aanpak DigiD-norm B.01",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-digid-assessment-aanpak-digid-norm-b-01/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-privacybeleid": {
+      "titel": "Privacybeleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/privacybeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bewustwordingsmateriaal-wet-politiegegevens": {
+      "titel": "Bewustwordingsmateriaal Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bewustwordingsmateriaal-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-addendum-rechten-van-betrokkenen-wet-politiegegevens": {
+      "titel": "Addendum rechten van betrokkenen Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/addendum-rechten-van-betrokkenen-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-addendum-privacybeleid-wet-politiegegevens": {
+      "titel": "Addendum privacybeleid Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/addendum-privacybeleid-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-privacyverklaring-wet-politiegegevens": {
+      "titel": "Privacyverklaring Wet politiegegevens",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/privacyverklaring-wet-politiegegevens/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-praktische-aanpak-3-2-1-back-up-regel": {
+      "titel": "Praktische aanpak 3-2-1 back-up regel",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/praktische-aanpak-3-2-1-back-up-regel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gap-analyse-business-continuity-management-bcm": {
+      "titel": "GAP-analyse Business Continuity Management (BCM)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-business-continuity-management-bcm/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-business-continuity-management-bcm-agenderen-binnen-de-organisatie": {
+      "titel": "Business Continuity Management (BCM) agenderen binnen de organisatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/business-continuity-management-bcm-agenderen-binnen-de-organisatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-aandachtspunten-back-up-en-recovery-inclusief-saas-leveranciers": {
+      "titel": "Aandachtspunten back-up en recovery inclusief SaaS-leveranciers",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/aandachtspunten-back-up-en-recovery-inclusief-saas-leveranciers/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2023-2024": {
+      "titel": "Dreigingsbeeld informatiebeveiliging Nederlandse gemeenten 2023/2024",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2023-2024/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-lessen-uit-de-hack-en-datalek-bij-gemeente-buren": {
+      "titel": "Lessen uit de hack en datalek bij Gemeente Buren",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/lessen-uit-de-hack-en-datalek-bij-gemeente-buren/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-aandachtspunten-en-richtlijn-en-monitoring-response": {
+      "titel": "Aandachtspunten en richtlijn en Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/aandachtspunten-en-richtlijn-en-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gegevensdeling-in-het-sociaal-domein-de-basis-bestendigen": {
+      "titel": "Gegevensdeling in het Sociaal Domein – de basis bestendigen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gegevensdeling-in-het-sociaal-domein-de-basis-bestendigen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-visie-monitoring-response": {
+      "titel": "Factsheet Visie Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-visie-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten-september": {
+      "titel": "Presentatie Privacy (be)Spreekuur Privacy Actualiteiten voor gemeenten – september",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten-september/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-voorbeeld-tijdspad-wpg-audit": {
+      "titel": "Voorbeeld tijdspad Wpg audit",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-tijdspad-wpg-audit/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-verwerkersovereenkomst-avg-en-wpg": {
+      "titel": "Verwerkersovereenkomst AVG én Wpg",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/verwerkersovereenkomst-avg-en-wpg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-register-van-verwerkingen-wpg-basis": {
+      "titel": "Register van verwerkingen Wpg (basis)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/register-van-verwerkingen-wpg-basis/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-overzicht-maatregelen-wpg-voorbeeld": {
+      "titel": "Overzicht maatregelen Wpg voorbeeld",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/overzicht-maatregelen-wpg-voorbeeld/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-proces-stroomschema-bcm": {
+      "titel": "Proces- / Stroomschema BCM",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/proces-stroomschema-bcm/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-7-uitval-personeel": {
+      "titel": "Quick Reference kaart 7 – Uitval personeel",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-7-uitval-personeel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-6-uitval-telefonie": {
+      "titel": "Quick Reference kaart 6 – Uitval telefonie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-6-uitval-telefonie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-5-uitval-datacommunicatie-internet": {
+      "titel": "Quick Reference kaart 5 – Uitval datacommunicatie (internet)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-5-uitval-datacommunicatie-internet/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-4-cybercrisis": {
+      "titel": "Quick Reference kaart 4 – Cybercrisis",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-4-cybercrisis/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-3-uitval-ict": {
+      "titel": "Quick Reference kaart 3 – Uitval ICT",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-3-uitval-ict/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-2-uitval-door-stroomstoring": {
+      "titel": "Quick Reference kaart 2 – Uitval door stroomstoring",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-2-uitval-door-stroomstoring/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quick-reference-kaart-1-uitval-gebouw": {
+      "titel": "Quick Reference kaart 1 – Uitval gebouw",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-1-uitval-gebouw/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bedrijfsimpactanalyse-bia": {
+      "titel": "Bedrijfsimpactanalyse (BIA)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bedrijfsimpactanalyse-bia/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-het-inlichtingenbureau": {
+      "titel": "Presentatie Privacy (be)Spreekuur Het Inlichtingenbureau",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-het-inlichtingenbureau/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-privacy-en-cookieverklaring": {
+      "titel": "Handreiking Privacy- en cookieverklaring",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-en-cookieverklaring/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-rechten-van-betrokkenen": {
+      "titel": "Handreiking Rechten van Betrokkenen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-rechten-van-betrokkenen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-mindmap-uitbreiden-monitoring-response": {
+      "titel": "Mindmap Uitbreiden Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/mindmap-uitbreiden-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-mindmap-starten-met-monitoring-response": {
+      "titel": "Mindmap Starten met Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/mindmap-starten-met-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-juridische-aspecten-van-monitoring-response": {
+      "titel": "Factsheet Juridische Aspecten van Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-juridische-aspecten-van-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-mindmap-randvoorwaarden-monitoring-response": {
+      "titel": "Mindmap Randvoorwaarden Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/mindmap-randvoorwaarden-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-projectplan-implementatie-monitoring-response": {
+      "titel": "Projectplan implementatie Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/projectplan-implementatie-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-uitbreiden-van-monitoring-response": {
+      "titel": "Handreiking Uitbreiden van Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-uitbreiden-van-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-starten-met-monitoring-response": {
+      "titel": "Handreiking Starten met Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-starten-met-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-randvoorwaarden-monitoring-response": {
+      "titel": "Handreiking Randvoorwaarden Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-randvoorwaarden-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-veilig-verwerken-van-persoonsgegevens-van-oekrainse-vluchtelingen": {
+      "titel": "Factsheet Veilig verwerken van persoonsgegevens van Oekraïense vluchtelingen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-veilig-verwerken-van-persoonsgegevens-van-oekrainse-vluchtelingen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten": {
+      "titel": "Presentatie Privacy (be)Spreekuur Privacy Actualiteiten voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-procesautomatisering-pa-beleid": {
+      "titel": "Handreiking Procesautomatisering (PA) Beleid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-procesautomatisering-pa-beleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-template-beschrijving-kritische-bedrijfsprocessen": {
+      "titel": "Template beschrijving kritische bedrijfsprocessen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/template-beschrijving-kritische-bedrijfsprocessen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-top-kritische-bedrijfsprocessen": {
+      "titel": "Top kritische bedrijfsprocessen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/top-kritische-bedrijfsprocessen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bepalen-kritische-bedrijfsprocessen": {
+      "titel": "Bepalen kritische bedrijfsprocessen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bepalen-kritische-bedrijfsprocessen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-7-uitval-personeel": {
+      "titel": "Scenariokaart 7 – Uitval Personeel",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-7-uitval-personeel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-6-uitval-telefonie": {
+      "titel": "Scenariokaart 6 – Uitval telefonie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-6-uitval-telefonie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-5-uitval-datacommunicatie-internet": {
+      "titel": "Scenariokaart 5 – Uitval datacommunicatie (internet)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-5-uitval-datacommunicatie-internet/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-4-cybercrisis": {
+      "titel": "Scenariokaart 4 – Cybercrisis",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-4-cybercrisis/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-3-uitval-ict": {
+      "titel": "Scenariokaart 3 – Uitval ICT",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-3-uitval-ict/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-2-uitval-door-stroomstoring": {
+      "titel": "Scenariokaart 2 – Uitval door stroomstoring",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-2-uitval-door-stroomstoring/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-scenariokaart-1-uitval-gebouw": {
+      "titel": "Scenariokaart 1 – Uitval gebouw",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-1-uitval-gebouw/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-back-up-versus-archivering": {
+      "titel": "Back-up versus Archivering",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/back-up-versus-archivering/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-back-up-plan": {
+      "titel": "Back-up Plan",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/back-up-plan/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-back-up-strategie": {
+      "titel": "Back-up Strategie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/back-up-strategie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-bepalen-bedrijfscontinuiteitsvereisten": {
+      "titel": "Bepalen bedrijfscontinuïteitsvereisten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/bepalen-bedrijfscontinuiteitsvereisten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-online-bijeenkomst-informatiebeveiliging-voor-de-privacyfunctionaris": {
+      "titel": "Presentatie online bijeenkomst Informatiebeveiliging voor de Privacyfunctionaris",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bijeenkomst-informatiebeveiliging-voor-de-privacyfunctionaris/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-schematisch-overzicht-ransomware-aanval": {
+      "titel": "Schematisch overzicht ransomware aanval",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/schematisch-overzicht-ransomware-aanval/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-online-bijeenkomst-privacy-voor-de-ciso": {
+      "titel": "Presentatie online bijeenkomst Privacy voor de CISO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bijeenkomst-privacy-voor-de-ciso/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-kwetsbaarheden-in-log4j-lessen-voor-de-gemeenten-en-de-ibd": {
+      "titel": "Kwetsbaarheden in Log4j – Lessen voor de gemeenten en de IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/kwetsbaarheden-in-log4j-lessen-voor-de-gemeenten-en-de-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-workshop-vdw-module-2-monitoring-response-use-case-met-een-technische-trigger": {
+      "titel": "Presentatie Workshop VDW Module 2 Monitoring & Response: Use case met een technische trigger",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-workshop-vdw-module-2-monitoring-response-use-case-met-een-technische-trigger/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-groeimodel-digitale-weerbaarheid-ondersteunend-document": {
+      "titel": "Groeimodel digitale weerbaarheid – ondersteunend document",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/groeimodel-digitale-weerbaarheid-ondersteunend-document/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-groeimodel-digitale-weerbaarheid": {
+      "titel": "Groeimodel digitale weerbaarheid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/groeimodel-digitale-weerbaarheid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2021": {
+      "titel": "IBD Jaaroverzicht 2021",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2021/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-rfc-2350": {
+      "titel": "RFC-2350",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/rfc-2350/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-ketenrisicoanalyses": {
+      "titel": "Handreiking Ketenrisicoanalyses",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-ketenrisicoanalyses/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-7-december-2021": {
+      "titel": "Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten (7 december 2021)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-7-december-2021/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-kaartje-in-de-meterkast-voor-de-gemeentesecretaris": {
+      "titel": "Kaartje in de meterkast voor de gemeentesecretaris",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/kaartje-in-de-meterkast-voor-de-gemeentesecretaris/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-21-september-2021": {
+      "titel": "Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten (21 september 2021)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-21-september-2021/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-werkdocument-audit-wet-politiegegevens-voor-gemeenten": {
+      "titel": "Werkdocument Audit Wet politiegegevens voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/werkdocument-audit-wet-politiegegevens-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-bespreekuur-privacy-actualiteiten-gemeenten": {
+      "titel": "Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-wachtwoordkluizen": {
+      "titel": "Handreiking Wachtwoordkluizen BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-wachtwoordkluizen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-iot-beveiliging": {
+      "titel": "Handreiking IoT beveiliging BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-iot-beveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-randvoorwaarden-en-starten-met-monitoring-response": {
+      "titel": "Presentatie webinar Randvoorwaarden en starten met Monitoring & Response",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-randvoorwaarden-en-starten-met-monitoring-response/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-modelovereenkomst-voor-gezamenlijke-verantwoordelijken": {
+      "titel": "Modelovereenkomst voor gezamenlijke verantwoordelijken",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/modelovereenkomst-voor-gezamenlijke-verantwoordelijken/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-praktijkvoorbeelden-verwerker-of-verwerkingsverantwoordelijke": {
+      "titel": "Praktijkvoorbeelden Verwerker of Verwerkingsverantwoordelijke",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/praktijkvoorbeelden-verwerker-of-verwerkingsverantwoordelijke/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-verwerker-of-verwerkingsverantwoordelijke": {
+      "titel": "Factsheet Verwerker of Verwerkingsverantwoordelijke en beslisboom",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-verwerker-of-verwerkingsverantwoordelijke/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-workshop-beheer-toegangsbeveiliging": {
+      "titel": "Presentatie workshop Beheer Toegangsbeveiliging",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-workshop-beheer-toegangsbeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-toolkit-behaviour-by-design": {
+      "titel": "Toolkit ‘Behaviour by Design’",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/toolkit-behaviour-by-design/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-beheer-toegangsbeveiliging": {
+      "titel": "Presentatie webinar Beheer Toegangsbeveiliging",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-beheer-toegangsbeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-2fa-webinar-door-microsoft-vragen-en-antwoorden": {
+      "titel": "Presentatie 2FA webinar door Microsoft: vragen en antwoorden",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-2fa-webinar-door-microsoft-vragen-en-antwoorden/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-2fa-webinar-door-microsoft": {
+      "titel": "Presentatie 2FA webinar door Microsoft",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-2fa-webinar-door-microsoft/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-factsheet-verwerkingsverantwoordelijke-en-verwerker": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Factsheet verwerkingsverantwoordelijke en verwerker",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-factsheet-verwerkingsverantwoordelijke-en-verwerker/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-lessen-uit-de-hack-bij-hof-van-twente": {
+      "titel": "Lessen uit de hack bij gemeente Hof van Twente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/lessen-uit-de-hack-bij-hof-van-twente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-ibd-privacy-bespreekuur-thema-beveiligen-persoonlijke-gezondheidsinformatie": {
+      "titel": "Presentatie IBD/Privacy bespreekuur thema Beveiligen persoonlijke gezondheidsinformatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-ibd-privacy-bespreekuur-thema-beveiligen-persoonlijke-gezondheidsinformatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-pettenvraagstuk-in-het-sociaal-domein": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Pettenvraagstuk in het sociaal domein",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-pettenvraagstuk-in-het-sociaal-domein/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-dreigingsbeeld-2021-2022": {
+      "titel": "Presentatie webinar Dreigingsbeeld 2021-2022",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-dreigingsbeeld-2021-2022/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-interactieve-workshop-incidentmanagement": {
+      "titel": "Presentatie interactieve workshop Incidentmanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-interactieve-workshop-incidentmanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-incidentmanagement": {
+      "titel": "Factsheet Incidentmanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-incidentmanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-schrems-ii": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Schrems II",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-schrems-ii/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2020": {
+      "titel": "IBD Jaaroverzicht 2020",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2020/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-jeugd-en-veiligheid": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Jeugd en veiligheid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-jeugd-en-veiligheid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-relatie-en-taken-ibd-ggi-veilig": {
+      "titel": "Presentatie webinar Relatie en taken IBD – GGI-Veilig",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-relatie-en-taken-ibd-ggi-veilig/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-incident-management": {
+      "titel": "Presentatie webinar Incident Management",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-incident-management/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-template-change-implementatie-plan": {
+      "titel": "Template Change Implementatie Plan",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/template-change-implementatie-plan/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-uitgangspunten-standaard-verwerkersovereenkomst-vwo": {
+      "titel": "Uitgangspunten Standaard Verwerkersovereenkomst (VWO)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/uitgangspunten-standaard-verwerkersovereenkomst-vwo/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-interactieve-workshop-changemanagement": {
+      "titel": "Presentatie interactieve workshop Changemanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-interactieve-workshop-changemanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-ibd-bespreekuur-thema-beinvloeding": {
+      "titel": "Presentatie (be)Spreekuur thema Beïnvloeding",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-ibd-bespreekuur-thema-beinvloeding/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-2fa": {
+      "titel": "Presentatie webinar 2FA",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-2fa/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-2-factor-authenticatie-2fa-voor-gemeenten": {
+      "titel": "Handreiking 2-Factor authenticatie (2FA) voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-2-factor-authenticatie-2fa-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-changemanagement-deel-2": {
+      "titel": "Presentatie webinar Changemanagement – deel 2",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-changemanagement-deel-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-vroegsignalering": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Vroegsignalering",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-vroegsignalering/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-schadescenarios-bio": {
+      "titel": "Schadescenario’s BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/schadescenarios-bio/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-changemanagement": {
+      "titel": "Factsheet Changemanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-changemanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-change-management": {
+      "titel": "Presentatie webinar Changemanagement – deel 1",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-change-management/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-volwassenheidsniveaus": {
+      "titel": "Presentatie Privacy (be)Spreekuur Thema Privacy Volwassenheidsniveaus",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-volwassenheidsniveaus/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-bespreekuur-risicomanagement": {
+      "titel": "Presentatie bespreekuur Risicomanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-risicomanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2021-2022": {
+      "titel": "Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2021/2022",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2021-2022/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-integriteit-wat-kunnen-hrm-ciso-en-po-voor-elkaar-betekenen": {
+      "titel": "Factsheet Integriteit – Wat kunnen HRM, CISO en PO voor elkaar betekenen?",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-integriteit-wat-kunnen-hrm-ciso-en-po-voor-elkaar-betekenen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-verslag-privacy-bespreekuur-samenwerken-binnen-het-ikz": {
+      "titel": "Verslag Privacy (be)Spreekuur Samenwerken binnen het IKZ",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/verslag-privacy-bespreekuur-samenwerken-binnen-het-ikz/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-maatregelenset-bbn2": {
+      "titel": "Maatregelenset BBN2+",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/maatregelenset-bbn2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-terug-naar-de-werkplek-corona-2": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Terug naar de werkplek – Corona 2",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-terug-naar-de-werkplek-corona-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-wachtwoordkluizen": {
+      "titel": "Presentatie webinar Wachtwoordkluizen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-wachtwoordkluizen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-patchmanagement-deel-2-techniek": {
+      "titel": "Presentatie webinar Patchmanagement deel 2 techniek",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-patchmanagement-deel-2-techniek/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-patchmanagement": {
+      "titel": "Factsheet Patchmanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-patchmanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-vdw-module-4-mindmap-bedrijfscontinuiteit-management": {
+      "titel": "VDW Module 4: Mindmap Bedrijfscontinuiteit management",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/vdw-module-4-mindmap-bedrijfscontinuiteit-management/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-patchmanagement-deel-1-proces": {
+      "titel": "Presentatie webinar Patchmanagement deel 1 proces",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-patchmanagement-deel-1-proces/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-diepgaande-risicoanalyse-methode-excel": {
+      "titel": "Diepgaande Risicoanalyse Methode Gemeenten (Excel)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/diepgaande-risicoanalyse-methode-excel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-waar-sta-je-als-fg-deel-2-positionering-en-effectief-toezicht": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema “Waar sta je als FG (deel 2): Positionering en effectief toezicht”",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-waar-sta-je-als-fg-deel-2-positionering-en-effectief-toezicht/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-positionering-en-taken-van-de-fg": {
+      "titel": "Handreiking Positionering en taken van de FG",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-positionering-en-taken-van-de-fg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-pragmatische-aanpak-bio": {
+      "titel": "Presentatie webinar Pragmatische aanpak BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-pragmatische-aanpak-bio/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuur-thema-big-data-en-open-data": {
+      "titel": "Presentatie Privacy (be)Spreekuur thema Big Data en Open Data",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-big-data-en-open-data/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuren-thema-2-jaar-avg-waar-sta-je-als-fg": {
+      "titel": "Presentatie Privacy (be)Spreekuren thema 2 jaar AVG: Waar sta je als FG?",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-2-jaar-avg-waar-sta-je-als-fg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuren-thema-zorg-en-veiligheid": {
+      "titel": "Presentatie Privacy (be)Spreekuren thema Zorg en Veiligheid",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-zorg-en-veiligheid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuren-thema-samenwerkingsverbanden": {
+      "titel": "Presentatie Privacy (be)Spreekuren thema Samenwerkingsverbanden",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-samenwerkingsverbanden/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-gestructureerde-aanpak-verhogen-beveiligingsbewustzijn": {
+      "titel": "Presentatie webinar Gestructureerde aanpak verhogen beveiligingsbewustzijn",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-gestructureerde-aanpak-verhogen-beveiligingsbewustzijn/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-webinar-plan-van-aanpak-bcm": {
+      "titel": "Presentatie webinar Plan van aanpak Business Continuity Management",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-plan-van-aanpak-bcm/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-privacy-bespreekuren-31-maart-en-1-april-2020": {
+      "titel": "Presentatie Privacy (be)Spreekuren thema Corona en Privacy",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-31-maart-en-1-april-2020/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-risicoregister-en-risico-acceptatie-overeenkomst-rao": {
+      "titel": "Handreiking Risicoregister en Risico Acceptatie Overeenkomst (RAO)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-risicoregister-en-risico-acceptatie-overeenkomst-rao/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-quickscan-videoconferencing-tools": {
+      "titel": "Quickscan Videoconferencing tools",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/quickscan-videoconferencing-tools/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-basisopzet-cmdb-bijlage-bij-factsheet-configuratiemanagement": {
+      "titel": "Basisopzet CMDB (bijlage bij factsheet configuratiemanagement)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/basisopzet-cmdb-bijlage-bij-factsheet-configuratiemanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-configuratiemanagement": {
+      "titel": "Factsheet Configuratiemanagement",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-configuratiemanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-kwetsbaarheden-in-citrix-lessen-voor-gemeenten-en-de-ibd": {
+      "titel": "Kwetsbaarheden in Citrix: Lessen voor gemeenten en de IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/kwetsbaarheden-in-citrix-lessen-voor-gemeenten-en-de-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-configuratiemanagement": {
+      "titel": "Handreiking Configuratiemanagement BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-configuratiemanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-mobiele-gegevensdragers": {
+      "titel": "Handreiking Mobiele gegevensdragers BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/mobiele-gegevensdragers/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-inkoopvoorwaarden-en-informatiebeveiligingseisen": {
+      "titel": "Handreiking Inkoopvoorwaarden en informatiebeveiligingseisen BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/inkoopvoorwaarden-en-informatiebeveiligingseisen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-personeelsbeleid": {
+      "titel": "Handreiking Personeelsbeleid gemeente BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/personeelsbeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gap-analyse-1-2-alle-sheets": {
+      "titel": "GAP-analyse BIO (alle sheets)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-1-2-alle-sheets/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-anti-malware-beleid": {
+      "titel": "Anti-malware beleid BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/anti-malware-beleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handleiding-screening-personeel": {
+      "titel": "Handreiking screening personeel BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handleiding-screening-personeel/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-plan-van-aanpak-bedrijfscontinuiteitsbeheer": {
+      "titel": "Plan van Aanpak Bedrijfscontinuïteitsbeheer (BCM)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/plan-van-aanpak-bedrijfscontinuiteitsbeheer/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-systeemeisenset-privacy-by-design-ibd-documenten": {
+      "titel": "Systeemeisenset Privacy by Design – IBD Documenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/systeemeisenset-privacy-by-design-ibd-documenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-criteriaset-privacy-by-design-ibd-instrumenten": {
+      "titel": "Criteriaset Privacy by Design – IBD instrumenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/criteriaset-privacy-by-design-ibd-instrumenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-referentiekader-privacy-by-design-ibd-instrumenten": {
+      "titel": "Referentiekader Privacy by Design – IBD instrumenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/referentiekader-privacy-by-design-ibd-instrumenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-privacy-by-design-gebruik-ibd-instrumenten": {
+      "titel": "Handreiking Privacy by Design – gebruik IBD instrumenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-by-design-gebruik-ibd-instrumenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-coordinated-vulnerability-disclosure-bio": {
+      "titel": "Handreiking Coordinated Vulnerability Disclosure BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-coordinated-vulnerability-disclosure-bio/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2019": {
+      "titel": "IBD Jaaroverzicht 2019",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2019/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-cloudcomputing-en-privacy": {
+      "titel": "Handreiking Cloudcomputing en Privacy",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-cloudcomputing-en-privacy/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-inkoop-clouddiensten": {
+      "titel": "Handreiking Inkoop Clouddiensten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-inkoop-clouddiensten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-impact-cloudcomputing": {
+      "titel": "Handreiking Impact Cloudcomputing",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-impact-cloudcomputing/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-threat-intelligence-ti-binnen-gemeente": {
+      "titel": "Factsheet Threat Intelligence (TI) binnen uw gemeente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-threat-intelligence-ti-binnen-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-security-information-event-management-siem-en-security-operations-center-soc-binnen-gemeente": {
+      "titel": "Factsheet Security Information & Event Management (SIEM) en Security Operations Center (SOC) binnen uw gemeente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-security-information-event-management-siem-en-security-operations-center-soc-binnen-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-vdw-module-1-mindmap-maatregelen": {
+      "titel": "VDW Module 1: Mindmap maatregelen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/vdw-module-1-mindmap-maatregelen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-vdw-module-1-mindmap-processen": {
+      "titel": "VDW Module 1: Mindmap processen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/vdw-module-1-mindmap-processen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-bedrijfscontinuiteitsbeheer": {
+      "titel": "Handreiking Bedrijfscontinuïteitsbeheer (BCM)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-bedrijfscontinuiteitsbeheer/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-service-level-agreements-sla": {
+      "titel": "Handreiking Service Level Agreement (SLA) BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-service-level-agreements-sla/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gap-analyse-nta-7516": {
+      "titel": "GAP-analyse NTA 7516",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-nta-7516/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-en-toolkit-veilige-e-mail-in-het-zorgdomein": {
+      "titel": "Factsheet en toolkit Veilige e-mail in het zorgdomein",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-en-toolkit-veilige-e-mail-in-het-zorgdomein/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-avg-basisregels-voor-gemeenten": {
+      "titel": "Factsheet AVG Basisregels voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-avg-basisregels-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-verhogen-bewustzijn-informatiebeveiliging": {
+      "titel": "Handreiking Verhogen bewustzijn informatiebeveiliging",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-verhogen-bewustzijn-informatiebeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-gehackt-hoe-nu-verder": {
+      "titel": "Factsheet Gehackt, hoe nu verder?",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-gehackt-hoe-nu-verder/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-serious-game-telekwetsbaarheid-presentatie": {
+      "titel": "Spelmateriaal Serious game Telekwetsbaarheid – Presentatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-presentatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-serious-game-telekwetsbaarheid-handreiking-evaluatie": {
+      "titel": "Spelmateriaal Serious game Telekwetsbaarheid – Handreiking evaluatie",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-handreiking-evaluatie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-serious-game-telekwetsbaarheid-handreiking-moderator": {
+      "titel": "Spelmateriaal Serious game Telekwetsbaarheid – Handreiking moderator",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-handreiking-moderator/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-serious-game-telekwetsbaarheid-draaiboek": {
+      "titel": "Spelmateriaal Serious game Telekwetsbaarheid – Draaiboek",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-draaiboek/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-privacy-avg-contentbibliotheek": {
+      "titel": "Privacy & AVG Contentbibliotheek",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/privacy-avg-contentbibliotheek/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-eenvoudig-hulpmiddel-voor-bepalen-maatregelen-bbn-en-schade-voor-betrokkenen": {
+      "titel": "Eenvoudig hulpmiddel voor bepalen maatregelen, BBN en schade voor betrokkenen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/eenvoudig-hulpmiddel-voor-bepalen-maatregelen-bbn-en-schade-voor-betrokkenen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-antwoordformulier-privacy-pubquiz": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Antwoordformulier",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/antwoordformulier-privacy-pubquiz/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-poster-pubquiz": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Poster",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/poster-pubquiz/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-instructie-pubquiz": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Handleiding en Spelregels",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/instructie-pubquiz/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-sociaal-domein": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Sociaal Domein",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-sociaal-domein/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-publiekszaken": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Publiekszaken",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-publiekszaken/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-hrm": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde HRM",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-hrm/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-bestuur": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Bestuur",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-bestuur/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-waar-of-niet-waar": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Waar of niet waar",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-waar-of-niet-waar/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-schatten": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Schatten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-schatten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-ronde-algemeen": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Ronde Algemeen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-algemeen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spelmateriaal-pubquiz-fotoronde": {
+      "titel": "Spelmateriaal Privacy Pubquiz – Fotoronde",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-fotoronde/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-en-beslismodel-verwerkingsverantwoordelijke-of-verwerker": {
+      "titel": "Factsheet en beslismodel “Is mijn leverancier wel of geen verwerker?”",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-en-beslismodel-verwerkingsverantwoordelijke-of-verwerker/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-wachtwoordbeleid-2": {
+      "titel": "Handreiking Wachtwoordbeleid BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/wachtwoordbeleid-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-leren-van-lochem-lessen-uit-een-informatiebeveiligingsincident": {
+      "titel": "Leren van Lochem: lessen uit een informatiebeveiligingsincident",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/leren-van-lochem-lessen-uit-een-informatiebeveiligingsincident/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-leaflet-meldplicht-datalekken": {
+      "titel": "IBD-Factsheet Meldplicht Datalekken",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-leaflet-meldplicht-datalekken/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-leeg-verwerkingsregister-gemeenten": {
+      "titel": "Leeg verwerkingsregister gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/leeg-verwerkingsregister-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-vooringevuld-verwerkingsregister-gemeenten": {
+      "titel": "Vooringevuld register van verwerkingen gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/vooringevuld-verwerkingsregister-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-verwerkingsregister-gemeenten-toelichting-bij-het-vooringevulde-register-van-verwerkingsactiviteiten": {
+      "titel": "Handreiking verwerkingsregister gemeenten – toelichting bij het vooringevulde register van verwerkingsactiviteiten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-verwerkingsregister-gemeenten-toelichting-bij-het-vooringevulde-register-van-verwerkingsactiviteiten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dataclassificatie-bio2": {
+      "titel": "Dataclassificatietoets BIO2 gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dataclassificatie-bio2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-privacy-en-integrale-toeleiding-en-dienstverlening-sociaal-domein": {
+      "titel": "Handreiking Privacy en Integrale toeleiding en dienstverlening sociaal domein",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-en-integrale-toeleiding-en-dienstverlening-sociaal-domein/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-diepgaande-risicoanalyse-methode-gemeenten": {
+      "titel": "Handreiking Diepgaande Risicoanalyse Methode Gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-diepgaande-risicoanalyse-methode-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-back-up-en-recovery-gemeente": {
+      "titel": "Handreiking Back-up en recovery gemeente BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/back-up-en-recovery-gemeente/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-standard-data-processing-agreement-dpa-for-dutch-municipalities-standaard-verwerkersovereenkomst-engelse-vertaling": {
+      "titel": "Standard Data Processing Agreement (DPA) for Dutch Municipalities",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/standard-data-processing-agreement-dpa-for-dutch-municipalities-standaard-verwerkersovereenkomst-engelse-vertaling/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-bio-voor-kleine-gemeenten": {
+      "titel": "Handreiking BIO voor kleine gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-bio-voor-kleine-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-casuistiek-gegevensbescherming-gemeenteraad": {
+      "titel": "Casuïstiek gegevensbescherming gemeenteraad",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/casuistiek-gegevensbescherming-gemeenteraad/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-samenhang-beheerprocessen-en-informatiebeveiliging": {
+      "titel": "Handreiking Samenhang beheerprocessen en informatiebeveiliging BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/samenhang-beheerprocessen-en-informatiebeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-baseline-informatiebeveiliging-overheid-bio": {
+      "titel": "Baseline Informatiebeveiliging Overheid (BIO) v1.04",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/baseline-informatiebeveiliging-overheid-bio/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-voorbeeld-incidentmanagement-en-response-beleid-2": {
+      "titel": "Handreiking Incident en response management",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-incidentmanagement-en-response-beleid-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-model-continuiteitsstrategie": {
+      "titel": "Model Continuïteitsstrategie BIO (BCM)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsstrategie/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-model-continuiteitsplan": {
+      "titel": "Model Continuïteitsplan BIO (BCM)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsplan/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-beleid-logische-toegangsbeveiliging-v1-0": {
+      "titel": "Handreiking Beleid logische toegangsbeveiliging BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/beleid-logische-toegangsbeveiliging-v1-0/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-proces-wijzigingsbeheer": {
+      "titel": "Handreiking Proces wijzigingsbeheer BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-proces-wijzigingsbeheer/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-afvoer-ict-middelen": {
+      "titel": "Handreiking Afvoer ICT middelen BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/afvoer-ict-middelen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-procedure-nieuwe-ict-voorzieningen-v1-0": {
+      "titel": "Handreiking Procedure nieuwe ICT-voorzieningen BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/procedure-nieuwe-ict-voorzieningen-v1-0/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-telewerkbeleid": {
+      "titel": "Handreiking Telewerkbeleid BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/telewerkbeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-encryptiebeleid-pki-gemeente-v1-0": {
+      "titel": "Handreiking Encryptiebeleid (PKI) BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/encryptiebeleid-pki-gemeente-v1-0/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-digitaal-forensisch-onderzoek": {
+      "titel": "Handreiking Digitaal Forensisch Onderzoek BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/digitaal-forensisch-onderzoek/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-aanwijzing-logging": {
+      "titel": "Handreiking Logging BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/aanwijzing-logging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-mobile-device-management": {
+      "titel": "Handreiking Mobile Device Management BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/mobile-device-management/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-toegangsbeleid": {
+      "titel": "Handreiking Toegangsbeleid BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/toegangsbeleid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-hardening-beleid-voor-gemeenten": {
+      "titel": "Handreiking Hardening-beleid voor gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/hardening-beleid-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-patch-management-voor-gemeenten": {
+      "titel": "Handreiking Patchmanagement voor gemeenten BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/patch-management-voor-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-geheimhoudingsverklaringen": {
+      "titel": "Handreiking Geheimhoudingsverklaringen BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/geheimhoudingsverklaringen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-gap-analyse-uitleg": {
+      "titel": "GAP-analyse uitleg BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-uitleg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-standaard-verwerkersovereenkomst-gemeenten": {
+      "titel": "Handreiking Standaard Verwerkersovereenkomst (VWO) Gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-standaard-verwerkersovereenkomst-gemeenten/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-presentatie-bio-ensia-congrestival-vng": {
+      "titel": "Presentatie BIO / ENSIA Congrestival VNG",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/presentatie-bio-ensia-congrestival-vng/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-introductie-aanpak-bio": {
+      "titel": "Introductie aanpak BIO",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/introductie-aanpak-bio/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-social-engineering": {
+      "titel": "Factsheet Social Engineering",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-social-engineering/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2018": {
+      "titel": "IBD Jaaroverzicht 2018",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2018/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-de-10-bestuurlijke-principes-voor-informatiebeveiliging": {
+      "titel": "De 10 bestuurlijke principes voor informatiebeveiliging",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/de-10-bestuurlijke-principes-voor-informatiebeveiliging/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2019-2020": {
+      "titel": "Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2019/2020",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2019-2020/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-lijnmanager": {
+      "titel": "Factsheet Lijnmanager",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-lijnmanager/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-producten-en-diensten-van-de-ibd-pdc": {
+      "titel": "Producten en diensten van de IBD (PDC)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/producten-en-diensten-van-de-ibd-pdc/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-standaard-incidentindeling-ibd": {
+      "titel": "Standaard Incidentindeling IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/standaard-incidentindeling-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2017": {
+      "titel": "IBD Jaaroverzicht 2017",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2017/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2018": {
+      "titel": "Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2018",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2018/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-factsheet-assurance": {
+      "titel": "Factsheet Assurance",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/factsheet-assurance/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-handreiking-en-voorbeeld-privacybeleid-gemeente-leidschendam-voorburg": {
+      "titel": "Handreiking en voorbeeld privacybeleid gemeente Leidschendam-Voorburg",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-en-voorbeeld-privacybeleid-gemeente-leidschendam-voorburg/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-privacybeleid-ibd": {
+      "titel": "Privacybeleid IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/privacybeleid-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-grip-op-privacy-artikel-ibestuur-2017-nr-21-interview-ibd": {
+      "titel": "Grip op privacy – artikel iBestuur 2017-nr 21 – interview IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/grip-op-privacy-artikel-ibestuur-2017-nr-21-interview-ibd/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-jaaroverzicht-2016": {
+      "titel": "IBD Jaaroverzicht 2016",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2016/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-spelregels-spelers": {
+      "titel": "Spion op je pad – Spelregels spelers",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelregels-spelers/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-vraag-en-antwoord-document-spelleider": {
+      "titel": "Spion op je pad – Vraag en antwoord document spelleider",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-vraag-en-antwoord-document-spelleider/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-spelvragen-kaartjes": {
+      "titel": "Spion op je pad – Spelvragen kaartjes",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelvragen-kaartjes/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-spelvragen-ppt": {
+      "titel": "Spion op je pad – Spelvragen ppt",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelvragen-ppt/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-speelbord-2": {
+      "titel": "Spion op je pad – Speelbord 2",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-speelbord-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-handleiding-spelleider": {
+      "titel": "Spion op je pad – Handleiding spelleider",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-handleiding-spelleider/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-achtergrond-en-toelichting": {
+      "titel": "Spion op je pad – Achtergrond en toelichting",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-achtergrond-en-toelichting/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-spion-op-pad-speelbord-1": {
+      "titel": "Spion op je pad – Speelbord 1",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-speelbord-1/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-tactische-baseline-informatiebeveiliging-nederlandse-gemeenten-2": {
+      "titel": "Tactische Baseline Informatiebeveiliging Nederlandse Gemeenten (BIG)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/tactische-baseline-informatiebeveiliging-nederlandse-gemeenten-2/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-edam-volendam-scherpt-informatiebeveiliging-aan-beveiliging-draait-om-bewustwording": {
+      "titel": "Edam-Volendam scherpt informatiebeveiliging aan: Beveiliging draait om bewustwording",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/edam-volendam-scherpt-informatiebeveiliging-aan-beveiliging-draait-om-bewustwording/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-asc": {
+      "titel": "IBD PGP-sleutel",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-asc/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ibd-aansluitformulier-kwetsbaarheidswaarschuwingen": {
+      "titel": "IBD Aansluitformulier kwetsbaarheidswaarschuwingen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-aansluitformulier-kwetsbaarheidswaarschuwingen/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-icsscada": {
+      "titel": "Factsheet ICS/SCADA",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/icsscada/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-addendum-informatiebeveiligingsdienst-voor-gemeenten-ibd-addendum": {
+      "titel": "Addendum Informatiebeveiligingsdienst voor Gemeenten",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/addendum-informatiebeveiligingsdienst-voor-gemeenten-ibd-addendum/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-lijst-met-gemeentelijke-ip-adressen-en-urls": {
+      "titel": "IBD Aansluitformulier Lijst met IP-adressen en URL’s",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/lijst-met-gemeentelijke-ip-adressen-en-urls/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-resolutie-informatieveiligheid": {
+      "titel": "Resolutie Informatieveiligheid, randvoorwaarde voor de professionele gemeente",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/resolutie-informatieveiligheid/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-abdo": {
+      "titel": "ABDO",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/abdo",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-applicatieontwikkeling": {
+      "titel": "BIO Thema-uitwerking Applicatieontwikkeling",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/applicatieontwikkeling",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-asm": {
+      "titel": "Agile Security Management",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/asm",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-bestuurlijke-principes": {
+      "titel": "Een bestuursmanifest voor informatieveiligheid",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/bestuurlijke-principes",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-bio-sa": {
+      "titel": "​​​​BIO Self-Assessment (BIO-SA)​​",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/bio-sa",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-bio-tekst": {
+      "titel": "Baseline Informatiebeveiliging Overheid",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/bio-tekst",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-cast-bio": {
+      "titel": "CIP-cast BIO",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-cast-bio",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-aanbesteden-en-inkopen": {
+      "titel": "CIP-casts aanbesteden en inkopen",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-aanbesteden-en-inkopen",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-awareness": {
+      "titel": "CIP-casts Awareness",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-awareness",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-ethiek": {
+      "titel": "CIP-casts Ethiek",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-ethiek",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-iot": {
+      "titel": "CIP-casts IoT",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-iot",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-privacy": {
+      "titel": "CIP-casts Privacy",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-privacy",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-casts-ssd": {
+      "titel": "CIP-casts Secure Software",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-casts-ssd",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-cip-whitepaper-iot": {
+      "titel": "Internet of Things, Whitepaper I",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/cip-whitepaper-iot",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-clouddiensten": {
+      "titel": "BIO Thema-uitwerking Clouddiensten",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/clouddiensten",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-communicatievoorzieningen": {
+      "titel": "BIO Thema-uitwerking Communicatievoorzieningen",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/communicatievoorzieningen",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-csir": {
+      "titel": "Procesautomatisering (CSIR)",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/csir",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-datalekken": {
+      "titel": "Datalekken",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/datalekken",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-de-8216-rijkspia-8217": {
+      "titel": "Model DPIA Rijksdienst",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/de-8216-rijkspia-8217",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-doe-je-voordeel-met-pet": {
+      "titel": "Doe je voordeel met PET",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/doe-je-voordeel-met-pet",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-dpia-rijksoverheid-cisco-webex": {
+      "titel": "DPIA Rijksoverheid – Cisco Webex",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/dpia-rijksoverheid-cisco-webex",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-fg-enquete-2026": {
+      "titel": "FG-enquête 2026",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/fg-enquete-2026",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-fg-enqute-2022": {
+      "titel": "FG-Enquête 2018 en 2022",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/fg-enqute-2022",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-grip-op-ssd": {
+      "titel": "Grip op SSD: De normen v3.0",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-grip-op-ssd-de-normen-voor-mobiele-apps": {
+      "titel": "Grip op SSD: De normen voor Mobile Apps",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd-de-normen-voor-mobiele-apps",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-grip-op-ssd-testraamwerk": {
+      "titel": "Grip op SSD: Testraamwerk",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd-testraamwerk",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-gripopssddemethode30": {
+      "titel": "Grip op SSD 3.0: De methode",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/gripopssddemethode30",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-handleiding-borging-van-privacy-in-organisaties": {
+      "titel": "Privacy Governance - een handleiding voor de implementatie en borging van privacy in organisaties",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/handleiding-borging-van-privacy-in-organisaties",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-handleiding-privacy-by-design": {
+      "titel": "Handleiding Privacy by Design",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/handleiding-privacy-by-design",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-handreiking-borging-van-privacy-en-volwassenheidsmodel": {
+      "titel": "Privacy Volwassenheidsmodel",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/handreiking-borging-van-privacy-en-volwassenheidsmodel",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-handreiking-gebruik-iama-samen-met-model-dpia-rijksdienst": {
+      "titel": "Handreiking gebruik IAMA samen met Model DPIA Rijksdienst",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/handreiking-gebruik-iama-samen-met-model-dpia-rijksdienst",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-huisvesting-informatievoorzieningen": {
+      "titel": "BIO Thema-uitwerking Huisvesting Informatievoorzieningen",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/huisvesting-informatievoorzieningen",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-ib-en-p-hulp-themasessie": {
+      "titel": "IB&P-hulp",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/ib-en-p-hulp-themasessie",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-ico": {
+      "titel": "ICO-Wizard",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/ico",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-internet-of-things": {
+      "titel": "Internet of Things, Whitepaper II",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/internet-of-things",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-invulhulpen-pre-scan-dpia-iama": {
+      "titel": "​​Invulhulpen voor het invullen van een pre-scan, DPIA en IAMA",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/invulhulpen-pre-scan-dpia-iama",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-kennisproducten-ransomware-en-datadiefstal": {
+      "titel": "​​Kennisproducten Ransomware en Datadiefstal​",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/kennisproducten-ransomware-en-datadiefstal",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-keten-practices": {
+      "titel": "Keten Service Library",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/keten-practices",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-ketencommunicatiebijcrises": {
+      "titel": "Ketencommunicatie bij crisis",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/ketencommunicatiebijcrises",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-microlearnings-privacy-de-fundamenten": {
+      "titel": "Microlearnings 'Privacy, de fundamenten'",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/microlearnings-privacy-de-fundamenten",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-middleware": {
+      "titel": "BIO Thema-uitwerking Middleware",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/middleware",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-privacy-afspraken-in-ketens": {
+      "titel": "Privacy afspraken in ketens",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/privacy-afspraken-in-ketens",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-privacy-baseline": {
+      "titel": "Privacy Baseline",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/privacy-baseline",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-privacy-supplementen": {
+      "titel": "BIO Thema-uitwerkingen Privacy-supplementen",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/privacy-supplementen",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-privacy-top-10": {
+      "titel": "Privacy Top 10",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/privacy-top-10",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-privacyselfassessmenttool": {
+      "titel": "Privacy Self Assessment (PriSA)",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/privacyselfassessmenttool",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-ps-pia": {
+      "titel": "Pre-scan DPIA",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/ps-pia",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-ransomware": {
+      "titel": "Vragenformulier 'Ransomware' ​",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/ransomware",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-responsible-disclosure": {
+      "titel": "Responsible Disclosure",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/responsible-disclosure",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-serious-games": {
+      "titel": "Ransomware game",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/serious-games",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-serverplatform": {
+      "titel": "BIO Thema-uitwerking Serverplatform",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/serverplatform",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-softwarepakketten": {
+      "titel": "BIO Thema-uitwerking Softwarepakketten",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/softwarepakketten",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-testdorp": {
+      "titel": "Testen in ketens",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/testdorp",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-testen-met-persoonsgegevens": {
+      "titel": "Testen met Persoonsgegevens",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/testen-met-persoonsgegevens",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-thuiswerken": {
+      "titel": "Veilig Thuiswerken",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/thuiswerken",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-toegangsbeveiliging": {
+      "titel": "BIO Thema-uitwerking Toegangsbeveiliging",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/toegangsbeveiliging",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-uw-digitale-veiligheid": {
+      "titel": "Brochure Uw digitale veiligheid",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/uw-digitale-veiligheid",
+      "partij": "cip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "cip-whitepaperredteaming": {
+      "titel": "Whitepaper Red Teaming",
+      "url": "https://www.cip-overheid.nl/producten-en-diensten/whitepaperredteaming",
+      "partij": "cip",
       "toegang": "open",
       "gezien": "2026-09-25"
     }

@@ -74,3 +74,397 @@ Bron: https://github.com/security-commons-nl/kennisbank . Overname en verwerking
 - [Val ik onder de Cbw?](https://security-commons-nl.github.io/kennisbank/governance/val-ik-onder-de-cbw/): Klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de Cyberbeveiligingswet valt. Loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. Rekent in de browser, er gaat niets naar een server. Normen: Cbw, NIS2. Elders: https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/cyberbeveiligingswet/voor-welke-overheidsorganisaties-geldt-de-cyberbeveiligingswet/, https://www.ncsc.nl/cyberbeveiligingswet-nis2/valt-mijn-organisatie-onder-de-cyberbeveiligingswet-nis2, https://www.rdi.nl/onderwerpen/digitale-weerbaarheid/cyberbeveiligingswet/wat-betekent-de-cbw-voor-u.
 - [Ben ik aanbieder onder de AI Act?](https://security-commons-nl.github.io/kennisbank/governance/aanbieder-onder-de-ai-act/): Klikbare toets waarmee een gemeente per AI-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. Wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. Bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met CE-markering. Levert een classificatiebesluit met onderbouwing. Rekent in de browser. Normen: AI Act.
 - [AI-beleid van een regionale samenwerking](https://security-commons-nl.github.io/kennisbank/governance/ai-beleid/): Compleet AI-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. Waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, AI-geletterdheid. Acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. Normen: AI Act, AVG, BIO2.
+
+## Bij anderen
+
+Stukken van andere partijen in het stelsel waar de kennisbank naar verwijst (bronnen.json).
+
+- [No More DDoS, de site van de Nationale Anti-DDoS-Coalitie](https://www.nomoreddos.org/): Anti-DDoS-Coalitie.
+- [Tooling van de Anti-DDoS-Coalitie, waaronder het DDoS Clearing House](https://github.com/NLADC): Anti-DDoS-Coalitie.
+- [Broncode en vragenlijsten van de Invulhulpen (MinBZK/par-dpia-form, EUPL-1.2)](https://github.com/MinBZK/par-dpia-form): BZK.
+- [Invulhulpen voor pre-scan, DPIA en IAMA (Rijksmodel DPIA 3.0)](https://invulhulpen.rijksapp.nl/): BZK.
+- [Voor welke overheidsorganisaties geldt de Cyberbeveiligingswet?](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/cyberbeveiligingswet/voor-welke-overheidsorganisaties-geldt-de-cyberbeveiligingswet/): BZK.
+- [ABDO](https://www.cip-overheid.nl/producten-en-diensten/abdo): CIP.
+- [Agile Security Management](https://www.cip-overheid.nl/producten-en-diensten/asm): CIP.
+- [Baseline Informatiebeveiliging Overheid](https://www.cip-overheid.nl/producten-en-diensten/bio-tekst): CIP.
+- [BIO Thema-uitwerking Applicatieontwikkeling](https://www.cip-overheid.nl/producten-en-diensten/applicatieontwikkeling): CIP.
+- [BIO Thema-uitwerking Clouddiensten](https://www.cip-overheid.nl/producten-en-diensten/clouddiensten): CIP.
+- [BIO Thema-uitwerking Communicatievoorzieningen](https://www.cip-overheid.nl/producten-en-diensten/communicatievoorzieningen): CIP.
+- [BIO Thema-uitwerking Huisvesting Informatievoorzieningen](https://www.cip-overheid.nl/producten-en-diensten/huisvesting-informatievoorzieningen): CIP.
+- [BIO Thema-uitwerking Middleware](https://www.cip-overheid.nl/producten-en-diensten/middleware): CIP.
+- [BIO Thema-uitwerking Serverplatform](https://www.cip-overheid.nl/producten-en-diensten/serverplatform): CIP.
+- [BIO Thema-uitwerking Softwarepakketten](https://www.cip-overheid.nl/producten-en-diensten/softwarepakketten): CIP.
+- [BIO Thema-uitwerking Toegangsbeveiliging](https://www.cip-overheid.nl/producten-en-diensten/toegangsbeveiliging): CIP.
+- [BIO Thema-uitwerkingen Privacy-supplementen](https://www.cip-overheid.nl/producten-en-diensten/privacy-supplementen): CIP.
+- [Brochure Uw digitale veiligheid](https://www.cip-overheid.nl/producten-en-diensten/uw-digitale-veiligheid): CIP.
+- [CIP-cast BIO](https://www.cip-overheid.nl/producten-en-diensten/cip-cast-bio): CIP.
+- [CIP-casts aanbesteden en inkopen](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-aanbesteden-en-inkopen): CIP.
+- [CIP-casts Awareness](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-awareness): CIP.
+- [CIP-casts Ethiek](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-ethiek): CIP.
+- [CIP-casts IoT](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-iot): CIP.
+- [CIP-casts Privacy](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-privacy): CIP.
+- [CIP-casts Secure Software](https://www.cip-overheid.nl/producten-en-diensten/cip-casts-ssd): CIP.
+- [Datalekken](https://www.cip-overheid.nl/producten-en-diensten/datalekken): CIP.
+- [Doe je voordeel met PET](https://www.cip-overheid.nl/producten-en-diensten/doe-je-voordeel-met-pet): CIP.
+- [DPIA Rijksoverheid – Cisco Webex](https://www.cip-overheid.nl/producten-en-diensten/dpia-rijksoverheid-cisco-webex): CIP.
+- [Een bestuursmanifest voor informatieveiligheid](https://www.cip-overheid.nl/producten-en-diensten/bestuurlijke-principes): CIP.
+- [FG-Enquête 2018 en 2022](https://www.cip-overheid.nl/producten-en-diensten/fg-enqute-2022): CIP.
+- [FG-enquête 2026](https://www.cip-overheid.nl/producten-en-diensten/fg-enquete-2026): CIP.
+- [Grip op SSD 3.0: De methode](https://www.cip-overheid.nl/producten-en-diensten/gripopssddemethode30): CIP.
+- [Grip op SSD: De normen v3.0](https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd): CIP.
+- [Grip op SSD: De normen voor Mobile Apps](https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd-de-normen-voor-mobiele-apps): CIP.
+- [Grip op SSD: Testraamwerk](https://www.cip-overheid.nl/producten-en-diensten/grip-op-ssd-testraamwerk): CIP.
+- [Handleiding Privacy by Design](https://www.cip-overheid.nl/producten-en-diensten/handleiding-privacy-by-design): CIP.
+- [Handreiking gebruik IAMA samen met Model DPIA Rijksdienst](https://www.cip-overheid.nl/producten-en-diensten/handreiking-gebruik-iama-samen-met-model-dpia-rijksdienst): CIP.
+- [IB&P-hulp](https://www.cip-overheid.nl/producten-en-diensten/ib-en-p-hulp-themasessie): CIP.
+- [ICO-Wizard](https://www.cip-overheid.nl/producten-en-diensten/ico): CIP.
+- [Internet of Things, Whitepaper I](https://www.cip-overheid.nl/producten-en-diensten/cip-whitepaper-iot): CIP.
+- [Internet of Things, Whitepaper II](https://www.cip-overheid.nl/producten-en-diensten/internet-of-things): CIP.
+- [Keten Service Library](https://www.cip-overheid.nl/producten-en-diensten/keten-practices): CIP.
+- [Ketencommunicatie bij crisis](https://www.cip-overheid.nl/producten-en-diensten/ketencommunicatiebijcrises): CIP.
+- [Microlearnings 'Privacy, de fundamenten'](https://www.cip-overheid.nl/producten-en-diensten/microlearnings-privacy-de-fundamenten): CIP.
+- [Model DPIA Rijksdienst](https://www.cip-overheid.nl/producten-en-diensten/de-8216-rijkspia-8217): CIP.
+- [Pre-scan DPIA](https://www.cip-overheid.nl/producten-en-diensten/ps-pia): CIP.
+- [Privacy afspraken in ketens](https://www.cip-overheid.nl/producten-en-diensten/privacy-afspraken-in-ketens): CIP.
+- [Privacy Baseline](https://www.cip-overheid.nl/producten-en-diensten/privacy-baseline): CIP.
+- [Privacy Governance - een handleiding voor de implementatie en borging van privacy in organisaties](https://www.cip-overheid.nl/producten-en-diensten/handleiding-borging-van-privacy-in-organisaties): CIP.
+- [Privacy Self Assessment (PriSA)](https://www.cip-overheid.nl/producten-en-diensten/privacyselfassessmenttool): CIP.
+- [Privacy Top 10](https://www.cip-overheid.nl/producten-en-diensten/privacy-top-10): CIP.
+- [Privacy Volwassenheidsmodel](https://www.cip-overheid.nl/producten-en-diensten/handreiking-borging-van-privacy-en-volwassenheidsmodel): CIP.
+- [Procesautomatisering (CSIR)](https://www.cip-overheid.nl/producten-en-diensten/csir): CIP.
+- [Ransomware game](https://www.cip-overheid.nl/producten-en-diensten/serious-games): CIP.
+- [Responsible Disclosure](https://www.cip-overheid.nl/producten-en-diensten/responsible-disclosure): CIP.
+- [Testen in ketens](https://www.cip-overheid.nl/producten-en-diensten/testdorp): CIP.
+- [Testen met Persoonsgegevens](https://www.cip-overheid.nl/producten-en-diensten/testen-met-persoonsgegevens): CIP.
+- [Veilig Thuiswerken](https://www.cip-overheid.nl/producten-en-diensten/thuiswerken): CIP.
+- [Vragenformulier 'Ransomware' ​](https://www.cip-overheid.nl/producten-en-diensten/ransomware): CIP.
+- [Whitepaper Red Teaming](https://www.cip-overheid.nl/producten-en-diensten/whitepaperredteaming): CIP.
+- [​​Invulhulpen voor het invullen van een pre-scan, DPIA en IAMA](https://www.cip-overheid.nl/producten-en-diensten/invulhulpen-pre-scan-dpia-iama): CIP.
+- [​​Kennisproducten Ransomware en Datadiefstal​](https://www.cip-overheid.nl/producten-en-diensten/kennisproducten-ransomware-en-datadiefstal): CIP.
+- [​​​​BIO Self-Assessment (BIO-SA)​​](https://www.cip-overheid.nl/producten-en-diensten/bio-sa): CIP.
+- [Aandachtspunten back-up en recovery inclusief SaaS-leveranciers](https://www.informatiebeveiligingsdienst.nl/product/aandachtspunten-back-up-en-recovery-inclusief-saas-leveranciers/): IBD.
+- [Aandachtspunten en richtlijn en Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/aandachtspunten-en-richtlijn-en-monitoring-response/): IBD.
+- [Addendum Informatiebeveiligingsdienst voor Gemeenten](https://www.informatiebeveiligingsdienst.nl/product/addendum-informatiebeveiligingsdienst-voor-gemeenten-ibd-addendum/): IBD.
+- [Addendum privacybeleid Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/addendum-privacybeleid-wet-politiegegevens/): IBD.
+- [Addendum rechten van betrokkenen Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/addendum-rechten-van-betrokkenen-wet-politiegegevens/): IBD.
+- [AI-specifieke toelichting voor DPIA's (versie 1.0, augustus 2026)](https://www.informatiebeveiligingsdienst.nl/product/ai-specifieke-toelichting-voor-dpias/): IBD.
+- [Anti-malware beleid BIO](https://www.informatiebeveiligingsdienst.nl/product/anti-malware-beleid/): IBD.
+- [AVG Borgingsproduct 3.1 Documentatie](https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-documentatie/): IBD.
+- [AVG Borgingsproduct 3.1 Handreiking](https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-handreiking/): IBD.
+- [AVG Borgingsproduct 3.1 Rapportage en Verbeterplan](https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-0-rapportage-en-verbeterplan/): IBD.
+- [AVG Borgingsproduct 3.1 Toetsingskader](https://www.informatiebeveiligingsdienst.nl/product/avg-borgingsproduct-3-1-toetsingskader/): IBD.
+- [AVG Klachtenprocedure](https://www.informatiebeveiligingsdienst.nl/product/avg-klachtenprocedure/): IBD.
+- [Back-up Plan](https://www.informatiebeveiligingsdienst.nl/product/back-up-plan/): IBD.
+- [Back-up Strategie](https://www.informatiebeveiligingsdienst.nl/product/back-up-strategie/): IBD.
+- [Back-up versus Archivering](https://www.informatiebeveiligingsdienst.nl/product/back-up-versus-archivering/): IBD.
+- [Baseline Informatiebeveiliging Overheid (BIO) v1.04](https://www.informatiebeveiligingsdienst.nl/product/baseline-informatiebeveiliging-overheid-bio/): IBD.
+- [Basisopzet CMDB (bijlage bij factsheet configuratiemanagement)](https://www.informatiebeveiligingsdienst.nl/product/basisopzet-cmdb-bijlage-bij-factsheet-configuratiemanagement/): IBD.
+- [Bedrijfsimpactanalyse (BIA)](https://www.informatiebeveiligingsdienst.nl/product/bedrijfsimpactanalyse-bia/): IBD.
+- [Beleid Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/beleid-wet-politiegegevens/): IBD.
+- [Bepalen bedrijfscontinuïteitsvereisten](https://www.informatiebeveiligingsdienst.nl/product/bepalen-bedrijfscontinuiteitsvereisten/): IBD.
+- [Bepalen kritische bedrijfsprocessen](https://www.informatiebeveiligingsdienst.nl/product/bepalen-kritische-bedrijfsprocessen/): IBD.
+- [Bewustwordingsmateriaal Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/bewustwordingsmateriaal-wet-politiegegevens/): IBD.
+- [BIO 2 Template Risicoanalyse tabel](https://www.informatiebeveiligingsdienst.nl/product/bio-2-template-risicoanalyse-tabel/): IBD.
+- [BIO2 Beschrijving ISMS verantwoordelijkheden binnen de gemeente](https://www.informatiebeveiligingsdienst.nl/product/bio2-beschrijving-isms-verantwoordelijkheden-binnen-de-gemeente/): IBD.
+- [BIO2 Business Model Canvas uitwerkingen](https://www.informatiebeveiligingsdienst.nl/product/bio2-business-model-canvas-uitwerkingen/): IBD.
+- [BIO2 Factsheet Informatiebeveiliging en de lijnmanager](https://www.informatiebeveiligingsdienst.nl/product/bio2-factsheet-informatiebeveiliging-en-de-lijnmanager/): IBD.
+- [BIO2 Factsheet Uitleg verschillende analysemethodieken](https://www.informatiebeveiligingsdienst.nl/product/bio2-factsheet-uitleg-verschillende-analysemethodieken/): IBD.
+- [BIO2 Gap-analyse](https://www.informatiebeveiligingsdienst.nl/product/bio2-gap-analyse/): IBD.
+- [BIO2 Handreiking ISMS](https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-isms/): IBD.
+- [BIO2 Handreiking ISMS Proces implementatie](https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-isms-proces-implementatie/): IBD.
+- [BIO2 Handreiking Realistische Implementatie Aanpak (BRIA)](https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-realistische-implementatie-aanpak-bria/): IBD.
+- [BIO2 Handreiking risicomanagement voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/bio-handreiking-risicomanagement-voor-gemeenten/): IBD.
+- [BIO2 Handreiking Strategisch Informatiebeveiligings- en Privacybeleid](https://www.informatiebeveiligingsdienst.nl/product/bio2-handreiking-strategisch-informatiebeveiligings-en-privacybeleid/): IBD.
+- [BIO2 Infographic – Wat is een ISMS](https://www.informatiebeveiligingsdienst.nl/product/bio2-infographic-wat-is-een-isms/): IBD.
+- [BIO2 Kans en Impact tabellen gemeenten](https://www.informatiebeveiligingsdienst.nl/product/bio2-kans-en-impact-tabellen-gemeenten/): IBD.
+- [BIO2 Kritieke processen gemeenten](https://www.informatiebeveiligingsdienst.nl/product/bio2-kritieke-processen-gemeenten/): IBD.
+- [BIO2 RASCI Tabel Controls Informatieveiligheid en Privacy](https://www.informatiebeveiligingsdienst.nl/product/bio2-rasci-tabel-controls-informatieveiligheid-en-privacy/): IBD.
+- [BIO2 Template Strategisch Informatiebeveiligings- en Privacybeleid](https://www.informatiebeveiligingsdienst.nl/product/bio2-template-strategisch-informatiebeveiligings-en-privacybeleid/): IBD.
+- [Business Continuity Management (BCM) agenderen binnen de organisatie](https://www.informatiebeveiligingsdienst.nl/product/business-continuity-management-bcm-agenderen-binnen-de-organisatie/): IBD.
+- [Casuïstiek gegevensbescherming gemeenteraad](https://www.informatiebeveiligingsdienst.nl/product/casuistiek-gegevensbescherming-gemeenteraad/): IBD.
+- [Collectieve DPIA's: bibliotheek van uitgevoerde gemeentelijke DPIA's](https://www.informatiebeveiligingsdienst.nl/collectieve-dpias/): IBD.
+- [Criteriaset Privacy by Design – IBD instrumenten](https://www.informatiebeveiligingsdienst.nl/product/criteriaset-privacy-by-design-ibd-instrumenten/): IBD.
+- [Dataclassificatietoets BIO2 gemeenten](https://www.informatiebeveiligingsdienst.nl/product/dataclassificatie-bio2/): IBD.
+- [De 10 bestuurlijke principes voor informatiebeveiliging](https://www.informatiebeveiligingsdienst.nl/product/de-10-bestuurlijke-principes-voor-informatiebeveiliging/): IBD.
+- [Diepgaande Risicoanalyse Methode Gemeenten (Excel)](https://www.informatiebeveiligingsdienst.nl/product/diepgaande-risicoanalyse-methode-excel/): IBD.
+- [DPIA-handreiking Samen naar een kwalitatief goede DPIA, met sjablonen en checklists](https://www.informatiebeveiligingsdienst.nl/product/dpia-handreiking-samen-naar-een-kwalitatief-goede-dpia/): IBD.
+- [Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2018](https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2018/): IBD.
+- [Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2019/2020](https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2019-2020/): IBD.
+- [Dreigingsbeeld Informatiebeveiliging Nederlandse Gemeenten 2021/2022](https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2021-2022/): IBD.
+- [Dreigingsbeeld informatiebeveiliging Nederlandse gemeenten 2023/2024](https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2023-2024/): IBD.
+- [Dreigingsbeeld informatiebeveiliging Nederlandse gemeenten 2025/2026](https://www.informatiebeveiligingsdienst.nl/product/dreigingsbeeld-informatiebeveiliging-nederlandse-gemeenten-2025-2026/): IBD.
+- [Edam-Volendam scherpt informatiebeveiliging aan: Beveiliging draait om bewustwording](https://www.informatiebeveiligingsdienst.nl/product/edam-volendam-scherpt-informatiebeveiliging-aan-beveiliging-draait-om-bewustwording/): IBD.
+- [Eenvoudig hulpmiddel voor bepalen maatregelen, BBN en schade voor betrokkenen](https://www.informatiebeveiligingsdienst.nl/product/eenvoudig-hulpmiddel-voor-bepalen-maatregelen-bbn-en-schade-voor-betrokkenen/): IBD.
+- [Factsheet Adviezen aan CISO’s met betrekking tot de Gemeenteraadsverkiezingen 18 maart 2026](https://www.informatiebeveiligingsdienst.nl/product/factsheet-adviezen-aan-cisos-met-betrekking-tot-de-gemeenteraadsverkiezingen-18-maart-2026/): IBD.
+- [Factsheet Adviezen aan CISO’s met betrekking tot de Tweede Kamerverkiezingen 2025](https://www.informatiebeveiligingsdienst.nl/product/factsheet-adviezen-aan-cisos-met-betrekking-tot-de-verkiezingen-2025/): IBD.
+- [Factsheet Assurance](https://www.informatiebeveiligingsdienst.nl/product/factsheet-assurance/): IBD.
+- [Factsheet AVG Basisregels voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/factsheet-avg-basisregels-voor-gemeenten/): IBD.
+- [Factsheet Changemanagement](https://www.informatiebeveiligingsdienst.nl/product/factsheet-changemanagement/): IBD.
+- [Factsheet Configuratiemanagement](https://www.informatiebeveiligingsdienst.nl/product/factsheet-configuratiemanagement/): IBD.
+- [Factsheet en beslismodel “Is mijn leverancier wel of geen verwerker?”](https://www.informatiebeveiligingsdienst.nl/product/factsheet-en-beslismodel-verwerkingsverantwoordelijke-of-verwerker/): IBD.
+- [Factsheet en toolkit Veilige e-mail in het zorgdomein](https://www.informatiebeveiligingsdienst.nl/product/factsheet-en-toolkit-veilige-e-mail-in-het-zorgdomein/): IBD.
+- [Factsheet Gehackt, hoe nu verder?](https://www.informatiebeveiligingsdienst.nl/product/factsheet-gehackt-hoe-nu-verder/): IBD.
+- [Factsheet IACS](https://www.informatiebeveiligingsdienst.nl/product/factsheet-iacs/): IBD.
+- [Factsheet ICS/SCADA](https://www.informatiebeveiligingsdienst.nl/product/icsscada/): IBD.
+- [Factsheet Incidentmanagement](https://www.informatiebeveiligingsdienst.nl/product/factsheet-incidentmanagement/): IBD.
+- [Factsheet Integriteit – Wat kunnen HRM, CISO en PO voor elkaar betekenen?](https://www.informatiebeveiligingsdienst.nl/product/factsheet-integriteit-wat-kunnen-hrm-ciso-en-po-voor-elkaar-betekenen/): IBD.
+- [Factsheet Juridische Aspecten van Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/factsheet-juridische-aspecten-van-monitoring-response/): IBD.
+- [Factsheet Lijnmanager](https://www.informatiebeveiligingsdienst.nl/product/factsheet-lijnmanager/): IBD.
+- [Factsheet Patchmanagement](https://www.informatiebeveiligingsdienst.nl/product/factsheet-patchmanagement/): IBD.
+- [Factsheet Security Information & Event Management (SIEM) en Security Operations Center (SOC) binnen uw gemeente](https://www.informatiebeveiligingsdienst.nl/product/factsheet-security-information-event-management-siem-en-security-operations-center-soc-binnen-gemeente/): IBD.
+- [Factsheet Social Engineering](https://www.informatiebeveiligingsdienst.nl/product/factsheet-social-engineering/): IBD.
+- [Factsheet Threat Intelligence (TI) binnen uw gemeente](https://www.informatiebeveiligingsdienst.nl/product/factsheet-threat-intelligence-ti-binnen-gemeente/): IBD.
+- [Factsheet Veilig verwerken van persoonsgegevens van Oekraïense vluchtelingen](https://www.informatiebeveiligingsdienst.nl/product/factsheet-veilig-verwerken-van-persoonsgegevens-van-oekrainse-vluchtelingen/): IBD.
+- [Factsheet Verwerker of Verwerkingsverantwoordelijke en beslisboom](https://www.informatiebeveiligingsdienst.nl/product/factsheet-verwerker-of-verwerkingsverantwoordelijke/): IBD.
+- [Factsheet Visie Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/factsheet-visie-monitoring-response/): IBD.
+- [FG Jaarrapportage 2024](https://www.informatiebeveiligingsdienst.nl/product/fg-jaarrapportage-2024/): IBD.
+- [FG-gesprekskaart AI en algoritmen](https://www.informatiebeveiligingsdienst.nl/product/fg-gesprekskaart-ai-en-algoritmen/): IBD.
+- [Format Projectplan implementatie NIS2](https://www.informatiebeveiligingsdienst.nl/product/format-projectplan-implementatie-nis2/): IBD.
+- [GAP-analyse BIO (alle sheets)](https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-1-2-alle-sheets/): IBD.
+- [GAP-analyse Business Continuity Management (BCM)](https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-business-continuity-management-bcm/): IBD.
+- [GAP-analyse NTA 7516](https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-nta-7516/): IBD.
+- [GAP-analyse uitleg BIO](https://www.informatiebeveiligingsdienst.nl/product/gap-analyse-uitleg/): IBD.
+- [Gegevensdeling in het Sociaal Domein – de basis bestendigen](https://www.informatiebeveiligingsdienst.nl/product/gegevensdeling-in-het-sociaal-domein-de-basis-bestendigen/): IBD.
+- [Gesprekskaartjes voor de Gemeentesecretaris](https://www.informatiebeveiligingsdienst.nl/product/gesprekskaartjes-voor-de-gemeentesecretaris/): IBD.
+- [Gespreksstarter Gebruik social media door gemeenten](https://www.informatiebeveiligingsdienst.nl/product/gespreksstarter-gebruik-social-media-door-gemeenten/): IBD.
+- [Grip op privacy – artikel iBestuur 2017-nr 21 – interview IBD](https://www.informatiebeveiligingsdienst.nl/product/grip-op-privacy-artikel-ibestuur-2017-nr-21-interview-ibd/): IBD.
+- [Groeimodel digitale weerbaarheid](https://www.informatiebeveiligingsdienst.nl/product/groeimodel-digitale-weerbaarheid/): IBD.
+- [Groeimodel digitale weerbaarheid – ondersteunend document](https://www.informatiebeveiligingsdienst.nl/product/groeimodel-digitale-weerbaarheid-ondersteunend-document/): IBD.
+- [Handelingskader voor generatieve AI](https://www.informatiebeveiligingsdienst.nl/product/handelingskader-voor-generatieve-ai/): IBD.
+- [Handleiding MijnIBD omgeving](https://www.informatiebeveiligingsdienst.nl/product/handleiding-mijnibd-omgeving/): IBD.
+- [Handreiking 2-Factor authenticatie (2FA) voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-2-factor-authenticatie-2fa-voor-gemeenten/): IBD.
+- [Handreiking Afvoer ICT middelen BIO](https://www.informatiebeveiligingsdienst.nl/product/afvoer-ict-middelen/): IBD.
+- [Handreiking AI en Algoritmen](https://www.informatiebeveiligingsdienst.nl/product/handreiking-ai-en-algoritmen/): IBD.
+- [Handreiking Back-up en recovery gemeente BIO](https://www.informatiebeveiligingsdienst.nl/product/back-up-en-recovery-gemeente/): IBD.
+- [Handreiking Bedrijfscontinuïteitsbeheer (BCM)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-bedrijfscontinuiteitsbeheer/): IBD.
+- [Handreiking Beleid logische toegangsbeveiliging BIO](https://www.informatiebeveiligingsdienst.nl/product/beleid-logische-toegangsbeveiliging-v1-0/): IBD.
+- [Handreiking BIO voor kleine gemeenten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-bio-voor-kleine-gemeenten/): IBD.
+- [Handreiking Cloudcomputing en Privacy](https://www.informatiebeveiligingsdienst.nl/product/handreiking-cloudcomputing-en-privacy/): IBD.
+- [Handreiking Configuratiemanagement BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-configuratiemanagement/): IBD.
+- [Handreiking Coordinated Vulnerability Disclosure BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-coordinated-vulnerability-disclosure-bio/): IBD.
+- [Handreiking Diepgaande Risicoanalyse Methode Gemeenten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-diepgaande-risicoanalyse-methode-gemeenten/): IBD.
+- [Handreiking DigiD-assessment aanpak DigiD-norm B.01](https://www.informatiebeveiligingsdienst.nl/product/handreiking-digid-assessment-aanpak-digid-norm-b-01/): IBD.
+- [Handreiking Digitaal Forensisch Onderzoek BIO](https://www.informatiebeveiligingsdienst.nl/product/digitaal-forensisch-onderzoek/): IBD.
+- [Handreiking Dossiervorming Participatiewet](https://www.informatiebeveiligingsdienst.nl/product/handreiking-dossiervorming-participatiewet/): IBD.
+- [Handreiking en voorbeeld privacybeleid gemeente Leidschendam-Voorburg](https://www.informatiebeveiligingsdienst.nl/product/handreiking-en-voorbeeld-privacybeleid-gemeente-leidschendam-voorburg/): IBD.
+- [Handreiking Encryptiebeleid (PKI) BIO](https://www.informatiebeveiligingsdienst.nl/product/encryptiebeleid-pki-gemeente-v1-0/): IBD.
+- [Handreiking FG Jaarverslag (AVG en WPG)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-fg-jaarverslag-avg-en-wpg/): IBD.
+- [Handreiking Functieprofiel Functionaris Gegevensbescherming (FG)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofiel-functionaris-gegevensbescherming-fg/): IBD.
+- [Handreiking Functieprofiel Privacy Officer (PO)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofiel-privacy-officer-po/): IBD.
+- [Handreiking Functieprofielen informatiebeveiliging](https://www.informatiebeveiligingsdienst.nl/product/handreiking-functieprofielen-informatiebeveiliging/): IBD.
+- [Handreiking Gebruik Inlichtingenbureau-signalen (IB-signalen)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-gebruik-ib-signalen/): IBD.
+- [Handreiking Geheimhoudingsverklaringen BIO](https://www.informatiebeveiligingsdienst.nl/product/geheimhoudingsverklaringen/): IBD.
+- [Handreiking Hardening-beleid voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/hardening-beleid-voor-gemeenten/): IBD.
+- [Handreiking Impact Cloudcomputing](https://www.informatiebeveiligingsdienst.nl/product/handreiking-impact-cloudcomputing/): IBD.
+- [Handreiking Incident en response management](https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-incidentmanagement-en-response-beleid-2/): IBD.
+- [Handreiking Inkoop Clouddiensten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-inkoop-clouddiensten/): IBD.
+- [Handreiking Inkoopvoorwaarden en informatiebeveiligingseisen BIO](https://www.informatiebeveiligingsdienst.nl/product/inkoopvoorwaarden-en-informatiebeveiligingseisen/): IBD.
+- [Handreiking IoT beveiliging BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-iot-beveiliging/): IBD.
+- [Handreiking Ketenrisicoanalyses](https://www.informatiebeveiligingsdienst.nl/product/handreiking-ketenrisicoanalyses/): IBD.
+- [Handreiking Logging BIO](https://www.informatiebeveiligingsdienst.nl/product/aanwijzing-logging/): IBD.
+- [Handreiking Mobiele gegevensdragers BIO](https://www.informatiebeveiligingsdienst.nl/product/mobiele-gegevensdragers/): IBD.
+- [Handreiking Mobile Device Management BIO](https://www.informatiebeveiligingsdienst.nl/product/mobile-device-management/): IBD.
+- [Handreiking Patchmanagement voor gemeenten BIO](https://www.informatiebeveiligingsdienst.nl/product/patch-management-voor-gemeenten/): IBD.
+- [Handreiking Personeelsbeleid gemeente BIO](https://www.informatiebeveiligingsdienst.nl/product/personeelsbeleid/): IBD.
+- [Handreiking Positionering en taken van de FG](https://www.informatiebeveiligingsdienst.nl/product/handreiking-positionering-en-taken-van-de-fg/): IBD.
+- [Handreiking Privacy by Design – gebruik IBD instrumenten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-by-design-gebruik-ibd-instrumenten/): IBD.
+- [Handreiking Privacy en Integrale toeleiding en dienstverlening sociaal domein](https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-en-integrale-toeleiding-en-dienstverlening-sociaal-domein/): IBD.
+- [Handreiking Privacy- en cookieverklaring](https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-en-cookieverklaring/): IBD.
+- [Handreiking privacy-risicomanagement: risico's uit DPIA's opvolgen, met risicoregister](https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-risicomanagement/): IBD.
+- [Handreiking Procedure nieuwe ICT-voorzieningen BIO](https://www.informatiebeveiligingsdienst.nl/product/procedure-nieuwe-ict-voorzieningen-v1-0/): IBD.
+- [Handreiking Proces wijzigingsbeheer BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-proces-wijzigingsbeheer/): IBD.
+- [Handreiking Procesautomatisering (PA) Beleid](https://www.informatiebeveiligingsdienst.nl/product/handreiking-procesautomatisering-pa-beleid/): IBD.
+- [Handreiking Randvoorwaarden Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/handreiking-randvoorwaarden-monitoring-response/): IBD.
+- [Handreiking Rechten van Betrokkenen](https://www.informatiebeveiligingsdienst.nl/product/handreiking-rechten-van-betrokkenen/): IBD.
+- [Handreiking Risicoregister en Risico Acceptatie Overeenkomst (RAO)](https://www.informatiebeveiligingsdienst.nl/product/handreiking-risicoregister-en-risico-acceptatie-overeenkomst-rao/): IBD.
+- [Handreiking Samenhang beheerprocessen en informatiebeveiliging BIO](https://www.informatiebeveiligingsdienst.nl/product/samenhang-beheerprocessen-en-informatiebeveiliging/): IBD.
+- [Handreiking screening personeel BIO](https://www.informatiebeveiligingsdienst.nl/product/handleiding-screening-personeel/): IBD.
+- [Handreiking Service Level Agreement (SLA) BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-service-level-agreements-sla/): IBD.
+- [Handreiking Standaard Verwerkersovereenkomst (VWO) Gemeenten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-standaard-verwerkersovereenkomst-gemeenten/): IBD.
+- [Handreiking Starten met Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/handreiking-starten-met-monitoring-response/): IBD.
+- [Handreiking Team op sterkte](https://www.informatiebeveiligingsdienst.nl/product/handreiking-team-op-sterkte/): IBD.
+- [Handreiking Telewerkbeleid BIO](https://www.informatiebeveiligingsdienst.nl/product/telewerkbeleid/): IBD.
+- [Handreiking Toegangsbeleid BIO](https://www.informatiebeveiligingsdienst.nl/product/toegangsbeleid/): IBD.
+- [Handreiking Uitbreiden van Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/handreiking-uitbreiden-van-monitoring-response/): IBD.
+- [Handreiking Verhogen bewustzijn informatiebeveiliging](https://www.informatiebeveiligingsdienst.nl/product/handreiking-verhogen-bewustzijn-informatiebeveiliging/): IBD.
+- [Handreiking verwerkingsregister gemeenten – toelichting bij het vooringevulde register van verwerkingsactiviteiten](https://www.informatiebeveiligingsdienst.nl/product/handreiking-verwerkingsregister-gemeenten-toelichting-bij-het-vooringevulde-register-van-verwerkingsactiviteiten/): IBD.
+- [Handreiking Voorbereiden op digitale crisis](https://www.informatiebeveiligingsdienst.nl/product/handreiking-voorbereiden-op-digitale-crisis/): IBD.
+- [Handreiking Wachtwoordbeleid BIO](https://www.informatiebeveiligingsdienst.nl/product/wachtwoordbeleid-2/): IBD.
+- [Handreiking Wachtwoordkluizen BIO](https://www.informatiebeveiligingsdienst.nl/product/handreiking-wachtwoordkluizen/): IBD.
+- [Het autorisatieproces Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/het-autorisatieproces-wet-politiegegevens/): IBD.
+- [IBD Aansluitformulier kwetsbaarheidswaarschuwingen](https://www.informatiebeveiligingsdienst.nl/product/ibd-aansluitformulier-kwetsbaarheidswaarschuwingen/): IBD.
+- [IBD Aansluitformulier Lijst met IP-adressen en URL’s](https://www.informatiebeveiligingsdienst.nl/product/lijst-met-gemeentelijke-ip-adressen-en-urls/): IBD.
+- [IBD Factsheet Geautomatiseerde individuele besluitvorming](https://www.informatiebeveiligingsdienst.nl/product/ibd-factsheet-geautomatiseerde-individuele-besluitvorming/): IBD.
+- [IBD Factsheet Verstrekken persoonsgegevens](https://www.informatiebeveiligingsdienst.nl/product/ibd-factsheet-verstrekken-persoonsgegevens/): IBD.
+- [IBD Handreiking Register van Verwerkingen](https://www.informatiebeveiligingsdienst.nl/product/ibd-handreiking-register-van-verwerkingen/): IBD.
+- [IBD Jaaroverzicht 2016](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2016/): IBD.
+- [IBD Jaaroverzicht 2017](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2017/): IBD.
+- [IBD Jaaroverzicht 2018](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2018/): IBD.
+- [IBD Jaaroverzicht 2019](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2019/): IBD.
+- [IBD Jaaroverzicht 2020](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2020/): IBD.
+- [IBD Jaaroverzicht 2021](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2021/): IBD.
+- [IBD Jaaroverzicht 2022](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2022/): IBD.
+- [IBD Jaaroverzicht 2024](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2024/): IBD.
+- [IBD Jaaroverzicht 2025: digitale veiligheid vraagt om samenwerking](https://www.informatiebeveiligingsdienst.nl/product/ibd-jaaroverzicht-2025-digitale-veiligheid-vraagt-om-samenwerking/): IBD.
+- [IBD Notitie Toegang tot Suwinet door externe medewerkers en commerciële dienstverleners](https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-toegang-tot-suwinet-door-externe-medewerkers-en-commerciele-dienstverleners/): IBD.
+- [IBD PGP-sleutel](https://www.informatiebeveiligingsdienst.nl/product/ibd-asc/): IBD.
+- [IBD-Factsheet Meldplicht Datalekken](https://www.informatiebeveiligingsdienst.nl/product/ibd-leaflet-meldplicht-datalekken/): IBD.
+- [IBD-notitie DPIA Microsoft Copilot](https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-dpia-microsoft-copilot/): IBD.
+- [Introductie aanpak BIO](https://www.informatiebeveiligingsdienst.nl/product/introductie-aanpak-bio/): IBD.
+- [Kaartje in de meterkast voor de gemeentesecretaris](https://www.informatiebeveiligingsdienst.nl/product/kaartje-in-de-meterkast-voor-de-gemeentesecretaris/): IBD.
+- [Kwetsbaarheden in Citrix: Lessen voor gemeenten en de IBD](https://www.informatiebeveiligingsdienst.nl/product/kwetsbaarheden-in-citrix-lessen-voor-gemeenten-en-de-ibd/): IBD.
+- [Kwetsbaarheden in Log4j – Lessen voor de gemeenten en de IBD](https://www.informatiebeveiligingsdienst.nl/product/kwetsbaarheden-in-log4j-lessen-voor-de-gemeenten-en-de-ibd/): IBD.
+- [Leeg verwerkingsregister gemeenten](https://www.informatiebeveiligingsdienst.nl/product/leeg-verwerkingsregister-gemeenten/): IBD.
+- [Leren van Lochem: lessen uit een informatiebeveiligingsincident](https://www.informatiebeveiligingsdienst.nl/product/leren-van-lochem-lessen-uit-een-informatiebeveiligingsincident/): IBD.
+- [Lessen uit de hack bij gemeente Hof van Twente](https://www.informatiebeveiligingsdienst.nl/product/lessen-uit-de-hack-bij-hof-van-twente/): IBD.
+- [Lessen uit de hack en datalek bij Gemeente Buren](https://www.informatiebeveiligingsdienst.nl/product/lessen-uit-de-hack-en-datalek-bij-gemeente-buren/): IBD.
+- [Lijst met Borgingsproduct-criteria ten behoeve van het inkoopproces](https://www.informatiebeveiligingsdienst.nl/product/lijst-met-borgingsproduct-criteria-ten-behoeve-van-het-inkoopproces/): IBD.
+- [Maatregelenset BBN2+](https://www.informatiebeveiligingsdienst.nl/product/maatregelenset-bbn2/): IBD.
+- [Mindmap Randvoorwaarden Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/mindmap-randvoorwaarden-monitoring-response/): IBD.
+- [Mindmap Starten met Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/mindmap-starten-met-monitoring-response/): IBD.
+- [Mindmap Uitbreiden Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/mindmap-uitbreiden-monitoring-response/): IBD.
+- [Model Continuïteitsplan BIO (BCM)](https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsplan/): IBD.
+- [Model Continuïteitsstrategie BIO (BCM)](https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsstrategie/): IBD.
+- [Modelgegevensleveringsovereenkomst voor zelfstandige verwerkingsverantwoordelijken](https://www.informatiebeveiligingsdienst.nl/product/modelgegevensleveringsovereenkomst-voor-zelfstandige-verwerkingsverantwoordelijken/): IBD.
+- [Modelovereenkomst voor gezamenlijke verantwoordelijken](https://www.informatiebeveiligingsdienst.nl/product/modelovereenkomst-voor-gezamenlijke-verantwoordelijken/): IBD.
+- [Overzicht maatregelen Wpg voorbeeld](https://www.informatiebeveiligingsdienst.nl/product/overzicht-maatregelen-wpg-voorbeeld/): IBD.
+- [Overzicht privacyproducten](https://www.informatiebeveiligingsdienst.nl/product/overzicht-privacyproducten/): IBD.
+- [Overzicht versiebeheer Standaard Verwerkersovereenkomst](https://www.informatiebeveiligingsdienst.nl/product/overzicht-versiebeheer-standaard-verwerkersovereenkomst/): IBD.
+- [Plan van Aanpak Bedrijfscontinuïteitsbeheer (BCM)](https://www.informatiebeveiligingsdienst.nl/product/plan-van-aanpak-bedrijfscontinuiteitsbeheer/): IBD.
+- [Poster Hoe richt je IB en P goed in binnen een gemeente?](https://www.informatiebeveiligingsdienst.nl/product/poster-hoe-richt-je-ib-en-p-goed-in-binnen-een-gemeente/): IBD.
+- [Praktijkvoorbeelden Verwerker of Verwerkingsverantwoordelijke](https://www.informatiebeveiligingsdienst.nl/product/praktijkvoorbeelden-verwerker-of-verwerkingsverantwoordelijke/): IBD.
+- [Praktische aanpak 3-2-1 back-up regel](https://www.informatiebeveiligingsdienst.nl/product/praktische-aanpak-3-2-1-back-up-regel/): IBD.
+- [Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten](https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-gemeenten/): IBD.
+- [Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten (21 september 2021)](https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-21-september-2021/): IBD.
+- [Presentatie (be)Spreekuur Privacy Actualiteiten voor Gemeenten (7 december 2021)](https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-privacy-actualiteiten-voor-gemeenten-7-december-2021/): IBD.
+- [Presentatie (be)Spreekuur thema Beïnvloeding](https://www.informatiebeveiligingsdienst.nl/product/presentatie-ibd-bespreekuur-thema-beinvloeding/): IBD.
+- [Presentatie 2FA webinar door Microsoft](https://www.informatiebeveiligingsdienst.nl/product/presentatie-2fa-webinar-door-microsoft/): IBD.
+- [Presentatie 2FA webinar door Microsoft: vragen en antwoorden](https://www.informatiebeveiligingsdienst.nl/product/presentatie-2fa-webinar-door-microsoft-vragen-en-antwoorden/): IBD.
+- [Presentatie bespreekuur Risicomanagement](https://www.informatiebeveiligingsdienst.nl/product/presentatie-bespreekuur-risicomanagement/): IBD.
+- [Presentatie BIO / ENSIA Congrestival VNG](https://www.informatiebeveiligingsdienst.nl/product/presentatie-bio-ensia-congrestival-vng/): IBD.
+- [Presentatie IBD/Privacy bespreekuur thema Beveiligen persoonlijke gezondheidsinformatie](https://www.informatiebeveiligingsdienst.nl/product/presentatie-ibd-privacy-bespreekuur-thema-beveiligen-persoonlijke-gezondheidsinformatie/): IBD.
+- [Presentatie interactieve workshop Changemanagement](https://www.informatiebeveiligingsdienst.nl/product/presentatie-interactieve-workshop-changemanagement/): IBD.
+- [Presentatie interactieve workshop Incidentmanagement](https://www.informatiebeveiligingsdienst.nl/product/presentatie-interactieve-workshop-incidentmanagement/): IBD.
+- [Presentatie Online (be)Spreekuur Privacy Actualiteiten voor gemeenten – december](https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-december/): IBD.
+- [Presentatie Online (be)Spreekuur Privacy Actualiteiten voor gemeenten – juni](https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bespreekuur-privacy-actualiteiten-voor-gemeenten-juni/): IBD.
+- [Presentatie online bijeenkomst Informatiebeveiliging voor de Privacyfunctionaris](https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bijeenkomst-informatiebeveiliging-voor-de-privacyfunctionaris/): IBD.
+- [Presentatie online bijeenkomst Privacy voor de CISO](https://www.informatiebeveiligingsdienst.nl/product/presentatie-online-bijeenkomst-privacy-voor-de-ciso/): IBD.
+- [Presentatie Privacy (be)Spreekuren thema 2 jaar AVG: Waar sta je als FG?](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-2-jaar-avg-waar-sta-je-als-fg/): IBD.
+- [Presentatie Privacy (be)Spreekuren thema Corona en Privacy](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-31-maart-en-1-april-2020/): IBD.
+- [Presentatie Privacy (be)Spreekuren thema Samenwerkingsverbanden](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-samenwerkingsverbanden/): IBD.
+- [Presentatie Privacy (be)Spreekuren thema Zorg en Veiligheid](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuren-thema-zorg-en-veiligheid/): IBD.
+- [Presentatie Privacy (be)Spreekuur Het Inlichtingenbureau](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-het-inlichtingenbureau/): IBD.
+- [Presentatie Privacy (be)Spreekuur Privacy Actualiteiten voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten/): IBD.
+- [Presentatie Privacy (be)Spreekuur Privacy Actualiteiten voor gemeenten – september](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-privacy-actualiteiten-voor-gemeenten-september/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Big Data en Open Data](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-big-data-en-open-data/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Factsheet verwerkingsverantwoordelijke en verwerker](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-factsheet-verwerkingsverantwoordelijke-en-verwerker/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Jeugd en veiligheid](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-jeugd-en-veiligheid/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Pettenvraagstuk in het sociaal domein](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-pettenvraagstuk-in-het-sociaal-domein/): IBD.
+- [Presentatie Privacy (be)Spreekuur Thema Privacy Volwassenheidsniveaus](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-volwassenheidsniveaus/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Schrems II](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-schrems-ii/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Terug naar de werkplek – Corona 2](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-terug-naar-de-werkplek-corona-2/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema Vroegsignalering](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-vroegsignalering/): IBD.
+- [Presentatie Privacy (be)Spreekuur thema “Waar sta je als FG (deel 2): Positionering en effectief toezicht”](https://www.informatiebeveiligingsdienst.nl/product/presentatie-privacy-bespreekuur-thema-waar-sta-je-als-fg-deel-2-positionering-en-effectief-toezicht/): IBD.
+- [Presentatie webinar 2FA](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-2fa/): IBD.
+- [Presentatie webinar Beheer Toegangsbeveiliging](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-beheer-toegangsbeveiliging/): IBD.
+- [Presentatie webinar Changemanagement – deel 1](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-change-management/): IBD.
+- [Presentatie webinar Changemanagement – deel 2](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-changemanagement-deel-2/): IBD.
+- [Presentatie webinar Dreigingsbeeld 2021-2022](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-dreigingsbeeld-2021-2022/): IBD.
+- [Presentatie webinar Gestructureerde aanpak verhogen beveiligingsbewustzijn](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-gestructureerde-aanpak-verhogen-beveiligingsbewustzijn/): IBD.
+- [Presentatie webinar Incident Management](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-incident-management/): IBD.
+- [Presentatie webinar NIS2 en AVG](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-nis2-en-avg/): IBD.
+- [Presentatie webinar Patchmanagement deel 1 proces](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-patchmanagement-deel-1-proces/): IBD.
+- [Presentatie webinar Patchmanagement deel 2 techniek](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-patchmanagement-deel-2-techniek/): IBD.
+- [Presentatie webinar Plan van aanpak Business Continuity Management](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-plan-van-aanpak-bcm/): IBD.
+- [Presentatie webinar Pragmatische aanpak BIO](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-pragmatische-aanpak-bio/): IBD.
+- [Presentatie webinar Randvoorwaarden en starten met Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-randvoorwaarden-en-starten-met-monitoring-response/): IBD.
+- [Presentatie webinar Relatie en taken IBD – GGI-Veilig](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-relatie-en-taken-ibd-ggi-veilig/): IBD.
+- [Presentatie webinar Wachtwoordkluizen](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-wachtwoordkluizen/): IBD.
+- [Presentatie webinar “Praktische Back-up-aanpak”](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-back-up-aanpak/): IBD.
+- [Presentatie webinar “Praktische BCM-aanpak” (gemeente Tilburg)](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-bcm-aanpak-gemeente-tilburg/): IBD.
+- [Presentatie webinar “Praktische BCM-aanpak” (IBD)](https://www.informatiebeveiligingsdienst.nl/product/presentatie-webinar-praktische-bcm-aanpak-ibd/): IBD.
+- [Presentatie workshop Beheer Toegangsbeveiliging](https://www.informatiebeveiligingsdienst.nl/product/presentatie-workshop-beheer-toegangsbeveiliging/): IBD.
+- [Presentatie Workshop VDW Module 2 Monitoring & Response: Use case met een technische trigger](https://www.informatiebeveiligingsdienst.nl/product/presentatie-workshop-vdw-module-2-monitoring-response-use-case-met-een-technische-trigger/): IBD.
+- [Privacy & AVG Contentbibliotheek](https://www.informatiebeveiligingsdienst.nl/product/privacy-avg-contentbibliotheek/): IBD.
+- [Privacybeleid](https://www.informatiebeveiligingsdienst.nl/product/privacybeleid/): IBD.
+- [Privacybeleid IBD](https://www.informatiebeveiligingsdienst.nl/product/privacybeleid-ibd/): IBD.
+- [Privacyverklaring Wet politiegegevens](https://www.informatiebeveiligingsdienst.nl/product/privacyverklaring-wet-politiegegevens/): IBD.
+- [Proces- / Stroomschema BCM](https://www.informatiebeveiligingsdienst.nl/product/proces-stroomschema-bcm/): IBD.
+- [Producten en diensten van de IBD (PDC)](https://www.informatiebeveiligingsdienst.nl/product/producten-en-diensten-van-de-ibd-pdc/): IBD.
+- [Projectplan implementatie Monitoring & Response](https://www.informatiebeveiligingsdienst.nl/product/projectplan-implementatie-monitoring-response/): IBD.
+- [Quick Reference kaart 1 – Uitval gebouw](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-1-uitval-gebouw/): IBD.
+- [Quick Reference kaart 2 – Uitval door stroomstoring](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-2-uitval-door-stroomstoring/): IBD.
+- [Quick Reference kaart 3 – Uitval ICT](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-3-uitval-ict/): IBD.
+- [Quick Reference kaart 4 – Cybercrisis](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-4-cybercrisis/): IBD.
+- [Quick Reference kaart 5 – Uitval datacommunicatie (internet)](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-5-uitval-datacommunicatie-internet/): IBD.
+- [Quick Reference kaart 6 – Uitval telefonie](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-6-uitval-telefonie/): IBD.
+- [Quick Reference kaart 7 – Uitval personeel](https://www.informatiebeveiligingsdienst.nl/product/quick-reference-kaart-7-uitval-personeel/): IBD.
+- [Quickscan Videoconferencing tools](https://www.informatiebeveiligingsdienst.nl/product/quickscan-videoconferencing-tools/): IBD.
+- [RASCI Tabel BIO controls en Privacy borgingsproduct controls](https://www.informatiebeveiligingsdienst.nl/product/rasci-tabel-bio-controls-en-privacy-borgingsproduct-controls/): IBD.
+- [Referentiekader Privacy by Design – IBD instrumenten](https://www.informatiebeveiligingsdienst.nl/product/referentiekader-privacy-by-design-ibd-instrumenten/): IBD.
+- [Regiobijeenkomst Informatiebeveiliging Najaar 2022 Plenaire opening](https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-informatiebeveiliging-najaar-2022-plenaire-opening/): IBD.
+- [Regiobijeenkomst Informatiebeveiliging Najaar 2022 Workshop Betrekken van het lijnmanagement](https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-informatiebeveiliging-najaar-2022-workshop-betrekken-van-het-lijnmanagement/): IBD.
+- [Regiobijeenkomst Privacy Najaar 2022 Workshop AVG Borgingsproduct 3.0](https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-privacy-najaar-2022-workshop-avg-borgingsproduct-3-0/): IBD.
+- [Regiobijeenkomst Privacy Najaar 2022 Workshop Team op Sterkte](https://www.informatiebeveiligingsdienst.nl/product/regiobijeenkomst-privacy-najaar-2022-workshop-team-op-sterkte/): IBD.
+- [Register van verwerkingen Wpg (basis)](https://www.informatiebeveiligingsdienst.nl/product/register-van-verwerkingen-wpg-basis/): IBD.
+- [Resolutie Informatieveiligheid, randvoorwaarde voor de professionele gemeente](https://www.informatiebeveiligingsdienst.nl/product/resolutie-informatieveiligheid/): IBD.
+- [RFC-2350](https://www.informatiebeveiligingsdienst.nl/product/rfc-2350/): IBD.
+- [Risicoregister (inclusief risicobehandelplan en dashboards)](https://www.informatiebeveiligingsdienst.nl/product/risicoregister-inclusief-risicobehandelplan-en-dashboards/): IBD.
+- [Scenariokaart 1 – Uitval gebouw](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-1-uitval-gebouw/): IBD.
+- [Scenariokaart 2 – Uitval door stroomstoring](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-2-uitval-door-stroomstoring/): IBD.
+- [Scenariokaart 3 – Uitval ICT](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-3-uitval-ict/): IBD.
+- [Scenariokaart 4 – Cybercrisis](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-4-cybercrisis/): IBD.
+- [Scenariokaart 5 – Uitval datacommunicatie (internet)](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-5-uitval-datacommunicatie-internet/): IBD.
+- [Scenariokaart 6 – Uitval telefonie](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-6-uitval-telefonie/): IBD.
+- [Scenariokaart 7 – Uitval Personeel](https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-7-uitval-personeel/): IBD.
+- [Schadescenario’s BIO](https://www.informatiebeveiligingsdienst.nl/product/schadescenarios-bio/): IBD.
+- [Schematisch overzicht ransomware aanval](https://www.informatiebeveiligingsdienst.nl/product/schematisch-overzicht-ransomware-aanval/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Antwoordformulier](https://www.informatiebeveiligingsdienst.nl/product/antwoordformulier-privacy-pubquiz/): IBD.
+- [Spelmateriaal Privacy Pubquiz – editie 2023](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-privacy-pubquiz-editie-2023/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Fotoronde](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-fotoronde/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Handleiding en Spelregels](https://www.informatiebeveiligingsdienst.nl/product/instructie-pubquiz/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Poster](https://www.informatiebeveiligingsdienst.nl/product/poster-pubquiz/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Algemeen](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-algemeen/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Bestuur](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-bestuur/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde HRM](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-hrm/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Publiekszaken](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-publiekszaken/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Schatten](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-schatten/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Sociaal Domein](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-sociaal-domein/): IBD.
+- [Spelmateriaal Privacy Pubquiz – Ronde Waar of niet waar](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-pubquiz-ronde-waar-of-niet-waar/): IBD.
+- [Spelmateriaal Serious game Telekwetsbaarheid – Draaiboek](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-draaiboek/): IBD.
+- [Spelmateriaal Serious game Telekwetsbaarheid – Handreiking evaluatie](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-handreiking-evaluatie/): IBD.
+- [Spelmateriaal Serious game Telekwetsbaarheid – Handreiking moderator](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-handreiking-moderator/): IBD.
+- [Spelmateriaal Serious game Telekwetsbaarheid – Presentatie](https://www.informatiebeveiligingsdienst.nl/product/spelmateriaal-serious-game-telekwetsbaarheid-presentatie/): IBD.
+- [Spion op je pad – Achtergrond en toelichting](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-achtergrond-en-toelichting/): IBD.
+- [Spion op je pad – Handleiding spelleider](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-handleiding-spelleider/): IBD.
+- [Spion op je pad – Speelbord 1](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-speelbord-1/): IBD.
+- [Spion op je pad – Speelbord 2](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-speelbord-2/): IBD.
+- [Spion op je pad – Spelregels spelers](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelregels-spelers/): IBD.
+- [Spion op je pad – Spelvragen kaartjes](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelvragen-kaartjes/): IBD.
+- [Spion op je pad – Spelvragen ppt](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-spelvragen-ppt/): IBD.
+- [Spion op je pad – Vraag en antwoord document spelleider](https://www.informatiebeveiligingsdienst.nl/product/spion-op-pad-vraag-en-antwoord-document-spelleider/): IBD.
+- [Standaard Incidentindeling IBD](https://www.informatiebeveiligingsdienst.nl/product/standaard-incidentindeling-ibd/): IBD.
+- [Standard Data Processing Agreement (DPA) for Dutch Municipalities](https://www.informatiebeveiligingsdienst.nl/product/standard-data-processing-agreement-dpa-for-dutch-municipalities-standaard-verwerkersovereenkomst-engelse-vertaling/): IBD.
+- [Standpuntbepaling en stappenplan Operationele Technologie (OT)](https://www.informatiebeveiligingsdienst.nl/product/standpuntbepaling-en-stappenplan-ot/): IBD.
+- [Stappenplan voor AI-incidenten](https://www.informatiebeveiligingsdienst.nl/product/stappenplan-voor-ai-incidenten/): IBD.
+- [Systeemeisenset Privacy by Design – IBD Documenten](https://www.informatiebeveiligingsdienst.nl/product/systeemeisenset-privacy-by-design-ibd-documenten/): IBD.
+- [Tactische Baseline Informatiebeveiliging Nederlandse Gemeenten (BIG)](https://www.informatiebeveiligingsdienst.nl/product/tactische-baseline-informatiebeveiliging-nederlandse-gemeenten-2/): IBD.
+- [Template beschrijving kritische bedrijfsprocessen](https://www.informatiebeveiligingsdienst.nl/product/template-beschrijving-kritische-bedrijfsprocessen/): IBD.
+- [Template Change Implementatie Plan](https://www.informatiebeveiligingsdienst.nl/product/template-change-implementatie-plan/): IBD.
+- [Toolkit ‘Behaviour by Design’](https://www.informatiebeveiligingsdienst.nl/product/toolkit-behaviour-by-design/): IBD.
+- [Top kritische bedrijfsprocessen](https://www.informatiebeveiligingsdienst.nl/product/top-kritische-bedrijfsprocessen/): IBD.
+- [Uitgangspunten Standaard Verwerkersovereenkomst (VWO)](https://www.informatiebeveiligingsdienst.nl/product/uitgangspunten-standaard-verwerkersovereenkomst-vwo/): IBD.
+- [VDW Module 1: Mindmap maatregelen](https://www.informatiebeveiligingsdienst.nl/product/vdw-module-1-mindmap-maatregelen/): IBD.
+- [VDW Module 1: Mindmap processen](https://www.informatiebeveiligingsdienst.nl/product/vdw-module-1-mindmap-processen/): IBD.
+- [VDW Module 4: Mindmap Bedrijfscontinuiteit management](https://www.informatiebeveiligingsdienst.nl/product/vdw-module-4-mindmap-bedrijfscontinuiteit-management/): IBD.
+- [Verslag Privacy (be)Spreekuur Samenwerken binnen het IKZ](https://www.informatiebeveiligingsdienst.nl/product/verslag-privacy-bespreekuur-samenwerken-binnen-het-ikz/): IBD.
+- [Verwerkersovereenkomst AVG én Wpg](https://www.informatiebeveiligingsdienst.nl/product/verwerkersovereenkomst-avg-en-wpg/): IBD.
+- [Voorbeeld IB&P beleid](https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-ibp-beleid/): IBD.
+- [Voorbeeld Privacybeleid](https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-privacybeleid/): IBD.
+- [Voorbeeld tijdspad Wpg audit](https://www.informatiebeveiligingsdienst.nl/product/voorbeeld-tijdspad-wpg-audit/): IBD.
+- [Voorbeeldaanpak NIS2 – een veilige (digitale) gemeente](https://www.informatiebeveiligingsdienst.nl/product/voorbeeldaanpak-nis2-een-veilige-digitale-gemeente/): IBD.
+- [Vooringevuld register van verwerkingen gemeenten](https://www.informatiebeveiligingsdienst.nl/product/vooringevuld-verwerkingsregister-gemeenten/): IBD.
+- [Werkdocument Audit Wet politiegegevens voor gemeenten](https://www.informatiebeveiligingsdienst.nl/product/werkdocument-audit-wet-politiegegevens-voor-gemeenten/): IBD.
+- [NaWas, de Nationale Wasstraat tegen DDoS-aanvallen](https://www.nbip.nl/nawas/): NBIP en NaWas.
+- [Valt mijn organisatie onder de Cyberbeveiligingswet (NIS2)?](https://www.ncsc.nl/cyberbeveiligingswet-nis2/valt-mijn-organisatie-onder-de-cyberbeveiligingswet-nis2): NCSC.
+- [Wat betekent de Cyberbeveiligingswet voor u?](https://www.rdi.nl/onderwerpen/digitale-weerbaarheid/cyberbeveiligingswet/wat-betekent-de-cbw-voor-u): RDI.

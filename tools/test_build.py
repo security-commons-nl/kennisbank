@@ -383,7 +383,9 @@ class Llms(unittest.TestCase):
         pad = build.ROOT / "llms.txt"
         if not pad.exists():
             self.skipTest("llms.txt is nog niet gebouwd; draai tools/build.py")
-        regels = [r for r in pad.read_text(encoding="utf-8").splitlines() if r.startswith("- [")]
+        # Alleen het deel met de eigen stukken; daaronder volgt de sectie Bij anderen (bronnen.json).
+        eigen = pad.read_text(encoding="utf-8").split("\n## Bij anderen")[0]
+        regels = [r for r in eigen.splitlines() if r.startswith("- [")]
         # Alleen de vakgebieden tellen. Een brede glob telde in CI ook _aanvalspaden/methode/README.md
         # mee, de repo die voor de barrieres naast de kennisbank wordt uitgecheckt.
         stukken = [p for vak in build.VAKGEBIEDEN for p in (build.ROOT / vak).glob("*/README.md")]
@@ -648,6 +650,78 @@ class Bronnen(Basis):
         self.assertNotIn("<script>alert", tekst)
 
 
+class BijAnderen(Basis):
+    """De stukken van andere partijen in het zoekvak van de voorpagina (besluit 25-09-2026)."""
+
+    def register(self, zoekwoorden: dict | None = None, **bronnen: dict) -> None:
+        pad = self.map / build.PARTIJEN_REL
+        pad.parent.mkdir(parents=True, exist_ok=True)
+        pad.write_text(PARTIJEN_JSON, encoding="utf-8")
+        data = {"bronnen": bronnen}
+        if zoekwoorden is not None:
+            data["zoekwoorden"] = zoekwoorden
+        (self.map / "bronnen.json").write_text(json.dumps(data), encoding="utf-8")
+
+    def test_elke_bron_staat_in_de_lijst_met_link_en_partij(self):
+        self.register(factsheet=BRON_OPEN, handreiking=BRON_INLOG)
+        html = build.bij_anderen()
+        self.assertIn('<a href="https://www.ncsc.nl/factsheet">Een factsheet</a>', html)
+        self.assertIn('<span class="partij">IBD</span>', html)
+        self.assertIn("inlog: gemeenten, via de IBD-community", html)
+        self.assertIn("2 stukken van 2 andere partijen", html)
+
+    def test_zoektekst_bevat_titel_partij_en_zoekwoorden(self):
+        """Wie VNG typt, moet de IBD vinden: de IBD is onderdeel van de VNG."""
+        self.register(zoekwoorden={"ibd": ["VNG"]}, handreiking=BRON_INLOG)
+        html = build.bij_anderen()
+        zoek = re.search(r'data-zoek="([^"]+)"', html).group(1)
+        for woord in ("een handreiking", "ibd", "vng"):
+            self.assertIn(woord, zoek)
+
+    def test_vervallen_bron_staat_niet_in_de_lijst(self):
+        self.register(x={**BRON_OPEN, "vervallen": "2026-10-01"}, y={**BRON_INLOG})
+        html = build.bij_anderen()
+        self.assertNotIn("Een factsheet", html)
+        self.assertIn("Een handreiking", html)
+
+    def test_leeg_register_geeft_geen_sectie(self):
+        self.register()
+        self.assertEqual(build.bij_anderen(), "")
+
+    def test_zoekwoorden_van_een_onbekende_partij_zijn_een_fout(self):
+        self.register(zoekwoorden={"verzonnen": ["x"]}, factsheet=BRON_OPEN)
+        build.register()
+        self.assertIn("zoekwoorden: partij 'verzonnen'", self.meldingen)
+
+    def test_zoekwoorden_moeten_een_lijst_zijn(self):
+        self.register(zoekwoorden={"ibd": "VNG"}, factsheet=BRON_OPEN)
+        build.register()
+        self.assertIn("moet een lijst met woorden zijn", self.meldingen)
+
+    def test_synoniemen_komen_als_json_in_de_pagina(self):
+        pad = self.map / build.PARTIJEN_REL
+        pad.parent.mkdir(parents=True, exist_ok=True)
+        pad.write_text(PARTIJEN_JSON, encoding="utf-8")
+        (self.map / "bronnen.json").write_text(json.dumps(
+            {"synoniemen": [["cbw", "cyberbeveiligingswet"]], "bronnen": {}}), encoding="utf-8")
+        blok = build.synoniemen_blok()
+        self.assertIn('id="synoniemen"', blok)
+        self.assertEqual(json.loads(re.search(r">(.*)</script>", blok).group(1)), [["cbw", "cyberbeveiligingswet"]])
+
+    def test_synoniemgroep_van_een_woord_is_een_fout(self):
+        self.register(factsheet=BRON_OPEN)
+        data = json.loads((self.map / "bronnen.json").read_text(encoding="utf-8"))
+        data["synoniemen"] = [["alleen"]]
+        (self.map / "bronnen.json").write_text(json.dumps(data), encoding="utf-8")
+        build.register()
+        self.assertIn("synoniemen: groep 1", self.meldingen)
+
+    def test_de_zoekfunctie_matcht_elk_woord_los(self):
+        """"vng beleid" moet werken, ook als die twee woorden niet naast elkaar staan."""
+        self.assertIn("term.split(", build.FILTER_JS)
+        self.assertIn("function past(tekst, woorden)", build.FILTER_JS)
+
+
 class EchteKennisbank(unittest.TestCase):
     """De controle over de echte inhoud; dit is het net onder alle regels samen."""
 
@@ -722,7 +796,7 @@ class Voorpagina(unittest.TestCase):
         self.assertIn('<span class="norm">NIS2</span>', self.html)
         treffers = [z for z in re.findall(r'data-zoek="([^"]*)"', self.html) if "nis2" in z]
         self.assertGreaterEqual(len(treffers), 5, "NIS2 staat op zes stukken")
-        self.assertIn("of norm", self.html)  # de tekst in het zoekvak zegt dat het kan
+        self.assertIn("onderwerp, norm of partij", self.html)  # de tekst in het zoekvak zegt dat het kan
 
     def test_tegeltekst_is_kort_en_heel(self) -> None:
         begin = self.html.index('<div class="vakken">')

@@ -31,6 +31,7 @@ import json
 import sys
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Callable
 
@@ -84,11 +85,11 @@ def te_controleren(root: Path = ROOT) -> list[dict]:
 
 
 def controleer(lijst: list[dict], ophaler: Ophaler = haal_status) -> list[dict]:
-    uit = []
-    for regel in lijst:
-        status = ophaler(regel["url"])
-        uit.append({**regel, "status": status, "oordeel": beoordeel(status, regel["toegang"])})
-    return uit
+    # Parallel: met de volledige catalogi van IBD en CIP zijn het honderden adressen, en een voor een
+    # duurt dat minuten. Acht tegelijk is beleefd genoeg voor de sites aan de andere kant.
+    with ThreadPoolExecutor(8) as pool:
+        statussen = list(pool.map(ophaler, [r["url"] for r in lijst]))
+    return [{**r, "status": s, "oordeel": beoordeel(s, r["toegang"])} for r, s in zip(lijst, statussen)]
 
 
 def heeft_melding(uitslag: list[dict]) -> bool:

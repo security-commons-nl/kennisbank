@@ -107,6 +107,12 @@ De build zet de verwijzingen onderaan de leesversie en controleert of elk id bes
 specifieke stuk, niet naar de homepage van de partij; die homepage is al de terugval als het stuk
 verdwijnt. Van een besloten stuk noem je de titel en de plek, nooit de inhoud.
 
+Alles in `bronnen.json` is vindbaar via het zoekvak op de voorpagina, ook als er geen item naar verwijst. De
+openbare catalogi van de IBD en CIP staan er daarom in hun geheel in; bijwerken gaat met
+`python tools/haal_catalogi.py --schrijf`, daarna `python tools/build.py`. Vindt een zoekterm niet wat hij zou
+moeten vinden, voeg dan een synoniem toe onder `synoniemen` in `bronnen.json`, en een toets in
+`tools/test_zoeken.js`.
+
 ### Vaste koppen
 
 De koppen **Bewijs** en **Zo leg je het uit** zijn verplicht; de build blokkeert als ze ontbreken.

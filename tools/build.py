@@ -157,6 +157,17 @@ def register() -> tuple[dict[str, dict], dict[str, dict]]:
         return _register_cache
     if not ptn:
         fout(pad, "B15", f"stelselkaart niet gevonden ({PARTIJEN_REL.as_posix()}); elke bron hoort bij een partij daaruit")
+    # Zoekwoorden per partij: wie "VNG" typt moet ook de IBD vinden, die onderdeel van de VNG is. De
+    # afkorting in de stelselkaart is de naam, maar niet het woord waarmee iedereen zoekt.
+    for pid, woorden in (data.get("zoekwoorden") or {}).items():
+        if ptn and pid not in ptn:
+            fout(pad, "B15", f"zoekwoorden: partij '{pid}' staat niet in de stelselkaart")
+        if not isinstance(woorden, list) or not all(isinstance(w, str) and w.strip() for w in woorden):
+            fout(pad, "B15", f"zoekwoorden: '{pid}' moet een lijst met woorden zijn")
+    for nr, groep in enumerate(data.get("synoniemen") or [], 1):
+        if (not isinstance(groep, list) or len(groep) < 2
+                or not all(isinstance(w, str) and w.strip() for w in groep)):
+            fout(pad, "B15", f"synoniemen: groep {nr} moet een lijst van minstens twee woorden zijn")
     goed: dict[str, dict] = {}
     gezien_urls: dict[str, str] = {}
     for bid, bron in (data.get("bronnen") or {}).items():
@@ -200,6 +211,40 @@ def register() -> tuple[dict[str, dict], dict[str, dict]]:
             goed[bid] = bron
     _register_cache = (goed, ptn)
     return _register_cache
+
+
+def synoniemen() -> list[list[str]]:
+    """Groepen woorden die bij het zoeken als hetzelfde tellen (cbw en Cyberbeveiligingswet)."""
+    pad = ROOT / BRONNEN_PAD_NAAM
+    if not pad.is_file():
+        return []
+    groepen = json.loads(pad.read_text(encoding="utf-8")).get("synoniemen") or []
+    return [[str(w) for w in g] for g in groepen if isinstance(g, list)]
+
+
+def synoniemen_blok() -> str:
+    # Als JSON in de pagina, zodat het zoekscript ze kan lezen zonder iets van buiten te laden.
+    # "</" kan de script-tag niet sluiten: de woorden bevatten dat niet, en json.dumps escapet geen
+    # slash, dus het wordt hier voor de zekerheid vervangen.
+    data = json.dumps(synoniemen(), ensure_ascii=False).replace("</", "<\\/")
+    return f'<script type="application/json" id="synoniemen">{data}</script>'
+
+
+def zoekwoorden() -> dict[str, list[str]]:
+    pad = ROOT / BRONNEN_PAD_NAAM
+    if not pad.is_file():
+        return {}
+    data = json.loads(pad.read_text(encoding="utf-8"))
+    return {k: [str(w) for w in v] for k, v in (data.get("zoekwoorden") or {}).items() if isinstance(v, list)}
+
+
+def bron_zoektekst(bron: dict, partij: dict | None, extra: list[str]) -> str:
+    """De tekst waarop het zoekvak een bron vergelijkt: titel, partij en haar zoekwoorden."""
+    delen = [bron.get("titel", ""), bron.get("partij", "")]
+    if partij:
+        delen.append(partij.get("naam", ""))
+    delen += extra
+    return " ".join(str(d) for d in delen).lower()
 
 
 def controleer_bronnen(readme: Path, fm: dict) -> None:
@@ -789,7 +834,7 @@ def zoekbalk(items: list[dict]) -> str:
         opties.append(f'  <option value="{e(b)}">{e(bekend.get(b, b))} ({tellingen[b]})</option>')
     return ('<div class="filters" id="filters" hidden>' + NL
             + '  <label class="visueel-verborgen" for="zoek">Zoeken</label>' + NL
-            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp of norm, bijvoorbeeld logboek of NIS2"'
+            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp, norm of partij, bijvoorbeeld logboek, NIS2 of VNG beleid"'
             + ' autocomplete="off">' + NL
             + '  <label class="visueel-verborgen" for="barriere">Barriere</label>' + NL
             + '  <select id="barriere">' + NL + NL.join(opties) + NL + '  </select>' + NL
@@ -808,24 +853,84 @@ FILTER_JS = """
   var telling = document.getElementById('telling');
   var leeg = document.getElementById('filter-leeg');
   var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+  var elders = document.getElementById('bij-anderen');
+  var eldersKop = document.getElementById('bij-anderen-kop');
+  var eldersUitleg = document.getElementById('bij-anderen-uitleg');
+  var bronnen = elders ? [].slice.call(elders.querySelectorAll('li')) : [];
+
+  // Accenten, koppeltekens en leestekens tellen niet mee: continuiteit vindt continuïteit,
+  // backup vindt back-up, en "(bcm)" is gewoon het woord bcm.
+  function norm(s) {
+    return ' ' + (s || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')
+      .replace(/-/g, '').replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
+  }
+  var groepen = [];
+  try {
+    groepen = JSON.parse(document.getElementById('synoniemen').textContent).map(function (g) {
+      return g.map(function (w) { return norm(w).trim(); });
+    });
+  } catch (e) { groepen = []; }
+  kaarten.forEach(function (k) { k._zoek = norm(k.getAttribute('data-zoek')); });
+  bronnen.forEach(function (b) { b._zoek = norm(b.getAttribute('data-zoek')); });
+
+  // Een zoekwoord mag ook als synoniem voorkomen: cbw vindt Cyberbeveiligingswet.
+  function varianten(woord) {
+    var uit = [woord];
+    groepen.forEach(function (g) {
+      if (g.indexOf(woord) !== -1) g.forEach(function (w) { if (uit.indexOf(w) === -1) uit.push(w); });
+    });
+    return uit;
+  }
+  // Korte woorden (ai, bio, vng) alleen aan het begin van een woord, anders vindt ai elk woord
+  // met die twee letters erin. Langere woorden overal, want samenstellingen moeten gevonden
+  // worden: beleid in wachtwoordbeleid.
+  function komtVoor(tekst, w) {
+    return w.length <= 3 ? tekst.indexOf(' ' + w) !== -1 : tekst.indexOf(w) !== -1;
+  }
+  // Elk woord moet ergens voorkomen, in willekeurige volgorde: "vng beleid" vindt het
+  // beleidssjabloon van de IBD, ook al staat er nergens "vng beleid" achter elkaar.
+  function past(tekst, woorden) {
+    for (var i = 0; i < woorden.length; i++) {
+      var alt = woorden[i], raak = false;
+      for (var j = 0; j < alt.length && !raak; j++) raak = komtVoor(tekst, alt[j]);
+      if (!raak) return false;
+    }
+    return true;
+  }
 
   function pas() {
-    var term = (zoek.value || '').trim().toLowerCase();
+    var term = norm(zoek.value).trim();
+    var woorden = term === '' ? [] : term.split(' ').map(varianten);
     var bar = keuze.value;
     var n = 0;
     kaarten.forEach(function (kaart) {
-      var tekst = kaart.getAttribute('data-zoek') || '';
+      var tekst = kaart._zoek;
       var barrieres = ' ' + (kaart.getAttribute('data-barrieres') || '') + ' ';
-      var mee = (term === '' || tekst.indexOf(term) !== -1) &&
+      var mee = past(tekst, woorden) &&
                 (bar === '' || barrieres.indexOf(' ' + bar + ' ') !== -1);
       kaart.hidden = !mee;
       if (mee) n++;
     });
+    // De stukken van anderen verschijnen pas bij een zoekterm; een lijst van honderden regels
+    // zonder vraag erbij helpt niemand. Een barriere is een sleutel van de eigen handleidingen,
+    // dus met een barriere gekozen blijven ze weg.
+    var m = 0;
+    bronnen.forEach(function (li) {
+      var mee = woorden.length > 0 && bar === '' && past(li._zoek, woorden);
+      li.hidden = !mee;
+      if (mee) m++;
+    });
+    if (elders) {
+      elders.hidden = m === 0;
+      eldersKop.textContent = m === 0 ? 'Bij anderen' : 'Bij anderen: ' + m + (m === 1 ? ' stuk' : ' stukken');
+      eldersUitleg.hidden = m !== 0 && woorden.length > 0;
+    }
     grid.hidden = n === 0;
-    if (leeg) leeg.hidden = n !== 0;
-    telling.textContent = n === kaarten.length
+    if (leeg) leeg.hidden = n !== 0 || m !== 0;
+    telling.textContent = (n === kaarten.length
       ? kaarten.length + ' stukken'
-      : n + ' van de ' + kaarten.length + ' stukken';
+      : n + ' van de ' + kaarten.length + ' stukken') +
+      (woorden.length > 0 && bronnen.length ? ', en ' + m + ' bij anderen' : '');
   }
 
   zoek.addEventListener('input', pas);
@@ -882,6 +987,47 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
                   [("Security Commons NL", HOOFDPAGINA), ("Kennisbank", "../"), (sectie["titel"], "")])
 
 
+def bij_anderen() -> str:
+    """De stukken van andere partijen uit het register, doorzoekbaar vanuit hetzelfde zoekvak.
+
+    Een wegwijzer helpt wie een onderwerp heeft. Wie een soort stuk van een bepaalde partij zoekt
+    ("iets van de VNG over beleid") vond die tot 25-09-2026 niet: de zoekbalk doorzocht alleen de
+    eigen stukken. Zonder JavaScript staat de lijst gewoon open; het script verbergt hem tot er een
+    zoekterm is.
+    """
+    bronnen, ptn = register()
+    extra = zoekwoorden()
+    actief = sorted(((bid, b) for bid, b in bronnen.items() if not b.get("vervallen")),
+                    key=lambda x: (str(x[1].get("partij")), x[1]["titel"].lower()))
+    if not actief:
+        return ""
+    partijen_n = len({b["partij"] for _, b in actief})
+    regels = []
+    for bid, b in actief:
+        p = ptn.get(b["partij"])
+        naam = p["naam"] if p else b["partij"]
+        slot = (f' <span class="slot">inlog: {e(b.get("kring", ""))}</span>' if b.get("toegang") == "inlog" else "")
+        regels.append(f'  <li data-zoek="{e(bron_zoektekst(b, p, extra.get(b["partij"], [])))}">'
+                      f'<a href="{e(b["url"])}">{e(b["titel"])}</a> <span class="partij">{e(naam)}</span>{slot}</li>')
+    return (f'<h2 id="bij-anderen-kop">Bij anderen</h2>' + NL
+            + f'<p class="h2sub" id="bij-anderen-uitleg">Daarnaast {len(actief)} stukken van {partijen_n} andere '
+            + 'partijen in het stelsel, zoals de IBD en CIP: handreikingen, sjablonen en factsheets. Typ '
+            + 'hierboven een zoekterm en ze verschijnen hier, met een link naar de partij zelf.</p>' + NL
+            + '<ul class="bij-anderen" id="bij-anderen">' + NL + NL.join(regels) + NL + '</ul>')
+
+
+BIJ_ANDEREN_CSS = """
+.bij-anderen{list-style:none;margin:0 0 18px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.bij-anderen li{padding:9px 13px;border-top:1px solid var(--line);font-size:14px;line-height:1.45}
+.bij-anderen li:first-child{border-top:0}
+.bij-anderen li[hidden],.bij-anderen[hidden]{display:none}
+.bij-anderen a{color:var(--accent);text-decoration:none}
+.bij-anderen a:hover{text-decoration:underline}
+.bij-anderen .partij{color:var(--muted);font-size:12.5px;margin-left:6px;white-space:nowrap}
+.bij-anderen .slot{font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px}
+"""
+
+
 def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
     live = [i for v in VAKGEBIEDEN for i in items[v] if i["_weergave"] == "live"]
     kaarten_live = "".join(kaart(i, "", True) for i in live)
@@ -924,6 +1070,10 @@ dan is dat een uitnodiging en geen fout.</p>
 
 {kaarten_live}
 </div>
+
+<style>{BIJ_ANDEREN_CSS}</style>
+{bij_anderen()}
+{synoniemen_blok()}
 
 <p class="h2sub" id="filter-leeg" hidden>Niets gevonden. Probeer een ander woord, of zet de barriere terug op
 alle. Zoek je iets dat er niet is? <a href="https://github.com/security-commons-nl/.github/discussions">Vraag het
@@ -1387,6 +1537,16 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
             if elders:
                 staart += " Elders: " + ", ".join(elders) + "."
             regels.append(f"- [{fm['titel']}]({link}): {samenvatting}{staart}")
+        regels.append("")
+    bronnen, ptn = register()
+    actief = sorted((b for b in bronnen.values() if not b.get("vervallen")),
+                    key=lambda b: (str(b.get("partij")), b["titel"].lower()))
+    if actief:
+        regels += ["## Bij anderen", "",
+                   "Stukken van andere partijen in het stelsel waar de kennisbank naar verwijst (bronnen.json).", ""]
+        for b in actief:
+            p = ptn.get(b["partij"])
+            regels.append(f"- [{b['titel']}]({b['url']}): {p['naam'] if p else b['partij']}.")
         regels.append("")
     return NL.join(regels)
 
