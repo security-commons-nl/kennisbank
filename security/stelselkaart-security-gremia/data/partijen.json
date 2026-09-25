@@ -43,6 +43,7 @@
     {
       "id": "enisa",
       "naam": "ENISA",
+      "url": "https://www.enisa.europa.eu/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -58,6 +59,7 @@
     {
       "id": "niscg",
       "naam": "NIS Cooperation Group",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/nis-cooperation-group",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -72,6 +74,7 @@
     {
       "id": "csirtnet",
       "naam": "CSIRTs Network",
+      "url": "https://csirtsnetwork.eu/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -87,6 +90,7 @@
     {
       "id": "cyclone",
       "naam": "EU-CyCLONe",
+      "url": "https://www.enisa.europa.eu/topics/eu-incident-response-and-cyber-crisis-management/eu-cyclone",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -101,6 +105,7 @@
     {
       "id": "eccc",
       "naam": "ECCC en NCC-NL",
+      "url": "https://cybersecurity-centre.europa.eu/index_en",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -115,6 +120,7 @@
     {
       "id": "certeu",
       "naam": "CERT-EU",
+      "url": "https://cert.europa.eu/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -129,6 +135,7 @@
     {
       "id": "ec3",
       "naam": "Europol EC3",
+      "url": "https://www.europol.europa.eu/about-europol/european-cybercrime-centre-ec3",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "wet",
@@ -143,6 +150,7 @@
     {
       "id": "gfce",
       "naam": "GFCE",
+      "url": "https://thegfce.org/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "informeel",
@@ -157,6 +165,7 @@
     {
       "id": "first",
       "naam": "FIRST",
+      "url": "https://www.first.org/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "vereniging",
@@ -172,6 +181,7 @@
     {
       "id": "ti",
       "naam": "TF-CSIRT en Trusted Introducer",
+      "url": "https://www.trusted-introducer.org/",
       "laag": "eu",
       "laag_label": "EU",
       "mandaat": "vereniging",
@@ -187,6 +197,7 @@
     {
       "id": "ncsc",
       "naam": "NCSC",
+      "url": "https://www.ncsc.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -205,6 +216,7 @@
     {
       "id": "nctv",
       "naam": "NCTV",
+      "url": "https://www.nctv.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -220,6 +232,7 @@
     {
       "id": "csr",
       "naam": "Cyber Security Raad",
+      "url": "https://www.cybersecurityraad.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "informeel",
@@ -234,6 +247,7 @@
     {
       "id": "nbv",
       "naam": "NBV (AIVD)",
+      "url": "https://www.aivd.nl/onderwerpen/aandachtsgebieden/informatiebeveiliging",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -248,6 +262,7 @@
     {
       "id": "aivd",
       "naam": "AIVD, MIVD en JSCU",
+      "url": "https://www.aivd.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -262,6 +277,7 @@
     {
       "id": "ndn",
       "naam": "Nationaal Detectie Netwerk",
+      "url": "https://www.ncsc.nl/producten-en-diensten/nationaal-detectie-netwerk-ndn",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -276,6 +292,7 @@
     {
       "id": "cyclotron",
       "naam": "Cyclotron",
+      "url": "https://www.ncsc.nl/producten-en-diensten/cyclotron",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -291,6 +308,7 @@
     {
       "id": "hoc",
       "naam": "House of Cyber",
+      "url": "https://www.ncsc.nl/nieuws/house-of-cyber-versterkt-digitale-weerbaarheid",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "informeel",
@@ -306,6 +324,7 @@
     {
       "id": "rdi",
       "naam": "RDI",
+      "url": "https://www.rdi.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -320,6 +339,7 @@
     {
       "id": "ilt",
       "naam": "ILT",
+      "url": "https://www.ilent.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -334,6 +354,7 @@
     {
       "id": "ap",
       "naam": "Autoriteit Persoonsgegevens",
+      "url": "https://www.autoriteitpersoonsgegevens.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -348,6 +369,7 @@
     {
       "id": "bzk",
       "naam": "BZK",
+      "url": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -364,6 +386,7 @@
     {
       "id": "ciorijk",
       "naam": "CIO Rijk en CIO-beraad",
+      "url": "https://organisaties.overheid.nl/134864/directie_Chief_Information_Office-_Rijk_CIO-Rijk/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -378,6 +401,7 @@
     {
       "id": "cisorijk",
       "naam": "CISO Rijk",
+      "url": "https://organisaties.overheid.nl/134864/directie_Chief_Information_Office-_Rijk_CIO-Rijk/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -392,6 +416,7 @@
     {
       "id": "vssr",
       "naam": "VSSR",
+      "url": "https://www.ncsc.nl/producten-en-diensten/versterken-soc-stelsel-rijk-vssr",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -407,6 +432,7 @@
     {
       "id": "abro",
       "naam": "ABRO 2026",
+      "url": "https://www.rijksoverheid.nl/themas/overheid-en-democratie/zakendoen-met-het-rijk/beveiligingseisen-abro",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -421,6 +447,7 @@
     {
       "id": "logius",
       "naam": "Logius",
+      "url": "https://www.logius.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -436,6 +463,7 @@
     {
       "id": "forum",
       "naam": "Forum Standaardisatie",
+      "url": "https://www.forumstandaardisatie.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -450,6 +478,7 @@
     {
       "id": "ndd",
       "naam": "Nederlandse Digitale Dienst",
+      "url": "https://digitaledienst.overheid.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "informeel",
@@ -464,6 +493,7 @@
     {
       "id": "digilab",
       "naam": "Digilab",
+      "url": "https://digilab.overheid.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -479,6 +509,7 @@
     {
       "id": "politie",
       "naam": "Politie: THTC en regionale cybercrimeteams",
+      "url": "https://www.politie.nl/informatie/wat-doet-de-politie-tegen-cybercrime.html",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -493,6 +524,7 @@
     {
       "id": "om",
       "naam": "Openbaar Ministerie",
+      "url": "https://www.om.nl/onderwerpen/c/cybercrime",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "wet",
@@ -507,6 +539,7 @@
     {
       "id": "melissa",
       "naam": "Convenant Melissa",
+      "url": "https://cyberveilignederland.nl/project-melissa",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -521,6 +554,7 @@
     {
       "id": "nipv",
       "naam": "NIPV",
+      "url": "https://nipv.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -536,6 +570,7 @@
     {
       "id": "cwn",
       "naam": "Cyberweerbaarheidsnetwerk",
+      "url": "https://www.ncsc.nl/cwn",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "wet",
@@ -553,6 +588,7 @@
     {
       "id": "ibd",
       "naam": "IBD",
+      "url": "https://www.informatiebeveiligingsdienst.nl/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -571,6 +607,7 @@
     {
       "id": "ibdraad",
       "naam": "IBD-adviesraad",
+      "url": "https://www.informatiebeveiligingsdienst.nl/governance-ibd/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -585,6 +622,7 @@
     {
       "id": "zcert",
       "naam": "Z-CERT",
+      "url": "https://www.z-cert.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -599,6 +637,7 @@
     {
       "id": "certwm",
       "naam": "CERT-WM",
+      "url": "https://www.cert-wm.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "wet",
@@ -613,6 +652,7 @@
     {
       "id": "surf",
       "naam": "SURFcert en SURFsoc",
+      "url": "https://www.surf.nl/diensten/beveiliging/surfcert",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "vereniging",
@@ -628,6 +668,7 @@
     {
       "id": "isac",
       "naam": "ISAC's (sectoraal)",
+      "url": "https://www.ncsc.nl/samenwerken/wat-is-een-isac",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -642,6 +683,7 @@
     {
       "id": "vrisac",
       "naam": "VR-ISAC",
+      "url": "https://nipv.nl/onderzoek/digitale-weerbaarheid/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "convenant",
@@ -657,6 +699,7 @@
     {
       "id": "nrn",
       "naam": "Nationaal Respons Netwerk",
+      "url": "https://www.ncsc.nl/nieuws/convenant-nationaal-response-netwerk-ondertekend",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "convenant",
@@ -671,6 +714,7 @@
     {
       "id": "adc",
       "naam": "Anti-DDoS-Coalitie",
+      "url": "https://www.nomoreddos.org/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -686,6 +730,7 @@
     {
       "id": "nbip",
       "naam": "NBIP en NaWas",
+      "url": "https://www.nbip.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -700,6 +745,7 @@
     {
       "id": "c2t",
       "naam": "Connect2Trust",
+      "url": "https://connect2trust.org/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -714,6 +760,7 @@
     {
       "id": "divd",
       "naam": "DIVD",
+      "url": "https://www.divd.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -742,6 +789,7 @@
     {
       "id": "vng",
       "naam": "VNG en VNG Realisatie",
+      "url": "https://vng.nl/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -758,6 +806,7 @@
     {
       "id": "vngkbg",
       "naam": "VNG-klankbordgroep Digitale Veiligheid",
+      "url": "https://vng.nl/artikelen/digitale-veiligheid",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -773,6 +822,7 @@
     {
       "id": "cominfo",
       "naam": "VNG-commissie Informatiesamenleving",
+      "url": "https://vng.nl/artikelen/commissie-informatiesamenleving",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -787,6 +837,7 @@
     {
       "id": "ggi",
       "naam": "GGI-Veilig, SCG en Bizob",
+      "url": "https://vng.nl/projecten/ggi-veilig",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -801,6 +852,7 @@
     {
       "id": "ensia",
       "naam": "ENSIA",
+      "url": "https://ensia.nl/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "wet",
@@ -815,6 +867,7 @@
     {
       "id": "bio",
       "naam": "BIO2 en de interbestuurlijke werkgroep",
+      "url": "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/cybersecurity/bio-en-ensia/baseline-informatiebeveiliging-overheid/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "wet",
@@ -829,6 +882,7 @@
     {
       "id": "cip",
       "naam": "CIP",
+      "url": "https://www.cip-overheid.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -858,6 +912,7 @@
     {
       "id": "kringen",
       "naam": "IBD-collectieven en regionale CISO-kringen",
+      "url": "https://www.informatiebeveiligingsdienst.nl/kennisdeling-en-kennisvermeerdering/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -872,6 +927,7 @@
     {
       "id": "commons",
       "naam": "security-commons",
+      "url": "https://security-commons-nl.github.io/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "informeel",
@@ -887,6 +943,7 @@
     {
       "id": "codepf",
       "naam": "Codeplatform",
+      "url": "https://code.overheid.nl/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -901,6 +958,7 @@
     {
       "id": "ipo",
       "naam": "IPO en het interprovinciaal CSIRT",
+      "url": "https://www.ipo.nl/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -915,6 +973,7 @@
     {
       "id": "uvw",
       "naam": "Unie van Waterschappen en Het Waterschapshuis",
+      "url": "https://unievanwaterschappen.nl/",
       "laag": "dec",
       "laag_label": "Decentraal collectief",
       "mandaat": "vereniging",
@@ -930,6 +989,7 @@
     {
       "id": "nds",
       "naam": "NDS",
+      "url": "https://www.digitaleoverheid.nl/nederlandse-digitaliseringsstrategie-nds/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -945,6 +1005,7 @@
     {
       "id": "nds52",
       "naam": "NDS 5.2 Federatief SOC-stelsel",
+      "url": "https://www.digitaleoverheid.nl/nederlandse-digitaliseringsstrategie-nds/6-prioriteiten-voor-een-overheid/prioriteit-5-versterken-digitale-weerbaarheid-en-autonomie-van-de-overheid/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -960,6 +1021,7 @@
     {
       "id": "nds53",
       "naam": "NDS 5.3 Continuiteit en BCM",
+      "url": "https://www.digitaleoverheid.nl/nederlandse-digitaliseringsstrategie-nds/6-prioriteiten-voor-een-overheid/prioriteit-5-versterken-digitale-weerbaarheid-en-autonomie-van-de-overheid/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -974,6 +1036,7 @@
     {
       "id": "nds54",
       "naam": "NDS 5.4 Inzicht kritieke dienstverlening",
+      "url": "https://www.digitaleoverheid.nl/nederlandse-digitaliseringsstrategie-nds/6-prioriteiten-voor-een-overheid/prioriteit-5-versterken-digitale-weerbaarheid-en-autonomie-van-de-overheid/",
       "laag": "rijk",
       "laag_label": "Rijk / nationaal",
       "mandaat": "convenant",
@@ -988,6 +1051,7 @@
     {
       "id": "rsv",
       "naam": "Regionale samenwerkingsverbanden (categorie)",
+      "url": "https://hetccv.nl/themas/integraal-veiligheidsbeleid/regionale-samenwerking/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "convenant",
@@ -1003,6 +1067,7 @@
     {
       "id": "rsiv",
       "naam": "RSIV Den Haag",
+      "url": "https://veiligheidscoalitiedenhaag.nl/over-ons/rsiv/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "convenant",
@@ -1018,6 +1083,7 @@
     {
       "id": "pvo",
       "naam": "PVO Regio Den Haag",
+      "url": "https://pvo-denhaag.nl/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "convenant",
@@ -1032,6 +1098,7 @@
     {
       "id": "vrhm",
       "naam": "Veiligheidsregio Hollands Midden",
+      "url": "https://www.vrhm.nl/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "vereniging",
@@ -1046,6 +1113,7 @@
     {
       "id": "hr",
       "naam": "Holland Rijnland",
+      "url": "https://hollandrijnland.nl/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "vereniging",
@@ -1060,6 +1128,7 @@
     {
       "id": "ccv",
       "naam": "Netwerk Lokale Weerbaarheid Cybercrime en CCV",
+      "url": "https://hetccv.nl/themas/cyberveiligheid/cybercrime/wat-is-de-city-deal-lokale-weerbaarheid-cybercrime/",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "convenant",
@@ -1074,6 +1143,7 @@
     {
       "id": "cwc",
       "naam": "Regionale cyberweerbaarheidscentra",
+      "url": "https://www.ncsc.nl/samenwerkingsverbanden",
       "laag": "reg",
       "laag_label": "Regionaal",
       "mandaat": "informeel",
@@ -1089,6 +1159,7 @@
     {
       "id": "ecp",
       "naam": "ECP",
+      "url": "https://ecp.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1103,6 +1174,7 @@
     {
       "id": "otc",
       "naam": "Online Trust Coalitie",
+      "url": "https://onlinetrustcoalitie.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1117,6 +1189,7 @@
     {
       "id": "hsd",
       "naam": "Security Delta (HSD)",
+      "url": "https://securitydelta.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1132,6 +1205,7 @@
     {
       "id": "cvd",
       "naam": "Centrum voor Veiligheid en Digitalisering",
+      "url": "https://www.cvdnederland.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1146,6 +1220,7 @@
     {
       "id": "sdv",
       "naam": "Samen Digitaal Veilig",
+      "url": "https://samendigitaalveilig.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1188,6 +1263,7 @@
     {
       "id": "cvn",
       "naam": "Cyberveilig Nederland",
+      "url": "https://www.cyberveilignederland.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1202,6 +1278,7 @@
     {
       "id": "nldig",
       "naam": "NLdigital",
+      "url": "https://www.nldigital.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1216,6 +1293,7 @@
     {
       "id": "pvib",
       "naam": "PvIB",
+      "url": "https://www.pvib.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",
@@ -1230,6 +1308,7 @@
     {
       "id": "norea",
       "naam": "NOREA",
+      "url": "https://www.norea.nl/",
       "laag": "sec",
       "laag_label": "Sectoraal",
       "mandaat": "informeel",

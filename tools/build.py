@@ -42,12 +42,17 @@ PIJLER_EIND = "<!-- /pijler-kinderen -->"
 # kwam nergens op een pagina terecht; wie op NIS2 of de Cbw zocht, vond het stuk alleen bij toeval.
 NORM_START = "<!-- normen -->"
 NORM_EIND = "<!-- /normen -->"
+# Bronnenblok (statuut B15): wat andere partijen over hetzelfde onderwerp al hebben, onderaan een
+# leesversie. De verwijzingen staan per item als id in de frontmatter; titel, adres en toegang staan
+# een keer in bronnen.json, zodat een verhuisd stuk op een plek wordt bijgewerkt.
+ELDERS_START = "<!-- elders -->"
+ELDERS_EIND = "<!-- /elders -->"
 
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage", "handleiding"]
 STATUSSEN = ["concept", "in gebruik", "sjabloon", "gearchiveerd"]
 VERPLICHT = ["titel", "vakgebied", "type", "normen", "herkomst", "status", "samenvatting"]
-TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie", "barrieres", "rol", "pijler"}
+TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie", "barrieres", "rol", "pijler", "bronnen"}
 ROLLEN = ["fundering", "alternatief", "verdieping"]
 # Types die aan een barriere uit de zelfcheck mogen hangen. Een handleiding moet het, een aanpak of
 # sjabloon mag het: die richten net zo goed een maatregel in, alleen in een andere vorm.
@@ -73,8 +78,9 @@ NL = chr(10)
 # Mappen die op de root mogen staan naast de vakgebieden. Alles wat met een punt begint is
 # tooling (.git, .pytest_cache, .venv) en telt nooit als inhoud.
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
+# `.git` is in een git-worktree een bestand in plaats van een map; het is tooling, geen inhoud.
 ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
-                     ".nojekyll", "handelingsperspectief.json", "llms.txt"}
+                     ".nojekyll", "handelingsperspectief.json", "llms.txt", "bronnen.json", ".git"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
 # naar _aanvalspaden uitgecheckt. Een handleiding mag alleen naar een barriere verwijzen die bestaat,
@@ -101,6 +107,122 @@ def barrieres() -> dict[str, str]:
             return uit
     _barrieres_cache = {}
     return _barrieres_cache
+
+
+# ----------------------------------------------------------------------------- bronnen (B15)
+# Een item verwijst naar het werk van andere partijen via id's uit bronnen.json. De partij komt uit
+# de stelselkaart: zo is elke verwijzing te herleiden tot een partij in het stelsel, en heeft elke
+# verwijzing een terugval als het specifieke stuk verdwijnt (het adres van de partij zelf).
+BRONNEN_PAD_NAAM = "bronnen.json"
+PARTIJEN_REL = Path("security") / "stelselkaart-security-gremia" / "data" / "partijen.json"
+TOEGANG = {
+    "open": "vrij toegankelijk",
+    "inlog": "achter een inlog",
+    "onbekend": "toegang niet vastgesteld",
+}
+BRON_VELDEN_VERPLICHT = ("titel", "url", "partij", "toegang", "gezien")
+BRON_VELDEN_OPTIONEEL = ("kring", "archief", "vervallen")
+BRON_ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+TLP = re.compile(r"\btlp\s*[:_-]?\s*(green|amber|amber\+strict|red|groen|rood)\b", re.I)
+_register_cache: tuple[dict, dict] | None = None
+
+
+def partijen() -> dict[str, dict]:
+    """id -> partij uit de stelselkaart. Leeg als de dataset er niet is; de aanroeper meldt dat."""
+    pad = ROOT / PARTIJEN_REL
+    if not pad.is_file():
+        return {}
+    return {p["id"]: p for p in json.loads(pad.read_text(encoding="utf-8"))["partijen"]}
+
+
+def register() -> tuple[dict[str, dict], dict[str, dict]]:
+    """(bronnen, partijen), gecontroleerd. Fouten landen in `fouten`; een kapotte bron valt weg.
+
+    Een keer lezen en een keer melden: het register wordt door elk item geraadpleegd, en zonder cache
+    zou een fout in een bron net zo vaak gemeld worden als er items naar verwijzen.
+    """
+    global _register_cache
+    if _register_cache is not None:
+        return _register_cache
+    pad = ROOT / BRONNEN_PAD_NAAM
+    ptn = partijen()
+    if not pad.is_file():
+        _register_cache = ({}, ptn)
+        return _register_cache
+    try:
+        data = json.loads(pad.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as fout_:
+        fout(pad, "B15", f"geen geldige JSON: {fout_}")
+        _register_cache = ({}, ptn)
+        return _register_cache
+    if not ptn:
+        fout(pad, "B15", f"stelselkaart niet gevonden ({PARTIJEN_REL.as_posix()}); elke bron hoort bij een partij daaruit")
+    goed: dict[str, dict] = {}
+    gezien_urls: dict[str, str] = {}
+    for bid, bron in (data.get("bronnen") or {}).items():
+        voor = len(fouten)
+        waar = f"bron '{bid}'"
+        if not BRON_ID.match(bid):
+            fout(pad, "B15", f"{waar}: id alleen kleine letters, cijfers en koppeltekens")
+        for veld in BRON_VELDEN_VERPLICHT:
+            if not bron.get(veld):
+                fout(pad, "B15", f"{waar}: veld '{veld}' ontbreekt")
+        for veld in bron:
+            if veld not in BRON_VELDEN_VERPLICHT + BRON_VELDEN_OPTIONEEL:
+                fout(pad, "B15", f"{waar}: veld '{veld}' bestaat niet")
+        for veld in ("url", "archief"):
+            if bron.get(veld) and not str(bron[veld]).startswith("https://"):
+                fout(pad, "B15", f"{waar}: {veld} moet met https:// beginnen")
+        if bron.get("url") and SOCIALE_MEDIA.search(str(bron["url"])):
+            fout(pad, "A5", f"{waar}: geen links naar sociale media")
+        # Een stuk met een TLP-markering mag niet publiek, ook de titel niet: het bestaan van een
+        # TLP:GREEN-advisory noemen op een open pagina doorbreekt de markering al.
+        if TLP.search(f"{bron.get('titel', '')} {bron.get('url', '')}"):
+            fout(pad, "B15", f"{waar}: verwijst naar een stuk met een TLP-markering; dat hoort niet in een publiek register")
+        url = str(bron.get("url", "")).rstrip("/")
+        if url and url in gezien_urls:
+            fout(pad, "B15", f"{waar}: zelfde adres als bron '{gezien_urls[url]}'; een stuk staat een keer in het register")
+        gezien_urls.setdefault(url, bid)
+        if bron.get("toegang") and bron["toegang"] not in TOEGANG:
+            fout(pad, "B15", f"{waar}: toegang '{bron['toegang']}' moet een van {list(TOEGANG)} zijn")
+        if bron.get("toegang") == "inlog" and not bron.get("kring"):
+            fout(pad, "B15", f"{waar}: bij toegang inlog hoort 'kring' (wie er wel bij kan)")
+        for veld in ("gezien", "vervallen"):
+            if bron.get(veld) and not DATUM.match(str(bron[veld])):
+                fout(pad, "A6", f"{waar}: {veld} '{bron[veld]}' niet in JJJJ-MM-DD of JJJJ-MM")
+        partij = ptn.get(str(bron.get("partij")))
+        if ptn and bron.get("partij") and partij is None:
+            fout(pad, "B15", f"{waar}: partij '{bron['partij']}' staat niet in de stelselkaart")
+        elif partij is not None and not str(partij.get("url", "")).startswith("https://"):
+            fout(pad, "B15", f"{waar}: partij '{bron['partij']}' heeft geen url in de stelselkaart; "
+                              "die is de terugval als dit stuk verdwijnt")
+        if len(fouten) == voor:
+            goed[bid] = bron
+    _register_cache = (goed, ptn)
+    return _register_cache
+
+
+def controleer_bronnen(readme: Path, fm: dict) -> None:
+    """Het veld `bronnen` is een niet-lege lijst met id's die in het register staan."""
+    if "bronnen" not in fm:
+        return
+    ids = fm["bronnen"]
+    if not isinstance(ids, list) or not ids:
+        fout(readme, "B2", "bronnen is een niet-lege lijst met id's uit bronnen.json")
+        return
+    if len(set(ids)) != len(ids):
+        fout(readme, "B2", "bronnen noemt een id twee keer")
+    pad = ROOT / BRONNEN_PAD_NAAM
+    if not pad.is_file():
+        fout(readme, "B15", "bronnen.json ontbreekt op de root van de kennisbank")
+        return
+    register()  # meldt fouten in de bronnen zelf, een keer
+    # Tegen de ruwe lijst, niet tegen de goedgekeurde: een bron met een fout wordt al bij het register
+    # gemeld, en hier nog eens "bestaat niet" zeggen stuurt de schrijver de verkeerde kant op.
+    ruw = json.loads(pad.read_text(encoding="utf-8")).get("bronnen") or {}
+    for bid in ids:
+        if bid not in ruw:
+            fout(readme, "B15", f"bron '{bid}' staat niet in bronnen.json")
 
 SOCIALE_MEDIA = re.compile(r"https?://(?:[a-z0-9-]+\.)*(linkedin\.com|x\.com|twitter\.com|substack\.com|medium\.com|facebook\.com|instagram\.com|threads\.net|tiktok\.com)", re.I)
 EMAIL = re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b")
@@ -340,6 +462,7 @@ def controleer_item(vak: str, map_: Path) -> dict | None:
     if isinstance(fm.get("samenvatting"), str) and len(fm["samenvatting"]) < 60:
         fout(readme, "B2", "samenvatting te kort; twee tot vier zinnen, dit wordt de kaarttekst")
     controleer_handleiding(vak, readme, fm)
+    controleer_bronnen(readme, fm)
     for bestand in map_.rglob("*"):
         if bestand.suffix in (".md", ".html", ".txt", ".json"):
             controleer_tekst(bestand)
@@ -426,6 +549,7 @@ def zet_op_volgorde(vak: str, items: list[dict], sectie: dict) -> list[dict]:
 
 def controleer_alles() -> dict[str, list[dict]]:
     items: dict[str, list[dict]] = {v: [] for v in VAKGEBIEDEN}
+    register()  # ook zonder verwijzende items: een kapotte bron hoort niet te wachten op zijn eerste gebruiker
     for kind in ROOT.iterdir():
         if kind.is_dir():
             if (kind.name not in VAKGEBIEDEN and kind.name not in ROOT_MAPPEN_OK
@@ -1082,8 +1206,68 @@ def zet_normen(tekst: str, normen: list[str]) -> str:
     return tekst[:plek] + normenregel(normen) + tekst[plek:]
 
 
+ELDERS_CSS = (
+    ".elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;"
+    "background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}"
+    ".elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}"
+    ".elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}"
+    ".elders ul{margin:0;padding-left:1.2em}"
+    ".elders li{margin:.3em 0}"
+    ".elders a{color:#1f4e79}"
+    ".elders .partij{color:#5a6675}"
+    ".elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;"
+    "border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}"
+    "@media print{.elders{background:none;border-left:1px solid #999}}"
+)
+
+
+def eldersregel(bron: dict, partij: dict | None) -> str:
+    """Een verwijzing: titel met link, de partij, en wat de lezer moet weten over de toegang.
+
+    Een vervallen bron wijst naar de partij zelf, met de datum waarop het stuk er nog stond en zo
+    mogelijk een archiefversie. Zo wordt een dode link een aanwijzing waar je verder moet zoeken.
+    """
+    naam = e(partij["naam"]) if partij else e(bron.get("partij", ""))
+    if bron.get("vervallen") and partij and partij.get("url"):
+        archief = (f' · <a href="{e(bron["archief"])}">archiefversie</a>' if bron.get("archief") else "")
+        return (f'<li>{e(bron["titel"])} <span class="partij">stond tot {e(bron["vervallen"])} bij '
+                f'<a href="{e(partij["url"])}">{naam}</a>; zoek daar verder</span>{archief}</li>')
+    slot = ""
+    if bron.get("toegang") == "inlog":
+        slot = f'<span class="slot">\U0001F512 inlog: {e(bron.get("kring", ""))} · gezien {e(bron["gezien"])}</span>'
+    elif bron.get("toegang") == "onbekend":
+        slot = '<span class="slot">toegang niet vastgesteld</span>'
+    return (f'<li><a href="{e(bron["url"])}">{e(bron["titel"])}</a> '
+            f'<span class="partij">· {naam}</span>{slot}</li>')
+
+
+def eldersblok(ids: list[str]) -> str:
+    """Het blok onderaan de leesversie: wat andere partijen al hebben over hetzelfde onderwerp."""
+    bronnen, ptn = register()
+    regels = "".join(eldersregel(bronnen[b], ptn.get(bronnen[b]["partij"])) for b in ids if b in bronnen)
+    return (ELDERS_START + f"<style>{ELDERS_CSS}</style>"
+            + '<aside class="elders"><b class="elders-kop">Wat anderen al hebben</b>'
+            + '<p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. '
+            + 'Dit stuk vult ze aan en vervangt ze niet.</p>'
+            + f"<ul>{regels}</ul></aside>" + ELDERS_EIND)
+
+
+def zet_elders(tekst: str, ids: list[str]) -> str:
+    """Zet, vernieuw of verwijder het bronnenblok vlak boven de bronvoet. Idempotent.
+
+    Onderaan en niet onder de titel: de lezer komt voor dit stuk, en de verwijzingen zijn de volgende
+    stap. Staat er geen bronvoet (een pagina zonder </body>), dan blijft het blok weg; dat meldt de
+    bronvoet-controle al.
+    """
+    tekst = re.sub(re.escape(ELDERS_START) + ".*?" + re.escape(ELDERS_EIND), "", tekst, flags=re.S)
+    if not ids or BRON_START not in tekst:
+        return tekst
+    return tekst.replace(BRON_START, eldersblok(ids) + BRON_START, 1)
+
+
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool,
-                   kinderen: list[dict] | None = None, normen: list[str] | None = None) -> bool:
+                   kinderen: list[dict] | None = None, normen: list[str] | None = None,
+                   bronnen: list[str] | None = None) -> bool:
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad, favicon,
     inhoudsopgave bij een lang stuk, een pijlerblok bij een pijler en een bronvoet. Idempotent.
 
@@ -1099,12 +1283,14 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.
     tekst = zet_pijlerblok(tekst, kinderen or [])
     tekst = zet_normen(tekst, [str(n) for n in (normen or [])])
+    tekst = zet_elders(tekst, [str(b) for b in (bronnen or [])])
     if BRON_START not in tekst:
         fout(pad, "B10", "geen </body> gevonden; de bronvoet kan er niet in")
         return False
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
-                          "inhoudsopgave, pijlerblok, normenregel of bronvoet); draai python tools/build.py")
+                          "inhoudsopgave, pijlerblok, normenregel, bronnenblok of bronvoet); "
+                          "draai python tools/build.py")
         return False
 
     blok = kruimelblok(kruimels)
@@ -1194,6 +1380,12 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
             samenvatting = " ".join(str(fm["samenvatting"]).split())
             normen = ", ".join(str(n) for n in (fm.get("normen") or []))
             staart = f" Normen: {normen}." if normen else ""
+            # Ook een systeem dat leest in plaats van klikt, moet zien wat er elders al ligt.
+            bronnen, _ = register()
+            elders = [bronnen[b]["url"] for b in (fm.get("bronnen") or [])
+                      if b in bronnen and not bronnen[b].get("vervallen")]
+            if elders:
+                staart += " Elders: " + ", ".join(elders) + "."
             regels.append(f"- [{fm['titel']}]({link}): {samenvatting}{staart}")
         regels.append("")
     return NL.join(regels)
@@ -1221,7 +1413,8 @@ def main() -> int:
             html_pad = fm["_map"] / "index.html"
             kinderen = kinderen_van(fm["_map"].name, items[vak])
             if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]),
-                                                    alleen_check, kinderen, fm.get("normen") or []):
+                                                    alleen_check, kinderen, fm.get("normen") or [],
+                                                    fm.get("bronnen") or []):
                 kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")

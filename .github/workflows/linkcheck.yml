@@ -1,0 +1,43 @@
+name: "Linkcheck: verwijzingen naar het werk van anderen"
+
+# Maandelijks, en met de hand te starten. Een verwijzing is alleen iets waard zolang hij werkt; dit
+# vangt verhuisde stukken voordat een lezer ze vindt. Het script wijzigt niets, het opent een issue.
+on:
+  schedule:
+    - cron: "17 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Adressen nalopen
+        id: check
+        run: |
+          python tools/linkcheck.py --rapport rapport.md && echo "dood=0" >> "$GITHUB_OUTPUT" || echo "dood=1" >> "$GITHUB_OUTPUT"
+          if grep -q "| Oordeel |" rapport.md; then echo "melding=1" >> "$GITHUB_OUTPUT"; else echo "melding=0" >> "$GITHUB_OUTPUT"; fi
+
+      # Een open issue per keer: bestaat er al een, dan wordt de tekst vervangen in plaats van dat er
+      # elke maand een nieuwe bij komt.
+      - name: Issue openen of bijwerken
+        if: steps.check.outputs.melding == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create linkcheck --color d93f0b --description "Dode of veranderde verwijzing" --force
+          nummer=$(gh issue list --label linkcheck --state open --json number --jq '.[0].number')
+          if [ -n "$nummer" ]; then
+            gh issue edit "$nummer" --body-file rapport.md
+          else
+            gh issue create --title "Linkcheck: verwijzingen nalopen" --label linkcheck --body-file rapport.md
+          fi

@@ -1,4 +1,5 @@
 ---
+
 titel: Val ik onder de Cbw?
 vakgebied: governance
 type: sjabloon
@@ -7,6 +8,7 @@ peildatum: 2026-08-31
 herkomst: toetsing van een gemeenschappelijke regeling door de CISO-organisatie van een regionale samenwerking
 status: concept
 samenvatting: Klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de Cyberbeveiligingswet valt. Loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. Rekent in de browser, er gaat niets naar een server.
+bronnen: [do-cbw-welke-overheidsorganisaties, ncsc-cbw-valt-mijn-organisatie-eronder, rdi-cbw-wat-betekent-het-voor-u]
 ---
 
 # Val ik onder de Cbw?

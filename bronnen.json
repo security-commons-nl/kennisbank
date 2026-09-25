@@ -1,0 +1,47 @@
+{
+  "toelichting": "Register van stukken bij andere partijen waar kennisbankitems naar verwijzen (redactiestatuut B15). Een stuk staat hier een keer; een item noemt het id in het veld bronnen van zijn frontmatter. De partij is een id uit de stelselkaart security-gremia; haar adres is de terugval als het stuk verdwijnt. Velden per bron: titel, url, partij, toegang (open, inlog of onbekend), gezien (datum waarop een mens het stuk zag), en naar behoefte kring (verplicht bij inlog: wie er wel bij kan), archief (een archiefversie) en vervallen (datum waarop het stuk weg bleek; de leesversie wijst dan naar de partij). tools/build.py controleert dit bestand, tools/linkcheck.py loopt de adressen maandelijks na.",
+  "bronnen": {
+    "do-cbw-welke-overheidsorganisaties": {
+      "titel": "Voor welke overheidsorganisaties geldt de Cyberbeveiligingswet?",
+      "url": "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/cyberbeveiligingswet/voor-welke-overheidsorganisaties-geldt-de-cyberbeveiligingswet/",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ncsc-cbw-valt-mijn-organisatie-eronder": {
+      "titel": "Valt mijn organisatie onder de Cyberbeveiligingswet (NIS2)?",
+      "url": "https://www.ncsc.nl/cyberbeveiligingswet-nis2/valt-mijn-organisatie-onder-de-cyberbeveiligingswet-nis2",
+      "partij": "ncsc",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "rdi-cbw-wat-betekent-het-voor-u": {
+      "titel": "Wat betekent de Cyberbeveiligingswet voor u?",
+      "url": "https://www.rdi.nl/onderwerpen/digitale-weerbaarheid/cyberbeveiligingswet/wat-betekent-de-cbw-voor-u",
+      "partij": "rdi",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "nbip-nawas": {
+      "titel": "NaWas, de Nationale Wasstraat tegen DDoS-aanvallen",
+      "url": "https://www.nbip.nl/nawas/",
+      "partij": "nbip",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "adc-nomoreddos": {
+      "titel": "No More DDoS, de site van de Nationale Anti-DDoS-Coalitie",
+      "url": "https://www.nomoreddos.org/",
+      "partij": "adc",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "adc-github": {
+      "titel": "Tooling van de Anti-DDoS-Coalitie, waaronder het DDoS Clearing House",
+      "url": "https://github.com/NLADC",
+      "partij": "adc",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    }
+  }
+}
