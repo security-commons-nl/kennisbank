@@ -42,6 +42,55 @@
       "partij": "adc",
       "toegang": "open",
       "gezien": "2026-09-25"
+    },
+    "bzk-invulhulpen": {
+      "titel": "Invulhulpen voor pre-scan, DPIA en IAMA (Rijksmodel DPIA 3.0)",
+      "url": "https://invulhulpen.rijksapp.nl/",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "bzk-par-dpia-form": {
+      "titel": "Broncode en vragenlijsten van de Invulhulpen (MinBZK/par-dpia-form, EUPL-1.2)",
+      "url": "https://github.com/MinBZK/par-dpia-form",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-dpia-handreiking": {
+      "titel": "DPIA-handreiking Samen naar een kwalitatief goede DPIA, met sjablonen en checklists",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/dpia-handreiking-samen-naar-een-kwalitatief-goede-dpia/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-collectieve-dpias": {
+      "titel": "Collectieve DPIA's: bibliotheek van uitgevoerde gemeentelijke DPIA's",
+      "url": "https://www.informatiebeveiligingsdienst.nl/collectieve-dpias/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-ai-toelichting-dpia": {
+      "titel": "AI-specifieke toelichting voor DPIA's (versie 1.0, augustus 2026)",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ai-specifieke-toelichting-voor-dpias/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-notitie-dpia-copilot": {
+      "titel": "IBD-notitie DPIA Microsoft Copilot",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-dpia-microsoft-copilot/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
+    },
+    "ibd-privacy-risicomanagement": {
+      "titel": "Handreiking privacy-risicomanagement: risico's uit DPIA's opvolgen, met risicoregister",
+      "url": "https://www.informatiebeveiligingsdienst.nl/product/handreiking-privacy-risicomanagement/",
+      "partij": "ibd",
+      "toegang": "open",
+      "gezien": "2026-09-25"
     }
   }
 }
