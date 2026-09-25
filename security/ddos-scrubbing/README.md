@@ -30,7 +30,7 @@ Voor elke publieke dienst met zichtbaarheid. Wanneer niet zonder back-up-plan: e
 Een upstream DDoS-scrubbing-dienst (cloudflare, Akamai, NaWas) ontvangt het verkeer eerst en filtert kwaadaardig verkeer. Bij grote aanvallen kan anycast load over meerdere PoPs verspreiden. Always-on of on-demand activatie; activatieprocedure is geoefend.
 
 1. Bepaal welke diensten in scope zijn (website, publieke loketten, API's).
-2. Kies een scrubbing-dienst (always-on of on-demand), sommige zijn beschikbaar via SURF/NaWas zonder commerciële prijs.
+2. Kies een scrubbing-dienst (always-on of on-demand). Er zijn non-profit routes: SURF biedt kosteloze DDoS-bescherming aan instellingen op het SURF-netwerk, en NaWas van NBIP is een non-profit dienst voor organisaties met een eigen AS-nummer en een poort op een internet exchange.
 3. Configureer DNS/BGP-routing voor scrubbing.
 4. Test activatie en failover periodiek.
 5. Stel een communicatieplan op voor tijdens een DDoS-incident (woordvoering).
@@ -44,7 +44,7 @@ Kosten: midden.
 
 - Publieke diensten blijven onder hacktivistische DDoS overeind.
 - Achterliggende systemen blijven gespaard van overspraak-effecten.
-- NaWas-route (gratis voor publieke sector) bestaat als drempelloze optie.
+- De NaWas-route is non-profit maar niet gratis: een vast bedrag per beschermd prefix plus lidmaatschap van NBIP, en alleen met een eigen AS-nummer. Zonder eigen netwerk vraag je of je provider is aangesloten.
 
 **Waar je op moet letten**
 
