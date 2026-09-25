@@ -92,6 +92,21 @@ rol: fundering
 - **`pijler`** is optioneel: de mapnaam van het item waar deze handleiding uit voortkomt, bijvoorbeeld
   `meten-voordat-je-ingrijpt`.
 
+### Verwijzen naar wat anderen al hebben
+
+Heeft de IBD, het NCSC, CIP of een andere partij al een stuk over hetzelfde onderwerp, verwijs er dan
+naar (statuut B15). Dat gaat in twee stappen:
+
+1. Zet het stuk in [`bronnen.json`](bronnen.json) op de root, als het er nog niet staat: titel, adres,
+   de partij (een `id` uit de [stelselkaart](security/stelselkaart-security-gremia/)), toegang (`open`,
+   `inlog` of `onbekend`) en de datum waarop je het zag. Bij `inlog` ook de `kring`: wie er wel bij kan.
+2. Noem het id in de frontmatter van je item: `bronnen: [ncsc-cbw-valt-mijn-organisatie-eronder]`.
+   Dit veld mag bij elk type, niet alleen bij een handleiding.
+
+De build zet de verwijzingen onderaan de leesversie en controleert of elk id bestaat. Verwijs naar het
+specifieke stuk, niet naar de homepage van de partij; die homepage is al de terugval als het stuk
+verdwijnt. Van een besloten stuk noem je de titel en de plek, nooit de inhoud.
+
 ### Vaste koppen
 
 De koppen **Bewijs** en **Zo leg je het uit** zijn verplicht; de build blokkeert als ze ontbreken.

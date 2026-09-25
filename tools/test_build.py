@@ -10,6 +10,7 @@ naar de bron. De laatste test draait de echte kennisbank door de controle heen.
 from __future__ import annotations
 
 import importlib.util
+import json
 import re
 import tempfile
 import unittest
@@ -29,10 +30,12 @@ class Basis(unittest.TestCase):
         self.map = Path(tempfile.mkdtemp()).resolve()
         self.oude_root = build.ROOT
         build.ROOT = self.map
+        build._register_cache = None
 
     def tearDown(self) -> None:
         build.ROOT = self.oude_root
         build.fouten.clear()
+        build._register_cache = None
 
     def item(self, readme: str, pagina: str | None = None, **bestanden: str) -> Path:
         map_ = self.map / "security" / "een-item"
@@ -445,11 +448,197 @@ class Volgorde(Basis):
         self.assertEqual(build.fouten, [])
 
 
+PARTIJEN_JSON = json.dumps({"partijen": [
+    {"id": "ncsc", "naam": "NCSC", "url": "https://www.ncsc.nl/"},
+    {"id": "ibd", "naam": "IBD", "url": "https://www.informatiebeveiligingsdienst.nl/"},
+    {"id": "zonder", "naam": "Partij zonder adres"},
+]})
+BRON_OPEN = {"titel": "Een factsheet", "url": "https://www.ncsc.nl/factsheet", "partij": "ncsc",
+             "toegang": "open", "gezien": "2026-09-25"}
+BRON_INLOG = {"titel": "Een handreiking", "url": "https://community.example.nl/handreiking", "partij": "ibd",
+              "toegang": "inlog", "kring": "gemeenten, via de IBD-community", "gezien": "2026-09-25"}
+README_MET_BRONNEN = """---
+titel: Een item
+vakgebied: security
+type: referentie
+normen: []
+peildatum: 2026-09-25
+herkomst: test
+status: concept
+samenvatting: Een item om het bronnenregister mee te toetsen, lang genoeg voor de kaarttekst op de site.
+bronnen: [{ids}]
+---
+
+# Een item
+"""
+PAGINA = "<html><body><h1>Een item</h1><p>tekst</p></body></html>"
+
+
+class Bronnen(Basis):
+    """Verwijzen naar het werk van anderen (statuut B15): register, veld en blok op de leesversie."""
+
+    def register(self, **bronnen: dict) -> None:
+        pad = self.map / build.PARTIJEN_REL
+        pad.parent.mkdir(parents=True, exist_ok=True)
+        pad.write_text(PARTIJEN_JSON, encoding="utf-8")
+        (self.map / "bronnen.json").write_text(json.dumps({"bronnen": bronnen}), encoding="utf-8")
+
+    def met_item(self, ids: str, **bronnen: dict) -> dict | None:
+        self.register(**bronnen)
+        map_ = self.item(README_MET_BRONNEN.replace("{ids}", ids), PAGINA)
+        return build.controleer_item("security", map_)
+
+    # --- register
+    def test_geldig_register_geeft_geen_fouten(self):
+        self.register(**{"factsheet": BRON_OPEN, "handreiking": BRON_INLOG})
+        goed, _ = build.register()
+        self.assertEqual(sorted(goed), ["factsheet", "handreiking"])
+        self.assertEqual(build.fouten, [])
+
+    def test_partij_moet_in_de_stelselkaart_staan(self):
+        self.register(x={**BRON_OPEN, "partij": "verzonnen"})
+        build.register()
+        self.assertIn("partij 'verzonnen' staat niet in de stelselkaart", self.meldingen)
+
+    def test_partij_zonder_adres_is_een_fout(self):
+        """Zonder adres van de partij is er geen terugval als het stuk verdwijnt."""
+        self.register(x={**BRON_OPEN, "partij": "zonder"})
+        build.register()
+        self.assertIn("geen url in de stelselkaart", self.meldingen)
+
+    def test_inlog_zonder_kring_is_een_fout(self):
+        self.register(x={k: v for k, v in BRON_INLOG.items() if k != "kring"})
+        build.register()
+        self.assertIn("'kring'", self.meldingen)
+
+    def test_onbekende_toegang_is_een_fout(self):
+        self.register(x={**BRON_OPEN, "toegang": "misschien"})
+        build.register()
+        self.assertIn("toegang 'misschien'", self.meldingen)
+
+    def test_verplichte_velden(self):
+        for veld in build.BRON_VELDEN_VERPLICHT:
+            with self.subTest(veld=veld):
+                build.fouten.clear()
+                build._register_cache = None
+                self.register(x={k: v for k, v in BRON_OPEN.items() if k != veld})
+                build.register()
+                self.assertIn(f"veld '{veld}' ontbreekt", self.meldingen)
+
+    def test_onbekend_veld_is_een_fout(self):
+        self.register(x={**BRON_OPEN, "auteur": "iemand"})
+        build.register()
+        self.assertIn("veld 'auteur' bestaat niet", self.meldingen)
+
+    def test_alleen_https(self):
+        self.register(x={**BRON_OPEN, "url": "http://www.ncsc.nl/factsheet"})
+        build.register()
+        self.assertIn("https://", self.meldingen)
+
+    def test_sociale_media_is_verboden(self):
+        self.register(x={**BRON_OPEN, "url": "https://www.linkedin.com/posts/iets"})
+        build.register()
+        self.assertIn("[A5]", self.meldingen)
+
+    def test_zelfde_adres_twee_keer_is_een_fout(self):
+        """Een url staat op een plek; twee ids voor hetzelfde stuk lopen uit elkaar."""
+        self.register(a=BRON_OPEN, b={**BRON_OPEN, "url": BRON_OPEN["url"] + "/"})
+        build.register()
+        self.assertIn("zelfde adres als bron 'a'", self.meldingen)
+
+    def test_datum_in_vaste_vorm(self):
+        self.register(x={**BRON_OPEN, "gezien": "25-09-2026"})
+        build.register()
+        self.assertIn("[A6]", self.meldingen)
+
+    def test_een_fout_meldt_zich_een_keer(self):
+        """Het register wordt per verwijzend item geraadpleegd; de melding mag niet vermenigvuldigen."""
+        self.register(x={**BRON_OPEN, "toegang": "misschien"})
+        build.register()
+        build.register()
+        self.assertEqual(self.meldingen.count("toegang 'misschien'"), 1)
+
+    # --- veld in de frontmatter
+    def test_veld_bronnen_is_toegestaan(self):
+        fm = self.met_item("factsheet", factsheet=BRON_OPEN)
+        self.assertIsNotNone(fm)
+        self.assertEqual(build.fouten, [])
+
+    def test_onbekend_id_is_een_fout(self):
+        self.met_item("factsheet, spook", factsheet=BRON_OPEN)
+        self.assertIn("bron 'spook' staat niet in bronnen.json", self.meldingen)
+
+    def test_lege_lijst_is_een_fout(self):
+        self.met_item("", factsheet=BRON_OPEN)
+        self.assertIn("niet-lege lijst", self.meldingen)
+
+    def test_dubbel_id_is_een_fout(self):
+        self.met_item("factsheet, factsheet", factsheet=BRON_OPEN)
+        self.assertIn("twee keer", self.meldingen)
+
+    def test_kapotte_bron_meldt_zich_niet_nog_eens_als_onbekend(self):
+        self.met_item("x", x={**BRON_OPEN, "toegang": "misschien"})
+        self.assertIn("toegang 'misschien'", self.meldingen)
+        self.assertNotIn("staat niet in bronnen.json", self.meldingen)
+
+    # --- blok op de leesversie
+    def bouw(self, ids: list[str], **bronnen: dict) -> str:
+        self.register(**bronnen)
+        map_ = self.item(README_MET_BRONNEN.replace("{ids}", ", ".join(ids)), PAGINA)
+        pad = map_ / "index.html"
+        build.zet_kruimelpad(pad, [("Kennisbank", "../")], False, [], [], ids)
+        return pad.read_text(encoding="utf-8")
+
+    def test_blok_staat_boven_de_bronvoet_met_link_en_partij(self):
+        tekst = self.bouw(["factsheet"], factsheet=BRON_OPEN)
+        self.assertIn('<a href="https://www.ncsc.nl/factsheet">Een factsheet</a>', tekst)
+        self.assertIn("NCSC", tekst)
+        self.assertLess(tekst.index(build.ELDERS_START), tekst.index(build.BRON_START))
+        self.assertLess(tekst.index("<p>tekst</p>"), tekst.index(build.ELDERS_START))
+
+    def test_inlog_krijgt_een_slot_met_kring_en_datum(self):
+        tekst = self.bouw(["handreiking"], handreiking=BRON_INLOG)
+        self.assertIn("inlog: gemeenten, via de IBD-community", tekst)
+        self.assertIn("gezien 2026-09-25", tekst)
+
+    def test_vervallen_bron_wijst_naar_de_partij(self):
+        tekst = self.bouw(["factsheet"], factsheet={**BRON_OPEN, "vervallen": "2026-10-01",
+                                                    "archief": "https://web.archive.org/web/2026/x"})
+        self.assertNotIn('href="https://www.ncsc.nl/factsheet"', tekst)
+        self.assertIn('href="https://www.ncsc.nl/"', tekst)
+        self.assertIn("stond tot 2026-10-01", tekst)
+        self.assertIn("archiefversie", tekst)
+
+    def test_blok_is_idempotent(self):
+        eerste = self.bouw(["factsheet"], factsheet=BRON_OPEN)
+        pad = self.map / "security" / "een-item" / "index.html"
+        build.zet_kruimelpad(pad, [("Kennisbank", "../")], False, [], [], ["factsheet"])
+        self.assertEqual(pad.read_text(encoding="utf-8"), eerste)
+        self.assertEqual(eerste.count(build.ELDERS_START), 1)
+
+    def test_blok_verdwijnt_als_het_veld_verdwijnt(self):
+        self.bouw(["factsheet"], factsheet=BRON_OPEN)
+        pad = self.map / "security" / "een-item" / "index.html"
+        build.zet_kruimelpad(pad, [("Kennisbank", "../")], False, [], [], [])
+        self.assertNotIn(build.ELDERS_START, pad.read_text(encoding="utf-8"))
+
+    def test_check_meldt_een_ontbrekend_blok(self):
+        self.register(factsheet=BRON_OPEN)
+        map_ = self.item(README_MET_BRONNEN.replace("{ids}", "factsheet"), PAGINA)
+        build.zet_kruimelpad(map_ / "index.html", [("Kennisbank", "../")], True, [], [], ["factsheet"])
+        self.assertIn("bronnenblok", self.meldingen)
+
+    def test_html_in_titel_wordt_ontsnapt(self):
+        tekst = self.bouw(["x"], x={**BRON_OPEN, "titel": "<script>alert(1)</script>"})
+        self.assertNotIn("<script>alert", tekst)
+
+
 class EchteKennisbank(unittest.TestCase):
     """De controle over de echte inhoud; dit is het net onder alle regels samen."""
 
     def test_geen_overtredingen(self):
         build.fouten.clear()
+        build._register_cache = None
         build.controleer_alles()
         self.assertEqual(build.fouten, [], "\n".join(build.fouten))
 
