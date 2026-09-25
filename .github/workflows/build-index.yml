@@ -47,6 +47,9 @@ jobs:
       - name: Tests van de Cbw-toets
         run: node tools/test_toets_cbw.js
 
+      - name: Tests van de toets aanbieder onder de AI Act
+        run: node tools/test_toets_aanbieder.js
+
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)
         if: github.event_name == 'pull_request'

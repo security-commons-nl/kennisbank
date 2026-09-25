@@ -19,7 +19,8 @@ naslag in het midden, verwijzingen naar het werk van anderen onderaan. `tools/bu
 lijst en blokkeert als een item ontbreekt of niet bestaat.
 
 1. [Val ik onder de Cbw?](val-ik-onder-de-cbw/)
-2. [AI-beleid van een regionale samenwerking](ai-beleid/)
+2. [Ben ik aanbieder onder de AI Act?](aanbieder-onder-de-ai-act/)
+3. [AI-beleid van een regionale samenwerking](ai-beleid/)
 
 ## Bijdragen
 
