@@ -540,6 +540,21 @@ class Bronnen(Basis):
         build.register()
         self.assertIn("[A5]", self.meldingen)
 
+    def test_tlp_markering_is_een_fout(self):
+        """Het bestaan van een TLP:GREEN-advisory noemen op een open pagina doorbreekt de markering al."""
+        for titel in ("TLP GREEN: verwerking van bestanden", "Advisory (TLP:AMBER)", "tlp-red rapport"):
+            with self.subTest(titel=titel):
+                build.fouten.clear()
+                build._register_cache = None
+                self.register(x={**BRON_INLOG, "titel": titel})
+                build.register()
+                self.assertIn("TLP-markering", self.meldingen)
+
+    def test_tlp_clear_mag(self):
+        self.register(x={**BRON_OPEN, "titel": "Factsheet (TLP:CLEAR)"})
+        build.register()
+        self.assertEqual(build.fouten, [])
+
     def test_zelfde_adres_twee_keer_is_een_fout(self):
         """Een url staat op een plek; twee ids voor hetzelfde stuk lopen uit elkaar."""
         self.register(a=BRON_OPEN, b={**BRON_OPEN, "url": BRON_OPEN["url"] + "/"})

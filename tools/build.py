@@ -123,6 +123,7 @@ TOEGANG = {
 BRON_VELDEN_VERPLICHT = ("titel", "url", "partij", "toegang", "gezien")
 BRON_VELDEN_OPTIONEEL = ("kring", "archief", "vervallen")
 BRON_ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+TLP = re.compile(r"\btlp\s*[:_-]?\s*(green|amber|amber\+strict|red|groen|rood)\b", re.I)
 _register_cache: tuple[dict, dict] | None = None
 
 
@@ -174,6 +175,10 @@ def register() -> tuple[dict[str, dict], dict[str, dict]]:
                 fout(pad, "B15", f"{waar}: {veld} moet met https:// beginnen")
         if bron.get("url") and SOCIALE_MEDIA.search(str(bron["url"])):
             fout(pad, "A5", f"{waar}: geen links naar sociale media")
+        # Een stuk met een TLP-markering mag niet publiek, ook de titel niet: het bestaan van een
+        # TLP:GREEN-advisory noemen op een open pagina doorbreekt de markering al.
+        if TLP.search(f"{bron.get('titel', '')} {bron.get('url', '')}"):
+            fout(pad, "B15", f"{waar}: verwijst naar een stuk met een TLP-markering; dat hoort niet in een publiek register")
         url = str(bron.get("url", "")).rstrip("/")
         if url and url in gezien_urls:
             fout(pad, "B15", f"{waar}: zelfde adres als bron '{gezien_urls[url]}'; een stuk staat een keer in het register")
