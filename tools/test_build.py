@@ -381,7 +381,10 @@ class Llms(unittest.TestCase):
         if not pad.exists():
             self.skipTest("llms.txt is nog niet gebouwd; draai tools/build.py")
         regels = [r for r in pad.read_text(encoding="utf-8").splitlines() if r.startswith("- [")]
-        self.assertEqual(len(regels), len(list(build.ROOT.glob("*/*/README.md"))))
+        # Alleen de vakgebieden tellen. Een brede glob telde in CI ook _aanvalspaden/methode/README.md
+        # mee, de repo die voor de barrieres naast de kennisbank wordt uitgecheckt.
+        stukken = [p for vak in build.VAKGEBIEDEN for p in (build.ROOT / vak).glob("*/README.md")]
+        self.assertEqual(len(regels), len(stukken))
         # Zo ging het de eerste keer mis: _link draagt het vakgebied al, dus security/security/.
         for vak in build.VAKGEBIEDEN:
             self.assertNotIn(f"/{vak}/{vak}/", "\n".join(regels))
