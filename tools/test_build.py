@@ -722,6 +722,54 @@ class BijAnderen(Basis):
         self.assertIn("function past(tekst, woorden)", build.FILTER_JS)
 
 
+class BewijsVoor(Basis):
+    """De bewijsregel onder de titel: welke maatregelen een stuk helpt aantonen (plan normwijzer, fase 3)."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        build._mappingen_cache = None
+        mp = self.map / "_aanvalspaden" / "mappingen"
+        mp.mkdir(parents=True)
+        (mp / "bio2.json").write_text(json.dumps({"regels": [
+            {"barriere": "pr", "norm": "8.5", "sterkte": "volledig", "reden": "x"},
+            {"barriere": "pr", "norm": "5.17", "sterkte": "gedeeltelijk", "reden": "x"},
+            {"barriere": "pr", "norm": "8.2", "sterkte": "raakvlak", "reden": "x"},
+            {"barriere": "fallback", "norm": "8.5", "sterkte": "gedeeltelijk", "reden": "x"},
+        ]}), encoding="utf-8")
+        (mp / "nist-csf.json").write_text(json.dumps({"regels": [
+            {"barriere": "pr", "norm": "PR.AA-03", "sterkte": "volledig", "reden": "x"}]}), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        super().tearDown()
+        build._mappingen_cache = None
+
+    def test_maatregelen_per_kader_op_nummer_zonder_raakvlak(self):
+        self.assertEqual(build.bewijs_voor(["pr", "fallback"]),
+                         [("bio2", "5.17"), ("bio2", "8.5"), ("nist-csf", "PR.AA-03")])
+
+    def test_raakvlak_telt_niet(self):
+        self.assertNotIn(("bio2", "8.2"), build.bewijs_voor(["pr"]))
+
+    def test_zonder_barrieres_geen_regel(self):
+        self.assertEqual(build.bewijs_voor([]), [])
+        tekst = "<body><h1>X</h1><p>y</p></body>"
+        self.assertEqual(build.zet_bewijs(tekst, []), tekst)
+
+    def test_regel_linkt_naar_de_normwijzer_en_is_idempotent(self):
+        tekst = "<body><h1>X</h1><p>y</p></body>"
+        een = build.zet_bewijs(tekst, build.bewijs_voor(["pr"]))
+        self.assertIn(f'href="{build.NORMWIJZER}#bio2/8.5"', een)
+        self.assertIn(f'href="{build.NORMWIJZER}#nist-csf/PR.AA-03"', een)
+        self.assertIn("Levert bewijs voor", een)
+        self.assertEqual(build.zet_bewijs(een, build.bewijs_voor(["pr"])), een)
+        self.assertNotIn(build.BEWIJS_START, build.zet_bewijs(een, []))
+
+    def test_belooft_geen_compliance(self):
+        regel = build.bewijsregel(build.bewijs_voor(["pr"])).lower()
+        for verboden in ("voldoet", "dekt af", "compliant"):
+            self.assertNotIn(verboden, regel)
+
+
 class EchteKennisbank(unittest.TestCase):
     """De controle over de echte inhoud; dit is het net onder alle regels samen."""
 
