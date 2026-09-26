@@ -20,7 +20,8 @@ De volgorde op de sitepagina is redactioneel en staat hier: wat je morgen kunt t
 naslag in het midden, verwijzingen naar het werk van anderen onderaan. `tools/build.py` volgt deze
 lijst en blokkeert als een item ontbreekt of niet bestaat.
 
-1. [Een DPIA uitvoeren: wat er al ligt](dpia-uitvoeren/)
+1. [Een DPIA in vijf stappen, met sjablonen](dpia-in-vijf-stappen/)
+2. [Een DPIA uitvoeren: wat er al ligt](dpia-uitvoeren/)
 
 ## Bijdragen
 

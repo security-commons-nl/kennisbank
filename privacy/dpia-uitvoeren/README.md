@@ -33,6 +33,10 @@ DPIA*: sjablonen voor DPIA, pre-DPIA en werkproces, checklists, een stappenplan 
 webinars (september 2024). Kies het Rijksmodel voor een machineleesbaar dossier, de IBD-handreiking als
 je al met IBD-sjablonen werkt. In beide is *Maatregelen* een leeg vak: daar zit het werk.
 
+Een lichtere route voor standaardverwerkingen staat in deze kennisbank: [Een DPIA in vijf stappen, met
+sjablonen](../dpia-in-vijf-stappen/). De kennishouder schrijft, privacy officer en security officer schuiven aan
+in drie overleggen, en voor camera's zijn de teksten voorgevuld.
+
 ## 3. Hoe zag het er elders uit?
 
 De **collectieve DPIA's van de IBD**: 27 uitgevoerde gemeentelijke DPIA's (peildatum 25-09-2026),
