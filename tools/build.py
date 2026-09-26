@@ -834,7 +834,7 @@ def zoekbalk(items: list[dict]) -> str:
         opties.append(f'  <option value="{e(b)}">{e(bekend.get(b, b))} ({tellingen[b]})</option>')
     return ('<div class="filters" id="filters" hidden>' + NL
             + '  <label class="visueel-verborgen" for="zoek">Zoeken</label>' + NL
-            + '  <input type="search" id="zoek" placeholder="Zoek op onderwerp, norm of partij, bijvoorbeeld logboek, NIS2 of VNG beleid"'
+            + '  <input type="search" id="zoek" placeholder="Bijvoorbeeld: wachtwoord, NIS2 of VNG beleid"'
             + ' autocomplete="off">' + NL
             + '  <label class="visueel-verborgen" for="barriere">Barriere</label>' + NL
             + '  <select id="barriere">' + NL + NL.join(opties) + NL + '  </select>' + NL
@@ -1032,6 +1032,15 @@ def bouw_root(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
     live = [i for v in VAKGEBIEDEN for i in items[v] if i["_weergave"] == "live"]
     kaarten_live = "".join(kaart(i, "", True) for i in live)
     balk = zoekbalk(live)
+    # De uitleg boven het zoekvak zegt wat het doorzoekt. Zonder die regel las het vak als een filter op
+    # de kaarten eronder, en wist een bezoeker niet dat de stukken van de IBD en CIP er ook in zitten
+    # (route-test 26-09-2026).
+    bronnen_actief = [b for b in register()[0].values() if not b.get("vervallen")]
+    n_partijen = len({b["partij"] for b in bronnen_actief})
+    zoek_uitleg = (f"Zoek op onderwerp, norm of partij. Het zoekvak doorzoekt de {len(live)} stukken hieronder"
+                   + (f" en {len(bronnen_actief)} stukken van {n_partijen} andere partijen, zoals de IBD, CIP en "
+                      "het Rijk" if bronnen_actief else "")
+                   + ". Zonder zoekterm zie je de stukken met een eigen pagina.")
     kaarten_secties = ""
     for vak in VAKGEBIEDEN:
         n = len(items[vak])
@@ -1061,8 +1070,8 @@ dan is dat een uitnodiging en geen fout.</p>
 {kaarten_secties}
 </div>
 
-<h2>Direct te lezen</h2>
-<p class="h2sub">Publicaties met een eigen pagina. Openen in de browser, geen installatie, geen externe afhankelijkheden.</p>
+<h2>Zoek in de kennisbank</h2>
+<p class="h2sub">{zoek_uitleg}</p>
 
 {balk}
 
