@@ -778,7 +778,7 @@ class Voorpagina(unittest.TestCase):
 
     def test_vakgebieden_staan_boven_de_kaarten(self) -> None:
         self.assertIn('<div class="vakken">', self.html)
-        self.assertLess(self.html.index("Waar zoek je in?"), self.html.index("Direct te lezen"))
+        self.assertLess(self.html.index("Waar zoek je in?"), self.html.index("Zoek in de kennisbank"))
         self.assertLess(self.html.index('class="vakken"'), self.html.index('id="direct-te-lezen"'))
         self.assertNotIn("<h2>Secties</h2>", self.html)
         for vak in ("security", "privacy", "bcm", "governance"):
@@ -796,7 +796,18 @@ class Voorpagina(unittest.TestCase):
         self.assertIn('<span class="norm">NIS2</span>', self.html)
         treffers = [z for z in re.findall(r'data-zoek="([^"]*)"', self.html) if "nis2" in z]
         self.assertGreaterEqual(len(treffers), 5, "NIS2 staat op zes stukken")
-        self.assertIn("onderwerp, norm of partij", self.html)  # de tekst in het zoekvak zegt dat het kan
+        self.assertIn("onderwerp, norm of partij", self.html)  # de uitleg bij het zoekvak zegt dat het kan
+
+    def test_de_uitleg_bij_het_zoekvak_noemt_de_stukken_van_anderen(self) -> None:
+        """Een bezoeker moet vóór het zoeken zien dat de IBD en CIP er ook in zitten (route-test 26-09-2026)."""
+        kop = self.html.index("Zoek in de kennisbank")
+        uitleg = self.html[kop:self.html.index('id="zoek"', kop)]
+        self.assertRegex(uitleg, r"en \d+ stukken van \d+ andere partijen, zoals de IBD, CIP en het Rijk")
+
+    def test_de_placeholder_past_in_het_zoekvak(self) -> None:
+        """Een lange placeholder viel op een gewoon scherm af voor het voorbeeld; houd hem onder 45 tekens."""
+        tekst = re.search(r'id="zoek" placeholder="([^"]*)"', self.html).group(1)
+        self.assertLessEqual(len(tekst), 45, tekst)
 
     def test_tegeltekst_is_kort_en_heel(self) -> None:
         begin = self.html.index('<div class="vakken">')
