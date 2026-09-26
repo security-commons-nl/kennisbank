@@ -1424,9 +1424,97 @@ def zet_elders(tekst: str, ids: list[str]) -> str:
     return tekst.replace(BRON_START, eldersblok(ids) + BRON_START, 1)
 
 
+# Bewijsregel: welke maatregelen een stuk helpt aantonen, via zijn barrieres en de mappingen van de
+# aanvalspaden. Het veld `normen` zegt alleen "BIO2"; deze regel zegt welke maatregel, met een link naar
+# de normwijzer. Zelfde relatie als de mappingen: levert bewijs voor, nooit voldoet aan.
+BEWIJS_START = "<!-- bewijs-voor -->"
+BEWIJS_EIND = "<!-- /bewijs-voor -->"
+NORMWIJZER = "https://security-commons-nl.github.io/normen/normwijzer.html"
+MAPPING_KADERS = (("bio2", "BIO"), ("nist-csf", "NIST CSF"), ("avg", "AVG"), ("wpg", "Wpg"))
+_mappingen_cache: dict[str, dict[str, list[str]]] | None = None
+
+
+def mappingen() -> dict[str, dict[str, list[str]]]:
+    """kader -> barriere -> maatregelen waarvoor de barriere bewijs levert (volledig of gedeeltelijk).
+
+    Een raakvlak telt niet: dat is in de mappingen uitdrukkelijk geen bewijs. Leeg als de aanvalspaden
+    nergens staan; dan krijgt een leesversie gewoon geen bewijsregel.
+    """
+    global _mappingen_cache
+    if _mappingen_cache is not None:
+        return _mappingen_cache
+    uit: dict[str, dict[str, list[str]]] = {}
+    for kandidaat in (ROOT.parent / "aanvalspaden" / "mappingen", ROOT / "_aanvalspaden" / "mappingen"):
+        if kandidaat.is_dir():
+            for kader, _ in MAPPING_KADERS:
+                pad = kandidaat / f"{kader}.json"
+                if not pad.is_file():
+                    continue
+                per_b: dict[str, list[str]] = {}
+                for r in json.loads(pad.read_text(encoding="utf-8")).get("regels", []):
+                    if r.get("sterkte") in ("volledig", "gedeeltelijk"):
+                        lijst = per_b.setdefault(r["barriere"], [])
+                        if r["norm"] not in lijst:
+                            lijst.append(r["norm"])
+                uit[kader] = per_b
+            break
+    _mappingen_cache = uit
+    return uit
+
+
+def bewijs_voor(barrieres_: list[str]) -> list[tuple[str, str]]:
+    """(kader, maatregel) waarvoor de barrieres van een stuk bewijs leveren, per kader op nummer."""
+    maps = mappingen()
+    uit: list[tuple[str, str]] = []
+    for kader, _ in MAPPING_KADERS:
+        gezien: list[str] = []
+        for b in barrieres_:
+            for n in maps.get(kader, {}).get(b, []):
+                if n not in gezien:
+                    gezien.append(n)
+        def sleutel(n: str) -> list:
+            return [int(x) if x.isdigit() else x for x in re.split(r"[.\-]", n)]
+        uit += [(kader, n) for n in sorted(gezien, key=sleutel)]
+    return uit
+
+
+BEWIJS_CSS = (
+    ".bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}"
+    ".bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}"
+    ".bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;"
+    "padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}"
+    ".bewijsregel a.maatregel:hover{text-decoration:underline}"
+    ".bewijsregel .kader{margin-left:10px}"
+)
+
+
+def bewijsregel(paren: list[tuple[str, str]]) -> str:
+    namen = dict(MAPPING_KADERS)
+    delen = []
+    for kader, _ in MAPPING_KADERS:
+        nrs = [n for k, n in paren if k == kader]
+        if not nrs:
+            continue
+        links = "".join(f'<a class="maatregel" href="{NORMWIJZER}#{kader}/{e(n)}">{e(n)}</a>' for n in nrs)
+        delen.append(f'<span class="kader">{e(namen[kader])}</span>{links}')
+    return (BEWIJS_START + f"<style>{BEWIJS_CSS}</style>"
+            + '<p class="bewijsregel"><b>Levert bewijs voor</b>' + "".join(delen) + "</p>" + BEWIJS_EIND)
+
+
+def zet_bewijs(tekst: str, paren: list[tuple[str, str]]) -> str:
+    """Zet, vernieuw of verwijder de bewijsregel onder de titel. Idempotent."""
+    tekst = re.sub(re.escape(BEWIJS_START) + ".*?" + re.escape(BEWIJS_EIND), "", tekst, flags=re.S)
+    if not paren:
+        return tekst
+    plek = na_de_titel(tekst)
+    if plek is None:
+        return tekst
+    return tekst[:plek] + bewijsregel(paren) + tekst[plek:]
+
+
 def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: bool,
                    kinderen: list[dict] | None = None, normen: list[str] | None = None,
-                   bronnen: list[str] | None = None) -> bool:
+                   bronnen: list[str] | None = None, bewijs: list[tuple[str, str]] | None = None) -> bool:
     """Maak de leesversie klaar: geen link naar zichzelf, wel een kruimelpad, favicon,
     inhoudsopgave bij een lang stuk, een pijlerblok bij een pijler en een bronvoet. Idempotent.
 
@@ -1441,6 +1529,9 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     # Eerst het pijlerblok, dan de normenregel: beide gaan vlak achter </h1>, dus wat als laatste
     # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.
     tekst = zet_pijlerblok(tekst, kinderen or [])
+    # De bewijsregel voor de normen gezet, zodat hij er direct onder komt te staan: eerst het etiket
+    # (BIO2), dan welke maatregelen precies.
+    tekst = zet_bewijs(tekst, bewijs or [])
     tekst = zet_normen(tekst, [str(n) for n in (normen or [])])
     tekst = zet_elders(tekst, [str(b) for b in (bronnen or [])])
     if BRON_START not in tekst:
@@ -1448,7 +1539,7 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
         return False
     if tekst != origineel and alleen_check:
         fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
-                          "inhoudsopgave, pijlerblok, normenregel, bronnenblok of bronvoet); "
+                          "inhoudsopgave, pijlerblok, normenregel, bewijsregel, bronnenblok of bronvoet); "
                           "draai python tools/build.py")
         return False
 
@@ -1583,7 +1674,8 @@ def main() -> int:
             kinderen = kinderen_van(fm["_map"].name, items[vak])
             if html_pad.exists() and zet_kruimelpad(html_pad, kruimels_van_item(fm, secties[vak]),
                                                     alleen_check, kinderen, fm.get("normen") or [],
-                                                    fm.get("bronnen") or []):
+                                                    fm.get("bronnen") or [],
+                                                    bewijs_voor(fm.get("barrieres") or [])):
                 kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
