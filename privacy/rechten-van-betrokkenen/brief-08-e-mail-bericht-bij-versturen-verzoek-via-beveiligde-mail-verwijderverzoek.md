@@ -6,6 +6,6 @@ In de bijlage vindt u ook ons besluit (zie 'Brief inwilligen verwijderverzoek').
 
 Met vriendelijke groet,
 
-Team Privacy
+Team IB&P
 
 naam@voorbeeldgemeente.nl

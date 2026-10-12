@@ -20,7 +20,8 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 
 1. [Val ik onder de Cbw?](val-ik-onder-de-cbw/)
 2. [Ben ik aanbieder onder de AI Act?](aanbieder-onder-de-ai-act/)
-3. [AI-beleid van een regionale samenwerking](ai-beleid/)
+3. [Beleidsset informatiebeveiliging van een regionale samenwerking](beleidsset-informatiebeveiliging/)
+4. [AI-beleid van een regionale samenwerking](ai-beleid/)
 
 ## Bijdragen
 

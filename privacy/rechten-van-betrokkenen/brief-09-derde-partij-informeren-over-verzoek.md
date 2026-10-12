@@ -24,6 +24,6 @@ Alvast bedankt voor de medewerking.
 
 Met vriendelijke groet,
 
-Team Privacy
+Team IB&P
 
 Gemeente <aanvullen>

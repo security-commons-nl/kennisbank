@@ -16,7 +16,7 @@ Wij hebben meer tijd nodig om een besluit te nemen op uw verzoek. In de wet staa
 
 Heeft u vragen of klachten?
 
-Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens. Hiervoor kunt u terecht bij de gemeenschappelijke Functionaris Gegevensbescherming van bovengenoemde organisaties. Deze is te bereiken via het e-mailadres: naam@voorbeeldgemeente.nl Met vragen kunt u terecht bij Team Privacy. Zij zijn bereikbaar via het e-mailadres: naam@voorbeeldgemeente.nl
+Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens. Hiervoor kunt u terecht bij de gemeenschappelijke Functionaris Gegevensbescherming van bovengenoemde organisaties. Deze is te bereiken via het e-mailadres: naam@voorbeeldgemeente.nl Met vragen kunt u terecht bij Team IB&P. Zij zijn bereikbaar via het e-mailadres: naam@voorbeeldgemeente.nl
 
 Met klachtenHiervoor kunt u terecht bij de Functionaris Gegevensbescherming. Deze is te bereiken via het e-mailadres: naam@voorbeeldgemeente.nl.
 
@@ -28,4 +28,4 @@ Het college van Burgemeester en Wethouders
 
 Namens deze,
 
-Team Privacy
+Team IB&P

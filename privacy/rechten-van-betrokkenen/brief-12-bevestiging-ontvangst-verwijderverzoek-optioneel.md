@@ -30,4 +30,4 @@ Het college van burgemeester en wethouders
 
 Namens deze,
 
-Team Privacy
+Team IB&P

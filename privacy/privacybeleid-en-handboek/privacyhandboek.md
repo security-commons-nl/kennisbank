@@ -1,0 +1,352 @@
+# Privacyhandboek (operationeel privacybeleid)
+
+### Afkortingen
+
+| Afkorting | Omschrijving |
+|---|---|
+| AVG | Algemene Verordening Gegevensbescherming |
+| IB&P | (team) Informatiebeveiliging en privacy |
+| PbD | Privacy by Design |
+| JZ | (team) Juridische Zaken |
+| informatiebeheer | (team) Informatiebeheer en archivering |
+| RvV | Register van Verwerkingen |
+| (C)ISO | (Chief) Information Security Officer |
+| DPIA | Data Protection Impact Assessment |
+| Wpg | Wet politiegegevens |
+| FG | Functionaris Gegevensbescherming |
+
+### Begrippen
+
+| Begrip | Uitleg |
+|---|---|
+| Betrokkene | De betrokkene is degene op wie een persoonsgegeven betrekking heeft. |
+| Doel | Om persoonsgegevens te mogen verwerken moet er altijd een doel zijn. Het doel is eigenlijk de reden waarom je persoonsgegevens verwerkt. Je mag persoonsgegevens alleen verwerken als dat noodzakelijk is om het doel te bereiken. Slechts ‘handig’ om te hebben is niet voldoende. |
+| Persoonsgegevens | Alle informatie die iets of kan zeggen over een mens is een persoonsgegeven. Bijvoorbeeld: Naam, adres, woonplaats, e-mailadres, gebruikersnaam, bloedgroep, kenteken, nationaliteit, IP-adres, postcode, geboortedatum, geslacht, geboorteplaats, mac-adres, salaris, etniciteit, IBAN, gezinssamenstelling, hoogte studieschuld, lengte, lichaamsgewicht, gezondheidsgegevens, lidmaatschappen, strafrechtelijke gegevens, seksuele voorkeur en BSN. |
+| Verwerken | Alles wat je kunt doen met persoonsgegevens noemen we verwerken. Denk bijvoorbeeld aan het bijhouden, opslaan, verstrekken, inzien of verwijderen van persoonsgegevens. |
+| Verwerker | Degene die in opdracht van de verwerkingsverantwoordelijke persoonsgegevens verwerkt. |
+| Verwerkings- verantwoordelijke | Degene (persoon of organisatie) die verantwoordelijk is voor het verwerken. Deze partij bepaalt waarom, welke en op welke wijze persoonsgegevens worden verwerkt. De wet noemt die ook wel het ‘bepalen van doel en middelen van de verwerking’. |
+
+## Privacyhandboek
+
+De deelnemende gemeenten hechten grote waarde aan de bescherming van persoonsgegevens. Ook verwachten de gemeenten hierin wat van hun medewerkers. Daarover lees je in dit handboek meer. Je kunt dit handboek ook gebruiken om informatie op te zoeken over specifieke privacy onderwerpen.
+
+### Bijdragen aan de kwaliteit van het privacyhandboek
+
+Hebben we je kunnen helpen door het opstellen van dit privacyhandboek? Heb je kunnen vinden wat je zocht of stond de gewenste informatie er niet in? Was het begrijpelijk, of te veel in de taal van de expert? De privacy officers zijn constant op zoek naar mogelijkheden om de communicatie over privacy en gegevensbescherming te verbeteren. En je kunt daarbij helpen!
+
+| Heb je tips/ aanvullingen/ verbeteren voor dit privacyhandboek? Geef dit dan door aan een privacy officer. Dat kan via deze link. De privacy officers herzien dit document minimaal een keer per jaar. Daarbij nemen ze alle suggesties mee. |
+|---|
+
+### Leeswijzer
+
+De onderwerpen in dit handboek. Met per onderwerp een aantal steekwoorden.
+
+| Hoofdstuk |
+|---|
+| 1. Algemene omgang met persoonsgegevens Rechtmatigheid, Behoorlijkheid, Transparantie |
+| 2. Nieuwe en gewijzigde verwerkingen Privacy Impact Assessment, Privacy by Design |
+| 3. Doelbinding Testen, doelen, verder verwerken |
+| 4. Beveiligingsincidenten en datalekken Beveiligingsincident |
+| 5. Beveiliging Passende technische en organisatorische maatregelen |
+| 6. Inschakelen van en doorgeven van persoonsgegevens aan derden Verwerker, ontvanger, gezamenlijke verantwoordelijkheid |
+| 7. Archiveren en vernietigen Vernietiging, bewaartermijn, Archiefwet |
+| 8. Bewustzijn Bewustwording, awareness, training |
+| 9. Rechten van betrokkenen Recht op inzage, recht op verwijdering |
+
+Dit handboek is een handleiding. In de handleiding staat wat de gemeente verwacht van haar medewerkers op het gebied van gegevensbescherming.
+
+### Opbouw hoofdstuk
+
+Ieder hoofdstuk heeft dezelfde opbouw:
+
+- Eerst lees je de beleidsregel (‘uitgangspunt’)
+
+- Vervolgens lees je hoe je hier uitvoering aan kunt geven.
+
+- Daarna lees je welke stappen je daarbij moet doorlopen.
+
+- Tot slot lees je welke onderwerp specifieke werkwijzen en procedures er zijn.
+
+Ieder hoofdstuk heeft de volgende koppen en opmaak:
+
+Uitgangspunt Hier lees je om welke beleidsregel het gaat.
+
+**Uitvoering**
+
+Hier lees je hoe de beleidsregel wordt uitgevoerd. In sommige gevallen lees je ook of er een onderwerp specifieke werkwijze of procedure is. De inhoud daarvan is kort samengevat. Nummers tussen haakjes (1) komen overeen met de bijbehorende instructies. (1)
+
+**Instructies**
+
+Hier lees je wat de gemeente van haar medewerkers verwacht. Verwijzingen Hier lees je of er onderwerp specifieke werkwijzen en procedures zijn. Ook vind je hier de vindplaats van een document.
+
+**Verantwoordelijkheden**
+
+Om de beleidsregel goed uit te voeren is het belangrijk om te weten wie waarvoor verantwoordelijk is. Dat is telkens aan de hand van RACI ingevuld. Hieronder lees je wat RACI betekent: R]esponsible [A]ccountable [C]onsulted [I]nformed R Wie is er verantwoordelijk voor het juist uitvoeren van deze beleidsregel? A Wie is er eindverantwoordelijk voor het juist uitvoeren van deze beleidsregel? C Wie moet geraadpleegd worden voor het juist uitvoeren van deze beleidsregel? I Wie moet geïnformeerd worden voor het juist uitvoeren van deze beleidsregel?
+
+## 1. Algemene omgang met persoonsgegevens
+
+**Uitgangspunt**
+
+De organisatie verwerkt persoonsgegevens alleen in overeenstemming met de wet. In het geval van gegevensbescherming gaat dit vaak om de Algemene verordening gegevensbescherming (AVG). Bij alle verwerkingen die plaatsvinden wordt rekening gehouden met de hieronder besproken beginselen.
+
+**Uitvoering**
+
+Rechtmatigheid Je mag persoonsgegevens alleen verwerken als dat noodzakelijk is. Ook moet er een grondslag uit de AVG zijn. Hieronder leggen we de zes mogelijke grondslagen uit:
+
+Toestemming De betrokkene kan toestemming geven voor het verwerken van zijn persoonsgegevens. Daarbij gelden een aantal eisen: De betrokkene moet goed geïnformeerd worden. De betrokkene moet weten waar hij toestemming voor geeft; De betrokkene moet zich vrij voelen om de toestemming te weigeren; De betrokkene moet een actieve handeling verrichten om toestemming te geven; De betrokkene moet de toestemming net zo makkelijke kunnen intrekken als dat deze is gegeven. Voorbeeld / Het aanmelden voor de gemeentelijke nieuwsbrief.
+
+Overeenkomst De verwerking van persoonsgegevens moet noodzakelijk zijn voor het sluiten of nakomen van een overeenkomst waarbij de betrokkene partij is. Voorbeeld / Het afsluiten van een arbeidsovereenkomst. Om die overeenkomst uit te kunnen voeren zijn persoonsgegevens nodig.
+
+Wettelijke verplichting De verwerking van persoonsgegevens is noodzakelijk om aan een wettelijke verplichting te voldoen. Voorbeeld / De gemeente is wettelijk verplicht om bepaalde persoonsgegevens van haar medewerkers aan de Belastingdienst te geven.
+
+Vitale belangen De verwerking van persoonsgegevens is noodzakelijk ter bescherming van iemands leven of gezondheid. Daarbij moet het echt gaan om situaties van leven op dood. Voorbeeld / Bij een grootschalige ramp moet er onmiddellijk hulp geboden worden. Als daarbij persoonsgegevens noodzakelijk zijn is daar een grondslag voor.
+
+Algemeen belang en openbaar gezag De verwerking van persoonsgegevens is noodzakelijk voor de uitvoer van taken die in een wet zijn opgedragen aan de gemeente. Hier kan ook wel gesproken worden over het uitvoeren van de ‘publieke taak’. Voorbeeld / Veel gemeentelijke taken vallen hieronder. Denk aan het uitvoeren van taken in het sociaal domein en het bijhouden van de Basisregistratie Personen (BRP). Om die taken uit te voeren zijn bepaalde persoonsgegevens nodig.
+
+Gerechtvaardigd belang De verwerking van persoonsgegevens is noodzakelijk voor een gerechtvaardigd belang. Dit belang moet worden afgewogen tegen rechten en vrijheden van de betrokkene. Er is alleen een gerechtvaardigd belang als dat belang zwaarder weegt, dan het belang van de betrokkene. Voorbeeld / Het ophangen van beveiligingscamera’s ter voorkoming van inbraken in een van de gebouwen van de gemeente.
+
+Behoorlijk, transparantie en doelbinding De verwerking van persoonsgegevens moet op een behoorlijke wijze plaatsvinden (behoorlijk). En het moet voor de betrokkene zo duidelijk mogelijk zijn wat er met zijn persoonsgegevens gebeurt (transparantie). Ook moet de gemeente betrokkenen informeren over het doel waarvoor persoonsgegevens worden verzameld. Dit moet gebeuren voordat of op het moment dat de persoonsgegevens worden verzameld. Het doel moet duidelijk beschreven zijn. De verzamelde persoonsgegevens mogen vervolgens ook alleen voor dit doel worden verwerkt. Verder verwerken voor andere doelen is dus niet toegestaan (doelbinding). Dataminimalisatie, juistheid, opslagbeperking, integriteit & vertrouwelijkheid Je mag persoonsgegevens alleen verwerken voor zover dat noodzakelijk is om het doel te bereiken (dataminimalisatie). Verder moeten persoonsgegevens ook altijd kloppen. Onjuiste gegevens moeten worden gewist of worden aangepast (juistheid). Als je persoonsgegevens opslaat mag je die gegevens niet langer bewaren dan noodzakelijk is om het doel te bereiken (opslagbeperking). Tot slot moeten persoonsgegevens goed beveiligd worden en vertrouwelijk worden behandeld (integriteit & vertrouwelijkheid).
+
+Verantwoordingsplicht Dit betekent dat je altijd moet kunnen aantonen dat je persoonsgegevens verwerkt in lijn met de AVG. Dit is de reden dat de AVG relatief veel administratieve verplichtingen bevat.
+
+**Instructies**
+
+Verwerk persoonsgegevens in overeenstemming met dit handboek en de onderwerp-specifieke werkwijzen en procedures waarnaar in dit handboek verwezen wordt. Bij twijfel of onduidelijkheid: neem contact op met een van de Privacy Officers. Dat kan via deze link.
+
+**Verwijzing**
+
+Privacybeleid (strategisch/tactisch) Uitleg: In het strategisch gemeentelijk privacybeleid is de algemene omgang met persoonsgegevens uitgebreid beschreven. Vindplaats: intranet.
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Medewerker die de persoonsgegevens verwerkt. A Afdelingshoofd/teammanager onder wiens verantwoordelijkheid de verwerking wordt uitgevoerd. C Privacy Officer / (Chief) Information Security Officer / Functionaris Gegevensbescherming. I Betrokkenen
+
+## 2. Nieuwe of gewijzigde verwerkingen
+
+**Uitgangspunt**
+
+Bij iedere nieuwe verwerking van persoonsgegevens of wijziging van een bestaande verwerking van persoonsgegevens wordt rekening gehouden met: Privacy by Design Privacy by Default Vóór een verwerking wordt dus rekening gehouden met het zo privacyvriendelijk mogelijk inrichten ervan.
+
+Uitvoering Voorafgaand aan iedere nieuwe verwerking van persoonsgegevens of wijziging van een bestaande verwerking van persoonsgegevens (hierna te noemen: wijziging) wordt:
+
+de verwerking volgens de beginselen van Privacy by Design en Privacy by Default vormgegeven; (1) Het beleid ‘Privacy by Design’ biedt concrete maatregelen die zoveel mogelijk doorgevoerd moeten worden in het ontwerp. Hiermee wordt gegarandeerd dat een ontwerp zo privacyvriendelijk mogelijk is vormgegeven. Het toepassen van Privacy by Design (PbD) is wettelijk verplicht. Het toepassen van deze werkwijze is vroeg in de vormgeving van de gegevensverwerking wenselijk. Hierdoor voorkom je dat er later zaken hersteld moeten worden. Tijdens het proces moet: – worden gedocumenteerd welke maatregelen zijn doorgevoerd; – op welke wijze overwegingen ten grondslag liggen aan het niet doorvoeren van bepaalde maatregelen.
+
+Privacy by Default betekent dat de instellingen van een programma, app, website of dienst, standaard zo privacyvriendelijk mogelijk zijn ingesteld. Bijvoorbeeld dat in vragenlijst alleen velden verplicht worden gemaakt, die echt noodzakelijk zijn voor een onderzoek.
+
+een Pre-DPIA uitgevoerd; (2) Dit is een toets aan de hand waarvan het risico van de verwerking wordt bepaald (en gedocumenteerd). Hieruit volgt of er een verplichting bestaat tot het uitvoeren van een Data Protection impact assessment (DPIA). Je kunt de pre-DPIA hier invullen. Op deze pagina vind je meer uitleg over het invullen van de pre-DPIA. Een van de Privacy Officers beoordeelt vervolgens of er een DPIA moet worden uitgevoerd. Als je hulp nodig hebt kun je altijd contact opnemen met de Privacy Officers.
+
+indien blijkt dat dit noodzakelijk is, een DPIA uitgevoerd; (3) De DPIA is een instrument met behulp waarvan, voorafgaand aan de daadwerkelijke verwerking van persoonsgegevens, de privacyrisico’s in kaart worden gebracht en beoordeeld. Verder worden maatregelen voorgesteld om de eventuele negatieve gevolgen tot een minimum te beperken. Het uitvoeren van een DPIA is een lijnverantwoordelijkheid. De privacy officers kan hierbij adviseren en ondersteunen.
+
+voorzien in de nodige afspraken; (4) Indien er derden worden ingeschakeld voor de nieuwe verwerking van persoonsgegevens, volg je hoofdstuk zes (‘Inschakelen van derden’).
+
+het Register van Verwerkingen (RvV) actueel gehouden; (5) In het RvV dient een actueel overzicht van alle verwerkingen van persoonsgegevens te staan. Het RvV wordt bijgehouden in een registertool of een spreadsheet. Proceseigenaren voeren zelf een verwerking in en houden die actueel, of nemen contact op met de Privacy Officers bij een nieuwe verwerking of een wijziging daarvan. Meer informatie is te vinden op intranet.
+
+De onder punt 2 en 3 genoemde toetsen worden met hulp van de privacy officer opgesteld en, indien nodig, voorgelegd aan de Functionaris Gegevensbescherming. De opgestelde documenten worden toegevoegd aan het projectdossier.
+
+**Instructies**
+
+(1) pas het beleid ‘Privacy by Design’ toe bij het ontwerpen van nieuwe verwerkingen en het wijzigen van bestaande verwerkingen; (2) voer een Pre-DPIA uit; (3) voer zo nodig een DPIA uit; (4) volg hoofdstuk zes (‘Inschakelen van derden’) als er derden worden ingeschakeld of persoonsgegevens worden uitgewisseld; (5) Werk het register van verwerkingen (RvV) bij.
+
+**Verwijzing**
+
+Beleid ‘Privacy by Design’ Uitleg: Het PbD-beleid schrijft concrete maatregelen voor die, wanneer deze worden toegepast, garanderen dat een verwerking zo ‘privacy-vriendelijk’ mogelijk is vormgegeven. De wijze waarop een maatregel wordt toegepast en de onmogelijkheid om een maatregel toe te passen moeten uitgelegd worden gedocumenteerd. Vindplaats: intranet.
+
+Procedure Risicoanalyses (DPIA) Uitleg: In de Procedure Risicoanalyses (DPIA) wordt uitgelegd wanneer het uitvoeren van een DPIA verplicht is. Ook wordt uitgelegd wat een DPIA inhoudt. In sommige gevallen moet eerst een pre-DPIA worden uitgevoerd. Dit is een vragenlijst om te controleren of er een DPIA moet worden uitgevoerd. Vindplaats: intranet.
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Projectleider of medewerker die de nieuwe of gewijzigde verwerking organiseert. A Projectopdrachtgever/afdelingshoofd verantwoordelijk voor de verwerking. C Pre-DPIA: privacy officer / information security officer. DPIA: privacy officer/ Functionaris Gegevensbescherming. I Functionaris Gegevensbescherming (voor het geheel).
+
+## 3. Doelbinding
+
+**Uitgangspunt**
+
+De persoonsgegevens die de gemeente verwerkt, zijn verzameld om te verwerken voor een specifiek doel. Persoonsgegevens worden slechts ‘verder’ verwerkt voor doeleinden die in lijn zijn met het doel waarvoor de persoonsgegevens zijn verkregen.
+
+**Uitvoering**
+
+In gevallen waarin persoonsgegevens voor een ander doel worden verwerkt dan waarvoor ze zijn verzameld, moet worden beoordeeld of de doelen verenigbaar zijn.
+
+Voorbeeld / Een betrokkene geeft zijn e-mailadres bij het aanvragen van zijn paspoort. Hij wil graag geïnformeerd worden wanneer het paspoort opgehaald kan worden. De gemeente gebruikt dit persoonsgegeven vervolgens om betrokkene uit te nodigen stembureaulid te worden bij de volgende verkiezingen. In dit geval worden de persoonsgegevens voor een ander doel verder verwerkt terwijl dit niet voor hetzelfde doel is. Het uitsturen van een enquête over de kwaliteit van de baliedienst, zou in dit geval wel een verdere verwerking met verenigbaar doel zijn.
+
+Een ander voorbeeld is het verwerken van persoonsgegevens voor om een applicatie te testen. Of het verkrijgen van toegang tot iemands persoonlijke mailbox of netwerkschijf. Hiervoor zijn aparte procedures opgesteld. Zie hiervoor: het Beleid testdata, (Privacy)reglement e-mail en internetgebruik en de Procedure inzage mailbox.
+
+Verder verwerken (2) Al het verder verwerken van persoonsgegevens, moet via het reguliere proces (zie hoofdstuk 2) tot stand komen. Bij de beoordeling van de vraag of de beoogde verwerking verenigbaar is met het doel waarvoor de persoonsgegevens zijn verzameld, wordt onder meer rekening gehouden met: ieder verband tussen de doeleinden waarvoor de persoonsgegevens zijn verzameld, en de doeleinden van de voorgenomen (verdere) verwerking; het kader waarin de persoonsgegevens zijn verzameld, met name de verhouding tussen de betrokkene en de verwerkingsverantwoordelijke; de aard van de persoonsgegevens, met name of bijzondere categorieën van persoonsgegevens worden verwerkt of persoonsgegevens over strafrechtelijke veroordelingen en strafbare feiten; de mogelijke gevolgen van de voorgenomen verdere verwerking voor de betrokkenen; het bestaan van passende waarborgen, waaronder eventueel versleuteling of pseudonimisering van de persoonsgegevens. Instructies
+
+(1) Volg eventueel aanwezige onderwerp-specifieke procedures of reglementen. (2) Volg in alle overige gevallen hoofdstuk 2: Nieuwe of gewijzigde verwerkingen.
+
+Verwijzing
+
+Procedure Testdata Uitleg: Beleid over het testen met persoonsgegevens. Het formulier in de bijlage wordt gebruikt om keuzes uit te leggen. Vindplaats: intranet
+
+Reglement IT-apparatuur Uitleg: Reglement voor het gebruik van IT-apparatuur. Het doel is om het verantwoord en veilig gebruik van IT-apparatuur binnen de organisatie te bevorderen en om een veilige en productieve werkomgeving te creëren en risico's van misbruik te verkleinen. Vindplaats: intranet.
+
+Procedure inzage mailbox Uitleg: In uitzonderlijke gevallen kan het nodig zijn om bij een mailbox of document van een andere collega te moeten. Bijvoorbeeld bij langdurige ziekte of overlijden. Om zorgvuldig om te gaan met de persoonsgegevens van de andere collega is een procedure opgesteld. Hierin wordt vastgelegd hoe het proces verloopt bij het toegang krijgen tot een mailbox. Vindplaats: intranet.
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Medewerkers A Afdelingshoofd/teammanager onder wiens verantwoordelijkheid de verwerking wordt uitgevoerd. C Privacy officer, Information security officer. I
+
+## 4. Datalekken
+
+**Uitgangspunt**
+
+Medewerkers melden een datalek direct nadat zij deze hebben ontdekt. Medewerkers moeten zich altijd vrij voelen een datalek, of vermoeden daarvan, te melden. Na de melding van een datalek wordt deze zo snel mogelijk beoordeeld door een Privacy Officer. Daarbij wordt beoordeeld of er melding bij de toezichthouder of de betrokkene(n) wordt gedaan.
+
+**Uitvoering**
+
+Intern melden van incident Van medewerkers wordt verwacht dat zij oplettend zijn. Wanneer zij een incident opmerken of vermoeden maken ze hier zo snel als mogelijk een melding van.
+
+Procedure datalekken In geval van een datalek, wordt dit door het informatiebeveiliging- en privacyteam (IB&P) afgehandeld volgens de procedure Datalekken.
+
+**Instructies**
+
+Heb je een incident opgemerkt? Meld het direct! Dit kan: Via de Zelf-servicedesk Telefonisch, telefoonnummers van de privacy officers vind je hier.
+
+Verwijzing Meer weten over een (mogelijk) datalek en hoe je dit meldt? Uitleg: intranetpagina met meer informatie over een (mogelijk) datalek en de Procedure Datalekken. Vindplaats: intranet
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Medewerker die het incident ontdekt/ vermoedt (voor intern melden) A Afdelingshoofd/team manager van het team waar het incident heeft plaatsgevonden (afhandelen proces melden datalek en beveiligingsincident) C Information security officer, privacy officer I - Functionaris Gegevensbescherming; - Autoriteit Persoonsgegevens, betrokkene(n), directeur, gemeentesecretaris, collegeleden (afhankelijk van aard en omvang)
+
+## 5. Beveiliging
+
+**Uitgangspunt**
+
+Informatiebeveiliging waarborgt de bescherming van persoonsgegevens door zowel organisatorische als technische maatregelen te nemen. Dit wordt gedaan op preventief en detectie niveau. Preventieve maatregelen voorkomen niet toegestane toegang en datalekken. Detectieve maatregelen zorgen ervoor dat verdachte activiteiten snel worden opgemerkt en aangepakt. Deze aanpak wordt toegepast met als doel de beschikbaarheid, integriteit en vertrouwelijkheid van persoonsgegevens te waarborgen. Zo zijn deze gegevens altijd toegankelijk voor bevoegde partijen. En worden ze niet onbedoeld gewijzigd en blijven ze beschermd tegen onbevoegde toegang.
+
+Uitvoering Bij het beginnen van een nieuwe verwerking van persoonsgegevens of wijzigen van een bestaande verwerking, worden passende beveiligingsmaatregelen getroffen volgens het Informatiebeveiligingsbeleid. Neem hiervoor contact op met een collega van Informatiebeveiliging.
+
+**Instructies**
+
+Passende maatregelen worden genomen afhankelijk van het B/I/V-niveau en eventuele aanvullende risicoanalyse. Voorbeeld / Het versturen van persoonsgegevens per e-mail is een verwerking van persoonsgegevens. Het goed beveiligen is daarom ook hier van belang. Wanneer een e-mail wordt verzonden, kan dit qua beveiligingsniveau worden gezien als het versturen van een ansichtkaart, wat zeer onveilig is.
+
+beveiligde mail wordt als preventieve maatregel toegepast om de veilige verzending van e-mails te waarborgen, waardoor persoonsgegevens beschermd zijn tegen onbevoegde toegang.
+
+**Verwijzing**
+
+Informatiebeveiligingsbeleid Uitleg: Beleidsstuk waarin de wijze waarop de gemeente omgaat met de beveiliging van informatie is beschreven. Vindplaats: intranet.
+
+Veilig mobiel werken Uitleg: Intranetpagina met informatie voor jou over veilig mobiel werken, met je eigen apparaat of mobiel apparaat wat je van je werkgever in bruikleen hebt. Vindplaats: intranet.
+
+Zo maak je een sterk wachtwoord Uitleg: Filmpje over het instellen van een sterk wachtwoord. Vindplaats: Hoe kraakt iemand een wachtwoord?
+
+Verantwoordelijkheden [R]esponsible[ A]ccountable [C]onsulted [I]nformed R Medewerker A Afdelingshoofd/teammanager onder wiens verantwoordelijkheid de verwerking wordt uitgevoerd C Information security officer I Privacy officer of Functionaris Gegevensbescherming
+
+## 6. Inschakelen van (en doorgeven van persoonsgegevens aan) derden
+
+**Uitgangspunt**
+
+Indien de gemeente: de verwerking van persoonsgegevens uitbesteedt aan, of samen uitvoert met, een derde; of persoonsgegevens verstrekt of doorgeeft aan derden gebeurt dit in overeenstemming met de AVG. Afhankelijk van de onderlinge relatie en daarmee samenhangende verdeling van AVG-rollen, maken partijen afspraken met elkaar. De volgende situaties kunnen voorkomen:
+
+↘ Wederpartij is verwerker De gemeente (verwerkingsverantwoordelijke) schakelt een derde (verwerker) in. De verwerker verwerkt namens de gemeente persoonsgegevens. De verwerkingsverantwoordelijke bepaalt hierbij het doel en de middelen. Daarmee wordt bedoeld dat de verwerkingsverantwoordelijke bijvoorbeeld bepaalt welke persoonsgegevens worden verzameld en waarom dit gebeurt. De verwerker volgt slechts de instructies van de verwerkingsverantwoordelijke op. Met een verwerker worden afspraken gemaakt in een verwerkersovereenkomst (vwo).
+
+Voorbeeld / Een voorbeeld van een verantwoordelijke-verwerker -relatie is een bedrijf dat de salarisadministratie doet. Er is hier sprake van een verwerker omdat het bedrijf in opdracht van de gemeente persoonsgegevens verwerkt. De gemeente bepaalt daarbij welke persoonsgegevens worden verwerkt en met welk doel. Een ander voorbeeld is een applicatie. De leverancier van de applicatie is dan een verwerker van de gemeente. De gemeente bepaalt namelijk zelf welke persoonsgegevens in de applicatie worden ingevuld. De leverancier kan in veel gevallen wel bij de persoonsgegevens om de applicatie te onderhouden.
+
+↘ Wederpartij is gezamenlijk verwerkingsverantwoordelijke Wanneer de gemeente het doel en de middelen van de verwerking in samenspraak met een derde bepaalt, is er sprake van gezamenlijke of medeverantwoordelijkheid. Dit is het geval als er een uitwisseling van persoonsgegevens voortvloeit uit afspraken die partijen op gelijkwaardige voet met elkaar gemaakt hebben. Bij deze relatie moet er een Overeenkomst gezamenlijk verwerkingsverantwoordelijken worden getekend.
+
+Voorbeeld / In het kader van de openbare orde wisselt de gemeente persoonsgegevens over overlastgevende jongeren uit met de politie. Periodiek overlegt de gemeente met de politie en wordt samen een lijst bijgehouden van deze jongeren. Voor die lijst zijn de gemeente en de politie gezamenlijk verwerkingsverantwoordelijk. Beide partijen bepalen gezamenlijk welke persoonsgegevens van de jongeren worden vastgelegd en waarom dit gebeurt (het hoe en wat van de gegevensverwerking).
+
+↘ Wederpartij is zelfstandig verwerkingsverantwoordelijke (ontvanger) De gemeente (verwerkingsverantwoordelijke) kan persoonsgegevens doorgeven aan een derde (verwerkingsverantwoordelijke). Die partij beslist vervolgens zelfstandig over het doel en de middelen van de verwerking. Dit vindt alleen plaats als er een verplichting of een sterke, rechtmatige reden daartoe bestaat. Dit laatste moet goed getoetst worden.
+
+Voorbeeld / Het als werkgever verstrekken van persoonsgegevens aan de Belastingdienst in het kader van de loonheffing.
+
+Uitvoering Vaststellen rollen Indien er derden betrokken zijn bij het verwerken van persoonsgegevens: stel vast wat de AVG-rollen van de betrokken partijen zijn. De privacy officer kan hierbij adviseren. (1)
+
+Verwerkersovereenkomst (in geval verantwoordelijke-verwerker-relatie) Is er sprake van een verantwoordelijke-verwerker-relatie? Dan draagt het afdelingshoofd er zorg voor dat er voorafgaand aan de gegevensverwerking een verwerkersovereenkomst gesloten wordt met de (beoogde) verwerker. (2)
+
+Gezamenlijke verantwoordelijkheidsovereenkomst (in geval gezamenlijke verantwoordelijkheid) Wanneer de gemeente samen met een derde het doel en de middelen van een verwerking van persoonsgegevens bepaalt, maken deze partijen afspraken hierover in een overeenkomst gezamenlijk verwerkingsverantwoordelijken. (2)
+
+Gegevensuitwisselingsovereenkomst (indien beide partijen zelfstandig verwerkingsverantwoordelijke) Wanneer er persoonsgegevens worden uitgewisseld met een partij die zelfstandig de doelen en de middelen van een verwerking van persoonsgegevens bepaalt, wordt een gegevensuitwisselingsovereenkomst gesloten. Hierbij moet ook worden getoetst of het doorgeven van persoonsgegevens is toegestaan. (2) De privacy officer en information security officer kunnen inhoudelijke ondersteuning bieden bij bovenstaande stappen.
+
+**Instructies**
+
+(1) Stel vast wat de AVG-rol is van de gemeente en de derde(n); (2) Sluit – indien van toepassing – een verwerkersovereenkomst (VWO), een Overeenkomst gezamenlijk verwerkingsverantwoordelijken of een gegevensuitwisselingsovereenkomst af. Win hierbij altijd advies in van een Privacy Officer voordat de overeenkomst wordt ondertekend. Lever de ondertekende overeenkomsten bij Inkoop aan via naam@voorbeeldgemeente.nl; Werk het Register van Verwerkingen (RvV) bij door deze gegevensuitwisseling toe te (laten) voegen.
+
+**Verwijzing**
+
+Privacy overeenkomsten Uitleg: Benieuwd of een privacy overeenkomst nodig is of heb jehulp nodig bij het invullen van een verwerkersovereenkomst of op zoek naar het sjabloon? Dit alles vind je terug op het intranet. Vindplaats: intranet
+
+Verantwoordelijkheden [R]esponsible[ A]ccountable [C]onsulted [I]nformed R Uitvoerende medewerker A Afdelingshoofd/teammanager onder wiens verantwoordelijkheid de verwerking wordt uitgevoerd C Privacy officer/ information security officer / medewerker inkoop / medewerker juridische zaken I Contractbeheer / Inkoop
+
+## 7. Archiveren en vernietigen
+
+**Uitgangspunt**
+
+De gemeente bewaart persoonsgegevens slechts zo lang als noodzakelijk is voor het doel waarvoor deze gegevens verwerkt worden. En om te voldoen aan een wettelijke verplichting zoals vastgelegd in de Archiefwet. Het is niet toegestaan om documenten langer of korter te bewaren dan is vastgelegd in de Selectielijst.
+
+**Uitvoering**
+
+Bewaartermijnen voor archivering De AVG schrijft geen concrete bewaartermijn voor: persoonsgegevens mogen niet langer worden bewaard dan noodzakelijk is voor de doeleinden waarvoor deze worden verwerkt. Wel zijn er concrete bewaartermijnen in andere wetten waar de gemeente zich aan moeten houden. Bijvoorbeeld in de Wet politiegegevens. Doorgaans hebben de meeste processen (en de documenten die daaruit voortvloeien) bij de gemeente al een vastgestelde bewaartermijn. Hanteer deze bewaartermijn zorgvuldig door bijvoorbeeld documenten goed op te slaan in de daarvoor bestemde systemen, waar de bewaartermijnen goed zijn ingericht (bijvoorbeeld het zaaksysteem). (1)
+
+Is er nog geen bewaartermijn vastgesteld? De ‘Selectielijst gemeenten en intergemeentelijke organen’ is leidend bij de gemeente in het bepalen van een bewaartermijn ten behoeve van archivering. Betrek het team informatiebeheer bij het maken van een keuze. (2)
+
+In principe zijn de ‘producenten’ van de documenten verantwoordelijk voor de naleving van bewaartermijnen. het team informatiebeheer kan hierbij helpen met advies en inrichting en zal ook controleren of de bewaartermijnen worden opgevolgd. Zorg dat bewaartermijnen structureel worden opgevolgd. Gebruik hier bijvoorbeeld de Richtlijnen voor vernietigen voor en betrek het team informatiebeheer hierbij. (3) Eventuele verwerkers zijn ook aan bewaartermijnen gebonden. Indien er verwerkers ingeschakeld zijn, moeten bewaartermijnen voor deze partij via de verwerkersovereenkomst vastgelegd worden. Overleg dit ook met het team informatiebeheer, die het ook zal vastleggen in hun systemen. (4)
+
+Registratie Archiveer informatie op de juiste wijze in een archief(systeem), zodat het beheerd kan worden. Alle vormen van informatie kunnen archiefwaardig zijn (dus e-mails, brieven, sms-jes en dergelijke). Verwijder de informatie uit niet-archief systemen/mappen/outlook en voorkom (al dan niet gestructureerde) schaduwarchieven. (5)
+
+Voorbeeld / Het belang van goed archiveren werd pijnlijk duidelijk in de ‘bonnetjesaffaire’ van voormalig staatssecretaris Teeven, oftewel de ‘Teevendeal’.
+
+De Teevendeal was een deels geheime schikking uit 2000–2001 tussen het Nederlandse Openbaar ministerie (OM) en de drugshandelaar Cees H. Als onderdeel van deze schikking werd een eerder in beslag genomen bedrag van 4,7 miljoen gulden aan H. terugbetaald. De details van de schikking werden buiten het zicht van de Belastingdienst en de FIOD gehouden. Pas in 2014 kwam de deal opnieuw in de belangstelling door een uitzending van Nieuwsuur. Concreet bewijs (het ‘bonnetje’ van de transactie) ontbrak aanvankelijk, waardoor discussie ontstond over het precieze bedrag. Teeven zei zich het bedrag niet te herinneren. Pas in maart 2015 werd door het Ministerie van Veiligheid en Justitie alsnog het ‘bonnetje’ geleverd: uit een afschrift uit een verouderd financieel computersysteem bleek het werkelijke bedrag 4,7 miljoen gulden te zijn. Dat bonnetje had natuurlijk zonder moeite uit een geordend archief gehaald moeten worden… Kort na het naar buiten komen van alle details trad Kamervoorzitter Van Miltenburg af, omdat zij eerder in het jaar een anonieme brief aan de Kamer met details over de Teevendeal had vernietigd. Ook vernietigen is immers aan strenge regels gebonden!
+
+**Instructies**
+
+(1) Achterhaal de bewaartermijn(en) die bij je werkzaamheden van belang zijn; (2) Bepaal een bewaartermijn ten behoeve van archivering op basis van de ‘Selectielijst gemeenten en intergemeentelijke organen’. Overleg deze keuze altijd met het team informatiebeheer; (3) Pas deze termijnen structureel toe. Eventueel met behulp van de Richtlijnen voor vernietigen; (4) Schrijf bewaartermijnen via verwerkersovereenkomst voor aan eventuele verwerkers. Overleg dit altijd met het team informatiebeheer; (5) Registreer informatie in een archief(systeem) en verwijder het van overige opslagplaatsen. Bepaal of het archiefwaardig is met behulp van opruimhulp. Verwijzing
+
+Selectielijst gemeenten en intergemeentelijke organen Uitleg: Hierin staat beschreven hoelang data bewaard moet worden door de gemeente. Vindplaats: VNG
+
+Richtlijnen voor vernietigen Uitleg: Hierin staat een instructie voor het vernietigen van archiefstukken beschreven (betrek ook altijd het team informatiebeheer). Vindplaats: de archiefdienst (e-depot)
+
+Opruimhulp Uitleg: Hierin staat beschreven welke informatie je moet archiveren. En hoe je het beste het papieren archief kunt opruimen met daarbij een handige beslisboom. Vindplaats: intranet
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Medewerkers zelf, afdeling informatiebeheer A Afdelingshoofd/teammanager van het desbetreffende team, afdeling informatiebeheer C afdeling informatiebeheer, Privacy Officer I afdeling informatiebeheer, Privacy Officer
+
+## 8. Bewustzijn
+
+**Uitgangspunt**
+
+Het beleid kan alleen worden uitgevoerd als de medewerkers die het moeten toepassen op de hoogte zijn van de inhoud en weten hoe te handelen. Daarom is het uitgangspunt dat alle medewerkers van de gemeente op de hoogte zijn van het geldende privacybeleid. Dit handboek draagt bij aan het bewustzijn rondom het privacybeleid. En zorgt voor het nemen van de juiste stappen.
+
+**Uitvoering**
+
+De gemeente verzorgt verschillende activiteiten en neemt maatregelen om: het privacybeleid kenbaar te maken aan haar medewerkers; medewerkers in staat te stellen de nodige (basis)kennis gegevensbescherming te verkrijgen; medewerkers in staat te stellen verwerkingen zelf in overeenstemming met de AVG te brengen.
+
+Dit wordt gedaan door:
+
+Goed inwerken Nieuwe medewerkers van de gemeente worden spoedig na hun eerste werkdag gewezen op het privacybeleid en de onderliggende werkwijzen en procedures.
+
+Gegevensbescherming op het intranet Op het intranet kunnen medewerkers informatie vinden die zij nodig hebben om hun werkzaamheden zelfstandig in lijn te brengen met de AVG.
+
+E-learning De gemeente heeft een e-learning-programma waarmee medewerkers hun kennis op het gebied van privacy en informatiebeveiliging kunnen vergroten. Medewerkers kunnen trainingen via de “Digitale Trainingen” knop volgen;
+
+Diverse trainingen, cursussen en activiteiten Het informatiebeveiligings- en privacyteam organiseert – al dan niet op aanvraag – diverse trainingen, cursussen en activiteiten op het gebied van informatiebeveiliging en privacy. Voorbeelden hiervan zijn de crisisgame, afdeling-specifieke trainingen, acties om voor bewustwording te zorgen en bezoeken aan werkoverleggen.
+
+**Verwijzing**
+
+Gegevensbescherming op het intranet Uitleg: Op het intranet kan de medewerker de nodige informatie vinden over gegevensbescherming. Vindplaats: intranet
+
+6 Gouden Regels Uitleg: Gebruik deze 6 Gouden Regels om je dagelijkse werkzaamheden zo (be)veilig(d) mogelijk uit te voeren. Vindplaats: intranet.
+
+Verantwoordelijkheden [R]esponsible [A]ccountable [C]onsulted [I]nformed R Afdelingshoofd/teammanager A Medewerker
+
+Zorgen voor bewustwording is de verantwoordelijkheid van de Privacy Officer. C Information security officer, privacy officer I Collega’s
+
+## 9. Rechten van betrokkenen
+
+**Uitgangspunt**
+
+Iedere betrokkene heeft op grond van de AVG en Wpg rechten die hem in staat stellen in control te zijn over zijn eigen persoonsgegevens. De gemeente geeft zo snel en goed mogelijk gevolg aan een verzoek van betrokkene om één of meer van deze rechten uit te oefenen.
+
+**Uitvoering**
+
+Betrokkenen kunnen ingevolge de AVG de volgende rechten uitoefenen: Recht op inzage; Recht op aanpassen van gegevens; Recht op verwijdering van gegevens; Recht op beperking van de verwerking; Recht om persoonsgegevens door te geven aan een andere partij; Recht van bezwaar tegen verwerking; Recht niet te worden onderworpen aan geautomatiseerde individuele besluitvorming/profiling.
+
+In dit handboek worden slechts het recht van inzage en het recht om gegevenswissing behandeld.
+
+Recht op inzage Een betrokkene kan met het recht op inzage achterhalen of, en zo ja welke, persoonsgegevens van hem of haar worden verwerkt worden door de gemeente. De betrokkene kan een overzicht of kopie van de desbetreffende persoonsgegevens opvragen. Ook de persoonsgegevens die zich eventueel bevinden bij verwerkers of samenwerkingspartners maken onderdeel uit van een inzageverzoek.
+
+Recht op verwijdering Dit recht is niet absoluut. Dat wil zeggen dat niet altijd gehoor hoeft te worden gegeven aan dit verzoek. Onder bepaalde voorwaarden moeten de gegevens worden gewist. Indien een van de uitzonderingssituaties van toepassing is, hoeft dit niet. De privacy officer zal, samen met de betrokken bedrijfsonderdelen, beoordelen in hoeverre aan het beroep van betrokkene kan worden voldaan.
+
+Termijnen De termijn voor het afhandelen van deze verzoeken betreft één maand na ontvangst van het verzoek. Deze termijn kan, wanneer dit noodzakelijk is, worden verlengd met nog eens twee maanden. Het is van belang verzoeken van betrokkenen binnen deze termijn af te handelen. Ten eerste omdat dit in het belang van de betrokkene is. Maar ook omdat, wanneer de termijn verloopt, betrokkene een ingebrekestelling kan indienen en daarna, bij het uitblijven van een besluit, binnen twee weken een dwangsom kan opleggen. De Autoriteit Persoonsgegevens, toezichthouder voor de AVG, kan daarnaast ook een dwangsom opleggen.
+
+Voor een goede afhandeling van het inzage- of wissingsverzoeken is het belangrijk dat: het binnengekomen verzoek zo spoedig mogelijk wordt doorgezonden aan de privacy officers. (Het kan gebeuren dat het verzoek om de één of andere reden niet direct op de juiste plek terecht komt). zodra de privacy officer met een vraag bij je komt, je dit zo spoedig mogelijk behandelt. Een desbetreffend verzoek heeft – in beginsel – voorrang op overig werk. als je niet de aangewezen persoon bent voor de behandeling van het verzoek, je dit zo spoedig mogelijk laat weten aan de privacy officer. Indien voor jou bekend, met naam van de collega die wel de juiste persoon is.
+
+**Instructies**
+
+Geef voorrang aan verzoeken (over inzage en verwijdering) afkomstig van de privacy officer, vanwege de wettelijke beantwoordingstermijn van een maand.
+
+Verwijzing Procedure Rechten van betrokkenen Uitleg: Om tijdig te kunnen voldoen aan AVG-verzoeken door burgers is er een procedure opgesteld. Hierin is vastgelegd wie voor welk onderdeel verantwoordelijk is. Ook worden hierin de rechten uitgelegd. Vindplaats: intranet
+
+Verantwoordelijkheden [R]esponsible[ A]ccountable [C]onsulted [I]nformed R - Teamleden van het team waar de persoonsgegevens zich bevinden - de Privacy officer voert de regie A Afdelingshoofd/teammanager van afdeling waar de gegevens zich bevinden C Privacy officer, Afdeling de postregistratie/ Team Documenten, Functionaris Gegevensbescherming I betrokkene, Functionaris Gegevensbescherming

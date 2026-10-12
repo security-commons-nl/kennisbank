@@ -66,14 +66,15 @@ De drie overleggen (1, 2b en 3a) zijn het skelet. Tussen de overleggen door werk
 
 | Stuk | Waarvoor | Bestanden |
 |---|---|---|
-| **Sjabloon DPIA** | Het werkdocument: tien hoofdstukken, van procesbeschrijving tot ondertekening, grotendeels aanvinken | [Markdown](sjabloon-dpia.md) · [Word](sjabloon-dpia.docx) |
-| **Camera's op grond van gerechtvaardigd belang** | Voorgevulde teksten per hoofdstuk voor camerabeveiliging van eigen gebouwen, inclusief een uitgeschreven belangenafweging | [Markdown](cameras-gerechtvaardigd-belang.md) · [Word](cameras-gerechtvaardigd-belang.docx) |
-| **Vragenlijst camera's** | Vijftien vragen voor de kennishouder en tien maatregelen voor de security officer, vóór het eerste overleg | [Markdown](vragenlijst-cameras.md) · [Word](vragenlijst-cameras.docx) |
-| **Security-assessment leverancier** | Vragen voor de security officer over certificering, architectuur, authenticatie, beschikbaarheid, integriteit en vertrouwelijkheid | [Markdown](security-assessment-leverancier.md) · [Word](security-assessment-leverancier.docx) |
+| **Sjabloon DPIA** | Het werkdocument: tien hoofdstukken, van procesbeschrijving tot ondertekening, grotendeels aanvinken | [Markdown](sjabloon-dpia.md) |
+| **Camera's op grond van gerechtvaardigd belang** | Voorgevulde teksten per hoofdstuk voor camerabeveiliging van eigen gebouwen, inclusief een uitgeschreven belangenafweging | [Markdown](cameras-gerechtvaardigd-belang.md) |
+| **Vragenlijst camera's** | Vijftien vragen voor de kennishouder en tien maatregelen voor de security officer, vóór het eerste overleg | [Markdown](vragenlijst-cameras.md) |
+| **Security-assessment leverancier** | Vragen voor de security officer over certificering, architectuur, authenticatie, beschikbaarheid, integriteit en vertrouwelijkheid | [Markdown](security-assessment-leverancier.md) |
 | **Toelichting op het sjabloon** | Per hoofdstuk wat er gevraagd wordt en hoe je het invult, met begrippen, voorbeelden en de keuzelijst technische en organisatorische maatregelen | [Markdown](toelichting-sjabloon-dpia.md) |
 
-De Markdown is de bron. De Word-bestanden zijn daaruit gegenereerd en bedoeld om in te vullen; pas ze aan op
-de eigen organisatie (logo, keuzelijst verwerkingsverantwoordelijke, namen van procedures).
+De Markdown is de bron. Wil je een Word-versie om in te vullen, zet de Markdown dan om (bijvoorbeeld met
+pandoc) en pas die aan op de eigen organisatie (logo, keuzelijst verwerkingsverantwoordelijke, namen van
+procedures).
 
 ## Wat deze werkwijze wel en niet is
 

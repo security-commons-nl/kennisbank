@@ -4,7 +4,7 @@ vakgebied: privacy
 type: aanpak
 normen: [AVG, Wpg]
 peildatum: 2026-10-12
-herkomst: vastgestelde procedure (versie 1.1) van het privacyteam van een regionale samenwerking van gemeenten
+herkomst: vastgestelde procedure (versie 1.1) van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten
 status: in gebruik
 samenvatting: Een procedure voor datalekken in negen stappen, van melding tot evaluatie, met per stap wie het doet en wie eindverantwoordelijk is. Met een afwegingskader van acht vragen voor de keuze melden bij de Autoriteit Persoonsgegevens en bij de betrokkene, de vragen voor het meldformulier in het servicedesksysteem, een brief om de betrokkene te informeren en een sjabloon voor de kwartaalevaluatie.
 bronnen: [ibd-ibd-leaflet-meldplicht-datalekken, cip-datalekken, ibd-lessen-uit-de-hack-en-datalek-bij-gemeente-buren]
