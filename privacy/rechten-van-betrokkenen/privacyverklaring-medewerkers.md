@@ -88,6 +88,6 @@ We maken geen gebruik van geautomatiseerde besluitvorming of profilering op basi
 
 ### Vragen?
 
-Dan kun je terecht bij het privacyteam. Dit kun je doen door een vraag te stellen via de Zelfservicedesk op deze pagina.
+Dan kun je terecht bij het team IB&P. Dit kun je doen door een vraag te stellen via de Zelfservicedesk op deze pagina.
 
 We beschikken als organisatie ook over een Functionaris Gegevensbescherming (FG). De FG is een interne onafhankelijke toezichthouder. De FG is bereikbaar op naam@voorbeeldgemeente.nl. Heb je een klacht over de manier waarop de gemeente omgaat met jouw persoonsgegevens? Dan kun je terecht bij de FG.

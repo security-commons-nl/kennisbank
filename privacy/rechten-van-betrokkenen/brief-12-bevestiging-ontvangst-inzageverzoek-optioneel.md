@@ -30,7 +30,7 @@ Het college van burgemeester en wethouders
 
 Namens deze,
 
-Team Privacy
+Team IB&P
 
 BIJLAGE 1 - Overzicht aanwezige (documenten waarin) persoonsgegevens van betrokkene (voorkomen) Z/00/000000 - Overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
 

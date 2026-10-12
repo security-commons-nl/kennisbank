@@ -60,7 +60,7 @@ Dit kan de proceseigenaar doen aan de hand van het stroomschema in bijlage 1. Al
 
 - Als de leverancier zelfstandig verwerkingsverantwoordelijk is moet er een gegevensuitwisselingsovereenkomst worden getekend.
 
-Voor de templates wordt altijd aangesloten bij de standaarden vanuit de VNG. Deze nieuste versies van deze sjablonen zijn te vinden op de interne privacysite. Het privacyteam zorgt voor de meest recente sjablonen op de externe Sharepoint pagina, zodat iedereen daarbij kan. Eventuele wijzigingen worden op deze manier direct bij de bron toegepast, zodat iedereen met de laatste versie(s) werkt.
+Voor de templates wordt altijd aangesloten bij de standaarden vanuit de VNG. Deze nieuste versies van deze sjablonen zijn te vinden op de interne privacysite. Het team IB&P zorgt voor de meest recente sjablonen op de externe Sharepoint pagina, zodat iedereen daarbij kan. Eventuele wijzigingen worden op deze manier direct bij de bron toegepast, zodat iedereen met de laatste versie(s) werkt.
 
 ##### 2. Opstellen
 
@@ -68,7 +68,7 @@ De proceseigenaar of procesbeheerder vult het document voor zover mogelijk in en
 
 ##### 3. Review
 
-Nadat het sjabloon is ingevuld zorgt dat proceseigenaar/ procesbeheerder ervoor dat er een inhoudelijke toets door het privacyteam wordt gedaan. De proceseigenaar stuurt het document ter review door aan het privacyteam. De Privacy Officer beoordeelt de inhoud van de volledige privacy overeenkomst. De ISO beoordeelt of dat wat is opgenomen in bijlage 2 voldoende is.
+Nadat het sjabloon is ingevuld zorgt dat proceseigenaar/ procesbeheerder ervoor dat er een inhoudelijke toets door het team IB&P wordt gedaan. De proceseigenaar stuurt het document ter review door aan het team IB&P. De Privacy Officer beoordeelt de inhoud van de volledige privacy overeenkomst. De ISO beoordeelt of dat wat is opgenomen in bijlage 2 voldoende is.
 
 Op- en aanmerkingen worden teruggekoppeld aan de proceseigenaar/ procesbeheerder, die dat vervolgens zelf doorvoert of laat doorvoeren. Vervolgens wordt alles naar de leverancier gestuurd voor een laatste review. Wanneer deze geen op- of aanmerkingen heeft wordt de overeenkomst door de leverancier geaccordeerd en ondertekend. Vervolgens wordt de getekende versie naar de proceseigenaar/ procesbeheerder gestuurd die op zijn beurt deze laat accorderen en ondertekenen door de afdelingsmanager of dit zelf doet als hij/zij gemandateerd is. De afdelingsmanager is eindverantwoordelijk voor de bescherming van persoonsgegevens op de afdeling.
 

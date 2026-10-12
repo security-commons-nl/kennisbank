@@ -4,7 +4,7 @@ vakgebied: privacy
 type: aanpak
 normen: [AVG, Wpg]
 peildatum: 2026-10-12
-herkomst: definitieve procedure (2026) van het privacyteam van een regionale samenwerking van gemeenten, die alle vier de registers heeft gepubliceerd
+herkomst: definitieve procedure (2026) van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten, die alle vier de registers heeft gepubliceerd
 status: in gebruik
 samenvatting: Hoe een privacyteam vier registers van verwerkingen centraal beheert en publiceert, met de proceseigenaar als eindverantwoordelijke voor de actualiteit en een kennishouder die twee keer per jaar een controlemail krijgt. Met een RACI over elf taken en een invulhulp per veld, van risicoclassificatie en DPIA-status tot algoritme en doorgifte buiten de EER.
 bronnen: [ibd-ibd-handreiking-register-van-verwerkingen, ibd-register-van-verwerkingen-wpg-basis]
@@ -14,7 +14,7 @@ bronnen: [ibd-ibd-handreiking-register-van-verwerkingen, ibd-register-van-verwer
 
 > **Lees de procedure online:** [security-commons-nl.github.io/kennisbank/privacy/register-van-verwerkingen-beheren](https://security-commons-nl.github.io/kennisbank/privacy/register-van-verwerkingen-beheren/)
 
-Een register opzetten is te doen. Het actueel houden is waar het vastloopt: het privacyteam weet niet wanneer
+Een register opzetten is te doen. Het actueel houden is waar het vastloopt: het team IB&P weet niet wanneer
 een proces verandert, en de afdeling vergeet dat het register bestaat. Deze procedure legt de actualiteit bij
 de lijn en maakt het onderhoud ritmisch.
 

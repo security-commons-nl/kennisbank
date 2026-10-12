@@ -34,7 +34,7 @@ De gemeente VOORBEELDGEMEENTE verstrekt bij het behandelen van inzageverzoeken n
 
 Hebt u vragen of klachten?
 
-Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens. Met vragen kunt u terecht bij Team Privacy. Zij zijn bereikbaar via het e-mailadres: naam@voorbeeldgemeente.nl
+Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens. Met vragen kunt u terecht bij Team IB&P. Zij zijn bereikbaar via het e-mailadres: naam@voorbeeldgemeente.nl
 
 Met klachtenHiervoor kunt u terecht bij de Functionaris Gegevensbescherming. Deze is te bereiken via het e-mailadres: naam@voorbeeldgemeente.nl.
 

@@ -27,7 +27,8 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 5. [Privacyovereenkomsten sluiten en controleren](privacy-overeenkomsten/)
 6. [Het register van verwerkingen beheren en publiceren](register-van-verwerkingen-beheren/)
 7. [Wet politiegegevens bij de gemeente: DPIA, verbeterplan en privacyverklaring](wet-politiegegevens/)
-8. [Een DPIA uitvoeren: wat er al ligt](dpia-uitvoeren/)
+8. [Privacybeleid en privacyhandboek van een regionale samenwerking](privacybeleid-en-handboek/)
+9. [Een DPIA uitvoeren: wat er al ligt](dpia-uitvoeren/)
 
 ## Bijdragen
 
