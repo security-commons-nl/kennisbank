@@ -78,7 +78,7 @@ Dit privacybeleid is van toepassing op alle verwerkingen van persoonsgegevens do
 
 ### De organisatie
 
-Sinds <datum> verzorgt één gemeente de bedrijfsvoering van de andere deelnemende gemeenten. Deze gemeenten werken regionaal veelvuldig samen. Zo is ook de expertise op het gebied van gegevensbescherming gecentraliseerd bij die gemeente. De privacy officers die voor de gemeenten zijn aangesteld hebben een adviserende en signalerende taak.
+Sinds [datum] verzorgt één gemeente de bedrijfsvoering van de andere deelnemende gemeenten. Deze gemeenten werken regionaal veelvuldig samen. Zo is ook de expertise op het gebied van gegevensbescherming gecentraliseerd bij die gemeente. De privacy officers die voor de gemeenten zijn aangesteld hebben een adviserende en signalerende taak.
 
 ### Visie
 

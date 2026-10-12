@@ -1,18 +1,18 @@
-Gegevensuitwisselingsovereenkomst tussen Zelfstandige Verwerkingsverantwoordelijken op grond van uitvoering <naam uitvoering wettelijke regeling/Hoofdovereenkomst voor <omschijving doel>
+Gegevensuitwisselingsovereenkomst tussen Zelfstandige Verwerkingsverantwoordelijken op grond van uitvoering <naam uitvoering wettelijke regeling/Hoofdovereenkomst voor [omschijving doel]
 
-Gemeente <naam gemeente>, waarvan <het college van Burgemeester en Wethouders/de Gemeenteraad> de verwerkingsverantwoordelijke is, verder te noemen Verwerkingsverantwoordelijke, hierbij rechtsgeldig vertegenwoordigd door de <heer of mevrouw> <persoonsnaam>, <functie>
+Gemeente [naam gemeente], waarvan [het college van Burgemeester en Wethouders/de Gemeenteraad] de verwerkingsverantwoordelijke is, verder te noemen Verwerkingsverantwoordelijke, hierbij rechtsgeldig vertegenwoordigd door de [heer of mevrouw] [persoonsnaam], [functie]
 
 en
 
-<Naam organisatie>, gevestigd te <plaatsnaam>, KVK-nummer <nummer> Verwerkingsverantwoordelijke, hierbij rechtsgeldig vertegenwoordigd door de <de heer of mevrouw>, <persoonsnaam> , <functie>,
+[Naam organisatie], gevestigd te [plaatsnaam], KVK-nummer [nummer] Verwerkingsverantwoordelijke, hierbij rechtsgeldig vertegenwoordigd door de [de heer of mevrouw], [persoonsnaam] , [functie],
 
 hierna afzonderlijk te noemen “Partij”, of gezamenlijk “Partijen”
 
 Overwegen het volgende:
 
-- Partijen <maak keuze: voeren beide op grond van <naam wettelijke regeling> taken uit of <hebben op <datum> de <titel hoofdovereenkomst>, hierna naam Hoofdovereenkomst/, afgesloten>,
+- Partijen <maak keuze: voeren beide op grond van [naam wettelijke regeling] taken uit of <hebben op [datum] de [titel hoofdovereenkomst], hierna naam Hoofdovereenkomst/, afgesloten>,
 
-- Partijen zullen ter uitvoering van de hiervoor vermelde <taken/afspraken> Persoonsgegevens verwerken;
+- Partijen zullen ter uitvoering van de hiervoor vermelde [taken/afspraken] Persoonsgegevens verwerken;
 
 - Op de verwerking van Persoonsgegevens door Partijen zijn de Algemene Verordening Gegevensbescherming (AVG) en de Uitvoeringswet AVG (UAVG) van toepassing;
 
@@ -38,7 +38,7 @@ Artikel 2 Ingangsdatum en duur
 
 Artikel 3 Onderwerp van deze Overeenkomst
 
-3.1 Partijen verwerken de door of via Partijen ter beschikking gestelde Persoonsgegevens uitsluitend voor de uitvoering van de hierboven genoemde <Hoofdovereenkomst> en het <doel omschrijven voor het afsluiten van de regeling/Hoofdovereenkomst>
+3.1 Partijen verwerken de door of via Partijen ter beschikking gestelde Persoonsgegevens uitsluitend voor de uitvoering van de hierboven genoemde [Hoofdovereenkomst] en het [doel omschrijven voor het afsluiten van de regeling/Hoofdovereenkomst]
 
 3.2 Iedere Partij vult de door haar uit te voeren leveringen aan de andere Partij in tabel 1 van Bijlage 1 in.
 
@@ -90,9 +90,9 @@ Aldus overeengekomen en ondertekend,
 
 Ingangsdatum: <……………>
 
-Gemeente <naam gemeente> <Naam organisatie>
+Gemeente [naam gemeente] [Naam organisatie]
 
-namens deze: <naam, functie> namens deze: <naam, functie>
+namens deze: [naam, functie] namens deze: [naam, functie]
 
 plaats: <……………..> plaats: <………………………>
 
@@ -113,12 +113,12 @@ Toelichting: Welke persoonsgegevens worden er verstrekt/geleverd? Wat is daarvan
 | 7. Van welke doorgifte instrumenten wordt gebruikgemaakt? |  |  |
 | 8. Welke aanvullende maatregelen worden genomen? (indien nodig) |  |  |
 
-2. Contactgegevens <naam Partij>
+2. Contactgegevens [naam Partij]
 
 | Contactpersoon Verwerkingsverantwoordelijke (NB: Ook buiten kantooruren) | Naam: Privacy Officer Contactgegevens: naam@voorbeeldgemeente.nl |
 |---|---|
 
-Contactgegevens <naam Partij>
+Contactgegevens [naam Partij]
 
 | Contactpersoon Verwerkingsverantwoordelijke (NB: Ook buiten kantooruren) | Naam: Contactgegevens: |
 |---|---|

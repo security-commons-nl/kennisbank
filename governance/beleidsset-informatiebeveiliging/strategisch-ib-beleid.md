@@ -73,7 +73,7 @@ Er verandert daarmee iets fundamenteels aan de aard van dit document. Het beleid
 
 ### 1.2 Achtergrond
 
-Eén gemeente verzorgt sinds <datum> de bedrijfsvoering van de deelnemende gemeenten. Die samenwerking komt de dienstverlening ten goede en vermindert de kwetsbaarheid van de afzonderlijke organisaties. Zij maakt ook dat een verstoring bij één partij gemeenten raakt. Gezamenlijk beleid is daarom geen efficiencykeuze maar een beheersmaatregel.
+Eén gemeente verzorgt sinds [datum] de bedrijfsvoering van de deelnemende gemeenten. Die samenwerking komt de dienstverlening ten goede en vermindert de kwetsbaarheid van de afzonderlijke organisaties. Zij maakt ook dat een verstoring bij één partij gemeenten raakt. Gezamenlijk beleid is daarom geen efficiencykeuze maar een beheersmaatregel.
 
 De dienstverlening digitaliseert verder, taken worden gedecentraliseerd en de afhankelijkheid van leveranciers en ketenpartners neemt toe. Tegelijk gaat de zorgplicht uit de Cyberbeveiligingswet nadrukkelijk over meer dan kantoorautomatisering: ook de operationele technologie in de openbare ruimte valt eronder. Bruggen, verkeersregelinstallaties, rioolgemalen en gebouwbeheersystemen zijn daarmee onderdeel van dit beleid.
 
@@ -272,7 +272,7 @@ College van burgemeester en wethouders. Eindverantwoordelijk voor de informatieb
 
 Directie. Zorgt dat elk proces, systeem en bedrijfsmiddel onder de verantwoordelijkheid van een afdelings- of teammanager valt. Stelt het gewenste niveau van beschikbaarheid, integriteit en vertrouwelijkheid vast, bijgestaan door de CISO. Autoriseert procedures en maatregelen en zorgt dat portefeuillehouders gevraagd en ongevraagd worden geïnformeerd.
 
-MT bedrijfsvoering. Bouwt in mandaat van het directieteam, op grond van het besluit van <datum>, het geïntegreerde managementsysteem namens de gehele organisatie. Clusters hebben daarbij een meewerkingsplicht. MT bedrijfsvoering is mandaathouder en opdrachtnemer, niet het eindstation van de rapportagelijnen.
+MT bedrijfsvoering. Bouwt in mandaat van het directieteam, op grond van het besluit van [datum], het geïntegreerde managementsysteem namens de gehele organisatie. Clusters hebben daarbij een meewerkingsplicht. MT bedrijfsvoering is mandaathouder en opdrachtnemer, niet het eindstation van de rapportagelijnen.
 
 Lijnmanagement. Verantwoordelijk voor de informatiebeveiliging binnen het eigen organisatieonderdeel. Belegt eigenaarschap van processen, systemen, data en applicaties. Draagt het beleid uit en vervult een voorbeeldfunctie. Signaleert dreigingen en risico’s vroegtijdig, bespreekt incidenten en de consequenties daarvan, en levert de bewijslast voor de verantwoording.
 

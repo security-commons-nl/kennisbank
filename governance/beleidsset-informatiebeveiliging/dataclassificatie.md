@@ -286,7 +286,7 @@ Deze bijlage kan als apart document gebruikt worden en als basis dienen om de cl
 | Telefoonnummer |  |
 | Laatste datum invullen |  |
 
-Het resultaat van het onderzoek voor wat betreft de BIV- aspecten voor het proces <procesnaam> van de gemeente <naam gemeente> geeft een inschaling op de volgende niveaus:
+Het resultaat van het onderzoek voor wat betreft de BIV- aspecten voor het proces [procesnaam] van de gemeente [naam gemeente] geeft een inschaling op de volgende niveaus:
 
 Beschikbaarheid :
 
@@ -296,7 +296,7 @@ Vertrouwelijkheid :
 
 <Gebruik voor een verklaring van de resultaten, de waardes van de BIV waardering, de verklarende toelichting uit hoofdstuk 3 ‘Beleidskaders voor classificatie’ uit dit document. Dat maakt het advies leesbaarder en begrijpelijker voor niet informatiebeveiligers.>
 
-Conclusie: Het proces <procesnaam> kent het basisbeveiligingsniveau:
+Conclusie: Het proces [procesnaam] kent het basisbeveiligingsniveau:
 
 Is er een motivatie om af te wijken van de conclusie (door de data-eigenaar)?
 

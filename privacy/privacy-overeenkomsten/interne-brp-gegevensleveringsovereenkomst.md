@@ -6,7 +6,7 @@
 | Afdeling Burgerzaken |
 |---|
 | Versie 1.0 |
-| <Datum> |
+| [Datum] |
 
 Colofon
 
@@ -18,7 +18,7 @@ Afdeling burgerzaken
 
 Datum
 
-<DATUM>
+[DATUM]
 
 Voor akkoordAFNEMENDE AFDELINGVOORBEELDGEMEENTE, VERANTWOORDELIJK MANAGER: Voor akkoordAFNEMENDE AFDELINGVOORBEELDGEMEENTE, VERANTWOORDELIJK MANAGER:
 
@@ -32,7 +32,7 @@ Sinds 1 april 2007 is de Gemeentelijke Basisadministratie persoonsgegevens (than
 
 Om dit te faciliteren is er een geautomatiseerde koppeling gemaakt tussen de BRP en het systeem (afnemende systeem) van de gemeente VOORBEELDGEMEENTE.
 
-Deze gegevensleveringsovereenkomst (GLO) gaat over het beschikbaar stellen van gegevens uit de BRP door de afdeling burgerzaken aan <AFDELING> en <APPLICATIE> met als doel: <DOEL (wettelijke grondslag om BRP gegevens in te mogen zien)>.
+Deze gegevensleveringsovereenkomst (GLO) gaat over het beschikbaar stellen van gegevens uit de BRP door de afdeling burgerzaken aan [AFDELING] en [APPLICATIE] met als doel: [DOEL (wettelijke grondslag om BRP gegevens in te mogen zien)].
 
 Het doel van deze GLO is het vastleggen van de belangrijkste afspraken en procedures t.b.v. het aanleveren van gegevens uit de BRP en het terugmelden van mogelijke afwijkingen aan PC.
 
@@ -50,7 +50,7 @@ De afdeling burgerzaken is verantwoordelijk voor:
 
 - de controle op de naleving van deze GLO en de follow-up daarvan.
 
-De <AFNEMENDE AFDELING> is verantwoordelijk voor:
+De [AFNEMENDE AFDELING] is verantwoordelijk voor:
 
 - het verplicht gebruik van de gegevens uit de BRP;
 
@@ -172,7 +172,7 @@ De contactpersonen, hun functie en rol rondom deze GLO:
 
 | Contactpersoon | Functie |
 |---|---|
-| <naam> | Manager Burgerzaken |
-| <naam> | Beleidsmedewerker Burgerzaken |
+| [naam] | Manager Burgerzaken |
+| [naam] | Beleidsmedewerker Burgerzaken |
 | AFNEMENDE PARTIJ |  |
 | AFNEMENDE PARTIJ |  |

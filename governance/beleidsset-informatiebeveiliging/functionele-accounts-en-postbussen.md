@@ -56,7 +56,7 @@ Afwijking (aanpassing) van dit beleid kan enkel worden geautoriseerd door een po
 
 Om functionele gebruikersaccounts te kunnen onderscheiden van de standaard gebruikersaccounts, is er voor gekozen een afwijkende naamgeving te formuleren.
 
-De gekozen naamgeving is als volgt: <organisatie / klant afkorting 3 posities>.<omschrijving van het functionele account>. Bij voorbeeld: ABC.Wachtcommandant. De organisatie / klant afkorting is conform de geldende naamgevingsstandaard.
+De gekozen naamgeving is als volgt: [organisatie / klant afkorting 3 posities].[omschrijving van het functionele account]. Bij voorbeeld: ABC.Wachtcommandant. De organisatie / klant afkorting is conform de geldende naamgevingsstandaard.
 
 ### 3. Leveranciers Accounts
 

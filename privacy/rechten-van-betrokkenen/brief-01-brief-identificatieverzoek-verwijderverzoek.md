@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Verzoek om identificatie |
 
 Beste voorletters + achternaam,

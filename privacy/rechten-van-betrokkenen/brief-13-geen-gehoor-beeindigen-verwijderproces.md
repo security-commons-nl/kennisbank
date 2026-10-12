@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Beëindigen verwijderproces |
 
 Beste voorletters + achternaam,
@@ -12,7 +12,7 @@ Op DATUM ontving de gemeente VOORBEELDGEMEENTE een verzoek om verwijdering van d
 
 Waarom ontvangt u deze brief?
 
-Op <DATUM> hebben wij u gevraagd om verduidelijking. Op die brief heeft u helaas niet gereageerd.
+Op [DATUM] hebben wij u gevraagd om verduidelijking. Op die brief heeft u helaas niet gereageerd.
 
 Wat betekent dit?
 

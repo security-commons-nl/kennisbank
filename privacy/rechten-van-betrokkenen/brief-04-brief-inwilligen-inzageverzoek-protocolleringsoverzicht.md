@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Inzageverzoek |
 
 Beste voorletters + achternaam,
@@ -72,7 +72,7 @@ Dit besluit blijft ook gelden als u bezwaar hebt gemaakt. Kunt u de uitslag van 
 
 U kunt alleen om een voorlopige voorziening vragen als u ook bezwaar hebt gemaakt. Voor de behandeling door de rechtbank moet u betalen (dit heet griffierecht).
 
-U vraagt een voorlopige voorziening aan door een verzoek te sturen naar: <rechtbank>, <adres rechtbank>. Meer informatie vindt u op de website www.rechtspraak.nl.
+U vraagt een voorlopige voorziening aan door een verzoek te sturen naar: [rechtbank], [adres rechtbank]. Meer informatie vindt u op de website www.rechtspraak.nl.
 
 Hopende u hiermee voldoende geïnformeerd te hebben en met vriendelijke groet,
 

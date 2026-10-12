@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Verduidelijking inzageverzoek |
 
 Beste voorletters + achternaam,
@@ -16,7 +16,7 @@ Uw verzoek is voor ons niet helemaal duidelijk. Om uw verzoek beter en sneller a
 
 Welke vragen hebben wij?
 
-- <vragen toevoegen>
+- [vragen toevoegen]
 
 Wat betekent dit voor de status van uw verzoek?
 
