@@ -1,0 +1,8 @@
+BIJLAGE 1 - Overzicht aanwezige (documenten waarin) persoonsgegevens van betrokkene (voorkomen) Overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
+
+| Document | Datum | Verwerkingsdoeleinden | Persoonsgegevens | Herkomst | Ontvanger | Bewaarter-mijn |
+|---|---|---|---|---|---|---|
+| Dossier of zaak nummer Omschrijving documenten | Datum document Datum document Datum document | Doel van verwerking:  Waarvoor worden de documenten gebruikt? | Persoonsgegevens die in de documenten staan benoemen en opnemen  Documentnummer, Documentnummer, documentnummer: | Herkomst(en) van de persoonsgegevens:  Van wie is het document afkomstig? | Ontvanger(s) van de persoonsgegevens: Wie zijn de ontvangers van het document/e-mail? | Conform archiefwet |
+| Dossier of zaak nummer Omschrijving documenten | Datum document Datum document Datum document | Doel van verwerking: | Persoonsgegevens:  Documentnummer, Documentnummer, documentnummer, | Herkomst(en) van de persoonsgegevens | Ontvanger(s) van de persoonsgegevens | Conform archiefwet |
+| Dossier of zaak nummer Omschrijving documenten | Datum document Datum document Datum document | Doel van verwerking: | Persoonsgegevens:  Documentnummer, Documentnummer, documentnummer, | Herkomst(en) van de persoonsgegevens | Ontvanger(s) van de persoonsgegevens | Conform archiefwet |
+| Dossier of zaak nummer Omschrijving documenten | Datum document Datum document Datum document | Doel van verwerking: | Persoonsgegevens:  Documentnummer, Documentnummer, documentnummer, | Herkomst(en) van de persoonsgegevens | Ontvanger(s) van de persoonsgegevens | Conform archiefwet |
