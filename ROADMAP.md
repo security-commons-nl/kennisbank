@@ -33,25 +33,11 @@ een risicosessie per proces of een calamiteitenplan is genoeg om te beginnen.
 **Meer dan één herkomst.** Vrijwel alles komt nog uit dezelfde hoek. Een commons met kennis uit één
 organisatie is een archief, geen commons. Het plan hieronder maakt daar werk van.
 
-## Beleidsset op maat: van één herkomst naar profielgestuurd
-
-De beleidsset informatiebeveiliging is geordend naar de 21 BIO 2.0-domeinen, met per domein een toets op
-de 117 overheidsmaatregelen. Nu komt alles nog uit één samenwerking van gemeenten. Het doel is een set
-waarin een gebruiker een handvol vragen beantwoordt en per domein het concept krijgt dat bij zijn
-organisatie past, met aanwijzingen waarmee zijn AI-agent het stuk afmaakt.
-
-| Stap | Wat | Resultaat | Omvang |
-|---|---|---|---|
-| 1 | Toets, sjablonen voor de vijf lege domeinen en een uitgewerkt voorbeeld (fysieke toegang) publiceren | Gedaan | |
-| 2 | Profielschema: zes tot acht vragen met vaste antwoordruimte (grootte, beheermodel, hosting, OT, samenwerking, Wpg-domeinen) in `profiel.yaml`; elk stuk krijgt in de frontmatter de profielkenmerken van zijn herkomst en de maatregelen die het dekt | Varianten zijn vergelijkbaar en selecteerbaar | 1 sessie |
-| 3 | Per stuk een blok "maatwerk": invulvelden, keuzes per profielantwoord, vervolgvragen voor een AI-agent; `llms.txt` wijst ernaar | Een agent kan het stuk gericht afmaken | 1 sessie |
-| 4 | De eerste variant uniform maken naar het format van het beleid fysieke toegang: per ISO-control de eisen met maatregelnummer, bijlage normen, bijlage controls, rollen als invulveld; de vijf sjablonen gevuld met een voorgestelde regel per maatregel | Variant 1 compleet voor alle 21 domeinen | 2 tot 3 sessies |
-| 5 | Selectie: `build.py` genereert per domein een tabel van profiel naar variant, met uitleg; later een invulpagina | De gebruiker krijgt per domein de beste match | 1 sessie |
-| 6 | Aanleverformulier voor andere organisaties: dezelfde profielkenmerken, dezelfde toets; een script geeft per aangeleverd stuk een eerste oordeel per maatregel, een mens corrigeert | Volgende inzenders hoeven niets te verzinnen | 1 sessie |
-| 7 | Uitvraag aan gemeenten en het corpus vullen | Meer dan één herkomst per domein | doorlopend |
-
-Randvoorwaarde: elke variant is tegen dezelfde 117 maatregelen gelegd, anders zegt selectie niets over
-dekking.
+**De beleidsset op maat.** De set naar meer dan één herkomst brengen, met een profielschema, een
+maatwerkblok per stuk en een aanleverformulier. Het plan staat in
+[plannen/2026-10-12-beleidsset-op-maat.md](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md);
+het werk volgt via het issue met label `plan` in deze repo en staat daarmee op
+[de backlog](https://security-commons-nl.github.io/backlog/).
 
 ---
 
