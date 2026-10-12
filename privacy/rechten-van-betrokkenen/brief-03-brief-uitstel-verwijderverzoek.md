@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Verwijderverzoek |
 
 Beste voorletters + achternaam,
@@ -12,7 +12,7 @@ Op DATUM ontving de gemeente VOORBEELDGEMEENTE uw verzoek om verwijdering van de
 
 Waarom ontvangt u deze brief?
 
-Wij hebben meer tijd nodig om een besluit te nemen op uw verzoek. In de wet staat dat wij het besluit maximaal 2 maanden mogen uitstellen. Dit betekent dat we uiterlijk op <datum> een besluit nemen op uw verzoek.
+Wij hebben meer tijd nodig om een besluit te nemen op uw verzoek. In de wet staat dat wij het besluit maximaal 2 maanden mogen uitstellen. Dit betekent dat we uiterlijk op [datum] een besluit nemen op uw verzoek.
 
 Heeft u vragen of klachten?
 

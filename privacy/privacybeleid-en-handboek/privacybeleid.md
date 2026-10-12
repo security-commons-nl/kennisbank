@@ -40,7 +40,7 @@ Bij de Privacy Officers van het team IB&P via de Zelf-servicedesk.
 
 ### Hoelang is dit Privacybeleid geldig?
 
-Dit Privacybeleid is vastgesteld door het college van burgemeester & wethouders op <datum>. Het beleid wordt tenminste een keer per drie jaar beoordeeld en zo nodig herzien. Als daar aanleiding voor bestaat kan het college besluiten tot een tussentijdse herziening van het Privacybeleid. Dit beleid blijft van toepassing tot het volgende Privacybeleid is vastgesteld.
+Dit Privacybeleid is vastgesteld door het college van burgemeester & wethouders op [datum]. Het beleid wordt tenminste een keer per drie jaar beoordeeld en zo nodig herzien. Als daar aanleiding voor bestaat kan het college besluiten tot een tussentijdse herziening van het Privacybeleid. Dit beleid blijft van toepassing tot het volgende Privacybeleid is vastgesteld.
 
 ## Uitgangspunten
 

@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Verwijderverzoek |
 
 Beste Voorletters + Achternaam,
@@ -22,7 +22,7 @@ In sommige gevallen ontvangt u kopieën van de documenten. Dit is afhankelijk va
 
 Wanneer ontvangt u ons besluit?
 
-In de wet staat dat we binnen 1 maand een besluit moeten nemen op uw verzoek. Dat betekent dat u uiterlijk <datum> een besluit ontvangt. Is het verzoek groot of ingewikkeld? Dan heeft de gemeente de mogelijkheid om het besluit uit te stellen met 2 maanden. U hoort dit van ons als dat het geval is.
+In de wet staat dat we binnen 1 maand een besluit moeten nemen op uw verzoek. Dat betekent dat u uiterlijk [datum] een besluit ontvangt. Is het verzoek groot of ingewikkeld? Dan heeft de gemeente de mogelijkheid om het besluit uit te stellen met 2 maanden. U hoort dit van ons als dat het geval is.
 
 Hopende u hiermee voldoende geïnformeerd te hebben en met vriendelijke groet,
 

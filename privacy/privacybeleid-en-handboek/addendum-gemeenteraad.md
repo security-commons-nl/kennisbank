@@ -4,7 +4,7 @@ Vaststelling door de Gemeenteraad
 
 ### AANLEIDING
 
-Het Privacybeleid is door het College van Burgemeester & Wethouders vastgesteld op <datum>. Dit beleid geeft invulling aan de wettelijke eisen uit de Algemene Verordening Gegevensbescherming (AVG) en de Wet politiegegevens (Wpg). Nu stelt de Gemeenteraad dit beleid vast voor haar eigen werkzaamheden als collegiaal bestuursorgaan. Dit addendum beschrijft hoe het bestaande beleid van toepassing is op de Gemeenteraad.
+Het Privacybeleid is door het College van Burgemeester & Wethouders vastgesteld op [datum]. Dit beleid geeft invulling aan de wettelijke eisen uit de Algemene Verordening Gegevensbescherming (AVG) en de Wet politiegegevens (Wpg). Nu stelt de Gemeenteraad dit beleid vast voor haar eigen werkzaamheden als collegiaal bestuursorgaan. Dit addendum beschrijft hoe het bestaande beleid van toepassing is op de Gemeenteraad.
 
 ### TOEPASSINGSBEREIK
 

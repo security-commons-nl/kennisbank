@@ -14,7 +14,7 @@ Naam:
 
 Geboortedatum:
 
-<eventueel aanvullend gegeven indien nodig>:
+[eventueel aanvullend gegeven indien nodig]:
 
 Wat vragen wij van jullie?
 
@@ -26,4 +26,4 @@ Met vriendelijke groet,
 
 Team IB&P
 
-Gemeente <aanvullen>
+Gemeente [aanvullen]

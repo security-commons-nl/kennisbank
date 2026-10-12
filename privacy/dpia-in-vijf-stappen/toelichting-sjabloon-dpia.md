@@ -196,7 +196,7 @@ De verwerkingsverantwoordelijke voor het werkproces is een natuurlijk persoon of
 
 | Externe partij | Applicatie, systeem of methode van gegevensuitwisseling | Privacyrol ((sub-)verwerker, zelfstandig verwerkings-verantwoordelijke, gezamenlijk verwerkingsverantwoordelijke) en uitleg | Verwerkers- of andere privacyovereenkomst aanwezig (j/n), zo ja, datum overeenkomst en locatie aangeven | Doorgifte naar buitenland (j/n), zo ja welk land | Indien doorgifte buiten de EER, met welk doorgifte- instrument |
 |---|---|---|---|---|---|
-| <leverancier> | <applicaties en diensten van deze leverancier> | Verwerker: ICT-leverancier | Ja, <datum> (locatie van de getekende verwerkersovereenkomst) | Nee | N.v.t. |
+| [leverancier] | [applicaties en diensten van deze leverancier] | Verwerker: ICT-leverancier | Ja, [datum] (locatie van de getekende verwerkersovereenkomst) | Nee | N.v.t. |
 | BKWI (Bureau keteninformatisering Werk & Inkomen | Suwinet | Zelfstandig verwerkingsverantwoordelijke: bronhouder, aanbieder van het netwerk, beheerder van het netwerk/de applicatie | N.v.t.; wettelijk geregeld | Nee | N.v.t. |
 | Microsoft | -OneDrive -MS Teams -Outlook | Verwerker: ICT-leverancier | Ja, (locatie verwerkersovereenkomst opgeslagen in Sharepoint) | Nee | N.v.t. |
 
@@ -688,7 +688,7 @@ Geef specifiek in de kolom ‘Beschrijving risico’ aan wat het risico inhoudt,
 
 Let op: het gaat hier in principe om risico’s die betrokkenen lopen binnen of naar aanleiding van het werkproces. Een risico kan echter worden overgenomen in de tabel hieronder, wanneer het eveneens een risico voor de gemeente betreft. Zo kan een datalek tot gevolg hebben dat de betrokkenen reputatieschade oplopen, maar de gemeente ook. In dat geval is het wijs om de regel te kopiëren naar de tabel hieronder en de tekst waar nodig aan te passen.
 
-### 11.2 Gemeente <aanvullen>
+### 11.2 Gemeente [aanvullen]
 
 [Vul de tabel hieronder aan met de privacyrisico’s die de gemeente loopt binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]
 

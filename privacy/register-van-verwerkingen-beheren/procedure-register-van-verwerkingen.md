@@ -34,7 +34,7 @@ Omdat het Register van verwerkingen Wet Politiegegevens meer informatie bevat in
 
 Het RvV van alle gemeenten in de regio wordt beheerd in de registertool. De registers van alle gemeenten zijn inmiddels gepubliceerd op ieder gemeentelijke website en is beschikbaar via de privacyverklaringen op de gemeentelijke websites en via onderstaande websites.
 
-<gemeente>.<registertool>.nl
+[gemeente].[registertool].nl
 
 Ook inwoners kunnen dit register terugvinden en raadplegen.
 

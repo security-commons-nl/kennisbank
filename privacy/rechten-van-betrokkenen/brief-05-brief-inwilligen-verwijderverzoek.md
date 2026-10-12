@@ -2,8 +2,8 @@
 
 | Veld | Invullen |
 |---|---|
-| Datum | <datum> |
-| Ons kenmerk | <zaaknummer> |
+| Datum | [datum] |
+| Ons kenmerk | [zaaknummer] |
 | Onderwerp | Verwijderverzoek |
 
 Beste voorletters + achternaam,
@@ -16,7 +16,7 @@ In artikel 17 AVG is bepaald dat persoonsgegevens die overbodig zijn of onrechtm
 
 In uw geval is dat laatste aan de hand. Het lijkt misschien alsof de registratie van uw persoonsgegevens overbodig is. Echter, de gemeente heeft een wettelijke verplichting om een archief erop na te houden. Archiefwaardige stukken moeten gedurende een bepaalde periode bewaard blijven, voordat deze moeten worden verwijderd. Dit is bepaald in de Archiefwet. Artikel 17 AVG, waarin het recht op verwijdering is geregeld, houdt hier rekening mee: het recht op verwijdering is niet aan de orde indien er een wettelijke verplichting tot bewaren bestaat (artikel 17, lid 3, onder b, AVG).
 
-Omdat eerdere zaken, zoals <BESCHRIJVEN>, bij de gemeente VOORBEELDGEMEENTE nog vrij recent is, rust op een deel daarvan nog een archiveringsplicht. Deze persoonsgegevens kunnen wij voorlopig dus niet verwijderen.
+Omdat eerdere zaken, zoals [BESCHRIJVEN], bij de gemeente VOORBEELDGEMEENTE nog vrij recent is, rust op een deel daarvan nog een archiveringsplicht. Deze persoonsgegevens kunnen wij voorlopig dus niet verwijderen.
 
 ### Om welke gegevens gaat het?
 
@@ -80,7 +80,7 @@ Dit besluit blijft ook gelden als u bezwaar hebt gemaakt. Kunt u de uitslag van 
 
 U kunt alleen om een voorlopige voorziening vragen als u ook bezwaar hebt gemaakt. Voor de behandeling door de rechtbank moet u betalen (dit heet griffierecht).
 
-U vraagt een voorlopige voorziening aan door een verzoek te sturen naar: <rechtbank>, <adres rechtbank>. Meer informatie vindt u op de website www.rechtspraak.nl.
+U vraagt een voorlopige voorziening aan door een verzoek te sturen naar: [rechtbank], [adres rechtbank]. Meer informatie vindt u op de website www.rechtspraak.nl.
 
 Hopende u hiermee voldoende geïnformeerd te hebben en met vriendelijke groet,
 

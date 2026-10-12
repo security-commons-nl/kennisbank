@@ -164,7 +164,7 @@ De organisatie hanteert de volgende beleidsuitgangspunten uit de BIO:
 
 ## BIJLAGEN
 
-### 3.1 Voorbeeld autorisatieprocedure tot <informatiesysteem>
+### 3.1 Voorbeeld autorisatieprocedure tot [informatiesysteem]
 
 Inleiding
 
@@ -172,7 +172,7 @@ De inhoud van deze autorisatieprocedure moet bekend zijn bij alle medewerkers di
 
 Doel
 
-Deze autorisatieprocedure voorziet in het vastleggen van de verschillende stappen die noodzakelijk zijn voor het autoriseren van personen voor <informatiesysteem>. Hiermee wordt de logische toegangsbeveiliging geregeld voor de gegevens van <informatiesysteem> en de vertrouwelijkheid hiervan gewaarborgd.
+Deze autorisatieprocedure voorziet in het vastleggen van de verschillende stappen die noodzakelijk zijn voor het autoriseren van personen voor [informatiesysteem]. Hiermee wordt de logische toegangsbeveiliging geregeld voor de gegevens van [informatiesysteem] en de vertrouwelijkheid hiervan gewaarborgd.
 
 Definitie
 
@@ -180,7 +180,7 @@ Met een autorisatie wordt een ‘door het bevoegd gezag gelegitimeerde toegang�
 
 - Autorisatie tot het netwerk
 
-- Autorisatie tot <informatiesysteem>
+- Autorisatie tot [informatiesysteem]
 
 - Periodieke controle autorisaties en rapportage
 
@@ -190,49 +190,49 @@ Voor elk bedrijfsproces, informatiesysteem, gegevensverzameling en ICT-facilitei
 
 Beheer
 
-Om toegang te kunnen krijgen tot de gegevens is naast de specifieke autorisatie in het desbetreffende informatiesysteem tevens een bevoegdheid nodig op netwerk- en/of systeemniveau. Deze bevoegdheden worden beheerd door de netwerk- en/of systeembeheerder. De bevoegdheden binnen <informatiesysteem> worden beheerd door de functioneel beheerder van <informatiesysteem>.
+Om toegang te kunnen krijgen tot de gegevens is naast de specifieke autorisatie in het desbetreffende informatiesysteem tevens een bevoegdheid nodig op netwerk- en/of systeemniveau. Deze bevoegdheden worden beheerd door de netwerk- en/of systeembeheerder. De bevoegdheden binnen [informatiesysteem] worden beheerd door de functioneel beheerder van [informatiesysteem].
 
 Proceseigenaar
 
-De proceseigenaar is de manager van de afdeling <afdeling>.
+De proceseigenaar is de manager van de afdeling [afdeling].
 
 Verantwoordelijkheden
 
-De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&W) en namens deze, bij de systeemeigenaar van het <informatiesysteem>. De systeemeigenaar stelt in overleg met de functioneel beheerder de autorisatiematrix op die als bijlage aan deze autorisatieprocedure wordt toegevoegd.
+De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&W) en namens deze, bij de systeemeigenaar van het [informatiesysteem]. De systeemeigenaar stelt in overleg met de functioneel beheerder de autorisatiematrix op die als bijlage aan deze autorisatieprocedure wordt toegevoegd.
 
-De verantwoordelijkheid om toegang te verlenen tot de gegevens behorend bij <informatiesysteem> berust bij de gegevenseigenaar. De uitvoering hiervan ligt bij de functioneel beheerder van <informatiesysteem>.
+De verantwoordelijkheid om toegang te verlenen tot de gegevens behorend bij [informatiesysteem] berust bij de gegevenseigenaar. De uitvoering hiervan ligt bij de functioneel beheerder van [informatiesysteem].
 
 Actualiteit
 
 De systeemeigenaar is verantwoordelijk voor het actueel houden van deze autorisatieprocedure.
 
-Autorisatie tot <informatiesysteem>
+Autorisatie tot [informatiesysteem]
 
-- De autorisatiebevoegde medewerker van <informatiesysteem> dient, met behulp van het daarvoor bestemde aanvraag- of wijzigingsformulier, schriftelijk een autorisatieverzoek in voor een nieuwe of gewijzigde autorisatie voor <informatiesysteem> bij de servicedesk.
+- De autorisatiebevoegde medewerker van [informatiesysteem] dient, met behulp van het daarvoor bestemde aanvraag- of wijzigingsformulier, schriftelijk een autorisatieverzoek in voor een nieuwe of gewijzigde autorisatie voor [informatiesysteem] bij de servicedesk.
 
-- De servicedesk beoordeelt het autorisatieverzoek. Hierbij wordt gecontroleerd of het aanvraag- of wijzigingsformulier op de juiste manier is ingevuld en of het formulier door een autorisatiebevoegde medewerker is ingediend. Tevens wordt gecontroleerd of de aanvraag in overeenstemming is met de autorisatiematrix behorende bij <informatiesysteem>.
+- De servicedesk beoordeelt het autorisatieverzoek. Hierbij wordt gecontroleerd of het aanvraag- of wijzigingsformulier op de juiste manier is ingevuld en of het formulier door een autorisatiebevoegde medewerker is ingediend. Tevens wordt gecontroleerd of de aanvraag in overeenstemming is met de autorisatiematrix behorende bij [informatiesysteem].
 
-- De functioneel beheerder <informatiesysteem> die het bericht van de servicedesk ontvangt regelt vervolgens de autorisatie in <informatiesysteem>.
+- De functioneel beheerder [informatiesysteem] die het bericht van de servicedesk ontvangt regelt vervolgens de autorisatie in [informatiesysteem].
 
 - De systemen zijn voor geautoriseerde gebruikers slechts toegankelijk met gebruik van persoonlijke toegangscodes (bijvoorbeeld wachtwoorden). Deze wachtwoorden dienen te voldoen aan de richtlijnen zoals vermeld in het wachtwoordbeleid van de gemeente.
 
-- De servicedesk krijgt van de functioneel beheerder <informatiesysteem> die het autorisatieverzoek heeft verwerkt een terugmelding over het autorisatieverzoek. De servicedesk koppelt dit terug aan de gebruiker en tevens krijgt de gebruiker een korte instructie hoe deze zich aan kan melden en hoe om te gaan met <informatiesysteem>.
+- De servicedesk krijgt van de functioneel beheerder [informatiesysteem] die het autorisatieverzoek heeft verwerkt een terugmelding over het autorisatieverzoek. De servicedesk koppelt dit terug aan de gebruiker en tevens krijgt de gebruiker een korte instructie hoe deze zich aan kan melden en hoe om te gaan met [informatiesysteem].
 
 - Bij vertrek of wijziging van de functie van een medewerker geeft de verantwoordelijk manager van de medewerker dit door aan de servicedesk, waarna de functioneel beheerder de autorisatie intrekt of wijzigt.
 
 Periodieke controle autorisaties en rapportage
 
-De functioneel beheerder <informatiesysteem> zorgt minmaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de systeem-, gegevens-, of proceseigenaren of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn, en brengt een rapportage uit aan de CISO.
+De functioneel beheerder [informatiesysteem] zorgt minmaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de systeem-, gegevens-, of proceseigenaren of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn, en brengt een rapportage uit aan de CISO.
 
 In deze rapportage wordt aangegeven:
 
 - Of de geïmplementeerde autorisaties overeenkomen met de toegekende autorisaties.
 
-- Of de geregistreerde gebruikers en de aan hen toegekende autorisaties correct zijn. Hierbij wordt het controleverslag vergeleken met de autorisatieformulieren en tevens vergeleken met wat is vastgelegd in de autorisatiematrix <informatiesysteem>.
+- Of de geregistreerde gebruikers en de aan hen toegekende autorisaties correct zijn. Hierbij wordt het controleverslag vergeleken met de autorisatieformulieren en tevens vergeleken met wat is vastgelegd in de autorisatiematrix [informatiesysteem].
 
 - Of bij tussentijdse wijzigingen in taak/functie de verantwoordelijke manager van de medewerker de servicedesk hierover informeert, en of bij ontslag of vertrek de autorisatie direct wordt geblokkeerd.
 
-Indien de uitgevoerde controle hiertoe aanleiding geeft, geeft de CISO opdracht aan de functioneel beheerder <informatiesysteem>, om de nodige correcties aan te brengen. De functioneel beheerder <informatiesysteem> past zo nodig de autorisatie(s) aan en stelt de betreffende gebruiker op de hoogte van een wijziging in zijn bevoegdheidsprofiel.
+Indien de uitgevoerde controle hiertoe aanleiding geeft, geeft de CISO opdracht aan de functioneel beheerder [informatiesysteem], om de nodige correcties aan te brengen. De functioneel beheerder [informatiesysteem] past zo nodig de autorisatie(s) aan en stelt de betreffende gebruiker op de hoogte van een wijziging in zijn bevoegdheidsprofiel.
 
 Aldus vastgesteld door [proceseigenaar] van [gemeente] op [datum],
 
@@ -248,19 +248,19 @@ De inhoud van deze procedure moet bekend zijn bij alle medewerkers die bij deze 
 
 Doel
 
-Doel van deze procedure is om bij het niet kunnen voldoen aan de vereiste functiescheiding toch de werkzaamheden, verband houdende met de <omschrijving uit te voeren activiteiten> te kunnen uitvoeren.
+Doel van deze procedure is om bij het niet kunnen voldoen aan de vereiste functiescheiding toch de werkzaamheden, verband houdende met de [omschrijving uit te voeren activiteiten] te kunnen uitvoeren.
 
 Definitie
 
-Gelet op de personele bezetting van <aantal> personen op de afdeling <afdelingsnaam> is het niet mogelijk de vereiste functiescheiding (te allen tijde) door te voeren tussen de betrokken medewerkers bij <aangeven welke activiteiten het hier betreft>. Door het toepassen van deze procedure wordt aan de (wettelijke) verantwoordingsplicht voldaan.
+Gelet op de personele bezetting van [aantal] personen op de afdeling [afdelingsnaam] is het niet mogelijk de vereiste functiescheiding (te allen tijde) door te voeren tussen de betrokken medewerkers bij [aangeven welke activiteiten het hier betreft]. Door het toepassen van deze procedure wordt aan de (wettelijke) verantwoordingsplicht voldaan.
 
 Proceseigenaar
 
-De proceseigenaar is de manager van de afdeling <afdeling>.
+De proceseigenaar is de manager van de afdeling [afdeling].
 
 Verantwoordelijkheid
 
-De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&W) en namens deze bij de systeemeigenaar van het <informatiesysteem>.
+De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&W) en namens deze bij de systeemeigenaar van het [informatiesysteem].
 
 Actualiteit
 
@@ -274,7 +274,7 @@ De betreffende aanvraagformulieren en de gegevens over de in deze periode verstr
 
 Periodieke controle autorisaties en rapportage
 
-De functioneel beheerder <informatiesysteem> zorgt direct of zo snel mogelijk na de bewuste periode of in ieder geval minimaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn en brengt een rapportage uit aan de CISO.
+De functioneel beheerder [informatiesysteem] zorgt direct of zo snel mogelijk na de bewuste periode of in ieder geval minimaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn en brengt een rapportage uit aan de CISO.
 
 De controle richt zich vooral op:
 
@@ -384,15 +384,15 @@ Gemeenten moeten inzicht hebben welke functie door één medewerker wordt ingevu
 
 Tabel 4. Overzicht welke functies worden uitgevoerd door een medewerker (autorisatiematrix)
 
-### 3.4 Voorbeeld autorisatie aanvraagformulier <informatiesysteem>
+### 3.4 Voorbeeld autorisatie aanvraagformulier [informatiesysteem]
 
 | Gegevens gebruiker |  |  |
 |---|---|---|
-| Naam en voorletters gebruiker | <Volledige naam van de te autoriseren medewerker.> |  |
-| Voornaam gebruiker | <Voornaam van de te autoriseren medewerker.> |  |
-| E-mailadres | <E-mailadres van de te autoriseren medewerker.> |  |
-| Afdeling/Groep | <Organisatorische eenheid waarbij de te autoriseren medewerker werkzaam is.> |  |
-| Functie | <De functie van de te autoriseren medewerker.> |  |
+| Naam en voorletters gebruiker | [Volledige naam van de te autoriseren medewerker.] |  |
+| Voornaam gebruiker | [Voornaam van de te autoriseren medewerker.] |  |
+| E-mailadres | [E-mailadres van de te autoriseren medewerker.] |  |
+| Afdeling/Groep | [Organisatorische eenheid waarbij de te autoriseren medewerker werkzaam is.] |  |
+| Functie | [De functie van de te autoriseren medewerker.] |  |
 | Kamernummer | <Kamer waar de te autoriseren medewerker zijn vaste werkplek heeft. Dit veld kan leeg worden gelaten op het moment dat met flexibele werkplekken wordt gewerkt.> |  |
 | Telefoonnummer | <Telefoonnummer van de te autoriseren medewerker. Bij calamiteiten moet de verwerkingsorganisatie direct contact op kunnen nemen met de gebruiker. Tevens kan de medewerker bij een spoed autorisatie direct op de hoogte worden gesteld dat de autorisatie is toegekend.> |  |
 | Dienstverband (Tijdelijk/Vast) | Tijdelijk / Vast |  |
@@ -401,24 +401,24 @@ Tabel 4. Overzicht welke functies worden uitgevoerd door een medewerker (autoris
 |  | Opschorten gebruiker-ID | O |
 |  | Intrekken gebruiker-ID | O |
 | Gebruiker-ID | <Als het een bestaande gebruiker betreft dient hier het huidige gebruikers-ID ingevuld te worden, bij een nieuwe gebruiker wordt dit door de verwerkingsorganisatie later ingevuld. Nieuwe gebruikers krijgen meestal een gebruikersnaam die van hun eigen naam is afgeleid. Deze gebruikersnaam wordt in het vakjargon gebruikers-ID genoemd.> |  |
-| Reden | <De reden van deze aanvraag/wijziging met betrekking tot de autorisaties van deze medewerker.> |  |
+| Reden | [De reden van deze aanvraag/wijziging met betrekking tot de autorisaties van deze medewerker.] |  |
 | Gewenste ingangsdatum | <De datum waarop de autorisatie ingaat kan afwijken van de aanmelddatum maar moet daarna liggen. Het is aan te raden om de autorisaties ruim van te voren aan te melden zodat de werkzaamheden die bij het autoriseren horen kunnen worden ingepland.> |  |
 | Einddatum geldigheid | <In veel gevallen zal deze rubriek leeg worden gelaten omdat er een permanente autorisatie wordt toegekend. Het komt echter voor dat bepaalde werkzaamheden slechts van korte duur zijn, medewerkers op contract worden aangenomen of vakantiewerk komen verrichten. In die gevallen wordt de ‘Einddatum geldigheid’ toegepast.> |  |
 
-| Autorisaties <informatiesysteem> |  |  |  |
+| Autorisaties [informatiesysteem] |  |  |  |
 |---|---|---|---|
 | Vul de huidige, de gewenste en de te verwijderen autorisatierollen in | Huidige | Verwijderen | Nieuwe rol / Toevoegen |
-| <Rol 1> | O | O | O |
-| <Rol 2> | O | O | O |
-| <Rol 3> | O | O | O |
+| [Rol 1] | O | O | O |
+| [Rol 2] | O | O | O |
+| [Rol 3] | O | O | O |
 | Alle autorisaties verwijderen | O |  |  |
 
 | Gegevens Aanvrager |  |
 |---|---|
-| Naam en voorletters aanvrager | <Volledige naam van de autorisatiebevoegde medewerker.> |
-| Voornaam aanvrager | <Voornaam van de autorisatiebevoegde medewerker.> |
-| Telefoonnummer | <Telefoonnummer van de autorisatiebevoegde medewerker.> |
-| E-mailadres | <E-mailadres van de autorisatiebevoegde medewerker.> |
+| Naam en voorletters aanvrager | [Volledige naam van de autorisatiebevoegde medewerker.] |
+| Voornaam aanvrager | [Voornaam van de autorisatiebevoegde medewerker.] |
+| Telefoonnummer | [Telefoonnummer van de autorisatiebevoegde medewerker.] |
+| E-mailadres | [E-mailadres van de autorisatiebevoegde medewerker.] |
 | Functie | <De functie van de autorisatiebevoegde medewerker dient tevens ter verificatie te worden vermeld zodat wordt voorkomen dat de aanvrager autorisaties uitgeeft van informatiesystemen waarvoor hij niet geautoriseerd is.> |
 | Aanmelddatum | <Datum waarop de autorisatie is aangevraagd. Aan de hand van deze datum kan achteraf worden vastgesteld hoe lang het heeft geduurd voordat de autorisatie werd ingevoerd.> |
 | Handtekening | <Handtekening van de autorisatiebevoegde medewerker. Deze handtekening dient op juistheid te worden gecontroleerd aan de hand van de parafen lijst.> |

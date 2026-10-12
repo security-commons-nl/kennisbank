@@ -6,9 +6,9 @@ Voor cameratoezicht in de openbare ruimte door de burgemeester (artikel 151c Gem
 
 ## 1.1 Waar gaat de DPIA over?
 
-> Deze DPIA gaat over de camera's op locatie `<invullen>`. Op deze locatie hangen `<aantal>` camera's met als doel: `<doel(en)>`. Omdat er sprake is van stelselmatige monitoring van openbaar toegankelijke ruimten met camera's, is een DPIA verplicht.
+> Deze DPIA gaat over de camera's op locatie `[invullen]`. Op deze locatie hangen `[aantal]` camera's met als doel: `[doel(en)]`. Omdat er sprake is van stelselmatige monitoring van openbaar toegankelijke ruimten met camera's, is een DPIA verplicht.
 >
-> `<Neem hier een plattegrond met het cameraplan op, als die er is.>`
+> `[Neem hier een plattegrond met het cameraplan op, als die er is.]`
 
 ## 1.3 Cameraregister
 
@@ -26,19 +26,19 @@ Aangevinkt: **camerabeelden** (gevoelige persoonsgegevens). Vink meer aan als er
 | | |
 |---|---|
 | Waarom is het **noodzakelijk**? | `<Waarom camera's nodig zijn, bijvoorbeeld ter bescherming van eigendommen of medewerkers. Leg ook uit waarom dit aantal camera's nodig is.>` |
-| Minder ingrijpende alternatieven? | `<Waarom minder ingrijpende alternatieven niet volstaan, bijvoorbeeld fysieke beveiliging.>` |
+| Minder ingrijpende alternatieven? | `[Waarom minder ingrijpende alternatieven niet volstaan, bijvoorbeeld fysieke beveiliging.]` |
 
 ## 3.3 Grondslag
 
 | Verwerkingsdoel | AVG-grondslag | Toelichting |
 |---|---|---|
-| `<verwerkingsdoel>` | Gerechtvaardigd belang, artikel 6 lid 1 sub f AVG | Zie de tekst hieronder |
+| `[verwerkingsdoel]` | Gerechtvaardigd belang, artikel 6 lid 1 sub f AVG | Zie de tekst hieronder |
 
-> De gemeente heeft een gerechtvaardigd belang om cameratoezicht in te zetten voor de beveiliging en bescherming van haar panden en eigendommen, en om de veiligheid van haar medewerkers en bezoekers te waarborgen. `<Beschrijf of er incidenten zijn geweest waarbij de camera's nodig waren.>` Zonder camera's zijn deze doelen niet te bereiken. De verwerking van camerabeelden is daarom noodzakelijk, en het doel kan niet op een minder ingrijpende manier worden bereikt.
+> De gemeente heeft een gerechtvaardigd belang om cameratoezicht in te zetten voor de beveiliging en bescherming van haar panden en eigendommen, en om de veiligheid van haar medewerkers en bezoekers te waarborgen. `[Beschrijf of er incidenten zijn geweest waarbij de camera's nodig waren.]` Zonder camera's zijn deze doelen niet te bereiken. De verwerking van camerabeelden is daarom noodzakelijk, en het doel kan niet op een minder ingrijpende manier worden bereikt.
 >
-> Het gaat niet om bijzondere categorieën persoonsgegevens. `<Er hangen waarschuwingsborden, waardoor bezoekers weten dat ze worden opgenomen.>` Camerabeveiliging is op dit soort locaties gebruikelijk, dus bezoekers kunnen er redelijkerwijs van uitgaan dat er beelden worden vastgelegd.
+> Het gaat niet om bijzondere categorieën persoonsgegevens. `[Er hangen waarschuwingsborden, waardoor bezoekers weten dat ze worden opgenomen.]` Camerabeveiliging is op dit soort locaties gebruikelijk, dus bezoekers kunnen er redelijkerwijs van uitgaan dat er beelden worden vastgelegd.
 >
-> De impact op betrokkenen is dat zij tijdens hun bezoek worden gefilmd, en daarop worden zij met borden gewezen. Zonder incident worden de beelden niet bekeken en na `<aantal>` dagen (automatisch) verwijderd. `<Er zijn voldoende technische beveiligingsmaatregelen genomen.>` De impact op betrokkenen is daarmee beperkt.
+> De impact op betrokkenen is dat zij tijdens hun bezoek worden gefilmd, en daarop worden zij met borden gewezen. Zonder incident worden de beelden niet bekeken en na `[aantal]` dagen (automatisch) verwijderd. `[Er zijn voldoende technische beveiligingsmaatregelen genomen.]` De impact op betrokkenen is daarmee beperkt.
 >
 > Dit afwegende heeft de gemeente een gerechtvaardigd belang om persoonsgegevens te verwerken met de camera's. De grondslag is artikel 6 lid 1 sub f AVG.
 
@@ -48,13 +48,13 @@ Let op: een overheidsorganisatie kan zich niet op gerechtvaardigd belang beroepe
 
 | Doel (hergebruik) | Partij | Soort persoonsgegevens | Verenigbaar doel of nieuw doel | Aanvullende maatregelen |
 |---|---|---|---|---|
-| Delen met de politie bij een vordering | Politie | Camerabeelden | Wettelijke verplichting om beelden aan te leveren | `<n.v.t., of procedure of checklist voor de overdracht>` |
+| Delen met de politie bij een vordering | Politie | Camerabeelden | Wettelijke verplichting om beelden aan te leveren | `[n.v.t., of procedure of checklist voor de overdracht]` |
 
 ## 4. Juistheid
 
 **Borging kwaliteit.** Het gaat om camerabeelden, vastgelegd op datum en tijdstip; de juistheid is daarmee geborgd.
 
-**Logging.** `<Wordt er gelogd wie de beelden heeft bekeken, en hoe wordt dat periodiek gecontroleerd?>`
+**Logging.** `[Wordt er gelogd wie de beelden heeft bekeken, en hoe wordt dat periodiek gecontroleerd?]`
 
 ## 6.2 Beveiliging leverancier
 
@@ -64,8 +64,8 @@ Laat de security officer het [security-assessment van de leverancier](security-a
 
 | Vraag | Antwoord |
 |---|---|
-| Algoritmes? | `<Worden er algoritmes gebruikt? Impactvolle algoritmes horen in het algoritmeregister.>` |
-| AI? | `<Wordt er AI gebruikt in de camera's, bijvoorbeeld gezichts- of kentekenherkenning?>` |
+| Algoritmes? | `[Worden er algoritmes gebruikt? Impactvolle algoritmes horen in het algoritmeregister.]` |
+| AI? | `[Wordt er AI gebruikt in de camera's, bijvoorbeeld gezichts- of kentekenherkenning?]` |
 | Profilering? | Er is geen sprake van profilering bij het opnemen van de beelden. |
 | Geautomatiseerde besluitvorming? | Er is geen sprake van geautomatiseerde besluitvorming bij het opnemen van de beelden. |
 
@@ -73,6 +73,6 @@ Laat de security officer het [security-assessment van de leverancier](security-a
 
 | Vraag | Antwoord |
 |---|---|
-| Hoe worden betrokkenen geïnformeerd? | Via de privacyverklaring op de website van de gemeente, met een overzicht van alle camera's. `<Staan deze camera's in het cameraregister en op de website?>` `<Hangen er waarschuwingsborden met een verwijzing naar de website?>` |
+| Hoe worden betrokkenen geïnformeerd? | Via de privacyverklaring op de website van de gemeente, met een overzicht van alle camera's. `[Staan deze camera's in het cameraregister en op de website?]` `[Hangen er waarschuwingsborden met een verwijzing naar de website?]` |
 | Afspraken over verzoeken van betrokkenen? | Verzoeken lopen via de procedure rechten van betrokkenen. Wie inzage wil, geeft aan om welke camera en welk datum en tijdstip het gaat. |
-| Kunnen systemen verzoeken uitvoeren? | `<Kunnen beelden met de hand worden veiliggesteld of verwijderd?>` |
+| Kunnen systemen verzoeken uitvoeren? | `[Kunnen beelden met de hand worden veiliggesteld of verwijderd?]` |
