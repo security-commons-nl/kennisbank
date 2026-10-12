@@ -54,6 +54,21 @@ en deels gedekt, van het totaal. Details per maatregel in de [BIO 2.0-toets](bio
 | Wijzigingsbeheer | [Sjabloon wijzigingsbeheer](beleid-wijzigingsbeheer.md) | S | 1 van 6, 4 deels |
 | **Totaal** | | | **70 van 117, 31 deels** |
 
+## Profiel en varianten
+
+Deze set is de eerste variant; het doel is meer dan één per domein, van verschillende organisaties, zodat je
+het stuk vindt dat bij de jouwe past. Daarvoor liggen twee databestanden klaar:
+
+- [`profiel.json`](profiel.json): zestien vragen met vaste antwoorden (type organisatie, grootte, wie de IT
+  beheert, waar systemen draaien, OT, politiegegevens, ketens, volwassenheid). Per vraag staat welke
+  BIO 2.0-domeinen hij raakt. Geen vraag is verplicht: ze zijn een filter om te sorteren, geen poort.
+- [`varianten.json`](varianten.json): per stuk het domein, de status, de BIO-versie, het bronprofiel van de
+  organisatie waar het vandaan komt (dezelfde zestien vragen) en de dekking per overheidsmaatregel uit de toets.
+
+Wie een eigen stuk inbrengt, beantwoordt dezelfde vragen en krijgt dezelfde toets; zo blijven varianten
+vergelijkbaar. Het plan staat in
+[beleidsset op maat](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md).
+
 ## Hoe je het gebruikt
 
 - **Je eigen set toetsen.** Leg je stukken naast de [toets](bio2-toets.md): dezelfde 117 overheidsmaatregelen,
