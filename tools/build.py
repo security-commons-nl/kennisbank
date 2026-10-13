@@ -1768,7 +1768,7 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
             regels.append(f"- [{fm['titel']}]({link}): {samenvatting}{staart}")
             # De losse stukken eronder, elk met zijn eigen leesversie: wie een brief, een procedure of
             # het beleid voor één domein zoekt, hoeft niet eerst het item te openen.
-            for md in stukken(fm["_map"]):
+            for md in (stukken(fm["_map"]) if fm.get("_map") else []):
                 if md.with_suffix(".html").is_file():
                     regels.append(f"  - [{stuktitel(md)[0]}]({SITE}/{vak}/{fm['_map'].name}/{md.stem}.html)")
         regels.append("")
