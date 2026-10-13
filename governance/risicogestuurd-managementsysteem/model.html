@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Het model: van strategisch risico naar de maatregel die eerst moet</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</a> › <span>Het model: van strategisch risico naar de maatregel die eerst moet</span></nav><!-- /kruimelpad -->
+<h1>Het model: van strategisch risico naar de maatregel die eerst moet</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</a> · <a href="model.md">Markdown-bron</a></p>
+<p>Bijlage bij <a href="./">GRC voor security, privacy en continuïteit</a>. Hier staan de regels van het register:
+de lagen, de relaties, het schema van een bevinding, het niveau van een maatregel en de prioriteit. Het
+<a href="voorbeeld-register.html">voorbeeld van Duinstad</a> is met deze regels doorgerekend; het script
+<code>tools/bouw_risicoregister.py</code> in de kennisbank voert ze uit.</p>
+<h2 id="1-doel">1. Doel</h2>
+<p>Het register beantwoordt één vraag: welke maatregel en welke control pakken we eerst, en waarom.
+Verantwoording aan de directie en de auditor volgt daaruit. Voor sturen is een rangorde genoeg; het
+register rekent daarom geen restrisico uit.</p>
+<h2 id="2-vijf-lagen">2. Vijf lagen</h2>
+<table>
+<thead>
+<tr>
+<th>Laag</th>
+<th>Wat het is</th>
+<th>Waar het vandaan komt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SR</strong> · strategisch risico</td>
+<td>Risico op het niveau van de directie, met kans en impact</td>
+<td>De strategische risicoanalyse</td>
+</tr>
+<tr>
+<td><strong>OR</strong> · operationeel risico</td>
+<td>Risico uit een standaardlijst per kader</td>
+<td>Zie de tabel hieronder</td>
+</tr>
+<tr>
+<td><strong>Bevinding</strong></td>
+<td>Aangetoond feit over een maatregel die niet werkt, met bron, datum en score</td>
+<td>Toetsen, incidenten, metingen, tests, analyses (§4)</td>
+</tr>
+<tr>
+<td><strong>Maatregel</strong></td>
+<td>Eenheid uit de maatregelenlijst van een kader</td>
+<td>Verklaring van toepasselijkheid, BCM-set, privacykader</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Toetsbare beheersactiviteit met eigenaar, frequentie en bewijs</td>
+<td>Het controleraamwerk bij het beleid</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Kader</th>
+<th>Standaardlijst voor de OR's</th>
+<th>Maatregelen</th>
+<th>Stand per maatregel in de bron</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BIO 2.0</strong></td>
+<td>Per ISO 27002-control een risicoformulering; verwante controls mogen samen één OR vormen</td>
+<td>De toepasselijke overheidsmaatregelen uit de verklaring van toepasselijkheid</td>
+<td>Geïmplementeerd of niet</td>
+</tr>
+<tr>
+<td><strong>BCM</strong> (ISO 22301)</td>
+<td>Per thema van de eigen BCM-maatregelenset</td>
+<td>De BCM-maatregelen</td>
+<td>Voltooid, deels of niets</td>
+</tr>
+<tr>
+<td><strong>Privacy</strong> (AVG)</td>
+<td>Per thema van het privacykader, bijvoorbeeld het AVG-borgingsproduct van de IBD</td>
+<td>De normen van dat kader</td>
+<td>Opzet, bestaan en werking als groen, oranje of rood</td>
+</tr>
+</tbody>
+</table>
+<p>Neem bronnen die er al zijn. Een register dat een nieuwe maatregelenlijst vraagt, haalt niemand bij.</p>
+<h2 id="3-relaties">3. Relaties</h2>
+<ol>
+<li><strong>SR naar OR: één op veel.</strong> Elk OR heeft precies één primair SR. Dat SR geeft het gewicht.
+   a. Een SR zonder OR is niet onderbouwd. Dat is een melding, geen fout.
+   b. Een OR zonder passend SR hangt onder <em>buiten de risicoanalyse</em>. Dat zegt iets over de
+      risicoanalyse: ontbreekt er een strategisch risico?</li>
+<li><strong>OR naar maatregel: één OR per maatregel.</strong> Het OR volgt uit de standaardlijst van het eigen kader:
+   een BIO 2.0-maatregel via zijn ISO-control, een BCM- of privacymaatregel via zijn thema. Een maatregel
+   hangt nooit onder een OR van een ander kader.</li>
+<li><strong>Bevinding naar maatregel: veel op veel.</strong> Een bevinding noemt per maatregel wat aantoonbaar niet
+   werkt, met een reden. Het OR en het SR volgen daaruit (§4.2).</li>
+<li><strong>Maatregel naar control: veel op veel.</strong> Eén control kan meer maatregelen toetsen, en één maatregel
+   kan door meer controls worden getoetst.</li>
+</ol>
+<h2 id="4-bevindingen">4. Bevindingen</h2>
+<h3>4.1 Wat een bevinding is</h3>
+<p>Een aangetoond feit dat laat zien dat een maatregel niet werkt, of niet bestaat terwijl de organisatie
+denkt dat hij er is. Twee dingen zijn geen bevinding:</p>
+<ol>
+<li><strong>Een kaderstand.</strong> "Niet geïmplementeerd", rood in het privacykader of "niet voltooid" in de BCM-set
+   is een gat dat al meetelt via het niveau (§5). Wie er een bevinding van maakt, telt het dubbel.</li>
+<li><strong>Een zorg of verwachting.</strong> Zonder vastgesteld feit, datum en bron is het een risico-inschatting.
+   Die hoort in een risicosessie over het OR.</li>
+</ol>
+<h3>4.2 Afleiding: de maatregel is het anker</h3>
+<ol>
+<li>De bevinding noemt één of meer maatregelen met hun sleutel (<code>BIO2:8.08.02</code>, <code>BCM:8.5</code>, <code>AVG:A15</code>),
+   elk met een reden.</li>
+<li>Het primaire OR is het OR van de eerste maatregel. De overige maatregelen geven de secundaire OR's.
+   Het SR is het SR van het primaire OR. Niemand typt een OR of SR bij een bevinding.</li>
+<li>Het menselijke oordeel zit in twee dingen: welke maatregel faalt, en de score (kans maal impact).</li>
+<li><strong>Uitzondering.</strong> Past geen enkele maatregel, dan mag een bevinding direct onder een OR hangen, met
+   een motivering. Elke uitzondering wordt gemeld, want ze wijst op een gat in de standaardlijst of de
+   maatregelenset.</li>
+</ol>
+<h3>4.3 Schema</h3>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Verplicht</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>ja</td>
+<td>B-nn, doorlopend, nooit hergebruikt</td>
+</tr>
+<tr>
+<td>titel</td>
+<td>ja</td>
+<td>Het gat als patroon, één niveau smaller dan het OR</td>
+</tr>
+<tr>
+<td>aangetoond</td>
+<td>ja</td>
+<td>Wat is vastgesteld, door wie (rol) en wanneer</td>
+</tr>
+<tr>
+<td>bronsoort</td>
+<td>ja</td>
+<td>toets, incident, meting, test of analyse</td>
+</tr>
+<tr>
+<td>bron</td>
+<td>ja</td>
+<td>Document en vindplaats</td>
+</tr>
+<tr>
+<td>peildatum</td>
+<td>ja</td>
+<td>Datum van het feit. Ouder dan twaalf maanden zonder herbevestiging wordt gemeld</td>
+</tr>
+<tr>
+<td>maatregelen</td>
+<td>ja</td>
+<td>Sleutels met reden per maatregel; de eerste bepaalt het primaire OR</td>
+</tr>
+<tr>
+<td>uitzondering</td>
+<td>nee</td>
+<td>OR plus motivering, alleen als geen maatregel past</td>
+</tr>
+<tr>
+<td>kans, impact</td>
+<td>ja</td>
+<td>Elk 1 tot en met 5; score is kans maal impact</td>
+</tr>
+<tr>
+<td>status</td>
+<td>ja</td>
+<td>kandidaat, open, in behandeling, geaccepteerd of gesloten, met datum</td>
+</tr>
+<tr>
+<td>acceptatie</td>
+<td>bij geaccepteerd</td>
+<td>Het besluit van de risico-eigenaar, met termijn</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>nee</td>
+<td>Verwijzing naar een gerubriceerd blad; exploiteerbare details staan nooit in het register</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 De titel is het gat, aangetoond is het bewijs</h3>
+<p>Een bevinding benoemt een patroon, geen gebeurtenis. "Kritieke kwetsbaarheden in extern bereikbare
+systemen blijven langer open dan de patchtermijn" is een bevinding. "Het VPN-incident van maart" is
+bewijs, en staat onder <em>aangetoond</em>. Breder is sterker, binnen drie grenzen:</p>
+<ol>
+<li><strong>Smaller dan het OR.</strong> Is de titel gelijk aan het OR, dan zegt de bevinding niets meer dan het risico.</li>
+<li><strong>Gedragen door het bewijs.</strong> Minstens twee onafhankelijke bewijsstukken, of één meting over de hele
+   populatie. Eén incident plus het woord "structureel" is een mening.</li>
+<li><strong>Sluitbaar.</strong> Er is één eigenaar denkbaar die het kan oplossen, en het is te zeggen hoe "opgelost"
+   eruitziet.</li>
+</ol>
+<h3>4.5 Status</h3>
+<p>Alleen <em>open</em> en <em>in behandeling</em> tellen mee in het niveau en de prioriteit.</p>
+<ul>
+<li><em>Kandidaat</em> telt niet. Pas als de CISO hem aanneemt, wordt hij open.</li>
+<li><em>Geaccepteerd</em> telt niet: de risico-eigenaar heeft besloten niet te behandelen. De bevinding blijft
+  zichtbaar, met het besluit en de termijn.</li>
+<li><em>Gesloten</em> vraagt bewijs dat de maatregel nu werkt.</li>
+</ul>
+<h3>4.6 Waar bevindingen vandaan komen</h3>
+<table>
+<thead>
+<tr>
+<th>Bronsoort</th>
+<th>Voorbeelden</th>
+<th>Hoe het een bevinding wordt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toets</td>
+<td>Toets van een control door de tweede of derde lijn, toets van de FG, audit, managementletter</td>
+<td>Werking of bestaan negatief getoetst, met bewijs</td>
+</tr>
+<tr>
+<td>Incident</td>
+<td>Incidentregister, datalekken, meldingen onder de Cbw</td>
+<td>Het incident laat zien welke maatregel faalde</td>
+</tr>
+<tr>
+<td>Meting</td>
+<td>Configuratie-exports, kwetsbaarheidsscans, logs</td>
+<td>Een meetwaarde met datum die de maatregel weerspreekt</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>Pentest, hersteltest, oefening</td>
+<td>Een geslaagde aanval of een mislukte hersteltest</td>
+</tr>
+<tr>
+<td>Analyse</td>
+<td>Risicoanalyse langs aanvalspaden, DPIA, bedrijfsimpactanalyse</td>
+<td>Een vastgestelde tekortkoming in het rapport</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-niveau-opzet-bestaan-werking">5. Niveau: opzet, bestaan, werking</h2>
+<p>Het niveau van een maatregel is cumulatief: 0 niet in orde of onbekend, 1 opzet, 2 bestaan, 3 werking.</p>
+<ol>
+<li><strong>Uit de bron, per kader.</strong> Privacy: werking groen (met opzet en bestaan groen) is 3, anders bestaan
+   groen is 2, anders opzet groen is 1, anders 0. Oranje telt niet. BCM: voltooid is 2, deels is 1, niets
+   is 0. BIO 2.0: geïmplementeerd is 2, anders 0. Een zelfbeoordeling komt nooit verder dan bestaan.</li>
+<li><strong>Controls.</strong> Heeft een maatregel getoetste controls, dan geldt de zwakste: het niveau is het laagste
+   niveau van de controls die hem toetsen. Alleen zo komt een maatregel op werking.</li>
+<li><strong>Geldigheid.</strong> Werking vervalt als een control een toetsronde mist. Het niveau zakt dan naar bestaan.</li>
+<li><strong>Meetellende bevinding.</strong> Een open bevinding op een maatregel betekent dat de werking aantoonbaar niet
+   in orde is: het niveau is hooguit 2.</li>
+<li><strong>Onbekend telt als niet in orde.</strong> Niet getoetst is 0.</li>
+</ol>
+<h2 id="6-prioriteit">6. Prioriteit</h2>
+<p>Prioriteit is gewicht maal gat. De rangorde:</p>
+<ol>
+<li>Eerst de maatregelen onder een OR met een meetellende bevinding, want daar is het gat aangetoond.
+   Daarbinnen op de score van het OR, dan op de score van het SR. De score van een OR is de hoogste score
+   van de meetellende bevindingen waarvan het het primaire OR is. Een secundaire relatie telt niet mee,
+   anders weegt één bevinding meer keren.</li>
+<li>Daarna de maatregelen onder een OR zonder bevinding, op de score van het SR. <em>Buiten de
+   risicoanalyse</em> telt als laagste gewicht.</li>
+<li>Bij gelijke stand het laagste niveau eerst. Een maatregel op werking zakt naar achteren.</li>
+</ol>
+<p>Wat de lijst niet doet: een restrisico berekenen. Of een restrisico aanvaardbaar is, besluit de
+risico-eigenaar met de acceptatieladder van de eigen risicoanalyse. Een gebruikelijke ladder: kritiek naar
+de directie, hoog naar het tactisch overleg met een termijn, gemiddeld bij het tactisch overleg, laag bij
+de eigenaar.</p>
+<h2 id="7-twee-soorten-eigenaar">7. Twee soorten eigenaar</h2>
+<ol>
+<li><strong>Beheerseigenaar</strong> van maatregel en control: richt in, voert uit en levert het bewijs. Staat in de
+   bron van het kader.</li>
+<li><strong>Risico-eigenaar</strong> van OR en SR: kiest de behandeling en accepteert restrisico. Staat in het
+   risicoregister van de organisatie.</li>
+</ol>
+<p>Het voorbeeld toont alleen de beheerseigenaar, als rol. Wie welk risico draagt, hoort in het eigen register.</p>
+<h2 id="8-wat-de-generator-doet">8. Wat de generator doet</h2>
+<p>Het script <code>tools/bouw_risicoregister.py</code> (of prompt 3 in <a href="prompts.html"><code>prompts.md</code></a>) doet drie dingen:</p>
+<ol>
+<li><strong>Toetsen.</strong> Het weigert een bevinding zonder maatregel of motivering, zonder bron of peildatum, met
+   een onbekende maatregelsleutel, een onbekende status of bronsoort, of een dubbele code. Een maatregel
+   onder een OR van een ander kader en een geaccepteerde bevinding zonder besluit worden ook geweigerd.</li>
+<li><strong>Afleiden.</strong> OR en SR uit de maatregel, het niveau per maatregel, de score per OR.</li>
+<li><strong>Melden.</strong> Uitzonderingen en feiten ouder dan twaalf maanden.</li>
+</ol>
+<p>Het bedenkt geen bevindingen. Wat erin staat, heeft een mens aangenomen.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/risicogestuurd-managementsysteem">governance/risicogestuurd-managementsysteem</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

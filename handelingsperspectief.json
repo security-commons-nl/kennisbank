@@ -255,6 +255,13 @@
     },
     {
       "barriere": "owner",
+      "item": "governance/risicogestuurd-managementsysteem",
+      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
+    },
+    {
+      "barriere": "owner",
       "item": "security/risicoanalyse-aanvalspaden",
       "titel": "Risicoanalyse langs aanvalspaden",
       "rol": "fundering",
@@ -406,6 +413,13 @@
       "titel": "Pentest- en exitverplichtingen bij leveranciers",
       "rol": "verdieping",
       "url": "https://security-commons-nl.github.io/kennisbank/security/pentest-en-exit-bij-leveranciers/"
+    },
+    {
+      "barriere": "treatment",
+      "item": "governance/risicogestuurd-managementsysteem",
+      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+      "rol": "fundering",
+      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
     },
     {
       "barriere": "treatment",
