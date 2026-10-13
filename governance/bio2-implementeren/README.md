@@ -12,6 +12,8 @@ bronnen: [ibd-bio2-handreiking-realistische-implementatie-aanpak-bria, ibd-bio2-
 
 # BIO 2.0 invoeren, een plan van aanpak met urenraming
 
+> **Lees het online:** [security-commons-nl.github.io/kennisbank/governance/bio2-implementeren](https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/)
+
 De vraag die elke CISO krijgt zodra de Cyberbeveiligingswet geldt: wat moeten we doen, in welke volgorde,
 en wat kost het aan mensen? De handreikingen van de IBD beschrijven het managementsysteem en de maatregelen
 goed. Wat ze niet geven, is een raming in uren en een volgorde die je aan een directie kunt voorleggen.
