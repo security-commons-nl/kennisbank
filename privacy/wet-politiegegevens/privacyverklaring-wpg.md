@@ -1,4 +1,4 @@
-## Privacyverklaring Wet politiegegevens (Wpg)
+# Privacyverklaring Wet politiegegevens (Wpg)
 
 De gemeente VOORBEELDGEMEENTE heeft verschillende buitengewoon opsporingsambtenaren (boa’s) in dienst. Waaronder:
 
@@ -123,4 +123,3 @@ De gemeente VOORBEELDGEMEENTE heeft het recht een verzoek af te wijzen als:
 De gemeente de wettelijke plicht heeft deze politiegegevens gegevens te bewaren;
 
 Het kennelijk een ongegrond of buitensporig verzoek is.
-

@@ -1,4 +1,6 @@
-Gegevensuitwisselingsovereenkomst tussen Zelfstandige Verwerkingsverantwoordelijken op grond van uitvoering <naam uitvoering wettelijke regeling/Hoofdovereenkomst voor [omschijving doel]
+# Gegevensuitwisselingsovereenkomst tussen zelfstandige verwerkingsverantwoordelijken
+
+Tussen zelfstandige verwerkingsverantwoordelijken, op grond van uitvoering [naam wettelijke regeling of hoofdovereenkomst, met het doel]
 
 Gemeente [naam gemeente], waarvan [het college van Burgemeester en Wethouders/de Gemeenteraad] de verwerkingsverantwoordelijke is, verder te noemen Verwerkingsverantwoordelijke, hierbij rechtsgeldig vertegenwoordigd door de [heer of mevrouw] [persoonsnaam], [functie]
 
@@ -88,15 +90,15 @@ Ondertekening
 
 Aldus overeengekomen en ondertekend,
 
-Ingangsdatum: <……………>
+Ingangsdatum: [……………]
 
 Gemeente [naam gemeente] [Naam organisatie]
 
 namens deze: [naam, functie] namens deze: [naam, functie]
 
-plaats: <……………..> plaats: <………………………>
+plaats: [……………..] plaats: [………………………]
 
-datum: <………………….> datum: <…………………….>
+datum: [………………….] datum: […………………….]
 
 Bijlage 1: Overzicht van te verwerken persoonsgegevens
 

@@ -1,10 +1,6 @@
-Procedure
+# Procedure beheren en publiceren van het register van verwerkingen
 
-Beheren en publiceren Register van verwerkingen (RvV)
-
-de deelnemende gemeenten
-
-Afkortingen
+## Afkortingen
 
 | Afkorting | Omschrijving |
 |---|---|

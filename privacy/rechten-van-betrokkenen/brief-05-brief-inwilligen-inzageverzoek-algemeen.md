@@ -1,3 +1,5 @@
+# Brief 5: inzageverzoek inwilligen
+
 **[Briefhoofd van de gemeente]**
 
 | Veld | Invullen |
@@ -10,23 +12,23 @@ Beste voorletters + achternaam,
 
 Op [datum binnenkomst] ontving de gemeente VOORBEELDGEMEENTE uw verzoek tot inzage in de persoonsgegevens die de gemeente van u verwerkt. Dit verzoek hebben wij in behandeling genomen als een beroep op artikel 15 van de Algemene Verordening Gegevensbescherming (AVG). In deze brief leest u ons besluit.
 
-Wat is ons besluit?
+**Wat is ons besluit?**
 
 Wij geven gehoor aan uw verzoek om inzage. Dit betekent dat u inzage krijgt in uw gegevens.
 
-Wat ontvangt u van ons?
+**Wat ontvangt u van ons?**
 
 U ontvangt een overzicht van de persoonsgegevens die de gemeente van u heeft. U vindt dit overzicht in bijlage 1.
 
-Welke rechten hebt u?
+**Welke rechten hebt u?**
 
 In de wet is bepaald dat u verschillende rechten hebt om grip te houden op uw persoonsgegevens. Meer uitleg daarover vindt u onderaan dit besluit.
 
-Waarom zijn delen onleesbaar?
+**Waarom zijn delen onleesbaar?**
 
 De gemeente VOORBEELDGEMEENTE verstrekt bij het behandelen van inzageverzoeken nooit persoonsgegevens van andere mensen. In de wet staat dat dit niet mag. Daarom zijn namen en contactgegevens van andere mensen onleesbaar. Dat kan op u vreemd overkomen. Misschien gaat dit om gegevens van personen die u regelmatig tegenkomt of goed kent. Wij kiezen er in zo’n geval voor één lijn te trekken en alle namen en contactgegevens van andere mensen onleesbaar te maken.
 
-Hebt u vragen of klachten?
+**Hebt u vragen of klachten?**
 
 Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens.
 
@@ -36,13 +38,13 @@ Met klachtenkunt u terecht bij de Functionaris Gegevensbescherming. Deze is te b
 
 Komt u er met ons niet uit? Dan heeft u het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens: https://autoriteitpersoonsgegevens.nl
 
-Wilt u bezwaar maken?
+**Wilt u bezwaar maken?**
 
 Bent u het niet eens met dit besluit? Dan kunt u schriftelijk bezwaar maken.
 
 U hebt daar zes weken de tijd voor. De zes weken beginnen een dag nadat dit besluit is verstuurd. De datum waarop dit besluit is verstuurd, vindt u bovenaan. Verstuur uw bezwaar op tijd. Zo voorkomt u dat wij uw bezwaar niet behandelen.
 
-Hoe maakt u bezwaar?
+**Hoe maakt u bezwaar?**
 
 Er zijn twee manieren waarop u bezwaar kunt maken:
 
@@ -50,7 +52,7 @@ Er zijn twee manieren waarop u bezwaar kunt maken:
 
 2. Per post: Stuur uw bezwaar naar het college van burgemeester en wethouders van de gemeente VOORBEELDGEMEENTE, Postbus 0000, 0000 AA VOORBEELDGEMEENTE.
 
-Wat moet in uw bezwaar staan?
+**Wat moet in uw bezwaar staan?**
 
 - Uw naam en adres;
 
@@ -62,7 +64,7 @@ Wat moet in uw bezwaar staan?
 
 - Uw telefoonnummer en e-mailadres (niet verplicht, wel gewenst).
 
-Wilt u een voorlopige voorziening aanvragen?
+**Wilt u een voorlopige voorziening aanvragen?**
 
 Dit besluit blijft ook gelden als u bezwaar hebt gemaakt. Kunt u de uitslag van de bezwaarprocedure niet afwachten omdat daardoor dringende problemen ontstaan? Dan kunt u de bevoegde rechtbank vragen om een voorlopige voorziening. Dit is een voorlopige beslissing in spoedeisende zaken die geldt als tijdelijke regeling tot de eindbeslissing er is.
 

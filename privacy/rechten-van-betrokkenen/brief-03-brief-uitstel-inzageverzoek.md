@@ -1,3 +1,5 @@
+# Brief 3: uitstel van een inzageverzoek
+
 **[Briefhoofd van de gemeente]**
 
 | Veld | Invullen |
@@ -10,11 +12,11 @@ Beste voorletters + achternaam,
 
 Op DATUM ontving de gemeente VOORBEELDGEMEENTE uw verzoek om inzage in de persoonsgegevens die de gemeente van u verwerkt. Wij hebben dit verzoek in behandeling genomen als een beroep op artikel 15 van de Algemene Verordening Gegevensbescherming (hierna: AVG).
 
-Waarom ontvangt u deze brief?
+**Waarom ontvangt u deze brief?**
 
 Wij hebben meer tijd nodig om een besluit te nemen op uw verzoek. In de wet staat dat wij het besluit maximaal 2 maanden mogen uitstellen. Dit betekent dat we uiterlijk op [datum] een besluit nemen op uw verzoek.
 
-Heeft u vragen of klachten?
+**Heeft u vragen of klachten?**
 
 Wij helpen u graag als u vragen of klachten heeft over de verwerking van uw persoonsgegevens. Hiervoor kunt u terecht bij de gemeenschappelijke Functionaris Gegevensbescherming van bovengenoemde organisaties. Deze is te bereiken via het e-mailadres: naam@voorbeeldgemeente.nl Met vragen kunt u terecht bij Team IB&P. Zij zijn bereikbaar via het e-mailadres: naam@voorbeeldgemeente.nl
 

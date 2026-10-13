@@ -1,4 +1,6 @@
-Verbeterplan naar aanleiding van [interne/externe] Wpg audit [jaar]
+# Verbeterplan naar aanleiding van een Wpg-audit
+
+Naar aanleiding van een [interne/externe] Wpg-audit in [jaar].
 
 Gemeente []
 

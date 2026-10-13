@@ -1,4 +1,6 @@
-BIJLAGE 1 - Overzicht aanwezige (documenten waarin) persoonsgegevens van betrokkene (voorkomen) Overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
+# Overzicht van persoonsgegevens van een betrokkene
+
+Overzicht van de documenten waarin persoonsgegevens van de betrokkene voorkomen. Het overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
 
 | Document | Datum | Verwerkingsdoeleinden | Persoonsgegevens | Herkomst | Ontvanger | Bewaarter-mijn |
 |---|---|---|---|---|---|---|

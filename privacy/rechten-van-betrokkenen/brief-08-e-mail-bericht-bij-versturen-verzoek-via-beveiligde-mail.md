@@ -1,3 +1,5 @@
+# E-mail bij het versturen via beveiligde mail (inzageverzoek)
+
 Beste voorletters + achternaam,
 
 Hierbij ontvangt u de door u opgevraagde gegevens die de gemeente VOORBEELDGEMEENTE van u verwerkt.

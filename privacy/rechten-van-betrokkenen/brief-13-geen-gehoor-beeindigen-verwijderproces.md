@@ -1,3 +1,5 @@
+# Brief 13: geen reactie, verwijderproces beëindigen
+
 **[Briefhoofd van de gemeente]**
 
 | Veld | Invullen |
@@ -10,11 +12,11 @@ Beste voorletters + achternaam,
 
 Op DATUM ontving de gemeente VOORBEELDGEMEENTE een verzoek om verwijdering van de persoonsgegevens die de gemeente van u verwerkt.
 
-Waarom ontvangt u deze brief?
+**Waarom ontvangt u deze brief?**
 
 Op [DATUM] hebben wij u gevraagd om verduidelijking. Op die brief heeft u helaas niet gereageerd.
 
-Wat betekent dit?
+**Wat betekent dit?**
 
 Wij stellen het verzoek buiten behandeling. Dat komt omdat uw verzoek voor ons niet duidelijk is. Het staat u uiteraard vrij een nieuw verzoek in te dienen. Vermeld u in uw verzoek het zaaknummer Z/24/XXXXXXX? Dan openen wij uw verzoek weer.
 

@@ -1,4 +1,4 @@
-Checklist ‘privacy proof website'.
+# Checklist privacyproof website
 
 ## Inleiding
 

@@ -1,4 +1,4 @@
-### Bijlage 2: Passende technische en organisatorische maatregelen (artikel 4.1)
+# Bijlage 2: passende technische en organisatorische maatregelen (artikel 4.1)
 
 Aantonen passend niveau van beveiliging
 

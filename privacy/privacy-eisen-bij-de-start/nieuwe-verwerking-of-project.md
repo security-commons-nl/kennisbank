@@ -1,8 +1,4 @@
-Procedure
-
-# Privacy eisen bij een nieuwe verwerking of project
-
-de deelnemende gemeenten
+# Procedure privacy-eisen bij een nieuwe verwerking of project
 
 ### Afkortingen
 

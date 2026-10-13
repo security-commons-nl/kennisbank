@@ -1,3 +1,5 @@
+# Brief 1: identificatie vragen bij een verwijderverzoek
+
 **[Briefhoofd van de gemeente]**
 
 | Veld | Invullen |
@@ -10,15 +12,15 @@ Beste voorletters + achternaam,
 
 Op datum ontving de gemeente VOORBEELDGEMEENTE uw verzoek om verwijdering van de persoonsgegevens die de gemeente van u gebruikt. Dit verzoek behandelen we als een beroep op artikel 17 van de Algemene Verordening Gegevensbescherming (hierna genoemd de AVG).
 
-Waarom ontvangt u deze brief?
+**Waarom ontvangt u deze brief?**
 
 Voordat we uw verzoek in behandeling kunnen nemen moet u uzelf identificeren.
 
-Waarom moet u zich identificeren?
+**Waarom moet u zich identificeren?**
 
 We moeten zeker weten dat het verzoek door u is gedaan. Zo verwijderen we geen persoonsgegevens van de verkeerde persoon. We zijn wettelijk verplicht om uw identiteit vast te stellen.
 
-Hoe kunt u uzelf identificeren?
+**Hoe kunt u uzelf identificeren?**
 
 Er zijn twee mogelijkheid waarop u zichzelf kunt identificeren:
 
@@ -32,11 +34,11 @@ U kunt zich ook identificeren met DigiD. Hiervoor hebben we een webformulier. Om
 
 We vragen u om in het webformulier het zaaknummer in te vullen. Dan is voor ons duidelijk dat de identificatie bij uw verzoek hoort. Uw zaaknummer is Z/xx/xxxxxx.
 
-Wat betekent dit voor de status van uw verzoek?
+**Wat betekent dit voor de status van uw verzoek?**
 
 We stellen de behandeling van uw verzoek uit. Op het moment dat u uzelf identificeert nemen we het verzoek wel in behandeling. Identificeert u uzelf niet binnen 14 dagen? Dan stellen we het verzoek buiten behandeling.
 
-Hebt u vragen?
+**Hebt u vragen?**
 
 Neem dan contact op met naam@voorbeeldgemeente.nl.
 

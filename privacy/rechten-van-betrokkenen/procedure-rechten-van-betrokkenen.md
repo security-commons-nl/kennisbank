@@ -1,8 +1,4 @@
-Procedure
-
-# Rechten van betrokkenen
-
-de deelnemende gemeenten
+# Procedure rechten van betrokkenen
 
 ### Afkortingen
 
