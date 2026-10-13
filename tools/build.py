@@ -420,7 +420,11 @@ def controleer_dode_links(map_: Path) -> None:
             if kaal.startswith("/"):
                 continue  # wortel van de site, niet van deze repo (bijvoorbeeld /favicon.svg)
             plek = (pad.parent / kaal).resolve()
-            if not plek.exists():
+            # De leesversie van een los stuk maakt deze build zelf (bouw_stukken). Een link ernaar is
+            # dus goed zodra de markdown ernaast staat, ook bij de eerste build van een nieuw item.
+            wordt_gebouwd = (plek.suffix == ".html" and plek.with_suffix(".md").is_file()
+                             and plek.parent == map_ and plek.with_suffix(".md").name != "README.md")
+            if not plek.exists() and not wordt_gebouwd:
                 fout(pad, "B3", f"link naar '{doel}' wijst naar een bestand dat niet bestaat")
             elif ROOT not in plek.parents and plek != ROOT:
                 fout(pad, "B3", f"link naar '{doel}' wijst buiten de kennisbank; "
@@ -561,6 +565,21 @@ STUKBRON_CSS = (
 def stukken(map_: Path) -> list[Path]:
     """De losse markdownstukken naast de README, alleen op het niveau van het item zelf."""
     return sorted(p for p in map_.glob("*.md") if p.name != "README.md")
+
+
+def losse_paginas(map_: Path) -> list[tuple[str, Path]]:
+    """HTML-bijlagen zonder markdownbron naast zich, zoals een gegenereerde verkenner: (titel, pad).
+
+    Een leesversie van een stuk staat al via stukken() in de sitemap en llms.txt; een pagina zonder
+    markdowntweeling viel daar buiten en was alleen te vinden via de link op de itempagina.
+    """
+    uit = []
+    for p in sorted(map_.glob("*.html")):
+        if p.name == "index.html" or p.with_suffix(".md").is_file():
+            continue
+        m = re.search(r"<title>(.*?)</title>", p.read_text(encoding="utf-8", errors="replace"), re.S)
+        uit.append((html.unescape(m.group(1).strip()) if m else p.stem.replace("-", " ").capitalize(), p))
+    return uit
 
 
 def koppel_stukken(tekst: str, map_: Path) -> str:
@@ -1716,6 +1735,7 @@ def sitemap_tekst(items: dict[str, list[dict]]) -> str:
                 urls.append(f"{SITE}/{fm['_link']}")
             urls += [f"{SITE}/{vak}/{fm['_map'].name}/{md.stem}.html" for md in stukken(fm["_map"])
                      if md.with_suffix(".html").is_file()]
+            urls += [f"{SITE}/{vak}/{fm['_map'].name}/{p.name}" for _, p in losse_paginas(fm["_map"])]
     regels = "".join(f"  <url><loc>{html.escape(u)}</loc></url>\n" for u in urls)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schema/sitemap/0.9">\n' + regels + "</urlset>\n")
@@ -1771,6 +1791,8 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
             for md in (stukken(fm["_map"]) if fm.get("_map") else []):
                 if md.with_suffix(".html").is_file():
                     regels.append(f"  - [{stuktitel(md)[0]}]({SITE}/{vak}/{fm['_map'].name}/{md.stem}.html)")
+            for titel, p in (losse_paginas(fm["_map"]) if fm.get("_map") else []):
+                regels.append(f"  - [{titel}]({SITE}/{vak}/{fm['_map'].name}/{p.name})")
         regels.append("")
     bronnen, ptn = register()
     actief = sorted((b for b in bronnen.values() if not b.get("vervallen")),
