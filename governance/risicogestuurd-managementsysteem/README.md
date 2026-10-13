@@ -8,7 +8,7 @@ herkomst: ontwikkeld door de CISO van een regionale samenwerking van gemeenten, 
 status: concept
 barrieres: [owner, treatment]
 rol: fundering
-samenvatting: Wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. Een GRC-tool kopen, of een register bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een AI-assistent als lezer binnen vaste regels. Met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register.
+samenvatting: Wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. Een GRC-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een AI-assistent als lezer binnen vaste regels. Met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register.
 bronnen: [ibd-bio2-handreiking-isms, ibd-bio2-infographic-wat-is-een-isms, ibd-bio2-handreiking-isms-proces-implementatie, ibd-bio-handreiking-risicomanagement-voor-gemeenten, ibd-risicoregister-inclusief-risicobehandelplan-en-dashboards, ibd-handreiking-risicoregister-en-risico-acceptatie-overeenkomst-rao, ibd-bio2-kans-en-impact-tabellen-gemeenten, ibd-avg-borgingsproduct-3-1-toetsingskader, ibd-avg-borgingsproduct-3-1-handreiking, cip-bio-tekst, ncsc-cbw-valt-mijn-organisatie-eronder]
 ---
 
