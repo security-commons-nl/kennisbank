@@ -1,3 +1,5 @@
+# Brief 5: verwijderverzoek inwilligen
+
 **[Briefhoofd van de gemeente]**
 
 | Veld | Invullen |
@@ -54,7 +56,7 @@ Bent u het niet eens met dit besluit? Dan kunt u schriftelijk bezwaar maken.
 
 U hebt daar zes weken de tijd voor. De zes weken beginnen een dag nadat dit besluit is verstuurd. De datum waarop dit besluit is verstuurd, vindt u bovenaan. Verstuur uw bezwaar op tijd. Zo voorkomt u dat wij uw bezwaar niet behandelen.
 
-Hoe maakt u bezwaar?
+**Hoe maakt u bezwaar?**
 
 Er zijn twee manieren waarop u bezwaar kunt maken:
 
@@ -62,7 +64,7 @@ Er zijn twee manieren waarop u bezwaar kunt maken:
 
 2. Per post: Stuur uw bezwaar naar het college van burgemeester en wethouders van de gemeente VOORBEELDGEMEENTE, Postbus 0000, 0000 AA VOORBEELDGEMEENTE.
 
-Wat moet in uw bezwaar staan?
+**Wat moet in uw bezwaar staan?**
 
 - Uw naam en adres;
 
@@ -74,7 +76,7 @@ Wat moet in uw bezwaar staan?
 
 - Uw telefoonnummer en e-mailadres (niet verplicht, wel gewenst).
 
-Wilt u een voorlopige voorziening aanvragen?
+**Wilt u een voorlopige voorziening aanvragen?**
 
 Dit besluit blijft ook gelden als u bezwaar hebt gemaakt. Kunt u de uitslag van de bezwaarprocedure niet afwachten omdat daardoor dringende problemen ontstaan? Dan kunt u de bevoegde rechtbank vragen om een voorlopige voorziening. Dit is een voorlopige beslissing in spoedeisende zaken die geldt als tijdelijke regeling tot de eindbeslissing er is.
 

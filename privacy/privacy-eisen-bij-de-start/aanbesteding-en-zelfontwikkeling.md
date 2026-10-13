@@ -1,8 +1,4 @@
-Procedure
-
-# Privacy eisen bij aanbesteding
-
-de deelnemende gemeenten
+# Procedure privacy-eisen bij aanbesteding en zelfontwikkeling
 
 ### Afkortingen
 

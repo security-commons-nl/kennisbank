@@ -1,4 +1,4 @@
-## Toelichting bijlage privacy overeenkomst
+# Toelichting bij de bijlagen van een privacy-overeenkomst
 
 Bij de verschillende privacy overeenkomsten zitten bijlagen. In de bijlage wordt onder andere ingevuld welke persoonsgegevens worden uitgewisseld en hoe die persoonsgegevens worden beveiligd. Een persoonsgegeven is alle informatie die iets zegt of kan zeggen over een persoon. Omdat het belangrijk is om deze bijlage correct en volledig in te vullen is deze toelichting geschreven. In dit document vind je welke informatie moet worden ingevuld en worden bepaalde termen uitgelegd. Als alle bijlagen zijn ingevuld is het de bedoeling om het nog langs team IB&P te sturen, zodat zij een check kunnen doen. Zij kunnen bepalen of de andere partij voldoende beveiligingsmaatregelen neemt. Je kunt de overeenkomst opsturen via de Zelfservicesk
 

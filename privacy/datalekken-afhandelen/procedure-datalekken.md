@@ -1,8 +1,4 @@
-Procedure
-
-# Datalekken
-
-de deelnemende gemeenten
+# Procedure datalekken
 
 ### Afkortingen
 

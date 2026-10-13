@@ -1,8 +1,4 @@
-Toelichting
-
-# DPIA-template
-
-de deelnemende gemeenten
+# Toelichting bij het DPIA-sjabloon
 
 ### Afkortingen
 

@@ -1,10 +1,6 @@
-Procedure
+# Procedure privacy-overeenkomsten
 
-Privacy overeenkomsten
-
-de deelnemende gemeenten
-
-Afkortingen
+## Afkortingen
 
 | Afkorting | Omschrijving |
 |---|---|

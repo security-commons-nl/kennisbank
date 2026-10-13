@@ -1,8 +1,7 @@
-Data Protection Impact Assessment Wpg
+# Data Protection Impact Assessment Wpg (sjabloon)
 
-# [Vul naam verwerking in]
+**Verwerking:** [Vul naam verwerking in]
 
-de deelnemende gemeenten
 
 | Status |  |
 |---|---|

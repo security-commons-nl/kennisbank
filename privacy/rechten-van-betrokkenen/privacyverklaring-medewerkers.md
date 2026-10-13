@@ -1,4 +1,4 @@
-## Privacyverklaring medewerkers
+# Privacyverklaring medewerkers
 
 De gemeente verwerkt veel persoonsgegevens van inwoners. De gemeente verwerkt ook persoonsgegevens als werkgever van haar medewerkers. Deze privacyverklaring gaat over de persoonsgegevens die de gemeente van medewerkers verwerkt. We leggen bijvoorbeeld uit waarom we bepaalde persoonsgegevens vastleggen en verwerken. Ook leggen we uit welke rechten je hebt en hoelang we jouw persoonsgegevens bewaren. Met persoonsgegevens wordt alle informatie bedoeld die iets over een persoon zegt of kan zeggen. Bijvoorbeeld je naam, bankrekeningnummer of gegevens over je gezondheid. Met verwerken bedoelen we alles wat je met een persoonsgegeven kan doen. Bijvoorbeeld vastleggen, opslaan, versturen of verwijderen.
 

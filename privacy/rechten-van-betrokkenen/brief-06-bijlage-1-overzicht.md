@@ -1,4 +1,6 @@
-BIJLAGE 1 - Overzicht aanwezige (documenten waarin) persoonsgegevens van betrokkene (voorkomen) Z/00/000000 - Overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
+# Bijlage 1 bij een inzageverzoek: overzicht van persoonsgegevens
+
+Overzicht van de documenten waarin persoonsgegevens van de betrokkene voorkomen. Zaaknummer: Z/00/000000. Het overzicht is gebaseerd op https://autoriteitpersoonsgegevens.nl/sites/default/files/atoms/files/voorbeeldoverzicht_bij_inzageverzoek_def.pdf
 
 | Document | Datum | Verwerkingsdoeleinden | Persoonsgegevens | Herkomst van persoonsgegevens | Externe ontvanger | Toekomstige externe ontvangers | Geautomatiseerde besluitvorming/ profilering | Bewaartermijn | Verwerking buiten Europa |
 |---|---|---|---|---|---|---|---|---|---|

@@ -1,3 +1,5 @@
+# E-mail bij het versturen via beveiligde mail (verwijderverzoek)
+
 Beste voorletters + achternaam,
 
 Hierbij ontvangt u een overzicht met de verwijderde gegevens die de gemeente VOORBEELDGEMEENTE van u heeft.

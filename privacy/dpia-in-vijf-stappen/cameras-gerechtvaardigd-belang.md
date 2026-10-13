@@ -1,6 +1,6 @@
 # DPIA camera's op grond van gerechtvaardigd belang
 
-Voorgevulde teksten voor een DPIA op camerabeveiliging van eigen gebouwen en terreinen (panden, fietsenstallingen, parkeergarages, sportvoorzieningen), op grond van gerechtvaardigd belang. Gebruik ze in het [sjabloon](sjabloon-dpia.md): elk blok hieronder vervangt of vult het hoofdstuk met hetzelfde nummer. Alles tussen `< >` vul je zelf in. Laat de kennishouder eerst de [vragenlijst](vragenlijst-cameras.md) invullen; daar komen de antwoorden voor deze blokken uit.
+Voorgevulde teksten voor een DPIA op camerabeveiliging van eigen gebouwen en terreinen (panden, fietsenstallingen, parkeergarages, sportvoorzieningen), op grond van gerechtvaardigd belang. Gebruik ze in het [sjabloon](sjabloon-dpia.md): elk blok hieronder vervangt of vult het hoofdstuk met hetzelfde nummer. Alles tussen `[ ]` vul je zelf in. Laat de kennishouder eerst de [vragenlijst](vragenlijst-cameras.md) invullen; daar komen de antwoorden voor deze blokken uit.
 
 Voor cameratoezicht in de openbare ruimte door de burgemeester (artikel 151c Gemeentewet) is dit niet de goede grondslag. Dat is een andere DPIA.
 
