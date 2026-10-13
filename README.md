@@ -46,6 +46,10 @@ een [privacybeleid met handboek](https://security-commons-nl.github.io/kennisban
 met een strategisch privacybeleid. Het zijn voorbeelden van een samenwerking van gemeenten, geen modellen
 van de IBD; die staan er als bron bij.
 
+**BIO 2.0 invoeren.** Een [plan van aanpak met urenraming](https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/)
+voor deel 1 (het managementsysteem, uren per rol) en deel 2 (de maatregelen per thema, met volgorde en
+eigenaar), met een sjabloon.
+
 **Handleidingen** zijn een eigen soort: een instructie voor het inrichten van een maatregel, gekoppeld aan
 een barriere uit de [zelfcheck aanvalspaden](https://security-commons-nl.github.io/aanvalspaden/). Ze
 dragen het veld `barrieres:` en zijn de bron van *Hoe pak ik het aan* op

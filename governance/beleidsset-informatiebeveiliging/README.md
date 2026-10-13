@@ -83,6 +83,9 @@ vergelijkbaar. Het plan staat in
 Namen van de organisatie, systemen en leveranciers zijn vervangen door een rol of een invulveld tussen
 vierkante haken.
 
+**Invoeren.** Hoe je van deze set naar ingerichte maatregelen komt, met volgorde, eigenaar per thema en
+een urenraming: [BIO 2.0 invoeren, een plan van aanpak](../bio2-implementeren/).
+
 ## Wat dit niet is
 
 Geen vastgesteld BIO 2.0-beleid: alleen het strategisch beleid en fysieke toegang zijn al op BIO 2.0
