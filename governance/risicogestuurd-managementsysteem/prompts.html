@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Prompts: een AI-assistent als lezer, binnen vaste regels</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</a> › <span>Prompts: een AI-assistent als lezer, binnen vaste regels</span></nav><!-- /kruimelpad -->
+<h1>Prompts: een AI-assistent als lezer, binnen vaste regels</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</a> · <a href="prompts.md">Markdown-bron</a></p>
+<p>Bijlage bij <a href="./">GRC voor security, privacy en continuïteit</a>. Drie prompts om in een AI-assistent te
+plakken. Elke prompt is zelfstandig: hij bevat het schema en de regels, zodat de uitkomst altijd dezelfde
+vorm heeft, welke assistent je ook gebruikt. Vul tussen de vierkante haken je eigen materiaal in.</p>
+<p>Plak geen materiaal in een assistent die daar niet voor is goedgekeurd. Incidentverslagen en auditrapporten
+zijn vaak vertrouwelijk. Gebruik de assistent die je organisatie voor vertrouwelijke informatie heeft
+ingericht, of haal namen en technische details eruit voordat je plakt.</p>
+<h2 id="de-regels-die-in-elke-prompt-staan">De regels die in elke prompt staan</h2>
+<p>De assistent:</p>
+<ol>
+<li>bedenkt geen bevinding. Zonder vastgesteld feit, datum en bron is het een zorg; die krijgt een reden
+   waarom het geen bevinding is;</li>
+<li>maakt van een kaderstand nooit een bevinding. "Niet geïmplementeerd", rood of "niet voltooid" telt al
+   mee via het niveau;</li>
+<li>kiest geen risico. Het operationele en het strategische risico volgen uit de maatregel;</li>
+<li>schrijft rollen in plaats van namen, en neemt geen exploiteerbare details over: geen hostnamen,
+   IP-adressen, accountnamen, configuratie of kwetsbaarheid per systeem;</li>
+<li>laat stukken over personen liggen: functioneren, inhuur, dienstverband, gezondheid;</li>
+<li>laat een bron liggen die hij niet helemaal heeft kunnen lezen, en zegt dat;</li>
+<li>levert kandidaten. De mens besluit welke erin komen.</li>
+</ol>
+<h2 id="prompt-1-van-context-naar-kandidaat-bevindingen">Prompt 1: van context naar kandidaat-bevindingen</h2>
+<pre><code class="language-text">Je helpt een CISO bij het bijhouden van een risicoregister voor informatiebeveiliging, privacy en
+bedrijfscontinuïteit. Lees de context hieronder volledig en maak kandidaat-bevindingen in het schema.
+
+Een bevinding is een aangetoond feit dat laat zien dat een maatregel niet werkt, of niet bestaat terwijl
+de organisatie denkt dat hij er is. Een bevinding heeft een feit, een datum en een bron.
+
+Regels:
+1. Bedenk niets. Staat er geen vastgesteld feit met datum en bron, dan is het geen bevinding. Zet het
+   onder &quot;geen bevinding&quot; met de reden.
+2. Een kaderstand (&quot;niet geïmplementeerd&quot;, rood, &quot;niet voltooid&quot;) is nooit een bevinding.
+3. De titel is het gat als patroon, niet de gebeurtenis. De gebeurtenis is bewijs en staat onder
+   &quot;aangetoond&quot;. Maak de titel breder dan het incident als het bewijs dat draagt: minstens twee
+   onafhankelijke bewijsstukken, of één meting over de hele populatie. Anders blijft de titel smal.
+4. Noem per bevinding de maatregel(en) die aantoonbaar niet werken, met sleutel en reden. Kies uit de
+   maatregelenlijst hieronder. De eerste maatregel is de belangrijkste. Kies geen operationeel of
+   strategisch risico; dat wordt afgeleid.
+5. Past geen enkele maatregel, zet dan &quot;uitzondering&quot; met het operationele risico en een motivering.
+6. Geef een voorstel voor kans en impact, elk 1 tot en met 5, met één zin onderbouwing. Het blijft een
+   voorstel.
+7. Rollen in plaats van namen. Geen hostnamen, IP-adressen, accountnamen, configuratie of kwetsbaarheid
+   per systeem. Geen stukken over personen.
+8. Heb je de context niet helemaal kunnen lezen, zeg dat en stop.
+
+Lever JSON in deze vorm, en niets anders:
+{
+  &quot;kandidaten&quot;: [
+    {
+      &quot;titel&quot;: &quot;...&quot;,
+      &quot;aangetoond&quot;: &quot;wat is vastgesteld, door welke rol, wanneer&quot;,
+      &quot;bronsoort&quot;: &quot;toets | incident | meting | test | analyse&quot;,
+      &quot;bron&quot;: &quot;document en vindplaats&quot;,
+      &quot;peildatum&quot;: &quot;JJJJ-MM-DD&quot;,
+      &quot;maatregelen&quot;: [{&quot;sleutel&quot;: &quot;...&quot;, &quot;reden&quot;: &quot;...&quot;}],
+      &quot;kans&quot;: 1, &quot;impact&quot;: 1,
+      &quot;onderbouwing_score&quot;: &quot;...&quot;,
+      &quot;status&quot;: &quot;kandidaat&quot;
+    }
+  ],
+  &quot;geen_bevinding&quot;: [
+    {&quot;wat&quot;: &quot;...&quot;, &quot;reden&quot;: &quot;kaderstand | zorg zonder feit | over een persoon | ...&quot;}
+  ],
+  &quot;weggelaten_details&quot;: [&quot;soort detail dat is weggelaten, zonder het detail zelf&quot;]
+}
+
+Maatregelenlijst (sleutel, omschrijving):
+[plak hier de maatregelen uit je register, één per regel]
+
+Context:
+[plak hier het verslag, rapport, de meting of de mail]
+</code></pre>
+<h3>Voorbeeld: een verzonnen incidentverslag</h3>
+<p>Context, geplakt in prompt 1 met de maatregelen uit het <a href="voorbeeld-register.html">voorbeeld van Duinstad</a>:</p>
+<pre><code class="language-text">Evaluatie incident 2026-031, gemeente Duinstad, 18 september 2026.
+Op zaterdag 6 september om 02:14 meldde de leverancier van de beveiligingsmonitoring een verdachte
+aanmelding op beheeraccount adm-[naam] op server DS-APP-07. De melding kwam binnen in de gedeelde
+mailbox van het team. Niemand las die mailbox in het weekend; de melding is maandag om 08:40 gezien.
+Toen bleek dat de aanvaller zondag een tweede beheeraccount had aangemaakt. Beide accounts zijn maandag
+om 09:30 geblokkeerd. Er is geen data buitgemaakt, voor zover bekend.
+In juni ging een vergelijkbare melding over een werkplek pas na 61 uur naar iemand die kon handelen.
+In de verklaring van toepasselijkheid staat 8.16.01 op niet geïmplementeerd.
+Het team maakt zich zorgen dat de leverancier bij een volgend incident ook niet belt.
+Collega [naam] had die zaterdag dienst maar was ziek.
+</code></pre>
+<p>Wat de assistent hoort terug te geven:</p>
+<pre><code class="language-json">{
+  &quot;kandidaten&quot;: [
+    {
+      &quot;titel&quot;: &quot;Beveiligingsmeldingen buiten kantoortijd worden niet opgevolgd&quot;,
+      &quot;aangetoond&quot;: &quot;Evaluatie incident 2026-031 (18-09-2026): melding van verdachte aanmelding op een beheeraccount op zaterdag 02:14 kwam in een gedeelde mailbox en werd maandag 08:40 gezien; de aanvaller maakte intussen een tweede beheeraccount aan. Ook in juni ging een vergelijkbare melding pas na 61 uur naar iemand die kon handelen.&quot;,
+      &quot;bronsoort&quot;: &quot;incident&quot;,
+      &quot;bron&quot;: &quot;evaluatie incident 2026-031, 18-09-2026&quot;,
+      &quot;peildatum&quot;: &quot;2026-09-06&quot;,
+      &quot;maatregelen&quot;: [
+        {&quot;sleutel&quot;: &quot;BIO2:8.16.01&quot;, &quot;reden&quot;: &quot;meldingen worden buiten kantoortijd niet opgevolgd&quot;},
+        {&quot;sleutel&quot;: &quot;BIO2:8.02.01&quot;, &quot;reden&quot;: &quot;een aanvaller kon met een beheeraccount een nieuw beheeraccount aanmaken&quot;}
+      ],
+      &quot;kans&quot;: 4, &quot;impact&quot;: 4,
+      &quot;onderbouwing_score&quot;: &quot;twee keer in vier maanden; een beheeraccount geeft toegang tot de hele omgeving&quot;,
+      &quot;status&quot;: &quot;kandidaat&quot;
+    }
+  ],
+  &quot;geen_bevinding&quot;: [
+    {&quot;wat&quot;: &quot;8.16.01 staat op niet geïmplementeerd&quot;, &quot;reden&quot;: &quot;kaderstand; telt al mee via het niveau&quot;},
+    {&quot;wat&quot;: &quot;zorg dat de leverancier bij een volgend incident niet belt&quot;, &quot;reden&quot;: &quot;zorg zonder feit; de leverancier meldde dit keer wel&quot;},
+    {&quot;wat&quot;: &quot;bezetting van de dienst die zaterdag&quot;, &quot;reden&quot;: &quot;over een persoon&quot;}
+  ],
+  &quot;weggelaten_details&quot;: [&quot;naam van een beheeraccount&quot;, &quot;servernaam&quot;, &quot;naam van een medewerker&quot;]
+}
+</code></pre>
+<p>De CISO beslist daarna: nieuwe bevinding, feit onder een bestaande, of afwijzen. In Duinstad staat al B-05
+"Activiteit van beheeraccounts wordt niet bewaakt" op dezelfde maatregel. Dan is de vraag of dit incident
+bewijs onder B-05 is, of een eigen gat (de opvolging, los van de detectie). Dat oordeel maakt de mens.</p>
+<h2 id="prompt-2-een-bevinding-toetsen">Prompt 2: een bevinding toetsen</h2>
+<p>Voor een kandidaat die er al staat, of een bevinding die je wilt herzien.</p>
+<pre><code class="language-text">Toets de bevinding hieronder aan de regels van een risicoregister. Geef per regel &quot;voldoet&quot; of &quot;voldoet
+niet&quot;, met één zin waarom, en een voorstel als iets niet voldoet. Verander zelf niets.
+
+Regels:
+1. Het is een aangetoond feit met datum en bron, geen zorg of verwachting.
+2. Het is geen kaderstand (&quot;niet geïmplementeerd&quot;, rood, &quot;niet voltooid&quot;).
+3. De titel is het gat als patroon, en is smaller dan het operationele risico waar hij onder valt.
+4. De titel wordt gedragen door het bewijs: minstens twee onafhankelijke bewijsstukken, of één meting over
+   de hele populatie.
+5. De bevinding is sluitbaar: er is één eigenaar denkbaar, en te zeggen hoe &quot;opgelost&quot; eruitziet.
+6. Elke genoemde maatregel heeft een reden, en de eerste maatregel is de belangrijkste.
+7. Er staan geen namen, hostnamen, accountnamen, configuratie of kwetsbaarheid per systeem in.
+8. De peildatum is niet ouder dan twaalf maanden, of het feit is herbevestigd.
+
+Leid daarna af, uit de koppeltabel hieronder:
+- het primaire operationele risico: het risico van de eerste maatregel;
+- de secundaire operationele risico's: die van de overige maatregelen, zonder het primaire;
+- het strategische risico: dat van het primaire operationele risico.
+
+Koppeltabel (maatregel, operationeel risico, strategisch risico):
+[plak hier de koppeling uit je register]
+
+Bevinding:
+[plak hier de bevinding]
+</code></pre>
+<h2 id="prompt-3-de-prioriteit-opnieuw-opbouwen">Prompt 3: de prioriteit opnieuw opbouwen</h2>
+<p>Voor wie het script niet draait. De prompt rekent met dezelfde regels als <code>tools/bouw_risicoregister.py</code>;
+controleer de eerste keer de uitkomst tegen het <a href="voorbeeld-register.html">voorbeeld van Duinstad</a> door dat
+register te plakken en de volgorde te vergelijken.</p>
+<pre><code class="language-text">Bouw uit het register hieronder de prioriteitslijst van de maatregelen. Volg de regels precies en reken
+niets anders uit dan wat er staat. Laat bij elke stap zien wat je hebt berekend.
+
+Stap 1, meetellende bevindingen: alleen status &quot;open&quot; of &quot;in behandeling&quot;.
+Stap 2, per bevinding: score = kans × impact. Primair operationeel risico = het risico van de eerste
+maatregel. Strategisch risico = dat van het primaire operationele risico.
+Stap 3, per operationeel risico: score = hoogste score van de meetellende bevindingen waarvan het het
+primaire risico is. Geen zulke bevinding: &quot;niet beoordeeld&quot;.
+Stap 4, per maatregel het niveau (0 niet in orde, 1 opzet, 2 bestaan, 3 werking):
+  a. BIO 2.0: geïmplementeerd = 2, anders 0. BCM: voltooid = 2, deels = 1, niets = 0. Privacy: werking,
+     bestaan en opzet groen = 3; bestaan en opzet groen = 2; opzet groen = 1; anders 0. Oranje telt niet.
+  b. Heeft de maatregel getoetste controls: neem het laagste niveau van die controls (opzet, bestaan,
+     werking cumulatief). Werking vervalt naar 2 als de toets langer geleden is dan de frequentie, gerekend
+     vanaf de peildatum van het register.
+  c. Heeft de maatregel een meetellende bevinding: niveau hooguit 2.
+Stap 5, sorteer de maatregelen:
+  a. eerst de maatregelen waarvan het operationele risico een score heeft, op die score van hoog naar laag;
+  b. dan de rest;
+  c. binnen a en b op de score van het strategische risico, van hoog naar laag; buiten de risicoanalyse
+     telt als 0;
+  d. bij gelijke stand het laagste niveau eerst, dan op sleutel.
+
+Lever een tabel: plek, sleutel, omschrijving, operationeel risico, niveau, bevindingen, waarom op deze plek.
+Zet daaronder elke regel die je niet kon toepassen, met de reden.
+
+Register:
+[plak hier het register]
+</code></pre>
+<h2 id="waarom-deze-verdeling">Waarom deze verdeling</h2>
+<p>Lezen en structureren is werk waar een assistent goed in is: een verslag van drie pagina's teruggebracht
+tot één feit in een vast schema. Oordelen is dat niet. Of een incident een eigen gat is of bewijs onder een
+bestaande bevinding, en hoe zwaar het weegt, hangt af van wat de CISO weet over de organisatie. Daarom levert
+prompt 1 kandidaten en geen bevindingen, en daarom zet prompt 2 niets zelf recht. Rekenen kan een assistent
+ook, maar een script doet het elke keer hetzelfde. Gebruik prompt 3 om te beginnen en het script zodra het
+register groeit.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/risicogestuurd-managementsysteem">governance/risicogestuurd-managementsysteem</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

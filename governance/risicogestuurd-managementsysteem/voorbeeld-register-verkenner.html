@@ -1,0 +1,171 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verkenner: het register van gemeente Duinstad (verzonnen)</title><link rel="icon" href="https://security-commons-nl.github.io/favicon.svg" type="image/svg+xml"><style>
+:root{--tekst:#111;--zacht:#5a6675;--lijn:#c9d1dc;--vlak:#f3f6fa;--accent:#1f4e79;--achter:#fff;
+--n0:#fbe3e1;--n1:#fdf0d5;--n2:#e6effa;--n3:#e2f3e6;--rand-n0:#c0392b;--rand-n1:#b9770e;--rand-n2:#1f4e79;--rand-n3:#1e7b3a}
+@media (prefers-color-scheme:dark){:root{--tekst:#e8ecf1;--zacht:#a7b2bf;--lijn:#3a4654;--vlak:#1c2530;--accent:#8db8e8;
+--achter:#11161c;--n0:#3d1f1c;--n1:#3a2f17;--n2:#18283a;--n3:#17301f;--rand-n0:#e57367;--rand-n1:#e0a64a;--rand-n2:#8db8e8;--rand-n3:#6cc68a}}
+*{box-sizing:border-box}
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:var(--tekst);background:var(--achter);
+max-width:27cm;margin:1.5em auto;padding:0 16px}
+h1{font-size:20pt;border-bottom:2px solid var(--accent);padding-bottom:.2em;color:var(--accent);margin:.4em 0 .3em}
+h2{font-size:14pt;color:var(--accent);margin:1.2em 0 .4em}
+p{margin:.5em 0}a{color:var(--accent)}
+.kruimel{font-size:10pt;color:var(--zacht);margin-bottom:.6em}
+.kruimel a{color:var(--zacht)}
+.uitleg{color:var(--zacht);font-size:10.5pt}
+.balk{display:flex;flex-wrap:wrap;gap:.4em;align-items:center;margin:1em 0 .6em}
+.tab{border:1px solid var(--lijn);background:var(--vlak);color:var(--tekst);padding:.35em .8em;border-radius:4px;
+font:inherit;cursor:pointer}
+.tab[aria-selected=true]{background:var(--accent);color:var(--achter);border-color:var(--accent)}
+.filter{margin-left:auto;display:flex;gap:.4em;align-items:center;font-size:10pt}
+.filter select{font:inherit;padding:.2em .3em;background:var(--achter);color:var(--tekst);border:1px solid var(--lijn)}
+[hidden]{display:none!important}
+.rol{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:10pt;margin:.4em 0}
+th,td{border:1px solid var(--lijn);padding:.35em .5em;vertical-align:top;text-align:left}
+th{background:var(--vlak)}
+.nw{white-space:nowrap}
+.niveau{display:inline-block;padding:0 .4em;border-radius:3px;border-left:3px solid;white-space:nowrap}
+.n0{background:var(--n0);border-color:var(--rand-n0)}.n1{background:var(--n1);border-color:var(--rand-n1)}
+.n2{background:var(--n2);border-color:var(--rand-n2)}.n3{background:var(--n3);border-color:var(--rand-n3)}
+.groep{font-size:9.5pt;color:var(--zacht)}
+.boom ul{list-style:none;margin:.2em 0 .2em 1.1em;padding:0}
+.boom>ul{margin-left:0}
+.boom li{margin:.25em 0}
+.sr{font-weight:bold;color:var(--accent);margin-top:.8em}
+.or{font-weight:bold}
+.zacht{color:var(--zacht)}
+.kaart{border:1px solid var(--lijn);border-radius:4px;padding:.6em .8em;margin:.6em 0;background:var(--vlak)}
+.kaart h3{margin:0 0 .3em;font-size:11.5pt}
+.kaart dl{display:grid;grid-template-columns:max-content 1fr;gap:.15em .8em;margin:0;font-size:10pt}
+.kaart dt{color:var(--zacht)}
+.kaart dd{margin:0}
+.voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
+@media (max-width:640px){.filter{margin-left:0;width:100%}.kaart dl{grid-template-columns:1fr}.kaart dt{margin-top:.3em}}
+@media print{body{max-width:none;margin:0}.balk{display:none}[data-paneel]{display:block!important}
+[data-paneel]+[data-paneel]{page-break-before:always}@page{size:A4 landscape;margin:1.5cm}}
+</style></head><body>
+<nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">GRC voor security, privacy en continuïteit</a> › <span>Verkenner</span></nav>
+<h1>Verkenner: het register van gemeente Duinstad (verzonnen)</h1>
+<p class="uitleg">Gemeente Duinstad bestaat niet; alles hieronder is verzonnen, behalve de sleutels van de maatregelen. Peildatum 01-10-2026. Deze pagina rekent niet zelf: ze toont wat <code>tools/bouw_risicoregister.py</code> uit <a href="voorbeeld-register.json">de gegevens</a> heeft afgeleid. Dezelfde uitkomst als tekst: <a href="voorbeeld-register.html">het voorbeeld</a>. De regels: <a href="model.html">het model</a>.</p>
+<div class="balk" role="tablist">
+<button class="tab" role="tab" data-tab="prioriteit" aria-selected="false">Prioriteit</button>
+<button class="tab" role="tab" data-tab="boom" aria-selected="false">Risico naar maatregel</button>
+<button class="tab" role="tab" data-tab="bevindingen" aria-selected="false">Bevindingen</button>
+<button class="tab" role="tab" data-tab="maatregelen" aria-selected="false">Maatregelen</button>
+<button class="tab" role="tab" data-tab="controls" aria-selected="false">Controls</button>
+<label class="filter">Kader <select id="kader"><option value="alle">alle</option>
+<option value="BIO2">BIO 2.0</option>
+<option value="BCM">BCM (ISO 22301)</option>
+<option value="AVG">Privacy (AVG)</option>
+</select></label></div>
+<section data-paneel="prioriteit"><h2>Prioriteit: wat eerst</h2><p class="uitleg">Eerst de maatregelen onder een risico met een aangetoond gat, dan de rest op het gewicht van het strategische risico. Bij gelijke stand het laagste niveau eerst.</p><div class="rol"><table><thead><tr><th>#</th><th>Maatregel</th><th>Wat</th><th>Risico</th><th>Niveau</th><th>Bevinding</th><th>Waarom hier</th></tr></thead><tbody>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.08.01"><td>1</td><td class="nw">BIO2:8.08.01</td><td>Technische kwetsbaarheden tijdig signaleren</td><td class="nw">OR-01</td><td><span class="niveau n0">0 · niet in orde</span></td><td>B-02</td><td class="groep">OR-01 heeft een aangetoond gat (score 20)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.08.02"><td>2</td><td class="nw">BIO2:8.08.02</td><td>Patches binnen de afgesproken termijn installeren</td><td class="nw">OR-01</td><td><span class="niveau n2">2 · bestaan</span></td><td>B-02</td><td class="groep">OR-01 heeft een aangetoond gat (score 20)</td></tr>
+<tr data-kader="BCM" data-sleutel="BCM:8.5"><td>3</td><td class="nw">BCM:8.5</td><td>Plannen oefenen en herstel testen</td><td class="nw">OR-02</td><td><span class="niveau n0">0 · niet in orde</span></td><td>B-03</td><td class="groep">OR-02 heeft een aangetoond gat (score 15)</td></tr>
+<tr data-kader="BCM" data-sleutel="BCM:8.4.4"><td>4</td><td class="nw">BCM:8.4.4</td><td>Continuïteitsplan per kritiek proces</td><td class="nw">OR-02</td><td><span class="niveau n1">1 · opzet</span></td><td>B-03</td><td class="groep">OR-02 heeft een aangetoond gat (score 15)</td></tr>
+<tr data-kader="BCM" data-sleutel="BCM:8.2.2"><td>5</td><td class="nw">BCM:8.2.2</td><td>Bedrijfsimpactanalyse van de kritieke processen</td><td class="nw">OR-02</td><td><span class="niveau n2">2 · bestaan</span></td><td></td><td class="groep">OR-02 heeft een aangetoond gat (score 15)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.02.01"><td>6</td><td class="nw">BIO2:8.02.01</td><td>Beheerrechten apart toekennen en beperken</td><td class="nw">OR-05</td><td><span class="niveau n0">0 · niet in orde</span></td><td>B-05</td><td class="groep">OR-05 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.16.01"><td>7</td><td class="nw">BIO2:8.16.01</td><td>Afwijkend gedrag opsporen en opvolgen</td><td class="nw">OR-06</td><td><span class="niveau n0">0 · niet in orde</span></td><td>B-05</td><td class="groep">OR-06 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:5.15.01"><td>8</td><td class="nw">BIO2:5.15.01</td><td>Toegangsbeleid vastgesteld en toegepast</td><td class="nw">OR-05</td><td><span class="niveau n2">2 · bestaan</span></td><td></td><td class="groep">OR-05 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:5.18.01"><td>9</td><td class="nw">BIO2:5.18.01</td><td>Toegangsrechten toekennen, herzien en intrekken</td><td class="nw">OR-05</td><td><span class="niveau n2">2 · bestaan</span></td><td>B-01</td><td class="groep">OR-05 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.15.01"><td>10</td><td class="nw">BIO2:8.15.01</td><td>Gebeurtenissen vastleggen in logbestanden</td><td class="nw">OR-06</td><td><span class="niveau n2">2 · bestaan</span></td><td></td><td class="groep">OR-06 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:8.05.01"><td>11</td><td class="nw">BIO2:8.05.01</td><td>Sterke authenticatie voor toegang</td><td class="nw">OR-05</td><td><span class="niveau n3">3 · werking</span></td><td></td><td class="groep">OR-05 heeft een aangetoond gat (score 12)</td></tr>
+<tr data-kader="AVG" data-sleutel="AVG:A12"><td>12</td><td class="nw">AVG:A12</td><td>Betrokkenen tijdig en begrijpelijk informeren over hun verzoek</td><td class="nw">OR-03</td><td><span class="niveau n1">1 · opzet</span></td><td>B-04</td><td class="groep">OR-03 heeft een aangetoond gat (score 8)</td></tr>
+<tr data-kader="AVG" data-sleutel="AVG:A15"><td>13</td><td class="nw">AVG:A15</td><td>Inzageverzoeken binnen de wettelijke termijn afhandelen</td><td class="nw">OR-03</td><td><span class="niveau n2">2 · bestaan</span></td><td>B-04</td><td class="groep">OR-03 heeft een aangetoond gat (score 8)</td></tr>
+<tr data-kader="AVG" data-sleutel="AVG:A29"><td>14</td><td class="nw">AVG:A29</td><td>Verwerkers werken alleen in opdracht</td><td class="nw">OR-04</td><td><span class="niveau n1">1 · opzet</span></td><td></td><td class="groep">OR-04 niet beoordeeld; gewicht van SR-02 (score 12)</td></tr>
+<tr data-kader="AVG" data-sleutel="AVG:A28"><td>15</td><td class="nw">AVG:A28</td><td>Verwerkersovereenkomst met elke verwerker</td><td class="nw">OR-04</td><td><span class="niveau n2">2 · bestaan</span></td><td></td><td class="groep">OR-04 niet beoordeeld; gewicht van SR-02 (score 12)</td></tr>
+<tr data-kader="BIO2" data-sleutel="BIO2:7.02.01"><td>16</td><td class="nw">BIO2:7.02.01</td><td>Fysieke toegang tot ruimtes met apparatuur</td><td class="nw">OR-07</td><td><span class="niveau n2">2 · bestaan</span></td><td></td><td class="groep">OR-07 niet beoordeeld en buiten de SRA; laagste gewicht</td></tr>
+</tbody></table></div></section>
+<section data-paneel="boom" class="boom"><h2>Van strategisch risico naar maatregel</h2><ul>
+<li data-kader="BCM BIO2"><div class="sr">SR-01 · Uitval van kritieke dienstverlening door een cyberaanval <span class="zacht">· score 20 (Kritiek)</span></div><ul>
+<li data-kader="BIO2"><span class="or">OR-01</span> Bekende kwetsbaarheden in systemen worden te laat verholpen <span class="zacht">· BIO 2.0 · score 20 (Kritiek) · B-02</span><ul>
+<li><span class="niveau n0">0 · niet in orde</span> BIO2:8.08.01 Technische kwetsbaarheden tijdig signaleren <span class="zacht">· B-02</span></li>
+<li><span class="niveau n2">2 · bestaan</span> BIO2:8.08.02 Patches binnen de afgesproken termijn installeren <span class="zacht">· B-02</span></li>
+</ul></li>
+<li data-kader="BCM"><span class="or">OR-02</span> Herstel van kritieke processen is niet voorbereid of niet beproefd <span class="zacht">· BCM (ISO 22301) · score 15 (Hoog) · B-03</span><ul>
+<li><span class="niveau n2">2 · bestaan</span> BCM:8.2.2 Bedrijfsimpactanalyse van de kritieke processen</li>
+<li><span class="niveau n1">1 · opzet</span> BCM:8.4.4 Continuïteitsplan per kritiek proces <span class="zacht">· B-03</span></li>
+<li><span class="niveau n0">0 · niet in orde</span> BCM:8.5 Plannen oefenen en herstel testen <span class="zacht">· B-03</span></li>
+</ul></li>
+</ul></li>
+<li data-kader="AVG"><div class="sr">SR-02 · Onrechtmatige verwerking of verlies van persoonsgegevens van inwoners <span class="zacht">· score 12 (Hoog)</span></div><ul>
+<li data-kader="AVG"><span class="or">OR-03</span> Verzoeken van betrokkenen worden niet tijdig of niet volledig afgehandeld <span class="zacht">· Privacy (AVG) · score 8 (Gemiddeld) · B-04</span><ul>
+<li><span class="niveau n1">1 · opzet</span> AVG:A12 Betrokkenen tijdig en begrijpelijk informeren over hun verzoek <span class="zacht">· B-04</span></li>
+<li><span class="niveau n2">2 · bestaan</span> AVG:A15 Inzageverzoeken binnen de wettelijke termijn afhandelen <span class="zacht">· B-04</span></li>
+</ul></li>
+<li data-kader="AVG"><span class="or">OR-04</span> Verwerkers werken met persoonsgegevens zonder passende afspraken <span class="zacht">· Privacy (AVG) · niet beoordeeld · B-06</span><ul>
+<li><span class="niveau n2">2 · bestaan</span> AVG:A28 Verwerkersovereenkomst met elke verwerker</li>
+<li><span class="niveau n1">1 · opzet</span> AVG:A29 Verwerkers werken alleen in opdracht</li>
+</ul></li>
+</ul></li>
+<li data-kader="BIO2"><div class="sr">SR-03 · Misbruik van bevoegdheden via een gekaapt of intern account <span class="zacht">· score 15 (Hoog)</span></div><ul>
+<li data-kader="BIO2"><span class="or">OR-05</span> Toegangsrechten passen niet bij de functie of worden niet ingetrokken <span class="zacht">· BIO 2.0 · score 12 (Hoog) · B-01</span><ul>
+<li><span class="niveau n2">2 · bestaan</span> BIO2:5.15.01 Toegangsbeleid vastgesteld en toegepast</li>
+<li><span class="niveau n2">2 · bestaan</span> BIO2:5.18.01 Toegangsrechten toekennen, herzien en intrekken <span class="zacht">· B-01</span></li>
+<li><span class="niveau n0">0 · niet in orde</span> BIO2:8.02.01 Beheerrechten apart toekennen en beperken <span class="zacht">· B-05</span></li>
+<li><span class="niveau n3">3 · werking</span> BIO2:8.05.01 Sterke authenticatie voor toegang</li>
+</ul></li>
+<li data-kader="BIO2"><span class="or">OR-06</span> Misbruik van accounts wordt niet of te laat gezien <span class="zacht">· BIO 2.0 · score 12 (Hoog) · B-05</span><ul>
+<li><span class="niveau n2">2 · bestaan</span> BIO2:8.15.01 Gebeurtenissen vastleggen in logbestanden</li>
+<li><span class="niveau n0">0 · niet in orde</span> BIO2:8.16.01 Afwijkend gedrag opsporen en opvolgen <span class="zacht">· B-05</span></li>
+</ul></li>
+</ul></li>
+<li data-kader="BIO2"><div class="sr">Buiten de strategische risicoanalyse <span class="zacht">· laagste gewicht</span></div><ul>
+<li data-kader="BIO2"><span class="or">OR-07</span> Onbevoegden komen fysiek bij apparatuur <span class="zacht">· BIO 2.0 · niet beoordeeld</span><ul>
+<li><span class="niveau n2">2 · bestaan</span> BIO2:7.02.01 Fysieke toegang tot ruimtes met apparatuur</li>
+</ul></li>
+</ul></li>
+</ul></section>
+<section data-paneel="bevindingen"><h2>Bevindingen</h2><p class="uitleg">Het risico volgt uit de maatregel: de eerste maatregel bepaalt het primaire risico. Alleen open en in behandeling tellen mee.</p>
+<article class="kaart" data-kader="BIO2"><h3>B-01 · Toegangsrechten worden bij een functiewissel niet aangepast</h3><dl><dt>Aangetoond</dt><dd>Kwartaalcontrole Q2 door de tweede lijn (15-07-2026): bij 2 van de 6 afdelingen samen 14 accounts met rechten uit een vorige functie. De controle zelf liep bij die afdelingen niet.</dd><dt>Bron</dt><dd>toets, toetsrapport C-01, Q2 2026 (peildatum 15-07-2026)</dd><dt>Maatregel BIO2:5.18.01</dt><dd>rechten worden bij functiewissel niet herzien</dd><dt>Afgeleid</dt><dd>OR-05, SR-03</dd><dt>Score</dt><dd>kans 3 × impact 4 = 12 (Hoog)</dd><dt>Status</dt><dd>open</dd></dl></article>
+<article class="kaart" data-kader="BIO2"><h3>B-02 · Kritieke kwetsbaarheden in extern bereikbare systemen blijven langer open dan de patchtermijn</h3><dl><dt>Aangetoond</dt><dd>Incident maart 2026: misbruik van een kwetsbaarheid in de VPN-voorziening, negen dagen nadat de patch beschikbaar was. Kwetsbaarheidsscan juni 2026: 3 van de 11 extern bereikbare systemen boven de termijn.</dd><dt>Bron</dt><dd>incident, incidentverslag maart 2026; scanrapport juni 2026 (peildatum 30-06-2026)</dd><dt>Maatregel BIO2:8.08.02</dt><dd>patchtermijn voor kritieke kwetsbaarheden niet gehaald</dd><dt>Maatregel BIO2:8.08.01</dt><dd>publicatie van de kwetsbaarheid niet tijdig opgemerkt</dd><dt>Afgeleid</dt><dd>OR-01, SR-01</dd><dt>Score</dt><dd>kans 4 × impact 5 = 20 (Kritiek)</dd><dt>Status</dt><dd>in behandeling</dd></dl></article>
+<article class="kaart" data-kader="BCM"><h3>B-03 · Herstel van kritieke applicaties is niet binnen de hersteltijd beproefd</h3><dl><dt>Aangetoond</dt><dd>Hersteltest mei 2026: herstel van het zaaksysteem uit back-up duurde 31 uur bij een afgesproken hersteltijd van 8 uur. Voor de andere vier kritieke applicaties is nooit een hersteltest gedaan.</dd><dt>Bron</dt><dd>test, verslag hersteltest mei 2026 (peildatum 20-05-2026)</dd><dt>Maatregel BCM:8.5</dt><dd>herstel niet beproefd voor vier van vijf kritieke applicaties</dd><dt>Maatregel BCM:8.4.4</dt><dd>continuïteitsplan noemt een hersteltijd die niet haalbaar is</dd><dt>Afgeleid</dt><dd>OR-02, SR-01</dd><dt>Score</dt><dd>kans 3 × impact 5 = 15 (Hoog)</dd><dt>Status</dt><dd>open</dd></dl></article>
+<article class="kaart" data-kader="AVG"><h3>B-04 · Inzageverzoeken worden structureel buiten de wettelijke termijn afgehandeld</h3><dl><dt>Aangetoond</dt><dd>Toets door de functionaris gegevensbescherming (september 2026): 7 van de 19 inzageverzoeken in 2026 na meer dan een maand afgehandeld, zonder dat de betrokkene over verlenging is geïnformeerd.</dd><dt>Bron</dt><dd>toets, rapportage FG, september 2026 (peildatum 10-09-2026)</dd><dt>Maatregel AVG:A15</dt><dd>termijn van een maand niet gehaald</dd><dt>Maatregel AVG:A12</dt><dd>betrokkene niet geïnformeerd over verlenging</dd><dt>Afgeleid</dt><dd>OR-03, SR-02</dd><dt>Score</dt><dd>kans 4 × impact 2 = 8 (Gemiddeld)</dd><dt>Status</dt><dd>open</dd></dl></article>
+<article class="kaart" data-kader="BIO2"><h3>B-05 · Activiteit van beheeraccounts wordt niet bewaakt</h3><dl><dt>Aangetoond</dt><dd>Meting augustus 2026: aanmeldingen van beheeraccounts worden gelogd, maar er staat geen melding op. In 90 dagen nul meldingen, terwijl de logs drie aanmeldingen buiten kantoortijd vanaf een onbekend apparaat tonen.</dd><dt>Bron</dt><dd>meting, meetrapport logging, augustus 2026 (peildatum 28-08-2026)</dd><dt>Maatregel BIO2:8.16.01</dt><dd>geen detectie op afwijkend gebruik van beheeraccounts</dd><dt>Maatregel BIO2:8.02.01</dt><dd>beheeraccounts worden ook gebruikt buiten beheertaken</dd><dt>Afgeleid</dt><dd>OR-06; secundair OR-05, SR-03</dd><dt>Score</dt><dd>kans 3 × impact 4 = 12 (Hoog)</dd><dt>Status</dt><dd>open</dd></dl></article>
+<article class="kaart" data-kader="AVG"><h3>B-06 · Verwerkersovereenkomsten ontbreken bij kleine leveranciers</h3><dl><dt>Aangetoond</dt><dd>Inventarisatie van het verwerkingsregister (april 2026): 2 van de 41 verwerkers zonder overeenkomst, beide kleine leveranciers met een contract dat eind 2026 afloopt.</dd><dt>Bron</dt><dd>analyse, inventarisatie verwerkingsregister, april 2026 (peildatum 30-04-2026)</dd><dt>Maatregel AVG:A28</dt><dd>geen overeenkomst bij twee verwerkers</dd><dt>Afgeleid</dt><dd>OR-04, SR-02</dd><dt>Score</dt><dd>kans 2 × impact 3 = 6 (Gemiddeld)</dd><dt>Status</dt><dd>geaccepteerd, telt niet mee</dd><dt>Besluit</dt><dd>Risico-eigenaar accepteert tot het einde van beide contracten op 31-12-2026; daarna niet verlengen zonder overeenkomst.</dd></dl></article>
+</section>
+<section data-paneel="maatregelen"><h2>Maatregelen</h2><div class="rol"><table><thead><tr><th>Maatregel</th><th>Wat</th><th>Risico</th><th>Stand in de bron</th><th>Niveau</th><th>Waar het niveau vandaan komt</th><th>Beheerseigenaar</th></tr></thead><tbody>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.08.01</td><td>Technische kwetsbaarheden tijdig signaleren</td><td class="nw">OR-01</td><td>niet geïmplementeerd</td><td><span class="niveau n0">0 · niet in orde</span></td><td>stand in de bron</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.08.02</td><td>Patches binnen de afgesproken termijn installeren</td><td class="nw">OR-01</td><td>geïmplementeerd</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BCM"><td class="nw">BCM:8.2.2</td><td>Bedrijfsimpactanalyse van de kritieke processen</td><td class="nw">OR-02</td><td>voltooid</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>BCM-coördinator</td></tr>
+<tr data-kader="BCM"><td class="nw">BCM:8.4.4</td><td>Continuïteitsplan per kritiek proces</td><td class="nw">OR-02</td><td>deels</td><td><span class="niveau n1">1 · opzet</span></td><td>stand in de bron</td><td>BCM-coördinator</td></tr>
+<tr data-kader="BCM"><td class="nw">BCM:8.5</td><td>Plannen oefenen en herstel testen</td><td class="nw">OR-02</td><td>niets</td><td><span class="niveau n0">0 · niet in orde</span></td><td>stand in de bron</td><td>BCM-coördinator</td></tr>
+<tr data-kader="AVG"><td class="nw">AVG:A12</td><td>Betrokkenen tijdig en begrijpelijk informeren over hun verzoek</td><td class="nw">OR-03</td><td>opzet groen, bestaan oranje, werking rood</td><td><span class="niveau n1">1 · opzet</span></td><td>stand in de bron</td><td>privacy officer</td></tr>
+<tr data-kader="AVG"><td class="nw">AVG:A15</td><td>Inzageverzoeken binnen de wettelijke termijn afhandelen</td><td class="nw">OR-03</td><td>opzet groen, bestaan groen, werking rood</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>privacy officer</td></tr>
+<tr data-kader="AVG"><td class="nw">AVG:A28</td><td>Verwerkersovereenkomst met elke verwerker</td><td class="nw">OR-04</td><td>opzet groen, bestaan groen, werking oranje</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>contractmanager</td></tr>
+<tr data-kader="AVG"><td class="nw">AVG:A29</td><td>Verwerkers werken alleen in opdracht</td><td class="nw">OR-04</td><td>opzet groen, bestaan rood, werking rood</td><td><span class="niveau n1">1 · opzet</span></td><td>stand in de bron</td><td>contractmanager</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:5.15.01</td><td>Toegangsbeleid vastgesteld en toegepast</td><td class="nw">OR-05</td><td>geïmplementeerd</td><td><span class="niveau n2">2 · bestaan</span></td><td>control C-03 (toets 01-06-2026, werking verlopen (cyclus gemist))</td><td>informatiemanager</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:5.18.01</td><td>Toegangsrechten toekennen, herzien en intrekken</td><td class="nw">OR-05</td><td>geïmplementeerd</td><td><span class="niveau n2">2 · bestaan</span></td><td>zwakste control C-01 (toets 15-07-2026)</td><td>teamleider functioneel beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.02.01</td><td>Beheerrechten apart toekennen en beperken</td><td class="nw">OR-05</td><td>niet geïmplementeerd</td><td><span class="niveau n0">0 · niet in orde</span></td><td>stand in de bron</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.05.01</td><td>Sterke authenticatie voor toegang</td><td class="nw">OR-05</td><td>geïmplementeerd</td><td><span class="niveau n3">3 · werking</span></td><td>control C-02 (toets 01-09-2026)</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.15.01</td><td>Gebeurtenissen vastleggen in logbestanden</td><td class="nw">OR-06</td><td>geïmplementeerd</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:8.16.01</td><td>Afwijkend gedrag opsporen en opvolgen</td><td class="nw">OR-06</td><td>niet geïmplementeerd</td><td><span class="niveau n0">0 · niet in orde</span></td><td>stand in de bron</td><td>teamleider technisch beheer</td></tr>
+<tr data-kader="BIO2"><td class="nw">BIO2:7.02.01</td><td>Fysieke toegang tot ruimtes met apparatuur</td><td class="nw">OR-07</td><td>geïmplementeerd</td><td><span class="niveau n2">2 · bestaan</span></td><td>stand in de bron</td><td>facilitair manager</td></tr>
+</tbody></table></div></section>
+<section data-paneel="controls"><h2>Controls</h2><p class="uitleg">De zwakste getoetste control bepaalt het niveau van de maatregel. Werking vervalt als de volgende toets niet op tijd komt.</p><div class="rol"><table><thead><tr><th>Control</th><th>Wat</th><th>Toetst</th><th>Frequentie</th><th>Laatste toets</th><th>Niveau</th><th>Bewijs</th></tr></thead><tbody>
+<tr data-kader="BIO2"><td class="nw">C-01</td><td>Kwartaalcontrole van toegangsrechten per afdeling</td><td>BIO2:5.18.01</td><td>elke 92 dagen</td><td>15-07-2026, tweede lijn</td><td><span class="niveau n2">2 · bestaan</span> <span class="zacht">toets 15-07-2026</span></td><td>steekproef Q2: 2 van 6 afdelingen niet gecontroleerd</td></tr>
+<tr data-kader="BIO2"><td class="nw">C-02</td><td>Aanmelden alleen met phishingbestendige MFA</td><td>BIO2:8.05.01</td><td>elke 183 dagen</td><td>01-09-2026, tweede lijn</td><td><span class="niveau n3">3 · werking</span> <span class="zacht">toets 01-09-2026</span></td><td>export aanmeldbeleid en aanmeldlog over 30 dagen</td></tr>
+<tr data-kader="BIO2"><td class="nw">C-03</td><td>Uitdienstmelding leidt binnen een werkdag tot blokkade</td><td>BIO2:5.18.01, BIO2:5.15.01</td><td>elke 31 dagen</td><td>01-06-2026, tweede lijn</td><td><span class="niveau n2">2 · bestaan</span> <span class="zacht">toets 01-06-2026, werking verlopen (cyclus gemist)</span></td><td>vergelijking HR-uitstroom met blokkades, mei</td></tr>
+</tbody></table></div></section>
+<p class="voet">Gegenereerd door <code>tools/bouw_risicoregister.py</code> in de <a href="https://github.com/security-commons-nl/kennisbank">kennisbank</a> van Security Commons NL. EUPL-1.2.</p>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panelen=[].slice.call(document.querySelectorAll('[data-paneel]'));
+  function toon(naam){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===naam?'true':'false');});
+    panelen.forEach(function(p){p.hidden=p.dataset.paneel!==naam;});
+    try{history.replaceState(null,'','#'+naam);}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){toon(t.dataset.tab);});});
+  var start=(location.hash||'').slice(1);
+  toon(tabs.some(function(t){return t.dataset.tab===start;})?start:tabs[0].dataset.tab);
+  var kies=document.getElementById('kader');
+  kies.addEventListener('change',function(){
+    var k=kies.value;
+    [].slice.call(document.querySelectorAll('[data-kader]')).forEach(function(el){
+      el.hidden=!(k==='alle'||el.dataset.kader.split(' ').indexOf(k)!==-1);
+    });
+  });
+})();
+</script></body></html>

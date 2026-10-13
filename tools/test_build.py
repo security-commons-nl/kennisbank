@@ -905,6 +905,23 @@ class LeesversiePerStuk(Basis):
         self.assertFalse((map_ / "procedure.html").exists())
 
 
+class LinkNaarTeBouwenLeesversie(Basis):
+    """Een link naar de leesversie van een stuk is goed als de markdown ernaast staat: de build maakt hem."""
+
+    def test_link_naar_leesversie_van_stuk_mag_voor_de_eerste_build(self):
+        map_ = self.item("x")
+        (map_ / "model.md").write_text("# Model\n", encoding="utf-8")
+        (map_ / "verkenner.html").write_text('<a href="model.html">model</a>', encoding="utf-8")
+        build.controleer_dode_links(map_)
+        self.assertEqual(build.fouten, [])
+
+    def test_link_naar_html_zonder_markdown_blijft_fout(self):
+        map_ = self.item("x")
+        (map_ / "verkenner.html").write_text('<a href="weg.html">weg</a>', encoding="utf-8")
+        build.controleer_dode_links(map_)
+        self.assertTrue(any("weg.html" in f for f in build.fouten))
+
+
 class SitemapEnAchterstand(Basis):
     """De sitemap komt uit dezelfde items als de pagina's; een achterstand waarschuwt, blokkeert niet."""
 
@@ -917,6 +934,17 @@ class SitemapEnAchterstand(Basis):
         self.assertIn(f"<loc>{build.SITE}/security/een-item/</loc>", xml)
         self.assertIn(f"<loc>{build.SITE}/security/een-item/brief.html</loc>", xml)
         self.assertNotIn("lastmod", xml)
+
+    def test_sitemap_en_llms_noemen_html_bijlage_zonder_markdown(self):
+        map_ = self.item("x")
+        (map_ / "verkenner.html").write_text("<html><head><title>De verkenner</title></head></html>",
+                                             encoding="utf-8")
+        items = {"security": [{"_map": map_, "_weergave": "live", "_link": "security/een-item/",
+                               "titel": "Het item", "samenvatting": "s", "normen": []}]}
+        self.assertIn(f"<loc>{build.SITE}/security/een-item/verkenner.html</loc>", build.sitemap_tekst(items))
+        llms = build.llms_tekst({"security": {"titel": "Security"}}, items)
+        self.assertIn(f"  - [De verkenner]({build.SITE}/security/een-item/verkenner.html)", llms)
+        self.assertNotIn("index.html", build.sitemap_tekst(items).replace(f"{build.SITE}/security/een-item/</loc>", ""))
 
     def test_achterstand_is_geen_fout(self):
         self.item("x")

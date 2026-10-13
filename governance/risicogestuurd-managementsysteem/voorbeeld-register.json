@@ -1,0 +1,149 @@
+{
+  "organisatie": "Gemeente Duinstad (verzonnen)",
+  "peildatum": "2026-10-01",
+  "toelichting": "Verzonnen register van een middelgrote gemeente, om te laten zien hoe de afleiding en de prioriteit werken. Elke naam, elk getal en elke gebeurtenis is verzonnen. De sleutels zijn echt: BIO 2.0-overheidsmaatregelen (nummer, eigen omschrijving), AVG-artikelen zoals in de normwijzer van de commons, en paragrafen van ISO 22301 voor BCM.",
+  "klassen": [
+    {"naam": "Laag", "vanaf": 1},
+    {"naam": "Gemiddeld", "vanaf": 5},
+    {"naam": "Hoog", "vanaf": 10},
+    {"naam": "Kritiek", "vanaf": 16}
+  ],
+  "kaders": {
+    "BIO2": {
+      "naam": "BIO 2.0",
+      "standaardlijst": "per ISO 27002-control een risicoformulering",
+      "bron": "verklaring van toepasselijkheid",
+      "stand": "status per maatregel: geïmplementeerd of niet geïmplementeerd (zelfbeoordeling)"
+    },
+    "BCM": {
+      "naam": "BCM (ISO 22301)",
+      "standaardlijst": "per thema van de BCM-maatregelenset",
+      "bron": "BCM-maatregelenset met voortgang per kwartaal",
+      "stand": "voltooid, deels of niets (zelfbeoordeling)"
+    },
+    "AVG": {
+      "naam": "Privacy (AVG)",
+      "standaardlijst": "per thema van het privacykader",
+      "bron": "privacykader met opzet, bestaan en werking per norm",
+      "stand": "opzet, bestaan en werking als groen, oranje of rood"
+    }
+  },
+  "sr": [
+    {"code": "SR-01", "titel": "Uitval van kritieke dienstverlening door een cyberaanval", "kans": 4, "impact": 5},
+    {"code": "SR-02", "titel": "Onrechtmatige verwerking of verlies van persoonsgegevens van inwoners", "kans": 3, "impact": 4},
+    {"code": "SR-03", "titel": "Misbruik van bevoegdheden via een gekaapt of intern account", "kans": 3, "impact": 5}
+  ],
+  "or": [
+    {"code": "OR-01", "kader": "BIO2", "standaard": "ISO 27002 8.8", "titel": "Bekende kwetsbaarheden in systemen worden te laat verholpen", "sr": "SR-01"},
+    {"code": "OR-02", "kader": "BCM", "standaard": "ISO 22301 8.4 en 8.5", "titel": "Herstel van kritieke processen is niet voorbereid of niet beproefd", "sr": "SR-01"},
+    {"code": "OR-03", "kader": "AVG", "standaard": "thema rechten van betrokkenen", "titel": "Verzoeken van betrokkenen worden niet tijdig of niet volledig afgehandeld", "sr": "SR-02"},
+    {"code": "OR-04", "kader": "AVG", "standaard": "thema verwerkers en ketenpartners", "titel": "Verwerkers werken met persoonsgegevens zonder passende afspraken", "sr": "SR-02"},
+    {"code": "OR-05", "kader": "BIO2", "standaard": "ISO 27002 5.15, 5.18, 8.2 en 8.5", "titel": "Toegangsrechten passen niet bij de functie of worden niet ingetrokken", "sr": "SR-03"},
+    {"code": "OR-06", "kader": "BIO2", "standaard": "ISO 27002 8.15 en 8.16", "titel": "Misbruik van accounts wordt niet of te laat gezien", "sr": "SR-03"},
+    {"code": "OR-07", "kader": "BIO2", "standaard": "ISO 27002 7.2", "titel": "Onbevoegden komen fysiek bij apparatuur", "sr": null}
+  ],
+  "maatregelen": [
+    {"sleutel": "BIO2:8.08.01", "titel": "Technische kwetsbaarheden tijdig signaleren", "or": "OR-01", "stand": "niet geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BIO2:8.08.02", "titel": "Patches binnen de afgesproken termijn installeren", "or": "OR-01", "stand": "geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BCM:8.2.2", "titel": "Bedrijfsimpactanalyse van de kritieke processen", "or": "OR-02", "stand": "voltooid", "eigenaar": "BCM-coördinator"},
+    {"sleutel": "BCM:8.4.4", "titel": "Continuïteitsplan per kritiek proces", "or": "OR-02", "stand": "deels", "eigenaar": "BCM-coördinator"},
+    {"sleutel": "BCM:8.5", "titel": "Plannen oefenen en herstel testen", "or": "OR-02", "stand": "niets", "eigenaar": "BCM-coördinator"},
+    {"sleutel": "AVG:A12", "titel": "Betrokkenen tijdig en begrijpelijk informeren over hun verzoek", "or": "OR-03", "stand": {"opzet": "groen", "bestaan": "oranje", "werking": "rood"}, "eigenaar": "privacy officer"},
+    {"sleutel": "AVG:A15", "titel": "Inzageverzoeken binnen de wettelijke termijn afhandelen", "or": "OR-03", "stand": {"opzet": "groen", "bestaan": "groen", "werking": "rood"}, "eigenaar": "privacy officer"},
+    {"sleutel": "AVG:A28", "titel": "Verwerkersovereenkomst met elke verwerker", "or": "OR-04", "stand": {"opzet": "groen", "bestaan": "groen", "werking": "oranje"}, "eigenaar": "contractmanager"},
+    {"sleutel": "AVG:A29", "titel": "Verwerkers werken alleen in opdracht", "or": "OR-04", "stand": {"opzet": "groen", "bestaan": "rood", "werking": "rood"}, "eigenaar": "contractmanager"},
+    {"sleutel": "BIO2:5.15.01", "titel": "Toegangsbeleid vastgesteld en toegepast", "or": "OR-05", "stand": "geïmplementeerd", "eigenaar": "informatiemanager"},
+    {"sleutel": "BIO2:5.18.01", "titel": "Toegangsrechten toekennen, herzien en intrekken", "or": "OR-05", "stand": "geïmplementeerd", "eigenaar": "teamleider functioneel beheer"},
+    {"sleutel": "BIO2:8.02.01", "titel": "Beheerrechten apart toekennen en beperken", "or": "OR-05", "stand": "niet geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BIO2:8.05.01", "titel": "Sterke authenticatie voor toegang", "or": "OR-05", "stand": "geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BIO2:8.15.01", "titel": "Gebeurtenissen vastleggen in logbestanden", "or": "OR-06", "stand": "geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BIO2:8.16.01", "titel": "Afwijkend gedrag opsporen en opvolgen", "or": "OR-06", "stand": "niet geïmplementeerd", "eigenaar": "teamleider technisch beheer"},
+    {"sleutel": "BIO2:7.02.01", "titel": "Fysieke toegang tot ruimtes met apparatuur", "or": "OR-07", "stand": "geïmplementeerd", "eigenaar": "facilitair manager"}
+  ],
+  "controls": [
+    {"code": "C-01", "titel": "Kwartaalcontrole van toegangsrechten per afdeling", "maatregelen": ["BIO2:5.18.01"], "eigenaar": "teamleider functioneel beheer", "frequentie_dagen": 92, "toets": {"datum": "2026-07-15", "toetser": "tweede lijn", "opzet": true, "bestaan": true, "werking": false, "bewijs": "steekproef Q2: 2 van 6 afdelingen niet gecontroleerd"}},
+    {"code": "C-02", "titel": "Aanmelden alleen met phishingbestendige MFA", "maatregelen": ["BIO2:8.05.01"], "eigenaar": "teamleider technisch beheer", "frequentie_dagen": 183, "toets": {"datum": "2026-09-01", "toetser": "tweede lijn", "opzet": true, "bestaan": true, "werking": true, "bewijs": "export aanmeldbeleid en aanmeldlog over 30 dagen"}},
+    {"code": "C-03", "titel": "Uitdienstmelding leidt binnen een werkdag tot blokkade", "maatregelen": ["BIO2:5.18.01", "BIO2:5.15.01"], "eigenaar": "teamleider functioneel beheer", "frequentie_dagen": 31, "toets": {"datum": "2026-06-01", "toetser": "tweede lijn", "opzet": true, "bestaan": true, "werking": true, "bewijs": "vergelijking HR-uitstroom met blokkades, mei"}}
+  ],
+  "bevindingen": [
+    {
+      "code": "B-01",
+      "titel": "Toegangsrechten worden bij een functiewissel niet aangepast",
+      "aangetoond": "Kwartaalcontrole Q2 door de tweede lijn (15-07-2026): bij 2 van de 6 afdelingen samen 14 accounts met rechten uit een vorige functie. De controle zelf liep bij die afdelingen niet.",
+      "bronsoort": "toets",
+      "bron": "toetsrapport C-01, Q2 2026",
+      "peildatum": "2026-07-15",
+      "maatregelen": [{"sleutel": "BIO2:5.18.01", "reden": "rechten worden bij functiewissel niet herzien"}],
+      "kans": 3, "impact": 4,
+      "status": "open", "statusdatum": "2026-07-20"
+    },
+    {
+      "code": "B-02",
+      "titel": "Kritieke kwetsbaarheden in extern bereikbare systemen blijven langer open dan de patchtermijn",
+      "aangetoond": "Incident maart 2026: misbruik van een kwetsbaarheid in de VPN-voorziening, negen dagen nadat de patch beschikbaar was. Kwetsbaarheidsscan juni 2026: 3 van de 11 extern bereikbare systemen boven de termijn.",
+      "bronsoort": "incident",
+      "bron": "incidentverslag maart 2026; scanrapport juni 2026",
+      "peildatum": "2026-06-30",
+      "maatregelen": [
+        {"sleutel": "BIO2:8.08.02", "reden": "patchtermijn voor kritieke kwetsbaarheden niet gehaald"},
+        {"sleutel": "BIO2:8.08.01", "reden": "publicatie van de kwetsbaarheid niet tijdig opgemerkt"}
+      ],
+      "kans": 4, "impact": 5,
+      "status": "in behandeling", "statusdatum": "2026-08-01"
+    },
+    {
+      "code": "B-03",
+      "titel": "Herstel van kritieke applicaties is niet binnen de hersteltijd beproefd",
+      "aangetoond": "Hersteltest mei 2026: herstel van het zaaksysteem uit back-up duurde 31 uur bij een afgesproken hersteltijd van 8 uur. Voor de andere vier kritieke applicaties is nooit een hersteltest gedaan.",
+      "bronsoort": "test",
+      "bron": "verslag hersteltest mei 2026",
+      "peildatum": "2026-05-20",
+      "maatregelen": [
+        {"sleutel": "BCM:8.5", "reden": "herstel niet beproefd voor vier van vijf kritieke applicaties"},
+        {"sleutel": "BCM:8.4.4", "reden": "continuïteitsplan noemt een hersteltijd die niet haalbaar is"}
+      ],
+      "kans": 3, "impact": 5,
+      "status": "open", "statusdatum": "2026-06-01"
+    },
+    {
+      "code": "B-04",
+      "titel": "Inzageverzoeken worden structureel buiten de wettelijke termijn afgehandeld",
+      "aangetoond": "Toets door de functionaris gegevensbescherming (september 2026): 7 van de 19 inzageverzoeken in 2026 na meer dan een maand afgehandeld, zonder dat de betrokkene over verlenging is geïnformeerd.",
+      "bronsoort": "toets",
+      "bron": "rapportage FG, september 2026",
+      "peildatum": "2026-09-10",
+      "maatregelen": [
+        {"sleutel": "AVG:A15", "reden": "termijn van een maand niet gehaald"},
+        {"sleutel": "AVG:A12", "reden": "betrokkene niet geïnformeerd over verlenging"}
+      ],
+      "kans": 4, "impact": 2,
+      "status": "open", "statusdatum": "2026-09-15"
+    },
+    {
+      "code": "B-05",
+      "titel": "Activiteit van beheeraccounts wordt niet bewaakt",
+      "aangetoond": "Meting augustus 2026: aanmeldingen van beheeraccounts worden gelogd, maar er staat geen melding op. In 90 dagen nul meldingen, terwijl de logs drie aanmeldingen buiten kantoortijd vanaf een onbekend apparaat tonen.",
+      "bronsoort": "meting",
+      "bron": "meetrapport logging, augustus 2026",
+      "peildatum": "2026-08-28",
+      "maatregelen": [
+        {"sleutel": "BIO2:8.16.01", "reden": "geen detectie op afwijkend gebruik van beheeraccounts"},
+        {"sleutel": "BIO2:8.02.01", "reden": "beheeraccounts worden ook gebruikt buiten beheertaken"}
+      ],
+      "kans": 3, "impact": 4,
+      "status": "open", "statusdatum": "2026-09-01"
+    },
+    {
+      "code": "B-06",
+      "titel": "Verwerkersovereenkomsten ontbreken bij kleine leveranciers",
+      "aangetoond": "Inventarisatie van het verwerkingsregister (april 2026): 2 van de 41 verwerkers zonder overeenkomst, beide kleine leveranciers met een contract dat eind 2026 afloopt.",
+      "bronsoort": "analyse",
+      "bron": "inventarisatie verwerkingsregister, april 2026",
+      "peildatum": "2026-04-30",
+      "maatregelen": [{"sleutel": "AVG:A28", "reden": "geen overeenkomst bij twee verwerkers"}],
+      "kans": 2, "impact": 3,
+      "status": "geaccepteerd", "statusdatum": "2026-05-12",
+      "acceptatie": "Risico-eigenaar accepteert tot het einde van beide contracten op 31-12-2026; daarna niet verlengen zonder overeenkomst."
+    }
+  ]
+}
