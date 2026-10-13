@@ -905,5 +905,24 @@ class LeesversiePerStuk(Basis):
         self.assertFalse((map_ / "procedure.html").exists())
 
 
+class SitemapEnAchterstand(Basis):
+    """De sitemap komt uit dezelfde items als de pagina's; een achterstand waarschuwt, blokkeert niet."""
+
+    def test_sitemap_noemt_item_en_losse_stukken(self):
+        map_ = self.item("x")
+        (map_ / "brief.md").write_text("# Brief\n", encoding="utf-8")
+        (map_ / "brief.html").write_text("<html></html>", encoding="utf-8")
+        items = {"security": [{"_map": map_, "_weergave": "live", "_link": "security/een-item/"}]}
+        xml = build.sitemap_tekst(items)
+        self.assertIn(f"<loc>{build.SITE}/security/een-item/</loc>", xml)
+        self.assertIn(f"<loc>{build.SITE}/security/een-item/brief.html</loc>", xml)
+        self.assertNotIn("lastmod", xml)
+
+    def test_achterstand_is_geen_fout(self):
+        self.item("x")
+        build.waarschuw_achterstand({}, {})
+        self.assertEqual(self.meldingen, "")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
