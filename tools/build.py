@@ -80,7 +80,7 @@ NL = chr(10)
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 # `.git` is in een git-worktree een bestand in plaats van een map; het is tooling, geen inhoud.
 ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
-                     ".nojekyll", "handelingsperspectief.json", "llms.txt", "bronnen.json", ".git"}
+                     ".nojekyll", "handelingsperspectief.json", "llms.txt", "sitemap.xml", "bronnen.json", ".git"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
 # naar _aanvalspaden uitgecheckt. Een handleiding mag alleen naar een barriere verwijzen die bestaat,
@@ -1701,6 +1701,40 @@ def schrijf_handelingsperspectief(items: dict[str, list[dict]]) -> bool:
     return schrijf(ROOT / "handelingsperspectief.json", json.dumps(data, ensure_ascii=False, indent=2) + NL)
 
 
+def sitemap_tekst(items: dict[str, list[dict]]) -> str:
+    """Elke pagina van de kennisbank voor zoekmachines: de voorpagina, de secties, elk item met een
+    leesversie en de leesversie van elk los stuk. Zonder lastmod, zodat het bestand alleen verandert als
+    er een pagina bijkomt of verdwijnt. De sitemap van het domein noemde maar een deel van de items, met
+    de hand toegevoegd; robots.txt verwijst naar beide."""
+    urls = [f"{SITE}/"]
+    for vak in VAKGEBIEDEN:
+        if not items.get(vak):
+            continue
+        urls.append(f"{SITE}/{vak}/")
+        for fm in sorted(items[vak], key=lambda f: f["_map"].name):
+            if fm["_weergave"] == "live" and not fm["_link"].startswith("http"):
+                urls.append(f"{SITE}/{fm['_link']}")
+            urls += [f"{SITE}/{vak}/{fm['_map'].name}/{md.stem}.html" for md in stukken(fm["_map"])
+                     if md.with_suffix(".html").is_file()]
+    regels = "".join(f"  <url><loc>{html.escape(u)}</loc></url>\n" for u in urls)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schema/sitemap/0.9">\n' + regels + "</urlset>\n")
+
+
+def waarschuw_achterstand(secties: dict[str, dict], items: dict[str, list[dict]]) -> None:
+    """In --check: zeg het als llms.txt of sitemap.xml achterloopt, maar blokkeer niet.
+
+    Op main maakt de CI ze opnieuw en commit ze, dus een achterstand lost zichzelf op na de merge. De
+    waarschuwing is er voor wie lokaal werkt en wil zien wat er na de merge verandert.
+    """
+    for naam, inhoud in (("llms.txt", llms_tekst(secties, items)), ("sitemap.xml", sitemap_tekst(items))):
+        pad = ROOT / naam
+        oud = pad.read_text(encoding="utf-8") if pad.exists() else None
+        if oud != inhoud:
+            print(f"::warning file={naam}::{naam} loopt achter op de items; wordt na de merge op main "
+                  "bijgewerkt (of draai python tools/build.py)")
+
+
 def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
     """De hele kennisbank als een lijst voor systemen die lezen in plaats van klikken.
 
@@ -1781,6 +1815,7 @@ def main() -> int:
 
     print(f"Redactiestatuut: geen overtredingen ({totaal} items).")
     if alleen_check:
+        waarschuw_achterstand(secties, items)
         return 0
     gewijzigd = list(kruimel_gewijzigd)
     for vak in VAKGEBIEDEN:
@@ -1792,6 +1827,8 @@ def main() -> int:
         gewijzigd.append("handelingsperspectief.json")
     if schrijf(ROOT / "llms.txt", llms_tekst(secties, items)):
         gewijzigd.append("llms.txt")
+    if schrijf(ROOT / "sitemap.xml", sitemap_tekst(items)):
+        gewijzigd.append("sitemap.xml")
     print("Gebouwd: " + (", ".join(gewijzigd) if gewijzigd else "niets gewijzigd"))
     return 0
 

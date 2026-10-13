@@ -75,12 +75,12 @@ jobs:
       - name: Commit gegenereerde indexpagina's
         if: github.event_name == 'push'
         run: |
-          if git diff --quiet -- '*.html' && [ -z "$(git ls-files --others --exclude-standard -- '*.html')" ]; then
-            echo "Index- en leesversies ongewijzigd."
+          if git diff --quiet -- '*.html' llms.txt sitemap.xml handelingsperspectief.json && [ -z "$(git ls-files --others --exclude-standard -- '*.html' llms.txt sitemap.xml handelingsperspectief.json)" ]; then
+            echo "Gegenereerde bestanden ongewijzigd."
             exit 0
           fi
           git config user.name "kennisbank-bot"
           git config user.email "kennisbank-bot@users.noreply.github.com"
-          git add -- '*.html'
+          git add -- '*.html' llms.txt sitemap.xml handelingsperspectief.json
           git commit -m "index: gegenereerd door tools/build.py"
           git push
