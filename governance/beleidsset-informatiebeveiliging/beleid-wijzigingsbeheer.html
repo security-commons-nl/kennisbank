@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid wijzigingsbeheer (sjabloon)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid wijzigingsbeheer (sjabloon)</span></nav><!-- /kruimelpad -->
+<h1>Beleid wijzigingsbeheer (sjabloon)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="beleid-wijzigingsbeheer.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Sjabloon.</strong> Dit stuk is geen vastgesteld beleid van een organisatie. Het volgt de BIO 2.0-indeling en
+zet per maatregel de eis klaar; de beleidsregel vul je zelf in: wie, wat, hoe vaak, waarmee. Waar de
+beleidsset al een regel heeft, staat die als vertrekpunt bij de eis.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Materie-specifiek beleid onder het strategisch informatiebeveiligingsbeleid</td>
+</tr>
+<tr>
+<td>BIO 2.0-domein</td>
+<td>Wijzigingsbeheer</td>
+</tr>
+<tr>
+<td>Versie</td>
+<td>0.1 (sjabloon)</td>
+</tr>
+<tr>
+<td>Lijneigenaar</td>
+<td>[eigenaar volgens de verklaring van toepasselijkheid]</td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td>[volgens de procedure voor het vaststellen van beleid]</td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de PDCA-cyclus van het ISMS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relevante-beleidsdocumenten">Relevante beleidsdocumenten</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Verhouding tot dit beleid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="strategisch-ib-beleid.html">Strategisch informatiebeveiligingsbeleid</a></td>
+<td>Bovenliggend kader; dit document werkt het uit voor wijzigingsbeheer.</td>
+</tr>
+<tr>
+<td>Verklaring van toepasselijkheid BIO 2.0 versie 1.3</td>
+<td>Bepaalt welke maatregelen in dit document zijn belegd, met eigenaar en status.</td>
+</tr>
+<tr>
+<td>Controleraamwerk (controls per maatregel)</td>
+<td>De controles waarmee de naleving van dit beleid wordt aangetoond; zie het <a href="controls-fysieke-toegang-en-beveiliging.html">controleraamwerk fysieke toegang en beveiliging</a> voor de opzet.</td>
+</tr>
+<tr>
+<td><a href="functionele-accounts-en-postbussen.html">Functionele accounts en postbussen</a></td>
+<td>Wijzigingen door leveranciers.</td>
+</tr>
+<tr>
+<td><a href="testdata.html">Testdata</a></td>
+<td>Welke gegevens in test en acceptatie mogen worden gebruikt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-inleiding">1 Inleiding</h2>
+<p>Dit materie-specifieke beleidsdocument beschrijft de uitgangspunten en eisen die de organisatie
+hanteert voor wijzigingsbeheer, vanuit de context van informatiebeveiliging. Het is de vertaalslag
+van het strategisch informatiebeveiligingsbeleid naar dit deelgebied en maakt deel uit van het ISMS.
+De naleving wordt aangetoond met het controleraamwerk en jaarlijks getoetst in de PDCA-cyclus.</p>
+<h3>1.1 Doel en doelgroep</h3>
+<p>Dit beleid legt de minimale eisen vast voor wijzigingen in informatiesystemen, infrastructuur en software, inclusief testen, acceptatie en scheiding van ontwikkel-, test-, acceptatie- en productieomgevingen. Het richt zich op de volgende deelgebieden,
+die overeenkomen met de ISO 27001-controls uit de verklaring van toepasselijkheid:</p>
+<ol>
+<li>Gedocumenteerde bedieningsprocedures (5.37)</li>
+<li>Installeren van software op operationele systemen (8.19)</li>
+<li>Testen van de beveiliging tijdens ontwikkeling en acceptatie (8.29)</li>
+<li>Scheiden van ontwikkel-, test- en productieomgevingen (8.31)</li>
+<li>Wijzigingsbeheer (8.32)</li>
+<li>Testgegevens (8.33)</li>
+</ol>
+<p>Dit beleidsdocument is bedoeld voor de IT-organisatie, functioneel beheer, leveranciers die wijzigingen doorvoeren en het change advisory board.</p>
+<h3>1.2 Reikwijdte</h3>
+<p>[Waarom dit thema voor de eigen organisatie ertoe doet, in een of twee alinea's.]</p>
+<h4>1.2.1 Organisatorisch toepassingsgebied</h4>
+<p>[Op wie het beleid van toepassing is: medewerkers, inhuur, leveranciers.]</p>
+<h4>1.2.2 Technisch toepassingsgebied</h4>
+<p>[Op welke systemen, omgevingen en gegevens; beperk tot de scope van het ISMS.]</p>
+<h2 id="2-eisen">2 Eisen</h2>
+<h3>2.1 Gedocumenteerde bedieningsprocedures (5.37)</h3>
+<p><strong>Eis 5.37.01 (ISO 27002).</strong> Voor deze maatregel kent de BIO 2.0 geen overheidsmaatregel; de eis is ISO/IEC 27002:2022, maatregel 5.37 (Gedocumenteerde bedieningsprocedures).</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h3>2.2 Installeren van software op operationele systemen (8.19)</h3>
+<p><strong>Eis 8.19.01 (BIO 2.0).</strong> Het risico van installatie door gebruikers van niet geautoriseerde software wordt beheerst.</p>
+<p>Vertrekpunt in de set (gedekt): <a href="hardening.html">hardening</a> maatregelen.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h3>2.3 Testen van de beveiliging tijdens ontwikkeling en acceptatie (8.29)</h3>
+<p><strong>Eis 8.29.01 (BIO 2.0).</strong> Voor acceptatietesten van systemen worden gestructureerde testmethodieken gebruikt. De testen worden waar mogelijk geautomatiseerd uitgevoerd. Van de resultaten van de testen wordt verslag gemaakt.</p>
+<p>Vertrekpunt in de set (deels): <a href="testdata.html">testdata</a> formulier. Testtypes genoemd; geen eis aan methodiek en verslag.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h3>2.4 Scheiden van ontwikkel-, test- en productieomgevingen (8.31)</h3>
+<p><strong>Eis 8.31.01 (BIO 2.0).</strong> In de productieomgeving wordt niet getest. Alleen met voorafgaande goedkeuring door de proceseigenaar kan hiervan worden afgeweken.</p>
+<p>Vertrekpunt in de set (deels): <a href="testdata.html">testdata</a> uitzondering 3; <a href="webapplicaties.html">webapplicaties</a> eis 46. Scheiding OTA en strenge eisen aan productiedata; het verbod zelf staat er niet zo.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<p><strong>Eis 8.31.02 (BIO 2.0).</strong> Significante wijzigingen in de productieomgeving worden altijd getest voordat zij in productie gebracht worden. Alleen met voorafgaande goedkeuring door de proceseigenaar kan hiervan worden afgeweken.</p>
+<p>Vertrekpunt in de set (deels): <a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1. Alleen voor wijzigingen door leveranciers.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h3>2.5 Wijzigingsbeheer (8.32)</h3>
+<p><strong>Eis 8.32.01 (BIO 2.0).</strong> In het wijzigingsbeheerproces is minimaal aandacht besteed aan: • het administreren van wijzigingen, met de resultaten van het testplan; • een risicoafweging van mogelijke gevolgen van de wijzigingen, inclusief een beschreven rollback-plan; • de goedkeuringsprocedure voor wijzigingen.</p>
+<p>Vertrekpunt in de set (deels): <a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1; <a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.8. Voor leverancierswijzigingen en het netwerk; geen algemeen wijzigingsbeleid.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<p><strong>Eis 8.32.02 (BIO 2.0).</strong> Wijzigingsbeheer vindt plaats op basis van een algemeen geaccepteerd beheerraamwerk.</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h3>2.6 Testgegevens (8.33)</h3>
+<p><strong>Eis 8.33.01 (ISO 27002).</strong> Voor deze maatregel kent de BIO 2.0 geen overheidsmaatregel; de eis is ISO/IEC 27002:2022, maatregel 8.33 (Testgegevens).</p>
+<ol>
+<li>[beleidsregel: wie doet wat, hoe vaak, waarmee]</li>
+</ol>
+<h2 id="bijlage-a-normen">Bijlage A Normen</h2>
+<p>De maatregelen uit de BIO 2.0 versie 1.3 die in dit document zijn belegd.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>ISO 27001-control</th>
+<th>Bron van de eis</th>
+<th>Waar in dit beleid</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.37.01</td>
+<td>Gedocumenteerde bedieningsprocedures</td>
+<td>ISO 27002</td>
+<td>2.1</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.19.01</td>
+<td>Installeren van software op operationele systemen</td>
+<td>BIO 2.0</td>
+<td>2.2</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.29.01</td>
+<td>Testen van de beveiliging tijdens ontwikkeling en acceptatie</td>
+<td>BIO 2.0</td>
+<td>2.3</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.31.01</td>
+<td>Scheiden van ontwikkel-, test- en productieomgevingen</td>
+<td>BIO 2.0</td>
+<td>2.4</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.31.02</td>
+<td>Scheiden van ontwikkel-, test- en productieomgevingen</td>
+<td>BIO 2.0</td>
+<td>2.4</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.32.01</td>
+<td>Wijzigingsbeheer</td>
+<td>BIO 2.0</td>
+<td>2.5</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.32.02</td>
+<td>Wijzigingsbeheer</td>
+<td>BIO 2.0</td>
+<td>2.5</td>
+<td>[control]</td>
+</tr>
+<tr>
+<td>8.33.01</td>
+<td>Testgegevens</td>
+<td>ISO 27002</td>
+<td>2.6</td>
+<td>[control]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-controleraamwerk">Bijlage B Controleraamwerk</h2>
+<p>Per eis een control met risico, beheersdoelstelling, beschrijving, eigenaar, frequentie en bewijslast.
+Zie het <a href="controls-fysieke-toegang-en-beveiliging.html">controleraamwerk fysieke toegang en beveiliging</a> als voorbeeld.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Onderwerp</th>
+<th>Eigenaar</th>
+<th>Frequentie</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[CODE]-001</td>
+<td>[onderwerp]</td>
+<td>[eigenaar]</td>
+<td>[frequentie]</td>
+<td>[n.nn.nn]</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

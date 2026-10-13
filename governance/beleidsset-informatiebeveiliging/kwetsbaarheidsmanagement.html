@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid kwetsbaarheidsmanagement</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid kwetsbaarheidsmanagement</span></nav><!-- /kruimelpad -->
+<h1>Beleid kwetsbaarheidsmanagement</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="kwetsbaarheidsmanagement.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#inleiding">Inleiding</a></li><li><a href="#beleidsvereisten">Beleidsvereisten</a></li><li><a href="#3-evaluatie-en-verbetering-van-het-beleid">3. Evaluatie en Verbetering van het Beleid</a></li><li><a href="#4-vrijwaring">4. Vrijwaring</a></li><li><a href="#5-rollen-en-verantwoordelijkheden">5. Rollen en verantwoordelijkheden</a></li><li><a href="#bijlage-1-kwetsbaarheidsmanagement-stroomdiagram">Bijlage 1: Kwetsbaarheidsmanagement stroomdiagram</a></li></ol></nav><!-- /inhoudsopgave -->
+<h3>Afkortingen</h3>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>IBD</td>
+<td>Informatiebeveiligingsdienst</td>
+</tr>
+<tr>
+<td>DNB</td>
+<td>De Nederlandsche Bank</td>
+</tr>
+<tr>
+<td>ATP</td>
+<td>Advanced Persistent Threat</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Informatievoorziening</td>
+</tr>
+<tr>
+<td>RACI</td>
+<td>Responsible Accountable Consulted Informed</td>
+</tr>
+</tbody>
+</table>
+<h3>Relevante beleidsdocumenten</h3>
+<h2 id="inleiding">Inleiding</h2>
+<p>Het Beleid Kwetsbaarheidsmanagement van de organisatie is opgesteld met als doel de principes en richtlijnen vast te stellen die nodig zijn om technische kwetsbaarheden op een effectieve en efficiënte manier te beheren binnen alle functionerende systemen van de organisatie.</p>
+<p>Dit beleid is gebaseerd en vormgegeven op basis van de eisen en principes van de volgende raamwerken: de Baseline Informatiebeveiliging Overheid (BIO), de Informatiebeveiligingsdienst (IBD) en de Good Practices van De Nederlandsche Bank (DNB).</p>
+<h3>1.1 Doel</h3>
+<p>Het doel van dit beleid is om de vereisten voor het management van kwetsbaarheden van de organisatie te bepalen. Het management van kwetsbaarheden is noodzakelijk om te zorgen dat kwetsbaarheden in netwerken en systemen van de organisatie worden gedetecteerd en dat er passende acties worden ondernomen om een veilige infrastructuur te waarborgen.</p>
+<h3>1.2 Doelstellingen</h3>
+<p>Het beleid heeft als doelstellingen dat de volgende fases van kwetsbaarheidsmanagement duidelijk zijn gedefinieerd en dat bijbehorende acties duidelijk zijn voor de bijbehorende uitvoerders en verantwoordelijken:</p>
+<ul>
+<li>
+<p>Identificatie van kwetsbaarheden</p>
+</li>
+<li>
+<p>Classificatie van kwetsbaarheden</p>
+</li>
+<li>
+<p>Documentatie van kwetsbaarheden</p>
+</li>
+<li>
+<p>Implementatie van tegenmaatregelen</p>
+</li>
+<li>
+<p>Verificatie van tegenmaatregelen</p>
+</li>
+</ul>
+<h3>1.3 Toepassingsgebied van het document</h3>
+<p>Dit beleid is van toepassing op alle medewerkers, dienstenleveranciers en externe partijen die betrokken zijn bij het beheer en het gebruik van IT diensten onder de organisatie. IT-diensten omvatten zowel die diensten die eigendom zijn van, worden bediend, onderhouden en gecontroleerd door de organisatie, als door een derde partij waarbij de geleverde dienst van invloed is op de vertrouwelijkheid, integriteit en/of beschikbaarheid en algemene beveiliging van de organisatie-gegevens en/of -systemen.</p>
+<p>Dit omvat:</p>
+<ul>
+<li>
+<p>Netwerkapparaten (firewalls, routers, switches, load balancers, andere netwerkapparaten),</p>
+</li>
+<li>
+<p>Servers (zowel fysiek als virtueel, met besturingssystemen, applicaties, databases en gegevens die erop staan)</p>
+</li>
+<li>
+<p>Cloud-aanbieders</p>
+</li>
+<li>
+<p>Applicaties en</p>
+</li>
+<li>
+<p>Alle andere IT-processen of apparatuur die kunnen worden aangevallen.</p>
+</li>
+</ul>
+<h2 id="beleidsvereisten">Beleidsvereisten</h2>
+<h3>2.1 Identificatie van kwetsbaarheden</h3>
+<p>Het proces van identificatie van kwetsbaarheden vormt de eerste stap in het algehele proces voor het management van kwetsbaarheden. Gedurende deze fase, dient de organisatie te streven naar het tijdig ontdekken van mogelijke zwakke punten in de systemen en netwerken die mogelijk kunnen worden geëxploiteerd door aanvallers.</p>
+<h4>2.1.1 Uitvoeren van kwetsbaarheidscans</h4>
+<ul>
+<li>
+<p>De organisatie zal scans van kwetsbaarheden uitvoeren op alle ICT-assets om potentiële zwakke punten die misbruikt kunnen worden, op te sporen.</p>
+</li>
+<li>
+<p>Wanneer de scans van de kwetsbaarheden van de systemen en infrastructuur van de organisatie worden uitgevoerd door een derde partij, zullen de vereisten voor deze scans duidelijk worden vastgelegd in een Service Level Agreement (SLA) met deze externe leverancier.</p>
+</li>
+<li>
+<p>Deze scans zullen volgens een vastgesteld schema worden uitgevoerd, of onmiddellijk nadat er aanzienlijke wijzigingen zijn aangebracht in de netwerken of systemen.</p>
+</li>
+<li>
+<p>De scans moeten met de volgende frequentie worden uitgevoerd:</p>
+</li>
+<li>
+<p>Interne systemen en netwerken: Maandelijks</p>
+</li>
+<li>
+<p>De organisatie gebruikt software-agenten/-collectoren om kwetsbaarheden op te sporen op (fysieke en virtuele) eindpunten.</p>
+</li>
+<li>
+<p>Ontdekking van kwetsbaarheden en misconfiguraties in besturingssystemen, apparaten en applicaties, on-premises of in de cloud, kan automatisch worden bereikt door de kwetsbaarheidsscans van de organisatie.</p>
+</li>
+<li>
+<p>De systemen voor kwetsbaarheidsscans worden ook gebruikt door de organisatie om de effectiviteit van de geïmplementeerde tegemaatregelen te evalueren (zie voor meer informatie 2.5 Verificatie van tegenmaatregelen).</p>
+</li>
+</ul>
+<h4>2.1.2 Uitvoeren van penetratie testen</h4>
+<ul>
+<li>
+<p>Naast reguliere kwetsbaarheidsscans zal de organisatie penetratie testen uitvoeren om zwakke punten in de systemen en netwerken op te sporen.</p>
+</li>
+<li>
+<p>Deze tests zullen simuleren hoe een aanvaller kan proberen in te breken op de systemen en de organisatie helpen bij het identificeren van gebieden waar de beveiliging eventueel versterkt moet worden.</p>
+</li>
+<li>
+<p>Een onafhankelijke derde leverancier voert deze penetratie testen uit.</p>
+</li>
+<li>
+<p>Het is belangrijk dat het proces van penetratietesten wordt afgestemd op de specifieke behoeften en risico's van de organisatie, waarbij rekening wordt gehouden met zowel de potentiële voordelen van de update als de mogelijke risico's van nieuwe kwetsbaarheden die door de update kunnen worden geïntroduceerd. Het doel is om een evenwicht te vinden tussen het bevorderen van veiligheid en het minimaliseren van verstoringen in de bedrijfsvoering.</p>
+</li>
+<li>
+<p>Informatiesystemen worden bij voorkeur jaarlijks gecontroleerd op technische naleving van beveiligingsnormen en risico’s ten aanzien van de feitelijke veiligheid. Dit kan bijvoorbeeld door (geautomatiseerde) kwetsbaarheidsanalyses, penetratietesten of red-teamingstesten.</p>
+</li>
+<li>
+<p>Internetfacing-systemen hebben een verplichte (bij voorkeur geautomatiseerde) penetratietest bij iedere nieuwe release of major update. Als daar bevindingen met een hoog risico uitkomen, mag het systeem niet in productie.</p>
+</li>
+</ul>
+<h4>2.1.3 Penetratie test methodes</h4>
+<p>De organisatie zal op voorhand een methode vaststellen voor het uitvoeren penetratietesten.</p>
+<ul>
+<li>Om consistentie te garanderen, dient er een standaardprotocol te worden gemaakt voor de penetratietesten in samenwerking met de onafhankelijke uitvoerder van de penetratietesten.</li>
+</ul>
+<h4>2.1.4 Gebruik van threat intelligence sharing mechanismen</h4>
+<ul>
+<li>
+<p>De organisatie zal gebruik maken van Threat Intelligence sharing mechanismen om op de hoogte te blijven van de nieuwste bedreigingen en actoren en om tijdig te reageren op deze bedreigingen.</p>
+</li>
+<li>
+<p>Deze mechanismen bieden actuele informatie over nieuwe en opkomende bedreigingen en helpen de organisatie om proactief kwetsbaarheden te identificeren en te corrigeren voordat deze kunnen worden uitgebuit.</p>
+</li>
+<li>
+<p>De organisatie voert continu inventarisaties uit van kwetsbaarheden op basis van dreigingsinformatie.</p>
+</li>
+<li>
+<p>De IBD deelt eveneens kwetsbaarheden met de organisatie.</p>
+</li>
+<li>
+<p>De IBD beschikt over een actueel beeld van de systemen en netwerken van de organisatie en kan advies op maat geven in het geval van een potentiële dreiging.</p>
+</li>
+<li>
+<p>Bij ontdekte nieuwe dreigingen worden deze, rekening houdend met de geldende juridische kaders, verplicht gedeeld binnen de overheid, waaronder met het NCSC (alleen voor rijksoverheidsorganisaties) of de sectorale CERT, bij voorkeur door geautomatiseerde mechanismen (threat intelligence sharing).</p>
+</li>
+</ul>
+<h3>2.2 Classificatie van kwetsbaarheden</h3>
+<p>Na het identificeren van kwetsbaarheden wordt elke kwetsbaarheid geclassificeerd. Het classificatieproces geeft de organisatie inzicht in de risico’s die de kwetsbaarheid met zich mee brengt en is daardoor van cruciaal belang voor het bepalen van de acties die ondernomen moeten worden om deze risico's naar een acceptabel niveau te brengen.</p>
+<h4>2.2.1 Classificatie van categorieën technische kwetsbaarheid</h4>
+<p>Technische kwetsbaarheden worden in zes categorieën ingedeeld van de organisatie:</p>
+<ul>
+<li>
+<p>Besturingssysteem Kwetsbaarheden</p>
+</li>
+<li>
+<p>Applicatie Kwetsbaarheden</p>
+</li>
+<li>
+<p>Netwerk Kwetsbaarheden</p>
+</li>
+<li>
+<p>Fysieke kwetsbaarheden</p>
+</li>
+<li>
+<p>Database kwetsbaarheden</p>
+</li>
+<li>
+<p>Systeem/Service kwetsbaarheden</p>
+</li>
+</ul>
+<p>Deze classificatie van technische kwetsbaarheden stelt de organisatie in staat om een holistische aanpak te hanteren voor het beheren van kwetsbaarheden en zorgt ervoor dat alle mogelijke gebieden van kwetsbaarheid worden aangepakt.</p>
+<h4>2.2.2 Identificatie van false positives</h4>
+<ul>
+<li>
+<p>Gedurende het proces van het scannen van kwetsbaarheden, kunnen er false-positives resultaten worden geïdentificeerd - dit zijn meldingen van kwetsbaarheden die in werkelijkheid geen bedreiging vormen voor het systeem of netwerk.</p>
+</li>
+<li>
+<p>Hoewel deze false-positives geen actie vereisen, is het nodig dat ze worden herkend en gecategoriseerd om te voorkomen dat toekomstige middelen en tijd worden besteed aan het oplossen van niet-bestaande problemen.</p>
+</li>
+<li>
+<p>De tool voor het scannen van kwetsbaarheden van de organisatie zal false-positives detecteren, analyseren en verwijderen. In gevallen van onzekerheid worden deze doorgestuurd naar de organisatie. Alle false-positives worden bijgehouden voor toekomstige referentie. Dit zal in het contract worden vastgelegd met de derde partij die de kwetsbaarheidsscans uitvoert.</p>
+</li>
+</ul>
+<h4>2.2.3 Categorisatie op basis van impact en ernst</h4>
+<ul>
+<li>
+<p>Alle geïdentificeerde kwetsbaarheden worden gecategoriseerd op basis van hun potentiële impact en ernst van de bedreiging voor de organisatie.</p>
+</li>
+<li>
+<p>Aspecten zoals het type gegevens dat in gevaar zou kunnen komen en de potentiële schade aan de systemen en operaties van de organisatie, worden in overweging genomen bij het bepalen van de ernst van elke kwetsbaarheid.</p>
+</li>
+</ul>
+<h4>2.2.4 Classificatie op basis van kritiek, hoog, gemiddeld of laag risico</h4>
+<p>Kwetsbaarheden worden geclassificeerd als kritiek, hoog, gemiddeld of laag risico op basis van hun potentiële impact en de ernst van de dreiging die zij vormen. Kritieke risico's zijn die welke onmiddellijke actie vereisen vanwege hun potentieel om aanzienlijke schade te veroorzaken, terwijl kwetsbaarheden met een lager risico minder snel een actie vereisen.</p>
+<p>De organisatie classificeert kwetsbaarheden volgens de volgende categorieën:</p>
+<ul>
+<li>
+<p>Kritiek: Een kritieke kwetsbaarheid is een ernstige beveiligingszwakte in een systeem, applicatie of netwerk die het risico met zich meebrengt van aanzienlijke schade, inbreuk op de vertrouwelijkheid, integriteit of beschikbaarheid van gegevens, of zelfs het volledige compromis van het getroffen systeem. Deze klasse van kwetsbaarheden vormt het hoogste risico voor een systeem brede compromittering van het netwerk van de organisatie.</p>
+</li>
+<li>
+<p>Hoog: Dit betekent dat een kwetsbaarheid een indringer toegang zou kunnen geven tot de host op het beheerdersniveau of mogelijk toegang zou kunnen geven tot gevoelige informatie die op de host is opgeslagen. Hoewel deze klasse van kwetsbaarheden uiterst ernstig is, is het risico op een inbreuk of compromittering niet zo urgent als bij een kritieke kwetsbaarheid.</p>
+</li>
+<li>
+<p>Middelmatig: Dit betekent dat een kwetsbaarheid een indringer toegang kan geven tot specifieke informatie die op de host is opgeslagen, inclusief beveiligingsinstellingen. Hoewel deze kwetsbaarheden niet direct geassocieerd zijn met een compromittering van een getroffen host, stellen deze kwetsbaarheden indringers in staat om toegang te krijgen tot informatie die in de toekomst kan worden gebruikt om de host te compromitteren.</p>
+</li>
+<li>
+<p>Laag: Dit zijn kwetsbaarheden die geen directe bedreiging vormen voor de host of het netwerk van de organisatie. Deze kwetsbaarheden verwijzen voornamelijk naar zwakke punten in een apparaat die een indringer toegang geven tot informatie die in de toekomst kan worden gebruikt om de host te compromitteren.</p>
+</li>
+</ul>
+<p>Het classificeren van kwetsbaarheden volgens deze categorieën helpt de organisatie bij het identificeren van de ernst van elke gekenmerkte kwetsbaarheid en richt de inspanningen en middelen op een manier die de bescherming van de meest kritieke aspecten van haar systemen en netwerken vooropstelt.</p>
+<h3>2.3 Documentatie van kwetsbaarheden</h3>
+<p>De organisatie dient ervoor te zorgen dat ontdekte kwetsbaarheden en de bijbehorende classificatie wordt gedocumenteerd en gerapporteerd aan de CISO. Het documenteren en rapporteren van kwetsbaarheden dient de volgende doelen:</p>
+<ul>
+<li>
+<p>Het afleggen van verantwoording</p>
+</li>
+<li>
+<p>Creëren van bewustwording</p>
+</li>
+<li>
+<p>Basis voor analyse en verbetering</p>
+</li>
+<li>
+<p>Basis voor toekomstige besluitvorming</p>
+</li>
+<li>
+<p>Bijhouden van voortgang van implementatie van tegenmaatregelen</p>
+</li>
+</ul>
+<h4>2.3.1 Rapporteren</h4>
+<p>Na de identificatie en classificatie van kwetsbaarheden zullen de specifieke details van elke kwetsbaarheid worden samengevat in gedocumenteerde rapporten.</p>
+<ul>
+<li>
+<p>De rapporten worden maandelijks aangeleverd door de derde leverancier die de kwetsbaarheidsscans uitvoert.</p>
+</li>
+<li>
+<p>Deze rapporten zullen de aard van de kwetsbaarheid, de systemen die risico lopen, de voorgestelde tegenmaatregelen en andere relevante informatie bevatten.</p>
+</li>
+<li>
+<p>Deze rapporten worden regelmatig besproken met relevante belanghebbenden binnen de organisatie en gebruikt om te helpen bij het maken van geïnformeerde beslissingen over hoe de kwetsbaarheden het beste kunnen worden aangepakt.</p>
+</li>
+</ul>
+<h4>2.3.2 Documentatie in IT-risicoregister</h4>
+<p>Alle geïdentificeerde kwetsbaarheden worden gedocumenteerd in het IT-risicoregister van de organisatie. Dit register dient als een centrale opslagplaats voor informatie over alle bekende kwetsbaarheden en hun status. Het bijhouden van dit register stelt de organisatie in staat om de status van elke kwetsbaarheid snel te bekijken en de voortgang van de gekozen tegenmaatregelen te volgen.</p>
+<h4>2.3.3 Delen van documentatie en rapporten</h4>
+<ul>
+<li>
+<p>Security teams en proces- en systeemeigenaren dienen maandelijks te rapporteren aan de CISO over kwetsbaarheden die openstaande risico’s vormen.</p>
+</li>
+<li>
+<p>Bij kwetsbaarheden die als kritiek en hoog risicovol gezien worden geldt dat deze maandelijks gepresenteerd en besproken moeten worden.</p>
+</li>
+<li>
+<p>De organisatie bespreekt ook met derde leveranciers rapportages en dashboards omtrent de resultaten van kwetsbaarheid scans.</p>
+</li>
+</ul>
+<h3>2.4 Implementatie van tegenmaatregelen</h3>
+<p>Zodra kwetsbaarheden zijn geïdentificeerd, geclassificeerd en gedocumenteerd, dient de organisatie passende tegenmaatregelen te implementeren om deze kwetsbaarheden te verhelpen of te mitigeren.</p>
+<h4>2.4.1 Patches, updates en andere methodes voor tegenmaatregelen</h4>
+<ul>
+<li>
+<p>De tegenmaatregelen kunnen variëren afhankelijk van de aard van de kwetsbaarheid en het risico dat deze vormt. De maatregelen kunnen onder andere bestaan uit het toepassen van patches, het uitvoeren van systeemupdates, het aanbrengen van wijzigingen in de configuraties van systemen of het implementeren van extra beveiligingscontroles.</p>
+</li>
+<li>
+<p>Bij het kiezen van de meest geschikte tegenmaatregel, zal de organisatie de mogelijke impact van elk van deze acties op de systemen en operaties in overweging nemen.</p>
+</li>
+</ul>
+<p>De volgende tegenmaatregelen van de organisatie zijn onderworpen aan specifieke vereisten vanuit de BIO:</p>
+<p>2.4.1.2 Patches:</p>
+<ul>
+<li>Als de kans op misbruik en de verwachte schade beiden hoog worden ingeschat (zie NCSC-classificatie kwetsbaarheid waarschuwingen), dienen patches zo snel mogelijk maar uiterlijk binnen een week geïnstalleerd.</li>
+</ul>
+<p>2.4.1.2 Updates:</p>
+<ul>
+<li>
+<p>De organisatie inventariseert periodiek voor welke software geen of niet tijdig security updates beschikbaar worden gesteld.</p>
+</li>
+<li>
+<p>Leveranciers zijn verplicht binnen de afgesproken termijn een oplossing te bieden.</p>
+</li>
+<li>
+<p>Software ondergaat regelmatig security updates binnen de afgesproken termijn.</p>
+</li>
+</ul>
+<h4>2.4.2 Verantwoordelijkheden voor implementeren tegenmaatregelen</h4>
+<ul>
+<li>De verantwoordelijkheid voor het implementeren van tegenmaatregelen wordt over het algemeen toegewezen aan de IV-teams, in samenwerking met de relevante systeem en proceseigenaren. De IV-teams zorgen voor de correcte implementatie van de tegenmaatregelen en zijn verantwoordelijk om alle veranderingen correct te documenteren in het IT-risicoregister.</li>
+</ul>
+<h3>2.5 Verificatie van tegenmaatregelen</h3>
+<ul>
+<li>
+<p>Na de implementatie van tegenmaatregelen, worden er verificatiecontroles uitgevoerd door het securityteam van de organisatie. Het doel van deze controles is om te bevestigen dat de genomen maatregelen naar behoren werken en de geïdentificeerde kwetsbaarheden effectief worden verholpen.</p>
+</li>
+<li>
+<p>De verificatie omvat herhaaldelijk uitgevoerde kwetsbaarheid scans, functionele testen van betrokken systemen en/of netwerken, en het doorlopen van event-specificaties of logs voor bewijs van effectieve mitigatie. Deze verificatiecontroles worden ook zorgvuldig gedocumenteerd als onderdeel van het IT-risicoregister, waardoor een volledig overzicht van de verantwoording van elke kwetsbaarheid wordt bijgehouden.</p>
+</li>
+<li>
+<p>Mocht een tegenmaatregel niet succesvol blijken te zijn in het aanpakken van de specifieke kwetsbaarheid, dan wordt dit probleem onmiddellijk geëscaleerd naar het relevante IV-team voor verdere analyse en actie.</p>
+</li>
+<li>
+<p>De verificatie van tegenmaatregelen speelt een belangrijke rol in het waarborgen van de effectiviteit van het beleid voor kwetsbaarheidsmanagement van de organisatie en dient als een laatste controle om ervoor te zorgen dat alle kwetsbaarheden op een adequate en volledige manier worden aangepakt.</p>
+</li>
+</ul>
+<h2 id="3-evaluatie-en-verbetering-van-het-beleid">3. Evaluatie en Verbetering van het Beleid</h2>
+<p>Het Beleid Kwetsbaarheid management wordt jaarlijks geëvalueerd om de doeltreffendheid ervan te waarborgen. Op basis van evaluatieresultaten worden indien nodig verbeteringen aangebracht in het beleid.</p>
+<h2 id="4-vrijwaring">4. Vrijwaring</h2>
+<p>In het kader van voortdurende verbetering en naleving van beleidsdoelstellingen, wordt erkend dat bepaalde vereisten momenteel niet kunnen worden vervuld volgens het huidige beleidsstuk. Echter, met het oog op toekomstige inzet voor progressieve ontwikkeling, zijn deze niet nagekomen verplichtingen opgenomen in de veranderkalender voor 2024. Hoewel ze momenteel buiten bereik liggen, is uitgesproken om tegen de aangegeven tijdlijn aan alle gestelde eisen te voldoen, waarmee het beleid wordt versterkt in lijn met gemeentelijke doelstellingen en in lijn met de vereisten van de BIO 2.0.</p>
+<h2 id="5-rollen-en-verantwoordelijkheden">5. Rollen en verantwoordelijkheden</h2>
+<p>Dit RACI-diagram biedt een overzicht van de verdeling van verantwoordelijkheden binnen de implementatie en handhaving van het netwerkbeveiligingsbeleid van de organisatie. De matrix identificeert de rollen van verschillende belanghebbenden bij specifieke taken en activiteiten die essentieel zijn voor een effectieve beveiliging van het netwerk. Hieronder wordt de betekenis van de gebruikte afkortingen toegelicht:</p>
+<ul>
+<li>
+<p>R (Responsible): De persoon of groep die verantwoordelijk is voor de uitvoering van een specifieke taak of activiteit.</p>
+</li>
+<li>
+<p>A (Accountable): De individuele persoon die uiteindelijk verantwoordelijk is en beslissingsbevoegdheid heeft voor het betreffende onderdeel.</p>
+</li>
+<li>
+<p>C (Consulted): Personen of afdelingen die geraadpleegd moeten worden voor input en feedback bij de uitvoering van taken.</p>
+</li>
+<li>
+<p>I (Informed): Personen of afdelingen die op de hoogte moeten worden gehouden van de voortgang en resultaten van specifieke taken.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Activiteit</th>
+<th>R</th>
+<th>A</th>
+<th>C</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1 Identificatie van kwetsbaarheden</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td>Securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.1 Uitvoeren van kwetsbaarheidsscans</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.2 Uitvoeren van penetration testing</td>
+<td>Externe leverancier penetratietesten</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.3 Verschillende penetratie testmethodes</td>
+<td>Externe leverancier penetratietesten</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.4 Gebruik van threat intelligence sharing mechanismen</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.2 Classificatie van kwetsbaarheden</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td>Securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.1 Classificatie van categorieën technische kwetsbaarheid</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td>Securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.2 Identificatie van false positives</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.3 Categorisatie op basis van impact en ernst</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td>Securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.4 Classificatie op basis van kritiek, hoog, gemiddeld of laag risico</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td>Securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3 Documentatie van kwetsbaarheden</td>
+<td>Externe leverancier kwetsbaarheidsscans</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.1 Rapporteren</td>
+<td>Securityteam</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.2 Documentatie in IT-risicoregister</td>
+<td>Securityteam</td>
+<td>CISO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.3 Delen van documentatie en rapporten</td>
+<td>CISO</td>
+<td>CISO</td>
+<td></td>
+<td>CIO</td>
+</tr>
+<tr>
+<td>2.4 Implementatie van tegenmaatregelen</td>
+<td>Systeembeheerder</td>
+<td>Securityteam</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.4.1 Patches, updates en andere methodes voor tegenmaatregelen</td>
+<td>Systeembeheerder</td>
+<td>Securityteam</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.4.2 Verantwoordelijkheden voor implementeren tegenmaatregelen</td>
+<td>Systeembeheerder</td>
+<td>Securityteam</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.5 Verificatie van tegenmaatregelen</td>
+<td>Systeembeheerder</td>
+<td>Securityteam</td>
+<td></td>
+<td>CISO</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-1-kwetsbaarheidsmanagement-stroomdiagram">Bijlage 1: Kwetsbaarheidsmanagement stroomdiagram</h2>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

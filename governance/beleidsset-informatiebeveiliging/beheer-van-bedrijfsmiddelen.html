@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid beheer van bedrijfsmiddelen</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid beheer van bedrijfsmiddelen</span></nav><!-- /kruimelpad -->
+<h1>Beleid beheer van bedrijfsmiddelen</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="beheer-van-bedrijfsmiddelen.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#inleiding">Inleiding</a></li><li><a href="#beleidsvereisten-beheer-van-bedrijfsmiddelen">Beleidsvereisten Beheer van Bedrijfsmiddelen</a></li><li><a href="#rollen-en-verantwoordelijkheden-voor-het-beheer-van-bedrijfsmiddelen-dienen-te-worden-gedefinieerd-en-onderhouden-in-de-procedures-er-zijn-vier-sleutelrollen-gedefinieerd-en-toegekend-van-de-organisatie">Rollen en verantwoordelijkheden voor het beheer van bedrijfsmiddelen dienen te worden gedefinieerd en onderhouden in de procedures. Er zijn vier sleutelrollen gedefinieerd en toegekend van de organisatie:</a></li><li><a href="#evaluatie-en-verbetering-van-het-beleid">Evaluatie en Verbetering van het Beleid</a></li><li><a href="#vrijwaring">Vrijwaring</a></li><li><a href="#rollen-en-verantwoordelijkheden">Rollen en verantwoordelijkheden</a></li></ol></nav><!-- /inhoudsopgave -->
+<h3>Afkortingen</h3>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>BIO</td>
+<td>Basisnormenkader Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>IBD</td>
+<td>Informatiebeveiligingsdienst van de VNG</td>
+</tr>
+<tr>
+<td>RACI</td>
+<td>Responsible, Accountable, Consulted, Informed</td>
+</tr>
+<tr>
+<td>VNG</td>
+<td>Vereniging van Nederlandse Gemeenten</td>
+</tr>
+</tbody>
+</table>
+<h3>Relevante beleidsdocumenten</h3>
+<ul>
+<li>Beleid Data Classificatie</li>
+</ul>
+<h2 id="inleiding">Inleiding</h2>
+<p>Het Beleid voor het Beheer van Bedrijfsmiddelen van de organisatie is opgesteld om een gestructureerd kader te bieden voor de identificatie, het beheer en de bescherming van bedrijfsmiddelen die verband houden met informatie en informatie verwerkende faciliteiten van de organisatie. Dit beleid is gebaseerd op de richtlijnen van de Baseline Informatiebeveiliging Overheid (BIO), handreikingen van de IBD, met integratie van aanvullende regels en heeft als doel een veilige en effectieve omgang met bedrijfsmiddelen te waarborgen binnen de organisatie.</p>
+<h3>1.1 Doel</h3>
+<p>Het hoofddoel van dit beleid is het vaststellen van een robuuste basis voor het beheer van bedrijfsmiddelen, waaronder informatie, met als uiteindelijk doel het waarborgen van de vertrouwelijkheid, integriteit en beschikbaarheid van gegevens. Door middel van dit beleid streven we ernaar proactief risico's te identificeren en passende beveiligingsmaatregelen te implementeren om bedrijfsmiddelen te beschermen tegen onbevoegde toegang, misbruik en vernietiging.</p>
+<h3>1.2 Doelstellingen</h3>
+<ul>
+<li>Inventariseren van Bedrijfsmiddelen</li>
+</ul>
+<p>Een volledige inventaris opstellen en onderhouden van alle bedrijfsmiddelen die gerelateerd zijn aan informatie en informatie verwerkende faciliteiten.</p>
+<ul>
+<li>Eigendom van Bedrijfsmiddelen</li>
+</ul>
+<p>Elk bedrijfsmiddel dat wordt bijgehouden in het inventarisoverzicht moet een duidelijk toegewezen eigenaar hebben.</p>
+<ul>
+<li>Aanvaardbaar Gebruik van Bedrijfsmiddelen</li>
+</ul>
+<p>Ontwikkelen, documenteren en implementeren van regels voor het aanvaardbaar gebruik van informatie en gerelateerde bedrijfsmiddelen.</p>
+<ul>
+<li>Teruggeven van Bedrijfsmiddelen</li>
+</ul>
+<p>Verzekeren dat alle medewerkers en externe gebruikers bij beëindiging van hun dienstverband, contract of overeenkomst alle bedrijfsmiddelen teruggeven aan de gemeente.</p>
+<h3>1.3 Toepassingsgebied</h3>
+<p>Dit beleid is van toepassing op alle medewerkers, dienstenleveranciers en externe gebruikers die toegang hebben tot bedrijfsmiddelen van de gemeente. Bedrijfsmiddelen omvatten informatie, fysieke bedrijfsmiddelen en informatie verwerkende faciliteiten die een rol spelen in het dagelijkse functioneren en de dienstverlening van de gemeente. Naleving van dit beleid is verplicht voor alle afdelingen en aangesloten entiteiten van de gemeente. Het beleid zal regelmatig worden herzien en bijgewerkt om te blijven voldoen aan veranderende behoeften, omgevingsfactoren en wet- en regelgeving.</p>
+<p>De organisatie maakt onderscheid tussen de volgende typen bedrijfsmiddelen:</p>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware bedrijfs-middelen</td>
+<td>Hardware bedrijfsmiddelen verwijzen naar fysieke technologische apparaten en uitrustingen die belangrijk zijn voor het functioneren van een organisatie.</td>
+<td>Computers, servers, printers, netwerk-apparatuur en laptops</td>
+</tr>
+<tr>
+<td>Eindgebruikers-apparaten</td>
+<td>Eindgebruikersapparaten verwijzen naar de hardware bedrijfsmiddelen waarmee de meeste gebruikers binnen een organisatie in contact komen met het computernetwerk of informatiesysteem. Ze dienen als de interface tussen de menselijke gebruiker en de digitale wereld.</td>
+<td>Desktopcomputers, laptopcomputers, smartphones, tablets en printers</td>
+</tr>
+<tr>
+<td>Mobiele apparatuur</td>
+<td>Mobiele apparatuur zijn draagbare technologische Eindgebruikersapparaten waarmee gebruikers gegevens creëren, manipuleren en beheren en interactie hebben met internetdiensten, ongeacht hun locatie. Deze apparaten kunnen verbinden met draadloze netwerken en hebben vaak een reeks functies, zoals bellen, berichten sturen en toegang verschaffen tot applicaties voor allerlei doeleinden.</td>
+<td>Computers / laptops , smartphones, tablets en smartwatches.</td>
+</tr>
+<tr>
+<td>Verwijderbare/ draagbare opslagmedia</td>
+<td>Verwijderbare of draagbare media vallen onder Hardware bedrijf smiddelen en zijn opslagapparaten die informatie opslaan en ontworpen zijn om draagbaar en verwisselbaar te zijn.</td>
+<td>USB-sticks, externe harde schijven, DVD’s en CD’s en geheugenkaarten</td>
+</tr>
+<tr>
+<td>Authenticatie-hardware</td>
+<td>Authenticatiehardware is een type Hardware bedrijfsmiddelen dat wordt gebruikt voor het bevestigen van de identiteit van een gebruiker. Deze apparaten genereren meestal unieke auteurscodes of sleutels die gekoppeld zijn aan een specifieke gebruiker, waardoor zonder de juiste hardware-identificatie geen toegang mogelijk is tot een systeem of locatie.</td>
+<td>Veiligheidstokens, biometrische scanners, smartcards, mechanische sleutels en USB-beveiligingssleutels</td>
+</tr>
+<tr>
+<td>Software bedrijfs-middelen</td>
+<td>Software bedrijfsmiddelen zijn alle softwareprogramma's, toepassingen en digitaal eigendom die eigendom zijn van, beheerd of gebruikt worden door de organisatie. Deze bedrijfsmiddelen hebben vaak licenties nodig en vereisen onderhoud en updates om effectief te blijven functioneren.</td>
+<td>Besturingssystemen, database-toepassingen, bedrijfssoftware en cloud-gebaseerde diensten</td>
+</tr>
+<tr>
+<td>Data en Informatie</td>
+<td>Data zijn de ruwe, ongeordende feiten en statistieken zonder enige context. Data kunnen worden verkregen uit verschillende bronnen en kunnen in vele vormen voorkomen, zoals cijfers, letters en afbeeldingen. Op zichzelf is data vaak van weinig nut totdat het is verwerkt.</td>
+<td>Bestanden, papieren documenten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="beleidsvereisten-beheer-van-bedrijfsmiddelen">Beleidsvereisten Beheer van Bedrijfsmiddelen</h2>
+<p>Het Beleid voor Beheer van Bedrijfsmiddelen van de organisatie hanteert de volgende uitgangspunten, ontleend aan de BIO, handreikingen van de IBD, met integratie van aanvullende regels:</p>
+<h3>2.1 Verantwoordelijkheid voor Bedrijfsmiddelen</h3>
+<p>Het doel van dit beleid is om bedrijfsmiddelen van de organisatie te identificeren en passende verantwoordelijkheden voor hun bescherming te definiëren.</p>
+<h4>Inventariseren van Bedrijfsmiddelen</h4>
+<p>Alle informatie, bedrijfsmiddelen gerelateerd aan informatie en informatie verwerkende faciliteiten moeten worden geïdentificeerd.</p>
+<ul>
+<li>
+<p>Een gedetailleerde inventaris van deze bedrijfsmiddelen moet worden opgesteld en worden onderhouden gedurende de volledige levenscyclus (bijvoorbeeld: creatie, wijziging, verwijdering en vernietiging).</p>
+</li>
+<li>
+<p>De inventaris maakt het mogelijk om het toepassingsgebied van bedrijfsmiddelen te identificeren waarop de beveiligingscontroles moeten worden uitgevoerd. Zonder een volledige en betrouwbare inventaris van bedrijfsmiddelen, kan de controle worden uitgevoerd op een deelscope en kunnen sommige bedrijfsmiddelen niet worden afgedekt, waardoor het beveiligingsrisico voor de organisatie toeneemt</p>
+</li>
+</ul>
+<h4>2.1.2 Review van de Inventaris</h4>
+<p>Om een accurate inventarisatie van bedrijfsmiddelen te behouden, moet er regelmatig, tenminste jaarlijks, een beoordeling worden georganiseerd. Deze beoordeling moet tot doel hebben:</p>
+<ul>
+<li>
+<p>Het in stand houden van een up-to-date overzicht van IT-systemen die de bedrijfsactiviteiten van de organisatie ondersteunen.</p>
+</li>
+<li>
+<p>Het in stand houden van de mapping tussen IT-systemen en bedrijfsapplicaties.</p>
+</li>
+<li>
+<p>Ervoor zorgen dat de kritikaliteit van systemen de resultaten van de BIA (Business Impact Analysis) weerspiegelt. De beoordeling moet worden uitgevoerd door de eerste verdedigingslinie (bijv. IT) met de ondersteuning van de tweede verdedigingslinie (het securityteam). De beoordeling moet worden uitgevoerd door het met elkaar in overeenstemming brengen van een reeks informatiebronnen:</p>
+</li>
+<li>
+<p>Een systeem voor de identificatie van bedrijfsmiddelen</p>
+</li>
+<li>
+<p>Een systeem voor de registratie van bedrijfsmiddelen</p>
+</li>
+<li>
+<p>Er moeten passende maatregelen worden getroffen als tijdens deze beoordeling bevindingen worden gedaan, zoals het buiten bedrijf stellen van systemen die niet meer in bedrijf zouden moeten zijn.</p>
+</li>
+</ul>
+<h4>2.1.3 Eigendom van Bedrijfsmiddelen</h4>
+<p>Alle informatie en bedrijfsmiddelen die verband houden met ICT-voorzieningen, moeten aan een 'bedrijfsmiddeleigenaar' (een deel van de organisatie) zijn toegewezen.</p>
+<p>De individuele of IT-serviceverantwoordelijkheden voor de bedrijfsmiddelen van een categorie van bedrijfsmiddelen moeten worden gedefinieerd en beheerd gedurende hun volledige levenscyclus.</p>
+<p>De volgende principes moeten worden geïmplementeerd:</p>
+<ul>
+<li>Alle bedrijfsmiddelen moeten een eigenaar hebben;</li>
+</ul>
+<h2 id="rollen-en-verantwoordelijkheden-voor-het-beheer-van-bedrijfsmiddelen-dienen-te-worden-gedefinieerd-en-onderhouden-in-de-procedures-er-zijn-vier-sleutelrollen-gedefinieerd-en-toegekend-van-de-organisatie">Rollen en verantwoordelijkheden voor het beheer van bedrijfsmiddelen dienen te worden gedefinieerd en onderhouden in de procedures. Er zijn vier sleutelrollen gedefinieerd en toegekend van de organisatie:</h2>
+<ul>
+<li>
+<p>De bedrijfsmiddeleigenaar is belast met het managen van een bedrijfsmiddel gedurende zijn volledige levenscyclus, vanaf het moment dat het wordt uitgegeven door de IT Service Desk tot aan het moment dat het door de bedrijfsmiddeleigenaar wordt ingeleverd bij de IT Service Desk.</p>
+</li>
+<li>
+<p>Binnen de organisatie worden de volgende soorten bedrijfsmiddeleigenaren onderscheiden:</p>
+</li>
+<li>
+<p>Voor werkplekhardware en ondersteunende software is de ICT-afdeling de eigenaar.</p>
+</li>
+<li>
+<p>Voor bedrijfsapplicaties zijn de afdelingen binnen de organisatie</p>
+</li>
+<li>
+<p>Voor databases en IT-infrastructuur is de ICT-afdeling eigenaar.</p>
+</li>
+<li>
+<p>IT Service Desk: De IT Service Desk is verantwoordelijk voor de correcte en volledige uitvoering van het uitgifte- en innameproces van bedrijfsmiddelen. Daarnaast is de IT Service Desk verantwoordelijk voor het definitief verwijderen en onbruikbaar maken van informatie op bedrijfsmiddelen en bedrijfsmiddelen gereedmaken voor her uitgifte dan wel definitieve verwijdering uit de organisatie. De ServiceDesk is verantwoordelijk voor bijwerken en actualiseren van de CMDB.</p>
+</li>
+<li>
+<p>CMDB-beheerder: De functionele Configuratie Management Database (CMDB) beheerder is verantwoordelijk voor het periodiek uitvoeren van controles om de CMDB te ontdoen van onvolkomenheden.</p>
+</li>
+<li>
+<p>IT manager:</p>
+</li>
+<li>
+<p>De IT-manager is verantwoordelijk voor het coördineren en beheren van alle IT-gerelateerde activiteiten binnen een organisatie. Dit kan onder andere het toezicht op IT-infrastructuur, het beheren van IT-teams en het uitvoeren van IT-strategie inhouden.</p>
+</li>
+<li>
+<p>In het huidige beleid zullen verschillende rollen verantwoordelijk zijn voor de uitvoering van de vereisten (R), maar voor alle vereisten geldt dat de IT manager eindverantwoordelijk of ‘accountable’ (A) zal zijn.</p>
+</li>
+<li>
+<p>De toereikendheid van de eigenaren van de bedrijfsmiddelen in de inventaris moet worden gemonitord, bijv. aantal bedrijfsmiddelen in eigendom, aantal bedrijfsmiddelen zonder eigenaar (wezenlijk bedrijfsmiddel).</p>
+</li>
+<li>
+<p>Naloopcontroles moeten worden uitgevoerd om de kwaliteit van de gegevens voortdurend te verbeteren en het eigendom van bedrijfsmiddelen opnieuw te certificeren.</p>
+</li>
+</ul>
+<h4>2.1.4 Aanvaardbaar Gebruik van Bedrijfsmiddelen</h4>
+<ul>
+<li>
+<p>Regels voor het aanvaardbaar gebruik van informatie en bedrijfsmiddelen moeten worden geïdentificeerd, gedocumenteerd en geïmplementeerd.</p>
+</li>
+<li>
+<p>Alle interne en externe personeel moeten aantoonbaar op de hoogte worden gesteld van de gedragsregels voor het gebruik van bedrijfsmiddelen.</p>
+</li>
+<li>
+<p>De gedragsregels voor het gebruik van bedrijfsmiddelen door extern personeel moeten contractueel worden vastgelegd, overeenkomstig de huisregels of gedragsregels.</p>
+</li>
+<li>
+<p>Alle gebruikers van bedrijfsmiddelen (zowel intern als extern personeel) moeten voorafgaand aan de ingebruikname een bruikleenovereenkomst tekenen. In deze bruikleenovereenkomst geeft de ondertekenaar tevens aan van de gedragsregels kennis te hebben genomen.</p>
+</li>
+</ul>
+<h4>2.1.5 Teruggeven van Bedrijfsmiddelen</h4>
+<p>Alle medewerkers en externe gebruikers zijn verplicht om bij beëindiging van hun dienstverband, contract of overeenkomst alle bedrijfsmiddelen van de organisatie terug te geven.</p>
+<ul>
+<li>
+<p>Bijv. in het geval van einde van tewerkstelling of diensten, keren interne medewerkers of externe aannemers hun in bruikleen gestelde laptop of telefoon terug;</p>
+</li>
+<li>
+<p>Bijv. voor persoonsgegevens, wanneer de bewaring van gegevens is voltooid, moeten de gegevensbestanden veilig worden gewist.</p>
+</li>
+<li>
+<p>De procedures voor het teruggeven van bedrijfsmiddelen moeten gezamenlijk worden gedefinieerd door de IT- en HR-afdeling, als een inherent onderdeel van de werknemerslevenscyclus.</p>
+</li>
+<li>
+<p>Er moeten periodieke controles worden uitgevoerd op de juistheid van de teruggave van bedrijfsmiddelen om te garanderen dat alle bedrijfsmiddelen zijn teruggegeven zodra de werknemer is vertrokken.</p>
+</li>
+</ul>
+<h3>2.2 Informatieclassificatie</h3>
+<p>Het doel van informatieclassificatie is om ervoor te zorgen dat informatie een passend beschermingsniveau krijgt in overeenstemming met de kritikaliteit van het middel voor de organisatie.</p>
+<h4>2.2.1 Classificatie van Informatie</h4>
+<ul>
+<li>
+<p>Elk bedrijfsmiddel (inclusief e-mails) moet worden geclassificeerd op basis van de classificatieniveaus van de organisatie zoals beschreven in het Beleid Dataclassificatie, rekening houdend met factoren zoals wettelijke vereisten, kritikaliteit van risicobeoordeling of gevoeligheid voor onbevoegde openbaarmaking.</p>
+</li>
+<li>
+<p>De informatie in alle informatiesystemen moet door middel van een expliciete risicoafweging worden geclassificeerd, zodat duidelijk is welke bescherming nodig is.</p>
+</li>
+<li>
+<p>De juiste classificatie maakt het mogelijk om het juiste niveau van bescherming te bepalen en te implementeren gedurende hun volledige levenscyclus. Classificatie moet worden bijgehouden in de inventaris van bedrijfsmiddelen.</p>
+</li>
+<li>
+<p>Beoordelingen van informatiehoudende bedrijfsmiddelen moeten regelmatig worden herzien en bijgewerkt bij belangrijke veranderingen die invloed op hen hebben.</p>
+</li>
+<li>
+<p>Alle classificaties van alle bedrijfskritische systemen zijn centraal vastgelegd in de CMDB. De eigenaren van de systemen geven de classificaties aan bij de CMDB-beheerder. De laatstgenoemde rol registreert de classificaties in de CMDB. De classificaties dienen minimaal jaarlijks of in het geval van grote wijzigingen door de eigenaren gecontroleerd te worden.</p>
+</li>
+</ul>
+<h4>2.2.2 Informatie Labelen</h4>
+<p>De organisatie heeft procedures beschreven voor het labelen van informatie en andere gerelateerde bedrijfsmiddelen in alle formaten. Het labelen moet in overeenstemming zijn met het classificatieschema dat is vastgesteld in het Beleid Dataclassificatie. Labels moeten gemakkelijk identificeerbaar en herkenbaar zijn. Voorbeelden van labeltechnieken zijn fysieke labels, kop- en voetteksten, metagegevens, watermerken en stempels.</p>
+<p>Digitale informatie moet metagegevens gebruiken om informatie te identificeren, beheren en beheersen, met name met betrekking tot vertrouwelijkheid. Deze metagegevens moeten ook efficiënt en accuraat zoeken mogelijk maken en interactie tussen systemen op basis van toegewezen classificatielabels mogelijk maken. Het meest gevoelige deel van de informatie bepaalt de algehele classificatie van de informatie en dus ook het label van de informatie.</p>
+<p>De methode van labelen hangt af van het type bedrijfsmiddel. Per type bedrijfsmiddel zijn de volgende vormen van labelen vereist:</p>
+<ul>
+<li>
+<p>Hardware bedrijfsmiddelen: Deze bedrijfsmiddelen dienen te worden voorzien van een sticker met daarop een barcode en het identificatienummer verwijzend naar de registratie van het bedrijfsmiddel in de CMDB. In de CMDB kan verdere, eventueel benodigde, informatie over het bedrijfsmiddel worden gevonden.</p>
+</li>
+<li>
+<p>Software bedrijfsmiddelen: Deze bedrijfsmiddelen dienen te worden voorzien van metagegevens inclusief het identificatienummer verwijzend naar de registratie van het bedrijfsmiddel in de CMDB en het classificatielabel (zoals beschreven in het classificatieschema). In de CMDB kan verdere eventueel benodigde informatie over het bedrijfsmiddel worden gevonden.</p>
+</li>
+<li>
+<p>Data en informatie: De digitale versie van deze bedrijfsmiddelen dient, net zoals de software bedrijfsmiddelen te worden voorzien van metagegevens inclusief het identificatienummer verwijzend naar de registratie van het bedrijfsmiddel in de CMDB en het classificatielabel (zoals beschreven in het classificatieschema). In de CMDB kan verdere eventueel benodigde informatie over het bedrijfsmiddel gevonden worden. De fysieke papieren versie van data dient op iedere pagina gemarkeerd te worden met het identificatienummer en het classificatielabel. Deze waarden kunnen in digitale vorm in een tekstverwerkingsapplicatie voor het printen al aan de informatie en data worden toegevoegd.</p>
+</li>
+</ul>
+<p>Al het personeel, contractanten en andere belanghebbenden zullen worden geïnformeerd over de labelprocedures en zullen de nodige training ontvangen om ervoor te zorgen dat de informatie correct wordt gelabeld en dienovereenkomstig wordt behandeld.</p>
+<h3>2.3 Behandelen van Verwijderbare/draagbare Opslagmedia</h3>
+<p>Deze paragraaf bevat de informatiebeveiligingsprincipes om ongeautoriseerde openbaarmaking, wijziging, verwijdering of vernietiging van informatie, die op media is opgeslagen, te voorkomen.</p>
+<h4>2.3.1 Beheer van Verwijderbare/draagbare Opslagmedia</h4>
+<p>Procedures moeten worden geïmplementeerd voor het beheer van verwijderbare/draagbare opslagmedia en eventueel mobiele apparatuur (indien bijvoorbeeld de SD-kaart van deze apparatuur als draagbare opslagmedia wordt gebruikt) van de organisatie in overeenstemming met de regels voor gegevensclassificatie.</p>
+<p>De volgende principes met betrekking tot het beheer van verwijderbare/draagbare media moeten worden nageleefd:</p>
+<ul>
+<li>
+<p>Het is in beginsel niet toegestaan om gegevens op verwijderbare/draagbare opslagmedia op te slaan, tenzij een formele beveiligingsuitzondering is aangevraagd volgens het vrijstellingenbeleid.</p>
+</li>
+<li>
+<p>Standaard mag het gebruik van verwijderbare/draagbare opslagmedia en dus de overdracht van data en informatie vanaf laptops niet worden geautoriseerd. Deze maatregel zal ook technisch worden afgedwongen door USB-poorten op laptops te sluiten. Gebruikers van BYOD-apparaten moeten specifiek op dit verbod gewezen worden.</p>
+</li>
+<li>
+<p>De meest waardevolle bedrijfsmiddelen mogen niet op verwijderbare/draagbare opslagmedia worden opgeslagen.</p>
+</li>
+<li>
+<p>Wanneer verwijderbare/draagbare opslagmedia vertrouwelijke gegevens bevatten, moeten cryptografische technieken worden gebruikt om gegevens te beschermen in overeenstemming met encryptieregels. Zie hiervoor het Beleid Cryptografie.</p>
+</li>
+<li>
+<p>Meerdere kopieën van waardevolle gegevens moeten op aparte verwijderbare/draagbare opslagmedia worden opgeslagen om het risico op gegevensschade of -verlies te verminderen.</p>
+</li>
+<li>
+<p>Het beheer van verwijderbare/draagbare opslagmedia en de doeltreffendheid daarvan moet worden gemonitord en gerapporteerd, bijvoorbeeld het aantal verwijderbare/draagbare opslagmedia dat moet worden verwijderd, het aantal kopieën van media met vertrouwelijke informatie en het aantal draagbare media dat is aangesloten.</p>
+</li>
+</ul>
+<h4>2.3.2 Verwijderen van Verwijderbare/draagbare Opslagmedia</h4>
+<p>Verwijderbare/draagbare opslagmedia moet beheerst, volgens formele procedures, worden verwijderd wanneer ze niet meer nodig zijn. In de organisatie wordt de verwijdering van data verricht door de ServiceDesk.</p>
+<p>Regels met betrekking tot de verwijdering van verwijderbare/draagbare opslagmedia:</p>
+<ul>
+<li>
+<p>De verwijdering van verwijderbare/draagbare opslagmedia moet volgens formele procedures, evenredig aan de gegevensclassificatie plaatsvinden, bijvoorbeeld versnipperen, verbranden van de media zijn voorbeelden van evenredige praktijken.</p>
+</li>
+<li>
+<p>Verzoeken om vertrouwelijke gegevens te verwijderen, moeten worden geregistreerd en de eigenaar van de gegevens moet op de hoogte worden gebracht van de effectiviteit van de verwijdering, bijvoorbeeld gebruik van verwijder formulier met goedkeuringsworkflow.</p>
+</li>
+<li>
+<p>Wanneer het beheer van verwijderbare/draagbare opslagmedia als een uitbestede controle wordt gezien, moet de toepassing van de verwijderingsprocedure worden opgenomen in de contractuele clausules met de leverancier en gecontroleerd.</p>
+</li>
+<li>
+<p>Data op verwijderbare/draagbare opslagmedia mogen niet meer te herstellen zijn zodra het dataverwijderingsproces is doorlopen.</p>
+</li>
+<li>
+<p>In geval van fysieke beschadiging van verwijderbare/draagbare opslagmedia voordat de effectieve afvoer van gegevens plaatsvindt, moet een beveiligingsbeoordeling worden uitgevoerd om te bepalen of de gegevens nog toegankelijk blijven voor standaardvervoer, als dat niet het geval is, moeten de mediabedrijfsmiddelen fysiek worden vernietigd of onherstelbaar worden gemaakt.</p>
+</li>
+<li>
+<p>De doeltreffendheid van de verwijderingsprocedure moet worden gemonitord, bijvoorbeeld aantal media met vertrouwelijke informatie. Vernietiging van organisatiegegevens op mobiele apparatuur is toegestaan wanneer als gestolen of verloren is opgegeven.</p>
+</li>
+<li>
+<p>De mogelijkheid om een mobiel apparaat op afstand te vergrendelen en te wissen, moet worden geïmplementeerd. Zie voor een verdere toelichting het Beleid Mobiele Apparatuur en Telewerken.</p>
+</li>
+</ul>
+<h4>2.3.3 Verwijderbare/draagbare Opslagmedia Fysiek Overdragen</h4>
+<p>Verwijderbare/draagbare opslagmedia die informatie bevatten, behoren te worden beschermd tegen onbevoegde toegang, misbruik of corruptie tijdens transport.</p>
+<ul>
+<li>
+<p>Er is een vastgestelde procedure voor het fysiek transport van media.</p>
+</li>
+<li>
+<p>Het gebruik van koeriers of transporteurs voor transport van op BBN2 of hoger geclassificeerde informatie voldoet aan vooraf opgestelde betrouwbaarheidseisen.</p>
+</li>
+</ul>
+<p>Verwijderbare/draagbare opslagmedia en papieren documenten met informatie moeten worden beschermd tegen ongeautoriseerde toegang, misbruik of corruptie tijdens het transport.</p>
+<ul>
+<li>
+<p>Alle verwijderbare/draagbare opslagmedia die vertrouwelijke informatie bevatten, moeten worden geconfigureerd met een encryptiemethode op basis van het classificatieniveau. Zie het Beleid Cryptografie van de organisatie.</p>
+</li>
+<li>
+<p>Wanneer vertrouwelijke informatie niet kan worden versleuteld, moet er aanvullende fysieke bescherming van de media worden geboden om het beveiligingsrisico onder een acceptatieniveau te brengen.</p>
+</li>
+<li>
+<p>Er moet een procedure worden geformaliseerd voor het transport van bedrijfsmiddelen en worden gecommuniceerd met de betrokkenen, bijvoorbeeld logistiek en leverancier van een derde partij.</p>
+</li>
+<li>
+<p>Medewerkers die zijn geïdentificeerd voor gegevensoverdracht, moeten formeel worden gemachtigd.</p>
+</li>
+<li>
+<p>Er moeten records worden gegenereerd voor het identificeren van de inhoud van de media, de transportomstandigheden en de ontvangst op de bestemming.</p>
+</li>
+<li>
+<p>De ServiceDesk moet ervoor zorgen dat de fysieke overdracht van media wordt uitgevoerd volgens de procedure voor het transport van gegevens, bijvoorbeeld het uitvoeren van een controle op de overdrachtslogbestanden van back-uptapes.</p>
+</li>
+</ul>
+<h2 id="evaluatie-en-verbetering-van-het-beleid">Evaluatie en Verbetering van het Beleid</h2>
+<p>Het Beleid Beheer van Bedrijfsmiddelen wordt jaarlijks geëvalueerd om de doeltreffendheid ervan te waarborgen. Op basis van evaluatieresultaten worden indien nodig verbeteringen aangebracht in het beleid.</p>
+<h2 id="vrijwaring">Vrijwaring</h2>
+<p>In het kader van voortdurende verbetering en naleving van beleidsdoelstellingen, wordt erkend dat bepaalde vereisten momenteel niet kunnen worden vervuld volgens het huidige beleidsstuk. Echter, met het oog op toekomstige inzet voor progressieve ontwikkeling, zijn deze niet nagekomen verplichtingen opgenomen in de veranderkalender voor 2024. Hoewel ze momenteel buiten bereik liggen, is uitgesproken om tegen de aangegeven tijdlijn aan alle gestelde eisen te voldoen, waarmee het beleid wordt versterkt in lijn met gemeentelijke doelstellingen en in lijn met de vereisten van de BIO 2.0.</p>
+<h2 id="rollen-en-verantwoordelijkheden">Rollen en verantwoordelijkheden</h2>
+<p>Dit RACI-diagram biedt een overzicht van de verdeling van verantwoordelijkheden binnen de implementatie en handhaving van het Beleid Beheer van Bedrijfsmiddelen van de organisatie. De matrix identificeert de rollen van verschillende belanghebbenden bij specifieke taken en activiteiten die essentieel zijn voor een effectieve beveiliging van bedrijfsmiddelen. Hieronder wordt de betekenis van de gebruikte afkortingen toegelicht:</p>
+<ul>
+<li>
+<p>R (Responsible): De persoon of groep die verantwoordelijk is voor de uitvoering van een specifieke taak of activiteit.</p>
+</li>
+<li>
+<p>A (Accountable): De individuele persoon die uiteindelijk verantwoordelijk is en beslissingsbevoegdheid heeft voor het betreffende onderdeel.</p>
+</li>
+<li>
+<p>C (Consulted): Personen of afdelingen die geraadpleegd moeten worden voor input en feedback bij de uitvoering van taken.</p>
+</li>
+<li>
+<p>I (Informed): Personen of afdelingen die op de hoogte moeten worden gehouden van de voortgang en resultaten van specifieke taken.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Activiteit</th>
+<th>R</th>
+<th>A</th>
+<th>C</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1 Verantwoordelijkheden voor bedrijfsmiddelen</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>Manager IT</td>
+<td>CMDB-beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.1 Inventariseren van Bedrijfsmiddelen</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>Manager IT</td>
+<td>CMDB-beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.2 Review van de Inventaris</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>Manager IT</td>
+<td>CMDB-beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.3 Eigendom van Bedrijfsmiddelen</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>Manager IT</td>
+<td>CMDB-beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.4 Aanvaardbaar Gebruik van Bedrijfsmiddelen</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>Manager IT</td>
+<td>HRM / ServiceDesk</td>
+<td></td>
+</tr>
+<tr>
+<td>2.1.5 Teruggeven van Bedrijfsmiddelen</td>
+<td>ServiceDesk</td>
+<td>Manager IT</td>
+<td>CMDB-beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.1 Classificatie van Informatie</td>
+<td>het securityteam</td>
+<td>Manager IT</td>
+<td>CMDB beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2.2 Informatie Labelen</td>
+<td>CMDB beheerder</td>
+<td>Bedrijfsmiddeleigenaar</td>
+<td>het securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.1 Beheer van Verwijderbare/draagbare Opslagmedia</td>
+<td></td>
+<td>Manager IT</td>
+<td>het securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.2 Verwijderen van Verwijderbare/draagbare Opslagmedia</td>
+<td>ServiceDesk</td>
+<td>Manager IT</td>
+<td>het securityteam</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3.3 Verwijderbare/draagbare Opslagmedia Fysiek Overdragen</td>
+<td>het securityteam &amp; ServiceDesk</td>
+<td>Manager IT</td>
+<td>het securityteam</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

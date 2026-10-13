@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Data Protection Impact Assessment</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <a href="./">Een DPIA in vijf stappen, met sjablonen</a> › <span>Data Protection Impact Assessment</span></nav><!-- /kruimelpad -->
+<h1>Data Protection Impact Assessment</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een DPIA in vijf stappen, met sjablonen</a> · <a href="sjabloon-dpia.md">Markdown-bron</a></p>
+<p><strong>[Naam werkproces]</strong></p>
+<p><strong>[Naam organisatie]</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Status</strong></td>
+<td>Concept / Definitief / Herzien</td>
+</tr>
+<tr>
+<td><strong>Datum start DPIA</strong></td>
+<td>[datum]</td>
+</tr>
+<tr>
+<td><strong>Datum herziening DPIA</strong></td>
+<td>[datum, uiterlijk drie jaar na afronding]</td>
+</tr>
+<tr>
+<td><strong>Organisatie</strong></td>
+<td>[naam]</td>
+</tr>
+<tr>
+<td><strong>Cluster</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Afdeling</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Verwerkingsverantwoordelijke</strong></td>
+<td>College van B&amp;W / Burgemeester / Gemeenteraad</td>
+</tr>
+<tr>
+<td><strong>Proceseigenaar</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Kennishouder / contactpersoon</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Betrokken privacy officer</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Versiegeschiedenis</strong></td>
+<td>Concept 0.1: eerste opzet kennishouder</td>
+</tr>
+</tbody>
+</table>
+<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<p><em>[Vat de resultaten samen: de scope, waarom de DPIA is uitgevoerd, de risico's, de maatregelen en de conclusie.]</em> (Actie: privacy officer)</p>
+<h2 id="1-beschrijving-proces">1. Beschrijving proces</h2>
+<h3>1.1 Waar gaat de DPIA over?</h3>
+<p><em>[De aanleiding. Het doel van het werkproces en de context waarin het plaatsvindt, op hoofdlijnen.]</em></p>
+<p><strong>Waar gaat de DPIA niet over?</strong></p>
+<p><em>[Wat expliciet buiten de scope valt, als dat nodig is.]</em></p>
+<h3>1.2 Procesbeschrijving</h3>
+<p>Beschrijf het proces stap voor stap, met per stap de tabel hieronder. Titels van stappen kunnen zijn:</p>
+<ol>
+<li>Verzoek komt binnen via het zaaksysteem</li>
+<li>Verzoek wordt in applicatie X gezet</li>
+<li>Inhoudelijke behandeling in applicatie X door de klantmanager</li>
+<li>Klantmanager neemt een besluit over de aanvraag</li>
+<li>Besluit gaat naar de inwoner via beveiligde mail</li>
+<li>Besluit wordt gearchiveerd en X jaar bewaard</li>
+</ol>
+<p>Voeg een procesplaat toe als die er is.</p>
+<table>
+<thead>
+<tr>
+<th>Stap 1</th>
+<th>[titel stap]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beschrijving stap</td>
+<td><em>Hoe ontvang je persoonsgegevens, wat doe je ermee, waar leg je ze vast?</em></td>
+</tr>
+<tr>
+<td>Wie voert de stap uit?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wie kunnen bij de gegevens?</td>
+<td></td>
+</tr>
+<tr>
+<td>Welke persoonsgegevens leg je bij deze stap vast?</td>
+<td></td>
+</tr>
+<tr>
+<td>Zijn al deze persoonsgegevens noodzakelijk? Leg uit.</td>
+<td></td>
+</tr>
+<tr>
+<td>Van wie leg je persoonsgegevens vast? Om hoeveel mensen gaat het?</td>
+<td></td>
+</tr>
+<tr>
+<td>Hoe kom je aan deze persoonsgegevens?</td>
+<td></td>
+</tr>
+<tr>
+<td>Welke applicaties gebruik je in deze stap? Gebeurt er ook iets met de hand?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wissel je deze gegevens uit met andere partijen?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wat is de bewaartermijn?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 Register van verwerkingen</h3>
+<ul>
+<li>[ ] De verwerking is <strong>wel</strong> opgenomen in het register van verwerkingen.</li>
+<li>[ ] De verwerking is <strong>niet</strong> opgenomen in het register van verwerkingen.</li>
+</ul>
+<h3>1.4 Procesbeschrijving of werkinstructie</h3>
+<ul>
+<li>[ ] Dit proces is <strong>wel</strong> vastgelegd in een procesbeschrijving of werkinstructie.</li>
+<li>[ ] Dit proces is <strong>niet</strong> vastgelegd in een procesbeschrijving of werkinstructie.</li>
+</ul>
+<h2 id="2-samenwerking">2. Samenwerking</h2>
+<p>Met welke externe partijen wordt in dit proces samengewerkt? Dat zijn leveranciers van wie een applicatie wordt afgenomen, en andere partijen waarmee de organisatie persoonsgegevens uitwisselt.</p>
+<table>
+<thead>
+<tr>
+<th>Externe partij</th>
+<th>Applicatie, systeem of manier van uitwisselen</th>
+<th>Privacyrol (verwerker / zelfstandig verwerkingsverantwoordelijk / gezamenlijk verwerkingsverantwoordelijk / sub-verwerker)</th>
+<th>Verwerkers- of andere privacyovereenkomst (j/n; datum en vindplaats)</th>
+<th>Doorgifte buiten Europa (j/n; welk land)</th>
+<th>Doorgifte-instrument bij doorgifte buiten de EER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-persoonsgegevens-grondslag-en-doelbinding">3. Persoonsgegevens, grondslag en doelbinding</h2>
+<p><em>Met welke persoonsgegevens wordt gewerkt, waarom is dat noodzakelijk, op welke grondslag, en worden ze hergebruikt?</em></p>
+<h3>3.1 Persoonsgegevens</h3>
+<p><strong>Gewone persoonsgegevens</strong></p>
+<ul>
+<li>[ ] Voor- en achternaam</li>
+<li>[ ] E-mailadres</li>
+<li>[ ] Telefoonnummer</li>
+<li>[ ] Woonadres</li>
+<li>[ ] Geboortedatum</li>
+<li>[ ] Geslacht</li>
+<li>[ ] Nationaliteit</li>
+<li>[ ] IP-adres</li>
+<li>[ ] Inloggegevens</li>
+<li>[ ] Functie</li>
+<li>[ ] Klantnummer</li>
+<li>[ ] Dienstbetrekking</li>
+<li>[ ] Kenteken</li>
+<li>[ ] Burgerlijke staat</li>
+<li>[ ] Anders, namelijk:</li>
+</ul>
+<p><strong>Gevoelige persoonsgegevens</strong></p>
+<ul>
+<li>[ ] Burgerservicenummer of ander nationaal identificatienummer</li>
+<li>[ ] Financiële gegevens, zoals schulden, bezittingen of een bankrekeningnummer</li>
+<li>[ ] GPS-locatie</li>
+<li>[ ] Kopie identiteitsbewijs</li>
+<li>[ ] Camerabeelden</li>
+<li>[ ] Anders, namelijk:</li>
+</ul>
+<p><strong>Bijzondere categorieën persoonsgegevens</strong></p>
+<ul>
+<li>[ ] Gezondheid</li>
+<li>[ ] Ras of etnische afkomst</li>
+<li>[ ] Politieke opvattingen</li>
+<li>[ ] Religieuze overtuiging</li>
+<li>[ ] Lidmaatschap vakbond</li>
+<li>[ ] Genetische gegevens</li>
+<li>[ ] Biometrische gegevens</li>
+<li>[ ] Seksueel leven of geaardheid</li>
+<li>[ ] Anders, namelijk:</li>
+</ul>
+<p><strong>Strafrechtelijke persoonsgegevens</strong></p>
+<ul>
+<li>[ ] Strafrechtelijke veroordelingen</li>
+<li>[ ] Lopende strafprocedures</li>
+<li>[ ] Opgelegde strafmaatregelen</li>
+<li>[ ] Anders, namelijk:</li>
+</ul>
+<h3>3.2 Noodzakelijkheid en subsidiariteit</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Waarom is het <strong>noodzakelijk</strong> om deze persoonsgegevens vast te leggen?</td>
+<td></td>
+</tr>
+<tr>
+<td>Zijn er minder ingrijpende alternatieven voor de privacy van betrokkenen? Leg uit.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 Grondslag</h3>
+<p>Tip: betrek de privacy officer bij deze vraag.</p>
+<table>
+<thead>
+<tr>
+<th>Verwerkingsdoel werkproces</th>
+<th>AVG-grondslag (toestemming / uitvoering overeenkomst / wettelijke verplichting / vitaal belang / taak van algemeen belang / gerechtvaardigd belang)</th>
+<th>Toelichting op de grondslag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td><em>Bij bijzondere categorieën: noem ook de uitzondering in de wet.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Toepasselijke wetgeving en (gemeentelijk) beleid</th>
+<th>Welke eisen volgen daaruit?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>3.4 Doelbinding</h3>
+<p><em>Worden de persoonsgegevens ook gebruikt voor een ander doel dan hierboven? Vul dan de tabel in. Anders: "n.v.t."</em></p>
+<table>
+<thead>
+<tr>
+<th>Doel (hergebruik)</th>
+<th>Partij (externe organisatie of interne afdeling)</th>
+<th>Soort persoonsgegevens</th>
+<th>Verenigbaar doel, of nieuw doel met eigen grondslag</th>
+<th>Aanvullende maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-juistheid">4. Juistheid</h2>
+<p><strong>Borging kwaliteit.</strong> <em>Hoe blijven de gegevens actueel, juist en volledig?</em></p>
+<p><strong>Logging.</strong> <em>Is er logging ingericht, op welke onderdelen, hoe lang wordt die bewaard en wordt er op gemonitord?</em></p>
+<h2 id="5-opslag">5. Opslag</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Welke bewaartermijn(en) gelden in dit proces?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wordt die bewaartermijn nageleefd?</td>
+<td></td>
+</tr>
+<tr>
+<td>Waar worden de persoonsgegevens opgeslagen?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-bescherming">6. Bescherming</h2>
+<p>Betrek een security officer om te toetsen of de organisatie en de leverancier genoeg beveiligingsmaatregelen nemen. Voor de leverancier kan dat met het <a href="security-assessment-leverancier.html">security-assessment</a>.</p>
+<h3>6.1 Beveiliging bij de organisatie</h3>
+<p><strong>Organisatiebrede maatregelen</strong></p>
+<ul>
+<li>[ ] Centrale identiteitsdienst met single sign-on of MFA</li>
+<li>[ ] Firewall ingericht (leg uit)</li>
+<li>[ ] Back-ups van data op servers, opgeslagen op twee fysieke plaatsen</li>
+<li>[ ] Jaarlijkse ENSIA-audit</li>
+<li>[ ] Fysieke beveiliging (toegang met tag)</li>
+<li>[ ] Werktelefoon (of BYOD) beveiligd met code of wachtwoord</li>
+<li>[ ] Werklaptop (of BYOD) beveiligd met code of wachtwoord</li>
+<li>[ ] [eigen aanvulling]</li>
+</ul>
+<p><strong>Betrokken medewerkers</strong></p>
+<ul>
+<li>[ ] Medewerkers hebben een eed afgelegd</li>
+<li>[ ] Medewerkers hebben een geheimhoudingsverklaring getekend</li>
+<li>[ ] Medewerkers hebben een VOG aangeleverd</li>
+<li>[ ] [eigen aanvulling]</li>
+</ul>
+<p><strong>Systemen in het werkproces</strong></p>
+<ul>
+<li>[ ] Systemen zijn alleen toegankelijk via het eigen netwerk</li>
+<li>[ ] Toegang alleen met eigen gebruikersnaam en wachtwoord</li>
+<li>[ ] Twee- of meerfactorauthenticatie (2FA/MFA)</li>
+<li>[ ] Autorisaties voor systemen zijn ingericht (IAM)</li>
+<li>[ ] Autorisaties hangen aan de functie van de medewerker</li>
+<li>[ ] Autorisaties vragen (aparte) toestemming van een leidinggevende</li>
+<li>[ ] Toegang tot systemen wordt gelogd, en niet iedereen kan bij die logging</li>
+<li>[ ] Automatische updates</li>
+<li>[ ] [eigen aanvulling]</li>
+</ul>
+<p><strong>Specifieke maatregelen voor dit werkproces</strong></p>
+<ul>
+<li>[ ] [eigen aanvulling]</li>
+</ul>
+<h3>6.2 Beveiliging leverancier(s)</h3>
+<p><strong>[Naam verwerker 1]</strong></p>
+<ul>
+<li>[ ] De verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Neem Bijlage 2 van de getekende overeenkomst hieronder over.</li>
+<li>[ ] Met de verwerker is een andere verwerkersovereenkomst gesloten. Hieronder de belangrijkste maatregelen van de leverancier.</li>
+<li>[ ] Met de verwerker is <strong>geen</strong> verwerkersovereenkomst gesloten.</li>
+</ul>
+<h2 id="7-transparantie">7. Transparantie</h2>
+<h3>7.1 Gebruikte technieken</h3>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord en uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Worden er algoritmes gebruikt? Zo ja: hoe werken ze, en voldoen ze aan de eisen van de AP en de Europese wetgever?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wordt er AI gebruikt? Zo ja: hoe werkt het, en voldoet het AI-systeem aan de eisen van de wet?</td>
+<td></td>
+</tr>
+<tr>
+<td>Is er sprake van profilering? Zo ja: hoe, en waarvoor wordt de profilering gebruikt?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wordt er geautomatiseerd besloten? Zo ja: hoe is menselijke tussenkomst geregeld?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 Transparantie richting betrokkenen</h3>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord en uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hoe en wanneer worden betrokkenen geïnformeerd over het gebruik van hun persoonsgegevens?</td>
+<td>Via de privacyverklaring op de website van de organisatie, die betrokkenen op elk moment kunnen lezen. <em>[Vul aan of pas aan]</em></td>
+</tr>
+<tr>
+<td>Zijn er binnen de afdeling specifieke afspraken over verzoeken van betrokkenen?</td>
+<td>Verzoeken lopen via de procedure rechten van betrokkenen; de rechten staan ook in de privacyverklaring. <em>[Vul aan of pas aan]</em></td>
+</tr>
+<tr>
+<td>Hoe zijn de systemen ingericht om verzoeken uit te voeren (bijvoorbeeld inzage en verwijdering)?</td>
+<td><em>[Vul aan]</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-risico-s-en-maatregelen">8. Risico's en maatregelen</h2>
+<p>Tip: betrek de privacy officer bij dit hoofdstuk.</p>
+<h3>8.1 Risico's</h3>
+<p><em>Welke privacyrisico's lopen betrokkenen in dit werkproces? Risicoclassificatie: hoog / midden / laag / geen.</em></p>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Risicoclassificatie</th>
+<th>Aanduiding risico</th>
+<th>Beschrijving risico</th>
+<th>Voor wie is het risico?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 Beheersmaatregelen</h3>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Risicoclassificatie</th>
+<th>Te treffen maatregelen</th>
+<th>Restrisico</th>
+<th>Maatregel akkoord (proceseigenaar)</th>
+<th>Al geïmplementeerd</th>
+<th>Wanneer en door wie?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Wordt een maatregel niet uitgevoerd, dan motiveert de proceseigenaar waarom het risico wordt geaccepteerd.</p>
+<h3>8.3 Restrisico</h3>
+<p><em>[Beschrijf de resterende risico's en bepaal of de verwerking door kan gaan, of dat een voorafgaande raadpleging van de Autoriteit Persoonsgegevens nodig is.]</em></p>
+<h2 id="9-advies-functionaris-gegevensbescherming">9. Advies functionaris gegevensbescherming</h2>
+<p><em>[Het advies van de FG is een verplicht onderdeel van de DPIA. De FG plaatst het advies hier.]</em></p>
+<h2 id="10-ondertekening">10. Ondertekening</h2>
+<h3>Proceseigenaar</h3>
+<ul>
+<li>[ ] De beschrijving van het werkproces is juist en volledig</li>
+<li>[ ] De belangrijkste organisatorische en technische oorzaken zijn in kaart gebracht</li>
+<li>[ ] De beschreven maatregelen verminderen de risico's voldoende</li>
+<li>[ ] De maatregelen worden uitgevoerd en gereedgemeld bij de privacy officer</li>
+</ul>
+<p>Naam: | Handtekening: | Datum:</p>
+<h3>Privacy officer</h3>
+<ul>
+<li>[ ] Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</li>
+<li>[ ] Een andere privacy officer heeft een kwaliteitscheck gedaan, namelijk:</li>
+<li>[ ] De belangrijkste risico's voor de rechten en vrijheden van betrokkenen zijn in kaart gebracht</li>
+<li>[ ] De maatregelen verminderen de risico's: ☐ voldoende ☐ niet voldoende</li>
+<li>[ ] De maatregelen worden bewaakt en afgestemd met de proceseigenaar</li>
+</ul>
+<p>Naam: | Handtekening: | Datum:</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/privacy/dpia-in-vijf-stappen">privacy/dpia-in-vijf-stappen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

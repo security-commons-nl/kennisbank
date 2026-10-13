@@ -390,7 +390,16 @@ def controleer_bestandslinks(map_: Path, readme: Path) -> None:
         rel = bestand.relative_to(map_).as_posix()
         if rel in ("README.md", "index.html"):
             continue
+        # Een stuk en zijn leesversie zijn één bestand in twee vormen: de README linkt de markdown,
+        # de pagina de leesversie, en de leesversie linkt zelf terug naar de markdown.
+        tweeling = None
+        if "/" not in rel and rel.endswith(".md"):
+            tweeling = rel[:-3] + ".html"
+        elif "/" not in rel and rel.endswith(".html") and (map_ / (rel[:-5] + ".md")).is_file():
+            tweeling = rel[:-5] + ".md"
         for pad in bronnen:
+            if tweeling and bereikbaar(tweeling, links[pad]):
+                continue
             if not bereikbaar(rel, links[pad]):
                 waar = "de README" if pad.suffix == ".md" else "de leesversie"
                 fout(pad, "B3", f"'{rel}' staat in de map maar nergens als link in {waar}; "
@@ -537,6 +546,91 @@ def bepaal_weergave(vak: str, map_: Path) -> tuple[str, str]:
     if any(p.suffix in (".pptx", ".docx", ".xlsx", ".pdf", ".zip") for p in map_.iterdir()):
         return "download", f"{REPO}/tree/main/{vak}/{map_.name}"
     return "markdown", f"{REPO}/tree/main/{vak}/{map_.name}"
+
+
+# Een item met losse stukken naast de README (een procedure, een brief, een beleidsstuk per domein)
+# had alleen een leesversie van de README. Klikte een lezer op een stuk, dan kreeg hij kale markdown
+# als platte tekst in de browser. Nu krijgt elk stuk een eigen leesversie met dezelfde naam en .html,
+# gemaakt door dit script, zodat hij niet achter kan lopen op de markdown (statuut B3).
+STUKBRON_CSS = (
+    ".stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}"
+    ".stukbron a{color:#1f4e79}"
+)
+
+
+def stukken(map_: Path) -> list[Path]:
+    """De losse markdownstukken naast de README, alleen op het niveau van het item zelf."""
+    return sorted(p for p in map_.glob("*.md") if p.name != "README.md")
+
+
+def koppel_stukken(tekst: str, map_: Path) -> str:
+    """Laat links naar een stuk in dezelfde map naar zijn leesversie wijzen, en README.md naar de pagina."""
+    namen = {p.name for p in stukken(map_)}
+
+    def vervang(m: re.Match) -> str:
+        kaal, haak, anker = m.group(1).partition("#")
+        staart = haak + anker
+        if kaal in namen:
+            return f'href="{kaal[:-3]}.html{staart}"'
+        if kaal == "README.md":
+            return f'href="./{staart}"'
+        return m.group(0)
+
+    return LINK_HTML.sub(vervang, tekst)
+
+
+def stuktitel(md: Path) -> tuple[str, str]:
+    """De titel van een stuk en de tekst zonder frontmatter; zonder h1 komt de titel erbij."""
+    fm, tekst = lees_frontmatter(md.read_text(encoding="utf-8"))
+    kop = re.search(r"^# (.+)$", tekst, re.M)
+    if kop:
+        return kop.group(1).strip(), tekst
+    titel = str((fm or {}).get("titel") or md.stem.replace("-", " ").capitalize())
+    return titel, f"# {titel}\n\n{tekst.lstrip()}"
+
+
+def stukpagina(md: Path, vak: str, fm: dict, sectie: dict) -> str:
+    """De leesversie van een los stuk: zelfde sjabloon, kruimelpad, favicon, inhoudsopgave en bronvoet
+    als de itempagina, met onder de titel de weg terug naar het item en naar de markdown."""
+    try:
+        import markdown
+    except ImportError:
+        sys.exit("python-markdown ontbreekt; draai: pip install markdown (nodig voor de leesversie per stuk)")
+    titel, tekst = stuktitel(md)
+    lichaam = markdown.markdown(tekst, extensions=["tables", "fenced_code", "sane_lists"])
+    lichaam = koppel_stukken(lichaam, md.parent)
+    item_titel = html.escape(str(fm["titel"]))
+    bronregel = (f"<style>{STUKBRON_CSS}</style>"
+                 f'<p class="stukbron">Onderdeel van <a href="./">{item_titel}</a> · '
+                 f'<a href="{md.name}">Markdown-bron</a></p>')
+    sjabloon = (Path(__file__).resolve().parent / "leesversie-sjabloon.html").read_text(encoding="utf-8")
+    pagina = sjabloon.replace("$title$", html.escape(titel)).replace("$body$", lichaam)
+    pagina = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(zet_favicon(pagina))), vak, md.parent.name)
+    # Na de inhoudsopgave gezet, zodat de weg terug direct onder de titel staat en het blok erna.
+    pagina = re.sub(r"(</h1>)", lambda m: m.group(1) + bronregel, pagina, count=1)
+    kruimels = kruimels_van_item(fm, sectie)[:-1] + [(str(fm["titel"]), "./"), (titel, "")]
+    m = re.search(r"<body[^>]*>", pagina)
+    return pagina[: m.end()] + kruimelblok(kruimels) + pagina[m.end():]
+
+
+def bouw_stukken(items: dict[str, list[dict]], secties: dict, alleen_check: bool) -> list[str]:
+    """Schrijf of controleer de leesversie van elk los stuk. Geeft de gewijzigde paden terug."""
+    gewijzigd = []
+    for vak in VAKGEBIEDEN:
+        for fm in items.get(vak, []):
+            for md in stukken(fm["_map"]):
+                doel = md.with_suffix(".html")
+                inhoud = stukpagina(md, vak, fm, secties[vak])
+                oud = doel.read_text(encoding="utf-8") if doel.exists() else None
+                if oud == inhoud:
+                    continue
+                if alleen_check:
+                    fout(doel, "B3", "de leesversie van dit stuk ontbreekt of loopt achter op de markdown; "
+                                     "draai python tools/build.py")
+                    continue
+                doel.write_bytes(inhoud.encode("utf-8"))
+                gewijzigd.append(doel.relative_to(ROOT).as_posix())
+    return gewijzigd
 
 
 def lees_volgorde(tekst: str) -> list[str]:
@@ -1526,6 +1620,7 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     vak, item = pad.parent.parent.name, pad.parent.name
     tekst = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(
         zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))), vak, item)
+    tekst = koppel_stukken(tekst, pad.parent)
     # Eerst het pijlerblok, dan de normenregel: beide gaan vlak achter </h1>, dus wat als laatste
     # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.
     tekst = zet_pijlerblok(tekst, kinderen or [])
@@ -1677,6 +1772,7 @@ def main() -> int:
                                                     fm.get("bronnen") or [],
                                                     bewijs_voor(fm.get("barrieres") or [])):
                 kruimel_gewijzigd.append(f"{vak}/{fm['_map'].name}/index.html")
+    kruimel_gewijzigd += bouw_stukken(items, secties, alleen_check)
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
         for f in fouten:

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Memo&#x27;s per gremium</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Een blue team opzetten</a> › <span>Memo&#x27;s per gremium</span></nav><!-- /kruimelpad -->
+<h1>Memo's per gremium</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een blue team opzetten</a> · <a href="memos-per-gremium.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#gemeente">Gemeente</a></li><li><a href="#waterschap">Waterschap</a></li></ol></nav><!-- /inhoudsopgave -->
+<p>Bijlage bij <a href="./">Een blue team opzetten</a>, stap 5. Per gremium een <strong>voorbeeldmemo</strong> (verzonnen
+organisatie, verzonnen cijfers) en een <strong>sjabloon</strong> om in te vullen. Elke memo heeft dezelfde bouw:
+aanleiding, wat we doen, waarom het u raakt, wat dit concreet kan betekenen, waarborgen, wat wij u vragen,
+wat u van ons krijgt. Vul de scenario's met je eigen diensten.</p>
+<p>Placeholders staan tussen <code>[ ]</code>. <code>[einddatum venster]</code> is de datum waarop het mandaat afloopt.</p>
+<h2 id="gemeente">Gemeente</h2>
+<h3>College &amp; burgemeester</h3>
+<p><strong>Kernboodschap.</strong> Er werkt tijdelijk een team met mandaat om buiten de reguliere route te handelen; het college kent het risico, de burgemeester (openbare orde/veiligheid) is aangesloten, en er is één vast aanspreekpunt.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: college van B&amp;W, t.a.v. burgemeester · Van: CISO [regio] · Betreft: tijdelijk interventieteam, ter informering · Classificatie: intern</em></p>
+<p><strong>Aanleiding.</strong> Drie partijen waarschuwden recent onafhankelijk voor hetzelfde: AI-gedreven aanvalscapaciteit maakt het vinden én misbruiken van kwetsbaarheden sneller en goedkoper, de tijd tussen "kwetsbaarheid bekend" en "actief misbruikt" krimpt van dagen naar uren. We hebben een handelingsvenster tot [einddatum venster] om onze meest urgente gaten te dichten; daarna moeten we ervan uitgaan dat zulke capaciteit breed beschikbaar is.</p>
+<p><strong>Wat we doen.</strong> We richten tijdelijk een klein interventieteam in dat náást de reguliere IT-lijn de grootste gaten dicht, detectie inricht en onze reactie oefent. Het team is uitdrukkelijk tijdelijk en heeft een vooraf belegd mandaat; het vervangt niets en herschrijft geen beleid.</p>
+<p><strong>Waarom dit het college raakt.</strong> Om in dat tempo te handelen mag het team, onder voorwaarden, buiten de reguliere change-procedure ingrijpen: een kritieke update uitrollen, een dienst tijdelijk afschakelen, of een externe partij inschakelen. Dat kan de dienstverlening kortstondig raken en, bij een incident, doorwerken in de openbare orde en de communicatie naar inwoners. Het gezag van de burgemeester en uw bestuurlijk eigenaarschap blijven volledig bij u; het team handelt binnen een mandaat dat u kent en hebt goedgekeurd.</p>
+<p><strong>Wat dit concreet kan betekenen.</strong> (A) we rollen 's avonds een spoedpatch uit op een internet-gerichte dienst, burgers merken hooguit een onderbreking van enkele minuten; (B) we vermoeden misbruik van een account en zetten een dienst een dag stil voor onderzoek, met balie en telefoon als terugval; (C) bij een bevestigd incident schakelen we een gespecialiseerde partij in, die mogelijk fysiek op locatie meewerkt. In alle gevallen hoort u het op het moment zelf, niet achteraf.</p>
+<p><strong>Waarborgen.</strong> Elke ingreep met merkbare impact is een besluit van minstens twee teamleden (vier-ogen), wordt binnen 24 uur vastgelegd in een besluitenregister, en valt onder onafhankelijk toezicht. Zo blijft achteraf navolgbaar wát is gebeurd en waaróm.</p>
+<p><strong>Wat wij u vragen.</strong> (1) Neem kennis van het mandaat en de drie situaties hierboven; (2) bevestig de lijn naar de burgemeester voor de openbare-orde- en gezagsaspecten; (3) laten we vooraf afspreken wie woordvoering doet als een ingreep zichtbaar wordt.</p>
+<p><strong>Wat u van ons krijgt.</strong> Een melding bij elke ingreep met bestuurlijke lading (niet achteraf), een korte periodieke voortgangsrapportage, en kant-en-klare feitelijke bouwstenen voor uw woordvoering of een raadsbriefing, inclusief een eindbeeld vóór het venster sluit.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Memo college &amp; burgemeester, ter informering
+Aanleiding. [trigger + venster-datum]
+Waarom het college dit moet weten. [mandaat + bestuurlijke/OOV-lading]
+Wat dit kan betekenen. [1-3 scenario's]
+Wat ik u vraag. [kennisname; OOV-lijn burgemeester; woordvoering]
+Wat u van mij krijgt. [melding bij ingreep + rapportageritme + woordvoeringsbouwstenen]
+</code></pre>
+<h3>Gemeentesecretaris (GS)</h3>
+<p><strong>Kernboodschap.</strong> Als hoogste ambtenaar bent u het scharnier naar het bestuur; u hoort het vóóraf en wijst één vast aanspreekpunt aan.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: gemeentesecretaris [gemeente] (mede namens de regiogemeenten) · Van: CISO [regio] · Betreft: interventieteam, ter informering · Classificatie: intern</em></p>
+<p><strong>Aanleiding.</strong> De vier gemeenten in onze regio delen één digitale infrastructuur; een kwetsbaarheid bij één raakt potentieel allemaal. Meerdere autoriteiten waarschuwen onafhankelijk voor AI-gedreven aanvalscapaciteit, met een handelingsvenster tot [einddatum venster]. Wachten betekent dat de aanvalskant ons inhaalt vóór we de basis op orde hebben.</p>
+<p><strong>Wat het interventieteam is.</strong> Een tijdelijk team in "fix-modus" dat náást de reguliere IV-lijn de meest urgente gaten dicht, detectie inricht en de reactie oefent. Het mandaat is belegd bij de directeur Bedrijfsvoering (opdrachtgever) en de CIO (beslisser en budgethouder); u gaf als gemeentesecretaris het groen licht. Het team leent mensen uit de lijn, de lijnverantwoordelijkheid blijft ongewijzigd.</p>
+<p><strong>Uw rol.</strong> Als hoogste ambtenaar bent u het scharnier naar het bestuur én naar de collega-secretarissen in de regio. Daarom hoort u het vooraf, en bent u degene die de bestuurlijke lijn en de woordvoering afstemt.</p>
+<p><strong>Wat dit concreet kan betekenen.</strong> (A) een patch buiten het reguliere change-venster, meestal 5-30 minuten onderbreking; (B) een dienst die we bij verdenking van misbruik uren tot dagen stilzetten, met een alternatieve route; (C) het inschakelen van een externe partij, soms fysiek op locatie. Omdat de infrastructuur gedeeld is, kan zo'n ingreep alle vier de gemeenten tegelijk raken.</p>
+<p><strong>Waarborgen.</strong> Vier-ogen-besluit bij elke ingreep met impact, vastlegging in een besluitenregister binnen 24 uur, en onafhankelijk toezicht (tweede en derde lijn).</p>
+<p><strong>Wat wij u vragen.</strong> (1) Informeer uw bestuurlijke lijn en de collega-secretarissen; (2) wijs één vast aanspreekpunt aan, naam, rol, 06-nummer, ook buiten kantooruren; (3) laten we de woordvoeringslijn vooraf afstemmen (wie levert feiten, wie communiceert).</p>
+<p><strong>Wat u van ons krijgt.</strong> Een korte bila vooraf, een melding op het moment van een ingreep, een periodieke voortgangsrapportage, en ondersteuning bij de briefing van burgemeester of raad.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Memo GS, ter informering
+Aanleiding. [trigger + gedeelde-infrastructuur-zin]
+Wat speelt. Tijdelijk team [naam] tot [einddatum]; mandaat bij [opdrachtgever] / [CIO].
+Wat kan dit betekenen. [1-3 scenario's + max. onderbreking]
+Wat ik u vraag. Aanspreekpunt: [naam, rol, 06-nr]; woordvoering: [wie].
+Wat u van mij krijgt. [ritme] + melding bij ingreep.
+</code></pre>
+<h3>Directieteam (DT)</h3>
+<p><strong>Kernboodschap.</strong> Het dreigingslandschap verschuift; handelen kan nu, in een venster; dat vraagt wendbaarheid, sneller schakelen en de gevolgen accepteren.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: directieteam · Van: CISO · Betreft: wendbaarheid bij acute cyberdreiging, ter informering</em></p>
+<p><strong>Duiding.</strong> Drie onafhankelijke signalen, een AI-modelleverancier, het nationale CSIRT en een sectorberaad, wijzen dezelfde kant op: de drempel om aan te vallen daalt snel. Wat eerst weken specialistisch werk kostte, kan straks in uren en grotendeels geautomatiseerd. We hebben een venster tot [einddatum venster].</p>
+<p><strong>Wat dit voor de regio betekent.</strong> Aanvallen versnellen en schalen; onze publieke dienstverlening is kwetsbaar op punten die we al kennen (toegang, patching, segmentatie); en we zijn afhankelijk van ketenpartners die hetzelfde venster voelen.</p>
+<p><strong>Waarom nú.</strong> De reguliere verbetercyclus, met change-vensters, planning en afstemming, is te traag voor dit venster. Niet omdat de lijn iets fout doet, maar omdat het tempo nu eenmaal hoger moet.</p>
+<p><strong>Twee sporen.</strong> Het structurele spoor (het verbeterprogramma) loopt ongewijzigd door. Daarnaast een acuut spoor dat gericht de grootste gaten dicht en detectie inricht. Eén bijwerking is bewust: méér detectie betekent dat we vaker en sneller iets zullen afschakelen.</p>
+<p><strong>Wat we van het DT vragen.</strong> Wendbaarheid. Concreet: (1) aanvaard een hoger tempo en meer, meestal korte, verstoringen; (2) zorg per kritiek proces voor een Plan B, zodat afschakelen geen ramp is; (3) spreek je managers aan op actiebereidheid, niet alleen op het geven van akkoord.</p>
+<p><strong>Waarborgen &amp; vervolg.</strong> Elke mandaat-inzet is een vier-ogen-besluit met vastlegging en onafhankelijk toezicht. We starten met een eerste werksessie [datum], rapporteren periodiek, en monitoren zowel het resultaat als de cultuurverandering die dit vraagt.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>DT-memo, ter informering
+Duiding. [signalen + venster-datum]
+Wat wachten kost. [reguliere doorlooptijd vs. venster]
+Twee sporen. Regulier: [programma]. Acuut: [team].
+Wat ik van het DT vraag. [tempo/verstoringen aanvaarden]; Plan B: [eigenaar per proces].
+Vervolg. [startdatum + ritme]
+</code></pre>
+<h3>IB&amp;P (Informatiebeveiliging &amp; Privacy)</h3>
+<p><strong>Kernboodschap.</strong> De brede technische toegang raakt persoonsgegevens; jullie blik op grondslag, proportionaliteit en waarborgen hoort er vooraf bij.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: IB&amp;P-overleg · Van: CISO · Betreft: het interventieteam, mandaat, technische toegang en waarborgen</em></p>
+<p><strong>Aanleiding &amp; beeld.</strong> Onze nulmeting (fictief) laat zien waaróm tempo nodig is: ± 640 accounts zonder MFA (waarvan 61 beheerders), 152 direct exploiteerbare kwetsbaarheden, en een Identity Secure Score van 29%. Stuk voor stuk bekende, dichtbare gaten, maar te veel om in de reguliere cyclus op tijd weg te werken.</p>
+<p><strong>Wat het interventieteam wél en niet doet.</strong> Het dicht gaten en richt detectie in. Het herschrijft geen beleid, voert geen gedragsmonitoring op medewerkers uit, en neemt de informatiebeveiligingsfunctie niet over, het werkt binnen jullie kaders, alleen sneller.</p>
+<p><strong>Mandaat &amp; technische toegang.</strong> Drie handelingen mogen zonder akkoord-per-geval (patch buiten change-venster, dienst tijdelijk afschakelen, externen raadplegen), getriggerd door een "Rood"-score en met vier-ogen. De toegang loopt over zes categorieën, identity, monitoring/logging, netwerk, kwetsbaarheden, endpoints en back-up, read-only waar het kan, schrijfrechten alleen waar nodig.</p>
+<p><strong>Raakvlak met IB&amp;P.</strong> Die toegang raakt persoonsgegevens, dus jullie blik hoort er vooraf bij, niet erachter. Concreet op vier punten: de privacy-toets op het mandaat; accountability (alles in een besluitenregister); de impact-afweging bij afschakelen; en de meldplicht-inschatting bij een vermoed datalek.</p>
+<p><strong>Wat we van jullie vragen.</strong> (1) Capaciteit van de IB&amp;P-kernleden die in of naast het team werken; (2) meedenken over de kaders, wat mag, wat loggen we, wat vraagt overleg; (3) consulteerbaar zijn bij twijfel; en (4) het tempo meedragen, zodat jullie blik vóór de actie komt en niet als rem erna.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>IB&amp;P-briefing
+Toegang die we voorzien. [systemen per categorie]
+Wat we daar wél/niet mee doen. [configuratie/metadata, géén inhoud]
+Waarborgen. read-only · geaggregeerd · logging in register · 4-ogen.
+Wat we vragen. [capaciteit + consultatie bij twijfel]
+</code></pre>
+<h3>Bedrijfsvoering (BVO)</h3>
+<p><strong>Kernboodschap.</strong> Drie verwachtingen kalibreren, de dienstverlening kán geraakt worden, het kán binnen uren zonder reguliere change, en je hoort het vooraf via een vast contactpunt.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: bedrijfsvoeringsoverleg · Van: CISO · Betreft: wat het interventieteam voor jouw cluster kan betekenen</em></p>
+<p><strong>Wat het interventieteam is (kort).</strong> Een tijdelijk team dat de meest urgente beveiligingsgaten dicht, náást de reguliere lijn, tot [einddatum venster]. Het is geen nieuw loket en geen verbeterprogramma, het werkt op tempo binnen een vooraf belegd mandaat.</p>
+<p><strong>Waarom het bedrijfsvoering raakt, drie verwachtingen.</strong> (1) De dienstverlening kán geraakt worden; (2) het kán binnen uren, zonder de reguliere change-ronde; (3) je hoort het vooraf via één vast contactpunt. Het doel van deze memo is verwachtingen kalibreren, zodat de eerste ingreep geen verrassing is, maar de uitvoering van een bekend scenario.</p>
+<p><strong>Wat merkt mijn cluster, twee voorbeelden.</strong> (A) We moeten een kritieke patch uitrollen op het gedeelde inlogplatform: ~15 minuten geen toegang, in alle gemeenten tegelijk, vooraf aangekondigd. (B) Bij verdenking van misbruik zetten we een online aanvraagformulier een dag stil voor onderzoek; burgers worden naar balie en telefoon geleid, en je cluster krijgt een dagelijkse statusupdate.</p>
+<p><strong>Waarom we het je vooraf vertellen.</strong> Jij ziet operationele context die wij niet zien, een piekperiode, een evenement, een lopend traject, een afspraak met een ketenpartner. Die context helpt ons een ingreep beter te timen.</p>
+<p><strong>Wat we vragen.</strong> (1) Neem kennis van de scenario's; (2) deel ze met je teammanagers, vooral in de dienstverlening; (3) meld knelpunten vooraf, zodat we ze kunnen meewegen.</p>
+<p><strong>Contact &amp; escalatie.</strong> Vragen lopen vooraf via de CISO; leg per cluster één operationeel contactpunt vast vóór [datum]; escalatie verloopt via de CIO.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>BVO-memo
+Drie verwachtingen. (1) kan geraakt worden; (2) kan binnen uren; (3) je hoort het vooraf.
+Scenario voor mijn cluster. [1 voorbeeld + max. onderbreking]
+Operationeel contactpunt. [naam per cluster, vóór datum]
+Knelpunten die ik nu al zie. [piek/evenement/lopend traject]
+</code></pre>
+<h3>Privacy / Functionaris Gegevensbescherming (FG)</h3>
+<p><strong>Kernboodschap.</strong> Het interventieteam introduceert geen fundamenteel nieuwe verwerkingen; voorstel: een risicoanalyse-licht, geen volledige DPIA.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: FG · Van: CISO · Betreft: werkwijze &amp; waarborgen het interventieteam, voorstel risicoanalyse-licht</em></p>
+<p><strong>Aanleiding.</strong> Je vroeg om onderbouwing van grondslag, noodzaak, proportionaliteit en waarborgen bij de inzet van het interventieteam. Deze notitie levert dat materiaal en doet een voorstel voor de vorm van je advies.</p>
+<p><strong>Wat we doen.</strong> Een tijdelijk team dicht de meest urgente beveiligingsgaten. Het raakvlak met persoonsgegevens is een bijproduct van bestaand IV- en CISO-werk; er ontstaat geen nieuwe verwerking en geen nieuw doel.</p>
+<p><strong>Technische toegang per categorie.</strong> Identity (account- en MFA-status, geen wachtwoorden), monitoring/logging (gebeurtenissen, geen mailinhoud), netwerk (configuratie en metadata), kwetsbaarheden (asset-gegevens), endpoints (compliance, geen bestanden) en back-up (configuratie). Uitdrukkelijk níet: de inhoud van mailboxen of documenten, en geen profilering of beoordeling van medewerkers.</p>
+<p><strong>Grondslag &amp; proportionaliteit.</strong> Grondslag: de uitvoering van een taak van algemeen belang (art. 6(1)e AVG), aangevuld met sectorale wetgeving. Proportioneel: read-only en geaggregeerd waar het kan, gegevens blijven binnen het team en de kwaliteitsfunctie, en de inzet is tijdelijk met vastgelegde bewaartermijnen (register langer, scan-output kort, exports retour of vernietigd na afloop).</p>
+<p><strong>Waarborgen.</strong> Bestaande screening van teamleden, afspraken bij overdracht aan derden, logging van elke mandaat-inzet in het besluitenregister (binnen 24 uur), een afwegingskader vóór elke ingreep, en de reguliere route via het ICT-reglement.</p>
+<p><strong>Voorstel.</strong> Een risicoanalyse-licht in plaats van een volledige DPIA, er is geen profilering, geen geautomatiseerd besluit met rechtsgevolg en geen grootschalige bijzondere persoonsgegevens, met een periodieke FG-peilstok (steekproef uit het register) als vinger aan de pols.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>FG-notitie, werkwijze &amp; waarborgen
+Grondslag. [art. 6(1)e + sectorale basis]
+Proportionaliteit. read-only: [ja/deels]; geen inhoud.
+Bewaartermijnen. register: […]; exports: [retour na N dagen]
+Vorm advies. risicoanalyse-licht; peilstok elke [N weken].
+</code></pre>
+<h3>Leveranciers / infrastructuurpartners</h3>
+<p><strong>Kernboodschap.</strong> Een voorstel voor samenwerking in heldere scenario's, gedeeld kanaal, transparant register, directe schakeling waar het kan. "Door het proces, niet eromheen."</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: infrastructuurpartners · Van: CISO / het interventieteam · Betreft: spelregels samenwerking (voorstel)</em></p>
+<p><strong>Context.</strong> Dit is een voorstel en een levend document, reageer waar je iets anders wilt. Het doel: soepel samenwerken op tempo, mét regie, zonder langs ieders processen heen te werken.</p>
+<p><strong>Vier scenario's.</strong> (1.1) Een signaal of vermoeden, meld het via je vaste liaison; wij triëren twee keer per week in Fix-Now / Latent / Info-only. (1.2) Je ziet iets in het domein van een andere partij, schakel rechtstreeks met die partij, met ons op cc. (1.3) Een het interventieteam-bevinding vraagt een change, die loopt via júllie versnelde change-route; wij leveren de impact-onderbouwing (geraakte processen, risico van wel/niet doen, terugrolplan). (1.4) Wrijving of een meningsverschil, eerst op werkniveau, dan via ons kernteam (vier-ogen, niet de persoonlijke lijn), dan naar opdrachtgever en CIO.</p>
+<p><strong>Werkomgeving.</strong> Eén gedeeld (cross-tenant) kanaal en een transparant samenwerkings-register waarin per partij staat: de vaste liaison plus back-up, het spoedkanaal, de versnelde change-route, een vertrouwelijk kanaal voor exports en credentials (nooit via gewone mail), en het escalatiepad.</p>
+<p><strong>Wat er bewust niet in zit.</strong> Echte incidenten in volle gang, daarvoor blijft jullie eigen incident-procedure en de gemeentelijke crisisroute leidend; het interventieteam is geen meldpunt en neemt de regie bij een calamiteit niet over.</p>
+<p><strong>Wat we vragen.</strong> Vóór [datum]: een vaste liaison (met back-up), je ingevulde rij in het register, en akkoord op deze werkwijze, of een tegenvoorstel waar je iets anders wilt.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Rij in het samenwerkings-register
+Partij: […]
+Vaste liaison + back-up: […]
+Spoedkanaal: [telefoon/ticket/IM]
+Versnelde change-route: [trigger + doorlooptijd]
+Vertrouwelijk kanaal exports: [tool]
+Escalatiepad: [accountmgr → senior mgmt → partner-CISO]
+</code></pre>
+<h2 id="waterschap">Waterschap</h2>
+<h3>Dagelijks Bestuur &amp; dijkgraaf</h3>
+<p><strong>Kernboodschap.</strong> Als vitale aanbieder (NIS2) raakt digitale uitval de waterveiligheid; er werkt tijdelijk een team met mandaat, en de dijkgraaf (crisisbeheersing) is aangesloten.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: dagelijks bestuur, t.a.v. dijkgraaf · Van: CISO [waterschap] · Betreft: tijdelijk interventieteam, ter informering</em></p>
+<p><strong>Aanleiding.</strong> Drie partijen waarschuwden recent onafhankelijk voor hetzelfde: AI-gedreven aanvalscapaciteit maakt het vinden én misbruiken van kwetsbaarheden sneller en goedkoper, met een handelingsvenster tot [einddatum venster]. Als vitale aanbieder (NIS2) kan digitale uitval ons primaire proces direct raken, waterpeilbeheer, zuivering, dijkbewaking.</p>
+<p><strong>Wat we doen.</strong> We richten tijdelijk een klein interventieteam in dat náást de reguliere lijn de meest urgente gaten dicht, detectie inricht en de reactie oefent. Het mandaat is belegd bij de secretaris-directeur (opdrachtgever) en de CIO (beslisser en budgethouder); u gaf als dagelijks bestuur het groen licht. Uitdrukkelijk tijdelijk; het vervangt niets.</p>
+<p><strong>Waarom dit het bestuur raakt.</strong> Om op tempo te kunnen handelen mag het team, onder voorwaarden, buiten de reguliere change-procedure ingrijpen. Bij IT betekent dat hooguit een korte onderbreking; bij OT kan een ingreep fysieke gevolgen hebben, en daar gaat veiligheid altijd vóór snelheid. De gezagsrol van de dijkgraaf bij crisisbeheersing en uw bestuurlijk eigenaarschap blijven volledig bij u.</p>
+<p><strong>Wat dit concreet kan betekenen.</strong> (A) een spoedpatch op een internet-gericht IT-systeem, vooraf aangekondigd; (B) bij verdenking van misbruik een OT-component tijdelijk afschakelen of overzetten naar handbediening, altijd samen met de proces-eigenaar en met een veilige terugval; (C) het inschakelen van het sector-CERT of een gespecialiseerde leverancier.</p>
+<p><strong>Waarborgen.</strong> Elke ingreep met merkbare impact is een vier-ogen-besluit, wordt binnen 24 uur vastgelegd, en valt onder onafhankelijk toezicht. Bij OT geldt bovendien: bij twijfel niet handelen, eerst opschalen.</p>
+<p><strong>Wat wij u vragen.</strong> (1) Neem kennis van het mandaat; (2) bevestig de koppeling met de crisis- en calamiteitenorganisatie voor waterveiligheid; (3) stem de woordvoering vooraf af.</p>
+<p><strong>Wat u van ons krijgt.</strong> Een melding bij elke ingreep met bestuurlijke of veiligheids-lading, een periodieke voortgangsrapportage, en feitelijke bouwstenen voor uw woordvoering.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Memo DB &amp; dijkgraaf, ter informering
+Aanleiding. [trigger + venster + NIS2/vitaal]
+Waarom het bestuur dit moet weten. [mandaat + OT/waterveiligheid-lading]
+Wat dit kan betekenen. [IT-patch; OT-afschakeling met proces-eigenaar; extern]
+Wat ik u vraag. [kennisname; koppeling crisisorganisatie; woordvoering]
+Wat u van mij krijgt. [melding bij ingreep + rapportageritme]
+</code></pre>
+<h3>Secretaris-directeur</h3>
+<p><strong>Kernboodschap.</strong> Als ambtelijk eindverantwoordelijke bent u opdrachtgever/scharnier naar het bestuur; u hoort het vóóraf en wijst één vast aanspreekpunt aan.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: secretaris-directeur [waterschap] · Van: CISO · Betreft: interventieteam, opdracht &amp; informering</em></p>
+<p><strong>Aanleiding.</strong> AI-gedreven aanvalscapaciteit verlaagt de drempel om aan te vallen, met een venster tot [einddatum venster]. Als vitale aanbieder willen we onze meest urgente gaten dichten vóór dat venster sluit.</p>
+<p><strong>Wat het interventieteam is.</strong> Een tijdelijk team in "fix-modus" dat náást de reguliere lijn werkt. U bent opdrachtgever; de CIO beslist en budgetteert; het team leent mensen uit de lijn, waarvan de verantwoordelijkheid ongewijzigd blijft.</p>
+<p><strong>Uw rol.</strong> Als ambtelijk eindverantwoordelijke bent u het scharnier naar het dagelijks en algemeen bestuur. U hoort het vooraf, en u verbindt het team met de bestaande crisis- en continuïteitsstructuur.</p>
+<p><strong>Wat dit concreet kan betekenen.</strong> Patches buiten het change-venster op IT; bij verdenking een tijdelijke afschakeling, bij OT (gemalen, zuivering, peilbeheer) altijd met de proces-eigenaar en een veilige terugval; of het inschakelen van externen. Bij OT gaat veiligheid vóór snelheid.</p>
+<p><strong>Waarborgen.</strong> Vier-ogen-besluit, vastlegging in een besluitenregister binnen 24 uur, en onafhankelijk toezicht (tweede en derde lijn).</p>
+<p><strong>Wat wij u vragen.</strong> (1) Informeer het dagelijks bestuur; (2) wijs één vast aanspreekpunt aan, ook buiten kantooruren; (3) bevestig de lijn naar de crisisorganisatie.</p>
+<p><strong>Wat u van ons krijgt.</strong> Een periodieke rapportage, een melding bij elke ingreep, en, ruim vóór de einddatum, een eindbeeld met advies: verlengen, afbouwen of overdragen aan de lijn.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Memo secretaris-directeur
+Aanleiding. [trigger + venster + vitaal]
+Opdracht &amp; mandaat. [opdrachtgever = u; CIO beslist/budget]
+Wat kan dit betekenen. [IT/OT-scenario's]
+Wat ik u vraag. Aanspreekpunt: [naam, rol, 06-nr]; lijn crisisorganisatie.
+Wat u van mij krijgt. [ritme + eindbeeld vóór einddatum]
+</code></pre>
+<h3>Directie / MT</h3>
+<p><strong>Kernboodschap.</strong> Handelen kan nu, in een venster; dat vraagt wendbaarheid, en bij een waterschap weegt elke afschakeling zwaar omdat het primaire proces fysiek is.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: directie / MT · Van: CISO · Betreft: wendbaarheid bij acute cyberdreiging</em></p>
+<p><strong>Duiding.</strong> Onafhankelijke signalen wijzen dezelfde kant op: de aanvalsdrempel daalt snel, en wat eerst weken specialistisch werk kostte kan straks in uren. We hebben een venster tot [einddatum venster].</p>
+<p><strong>Wat dit voor ons betekent.</strong> Niet alleen onze kantoor-IT is doelwit, maar juist ook onze OT, gemalen, zuivering, peilbeheer, dijkbewaking. Een aanvaller die binnenkomt via IT zoekt het pad naar die processen; uitval raakt de waterveiligheid en de omgeving.</p>
+<p><strong>Waarom nú.</strong> De reguliere verbetercyclus is te traag voor dit venster. Daarom een tweede, sneller spoor, niet in plaats van, maar náást het verbeterprogramma.</p>
+<p><strong>Twee sporen.</strong> Het verbeterprogramma loopt ongewijzigd door; het interventieteam is het acute spoor dat gericht gaten dicht en detectie inricht. Méér detectie betekent ook: vaker en sneller ingrijpen.</p>
+<p><strong>Wat we van het MT vragen.</strong> Wendbaarheid, met een waterschaps-nuance: (1) aanvaard een hoger tempo; (2) zorg per kritiek (OT-)proces voor een Plan B inclusief veilige handbediening, zodat afschakelen beheerst kan; (3) spreek teammanagers aan op actiebereidheid.</p>
+<p><strong>Waarborgen &amp; vervolg.</strong> Elke mandaat-inzet is een vier-ogen-besluit met vastlegging en onafhankelijk toezicht; bij OT geldt veiligheid vóór snelheid. We starten met een eerste werksessie [datum], rapporteren periodiek, en monitoren resultaat én cultuur.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>MT-memo
+Duiding. [signalen + venster]
+Wat het ons raakt. [IT + OT/waterveiligheid]
+Twee sporen. Regulier: [programma]. Acuut: het interventieteam.
+Wat ik vraag. Plan B per kritiek OT-proces: [eigenaar + handbediening].
+Vervolg. [startdatum + ritme]
+</code></pre>
+<h3>IB&amp;P (Informatiebeveiliging &amp; Privacy)</h3>
+<p><strong>Kernboodschap.</strong> De brede technische toegang raakt persoonsgegevens én OT; jullie blik op grondslag, proportionaliteit en veiligheid hoort er vooraf bij.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: IB&amp;P-overleg · Van: CISO · Betreft: het interventieteam, mandaat, toegang en waarborgen</em></p>
+<p><strong>Aanleiding &amp; beeld.</strong> Onze nulmeting (fictief) laat zien waaróm tempo nodig is: ± 640 accounts zonder MFA, 152 direct exploiteerbare kwetsbaarheden, en OT-segmenten die onvoldoende gescheiden zijn van de kantoor-IT. Bekende, dichtbare gaten, maar te veel voor de reguliere cyclus binnen het venster.</p>
+<p><strong>Wat het interventieteam wél en niet doet.</strong> Het dicht gaten en richt detectie in, in IT én OT. Het herschrijft geen beleid en voert geen gedragsmonitoring op medewerkers uit; het werkt binnen jullie kaders, alleen sneller.</p>
+<p><strong>Mandaat &amp; technische toegang.</strong> Drie handelingen mogen zonder akkoord-per-geval (patch buiten change-venster, dienst/component tijdelijk afschakelen, externen raadplegen), getriggerd door een "Rood"-score en met vier-ogen. Toegang over identity, monitoring/logging, netwerk, kwetsbaarheden, endpoints, back-up én OT-/SCADA-omgevingen, read-only waar het kan, en in OT altijd met de proces-eigenaar.</p>
+<p><strong>Raakvlak met IB&amp;P.</strong> Jullie blik hoort er vooraf bij, op vier punten: de privacy-toets op het mandaat; accountability (alles in een besluitenregister); de impact-afweging bij afschakelen, met een uitdrukkelijke veiligheidsweging voor OT; en de meldplicht-inschatting.</p>
+<p><strong>Wat we van jullie vragen.</strong> (1) Capaciteit van de kernleden; (2) meedenken over de kaders, wat mag, wat loggen we, wat vraagt overleg; (3) consulteerbaar zijn bij twijfel; (4) het tempo meedragen, zodat jullie blik vóór de actie komt.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>IB&amp;P-briefing
+Toegang die we voorzien. [IT-systemen + OT/SCADA]
+Wat we daar wél/niet mee doen. [config/metadata, géén inhoud]
+Waarborgen. read-only · OT met proces-eigenaar · logging · 4-ogen.
+Wat we vragen. [capaciteit + consultatie]
+</code></pre>
+<h3>Bedrijfsvoering</h3>
+<p><strong>Kernboodschap.</strong> Drie verwachtingen kalibreren, bedrijfsvoeringssystemen kunnen geraakt worden, het kan binnen uren, en je hoort het vooraf.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: bedrijfsvoering · Van: CISO · Betreft: wat het interventieteam voor jouw werkveld kan betekenen</em></p>
+<p><strong>Wat het interventieteam is (kort).</strong> Een tijdelijk team dat de meest urgente beveiligingsgaten dicht, náást de reguliere lijn, tot [einddatum venster].</p>
+<p><strong>Waarom het bedrijfsvoering raakt, drie verwachtingen.</strong> (1) Bedrijfsvoeringssystemen (financieel, HR, vergunningverlening, heffingen) kunnen geraakt worden; (2) het kán binnen uren, zonder de reguliere change-ronde; (3) je hoort het vooraf via één vast contactpunt. Doel: verwachtingen kalibreren, zodat de eerste ingreep geen verrassing is.</p>
+<p><strong>Wat merkt mijn werkveld, een voorbeeld.</strong> We rollen een kritieke patch uit op het heffings-/belastingsamenwerkingssysteem: een korte, vooraf aangekondigde onderbreking. Bij verdenking van misbruik zetten we het tijdelijk stil voor onderzoek, met een alternatieve route.</p>
+<p><strong>Waarom we het je vooraf vertellen.</strong> Jij ziet operationele context die wij niet zien, een piek bij de aanslagoplegging, een lopend traject, een afspraak met een ketenpartner. Die context helpt ons de timing te kiezen.</p>
+<p><strong>Wat we vragen.</strong> (1) Neem kennis van de scenario's; (2) deel ze met je teammanagers; (3) meld knelpunten vooraf.</p>
+<p><strong>Contact &amp; escalatie.</strong> Vragen lopen vooraf via de CISO; leg één contactpunt vast vóór [datum]; escalatie via de CIO.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Bedrijfsvoering-memo
+Drie verwachtingen. (1) kan geraakt worden; (2) kan binnen uren; (3) je hoort het vooraf.
+Scenario voor mijn werkveld. [1 voorbeeld + max. onderbreking]
+Operationeel contactpunt. [naam, vóór datum]
+Knelpunten die ik nu al zie. [piek/lopend traject]
+</code></pre>
+<h3>OT / procesautomatisering</h3>
+<p><strong>Kernboodschap.</strong> Hier raakt cybersecurity de fysieke wereld; het interventieteam komt nooit zonder de proces-eigenaar aan een OT-component, en veiligheid gaat vóór snelheid.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: team procesautomatisering / OT-beheer · Van: CISO · Betreft: samenwerking het interventieteam rond OT</em></p>
+<p><strong>Waarom dit jullie raakt.</strong> Een aanvaller die binnenkomt via de kantoor-IT zoekt het pad naar de OT: gemalen, sluizen, zuivering, peilregeling. het interventieteam wil dat pad zichtbaar maken en afsnijden, zonder ooit het proces zelf in gevaar te brengen.</p>
+<p><strong>De grondregel.</strong> Veiligheid en continuïteit gaan vóór snelheid. het interventieteam komt nooit zonder de proces-eigenaar aan een OT-component, en bij twijfel doen we het niet, dan schalen we eerst op.</p>
+<p><strong>Werkafspraken.</strong> (1) Read-only en passief waar het kan, we kijken liever dan dat we draaien; (2) elke handeling aan een OT-component gebeurt sámen met de proces-eigenaar en met een veilige terugval (handbediening); (3) we plannen rond kritieke momenten (hoogwater, droogte, gepland onderhoud); (4) elke ingreep heeft een vooraf bekend terugrolpad.</p>
+<p><strong>Wat we zoeken.</strong> Inzicht in de segmentatie tussen IT en OT, in de remote-toegang van OT-leveranciers, en in de monitoring van de OT-netwerken, zodat we weten of we een aanval in dat domein überhaupt zouden zien.</p>
+<p><strong>Wat we vragen.</strong> Een vaste OT-contactpersoon in of naast het kernteam, en meedenken over een veilige manier om te oefenen (bijvoorbeeld op een testopstelling in plaats van op een live gemaal).</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>OT-werkafspraken
+Scope. [welke OT-systemen/locaties]
+Spelregels. read-only waar kan · altijd met proces-eigenaar · veilige terugval · veiligheid vóór snelheid.
+Kritieke momenten om te mijden. [hoogwater/droogte/onderhoud]
+OT-contactpersoon. [naam + back-up]
+</code></pre>
+<h3>Privacy / Functionaris Gegevensbescherming (FG)</h3>
+<p><strong>Kernboodschap.</strong> Geen fundamenteel nieuwe verwerkingen; voorstel: een risicoanalyse-licht, geen volledige DPIA.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: FG · Van: CISO · Betreft: werkwijze &amp; waarborgen het interventieteam</em></p>
+<p><strong>Aanleiding.</strong> Je vroeg om onderbouwing van grondslag, noodzaak, proportionaliteit en waarborgen. Deze notitie levert dat materiaal en doet een voorstel voor de vorm van je advies.</p>
+<p><strong>Wat we doen.</strong> Een tijdelijk team dicht de meest urgente gaten. Het raakvlak met persoonsgegevens is een bijproduct van bestaand IV- en CISO-werk, geen nieuwe verwerking. OT-gegevens zijn bovendien vooral technische meet- en stuurdata, zelden persoonsgegevens.</p>
+<p><strong>Technische toegang per categorie.</strong> Identity (account- en MFA-status, geen wachtwoorden), monitoring/logging (gebeurtenissen, geen mailinhoud), netwerk (configuratie en metadata), kwetsbaarheden, endpoints (compliance, geen bestanden), back-up en OT (technische data). Uitdrukkelijk níet: inhoud van mailboxen of documenten, en geen profilering van medewerkers.</p>
+<p><strong>Grondslag &amp; proportionaliteit.</strong> Grondslag: uitvoering van een taak van algemeen belang (art. 6(1)e AVG), aangevuld met sectorale wetgeving. Proportioneel: read-only en geaggregeerd waar het kan, gegevens binnen team en kwaliteitsfunctie, tijdelijk, met vastgelegde bewaartermijnen.</p>
+<p><strong>Waarborgen.</strong> Bestaande screening, afspraken bij overdracht aan derden, logging van elke mandaat-inzet in het besluitenregister, een afwegingskader vóór elke ingreep, en de reguliere route via het ICT-reglement.</p>
+<p><strong>Voorstel.</strong> Een risicoanalyse-licht in plaats van een volledige DPIA, geen profilering, geen geautomatiseerd besluit met rechtsgevolg, met een periodieke FG-peilstok als vinger aan de pols.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>FG-notitie
+Grondslag. [art. 6(1)e + sectorale basis]
+Proportionaliteit. read-only: [ja/deels]; geen inhoud.
+Bewaartermijnen. [register / exports]
+Vorm advies. risicoanalyse-licht; peilstok elke [N weken].
+</code></pre>
+<h3>Leveranciers / infrastructuurpartners (incl. OT)</h3>
+<p><strong>Kernboodschap.</strong> Samenwerking in heldere scenario's, met extra aandacht voor OT-/SCADA-leveranciers en hun remote-toegang.</p>
+<h4>Voorbeeldmemo (verzonnen)</h4>
+<blockquote>
+<p><em>Aan: infrastructuur- en OT-partners · Van: CISO / het interventieteam · Betreft: spelregels samenwerking (voorstel)</em></p>
+<p><strong>Context.</strong> Dit is een voorstel en een levend document, reageer waar je iets anders wilt. Doel: soepel samenwerken op tempo, mét regie, met extra aandacht voor de OT-/SCADA-kant.</p>
+<p><strong>Vier scenario's.</strong> Als bij IT: (1.1) een signaal/vermoeden via je vaste liaison; (1.2) partij-naar-partij rechtstreeks, met ons op cc; (1.3) een het interventieteam-bevinding die een change vraagt loopt via júllie versnelde change-route, wij leveren de impact-onderbouwing; (1.4) wrijving via een drietraps-escalatie (werkniveau → kernteam → opdrachtgever/CIO).</p>
+<p><strong>Extra voor OT.</strong> De remote-toegang van OT-leveranciers wordt geïnventariseerd en waar nodig ingeperkt; changes aan OT lopen altijd via de proces-eigenaar met een veilige terugval; en er zijn geen losse "even-inbellen"-routes buiten het register om. Veiligheid gaat vóór snelheid.</p>
+<p><strong>Werkomgeving.</strong> Eén gedeeld (cross-tenant) kanaal en een transparant samenwerkings-register (vaste liaison, spoedkanaal, versnelde change-route, escalatiepad), plus een vertrouwelijk kanaal voor exports en credentials, nooit via gewone mail.</p>
+<p><strong>Wat er bewust niet in zit.</strong> Echte incidenten in volle gang, daarvoor blijft jullie eigen incident-procedure en de crisisroute van het waterschap leidend; het interventieteam is geen meldpunt.</p>
+<p><strong>Wat we vragen.</strong> Vóór [datum]: een vaste liaison (ook voor OT, met back-up), je ingevulde rij in het register, en akkoord op deze werkwijze, of een tegenvoorstel.</p>
+</blockquote>
+<h4>Sjabloon</h4>
+<pre><code>Rij in het samenwerkings-register (OT)
+Partij: […]
+Liaison + back-up: […]
+Remote-toegang OT: [hoe, wanneer, door wie]
+Versnelde change-route OT: [via proces-eigenaar + terugval]
+Vertrouwelijk kanaal exports/credentials: [tool]
+Escalatiepad: [accountmgr → senior mgmt → partner-CISO]
+</code></pre>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/blue-team-opzetten">security/blue-team-opzetten</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

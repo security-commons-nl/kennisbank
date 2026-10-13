@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: matrix en risicolijst</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Risicoanalyse langs aanvalspaden</a> › <span>Sjabloon: matrix en risicolijst</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: matrix en risicolijst</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Risicoanalyse langs aanvalspaden</a> · <a href="sjabloon-matrix.md">Markdown-bron</a></p>
+<p>Bijlage bij <a href="./">Risicoanalyse langs aanvalspaden</a>, stap 3 en 4. Kopieer, vul in, bewaar
+intern. Een ingevuld voorbeeld met verzonnen cijfers staat in <a href="voorbeeld.html"><code>voorbeeld.md</code></a>.</p>
+<h2 id="kroonjuwelen-stap-1">Kroonjuwelen (stap 1)</h2>
+<p>Maximaal tien. Eigenaar is de lijn, niet IT.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Kroonjuweel (proces of gegevens)</th>
+<th>Eigenaar</th>
+<th>Systemen eronder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="matrix-stap-3">Matrix (stap 3)</h2>
+<p>Per cel drie letters, elk groen, geel of rood:</p>
+<ul>
+<li><strong>D</strong> detecteren: zien we het als het gebeurt</li>
+<li><strong>R</strong> reageren: weten we wat we dan doen, en is dat geoefend</li>
+<li><strong>P</strong> preventief: houden we het tegen</li>
+</ul>
+<p>Groen alleen met bewijs (link naar export, testverslag of playbook, niet ouder dan zes maanden).
+Geen bewijs, dan geel. Niet aanwezig, dan rood.</p>
+<table>
+<thead>
+<tr>
+<th>Kroonjuweel</th>
+<th>1. Gecompromitteerd account</th>
+<th>2. Werkplek via gebruiker</th>
+<th>3. Internetgerichte dienst</th>
+<th>4. Leverancier en keten</th>
+<th>5. Beheerrechten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>2</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>5</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>6</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>7</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>8</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>9</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+<tr>
+<td>10</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+<td>D · R · P</td>
+</tr>
+</tbody>
+</table>
+<p>Tip: veel cellen in een kolom delen hetzelfde bewijs. FIDO2 op alle beheeraccounts is de P van kolom 1
+voor élk kroonjuweel. Vul de kolom dan in één keer, en noteer het bewijs één keer.</p>
+<h2 id="bewijsregister">Bewijsregister</h2>
+<table>
+<thead>
+<tr>
+<th>Cel (kroonjuweel, pad, letter)</th>
+<th>Bewijs</th>
+<th>Bron</th>
+<th>Datum</th>
+<th>Volgende toets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="risicolijst-stap-4">Risicolijst (stap 4)</h2>
+<p>Alle rode cellen, hoogste impact eerst. Eén regel per cel, in gewone taal.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Risico (pad → kroonjuweel, wat ontbreekt)</th>
+<th>Maatregel (chokepoint)</th>
+<th>Eigenaar</th>
+<th>Termijn, of geaccepteerd door en op</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Meer dan tien regels tegelijk oppakken werkt niet. Wat niet in deze ronde past, blijft rood in de
+matrix en komt in de volgende ronde terug; het verdwijnt niet.</p>
+<h2 id="ritme">Ritme</h2>
+<ul>
+<li>Kwartaal: bewijs vernieuwen, matrix bijwerken, risicolijst naar lijn en risico-eigenaren.</li>
+<li>Nieuw pad of nieuw kroonjuweel: één kolom of rij erbij.</li>
+<li>Na een incident: welke cel was het, stond die op groen, en waarom was het bewijs dan niet goed genoeg.</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/risicoanalyse-aanvalspaden">security/risicoanalyse-aanvalspaden</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

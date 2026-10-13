@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Controleraamwerk fysieke toegang en beveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Controleraamwerk fysieke toegang en beveiliging</span></nav><!-- /kruimelpad -->
+<h1>Controleraamwerk fysieke toegang en beveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="controls-fysieke-toegang-en-beveiliging.md">Markdown-bron</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Controleraamwerk (ICF) bij het materie-specifieke beleid Fysieke toegang en beveiliging</td>
+</tr>
+<tr>
+<td>Thema-code</td>
+<td>FTB</td>
+</tr>
+<tr>
+<td>Versie</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>Uitgewerkt in het werkblad van het controleraamwerk; FTB-006 is een voorstel en staat daar nog niet in.</td>
+</tr>
+<tr>
+<td>Werkwijze</td>
+<td>Zes stappen ICF: 1 vaststellen beleid, 2 concept ICF, 3 review materiedeskundige, 4 review management, 5 inrichten en testen in het servicedesksysteem, 6 uitvoeren</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken (FTB-001 tot en met FTB-005)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-001-fysieke-beveiligingszones">FTB-001 · Fysieke beveiligingszones</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Als beveiligingszones onjuist worden geclassificeerd in het zoneringsplan of onjuist worden geregistreerd in het fysieke toegangssysteem, kan dit resulteren in een te laag beschermingsniveau voor de beveiliging en bescherming van gegevens.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Waarborgen van het vereiste beschermingsniveau voor fysieke informatie en IT-middelen.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>De functioneel beheerder exporteert de lijst met zones die zijn opgenomen in het fysieke toegangssysteem op basis van een voorgedefinieerd rapport. Dit systeemrapport wordt samen met het zoneringsplan opgenomen in het ticket dat jaarlijks geautomatiseerd wordt geregistreerd in het servicedesksysteem.<br><br>De eigenaar van een zone van categorie 2 of hoger beoordeelt vervolgens het zoneringsplan en het voorgedefinieerde rapport op de volgende aandachtspunten:<br>1. Zijn alle zones met de vereiste categorie 2 of hoger (conform het IB-beleid Fysieke toegang en beveiliging) als zodanig opgenomen in het zoneringsplan en het fysieke toegangssysteem?<br>2. Is het eigenaarschap van deze zones correct opgenomen in het zoneringsplan?<br><br>Opmerkingen of bijzonderheden worden geregistreerd in het ticket en opgevolgd door de functioneel beheerder van het toegangssysteem. Het ticket voor de uitvoering, vastlegging en opvolging van deze controle wordt afgerond voordat de status wordt gewijzigd naar "afgesloten" in het servicedesksysteem.</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: controle juistheid eigenaarschap en classificatie zones<br>2. Waarom: classificatie zone bepaalt weerstandsniveau<br>3. Wie: eigenaar van de zone<br>4. Wanneer: jaarlijks<br>5. Waar: onderliggende documenten worden gearchiveerd in het servicedesksysteem<br>6. Waarmee: beleid FTB, zoneringsplan en autorisatiematrix toegangssysteem</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>ticket; zoneringsplan; systeemrapport FTB</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.01.02 (7.01.01 is vervallen in de VvT 1.3)</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-002-fysieke-toegangsbeveiliging">FTB-002 · Fysieke toegangsbeveiliging</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Onbevoegde fysieke toegang tot het archief of tot technische ruimtes voor de geautomatiseerde verwerking van gegevens.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Waarborgen dat alleen bevoegde medewerkers op basis van een persoonlijke pas fysieke toegang hebben tot het archief en de technische ruimtes voor de geautomatiseerde verwerking van gegevens.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>De autorisaties in het fysieke toegangssysteem voor zones met categorie 2 of hoger worden pas aangemaakt en verstrekt na goedkeuring van de eigenaar van de betreffende zone (conform zoneringsplan).<br><br>De aanvraag wordt geregistreerd in het servicedesksysteem. De goedkeuring en het toekennen van de autorisaties worden in het bijbehorende ticket vastgelegd voordat de status wordt gewijzigd naar "afgesloten".</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: beoordeling op basis van het need-to-know- en need-to-have-principe<br>2. Waarom: onbevoegde toegang kan ten koste gaan van BIV<br>3. Wie: eigenaar van de zone<br>4. Wanneer: per gebeurtenis<br>5. Waar: onderliggende documenten worden gearchiveerd in het servicedesksysteem<br>6. Waarmee: beleid FTB en aanvraag in ticket</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Per gebeurtenis</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>ticket; zoneringsplan</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.03.01, 7.04.01, 7.05.01</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-003-intrekken-fysieke-toegang-na-personeelsmutaties">FTB-003 · Intrekken fysieke toegang na personeelsmutaties</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Onbevoegde fysieke toegang tot het archief of tot technische ruimtes voor de geautomatiseerde verwerking van gegevens.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Waarborgen dat autorisaties voor toegang tot beveiligingszones tijdig worden ingetrokken in het fysieke toegangssysteem.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>In het servicedesksysteem worden door IAM, op basis van personeelsmutaties in het HR-systeem, taken aangemaakt voor het tijdig intrekken van fysieke toegangsrechten van de betreffende medewerker. De manager Facilitaire Zaken stelt op basis van een standaardrapportage vast dat deze geregistreerde taken tijdig door de medewerkers zijn uitgevoerd.<br><br>Het ticket voor de uitvoering, vastlegging en opvolging van deze controle wordt afgerond voordat de status wordt gewijzigd naar "afgesloten" in het servicedesksysteem.</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: tijdig intrekken van bevoegdheden op passen bewaken<br>2. Waarom: onbevoegde toegang kan ten koste gaan van BIV<br>3. Wie: beleidsmedewerker Facilitaire Zaken<br>4. Wanneer: maandelijks<br>5. Waar: onderliggende documenten worden gearchiveerd in het servicedesksysteem<br>6. Waarmee: beleid FTB, systeemrapport met status van de taken "intrekken autorisaties op de toegangspas" en het ticket</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>ticket; functionaliteit van de IAM-tool</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.02.01 (ISO-control 7.2 Fysieke toegangsbeveiliging)</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-004-periodieke-controle-van-autorisaties-door-de-eigenaar-van-de-zone">FTB-004 · Periodieke controle van autorisaties door de eigenaar van de zone</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Onbevoegde fysieke toegang tot het archief of tot technische ruimtes voor de geautomatiseerde verwerking van gegevens.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Waarborgen dat autorisaties voor toegang tot beveiligingszones tijdig worden ingetrokken in het fysieke toegangssysteem.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>De autorisaties in het fysieke toegangssysteem voor zones met categorie 2 of hoger worden op juistheid gecontroleerd door de eigenaar van de betreffende zone (conform zoneringsplan), op basis van een voorgedefinieerd systeemrapport.<br><br>Deze controle wordt geregistreerd in het servicedesksysteem. De beoordeling en de opmerkingen worden in het bijbehorende ticket vastgelegd voordat de status wordt gewijzigd naar "afgesloten".</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: tijdig intrekken van bevoegdheden op passen bewaken<br>2. Waarom: onbevoegde toegang kan ten koste gaan van BIV<br>3. Wie: eigenaar van de zone<br>4. Wanneer: halfjaarlijks (niveau 2), per kwartaal (niveau 3)<br>5. Waar: onderliggende documenten worden gearchiveerd in het servicedesksysteem<br>6. Waarmee: ticket, beleid FTB, systeemrapport met autorisaties van het fysieke toegangssysteem voor categorie 2 en hoger</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Halfjaarlijks (niveau 2), per kwartaal (niveau 3).</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>ticket; zoneringsplan; systeemrapport FTB</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.02.01 (ISO-control 7.2 Fysieke toegangsbeveiliging)</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-005-fysieke-bescherming-en-beveiliging-van-informatiemiddelen-en-bekabeling">FTB-005 · Fysieke bescherming en beveiliging van informatiemiddelen en bekabeling</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Informatiemiddelen worden gecompromitteerd, gestolen of beschadigd.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Het vereiste beschermings- en beveiligingsniveau van het archief en de technische ruimtes voor de geautomatiseerde verwerking van gegevens waarborgen.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>De manager Facilitaire Zaken beoordeelt op basis van een standaardchecklist of de positionering, beveiliging en bescherming van informatiemiddelen en bekabeling op de ambtelijke locaties conform het IB-beleid Fysieke toegang en beveiliging is ingericht en uitgevoerd.<br><br>Het ticket voor de uitvoering, vastlegging en opvolging van deze controle wordt afgerond voordat de status wordt gewijzigd naar "afgesloten" in het servicedesksysteem.</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: beoordelen compliance met IB-beleid FTB<br>2. Waarom: onvoldoende bescherming of beveiliging kan ten koste gaan van BIV<br>3. Wie: eigenaar van de zone<br>4. Wanneer: halfjaarlijks<br>5. Waar: onderliggende documenten worden gearchiveerd in het servicedesksysteem<br>6. Waarmee: ticket, beleid FTB, checklist FTB</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>ticket; checklist FTB</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.04.01, 7.05.01, 7.12.01</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ftb-006-waarschuwingen-bij-concrete-beveiligingsrisico-s-voorstel">FTB-006 · Waarschuwingen bij concrete beveiligingsrisico's (voorstel)</h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico</td>
+<td>Een concreet beveiligingsrisico voor de fysieke beveiliging bereikt de relevante collega's binnen het beveiligingsdomein van de overheid niet, of een ontvangen waarschuwing bereikt de eigenaren van de betrokken zones niet, waardoor maatregelen uitblijven.</td>
+</tr>
+<tr>
+<td>Beheersdoelstelling</td>
+<td>Waarborgen dat concrete beveiligingsrisico's voor de fysieke beveiliging tijdig worden gemeld, beoordeeld en langs de afgesproken lijnen gedeeld, in beide richtingen.</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Meldingen van concrete beveiligingsrisico's voor de fysieke beveiliging komen via de incidentmeldroute bij de CISO. De CISO legt per melding vast of het risico andere overheidsorganisaties raakt en of, langs welke lijn en wanneer een waarschuwing is verzonden. Ontvangen waarschuwingen worden met advies doorgezet naar de afdeling Facilitaire Zaken en de eigenaren van de betrokken zones; de opvolging wordt in het servicedesksysteem vastgelegd.<br><br>Jaarlijks toetst team IB&amp;P aan de hand van de registratie of de meldingen en waarschuwingen volgens deze afspraak zijn afgehandeld.</td>
+</tr>
+<tr>
+<td>6 W's</td>
+<td>1. Wat: melden, beoordelen en doorzetten van concrete beveiligingsrisico's<br>2. Waarom: de BIO 2.0 verlangt waarschuwingen binnen het beveiligingsdomein van de overheid (7.02.01)<br>3. Wie: CISO, met team IB&amp;P<br>4. Wanneer: per gebeurtenis, jaarlijks getoetst<br>5. Waar: incidentregistratie en het servicedesksysteem<br>6. Waarmee: beleid FTB paragraaf 3, Strategisch IB-beleid (formele contacten), incidentmeldroute</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>CIO / manager IT-ontwikkeling; uitvoering team IB&amp;P (conform de VvT)</td>
+</tr>
+<tr>
+<td>Frequentie</td>
+<td>Per gebeurtenis; jaarlijkse toets</td>
+</tr>
+<tr>
+<td>Werkdocumenten</td>
+<td>Incidentregistratie; ticket; overzicht formele contacten uit het Strategisch IB-beleid</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Niet geïmplementeerd (voorstel, nog niet in het werkblad)</td>
+</tr>
+<tr>
+<td>Maatregelen</td>
+<td>7.02.01</td>
+</tr>
+<tr>
+<td>Toelichting</td>
+<td>Voorstel. Nog te besluiten of deze control hier hoort of bij beveiligingsincidenten.</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

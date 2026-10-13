@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid cryptografie</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid cryptografie</span></nav><!-- /kruimelpad -->
+<h1>Beleid cryptografie</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="cryptografie.md">Markdown-bron</a></p>
+<h3>Afkortingen</h3>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>PKI</td>
+<td>Public Key Infrastructure</td>
+</tr>
+<tr>
+<td>CAR/UWO</td>
+<td>Collectieve Arbeidsvoorwaardenregeling en Uitwerkingsovereenkomst</td>
+</tr>
+<tr>
+<td>BIO</td>
+<td>Basisnormenkader Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>IBD</td>
+<td>Informatiebeveiligingsdienst voor gemeenten</td>
+</tr>
+<tr>
+<td>CA</td>
+<td>Certificaatautoriteit</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>Hyper Text Transfer Protocol Secure</td>
+</tr>
+<tr>
+<td>HSTS</td>
+<td>HTTP Strict Transport Security</td>
+</tr>
+<tr>
+<td>DKIM</td>
+<td>DomainKeys Identified Mail</td>
+</tr>
+<tr>
+<td>DMARC</td>
+<td>Domain-based Messagee Authentication, Reporting and Conformance</td>
+</tr>
+<tr>
+<td>DNSSEC</td>
+<td>Domain Name System Security Extension</td>
+</tr>
+<tr>
+<td>DANE</td>
+<td>DNS-based Authentication of Named Entities</td>
+</tr>
+<tr>
+<td>STARTTLS</td>
+<td>Start Transport Layer Security</td>
+</tr>
+<tr>
+<td>BYOD</td>
+<td>Bring Your Own Device</td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Transport Layer Security</td>
+</tr>
+<tr>
+<td>WEH</td>
+<td>Wet Elektronische Handtekening</td>
+</tr>
+<tr>
+<td>CRL</td>
+<td>Certificate Revocation List</td>
+</tr>
+<tr>
+<td>OCSP</td>
+<td>Online Certificate Status Protocol</td>
+</tr>
+<tr>
+<td>RACI</td>
+<td>Responsible, Accountable, Consulted, Informed</td>
+</tr>
+</tbody>
+</table>
+<h3>Relevante beleidsdocumenten</h3>
+<ul>
+<li>
+<p>Beleid Data Classificatie</p>
+</li>
+<li>
+<p>Beleid Beheer van Bedrijfsmiddelen</p>
+</li>
+</ul>
+<h2 id="inleiding">Inleiding</h2>
+<h3>1.1 Doel</h3>
+<p>Dit document beschrijft het beleid van de organisatie met betrekking tot Cryptografie (encryptie en Public Key Infrastructure). Het beleid omvat gedragsregels en implementatie van technieken om de vertrouwelijkheid, integriteit, onweerlegbaarheid en authenticatie van digitale informatie te waarborgen.</p>
+<h3>1.2 Verantwoordelijkheid</h3>
+<p>Het IT-team is verantwoordelijk voor de implementatie en handhaving van dit cryptografie beleid.</p>
+<p>De Chief Information Security Officer (CISO) houdt toezicht op de naleving van het beleid en zorgt voor regelmatige evaluaties.</p>
+<h3>1.3 Toepassingsgebied van het document</h3>
+<ul>
+<li>
+<p>Dit beleid is van toepassing op alle systemen, applicaties en gegevens die onder de verantwoordelijkheid van de organisatie vallen.</p>
+</li>
+<li>
+<p>Dit beleid is van groot belang voor een veilige informatiecultuur en is onderhevig aan regelmatige evaluatie en aanpassing om te blijven voldoen aan de veranderende dreigingslandschappen en normen op het gebied van informatiebeveiliging.</p>
+</li>
+</ul>
+<h2 id="beleidsvereisten-cryptografie">Beleidsvereisten Cryptografie</h2>
+<p>Het Cryptografie Beleid van de organisatie hanteert de volgende uitgangspunten, ontleend aan de BIO, Handreiking Encryptiebeleid van de IBD, met integratie van aanvullende regels:</p>
+<h3>2.1 Gebruiksvoorwaarden voor versleuteling van gegevens</h3>
+<p>De organisatie dient gebruiksvoorwaarden waarin aanwijzingen staan over hoe omgegaan dient te worden met de private sleutel, het versleutelen van gegevens, de applicaties voor versleuteling en hoe adequaat gereageerd dient te worden op incidenten, op te stellen.</p>
+<h4>2.1.1 Regels voor acceptabel gebruik</h4>
+<ul>
+<li>
+<p>Alle medewerkers van de organisatie dienen regels voor acceptabel gebruik te accepteren en ondertekenen. Hierin wordt aandacht besteed aan het proces bij verlies, diefstal of compromittering van de private sleutel, waarbij meldingen binnen 4 uur moeten plaatsvinden.</p>
+</li>
+<li>
+<p>Niet voldoen aan beleid en regels kan resulteren in een disciplinair proces volgens de CAR/UWO.</p>
+</li>
+<li>
+<p>Medewerkers dienen zich te houden aan ICT-standaarden en nader gemaakte afspraken.</p>
+</li>
+</ul>
+<h4>2.1.2 Regels voor versleuteling van informatie</h4>
+<p>De organisatie heeft regels schreven voor het versleutelen van informatie, waarbij aandacht wordt besteed aan de impliciete toestemming aan gebruikers over welke informatie zij wel of niet mogen inzien tijdens het telewerken. Medewerkers dienen zich ervan bewust te zijn dat zij achteraf ter verantwoording geroepen kunnen worden.</p>
+<h3>2.2 Classificatieniveaus en versleuteling</h3>
+<p>De organisatie hanteert classificatieregels voor gemeentelijke gegevens en andere gegevens onder haar beheer en zorgt voor passende maatregelen om deze gegevens te beschermen</p>
+<p>De organisatie dient duidelijk te hebben van welke gegevens de beschikbaarheid, vertrouwelijkheid en integriteit gegarandeerd dienen te worden. Tevens dient duidelijk te zijn hoe dit wordt gegarandeerd. Denk hierbij aan de volgende maatregelen:</p>
+<ul>
+<li>
+<p>Er is een overzicht van gegevens waarin is aangegeven op welke wijze deze versleuteld dienen te worden. Dit betreft de gegevenseigenaar, de te volgen procedure en de beschikbare hulpmiddelen om de versleuteling uit te voeren.</p>
+</li>
+<li>
+<p>Er zijn procedures voor gebruikers, voor het versleutelen van gegevens.</p>
+</li>
+</ul>
+<p>Alle gegevens anders dan met classificatie ‘geen’, worden versleuteld conform beveiligingseisen in de gemeentelijke informatiebeveiligingsarchitectuur:</p>
+<ul>
+<li>
+<p>Classificatieniveau ‘laag’: transportbeveiliging buiten het interne netwerk</p>
+</li>
+<li>
+<p>Classificatieniveau ‘midden’: transportbeveiliging</p>
+</li>
+<li>
+<p>Classificatieniveau ‘hoog’: transport en berichtbeveiliging</p>
+</li>
+</ul>
+<h4>2.2.1 Versleuteling van gegevens</h4>
+<p>De organisatie dient een basis aan cryptografische maatregelen te implementeren om te voldoen aan regelgeving. Denk hierbij aan transportbeveiliging buiten het interne netwerk. Als de organisatie informatie verwerkt met een hoger vertrouwelijkheidsniveau (gemeentelijk) dan ‘vertrouwelijk’, zullen mogelijk aanvullende maatregelen geïmplementeerd moeten worden. Deze aanvullende maatregelen dienen gebaseerd te zijn op de resultaten van een risicoanalyse die de organisatie heeft uitvoert. Hieronder wordt aangegeven welk beveiligingsaspect wordt ondersteund door welke cryptografische techniek.</p>
+<p>• Integriteit: encryptie (hashing)</p>
+<p>• Vertrouwelijkheid: encryptie</p>
+<p>• Onweerlegbaarheid: digitale handtekening</p>
+<p>• Authenticatie: digitale handtekening</p>
+<p>De sterkte van de cryptografie wordt waar mogelijk gebaseerd op de actuele adviezen van het NCSC.</p>
+<h5>2.2.1.1 Versleuteling van gegevens tijdens transport</h5>
+<p>Versleuteling vindt plaats conform ‘best practices’ (de stand der techniek), waarbij geldt dat de vereiste encryptie sterker is naarmate gegevens gevoeliger zijn. Hiervoor wordt gebruik gemaakt van het Forum standaardisatie op basis van pas toe of leg uit. Onderstaand de standaarden voor encryptie die vanuit het Forum verplicht zijn en binnen de organisatie minstens worden toegepast.</p>
+<ul>
+<li>
+<p>Om webverkeer te versleutelen: HTTPS en HSTS moeten worden toegepast op de communicatie tussen klanten (zoals webbrowsers) en servers voor alle websites en webservices.</p>
+</li>
+<li>
+<p>DKIM (DomainKeys Identified Mail) moet worden toegepast op alle overheidsdomeinnamen waarvandaan wordt gemaild én op alle mailservers waarmee de overheid e-mail verstuurt en ontvangt.</p>
+</li>
+<li>
+<p>DMARC (Domain-based Messagee Authentication, Reporting and Conformance) moet worden toegepast op alle overheidsdomeinnamen, ook op domeinen waarvan niet wordt gemaild, én op alle mailservers waarmee de overheid e-mail ontvangt.</p>
+</li>
+<li>
+<p>DNSSEC (Domain Name System Security Extension) moet worden toegepast op alle overheidsdomeinnamen én op DNS-resolvers die clients van overheidsorganisaties direct of indirect van DNS-antwoorden voorzien.</p>
+</li>
+<li>
+<p>TLS (transport Layer Secuity) moet worden toegepast op de uitwisseling van gegevens tussen clients en servers, inclusief machine-to-machine communicatie.</p>
+</li>
+<li>
+<p>STARTTLS en DANE moeten in combinatie worden toegepast op ontvangende en verzendende e-mailservers.</p>
+</li>
+<li>
+<p>Om vertrouwelijke en geheime informatie te beschermen is het niet toegestaan om dit type informatie te delen via voorzieningen als webmail, als ook sociale netwerken en clouddiensten (Dropbox, Gmail, et cetera.). Dit vanwege het lage beschermingsniveau, veelal alleen naam en wachtwoord, en het ontbreken van versleuteling.</p>
+</li>
+</ul>
+<h5>2.2.1.2 Versleuteling van opgeslagen gegevens</h5>
+<ul>
+<li>
+<p>Gevoelige gegevens die worden opgeslagen in databases, repositories of andere opslagmedia dienen te worden versleuteld.</p>
+</li>
+<li>
+<p>Versleutel opgeslagen back-ups van cruciale gegevens. Zorg ervoor dat de versleutelingssleutels veilig worden beheerd en dat herstelprocedures getest zijn om de beschikbaarheid van gegevens te waarborgen, zelfs na een incident.</p>
+</li>
+<li>
+<p>Om een correcte en veilige bediening van mobiele (privé-)apparatuur en thuiswerkplek te waarborgen, is de gemeente bevoegd om beveiligingsinstellingen af te dwingen. Dit heeft betrekking op zowel door de gemeente verstrekte middelen, als privé-apparatuur ('bring your own device' (BYOD)). Dit betreft onder meer versleuteling.</p>
+</li>
+</ul>
+<h3>2.3 Certificaatbeheer</h3>
+<p>Een strikt certificaatbeheer wordt gehandhaafd conform de BIO en IBD-richtlijnen om de veiligheid van de certificaten te waarborgen. Er zijn (contractuele) afspraken over reservecertificaten van een alternatieve leverancier als uit risicoafweging blijkt dat deze noodzakelijk zijn.</p>
+<p>Binnen de organisatie worden er drie soorten certificaten uitgegeven:</p>
+<ul>
+<li>
+<p>Externe certificaten: worden gebruikt om de beveiliging van communicatie op internet te waarborgen. Deze certificaten worden uitgegeven door een certificaatautoriteit (CA) en worden toegepast op websites, servers en applicaties om een veilige en versleutelde verbinding tot stand te brengen.</p>
+</li>
+<li>
+<p>PKI Overheidscertificaten: verwijzen naar digitale certificaten die gebruikt worden door overheidsinstanties en die worden uitgegeven onder toezicht van Logius, een initiatief van de Nederlandse overheid. Deze certificaten spelen een cruciale rol bij het waarborgen van de beveiliging en betrouwbaarheid van digitale communicatie en transacties in overheidsinstellingen. Deze certificaten worden door een certificaatleverancier aan de organisatie uitgegeven.</p>
+</li>
+<li>
+<p>Interne certificaten: worden uitgegeven door de hostingpartij voor intern gebruik. In tegenstelling tot externe certificaten, die worden verstrekt door openbare certificaatautoriteiten (CA's) en wereldwijd worden vertrouwd, zijn interne certificaten bedoeld voor beveiligingsdoeleinden binnen de infrastructuur van de organisatie</p>
+</li>
+</ul>
+<p>In geval van PKIoverheid-certificaten hanteer de PKIoverheid-eisen ten aanzien van het sleutelbeheer. In overige situaties hanteer de norm ISO 11770-1 voor het beheer van cryptografische sleutels.</p>
+<p>Onder Certificaatbeheer binnen de organisatie worden de volgende activiteiten verstaan:</p>
+<h4>2.3.1 Bepalen van de levensduur van de certificaten</h4>
+<p>Het bepalen van de levensduur van certificaten is uitbesteed aan de certificaatbeheerders. Deze beheerders dienen:</p>
+<ul>
+<li>
+<p>Van alle certificaten bij te houden, wanneer ze zijn uitgegeven en wanneer deze weer verlopen.</p>
+</li>
+<li>
+<p>Een procedure op te stellen over hoe op de certificaateigenaren op de hoogte worden gebracht van het feit dat de publieke sleutel is geverifieerd door de certificaatbeheerder.</p>
+</li>
+</ul>
+<h4>2.3.2 Genereren (en registeren) van certificaten</h4>
+<p>De Wet Elektronische Handtekening (WEH) stelt eisen aan de manier waarop certificaten die gebruikt worden voor digitale handtekeningen gegenereerd worden.</p>
+<p>De organisatie en daarmee de certificaateigenaren en certificaatbeheerders dienen:</p>
+<p>Alle relevante informatie, zoals de cryptografische eigenschappen, het eigenaarschap en de levensfases van certificaten, vast te leggen in een geautomatiseerd registratiesysteem.</p>
+<p>De taken, verantwoordelijkheden en bevoegdheden met betrekking tot het aanvragen en generen van certificaten vast te leggen.</p>
+<p>De certificaatbeheerder:</p>
+<ul>
+<li>
+<p>Verzamelt en verifieert de identiteitsgegevens van de aanvrager en autoriseert de aanvraag.</p>
+</li>
+<li>
+<p>Fungeert voor certificaataanvragen als Externe Registration Authority (RA). Denk hierbij aan de volgende activiteiten: identificatie, authenticatie en autorisatie van de aanvraag, het bepalen en aanvullen van de juiste inhoud.</p>
+</li>
+</ul>
+<p>Vast te leggen waar beveiligingsincidenten gemeld moeten worden, wie een certificaat mag intrekken, hoe dat gecommuniceerd dient te worden, welke stappen verder moeten worden genomen en welke ingetrokken certificaten op een ‘revocation list’ komen.</p>
+<h4>2.3.3 Distribueren van de certificaten</h4>
+<p>Het distribueren van de certificaten dient op een veilige en gecontroleerde wijze te gebeuren.</p>
+<ul>
+<li>
+<p>De organisatie en daarmee de certificaateigenaren en externe certificaatbeheerders dienen:</p>
+</li>
+<li>
+<p>Alle uitgegegeven certificaten worden bijgehouden en bij verdenking van compromittering kan de beheerder het certificaat intrekken en ongeldig maken.</p>
+</li>
+</ul>
+<h4>2.3.4 Vervangen (en updaten) van de certificaten</h4>
+<p>Het vervangen van certificaten is noodzakelijk op het moment dat de gebruiker zijn wachtwoord is vergeten, waarmee de private sleutel is beveiligd of het opslagmedium defect of gestolen is. Een andere reden kan zijn dat een certificaat met een vermelde geldigheidsduur verlopen is.</p>
+<ul>
+<li>De organisatie en daarmee de certificaatbeheerders dienen:</li>
+</ul>
+<p>Vast te leggen in welke specifieke gevallen het herstellen van sleutels toegepast mag worden, voor welk type sleutels, welke methode/oplossing wordt geïmplementeerd, wie een aanvraag mag indienen en wie de herstelprocedure mag uitvoeren.</p>
+<h4>2.3.5 Intrekken van de certificaten</h4>
+<ul>
+<li>
+<p>Certificaatbeheerders hebben als enige de mogelijkheid hebben om certificaten in te trekken (revocation). Het intrekken van certificaten heeft alleen zin op het moment dat de geldigheidsduur van het certificaat nog niet is verlopen.</p>
+</li>
+<li>
+<p>De organisatie en daarmee de certificaatbeheerders dienen:</p>
+</li>
+</ul>
+<p>Vast te leggen in welke specifieke gevallen het intrekken van certificaten wordt toegepast, wie een aanvraag mag indienen, wie de procedure mag uitvoeren en via welke methode het overzicht van ingetrokken certificaten wordt gepubliceerd (Certificate Revocation List (CRL) en/of Online Certificate Status Protocol (OCSP)).</p>
+<h3>2.4 PKIoverheid</h3>
+<ul>
+<li>Op het moment dat de gemeente gebruik gaat maken van PKIoverheid certificaten, dient de gemeente zorg te dragen dat:</li>
+</ul>
+<p>Geen enkele andere persoon, dan de certificaathouder, toegang zal hebben tot de private sleutel die is gekoppeld aan de publieke sleutel in het PKIoverheid certificaat.</p>
+<p>De toegangscodes van smartcards en/of USB-tokens,waarin de private sleutel is opgeslagen, steeds veilig en gescheiden van de smartcards en/of USB-tokens bewaard zullen worden.</p>
+<p>Het PKIoverheid certificaat enkel zal worden gebruikt voor de doelen waartoe deze is uitgereikt.</p>
+<p>Direct na ontvangst van het certificaat, maar in ieder geval alvorens over te gaan tot installatie en gebruik, het digitale certificaat op haar volledige en juiste inhoud zal worden gecontroleerd.</p>
+<p>Direct tot intrekking van het PKIoverheid certificaat zal worden overgegaan en elk gebruik daarvan direct zal worden gestaakt, wanneer:</p>
+<ul>
+<li>
+<p>Er onvolledigheden en/of onjuistheden in het PKIoverheid certificaat worden geconstateerd dan wel deze door gewijzigde omstandigheden dreigen te ontstaan of zijn ontstaan</p>
+</li>
+<li>
+<p>De private sleutel verloren, gestolen of anderszins gecompromitteerd is geraakt</p>
+</li>
+<li>
+<p>Smartcards en/of USB-tokens of de toegangscodes van smartcards en/of USB-tokens in onbevoegde handen zijn gekomen, of kunnen zijn gekomen.</p>
+</li>
+</ul>
+<h2 id="evaluatie-en-verbetering-van-het-beleid">Evaluatie en Verbetering van het Beleid</h2>
+<p>Het Beleid Cryptografie wordt jaarlijks geëvalueerd om de doeltreffendheid ervan te waarborgen. Op basis van evaluatieresultaten worden indien nodig verbeteringen aangebracht in het beleid.</p>
+<h2 id="rollen-en-verantwoordelijkheden">Rollen en verantwoordelijkheden</h2>
+<p>Dit RACI-diagram biedt een overzicht van de verdeling van verantwoordelijkheden binnen de implementatie en handhaving van het netwerkbeveiligingsbeleid van de organisatie. De matrix identificeert de rollen van verschillende belanghebbenden bij specifieke taken en activiteiten die essentieel zijn voor een effectieve beveiliging van het netwerk. Hieronder wordt de betekenis van de gebruikte afkortingen toegelicht:</p>
+<ul>
+<li>
+<p>R (Responsible): De persoon of groep die verantwoordelijk is voor de uitvoering van een specifieke taak of activiteit.</p>
+</li>
+<li>
+<p>A (Accountable): De individuele persoon die uiteindelijk verantwoordelijk is en beslissingsbevoegdheid heeft voor het betreffende onderdeel.</p>
+</li>
+<li>
+<p>C (Consulted): Personen of afdelingen die geraadpleegd moeten worden voor input en feedback bij de uitvoering van taken.</p>
+</li>
+<li>
+<p>I (Informed): Personen of afdelingen die op de hoogte moeten worden gehouden van de voortgang en resultaten van specifieke taken.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Activiteit</th>
+<th>R</th>
+<th>A</th>
+<th>C</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1 Gebruikersvoorwaarden voor versleuteling van gegevens</td>
+<td>het securityteam</td>
+<td>CISO</td>
+<td></td>
+<td>CIO</td>
+</tr>
+<tr>
+<td>2.1.1 Regels voor acceptabel gebruik</td>
+<td>het securityteam</td>
+<td>CISO</td>
+<td></td>
+<td>CIO</td>
+</tr>
+<tr>
+<td>2.1.2 Regels voor versleuteling van informatie</td>
+<td>het securityteam</td>
+<td>CISO</td>
+<td></td>
+<td>CIO</td>
+</tr>
+<tr>
+<td>2.2 Classificatieniveaus en versleuteling</td>
+<td>Information Security Officers</td>
+<td>Management</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.2.1 Versleuteling van gegevens</td>
+<td>Medewerkers</td>
+<td>Mangement</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.2.1.1 Versleuteling van Gegevens tijdens transport</td>
+<td>Architecten</td>
+<td>Management</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.2.1.2 Versleuteling van opgeslagen gegevens</td>
+<td>Database beheerders</td>
+<td>Management</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3 Certificaatbeheer</td>
+<td>Beheerder certificaat</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.1 Bepalen van de levensduur van de certificaten</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.2 Genereren (en registreren) van certificaten</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.3 Distribueren van de certificaten</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.4 Vervangen (en updaten) van de seutels</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.5 Herstellen van de sleutels</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.6 Intrekken van de sleutels</td>
+<td>Certificaatleverancier / Certificaat eigenaar</td>
+<td>Certificaatleverancier / Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.7 Archiveren van de sleutels</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.3.8 Vernietigen van de sleutels</td>
+<td>Certificaatleverancier</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+<tr>
+<td>2.4 PKI Overheid</td>
+<td>Certificaatbeheerder</td>
+<td>Certificaat eigenaar</td>
+<td></td>
+<td>CISO</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

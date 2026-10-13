@@ -31,6 +31,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      # De leesversie van een los stuk maakt build.py met python-markdown, op een vaste versie.
+      - name: Python-markdown
+        run: pip install markdown==3.10.3
+
       # De controles zelf hebben ook tests; die draaien altijd, PR en push.
       - name: Tests van het bouwscript
         run: python tools/test_build.py
@@ -71,12 +75,12 @@ jobs:
       - name: Commit gegenereerde indexpagina's
         if: github.event_name == 'push'
         run: |
-          if git diff --quiet -- index.html '*/index.html'; then
-            echo "Indexpagina's ongewijzigd."
+          if git diff --quiet -- '*.html' && [ -z "$(git ls-files --others --exclude-standard -- '*.html')" ]; then
+            echo "Index- en leesversies ongewijzigd."
             exit 0
           fi
           git config user.name "kennisbank-bot"
           git config user.email "kennisbank-bot@users.noreply.github.com"
-          git add index.html '*/index.html'
+          git add -- '*.html'
           git commit -m "index: gegenereerd door tools/build.py"
           git push
