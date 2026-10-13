@@ -1741,7 +1741,7 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
     De root-site had een handgeschreven lijst van veertien stukken naast een kennisbank van 52; wat
     met de hand wordt bijgehouden loopt achter. Dit bestand komt uit dezelfde frontmatter als de
     kaarten, dus het kan niet achterlopen. Per stuk de titel, de URL van de leesversie of de map, de
-    samenvatting en de normen.
+    samenvatting en de normen, en ingesprongen eronder de losse stukken met hun eigen leesversie.
     """
     regels = ["# Kennisbank van Security Commons NL", "",
               "> Werkende kennis uit de publieke sector: security, privacy, continuiteit en governance,",
@@ -1766,6 +1766,11 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
             if elders:
                 staart += " Elders: " + ", ".join(elders) + "."
             regels.append(f"- [{fm['titel']}]({link}): {samenvatting}{staart}")
+            # De losse stukken eronder, elk met zijn eigen leesversie: wie een brief, een procedure of
+            # het beleid voor één domein zoekt, hoeft niet eerst het item te openen.
+            for md in stukken(fm["_map"]):
+                if md.with_suffix(".html").is_file():
+                    regels.append(f"  - [{stuktitel(md)[0]}]({SITE}/{vak}/{fm['_map'].name}/{md.stem}.html)")
         regels.append("")
     bronnen, ptn = register()
     actief = sorted((b for b in bronnen.values() if not b.get("vervallen")),
