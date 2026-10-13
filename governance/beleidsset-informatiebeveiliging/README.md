@@ -15,7 +15,7 @@ bronnen: [ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid,
 > **Lees de beleidsset online:** [security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/)
 
 Onder de BIO 2.0 en de Cyberbeveiligingswet heeft elke gemeente een strategisch beleid nodig en daaronder
-materie-specifiek beleid dat de 167 maatregelen afdekt. De IBD levert templates; wat ontbreekt, is een set
+materie-specifiek beleid dat de 117 overheidsmaatregelen afdekt. De IBD levert templates; wat ontbreekt, is een set
 zoals een gemeente die werkelijk heeft, met de gaten erin zichtbaar. Dit is zo'n set, van een samenwerking
 van gemeenten met één gezamenlijke bedrijfsvoering, geordend naar de 21 domeinen waarin het controleraamwerk
 de BIO 2.0-maatregelen verdeelt.
