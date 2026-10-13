@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Data Protection Impact Assessment Wpg (sjabloon)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <a href="./">Wet politiegegevens bij de gemeente: DPIA, verbeterplan en privacyverklaring</a> › <span>Data Protection Impact Assessment Wpg (sjabloon)</span></nav><!-- /kruimelpad -->
+<h1>Data Protection Impact Assessment Wpg (sjabloon)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Wet politiegegevens bij de gemeente: DPIA, verbeterplan en privacyverklaring</a> · <a href="dpia-wpg-sjabloon.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#managementsamenvatting">Managementsamenvatting</a></li><li><a href="#scope">Scope</a></li><li><a href="#governance">Governance</a></li><li><a href="#cultuur">Cultuur</a></li><li><a href="#grondslag-en-doelbinding">Grondslag en doelbinding</a></li><li><a href="#juistheid">Juistheid</a></li><li><a href="#dataminimalisatie">Dataminimalisatie</a></li><li><a href="#opslag">Opslag</a></li><li><a href="#bescherming">Bescherming</a></li><li><a href="#transparantie">Transparantie</a></li><li><a href="#risico-s">Risico’s</a></li><li><a href="#advies-functionaris-gegevensbescherming">Advies Functionaris Gegevensbescherming</a></li><li><a href="#ondertekening-dpia-rapportage">Ondertekening DPIA-rapportage</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><strong>Verwerking:</strong> [Vul naam verwerking in]</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datum start DPIA</td>
+<td></td>
+</tr>
+<tr>
+<td>Datum herziening DPIA</td>
+<td></td>
+</tr>
+<tr>
+<td>Organisatie</td>
+<td>Gemeente VOORBEELDGEMEENTE</td>
+</tr>
+<tr>
+<td>Afdeling</td>
+<td></td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td></td>
+</tr>
+<tr>
+<td>Procesexpert/ contactpersoon</td>
+<td></td>
+</tr>
+<tr>
+<td>Betrokken Privacy Officer</td>
+<td>[naam privacy officer]</td>
+</tr>
+<tr>
+<td>Versiegeschiedenis</td>
+<td>Concept 0.1 – eerste opzet Privacy Officer n.a.v. kick-off Concept 0.2 – versie aangevuld door Procesexperts Concept 0.3 – versie aangevuld door Privacy Officer en Procesexperts Concept 0.4 – versie aangevuld door Security Officer Concept 0.5 – versie voorgelegd aan 2e Privacy Officer Concept 0.6 – versie aangevuld door Proceseigenaar Concept 0.9 – versie aangevuld met FG advies</td>
+</tr>
+</tbody>
+</table>
+<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<table>
+<thead>
+<tr>
+<th>[Vat hier de resultaten van de DPIA samen. Beschrijf de scope, waarom de DPIA is uitgevoerd, de risico’s, de maatregelen en de conclusie]   (Actie privacycoördinator)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="scope">Scope</h2>
+<h3>Scope</h3>
+<p>Binnen scope</p>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf wat binnen scope is]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Buiten scope</p>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf wat buiten scope van deze DPIA is en waarom]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Procesbeschrijving op hoofdlijnen</h3>
+<p>[Vink aan wat van toepassing is]</p>
+<p>☐ Dit betreft wel een ingewikkeld werkproces en verdient een verdere analyse</p>
+<p>☒ Dit betreft geen ingewikkeld werkproces. Het werkproces stapsgewijs is hieronder aangevuld.</p>
+<p>Het werkproces (stapsgewijs)</p>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf per stap de naam. Het doel, de betrokkenen en de gebruikte applicaties. Wees zo specifiek mogelijk]  Stap:  Doel:  Betrokkenen:  Applicaties:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Stap:  Doel:  Betrokkenen:  Applicaties:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Stap:  Doel:  Betrokkenen:  Applicaties:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Stap:  Doel:  Betrokkenen:  Applicaties:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Stap:  Doel:  Betrokkenen:  Applicaties:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Workflow grafisch</p>
+<table>
+<thead>
+<tr>
+<th>[Plak hier een bestaande procesbeschrijving of grafische omschrijving van het werkproces en vermeld de publicatiedatum ervan]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Pre-DPIA</h3>
+<table>
+<thead>
+<tr>
+<th>Alle verwerkingen onder de Wpg zijn een hoogrisicoverwerking en behoeven daarom een DPIA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="governance">Governance</h2>
+<p>Proceseigenaar</p>
+<p>[Beschrijf in de tabel de verschillende rollen (per stap) binnen het werkproces]</p>
+<table>
+<thead>
+<tr>
+<th>(Stap in het) Werkproces</th>
+<th>Hoofd-proceseigenaar (afdelingsmanager)</th>
+<th>Proceseigenaar (verantwoordelijk voor 3B’s omtrent werkproces)</th>
+<th>Procesexpert(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Verwerkingsverantwoordelijke</p>
+<p>☐ Het college van burgemeester en wethouders</p>
+<p>☐ De burgemeester</p>
+<p>☐ De ambtenaar belast met heffing en invordering</p>
+<h3>Overzicht EXTERNE partijen en systemen in het werkproces</h3>
+<p>[Vul het overzicht hieronder aan met alle externe partijen die een rol spelen bij de verwerking van politiegegevens in dit werkproces, en verwijder of wijzig de vooraf in de tabel ingevulde partijen die geen rol spelen bij het werkproces]</p>
+<table>
+<thead>
+<tr>
+<th>Externe partij</th>
+<th>Applicatie, systeem of methode van gegevensuitwisseling</th>
+<th>Privacyrol ((sub-)verwerker, zelfstandig verwerkings-verantwoordelijke, gezamenlijk verwerkingsverantwoordelijke) en uitleg</th>
+<th>Verwerkers- of andere privacyovereenkomst aanwezig (j/n), zo ja, datum overeenkomst en locatie aangeven</th>
+<th>Doorgifte naar buitenland (j/n), zo ja welk land</th>
+<th>Indien doorgifte buiten de EER, met welk doorgifte- instrument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xxxx</td>
+<td>xxxx</td>
+<td>Verwerker: ICT-leverancier</td>
+<td></td>
+<td>Nee</td>
+<td>N.v.t.</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>-OneDrive -MS Teams -Outlook</td>
+<td>Verwerker: ICT-leverancier</td>
+<td>Ja, [toevoegen link naar bronbestand en datum ondertekening]</td>
+<td>Nee</td>
+<td>N.v.t.</td>
+</tr>
+<tr>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+</tr>
+<tr>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+</tr>
+</tbody>
+</table>
+<h3>Overzicht INTERNE partijen en systemen in het werkproces</h3>
+<p>[Vul voor alle gemeentelijke partijen die een rol spelen in de verwerking van politiegegevens in dit werkproces de tabel aan]</p>
+<table>
+<thead>
+<tr>
+<th>Interne partij/afdeling</th>
+<th>Gebruikte applicaties/systemen</th>
+<th>Bronhouder/Uitvoerend/ Ontvanger/Toezichthouder</th>
+<th>Uitleg keuze rol van deze partij</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Vul in de afdeling waarbinnen het werkproces plaatsvindt]</td>
+<td>Polydoc</td>
+<td>Uitvoerend, [vul evt. aan]</td>
+<td>Uitvoerend, want binnen deze afdeling vindt het werkproces plaats; medewerkers van de afdeling voeren het werkproces uit.</td>
+</tr>
+<tr>
+<td>[Vul aan met andere betrokken afdelingen, bijv.: Facilitaire Zaken]</td>
+<td>[Vul in, bijv.: Outlook, fysieke post]</td>
+<td>[Vul in, bijv.: Uitvoerend]</td>
+<td>[Vul in, bijv.: Uitvoerend, want FZ verzorgt binnen het werkproces het verzenden van brieven aan de betrokken burgers via de Postkamer]</td>
+</tr>
+<tr>
+<td>[Vul evt. aan met andere afdelingen of teams]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+<td>[Vul in]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cultuur">Cultuur</h2>
+<p>[Beschrijf hieronder per betrokken afdeling (binnen de scope van het werkproces) wat het privacybewustzijn is en hoe</p>
+<p>medewerkers omgaan met politiegegevens. Maak gebruik van de volgende kleuren:</p>
+<ul>
+<li>
+<p>Groen = geen verbetering vereist</p>
+</li>
+<li>
+<p>Oranje = enige verbetering vereist</p>
+</li>
+<li>
+<p>Rood = sterke verbetering vereist of onbekend]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Afdeling</th>
+<th>Privacybewustzijn medewerkers</th>
+<th>Omgang met politiegegevens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kleur + toelichting</td>
+<td>kleur + toelichting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="grondslag-en-doelbinding">Grondslag en doelbinding</h2>
+<h3>Grondslag</h3>
+<p>[Vul onderstaande tabellen in en gebruik de toelichting op de grondslag. Beschrijf eventuele toepasselijke wetgeving.]</p>
+<table>
+<thead>
+<tr>
+<th>Verwerkingsdoel werkproces</th>
+<th>Wpg-grondslag</th>
+<th>Toelichting op grondslag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Artikel 9</td>
+<td>WPG Artikel 8: Uitvoering van de dagelijkse politietaak  WPG Artikel 9: Onderzoek in verband met de handhaving van de rechtsorde in een specifiek (1 persoon of gebeurtenis) geval;  WPG Artikel 13: Ondersteunende taken.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Wpg-grondslag</th>
+<th>Welke eisen volgen uit de specifieke wetgeving</th>
+<th>Welke maatregelen zijn er genomen om te voldoen aan de eisen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artikel 9</td>
+<td>Voor alle artikelen1 geldt: -Er dient onderscheid gemaakt te worden tussen verschillende categorieën van betrokkenen. -De risico’s in alle Wpg verwerkingen dienen beoordeeld te worden. -De grondslagen voor het gebruik van bijzondere categorieën van politiegegevens dienen te worden vastgelegd. -Dat voor alle uitbestede Wpg verwerkingen verwerkersovereenkomsten afgesloten zijn en dat deze verwerkersovereenkomsten periodiek gecontroleerd worden of de eisen door de verwerker worden nageleefd.  Artikel 8 eist dat de noodzakelijkheid en rechtmatigheid vastgelegd wordt.  Dit geld ook voor artikel 9 met als extra eis dat de herkomst wordt vastgelegd. Verder ook dat de instemming van de bevoegd functionaris in geval van verdere verwerking van artikel 9 gegevens wordt vastgelegd?  Artikel 13 eist dat er een protocol is vastgelegd waarom dit artikel gebruikt wordt en wat de verder vertaling (qua bewaartermijnen is)</td>
+<td>In de systemen moet onderscheid gemaakt kunnen worden tussen verschillende categorieën van betrokkenen.  Er dient een DPIA uitgevoerd te worden.  De grondslagen voor het gebruik van bijzondere categorieën van politiegegevens vastleggen in het register van verwerking.  Voor alle uitbestede verwerkingen verwerkersovereenkomsten afsluiten en periodiek controleren.  Artikel 8: De informatie wordt vastgelegd in het register van verwerkingen.  Artikel 9: - De informatie wordt vastgelegd in het register van verwerkingen. - Bevoegd functionaris aangewezen - Lijst van bevoegde functionarissen bijhouden.  ☐ Er is instemming van een bevoegd functionaris vastgelegd in het geval van een artikel 9 verwerking  Artikel 13: - Protcocol is opgesteld en vastgelegd</td>
+</tr>
+<tr>
+<td>Selecteer een optie</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Toepasselijke wetgeving en (gemeentelijk) beleid</th>
+<th>Welke eisen volgen uit de specifieke wetgeving</th>
+<th>Welke maatregelen zijn er genomen om te voldoen aan de eisen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Doelbinding</h3>
+<p>[Wanneer de in dit werkproces gebruikte politiegegevens worden verwerkt voor een ander dan het hierboven beschreven doel, dan moet onderstaande tabel ingevuld worden. Wanneer dit niet van toepassing is vul dan in ‘N.v.t.’]</p>
+<table>
+<thead>
+<tr>
+<th>Doel (hergebruik)</th>
+<th>Partij (externe organisatie/interne afdeling)</th>
+<th>Soort politiegegevens</th>
+<th>Verenigbaar doel of nieuw doel/grondslag</th>
+<th>Aanvullende maatregelen/acties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n.v.t</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="juistheid">Juistheid</h2>
+<h3>Borging kwaliteit</h3>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf hier hoe de kwaliteit van de (persoons)gegevens gewaarborgd wordt. Schenk aandacht aan het actueel, juist en volledig houden ervan. Denk aan vier-ogen principe, procedures voor kwaliteitscontrole, etc].</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Onderscheid feiten en persoonlijk oordeel</h3>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf of er bij het verwerken van politiegegevens voor zover mogelijk onderscheid wordt gemaakt tussen politiegegevens die op feiten zijn gebaseerd en politiegegevens die op een persoonlijk oordeel zijn gebaseerd? Zo ja, hoe?]  Er wordt de reden van wetenschap vastgeleged, dus feitelijk. Ik hoor ik zie. Deze manier van werken is nog niet vastgelegd in werkinstructies (=Risico)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Logging</h3>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf hier of er logging is ingericht voor (onderdelen binnen) het werkproces en op welke wijze. Dat is vanuit de BIO (Baseline Informatie Overheid) een verplichting op de gehele organisatie.]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Audits</h3>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf hier of er audits worden uitgevoerd op (onderdelen binnen) het werkproces en op de kwaliteit van de data. Of dat het onderdeel is geweest van een intern, danwel externe Wpg audit]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dataminimalisatie">Dataminimalisatie</h2>
+<h3>Categorieën betrokkenen</h3>
+<p>[Beschrijf de categorieën van betrokkenen en de grootte van deze groep(en)]</p>
+<table>
+<thead>
+<tr>
+<th>Categorie betrokkenen</th>
+<th>(Geschat) aantal per categorie</th>
+<th>Toelichting op aantal (bron, aantal per jaar/zaak/etc.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verdachte</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Derde (getuige)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Selecteer een optie</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Beoordeling gebruikte politiegegevens</h3>
+<p>[Vul de tabel hieronder aan met de beoordelingen per gebruikt politiegegeven binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
+<table>
+<thead>
+<tr>
+<th>Politiegegeven:</th>
+<th>Bijvoorbeeld: E-mailadres</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Noodzakelijkheid) Beschrijf de noodzakelijkheid van het verwerken van dit politiegegeven binnen dit werkproces</td>
+<td>Het e-mailadres is binnen dit werkproces vereist om contact op te kunnen nemen met de betrokkenen, of om een document of toelichting toe te kunnen sturen.</td>
+</tr>
+<tr>
+<td>(Proportionaliteit en evenredigheid) Beschrijf of het verwerken van dit politiegegeven in evenredige verhouding staat tot het doel van dit werkproces</td>
+<td>Het verwerken van het e-mailadres van betrokkenen staat in verhouding met het verwerkingsdoel; het betreft geen bijzonder of gevoelig politiegegeven en wordt niet verder verwerkt of doorgegeven aan andere partijen dus de inbreuk van het verwerken ervan is beperkt.</td>
+</tr>
+<tr>
+<td>(Subsidiariteit) Beschrijf of het doel van het werkproces op een andere manier bereikt kan worden – met andere maatregelen of zonder dit politiegegeven</td>
+<td>Zonder verwerking van het e-mailadres kan dit werkproces niet plaatsvinden. Contact opnemen via telefoon is een te grote inbreuk op de privésituatie van de betrokkenen, daarnaast is er ook geen spoedeisend karakter om telefonisch contact te leggen.</td>
+</tr>
+<tr>
+<td>(Anonimisering en Pseudonimisering) Beschrijf of anonimisering en pseudonimisering toegepast (kunnen) worden op dit politiegegeven binnen dit werkproces</td>
+<td>Het anonimiseren of pseudonimiseren van dit politiegegeven is geen optie, omdat de betrokkenen herleidbaar en herkenbaar moeten zijn om contact op te nemen.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Voornaam en achternaam</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td>De voor- en achternaam van een burger zijn vereist om de juiste persoon te vinden in de gebruikte systemen en ter juiste aanhef van eventueel contact.</td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td>Het verwerken van de voor- en achternaam van betrokkenen staat in verhouding met het verwerkingsdoel; het betreffen geen bijzondere of gevoelige politiegegevens en deze gegevens worden niet verder verwerkt of doorgegeven aan andere partijen dus de inbreuk van het verwerken ervan is beperkt.</td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td>Zonder verwerking van de voor- en achternaam van betrokken burgers kan dit werkproces niet plaatsvinden. Het is vereist om de juiste persoon te koppelen aan de interne processen of dossiers en het is nodig ter correcte adressering.</td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td>Het anonimiseren of pseudonimiseren van dit politiegegeven is geen optie, omdat de betrokkenen herleidbaar en herkenbaar moeten zijn om contact mee op te nemen en om het juiste dossier te koppelen aan de betrokken burger.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Adresgegevens</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td>De adresgegevens van een burger zijn binnen dit werkproces vereist om schriftelijke correspondentie toe te sturen.</td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td>Het verwerken van de adresgegevens van betrokkenen staat in verhouding met het verwerkingsdoel; het betreffen geen bijzondere of gevoelige politiegegevens en deze gegevens worden niet verder verwerkt of doorgegeven aan andere partijen dus de inbreuk van het verwerken ervan is beperkt.</td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td>Het doel van het werkproces kan niet op een andere manier, zonder adresgegevens, worden bereikt. Zonder adresgegevens van burgers kan er immers geen schriftelijk (per brief) contact plaatsvinden.</td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td>Adresgegevens anonimiseren of pseudonimiseren is niet mogelijk en niet vereist. Het gaat niet om bijzondere of gevoelige gegevens waardoor strenge beveiliging niet vereist is, en de gegevens zijn juist herkenbaar nodig binnen het werkproces.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Geboortedatum</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td>Het geboortedatum van een burger is vereist om in het systeem het juiste dossier aan de betreffende burger te linken en om in het systeem specifieke dossiers terug te vinden.</td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td>Het verwerken van de geboortedata van betrokkenen staat in verhouding met het verwerkingsdoel; het betreffen geen bijzondere of gevoelige politiegegevens en deze gegevens worden niet verder verwerkt of doorgegeven aan andere partijen dus de inbreuk van het verwerken ervan is beperkt.</td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td>Zonder geboortedatum kan dit werkproces geen doorgang vinden. Burgers worden niet met elkaar verward doordat zij verschillende geboortedata hebben. Het doel van dit werkproces kan niet bereikt worden zonder dit gegeven.</td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td>De geboortedata anonimiseren of pseudonimiseren is niet mogelijk en niet vereist. Het gaat niet om bijzondere of gevoelige gegevens waardoor (extra) strenge beveiliging niet vereist is, en de gegevens zijn juist herkenbaar nodig binnen het werkproces.</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Kenteken</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Verklaring</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Gevoelige politiegegevens</h3>
+<p>[Het kan zijn dat tijdens een opsporingsonderzoek door een Boa, naast financiële gegevens en het BSN, het nodig is te weten te komen of de verdachte betrokken is geweest andere strafbare feiten of anderszins is opgevallen tijdens onderzoeken, of dat er een eerdere boete of een veroordeling heeft plaatsgevonden. Belangrijk hierbij is om de herkomst, grondslag en doel te vermelden. Indien deze gevoelige politiegegevens worden verwerkt binnen dit werkproces, dan dient eveneens toegelicht te worden hoe hiermee wordt omgegaan - denk aan extra organisatorische en technische maatregelen]</p>
+<p>☐ Niet van toepassing à ga naar 7.4</p>
+<p>Schulden. Partner. In BRP zien we wie op het adres staan ingeschreven. Bewoning van adres. Gezinssituatie</p>
+<table>
+<thead>
+<tr>
+<th>Politiegegeven:</th>
+<th>Bijvoorbeeld: Financiële gegevens (hoogte schuld, inkomen, bankrekeningnummer)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting extra technische en organisatorische maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Burgerservicenummer</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting extra technische en organisatorische maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>Van toepassing zijnde wettelijke uitzondering op het verwerken van BSN</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Bijzondere politiegegevens</h3>
+<p>[Indien bijzondere politiegegevens worden verwerkt binnen dit werkproces, dan dient aangegeven te worden hoe hiermee wordt omgegaan - denk aan extra beveiliging of andere maatregelen - en dient de wettelijke uitzondering op het verwerkingsverbod benoemd te worden]</p>
+<p>☐ Niet van toepassing à ga naar 8</p>
+<table>
+<thead>
+<tr>
+<th>Politiegegeven:</th>
+<th>Bijvoorbeeld: Medische gegevens/gegevens met betrekking tot gezondheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting extra technische en organisatorische maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>Van toepassing zijnde wettelijke uitzondering op het verwerken van dit bijzondere politiegegeven</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>Politiegegeven:</td>
+<td>Bijvoorbeeld: Gegevens over politieke opvattingen</td>
+</tr>
+<tr>
+<td>Noodzakelijkheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Proportionaliteit en evenredigheid</td>
+<td></td>
+</tr>
+<tr>
+<td>Subsidiariteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Anonimisering en Pseudonimisering</td>
+<td></td>
+</tr>
+<tr>
+<td>Toelichting extra technische en organisatorische maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>Van toepassing zijnde wettelijke uitzondering op het verwerken van dit bijzondere politiegegeven</td>
+<td></td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="opslag">Opslag</h2>
+<p>[in het werkproces waar politiegegevens worden opgeslagen,</p>
+<p>de betreffende bewaartermijnen en eventueel of er archivering plaatsvindt]</p>
+<table>
+<thead>
+<tr>
+<th>Artikel 8 gegevens</th>
+<th>Inrichting proces</th>
+<th>Antwoord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opslaglocatie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Verwerkingstermijn</td>
+<td>Is het proces zo ingericht dat na 1 jaar vanaf de start van de verwerking geen ‘ruime toegang’ meer mogelijk is?</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Is het proces zo ingericht dat na 4 jaar vanaf het moment van ‘ruime toegang’ niet meer gericht in de gegevens gezocht kan worden?</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Is het proces zo ingericht dat de gegevens 5 jaar na het eerste moment van verwerking ‘verwijderd’ worden?</td>
+<td></td>
+</tr>
+<tr>
+<td>Bewaartermijn</td>
+<td>Is het proces zo ingericht dat tot 5 jaar na ‘verwijderen’ de gegevens kunnen worden ingezien op basis van verantwoording en klachtenafhandeling</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>En na 5 jaar vanaf ‘verwijderen’ worden ‘vernietigd’?</td>
+<td></td>
+</tr>
+<tr>
+<td>Controle</td>
+<td>Vindt er controle op het naleven van de termijnen plaats? En wordt dit gedocumenteerd?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Artikel 9 gegevens</th>
+<th>Inrichting proces</th>
+<th>Antwoord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opslaglocatie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Verwerkingstermijn</td>
+<td>Is het proces zo ingericht dat binnen een week na eerste moment van verwerking het doel is ‘aangemeld’?</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Is het proces zo ingericht dat de verwerking kan plaatsvinden zolang dit noodzakelijk is voor het doel?</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Is het proces zo ingericht dat na 6 maanden na de uitspraak of verjaring de gegevens worden ‘verwijderd’?</td>
+<td></td>
+</tr>
+<tr>
+<td>Bewaartermijn</td>
+<td>Is het proces zo ingericht dat tot 5 jaar vanaf ‘verwijderen’ de gegevens kunnen worden ingezien op basis van verantwoording en klachtenafhandeling</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>En na 5 jaar vanaf ‘verwijderen’ worden ‘vernietigd’?</td>
+<td></td>
+</tr>
+<tr>
+<td>Controle</td>
+<td>Vindt er controle op het naleven van de termijnen plaats? En wordt dit gedocumenteerd?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Is voor artikel 13 verwerkingen vastgelegd in een ‘Protocollering van verwerkingen ex artikel 13 lid 1 Wet Politiegegevens’ welke verwerkings- en bewaartermijnen zijn afgesproken?</p>
+<p>☐ Ja ☐ Nee ☐ N.v.t</p>
+<p>Is dat ook technisch mogelijk gemaakt in de gebruikte applicaties?</p>
+<p>☐ Ja ☐ Nee ☐ N.v.t</p>
+<p>Worden de bewaartermijnen periodiek gecontroleerd?</p>
+<p>☐ Ja ☐ Nee ☐ N.v.t</p>
+<h2 id="bescherming">Bescherming</h2>
+<h3>Beveiliging bij de gemeente</h3>
+<p>[Kruis aan op welke wijze de politiegegevens worden beschermd binnen</p>
+<p>de gemeente, voeg maatregelen toe waar nodig]</p>
+<p>Gemeentebrede beveiligingsmaatregelen</p>
+<p>☐ MS Active Directory (Single Sign On)</p>
+<p>☐ Firewall ingericht bij datacenter</p>
+<p>☐ Back-ups voor data op de servers ingericht met opslag op twee fysieke plaatsen (twee datacenterlocaties)</p>
+<p>☐ Er vindt jaarlijks een Ensia Audit plaats</p>
+<p>☐ Fysieke beveiliging (toegang met tag)</p>
+<p>☐ Werktelefoon (of BYOD) is beveiligd met code of wachtwoord</p>
+<p>☐ Werklaptop (of BYOD) is beveiligd met code of wachtwoord</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>Betrokken medewerkers</p>
+<p>☐ Medewerkers hebben een eed afgelegd</p>
+<p>☐ Medewerkers hebben een geheimhoudingsverklaring getekend</p>
+<p>☐ Medewerkers hebben een VOG aangeleverd</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>Systemen binnen het werkproces</p>
+<p>☐ Systemen zijn enkel toegankelijk via het VOORBEELDGEMEENTE-netwerk</p>
+<p>☐Toegang tot gebruikte systemen is alleen mogelijk met de juiste credentials (wachtwoord en gebruikersnaam)</p>
+<p>☐ Er wordt gebruik gemaakt van twee- of meerfactorauthenticatie (2FA/MFA)</p>
+<p>☐ Er zijn (via IAM) autorisaties voor systemen ingericht</p>
+<p>☐ Het verkrijgen van autorisaties is gekoppeld aan functie van medewerkers</p>
+<p>☐ Het verkrijgen van autorisaties is afhankelijk van (aparte) toestemming van een leidinggevende</p>
+<p>☐ In de systemen zijn autorisatiematrixen ingericht die op persoonsniveau de toegang regelen tot politiegegevens.</p>
+<p>☐ Toegang tot systemen wordt gelogd, niet iedereen kan zomaar bij deze loggegevens</p>
+<p>☐ Er vinden automatische updates plaats</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>☐ [Eigen aanvulling]</p>
+<p>Specifieke maatregelen voor dit werkproces</p>
+<p>☐ Er vindt actief beheer plaats op de autorisatiematrixen</p>
+<p>☐ Er worden periodieke controles (minimaal 2 keer per jaar) uitgevoerd op de toegekende autorisaties</p>
+<p>☐ Er is een actuele lijst aanwezig met daarop de aangewezen bevoegd functionaris voor verwerkingen die vallen onder artikel 9,11, 13?</p>
+<h3>Beveiliging bij (sub)verwerkers</h3>
+<p>[Geef per verwerker aan welke verwerkersovereenkomst is getekend en vul aan waar nodig]</p>
+<p>[Vul in naam verwerker 1]</p>
+<p>☐Verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Hieronder staat Bijlage 2 van de getekende verwerkersovereenkomst</p>
+<p>☐ Met verwerker is een andere verwerkersovereenkomst tot stand gekomen. In het tekstvak staan de belangrijkste beveiligingsmaatregelen</p>
+<p>☐ Met verwerker is geen verwerkersovereenkomst afgesloten.</p>
+<p>☐ Met verwerker zijn afspraken gemaakt om periodiek te controleren of afspraken in VWO nagekomen worden en dit wordt gedocumenteerd.</p>
+<p>☐Met verwerker zijn afspraken gemaakt hoe, in het geval van incidenten, de verwerker de gemeente hierover informeert en meeneemt in de afhandeling ervan.</p>
+<table>
+<thead>
+<tr>
+<th>[Indien van toepassing, plak hier ‘Bijlage 2: Aantonen passend niveau van beveiliging’ van de ingevulde VNG-verwerkersovereenkomst]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Indien geen sprake van ondertekende VNG-verwerkersovereenkomst, beschrijf hier hoe politiegegevens worden beschermd door de verwerker, schenk onder meer aandacht aan bescherming door subverwerkers, uitoefening van rechten van betrokkenen, afhandeling van datalekken en uitvoering van audits]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>[Vul in naam verwerker 2]</p>
+<p>☐Verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Hieronder staat Bijlage 2 van de getekende verwerkersovereenkomst</p>
+<p>☐ Met verwerker is een andere verwerkersovereenkomst tot stand gekomen. In het tekstvak staan de belangrijkste beveiligingsmaatregelen</p>
+<p>☐ Met verwerker is geen verwerkersovereenkomst afgesloten.</p>
+<p>☐ Met verwerker zijn afspraken gemaakt om periodiek te controleren of afspraken in VWO nagekomen worden en dit wordt gedocumenteerd.</p>
+<p>☐Met verwerker zijn afspraken gemaakt hoe, in het geval van incidenten, de verwerker de gemeente hierover informeert en meeneemt in de afhandeling ervan.</p>
+<table>
+<thead>
+<tr>
+<th>[Indien van toepassing, plak hier ‘Bijlage 2: Aantonen passend niveau van beveiliging’ van de ingevulde VNG-verwerkersovereenkomst]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Indien geen sprake van ondertekende VNG-verwerkersovereenkomst, beschrijf hier hoe politiegegevens worden beschermd door de verwerker, schenk onder meer aandacht aan bescherming door subverwerkers, uitoefening van rechten van betrokkenen, afhandeling van datalekken en uitvoering van audits]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>[Vul in naam verwerker 3]</p>
+<p>☐Verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Hieronder staat Bijlage 2 van de getekende verwerkersovereenkomst</p>
+<p>☐ Met verwerker is een andere verwerkersovereenkomst tot stand gekomen. In het tekstvak staan de belangrijkste beveiligingsmaatregelen</p>
+<p>☐ Met verwerker is geen verwerkersovereenkomst afgesloten.</p>
+<p>☒ Met verwerker zijn afspraken gemaakt om periodiek te controleren of afspraken in VWO nagekomen worden.</p>
+<p>☐Met verwerker zijn afspraken gemaakt hoe, in het geval van incidenten, de verwerker de gemeente hierover informeert en meeneemt in de afhandeling ervan.</p>
+<table>
+<thead>
+<tr>
+<th>[Indien van toepassing, plak hier ‘Bijlage 2: Aantonen passend niveau van beveiliging’ van de ingevulde VNG-verwerkersovereenkomst]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Indien geen sprake van ondertekende VNG-verwerkersovereenkomst, beschrijf hier hoe politiegegevens worden beschermd door de verwerker, schenk onder meer aandacht aan bescherming door subverwerkers, uitoefening van rechten van betrokkenen, afhandeling van datalekken en uitvoering van audits]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Beveiliging van politiegegevens bij structurele samenwerkingsverbanden.</h3>
+<p>☐ Niet van toepassing, ga door naar 9.4</p>
+<table>
+<thead>
+<tr>
+<th>[Wordt bijgehouden bij welke samenwerkingsverbanden politiegegevens verstrekt worden? Er is een overzicht van de in dit verband gedane gegevens-verstrekkingen, wat daarvan het doel is, onder welke voorwaarden dit plaatsvond en aan wie de gegevens verstrekt zijn?]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Zijn daar convenanten voor afgesloten?]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Blijkt uit een steekproef dat voldoende is vastgelegd welke gegevensverstrekkingen hebben plaatsgevonden, wat daarvan het doel was, onder welke voorwaarden en aan wie de gegevens verstrekt zijn?]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Rechtstreekse verstrekkingen OM</h3>
+<p>[Geef aan of er rechtstreekse verstrekkingen plaatsvinden]</p>
+<p>☐ Ja à ga hieronder verder</p>
+<p>☐ Nee à ga naar vraag 9.5</p>
+<p>☐ Technische en organisatorische maatregelen zijn getroffen</p>
+<table>
+<thead>
+<tr>
+<th>[Namelijk….]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>☐ De rechtstreekse verstrekking vindt alleen plaats voor zover noodzakelijk</p>
+<p>☐ De rechtstreekse verstrekking vindt alleen plaats aan de aangewezen personen.</p>
+<h3>Ter beschikking stellen van politiegegevens binnen het Wpg domein</h3>
+<p>☐ Er wordt bijgehouden met wie gegevens gedeeld worden</p>
+<p>☐ De ontvanger is geautoriseerd</p>
+<p>☐ Voor verdere verwerking van artikel 9-gegevens is er toestemming gegeven van de Bevoegd Funtionaris.</p>
+<h3>Verstrekking politiegegevens buiten Wpg domein</h3>
+<p><Politiegegevens mogen alleen worden verstrekt aan personen of instanties buiten het Politiedomein als dit noodzakelijk is voor de doeleinden zoals deze in de Wet politiegegevens en het Besluit politiegegevens zijn genoemd.></p>
+<p>☐ Er wordt bijgehouden met wie gegevens gedeeld worden</p>
+<p>☐ Er is een werkwijze aanwezig voor de te ondernemen stappen en uit te voeren controles bij het verstrekken van politiegegevens</p>
+<p>☐ Er zijn maatregelen geïmplementeerd om de beveiliging van de politiegegevens tijdens de verstrekking te waarborgen</p>
+<p>☐ Er is een werkinstructie voor de documentatieplicht bij de verstrekking</p>
+<p>☐ Er vindt controle / toezicht plaats op de verstrekkingen</p>
+<p>☐ Er Blijkt uit steekproeven dat de waarborgen bij verstrekkingen worden getroffen</p>
+<h2 id="transparantie">Transparantie</h2>
+<h3>Gebruikte technieken</h3>
+<p>[Beschrijf in onderstaande tabel of er gebruik wordt gemaakt</p>
+<p>van algoritmes, artificial intelligence, profilering en automatische besluitvorming]</p>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord en uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Worden er algoritmes gebruikt, zo ja, beschrijf de werking ervan:  Wat is het doel dat wordt beoogd en is (eventueel) helder uit te leggen hoe het algoritme werkt? Is het algoritme toegevoegd aan het Algoritmeregister?  Heeft een analyse plaatsgevonden via een Impact Assessment Mensenrechten en Algoritmes (IAMA) alvorens het algoritme in gebruik is genomen?  Voldoet het algoritme aan de eisen die de AP/Europese wetgever daaraan stelt?</td>
+<td></td>
+</tr>
+<tr>
+<td>Wordt er gebruik gemaakt van artificial intelligence (kunstmatige intelligentie), zo ja, licht de werking ervan toe.</td>
+<td></td>
+</tr>
+<tr>
+<td>Is er sprake van profilering? Zo ja, beschrijf de wijze van profilering en het gebruik van de profilering.</td>
+<td></td>
+</tr>
+<tr>
+<td>Wordt er automatische besluitvorming toegepast, zo ja, beschrijf hoe menselijke tussenkomst geregeld is.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Transparantie richting betrokkenen</h3>
+<p>[Beschrijf in de tabel op welke wijze betrokkenen geïnformeerd worden over dit werkproces en hoe de afhandeling van verzoeken in het kader van rechten van betrokkenen geregeld is; verwijder of pas de vooraf ingevulde tekst eventueel aan]</p>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord en uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hoe en op welk moment binnen het werkproces worden de betrokkenen geïnformeerd over het gebruik van hun politiegegevens</td>
+<td>Hiervoor wordt naast de reguliere Privacyverklaring op de website ook een Wpg stuk in meegenomen. Betrokkenen kunnen op ieder moment dus stuk lezen. [Vul of pas evt. aan]</td>
+</tr>
+<tr>
+<td>Hiervoor wordt naast de reguliere Privacyverklaring op de website ook een Wpg stuk in meegenomen. Betrokkenen kunnen op ieder moment dus stuk lezen.</td>
+<td></td>
+</tr>
+<tr>
+<td>Licht toe of er binnen de afdeling specifieke afspraken gemaakt zijn voor de afhandeling van verzoeken in het kader van rechten van betrokkenen</td>
+<td>Het afhandelen van verzoeken tot uitoefenen van rechten van betrokkenen verloopt via de Richtlijn Inzageverzoeken. Echter, wanneer het politiegegevens betreft geldt alleen ‘recht op informatie’, ‘recht op inzage’, ‘recht op rectificatie en/of aanvulling en/of op verwijdering’. Dit staat ook vermeld in het Wpg stuk in de Privacyverklaring op de website van VOORBEELDGEMEENTE. Met als toevoeging dat overlegd wordt met OVJ in geval van opsporingsbelang, de afhandelingstermijn 6 weken is met een uitloop van 4 weken en de BOA niet zelf het inzage verzoek afhandelt. [Vul of pas evt. aan]</td>
+</tr>
+<tr>
+<td>Hoe zijn de systemen ingericht om verzoeken in het kader van rechten van betrokkenen uit te voeren</td>
+<td>[Vul aan]</td>
+</tr>
+<tr>
+<td>Wordt vastgelegd wanneer een beroep wordt gedaan op een uitzonderingsgrond (artikel 27 Wpg)?</td>
+<td></td>
+</tr>
+<tr>
+<td>Worden alle weigeringen van inzageverzoeken politiegegevens vastgelegd?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="risico-s">Risico’s</h2>
+<h3>Betrokkenen</h3>
+<p>[Vul de tabel hieronder aan met de privacyrisico’s die betrokkenen lopen binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
+<table>
+<thead>
+<tr>
+<th>Risico nr.</th>
+<th>Risicoclassificatie</th>
+<th>Aanduiding risico</th>
+<th>Beschrijving risico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Rechten van betrokkenen</td>
+<td>De Richtlijn Inzageverzoeken is onvoldoende bekend binnen de afdeling waardoor er niet volgens de vastgestelde procedure voor de afhandeling van verzoeken van betrokkenen wordt gewerkt</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Uitsluiting van informatie of uitoefenen van rechten</td>
+<td>Betrokkene heeft geen toegang tot belangrijke informatie of stukken of wordt (tijdelijk) uitgesloten van het uitoefenen van een recht doordat er in het proces geen controle is op het verzenden van belangrijke poststukken</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Identiteitsdiefstal en -fraude door datalek</td>
+<td>Een datalek, zoals het verkeerd verzenden van een poststuk of e-mail waarin het BSN staat, kan er binnen dit werkproces toe leiden dat er gefraudeerd wordt met gegevens van betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Financiële verliezen door datalek</td>
+<td>Een datalek, zoals het verkeerd verzenden van een poststuk of e-mail waarin financiële gegevens staan, kan er binnen dit werkproces toe leiden dat betrokkenen financiële verliezen lijden</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Reputatieschade door datalek</td>
+<td>Een datalek, zoals het verkeerd verzenden van een poststuk of e-mail waarin gevoelige gegevens staan, kan er binnen dit werkproces toe leiden dat betrokkenen reputatieschade lijden</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Gemeente VOORBEELDGEMEENTE</h3>
+<p>[Vul de tabel hieronder aan met de privacyrisico’s die de gemeente loopt binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
+<table>
+<thead>
+<tr>
+<th>Risico nr.</th>
+<th>Risicoclassificatie</th>
+<th>Aanduiding risico</th>
+<th>Beschrijving risico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Reputatieschade door datalek</td>
+<td>Een datalek waarbij politiegegevens binnen dit werkproces in onbevoegde handen vallen kan ertoe leiden dat de gemeente reputatieschade oploopt</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Klachten of claims door datalek</td>
+<td>Een datalek waarbij politiegegevens binnen dit werkproces in onbevoegde handen vallen kan ertoe leiden dat er klachten of claims bij de gemeente binnenkomen</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Niet voldoen aan transparantieplicht</td>
+<td>Betrokkenen ontvangen geen of weinig informatie over de verwerking van hun politiegegevens binnen dit werkproces</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Niet voldoen aan opslagbeperking</td>
+<td>-Er zijn binnen dit werkproces geen bewaartermijnen ingericht; -De bewaartermijnen die er zijn, worden niet nageleefd</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Geen audits (laten) uitvoeren</td>
+<td>Het werkproces vereist het (laten) uitvoeren van audits (door externen), dit gebeurt echter nooit</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Geen (up-to-date) verwerkersovereenkomst afgesloten</td>
+<td>-Met niet alle verwerkers die worden ingeschakeld bij dit werkproces is een verwerkersovereenkomst afgesloten; -De verwerkersovereenkomsten die zijn afgesloten zijn niet up-to-date</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Corrigerende maatregelen door AP (boete, waarschuwing, etc.)</td>
+<td>Doordat het werkproces niet voldoet aan de AVG bestaat er een risico op corrigerende maatregelen van de AP</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Autorisaties niet op orde</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Risicoclassificatie werkproces</h3>
+<p>[Selecteer en sleep de ‘X’ naar de juiste plek in de risicomatrix hieronder om het totale risico van het werkproces aan te geven. Het gaat om de classificatie van de som van alle beschreven risico’s binnen het werkproces vóór het opvolgen en implementeren van de beheersmaatregelen. Om een juiste risicoscore aan het werkproces toe te kennen kan overleg plaatsvinden met de privacycoördinator]</p>
+<h3>Beheersmaatregelen</h3>
+<p>[Vul per gesignaleerd risico onderstaande tabel verder in]</p>
+<table>
+<thead>
+<tr>
+<th>Risico nr.</th>
+<th>Risicoclassificatie</th>
+<th>Te treffen beheersmaatregelen</th>
+<th>Restrisico</th>
+<th>Maatregelen akkoord</th>
+<th>Maatregel al geïmplementeerd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td></td>
+<td>☐ Ja ☐ Nee</td>
+<td>☐ Ja ☐ Nee</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Restrisico</h3>
+<table>
+<thead>
+<tr>
+<th>[Beschrijf de resterende risico’s en bepaal aan de hand daarvan of de verwerking door kan gaan/mag worden gestart, of dat een voorafgaande raadpleging bij de AP nodig is]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="advies-functionaris-gegevensbescherming">Advies Functionaris Gegevensbescherming</h2>
+<table>
+<thead>
+<tr>
+<th>[Een verplicht onderdeel van de DPIA is een advies van de Functionaris Gegevensbescherming. De FG kan hier het advies plaatsen.]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Naam FG]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Handtekening]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Datum: Klik of tik om een datum in te voeren.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>☐ Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</p>
+<p>☐ De belangrijkste risico’s die een inbreuk op de rechten en vrijheden van betrokkenen</p>
+<p>kunnen hebben zijn in kaart gebracht</p>
+<ul>
+<li>De beschreven maatregelen mitigeren de risico’s:</li>
+</ul>
+<p>☐ voldoende</p>
+<p>☐ niet voldoende</p>
+<p>☐ Er dient een voorafgaande raadpleging bij de AP verzocht te worden</p>
+<p>☐ De vermelde restrisico’s zijn aanvaardbaar</p>
+<p>☐ Ik stem in met de uitvoering van de in de rapportage genomen beheersmaatregelen</p>
+<p>☐ De DPIA voldoet aan de eisen van de AVG en de aanvullende eisen van de EDPB</p>
+<p>☐ Er is geen bezwaar om de genoemde verwerking uit te voeren</p>
+<p>☐ De DPIA is goedgekeurd door de FG</p>
+<h2 id="ondertekening-dpia-rapportage">Ondertekening DPIA-rapportage</h2>
+<h3>Proceseigenaar</h3>
+<p>[vink aan wat van toepassing is]</p>
+<p>☐ De beschrijving van het werkproces is juist en volledig</p>
+<p>☐ De belangrijkste organisatorische en technische oorzaken zijn in kaart gebracht</p>
+<p>☐ De beschreven maatregelen mitigeren de risico’s voldoende</p>
+<p>☐ De beschreven mitigerende maatregelen worden uitgevoerd en gereed gemeld bij</p>
+<p>de Privacycoördinator</p>
+<table>
+<thead>
+<tr>
+<th>[Naam proceseigenaar]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Handtekening]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Datum: Klik of tik om een datum in te voeren.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Privacycoördinator</h3>
+<p>[vink aan wat van toepassing is]</p>
+<p>☐ Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</p>
+<p>☐ De belangrijkste risico’s die een inbreuk op de rechten en vrijheden van betrokkenen kunnen hebben zijn in kaart gebracht</p>
+<ul>
+<li>De beschreven maatregelen mitigeren de risico’s:</li>
+</ul>
+<p>☐ voldoende</p>
+<p>☐ niet voldoende</p>
+<p>☐ De FG dient een voorafgaande raadpleging bij de Autoriteit Politiegegevens te vragen</p>
+<p>☐ De beschreven mitigerende maatregelen worden bewaakt en afgestemd met de Proceseigenaar</p>
+<table>
+<thead>
+<tr>
+<th>[Naam privacycoördinator]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Handtekening]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Datum: Klik of tik om een datum in te voeren.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Interne kwaliteitscontrole</h3>
+<p>[vink aan wat van toepassing is]</p>
+<p>☐ Er is een kwaliteitscheck uitgevoerd op de DPIA, door bijvoorbeeld een Privacy of Security collega.</p>
+<p>☐ De risico’s zijn voldoende gemitigeerd</p>
+<table>
+<thead>
+<tr>
+<th>[Naam controleur]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>[Handtekening]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Datum: Klik of tik om een datum in te voeren.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/privacy/wet-politiegegevens">privacy/wet-politiegegevens</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

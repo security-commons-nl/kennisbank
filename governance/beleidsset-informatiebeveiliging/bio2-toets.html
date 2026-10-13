@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>BIO 2.0-toets van de beleidsset</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>BIO 2.0-toets van de beleidsset</span></nav><!-- /kruimelpad -->
+<h1>BIO 2.0-toets van de beleidsset</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="bio2-toets.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#overzicht">Overzicht</a></li><li><a href="#iv-beleid">IV-beleid</a></li><li><a href="#informatiebeveiliging-binnen-projecten">Informatiebeveiliging binnen projecten</a></li><li><a href="#screening-bewustzijn-amp-opleiding">Screening, bewustzijn &amp; opleiding</a></li><li><a href="#bedrijfsmiddelenbeheer">Bedrijfsmiddelenbeheer</a></li><li><a href="#informatie-classificatie">Informatie classificatie</a></li><li><a href="#logische-toegangsbeveiliging">Logische toegangsbeveiliging</a></li><li><a href="#leveranciersbeheer-inkoop">Leveranciersbeheer - Inkoop</a></li><li><a href="#leveranciersbeheer-contractbeheer">Leveranciersbeheer - contractbeheer</a></li><li><a href="#security-incident-management">Security Incident Management</a></li><li><a href="#business-continuity-amp-disaster-recovery">Business Continuity &amp; Disaster Recovery</a></li><li><a href="#it-compliance">IT-Compliance</a></li><li><a href="#fysieke-toegang-amp-beveiliging">Fysieke toegang &amp; beveiliging</a></li><li><a href="#afvoer-en-hergebruik-gegevensdragers">Afvoer en hergebruik gegevensdragers</a></li><li><a href="#mobile-device-management">Mobile Device Management</a></li><li><a href="#vulnerability-amp-patchmanagement">Vulnerability &amp; patchmanagement</a></li><li><a href="#back-up-amp-recovery">Back-up &amp; Recovery</a></li><li><a href="#logging-amp-monitoring">Logging &amp; monitoring</a></li><li><a href="#netwerkbeveiliging">Netwerkbeveiliging</a></li><li><a href="#cryptografie">Cryptografie</a></li><li><a href="#secure-software-development">Secure Software Development</a></li><li><a href="#wijzigingsbeheer">Wijzigingsbeheer</a></li></ol></nav><!-- /inhoudsopgave -->
+<p>Per BIO 2.0-domein: welke overheidsmaatregelen de stukken in deze set afdekken. Peildatum 12-10-2026,
+getoetst aan de BIO 2.0 versie 1.3 met de domeinindeling van het controleraamwerk. Een oordeel zegt of
+er een beleidsregel staat die de maatregel invult, niet of de maatregel in de praktijk werkt.</p>
+<ul>
+<li><strong>gedekt</strong>: een beleidsregel vult de maatregel in (vindplaats erbij);</li>
+<li><strong>deels</strong>: een deel staat er, de toelichting zegt wat ontbreekt;</li>
+<li><strong>niet gedekt</strong>: geen beleidsregel in deze set.</li>
+</ul>
+<p>Maatregelen zonder overheidsmaatregel (alleen ISO 27002) staan per domein met nummer en titel; daar geldt
+de ISO-maatregel zelf. De tekst daarvan is niet overgenomen.</p>
+<h2 id="overzicht">Overzicht</h2>
+<table>
+<thead>
+<tr>
+<th>Domein</th>
+<th>Overheidsmaatregelen</th>
+<th>Gedekt</th>
+<th>Deels</th>
+<th>Niet</th>
+<th>Stuk in deze set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IV-beleid</td>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a></td>
+</tr>
+<tr>
+<td>Informatiebeveiliging binnen projecten</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><a href="beleid-informatiebeveiliging-in-projecten.html">beleid informatiebeveiliging in projecten</a></td>
+</tr>
+<tr>
+<td>Screening, bewustzijn &amp; opleiding</td>
+<td>7</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td><a href="veilig-personeel.html">veilig personeel</a></td>
+</tr>
+<tr>
+<td>Bedrijfsmiddelenbeheer</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a></td>
+</tr>
+<tr>
+<td>Informatie classificatie</td>
+<td>6</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td><a href="dataclassificatie.html">dataclassificatie</a></td>
+</tr>
+<tr>
+<td>Logische toegangsbeveiliging</td>
+<td>14</td>
+<td>7</td>
+<td>3</td>
+<td>4</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a>, <a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a></td>
+</tr>
+<tr>
+<td>Leveranciersbeheer - Inkoop</td>
+<td>9</td>
+<td>8</td>
+<td>0</td>
+<td>1</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a>, <a href="webapplicaties.html">webapplicaties</a></td>
+</tr>
+<tr>
+<td>Leveranciersbeheer - contractbeheer</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a></td>
+</tr>
+<tr>
+<td>Security Incident Management</td>
+<td>12</td>
+<td>10</td>
+<td>2</td>
+<td>0</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a></td>
+</tr>
+<tr>
+<td>Business Continuity &amp; Disaster Recovery</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>geen (zie BCM-items)</td>
+</tr>
+<tr>
+<td>IT-Compliance</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td><a href="beleid-it-compliance.html">beleid it compliance</a></td>
+</tr>
+<tr>
+<td>Fysieke toegang &amp; beveiliging</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td><a href="fysieke-toegang-en-beveiliging.html">fysieke toegang en beveiliging</a>, <a href="controls-fysieke-toegang-en-beveiliging.html">controls fysieke toegang en beveiliging</a></td>
+</tr>
+<tr>
+<td>Afvoer en hergebruik gegevensdragers</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a></td>
+</tr>
+<tr>
+<td>Mobile Device Management</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td><a href="beleid-mobile-device-management.html">beleid mobile device management</a>, <a href="wifi.html">wifi</a></td>
+</tr>
+<tr>
+<td>Vulnerability &amp; patchmanagement</td>
+<td>9</td>
+<td>5</td>
+<td>4</td>
+<td>0</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a>, <a href="hardening.html">hardening</a></td>
+</tr>
+<tr>
+<td>Back-up &amp; Recovery</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td><a href="back-up-en-recovery.html">back up en recovery</a></td>
+</tr>
+<tr>
+<td>Logging &amp; monitoring</td>
+<td>10</td>
+<td>3</td>
+<td>1</td>
+<td>6</td>
+<td><a href="beleid-logging-en-monitoring.html">beleid logging en monitoring</a></td>
+</tr>
+<tr>
+<td>Netwerkbeveiliging</td>
+<td>7</td>
+<td>5</td>
+<td>2</td>
+<td>0</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a>, <a href="wifi.html">wifi</a></td>
+</tr>
+<tr>
+<td>Cryptografie</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td><a href="cryptografie.html">cryptografie</a></td>
+</tr>
+<tr>
+<td>Secure Software Development</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td><a href="webapplicaties.html">webapplicaties</a>, <a href="testdata.html">testdata</a></td>
+</tr>
+<tr>
+<td>Wijzigingsbeheer</td>
+<td>6</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td><a href="beleid-wijzigingsbeheer.html">beleid wijzigingsbeheer</a></td>
+</tr>
+<tr>
+<td><strong>Totaal</strong></td>
+<td><strong>117</strong></td>
+<td><strong>70</strong></td>
+<td><strong>31</strong></td>
+<td><strong>16</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Vervallen of verplaatste maatregelen uit versie 1.3 zijn weggelaten.</p>
+<h2 id="iv-beleid">IV-beleid</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.01.01</td>
+<td>IB-beleid vastgesteld door het bestuur, met de verplichte onderdelen</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 1 t/m 8, bijlage A</td>
+<td></td>
+</tr>
+<tr>
+<td>5.01.02</td>
+<td>Beleid jaarlijks beoordelen, aangesloten op P&amp;C</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 8.5</td>
+<td></td>
+</tr>
+<tr>
+<td>5.02.01</td>
+<td>Rollen en samenhang IB, privacy, OT en BCM vastgesteld</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 5, 6</td>
+<td></td>
+</tr>
+<tr>
+<td>5.02.02</td>
+<td>CISO die onafhankelijk adviseert en rapporteert</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 6.1, 6.2</td>
+<td></td>
+</tr>
+<tr>
+<td>5.05.01</td>
+<td>Overzicht formele contacten met instanties, jaarlijks bijgewerkt</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 7</td>
+<td></td>
+</tr>
+<tr>
+<td>5.35.02</td>
+<td>Vastgesteld auditplan</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 8.4</td>
+<td></td>
+</tr>
+<tr>
+<td>5.36.01</td>
+<td>Rapportage in P&amp;C en PDCA, jaarlijkse ICV</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 8.2, 8.3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.03.01 Functiescheiding; 5.06.01 Contact met speciale belangengroepen; 5.07.01 Informatie en analyses over dreigingen.</p>
+<h2 id="informatiebeveiliging-binnen-projecten">Informatiebeveiliging binnen projecten</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.08.01</td>
+<td>Risicoafweging bij nieuwe systemen en significante wijzigingen</td>
+<td>deels</td>
+<td><a href="../../privacy/privacybeleid-en-handboek/privacy-by-design.md">privacy by design</a> 2; <a href="dataclassificatie.html">dataclassificatie</a> bepalen van classificatieniveaus</td>
+<td>Alleen voor privacy (privacy by design) en via classificatie; geen eis voor de IB-risicoafweging per project.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="screening-bewustzijn-amp-opleiding">Screening, bewustzijn &amp; opleiding</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.04.01</td>
+<td>Bestuur en medewerkers volgen regelmatig scholing</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 2.1; <a href="veilig-personeel.html">veilig personeel</a> 3.2</td>
+<td></td>
+</tr>
+<tr>
+<td>6.01.01</td>
+<td>Vastgesteld screeningsbeleid, VOG op basis van risico</td>
+<td>niet gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> VOG</td>
+<td>Alleen voor medewerkers van leveranciers; veilig personeel noemt screening alleen in de normenbijlage.</td>
+</tr>
+<tr>
+<td>6.02.01</td>
+<td>Medewerkers bij aanstelling gewezen op hun IB-verantwoordelijkheden</td>
+<td>gedekt</td>
+<td><a href="veilig-personeel.html">veilig personeel</a> 5.1</td>
+<td></td>
+</tr>
+<tr>
+<td>6.03.01</td>
+<td>Iedereen kent de regels en verplichtingen</td>
+<td>gedekt</td>
+<td><a href="veilig-personeel.html">veilig personeel</a> 4; <a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 4.4</td>
+<td></td>
+</tr>
+<tr>
+<td>6.03.02</td>
+<td>Training I-bewustzijn binnen drie maanden na indiensttreding</td>
+<td>gedekt</td>
+<td><a href="veilig-personeel.html">veilig personeel</a> 3.2</td>
+<td>Het beleid is strenger: introductie binnen twee maanden en jaarlijkse training.</td>
+</tr>
+<tr>
+<td>6.03.03</td>
+<td>Management benadrukt het belang van training</td>
+<td>deels</td>
+<td><a href="veilig-personeel.html">veilig personeel</a> 5.2</td>
+<td>Wel aandacht bij functiewijziging; de rol van het management bij stimuleren staat er niet.</td>
+</tr>
+<tr>
+<td>6.03.04</td>
+<td>Veilig mobiel werken in het bewustwordingsprogramma</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 6.04.01 Disciplinaire procedure; 6.05.01 Verantwoordelijkheden na beëindiging of wijziging van het dienstverband; 6.06.01 Vertrouwelijkheids- of geheimhoudingsovereenkomsten.</p>
+<h2 id="bedrijfsmiddelenbeheer">Bedrijfsmiddelenbeheer</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.09.01</td>
+<td>Inventaris van bedrijfsmiddelen, ook OT, cloud en op afstand</td>
+<td>deels</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.1</td>
+<td>Inventaris is geregeld; OT, cloud en bedrijfsmiddelen op afstand worden niet genoemd.</td>
+</tr>
+<tr>
+<td>5.10.02</td>
+<td>Gedragsregels voor extern personeel in het contract</td>
+<td>gedekt</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.1.4</td>
+<td></td>
+</tr>
+<tr>
+<td>5.10.03</td>
+<td>Medewerkers aantoonbaar gewezen op de gedragsregels</td>
+<td>gedekt</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.1.4</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.10.01 Aanvaard gebruik van informatie en andere gerelateerde bedrijfsmiddelen; 5.11.01 Retourneren van bedrijfsmiddelen; 7.06.01 Werken in beveiligde zones; 7.08.01 Plaatsen en beschermen van apparatuur; 7.09.01 Beveiligen van bedrijfsmiddelen buiten het terrein; 7.11.01 Nutsvoorzieningen; 7.13.01 Onderhoud van apparatuur.</p>
+<h2 id="informatie-classificatie">Informatie classificatie</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.12.01</td>
+<td>Classificatie via een vastgestelde methodiek en risicoafweging</td>
+<td>gedekt</td>
+<td><a href="dataclassificatie.html">dataclassificatie</a> principes en stappen; <a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.2.1</td>
+<td></td>
+</tr>
+<tr>
+<td>5.14.01</td>
+<td>Internetfacing en mail voldoen aan de verplichte standaarden</td>
+<td>deels</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.2.1.1</td>
+<td>De standaarden staan erin; sturing op internet.nl en het Cyberbeveiligingsbesluit niet.</td>
+</tr>
+<tr>
+<td>5.14.02</td>
+<td>OV-certificaten of PKIoverheid voor gevoelig webverkeer</td>
+<td>deels</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.3</td>
+<td>Certificaatsoorten beschreven, de OV-eis niet.</td>
+</tr>
+<tr>
+<td>5.14.03</td>
+<td>Elektronische handtekeningen volgens AdES Baseline Profiles</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.3.3</td>
+<td></td>
+</tr>
+<tr>
+<td>5.14.04</td>
+<td>Registratie van internetfacing systemen, IP-adressen en API's</td>
+<td>gedekt</td>
+<td><a href="webapplicaties.html">webapplicaties</a> eis 35; <a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.7</td>
+<td></td>
+</tr>
+<tr>
+<td>5.14.05</td>
+<td>Websites gemeld in het Register Internetdomeinen Overheid</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.13.01 Labelen van informatie.</p>
+<h2 id="logische-toegangsbeveiliging">Logische toegangsbeveiliging</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.15.01</td>
+<td>Toegang tot een vertrouwde zone alleen vanaf geauthentiseerde apparatuur</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>5.16.01</td>
+<td>Sluitende registratie- en afmeldprocedure</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> autorisatie en toegang; bijlage 3.1</td>
+<td></td>
+</tr>
+<tr>
+<td>5.16.02</td>
+<td>Groepsaccounts alleen gemotiveerd en afgestemd met de CISO</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten; <a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 2.1</td>
+<td></td>
+</tr>
+<tr>
+<td>5.17.01</td>
+<td>MFA voor de werkomgeving, internetvoorzieningen en beheeraccounts</td>
+<td>deels</td>
+<td><a href="webapplicaties.html">webapplicaties</a> eis 11, 45; <a href="wifi.html">wifi</a> thuis; <a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1</td>
+<td>MFA voor cloud, SaaS en leveranciers; niet als algemene eis voor het primaire aanloggen en beheeraccounts.</td>
+</tr>
+<tr>
+<td>5.17.02</td>
+<td>Wachtwoordmanager voor alle medewerkers</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten</td>
+<td></td>
+</tr>
+<tr>
+<td>5.17.03</td>
+<td>Wachtwoordeisen geautomatiseerd afgedwongen</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten</td>
+<td></td>
+</tr>
+<tr>
+<td>5.18.01</td>
+<td>Aanmaken en wijzigen van accounts met bijzondere rechten gemonitord</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>5.18.02</td>
+<td>Toegangsrechten minstens jaarlijks beoordeeld</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> autorisatie en toegang; bijlage 3.1</td>
+<td>Het beleid is strenger: meerdere keren per jaar, overzicht per kwartaal.</td>
+</tr>
+<tr>
+<td>8.02.01</td>
+<td>Speciale bevoegdheden elk kwartaal beoordeeld</td>
+<td>deels</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> bijlage 3.1</td>
+<td>Kwartaaloverzicht van alle autorisaties; speciale bevoegdheden niet apart.</td>
+</tr>
+<tr>
+<td>8.03.01</td>
+<td>Informatie met specifiek belang fysiek of logisch geïsoleerd</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.03.02</td>
+<td>Alleen toegang tot informatie die nodig is voor de taak</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten</td>
+<td></td>
+</tr>
+<tr>
+<td>8.05.01</td>
+<td>Netwerktoegang voor leveranciers na risicoafweging, met registratie</td>
+<td>gedekt</td>
+<td><a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1</td>
+<td></td>
+</tr>
+<tr>
+<td>8.18.01</td>
+<td>Systeemhulpmiddelen alleen voor bevoegd personeel</td>
+<td>deels</td>
+<td><a href="hardening.html">hardening</a> maatregelen</td>
+<td>Installeren alleen door geautoriseerd personeel; systeemhulpmiddelen niet benoemd.</td>
+</tr>
+<tr>
+<td>8.18.02</td>
+<td>Gebruik van systeemhulpmiddelen gelogd, een halfjaar bewaard</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 6.07.01 Werken op afstand; 8.04.01 Toegangsbeveiliging op broncode.</p>
+<h2 id="leveranciersbeheer-inkoop">Leveranciersbeheer - Inkoop</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.19.01</td>
+<td>IB-eisen in offerteaanvragen, op basis van risico</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> beveiligingseisen in inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.01</td>
+<td>Beveiligingseisen expliciet in het contract</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.02</td>
+<td>Algemene voorwaarden van de leverancier uitgesloten</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.03</td>
+<td>Leverancier toont opzet, bestaan en werking aan via onafhankelijke derden</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> toezien op naleving; tabel controle en toezicht</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.04</td>
+<td>Eigen onderzoek en recht op externe audit</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.05</td>
+<td>Leverancier transparant over kwetsbaarheden en incidenten</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.20.06</td>
+<td>Afhankelijkheid beoordeeld, exitstrategie in het contract</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.21.02</td>
+<td>Inzicht in de keten van toeleveranciers vóór het contract</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.21.05</td>
+<td>Toeleveringsketen onderdeel van de eigen risicoanalyse</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="leveranciersbeheer-contractbeheer">Leveranciersbeheer - contractbeheer</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.21.03</td>
+<td>Eisen gelden door in de keten van toeleveranciers</td>
+<td>gedekt</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td></td>
+</tr>
+<tr>
+<td>5.21.04</td>
+<td>Leverancier meldt veranderingen in de keten tijdens de looptijd</td>
+<td>deels</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden</td>
+<td>Transparantie over de keten bij aanvang; wijzigingen tijdens de looptijd niet.</td>
+</tr>
+<tr>
+<td>5.22.01</td>
+<td>Proceseigenaar beoordeelt de leverancier jaarlijks</td>
+<td>deels</td>
+<td><a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden; <a href="../../privacy/privacy-overeenkomsten/procedure-privacy-overeenkomsten.md">procedure privacy overeenkomsten</a> stap 5</td>
+<td>Jaarlijkse toets alleen voor verwerkers van persoonsgegevens.</td>
+</tr>
+<tr>
+<td>5.22.02</td>
+<td>Actuele registratie van leveranciers en contracten</td>
+<td>deels</td>
+<td><a href="../../privacy/privacy-overeenkomsten/procedure-privacy-overeenkomsten.md">procedure privacy overeenkomsten</a> stap 4</td>
+<td>Alleen voor privacyovereenkomsten.</td>
+</tr>
+<tr>
+<td>5.23.01</td>
+<td>Beleid voor cloud service providers, eens per drie jaar herzien</td>
+<td>deels</td>
+<td><a href="webapplicaties.html">webapplicaties</a> eis 40 t/m 57</td>
+<td>Eisen aan SaaS-leveranciers; geen beleid voor selectie, beheer en beëindiging van CSP's.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security-incident-management">Security Incident Management</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.24.01</td>
+<td>Toegankelijk meldloket voor IB-incidenten</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2</td>
+<td></td>
+</tr>
+<tr>
+<td>5.24.02</td>
+<td>Meldprocedure met taken van het meldloket</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2</td>
+<td>Via verwijzing naar de incident response procedure.</td>
+</tr>
+<tr>
+<td>5.24.03</td>
+<td>Proceseigenaar lost incidenten op</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2</td>
+<td></td>
+</tr>
+<tr>
+<td>5.24.04</td>
+<td>Maandelijkse rapportage aan de eindverantwoordelijke voor de bedrijfsvoering</td>
+<td>deels</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2</td>
+<td>Maandelijks, maar aan de CISO.</td>
+</tr>
+<tr>
+<td>5.24.05</td>
+<td>Verwijzing naar de procedure voor crisisbeheersing</td>
+<td>gedekt</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 5.4</td>
+<td></td>
+</tr>
+<tr>
+<td>5.24.07</td>
+<td>Melden bij het CSIRT en informeren binnen de wettelijke termijn</td>
+<td>deels</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2; <a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 2.1, 5.4</td>
+<td>Het vastgestelde beleid noemt nog het oude regime (72 uur, NCSC alleen voor het Rijk); het concept verwijst naar de meldprocedure Cbw.</td>
+</tr>
+<tr>
+<td>5.24.08</td>
+<td>CVD-procedure ingericht en gepubliceerd</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.3</td>
+<td></td>
+</tr>
+<tr>
+<td>5.26.02</td>
+<td>Afhandeling via incidentbeheer, melden bij toezichthouders</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.5; <a href="../../privacy/privacybeleid-en-handboek/privacybeleid.md">privacybeleid</a> datalekken</td>
+<td></td>
+</tr>
+<tr>
+<td>5.27.01</td>
+<td>Afhandeling via incidentbeheer, melden bij toezichthouders</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.5; <a href="../../privacy/privacybeleid-en-handboek/privacybeleid.md">privacybeleid</a> datalekken</td>
+<td></td>
+</tr>
+<tr>
+<td>5.27.02</td>
+<td>Incidenten geanalyseerd op oorzaken</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.6</td>
+<td></td>
+</tr>
+<tr>
+<td>5.28.01</td>
+<td>Incidentinformatie minimaal drie jaar bewaard</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.7</td>
+<td></td>
+</tr>
+<tr>
+<td>6.08.01</td>
+<td>Alle medewerkers kennen de meldprocedure aantoonbaar</td>
+<td>gedekt</td>
+<td><a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.25.02 Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen.</p>
+<h2 id="business-continuity-amp-disaster-recovery">Business Continuity &amp; Disaster Recovery</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.30.01</td>
+<td>Proceseigenaar test continuïteitsplannen jaarlijks</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td>Hoort bij BCM; zie de BCM-items van deze kennisbank.</td>
+</tr>
+<tr>
+<td>5.30.02</td>
+<td>Kritieke systemen geïdentificeerd, eens per drie jaar bijgewerkt</td>
+<td>deels</td>
+<td><a href="strategisch-ib-beleid.html">strategisch ib beleid</a> 3.3</td>
+<td>Kritieke processen en IT-middelen als grondslag van de scope, jaarlijks beoordeeld.</td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.29.01 Informatiebeveiliging tijdens een verstoring; 8.14.01 Redundantie van informatieverwerkende faciliteiten.</p>
+<h2 id="it-compliance">IT-Compliance</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.33.01</td>
+<td>Bewaartermijnen per informatiesysteem vastgelegd en ingeregeld</td>
+<td>gedekt</td>
+<td><a href="../../privacy/privacybeleid-en-handboek/privacybeleid.md">privacybeleid</a> uitgangspunten; <a href="../../privacy/privacybeleid-en-handboek/privacyhandboek.md">privacyhandboek</a> 7</td>
+<td></td>
+</tr>
+<tr>
+<td>7.07.01</td>
+<td>Vergrendeling bij het verwijderen van een chipcardtoken</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.31.01 Wettelijke, statutaire, regelgevende en contractuele eisen; 5.32.01 Intellectuele-eigendomsrechten; 5.34.01 Privacy en bescherming van persoonsgegevens; 8.06.01 Capaciteitsbeheer; 8.11.01 Maskeren van gegevens; 8.12.01 Voorkomen van gegevenslekken (data leakage prevention); 8.17.01 Kloksynchronisatie; 8.34.01 Bescherming van informatiesystemen tijdens audits.</p>
+<h2 id="fysieke-toegang-amp-beveiliging">Fysieke toegang &amp; beveiliging</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.01.02</td>
+<td>Kritieke informatie nooit via één beveiligde zone bereikbaar</td>
+<td>gedekt</td>
+<td><a href="fysieke-toegang-en-beveiliging.html">fysieke toegang en beveiliging</a> 2.4</td>
+<td></td>
+</tr>
+<tr>
+<td>7.02.01</td>
+<td>Waarschuwingen bij concrete beveiligingsrisico's gedeeld binnen de overheid</td>
+<td>gedekt</td>
+<td><a href="fysieke-toegang-en-beveiliging.html">fysieke toegang en beveiliging</a> 3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 7.03.01 Beveiligen van kantoren, ruimten en faciliteiten; 7.04.01 Monitoren van de fysieke beveiliging; 7.05.01 Beschermen tegen fysieke en omgevingsdreigingen; 7.12.01 Beveiligen van bekabeling.</p>
+<h2 id="afvoer-en-hergebruik-gegevensdragers">Afvoer en hergebruik gegevensdragers</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.10.01</td>
+<td>Herbruikbare media onherstelbaar gewist voor ze de organisatie verlaten</td>
+<td>gedekt</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.3.2</td>
+<td></td>
+</tr>
+<tr>
+<td>7.10.02</td>
+<td>Controle en verslag van het wissen, NBV-producten waar mogelijk</td>
+<td>deels</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.3.2</td>
+<td>Registratie van verwijderverzoeken; verslag per medium en NBV-producten niet.</td>
+</tr>
+<tr>
+<td>7.10.03</td>
+<td>Betrouwbaarheidseisen aan koeriers</td>
+<td>gedekt</td>
+<td><a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.3.3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 7.14.01 Veilig verwijderen of hergebruiken van apparatuur; 8.10.01 Wissen van informatie.</p>
+<h2 id="mobile-device-management">Mobile Device Management</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.01.01</td>
+<td>Zero footprint op mobiele apparatuur, anders versleuteling</td>
+<td>gedekt</td>
+<td><a href="wifi.html">wifi</a> beleid</td>
+<td></td>
+</tr>
+<tr>
+<td>8.01.02</td>
+<td>MDM of MAM, patchen, gebruikersovereenkomst mobiel werken</td>
+<td>deels</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.2.1.2; <a href="beheer-van-bedrijfsmiddelen.html">beheer van bedrijfsmiddelen</a> 2.3.2</td>
+<td>Instellingen afdwingen en wissen op afstand; geen MDM-eis en geen gebruikersovereenkomst.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vulnerability-amp-patchmanagement">Vulnerability &amp; patchmanagement</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.07.01</td>
+<td>Downloaden beheerst, antimalware beoordeelt alles</td>
+<td>deels</td>
+<td><a href="hardening.html">hardening</a> maatregelen</td>
+<td>Gegevensuitwisseling gecontroleerd op malware; downloadbeleid niet.</td>
+</tr>
+<tr>
+<td>8.07.02</td>
+<td>Voorlichting over surfgedrag en links</td>
+<td>gedekt</td>
+<td><a href="veilig-personeel.html">veilig personeel</a> 4</td>
+<td></td>
+</tr>
+<tr>
+<td>8.07.03</td>
+<td>Antimalware actueel</td>
+<td>deels</td>
+<td><a href="hardening.html">hardening</a> maatregelen</td>
+<td>Antivirus geactiveerd; actualiteit niet.</td>
+</tr>
+<tr>
+<td>8.07.04</td>
+<td>Malwarescan op alle omgevingen en ontvangen bestanden</td>
+<td>deels</td>
+<td><a href="hardening.html">hardening</a> maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>8.08.01</td>
+<td>Bij hoog risico mitigeren binnen een week</td>
+<td>gedekt</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.4.1</td>
+<td></td>
+</tr>
+<tr>
+<td>8.08.02</td>
+<td>Mitigatie op basis van een expliciete risicoafweging</td>
+<td>gedekt</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.4.1</td>
+<td></td>
+</tr>
+<tr>
+<td>8.08.03</td>
+<td>Tussentijds mitigeren als patchen niet binnen een week lukt</td>
+<td>deels</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.4</td>
+<td>Alternatieve maatregelen genoemd, de termijn niet.</td>
+</tr>
+<tr>
+<td>8.08.04</td>
+<td>Jaarlijkse technische controle, internetfacing continu</td>
+<td>gedekt</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.1.2</td>
+<td></td>
+</tr>
+<tr>
+<td>8.08.05</td>
+<td>Pentest bij elke release van internetfacing systemen</td>
+<td>gedekt</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.1.2; <a href="webapplicaties.html">webapplicaties</a> eis 38</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 8.09.01 Configuratiebeheer.</p>
+<h2 id="back-up-amp-recovery">Back-up &amp; Recovery</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.13.01</td>
+<td>Back-upbeleid met aandacht voor ransomware</td>
+<td>gedekt</td>
+<td><a href="back-up-en-recovery.html">back up en recovery</a> back-up strategie, NIS2</td>
+<td></td>
+</tr>
+<tr>
+<td>8.13.02</td>
+<td>Maximaal dataverlies en hersteltijd op basis van risico</td>
+<td>gedekt</td>
+<td><a href="back-up-en-recovery.html">back up en recovery</a> risico-afweging</td>
+<td></td>
+</tr>
+<tr>
+<td>8.13.03</td>
+<td>Back-up op een andere locatie</td>
+<td>gedekt</td>
+<td><a href="back-up-en-recovery.html">back up en recovery</a> algemene uitgangspunten (3-2-1)</td>
+<td></td>
+</tr>
+<tr>
+<td>8.13.04</td>
+<td>Herstel minstens jaarlijks getest</td>
+<td>gedekt</td>
+<td><a href="back-up-en-recovery.html">back up en recovery</a> controleren en testen</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logging-amp-monitoring">Logging &amp; monitoring</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.15.01</td>
+<td>Minimale inhoud van een logregel</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.15.02</td>
+<td>Geen gevoelige gegevens in logregels</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.15.03</td>
+<td>Overzicht van logbestanden</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.15.04</td>
+<td>Bewaartermijn van logs en SIEM op basis van risico</td>
+<td>deels</td>
+<td><a href="dataclassificatie.html">dataclassificatie</a> 4.2.2; <a href="beveiligingsincidenten.html">beveiligingsincidenten</a> 2.7</td>
+<td>Bewaartermijnen per classificatieniveau; SIEM niet.</td>
+</tr>
+<tr>
+<td>8.15.05</td>
+<td>Wijzigen van loggegevens melden als incident</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.15.06</td>
+<td>Periodieke toets op ongewijzigde logbestanden</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.16.01</td>
+<td>Nieuwe dreigingen delen met het CERT</td>
+<td>gedekt</td>
+<td><a href="kwetsbaarheidsmanagement.html">kwetsbaarheidsmanagement</a> 2.1.4; <a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>8.16.02</td>
+<td>Regels voor rapportage van SIEM- of SOC-meldingen aan management</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>8.16.03</td>
+<td>Detectie- en response-oplossing</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>8.16.04</td>
+<td>Logging en monitoring op actieve netwerkcomponenten</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="netwerkbeveiliging">Netwerkbeveiliging</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.20.01</td>
+<td>Netwerkcomponenten op het niveau van hun netwerk</td>
+<td>deels</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.5</td>
+<td></td>
+</tr>
+<tr>
+<td>8.20.02</td>
+<td>Beheerinterfaces gescheiden van het gebruikersnetwerk</td>
+<td>gedekt</td>
+<td><a href="logische-toegangsbeveiliging.html">logische toegangsbeveiliging</a> uitgangspunten</td>
+<td></td>
+</tr>
+<tr>
+<td>8.21.01</td>
+<td>Aanvallen op beschikbaarheid in koppelpunten signaleren en mitigeren</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.4</td>
+<td></td>
+</tr>
+<tr>
+<td>8.21.02</td>
+<td>Dataverkeer bewaakt met detectievoorzieningen</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>8.21.03</td>
+<td>Nieuwe dreigingen gedeeld binnen de overheid</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>8.21.04</td>
+<td>Versleuteling over wifi en bedrading buiten gecontroleerd gebied</td>
+<td>deels</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.4; <a href="wifi.html">wifi</a> beleid</td>
+<td>Wifi wel; bedrade verbindingen buiten het gecontroleerde gebied niet.</td>
+</tr>
+<tr>
+<td>8.22.01</td>
+<td>Elk netwerksegment heeft een beveiligingsniveau</td>
+<td>gedekt</td>
+<td><a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 8.23.01 Toepassen van webfilters.</p>
+<h2 id="cryptografie">Cryptografie</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.24.01</td>
+<td>Cryptografiebeleid met de verplichte onderwerpen</td>
+<td>gedekt</td>
+<td><a href="cryptografie.html">cryptografie</a> 1 t/m 2.4</td>
+<td></td>
+</tr>
+<tr>
+<td>8.24.02</td>
+<td>Cryptografische maatregelen in de inventaris van bedrijfsmiddelen</td>
+<td>deels</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.3.2</td>
+<td>Eigen registratiesysteem voor certificaten, niet in de inventaris van bedrijfsmiddelen.</td>
+</tr>
+<tr>
+<td>8.24.04</td>
+<td>Sterkte volgens NCSC en NBV</td>
+<td>deels</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.2.1</td>
+<td>NCSC wel, NBV niet.</td>
+</tr>
+<tr>
+<td>8.24.05</td>
+<td>Reservecertificaten bij een alternatieve leverancier</td>
+<td>gedekt</td>
+<td><a href="cryptografie.html">cryptografie</a> 2.3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="secure-software-development">Secure Software Development</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.27.01</td>
+<td>Security en privacy by design als vastgestelde architectuurprincipes</td>
+<td>deels</td>
+<td><a href="webapplicaties.html">webapplicaties</a> eis 9 t/m 37; <a href="beveiliging-leveranciers-en-relaties.html">beveiliging leveranciers en relaties</a> tabel inkoopvoorwaarden; <a href="../../privacy/privacybeleid-en-handboek/privacy-by-design.md">privacy by design</a> 1, 2</td>
+<td>Wel als uitgangspunt; niet als vastgestelde, gedocumenteerde principes voor alle ontwikkeling.</td>
+</tr>
+<tr>
+<td>8.30.01</td>
+<td>Eisen gelden ook voor uitbestede ontwikkeling</td>
+<td>gedekt</td>
+<td><a href="webapplicaties.html">webapplicaties</a> inleiding, SaaS-leveranciers</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 8.25.01 Beveiligen tijdens de ontwikkelcyclus; 8.26.01 Toepassingsbeveiligingseisen; 8.28.01 Veilig coderen.</p>
+<h2 id="wijzigingsbeheer">Wijzigingsbeheer</h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Waar het over gaat</th>
+<th>Oordeel</th>
+<th>Vindplaats</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.19.01</td>
+<td>Installatie van niet-geautoriseerde software beheerst</td>
+<td>gedekt</td>
+<td><a href="hardening.html">hardening</a> maatregelen</td>
+<td></td>
+</tr>
+<tr>
+<td>8.29.01</td>
+<td>Gestructureerde acceptatietesten met verslag</td>
+<td>deels</td>
+<td><a href="testdata.html">testdata</a> formulier</td>
+<td>Testtypes genoemd; geen eis aan methodiek en verslag.</td>
+</tr>
+<tr>
+<td>8.31.01</td>
+<td>Niet testen in productie</td>
+<td>deels</td>
+<td><a href="testdata.html">testdata</a> uitzondering 3; <a href="webapplicaties.html">webapplicaties</a> eis 46</td>
+<td>Scheiding OTA en strenge eisen aan productiedata; het verbod zelf staat er niet zo.</td>
+</tr>
+<tr>
+<td>8.31.02</td>
+<td>Significante wijzigingen getest vóór productie</td>
+<td>deels</td>
+<td><a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1</td>
+<td>Alleen voor wijzigingen door leveranciers.</td>
+</tr>
+<tr>
+<td>8.32.01</td>
+<td>Wijzigingsbeheer met administratie, risicoafweging, rollback en goedkeuring</td>
+<td>deels</td>
+<td><a href="functionele-accounts-en-postbussen.html">functionele accounts en postbussen</a> 3.1; <a href="netwerkbeveiliging.html">netwerkbeveiliging</a> 2.1.8</td>
+<td>Voor leverancierswijzigingen en het netwerk; geen algemeen wijzigingsbeleid.</td>
+</tr>
+<tr>
+<td>8.32.02</td>
+<td>Wijzigingsbeheer volgens een gangbaar beheerraamwerk</td>
+<td>niet gedekt</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alleen ISO 27002: 5.37.01 Gedocumenteerde bedieningsprocedures; 8.33.01 Testgegevens.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

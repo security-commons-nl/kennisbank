@@ -866,5 +866,44 @@ class Voorpagina(unittest.TestCase):
             self.assertTrue(0 < len(tekst) <= 72, tekst)
             self.assertFalse(tekst.endswith(("-", ",", ";")), tekst)
 
+class LeesversiePerStuk(Basis):
+    """Een los stuk naast de README krijgt een eigen leesversie, gemaakt door build.py (B3)."""
+
+    def test_links_naar_een_stuk_wijzen_naar_de_leesversie(self):
+        map_ = self.item("x")
+        (map_ / "procedure.md").write_text("# Procedure\n\nTekst.", encoding="utf-8")
+        uit = build.koppel_stukken('<a href="procedure.md#stap-2">p</a> <a href="README.md">r</a>', map_)
+        self.assertIn('href="procedure.html#stap-2"', uit)
+        self.assertIn('href="./"', uit)
+
+    def test_stukpagina_heeft_kruimelpad_weg_terug_en_bronvoet(self):
+        map_ = self.item("x")
+        (map_ / "brief.md").write_text("---\ntitel: Een brief\n---\n\nBeste lezer,\n", encoding="utf-8")
+        pagina = build.stukpagina(map_ / "brief.md", "security", {"titel": "Het item"}, {"titel": "Security"})
+        self.assertIn("<h1>Een brief</h1>", pagina)          # titel uit de frontmatter als er geen h1 is
+        self.assertIn('href="brief.md">Markdown-bron', pagina)
+        self.assertIn('<a href="./">Het item</a>', pagina)
+        self.assertIn(build.KRUIMEL_START, pagina)
+        self.assertIn(build.BRON_START, pagina)
+        self.assertNotIn("titel: Een brief", pagina)       # de frontmatter staat niet op de pagina
+
+    def test_leesversie_telt_als_link_naar_het_stuk(self):
+        map_ = self.item("[Procedure](procedure.md)",
+                         '<html><body><a href="procedure.html">Procedure</a></body></html>')
+        (map_ / "procedure.md").write_text("# Procedure\n", encoding="utf-8")
+        (map_ / "procedure.html").write_text('<a href="procedure.md">bron</a>', encoding="utf-8")
+        build.controleer_bestandslinks(map_, map_ / "README.md")
+        self.assertEqual(self.meldingen, "")
+
+    def test_ontbrekende_leesversie_is_een_fout_in_check(self):
+        map_ = self.item("x")
+        (map_ / "procedure.md").write_text("# Procedure\n", encoding="utf-8")
+        items = {"security": [{"titel": "Het item", "_map": map_}]}
+        gewijzigd = build.bouw_stukken(items, {"security": {"titel": "Security"}}, alleen_check=True)
+        self.assertEqual(gewijzigd, [])
+        self.assertIn("loopt achter op de markdown", self.meldingen)
+        self.assertFalse((map_ / "procedure.html").exists())
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

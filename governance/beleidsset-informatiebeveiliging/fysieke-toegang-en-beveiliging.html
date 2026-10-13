@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid fysieke toegang en beveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid fysieke toegang en beveiliging</span></nav><!-- /kruimelpad -->
+<h1>Beleid fysieke toegang en beveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="fysieke-toegang-en-beveiliging.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#afkortingen">Afkortingen</a></li><li><a href="#relevante-beleidsdocumenten">Relevante beleidsdocumenten</a></li><li><a href="#1-inleiding">1 Inleiding</a></li><li><a href="#2-beschermingsniveaus">2 Beschermingsniveaus</a></li><li><a href="#3-waarschuwingen-bij-concrete-beveiligingsrisico-s">3 Waarschuwingen bij concrete beveiligingsrisico's</a></li><li><a href="#bijlage-a-normen">Bijlage A Normen</a></li><li><a href="#bijlage-b-controleraamwerk">Bijlage B Controleraamwerk</a></li></ol></nav><!-- /inhoudsopgave -->
+<blockquote>
+<p><strong>Concept, niet vastgesteld.</strong> Dit stuk staat hier als voorbeeld van een materie-specifiek beleid dat
+al op de BIO 2.0-indeling is gebouwd, met een bijlage die elke eis aan een maatregel en een control koppelt.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Materie-specifiek beleid onder het strategisch informatiebeveiligingsbeleid</td>
+</tr>
+<tr>
+<td>BIO 2.0-domein</td>
+<td>Fysieke toegang &amp; beveiliging</td>
+</tr>
+<tr>
+<td>Versie</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept</td>
+</tr>
+<tr>
+<td>Lijneigenaar</td>
+<td>Afdelingsmanager Facilitaire Zaken; voor paragraaf 3 de CIO / manager IT-ontwikkeling</td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de PDCA-cyclus van het ISMS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="afkortingen">Afkortingen</h2>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>BIV</td>
+<td>Beschikbaarheid, integriteit en vertrouwelijkheid; de drie aspecten waarop informatie wordt geclassificeerd</td>
+</tr>
+<tr>
+<td>CIO</td>
+<td>Chief Information Officer</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>FTB</td>
+<td>Fysieke toegang en beveiliging; de thema-code van dit beleidsdocument en het voorvoegsel van de bijbehorende controls</td>
+</tr>
+<tr>
+<td>IB&amp;P</td>
+<td>Informatiebeveiliging en Privacy, het team dat de tweede lijn invult</td>
+</tr>
+<tr>
+<td>ICF</td>
+<td>In Control Framework, het controleraamwerk voor informatiebeveiliging</td>
+</tr>
+<tr>
+<td>ICT</td>
+<td>Informatie- en communicatietechnologie</td>
+</tr>
+<tr>
+<td>ISMS</td>
+<td>Information Security Management System, het managementsysteem voor informatiebeveiliging</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>International Organization for Standardization; ook: Information Security Officer</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>Informatietechnologie</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Informatievoorziening</td>
+</tr>
+<tr>
+<td>PDCA</td>
+<td>Plan, do, check, act</td>
+</tr>
+<tr>
+<td>VvT</td>
+<td>Verklaring van toepasselijkheid: welke BIO2-maatregelen voor de organisatie gelden, met eigenaar en status</td>
+</tr>
+<tr>
+<td>Wpbr</td>
+<td>Wet particuliere beveiligingsorganisaties en recherchebureaus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relevante-beleidsdocumenten">Relevante beleidsdocumenten</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Verhouding tot dit beleid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strategisch informatiebeveiligingsbeleid</td>
+<td>Bovenliggend kader; dit document werkt het uit voor fysieke toegang en beveiliging. Het hoofdstuk over formele contacten met instanties bepaalt langs welke lijnen paragraaf 3 werkt.</td>
+</tr>
+<tr>
+<td>Verklaring van toepasselijkheid BIO 2.0 versie 1.3</td>
+<td>Bepaalt welke maatregelen in dit document zijn belegd, met eigenaar en status (bijlage A).</td>
+</tr>
+<tr>
+<td>Classificatieschema en de mapping van het classificatieschema naar fysieke zones</td>
+<td>Grondslag voor de indeling in beschermingsniveaus (hoofdstuk 2).</td>
+</tr>
+<tr>
+<td>Zoneringsplan per locatie</td>
+<td>Wijst per ruimte het beschermingsniveau en de eigenaar van de zone aan.</td>
+</tr>
+<tr>
+<td>Controleraamwerk FTB (controls FTB-001 en verder)</td>
+<td>De controles waarmee de naleving van dit beleid wordt aangetoond (bijlage B).</td>
+</tr>
+<tr>
+<td>Beleid Bedrijfsmiddelenbeheer</td>
+<td>Aangrenzend: werken in beveiligde zones, plaatsen en beschermen van apparatuur, nutsvoorzieningen en onderhoud (maatregelen 7.06.01, 7.08.01, 7.09.01, 7.11.01, 7.13.01).</td>
+</tr>
+<tr>
+<td>Beleid IT-Compliance</td>
+<td>Aangrenzend: clear desk en clear screen (maatregel 7.07.01).</td>
+</tr>
+<tr>
+<td>Beleid Afvoer en hergebruik gegevensdragers</td>
+<td>Aangrenzend: opslagmedia en het veilig verwijderen of hergebruiken van apparatuur (maatregelen 7.10.01 tot en met 7.14.01).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-inleiding">1 Inleiding</h2>
+<p>Dit materie-specifieke beleidsdocument beschrijft de uitgangspunten en eisen die de gemeente hanteert voor fysieke toegang en beveiliging, vanuit de context van informatiebeveiliging.
+Deze uitgangspunten en eisen zijn de vertaalslag van het Strategisch Informatiebeveiligingsbeleid
+naar dit deelgebied en maken daarmee deel uit van het ISMS van de gemeente.</p>
+<p>Het waarborgen van de belangrijkste uitgangspunten en eisen uit dit document maakt onderdeel uit
+van het controleraamwerk voor informatiebeveiliging (ICF). Dit beleid en de naleving ervan worden
+jaarlijks getoetst in de PDCA-cyclus van het ISMS. Daarbij wordt jaarlijks vastgesteld of de opzet
+van het controleraamwerk, in combinatie met de materie-specifieke beleidsdocumenten, leidt tot het
+benodigde niveau van informatiebeveiliging.</p>
+<h3>1.1 Doel en doelgroep</h3>
+<p>Dit beleid geeft vanuit het perspectief van informatiebeveiliging invulling aan de minimale
+vereisten voor fysieke toegang en beveiliging. Daarmee wordt het mogelijk om fysieke toegang en
+beveiliging op eenduidige wijze in te richten en de bijbehorende risico's te verlagen tot een
+acceptabel niveau. Het beleid richt zich op de volgende deelgebieden, die overeenkomen met de
+ISO 27001-controls uit de VvT:</p>
+<ol>
+<li>Fysieke beveiligingszones (7.01)</li>
+<li>Fysieke toegangsbeveiliging (7.02)</li>
+<li>Beveiligen van kantoren, ruimten en faciliteiten (7.03)</li>
+<li>Monitoren van de fysieke beveiliging (7.04)</li>
+<li>Beschermen tegen fysieke en omgevingsdreigingen (7.05)</li>
+<li>Beveiligen van bekabeling (7.12)</li>
+</ol>
+<p>Dit beleidsdocument is bedoeld voor de afdelingen die eindverantwoordelijkheid dragen voor de
+fysieke beveiliging in en van (technische) ruimtes waarin gegevens worden opgeslagen of verwerkt,
+in de eerste plaats de afdeling Facilitaire Zaken, en voor de eigenaren van zones die in het
+zoneringsplan zijn aangewezen.</p>
+<h3>1.2 Reikwijdte</h3>
+<p>De gemeente onderschrijft het belang van adequate fysieke beveiliging, omdat de veiligheid
+van informatie(systemen) en van fysieke vormen van informatie en documenten in hoge mate wordt
+bepaald door het fysieke beschermingsniveau van de kantooromgeving en de technische ICT-ruimtes.</p>
+<p>Om fysieke toegang en beveiliging risicogebaseerd vorm te geven worden de ruimtes binnen de
+ambtelijke locaties gecategoriseerd in beveiligingszones. Deze zonering maakt het mogelijk om in
+beschermingsniveau te differentiëren op basis van het risico op onbevoegde toegang en de impact
+die deze kan hebben op de beschikbaarheid, integriteit en vertrouwelijkheid (BIV) van gegevens.</p>
+<p>De reikwijdte van dit beleidsdocument is afgestemd op de beveiliging van informatie en
+informatieverwerkende faciliteiten ten behoeve van de geïdentificeerde kritische processen en
+systemen van de gemeente. Het toepassingsgebied is enerzijds organisatorisch en anderzijds
+fysiek vastgesteld op basis van de volgende criteria.</p>
+<h4>1.2.1 Organisatorisch toepassingsgebied</h4>
+<p>Dit beleid is van toepassing op:</p>
+<ol>
+<li>Alle medewerkers die werkzaamheden verrichten binnen gemeentelijke locaties: interne
+   medewerkers, externe inhuur, stagiairs, vrijwilligers en overige functionarissen.</li>
+<li>Alle bezoekers die toegang krijgen tot de ambtelijke locaties: inwoners, leveranciers,
+   contractpartijen en functionarissen van samenwerkingsverbanden of verbonden partijen.</li>
+</ol>
+<h4>1.2.2 Fysiek toepassingsgebied</h4>
+<p>Het beleid is van toepassing op de ambtelijke locaties en buitenruimtes van de gemeente
+die zijn ingericht en worden gebruikt voor de uitvoering van kritische processen. De nadruk ligt
+op de beveiligingszones die vanwege de opslag en (geautomatiseerde) verwerking van gegevens en
+gevoelige documenten (paspoorten, rijbewijzen en vergelijkbare documenten) een verhoogd
+risicoprofiel hebben.</p>
+<p>Buiten de reikwijdte vallen de eisen aan het werken in beveiligde zones, het plaatsen en
+onderhouden van apparatuur en de nutsvoorzieningen (Beleid Bedrijfsmiddelenbeheer), clear desk
+en clear screen (Beleid IT-Compliance) en de omgang met opslagmedia (Beleid Afvoer en hergebruik
+gegevensdragers). Waar dit document een eis stelt aan een technische ruimte, geldt die eis naast
+de eisen uit die documenten.</p>
+<h2 id="2-beschermingsniveaus">2 Beschermingsniveaus</h2>
+<p>Om standaardisering van fysieke beveiliging mogelijk te maken bevat dit document de minimale
+vereisten per beschermingsniveau. De beschermingsniveaus zijn incrementeel opgebouwd op basis van
+het classificatieschema van de gemeente: 
+| Niveau | Classificatie | Voorbeelden van zones |
+|---|---|---|
+| 0 | Verwaarloosbaar | Buitenruimte, ontvangsthal, gedeelde ruimte in een multi-tenantlocatie |
+| 1 | Gering | Kantoor- en werkruimtes, opslag van niet-kritieke ICT-apparatuur |
+| 2 | Gemiddeld | Knooppunten netwerk en stroom, noodstroominstallatie, opslag kritieke apparatuur, statisch archief |
+| 3 | Kritiek / zeer ernstig | Datacenter, opslag van identiteitsbewijzen |</p>
+<p>De classificatie van een zone vormt de grondslag voor de inrichting van de vereiste
+toegangsbeveiliging. Om het benodigde beschermingsniveau actueel te houden evalueert de afdeling
+Facilitaire Zaken elke twaalf maanden het zoneringsplan en toetst daarbij of de classificaties
+juist zijn vastgesteld. In het zoneringsplan wordt ook de primaire gebruiker van de zone
+geregistreerd als eigenaar van de zone. Deze eigenaar is verantwoordelijk voor:</p>
+<ol>
+<li>De periodieke controle op de juistheid van de toegekende toegangsmiddelen (persoonlijke pas).</li>
+<li>Het jaarlijks evalueren van het gekozen beschermingsniveau voor de ruimtes in het zoneringsplan.</li>
+</ol>
+<p>Uitgangspunt is dat naarmate het risicoprofiel toeneemt, het benodigde niveau van fysieke
+beveiliging eveneens toeneemt. Voor een zone met de classificatie kritiek / zeer ernstig geldt
+daarom de volledige set eisen van dat niveau, aangevuld met de eisen van de niveaus
+verwaarloosbaar, gering en gemiddeld.</p>
+<h3>2.1 Eisen classificatie verwaarloosbaar (niveau 0)</h3>
+<p>Het beschermingsniveau voor zones met de classificatie verwaarloosbaar is bedoeld voor onder
+andere de volgende ruimtes en gebieden:</p>
+<ol>
+<li>Buitenruimte van een gemeentelijke locatie.</li>
+<li>Ontvangsthal en buitenlocatie van een ambtelijke locatie.</li>
+<li>Gedeelde ruimte binnen een multi-tenantlocatie.</li>
+<li>Nader te bepalen op basis van het zoneringsplan.</li>
+</ol>
+<p>Voor deze zones heeft onbevoegde toegang weinig tot geen gevolgen voor de veiligheid van
+informatie en de beschikbaarheid van informatiesystemen. Dat sluit niet uit dat onbevoegde
+toegang grote gevolgen kan hebben voor kritieke processen waarbij informatieveiligheid geen of
+een beperkte rol speelt. Voor deze zones gelden de volgende eisen:</p>
+<ol>
+<li>Vrije toegang voor bezoekers en leveranciers tot het afgesloten terrein van de ambtelijke
+   locaties is alleen mogelijk tijdens openingstijden.</li>
+<li>Ambtelijke locaties beschikken tijdens openingstijden over een bemande receptie voor de
+   controle van de fysieke toegang en de waarneming van verdacht gedrag.</li>
+<li>Noodprocedures worden op gepaste wijze gecommuniceerd op terreinen en binnen ambtelijke locaties.</li>
+<li>Ambtelijke locaties beschikken over solide buitengrenzen zonder zwakke plekken die inbreken
+   makkelijk maken: daken, buitenmuren, plafonds en vloeren zijn gedegen geconstrueerd.</li>
+<li>Een eventuele laad- en losplaats biedt geen mogelijkheid tot directe onbevoegde toegang tot
+   zones met beschermingsniveau 1 of hoger.</li>
+<li>Buiten openingstijden worden locaties bewaakt door een bewakingsdienst. Voor de inhuur van
+   een bewakingsdienst is vooraf geverifieerd dat deze voldoet aan de wettelijke eisen uit de Wpbr.</li>
+<li>Voedingskabels en kabels voor het versturen van gegevens of het ondersteunen van
+   informatiediensten zijn beschermd tegen onderschepping, interferentie en beschadiging
+   (maatregel 7.12.01).</li>
+<li>Buiten openingstijden zijn ambtelijke locaties afgesloten en voorzien van een werkend alarm,
+   met een passende mix van de volgende functionaliteiten:<ul>
+<li>contactmelders op ramen, deuren of andere objecten;</li>
+<li>bewegingsmelders (infraroodtechniek voor bewaking op beweging);</li>
+<li>geluidsmelders (beoordeling van geluid op inbraakpogingen);</li>
+<li>een gesloten videobewakingssysteem, in lijn met de privacywetgeving en de bewaartermijnen.</li>
+</ul>
+</li>
+<li>Het bewakingssysteem is aangesloten op een alarmcentrale.</li>
+</ol>
+<h3>2.2 Eisen classificatie gering (niveau 1)</h3>
+<p>Het beschermingsniveau voor zones met de classificatie gering is bedoeld voor onder andere de
+volgende ruimtes en gebieden:</p>
+<ol>
+<li>Kantoorruimtes van ambtelijke locaties.</li>
+<li>Werkruimtes van ambtelijke locaties.</li>
+<li>Opslagruimtes voor niet-kritieke ICT-apparatuur.</li>
+<li>Nader te bepalen op basis van het zoneringsplan.</li>
+</ol>
+<p>Voor zones met de classificatie gering heeft onbevoegde toegang beperkte gevolgen voor de
+beveiliging van fysieke informatie of documenten en voor de beschikbaarheid van
+informatiesystemen. Deze zones bevatten geen knooppunten of centrale functies voor de
+geautomatiseerde verwerking van gegevens en geen opslag van fysieke informatiedragers of
+documenten.</p>
+<p>Binnen deze zones wordt wel gebruikgemaakt van informatiesystemen en fysieke documenten.
+Onbevoegde toegang leidt hooguit tot toegang tot deze zichtbare verwerking van informatie. Het is
+in deze zones niet mogelijk fysieke toegang te krijgen tot gegevensdragers of servers waarop
+grootschalig gegevens worden verwerkt of opgeslagen.</p>
+<p>In aanvulling op de eisen voor de classificatie verwaarloosbaar gelden de volgende eisen:</p>
+<ol>
+<li>Medewerkers en leveranciers krijgen alleen toegang op basis van een op naam geregistreerd
+   toegangsmiddel (persoonlijke pas).</li>
+<li>Niet-toegekende toegangsmiddelen worden bewaard op een bemande receptie of achter slot en grendel.</li>
+<li>Bezoekers en leveranciers krijgen alleen onder begeleiding toegang, na nadrukkelijke
+   toestemming van een interne medewerker.</li>
+</ol>
+<h3>2.3 Eisen classificatie gemiddeld (niveau 2)</h3>
+<p>Het beschermingsniveau voor zones met de classificatie gemiddeld is bedoeld voor onder andere de
+volgende ruimtes en gebieden:</p>
+<ol>
+<li>Knooppunten voor netwerkverbindingen.</li>
+<li>Knooppunten voor de stroomvoorziening.</li>
+<li>De installatie voor de noodstroomvoorziening.</li>
+<li>Opslag van kritieke of kostbare apparatuur.</li>
+<li>Statisch archief.</li>
+<li>Nader te bepalen op basis van het zoneringsplan.</li>
+</ol>
+<p>Onbevoegde toegang tot knooppunten voor netwerkverbindingen en stroomvoorziening kan leiden tot
+uitval van de centrale ICT-diensten. Onbevoegde toegang tot het archief kan gevolgen hebben voor
+de integriteit en vertrouwelijkheid van de informatie daarin. In aanvulling op de eisen voor de
+classificatie gering gelden de volgende eisen:</p>
+<ol>
+<li>Voor toegang tot deze beveiligde zones is doelbinding vereist: medewerkers en leveranciers
+   krijgen toegang op grond van de uit te voeren werkzaamheden.</li>
+<li>Deze zones zijn voor onbevoegden afgesloten met een elektronisch toegangssysteem met logging.</li>
+<li>Interne medewerkers krijgen alleen toegang na goedkeuring van de eigenaar van de zone, op
+   basis van een op naam geregistreerd toegangsmiddel (persoonlijke pas).</li>
+<li>Bezoekers krijgen alleen onder toezicht van een bevoegde interne medewerker toegang, voor de
+   uitvoering van noodzakelijke werkzaamheden.</li>
+<li>Halfjaarlijks stelt de eigenaar van de zone vast dat de toegekende toegangsmiddelen alleen in
+   gebruik zijn bij bevoegde medewerkers, op basis van hun organisatiefunctie en doelbinding.</li>
+<li>Zonder expliciete toestemming van de eigenaar van de zone is het niet toegestaan in beveiligde
+   zones opnames te maken (foto, video of audio).</li>
+<li>Onveilige of brandbare materialen worden op zodanige afstand van deze zones opgeslagen dat ze
+   geen invloed hebben op de beveiligde ruimte.</li>
+</ol>
+<h3>2.4 Eisen classificatie kritiek / zeer ernstig (niveau 3)</h3>
+<p>Het beschermingsniveau voor zones met de classificatie kritiek / zeer ernstig is bedoeld voor
+onder andere de volgende ruimtes en gebieden:</p>
+<ol>
+<li>Datacenter.</li>
+<li>Opslag van identiteitsbewijzen.</li>
+<li>Nader te bepalen op basis van het zoneringsplan.</li>
+</ol>
+<p>Onbevoegde toegang tot deze zones kan grote gevolgen hebben voor de beveiliging van informatie.
+Bij onbevoegde toegang tot het datacenter kunnen controlemechanismen worden omzeild door toegang
+tot de fysieke servers. Dat kan leiden tot een grootschalig datalek of tot aantasting van de
+integriteit van informatie die van groot belang is voor de uitvoering van de wettelijke taken van
+de gemeente.</p>
+<p>Onbevoegde toegang kan ook grote gevolgen hebben voor de beschikbaarheid van informatiesystemen,
+omdat in deze zones het fysieke serverpark en de bijbehorende gegevensdragers staan. Onbevoegde
+toegang kan zo leiden tot uitval van de centrale ICT-diensten. Toegang tot de beveiligde ruimte
+voor de opslag van identiteitsbewijzen en rijbewijzen kan leiden tot identiteitsfraude of het
+faciliteren van andere vormen van (georganiseerde) criminaliteit.</p>
+<p>In aanvulling op de eisen voor de classificatie gemiddeld gelden de volgende eisen:</p>
+<ol>
+<li>Kritieke informatie of informatiesystemen zijn nooit via één beveiligde zone te bereiken: een
+   zone van niveau 3 ligt altijd binnen een zone van niveau 2 of hoger, zodat toegang steeds twee
+   controlepunten passeert (maatregel 7.01.02). 2. Er is een informatiesysteem in gebruik dat op basis van een autorisatiestructuur en
+   persoonlijke toegangsmiddelen (pas) toegang verstrekt aan bevoegde medewerkers.</li>
+<li>Dit systeem registreert geslaagde en niet-geslaagde pogingen tot toegang tot beveiligde zones
+   met beschermingsniveau 2 of hoger, zodat logging en monitoring mogelijk zijn.</li>
+<li>Per kwartaal stelt de eigenaar van de zone vast dat de toegekende toegangsmiddelen alleen in
+   gebruik zijn bij bevoegde medewerkers, op basis van hun organisatiefunctie en doelbinding.</li>
+<li>Leveranciers krijgen geen toegang tot deze zones zonder toezicht van een bevoegde interne
+   medewerker, tenzij de eigenaar van de zone daar nadrukkelijk toestemming voor heeft gegeven.</li>
+<li>De identiteit van leveranciers en bezoekers wordt vastgesteld op basis van een
+   legitimatiebewijs voordat toegang wordt verstrekt.</li>
+<li>Datum en tijdstip van binnenkomst en vertrek van bezoekers en leveranciers worden
+   geregistreerd door de begeleidende bevoegde interne medewerker.</li>
+<li>Videomonitoring registreert de toegang tot deze zones.</li>
+<li>Er is bescherming ingericht tegen stroomuitval en andere storingen door onderbreking van
+   nutsvoorzieningen. Deze bescherming wordt halfjaarlijks getest.</li>
+<li>Er is een klimaatinstallatie aanwezig die temperatuur en vochtigheidsgraad beheerst en bewaakt.</li>
+<li>Er is een noodstroomvoorziening ingericht die het datacenter en kritische installaties bij
+    calamiteiten van stroom kan voorzien, onafhankelijk van het elektriciteitsnet. Deze voorziening
+    wordt jaarlijks getest.</li>
+<li>De zone is voldoende beschermd tegen wateroverlast. Er is een systeem geïnstalleerd en getest
+    dat waterschade kan signaleren, voorkomen of beperken.</li>
+<li>Er zijn systemen geïnstalleerd en getest die schade door stroompieken aan informatieverwerkende
+    systemen voorkomen, normaliseren of beperken.</li>
+<li>Jaarlijks voert de eigenaar van de informatieverwerkende zone een risicobeoordeling uit en
+    volgt die op voor:<ul>
+<li>de potentiële gevolgen van omgevingsdreigingen (oproer, terrorisme, explosies);</li>
+<li>de potentiële gevolgen van brand, overstroming of een aardbeving;</li>
+<li>de topografische ligging (watermassa's, breuklijnen, hoogteligging).</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-waarschuwingen-bij-concrete-beveiligingsrisico-s">3 Waarschuwingen bij concrete beveiligingsrisico's</h2>
+<p>De BIO 2.0 verlangt dat bij concrete beveiligingsrisico's
+waarschuwingen, volgens onderlinge afspraken, worden verzonden aan de relevante collega's binnen
+het beveiligingsdomein van de overheid (maatregel 7.02.01). Voor fysieke toegang en beveiliging
+betekent dat:</p>
+<ol>
+<li>Een concreet beveiligingsrisico voor de fysieke beveiliging (zoals een dreiging tegen een
+   locatie, een reeks inbraken of inbraakpogingen, verlies van sleutels of toegangsmiddelen met
+   ruime rechten, of een kwetsbaarheid in het toegangssysteem) wordt door de eigenaar van de zone
+   of de afdeling Facilitaire Zaken direct gemeld bij de CISO via de incidentmeldroute.</li>
+<li>De CISO beoordeelt of het risico ook andere overheidsorganisaties raakt en waarschuwt in dat
+   geval de relevante collega's binnen het beveiligingsdomein van de overheid, langs de lijnen die
+   het Strategisch Informatiebeveiligingsbeleid vastlegt voor formele contacten met instanties.</li>
+<li>Waarschuwingen die de gemeente langs die lijnen ontvangt, worden door de CISO doorgezet naar
+   de afdeling Facilitaire Zaken en de eigenaren van de betrokken zones, met een advies over de te
+   nemen maatregelen.</li>
+</ol>
+<p>De lijneigenaar voor deze paragraaf is, conform de VvT, de CIO / manager IT-ontwikkeling;
+de uitvoering ligt bij team IB&amp;P.</p>
+<h2 id="bijlage-a-normen">Bijlage A Normen</h2>
+<p>De volgende maatregelen uit de VvT BIO 2.0 versie 1.3 zijn in dit document belegd. De eis is de
+BIO2-overheidsmaatregel; waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-maatregel.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>ISO 27001-control</th>
+<th>Eis</th>
+<th>Bron</th>
+<th>Waar in dit beleid</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.01.01</td>
+<td>Fysieke beveiligingszones</td>
+<td>Vervallen in de VvT 1.3.</td>
+<td>VvT</td>
+<td>n.v.t.</td>
+<td>n.v.t.</td>
+</tr>
+<tr>
+<td>7.01.02</td>
+<td>Fysieke beveiligingszones</td>
+<td>Kritieke informatie of informatiesystemen zijn nooit via één beveiligde zone te bereiken.</td>
+<td>BIO2</td>
+<td>2, 2.4 eis 1</td>
+<td>FTB-001</td>
+</tr>
+<tr>
+<td>7.02.01</td>
+<td>Fysieke toegangsbeveiliging</td>
+<td>In geval van concrete beveiligingsrisico's worden waarschuwingen, volgens onderlinge afspraken, verzonden aan de relevante collega's binnen het beveiligingsdomein van de overheid.</td>
+<td>BIO2</td>
+<td>3</td>
+<td>FTB-006 (voorstel)</td>
+</tr>
+<tr>
+<td>7.02</td>
+<td>Fysieke toegangsbeveiliging</td>
+<td>Zie ISO/IEC 27002:2022, maatregel 7.2.</td>
+<td>ISO 27002</td>
+<td>2.2, 2.3, 2.4</td>
+<td>FTB-002, FTB-003, FTB-004</td>
+</tr>
+<tr>
+<td>7.03.01</td>
+<td>Beveiligen van kantoren, ruimten en faciliteiten</td>
+<td>Zie ISO/IEC 27002:2022, maatregel 7.3.</td>
+<td>ISO 27002</td>
+<td>2.1, 2.2</td>
+<td>FTB-002</td>
+</tr>
+<tr>
+<td>7.04.01</td>
+<td>Monitoren van de fysieke beveiliging</td>
+<td>Zie ISO/IEC 27002:2022, maatregel 7.4.</td>
+<td>ISO 27002</td>
+<td>2.1 eis 2, 8 en 9; 2.3 eis 2; 2.4 eis 3 en 8</td>
+<td>FTB-002, FTB-005</td>
+</tr>
+<tr>
+<td>7.05.01</td>
+<td>Beschermen tegen fysieke en omgevingsdreigingen</td>
+<td>Zie ISO/IEC 27002:2022, maatregel 7.5.</td>
+<td>ISO 27002</td>
+<td>2.3 eis 7; 2.4 eis 9 tot en met 14</td>
+<td>FTB-002, FTB-005</td>
+</tr>
+<tr>
+<td>7.12.01</td>
+<td>Beveiligen van bekabeling</td>
+<td>Zie ISO/IEC 27002:2022, maatregel 7.12.</td>
+<td>ISO 27002</td>
+<td>2.1 eis 7</td>
+<td>FTB-005</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-controleraamwerk">Bijlage B Controleraamwerk</h2>
+<p>Samenvatting van de controls; de volledige uitwerking (risico, beheersdoelstelling, zes W's,
+werkdocumenten) staat in het controleraamwerk FTB. Alle controls hebben de status
+Niet geïmplementeerd.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Onderwerp</th>
+<th>Eigenaar</th>
+<th>Frequentie</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTB-001</td>
+<td>Fysieke beveiligingszones: juistheid van classificatie en eigenaarschap in zoneringsplan en toegangssysteem</td>
+<td>Manager Facilitaire Zaken</td>
+<td>Jaarlijks</td>
+<td>7.01.02</td>
+</tr>
+<tr>
+<td>FTB-002</td>
+<td>Fysieke toegangsbeveiliging: autorisaties voor zones van niveau 2 en hoger pas na goedkeuring van de eigenaar</td>
+<td>Manager Facilitaire Zaken</td>
+<td>Per gebeurtenis</td>
+<td>7.03.01, 7.04.01, 7.05.01</td>
+</tr>
+<tr>
+<td>FTB-003</td>
+<td>Intrekken fysieke toegang: tijdige uitvoering van intrektaken na personeelsmutaties</td>
+<td>Manager Facilitaire Zaken</td>
+<td>Maandelijks</td>
+<td>7.02.01</td>
+</tr>
+<tr>
+<td>FTB-004</td>
+<td>Intrekken fysieke toegang: periodieke controle van autorisaties door de eigenaar van de zone</td>
+<td>Manager Facilitaire Zaken</td>
+<td>Halfjaarlijks (niveau 2), per kwartaal (niveau 3)</td>
+<td>7.02.01</td>
+</tr>
+<tr>
+<td>FTB-005</td>
+<td>Fysieke bescherming en beveiliging van informatiemiddelen en bekabeling volgens checklist</td>
+<td>Manager Facilitaire Zaken</td>
+<td>Halfjaarlijks</td>
+<td>7.04.01, 7.05.01, 7.12.01</td>
+</tr>
+<tr>
+<td>FTB-006 (voorstel)</td>
+<td>Waarschuwingen bij concrete beveiligingsrisico's: melden, beoordelen en doorzetten</td>
+<td>CIO / manager IT-ontwikkeling (uitvoering team IB&amp;P)</td>
+<td>Per gebeurtenis, jaarlijks getoetst</td>
+<td>7.02.01</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

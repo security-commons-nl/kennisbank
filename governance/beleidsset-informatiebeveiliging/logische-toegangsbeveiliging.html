@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid logische toegangsbeveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid logische toegangsbeveiliging</span></nav><!-- /kruimelpad -->
+<h1>Beleid logische toegangsbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="logische-toegangsbeveiliging.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#inleiding">Inleiding</a></li><li><a href="#uitgangspunten">Uitgangspunten</a></li><li><a href="#bijlagen">BIJLAGEN</a></li></ol></nav><!-- /inhoudsopgave -->
+<blockquote>
+<p><strong>Concept, niet vastgesteld.</strong> Dit stuk staat hier als voorbeeld van een uitgewerkt concept. Neem het niet over als vastgesteld beleid.</p>
+</blockquote>
+<h3>Afkortingen</h3>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>BRP</td>
+<td>Basisregistratie Personen</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>DAP</td>
+<td>Document Afspraken en Procedures</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>Information Security Officer</td>
+</tr>
+</tbody>
+</table>
+<h3>Relevante beleidsdocumenten</h3>
+<ul>
+<li>
+<p>Baseline Informatiebeveiliging Overheid (BIO)</p>
+</li>
+<li>
+<p>Strategisch Gemeentelijk Informatiebeveiligingsbeleid</p>
+</li>
+<li>
+<p>Procedure Autorisatiebeheer</p>
+</li>
+<li>
+<p>Controleprocedure</p>
+</li>
+<li>
+<p>Wachtwoordbeleid</p>
+</li>
+<li>
+<p>Telewerkbeleid</p>
+</li>
+<li>
+<p>Beleid dataclassificatie</p>
+</li>
+</ul>
+<h2 id="inleiding">Inleiding</h2>
+<p>Logische toegangsbeveiliging vormt een belangrijk aspect van de gemeentelijke informatiebeveiliging. Logische toegangsbeveiliging zorgt ervoor dat onbevoegden minder makkelijk toegang kunnen krijgen tot gemeentelijke informatiesystemen en de informatie binnen deze gemeentelijke informatiesystemen. Het kan hierbij ook gaan om bedrijfsinformatie van derde partijen, waarvan de gemeente niet de bronhouder is, indien deze via het gemeentelijk platform ontsloten en beschikbaar gesteld wordt, bijvoorbeeld Basisregistratie Personen (BRP) en Suwinet. Alle gebruikers van gemeentelijke informatiesystemen dienen, volgens logische toegangsbeveiliging procedures, geautoriseerd te worden.</p>
+<p>Risico’s</p>
+<p>Door het ontbreken van adequate logische toegangsbeveiliging bestaat het risico dat onbevoegden (hieronder vallen ook exmedewerkers en externen) zich toegang kunnen verschaffen tot gemeentelijke informatiesystemen en de informatie binnen deze gemeentelijke informatiesystemen, waardoor ongewenste acties op de diensten kunnen plaatsvinden en/of informatie kan worden ontvreemd of verminkt.</p>
+<p>Onduidelijke of niet gevolgde logische toegangsbeveiliging procedures zijn niet alleen een bedreiging voor de vertrouwelijkheid en integriteit van gemeentelijke informatie, maar uiteindelijk ook slecht voor het imago.</p>
+<h2 id="uitgangspunten">Uitgangspunten</h2>
+<p>De organisatie hanteert de volgende beleidsuitgangspunten uit de BIO:</p>
+<h3>Eigenaarschap</h3>
+<ul>
+<li>
+<p>Het beleid logische toegangsbeveiliging is van toepassing op informatiesystemen waarvan de uitvoeringsorganisatie-gemeenten eigenaar zijn. Ook als informatiesystemen niet intern, of intern door externe partijen beheerd worden is het beleid logische toegangsbeveiliging van toepassing.</p>
+</li>
+<li>
+<p>Voor elk bedrijfsproces, informatiesysteem, gegevensverzameling is een verantwoordelijke systeemeigenaar benoemd.</p>
+</li>
+<li>
+<p>Iedere systeemeigenaar is verplicht tot het uitvoeren van een baselinetoets BIO en, afhankelijk van de uitkomsten van deze baselinetoetsook nog voor een diepgaande risicoanalyse voor de informatiesystemen waarvan hij eigenaar is.</p>
+</li>
+<li>
+<p>Iedere systeemeigenaar is verplicht tot het maken van een specifieke autorisatieprocedure voor elk informatiesysteem waarvan hij eigenaar is.</p>
+</li>
+<li>
+<p>Iedere systeemeigenaar is verplicht tot het toepassen van de specifieke autorisatieprocedures voor de informatiesystemen waarvan hij eigenaar is.</p>
+</li>
+<li>
+<p>De systeemeigenaar dient bij het opstellen en uitvoeren van een specifieke autorisatieprocedure de volgende uitgangspunten te hanteren:</p>
+</li>
+<li>
+<p>De autorisatiestructuur van een informatiesysteem is uniform voor alle gebruikers.</p>
+</li>
+<li>
+<p>De autorisatiestructuur van een informatiesysteem sluit aan bij de goedgekeurde procesbeschrijvingen.</p>
+</li>
+<li>
+<p>Er worden in de regel geen ‘algemene’ (ongepersonaliseerde) identiteiten gebruikt; Activiteiten zijn altijd te herleiden tot één persoon.</p>
+</li>
+<li>
+<p>Gegevens worden alleen gemuteerd door de gegevenseigenaar of de daartoe, door de gegevenseigenaar, gemachtigde functionarissen.</p>
+</li>
+<li>
+<p>De systeemeigenaar overlegt met de betrokken gegevenseigenaren en proceseigenaren over de vraag wie geautoriseerd wordt en op welke manier dat gebeurt.</p>
+</li>
+<li>
+<p>De systeemeigenaar is verplicht de autorisatieprocedure te laten toetsen door de aangewezen beveiligingsfunctionaris/het team IB&amp;P binnen de uitvoeringsorganisatie.</p>
+</li>
+<li>
+<p>De systeemeigenaar dient bij het opstellen van een autorisatieprocedure rekening te houden met mogelijk van toepassing zijnde wet- en regelgeving.</p>
+</li>
+<li>
+<p>De systeemeigenaar moet bij het maken van een systeemspecifieke autorisatieprocedure aangeven welke detailnormen hij wel of niet van toepassing wil laten zijn.</p>
+</li>
+</ul>
+<h3>Functiescheiding</h3>
+<ul>
+<li>
+<p>De beschikkende, bewarende en controlerende taken worden in beginsel nooit in de rol van één functionaris tezamen gebracht. Indien dit toch noodzakelijk is dan wordt door de systeemeigenaar apart toezicht georganiseerd op de betreffende functionaris om een 4-ogen principe te handhaven.</p>
+</li>
+<li>
+<p>(Technische) beheerders mogen geen toegang hebben tot de data van het informatiesysteem waar zij (technisch) beheerder van zijn. Indien dit toch noodzakelijk is dan wordt door de systeemeigenaar apart toezicht georganiseerd.</p>
+</li>
+</ul>
+<h3>Autorisatie en Toegang</h3>
+<ul>
+<li>
+<p>de uitvoeringsorganisatie autoriseert en registreert gebruikers/beheerders die toegang hebben tot informatiesystemen op basis van een formele autorisatieprocedure. waarin is opgenomen:</p>
+</li>
+<li>
+<p>Elke gebruiker/beheerder dient zich te authentiseren voordat er op een informatiesysteem activiteiten kunnen worden uitgevoerd.</p>
+</li>
+<li>
+<p>Gebruikers- en beheeraccounts worden na een vast gedefinieerd aantal, bijvoorbeeld drie, foutieve/ongeldige inlogpogingen (al dan niet tijdelijk) geblokkeerd.</p>
+</li>
+<li>
+<p>Het gebruik van groepsaccounts dient zo veel mogelijk worden beperkt. Indien deze toch gebruikt wordt dient het gebruik ervan te worden gemotiveerd en worden vastgelegd door de proceseigenaar.</p>
+</li>
+<li>
+<p>Er is een autorisatiematrix aanwezig, waarin gebruikers/beheerders, gebruik- en beheerprofielen en te beheren objecten beschreven worden en aan elkaar worden gekoppeld.</p>
+</li>
+<li>
+<p>Er is een actueel mandaatregister aanwezig waaruit blijkt welke personen bevoegdheden hebben voor het verlenen van toegangsrechten dan wel functieprofielen.</p>
+</li>
+<li>
+<p>Gebruikers- en beheeraccounts zijn niet voorzien van meer rechten dan strikt noodzakelijk is voor het uitvoeren van de noodzakelijke taken.</p>
+</li>
+<li>
+<p>Identificatie, authenticatie en autorisatie vinden plaats met behulp van een toegangbeveiligingstool. Bijvoorbeeld Identity &amp; Access Management (I&amp;AM).</p>
+</li>
+<li>
+<p>Ongeautoriseerde toegangspogingen en essentiële activiteiten worden gedetecteerd, geanalyseerd en tegen inbreuken wordt actie ondernomen.</p>
+</li>
+<li>
+<p>Bij functiewijzingen van personeel en uitdiensttreding worden autorisaties zo spoedig mogelijk volgens bestaande procedures aangepast.</p>
+</li>
+<li>
+<p>Controle op verleende toegangsrechten en gebruik van informatiesystemen en gegevens vindt meerdere keren per jaar plaats, in opdracht van de CISO of de systeem-, gegevens-, of proceseigenaren.</p>
+</li>
+<li>
+<p>De toegang tot programmabroncode is beperkt. Alleen gebruikers met speciale toegangsrechten dienen de broncode te kunnen inzien.</p>
+</li>
+<li>
+<p>Het toepassen van schermbeveiligingsprogrammatuur (een screensaver) maakt na een periode van inactiviteit van maximaal 15 minuten alle informatie op het beeldscherm onleesbaar en ontoegankelijk. Ook een remote desktop sessie dient na 15 minuten inactiviteit te worden vergrendeld.</p>
+</li>
+<li>
+<p>Systemen die een chipcardtoken gebruiken worden bij het verwijderen van de chipcardtoken automatisch vergrendeld.</p>
+</li>
+<li>
+<p>Een onbeheerde werkplek is in een ongecontroleerde omgeving altijd vergrendeld.</p>
+</li>
+<li>
+<p>Het gebruik van wachtwoorden is gebaseerd op het wachtwoordbeleid van de gemeente. Het binnen de gemeente geldende wachtwoordbeleid wordt, waar mogelijk, technisch afgedwongen.</p>
+</li>
+<li>
+<p>Er is voor de medewerkers een wachtwoordkluis (password manager) beschikbaar ter ondersteuning van het beheren van hun wachtwoorden.</p>
+</li>
+<li>
+<p>Nadat een vooraf vastgestelde periode van inactiviteit is overschreden wordt de sessie automatisch afgesloten.</p>
+</li>
+<li>
+<p>Beheersessies worden versleuteld.</p>
+</li>
+<li>
+<p>Beheerdiensten zijn netwerktechnisch enkel toegankelijk voor geautoriseerde beheerders.</p>
+</li>
+<li>
+<p>Voordat er succesvol is ingelogd op een informatiesysteem, wordt een inlogbericht getoond, waarin wordt gewezen op het feit dat alle activiteiten op het informatiesysteem worden vastgelegd en waar nodig voor onderzoek en bewijsvoering kunnen worden overgedragen aan geselecteerde instanties.</p>
+</li>
+</ul>
+<h3>Inhuur externen</h3>
+<ul>
+<li>
+<p>Inhuurpersoneel valt onverkort onder het beleid logische toegangsbeveiliging en dient conform deze regels te handelen.</p>
+</li>
+<li>
+<p>Aan de hand van hun taken/functie zal hun toegang verleend worden tot de gegevens en informatiesystemen.</p>
+</li>
+</ul>
+<h3>Uitbesteding aan een ICT-dienstverlener</h3>
+<ul>
+<li>
+<p>De ICT-dienstverlener heeft een beveiligingsbeleid en geëffectueerde maatregelen, die zij aan de uitvoeringsorganisatie inzichtelijk maakt die in lijn zijn met dit logisch toegangsbeveiligingbeleid.</p>
+</li>
+<li>
+<p>De ICT-dienstverlener is verantwoordelijk voor een correcte inrichting van het beleid en naleving hiervan binnen de eigen organisatie. De ICT-dienstverlener voldoet aan de normen en eisen die gesteld zijn in het informatiebeveiligingsbeleid casu quo beleid logische toegangsbeveiliging en de van toepassing zijnde wet- en regelgeving.</p>
+</li>
+<li>
+<p>Binnen de ICT-dienstverlener is een Securitymanager aanwezig die verantwoordelijk is voor het informatiebeveiligingsbeleid van de ICT-dienstverlener en die contactpersoon is voor de ISO’s en CISO van de organisatie.</p>
+</li>
+<li>
+<p>De normen en eisen aangaande de beveiliging maken onderdeel uit van het servicecontract (mantelovereenkomst, nadere overeenkomsten en diensten niveau overeenkomsten), dat de uitvoeringsorganisatie en de ICT-dienstverlener afgesproken is.</p>
+</li>
+<li>
+<p>De ICT-dienstverlener stelt uitsluitend in opdracht van de uitvoeringsorganisatie gegevens en systemen beschikbaar aan medewerkers uit de gemeente, de ICT-dienstverlener en aan derde partijen.</p>
+</li>
+<li>
+<p>De ICT-dienstverlener stelt capaciteit en informatie beschikbaar aan audits op gebied van autorisaties, die in opdracht van de uitvoeringsorganisatie en de gemeenten uitgevoerd worden.</p>
+</li>
+<li>
+<p>Voor de dagelijkse operatie is er bij de ICT-dienstverlener een autorisatiebeheerder aanwezig die verantwoordelijk is voor een correcte inrichting van de autorisaties en die aanspreekpunt is voor de CISO. De autorisatiebeheerder ressorteert onder de Securitymanager.</p>
+</li>
+<li>
+<p>De operationele afspraken en geldende procedures tussen opdrachtgever en ICT-dienstverlener worden vastgelegd in een dossier afspraken en procedures (DAP).</p>
+</li>
+</ul>
+<h3>Beoordeling van de uitvoering van het beleid</h3>
+<ul>
+<li>
+<p>De systeemeigenaar dient het toezicht op de uitvoering van de autorisatieprocedure goed te regelen en te documenteren. Hij neemt interne beheersmaatregelen die in overeenstemming zijn met de eisen die uit de baselinetoets BIO of risicoanalyse voortvloeien.</p>
+</li>
+<li>
+<p>De uitvoering van het beleid logische toegangsbeveiliging wordt periodiek beoordeeld door de (interne) accountantsdienst. Het initiatief voor de uitvoering van de controles ligt bij de CISO of de systeem-, gegevens-, of proceseigenaren.</p>
+</li>
+<li>
+<p>Tussentijdse controles kunnen plaatsvinden door de interne accountantsdienst van de uitvoeringsorganisatie. De bevindingen en verbeteringen zijn onderdeel van de jaarlijkse controle door de onafhankelijke partij.</p>
+</li>
+<li>
+<p>Beoordeling vindt plaats op de volgende punten/onderdelen:</p>
+</li>
+<li>
+<p>Of het beleid logische toegangsbeveiliging in overeenstemming is met de wet- en regelgeving en ander beleidsstukken.</p>
+</li>
+<li>
+<p>Of de maatregelen passend zijn voor het beleid logische toegangsbeveiliging.</p>
+</li>
+<li>
+<p>Of de organisatie in voldoende mate het beleid naleeft.</p>
+</li>
+</ul>
+<h2 id="bijlagen">BIJLAGEN</h2>
+<h3>3.1 Voorbeeld autorisatieprocedure tot [informatiesysteem]</h3>
+<p>Inleiding</p>
+<p>De inhoud van deze autorisatieprocedure moet bekend zijn bij alle medewerkers die bij deze procedure betrokken zijn.</p>
+<p>Doel</p>
+<p>Deze autorisatieprocedure voorziet in het vastleggen van de verschillende stappen die noodzakelijk zijn voor het autoriseren van personen voor [informatiesysteem]. Hiermee wordt de logische toegangsbeveiliging geregeld voor de gegevens van [informatiesysteem] en de vertrouwelijkheid hiervan gewaarborgd.</p>
+<p>Definitie</p>
+<p>Met een autorisatie wordt een ‘door het bevoegd gezag gelegitimeerde toegang’ tot één of meerdere informatiesystemen van de gemeente bedoeld. De procedure bestaat uit drie afzonderlijke deelprocedures die gescheiden kunnen worden uitgevoerd:</p>
+<ul>
+<li>
+<p>Autorisatie tot het netwerk</p>
+</li>
+<li>
+<p>Autorisatie tot [informatiesysteem]</p>
+</li>
+<li>
+<p>Periodieke controle autorisaties en rapportage</p>
+</li>
+</ul>
+<p>Verantwoordelijkheid</p>
+<p>Voor elk bedrijfsproces, informatiesysteem, gegevensverzameling en ICT-faciliteit is een verantwoordelijke lijnmanager benoemd.</p>
+<p>Beheer</p>
+<p>Om toegang te kunnen krijgen tot de gegevens is naast de specifieke autorisatie in het desbetreffende informatiesysteem tevens een bevoegdheid nodig op netwerk- en/of systeemniveau. Deze bevoegdheden worden beheerd door de netwerk- en/of systeembeheerder. De bevoegdheden binnen [informatiesysteem] worden beheerd door de functioneel beheerder van [informatiesysteem].</p>
+<p>Proceseigenaar</p>
+<p>De proceseigenaar is de manager van de afdeling [afdeling].</p>
+<p>Verantwoordelijkheden</p>
+<p>De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&amp;W) en namens deze, bij de systeemeigenaar van het [informatiesysteem]. De systeemeigenaar stelt in overleg met de functioneel beheerder de autorisatiematrix op die als bijlage aan deze autorisatieprocedure wordt toegevoegd.</p>
+<p>De verantwoordelijkheid om toegang te verlenen tot de gegevens behorend bij [informatiesysteem] berust bij de gegevenseigenaar. De uitvoering hiervan ligt bij de functioneel beheerder van [informatiesysteem].</p>
+<p>Actualiteit</p>
+<p>De systeemeigenaar is verantwoordelijk voor het actueel houden van deze autorisatieprocedure.</p>
+<p>Autorisatie tot [informatiesysteem]</p>
+<ul>
+<li>
+<p>De autorisatiebevoegde medewerker van [informatiesysteem] dient, met behulp van het daarvoor bestemde aanvraag- of wijzigingsformulier, schriftelijk een autorisatieverzoek in voor een nieuwe of gewijzigde autorisatie voor [informatiesysteem] bij de servicedesk.</p>
+</li>
+<li>
+<p>De servicedesk beoordeelt het autorisatieverzoek. Hierbij wordt gecontroleerd of het aanvraag- of wijzigingsformulier op de juiste manier is ingevuld en of het formulier door een autorisatiebevoegde medewerker is ingediend. Tevens wordt gecontroleerd of de aanvraag in overeenstemming is met de autorisatiematrix behorende bij [informatiesysteem].</p>
+</li>
+<li>
+<p>De functioneel beheerder [informatiesysteem] die het bericht van de servicedesk ontvangt regelt vervolgens de autorisatie in [informatiesysteem].</p>
+</li>
+<li>
+<p>De systemen zijn voor geautoriseerde gebruikers slechts toegankelijk met gebruik van persoonlijke toegangscodes (bijvoorbeeld wachtwoorden). Deze wachtwoorden dienen te voldoen aan de richtlijnen zoals vermeld in het wachtwoordbeleid van de gemeente.</p>
+</li>
+<li>
+<p>De servicedesk krijgt van de functioneel beheerder [informatiesysteem] die het autorisatieverzoek heeft verwerkt een terugmelding over het autorisatieverzoek. De servicedesk koppelt dit terug aan de gebruiker en tevens krijgt de gebruiker een korte instructie hoe deze zich aan kan melden en hoe om te gaan met [informatiesysteem].</p>
+</li>
+<li>
+<p>Bij vertrek of wijziging van de functie van een medewerker geeft de verantwoordelijk manager van de medewerker dit door aan de servicedesk, waarna de functioneel beheerder de autorisatie intrekt of wijzigt.</p>
+</li>
+</ul>
+<p>Periodieke controle autorisaties en rapportage</p>
+<p>De functioneel beheerder [informatiesysteem] zorgt minmaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de systeem-, gegevens-, of proceseigenaren of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn, en brengt een rapportage uit aan de CISO.</p>
+<p>In deze rapportage wordt aangegeven:</p>
+<ul>
+<li>
+<p>Of de geïmplementeerde autorisaties overeenkomen met de toegekende autorisaties.</p>
+</li>
+<li>
+<p>Of de geregistreerde gebruikers en de aan hen toegekende autorisaties correct zijn. Hierbij wordt het controleverslag vergeleken met de autorisatieformulieren en tevens vergeleken met wat is vastgelegd in de autorisatiematrix [informatiesysteem].</p>
+</li>
+<li>
+<p>Of bij tussentijdse wijzigingen in taak/functie de verantwoordelijke manager van de medewerker de servicedesk hierover informeert, en of bij ontslag of vertrek de autorisatie direct wordt geblokkeerd.</p>
+</li>
+</ul>
+<p>Indien de uitgevoerde controle hiertoe aanleiding geeft, geeft de CISO opdracht aan de functioneel beheerder [informatiesysteem], om de nodige correcties aan te brengen. De functioneel beheerder [informatiesysteem] past zo nodig de autorisatie(s) aan en stelt de betreffende gebruiker op de hoogte van een wijziging in zijn bevoegdheidsprofiel.</p>
+<p>Aldus vastgesteld door [proceseigenaar] van [gemeente] op [datum],</p>
+<p>[Naam. Functie] [Naam. Functie]</p>
+<hr />
+<h3>3.2 Voorbeeld procedure ontbreken voldoende functiescheiding</h3>
+<p>Inleiding</p>
+<p>De inhoud van deze procedure moet bekend zijn bij alle medewerkers die bij deze procedure betrokken zijn. Deze procedure wordt alleen toegepast als niet voldaan kan worden aan de functiescheiding zoals de wet- en regelgeving dit voorschrijft.</p>
+<p>Doel</p>
+<p>Doel van deze procedure is om bij het niet kunnen voldoen aan de vereiste functiescheiding toch de werkzaamheden, verband houdende met de [omschrijving uit te voeren activiteiten] te kunnen uitvoeren.</p>
+<p>Definitie</p>
+<p>Gelet op de personele bezetting van [aantal] personen op de afdeling [afdelingsnaam] is het niet mogelijk de vereiste functiescheiding (te allen tijde) door te voeren tussen de betrokken medewerkers bij [aangeven welke activiteiten het hier betreft]. Door het toepassen van deze procedure wordt aan de (wettelijke) verantwoordingsplicht voldaan.</p>
+<p>Proceseigenaar</p>
+<p>De proceseigenaar is de manager van de afdeling [afdeling].</p>
+<p>Verantwoordelijkheid</p>
+<p>De verantwoordelijkheid voor deze autorisatieprocedure ligt bij het college van burgemeester en wethouders (college van B&amp;W) en namens deze bij de systeemeigenaar van het [informatiesysteem].</p>
+<p>Actualiteit</p>
+<p>De systeemeigenaar is verantwoordelijk voor het actueel houden van deze autorisatieprocedure.</p>
+<p>Uitvoering</p>
+<p>Gedurende de periode, dat zich de hier bovenstaande situatie voordoet (of wanneer dit continu het geval is: minimaal eenmaal per kwartaal) wordt bijgehouden, wie de medewerkers zijn die in deze periode belast zijn met de aanvraag, de controle, het toekennen en het doorvoeren van de autorisaties. Tevens wordt schriftelijk vastgelegd wat de reden is waarom (tijdelijk) niet aan de eis van functiescheiding kan worden voldaan, en de periode waarin niet aan de eis van functiescheiding kan worden voldaan.</p>
+<p>De betreffende aanvraagformulieren en de gegevens over de in deze periode verstrekte documenten worden afzonderlijk bewaard.</p>
+<p>Periodieke controle autorisaties en rapportage</p>
+<p>De functioneel beheerder [informatiesysteem] zorgt direct of zo snel mogelijk na de bewuste periode of in ieder geval minimaal één keer per kwartaal voor een overzicht van de in het informatiesysteem toegekende autorisaties. Mede op basis van dit overzicht controleert het management of de toegangsrechten van medewerkers nog juist zijn binnen de informatiesystemen waar zij verantwoordelijk voor zijn en brengt een rapportage uit aan de CISO.</p>
+<p>De controle richt zich vooral op:</p>
+<ul>
+<li>
+<p>Het ontbreken van de vereiste functiescheiding.</p>
+</li>
+<li>
+<p>Of in de betreffende periode bijgehouden is wie de medewerker(s) is/zijn die in deze periode betrokken is/zijn geweest met de aanvraag, de controle, het toekennen en het doorvoeren van de autorisaties.</p>
+</li>
+<li>
+<p>Of de schriftelijke vastlegging aanwezig is en de aanvraag, controle, toekenning en het beheer op de voorgeschreven wijze hebben plaatsgevonden.</p>
+</li>
+</ul>
+<p>Aldus vastgesteld door [proceseigenaar] van [gemeente] op [datum],</p>
+<p>[Naam. Functie] [Naam. Functie]</p>
+<hr />
+<h3>3.3 Voorbeeld autorisatieoverzichten</h3>
+<p>Gemeenten dienen een actueel inzicht te hebben wie, welke autorisaties heeft binnen de informatiesystemen die bij de gemeente worden gebruikt. Als gemeenten moet je daarvoor onderstaande vragen kunnen beantwoorden:</p>
+<ul>
+<li>
+<p>Welke functies binnen de gemeenten worden onderkend?</p>
+</li>
+<li>
+<p>Welke taken bij een specifieke functie horen?</p>
+</li>
+<li>
+<p>Welke taken niet gecombineerd mogen worden vanuit het oogpunt functiescheiding?</p>
+</li>
+<li>
+<p>Welke functie een medewerker bekleed?</p>
+</li>
+<li>
+<p>Welke taken een medewerker vervuld?</p>
+</li>
+</ul>
+<p>In figuur 3 wordt de relatie weergeven tussen de functie die een medewerker bekleedt, de taken die bij deze functie horen en de benodigde autorisaties die deze medewerker in de verschillende systemen moet hebben om deze taken te kunnen uitvoeren.</p>
+<p>Bijvoorbeeld:</p>
+<ul>
+<li>
+<p>Voor het uitvoeren van ‘taak 1’ heeft deze medewerker autorisatie A1 voor systeem A nodig.</p>
+</li>
+<li>
+<p>Voor het uitvoeren van ‘taak 2’ heeft deze medewerker autorisatie A1 voor systeem A en Autorisatie B1 voor systeem B nodig.</p>
+</li>
+<li>
+<p>Voor het uitvoeren van ‘taak 3’ heeft deze medewerker autorisatie A2 voor systeem A nodig.</p>
+</li>
+<li>
+<p>Voor het uitvoeren van ‘taak 4’ heeft deze medewerker autorisatie B1 en B2 voor systeem B nodig.</p>
+</li>
+</ul>
+<p>Figuur 3. Relatie Functie, taken en autorisaties</p>
+<p>Gemeenten moeten inzicht hebben in welke taken behoren bij een specifieke functie. Hiervoor kan gebruik worden gemaakt van tabel 2. Deze verschillende taken kunnen betrekking hebben op verschillende informatiesystemen. Voorbeelden van functies zijn:</p>
+<ul>
+<li>
+<p>Controller</p>
+</li>
+<li>
+<p>Junior/senior inkoper</p>
+</li>
+<li>
+<p>Medewerker salarisadministratie</p>
+</li>
+<li>
+<p>Kwaliteitsmedewerker</p>
+</li>
+<li>
+<p>Lijnmanager</p>
+</li>
+<li>
+<p>Teammanager</p>
+</li>
+</ul>
+<p>Voorbeelden van taken zijn:</p>
+<ul>
+<li>
+<p>Aanvragen bestellingen</p>
+</li>
+<li>
+<p>Accorderen bestellingen</p>
+</li>
+<li>
+<p>Invoeren betalingen</p>
+</li>
+<li>
+<p>Accorderen betalingen</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>X = Taak behorende bij functie</th>
+<th>Taak 1</th>
+<th>Taak 2</th>
+<th>Taak 3</th>
+<th>Taak 4</th>
+<th>Taak 5</th>
+<th>Taak 6</th>
+<th>Taak 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Functie 1</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 2</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 4</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 5</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Functie 7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Tabel 2. Overzicht welke taken behoren bij een specifieke functie</p>
+<p>Gemeenten moeten inzicht hebben welke combinaties van taken (autorisaties binnen een informatiesysteem), wel en niet mogen worden toegekend aan één functie (medewerker). Hiervoor kan gebruik worden gemaakt van tabel 3. In dit overzicht dienen de functies voor te komen die uit het oogpunt van functiescheiding belangrijk zijn.</p>
+<p>Autorisaties waarmee het informatiesysteem alleen geraadpleegd kan worden (rapporten afdrukken, schermen bekijken) mogen met andere autorisaties worden gecombineerd.</p>
+<table>
+<thead>
+<tr>
+<th>X = niet toegestane combinatie van autorisaties Bijvoorbeeld: Op het snijpunt van de regel taak 1 en de kolom taak 2 staat een X. Dat betekent dat een medewerker niet mag worden geautoriseerd voor deze beide rollen tegelijk.</th>
+<th>Taak 1</th>
+<th>Taak 2</th>
+<th>Taak 3</th>
+<th>Taak 4</th>
+<th>Taak 5</th>
+<th>Taak 6</th>
+<th>Taak 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taak 1</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 2</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 4</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 5</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taak 7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Tabel 3. Overzicht van wel en niet toegestane combinaties van taken</p>
+<p>Gemeenten moeten inzicht hebben welke functie door één medewerker wordt ingevuld. Hiervoor kan gebruik worden gemaakt van tabel 4.</p>
+<table>
+<thead>
+<tr>
+<th>X = Functie die door de medewerker wordt ingevuld</th>
+<th>Functie 1</th>
+<th>Functie 2</th>
+<th>Functie 3</th>
+<th>Functie 4</th>
+<th>Functie 5</th>
+<th>Functie 6</th>
+<th>Functie 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medewerker 1</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerker 2</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerker 3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Medewerker 4</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerker 5</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerker 6</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerker 7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Tabel 4. Overzicht welke functies worden uitgevoerd door een medewerker (autorisatiematrix)</p>
+<h3>3.4 Voorbeeld autorisatie aanvraagformulier [informatiesysteem]</h3>
+<table>
+<thead>
+<tr>
+<th>Gegevens gebruiker</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naam en voorletters gebruiker</td>
+<td>[Volledige naam van de te autoriseren medewerker.]</td>
+<td></td>
+</tr>
+<tr>
+<td>Voornaam gebruiker</td>
+<td>[Voornaam van de te autoriseren medewerker.]</td>
+<td></td>
+</tr>
+<tr>
+<td>E-mailadres</td>
+<td>[E-mailadres van de te autoriseren medewerker.]</td>
+<td></td>
+</tr>
+<tr>
+<td>Afdeling/Groep</td>
+<td>[Organisatorische eenheid waarbij de te autoriseren medewerker werkzaam is.]</td>
+<td></td>
+</tr>
+<tr>
+<td>Functie</td>
+<td>[De functie van de te autoriseren medewerker.]</td>
+<td></td>
+</tr>
+<tr>
+<td>Kamernummer</td>
+<td><Kamer waar de te autoriseren medewerker zijn vaste werkplek heeft. Dit veld kan leeg worden gelaten op het moment dat met flexibele werkplekken wordt gewerkt.></td>
+<td></td>
+</tr>
+<tr>
+<td>Telefoonnummer</td>
+<td><Telefoonnummer van de te autoriseren medewerker. Bij calamiteiten moet de verwerkingsorganisatie direct contact op kunnen nemen met de gebruiker. Tevens kan de medewerker bij een spoed autorisatie direct op de hoogte worden gesteld dat de autorisatie is toegekend.></td>
+<td></td>
+</tr>
+<tr>
+<td>Dienstverband (Tijdelijk/Vast)</td>
+<td>Tijdelijk / Vast</td>
+<td></td>
+</tr>
+<tr>
+<td>Autorisatie</td>
+<td>Nieuwe gebruiker</td>
+<td>O</td>
+</tr>
+<tr>
+<td></td>
+<td>Wijzig huidige autorisaties</td>
+<td>O</td>
+</tr>
+<tr>
+<td></td>
+<td>Opschorten gebruiker-ID</td>
+<td>O</td>
+</tr>
+<tr>
+<td></td>
+<td>Intrekken gebruiker-ID</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Gebruiker-ID</td>
+<td><Als het een bestaande gebruiker betreft dient hier het huidige gebruikers-ID ingevuld te worden, bij een nieuwe gebruiker wordt dit door de verwerkingsorganisatie later ingevuld. Nieuwe gebruikers krijgen meestal een gebruikersnaam die van hun eigen naam is afgeleid. Deze gebruikersnaam wordt in het vakjargon gebruikers-ID genoemd.></td>
+<td></td>
+</tr>
+<tr>
+<td>Reden</td>
+<td>[De reden van deze aanvraag/wijziging met betrekking tot de autorisaties van deze medewerker.]</td>
+<td></td>
+</tr>
+<tr>
+<td>Gewenste ingangsdatum</td>
+<td><De datum waarop de autorisatie ingaat kan afwijken van de aanmelddatum maar moet daarna liggen. Het is aan te raden om de autorisaties ruim van te voren aan te melden zodat de werkzaamheden die bij het autoriseren horen kunnen worden ingepland.></td>
+<td></td>
+</tr>
+<tr>
+<td>Einddatum geldigheid</td>
+<td><In veel gevallen zal deze rubriek leeg worden gelaten omdat er een permanente autorisatie wordt toegekend. Het komt echter voor dat bepaalde werkzaamheden slechts van korte duur zijn, medewerkers op contract worden aangenomen of vakantiewerk komen verrichten. In die gevallen wordt de ‘Einddatum geldigheid’ toegepast.></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Autorisaties [informatiesysteem]</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vul de huidige, de gewenste en de te verwijderen autorisatierollen in</td>
+<td>Huidige</td>
+<td>Verwijderen</td>
+<td>Nieuwe rol / Toevoegen</td>
+</tr>
+<tr>
+<td>[Rol 1]</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>[Rol 2]</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>[Rol 3]</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Alle autorisaties verwijderen</td>
+<td>O</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Gegevens Aanvrager</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naam en voorletters aanvrager</td>
+<td>[Volledige naam van de autorisatiebevoegde medewerker.]</td>
+</tr>
+<tr>
+<td>Voornaam aanvrager</td>
+<td>[Voornaam van de autorisatiebevoegde medewerker.]</td>
+</tr>
+<tr>
+<td>Telefoonnummer</td>
+<td>[Telefoonnummer van de autorisatiebevoegde medewerker.]</td>
+</tr>
+<tr>
+<td>E-mailadres</td>
+<td>[E-mailadres van de autorisatiebevoegde medewerker.]</td>
+</tr>
+<tr>
+<td>Functie</td>
+<td><De functie van de autorisatiebevoegde medewerker dient tevens ter verificatie te worden vermeld zodat wordt voorkomen dat de aanvrager autorisaties uitgeeft van informatiesystemen waarvoor hij niet geautoriseerd is.></td>
+</tr>
+<tr>
+<td>Aanmelddatum</td>
+<td><Datum waarop de autorisatie is aangevraagd. Aan de hand van deze datum kan achteraf worden vastgesteld hoe lang het heeft geduurd voordat de autorisatie werd ingevoerd.></td>
+</tr>
+<tr>
+<td>Handtekening</td>
+<td><Handtekening van de autorisatiebevoegde medewerker. Deze handtekening dient op juistheid te worden gecontroleerd aan de hand van de parafen lijst.></td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

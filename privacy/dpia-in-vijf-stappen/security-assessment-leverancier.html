@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Security-assessment leverancier bij een DPIA</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <a href="./">Een DPIA in vijf stappen, met sjablonen</a> › <span>Security-assessment leverancier bij een DPIA</span></nav><!-- /kruimelpad -->
+<h1>Security-assessment leverancier bij een DPIA</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een DPIA in vijf stappen, met sjablonen</a> · <a href="security-assessment-leverancier.md">Markdown-bron</a></p>
+<p>Vragen voor de security officer bij hoofdstuk 6.2 van het <a href="sjabloon-dpia.html">sjabloon</a>. De onderwerpen liggen niet vast: pas ze aan als dat nodig is.</p>
+<h2 id="1-leveranciersbeoordeling">1. Leveranciersbeoordeling</h2>
+<p><strong>Certificeringen en compliance</strong></p>
+<ul>
+<li>Heeft de leverancier een ISO/IEC 27001-certificaat?</li>
+<li>Is de bijbehorende verklaring van toepasselijkheid beschikbaar?</li>
+<li>Zijn er andere certificeringen, zoals NEN 7510 (zorg) of een SOC 2-verklaring?</li>
+</ul>
+<p><strong>Patchbeleid en kwetsbaarhedenbeheer</strong></p>
+<ul>
+<li>Is er een gedocumenteerd patchbeleid?</li>
+<li>Hoe snel worden kwetsbaarheden opgelost (bijvoorbeeld binnen x dagen)?</li>
+<li>Staan afspraken daarover in de SLA of de dossierafspraken?</li>
+</ul>
+<h2 id="2-architectuur-van-de-oplossing">2. Architectuur van de oplossing</h2>
+<p><strong>Netwerktekening</strong></p>
+<ul>
+<li>Is er een actuele netwerktekening?</li>
+<li>Staan segmentatie en beveiligingszones er duidelijk op?</li>
+</ul>
+<p><strong>Gegevensuitwisseling</strong></p>
+<ul>
+<li>Welke gegevens worden uitgewisseld (bijvoorbeeld persoonsgegevens of financiële gegevens)?</li>
+<li>Hoe gebeurt dat (bijvoorbeeld via een API, SFTP of een webservice)?</li>
+<li>Worden de gegevens tijdens transport versleuteld?</li>
+</ul>
+<h2 id="3-authenticatie">3. Authenticatie</h2>
+<p><strong>Gebruikersauthenticatie</strong></p>
+<ul>
+<li>Hoe verloopt de authenticatie (bijvoorbeeld via SSO, LDAP of OAuth)?</li>
+</ul>
+<p><strong>Meerfactorauthenticatie</strong></p>
+<ul>
+<li>Is MFA verplicht voor alle gebruikers?</li>
+<li>Welke vormen worden ondersteund (bijvoorbeeld sms, een authenticator-app of een hardwaretoken)?</li>
+</ul>
+<h2 id="4-beschikbaarheid">4. Beschikbaarheid</h2>
+<ul>
+<li>Welke maatregelen garanderen een hoge beschikbaarheid?</li>
+<li>Zijn er SLA's met uptime-garanties?</li>
+</ul>
+<p><strong>Back-up en herstel</strong></p>
+<ul>
+<li>Worden er regelmatig back-ups gemaakt?</li>
+<li>Wat is de bewaartermijn van de back-ups?</li>
+<li>Worden er hersteltests gedaan?</li>
+</ul>
+<p><strong>Redundantie</strong></p>
+<ul>
+<li>Zijn de kritieke componenten redundant uitgevoerd?</li>
+<li>Is er failover en loadbalancing?</li>
+</ul>
+<h2 id="5-integriteit">5. Integriteit</h2>
+<ul>
+<li>Is er een autorisatiematrix met rollen, taken en rechten?</li>
+<li>Zijn de taken gescheiden, bijvoorbeeld tussen gebruikers en beheerders?</li>
+<li>Hoe worden in-, door- en uitstroom van gebruikers beheerd? Zijn er vaste procedures voor aanvragen?</li>
+<li>Worden kritieke handelingen gelogd? Zijn de logs onveranderbaar en centraal opgeslagen?</li>
+<li>Wordt er actief gemonitord op afwijkend gedrag?</li>
+</ul>
+<h2 id="6-vertrouwelijkheid">6. Vertrouwelijkheid</h2>
+<ul>
+<li>Worden gegevens versleuteld tijdens transport, en in rust?</li>
+<li>Worden de encryptie-algoritmen actueel gehouden?</li>
+<li>Is er een wachtwoordbeleid? Wordt SSO gebruikt of een eigen authenticatiesysteem?</li>
+</ul>
+<h2 id="7-samenvatting-en-conclusie">7. Samenvatting en conclusie</h2>
+<p>Wat is de algemene indruk, en welke restrisico's moeten worden geaccepteerd of aangepakt?</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/privacy/dpia-in-vijf-stappen">privacy/dpia-in-vijf-stappen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

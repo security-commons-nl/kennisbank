@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>De vijf aanvalspaden voor lokale overheid</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Risicoanalyse langs aanvalspaden</a> › <span>De vijf aanvalspaden voor lokale overheid</span></nav><!-- /kruimelpad -->
+<h1>De vijf aanvalspaden voor lokale overheid</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Risicoanalyse langs aanvalspaden</a> · <a href="aanvalspaden.md">Markdown-bron</a></p>
+<p>Bijlage bij <a href="./">Risicoanalyse langs aanvalspaden</a>, stap 2. Vijf paden, elk in hetzelfde
+formaat: <strong>hoe het loopt</strong> (vijf stappen, geen techniektabellen), <strong>de chokepoints</strong> (waar je het kunt
+zien of stoppen), en <strong>de bewijsvragen</strong> voor de dekkingsmeting in stap 3. Neem de paden zoals ze zijn;
+een pad schrappen omdat het "bij ons niet speelt" is de aanname die je wilt toetsen.</p>
+<p>De paden zijn geordend op wat gemeenten en waterschappen nu het meest raakt. Ze overlappen bewust:
+een echte aanval loopt vaak over twee of drie paden (binnen via 1 of 2, verder via 5). Dat is geen
+dubbeltelling; het betekent dat één dicht chokepoint meerdere paden breekt.</p>
+<hr />
+<h2 id="pad-1-gecompromitteerd-account">Pad 1. Gecompromitteerd account</h2>
+<p><strong>Kern.</strong> De aanvaller logt gewoon in. Niet met een exploit, maar met de inloggegevens van een
+medewerker, verkregen via phishing, een adversary-in-the-middle-pagina, een hergebruikt wachtwoord uit
+een eerder lek, of door de gebruiker net zo lang MFA-verzoeken te sturen tot hij op "ja" drukt.</p>
+<p><strong>Hoe het loopt.</strong>
+1. Een mail, een Teams-bericht of een QR-code leidt naar een inlogpagina die de echte nabootst.
+2. De gebruiker logt in; de proxy ertussen vangt wachtwoord én de sessiecookie na de MFA-stap.
+3. De aanvaller gebruikt de sessie: mailbox, SharePoint, Teams, alles wat het account mag.
+4. Vanuit de mailbox: nieuwe phishing naar collega's en ketenpartners, met de geloofwaardigheid van
+   een echte afzender; regels die antwoorden verbergen; facturen omleiden.
+5. Bij een account met rechten: verder langs pad 5.</p>
+<p><strong>Waarom het lukt.</strong> MFA via pushnotificatie of een tweecijferige number match is niet bestand tegen
+adversary-in-the-middle. Wachtwoorden worden hergebruikt. Sessies blijven lang geldig. En de
+gecompromitteerde mailbox is de perfecte springplank naar de volgende organisatie.</p>
+<p><strong>Chokepoints.</strong>
+- Phishing-resistente authenticatie (FIDO2, passkeys) voor iedereen die het aankan, en verplicht voor
+  beheer- en gevoelige accounts.
+- Conditional access: geen sessie vanaf een onbekend apparaat of een onmogelijke locatie.
+- Detectie op inlogafwijkingen: nieuw land, nieuw apparaat, onmogelijke reis, nieuwe mailregels.
+- Sessieduur en token-intrekking bij verdenking.</p>
+<p><strong>Bewijsvragen (D/R/P).</strong>
+- D: hebben we een regel die een inlog vanaf een nieuw land of een nieuwe mailregel meldt, en is die de
+  afgelopen zes maanden ooit afgegaan of getest?
+- R: wat doen we bij een bevestigd gecompromitteerd account: wie trekt sessies in, wie kijkt in de
+  mailbox, wie waarschuwt de ketenpartners die een mail kregen? Is dat één keer geoefend?
+- P: export uit de identity provider: welk percentage van de beheeraccounts dwingt FIDO2 af? Welk
+  percentage van alle accounts? Hoeveel accounts hebben nog sms of push als enige tweede factor?</p>
+<hr />
+<h2 id="pad-2-werkplek-via-de-gebruiker">Pad 2. Werkplek via de gebruiker</h2>
+<p><strong>Kern.</strong> De gebruiker voert zelf de code van de aanvaller uit. Een nepfoutmelding ("uw browser moet
+geverifieerd worden") vraagt om een toetscombinatie en een plakactie in het Uitvoeren-venster;
+daarmee start een PowerShell-commando dat de eigenlijke lading ophaalt. Bekend als ClickFix, met
+varianten via valse CAPTCHA's, valse updates en valse Teams-vergaderingen.</p>
+<p><strong>Hoe het loopt.</strong>
+1. Een gecompromitteerde of vervalste website, een advertentie of een mailbijlage toont de nepmelding.
+2. De gebruiker volgt de instructie: Windows+R, Ctrl+V, Enter.
+3. Het commando haalt een infostealer of remote-access-tool binnen, buiten de browser om.
+4. Inloggegevens en sessiecookies van alles wat op de werkplek is opgeslagen gaan naar buiten.
+5. Met die gegevens: pad 1 en pad 5.</p>
+<p><strong>Waarom het lukt.</strong> De gebruiker doet het zelf, dus de browserbeveiliging ziet geen download. De
+werkplek staat toe dat een gebruiker willekeurige scripts start. En de melding ziet er precies uit
+als de echte foutmeldingen die mensen dagelijks wegklikken.</p>
+<p><strong>Chokepoints.</strong>
+- Werkplekhardening: geen lokale beheerrechten, PowerShell en scripting beperkt tot wie het nodig
+  heeft, attack surface reduction-regels aan.
+- Endpointdetectie die de keten "Uitvoeren-venster, PowerShell, download" ziet.
+- DNS- en webfiltering, zodat de lading niet opgehaald kan worden.
+- Bij de mens: niet "let op phishing", maar de concrete instructie: niets plakken in het
+  Uitvoeren-venster, nooit, ook niet als de melding het vraagt.</p>
+<p><strong>Bewijsvragen (D/R/P).</strong>
+- D: draait er een detectieregel op het gebruik van het Uitvoeren-venster gevolgd door PowerShell met
+  een downloadcommando? Hoeveel keer ging die af, en was dat terecht?
+- R: wat doen we als een werkplek een infostealer had: welke wachtwoorden en sessies worden
+  ingetrokken, en hoe snel?
+- P: hoeveel werkplekken hebben nog lokale beheerrechten voor de gebruiker? Staan de
+  ASR-regels aan, en is dat te zien in een export?</p>
+<p>Dit pad is volledig uitgewerkt, tot aan de query's, in
+<a href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>.</p>
+<hr />
+<h2 id="pad-3-kwetsbare-internetgerichte-dienst">Pad 3. Kwetsbare internetgerichte dienst</h2>
+<p><strong>Kern.</strong> Iets wat aan het internet hangt heeft een bekende kwetsbaarheid, en de patch is er wel
+maar staat nog niet. VPN-concentrators, firewalls, mailgateways, portalen, een vergeten testserver.
+De tijd tussen "kwetsbaarheid bekend" en "actief misbruikt" is teruggelopen van weken naar dagen,
+soms uren.</p>
+<p><strong>Hoe het loopt.</strong>
+1. Een kwetsbaarheid wordt gepubliceerd, vaak met werkende exploitcode.
+2. Aanvallers scannen het hele internet; alles wat reageert, wordt binnen een dag geprobeerd.
+3. De exploit geeft toegang tot het apparaat of de dienst, meestal met hoge rechten.
+4. Vanaf daar: het interne netwerk, inloggegevens die op het apparaat staan, verder langs pad 5.
+5. Vaak wordt de toegang pas weken later gebruikt, als de patch allang is gezet en niemand meer kijkt.</p>
+<p><strong>Waarom het lukt.</strong> Patchen buiten het change-venster is niet geregeld. Niemand weet precies wat er
+allemaal aan het internet hangt. En een apparaat dat gepatcht is, is niet automatisch schoon.</p>
+<p><strong>Chokepoints.</strong>
+- Weten wat er aan het internet hangt: een actueel overzicht van het externe aanvalsoppervlak.
+- Kritieke patches op internetgerichte systemen binnen dagen, met een mandaat om buiten het
+  change-venster te handelen.
+- Beheerinterfaces nooit direct aan het internet.
+- Na een kritieke kwetsbaarheid: niet alleen patchen maar ook controleren op sporen van misbruik.</p>
+<p><strong>Bewijsvragen (D/R/P).</strong>
+- D: zien we een inlog op de beheerinterface van de firewall of VPN vanaf een onbekend adres? Zien we
+  uitgaand verkeer van een apparaat dat normaal niets naar buiten stuurt?
+- R: bij een spoedadvies van het nationale CSIRT: wie beslist over patchen buiten het venster, en
+  binnen hoeveel uur is dat de laatste keer gebeurd?
+- P: het overzicht van internetgerichte systemen met per systeem de laatste patchdatum, en het aantal
+  kritieke kwetsbaarheden ouder dan een week.</p>
+<hr />
+<h2 id="pad-4-leverancier-en-keten">Pad 4. Leverancier en keten</h2>
+<p><strong>Kern.</strong> De aanvaller komt niet bij jou binnen maar bij je leverancier, en gebruikt diens toegang,
+account of omgeving als opstap. Een beheerder van de leverancier met een gecompromitteerd account, een
+SaaS-dienst die jouw gegevens verwerkt, een ontwikkelstraat waar de code voor jouw applicatie vandaan
+komt, een remote-beheerkoppeling die altijd aanstaat.</p>
+<p><strong>Hoe het loopt.</strong>
+1. Bij de leverancier gebeurt pad 1, 2 of 3.
+2. De aanvaller vindt de klantenlijst en de toegangen: VPN-accounts, beheerwachtwoorden, API-sleutels.
+3. Met de toegang van de leverancier logt hij bij jou in, langs een route die vertrouwd is en zelden
+   bekeken wordt.
+4. Of: de aanvaller past de software of de dienst aan, en jij haalt de besmette versie zelf binnen.
+5. Vaak meerdere klanten tegelijk; jij bent er een van.</p>
+<p><strong>Waarom het lukt.</strong> Leverancierstoegang is breed, permanent en vertrouwd. Wat de leverancier zelf
+aan beveiliging doet, is contractueel zelden hard gemaakt en bijna nooit getoetst. En als de
+leverancier een incident heeft, hoor je het te laat.</p>
+<p><strong>Chokepoints.</strong>
+- Leverancierstoegang op maat: alleen wat nodig is, alleen wanneer nodig, phishing-resistent
+  ingelogd, en gelogd.
+- Contractuele eisen die op deze risico's slaan, met bewijs: phishing-resistente authenticatie bij de
+  leverancier, gehardende werkplekken, pentest en kwetsbaarheidsbeheer van de applicatie en de
+  ontwikkelstraat, en een meldplicht binnen uren.
+- Weten welke leveranciers welke toegang hebben, en dat periodiek nalopen.</p>
+<p><strong>Bewijsvragen (D/R/P).</strong>
+- D: zien we een leveranciersaccount dat inlogt buiten de afgesproken tijden of vanaf een nieuw adres?
+- R: als een leverancier meldt dat hij gecompromitteerd is: welke toegangen zetten we binnen een uur
+  uit, en weten we welke dat zijn?
+- P: de lijst leveranciers met toegang, en per leverancier: dwingt de toegang phishing-resistente
+  authenticatie af, en hebben we het bewijs (assurance, pentestrapport) van het afgelopen jaar?</p>
+<p>De contractuele kant van dit pad is uitgewerkt in de
+<a href="../security-annex-leveranciers/">Security Annex voor leveranciers</a>, die precies deze drie eisen
+centraal stelt.</p>
+<hr />
+<h2 id="pad-5-misbruik-van-beheerrechten">Pad 5. Misbruik van beheerrechten</h2>
+<p><strong>Kern.</strong> Dit is het pad na de voordeur. Eenmaal binnen met een gewoon account of op een gewone
+werkplek zoekt de aanvaller de weg naar beheerrechten: opgeslagen wachtwoorden, service-accounts met
+te veel rechten, beheerders die met hun beheeraccount ook mail lezen, een werkplek waar een
+domeinbeheerder ooit is ingelogd. Met domeinbeheer is alles bereikbaar, en dan pas komt de ransomware.</p>
+<p><strong>Hoe het loopt.</strong>
+1. Een voet binnen via pad 1, 2, 3 of 4.
+2. Verkenning: welke accounts bestaan, wie is beheerder, waar staan de wachtwoorden.
+3. Een tussenstap omhoog: een lokaal beheerderswachtwoord dat overal hetzelfde is, een
+   service-account met domeinrechten, een kwetsbaarheid in een interne server.
+4. Domeinbeheer: back-ups eerst vernietigen of versleutelen, daarna de rest.
+5. Afpersing, vaak met gestolen gegevens als tweede drukmiddel.</p>
+<p><strong>Waarom het lukt.</strong> Beheerrechten zijn permanent en breed uitgedeeld. Beheer gebeurt vanaf dezelfde
+werkplek als het gewone werk. Lokale beheerderswachtwoorden zijn gedeeld. En back-ups staan in
+hetzelfde domein als wat ze moeten beschermen.</p>
+<p><strong>Chokepoints.</strong>
+- Beheerrechten alleen tijdelijk en per taak (just-in-time), tenant-brede rollen tot een handvol
+  beperkt, nooit dezelfde identiteit voor beheer en mail.
+- Beheer alleen vanaf gehardende beheerwerkplekken, gescheiden van het gebruikersnetwerk.
+- Lokale beheerderswachtwoorden uniek per apparaat (LAPS of gelijkwaardig).
+- Back-ups die niet vanuit het domein te wijzigen of te verwijderen zijn, en een hersteltest die echt
+  is gedaan.</p>
+<p><strong>Bewijsvragen (D/R/P).</strong>
+- D: zien we het als een account voor het eerst een domeinbeheerder-groep aanraakt, als een
+  service-account interactief inlogt, of als iemand de back-upserver benadert?
+- R: hebben we ooit een volledige hersteltest gedaan vanaf een back-up die niet vanuit het domein
+  bereikbaar was, en hoe lang duurde dat?
+- P: hoeveel accounts hebben permanente domein- of tenantbeheerrechten? Hoeveel beheerders gebruiken
+  een aparte beheeridentiteit? Staat LAPS op alle werkplekken en servers? Voor Linux-servers beantwoordt
+  <a href="https://github.com/security-commons-nl/iamscan">iamscan</a> de vraag "wie kan root worden" uit de
+  configuratie.</p>
+<hr />
+<h2 id="wat-hier-bewust-niet-bij-staat">Wat hier bewust niet bij staat</h2>
+<p><strong>DDoS en hacktivisme.</strong> Dat is geen pad naar binnen maar uitval van buitenaf, en het raakt vooral de
+publieke website en online dienstverlening. Het hoort in je continuïteitsplan en bij je hostingpartij,
+niet in deze matrix. Wil je het toch meenemen, dan als kolom 6 met alleen R en P: is er een wasstraat,
+en is de omschakeling geoefend.</p>
+<p><strong>Insider.</strong> Een kwaadwillende medewerker loopt langs pad 5 zonder de voordeur nodig te hebben. De
+chokepoints van pad 5 zijn precies de maatregelen die ook daar werken; een apart pad voegt niets toe.</p>
+<h2 id="bronnen">Bronnen</h2>
+<p>De paden zijn een samenvatting van wat publiek is over incidenten bij Nederlandse gemeenten en
+waterschappen sinds 2023, en van de adviezen van het Nationaal Cyber Security Centrum, de
+Informatiebeveiligingsdienst voor gemeenten en ENISA over dezelfde periode. Per pad zijn de technieken
+terug te vinden in MITRE ATT&CK; die verwijzingen zijn hier bewust weggelaten, omdat de bewijsvragen
+belangrijker zijn dan de techniekcodes.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/risicoanalyse-aanvalspaden">security/risicoanalyse-aanvalspaden</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

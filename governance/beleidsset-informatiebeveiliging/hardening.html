@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid hardening</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> › <span>Beleid hardening</span></nav><!-- /kruimelpad -->
+<h1>Beleid hardening</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging volgens de BIO 2.0-indeling</a> · <a href="hardening.md">Markdown-bron</a></p>
+<h3>Afkortingen</h3>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+</tbody>
+</table>
+<h3>Verwante beleidsdocumenten</h3>
+<ul>
+<li>
+<p>Strategisch IB-beleid</p>
+</li>
+<li>
+<p>Beleid Mobile Device Management</p>
+</li>
+<li>
+<p>Wachtwoordbeleid</p>
+</li>
+<li>
+<p>Aanwijzing patchmanagement</p>
+</li>
+</ul>
+<h2 id="inleiding">Inleiding</h2>
+<p>Hardening is het proces om overbodige functies in besturingssystemen uit te schakelen en te verwijderen, periodiek te controleren en bij te stellen. Het niet uitvoeren van hardening vormt een onnodig risico, kwaadwillenden gebruiken deze functionaliteiten om zich onbevoegd toegang tot systemen te verschaffen, met ernstige schade aan gemeentelijke informatievoorziening tot gevolg. Hardening dient gestructureerd te worden aangepakt, daarom moeten procedures worden vastgesteld om hardening doeltreffend en ordelijk te laten plaatsvinden. Dit beleid is van toepassing op alle systemen die in gebruik zijn van de organisatie VOORBEELDGEMEENTE.</p>
+<h2 id="uitgangspunten">Uitgangspunten</h2>
+<p>Om te voldoen aan de eisen voor hardening uit de BIO hanteert de organisatie de volgende uitgangspunten:</p>
+<p>Overbodige software, services, gebruikersaccounts, en gebruikersrechten worden uitgeschakeld en/of van het systeem verwijderd, of aangepast naar een acceptabel niveau.</p>
+<h2 id="operationele-maatregelen">Operationele maatregelen</h2>
+<p>De operationele maatregelen voor hardening zijn de volgende:</p>
+<ul>
+<li>
+<p>Gegevensuitwisseling tussen vertrouwde en niet vertrouwde zones zoals communicatie via internet, e-mail, of andere elektronische wijze, dient inhoudelijk geautomatiseerd gecontroleerd te worden op aanwezigheid van kwaadaardige software (zoals virussen en malware).</p>
+</li>
+<li>
+<p>Communicatiekanalen, diensten en soortgelijke voorzieningen op een netwerk of computer die niet vereist zijn voor de dienst dienen te worden afgesloten door systeembeheerders.</p>
+</li>
+<li>
+<p>Voor toegang tot systemen door middel van wachtwoorden dient men zich te houden aan het vigerende wachtwoordbeleid voor de organisatie.</p>
+</li>
+<li>
+<p>Wachtwoorden die bij default (af-fabriek) zijn meegeleverd met de apparatuur worden vervangen door wachtwoorden die voldoen aan het vigerende wachtwoordbeleid.</p>
+</li>
+<li>
+<p>Op alle apparatuur worden (waar mogelijk) beschikbare firewalls, antivirusscanners en andere beschermende maatregelen geactiveerd, voor serversystemen is core-installatie het uitgangspunt.</p>
+</li>
+<li>
+<p>Op alle apparatuur wordt (waar mogelijk) systeem logging geactiveerd om detectie mogelijk te maken van malware en ongebruikelijke systeem activiteiten.</p>
+</li>
+<li>
+<p>Het centraal beperken van toegang tot bestanden of objecten door gebruikers of systeemprocessen door de inzet van verplichte toegangscontrole, Mandatory Access Control (MAC), op systemen.</p>
+</li>
+<li>
+<p>Rechten op bestandssystemen worden zo optimaal mogelijk toegekend.</p>
+</li>
+<li>
+<p>Werkstations worden zo ingericht dat routeren van verkeer tussen verschillende zones of netwerken niet mogelijk is.</p>
+</li>
+<li>
+<p>De indeling van zones binnen de technische infrastructuur vindt plaats volgens een operationeel beleidsdocument waarin is vastgelegd welke uitgangspunten voor zonering worden gehanteerd. Van systemen wordt bijgehouden in welke zone ze staan. Er wordt periodiek, minimaal één keer per jaar, geëvalueerd of het systeem nog steeds in de optimale zone zit of verplaatst moet worden.</p>
+</li>
+<li>
+<p>Zonering wordt ingericht met voorzieningen waarvan de functionaliteit is beperkt tot het strikt noodzakelijke (hardening van voorzieningen).</p>
+</li>
+<li>
+<p>Alle dataverbindingen zijn voorzien van versleuteling.</p>
+</li>
+<li>
+<p>Accounts die niet zijn toe te wijzen aan een (actieve) gebruiker worden verwijderd of gedeactiveerd.</p>
+</li>
+<li>
+<p>Alleen geautoriseerd personeel kan functies en software installeren of activeren.</p>
+</li>
+<li>
+<p>Alleen noodzakelijke software is toegestaan, overige software dient verwijderd of gedeactiveerd te worden.</p>
+</li>
+<li>
+<p>Alle apparatuur moet regelmatig worden getest op bekende zwakheden zoals beschreven in de aanwijzing patchmanagement</p>
+</li>
+<li>
+<p>De gemeentelijke infrastructuur is via het defense-in-depth principe op diverse lagen beveiligd.</p>
+</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

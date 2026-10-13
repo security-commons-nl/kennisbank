@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Voorbeeld: gemeente Duinstad (verzonnen)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Risicoanalyse langs aanvalspaden</a> › <span>Voorbeeld: gemeente Duinstad (verzonnen)</span></nav><!-- /kruimelpad -->
+<h1>Voorbeeld: gemeente Duinstad (verzonnen)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Risicoanalyse langs aanvalspaden</a> · <a href="voorbeeld.md">Markdown-bron</a></p>
+<p>Bijlage bij <a href="./">Risicoanalyse langs aanvalspaden</a>. Gemeente Duinstad bestaat niet; de cijfers
+zijn gekozen omdat ze herkenbaar zijn. Eén dag werk: ochtend stap 1 en 2 met de directie en de
+CISO, middag stap 3 met de beheerders, stap 4 aan het eind van de dag.</p>
+<h2 id="stap-1-kroonjuwelen">Stap 1. Kroonjuwelen</h2>
+<p>De directie kwam tot twaalf en schrapte er twee ("als dat een dag plat ligt, merkt niemand het").</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Kroonjuweel</th>
+<th>Eigenaar</th>
+<th>Systemen eronder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Uitkeringen en toeslagen betalen</td>
+<td>directeur Sociaal Domein</td>
+<td>uitkeringsapplicatie, financieel systeem, identiteitsvoorziening</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Basisregistratie personen</td>
+<td>hoofd Burgerzaken</td>
+<td>BRP-applicatie, koppeling landelijke voorziening</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Vergunningen en handhaving</td>
+<td>directeur Ruimte</td>
+<td>zaaksysteem, GIS, DSO-koppeling</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Salarisbetaling</td>
+<td>hoofd HR</td>
+<td>HR-systeem (SaaS), financieel systeem</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Meldkamer openbare orde en crisisorganisatie</td>
+<td>gemeentesecretaris</td>
+<td>Teams, telefonie, crisisportaal</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Belastingen en WOZ</td>
+<td>hoofd Belastingen</td>
+<td>belastingapplicatie (SaaS), koppeling BAG</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Website en digitale balie</td>
+<td>hoofd Communicatie</td>
+<td>CMS (gehost), DigiD-koppeling</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Werkplek en mail voor 900 medewerkers</td>
+<td>manager IV</td>
+<td>Microsoft 365, Entra, endpoints</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jeugdzorg-dossiers</td>
+<td>directeur Sociaal Domein</td>
+<td>jeugdapplicatie (SaaS), zaaksysteem</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Back-up en herstel van alles hierboven</td>
+<td>manager IV</td>
+<td>back-upplatform, offsite-kopie</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stap-3-matrix">Stap 3. Matrix</h2>
+<p>Ingevuld op basis van exports (Entra, endpointplatform, firewall, SIEM-regels, leverancierslijst) en
+twee uur met de beheerders. Groen alleen waar een export of testverslag ligt.</p>
+<table>
+<thead>
+<tr>
+<th>Kroonjuweel</th>
+<th>1. Account</th>
+<th>2. Werkplek</th>
+<th>3. Internetgericht</th>
+<th>4. Leverancier</th>
+<th>5. Beheerrechten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Uitkeringen</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>D🟡 R🟡 P🟢</td>
+<td>D🔴 R🔴 P🔴</td>
+<td>D🔴 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>2 BRP</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>D🟢 R🟡 P🟢</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🔴 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>3 Vergunningen</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🔴 R🔴 P🔴</td>
+<td>D🔴 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>4 Salaris</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>n.v.t. (SaaS)</td>
+<td>D🔴 R🔴 P🟡</td>
+<td>D🟡 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>5 Crisisorganisatie</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>D🟡 R🟢 P🟡</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🔴 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>6 Belastingen</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>n.v.t. (SaaS)</td>
+<td>D🔴 R🔴 P🟡</td>
+<td>D🟡 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>7 Website en balie</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>n.v.t.</td>
+<td>D🟢 R🟢 P🟢</td>
+<td>D🟡 R🟡 P🟢</td>
+<td>D🟡 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>8 Werkplek en mail</td>
+<td>D🟡 R🔴 P🔴</td>
+<td>D🟢 R🟡 P🔴</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🔴 R🟡 P🔴</td>
+</tr>
+<tr>
+<td>9 Jeugdzorg</td>
+<td>D🟡 R🔴 P🟡</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>n.v.t. (SaaS)</td>
+<td>D🔴 R🔴 P🔴</td>
+<td>D🟡 R🟡 P🟡</td>
+</tr>
+<tr>
+<td>10 Back-up</td>
+<td>D🔴 R🔴 P🔴</td>
+<td>D🟢 R🟡 P🟡</td>
+<td>D🟢 R🟡 P🟢</td>
+<td>D🟡 R🟡 P🟡</td>
+<td>D🔴 R🔴 P🔴</td>
+</tr>
+</tbody>
+</table>
+<p>Wat opviel bij het invullen:</p>
+<ul>
+<li><strong>Kolom 2 is grotendeels groen op D</strong> omdat de endpointdetectie de ClickFix-keten ziet en dat in
+  april is getest. Maar P is geel: 140 van de 900 werkplekken hebben nog lokale beheerrechten.</li>
+<li><strong>Kolom 4 is de rode kolom.</strong> Zeven leveranciers hebben permanente VPN- of beheertoegang; niemand
+  kon zeggen of die toegang phishing-resistent is ingelogd, en er zijn geen inlogmeldingen op die
+  accounts. De contracten eisen "passende maatregelen" zonder bewijs.</li>
+<li><strong>Kolom 5, rij 10: de back-up.</strong> De back-upserver staat in het domein en is met een
+  domeinbeheeraccount te benaderen. Een hersteltest is drie jaar geleden gedaan, op één applicatie.</li>
+<li><strong>R is bijna overal geel of rood.</strong> Er zijn playbooks, maar ze zijn niet geoefend. Dat ene groene
+  vakje (crisisorganisatie, pad 3) komt van een tabletop in het voorjaar.</li>
+<li><strong>Kolom 1 P is overal geel:</strong> MFA staat aan, maar via pushnotificatie. Vier beheeraccounts hebben
+  FIDO2, de overige 31 niet.</li>
+</ul>
+<h2 id="stap-4-risicolijst">Stap 4. Risicolijst</h2>
+<p>Zeventien rode cellen. Tien in deze ronde, gesorteerd op impact en op wat nu gebeurt.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Risico</th>
+<th>Maatregel</th>
+<th>Eigenaar</th>
+<th>Termijn of acceptatie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Via een leveranciersaccount (pad 4) zijn de uitkerings-, vergunning- en jeugdapplicaties bereikbaar; we zien het niet, we houden het niet tegen, we weten niet wat we dan doen</td>
+<td>leverancierstoegang inventariseren, FIDO2 afdwingen op die toegang, inlogmeldingen aan; Annex in de eerstvolgende contractverlenging</td>
+<td>manager IV (toegang), inkoop (contract)</td>
+<td>inventarisatie 4 weken, FIDO2 op toegang 3 maanden</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Back-up (kroonjuweel 10) is vanuit het domein te vernietigen (pad 5) en niet aantoonbaar herstelbaar</td>
+<td>back-up buiten het domein, immutable kopie, volledige hersteltest</td>
+<td>manager IV</td>
+<td>immutable 6 weken, hersteltest 3 maanden</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Beheeraccounts loggen in met push-MFA (pad 1, P geel op alles), en een overgenomen beheeraccount zien we niet (pad 5, D rood)</td>
+<td>FIDO2 verplicht op alle 35 beheeraccounts; detectie op wijziging in beheerdersgroepen</td>
+<td>manager IV</td>
+<td>6 weken</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bij een gecompromitteerd account weet niemand wie de sessies intrekt en wie de keten waarschuwt (pad 1, R rood op 7 rijen)</td>
+<td>playbook accountcompromittering schrijven en één keer oefenen</td>
+<td>CISO (schrijven), servicedesk (oefenen)</td>
+<td>8 weken</td>
+</tr>
+<tr>
+<td>5</td>
+<td>140 werkplekken met lokale beheerrechten (pad 2 en 5, P rood op rij 8)</td>
+<td>lokale beheerrechten weg, LAPS op alle apparaten</td>
+<td>manager IV</td>
+<td>3 maanden</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Salaris- en belastingapplicaties (SaaS) zonder bewijs van de leverancier over pad 1 t/m 3 aan hun kant (pad 4)</td>
+<td>assurance en pentestrapport opvragen; ontbreekt het, dan Annex-eisen in het gesprek</td>
+<td>inkoop, contracteigenaren</td>
+<td>2 maanden</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Kritieke patch op de VPN buiten het change-venster is niet geregeld (pad 3, R geel op alles)</td>
+<td>mandaat op één A4: wie beslist, binnen hoeveel uur</td>
+<td>CIO</td>
+<td>4 weken</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Geen overzicht van wat er aan het internet hangt (pad 3, D geel)</td>
+<td>extern aanvalsoppervlak in kaart, kwartaalscan</td>
+<td>manager IV</td>
+<td>6 weken</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jeugdzorg-dossiers via gecompromitteerd account bereikbaar zonder dat het opvalt (pad 1, D geel op rij 9)</td>
+<td>conditional access op de jeugdapplicatie: alleen beheerde apparaten</td>
+<td>manager IV, directeur Sociaal Domein</td>
+<td>2 maanden</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Playbooks bestaan maar zijn nooit geoefend (R geel op bijna alles)</td>
+<td>twee tabletops per jaar, eerste in het najaar</td>
+<td>CISO</td>
+<td>eerste tabletop 3 maanden</td>
+</tr>
+</tbody>
+</table>
+<p>Zeven rode cellen blijven open, allemaal in kolom 4 en 5 op kroonjuwelen 3, 6 en 9. De directeur
+Bedrijfsvoering heeft die als risico-eigenaar expliciet geaccepteerd tot de volgende ronde, met de
+aantekening dat regel 1 en 2 hierboven de meeste ervan meenemen.</p>
+<h2 id="wat-de-directie-eruit-haalde">Wat de directie eruit haalde</h2>
+<p>Niet "we scoren 40% op detectie", maar: <em>als een van onze zeven leveranciers gehackt wordt, kunnen ze
+bij de uitkeringen, en dat merken we niet.</em> Die ene zin deed meer dan de matrix. De matrix is voor de
+CISO en de beheerders; de risicolijst is voor de lijn.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/risicoanalyse-aanvalspaden">security/risicoanalyse-aanvalspaden</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
