@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid informatieclassificatie</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid informatieclassificatie</span></nav><!-- /kruimelpad -->
+<h1>Beleid informatieclassificatie</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="classificatie.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Informatie classificatie</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het classificeren, labelen en veilig
+overdragen van informatie. Classificeren is het vaststellen hoe zwaar informatie beschermd moet worden op
+beschikbaarheid, integriteit en vertrouwelijkheid (BIV). De classificatie bepaalt welke maatregelen uit de
+andere beleidsstukken van toepassing zijn. Het beleid geldt voor alle informatie van de organisatie, in alle
+systemen en op alle dragers, en voor iedereen die die informatie verwerkt. Het gaat over de
+ISO-beheersmaatregelen 5.12 tot en met 5.14.</p>
+<p>Buiten dit beleid vallen de versleutelingseisen zelf (beleid cryptografie) en de toegangsrechten per
+classificatie (beleid logische toegangsbeveiliging).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>De eigenaar van de informatie (meestal de proceseigenaar) bepaalt de classificatie en accepteert het
+   restrisico. De CISO en de privacy officer adviseren.</li>
+<li>Zo laag als verantwoord: te hoog classificeren kost geld en belemmert openbaarheid. Wettelijke eisen gaan
+   altijd voor.</li>
+<li>Het meest gevoelige deel bepaalt de classificatie van het geheel. Een systeem krijgt de classificatie van
+   de zwaarste informatie die het verwerkt, tenzij het systeem die informatie apart afschermt.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Classificatiemethode</h3>
+<ul>
+<li>De organisatie classificeert met een vastgestelde impactmethode die deel uitmaakt van de
+  risicomanagementmethode van de organisatie, bijvoorbeeld de baselinetoets of een BIA. De methode staat in
+  <strong>[classificatiemethode]</strong>. [5.12.01]</li>
+<li>De impact op het proces wordt per BIV-aspect gescoord op een schaal van 0 tot en met 3 en vertaald naar een
+  niveau:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Impact</th>
+<th>Beschikbaarheid</th>
+<th>Integriteit</th>
+<th>Vertrouwelijkheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 verwaarloosbaar</td>
+<td>niet nodig</td>
+<td>niet zeker</td>
+<td>openbaar</td>
+</tr>
+<tr>
+<td>1 beperkt</td>
+<td>belangrijk (BBN1)</td>
+<td>beschermd (BBN1)</td>
+<td>intern (BBN1)</td>
+</tr>
+<tr>
+<td>2 ernstig</td>
+<td>noodzakelijk (BBN2)</td>
+<td>hoog (BBN2)</td>
+<td>vertrouwelijk (BBN2)</td>
+</tr>
+<tr>
+<td>3 zeer ernstig</td>
+<td>essentieel (BBN2 met aanvullende risicoanalyse)</td>
+<td>absoluut (BBN2 met aanvullende risicoanalyse)</td>
+<td>geheim (BBN3)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>BBN3 voor vertrouwelijkheid geldt als de informatie weerstand vraagt tegen statelijke actoren of tegen
+  georganiseerde criminaliteit en ondermijning.</li>
+<li>De informatie in elk informatiesysteem is geclassificeerd op basis van een expliciete risicoafweging, vóór
+  ingebruikname en daarna bij elke ingrijpende wijziging en ten minste elke drie jaar. De eigenaar legt de
+  uitkomst vast in een classificatierapport met de ingevulde vragenlijsten, ondertekend als besluit. [5.12.01]</li>
+<li>De classificatie per systeem staat in de inventaris van bedrijfsmiddelen.</li>
+</ul>
+<h3>3.2 Eisen per niveau</h3>
+<ul>
+<li>Elk niveau heeft een vaste set minimumeisen; de basis is de BIO 2.0 bij het bijbehorende BBN. Aanvullend
+  geldt ten minste:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Niveau vertrouwelijkheid</th>
+<th>Authenticatie</th>
+<th>Autorisatie</th>
+<th>Opslag en transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>intern (BBN1)</td>
+<td>persoonsgebonden account; meerfactor bij toegang van buiten</td>
+<td>toegang voor medewerkers van de organisatie</td>
+<td>versleuteld transport buiten het eigen netwerk</td>
+</tr>
+<tr>
+<td>vertrouwelijk (BBN2)</td>
+<td>meerfactor</td>
+<td>toegang per rol, door de eigenaar toegekend</td>
+<td>versleuteld transport en versleutelde opslag; zo min mogelijk kopieën</td>
+</tr>
+<tr>
+<td>geheim (BBN3)</td>
+<td>meerfactor met een sterk middel, geen single sign-on</td>
+<td>toegang per persoon, vierogenprincipe</td>
+<td>aanvullende maatregelen op basis van een eigen risicoanalyse</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Voor integriteit van BBN2 en hoger geldt het vierogenprincipe bij wijzigingen van gegevens die
+  rechtsgevolgen hebben, en worden wijzigingen gelogd. Voor beschikbaarheid legt de eigenaar per systeem de
+  hersteltijd en het toelaatbaar gegevensverlies vast in het continuïteitsbeleid.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd»</strong></p>
+<ul>
+<li>Informatie over cliënten in het sociaal domein of de jeugdhulp krijgt ten minste vertrouwelijk (BBN2) voor
+  vertrouwelijkheid en hoog (BBN2) voor integriteit. Een lagere classificatie kan alleen met een
+  gedocumenteerd besluit van de eigenaar na advies van de privacy officer. [5.12.01]</li>
+</ul>
+<p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
+<ul>
+<li>Gezondheidsinformatie is een bijzonder persoonsgegeven en krijgt ten minste vertrouwelijk (BBN2). Ad-hoc
+  uitwisseling per e-mail of chat voldoet aan de NTA 7516: gezondheidsinformatie hoort in het
+  vakinhoudelijke systeem, gaat per e-mail alleen als dat niet kan en dan alleen versleuteld via beveiligde
+  mail, met een vastgestelde grond om te verzenden en een gecontroleerde ontvanger. Automatisch doorsturen,
+  leesbevestigingen en het delen van inloggegevens zijn niet toegestaan; wie namens een ander mailt, doet dat
+  via een zichtbare mandaatfunctie. [5.12.01]</li>
+<li>De organisatie biedt burgers een beveiligde mailvoorziening aan en vermeldt die op de website.</li>
+</ul>
+<p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
+<ul>
+<li>Politiegegevens die de organisatie verwerkt (bijvoorbeeld door boa's of in de handhaving) worden apart
+  geclassificeerd en krijgen ten minste vertrouwelijk (BBN2). Ze worden gescheiden gehouden van de overige
+  informatie in een systeem of omgeving waarvoor de autorisatie-, logging- en bewaareisen van de Wet
+  politiegegevens gelden, en gaan niet via gewone e-mail of chat naar ontvangers buiten de kring die de wet
+  toestaat. [5.12.01]</li>
+</ul>
+</blockquote>
+<h3>3.3 Labelen</h3>
+<ul>
+<li>Informatie van vertrouwelijk (BBN2) en hoger is herkenbaar gelabeld: digitaal met een classificatielabel
+  in de metagegevens, en op papier met het niveau op elke pagina. Systemen die labels ondersteunen, passen
+  de bijbehorende beveiliging (versleuteling, deelbeperkingen) automatisch toe.</li>
+<li>Hardware krijgt een sticker met het kenmerk uit de inventaris.</li>
+</ul>
+<h3>3.4 Overdragen van informatie</h3>
+<ul>
+<li>Websites, webapplicaties, API's en het e-mailverkeer van de organisatie die vanaf internet bereikbaar zijn,
+  voldoen aan de verplichte standaarden van de lijst van het Forum Standaardisatie en aan de eisen uit het
+  Cyberbeveiligingsbesluit. De organisatie stelt die zo in dat de beveiliging maximaal is zonder dat de dienst
+  ervan uitvalt. [5.14.01]</li>
+<li><strong>[beheerder internetfacing systemen]</strong>
+  meet elke maand alle domeinen met internet.nl, rapporteert de scores aan de CISO en zet tekortkomingen
+  binnen drie maanden om in een wijziging of een geaccepteerd risico. [5.14.01]</li>
+<li>Voor openbaar webverkeer met gevoelige gegevens gebruikt de organisatie ten minste publiek vertrouwde
+  OV-certificaten; voor intern webverkeer met gevoelige gegevens ten minste publiek vertrouwde OV-certificaten
+  of PKIoverheid-certificaten uit een private stam. Zwaardere certificaten volgen uit een risicoanalyse,
+  aansluitvoorwaarden of wetgeving. [5.14.02]</li>
+<li>Gebruikt de organisatie geavanceerde of gekwalificeerde elektronische handtekeningen, dan voldoen die aan
+  de AdES Baseline Profiles van de lijst open standaarden. Bij aanschaf van een ondertekendienst is dat een
+  eis in de uitvraag. [5.14.03]</li>
+<li>De organisatie heeft één actuele registratie van alle internetfacing systemen, webapplicaties, IP-adressen
+  en API's, als onderdeel van de inventaris van bedrijfsmiddelen. Een nieuw systeem komt pas online na
+  registratie. [5.14.04]</li>
+<li>Alle publiek toegankelijke websites zijn aangemeld in het Register Internetdomeinen Overheid. De
+  registratie wordt ten minste elk halfjaar bijgewerkt. [5.14.05]</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proceseigenaar (eigenaar van de informatie)</td>
+<td>Classificatie, classificatierapport en acceptatie van het restrisico</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Toepassen van de maatregelen die bij de classificatie horen; registratie in de inventaris</td>
+</tr>
+<tr>
+<td><strong>[beheerder internetfacing systemen]</strong></td>
+<td>Metingen met internet.nl, certificaten, registratie van internetfacing systemen en RIO</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Methode, advies bij classificatie, toetsing van de uitkomsten en van dit beleid</td>
+</tr>
+<tr>
+<td>Privacy officer of FG</td>
+<td>Advies bij classificatie van persoonsgegevens</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Informatie labelen en volgens het niveau behandelen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Jaarlijks: controle dat elk systeem in de inventaris een classificatie heeft die niet ouder is dan drie
+  jaar; bewijs is de lijst met ontbrekende of verlopen classificaties en de afhandeling.</li>
+<li>Maandelijks: internet.nl-scores per domein, met een kwartaaloverzicht aan de CISO.</li>
+<li>Halfjaarlijks: vergelijking van de registratie van internetfacing systemen en van het RIO met een externe
+  scan van de domeinen en IP-reeksen van de organisatie.</li>
+<li>Jaarlijks: steekproef op de certificaten van internetfacing systemen met gevoelige gegevens.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De classificatie stuurt het beleid
+logische toegangsbeveiliging, het beleid cryptografie, het beleid logging en monitoring, het beleid afvoer
+en hergebruik van gegevensdragers en het continuïteitsbeleid. De inventaris uit het beleid
+bedrijfsmiddelenbeheer bevat de classificaties en de registratie van internetfacing systemen.</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (6) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.12.01</td>
+<td>Classificeren van informatie</td>
+<td>3.1 Classificatiemethode</td>
+</tr>
+<tr>
+<td>5.14.01</td>
+<td>Overdragen van informatie</td>
+<td>3.4 Overdragen van informatie</td>
+</tr>
+<tr>
+<td>5.14.02</td>
+<td>Overdragen van informatie</td>
+<td>3.4 Overdragen van informatie</td>
+</tr>
+<tr>
+<td>5.14.03</td>
+<td>Overdragen van informatie</td>
+<td>3.4 Overdragen van informatie</td>
+</tr>
+<tr>
+<td>5.14.04</td>
+<td>Overdragen van informatie</td>
+<td>3.4 Overdragen van informatie</td>
+</tr>
+<tr>
+<td>5.14.05</td>
+<td>Overdragen van informatie</td>
+<td>3.4 Overdragen van informatie</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>classificatiemethode</strong>: het vastgestelde document met vragenlijsten en impactschaal</li>
+<li><strong>beheerder internetfacing systemen</strong>: de functie die de metingen uitvoert, bijvoorbeeld de netwerkbeheerder</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid IT-compliance</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid IT-compliance</span></nav><!-- /kruimelpad -->
+<h1>Beleid IT-compliance</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="it-compliance.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>IT-Compliance</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de naleving van wet- en
+regelgeving en contractuele eisen die op informatie en informatiesystemen van de organisatie rusten. Het
+regelt hoe de organisatie weet welke eisen gelden, hoe registraties en bewaartermijnen zijn ingericht,
+hoe werkplekken en schermen worden afgeschermd en hoe systemen tijdens audits beschermd blijven. Het gaat
+over de ISO-beheersmaatregelen 5.31 tot en met 5.34, 7.07, 8.06, 8.11, 8.12, 8.17 en 8.34.</p>
+<p>Het beleid geldt voor alle informatiesystemen in de scope van het managementsysteem en voor iedereen die
+ermee werkt. Het is bedoeld voor proceseigenaren, de archieffunctie, de privacy officer, de IT-organisatie en
+de CISO.</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>De proceseigenaar weet welke wettelijke en contractuele eisen op zijn proces rusten en is verantwoordelijk
+   voor de naleving.</li>
+<li>Informatie wordt niet langer bewaard dan nodig, en niet korter dan de wet voorschrijft.</li>
+<li>Naleving is aantoonbaar met registraties die de organisatie zelf bijhoudt.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Wettelijke en contractuele eisen</h3>
+<ul>
+<li>De CISO houdt samen met de privacy officer en de juridische functie een register bij van de wet- en
+  regelgeving en de contractuele eisen die gelden voor informatiebeveiliging, met per eis de eigenaar en het
+  beleidsstuk waarin hij is uitgewerkt. Het register wordt jaarlijks en bij elke relevante wetswijziging
+  bijgewerkt.</li>
+<li>Het register bevat ten minste de AVG, de Archiefwet, de Cyberbeveiligingswet waar die geldt en de
+  sectorale wetgeving van de eigen taken.</li>
+<li>De organisatie gebruikt alleen software waarvoor een geldige licentie is. De IT-organisatie houdt de
+  licenties bij en vergelijkt ze jaarlijks met de geïnstalleerde software.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
+<ul>
+<li>De organisatie verwerkt politiegegevens, bijvoorbeeld door boa's of bij handhaving en opsporing. Voor die
+  verwerkingen geldt de Wet politiegegevens naast de AVG. Het register noemt per verwerking het doel uit de
+  Wpg, de geautoriseerde functies en de bewaartermijn.</li>
+<li>Autorisaties voor politiegegevens worden per persoon verleend en ten minste halfjaarlijks door de
+  proceseigenaar gecontroleerd. Elke raadpleging en wijziging wordt gelogd; de logging wordt bewaard
+  zolang de Wpg voorschrijft.</li>
+<li>Over de verwerking van politiegegevens laat de organisatie de periodieke privacy-audit uitvoeren die de
+  Wpg voorschrijft en stuurt het rapport naar de Autoriteit Persoonsgegevens.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD» of «Suwinet» of «BRP (als bronhouder of afnemer)» of «BAG of andere basisregistraties» of «Andere ketens met eigen beveiligingseisen»</strong></p>
+<ul>
+<li>De organisatie is aangesloten op landelijke voorzieningen met een eigen beveiligings- en auditregime. Het
+  register noemt per aansluiting het normenkader, de eigenaar en de termijn van de verantwoording.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD»</strong></p>
+<ul>
+<li>Voor de DigiD-aansluiting laat de organisatie jaarlijks een ICT-beveiligingsassessment door een
+  onafhankelijke auditor uitvoeren en levert het rapport op tijd aan bij de beheerder van DigiD.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «Suwinet»</strong></p>
+<ul>
+<li>Voor Suwinet legt de organisatie jaarlijks verantwoording af over de normen voor gebruik en beveiliging.
+  De proceseigenaar controleert per kwartaal de autorisaties en steekproefsgewijs de raadplegingen op
+  doelbinding.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «BRP (als bronhouder of afnemer)»</strong></p>
+<ul>
+<li>Voor de BRP voert de organisatie de jaarlijkse zelfevaluatie of audit uit die de beheerder van de BRP
+  voorschrijft, en controleert de proceseigenaar de autorisaties ten minste jaarlijks.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «BAG of andere basisregistraties»</strong></p>
+<ul>
+<li>Voor de BAG en andere basisregistraties waarvoor de organisatie bronhouder is, voert de organisatie de
+  verplichte kwaliteitscontroles en audits uit en volgt de bevindingen op.</li>
+</ul>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «Andere ketens met eigen beveiligingseisen»</strong></p>
+<ul>
+<li>Voor andere ketens met eigen beveiligingseisen staat het normenkader en de wijze van verantwoording in
+  <strong>[overzicht overige ketens]</strong>.</li>
+</ul>
+</blockquote>
+<h3>3.2 Registraties en bewaartermijnen</h3>
+<ul>
+<li>De proceseigenaar legt voor elk informatiesysteem en elke categorie informatie de bewaartermijn vast, op
+  basis van de geldende selectielijst, de Archiefwet, de privacywetgeving en de eigen bedrijfsdoelen. De
+  termijnen staan in het verwerkingsregister of in een overzicht dat de archieffunctie bijhoudt. [5.33.01]</li>
+<li>De proceseigenaar zorgt dat het systeem de termijnen ook uitvoert: vernietiging, overbrenging of
+  anonimisering na afloop, automatisch waar het systeem dat kan en volgens een vast schema waar dat niet kan.
+  [5.33.01]</li>
+<li>De proceseigenaar toetst ten minste jaarlijks met een steekproef of informatie na afloop van de termijn
+  daadwerkelijk is vernietigd of overgebracht, en legt de uitkomst vast. [5.33.01]</li>
+<li>Bij aanschaf of vervanging van een systeem is de mogelijkheid om bewaartermijnen uit te voeren een eis in
+  het programma van eisen. [5.33.01]</li>
+<li>Registraties die als bewijs dienen (zoals logging, besluiten en audit trails) zijn beschermd tegen
+  wijziging en voortijdige verwijdering.</li>
+</ul>
+<h3>3.3 Privacy en persoonsgegevens</h3>
+<ul>
+<li>De privacymaatregelen staan in het privacybeleid. Dit beleid regelt alleen de raakvlakken: het register
+  van eisen (3.1) en de bewaartermijnen (3.2) gelden ook voor persoonsgegevens.</li>
+<li>In test- en ontwikkelomgevingen worden geen echte persoonsgegevens gebruikt, tenzij ze zijn gemaskeerd of
+  gepseudonimiseerd en de privacy officer heeft ingestemd.</li>
+<li>De IT-organisatie zet maatregelen in tegen het onbedoeld weglekken van gevoelige gegevens, zoals
+  waarschuwingen of blokkades bij het versturen van gegevens met een hoge classificatie naar externe
+  adressen. De keuze volgt uit de risicoanalyse.</li>
+</ul>
+<h3>3.4 Clear desk en clear screen</h3>
+<ul>
+<li>Medewerkers laten geen vertrouwelijke informatie onbeheerd achter op hun werkplek, printer of in
+  vergaderruimten, en vergrendelen hun scherm wanneer zij de werkplek verlaten.</li>
+<li>Werkplekken vergrendelen automatisch na
+  <strong>[vergrendeltijd]</strong>
+  minuten zonder activiteit.</li>
+<li>Waar toegang tot systemen werkt met een chipcard, pas of andere fysieke token, vergrendelt de werkplek
+  automatisch zodra het token wordt verwijderd. De IT-organisatie stelt dat centraal in, zodat gebruikers het
+  niet kunnen uitzetten. [7.07.01]</li>
+<li>Werkt de organisatie niet met een fysieke token, dan geldt de vorige regel voor elke toekomstige invoering
+  ervan en is hij een eis bij de aanschaf. [7.07.01]</li>
+</ul>
+<h3>3.5 Techniek ter ondersteuning van naleving</h3>
+<ul>
+<li>De IT-organisatie bewaakt de capaciteit van kritieke systemen (opslag, rekenkracht, netwerk) en signaleert
+  tekorten voordat ze de beschikbaarheid raken.</li>
+<li>Alle systemen synchroniseren hun klok met een betrouwbare tijdbron, zodat logging uit verschillende
+  systemen vergelijkbaar is.</li>
+</ul>
+<h3>3.6 Audits op informatiesystemen</h3>
+<ul>
+<li>Audits en technische tests op productiesystemen worden vooraf afgestemd met de systeemeigenaar en de
+  IT-organisatie: wat wordt getest, door wie, wanneer en met welke rechten.</li>
+<li>Auditors krijgen bij voorkeur alleen-lezen toegang. Rechten worden na afloop direct ingetrokken.</li>
+<li>Tests die de beschikbaarheid kunnen raken, gebeuren buiten piektijden of op een kopie.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak»</strong></p>
+<ul>
+<li>Zonder eigen ISO houdt
+  <strong>[functionaris informatiebeveiliging]</strong>
+  het register uit 3.1 bij. De jaarlijkse controle op het register en op de steekproef bewaartermijnen wordt
+  belegd bij de CISO-invulling of de interne controle.</li>
+</ul>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een ISO of CISO in deeltijd» of «Een eigen team (CISO met ISO's)»</strong></p>
+<ul>
+<li>De ISO of CISO houdt het register uit 3.1 bij en voert de jaarlijkse controle op de bewaartermijnen uit
+  samen met de archieffunctie.</li>
+</ul>
+</blockquote>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proceseigenaar</td>
+<td>Naleving van de eisen op het eigen proces, bewaartermijnen vastleggen, uitvoeren en toetsen</td>
+</tr>
+<tr>
+<td><strong>[lijneigenaar archief]</strong></td>
+<td>Overzicht van bewaartermijnen, selectielijst, ondersteuning bij vernietiging en overbrenging</td>
+</tr>
+<tr>
+<td>CISO of ISO</td>
+<td>Register van eisen, advies, controle op naleving</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Privacyeisen, maskeren in testomgevingen; de FG houdt toezicht</td>
+</tr>
+<tr>
+<td>IT-organisatie</td>
+<td>Automatische vergrendeling, licenties, capaciteit, kloksynchronisatie, begeleiding van audits</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Clear desk en clear screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Jaarlijks: actualisering van het register van wettelijke en contractuele eisen; bewijs is de versie met
+  datum en de lijst van wijzigingen.</li>
+<li>Jaarlijks: steekproef per kritiek systeem op de uitvoering van bewaartermijnen; bewijs is het
+  vernietigingsverslag of de overbrengingsverklaring.</li>
+<li>Jaarlijks: technische controle dat automatische vergrendeling (op inactiviteit en bij verwijderen van een
+  token) op alle werkplekken aanstaat; bewijs is de configuratie-export.</li>
+<li>Halfjaarlijks: rondgang clear desk door de ISO of de lijneigenaar, met een kort verslag.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «Startend: nog geen samenhangend beleid» of «BIO 1 op orde, verantwoording via ENSIA»</strong></p>
+<ul>
+<li>De controles hierboven worden eerst ingevoerd voor de systemen met de hoogste classificatie. Binnen twee
+  jaar dekken ze alle systemen in de scope.</li>
+</ul>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «BIO 2.0-ISMS in opbouw» of «BIO 2.0-ISMS werkend, met controleraamwerk»</strong></p>
+<ul>
+<li>Elke controle hierboven is een control in het controleraamwerk, met eigenaar, frequentie en bewijs.</li>
+</ul>
+<p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
+<ul>
+<li>Halfjaarlijks: controle van de autorisaties voor politiegegevens; periodiek: de Wpg-audit en de
+  opvolging van de bevindingen.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het privacybeleid
+(persoonsgegevens en bewaartermijnen), het beleid logische toegangsbeveiliging (vergrendeling en
+autorisaties), het beleid logging en monitoring (bewaren van logging en kloksynchronisatie), het beleid
+informatieclassificatie (gegevenslekken) en het beleid secure software development (testdata).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (2) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.33.01</td>
+<td>Beschermen van registraties</td>
+<td>3.2 Registraties en bewaartermijnen</td>
+</tr>
+<tr>
+<td>7.07.01</td>
+<td>‘Clear desk’ en ‘clear screen’</td>
+<td>3.4 Clear desk en clear screen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>overzicht overige ketens</strong>: per keten het normenkader, de eigenaar en de auditcyclus</li>
+<li><strong>vergrendeltijd</strong>: het aantal minuten inactiviteit, bijvoorbeeld 10</li>
+<li><strong>functionaris informatiebeveiliging</strong>: de medewerker met de neventaak informatiebeveiliging</li>
+<li><strong>lijneigenaar archief</strong>: de functie die de archieffunctie uitvoert, bijvoorbeeld de DIV-coördinator</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid wijzigingsbeheer</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid wijzigingsbeheer</span></nav><!-- /kruimelpad -->
+<h1>Beleid wijzigingsbeheer</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="wijzigingsbeheer.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Wijzigingsbeheer</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor wijzigingen in informatiesystemen,
+infrastructuur, software en configuratie in de productieomgeving. Het regelt hoe een wijziging wordt
+aangevraagd, beoordeeld, getest, goedgekeurd en doorgevoerd, hoe omgevingen gescheiden zijn en wie software
+mag installeren. Het geldt voor de eigen IT-organisatie, functioneel beheer en leveranciers die wijzigingen
+doorvoeren op systemen van de organisatie. Het gaat over de ISO-beheersmaatregelen 5.37, 8.19, 8.29, 8.31,
+8.32 en 8.33.</p>
+<p>Buiten dit beleid vallen de eisen aan het bouwen van software (beleid veilige softwareontwikkeling) en het
+installeren van beveiligingsupdates binnen de termijnen voor kwetsbaarheden (beleid vulnerability- en
+patchmanagement); die updates lopen wel via dit proces, als standaardwijziging.</p>
+<blockquote>
+<p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed»</strong></p>
+<p>De organisatie stuurt, een leverancier voert het beheer uit. Het wijzigingsproces van de leverancier
+is leidend voor de uitvoering; de organisatie houdt de goedkeuring van wijzigingen met gevolgen voor haar
+processen of informatie, en legt dit beleid als eis in het contract.</p>
+<p><strong>Alleen als: Wie beheert je IT? «Volledig uitbesteed»</strong></p>
+<p>Het beheer is volledig uitbesteed. De leverancier voert wijzigingsbeheer uit volgens dit beleid, zoals
+vastgelegd in het contract. De organisatie keurt wijzigingen goed die haar processen of informatie
+raken en ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.</p>
+</blockquote>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Elke wijziging in productie is vastgelegd, beoordeeld en goedgekeurd voordat hij wordt doorgevoerd.
+   Spoedwijzigingen worden achteraf binnen vijf werkdagen beoordeeld.</li>
+<li>Er wordt niet getest in productie.</li>
+<li>Elke wijziging heeft een weg terug.</li>
+<li>Hoe groter het risico van een wijziging, hoe zwaarder de beoordeling en de goedkeuring.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Het wijzigingsproces</h3>
+<ul>
+<li>De organisatie richt wijzigingsbeheer in volgens een algemeen geaccepteerd beheerraamwerk, bijvoorbeeld
+  ITIL of ISO/IEC 20000 voor technisch beheer en BiSL voor functioneel beheer, en legt vast welk raamwerk
+  geldt. [8.32.02]</li>
+<li>Elke wijziging staat in het wijzigingsregister met: omschrijving, aanvrager, betrokken systemen,
+  risicoklasse, testplan en testresultaten, besluit en datum van doorvoeren. [8.32.01]</li>
+<li>Elke wijziging krijgt een risicoafweging van de mogelijke gevolgen voor beschikbaarheid, integriteit en
+  vertrouwelijkheid, inclusief een beschreven plan om terug te gaan naar de vorige situatie (rollback).
+  [8.32.01]</li>
+<li>Wijzigingen vallen in drie soorten, elk met een eigen goedkeuring: [8.32.01]</li>
+<li>standaardwijzigingen: vooraf beoordeelde, terugkerende wijzigingen met laag risico (zoals reguliere
+    updates), goedgekeurd als type en uitgevoerd volgens een vast draaiboek;</li>
+<li>normale wijzigingen: beoordeeld en goedgekeurd door het wijzigingsoverleg (change advisory board), met
+    de systeemeigenaar en, bij een hoog risico of informatie met classificatie hoog, advies van de CISO;</li>
+<li>spoedwijzigingen: goedgekeurd door
+    <strong>[spoedgoedkeurder]</strong>
+    en achteraf in het eerstvolgende wijzigingsoverleg beoordeeld.</li>
+<li>Na het doorvoeren controleert de uitvoerder of de wijziging werkt zoals bedoeld en sluit hij de
+  wijziging pas af na die controle. Een mislukte wijziging wordt teruggedraaid volgens het rollbackplan. [8.32.01]</li>
+<li>Wijzigingen door leveranciers op systemen van de organisatie lopen via hetzelfde register en dezelfde
+  goedkeuring, ook als de leverancier eigen accounts gebruikt. [8.32.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
+<ul>
+<li>Het wijzigingsoverleg komt ten minste wekelijks bijeen, onder voorzitterschap van de wijzigingsmanager van
+  de eigen IT-afdeling. De uitvoerder van een wijziging keurt zijn eigen wijziging niet goed. [8.32.01]</li>
+</ul>
+<p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
+<ul>
+<li>In het contract staat welke wijzigingen de leverancier zelf mag goedkeuren (standaardwijzigingen) en welke
+  de organisatie vooraf goedkeurt. De organisatie heeft een vaste vertegenwoordiger in het wijzigingsoverleg
+  van de leverancier. Het wijzigingsregister van de leverancier is voor de organisatie in te zien. [8.32.01, 8.32.02]</li>
+</ul>
+</blockquote>
+<h3>3.2 Bedieningsprocedures</h3>
+<ul>
+<li>Voor terugkerende beheertaken (starten en stoppen van systemen, back-up en herstel, standaardwijzigingen,
+  afhandelen van storingen) zijn werkinstructies vastgelegd. Ze zijn beschikbaar voor wie ze nodig heeft en
+  worden na elke relevante wijziging bijgewerkt. [5.37.01]</li>
+</ul>
+<h3>3.3 Software installeren</h3>
+<ul>
+<li>Gebruikers hebben geen lokale beheerrechten op hun werkplek. Software komt alleen op werkplekken en
+  servers via de softwarecatalogus of een goedgekeurde wijziging. [8.19.01]</li>
+<li>De organisatie houdt een lijst bij van toegestane software. Het installeren of uitvoeren van software buiten
+  die lijst wordt technisch tegengehouden, bijvoorbeeld met applicatiewhitelisting, of minstens gedetecteerd
+  en binnen
+  <strong>[termijn verwijderen software]</strong>
+  verwijderd. [8.19.01]</li>
+<li>Een verzoek om nieuwe software wordt getoetst op leverancier, licentie, beveiliging en privacy voordat de
+  software in de catalogus komt. [8.19.01]</li>
+</ul>
+<h3>3.4 Scheiding van omgevingen</h3>
+<ul>
+<li>Ontwikkeling, test, acceptatie en productie zijn gescheiden omgevingen. Voor een systeem zonder eigen
+  test- of acceptatieomgeving legt de systeemeigenaar vast hoe wijzigingen wel vooraf worden getest. [8.31.01]</li>
+<li>In de productieomgeving wordt niet getest. Is een test in productie onvermijdelijk, dan keurt de
+  proceseigenaar die vooraf schriftelijk goed, met de omvang, het tijdvak en de maatregelen om schade te
+  voorkomen. [8.31.01]</li>
+<li>Significante wijzigingen worden getest in een omgeving buiten productie voordat ze in productie gaan.
+  Afwijken kan alleen met voorafgaande goedkeuring van de proceseigenaar, die het risico vastlegt. [8.31.02]</li>
+<li>Testgegevens volgen de regels in het beleid veilige softwareontwikkeling: fictieve gegevens, en
+  persoonsgegevens alleen als onderbouwde uitzondering met advies van de privacy officer en de CISO. [8.33.01]</li>
+</ul>
+<h3>3.5 Testen en acceptatie</h3>
+<ul>
+<li>Acceptatietesten volgen een vaste testmethode: een testplan met testgevallen afgeleid van de functionele
+  eisen en de beveiligingseisen, uitgevoerd door of namens de systeemeigenaar. [8.29.01]</li>
+<li>Tests die vaker terugkomen (regressietests, controles op beveiligingsinstellingen) worden waar het kan
+  geautomatiseerd. [8.29.01]</li>
+<li>Van elke acceptatietest wordt een verslag gemaakt met de uitgevoerde tests, de resultaten, de openstaande
+  bevindingen en het besluit tot acceptatie. Het verslag hoort bij de wijziging in het register. [8.29.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
+<ul>
+<li>Voor eigen software voert de bouwstraat bij elke wijziging automatisch unit-, integratie- en
+  beveiligingstests uit. Uitrol naar productie gebeurt alleen via de bouwstraat, na goedkeuring in het
+  wijzigingsregister; ontwikkelaars hebben geen schrijfrechten in productie. [8.29.01, 8.31.01, 8.32.01]</li>
+</ul>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Nee, alleen inkoop en configuratie»</strong></p>
+<ul>
+<li>Bij een nieuwe versie van een leverancier test de organisatie zelf in de acceptatieomgeving de eigen
+  processen, koppelingen en autorisaties, naast het testverslag van de leverancier. [8.29.01, 8.31.02]</li>
+</ul>
+</blockquote>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar wijzigingsbeheer]</strong></td>
+<td>Uitvoering van dit beleid en het wijzigingsproces</td>
+</tr>
+<tr>
+<td>Wijzigingsmanager</td>
+<td>Het wijzigingsregister, het wijzigingsoverleg en de rapportage</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Beoordeling van wijzigingen op zijn systeem, acceptatietests</td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td>Goedkeuring van afwijkingen: testen in productie of niet vooraf testen</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies bij wijzigingen met een hoog risico, toetsing van dit beleid</td>
+</tr>
+<tr>
+<td>Leveranciers</td>
+<td>Wijzigingen aanmelden en doorvoeren volgens dit beleid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Maandelijks: rapportage over het aantal wijzigingen per soort, mislukte en teruggedraaide wijzigingen en
+  spoedwijzigingen; bewijs is de rapportage aan de lijneigenaar.</li>
+<li>Elk kwartaal: steekproef van wijzigingen op volledigheid van risicoafweging, rollbackplan, testverslag en
+  goedkeuring.</li>
+<li>Elk kwartaal: vergelijking van de geïnstalleerde software met de lijst van toegestane software.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid veilige
+softwareontwikkeling (testgegevens en bouwstraat), het beleid vulnerability- en patchmanagement (updates als
+standaardwijziging), het beleid leveranciersbeheer (afspraken over wijzigingen door leveranciers) en het
+beleid logische toegangsbeveiliging (rechten in productie).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (6) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.19.01</td>
+<td>Installeren van software op operationele systemen</td>
+<td>3.3 Software installeren</td>
+</tr>
+<tr>
+<td>8.29.01</td>
+<td>Testen van de beveiliging tijdens ontwikkeling en acceptatie</td>
+<td>3.5 Testen en acceptatie</td>
+</tr>
+<tr>
+<td>8.31.01</td>
+<td>Scheiding van ontwikkel-, test- en productieomgevingen</td>
+<td>3.4 Scheiding van omgevingen</td>
+</tr>
+<tr>
+<td>8.31.02</td>
+<td>Scheiding van ontwikkel-, test- en productieomgevingen</td>
+<td>3.4 Scheiding van omgevingen</td>
+</tr>
+<tr>
+<td>8.32.01</td>
+<td>Wijzigingsbeheer</td>
+<td>3.1 Het wijzigingsproces</td>
+</tr>
+<tr>
+<td>8.32.02</td>
+<td>Wijzigingsbeheer</td>
+<td>3.1 Het wijzigingsproces</td>
+</tr>
+</tbody>
+</table>
+<p>Ook ingevuld, ISO-beheersmaatregelen van dit domein zonder overheidsmaatregel: 5.37.01 (Gedocumenteerde bedieningsprocedures), 8.33.01 (Testgegevens).</p>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>spoedgoedkeurder</strong>: de functie die buiten het overleg mag goedkeuren, bijvoorbeeld de dienstdoende IT-manager</li>
+<li><strong>termijn verwijderen software</strong>: bijvoorbeeld vijf werkdagen</li>
+<li><strong>lijneigenaar wijzigingsbeheer</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

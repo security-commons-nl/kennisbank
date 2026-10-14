@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid beveiligingsincidenten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid beveiligingsincidenten</span></nav><!-- /kruimelpad -->
+<h1>Beleid beveiligingsincidenten</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="incidenten.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Security Incident Management</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het melden, beoordelen, afhandelen en
+leren van informatiebeveiligingsincidenten. Het doel is dat een incident snel bij de juiste mensen ligt, dat
+de schade beperkt blijft, dat wettelijke meldingen op tijd gebeuren en dat hetzelfde incident niet opnieuw
+voorkomt. Het gaat over de ISO-beheersmaatregelen 5.24 tot en met 5.28 en 6.08.</p>
+<p>Het beleid geldt voor iedereen die voor de organisatie werkt: medewerkers, inhuur, stagiairs en leveranciers
+die met informatie of systemen van de organisatie werken. Een datalek onder de AVG is ook een
+informatiebeveiligingsincident; de melding aan de Autoriteit Persoonsgegevens en aan betrokkenen loopt via
+dezelfde procedure, met de privacy officer en de FG als vaste deelnemers.</p>
+<p>Buiten dit beleid vallen het verzamelen en bewaren van logbestanden (beleid logging en monitoring) en het
+oplossen van technische kwetsbaarheden die geen incident zijn (beleid kwetsbaarheden en patchmanagement).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Elke medewerker meldt een vermoed incident direct. Twijfel is geen reden om te wachten; een melding die
+   achteraf geen incident blijkt, kost weinig.</li>
+<li>Er is één meldloket en één incidentprocedure voor beveiligingsincidenten en datalekken.</li>
+<li>De proceseigenaar is eigenaar van het incident in zijn proces; de CISO coördineert en adviseert.</li>
+<li>Wettelijke meldtermijnen gaan vóór interne afstemming. Een melding die later moet worden aangevuld, is
+   beter dan een te late melding.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Meldloket en meldprocedure</h3>
+<ul>
+<li>Medewerkers en externen melden een vermoed incident bij
+  <strong>[meldloket incidenten]</strong>.
+  Het loket is tijdens kantoortijd bereikbaar en heeft daarbuiten een bereikbaarheidsregeling. Elke melding
+  krijgt een registratienummer. [5.24.01]</li>
+<li>De meldprocedure beschrijft wat het loket doet: registreren, eerste beoordeling, doorzetten naar de CISO
+  of de privacy officer, en terugkoppelen aan de melder. De procedure noemt per stap de rol en de termijn.
+  Een intern gemeld incident ligt binnen 24 uur bij de CISO. [5.24.02]</li>
+<li>Iedere nieuwe medewerker en iedere externe met een account krijgt de meldprocedure bij indiensttreding
+  en bevestigt dat hij die kent. Jaarlijks komt de procedure terug in de bewustwordingscampagne. De
+  bevestiging wordt geregistreerd. [6.08.01]</li>
+</ul>
+<h3>3.2 Beoordelen en classificeren</h3>
+<ul>
+<li>De CISO, of bij afwezigheid de vervanger, beoordeelt elke melding: is dit een incident, welke categorie
+  en welke ernst. De indeling in categorieën en ernstniveaus staat in de incidentprocedure en sluit aan op
+  de classificatie van informatie.</li>
+<li>Bij elk incident beoordeelt de privacy officer of er persoonsgegevens zijn geraakt. Zo ja, dan volgt de
+  beoordeling of het een meldplichtig datalek is.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak»</strong></p>
+<ul>
+<li>Er is geen eigen ISO. De beoordeling ligt bij
+  <strong>[incidentcoördinator]</strong>, die voor de
+  technische analyse een externe partij inschakelt waarmee vooraf een raamafspraak is gemaakt, met een
+  afgesproken reactietijd.</li>
+</ul>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een ISO of CISO in deeltijd»</strong></p>
+<ul>
+<li>De ISO of CISO coördineert de afhandeling. Voor forensisch onderzoek en voor incidenten buiten
+  kantoortijd is een externe incidentrespons-partij gecontracteerd, met een afgesproken reactietijd.</li>
+</ul>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een eigen team (CISO met ISO's)»</strong></p>
+<ul>
+<li>Het securityteam heeft een bereikbaarheidsdienst buiten kantoortijd en een vaste incidentrespons-rol
+  per dienst. Voor forensisch onderzoek dat het team niet zelf kan doen, is een externe partij
+  gecontracteerd.</li>
+</ul>
+</blockquote>
+<h3>3.3 Detectie en escalatie</h3>
+<blockquote>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC»</strong></p>
+<ul>
+<li>Het eigen SOC beoordeelt meldingen uit de detectievoorzieningen en werkt met vastgelegde
+  draaiboeken. Het SOC mag zelf een systeem of account isoleren als het draaiboek dat toelaat, en meldt
+  dat direct aan de CISO.</li>
+</ul>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Uitbesteed SOC of MDR-dienst»</strong></p>
+<ul>
+<li>De SOC- of MDR-dienstverlener escaleert volgens het contract: per ernstniveau de termijn, het kanaal en
+  de contactpersoon bij de organisatie, ook buiten kantoortijd. Het contract regelt welke ingrepen de
+  dienstverlener zelf mag doen (zoals een apparaat isoleren) en welke toestemming vragen.</li>
+<li>De organisatie toetst de escalatieketen elk jaar met een test-alarm.</li>
+</ul>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Geen structurele detectie»</strong></p>
+<ul>
+<li>Er is geen structurele detectie. Incidenten komen binnen via medewerkers, leveranciers, waarschuwingen
+  van de sectorale CERT en meldingen van buiten. Het ontbreken van detectie staat als risico in het
+  risicoregister, met een besluit van de directie over de aanpak.</li>
+</ul>
+</blockquote>
+<h3>3.4 Afhandelen</h3>
+<ul>
+<li>Incidenten worden afgehandeld via het incidentbeheerproces. De proceseigenaar is verantwoordelijk voor
+  het oplossen van het incident in zijn proces en wijst daarvoor een behandelaar aan. [5.24.03, 5.26.02]</li>
+<li>De incidentprocedure verwijst naar de procedure voor crisisbeheersing en zegt wanneer een incident
+  overgaat naar crisisbeheersing: bij langdurige uitval van kritieke processen, bij een groot datalek of
+  bij een aanval met losgeld. [5.24.05]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen»</strong></p>
+<ul>
+<li>De organisatie heeft geen vaste crisisorganisatie. Bij een incident dat de grens voor crisis haalt,
+  roept de CISO <strong>[eindverantwoordelijke bedrijfsvoering]</strong>
+  op, die een ad-hoc crisisteam samenstelt. Het opzetten van een crisisprocedure staat als actie in het
+  jaarplan informatiebeveiliging.</li>
+</ul>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een crisisteam, zonder BCM-functie» of «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
+<ul>
+<li>Het crisisteam neemt het incident over volgens de crisisprocedure; de CISO schuift aan als adviseur.</li>
+</ul>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
+<ul>
+<li>Bij uitval van een kritiek proces start de proceseigenaar het continuïteitsplan van dat proces. De
+  hersteltijden uit de BIA bepalen de volgorde van herstel.</li>
+</ul>
+</blockquote>
+<ul>
+<li>De proceseigenaar rapporteert maandelijks de stand van de incidenten in zijn proces: wat is open, wat is
+  opgelost, welke maatregelen lopen nog. De CISO bundelt dit tot een maandrapport voor
+  <strong>[eindverantwoordelijke bedrijfsvoering]</strong>. [5.24.04]</li>
+</ul>
+<h3>3.5 Melden aan externe partijen</h3>
+<ul>
+<li>De incidentprocedure regelt de meldingen buiten de organisatie, elk met eigen termijn en eigenaar:
+  het CSIRT en de toezichthouder volgens de Cyberbeveiligingswet waar die van toepassing is, de Autoriteit
+  Persoonsgegevens bij een meldplichtig datalek (binnen 72 uur na ontdekking), de politie bij een strafbaar
+  feit, en betrokkenen als het incident hun rechten of belangen raakt. [5.24.07, 5.26.02, 5.27.01]</li>
+<li>Meldingen en waarschuwingen die het CSIRT of de sectorale CERT aan de organisatie stuurt, komen binnen
+  op een vast adres. De CISO beoordeelt ze binnen één werkdag en neemt ze op in de risicobehandeling,
+  bijvoorbeeld als kwetsbaarheid die moet worden verholpen. [5.24.07]</li>
+<li>Betrokkenen worden binnen de wettelijke termijn geïnformeerd. De privacy officer stelt de tekst op, de
+  proceseigenaar beslist over verzending. [5.24.07]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>De organisatie valt onder de Cyberbeveiligingswet. Een significant incident meldt de CISO aan het
+  aangewezen CSIRT en de toezichthouder in drie stappen: een vroegtijdige waarschuwing binnen 24 uur na
+  kennisname, een incidentmelding binnen 72 uur en een eindrapport binnen een maand. De incidentprocedure
+  legt vast wat significant is en wie de melding mag doen als de CISO afwezig is. [5.24.07, 5.26.02]</li>
+<li>Waar een significant incident de dienstverlening aan afnemers kan raken, informeert de organisatie die
+  afnemers zonder onnodige vertraging, met de maatregelen die zij zelf kunnen nemen. [5.24.07]</li>
+<li>De bestuurders worden bij elk significant incident direct geïnformeerd; zij zijn persoonlijk
+  verantwoordelijk voor het toezicht op het risicobeheer onder de wet.</li>
+</ul>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit»</strong></p>
+<ul>
+<li>Als essentiële entiteit staat de organisatie onder proactief toezicht. Het incidentregister en de
+  meldingen zijn op verzoek van de toezichthouder direct beschikbaar.</li>
+</ul>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Niet aangewezen»</strong></p>
+<ul>
+<li>De organisatie is niet aangewezen onder de Cyberbeveiligingswet. Zij meldt ernstige incidenten
+  vrijwillig aan de sectorale CERT, zodat andere overheden gewaarschuwd kunnen worden. [5.24.07]</li>
+</ul>
+</blockquote>
+<h3>3.6 Coordinated Vulnerability Disclosure</h3>
+<ul>
+<li>De organisatie heeft een CVD-procedure volgens de NCSC-leidraad, gepubliceerd op de website met een
+  meldadres en een security.txt-bestand. De procedure noemt de reactietermijn, de afspraken over openbaar
+  maken en de voorwaarden waaronder de organisatie geen aangifte doet. [5.24.08]</li>
+<li>Een CVD-melding wordt geregistreerd als beveiligingsmelding. De meldingen en hun afhandeling zijn
+  onderdeel van het maandrapport incidenten. [5.24.08]</li>
+</ul>
+<h3>3.7 Bewijs verzamelen en bewaren</h3>
+<ul>
+<li>Bij een vermoed incident wordt eerst bewijs veiliggesteld, daarna pas hersteld, tenzij de schade dat
+  niet toelaat. Wie bewijs verzamelt, legt vast wat, wanneer, door wie en waar het is opgeslagen.</li>
+<li>Bij een mogelijk strafbaar feit of een mogelijke juridische procedure laat de CISO het veiligstellen
+  doen door een forensisch onderzoeker.</li>
+<li>Het incidentdossier bevat de melding, de analyse, de gebruikte logging, de genomen maatregelen en het
+  advies. Het dossier wordt ten minste drie jaar na afsluiting bewaard, ook als het vermoeden ongegrond
+  bleek. [5.28.01]</li>
+</ul>
+<h3>3.8 Leren van incidenten</h3>
+<ul>
+<li>Na elk incident met ernst hoog of kritiek, en na elk meldplichtig datalek, volgt binnen een maand een
+  evaluatie: oorzaak, wat werkte, wat niet, en welke maatregelen nodig zijn. Verbetermaatregelen krijgen
+  een eigenaar en een datum en gaan naar het risicoregister. [5.27.02]</li>
+<li>De CISO analyseert elk kwartaal alle incidenten samen op patronen en herhalingen en neemt de uitkomst op
+  in de rapportage aan de directie. [5.27.02]</li>
+<li>Lessen die voor andere overheden waardevol zijn, deelt de organisatie geanonimiseerd met de sectorale
+  CERT of samenwerkingspartners.</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[eindverantwoordelijke bedrijfsvoering]</strong></td>
+<td>Ontvangst van het maandrapport, besluit over escalatie naar crisisbeheersing</td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td>Oplossen van incidenten in het eigen proces, maandelijkse rapportage, uitvoeren van verbetermaatregelen</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Beoordeling, coördinatie, externe meldingen, CVD-procedure, evaluaties en kwartaalanalyse</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Beoordeling datalekken, melding aan de Autoriteit Persoonsgegevens, informeren van betrokkenen (FG adviseert en houdt toezicht)</td>
+</tr>
+<tr>
+<td><strong>[meldloket incidenten]</strong></td>
+<td>Registratie, eerste beoordeling, doorzetten en terugkoppelen</td>
+</tr>
+<tr>
+<td>Medewerkers en externen</td>
+<td>Direct melden van een vermoed incident en meewerken aan het onderzoek</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Maandelijks: maandrapport incidenten met CVD-meldingen aan de eindverantwoordelijke bedrijfsvoering;
+  bewijs is het rapport en de verzendregistratie.</li>
+<li>Per kwartaal: analyse op patronen; bewijs is de rapportage aan de directie.</li>
+<li>Jaarlijks: steekproef van tien incidenten op volledigheid van het dossier, tijdigheid van de interne en
+  externe meldingen en opvolging van de verbetermaatregelen.</li>
+<li>Jaarlijks: controle dat alle medewerkers en externen met een account de meldprocedure hebben bevestigd,
+  door de registratie te vergelijken met de lijst van actieve accounts.</li>
+<li>Jaarlijks: een oefening met een incidentscenario, inclusief de overgang naar crisisbeheersing en het
+  opstellen van een externe melding; bewijs is het oefenverslag met verbeterpunten.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid logging en
+monitoring (detectie en bewijs), het beleid kwetsbaarheden en patchmanagement (opvolging van
+CERT-waarschuwingen en CVD-meldingen), het continuïteitsbeleid (crisisbeheersing en herstel), het
+privacybeleid (datalekken) en het beleid leveranciersbeheer (meldplicht van leveranciers).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (12) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.24.01</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.1 Meldloket en meldprocedure</td>
+</tr>
+<tr>
+<td>5.24.02</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.1 Meldloket en meldprocedure</td>
+</tr>
+<tr>
+<td>5.24.03</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.4 Afhandelen</td>
+</tr>
+<tr>
+<td>5.24.04</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.4 Afhandelen</td>
+</tr>
+<tr>
+<td>5.24.05</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.4 Afhandelen</td>
+</tr>
+<tr>
+<td>5.24.07</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.5 Melden aan externe partijen</td>
+</tr>
+<tr>
+<td>5.24.08</td>
+<td>Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten</td>
+<td>3.6 Coordinated Vulnerability Disclosure</td>
+</tr>
+<tr>
+<td>5.26.02</td>
+<td>Reageren op informatiebeveiligings-incidenten</td>
+<td>3.4 Afhandelen</td>
+</tr>
+<tr>
+<td>5.27.01</td>
+<td>Leren van informatiebeveiligingsincidenten</td>
+<td>3.5 Melden aan externe partijen</td>
+</tr>
+<tr>
+<td>5.27.02</td>
+<td>Leren van informatiebeveiligingsincidenten</td>
+<td>3.8 Leren van incidenten</td>
+</tr>
+<tr>
+<td>5.28.01</td>
+<td>Verzamelen van bewijsmateriaal</td>
+<td>3.7 Bewijs verzamelen en bewaren</td>
+</tr>
+<tr>
+<td>6.08.01</td>
+<td>Melden van informatiebeveiligings-gebeurtenissen</td>
+<td>3.1 Meldloket en meldprocedure</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>meldloket incidenten</strong>: het loket, bijvoorbeeld de servicedesk, met telefoonnummer en mailadres</li>
+<li><strong>incidentcoördinator</strong>: de functionaris die informatiebeveiliging als neventaak heeft</li>
+<li><strong>eindverantwoordelijke bedrijfsvoering</strong>: de functie, bijvoorbeeld de secretaris of directeur</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

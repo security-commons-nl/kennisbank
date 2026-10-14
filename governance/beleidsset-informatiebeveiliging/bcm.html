@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid ICT-continuïteit en uitwijk</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid ICT-continuïteit en uitwijk</span></nav><!-- /kruimelpad -->
+<h1>Beleid ICT-continuïteit en uitwijk</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="bcm.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Business Continuity &amp; Disaster Recovery</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de continuïteit van informatie en
+ICT. Het regelt welke systemen kritiek zijn, welke hersteleisen daarbij horen, hoe de organisatie uitwijkt
+als een systeem of locatie uitvalt, hoe de beveiliging overeind blijft tijdens een verstoring en hoe de
+plannen worden getest. Het gaat over de ISO-beheersmaatregelen 5.29, 5.30 en 8.14.</p>
+<p>Buiten dit beleid vallen de bedrijfscontinuïteit van processen die niets met ICT te maken hebben, de
+crisisorganisatie zelf en het maken en terugzetten van back-ups (beleid back-up en recovery). Dit beleid sluit
+daarop aan.</p>
+<blockquote>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
+<p>De organisatie heeft een BCM-functie met een business impact analyse (BIA) en continuïteitsplannen. Dit
+beleid volgt de BIA: de hersteleisen voor systemen komen uit de hersteleisen voor processen.</p>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen» of «Een crisisteam, zonder BCM-functie»</strong></p>
+<p>De organisatie heeft geen BCM-functie met een BIA. Dit beleid legt daarom zelf de minimale stappen vast om
+kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de stappen in 3.1.</p>
+</blockquote>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>De lijn bepaalt welke processen kritiek zijn en in welke volgorde ze terugkomen. ICT vertaalt dat naar
+   systemen, hersteleisen en voorzieningen.</li>
+<li>Een continuïteitsplan dat niet getest is, telt niet als maatregel.</li>
+<li>Tijdens een verstoring gelden dezelfde beveiligingseisen als daarbuiten, tenzij een vooraf vastgestelde
+   noodprocedure iets anders zegt.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Kritieke processen en systemen</h3>
+<ul>
+<li>De proceseigenaren stellen vast welke processen niet mogen uitvallen, omdat inwoners of bedrijven er direct
+  last van hebben of omdat er een wettelijke termijn op zit. Per proces leggen ze vast: de maximale
+  uitvalsduur, het maximale gegevensverlies en het minimumniveau waarop de dienstverlening tijdens de
+  verstoring doorgaat.</li>
+<li>Op basis daarvan stelt elke proceseigenaar, met de systeemeigenaren, vast welke systemen kritiek zijn. Het
+  gebeurt binnen de inventaris van bedrijfsmiddelen, met de risicomanagementmethodiek van de organisatie, en
+  de afweging wordt vastgelegd. Een systeem is kritiek als een kritiek proces er binnen zijn maximale
+  uitvalsduur niet zonder kan. [5.30.02]</li>
+<li>Het overzicht van kritieke systemen noemt per systeem de hersteltijd, het maximale gegevensverlies, de
+  afhankelijkheden (netwerk, identiteitsvoorziening, koppelingen, leveranciers) en de herstelvolgorde. De
+  herstelvolgorde is een besluit van de directie. [5.30.02]</li>
+<li>De proceseigenaar actualiseert het overzicht ten minste eens per drie jaar, en eerder bij een
+  reorganisatie, een nieuwe aanbesteding, een uitbesteding of een migratie van een kritiek systeem. [5.30.02]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
+<ul>
+<li>De kritieke processen en hun hersteleisen komen uit de BIA. De BCM-functie levert het overzicht aan;
+  <strong>[eigenaar overzicht kritieke systemen]</strong>
+  koppelt de systemen eraan. [5.30.02]</li>
+</ul>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen» of «Een crisisteam, zonder BCM-functie»</strong></p>
+<ul>
+<li>Zolang er geen BIA is, organiseert de CISO elke drie jaar een sessie met de proceseigenaren om de kritieke
+  processen te bepalen, met een startomvang van ongeveer twintig processen. De uitkomst wordt door de
+  directie vastgesteld. [5.30.02]</li>
+</ul>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>De organisatie valt onder de Cyberbeveiligingswet. De diensten waarvoor zij is aangewezen staan als
+  kritieke processen op de lijst, en de bestuurder keurt de hersteleisen en de herstelvolgorde goed. [5.30.02]</li>
+</ul>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's» of «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
+<ul>
+<li>Operationele technologie staat in hetzelfde overzicht. Per installatie staat erbij of hij bij uitval van
+  de ICT lokaal of met de hand te bedienen is en wie dat kan. [5.30.02]</li>
+</ul>
+</blockquote>
+<h3>3.2 Uitwijk en redundantie</h3>
+<ul>
+<li>Voor elk kritiek systeem is een voorziening ingericht waarmee de hersteltijd haalbaar is: dubbele
+  uitvoering, een uitwijklocatie of een herstel uit back-up dat aantoonbaar binnen de tijd past.</li>
+<li>Gedeelde voorzieningen waar meer kritieke systemen van afhangen (netwerk, internetverbinding,
+  identiteitsvoorziening, stroom) zijn dubbel uitgevoerd of hebben een gedocumenteerde noodroute.</li>
+<li>Een uitwijkvoorziening is tegen dezelfde dreigingen beschermd als de primaire omgeving en is daar zo ver
+  van gescheiden dat een cyberaanval of fysiek incident ze niet allebei raakt. Waar dat niet kan, staat het
+  restrisico in het risicoregister.</li>
+<li>Ligt een kritiek systeem bij een leverancier, dan staan de hersteltijd, het maximale gegevensverlies en de
+  uitwijkvoorziening in het contract, en levert de leverancier het bewijs van zijn eigen tests.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
+<ul>
+<li>Bij installaties zoals gemalen, bruggen, sluizen en zuivering heeft de organisatie per installatie een
+  terugvalscenario zonder centrale besturing, met de bemensing die daarvoor nodig is en de tijd die het kan
+  volhouden. De OT-omgeving kan bij een aanval op de kantoor-ICT worden losgekoppeld zonder dat de installatie
+  stopt.</li>
+</ul>
+</blockquote>
+<h3>3.3 Beveiliging tijdens een verstoring</h3>
+<ul>
+<li>Elk continuïteitsplan beschrijft welke beveiligingsmaatregelen tijdens uitwijk of noodbedrijf gelden. Een
+  noodaccount, een handmatige werkwijze of een tijdelijke verbinding staat vooraf in het plan, met wie
+  hem mag inzetten.</li>
+<li>Noodaccounts en tijdelijke uitzonderingen worden na de verstoring binnen
+  <strong>[termijn intrekken noodvoorzieningen]</strong>
+  ingetrokken, en de CISO controleert dat.</li>
+<li>Na een cyberincident gaat een systeem pas terug in productie als vaststaat dat de oorzaak is weggenomen en de
+  herstelde omgeving schoon is.</li>
+</ul>
+<h3>3.4 Continuïteitsplannen en testen</h3>
+<ul>
+<li>Voor elk kritiek proces is er een continuïteitsplan dat beschrijft hoe het proces doorgaat en wordt
+  hersteld bij uitval van de ICT, met contactgegevens, beslissers en de herstelvolgorde. Het plan is ook
+  beschikbaar als de eigen systemen niet werken.</li>
+<li>De proceseigenaar test het continuïteitsplan elk jaar op werking, volledigheid en actualiteit. De test kan
+  een tafeloefening, een technische uitwijktest of een combinatie zijn; ten minste eens per drie jaar is er
+  een technische test van de uitwijk van de kritieke systemen. [5.30.01]</li>
+<li>Elke test heeft een verslag met de bevindingen en de verbeteringen. De proceseigenaar past het plan binnen
+  drie maanden aan en meldt open verbeteringen in het risicoregister. [5.30.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen»</strong></p>
+<ul>
+<li>Er is geen crisisteam. Voor een digitale calamiteit stelt de CISO met de ICT-organisatie een
+  calamiteitenteam samen uit de eigen bedrijfsvoering, met een rolverdeling, een logboek en een
+  besluitprocedure. Dat team oefent elk jaar een scenario met uitval van ICT. [5.30.01]</li>
+</ul>
+<p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een crisisteam, zonder BCM-functie» of «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
+<ul>
+<li>De jaarlijkse test van de continuïteitsplannen sluit aan op een oefening van het crisisteam met een
+  digitaal scenario, bijvoorbeeld ransomware, zodat ook de besluitvorming en de communicatie worden getest.
+  [5.30.01]</li>
+</ul>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>De tests dekken ook de meldplicht onder de Cyberbeveiligingswet: wie stelt vast of een incident
+  significant is, en lukt de vroege waarschuwing binnen 24 uur. [5.30.01]</li>
+</ul>
+</blockquote>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Directie</td>
+<td>Vaststellen van de kritieke processen en de herstelvolgorde</td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td>Hersteleisen per proces, kritieke systemen, continuïteitsplan en de jaarlijkse test</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Uitwijk- en redundantievoorzieningen en de technische uitwijktest</td>
+</tr>
+<tr>
+<td><strong>[lijneigenaar ICT-continuïteit]</strong></td>
+<td>Uitvoering van uitwijk en herstel, ook bij leveranciers</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing van dit beleid, beveiliging tijdens verstoringen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Jaarlijks: overzicht van de continuïteitstests van dat jaar per kritiek proces, met de processen waarvoor de
+  test ontbreekt; bewijs zijn de testverslagen.</li>
+<li>Jaarlijks: controle of de verbeteringen uit de tests van het jaar ervoor zijn doorgevoerd.</li>
+<li>Eens per drie jaar, of na een trigger uit 3.1: actualisatie van het overzicht van kritieke systemen;
+  bewijs is het vastgestelde overzicht met datum.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het hangt nauw samen met het beleid back-up
+en recovery (hersteltijden en gegevensverlies), het incidentbeleid (overgang van incident naar calamiteit),
+het beleid bedrijfsmiddelenbeheer (inventaris), het beleid fysieke beveiliging (noodstroom, uitwijklocatie) en
+het beleid contractbeheer (afspraken met leveranciers over uitwijk en exit).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (2) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.30.01</td>
+<td>ICT-gereedheid voor bedrijfscontinuïteit</td>
+<td>3.4 Continuïteitsplannen en testen</td>
+</tr>
+<tr>
+<td>5.30.02</td>
+<td>ICT-gereedheid voor bedrijfscontinuïteit</td>
+<td>3.1 Kritieke processen en systemen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>eigenaar overzicht kritieke systemen</strong>: de functie die het overzicht van kritieke systemen bijhoudt, bijvoorbeeld de informatiemanager</li>
+<li><strong>termijn intrekken noodvoorzieningen</strong>: bijvoorbeeld vijf werkdagen</li>
+<li><strong>lijneigenaar ICT-continuïteit</strong>: de manager die de ICT-voorzieningen voor continuïteit uitvoert</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

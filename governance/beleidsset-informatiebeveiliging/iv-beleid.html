@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Strategisch informatiebeveiligingsbeleid</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Strategisch informatiebeveiligingsbeleid</span></nav><!-- /kruimelpad -->
+<h1>Strategisch informatiebeveiligingsbeleid</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="iv-beleid.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>IV-beleid</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid is het bovenliggende kader voor informatiebeveiliging in de organisatie. Het zegt wat de
+organisatie wil bereiken, wie waarvoor verantwoordelijk is, hoe informatiebeveiliging samenhangt met
+privacybescherming, operationele technologie (OT) en bedrijfscontinuïteit (BCM), en hoe de organisatie
+aantoont dat het werkt. De materie-specifieke beleidsstukken van deze set werken het uit per BIO 2.0-domein.
+Dit stuk is het beleidsdocument uit clausule 5.2 van ISO 27001 en dekt de ISO-beheersmaatregelen 5.01, 5.02,
+5.05, 5.35 en 5.36.</p>
+<p>Het beleid geldt voor alle processen, informatiesystemen en gegevens van de organisatie, ongeacht waar ze
+draaien of wie ze beheert, en voor iedereen die ermee werkt: medewerkers, inhuur, stagiairs, leveranciers en
+ketenpartners.</p>
+<p>Het doel is dat de organisatie haar taken kan blijven uitvoeren, dat de informatie van burgers, bedrijven en
+medewerkers beschermd is, en dat de organisatie dit kan aantonen aan bestuur, toezichthouder en accountant.</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Het bestuur is eindverantwoordelijk voor informatiebeveiliging en stelt dit beleid vast. [5.01.01]</li>
+<li>Informatiebeveiliging is risicogestuurd. Risico's worden geïdentificeerd, beoordeeld, behandeld en
+   gemonitord volgens de vastgestelde risicomanagementmethodiek van de organisatie.</li>
+<li>De uitvoering ligt in de lijn. Wie eigenaar is van een proces, systeem of bedrijfsmiddel, is ook
+   eigenaar van de risico's daarop en van de maatregelen die ze beheersen. [5.02.01]</li>
+<li>Het normenkader is BIO 2.0, met ISO 27001 voor het managementsysteem en ISO 27002 plus de
+   overheidsmaatregelen van BIO 2.0 voor de beheersmaatregelen. De Verklaring van Toepasselijkheid zegt per
+   maatregel of hij geldt, wie eigenaar is en waar hij is uitgewerkt. [5.01.01]</li>
+<li>Informatiebeveiliging is een doorlopend verbeterproces volgens plan, do, check, act. Opzet, bestaan en
+   werking van maatregelen moeten aantoonbaar zijn.</li>
+<li>De organisatie stelt de mensen en middelen beschikbaar die nodig zijn om dit beleid uit te voeren.</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ol start="7">
+<li>De organisatie valt onder de Cyberbeveiligingswet. Daarmee zijn zorgplicht, meldplicht, registratieplicht
+   en toezicht wettelijke verplichtingen. Dit beleid beschrijft wat de organisatie moet kunnen aantonen;
+   eigen ambitie komt daar bovenop.</li>
+</ol>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Niet aangewezen»</strong></p>
+<ol start="7">
+<li>De organisatie is niet aangewezen onder de Cyberbeveiligingswet. Zij past BIO 2.0 toe als afgesproken
+   norm voor de overheid en toetst jaarlijks of de aanwijzing nog klopt, bijvoorbeeld na een wijziging van
+   taken of een nieuwe aanwijzing door de sector.</li>
+</ol>
+</blockquote>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Inhoud, vaststelling en inbedding van het beleid</h3>
+<ul>
+<li>Het bestuur stelt dit beleid vast. Het beleid bevat ten minste: de strategische uitgangspunten
+  (hoofdstuk 2), de organisatie van de beveiligingsfunctie (paragraaf 3.3), de toewijzing van ketens, OT,
+  privacy en BCM aan de lijn (paragraaf 3.2), het normenkader (uitgangspunt 4), de evaluatiefrequentie
+  (paragraaf 3.7) en de bevordering van bewustzijn (paragraaf 3.4). [5.01.01]</li>
+<li>Het beleid sluit aan op het algemene beveiligingsbeleid (fysiek, personeel, integriteit) en op het
+  informatievoorzieningsbeleid. Bij tegenstrijdigheid beslist het bestuur op advies van de CISO welk stuk
+  wordt aangepast. [5.01.01]</li>
+<li>Uit dit beleid worden jaarlijks meetbare doelstellingen afgeleid, met per doelstelling een eigenaar, een
+  meetmethode en een rapportagemoment in de P&amp;C-cyclus.</li>
+<li>Het toepassingsgebied van het managementsysteem ligt vast in een scopedocument, gebaseerd op de lijst van
+  kritieke processen en de systemen die ze dragen. De CISO beoordeelt het scopedocument jaarlijks.</li>
+<li>Waar een eis uit deze set niet kan worden nageleefd, legt de eigenaar een uitzondering vast met
+  motivering, compenserende maatregel of risicoacceptatie en een einddatum. Een uitzondering zonder einddatum
+  wordt niet geaccepteerd.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>Het scopedocument noemt ook de diensten waarvoor de organisatie onder de Cyberbeveiligingswet valt. De
+  gegevens in het entiteitenregister worden bij elke wijziging en ten minste jaarlijks bijgewerkt.</li>
+</ul>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «Startend: nog geen samenhangend beleid»</strong></p>
+<ul>
+<li>De organisatie heeft nog geen samenhangend beleid. Dit strategisch beleid wordt eerst vastgesteld. Binnen
+  twaalf maanden volgen een Verklaring van Toepasselijkheid, een risicoanalyse op de kritieke processen en
+  de materie-specifieke stukken voor de domeinen met het hoogste risico. De CISO legt die volgorde vast in
+  een plan van aanpak dat het bestuur vaststelt.</li>
+</ul>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «BIO 1 op orde, verantwoording via ENSIA»</strong></p>
+<ul>
+<li>De organisatie heeft BIO 1 op orde. De overgang naar BIO 2.0 loopt via een vergelijking per maatregel:
+  wat al gedekt is, wat aangepast moet worden en wat nieuw is. Die vergelijking en het tijdpad staan in een
+  transitieplan dat het bestuur vaststelt.</li>
+</ul>
+</blockquote>
+<h3>3.2 Samenhang en toewijzing aan de lijn</h3>
+<ul>
+<li>Informatiebeveiliging, privacybescherming, de beveiliging van OT en de continuïteit van de taakuitvoering
+  raken dezelfde processen en hebben dezelfde eigenaren. De organisatie beheert ze daarom als één geheel:
+  één risicoregister, één set eigenaren en één rapportagelijn naar het bestuur. [5.02.01]</li>
+<li>Lijnmanagers en proceseigenaren zijn voor hun proces en de bijbehorende systemen en ketens
+  verantwoordelijk voor de informatiebeveiliging, de bescherming van persoonsgegevens, de beveiliging van de
+  OT die het proces aanstuurt, de continuïteit van het proces en de behandeling van de risico's op hun
+  bedrijfsmiddelen. [5.01.01, 5.02.01]</li>
+<li>Voor elke keten van informatiesystemen die de organisatie met andere partijen deelt, is één interne
+  eigenaar benoemd die de afspraken over beveiliging met de ketenpartners bewaakt. [5.01.01]</li>
+<li>De verhouding tussen de vier kaders ligt vast in deze tabel. [5.02.01]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Kader</th>
+<th>Norm</th>
+<th>Belegd bij</th>
+<th>Verhouding tot dit beleid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Informatiebeveiliging</td>
+<td>BIO 2.0, ISO 27001 en 27002</td>
+<td>Lijnmanagement, met de CISO in de tweede lijn</td>
+<td>Dit beleid is het kader</td>
+</tr>
+<tr>
+<td>Privacybescherming</td>
+<td>AVG</td>
+<td>Lijnmanagement, met de privacy officer en de FG</td>
+<td>Uitgewerkt in het privacybeleid; gedeelde maatregelen en eigenaren</td>
+</tr>
+<tr>
+<td>Operationele technologie</td>
+<td>BIO 2.0</td>
+<td>Eigenaren van de installaties</td>
+<td>Valt onder dit beleid</td>
+</tr>
+<tr>
+<td>Bedrijfscontinuïteit</td>
+<td>BIO 2.0, eventueel ISO 22301</td>
+<td>Lijnmanagement, met de BCM-coördinatie</td>
+<td>Beschikbaarheidseisen komen uit dit beleid; herstel staat in het continuïteitsbeleid</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's»</strong></p>
+<ul>
+<li>De OT van de organisatie is beperkt tot gebouwbeheer, toegangssystemen en camera's. Eigenaar is
+  <strong>[eigenaar gebouwgebonden OT]</strong>.
+  Deze installaties staan in het register van bedrijfsmiddelen en vallen onder dezelfde risicoanalyse als de
+  IT-systemen. [5.02.01]</li>
+</ul>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
+<ul>
+<li>De organisatie heeft OT met een fysieke functie in de openbare ruimte, zoals bruggen, gemalen,
+  verkeersregelinstallaties of zuivering. Per installatiesoort is een eigenaar in de lijn benoemd in
+  <strong>[register OT-eigenaren]</strong>.
+  Een storing of aanval op OT wordt behandeld als informatiebeveiligingsincident én als
+  continuïteitsincident. [5.02.01]</li>
+</ul>
+</blockquote>
+<ul>
+<li>Bij het toewijzen van rollen is vastgelegd wie bij een incident beslist, wie coördineert en wie meldt.
+  Een incident kan alle vier de kaders tegelijk raken; de meldroutes verschillen, de coördinatie ligt bij één
+  rol, uitgewerkt in het incidentbeleid. [5.02.01]</li>
+</ul>
+<h3>3.3 Organisatie van de beveiligingsfunctie</h3>
+<ul>
+<li>De organisatie werkt met drie lijnen. De eerste lijn (directie en lijnmanagement) is eigenaar van risico
+  en maatregel. De tweede lijn (CISO, privacy officer, FG) stelt kaders, adviseert en bewaakt. De derde lijn
+  (interne audit of de accountant) geeft onafhankelijk oordeel over opzet, bestaan en werking. [5.02.01]</li>
+<li>Er is een CISO aangesteld met een vastgelegd mandaat. De CISO adviseert het bestuur en het controlerend
+  orgaan zelfstandig en ongevraagd, en rapporteert rechtstreeks aan het bestuur. Die rapportage kan niet
+  worden tegengehouden door een tussenliggende laag. [5.02.02]</li>
+<li>Wie een maatregel uitvoert, beoordeelt niet zelf of hij werkt. Beheer, autorisatie en controle liggen bij
+  verschillende personen; waar dat door de omvang van de organisatie niet kan, staat de compenserende
+  maatregel in het risicoregister.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak»</strong></p>
+<ul>
+<li>De organisatie heeft geen eigen ISO. Informatiebeveiliging is een neventaak van
+  <strong>[functionaris informatiebeveiliging]</strong>.
+  De CISO-rol is belegd bij
+  <strong>[CISO-invulling]</strong>,
+  met een schriftelijk mandaat van het bestuur en een vast overleg met de directie ten minste elk kwartaal.
+  [5.02.02]</li>
+</ul>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een ISO of CISO in deeltijd»</strong></p>
+<ul>
+<li>De CISO werkt in deeltijd. Het mandaat legt vast hoeveel uren beschikbaar zijn en welke taken voorrang
+  hebben: de jaarrapportage aan het bestuur, het risicoregister en de advisering bij nieuwe systemen. Taken
+  die niet passen, worden belegd bij
+  <strong>[ondersteuning CISO]</strong>.
+  [5.02.02]</li>
+</ul>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een eigen team (CISO met ISO's)»</strong></p>
+<ul>
+<li>De CISO leidt een team van ISO's. De ISO's zijn per organisatieonderdeel of domein aanspreekpunt voor de
+  lijn, stellen de controleraamwerken op en bewaken de uitvoering in de dagelijkse praktijk. [5.02.02]</li>
+</ul>
+</blockquote>
+<h3>3.4 Bewustzijn</h3>
+<ul>
+<li>Het bestuur draagt informatiebeveiliging uit en volgt zelf de scholing die het beleid screening, bewustzijn
+  en opleiding voorschrijft. Iedere medewerker kent de regels die voor de eigen functie gelden en meldt
+  vermoedens van incidenten direct. [5.01.01]</li>
+<li>De CISO stelt jaarlijks een bewustwordingsprogramma op met doelgroepen, onderwerpen en meetpunten. Het
+  programma is onderdeel van de jaarplanning van het managementsysteem. [5.01.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>Bestuurders volgen de scholing die de Cyberbeveiligingswet hun persoonlijk oplegt. Het bestuur keurt de
+  risicobeheersingsmaatregelen goed en ziet toe op de uitvoering; die plicht is niet over te dragen.</li>
+</ul>
+</blockquote>
+<h3>3.5 Contacten met instanties en toezichthouders</h3>
+<ul>
+<li>De organisatie houdt een overzicht bij van welke functionaris formeel contact heeft met welke instantie
+  over informatiebeveiliging, met per contact een plaatsvervanger. Het overzicht noemt functies; de namen
+  staan in een bijlage die bij elke personeelswisseling wordt bijgewerkt. [5.05.01]</li>
+<li>Het overzicht bevat ten minste het CSIRT of de sectorale CERT voor de organisatie, de toezichthouder op
+  informatiebeveiliging, de Autoriteit Persoonsgegevens (contact via de FG) en de politie voor aangifte.
+  [5.05.01]</li>
+<li>De CISO actualiseert het overzicht ten minste jaarlijks en na elke organisatiewijziging die een contact
+  raakt. [5.05.01]</li>
+<li>De organisatie is aangesloten bij ten minste één informatiedeelnetwerk voor de eigen sector en verwerkt
+  de dreigingsinformatie daaruit in het risicoregister.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wat is je status onder de Cyberbeveiligingswet? «Essentiële entiteit» of «Belangrijke entiteit»</strong></p>
+<ul>
+<li>Het overzicht noemt ook de toezichthouder onder de Cyberbeveiligingswet, het CSIRT waar significante
+  incidenten worden gemeld en de aangewezen meldbevoegde met plaatsvervanger. [5.05.01]</li>
+</ul>
+</blockquote>
+<h3>3.6 Audit en verantwoording</h3>
+<ul>
+<li>Er is een auditplan dat het bestuur jaarlijks vaststelt. Het plan zegt welke systemen en onderwerpen dat
+  jaar welk soort audit krijgen (bijvoorbeeld een opzet-, bestaans- of werkingstoets, een pentest of een
+  ketenaudit) en is risicogestuurd: het hoogste risico eerst. [5.35.02]</li>
+<li>Bevindingen uit audits gaan met eigenaar en termijn in het risicoregister. De CISO volgt de opvolging en
+  rapporteert erover aan het bestuur.</li>
+<li>Over informatiebeveiliging wordt gerapporteerd in de P&amp;C-cyclus, onder coördinatie van de CISO. De
+  rapportage gaat over de stand van de maatregelen, de open risico's, de incidenten en de voortgang op de
+  doelstellingen. [5.36.01]</li>
+<li>Het bestuur geeft jaarlijks een In Control Verklaring over de informatiebeveiliging af, of een
+  vergelijkbaar instrument, gebaseerd op die rapportage. [5.36.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «Startend: nog geen samenhangend beleid» of «BIO 1 op orde, verantwoording via ENSIA»</strong></p>
+<ul>
+<li>Zolang een werkend controleraamwerk ontbreekt, steunt de verklaring op een zelfevaluatie per maatregel,
+  bijvoorbeeld de ENSIA-vragenlijst, met bewijs dat de lijneigenaar aanlevert. De CISO beoordeelt het
+  bewijs steekproefsgewijs. [5.36.01]</li>
+</ul>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «BIO 2.0-ISMS in opbouw» of «BIO 2.0-ISMS werkend, met controleraamwerk»</strong></p>
+<ul>
+<li>Per materie-specifiek beleidsstuk is er een controleraamwerk: per maatregel een control met eigenaar,
+  frequentie en benoemd bewijs. De uitvoering wordt vastgelegd op het moment dat de control draait, zodat de
+  verklaring steunt op aantoonbare werking. [5.36.01]</li>
+</ul>
+<p><strong>Alleen als: Waar sta je met informatiebeveiliging? «BIO 2.0-ISMS werkend, met controleraamwerk»</strong></p>
+<ul>
+<li>Het auditplan neemt elk jaar ten minste een deel van de controls op in een werkingstoets door de derde
+  lijn, zodat over een cyclus van drie jaar alle domeinen zijn getoetst. [5.35.02]</li>
+</ul>
+</blockquote>
+<h3>3.7 Evaluatie van het beleid</h3>
+<ul>
+<li>De CISO beoordeelt dit beleid ten minste jaarlijks, in aansluiting op de bestuurscyclus en de P&amp;C-cyclus,
+  en legt wijzigingen ter vaststelling voor aan het bestuur. [5.01.02]</li>
+<li>Tussentijds wordt het beleid beoordeeld bij een wijziging van wet- of regelgeving, een nieuwe versie van
+  BIO 2.0, een organisatiewijziging die de rollen raakt of een significant incident. [5.01.02]</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bestuur</td>
+<td>Vaststellen van dit beleid en het auditplan, goedkeuren van risicobeheersing, afgeven van de In Control Verklaring</td>
+</tr>
+<tr>
+<td><strong>[ambtelijk eindverantwoordelijke]</strong></td>
+<td>Sturing op de uitvoering, beleggen van eigenaarschap per proces en systeem</td>
+</tr>
+<tr>
+<td>Lijnmanagers en proceseigenaren</td>
+<td>Risico's en maatregelen van hun processen en bedrijfsmiddelen, inclusief privacy, OT en continuïteit; leveren van bewijs</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Opstellen en evalueren van dit beleid, advies aan en rapportage naar het bestuur, coördinatie van de P&amp;C-rapportage, overzicht van contacten</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Privacykant van dezelfde processen; de FG houdt onafhankelijk toezicht op de AVG</td>
+</tr>
+<tr>
+<td>BCM-coördinatie</td>
+<td>Continuïteitsplannen en de afstemming van hersteltijden met de beschikbaarheidseisen</td>
+</tr>
+<tr>
+<td>Interne audit of accountant</td>
+<td>Onafhankelijke toetsing volgens het auditplan</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Kennen en naleven van de regels voor de eigen functie, melden van incidenten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Jaarlijks: beoordeling van dit beleid door de CISO en vaststelling door het bestuur; bewijs is het
+  bestuursbesluit of het verslag waarin de beoordeling is besproken.</li>
+<li>Jaarlijks: vaststelling van het auditplan; bewijs is het vastgestelde plan en de rapportage over de
+  uitgevoerde audits.</li>
+<li>Jaarlijks: In Control Verklaring met de onderliggende rapportage.</li>
+<li>Jaarlijks: actualisering van het overzicht van contacten met instanties; bewijs is de versie met datum.</li>
+<li>Elk kwartaal of elk halfjaar, afhankelijk van de P&amp;C-cyclus: rapportage van de CISO over maatregelen,
+  risico's, incidenten en doelstellingen.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak»</strong></p>
+<ul>
+<li>Bij een organisatie zonder eigen ISO voert de CISO-invulling de jaarlijkse beoordeling uit; de
+  functionaris informatiebeveiliging levert het bewijs aan.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid is het bovenliggende kader voor alle materie-specifieke stukken van deze set. Het staat naast het
+privacybeleid en het continuïteitsbeleid, met dezelfde eigenaren en één risicoregister. De rolverdeling bij
+incidenten staat in het incidentbeleid; scholing van bestuur en medewerkers in het beleid screening,
+bewustzijn en opleiding; risicoafweging bij nieuwe systemen in het beleid informatiebeveiliging in
+projecten; wettelijke eisen en bewaartermijnen in het beleid IT-compliance.</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (7) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.01.01</td>
+<td>Informatiebeveiligingsbeleid</td>
+<td>2. Uitgangspunten</td>
+</tr>
+<tr>
+<td>5.01.02</td>
+<td>Informatiebeveiligingsbeleid</td>
+<td>3.7 Evaluatie van het beleid</td>
+</tr>
+<tr>
+<td>5.02.01</td>
+<td>Rollen en verantwoordelijkheden bij informatiebeveiliging</td>
+<td>2. Uitgangspunten</td>
+</tr>
+<tr>
+<td>5.02.02</td>
+<td>Rollen en verantwoordelijkheden bij informatiebeveiliging</td>
+<td>3.3 Organisatie van de beveiligingsfunctie</td>
+</tr>
+<tr>
+<td>5.05.01</td>
+<td>Contact met overheidsinstanties</td>
+<td>3.5 Contacten met instanties en toezichthouders</td>
+</tr>
+<tr>
+<td>5.35.02</td>
+<td>Onafhankelijke beoordeling van informatiebeveiliging</td>
+<td>3.6 Audit en verantwoording</td>
+</tr>
+<tr>
+<td>5.36.01</td>
+<td>Naleving van beleid, regels en normen voor informatiebeveiliging</td>
+<td>3.6 Audit en verantwoording</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>eigenaar gebouwgebonden OT</strong>: de manager die de installaties beheert, bijvoorbeeld facilitaire zaken</li>
+<li><strong>register OT-eigenaren</strong>: overzicht van installatiesoorten met eigenaar en beheerpartij</li>
+<li><strong>functionaris informatiebeveiliging</strong>: de medewerker die de neventaak heeft, met het aantal uren per week</li>
+<li><strong>CISO-invulling</strong>: bijvoorbeeld een gedeelde CISO via een samenwerkingsverband of een externe partij</li>
+<li><strong>ondersteuning CISO</strong>: bijvoorbeeld een ISO van een samenwerkingspartner of ingehuurde capaciteit</li>
+<li><strong>ambtelijk eindverantwoordelijke</strong>: de hoogste ambtelijke functie, bijvoorbeeld de secretaris of algemeen directeur</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

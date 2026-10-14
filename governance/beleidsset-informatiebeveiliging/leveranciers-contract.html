@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid informatiebeveiliging in contractbeheer</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid informatiebeveiliging in contractbeheer</span></nav><!-- /kruimelpad -->
+<h1>Beleid informatiebeveiliging in contractbeheer</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="leveranciers-contract.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Leveranciersbeheer - contractbeheer</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de looptijd van contracten met
+leveranciers die informatie voor de organisatie verwerken. Het regelt hoe de organisatie zicht houdt op haar
+leveranciers en hun toeleveranciers, hoe ze jaarlijks beoordeelt of de afspraken worden nagekomen, hoe ze
+clouddiensten selecteert en beheert, en wanneer ze een contract beëindigt. Het gaat over de
+ISO-beheersmaatregelen 5.21 (voor zover tijdens de looptijd), 5.22 en 5.23.</p>
+<p>De eisen vóór het contract (uitvraag, voorwaarden, bewijs, exitregeling) staan in het beleid informatiebeveiliging
+bij inkoop.</p>
+<blockquote>
+<p><strong>Alleen als: Hoe is je bedrijfsvoering georganiseerd? «Centrumorganisatie die de bedrijfsvoering ook voor anderen doet»</strong></p>
+<p>De organisatie sluit contracten ook namens de deelnemers. Het register en de jaarlijkse beoordeling vermelden
+per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkomst van de beoordeling.</p>
+</blockquote>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Elk contract met een informatiecomponent heeft een contracteigenaar en een proceseigenaar. De
+   proceseigenaar is verantwoordelijk voor de beveiligingsrisico's van de dienst.</li>
+<li>De beoordeling van een leverancier steunt op bewijs: rapporten van onafhankelijke derden, rapportages uit
+   het contract en eigen onderzoek. Een gesprek alleen is geen bewijs.</li>
+<li>De risico's in de keten van toeleveranciers horen bij de risico's van de organisatie zelf.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Register van leveranciers en contracten</h3>
+<ul>
+<li>De organisatie houdt een register bij van alle leveranciers en contracten met een informatiecomponent. Per
+  contract staat erin: de dienst, de contracteigenaar, de proceseigenaar, het classificatieniveau van de
+  informatie, of er een verwerkersovereenkomst is, de belangrijkste toeleveranciers, de datum van de laatste
+  beoordeling en de einddatum. [5.22.02]</li>
+<li>Een nieuw contract staat binnen een maand na ondertekening in het register. Een beëindigd contract blijft
+  erin staan tot de exit is afgerond en de leverancier de verwijdering van gegevens heeft bevestigd. [5.22.02]</li>
+<li>Het register staat in <strong>[register leveranciers]</strong>. [5.22.02]</li>
+</ul>
+<h3>3.2 Jaarlijkse beoordeling van de leverancier</h3>
+<ul>
+<li>De proceseigenaar beoordeelt elk jaar of de leverancier aan de afgesproken beveiligingseisen voldoet. Hij
+  gebruikt daarvoor het bewijs dat de leverancier volgens het contract aanlevert (zie het beleid
+  informatiebeveiliging bij inkoop) en de rapportages uit de looptijd. [5.22.01]</li>
+<li>De beoordeling stelt de beveiligingsrisico's vast, bijvoorbeeld een voorbehoud in het rapport, een
+  verlopen certificaat of een reikwijdte die de dienst niet meer dekt. De proceseigenaar laat maatregelen
+  nemen, door de leverancier of door de organisatie zelf, of accepteert een restrisico en legt dat vast. [5.22.01]</li>
+<li>De CISO adviseert over de beoordeling. Bij een contract voor een kritiek proces of met vertrouwelijke
+  informatie is dat advies verplicht. [5.22.01]</li>
+<li>De beoordeling volgt een vast format:
+  <strong>[format leveranciersbeoordeling]</strong>. [5.22.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
+<ul>
+<li>Bij beheer- en hostingpartijen bespreekt de regieorganisatie de beveiligingsrapportage ten minste elk
+  kwartaal in het reguliere leveranciersoverleg: incidenten, kwetsbaarheden, patchstand, wijzigingen en
+  back-uptests. De verslagen zijn bewijs bij de jaarlijkse beoordeling. [5.22.01]</li>
+</ul>
+<p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
+<ul>
+<li>Bij eigen beheer zijn de meeste contracten licentie- en ondersteuningscontracten. Daarvoor volstaat een
+  lichtere jaarlijkse beoordeling: geldigheid van het bewijs, ondersteuningstermijn van de software en de
+  meldingen van de leverancier over kwetsbaarheden. [5.22.01]</li>
+</ul>
+</blockquote>
+<h3>3.3 Keten van toeleveranciers</h3>
+<ul>
+<li>Het contract verplicht de leverancier om de beveiligingseisen ook op zijn toeleveranciers toe te passen.
+  Laat hij een eis voor een toeleverancier vallen omdat die eis voor diens rol niet relevant is, dan meldt hij
+  dat met een onderbouwing. De proceseigenaar beoordeelt die onderbouwing bij de jaarlijkse beoordeling. [5.21.03]</li>
+<li>De leverancier meldt tijdens de looptijd elke wijziging in de keten van toeleveranciers die de dienst
+  raakt, met de risico's die hij erin ziet. Ook kwetsbaarheden en incidenten bij een toeleverancier die de
+  dienst kunnen raken, meldt hij. [5.21.04]</li>
+<li>Bij een melding over de keten beoordeelt de CISO binnen
+  <strong>[beoordelingstermijn ketenwijziging]</strong>
+  of de risico's acceptabel zijn. De proceseigenaar besluit en legt dat vast. [5.21.04]</li>
+<li>De risicoanalyse van de organisatie neemt de toeleveringsketen mee. Per directe leverancier van een
+  kritieke dienst gaat het over de bekende kwetsbaarheden van de leverancier en zijn producten, de kwaliteit
+  van zijn producten en de beveiligingspraktijk van zijn eigen leveranciers, inclusief hun manier van veilig
+  ontwikkelen. De analyse wordt jaarlijks bijgewerkt. [5.21.05]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD» of «Suwinet» of «BRP (als bronhouder of afnemer)» of «Andere ketens met eigen beveiligingseisen»</strong></p>
+<ul>
+<li>Bij leveranciers van diensten voor een landelijke voorziening (zoals DigiD, Suwinet of de BRP) regelt het
+  contract dat de leverancier meewerkt aan de audits van dat stelsel en de rapporten op tijd levert. De
+  jaarlijkse beoordeling toetst ook of de leverancier aan de eisen van het stelsel voldoet. [5.22.01]</li>
+<li>De keten van toeleveranciers voor die diensten staat apart in het register, omdat het stelsel eigen
+  voorwaarden stelt aan locatie en uitbesteding. [5.22.02]</li>
+</ul>
+</blockquote>
+<h3>3.4 Clouddiensten</h3>
+<ul>
+<li>De organisatie past een vaste werkwijze toe voor clouddiensten. Die beschrijft hoe de organisatie
+  clouddiensten inventariseert, classificeert op de informatie die ze verwerken, selecteert, beoordeelt en
+  beheert, en hoe ze de dienst beëindigt. Deze paragraaf en het beleid informatiebeveiliging bij inkoop zijn
+  samen dat beleid. [5.23.01]</li>
+<li>Inventariseren: elke clouddienst staat in het register, ook gratis diensten en diensten die een afdeling
+  zelf afneemt. Een clouddienst die niet in het register staat, wordt gemeld bij de CISO. [5.23.01]</li>
+<li>Selecteren en beoordelen: welke informatie in welke soort clouddienst mag, volgt uit het
+  classificatiebeleid. De jaarlijkse beoordeling geldt ook voor clouddiensten. [5.23.01]</li>
+<li>Beëindigen: elk cloudcontract noemt de situaties waarin de organisatie het contract kan ontbinden,
+  bijvoorbeeld een ernstig of herhaald beveiligingsincident, verplaatsing van gegevens naar een land buiten de
+  afspraken, overname van de leverancier of het niet leveren van het bewijs. [5.23.01]</li>
+<li>Bij een belangrijke wijziging bij de leverancier, zoals een overname, een nieuwe verwerkingslocatie of een
+  ingrijpende wijziging van de dienst, beoordeelt de proceseigenaar met de CISO de risico's en neemt passende
+  maatregelen, tot en met het uitvoeren van de exitregeling. [5.23.01]</li>
+<li>De CISO herziet deze werkwijze ten minste eens per drie jaar. [5.23.01]</li>
+</ul>
+<h3>3.5 Beëindigen van een contract</h3>
+<ul>
+<li>Bij het einde van een contract voert de contracteigenaar de exitregeling uit: gegevens terug, overdracht aan
+  de opvolger, intrekken van alle toegang van de leverancier en een schriftelijke bevestiging van de
+  verwijdering van gegevens.</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proceseigenaar</td>
+<td>Jaarlijkse beoordeling, besluit over restrisico's en wijzigingen in de keten</td>
+</tr>
+<tr>
+<td><strong>[contracteigenaar]</strong></td>
+<td>Register, rapportages van de leverancier, uitvoering van de exit</td>
+</tr>
+<tr>
+<td><strong>[lijneigenaar leveranciersmanagement]</strong></td>
+<td>Werkwijze, format en planning van de beoordelingen</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies bij beoordelingen en ketenwijzigingen, herziening van de werkwijze voor clouddiensten</td>
+</tr>
+<tr>
+<td>Privacy officer of FG</td>
+<td>Toezicht op verwerkersovereenkomsten en meldingen van datalekken door leveranciers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Elk kwartaal: controle of nieuwe en beëindigde contracten in het register staan; bewijs is de vergelijking
+  met de contractadministratie van inkoop.</li>
+<li>Jaarlijks: overzicht van de leveranciersbeoordelingen van dat jaar, met de leveranciers waarvoor de
+  beoordeling ontbreekt of te laat is; bewijs is het overzicht met de afhandeling.</li>
+<li>Jaarlijks: steekproef op de kwaliteit van ten minste
+  <strong>[aantal steekproef beoordelingen]</strong>;
+  bewijs is het verslag van de steekproef.</li>
+<li>Eens per drie jaar: herziening van de werkwijze voor clouddiensten, met vaststelling door de directie.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en volgt op het beleid
+informatiebeveiliging bij inkoop. Het raakt het classificatiebeleid (welke informatie waar mag), het
+incidentbeleid (meldingen van leveranciers), het beleid kwetsbaarheden en patchmanagement, het
+continuïteitsbeleid (exit en afhankelijkheid) en het privacybeleid (verwerkersovereenkomsten).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (6) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.21.03</td>
+<td>Beheren van informatiebeveiliging in de ICT-toeleveringsketen</td>
+<td>3.3 Keten van toeleveranciers</td>
+</tr>
+<tr>
+<td>5.21.04</td>
+<td>Beheren van informatiebeveiliging in de ICT-toeleveringsketen</td>
+<td>3.3 Keten van toeleveranciers</td>
+</tr>
+<tr>
+<td>5.21.05</td>
+<td>Beheren van informatiebeveiliging in de ICT-toeleveringsketen</td>
+<td>3.3 Keten van toeleveranciers</td>
+</tr>
+<tr>
+<td>5.22.01</td>
+<td>Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten</td>
+<td>3.2 Jaarlijkse beoordeling van de leverancier</td>
+</tr>
+<tr>
+<td>5.22.02</td>
+<td>Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten</td>
+<td>3.1 Register van leveranciers en contracten</td>
+</tr>
+<tr>
+<td>5.23.01</td>
+<td>Informatiebeveiliging voor het gebruik van clouddiensten</td>
+<td>3.4 Clouddiensten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>register leveranciers</strong>: de plaats of het systeem waar het register wordt bijgehouden</li>
+<li><strong>format leveranciersbeoordeling</strong>: het sjabloon met de vragen en het bewijs per vraag</li>
+<li><strong>beoordelingstermijn ketenwijziging</strong>: bijvoorbeeld tien werkdagen</li>
+<li><strong>contracteigenaar</strong>: de functie die het contract beheert</li>
+<li><strong>lijneigenaar leveranciersmanagement</strong>: de manager die het contractmanagement uitvoert</li>
+<li><strong>aantal steekproef beoordelingen</strong>: bijvoorbeeld drie beoordelingen van kritieke diensten</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

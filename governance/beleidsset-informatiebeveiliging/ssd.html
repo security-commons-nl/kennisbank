@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid veilige softwareontwikkeling</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid veilige softwareontwikkeling</span></nav><!-- /kruimelpad -->
+<h1>Beleid veilige softwareontwikkeling</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="ssd.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Secure Software Development</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het ontwerpen, bouwen, aanpassen en
+testen van software: applicaties, webapplicaties, apps, koppelingen (API's), scripts en configuraties met
+logica, zoals low-code en workflows. Het geldt voor ontwikkeling door de organisatie zelf en voor
+ontwikkeling die ze uitbesteedt of als maatwerk of SaaS-dienst afneemt. Het gaat over de
+ISO-beheersmaatregelen 8.25 tot en met 8.28 en 8.30.</p>
+<p>Buiten dit beleid vallen het in productie nemen van wijzigingen en het scheiden van omgevingen (beleid
+wijzigingsbeheer), het oplossen van kwetsbaarheden na ingebruikname (beleid vulnerability- en
+patchmanagement) en de toegang tot broncode (beleid logische toegangsbeveiliging).</p>
+<blockquote>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Nee, alleen inkoop en configuratie»</strong></p>
+<p>De organisatie bouwt zelf geen software. Dit beleid is daarom vooral een set eisen die de organisatie stelt
+aan leveranciers bij inkoop, maatwerk en configuratie. Ook configuratie met logica (formulieren, workflows,
+koppelingen in een standaardpakket) valt eronder.</p>
+</blockquote>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Beveiliging en privacy zitten in het ontwerp (security en privacy by design) en de veiligste instelling
+   is de standaard (security by default).</li>
+<li>Beveiligingseisen worden vastgesteld voordat er gebouwd of gekocht wordt, en getoetst voordat iets in
+   gebruik gaat.</li>
+<li>Voor uitbestede ontwikkeling gelden dezelfde eisen als voor eigen ontwikkeling.</li>
+<li>Er wordt getest met fictieve gegevens; persoonsgegevens in test zijn een onderbouwde uitzondering.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Architectuurprincipes</h3>
+<ul>
+<li>De organisatie stelt beveiligingsprincipes voor het ontwerp van informatiesystemen vast en houdt ze
+  bij in de architectuur. Ze gelden voor elke ontwikkeling en aanschaf. Ten minste: [8.27.01]</li>
+<li>toegang standaard geweigerd en per rol expliciet toegekend, voor elke pagina, functie, API en
+    gegevensverzameling;</li>
+<li>aanmelden via de centrale identiteitsvoorziening met single sign-on en MFA volgens het beleid logische
+    toegangsbeveiliging;</li>
+<li>alleen versleutelde verbindingen, ook naar de backend, volgens het beleid cryptografie;</li>
+<li>minimale gegevensverwerking en standaard de meest privacyvriendelijke instelling;</li>
+<li>scheiding tussen klanten of omgevingen bij gedeelde (multi-tenant) platforms;</li>
+<li>logging van beveiligingsrelevante gebeurtenissen volgens het beleid logging en monitoring.</li>
+<li>De principes worden jaarlijks door de architect en de CISO herzien en na elke herziening vastgesteld. [8.27.01]</li>
+<li>Bij elk project of elke aanschaf toetst de architect het ontwerp aan de principes. Een afwijking wordt
+  vastgelegd en door de systeemeigenaar als risico geaccepteerd. [8.27.01]</li>
+</ul>
+<h3>3.2 Beveiligingseisen per toepassing</h3>
+<ul>
+<li>Voor elke nieuwe toepassing of grote wijziging stelt de systeemeigenaar beveiligingseisen op, afgeleid uit
+  de classificatie en de risicoanalyse. Voor webapplicaties en API's gebruikt de organisatie een erkende
+  eisenset als basis, bijvoorbeeld de OWASP Application Security Verification Standard (ASVS) op een niveau
+  dat past bij de classificatie. [8.26.01]</li>
+<li>Voor webapplicaties gelden in elk geval: veilig sessiebeheer met een time-out, bescherming tegen
+  brute-force-aanmeldingen, controle van alle invoer, geen gevoelige gegevens in de URL, beveiligingsheaders
+  (zoals HSTS en een Content Security Policy) en een register van websites en API's in de inventaris van
+  bedrijfsmiddelen. [8.26.01]</li>
+<li>Een internetvoorziening krijgt voor ingebruikname een penetratietest; de bevindingen met een hoog risico
+  zijn opgelost voordat de voorziening live gaat. [8.26.01]</li>
+</ul>
+<h3>3.3 Veilig ontwikkelen</h3>
+<blockquote>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
+<ul>
+<li>Ontwikkelaars werken volgens een vastgestelde richtlijn voor veilig programmeren en krijgen jaarlijks
+  training in veilig ontwikkelen. [8.28.01]</li>
+<li>Elke wijziging in code gaat via versiebeheer en wordt beoordeeld door een tweede ontwikkelaar voordat hij
+  in de hoofdtak komt. [8.25.01, 8.28.01]</li>
+<li>De bouwstraat controleert elke wijziging automatisch met statische codeanalyse, controle op kwetsbare
+  bibliotheken en op geheimen (wachtwoorden, sleutels) in de code. Bevindingen met een hoog risico houden de
+  release tegen. [8.25.01, 8.28.01]</li>
+<li>Van elke applicatie is een overzicht van gebruikte componenten (een SBOM) beschikbaar, zodat een nieuwe
+  kwetsbaarheid in een bibliotheek snel te vinden is. [8.25.01]</li>
+<li>Geheimen staan in een sleutelkluis en niet in code of configuratiebestanden in de repository. [8.28.01]</li>
+</ul>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Nee, alleen inkoop en configuratie»</strong></p>
+<ul>
+<li>Bij inkoop van software of maatwerk vraagt de organisatie aan de leverancier hoe die veilig ontwikkelt:
+  een richtlijn voor veilig programmeren, codereview, geautomatiseerde controle op kwetsbare componenten en
+  een proces voor kwetsbaarheden. Het antwoord weegt mee in de gunning. [8.25.01, 8.28.01]</li>
+<li>De organisatie vraagt bij elke grote release een recente pentestrapportage of een ASVS-verklaring, en
+  een overzicht van gebruikte componenten (SBOM) als de toepassing informatie met classificatie hoog
+  verwerkt. [8.25.01]</li>
+<li>Configuratie met logica door functioneel beheer (formulieren, workflows, koppelingen) volgt de
+  architectuurprincipes en gaat via wijzigingsbeheer. [8.25.01]</li>
+</ul>
+</blockquote>
+<h3>3.4 Uitbestede ontwikkeling</h3>
+<ul>
+<li>De eisen uit dit beleid gelden onverkort voor ontwikkeling door een leverancier, voor maatwerk en voor
+  SaaS-diensten. De organisatie neemt ze op in het programma van eisen en in het contract. [8.30.01]</li>
+<li>Daarbovenop regelt het contract: het recht op audit of een onafhankelijke verklaring over het
+  ontwikkelproces, het eigendom van of de toegang tot de broncode (bijvoorbeeld via escrow als de
+  continuïteit dat vraagt), de termijn voor het oplossen van kwetsbaarheden, een regeling voor het melden van
+  kwetsbaarheden (responsible disclosure) bij de leverancier en de manier van opleveren en accepteren. [8.30.01]</li>
+<li>De systeemeigenaar controleert bij elke oplevering of de afgesproken bewijzen er zijn (testverslag,
+  pentest, componentenoverzicht) en accepteert pas daarna. [8.30.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
+<ul>
+<li>Huurt de organisatie ontwikkelaars in voor het eigen team, dan werken die in de eigen bouwstraat, met
+  persoonlijke accounts en volgens dezelfde richtlijnen als eigen ontwikkelaars. [8.30.01]</li>
+</ul>
+</blockquote>
+<h3>3.5 Testgegevens</h3>
+<ul>
+<li>Er wordt getest met fictieve gegevens. Kan een test daar aantoonbaar niet mee, dan beoordeelt de
+  opdrachtgever van de test stap voor stap of het kan met geanonimiseerde gegevens, daarna met
+  gepseudonimiseerde gegevens en pas als laatste met productiegegevens. [8.33.01]</li>
+<li>Voor het maken van een geanonimiseerde of gepseudonimiseerde set en voor testen met gepseudonimiseerde of
+  productiegegevens vult de opdrachtgever een formulier in met doel, onderbouwing, benodigde gegevens en
+  bewaartermijn. De privacy officer en de CISO geven advies. Volgt de opdrachtgever het advies niet, dan
+  accepteert de proceseigenaar het risico schriftelijk. [8.33.01]</li>
+<li>Een testomgeving met persoonsgegevens krijgt dezelfde beveiliging als productie, alleen de minimaal nodige
+  gegevens en een vaste einddatum waarop de gegevens worden verwijderd. Het verwijderen wordt vastgelegd. [8.33.01]</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar veilige ontwikkeling]</strong></td>
+<td>Uitvoering van dit beleid en de eisen in inkoop en ontwikkeling</td>
+</tr>
+<tr>
+<td>Architect</td>
+<td>Opstellen en bijhouden van de architectuurprincipes, toets op ontwerpen</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Beveiligingseisen per toepassing, acceptatie van opleveringen en van afwijkingen</td>
+</tr>
+<tr>
+<td>Privacy officer of FG</td>
+<td>Advies bij testen met persoonsgegevens en bij privacy by design</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing van dit beleid en van afwijkingen</td>
+</tr>
+<tr>
+<td>Leveranciers en ontwikkelaars</td>
+<td>Bouwen volgens de eisen en het aanleveren van bewijs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Bij elke oplevering of release: controle van de bewijzen (testverslag, pentest, codeanalyse of
+  leveranciersverklaring); bewijs is het acceptatiedossier.</li>
+<li>Jaarlijks: herziening van de architectuurprincipes; bewijs is de vastgestelde versie.</li>
+<li>Jaarlijks: steekproef op testomgevingen met persoonsgegevens, met het formulier, het advies en de
+  verwijdering.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+informatiebeveiliging in projecten, het beleid wijzigingsbeheer (testen, acceptatie en scheiding van
+omgevingen), het beleid leveranciersbeheer (eisen in inkoop en contract), het beleid
+vulnerability- en patchmanagement en het privacybeleid (privacy by design en testen met persoonsgegevens).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (2) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.27.01</td>
+<td>Veilige systeemarchitectuur en technische uitgangspunten</td>
+<td>3.1 Architectuurprincipes</td>
+</tr>
+<tr>
+<td>8.30.01</td>
+<td>Uitbestede systeemontwikkeling</td>
+<td>3.4 Uitbestede ontwikkeling</td>
+</tr>
+</tbody>
+</table>
+<p>Ook ingevuld, ISO-beheersmaatregelen van dit domein zonder overheidsmaatregel: 8.25.01 (Beveiligen tijdens de ontwikkelcyclus), 8.26.01 (Toepassingsbeveiligingseisen), 8.28.01 (Veilig coderen).</p>
+<p>Daarnaast vult dit stuk maatregelen van andere domeinen mee in: 8.33.01 (Testgegevens).</p>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>lijneigenaar veilige ontwikkeling</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT of informatievoorziening</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

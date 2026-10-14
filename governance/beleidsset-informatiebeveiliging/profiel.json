@@ -1,0 +1,263 @@
+{
+  "toelichting": "Profielschema van de beleidsset (plan beleidsset op maat, stap 2). Zestien vragen met vaste antwoordruimte. Elke vraag zegt welke BIO 2.0-domeinen hij raakt, zodat een sortering weet waar een antwoord telt. Vragen met doel 'matching' helpen alleen om organisaties zoals de jouwe te vinden; vragen met doel 'inhoud' veranderen wat er in het beleid staat. Geen enkele vraag is verplicht: de vragen zijn een filter, geen poort. Een inzender beantwoordt dezelfde vragen voor de organisatie waar een stuk vandaan komt (bronprofiel in varianten.json).",
+  "versie": "2026-10-12",
+  "domeinen": [
+    {"id": "iv-beleid", "naam": "IV-beleid"},
+    {"id": "ib-in-projecten", "naam": "Informatiebeveiliging binnen projecten"},
+    {"id": "screening-bewustzijn", "naam": "Screening, bewustzijn & opleiding"},
+    {"id": "bedrijfsmiddelen", "naam": "Bedrijfsmiddelenbeheer"},
+    {"id": "classificatie", "naam": "Informatie classificatie"},
+    {"id": "logische-toegang", "naam": "Logische toegangsbeveiliging"},
+    {"id": "leveranciers-inkoop", "naam": "Leveranciersbeheer - Inkoop"},
+    {"id": "leveranciers-contract", "naam": "Leveranciersbeheer - contractbeheer"},
+    {"id": "incidenten", "naam": "Security Incident Management"},
+    {"id": "bcm", "naam": "Business Continuity & Disaster Recovery"},
+    {"id": "it-compliance", "naam": "IT-Compliance"},
+    {"id": "fysiek", "naam": "Fysieke toegang & beveiliging"},
+    {"id": "gegevensdragers", "naam": "Afvoer en hergebruik gegevensdragers"},
+    {"id": "mdm", "naam": "Mobile Device Management"},
+    {"id": "kwetsbaarheden", "naam": "Vulnerability & patchmanagement"},
+    {"id": "back-up", "naam": "Back-up & Recovery"},
+    {"id": "logging", "naam": "Logging & monitoring"},
+    {"id": "netwerk", "naam": "Netwerkbeveiliging"},
+    {"id": "cryptografie", "naam": "Cryptografie"},
+    {"id": "ssd", "naam": "Secure Software Development"},
+    {"id": "wijzigingsbeheer", "naam": "Wijzigingsbeheer"}
+  ],
+  "vragen": [
+    {
+      "id": "type",
+      "vraag": "Wat voor organisatie ben je?",
+      "doel": "matching",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "gemeente", "label": "Gemeente"},
+        {"id": "gr", "label": "Gemeenschappelijke regeling of uitvoeringsorganisatie"},
+        {"id": "provincie", "label": "Provincie"},
+        {"id": "waterschap", "label": "Waterschap"},
+        {"id": "ministerie", "label": "Ministerie of kerndepartement"},
+        {"id": "rijksdienst", "label": "Rijksdienst, agentschap of inspectie"},
+        {"id": "zbo", "label": "Zelfstandig bestuursorgaan"},
+        {"id": "veiligheidsregio", "label": "Veiligheidsregio"},
+        {"id": "overig", "label": "Overige publieke organisatie"}
+      ],
+      "domeinen": ["iv-beleid", "it-compliance", "classificatie"],
+      "toelichting": "Bepaalt het wettelijk kader dat meekomt: ENSIA en de Wpg voor gemeenten, VIR-BI en gerubriceerde informatie voor het Rijk, OT-zwaar voor waterschappen. Daarom geen aparte vraag over rubricering."
+    },
+    {
+      "id": "grootte",
+      "vraag": "Hoe groot is je organisatie?",
+      "doel": "matching",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "klein", "label": "Klein (gemeente tot 30.000 inwoners; anders tot 250 medewerkers)"},
+        {"id": "middel", "label": "Middel (30.000 tot 100.000 inwoners; anders 250 tot 1.000 medewerkers)"},
+        {"id": "groot", "label": "Groot (meer dan 100.000 inwoners; anders meer dan 1.000 medewerkers)"}
+      ],
+      "domeinen": [],
+      "toelichting": "Verandert de inhoud nauwelijks; helpt om organisaties zoals de jouwe te vinden. Wie het beleid uitvoert zit in de vraag over security-capaciteit."
+    },
+    {
+      "id": "samenwerking",
+      "vraag": "Hoe is je bedrijfsvoering georganiseerd?",
+      "doel": "matching",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "zelfstandig", "label": "Zelfstandig"},
+        {"id": "centrum", "label": "Centrumorganisatie die de bedrijfsvoering ook voor anderen doet"},
+        {"id": "aangesloten", "label": "Aangesloten bij een uitvoeringsorganisatie of centrumorganisatie"}
+      ],
+      "domeinen": ["iv-beleid", "incidenten", "leveranciers-contract"],
+      "toelichting": "Bij een centrumorganisatie geldt het beleid voor meerdere entiteiten en moet de governance per deelnemer zijn beschreven."
+    },
+    {
+      "id": "capaciteit",
+      "vraag": "Welke eigen security-capaciteit heb je?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "geen", "label": "Geen eigen ISO; informatiebeveiliging is een neventaak"},
+        {"id": "parttime", "label": "Een ISO of CISO in deeltijd"},
+        {"id": "team", "label": "Een eigen team (CISO met ISO's)"}
+      ],
+      "domeinen": ["iv-beleid", "incidenten", "kwetsbaarheden", "logging", "it-compliance"],
+      "toelichting": "Bepaalt wie de rollen in het beleid vult en hoe zwaar het controleraamwerk kan zijn."
+    },
+    {
+      "id": "cbw",
+      "vraag": "Wat is je status onder de Cyberbeveiligingswet?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "essentieel", "label": "Essentiële entiteit"},
+        {"id": "belangrijk", "label": "Belangrijke entiteit"},
+        {"id": "niet", "label": "Niet aangewezen"}
+      ],
+      "domeinen": ["iv-beleid", "incidenten", "leveranciers-inkoop", "bcm"],
+      "toelichting": "Bepaalt meldplicht, toezicht en de persoonlijke plicht van bestuurders."
+    },
+    {
+      "id": "beheer",
+      "vraag": "Wie beheert je IT?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "eigen", "label": "Eigen beheer"},
+        {"id": "regie", "label": "Regie: eigen organisatie stuurt, beheer is uitbesteed"},
+        {"id": "uitbesteed", "label": "Volledig uitbesteed"}
+      ],
+      "domeinen": ["leveranciers-inkoop", "leveranciers-contract", "logische-toegang", "wijzigingsbeheer", "kwetsbaarheden", "back-up", "netwerk"],
+      "toelichting": "Bepaalt of een beleidsregel een eis aan je eigen beheerders is of een afspraak met een leverancier."
+    },
+    {
+      "id": "hosting",
+      "vraag": "Waar draaien je systemen?",
+      "doel": "inhoud",
+      "meerdere": true,
+      "antwoorden": [
+        {"id": "eigen-dc", "label": "Eigen datacenter of serverruimte"},
+        {"id": "hostingpartij", "label": "Hostingpartij (IaaS, gedeeld datacenter)"},
+        {"id": "saas", "label": "Vooral SaaS en publieke cloud"}
+      ],
+      "domeinen": ["back-up", "fysiek", "leveranciers-inkoop", "logging", "netwerk", "cryptografie"],
+      "subvraag": {
+        "id": "soevereiniteit",
+        "vraag": "Stel je eisen aan Europese of soevereine cloud?",
+        "antwoorden": [
+          {"id": "ja", "label": "Ja: alleen EU of soevereine dienstverlening"},
+          {"id": "nee", "label": "Nee"}
+        ],
+        "domeinen": ["leveranciers-inkoop", "leveranciers-contract"]
+      },
+      "toelichting": "Een back-upbeleid voor een eigen datacenter gaat over media en uitwijk; een voor SaaS gaat over afspraken met de leverancier."
+    },
+    {
+      "id": "werkplek",
+      "vraag": "Hoe ziet je werkplek eruit?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "cloud", "label": "Cloudwerkplek (bijvoorbeeld Microsoft 365)"},
+        {"id": "hybride", "label": "Hybride: cloud naast een virtuele of lokale werkplek"},
+        {"id": "on-premises", "label": "On-premises"}
+      ],
+      "domeinen": ["logische-toegang", "mdm", "back-up", "bedrijfsmiddelen"],
+      "subvraag": {
+        "id": "byod",
+        "vraag": "Mogen medewerkers eigen apparaten gebruiken (BYOD)?",
+        "antwoorden": [
+          {"id": "ja", "label": "Ja, onder voorwaarden"},
+          {"id": "nee", "label": "Nee"}
+        ],
+        "domeinen": ["mdm", "bedrijfsmiddelen", "cryptografie"]
+      }
+    },
+    {
+      "id": "detectie",
+      "vraag": "Wie bewaakt je omgeving op aanvallen?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "eigen-soc", "label": "Eigen SOC"},
+        {"id": "uitbesteed", "label": "Uitbesteed SOC of MDR-dienst"},
+        {"id": "geen", "label": "Geen structurele detectie"}
+      ],
+      "domeinen": ["logging", "incidenten", "netwerk"],
+      "toelichting": "Bepaalt wie logs beoordeelt, wie escaleert en welke afspraken in het incidentbeleid staan."
+    },
+    {
+      "id": "ontwikkeling",
+      "vraag": "Bouwt je organisatie zelf software, apps of koppelingen?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "ja", "label": "Ja"},
+        {"id": "nee", "label": "Nee, alleen inkoop en configuratie"}
+      ],
+      "domeinen": ["ssd", "wijzigingsbeheer", "kwetsbaarheden"],
+      "toelichting": "Zonder eigen ontwikkeling is secure software development een eis aan leveranciers, niet aan een eigen team."
+    },
+    {
+      "id": "ot",
+      "vraag": "Heb je operationele technologie (OT)?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "geen", "label": "Geen"},
+        {"id": "beperkt", "label": "Beperkt: gebouwbeheer, toegang, camera's"},
+        {"id": "substantieel", "label": "Substantieel: bruggen, gemalen, verkeer, zuivering"}
+      ],
+      "domeinen": ["iv-beleid", "bedrijfsmiddelen", "netwerk", "fysiek", "bcm"],
+      "toelichting": "Onder de Cyberbeveiligingswet valt OT onder de zorgplicht; het beleid moet dan zeggen wie er eigenaar van is."
+    },
+    {
+      "id": "politiegegevens",
+      "vraag": "Verwerk je politiegegevens (boa's, opsporing, handhaving)?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "ja", "label": "Ja"},
+        {"id": "nee", "label": "Nee"}
+      ],
+      "domeinen": ["logging", "logische-toegang", "classificatie", "it-compliance"],
+      "toelichting": "De Wet politiegegevens stelt eigen eisen aan autorisaties, logging, bewaartermijnen en audit."
+    },
+    {
+      "id": "ketens",
+      "vraag": "Op welke landelijke voorzieningen ben je aangesloten?",
+      "doel": "inhoud",
+      "meerdere": true,
+      "antwoorden": [
+        {"id": "digid", "label": "DigiD"},
+        {"id": "suwinet", "label": "Suwinet"},
+        {"id": "brp", "label": "BRP (als bronhouder of afnemer)"},
+        {"id": "bag", "label": "BAG of andere basisregistraties"},
+        {"id": "anders", "label": "Andere ketens met eigen beveiligingseisen"},
+        {"id": "geen", "label": "Geen"}
+      ],
+      "domeinen": ["logische-toegang", "logging", "it-compliance", "leveranciers-contract"],
+      "toelichting": "Elke aansluiting brengt een eigen audit- en beveiligingsregime mee. De lijst is per type organisatie anders; dit zijn de gemeentelijke."
+    },
+    {
+      "id": "gevoelig",
+      "vraag": "In welke gevoelige domeinen verwerk je persoonsgegevens?",
+      "doel": "inhoud",
+      "meerdere": true,
+      "antwoorden": [
+        {"id": "sociaal", "label": "Sociaal domein"},
+        {"id": "jeugd", "label": "Jeugd"},
+        {"id": "gezondheid", "label": "Gezondheid (WvGGZ, NTA 7516)"},
+        {"id": "geen", "label": "Geen van deze"}
+      ],
+      "domeinen": ["classificatie", "cryptografie", "logische-toegang", "ib-in-projecten"],
+      "toelichting": "Bijzondere persoonsgegevens verhogen het classificatieniveau en stellen eisen aan mail en chat."
+    },
+    {
+      "id": "bcm",
+      "vraag": "Hoe is je crisis- en continuïteitsorganisatie geregeld?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "geen", "label": "Geen"},
+        {"id": "crisisteam", "label": "Een crisisteam, zonder BCM-functie"},
+        {"id": "bcm", "label": "Een BCM-functie met continuïteitsplannen en een BIA"}
+      ],
+      "domeinen": ["bcm", "incidenten", "back-up"],
+      "toelichting": "Bepaalt of het incidentbeleid naar een crisisprocedure kan verwijzen en of hersteltijden uit een BIA komen."
+    },
+    {
+      "id": "volwassenheid",
+      "vraag": "Waar sta je met informatiebeveiliging?",
+      "doel": "inhoud",
+      "meerdere": false,
+      "antwoorden": [
+        {"id": "startend", "label": "Startend: nog geen samenhangend beleid"},
+        {"id": "bio1", "label": "BIO 1 op orde, verantwoording via ENSIA"},
+        {"id": "bio2-opbouw", "label": "BIO 2.0-ISMS in opbouw"},
+        {"id": "bio2-werkend", "label": "BIO 2.0-ISMS werkend, met controleraamwerk"}
+      ],
+      "domeinen": ["iv-beleid", "it-compliance"],
+      "toelichting": "Bepaalt of je een licht concept krijgt of een volledig stuk met controleraamwerk."
+    }
+  ]
+}

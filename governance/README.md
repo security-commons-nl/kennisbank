@@ -20,9 +20,10 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 
 1. [Val ik onder de Cbw?](val-ik-onder-de-cbw/)
 2. [Ben ik aanbieder onder de AI Act?](aanbieder-onder-de-ai-act/)
-3. [BIO 2.0 invoeren, een plan van aanpak met urenraming](bio2-implementeren/)
-4. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
-5. [AI-beleid van een regionale samenwerking](ai-beleid/)
+3. [Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen](beleidsset-informatiebeveiliging/)
+4. [BIO 2.0 invoeren, een plan van aanpak met urenraming](bio2-implementeren/)
+5. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
+6. [AI-beleid van een regionale samenwerking](ai-beleid/)
 
 ## Bijdragen
 

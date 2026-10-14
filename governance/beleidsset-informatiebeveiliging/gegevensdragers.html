@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid afvoer en hergebruik van gegevensdragers</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid afvoer en hergebruik van gegevensdragers</span></nav><!-- /kruimelpad -->
+<h1>Beleid afvoer en hergebruik van gegevensdragers</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="gegevensdragers.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Afvoer en hergebruik gegevensdragers</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor gegevensdragers: alles waarop
+informatie van de organisatie is opgeslagen en dat los kan worden gebruikt, vervoerd, hergebruikt of
+afgevoerd. Het doel is dat informatie niet uitlekt bij gebruik, transport, reparatie, hergebruik of afvoer
+van die dragers. Het geldt voor iedereen die gegevensdragers van de organisatie gebruikt, beheert of
+vervoert, ook leveranciers. Het gaat over de ISO-beheersmaatregelen 7.10, 7.14 en 8.10.</p>
+<p>Gegevensdragers zijn in dit beleid: verwijderbare media (USB-sticks, externe schijven, geheugenkaarten,
+optische schijven, back-uptapes), vaste opslag in apparatuur (harde schijven en SSD's in werkplekken,
+servers, printers, multifunctionals en netwerkapparatuur), opslag in mobiele apparaten en papier.</p>
+<p>Buiten dit beleid vallen de inventaris en de inname van apparatuur (beleid bedrijfsmiddelenbeheer) en de
+versleutelingseisen zelf (beleid cryptografie).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Informatie hoort in de systemen van de organisatie, niet op losse dragers. Een verwijderbaar medium is de
+   uitzondering.</li>
+<li>Een drager die de organisatie verlaat, bevat geen leesbare informatie van de organisatie meer, tenzij het
+   transport daarvoor bedoeld is en beveiligd is.</li>
+<li>Wissen is pas klaar als het is gecontroleerd en vastgelegd.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Gebruik van verwijderbare media</h3>
+<ul>
+<li>Het opslaan van informatie op verwijderbare media is standaard niet toegestaan en technisch geblokkeerd op
+  beheerde werkplekken. Een uitzondering vraagt de gebruiker aan bij
+  <strong>[aanvraagpunt uitzonderingen]</strong>,
+  met akkoord van de leidinggevende en, voor informatie met een vertrouwelijkheid van BBN2 of hoger, van de
+  CISO. Uitzonderingen gelden ten hoogste een jaar.</li>
+<li>Toegestane media zijn eigendom van de organisatie, staan in de inventaris en zijn versleuteld volgens het
+  beleid cryptografie. Privémedia worden niet gebruikt voor informatie van de organisatie.</li>
+</ul>
+<h3>3.2 Wissen en vernietigen</h3>
+<ul>
+<li>De organisatie heeft een verwijderinstructie voor gegevensdragers. Die schrijft voor dat van elk
+  herbruikbaar medium dat de organisatie verlaat (verkoop, retour aan leverancier, reparatie, schenking,
+  einde lease) eerst alle informatie onherstelbaar wordt verwijderd. Het gaat daarbij om de hele drager, niet
+  alleen om de bestanden die de gebruiker kent. [7.10.01]</li>
+<li>De verwijderinstructie noemt per type drager en per classificatie de toegestane methode: cryptografisch
+  wissen of overschrijven met een erkende methode voor herbruikbare dragers, en fysieke vernietiging
+  (versnipperen, desintegreren) voor dragers die niet betrouwbaar te wissen zijn, defecte dragers en dragers
+  met informatie van BBN3. [7.10.01]</li>
+<li>Voor het wissen gebruikt de organisatie waar mogelijk producten met een positief inzetadvies van het
+  Nationaal Bureau voor Verbindingsbeveiliging. Wijkt de organisatie daarvan af, dan legt de CISO de reden en
+  het gekozen alternatief vast. [7.10.02]</li>
+<li>Na het wissen controleert de uitvoerder per drager met een steekproef of een verificatiefunctie van het
+  wisproduct dat er geen informatie meer te herstellen is. Van elke gewiste of vernietigde drager wordt een
+  verslag gemaakt met: kenmerk uit de inventaris, methode, product en versie, datum, uitvoerder en uitkomst
+  van de controle. Het verslag wordt ten minste zeven jaar bewaard. [7.10.02]</li>
+<li>Laat de organisatie het wissen of vernietigen uitvoeren door een leverancier, dan staan de methode, de
+  controle en het verslag per drager (vernietigingscertificaat met serienummers) in het contract. De
+  organisatie vergelijkt elke levering van certificaten met de lijst van afgegeven dragers. [7.10.02]</li>
+<li>Apparatuur met vaste opslag die voor reparatie of garantie de organisatie verlaat, gaat zonder die opslag
+  weg of wordt eerst gewist. Kan dat niet, dan gaat de reparatie alleen naar een leverancier met een
+  geheimhoudingsclausule en wordt de drager bij terugkomst gewist of vervangen.</li>
+<li>Papier met informatie van BBN1 of hoger gaat in afgesloten containers voor vernietiging.</li>
+</ul>
+<h3>3.3 Transport</h3>
+<ul>
+<li>Gegevensdragers met informatie worden vervoerd volgens een vaste transportprocedure: versleuteld, in een
+  verzegelde verpakking en met een registratie van inhoud, afzender, ontvanger, vervoerder, datum van
+  verzending en bevestiging van ontvangst.</li>
+<li>Wie dragers met informatie van BBN2 of hoger vervoert of laat vervoeren, is daartoe door de eigenaar van de
+  informatie gemachtigd.</li>
+<li>De organisatie zet voor het vervoer van geclassificeerde informatie alleen koeriers of transporteurs in die
+  voldoen aan vooraf vastgestelde betrouwbaarheidseisen. Die eisen staan in
+  <strong>[eisen aan koeriers]</strong>
+  en worden bij de selectie en bij elke contractverlenging getoetst. [7.10.03]</li>
+<li>Kan informatie op een drager niet worden versleuteld, dan vervoert een gemachtigde medewerker de drager
+  persoonlijk of gaat het transport in een verzegelde, afgesloten verpakking met overdracht tegen handtekening.</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar gegevensdragers]</strong></td>
+<td>Uitvoering van dit beleid, de verwijderinstructie en de transportprocedure</td>
+</tr>
+<tr>
+<td>Servicedesk of beheer</td>
+<td>Wissen, vernietigen, controle en verslag per drager; registratie in de inventaris</td>
+</tr>
+<tr>
+<td>Eigenaar van de informatie</td>
+<td>Machtiging voor transport van informatie van BBN2 of hoger</td>
+</tr>
+<tr>
+<td>Inkoop</td>
+<td>Eisen aan wis- en vernietigingsleveranciers en aan koeriers in het contract</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing van dit beleid, akkoord op uitzonderingen en op afwijkingen van het NBV-advies</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Geen informatie op losse dragers zonder uitzondering, verlies van een drager direct melden als incident</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Per kwartaal: vergelijking van de afgevoerde dragers in de inventaris met de wisverslagen en
+  vernietigingscertificaten; bewijs is de vergelijking met de dragers zonder verslag en hun afhandeling.</li>
+<li>Jaarlijks: steekproef van ten minste vijf gewiste dragers die met forensische software worden gecontroleerd
+  op herstelbare informatie.</li>
+<li>Jaarlijks: controle van de lijst met uitzonderingen voor verwijderbare media; verlopen uitzonderingen worden
+  ingetrokken.</li>
+<li>Jaarlijks: toets van de ingezette koeriers en vernietigingsleveranciers aan de vastgestelde eisen.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie; een verloren drager met
+  informatie is een beveiligingsincident.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+bedrijfsmiddelenbeheer (inventaris en inname), het beleid informatieclassificatie (niveaus die de methode
+bepalen), het beleid cryptografie (versleuteling van dragers), het beleid mobile device management (wissen op
+afstand) en het beleid back-up en recovery (transport en opslag van back-upmedia).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (3) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.10.01</td>
+<td>Opslagmedia</td>
+<td>3.2 Wissen en vernietigen</td>
+</tr>
+<tr>
+<td>7.10.02</td>
+<td>Opslagmedia</td>
+<td>3.2 Wissen en vernietigen</td>
+</tr>
+<tr>
+<td>7.10.03</td>
+<td>Opslagmedia</td>
+<td>3.3 Transport</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>aanvraagpunt uitzonderingen</strong>: de functie die uitzonderingen op dit beleid registreert, bijvoorbeeld de servicedesk</li>
+<li><strong>eisen aan koeriers</strong>: het document met de betrouwbaarheidseisen, zoals VOG of screening van chauffeurs, verzegeling, volgsysteem en overdrachtsprotocol</li>
+<li><strong>lijneigenaar gegevensdragers</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

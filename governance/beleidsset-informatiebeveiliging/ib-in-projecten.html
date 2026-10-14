@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid informatiebeveiliging in projecten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid informatiebeveiliging in projecten</span></nav><!-- /kruimelpad -->
+<h1>Beleid informatiebeveiliging in projecten</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="ib-in-projecten.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Informatiebeveiliging binnen projecten</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor projecten en wijzigingen waarin
+informatiesystemen worden aangeschaft, gebouwd, gekoppeld of ingrijpend aangepast. Het zorgt dat de
+beveiligingseisen worden bepaald voordat er een keuze valt, en dat de risico's bekend en behandeld zijn
+voordat een systeem in gebruik gaat. Het gaat over ISO-beheersmaatregel 5.08.</p>
+<p>Het beleid geldt voor alle projecten en programma's, ook als een leverancier het project uitvoert, en voor
+wijzigingen buiten projectverband die als significant gelden (zie 3.1). Het is bedoeld voor opdrachtgevers,
+projectleiders, proceseigenaren, de architectuurfunctie en inkoop.</p>
+<p>Buiten dit beleid vallen de technische eisen aan software-ontwikkeling (beleid secure software development),
+de afhandeling van gewone wijzigingen (beleid wijzigingsbeheer) en de eisen aan leveranciers in het
+inkooptraject (beleid leveranciersbeheer, inkoop).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Beveiliging en privacy horen bij de start van een project. Eisen die pas bij de oplevering worden
+   gesteld, kosten meer en worden vaker uitgezonderd.</li>
+<li>De opdrachtgever van een project is eigenaar van de projectrisico's tot de overdracht; daarna is de
+   proceseigenaar eigenaar.</li>
+<li>De risicoafweging gebruikt de risicomanagementmethodiek die de organisatie heeft vastgesteld; een project
+   gebruikt geen eigen methode.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Wanneer een risicoafweging nodig is</h3>
+<ul>
+<li>Een risicoafweging is verplicht bij elk nieuw informatiesysteem en bij elke significante wijziging op een
+  bestaand systeem. [5.08.01]</li>
+<li>Een wijziging is significant als ze ten minste een van deze dingen doet: een nieuwe categorie gegevens
+  verwerken, een nieuwe koppeling met een externe partij maken, de hostinglocatie of leverancier wijzigen,
+  de toegang voor een nieuwe groep gebruikers openzetten of de classificatie van het systeem verhogen.
+  Bij twijfel beslist de CISO. [5.08.01]</li>
+<li>De projectleider meldt het project bij de start (projectopdracht of startdocument) bij de CISO en de
+  privacy officer. Een project zonder melding krijgt geen budget voor de realisatiefase.</li>
+</ul>
+<h3>3.2 Uitvoering van de risicoafweging</h3>
+<ul>
+<li>De opdrachtgever laat de risicoafweging uitvoeren met de vastgestelde methodiek. Het resultaat is een
+  verslag met de classificatie van het systeem, de dreigingen, de risico's, de gekozen maatregelen en de
+  restrisico's. [5.08.01]</li>
+<li>De classificatie volgt het beleid informatieclassificatie en bepaalt welke maatregelen uit de BIO 2.0
+  basisset en welke aanvullende maatregelen gelden. [5.08.01]</li>
+<li>Uit de risicoafweging volgen de beveiligingseisen. Die worden opgenomen in het programma van eisen, de
+  aanbesteding of de opdracht aan de leverancier, en in de acceptatiecriteria voor oplevering. [5.08.01]</li>
+<li>Verwerkt het systeem persoonsgegevens, dan beoordeelt de privacy officer of een DPIA nodig is. DPIA en
+  risicoafweging gebruiken dezelfde beschrijving van het systeem en worden samen opgeleverd.</li>
+<li>De ISO of CISO adviseert over de risicoafweging. Bij een restrisico boven de risicobereidheid van de
+  organisatie is het advies schriftelijk.</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd» of «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
+<ul>
+<li>Verwerkt het systeem gegevens uit het sociaal domein, over jeugd of over gezondheid, dan is een DPIA altijd
+  verplicht en geldt voor vertrouwelijkheid ten minste het hoogste niveau uit het beleid
+  informatieclassificatie, tenzij de risicoafweging met redenen een lager niveau onderbouwt. [5.08.01]</li>
+<li>De risicoafweging behandelt in dat geval ook toegang door ketenpartners en zorgaanbieders, de logging van
+  inzage en de vraag of gegevens buiten de Europese Economische Ruimte terechtkomen. De FG wordt om advies
+  gevraagd voordat het project de realisatiefase ingaat. [5.08.01]</li>
+</ul>
+<p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
+<ul>
+<li>Bij gezondheidsgegevens toetst de risicoafweging het systeem en de berichtenstroom (mail, chat,
+  berichtenbox) aan NEN 7510 en NEN 7516 waar die van toepassing zijn. [5.08.01]</li>
+</ul>
+</blockquote>
+<h3>3.3 Projectfasen en beslismomenten</h3>
+<ul>
+<li>Bij de start: melding, eerste classificatie en de vraag of het project significant is.</li>
+<li>Voor de keuze van oplossing of leverancier: risicoafweging af, beveiligingseisen in het programma van
+  eisen. [5.08.01]</li>
+<li>Voor de livegang: de opdrachtgever toont aan dat de eisen zijn gerealiseerd, bijvoorbeeld met testresultaten,
+  een pentest bij systemen die vanaf internet bereikbaar zijn en de configuratie van de toegang. Open
+  punten staan met eigenaar en termijn in het risicoregister.</li>
+<li>De opdrachtgever accepteert de restrisico's schriftelijk. Restrisico's boven de risicobereidheid worden
+  geaccepteerd door
+  <strong>[risico-acceptant]</strong>.
+  [5.08.01]</li>
+<li>Bij de overdracht naar beheer krijgt de proceseigenaar het verslag van de risicoafweging en de lijst van
+  open risico's.</li>
+</ul>
+<h3>3.4 Projectmethodiek</h3>
+<ul>
+<li>De projectmethodiek van de organisatie bevat de beslismomenten uit 3.3 als vaste stappen met een
+  sjabloon voor de risicoafweging. [5.08.01]</li>
+<li>Projectleiders kennen de methodiek. Nieuwe projectleiders, ook inhuur, krijgen bij de start een korte
+  instructie van de ISO of CISO.</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opdrachtgever</td>
+<td>Laten uitvoeren van de risicoafweging, opnemen van de eisen in de opdracht, accepteren van restrisico's</td>
+</tr>
+<tr>
+<td>Projectleider</td>
+<td>Melding bij de start, planning van de beslismomenten, bewijs bij oplevering</td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td>Classificatie, inbreng van de eisen vanuit het proces, eigenaar van de risico's na overdracht</td>
+</tr>
+<tr>
+<td>CISO of ISO</td>
+<td>Advies over de risicoafweging en over de vraag of een wijziging significant is</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Beoordeling DPIA-plicht, advies bij persoonsgegevens</td>
+</tr>
+<tr>
+<td><strong>[lijneigenaar projectportfolio]</strong></td>
+<td>Overzicht van lopende projecten met de status van hun risicoafweging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Elk kwartaal: de CISO vergelijkt het projectportfolio met de ontvangen meldingen; bewijs is de lijst met
+  projecten zonder melding en de afhandeling daarvan.</li>
+<li>Jaarlijks: steekproef van ten minste vijf opgeleverde projecten of significante wijzigingen op een
+  volledige risicoafweging, eisen in de opdracht en schriftelijke risicoacceptatie.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het gebruikt de classificatie uit het
+beleid informatieclassificatie en de methodiek uit het risicomanagementbeleid. Het raakt het privacybeleid
+(DPIA), het beleid leveranciersbeheer (eisen in de aanbesteding), het beleid wijzigingsbeheer (wijzigingen
+die geen project zijn) en het beleid secure software development (eigen ontwikkeling).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (1) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.08.01</td>
+<td>Informatiebeveiliging in projectmanagement</td>
+<td>3.1 Wanneer een risicoafweging nodig is</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>risico-acceptant</strong>: de functie die hoge restrisico's mag accepteren, bijvoorbeeld de directie</li>
+<li><strong>lijneigenaar projectportfolio</strong>: de functie die het overzicht van projecten bijhoudt, bijvoorbeeld het projectbureau</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

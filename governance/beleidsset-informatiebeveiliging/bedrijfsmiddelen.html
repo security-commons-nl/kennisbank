@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid bedrijfsmiddelenbeheer</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid bedrijfsmiddelenbeheer</span></nav><!-- /kruimelpad -->
+<h1>Beleid bedrijfsmiddelenbeheer</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="bedrijfsmiddelen.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Bedrijfsmiddelenbeheer</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het beheer van bedrijfsmiddelen: de
+informatie zelf en alles waarmee die wordt verwerkt, opgeslagen of doorgegeven. Het regelt welke
+bedrijfsmiddelen de organisatie heeft, wie er eigenaar van is, hoe ze gebruikt mogen worden en hoe ze
+terugkomen als iemand vertrekt. Het geldt voor medewerkers, inhuur, stagiairs, vrijwilligers en leveranciers
+die bedrijfsmiddelen van de organisatie gebruiken. Het gaat over de ISO-beheersmaatregelen 5.09 tot en met
+5.11, 7.06, 7.08, 7.09, 7.11 en 7.13.</p>
+<p>Onder bedrijfsmiddelen vallen in dit beleid: hardware (servers, netwerkapparatuur, werkplekken, printers),
+eindgebruikersapparaten en mobiele apparatuur, verwijderbare opslagmedia, authenticatiemiddelen (tokens,
+smartcards, sleutels), software en clouddiensten, en gegevensverzamelingen.</p>
+<p>Buiten dit beleid vallen het classificeren en labelen van informatie (beleid informatieclassificatie), het
+wissen en afvoeren van opslagmedia (beleid afvoer en hergebruik van gegevensdragers) en de inrichting van
+mobiele apparaten (beleid mobile device management).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Wat niet in de inventaris staat, wordt niet beveiligd. De inventaris is daarom de basis voor
+   patchmanagement, toegangsbeheer, back-up en controle.</li>
+<li>Elk bedrijfsmiddel heeft één eigenaar: een functie of organisatieonderdeel dat over de hele levenscyclus
+   verantwoordelijk is, van aanschaf tot afvoer.</li>
+<li>Wie een bedrijfsmiddel gebruikt, kent de gedragsregels en heeft dat aantoonbaar bevestigd.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Inventaris</h3>
+<ul>
+<li>De organisatie houdt één inventaris bij van alle bedrijfsmiddelen die van belang zijn voor
+  informatieverwerking, bijvoorbeeld in een CMDB. De inventaris omvat ook bedrijfsmiddelen op afstand
+  (thuiswerkplekken, mobiele apparatuur), clouddiensten en apparaten die regelmatig op het netwerk zijn
+  aangesloten zonder dat de organisatie ze beheert, zoals apparatuur van leveranciers. [5.09.01]</li>
+<li>Per bedrijfsmiddel legt de inventaris ten minste vast: uniek kenmerk, type, eigenaar, locatie of
+  leverancier, gebruiker of beheerder, classificatie, bedrijfsprocessen die ervan afhangen, versie of
+  configuratie en de datum van ingebruikname en einde ondersteuning. [5.09.01]</li>
+<li>Elke wijziging in de levenscyclus (aanschaf, uitgifte, verplaatsing, reparatie, inname, afvoer) wordt in de
+  inventaris verwerkt via het wijzigingsproces of de uitgifte- en innameprocedure.</li>
+<li>De organisatie controleert de volledigheid en actualiteit van de inventaris ten minste elk kwartaal voor
+  werkplekken, mobiele apparatuur en clouddiensten en ten minste jaarlijks voor de overige bedrijfsmiddelen.
+  Dat gebeurt door de inventaris te vergelijken met een tweede bron (netwerkscan, beheertool, facturen of
+  licentieoverzichten). Bedrijfsmiddelen zonder eigenaar of zonder registratie worden binnen een maand
+  opgelost of buiten gebruik gesteld. [5.09.01]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)»</strong></p>
+<ul>
+<li>Werkplekken en mobiele apparaten worden geregistreerd via het centrale endpointbeheer van de cloudwerkplek.
+  Alleen apparaten die daar zijn ingeschreven krijgen toegang tot bedrijfsinformatie, zodat de registratie
+  van werkplekken vanzelf volledig is. De lijst met cloudtenants, abonnementen en gekoppelde apps maakt deel
+  uit van de inventaris en wordt per kwartaal vergeleken met de inkoopadministratie. [5.09.01]</li>
+</ul>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
+<ul>
+<li>Werkplekken staan zowel in het cloudendpointbeheer als in het beheer van de lokale of virtuele omgeving.
+  De kwartaalcontrole vergelijkt beide registraties met elkaar en met de inventaris; een apparaat dat in één
+  bron ontbreekt, is een afwijking. [5.09.01]</li>
+</ul>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «On-premises»</strong></p>
+<ul>
+<li>Werkplekken en servers in het eigen netwerk worden ten minste maandelijks met een netwerkscan of
+  beheertool vergeleken met de inventaris. Onbekende apparaten op het netwerk worden binnen een week
+  geïdentificeerd en geregistreerd of van het netwerk verwijderd. [5.09.01]</li>
+</ul>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's»</strong></p>
+<ul>
+<li>Operationele technologie in gebouwen (gebouwbeheer, toegangscontrole, camera's) staat in dezelfde
+  inventaris, met per installatie de eigenaar, de leverancier die het onderhoud doet, de manier waarop die op
+  afstand toegang heeft en de softwareversie. [5.09.01]</li>
+</ul>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
+<ul>
+<li>Operationele technologie (bijvoorbeeld gemalen, bruggen, verkeersinstallaties, zuivering) heeft een eigen
+  OT-inventaris die deel uitmaakt van de inventaris van de organisatie. Per component staan daarin de
+  eigenaar, de fysieke locatie, het netwerksegment, de firmware- of softwareversie, de leverancier, de
+  toegang op afstand en de procesfunctie die ervan afhangt. [5.09.01]</li>
+<li>De OT-inventaris wordt ten minste elk halfjaar gecontroleerd met een passieve netwerkinventarisatie of een
+  fysieke opname op locatie; actieve scans op OT-netwerken gebeuren alleen met akkoord van de eigenaar van de
+  installatie. [5.09.01]</li>
+</ul>
+</blockquote>
+<h3>3.2 Eigendom</h3>
+<ul>
+<li>Elk bedrijfsmiddel in de inventaris heeft een eigenaar. Voor werkplekken, infrastructuur en ondersteunende
+  software is dat
+  <strong>[eigenaar IT-middelen]</strong>;
+  voor bedrijfsapplicaties en gegevensverzamelingen is dat de proceseigenaar.</li>
+<li>De eigenaar zorgt dat het bedrijfsmiddel juist is geregistreerd, geclassificeerd en beveiligd, en dat het
+  wordt afgevoerd als het niet meer nodig is.</li>
+</ul>
+<h3>3.3 Aanvaardbaar gebruik</h3>
+<ul>
+<li>De organisatie heeft gedragsregels voor het gebruik van bedrijfsmiddelen, vastgelegd in
+  <strong>[gedragsregels bedrijfsmiddelen]</strong>.
+  Ze gaan ten minste over privégebruik, het installeren van software, het gebruik van clouddiensten buiten
+  de organisatie, het meenemen van apparatuur en het melden van verlies of diefstal.</li>
+<li>Elke medewerker krijgt de gedragsregels bij indiensttreding en bevestigt met een handtekening of een
+  digitale bevestiging dat hij ze kent, voordat hij een account of apparatuur krijgt. De bevestiging wordt in
+  het personeelsdossier of in het uitgiftesysteem bewaard. Na een inhoudelijke wijziging van de gedragsregels
+  bevestigen alle medewerkers opnieuw. [5.10.03]</li>
+<li>Voor inhuur, extern personeel en vrijwilligers staan de gedragsregels in het contract of de
+  vrijwilligersovereenkomst, met een verwijzing naar de geldende huisregels. Inkoop en HR gebruiken daarvoor
+  een vaste clausule. [5.10.02]</li>
+<li>Wie apparatuur in bruikleen krijgt, tekent een bruikleenovereenkomst waarin de gedragsregels staan.</li>
+</ul>
+<h3>3.4 Teruggeven</h3>
+<ul>
+<li>Bij vertrek, einde van een contract of functiewijziging levert de gebruiker alle bedrijfsmiddelen in op of
+  voor de laatste werkdag: apparatuur, toegangsmiddelen en informatie op papier of andere dragers. HR meldt
+  het vertrek tijdig aan IT; IT verwerkt de inname in de inventaris.</li>
+<li>Informatie die de gebruiker op eigen apparatuur heeft, wordt verwijderd; waar het apparaat onder
+  apparaatbeheer valt, gebeurt dat op afstand.</li>
+</ul>
+<h3>3.5 Apparatuur plaatsen, beschermen en onderhouden</h3>
+<ul>
+<li>Servers, netwerkapparatuur en opslag staan in ruimten die passen bij hun classificatie volgens het beleid
+  fysieke toegang en beveiliging. Werken in beveiligde zones gebeurt alleen door bevoegde personen; derden
+  worden begeleid.</li>
+<li>Kritieke apparatuur heeft een stroomvoorziening en koeling die passen bij de hersteltijden uit het
+  continuïteitsbeleid; de nutsvoorzieningen worden volgens het onderhoudsschema van de leverancier getest.</li>
+<li>Onderhoud aan apparatuur gebeurt volgens het schema van de fabrikant, door bevoegde partijen. Apparatuur die
+  voor reparatie de organisatie verlaat, wordt eerst gewist of de opslag wordt eruit gehaald.</li>
+<li>Apparatuur buiten de locaties van de organisatie wordt niet onbeheerd achtergelaten op openbare plaatsen en
+  is versleuteld volgens het beleid cryptografie.</li>
+</ul>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar bedrijfsmiddelen]</strong></td>
+<td>Uitvoering van dit beleid, de inventaris en de uitgifte- en innameprocedure</td>
+</tr>
+<tr>
+<td>Beheerder van de inventaris</td>
+<td>Registratie, kwartaal- en jaarcontroles, afhandeling van afwijkingen</td>
+</tr>
+<tr>
+<td>Eigenaar van een bedrijfsmiddel</td>
+<td>Juiste registratie, classificatie en beveiliging over de hele levenscyclus</td>
+</tr>
+<tr>
+<td>HR en inkoop</td>
+<td>Gedragsregels in arbeidsovereenkomst, inhuurcontract en vrijwilligersovereenkomst; tijdige melding van vertrek</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing van dit beleid en van de controles</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Gedragsregels naleven, verlies of diefstal direct melden, bedrijfsmiddelen inleveren bij vertrek</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Per kwartaal: vergelijking van de inventaris met een tweede bron voor werkplekken, mobiele apparatuur en
+  clouddiensten; bewijs is het vergelijkingsrapport met de afwijkingen en hun afhandeling.</li>
+<li>Jaarlijks: volledige controle van de inventaris inclusief eigendom; bewijs is het aantal bedrijfsmiddelen
+  zonder eigenaar of registratie, voor en na de controle.</li>
+<li>Jaarlijks: steekproef van ten minste vijftien nieuwe medewerkers en vijftien externen op een bevestiging
+  van de gedragsregels en een gedragsclausule in het contract.</li>
+<li>Per kwartaal: vergelijking van vertrokken medewerkers met de innameregistratie; niet ingeleverde middelen
+  worden geblokkeerd en nagevorderd.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+informatieclassificatie (classificatie in de inventaris), het beleid afvoer en hergebruik van
+gegevensdragers, het beleid mobile device management, het beleid fysieke toegang en beveiliging, het beleid
+screening en bewustzijn (gedragsregels bij indiensttreding) en het beleid vulnerability- en patchmanagement,
+dat de inventaris als bron gebruikt.</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (3) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.09.01</td>
+<td>Inventarisatie van informatie en andere gerelateerde bedrijfsmiddelen</td>
+<td>3.1 Inventaris</td>
+</tr>
+<tr>
+<td>5.10.02</td>
+<td>Aanvaardbaar gebruik van informatie en andere gerelateerde bedrijfsmiddelen</td>
+<td>3.3 Aanvaardbaar gebruik</td>
+</tr>
+<tr>
+<td>5.10.03</td>
+<td>Aanvaardbaar gebruik van informatie en andere gerelateerde bedrijfsmiddelen</td>
+<td>3.3 Aanvaardbaar gebruik</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>eigenaar IT-middelen</strong>: de functie die eigenaar is van werkplekken en infrastructuur, bijvoorbeeld het hoofd IT</li>
+<li><strong>gedragsregels bedrijfsmiddelen</strong>: het document met de huisregels of de gedragscode voor ICT-gebruik</li>
+<li><strong>lijneigenaar bedrijfsmiddelen</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

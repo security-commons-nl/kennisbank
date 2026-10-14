@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid cryptografie</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid cryptografie</span></nav><!-- /kruimelpad -->
+<h1>Beleid cryptografie</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="cryptografie.md">Markdown-bron</a></p>
+<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Cryptografie</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het gebruik van cryptografie:
+versleuteling van gegevens bij transport en opslag, digitale handtekeningen, certificaten en het beheer van
+cryptografische sleutels. Het geldt voor alle systemen, applicaties en gegevens waarvoor de organisatie
+verantwoordelijk is, ook als een leverancier ze host of beheert. Het gaat over de ISO-beheersmaatregel 8.24.</p>
+<p>Buiten dit beleid vallen de classificatie zelf (beleid informatieclassificatie), de verplichte
+internetstandaarden voor websites en mail voor zover ze over de inrichting van diensten gaan (beleid
+informatieclassificatie en beleid netwerkbeveiliging) en de versleuteling van mobiele apparaten (beleid
+mobile device management).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Cryptografie volgt de classificatie: hoe hoger het betrouwbaarheidsniveau van de informatie, hoe
+   zwaarder de versleuteling.</li>
+<li>De organisatie gebruikt alleen erkende, openbare algoritmen en protocollen in een actuele versie, geen
+   eigen of geheime constructies.</li>
+<li>Elk cryptografisch middel (certificaat, sleutel, versleutelingsvoorziening) heeft een eigenaar en staat
+   in de inventaris.</li>
+<li>Sleutels zijn net zo goed beschermd als de informatie die ze beschermen.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Wanneer de organisatie cryptografie inzet</h3>
+<ul>
+<li>De organisatie zet cryptografie in volgens deze minimumtabel, die per classificatieniveau aansluit op het
+  classificatiebeleid: [8.24.01]</li>
+<li>laag: versleuteld transport over elk netwerk buiten het eigen interne netwerk;</li>
+<li>midden: versleuteld transport over elk netwerk, ook intern, en versleutelde opslag op draagbare
+    apparaten en gegevensdragers;</li>
+<li>hoog: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij uitwisseling, versleuteling
+    van het bericht zelf.</li>
+<li>Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en een herstel met die
+  sleutels wordt jaarlijks getest. [8.24.01]</li>
+<li>Voor integriteit en onweerlegbaarheid gebruikt de organisatie digitale handtekeningen of gekwalificeerde
+  elektronische zegels waar een wet of de risicoanalyse dat vraagt, bijvoorbeeld bij besluiten die digitaal
+  worden verzonden. [8.24.01]</li>
+<li>Vertrouwelijke informatie gaat niet via persoonlijke webmail, privé-opslagdiensten of sociale media. [8.24.01]</li>
+</ul>
+<h3>3.2 Normen en sterkte</h3>
+<ul>
+<li>De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
+  Voor websites en mail zijn dat in elk geval HTTPS met HSTS, TLS, DNSSEC, DKIM, DMARC, SPF en STARTTLS met
+  DANE. Afwijkingen worden gemotiveerd en jaarlijks gerapporteerd. [8.24.01]</li>
+<li>De keuze van algoritmen, sleutellengten en protocolversies volgt de actuele adviezen van het NCSC (onder
+  meer de ICT-beveiligingsrichtlijnen voor TLS) en van het Nationaal Bureau voor Verbindingsbeveiliging van de
+  AIVD. Instellingen die als onvoldoende of uit te faseren gelden, worden binnen
+  <strong>[termijn uitfaseren]</strong>
+  uitgezet. [8.24.04]</li>
+<li>De beheerder van de cryptografische inventaris controleert elk halfjaar of er nieuwe adviezen zijn en of
+  de inzet nog voldoet. Dit omvat de voorbereiding op quantumveilige cryptografie: de inventaris laat zien
+  welke toepassingen eerst over moeten. [8.24.04]</li>
+<li>Het beschermingsniveau van een toepassing volgt uit de classificatie van de informatie en de
+  risicoanalyse van het systeem. De systeemeigenaar legt het vast in het systeemdossier. [8.24.01]</li>
+<li>Wisselt de organisatie versleutelde informatie uit met een andere organisatie, dan leggen beide partijen
+  vooraf vast welke versleuteling, welke certificaten en welk sleutelbeheer ze gebruiken, bijvoorbeeld in een
+  aansluitovereenkomst of verwerkersovereenkomst. [8.24.01]</li>
+</ul>
+<h3>3.3 Verantwoordelijkheden en registratie</h3>
+<ul>
+<li><strong>[eigenaar cryptografie]</strong>
+  is verantwoordelijk voor de implementatie van cryptografie. [8.24.01]</li>
+<li><strong>[sleutelbeheerder]</strong>
+  is verantwoordelijk voor het beheer van sleutels en certificaten gedurende de hele levenscyclus. [8.24.01]</li>
+<li>Elk certificaat, elke sleutel met een functie in productie en elke versleutelingsvoorziening staat in de
+  inventaris van bedrijfsmiddelen, met waar het wordt gebruikt, wie de eigenaar is, het algoritme en de
+  sleutellengte, de vervaldatum en hoe het actueel wordt gehouden. [8.24.02]</li>
+<li>De inventaris geeft
+  <strong>[waarschuwingstermijn verlopen]</strong>
+  voor het verlopen van een certificaat automatisch een signaal aan de eigenaar. [8.24.02]</li>
+</ul>
+<h3>3.4 Sleutel- en certificaatbeheer</h3>
+<ul>
+<li>Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
+  overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01]</li>
+<li>Voor elke fase is vastgelegd wie wat doet: aanvragen (na vaststelling van de identiteit van de aanvrager),
+  genereren, distribueren, opslaan, vervangen, herstellen, intrekken, archiveren en vernietigen. [8.24.01]</li>
+<li>Een privésleutel is alleen toegankelijk voor de houder of de voorziening die hem gebruikt. Sleutels staan
+  in een sleutelkluis of beveiligde hardware; nooit in broncode, scripts of gedeelde mappen. [8.24.01]</li>
+<li>Verlies, diefstal of een vermoeden van misbruik van een sleutel of token meldt de medewerker direct, en
+  uiterlijk binnen vier uur, bij de servicedesk. De sleutelbeheerder trekt het certificaat in en publiceert
+  de intrekking via de gebruikelijke kanalen (CRL of OCSP). [8.24.01]</li>
+<li>Voor certificaten waarvan de dienstverlening afhangt (bijvoorbeeld voor websites, koppelingen en
+  ketenaansluitingen) bepaalt de risicoafweging of de organisatie reservecertificaten van een andere
+  leverancier nodig heeft. Is dat zo, dan liggen er afspraken met die leverancier en is de vervanging
+  beschreven in het continuïteitsplan. [8.24.05]</li>
+</ul>
+<blockquote>
+<p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
+<ul>
+<li>Sleutels voor de eigen systemen worden in de eigen omgeving gegenereerd en beheerd. Sleutels voor
+  informatie met classificatie hoog staan in een hardware security module of een gelijkwaardige
+  voorziening. [8.24.01]</li>
+</ul>
+<p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
+<ul>
+<li>Waar de hostingpartij versleuteling of certificaten levert, staat in het contract wie de sleutels beheert,
+  dat de hostingpartij de normen uit dit beleid volgt en dat de organisatie inzage krijgt in het
+  sleutelbeheer. Interne certificaten van de hostingpartij staan ook in de inventaris van de organisatie. [8.24.01, 8.24.02]</li>
+</ul>
+<p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
+<ul>
+<li>Bij SaaS en publieke cloud toetst de organisatie bij inkoop of de leverancier versleutelt bij transport en
+  opslag volgens dit beleid. Voor informatie met classificatie hoog kiest de organisatie waar het kan voor
+  sleutels die zij zelf beheert (customer-managed keys) of die buiten de leverancier liggen. [8.24.01]</li>
+<li>De versleutelingsinstellingen van elke clouddienst staan in de inventaris, ook als de leverancier de
+  sleutels beheert. [8.24.02]</li>
+</ul>
+<p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Ja, onder voorwaarden»</strong></p>
+<ul>
+<li>Op privéapparaten (BYOD) staan werkgegevens alleen in een beheerde, versleutelde app-omgeving met een
+  eigen sleutel van de organisatie, die de organisatie op afstand kan wissen zonder de privégegevens te
+  raken. [8.24.01]</li>
+</ul>
+<p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd» of «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
+<ul>
+<li>Mail met bijzondere persoonsgegevens (sociaal domein, jeugd of gezondheid) gaat naar externe ontvangers
+  alleen over een kanaal dat versleuteling afdwingt en de ontvanger controleert, bijvoorbeeld beveiligde mail
+  volgens NTA 7516. Zonder zo'n kanaal wordt de informatie niet gemaild. [8.24.01]</li>
+</ul>
+</blockquote>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar cryptografie]</strong></td>
+<td>Uitvoering van dit beleid en de inventaris van cryptografische middelen</td>
+</tr>
+<tr>
+<td>Eigenaar cryptografie</td>
+<td>Implementatie van versleuteling en de halfjaarlijkse toets op de adviezen van NCSC en NBV</td>
+</tr>
+<tr>
+<td>Sleutelbeheerder</td>
+<td>Levenscyclus van sleutels en certificaten, intrekking bij misbruik</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Beschermingsniveau per systeem en afspraken met leveranciers</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing van dit beleid en van afwijkingen op de standaarden</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Zorgvuldig gebruik van tokens en sleutels, direct melden van verlies</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
+<ul>
+<li>Doorlopend: meting van websites en maildomeinen tegen de verplichte standaarden, bijvoorbeeld met
+  internet.nl; bewijs is de maandelijkse uitslag en de afhandeling van afwijkingen.</li>
+<li>Halfjaarlijks: controle van de inventaris op volledigheid, vervaldata en zwakke instellingen; bewijs is
+  het bijgewerkte overzicht met acties.</li>
+<li>Jaarlijks: test van herstel van een versleutelde back-up en, waar reservecertificaten zijn afgesproken,
+  een oefening met de vervanging.</li>
+<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
+</ul>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+informatieclassificatie (niveaus), het beleid bedrijfsmiddelenbeheer (inventaris), het beleid back-up en
+recovery, het beleid mobile device management, het beleid leveranciersbeheer (afspraken over versleuteling)
+en het continuïteitsbeleid (reservecertificaten).</p>
+<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
+<p>De overheidsmaatregelen van dit domein (4) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>In dit stuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.24.01</td>
+<td>Gebruik van cryptografie</td>
+<td>3.1 Wanneer de organisatie cryptografie inzet</td>
+</tr>
+<tr>
+<td>8.24.02</td>
+<td>Gebruik van cryptografie</td>
+<td>3.3 Verantwoordelijkheden en registratie</td>
+</tr>
+<tr>
+<td>8.24.04</td>
+<td>Gebruik van cryptografie</td>
+<td>3.2 Normen en sterkte</td>
+</tr>
+<tr>
+<td>8.24.05</td>
+<td>Gebruik van cryptografie</td>
+<td>3.4 Sleutel- en certificaatbeheer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>termijn uitfaseren</strong>: bijvoorbeeld zes maanden na publicatie van het advies</li>
+<li><strong>eigenaar cryptografie</strong>: de functie die verantwoordelijk is voor de implementatie, bijvoorbeeld de IT-architect of het hoofd IT</li>
+<li><strong>sleutelbeheerder</strong>: de functie die verantwoordelijk is voor het sleutel- en certificaatbeheer</li>
+<li><strong>waarschuwingstermijn verlopen</strong>: bijvoorbeeld 60 dagen</li>
+<li><strong>lijneigenaar cryptografie</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
