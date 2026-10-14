@@ -37,7 +37,7 @@ organisatie is een archief, geen commons. Het plan hieronder maakt daar werk van
 **Een beleidsset op BIO 2.0.** Een set beleidsstukken die al op BIO 2.0 zijn geschreven, per domein van het
 controleraamwerk. Het plan
 [beleidsset op maat](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md)
-wordt daarop aangepast: elk stuk wordt herschreven op de BIO 2.0, en op den duur maakt een gebruiker zijn
+wordt daarop aangepast: elk stuk wordt herschreven op de BIO 2.0, en op den duur maakt een gebruiker een
 eigen set door een handvol contextvragen te beantwoorden.
 
 ---
