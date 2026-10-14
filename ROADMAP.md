@@ -20,7 +20,9 @@ Sinds de vorige peildatum is `privacy` gevuld met de werkwijze van één privacy
 rechten van betrokkenen, register, overeenkomsten, eisen bij de start, Wpg, en het privacybeleid met
 handboek. De beleidsset informatiebeveiliging die op 12 oktober onder `governance` kwam, is op 14 oktober
 teruggetrokken: de meeste stukken waren nog onder BIO 1 vastgesteld, en een gemeente heeft actuele stukken
-nodig. De historie staat in git.
+nodig. Dezelfde dag kwam hij terug, herschreven op BIO 2.0 versie 1.3 als 21 bouwstenen met een generator
+die per antwoordprofiel op zestien contextvragen een eigen set maakt; een test bewijst bij elk profiel dat
+alle 117 overheidsmaatregelen en de 40 ISO-beheersmaatregelen zonder overheidsmaatregel gedekt zijn, elk met een controle.
 
 ## Wat open staat
 
@@ -34,11 +36,10 @@ een risicosessie per proces of een calamiteitenplan is genoeg om te beginnen.
 **Meer dan één herkomst.** Vrijwel alles komt nog uit dezelfde hoek. Een commons met kennis uit één
 organisatie is een archief, geen commons. Het plan hieronder maakt daar werk van.
 
-**Een beleidsset op BIO 2.0.** Een set beleidsstukken die al op BIO 2.0 zijn geschreven, per domein van het
-controleraamwerk. Het plan
-[beleidsset op maat](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md)
-wordt daarop aangepast: elk stuk wordt herschreven op de BIO 2.0, en op den duur maakt een gebruiker een
-eigen set door een handvol contextvragen te beantwoorden.
+**De beleidsset verder op maat.** De set staat, met generator. Open in het plan
+[beleidsset op maat](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md):
+IBD-materiaal en stukken van andere organisaties verwerken als regel of blok, en AI-hulp met eigen sleutel
+bij het invullen.
 
 ---
 

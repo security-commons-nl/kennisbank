@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid netwerkbeveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid netwerkbeveiliging</span></nav><!-- /kruimelpad -->
+<h1>Beleid netwerkbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="netwerk.md">Markdown-bron</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein <em>Netwerkbeveiliging</em></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept, vast te stellen door de organisatie</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td><strong>[eigenaar van dit beleid]</strong></td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td><strong>[vaststeller]</strong></td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging</td>
+</tr>
+</tbody>
+</table>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het ontwerp, de inrichting, het
+beheer en de bewaking van de netwerken van de organisatie, inclusief wifi en externe koppelingen. Het doel
+is dat een aanvaller die ergens binnenkomt niet vrij verder kan, dat aanvallen op het netwerk worden gezien
+en dat gegevens onderweg beschermd zijn. Het gaat over de ISO-beheersmaatregelen 8.20 tot en met 8.23.</p>
+<p><strong>Voor wie.</strong> Het beleid is primair bedoeld voor de netwerkarchitect, de afdeling of leverancier die de
+netwerkcomponenten beheert en de systeemeigenaren die verbindingen nodig hebben. De regels over het
+aansluiten van apparatuur gelden voor iedereen die een apparaat op een netwerk van de organisatie aansluit.</p>
+<p><strong>Waarop.</strong> Alle netwerken en netwerkdiensten die de organisatie gebruikt: het bedrijfsnetwerk, het
+beheersegment, wifi, de koppelpunten met internet en met ketenpartners, de verbindingen tussen locaties en
+met leveranciers, en de netwerken waarop operationele technologie draait. Is het netwerk of een netwerkdienst
+uitbesteed, dan gelden de eisen uit dit beleid als minimumeis voor die partij. De organisatie legt dat vast
+in het contract en toetst de naleving met een onafhankelijke verklaring, zoals een ISO 27001-certificaat of
+een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid informatiebeveiliging bij inkoop,
+het toetsen via het beleid contractbeheer.</p>
+<p>Buiten dit beleid vallen de logging van netwerkcomponenten (beleid logging en monitoring), de keuze van
+cryptografische middelen in het algemeen (beleid cryptografie), de beheeraccounts zelf (beleid logische
+toegangsbeveiliging) en de fysieke beveiliging van patchkasten en bekabeling (beleid fysieke toegang en
+beveiliging).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Het netwerk is opgedeeld in segmenten. Verkeer tussen segmenten is standaard dicht en wordt alleen
+   toegestaan waar dat nodig is.</li>
+<li>Elk segment heeft een beveiligingsniveau, afgeleid van het hoogste impactniveau van de systemen erin. Wat
+   erin zit, en wat ermee verbonden is, voldoet aan dat niveau.</li>
+<li>Toegang hangt af van de identiteit van gebruiker en apparaat, ook binnen het eigen netwerk.</li>
+<li>Beheer van het netwerk loopt via een eigen, afgeschermde route.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Netwerkontwerp en segmentatie</h3>
+<ol>
+<li><strong>[netwerkarchitect]</strong> houdt een
+   actueel netwerkontwerp bij met de segmenten, hun beveiligingsniveau, de koppelpunten en de toegestane
+   verkeersstromen, werkt het bij bij elke grote wijziging en beoordeelt het ten minste jaarlijks; de
+   beoordeling is vastgelegd. [8.22.01]</li>
+<li>Elk segment heeft een vastgelegd beveiligingsniveau, afgeleid van het hoogste impactniveau van de
+   informatie en systemen erin. Ten minste gescheiden zijn: gebruikers, servers, beheer, gasten en
+   voorzieningen van derden. [8.22.01]</li>
+<li><strong>[netwerkbeheer]</strong> beoordeelt de
+   firewallregels tussen segmenten en naar buiten ten minste jaarlijks en verwijdert regels zonder eigenaar
+   of zonder aantoonbare noodzaak; elke regel heeft een eigenaar en een reden in de regelset. [8.21.01, 8.22.01]</li>
+<li>Werkplekken kunnen geen verkeer tussen segmenten doorsturen; <strong>[netwerkbeheer]</strong> dwingt dat af in de
+   configuratie van de werkplek en van de switches. [8.22.01]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's»</strong></p>
+<ol start="5">
+<li>Gebouwbeheer, toegangscontrole en camera's staan in een eigen segment met een eigen beveiligingsniveau.
+   Vanuit dit segment is er geen verbinding met het kantoornetwerk; de leverancier krijgt beheertoegang
+   alleen via de beheerroute van de organisatie. [8.22.01]</li>
+</ol>
+<p><strong>Alleen als: Heb je operationele technologie (OT)? «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
+<ol start="6">
+<li>Operationele technologie (gemalen, bruggen, sluizen, verkeersinstallaties, zuivering) staat in een
+   eigen netwerk, gescheiden van het kantoornetwerk volgens een zonemodel, bijvoorbeeld uit IEC 62443.
+   Elke zone heeft een beveiligingsniveau en elke verbinding tussen zones loopt via een gecontroleerd
+   koppelpunt dat de netwerkarchitect in het ontwerp vastlegt. [8.22.01]</li>
+<li>Het OT-netwerk heeft geen directe verbinding met internet. Toegang op afstand, ook van leveranciers,
+   verloopt via een aparte beheeromgeving met MFA, op verzoek aangezet en per sessie gelogd. [8.20.02]</li>
+<li>Verkeer van en naar het OT-netwerk wordt apart bewaakt met detectie die OT-protocollen herkent. [8.21.02]</li>
+</ol>
+</blockquote>
+<h3>3.2 Netwerkcomponenten en beheer</h3>
+<ol>
+<li>Netwerkcomponenten voldoen ten minste aan het beveiligingsniveau van het segment waarin ze staan: een
+   component in een segment met impactniveau kritiek of hoger heeft de hardening, firmware-updates en
+   beheerbeveiliging die bij dat niveau horen. <strong>[netwerkbeheer]</strong> legt per component vast welke
+   hardeningsrichtlijn geldt. [8.20.01]</li>
+<li>De beheerinterfaces van netwerkcomponenten zijn alleen bereikbaar vanuit een apart beheersegment en
+   niet vanuit het gebruikersnetwerk of internet. Beheer gebeurt met persoonsgebonden accounts en MFA.
+   [8.20.02]</li>
+<li><strong>[netwerkbeheer]</strong> verwijdert standaardwachtwoorden en ongebruikte diensten op netwerkcomponenten voor
+   ingebruikname. De configuratie van elke component staat in een back-up en wijzigingen lopen via
+   wijzigingsbeheer. [8.20.01]</li>
+<li>Een apparaat krijgt pas toegang tot het bedrijfsnetwerk na authenticatie van apparaat en gebruiker, via
+   netwerktoegangscontrole die <strong>[netwerkbeheer]</strong> inricht. [8.20.02]</li>
+<li><strong>[netwerkbeheer]</strong> patcht netwerkcomponenten binnen de termijnen uit het beleid kwetsbaarheden en
+   patchmanagement en vervangt componenten die geen beveiligingsupdates meer krijgen. [8.20.01]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
+<ol start="6">
+<li>De eigen netwerkbeheerders beheren de componenten. Een beheerder die netwerkcomponenten beheert,
+   beoordeelt niet zelf de monitoring van dat beheer; de CISO wijst aan wie dat doet. [8.20.02]</li>
+</ol>
+<p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
+<ol start="7">
+<li>De netwerkdienst is uitbesteed. Het contract legt de beveiligingseisen uit dit beleid vast:
+   segmentatie, beheer via een apart beheersegment, patchtermijnen voor netwerkcomponenten, de levering
+   van logging en een jaarlijkse rapportage waarmee de leverancier aantoont dat hij eraan voldoet. [8.20.01, 8.20.02]</li>
+<li>De partij die het netwerk beheert, controleert niet zelf de beveiliging ervan; de organisatie laat de
+   controle doen door een andere partij of doet die zelf. [8.20.02]</li>
+</ol>
+</blockquote>
+<h3>3.3 Koppelpunten en bewaking</h3>
+<ol>
+<li>Elk koppelpunt met internet of een andere onvertrouwde zone heeft een firewall en maatregelen tegen
+   aanvallen op de beschikbaarheid, zoals DDoS-bescherming. Tussen segmenten met een verschillend
+   beveiligingsniveau zijn maatregelen die het misbruik van één segment beperken tot dat segment. [8.21.01]</li>
+<li>Verkeer van en naar de vertrouwde omgeving wordt bewaakt met detectievoorzieningen die verdacht verkeer
+   signaleren, zoals een netwerkdetectiesysteem of de detectiefunctie van de firewall. [8.21.02]</li>
+<li>Nieuwe dreigingen die bij deze bewaking worden ontdekt, worden binnen de juridische kaders gedeeld met
+   de sectorale CERT, zodat andere overheden zich kunnen beschermen; wat is gedeeld, wordt vastgelegd.
+   [8.21.03]</li>
+<li>Een systeemeigenaar die een nieuwe koppeling met een externe partij nodig heeft, vraagt die aan bij de
+   netwerkarchitect, die de koppeling toetst aan het ontwerp en vastlegt welke verkeersstromen zijn
+   toegestaan. [8.21.01]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC» of «Uitbesteed SOC of MDR-dienst»</strong></p>
+<ol start="5">
+<li>Het SOC beoordeelt de meldingen van de netwerkdetectie binnen de afgesproken termijn en deelt nieuwe
+   dreigingen volgens de procedure met de CERT. [8.21.02, 8.21.03]</li>
+</ol>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Geen structurele detectie»</strong></p>
+<ol start="6">
+<li>Er is geen SOC. De meldingen van de netwerkdetectie gaan naar <strong>[netwerkbeheer]</strong>, die ze elke werkdag
+   beoordeelt en opvallende meldingen aan de CISO doorzet. De CISO deelt nieuwe dreigingen met de CERT.
+   [8.21.02, 8.21.03]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
+<ol start="7">
+<li>Het eigen datacenter heeft een eigen koppelpunt met internet. De organisatie neemt DDoS-bescherming af
+   bij de internetleverancier en <strong>[netwerkbeheer]</strong> test die jaarlijks. [8.21.01]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
+<ol start="8">
+<li>De verbinding met de hostingpartij loopt over een versleutelde verbinding of een eigen lijn. De
+   hostingpartij scheidt de omgeving van de organisatie van die van andere klanten en levert
+   DDoS-bescherming op het koppelpunt met internet, vastgelegd in het contract. [8.21.01, 8.21.04]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
+<ol start="9">
+<li>De meeste diensten draaien bij SaaS- en cloudleveranciers. Werkplekken maken daarom rechtstreeks
+   verbinding met internet. Toegang tot clouddiensten hangt af van identiteit en apparaatstatus; de
+   leverancier levert de bescherming tegen aanvallen op de beschikbaarheid. De organisatie bewaakt het
+   verkeer naar clouddiensten via de werkplek en de logging van de clouddienst. [8.21.01, 8.21.02]</li>
+</ol>
+</blockquote>
+<h3>3.4 Webfilter</h3>
+<ol>
+<li>Internetverkeer van werkplekken en servers loopt via een webfilter dat bekende kwaadaardige sites,
+   phishingsites en sites met malware blokkeert en dat verkeer naar anonimiseringsdiensten en onbeheerde
+   opslagdiensten tegenhoudt. <strong>[netwerkbeheer]</strong> houdt de blokkeerlijsten automatisch actueel. [8.23.01]</li>
+<li>De CISO stelt vast welke categorieën websites geblokkeerd zijn en beoordeelt die lijst jaarlijks. Een
+   uitzondering vraagt de leidinggevende aan bij de servicedesk, met een reden en een einddatum; de
+   servicedesk legt de uitzondering vast. [8.23.01]</li>
+<li>Medewerkers horen via het bewustzijnsprogramma welke sites geblokkeerd zijn en waarom, en hoe ze een
+   geblokkeerde site melden die ze voor hun werk nodig hebben. [8.23.01]</li>
+</ol>
+<h3>3.5 Versleuteling onderweg</h3>
+<ol>
+<li>Gegevens die over draadloze verbindingen gaan, en over bedrade verbindingen buiten het gebied dat de
+   organisatie fysiek beheert, worden versleuteld. Alleen gegevens die nodig zijn om de verbinding tot
+   stand te brengen, blijven onversleuteld. [8.21.04]</li>
+<li>De sterkte van de versleuteling volgt uit het vertrouwelijkheidslabel en uit hoe lang de gegevens
+   beschermd moeten blijven. Waar mogelijk gebruikt de organisatie middelen met een positief inzetadvies van
+   het NBV. Is er geen geadviseerd middel, dan kiest de netwerkarchitect in overleg met de CISO een andere
+   geschikte methode en legt die keuze vast. [8.21.04]</li>
+<li>Verbindingen tussen locaties en met externe partijen lopen via een VPN of versleutelde lijn. Thuiswerkers
+   maken verbinding via een versleutelde verbinding met MFA. [8.21.04]</li>
+</ol>
+<h3>3.6 Wifi</h3>
+<ol>
+<li>Het bedrijfswifi is alleen toegankelijk voor beheerde apparaten, na authenticatie van apparaat en
+   gebruiker, en is versleuteld volgens de geldende standaard. [8.21.04]</li>
+<li>Gastwifi, ook een landelijk roamingnetwerk voor bezoekende ambtenaren, staat in een apart segment zonder
+   toegang tot het bedrijfsnetwerk. Er is geen open en onversleuteld netwerk. [8.22.01]</li>
+<li><strong>[netwerkbeheer]</strong> zoekt jaarlijks naar toegangspunten die niet van de organisatie zijn, schakelt ze uit
+   en legt de uitkomst vast. [8.20.01]</li>
+</ol>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar netwerkbeveiliging]</strong></td>
+<td>Eigenaar van dit beleid en de contracten met netwerkleveranciers</td>
+</tr>
+<tr>
+<td><strong>[netwerkarchitect]</strong></td>
+<td>Netwerkontwerp, segmentatie, beveiligingsniveaus, toetsing van nieuwe koppelingen en keuze van versleuteling</td>
+</tr>
+<tr>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Inrichting en beheer van componenten, firewallregels, netwerktoegangscontrole, webfilter en wifi</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, toetsing, categorieën van het webfilter, goedkeuring van afwijkende versleuteling, delen van dreigingen, beoordeling van afwijkingen</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Aangeven welke verbindingen zijn systeem nodig heeft en welk impactniveau en label gelden</td>
+</tr>
+<tr>
+<td>Inkoop en contractbeheer</td>
+<td>Vastleggen van de eisen uit dit beleid bij netwerk- en hostingleveranciers en toetsen van hun verklaringen</td>
+</tr>
+<tr>
+<td>Medewerkers</td>
+<td>Alleen beheerde apparaten aansluiten, geen eigen toegangspunten plaatsen, geblokkeerde sites melden via de servicedesk</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
+afwijkingen gaan als bevinding naar het risicoregister.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+<th>Bewijs</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NWB-01</td>
+<td>Het netwerkontwerp is actueel, elk segment heeft een beveiligingsniveau en de segmenten in de configuratie komen overeen met het ontwerp</td>
+<td><strong>[netwerkarchitect]</strong></td>
+<td>Jaarlijks</td>
+<td>Netwerkontwerp met beoordeling, configuratierapport van de segmenten, afwijkingen</td>
+<td>8.22.01</td>
+</tr>
+<tr>
+<td>NWB-02</td>
+<td>Alle firewallregels hebben een eigenaar en een reden; regels zonder noodzaak zijn verwijderd</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Jaarlijks</td>
+<td>Verslag met de verwijderde en aangepaste regels</td>
+<td>8.21.01, 8.22.01</td>
+</tr>
+<tr>
+<td>NWB-03</td>
+<td>Netwerkcomponenten voldoen aan de hardening en de patchtermijnen van hun segment en zijn alleen beheerbaar vanuit het beheersegment met MFA</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Overzicht van componenten met hardeningsrichtlijn en patchstand, configuratierapport van de beheerinterfaces</td>
+<td>8.20.01, 8.20.02</td>
+</tr>
+<tr>
+<td>NWB-04</td>
+<td>Een segmentatietest vanuit het gebruikers- en het gastsegment bereikt het beheersegment en het serversegment niet</td>
+<td>Onafhankelijke tester aangewezen door de CISO</td>
+<td>Jaarlijks</td>
+<td>Testrapport met bevindingen en opvolging</td>
+<td>8.22.01, 8.20.02</td>
+</tr>
+<tr>
+<td>NWB-05</td>
+<td>De DDoS-bescherming en de netwerkdetectie op de koppelpunten werken en meldingen zijn binnen de termijn beoordeeld</td>
+<td>CISO</td>
+<td>Jaarlijks, meldingen per maand</td>
+<td>Testrapport DDoS-bescherming, maandrapportage van de netwerkdetectie</td>
+<td>8.21.01, 8.21.02</td>
+</tr>
+<tr>
+<td>NWB-06</td>
+<td>Nieuwe dreigingen uit de netwerkbewaking zijn volgens de procedure met de CERT gedeeld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Registratie van gedeelde dreigingen</td>
+<td>8.21.03</td>
+</tr>
+<tr>
+<td>NWB-07</td>
+<td>Het webfilter blokkeert de vastgestelde categorieën, de blokkeerlijsten zijn actueel en elke uitzondering heeft een reden en een einddatum</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Halfjaarlijks</td>
+<td>Configuratierapport van het webfilter, lijst van uitzonderingen</td>
+<td>8.23.01</td>
+</tr>
+<tr>
+<td>NWB-08</td>
+<td>Draadloze en externe verbindingen zijn versleuteld volgens de geldende adviezen, het bedrijfswifi vraagt authenticatie van apparaat en gebruiker, en er zijn geen onbekende toegangspunten</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Jaarlijks</td>
+<td>Configuratierapport van wifi en VPN, verslag van de zoektocht naar toegangspunten</td>
+<td>8.21.04, 8.20.01</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Afwijkingen.</strong> Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+netwerkarchitect dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd.
+De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaar]</strong>
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
+<p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid logging en
+monitoring (logging en detectie op netwerkcomponenten), het beleid cryptografie (versleutelingsmiddelen),
+het beleid logische toegangsbeveiliging (beheeraccounts en MFA), het beleid kwetsbaarheden en
+patchmanagement (patchtermijnen), het beleid wijzigingsbeheer (netwerkwijzigingen), het beleid fysieke
+toegang en beveiliging (patchkasten en bekabeling), het beleid screening, bewustzijn en opleiding (het
+webfilter in het bewustzijnsprogramma) en het beleid informatiebeveiliging bij inkoop en contractbeheer
+(contracten met netwerk- en hostingleveranciers).</p>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<p>De maatregelen van dit domein (8, waarvan 7 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>Soort</th>
+<th>In dit stuk</th>
+<th>Controle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.20.01</td>
+<td>Beveiliging netwerkcomponenten</td>
+<td>overheidsmaatregel</td>
+<td>3.2 Netwerkcomponenten en beheer</td>
+<td>NWB-03, NWB-08</td>
+</tr>
+<tr>
+<td>8.20.02</td>
+<td>Beveiliging netwerkcomponenten</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Netwerkontwerp en segmentatie</td>
+<td>NWB-03, NWB-04</td>
+</tr>
+<tr>
+<td>8.21.01</td>
+<td>Beveiliging van netwerkdiensten</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Netwerkontwerp en segmentatie</td>
+<td>NWB-02, NWB-05</td>
+</tr>
+<tr>
+<td>8.21.02</td>
+<td>Beveiliging van netwerkdiensten</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Netwerkontwerp en segmentatie</td>
+<td>NWB-05</td>
+</tr>
+<tr>
+<td>8.21.03</td>
+<td>Beveiliging van netwerkdiensten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Koppelpunten en bewaking</td>
+<td>NWB-06</td>
+</tr>
+<tr>
+<td>8.21.04</td>
+<td>Beveiliging van netwerkdiensten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Koppelpunten en bewaking</td>
+<td>NWB-08</td>
+</tr>
+<tr>
+<td>8.22.01</td>
+<td>Netwerksegmentatie</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Netwerkontwerp en segmentatie</td>
+<td>NWB-01, NWB-02, NWB-04</td>
+</tr>
+<tr>
+<td>8.23.01</td>
+<td>Toepassen van webfilters</td>
+<td>ISO-beheersmaatregel</td>
+<td>3.4 Webfilter</td>
+<td>NWB-07</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>CERT</td>
+<td>Computer emergency response team</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>IEC</td>
+<td>International Electrotechnical Commission</td>
+</tr>
+<tr>
+<td>ISAE</td>
+<td>International Standard on Assurance Engagements</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>International Organization for Standardization</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>Informatietechnologie</td>
+</tr>
+<tr>
+<td>IaaS</td>
+<td>Infrastructure as a service</td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>Managed detection and response</td>
+</tr>
+<tr>
+<td>MFA</td>
+<td>Meerfactorauthenticatie</td>
+</tr>
+<tr>
+<td>NBV</td>
+<td>Nationaal Bureau voor Verbindingsbeveiliging</td>
+</tr>
+<tr>
+<td>OT</td>
+<td>Operationele technologie</td>
+</tr>
+<tr>
+<td>SOC</td>
+<td>Security operations center</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>Software as a service</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Virtual private network</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>netwerkarchitect</strong>: de functie die het netwerkontwerp opstelt, eigen of bij de leverancier</li>
+<li><strong>netwerkbeheer</strong>: de eigen afdeling of de leverancier die de componenten beheert</li>
+<li><strong>lijneigenaar netwerkbeveiliging</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd ICT</li>
+<li><strong>registratie van controles</strong>: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem</li>
+<li><strong>risico-eigenaar</strong>: de manager die restrisico's accepteert</li>
+<li><strong>eigenaar van dit beleid</strong>: de manager die dit beleid uitvoert en laat naleven</li>
+<li><strong>vaststeller</strong>: wie het beleid vaststelt, bijvoorbeeld de directie of het bestuur</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

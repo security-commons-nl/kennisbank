@@ -85,7 +85,8 @@ plan pakt ze niet maatregel voor maatregel aan, maar per thema.
 ### Per thema: beleid, ontwerp, inrichting, bewaking
 
 Elk thema krijgt een eigen beleidsstuk; het plan rekent op ongeveer twintig, naast het strategisch beleid.
-De stukken volgen de domeinindeling van het BIO 2.0-controleraamwerk. Per thema doorloopt het plan drie
+De stukken volgen de domeinindeling van het BIO 2.0-controleraamwerk; een set om mee te beginnen is de
+[beleidsset informatiebeveiliging](../beleidsset-informatiebeveiliging/). Per thema doorloopt het plan drie
 stappen:
 
 1. **Richten.** Het beleid schrijven, samen met de afdeling die het moet uitvoeren. Het huidige proces

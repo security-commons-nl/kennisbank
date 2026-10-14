@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid mobile device management</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid mobile device management</span></nav><!-- /kruimelpad -->
+<h1>Beleid mobile device management</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="mdm.md">Markdown-bron</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein <em>Mobile Device Management</em></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept, vast te stellen door de organisatie</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td><strong>[eigenaar van dit beleid]</strong></td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td><strong>[vaststeller]</strong></td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging</td>
+</tr>
+</tbody>
+</table>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor mobiele apparatuur waarmee
+bedrijfsinformatie wordt verwerkt: laptops, smartphones en tablets van de organisatie en, waar dat is
+toegestaan, eigen apparaten van medewerkers. Het regelt hoe die apparaten zijn ingericht, beheerd en gebruikt,
+zodat bedrijfsinformatie beschermd blijft bij verlies, diefstal en werken buiten de locaties van de
+organisatie. Het gaat over ISO-beheersmaatregel 8.1.</p>
+<p><strong>Voor wie.</strong> Het beleid is primair bedoeld voor de afdeling die het apparaatbeheer inricht en voor de
+servicedesk die uitgifte, verlies en wissen afhandelt. De gedragsregels gelden voor iedereen die mobiel werkt
+met bedrijfsinformatie: medewerkers, inhuur, stagiairs en vrijwilligers.</p>
+<p><strong>Waarop.</strong> Alle laptops, smartphones en tablets met toegang tot bedrijfsinformatie, de apps en diensten die
+daarop draaien, en de voorzieningen voor apparaatbeheer (MDM) en appbeheer (MAM). Is het apparaatbeheer of
+de werkplekdienst uitbesteed, dan gelden de eisen uit dit beleid als minimumeis voor die leverancier. De
+organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring, zoals een
+ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid
+informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.</p>
+<p>Buiten dit beleid vallen de inventaris en uitgifte van apparatuur (beleid bedrijfsmiddelenbeheer), de
+versleutelingseisen (beleid cryptografie), de netwerktoegang en het wifinetwerk (beleid netwerkbeveiliging),
+de accounts en de meerfactorauthenticatie (beleid logische toegangsbeveiliging) en het wissen van
+apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Bedrijfsinformatie blijft zo veel mogelijk in de centrale systemen. Op het apparaat staat niets, of zo min
+   mogelijk en dan versleuteld.</li>
+<li>Alleen beheerde apparaten of beheerde apps krijgen toegang tot bedrijfsinformatie.</li>
+<li>De gebruiker weet wat de risico's van mobiel werken zijn en heeft getekend dat hij veilig werkt.</li>
+<li>Een apparaat dat niet meer aan de eisen voldoet, verliest zijn toegang automatisch; de techniek dwingt
+   het beleid af, de gebruiker hoeft er niet aan te denken.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Zero footprint en bescherming op het apparaat</h3>
+<ol>
+<li>De beheerder MDM richt apps en diensten voor mobiele apparaten zo in dat bedrijfsinformatie niet standaard
+   op het apparaat wordt opgeslagen: werken gebeurt via de browser, een virtuele werkplek of een beheerde app
+   die geen lokale kopie bewaart. [8.01.01]</li>
+<li>Waar dat nog niet kan, staat bedrijfsinformatie alleen in een beheerde, versleutelde container of op een
+   volledig versleuteld apparaat. Het apparaat is beveiligd met een pincode van ten minste zes cijfers, een
+   wachtwoord of biometrie, met automatische vergrendeling na ten hoogste vijf minuten; de beheerder MDM
+   dwingt die instellingen af. [8.01.01]</li>
+<li>Van elk apparaat met toegang tot bedrijfsinformatie kan de organisatie de bedrijfsinformatie op afstand
+   wissen. Bij verlies of diefstal meldt de gebruiker dat direct bij de servicedesk; de servicedesk wist
+   binnen <strong>[wistermijn]</strong>, blokkeert de toegang van het apparaat en registreert de melding als
+   beveiligingsincident volgens het beleid beveiligingsincidenten. [8.01.01]</li>
+<li>Informatie met het label strikt vertrouwelijk of geheim uit het beleid informatieclassificatie staat nooit lokaal
+   op een mobiel apparaat; de beheerder MDM blokkeert downloaden en offline beschikbaar maken voor die labels
+   waar de systemen dat ondersteunen. [8.01.01]</li>
+<li>Bij reizen naar landen waar de organisatie een verhoogd risico ziet, geeft de servicedesk op verzoek een
+   schoon reisapparaat uit, dat na terugkomst wordt gewist; welke landen dat zijn, staat in
+   <strong>[reisrichtlijn apparatuur]</strong>.
+   [8.01.01]</li>
+</ol>
+<h3>3.2 Beheer van apparaten</h3>
+<ol>
+<li>Elk mobiel apparaat met toegang tot bedrijfsinformatie valt onder een MDM-oplossing (beheer van het hele
+   apparaat) of, voor eigen apparaten, een MAM-oplossing (beheer van de bedrijfsapps). De beheerder MDM
+   schrijft het apparaat in vóór uitgifte; inschrijving is een voorwaarde voor toegang. [8.01.02]</li>
+<li>Via MDM of MAM dwingt de beheerder MDM ten minste af: versleuteling, schermvergrendeling, een ondersteunde
+   versie van het besturingssysteem, geen root of jailbreak, geen onbekende appbronnen en wissen op afstand.
+   Een apparaat dat niet voldoet, verliest automatisch de toegang tot bedrijfsinformatie en de gebruiker
+   krijgt een melding met wat hij moet doen. [8.01.02]</li>
+<li>Mobiele apparaten vallen onder patchmanagement en hardening volgens het beleid vulnerability- en
+   patchmanagement. De beheerder MDM installeert beveiligingsupdates van het besturingssysteem en de
+   bedrijfsapps binnen de termijnen uit dat beleid, of dwingt de installatie af bij de gebruiker; apparaten
+   waarvoor de fabrikant geen updates meer levert, worden binnen drie maanden uitgefaseerd. [8.01.02]</li>
+<li>Apps op beheerde apparaten komen uit de officiële winkel of uit de beheerde bedrijfscatalogus. De
+   beheerder MDM beoordeelt elk kwartaal de lijst van geïnstalleerde apps op apps die bedrijfsinformatie
+   kunnen lezen of doorsturen, en blokkeert apps die niet zijn toegestaan. [8.01.02]</li>
+<li>De beheerder MDM houdt een nalevingsrapportage bij met per apparaat de inschrijving, de versie van het
+   besturingssysteem, de laatste contactdatum en de nalevingsstatus, en rapporteert die elk kwartaal aan
+   <strong>[lijneigenaar mobiele apparatuur]</strong> en de
+   CISO. Apparaten zonder contact in de afgelopen drie maanden worden geblokkeerd en bij de gebruiker
+   nagevraagd. [8.01.02]</li>
+<li>De beheerder MDM legt de inrichting van MDM en MAM (nalevingsregels, app-beleid, voorwaardelijke toegang)
+   vast als configuratiestandaard en beheert wijzigingen daarin via het beleid wijzigingsbeheer. [8.01.02]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Ja, onder voorwaarden»</strong></p>
+<ol start="7">
+<li>Eigen apparaten zijn toegestaan onder de voorwaarden in
+   <strong>[regeling eigen apparaten]</strong>.
+   Op een eigen apparaat staat bedrijfsinformatie alleen in beheerde apps (MAM); de organisatie wist bij vertrek
+   of verlies alleen die apps en hun gegevens, niet het hele apparaat. De medewerker stemt daar vooraf
+   schriftelijk mee in; HR bewaart de instemming bij de gebruikersovereenkomst. [8.01.01]</li>
+<li>Een eigen apparaat krijgt pas toegang als het een ondersteunde versie van het besturingssysteem heeft, een
+   schermvergrendeling en versleuteling van de opslag. De toegangsvoorziening controleert dat bij elke
+   aanmelding; de beheerder MDM ziet eigen apparaten in dezelfde nalevingsrapportage als apparaten van de
+   organisatie. [8.01.02]</li>
+</ol>
+<p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Nee»</strong></p>
+<ol start="9">
+<li>Eigen apparaten krijgen geen toegang tot bedrijfsinformatie, ook niet via webmail of de browser. De
+   toegangsvoorziening laat alleen apparaten toe die de organisatie beheert; de beheerder MDM test dat
+   jaarlijks met een niet-beheerd apparaat. [8.01.01]</li>
+</ol>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)»</strong></p>
+<ol start="10">
+<li>Toegang tot de cloudwerkplek vanaf een mobiel apparaat loopt via voorwaardelijke toegang: meerfactor plus
+   een apparaat of app die volgens het MDM of MAM aan de eisen voldoet. Opslaan, kopiëren naar niet-beheerde
+   apps en lokaal synchroniseren van bestanden zijn op niet-beheerde apparaten uitgeschakeld. De beheerder MDM
+   test de regels voor voorwaardelijke toegang bij elke wijziging en ten minste jaarlijks. [8.01.01, 8.01.02]</li>
+</ol>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
+<ol start="11">
+<li>Mobiele apparaten krijgen toegang tot clouddiensten via voorwaardelijke toegang op basis van de MDM- of
+   MAM-status, en tot de lokale of virtuele werkplek alleen via een beveiligde verbinding (bijvoorbeeld een
+   VPN of een gateway voor de virtuele werkplek) vanaf een beheerd apparaat. De beheerder MDM stemt de
+   beheerinstellingen voor beide routes op elkaar af, zodat een apparaat dat voor de ene route is
+   geblokkeerd, ook de andere verliest, en test dat ten minste jaarlijks. [8.01.02]</li>
+</ol>
+<p><strong>Alleen als: Hoe ziet je werkplek eruit? «On-premises»</strong></p>
+<ol start="12">
+<li>Mobiele apparaten krijgen toegang tot de interne omgeving alleen via een beveiligde verbinding
+   (bijvoorbeeld een VPN of een gateway voor een virtuele werkplek) vanaf een apparaat dat onder MDM valt.
+   Mail en agenda op smartphones lopen via een beheerde app. Werken via een virtuele werkplek is de standaard,
+   zodat er geen bedrijfsinformatie op het apparaat komt; de beheerder MDM controleert jaarlijks dat er geen
+   andere routes naar de interne omgeving openstaan. [8.01.01, 8.01.02]</li>
+</ol>
+</blockquote>
+<h3>3.3 Gebruikersovereenkomst en gedrag</h3>
+<ol>
+<li>Voordat een medewerker mobiel werkt, tekent hij een gebruikersovereenkomst mobiel werken. Daarin verklaart
+   hij de risico's te kennen en veilig te werken. De overeenkomst geldt voor alle mobiele apparatuur die hij
+   zakelijk gebruikt, ook een eigen apparaat. HR bewaart de getekende overeenkomst in het personeelsdossier of
+   het uitgiftesysteem; de servicedesk geeft geen apparaat uit zonder getekende overeenkomst. [8.01.02]</li>
+<li>De overeenkomst gaat ten minste over: direct melden van verlies of diefstal, geen bedrijfsinformatie in
+   privéapps of privécloudopslag, geen gedeeld gebruik van het apparaat met anderen, updates installeren, het
+   apparaat niet onbeheerd achterlaten, voorzichtig zijn met openbare wifi en het accepteren van wissen op
+   afstand. <strong>[lijneigenaar mobiele apparatuur]</strong> beoordeelt de overeenkomst jaarlijks en laat haar opnieuw
+   tekenen na een inhoudelijke wijziging. [8.01.02]</li>
+<li>De gebruiker werkt in openbare ruimten en in het openbaar vervoer zo dat anderen niet kunnen meekijken
+   (privacyfilter op het scherm, geen gevoelige gesprekken), en voert geen handelingen met informatie met het
+   label strikt vertrouwelijk of hoger uit buiten een beveiligde verbinding. [8.01.01]</li>
+<li>Op de locaties van de organisatie gebruiken beheerde apparaten het beveiligde bedrijfsnetwerk; niet-beheerde
+   apparaten en gasten gebruiken een gastnetwerk dat logisch gescheiden is van het bedrijfsnetwerk, volgens
+   het beleid netwerkbeveiliging. Er is geen open, onbeveiligd wifinetwerk. [8.01.02]</li>
+<li>Bij vertrek of functiewijziging levert de gebruiker het apparaat in volgens het beleid
+   bedrijfsmiddelenbeheer; de servicedesk wist het apparaat of de beheerde apps op de laatste werkdag en
+   verwijdert het uit het apparaatbeheer. [8.01.01]</li>
+</ol>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar mobiele apparatuur]</strong></td>
+<td>Eigenaar van dit beleid, de inrichting van MDM en MAM, de gebruikersovereenkomst en de reisrichtlijn; ontvangst van de kwartaalrapportage</td>
+</tr>
+<tr>
+<td>Beheerder MDM</td>
+<td>Inschrijving, nalevingsregels, voorwaardelijke toegang, app-beleid, updates, nalevingsrapportage en wissen op afstand</td>
+</tr>
+<tr>
+<td>Servicedesk</td>
+<td>Uitgifte na getekende overeenkomst, melding van verlies of diefstal, wissen binnen de wistermijn, registratie als incident, reisapparatuur, inname bij vertrek</td>
+</tr>
+<tr>
+<td>HR</td>
+<td>Gebruikersovereenkomst mobiel werken en instemming met wissen bij indiensttreding en bij uitgifte</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Advies, jaarlijkse toetsing van opzet en werking van dit beleid, beoordeling van de nalevingsrapportages en van afwijkingen</td>
+</tr>
+<tr>
+<td>Inkoop en contractbeheer</td>
+<td>Eisen uit dit beleid in het contract met een uitbestede werkplek- of beheerdienst, toetsen van de verklaring</td>
+</tr>
+<tr>
+<td>Medewerkers en inhuur</td>
+<td>Overeenkomst naleven, updates installeren, apparaat niet delen, verlies of diefstal direct melden</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
+afwijkingen gaan als bevinding naar het risicoregister.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+<th>Bewijs</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MDM-01</td>
+<td>Elk apparaat met toegang tot bedrijfsinformatie is ingeschreven in MDM of MAM, voldoet aan de nalevingsregels en heeft een ondersteund en bijgewerkt besturingssysteem</td>
+<td>Beheerder MDM</td>
+<td>Per kwartaal</td>
+<td>Nalevingsrapportage: aantal apparaten met toegang tegenover aantal ingeschreven, aantal apparaten met verouderd systeem of ontbrekende updates, afhandeling</td>
+<td>8.01.02</td>
+</tr>
+<tr>
+<td>MDM-02</td>
+<td>Elke mobiele gebruiker heeft een getekende gebruikersovereenkomst en, bij een eigen apparaat, een instemming met wissen op afstand</td>
+<td>HR</td>
+<td>Per kwartaal</td>
+<td>Vergelijking van de lijst mobiele gebruikers uit MDM en MAM met de getekende overeenkomsten</td>
+<td>8.01.02</td>
+</tr>
+<tr>
+<td>MDM-03</td>
+<td>Wissen op afstand werkt en gemelde verliezen zijn binnen de wistermijn gewist en als incident geregistreerd</td>
+<td>Beheerder MDM</td>
+<td>Jaarlijks</td>
+<td>Testverslag van wissen op een testapparaat, incidentregistratie met meldtijd en wistijd per verlies</td>
+<td>8.01.01</td>
+</tr>
+<tr>
+<td>MDM-04</td>
+<td>Niet-beheerde apparaten krijgen geen toegang tot bedrijfsinformatie en de regels voor voorwaardelijke toegang en de blokkering van lokaal opslaan werken zoals ingericht</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Testverslag met een niet-beheerd apparaat en een beheerd apparaat per route, configuratiestandaard</td>
+<td>8.01.01, 8.01.02</td>
+</tr>
+<tr>
+<td>MDM-05</td>
+<td>De geïnstalleerde apps op beheerde apparaten zijn toegestaan en apparaten zonder contact in drie maanden zijn geblokkeerd</td>
+<td>Beheerder MDM</td>
+<td>Per kwartaal</td>
+<td>Applijst met de beoordeling, lijst van geblokkeerde apparaten en de opvolging</td>
+<td>8.01.02</td>
+</tr>
+<tr>
+<td>MDM-06</td>
+<td>Een uitbestede werkplek- of beheerdienst levert een geldige onafhankelijke verklaring over het apparaatbeheer</td>
+<td>Contractbeheer</td>
+<td>Jaarlijks</td>
+<td>Verklaring van de leverancier, beoordeling van de uitzonderingen</td>
+<td>8.01.01, 8.01.02</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Afwijkingen.</strong> Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging.
+<strong>[lijneigenaar mobiele apparatuur]</strong> dient het verzoek in bij de CISO, met de reden, de compenserende
+maatregelen en de looptijd. De afwijking geldt pas na acceptatie van het risico door
+<strong>[risico-eigenaar]</strong> en staat in het risicoregister; afwijkingen
+worden ten minste jaarlijks opnieuw beoordeeld.</p>
+<p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+bedrijfsmiddelenbeheer (uitgifte, inventaris, inname en gedragsregels), het beleid informatieclassificatie
+(labels die niet lokaal mogen staan), het beleid cryptografie (versleuteling op het apparaat), het beleid
+vulnerability- en patchmanagement (updates en hardening), het beleid logische toegangsbeveiliging (meerfactor
+en voorwaardelijke toegang), het beleid netwerkbeveiliging (wifi en externe toegang), het beleid
+wijzigingsbeheer (configuratiestandaard), het beleid beveiligingsincidenten (verlies en diefstal), het beleid
+afvoer en hergebruik van gegevensdragers (wissen bij afvoer) en het beleid informatiebeveiliging bij inkoop en
+contractbeheer (uitbestede werkplekdienst).</p>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<p>De maatregelen van dit domein (2, waarvan 2 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>Soort</th>
+<th>In dit stuk</th>
+<th>Controle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.01.01</td>
+<td>User endpoint devices</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Zero footprint en bescherming op het apparaat</td>
+<td>MDM-03, MDM-04, MDM-06</td>
+</tr>
+<tr>
+<td>8.01.02</td>
+<td>User endpoint devices</td>
+<td>overheidsmaatregel</td>
+<td>3.2 Beheer van apparaten</td>
+<td>MDM-01, MDM-02, MDM-04, MDM-05, MDM-06</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>BYOD</td>
+<td>Bring your own device: eigen apparaten van medewerkers voor het werk</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>HR</td>
+<td>Human resources, personeelszaken</td>
+</tr>
+<tr>
+<td>ISAE</td>
+<td>International Standard on Assurance Engagements</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>International Organization for Standardization</td>
+</tr>
+<tr>
+<td>MAM</td>
+<td>Mobile application management, het beheer van bedrijfsapps op een apparaat</td>
+</tr>
+<tr>
+<td>MDM</td>
+<td>Mobile device management</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Virtual private network</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>wistermijn</strong>: standaard vier uur na de melding</li>
+<li><strong>reisrichtlijn apparatuur</strong>: het document met de landen en de voorwaarden voor reisapparatuur</li>
+<li><strong>lijneigenaar mobiele apparatuur</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+<li><strong>regeling eigen apparaten</strong>: welke apparaten, besturingssystemen en diensten zijn toegestaan</li>
+<li><strong>registratie van controles</strong>: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem</li>
+<li><strong>risico-eigenaar</strong>: de manager die restrisico's accepteert</li>
+<li><strong>eigenaar van dit beleid</strong>: de manager die dit beleid uitvoert en laat naleven</li>
+<li><strong>vaststeller</strong>: wie het beleid vaststelt, bijvoorbeeld de directie of het bestuur</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

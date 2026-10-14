@@ -70,6 +70,14 @@ jobs:
       - name: Tests van de toets aanbieder onder de AI Act
         run: node tools/test_toets_aanbieder.js
 
+      # De beleidsset bij governance/beleidsset-informatiebeveiliging: het bouwsteenformaat, de dekking van
+      # elke overheidsmaatregel bij elk profiel, en de generatorpagina (JavaScript) tegen de Python-versie.
+      - name: Tests van de beleidsset
+        run: python tools/test_beleidsset.py
+
+      - name: Beleidsset past bij de bouwstenen
+        run: python tools/bouw_beleidsset.py --check
+
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)
         if: github.event_name == 'pull_request'

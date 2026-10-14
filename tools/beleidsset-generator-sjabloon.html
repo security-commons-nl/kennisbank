@@ -1,0 +1,176 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beleidsset op maat: generator</title><link rel="icon" href="https://security-commons-nl.github.io/favicon.svg" type="image/svg+xml"><style>
+:root{--tekst:#111;--zacht:#5a6675;--lijn:#c9d1dc;--vlak:#f3f6fa;--accent:#1f4e79;--achter:#fff;--kader:#fdf6e3;--rand-kader:#b9770e}
+@media (prefers-color-scheme:dark){:root{--tekst:#e8ecf1;--zacht:#a7b2bf;--lijn:#3a4654;--vlak:#1c2530;--accent:#8db8e8;
+--achter:#11161c;--kader:#2c2615;--rand-kader:#e0a64a}}
+*{box-sizing:border-box}
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:var(--tekst);background:var(--achter);
+max-width:27cm;margin:1.5em auto;padding:0 16px}
+h1{font-size:20pt;border-bottom:2px solid var(--accent);padding-bottom:.2em;color:var(--accent);margin:.4em 0 .3em}
+h2{font-size:14pt;color:var(--accent);margin:1.2em 0 .4em}
+h3{font-size:12pt;margin:1em 0 .3em}
+p{margin:.5em 0}a{color:var(--accent)}
+.kruimel{font-size:10pt;color:var(--zacht);margin-bottom:.6em}.kruimel a{color:var(--zacht)}
+.uitleg{color:var(--zacht);font-size:10.5pt}
+[hidden]{display:none!important}
+fieldset{border:1px solid var(--lijn);border-radius:4px;margin:.6em 0;padding:.5em .8em}
+legend{font-weight:bold;padding:0 .3em}
+fieldset .toel{font-size:9.5pt;color:var(--zacht);margin:.1em 0 .3em}
+fieldset label{display:inline-flex;gap:.3em;align-items:center;margin:.15em 1em .15em 0;font-size:10.5pt}
+.vragen{display:grid;grid-template-columns:repeat(auto-fill,minmax(20em,1fr));gap:0 1em}
+.knoppen{display:flex;flex-wrap:wrap;gap:.5em;margin:1em 0}
+button{border:1px solid var(--accent);background:var(--accent);color:var(--achter);padding:.4em .9em;border-radius:4px;font:inherit;cursor:pointer}
+button.zacht{background:var(--vlak);color:var(--tekst);border-color:var(--lijn)}
+.lijst{display:flex;flex-wrap:wrap;gap:.4em;margin:.6em 0}
+.lijst button{background:var(--vlak);color:var(--tekst);border-color:var(--lijn);font-size:10pt;padding:.25em .6em}
+.lijst button[aria-selected=true]{background:var(--accent);color:var(--achter);border-color:var(--accent)}
+.stuk{border-top:1px solid var(--lijn);margin-top:1em;padding-top:.5em}
+.stuk table{border-collapse:collapse;width:100%;font-size:10pt;margin:.4em 0;display:block;overflow-x:auto}
+.stuk th,.stuk td{border:1px solid var(--lijn);padding:.3em .5em;vertical-align:top;text-align:left}
+.stuk th{background:var(--vlak)}
+.stuk blockquote{margin:.6em 0;padding:.3em .8em;background:var(--kader);border-left:3px solid var(--rand-kader)}
+.voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
+@media print{body{max-width:none;margin:0}form,.knoppen,.lijst,.kruimel{display:none}@page{size:A4;margin:2cm}}
+</style></head><body>
+<nav class="kruimel"><a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › Generator</nav>
+<h1>Beleidsset op maat</h1>
+<p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt per BIO 2.0-domein een
+conceptbeleid waarin de regels staan die bij jouw organisatie passen. Een vraag die je overslaat, laat beide
+varianten staan, elk in een kader met de vraag erboven. Alles gebeurt in je browser: er gaat niets naar een server.</p>
+<p class="uitleg">Elke regel eindigt op de nummers van de BIO 2.0-maatregelen die hij invult, en een controleraamwerk zegt hoe je de naleving aantoont. Wat vetgedrukt
+tussen haken staat, vul je zelf in; de lijst onderaan elk stuk zegt wat er nog open staat.</p>
+<form id="vragen"><div class="vragen" id="velden"></div>
+<div class="knoppen"><button type="submit">Maak de set</button><button type="button" class="zacht" id="wis">Antwoorden wissen</button></div></form>
+<section id="uitkomst" hidden>
+<h2>Je set</h2>
+<div class="knoppen"><button type="button" id="alles-md">Hele set als markdown</button><button type="button" id="alles-html">Hele set als HTML</button><button type="button" class="zacht" id="stuk-md">Dit stuk als markdown</button></div>
+<div class="lijst" id="lijst" role="tablist"></div>
+<div class="stuk" id="stuk"></div>
+</section>
+<p class="voet">Gegenereerd uit de bouwstenen van de kennisbank met <code>tools/bouw_beleidsset.py</code>. Dezelfde antwoorden geven dezelfde tekst; er zit geen taalmodel in.</p>
+<script>
+/*CODE*/
+</script>
+<script>
+var DATA = /*DATA*/;
+(function () {
+  "use strict";
+  var velden = document.getElementById("velden"), uitkomst = document.getElementById("uitkomst");
+  var lijst = document.getElementById("lijst"), stukEl = document.getElementById("stuk");
+  var set = null, gekozen = null;
+  var OPSLAG = "beleidsset-profiel";
+
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function inline(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>")
+      .replace(/`(.+?)`/g, "<code>$1</code>").replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, function (_, tekst, url) { return "<a hr" + "ef=\"" + url + "\">" + tekst + "</a>"; });
+  }
+  // Genoeg markdown voor wat de generator maakt: koppen, alinea's, lijsten, tabellen en kaders.
+  function html(md) {
+    var regels = md.split("\n"), uit = [], i = 0;
+    while (i < regels.length) {
+      var r = regels[i];
+      if (/^>/.test(r)) {
+        var blok = [];
+        while (i < regels.length && /^>/.test(regels[i])) { blok.push(regels[i].replace(/^> ?/, "")); i++; }
+        uit.push("<blockquote>" + html(blok.join("\n")) + "</blockquote>"); continue;
+      }
+      var k = /^(#{1,4}) (.*)$/.exec(r);
+      if (k) { uit.push("<h" + k[1].length + ">" + inline(k[2]) + "</h" + k[1].length + ">"); i++; continue; }
+      if (/^\|/.test(r)) {
+        var rijen = [];
+        while (i < regels.length && /^\|/.test(regels[i])) { rijen.push(regels[i]); i++; }
+        var cellen = function (x) { return x.replace(/^\||\|$/g, "").split("|").map(function (c) { return c.trim(); }); };
+        var t = "<table><thead><tr>" + cellen(rijen[0]).map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        rijen.slice(2).forEach(function (x) { t += "<tr>" + cellen(x).map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>"; });
+        uit.push(t + "</tbody></table>"); continue;
+      }
+      if (/^(- |\d+\. )/.test(r)) {
+        var genummerd = /^\d+\. /.test(r), items = [];
+        var start = genummerd ? parseInt(r, 10) : 1;
+        while (i < regels.length && /^(- |\d+\. |  +\S)/.test(regels[i])) {
+          if (/^(- |\d+\. )/.test(regels[i])) items.push(regels[i].replace(/^(- |\d+\. )/, ""));
+          else items[items.length - 1] += " " + regels[i].trim();
+          i++;
+        }
+        var tag = genummerd ? "ol" : "ul";
+        uit.push("<" + tag + (start > 1 ? ' start="' + start + '"' : "") + ">" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</" + tag + ">"); continue;
+      }
+      if (!r.trim()) { i++; continue; }
+      var alinea = [];
+      while (i < regels.length && regels[i].trim() && !/^(#|>|\||- |\d+\. )/.test(regels[i])) { alinea.push(regels[i]); i++; }
+      uit.push("<p>" + inline(alinea.join(" ")) + "</p>");
+    }
+    return uit.join("\n");
+  }
+
+  DATA.profiel.vragen.forEach(function (v) {
+    var fs = document.createElement("fieldset");
+    var lg = document.createElement("legend"); lg.textContent = v.vraag; fs.appendChild(lg);
+    if (v.toelichting) { var p = document.createElement("p"); p.className = "toel"; p.textContent = v.toelichting; fs.appendChild(p); }
+    v.antwoorden.forEach(function (a) {
+      var l = document.createElement("label"), inp = document.createElement("input");
+      inp.type = v.meerdere ? "checkbox" : "radio"; inp.name = v.id; inp.value = a.id;
+      l.appendChild(inp); l.appendChild(document.createTextNode(a.label)); fs.appendChild(l);
+    });
+    velden.appendChild(fs);
+  });
+
+  function profiel() {
+    var p = {};
+    DATA.profiel.vragen.forEach(function (v) {
+      var aan = [].slice.call(document.querySelectorAll('input[name="' + v.id + '"]:checked')).map(function (x) { return x.value; });
+      if (aan.length) p[v.id] = v.meerdere ? aan : aan[0];
+    });
+    return p;
+  }
+  function zet(p) {
+    [].slice.call(document.querySelectorAll("#velden input")).forEach(function (x) {
+      var w = p[x.name]; x.checked = Array.isArray(w) ? w.indexOf(x.value) >= 0 : w === x.value;
+    });
+  }
+  try { zet(JSON.parse(localStorage.getItem(OPSLAG) || "{}")); } catch (e) {}
+
+  function toon(domein) {
+    gekozen = domein;
+    [].slice.call(lijst.children).forEach(function (b) { b.setAttribute("aria-selected", b.dataset.domein === domein ? "true" : "false"); });
+    stukEl.innerHTML = html(set[domein].markdown);
+  }
+  function maak() {
+    var p = profiel();
+    try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
+    set = Beleidsset.genereer(DATA, p);
+    lijst.innerHTML = "";
+    DATA.bouwstenen.forEach(function (s) {
+      var b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab");
+      b.dataset.domein = s.domein; b.textContent = s.titel;
+      b.addEventListener("click", function () { toon(s.domein); });
+      lijst.appendChild(b);
+    });
+    uitkomst.hidden = false;
+    toon(gekozen && set[gekozen] ? gekozen : DATA.bouwstenen[0].domein);
+    uitkomst.scrollIntoView({ behavior: "smooth" });
+  }
+  function bewaar(naam, inhoud, soort) {
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([inhoud], { type: soort + ";charset=utf-8" }));
+    a.download = naam; document.body.appendChild(a); a.click(); a.remove();
+  }
+  function geheel() {
+    return DATA.bouwstenen.map(function (s) { return set[s.domein].markdown; }).join("\n\n---\n\n");
+  }
+  document.getElementById("vragen").addEventListener("submit", function (e) { e.preventDefault(); maak(); });
+  document.getElementById("wis").addEventListener("click", function () { zet({}); try { localStorage.removeItem(OPSLAG); } catch (e) {} });
+  document.getElementById("stuk-md").addEventListener("click", function () {
+    var s = DATA.bouwstenen.filter(function (x) { return x.domein === gekozen; })[0];
+    bewaar(s.bestand.replace(/^\d+-/, ""), set[gekozen].markdown, "text/markdown");
+  });
+  document.getElementById("alles-md").addEventListener("click", function () { bewaar("beleidsset.md", geheel(), "text/markdown"); });
+  document.getElementById("alles-html").addEventListener("click", function () {
+    var stijl = document.querySelector("style").textContent;
+    var body = DATA.bouwstenen.map(function (s) { return '<section class="stuk">' + html(set[s.domein].markdown) + "</section>"; }).join("\n");
+    bewaar("beleidsset.html", '<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Beleidsset informatiebeveiliging</title><style>' +
+      stijl + ".stuk{page-break-before:always}</style></head><body>" + body + "</body></html>", "text/html");
+  });
+})();
+</script>
+</body></html>

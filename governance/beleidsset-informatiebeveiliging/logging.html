@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beleid logging en monitoring</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid logging en monitoring</span></nav><!-- /kruimelpad -->
+<h1>Beleid logging en monitoring</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="logging.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein <em>Logging &amp; monitoring</em></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept, vast te stellen door de organisatie</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td><strong>[eigenaar van dit beleid]</strong></td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td><strong>[vaststeller]</strong></td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging</td>
+</tr>
+</tbody>
+</table>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het vastleggen, bewaren en
+beschermen van logbestanden en voor het bewaken van de omgeving op aanvallen en afwijkingen. Logging is
+nodig om aanvallen te ontdekken, om incidenten achteraf te reconstrueren en om aan te tonen wie wat heeft
+gedaan met welke gegevens. Het gaat over de ISO-beheersmaatregelen 8.15 en 8.16.</p>
+<p><strong>Voor wie.</strong> Het beleid is primair bedoeld voor de afdeling die de centrale logvoorziening beheert, voor
+systeemeigenaren en voor wie de meldingen beoordeelt: het eigen SOC, een SOC-dienstverlener of de
+beheerder. De regels over het gebruik van logging gelden voor iedereen die logbestanden inricht, beheert
+of raadpleegt.</p>
+<p><strong>Waarop.</strong> Alle systemen, applicaties, netwerkcomponenten, werkplekken, identiteitsvoorzieningen en
+clouddiensten waarmee de organisatie informatie verwerkt, en de logbestanden die daaruit voortkomen. Is de
+logvoorziening, de bewaking of een systeem uitbesteed, dan gelden de eisen uit dit beleid als minimumeis
+voor die partij. De organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke
+verklaring, zoals een ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt
+via het beleid informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.</p>
+<p>Buiten dit beleid vallen de afhandeling van incidenten die uit monitoring voortkomen (beleid
+beveiligingsincidenten), de tijdsynchronisatie en de netwerkinrichting (beleid netwerkbeveiliging) en de
+toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveiliging).</p>
+<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<ol>
+<li>Wat gelogd wordt, volgt uit risico: hoe hoger het impactniveau van een systeem, hoe meer er wordt
+   vastgelegd en hoe langer het wordt bewaard.</li>
+<li>Logbestanden zijn zelf informatie met ten minste het label vertrouwelijk. Ze worden beschermd tegen
+   inzage, wijziging en verwijdering.</li>
+<li>Logging zonder beoordeling heeft weinig waarde. Voor elke logbron staat vast wie hem bekijkt en wat er
+   gebeurt bij een afwijking.</li>
+<li>Logging met persoonsgegevens dient alleen beveiliging, beheer en verantwoording, niet het volgen van
+   medewerkers.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+</ol>
+<h2 id="3-beleidsregels">3. Beleidsregels</h2>
+<h3>3.1 Wat er gelogd wordt</h3>
+<ol>
+<li>De systeemeigenaar zorgt dat elk systeem ten minste logt: aanmeldingen en mislukte aanmeldpogingen, het
+   gebruik van beheerrechten, wijzigingen in accounts en rechten, wijzigingen in de beveiligingsinstellingen,
+   het starten en stoppen van de logging zelf, en de toegang tot gegevens met het label vertrouwelijk of
+   hoger. [8.15.01]</li>
+<li>Elke logregel bevat: de handeling, het object waarop de handeling betrekking had, het resultaat, het
+   apparaat of netwerkadres van herkomst, de persoon of het proces dat de handeling startte, en datum en
+   tijd. Alle systemen gebruiken dezelfde tijdbron. [8.15.01]</li>
+<li>Logregels bevatten geen wachtwoorden, sessietokens, sleutels of andere gegevens waarmee de beveiliging
+   kan worden doorbroken. Bij de ingebruikname van een nieuwe logbron controleert
+   <strong>[beheerder logvoorziening]</strong> een steekproef
+   van de logregels hierop en legt de uitkomst vast. [8.15.02]</li>
+<li><strong>[beheerder logvoorziening]</strong> houdt een overzicht bij van alle logbronnen: per systeem welke gebeurtenissen
+   worden gelogd, waar de logbestanden staan, de bewaartermijn, wie ze beheert en wie ze beoordeelt. Een
+   nieuw systeem gaat pas in productie als het in dit overzicht staat; wijzigingsbeheer controleert dat bij
+   elke ingebruikname. [8.15.03]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
+<ol start="5">
+<li>Voor SaaS- en clouddiensten legt de organisatie bij inkoop in het contract vast welke auditlogs de
+   leverancier beschikbaar stelt, hoe lang die bewaard blijven en hoe de organisatie ze kan exporteren naar
+   de eigen centrale logvoorziening. Waar de leverancier de logs korter bewaart dan de eigen termijn, haalt
+   <strong>[beheerder logvoorziening]</strong> ze zelf op. [8.15.03, 8.15.04]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
+<ol start="6">
+<li>Bij een hostingpartij logt de organisatie zelf op het niveau van besturingssysteem en applicatie. De
+   logging van de platformlaag (hypervisor, beheerportaal, netwerk van de hostingpartij) levert de
+   hostingpartij op verzoek binnen de termijn uit het contract. [8.15.03]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
+<ol start="7">
+<li>In het eigen datacenter verzamelt een centrale logvoorziening de logging van servers, opslag,
+   virtualisatie en netwerkcomponenten. De logvoorziening staat in een eigen beheersegment. [8.15.03]</li>
+</ol>
+<p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
+<ol start="8">
+<li>Voor systemen met politiegegevens logt de organisatie elke raadpleging en elke verstrekking, met de
+   persoon die raadpleegt en, waar het systeem dat toelaat, het doel van de raadpleging. Deze logging is
+   nodig voor de verantwoording onder de Wpg. [8.15.01, 8.15.03]</li>
+</ol>
+<p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD» of «Suwinet» of «BRP (als bronhouder of afnemer)» of «BAG of andere basisregistraties» of «Andere ketens met eigen beveiligingseisen»</strong></p>
+<ol start="9">
+<li>Voor de aansluiting op landelijke voorzieningen volgt de systeemeigenaar bovendien de logeisen uit het
+   normenkader van die voorziening en staan de betreffende systemen apart in het overzicht van logbronnen,
+   met het normenkader erbij. [8.15.03]</li>
+</ol>
+</blockquote>
+<h3>3.2 Bewaren en beschermen</h3>
+<ol>
+<li>De bewaartermijn per logbron staat in het overzicht en volgt uit een risicoafweging door de
+   systeemeigenaar. Omdat aanvallers vaak maanden onopgemerkt in een omgeving zitten, is de termijn voor
+   beveiligingsrelevante logging en voor de gegevens in het SIEM ten minste
+   <strong>[bewaartermijn beveiligingslogging]</strong>.
+   Logging die bij een incident hoort, valt onder de termijn van het incidentdossier (drie jaar). [8.15.04]</li>
+<li>Logging die persoonsgegevens bevat, wordt niet langer bewaard dan de vastgestelde termijn en alleen
+   gebruikt voor beveiliging, beheer en verantwoording. De verwerking staat in het verwerkingsregister; de
+   privacy officer toetst dat jaarlijks. [8.15.04]</li>
+<li><strong>[beheerder logvoorziening]</strong> kopieert logbestanden zo snel mogelijk na het ontstaan naar een centrale
+   opslag waar de beheerders van het bronsysteem geen schrijf- of verwijderrechten hebben. [8.15.05]</li>
+<li>Een poging om loggegevens oneigenlijk te wijzigen of te verwijderen, of het onverwacht stoppen van de
+   logging, wordt direct als beveiligingsincident gemeld via de incidentprocedure. De centrale
+   logvoorziening geeft hierop een automatische melding aan <strong>[bewaking]</strong>. [8.15.05]</li>
+<li>Op basis van een risicoafweging stelt de CISO vast hoe vaak wordt getoetst dat de logbestanden
+   gedurende de bewaartermijn ongewijzigd en volledig aanwezig zijn, met ten minste een jaarlijkse toets.
+   De toets wordt uitgevoerd door iemand die geen beheertaken heeft op de logvoorziening of de
+   bronsystemen. [8.15.06]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak» of «Een ISO of CISO in deeltijd»</strong></p>
+<ol start="6">
+<li>De organisatie heeft geen eigen team dat onafhankelijk is van het beheer. De toets op ongewijzigde
+   logbestanden laat zij uitvoeren door een externe auditor of door de interne controle. [8.15.06]</li>
+</ol>
+<p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een eigen team (CISO met ISO's)»</strong></p>
+<ol start="7">
+<li>De toets op ongewijzigde logbestanden voert een ISO uit die geen beheerrechten heeft op de logging. [8.15.06]</li>
+</ol>
+<p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
+<ol start="8">
+<li>De logging van systemen met politiegegevens wordt bewaard volgens de termijn uit de Wpg en is onderwerp
+   van de periodieke Wpg-audit. Alleen de privacy officer, de CISO en de functionaris die de Wpg-controle
+   uitvoert, mogen deze logging raadplegen; elke raadpleging wordt zelf ook gelogd. [8.15.04, 8.15.05]</li>
+</ol>
+</blockquote>
+<h3>3.3 Monitoren en detecteren</h3>
+<ol>
+<li>De organisatie bewaakt de omgeving met een detectie- en responsvoorziening die de logging van
+   werkplekken, servers, identiteiten, clouddiensten en netwerkcomponenten bij elkaar brengt, bijvoorbeeld
+   een SIEM met EDR. <strong>[bewaking]</strong> beoordeelt afwijkingen binnen de termijn per ernstniveau en legt de
+   beoordeling vast. [8.16.03]</li>
+<li>Actieve netwerkcomponenten (firewalls, routers, switches, toegangspunten voor wifi en VPN) sturen hun
+   logging naar deze voorziening. <strong>[bewaking]</strong> onderhoudt detectieregels voor afwijkend gedrag zoals
+   ongebruikelijk verkeer, wijzigingen in de configuratie en aanmeldingen buiten de beheerroute. [8.16.04]</li>
+<li>De CISO legt vaste regels vast over wanneer een melding als incident aan het management gaat: per
+   ernstniveau de termijn en de ontvanger. Een melding met ernst hoog of kritiek gaat altijd direct naar de
+   CISO, die bepaalt of de directie wordt ingelicht. [8.16.02]</li>
+<li>Nieuwe dreigingen of aanvalstechnieken die bij de monitoring worden ontdekt, deelt <strong>[bewaking]</strong> binnen
+   de juridische kaders met de aangewezen CERT, zo nodig zonder persoonsgegevens, en legt vast wat is
+   gedeeld. [8.16.01]</li>
+<li><strong>[bewaking]</strong> rapporteert maandelijks aan de CISO over meldingen, escalaties en gedeelde dreigingen.
+   [8.16.02, 8.16.03]</li>
+</ol>
+<blockquote>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC»</strong></p>
+<ol start="6">
+<li>Het eigen SOC beoordeelt de meldingen uit de detectievoorziening, ook buiten kantoortijd via een
+   bereikbaarheidsdienst. Het SOC beheert de detectieregels en past ze aan na elk incident en na elke
+   relevante dreigingsmelding. [8.16.03, 8.16.04]</li>
+<li>Het SOC heeft een vastgelegde procedure voor het delen van nieuwe dreigingen met de CERT. [8.16.01]</li>
+</ol>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Uitbesteed SOC of MDR-dienst»</strong></p>
+<ol start="8">
+<li>Een SOC- of MDR-dienstverlener bewaakt de omgeving. Het contract regelt: welke logbronnen zijn
+   aangesloten, de reactietijd per ernstniveau, de escalatie naar de organisatie, de bevoegdheid om in te
+   grijpen, het delen van nieuwe dreigingen met de CERT en een maandelijkse rapportage. [8.16.01, 8.16.02, 8.16.03]</li>
+<li><strong>[beheerder logvoorziening]</strong> controleert elk kwartaal of alle logbronnen uit het overzicht ook bij de
+   dienstverlener binnenkomen en legt de uitkomst vast. [8.16.03, 8.16.04]</li>
+</ol>
+<p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Geen structurele detectie»</strong></p>
+<ol start="10">
+<li>Er is nog geen structurele detectie. Als minimum zijn op werkplekken en servers detectie- en
+   responsfuncties actief met automatische meldingen aan de beheerder, die ze elke werkdag bekijkt. De CISO
+   neemt het ontbreken van een SOC op als risico in het risicoregister en legt in het jaarplan vast wanneer de
+   organisatie structurele detectie heeft ingericht, zelf of uitbesteed. [8.16.03, 8.16.04]</li>
+</ol>
+<p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud» of «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
+<ol start="11">
+<li>De logging van clouddiensten en van de hostingpartij is aangesloten op de detectievoorziening. Waar dat
+   technisch niet kan, legt de systeemeigenaar vast welke meldingen de leverancier zelf geeft en hoe snel.
+   [8.16.03]</li>
+</ol>
+</blockquote>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Verantwoordelijk voor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[lijneigenaar logging]</strong></td>
+<td>Eigenaar van dit beleid, de centrale logvoorziening en de contracten met de SOC-dienstverlener</td>
+</tr>
+<tr>
+<td>Systeemeigenaar</td>
+<td>Bepalen wat er van zijn systeem wordt gelogd en hoe lang, opname in het overzicht van logbronnen, afspraken met leveranciers over logs</td>
+</tr>
+<tr>
+<td><strong>[beheerder logvoorziening]</strong></td>
+<td>Inrichting en beschikbaarheid van de logging en de centrale opslag, het overzicht van logbronnen, steekproef op gevoelige gegevens</td>
+</tr>
+<tr>
+<td><strong>[bewaking]</strong></td>
+<td>Beoordelen van meldingen, detectieregels, escaleren volgens de regels, delen van nieuwe dreigingen, maandrapportage</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Vaststellen van escalatieregels en toetsfrequentie, ontvangst van escalaties, opdracht tot de onafhankelijke toets, beoordeling van afwijkingen</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Toetsing van het gebruik van logging met persoonsgegevens (de FG houdt toezicht)</td>
+</tr>
+<tr>
+<td>Inkoop en contractbeheer</td>
+<td>Vastleggen van de logeisen bij leveranciers en toetsen van hun verklaringen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
+afwijkingen gaan als bevinding naar het risicoregister.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+<th>Bewijs</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOG-01</td>
+<td>Elke logbron uit het overzicht logt daadwerkelijk en komt in de centrale opslag binnen; elk productiesysteem staat in het overzicht</td>
+<td><strong>[beheerder logvoorziening]</strong></td>
+<td>Per kwartaal</td>
+<td>Vergelijking van het overzicht met de centrale logvoorziening en de configuratiedatabase, met de afwijkingen</td>
+<td>8.15.03, 8.15.05</td>
+</tr>
+<tr>
+<td>LOG-02</td>
+<td>Een steekproef van logregels uit vijf systemen bevat de verplichte velden, dezelfde tijdbron en geen wachtwoorden of sleutels</td>
+<td><strong>[beheerder logvoorziening]</strong></td>
+<td>Jaarlijks</td>
+<td>Steekproefverslag met de beoordeelde logregels</td>
+<td>8.15.01, 8.15.02</td>
+</tr>
+<tr>
+<td>LOG-03</td>
+<td>De bewaartermijn per logbron is vastgesteld, wordt gehaald en logging met persoonsgegevens staat in het verwerkingsregister</td>
+<td>Privacy officer</td>
+<td>Jaarlijks</td>
+<td>Overzicht van logbronnen met termijnen, rapport uit de logvoorziening over de oudste beschikbare regel, verwerkingsregister</td>
+<td>8.15.04</td>
+</tr>
+<tr>
+<td>LOG-04</td>
+<td>De logbestanden zijn over de bewaartermijn ongewijzigd en volledig aanwezig, getoetst door iemand zonder beheerrechten op de logging</td>
+<td>Onafhankelijke toetser aangewezen door de CISO</td>
+<td>Jaarlijks</td>
+<td>Toetsverslag</td>
+<td>8.15.05, 8.15.06</td>
+</tr>
+<tr>
+<td>LOG-05</td>
+<td>Meldingen uit de detectievoorziening zijn binnen de termijn per ernstniveau beoordeeld en de detectieregels zijn na incidenten bijgewerkt</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+<td>Maandrapportages, steekproef van meldingen met beoordelingstijd, wijzigingslog van detectieregels</td>
+<td>8.16.03, 8.16.04</td>
+</tr>
+<tr>
+<td>LOG-06</td>
+<td>De escalatie werkt: een gesimuleerde melding met ernst hoog bereikt de CISO binnen de afgesproken termijn</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Tijdlijn van melding tot management</td>
+<td>8.16.02</td>
+</tr>
+<tr>
+<td>LOG-07</td>
+<td>Nieuwe dreigingen die bij de monitoring zijn ontdekt, zijn volgens de procedure met de CERT gedeeld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Registratie van gedeelde dreigingen, procedure</td>
+<td>8.16.01</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Afwijkingen.</strong> Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+systeemeigenaar dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd.
+De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaar]</strong>
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
+<p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
+<h2 id="6-samenhang">6. Samenhang</h2>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
+beveiligingsincidenten (melden van incidenten en bewaren van bewijs), het beleid netwerkbeveiliging
+(bewaking van dataverkeer en tijdsynchronisatie), het beleid logische toegangsbeveiliging (logging van
+beheerrechten en systeemhulpmiddelen), het beleid informatieclassificatie (impactniveaus en labels), het
+beleid wijzigingsbeheer (ingebruikname van logbronnen), het beleid informatiebeveiliging bij inkoop en
+contractbeheer (logs van leveranciers) en het privacybeleid (logging met persoonsgegevens).</p>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<p>De maatregelen van dit domein (10, waarvan 10 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Titel</th>
+<th>Soort</th>
+<th>In dit stuk</th>
+<th>Controle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.15.01</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Wat er gelogd wordt</td>
+<td>LOG-02</td>
+</tr>
+<tr>
+<td>8.15.02</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Wat er gelogd wordt</td>
+<td>LOG-02</td>
+</tr>
+<tr>
+<td>8.15.03</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Wat er gelogd wordt</td>
+<td>LOG-01</td>
+</tr>
+<tr>
+<td>8.15.04</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Wat er gelogd wordt</td>
+<td>LOG-03</td>
+</tr>
+<tr>
+<td>8.15.05</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.2 Bewaren en beschermen</td>
+<td>LOG-01, LOG-04</td>
+</tr>
+<tr>
+<td>8.15.06</td>
+<td>Logging</td>
+<td>overheidsmaatregel</td>
+<td>3.2 Bewaren en beschermen</td>
+<td>LOG-04</td>
+</tr>
+<tr>
+<td>8.16.01</td>
+<td>Monitoren van activiteiten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Monitoren en detecteren</td>
+<td>LOG-07</td>
+</tr>
+<tr>
+<td>8.16.02</td>
+<td>Monitoren van activiteiten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Monitoren en detecteren</td>
+<td>LOG-06</td>
+</tr>
+<tr>
+<td>8.16.03</td>
+<td>Monitoren van activiteiten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Monitoren en detecteren</td>
+<td>LOG-05</td>
+</tr>
+<tr>
+<td>8.16.04</td>
+<td>Monitoren van activiteiten</td>
+<td>overheidsmaatregel</td>
+<td>3.3 Monitoren en detecteren</td>
+<td>LOG-05</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BAG</td>
+<td>Basisregistratie Adressen en Gebouwen</td>
+</tr>
+<tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
+<td>BRP</td>
+<td>Basisregistratie Personen</td>
+</tr>
+<tr>
+<td>CERT</td>
+<td>Computer emergency response team</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>EDR</td>
+<td>Endpoint detection and response</td>
+</tr>
+<tr>
+<td>FG</td>
+<td>Functionaris gegevensbescherming</td>
+</tr>
+<tr>
+<td>ISAE</td>
+<td>International Standard on Assurance Engagements</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>International Organization for Standardization</td>
+</tr>
+<tr>
+<td>IaaS</td>
+<td>Infrastructure as a service</td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>Managed detection and response</td>
+</tr>
+<tr>
+<td>SIEM</td>
+<td>Security information and event management</td>
+</tr>
+<tr>
+<td>SOC</td>
+<td>Security operations center</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>Software as a service</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Virtual private network</td>
+</tr>
+<tr>
+<td>Wpg</td>
+<td>Wet politiegegevens</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<ul>
+<li><strong>beheerder logvoorziening</strong>: de afdeling of leverancier die de centrale logging beheert</li>
+<li><strong>bewaartermijn beveiligingslogging</strong>: de minimale termijn, bijvoorbeeld twaalf maanden</li>
+<li><strong>bewaking</strong>: het eigen SOC, de SOC-dienstverlener of de beheerder die de meldingen beoordeelt</li>
+<li><strong>lijneigenaar logging</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
+<li><strong>registratie van controles</strong>: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem</li>
+<li><strong>risico-eigenaar</strong>: de manager die restrisico's accepteert</li>
+<li><strong>eigenaar van dit beleid</strong>: de manager die dit beleid uitvoert en laat naleven</li>
+<li><strong>vaststeller</strong>: wie het beleid vaststelt, bijvoorbeeld de directie of het bestuur</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
