@@ -37,14 +37,11 @@ en je krijgt precies de stukken die daaraan hangen), plus een keuzelijst op barr
 stuk toont zijn normen als etiket op de kaart en onder de titel. Voor systemen die de hele lijst willen lezen
 is er [`llms.txt`](https://security-commons-nl.github.io/kennisbank/llms.txt), gegenereerd bij elke build.
 
-**Beleid.** Onder governance staat een complete
-[beleidsset informatiebeveiliging](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/)
-naar de 21 BIO 2.0-domeinen: een
-[strategisch informatiebeveiligingsbeleid](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/strategisch-ib-beleid.html)
-en per domein een beleidsstuk of sjabloon, getoetst op de 117 overheidsmaatregelen. Onder privacy staat
-een [privacybeleid met handboek](https://security-commons-nl.github.io/kennisbank/privacy/privacybeleid-en-handboek/),
-met een strategisch privacybeleid. Het zijn voorbeelden van een samenwerking van gemeenten, geen modellen
-van de IBD; die staan er als bron bij.
+**Beleid.** Onder privacy staat een
+[privacybeleid met handboek](https://security-commons-nl.github.io/kennisbank/privacy/privacybeleid-en-handboek/),
+met een strategisch privacybeleid. Het is een voorbeeld van een samenwerking van gemeenten, geen model van
+de IBD; die staan er als bron bij. De beleidsset informatiebeveiliging is op 14 oktober 2026 teruggetrokken,
+omdat de meeste stukken nog onder BIO 1 waren geschreven. Hij komt terug, herschreven op BIO 2.0.
 
 **BIO 2.0 invoeren.** Een [plan van aanpak met urenraming](https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/)
 voor deel 1 (het managementsysteem, uren per rol) en deel 2 (de maatregelen per thema, met volgorde en
