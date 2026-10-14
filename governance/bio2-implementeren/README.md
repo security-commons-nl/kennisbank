@@ -3,7 +3,7 @@ titel: BIO 2.0 invoeren, een plan van aanpak met urenraming
 vakgebied: governance
 type: aanpak
 normen: [BIO2, ISO 27001, Cbw]
-peildatum: 2026-10-13
+peildatum: 2026-10-14
 herkomst: plan van aanpak voor de invoering van BIO 2.0, deel 1 en deel 2 (2026), van het team informatiebeveiliging en privacy van een regionale samenwerking van gemeenten; nog niet vastgesteld
 status: concept
 samenvatting: Hoe een samenwerking van gemeenten de invoering van BIO 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. Deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. Deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema's met de afdeling die eigenaar is. Met de randvoorwaarden en de zes projectrisico's die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen.
@@ -85,8 +85,8 @@ plan pakt ze niet maatregel voor maatregel aan, maar per thema.
 ### Per thema: beleid, ontwerp, inrichting, bewaking
 
 Elk thema krijgt een eigen beleidsstuk; het plan rekent op ongeveer twintig, naast het strategisch beleid.
-Dat zijn de stukken uit de [beleidsset informatiebeveiliging](../beleidsset-informatiebeveiliging/), die
-dezelfde indeling volgt. Per thema doorloopt het plan drie stappen:
+De stukken volgen de domeinindeling van het BIO 2.0-controleraamwerk. Per thema doorloopt het plan drie
+stappen:
 
 1. **Richten.** Het beleid schrijven, samen met de afdeling die het moet uitvoeren. Het huidige proces
    langs de risico's leggen. De maatregelen ontwerpen die er nog bij moeten.
@@ -156,10 +156,9 @@ vastgesteld; de invoering van de maatregelen duurt daarna ongeveer twee keer zo 
 | 20 | Afvoer en hergebruik van gegevensdragers | IV-beheer |
 | 21 | IT-compliance | IV-ontwikkeling |
 
-Fysieke toegang staat vooraan omdat het buiten IV ligt en snel resultaat geeft: het beleid en het
-controleraamwerk daarvan staan als uitgewerkt voorbeeld in de
-[beleidsset](../beleidsset-informatiebeveiliging/). Vijftien van de 21 thema's liggen bij IV-beheer. Daar zit
-de capaciteit die de invoering bepaalt, en daar hoort de volgorde besproken te worden.
+Fysieke toegang staat vooraan omdat het buiten IV ligt en snel resultaat geeft. Vijftien van de 21 thema's
+liggen bij IV-beheer. Daar zit de capaciteit die de invoering bepaalt, en daar hoort de volgorde besproken
+te worden.
 
 ### Randvoorwaarden
 
