@@ -448,11 +448,28 @@ def bestandsnaam(steen: dict) -> str:
     return steen["bestand"].split("-", 1)[1] if re.match(r"^\d+-", steen["bestand"]) else steen["bestand"]
 
 
+LIVE = "https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/"
+
+
+def agentlijst(data: dict) -> str:
+    """De stukken als vaste HTML-lijst, zodat een AI-assistent die geen JavaScript draait ze ook ziet."""
+    import html as h
+    domeinen = {d["id"]: d["naam"] for d in data["profiel"]["domeinen"]}
+    regels = []
+    for s in data["bouwstenen"]:
+        naam = bestandsnaam(s)
+        regels.append(f'<li>{h.escape(s["titel"])} ({h.escape(domeinen[s["domein"]])}): '
+                      f'<a href="{LIVE}{naam}">{naam}</a>, bouwsteen '
+                      f'<a href="{LIVE}data/{s["bestand"]}">data/{s["bestand"]}</a></li>')
+    return "\n".join(regels)
+
+
 def pagina(data: dict) -> str:
     sjabloon = SJABLOON.read_text(encoding="utf-8")
     code = JS.read_text(encoding="utf-8")
     gegevens = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    return sjabloon.replace("/*CODE*/", code).replace("/*DATA*/", gegevens)
+    return (sjabloon.replace("/*AGENTLIJST*/", agentlijst(data))
+            .replace("/*CODE*/", code).replace("/*DATA*/", gegevens))
 
 
 BEGIN, EINDE = "<!-- stukken:begin -->", "<!-- stukken:einde -->"

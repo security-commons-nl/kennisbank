@@ -288,13 +288,17 @@ De tekst van de overheidsmaatregelen staat er niet in; die is van het
 CIP en staat op <a
 href="https://www.bio-overheid.nl/bio2/">bio-overheid.nl</a>.</p>
 <h2 id="met-je-eigen-ai-agent">Met je eigen AI-agent</h2>
-<p>Geef je agent <a
-href="beleidsset.json"><code>beleidsset.json</code></a> of de bouwsteen
-van het domein en vraag hem het stuk af te maken voor jouw organisatie.
-De lijst <em>Nog in te vullen</em> onderaan elk stuk zegt wat er open
-staat; de kaders zeggen welke vraag hij eerst moet stellen. Een stuk dat
-de agent aanpast, blijft toetsbaar: laat de nummers achter elke regel
-staan.</p>
+<p>Geef je assistent de link naar de <a
+href="beleidsset-generator.html">generatorpagina</a>. Bovenaan staat,
+als gewone tekst die ook een assistent zonder JavaScript leest, een blok
+<em>Instructies voor de assistent</em>: eerst de contextvragen uit <a
+href="profiel.json"><code>profiel.json</code></a> stellen, dan per
+gekozen stuk de leesversie ophalen, de kaders houden of weghalen naar de
+antwoorden, de invulvelden met de gebruiker invullen, en de nummers, het
+controleraamwerk en bijlage A laten staan zodat het stuk toetsbaar
+blijft. Wie precies dezelfde tekst wil als het formulier, rekent met <a
+href="beleidsset.json"><code>beleidsset.json</code></a> of draait
+<code>python tools/bouw_beleidsset.py --profiel antwoorden.json uitmap/</code>.</p>
 <h2 id="bijdragen">Bijdragen</h2>
 <p>Een regel die bij jullie anders is, een vraag die ontbreekt of een
 domein dat beter kan: pas de bouwsteen aan en draai

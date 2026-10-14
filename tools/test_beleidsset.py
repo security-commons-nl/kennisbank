@@ -246,6 +246,18 @@ class EchteSet(unittest.TestCase):
                     self.assertNotIn("—", r, s["bestand"])
                     self.assertNotIn("–", r, s["bestand"])
 
+    def test_generatorpagina_heeft_instructies_voor_een_ai_assistent_zonder_javascript(self):
+        pagina = b.pagina(self.data)
+        statisch = pagina.split("<script")[0]  # wat een assistent ziet die geen JavaScript draait
+        self.assertIn('id="voor-ai"', statisch)
+        self.assertIn(b.LIVE + "profiel.json", statisch)
+        self.assertIn(b.LIVE + "beleidsset.json", statisch)
+        for s in self.data["bouwstenen"]:
+            self.assertIn(b.LIVE + b.bestandsnaam(s), statisch, s["bestand"])
+            self.assertIn(b.LIVE + "data/" + s["bestand"], statisch, s["bestand"])
+        self.assertNotIn("/*AGENTLIJST*/", pagina)
+        self.assertNotIn("—", statisch)
+
     def test_maatregelkopie_gelijk_aan_normen(self):
         normen = b.ROOT.parent / "normen" / "bio2.json"
         if not normen.exists():
