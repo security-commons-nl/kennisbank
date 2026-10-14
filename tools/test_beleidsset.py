@@ -35,7 +35,8 @@ def data_met(tekst: str) -> dict:
     ]}
     steen = b.parse_bouwsteen(tekst, VRAGEN, "proef.md")
     steen["bestand"] = "01-proef.md"
-    return {"profiel": profiel, "maatregelen": maatregelen, "bouwstenen": [steen]}
+    afkortingen = {"CISO": "Chief Information Security Officer", "BIO": "Baseline Informatiebeveiliging Overheid"}
+    return {"profiel": profiel, "maatregelen": maatregelen, "afkortingen": afkortingen, "bouwstenen": [steen]}
 
 
 KOP = "---\ndomein: proef\ntitel: Proefbeleid\n---\n\n"
@@ -112,13 +113,13 @@ class Rekenregel(unittest.TestCase):
         d = data_met(KOP + "- a [8.13.01]\n\n::: als beheer=uitbesteed\n- b [8.13.02]\n:::\n")
         md = b.genereer_stuk(d["bouwstenen"][0], d, {})["markdown"]
         self.assertIn("> **Alleen als: Wie beheert je IT? «Uitbesteed»**", md)
-        self.assertIn("> - b [8.13.02]", md)
+        self.assertIn("> 2. b [8.13.02]", md)  # de nummering loopt door in het kader
 
     def test_gekozen_blok_zonder_kader_en_ander_blok_weg(self):
         tekst = KOP + "::: als beheer=uitbesteed\n- b [8.13.02]\n:::\n::: als beheer=eigen\n- c [8.13.02]\n:::\n"
         d = data_met(tekst)
         md = b.genereer_stuk(d["bouwstenen"][0], d, {"beheer": "uitbesteed"})["markdown"]
-        self.assertIn("\n- b [8.13.02]", md)
+        self.assertIn("\n1. b [8.13.02]", md)
         self.assertNotIn("- c", md)
         self.assertNotIn("Alleen als", md)
         self.assertIn("Opgesteld voor dit profiel: Wie beheert je IT? Uitbesteed.", md)
@@ -129,18 +130,31 @@ class Rekenregel(unittest.TestCase):
         self.assertIn("de **[eigenaar]** doet het", md)
         self.assertEqual(md.count("- **eigenaar**: de rol die het doet"), 1)
 
-    def test_bijlage_noemt_kop_en_ontbrekende(self):
-        d = data_met(KOP + "## 3. Regels\n\n- a [8.13.01]\n")
+    def test_bijlage_noemt_kop_controle_en_ontbrekende(self):
+        d = data_met(KOP + "## 3. Regels\n\n- a [8.13.01]\n\n| Nr | Wat | Maatregelen |\n|---|---|---|\n| PRF-01 | kijk | 8.13.01, 8.13.03 |\n")
         stuk = b.genereer_stuk(d["bouwstenen"][0], d, {})
-        self.assertIn("| 8.13.01 | Back-up | 3. Regels |", stuk["markdown"])
-        self.assertIn("| 8.13.02 | Back-up | niet ingevuld |", stuk["markdown"])
-        self.assertNotIn("8.13.03 |", stuk["markdown"])  # alleen-iso staat niet in de bijlage
+        self.assertIn("| 8.13.01 | Back-up | overheidsmaatregel | 3. Regels | PRF-01 |", stuk["markdown"])
+        self.assertIn("| 8.13.02 | Back-up | overheidsmaatregel | niet ingevuld | geen |", stuk["markdown"])
+        self.assertIn("| 8.13.03 | Back-up | ISO-beheersmaatregel | niet ingevuld | PRF-01 |", stuk["markdown"])
+        self.assertEqual(stuk["controles"], ["8.13.01", "8.13.03"])
+        self.assertEqual(stuk["eigen"], ["8.13.01", "8.13.02", "8.13.03"])
+        self.assertEqual(stuk["overheid"], ["8.13.01", "8.13.02"])
 
-    def test_iso_maatregel_van_eigen_domein_niet_bij_andere_domeinen(self):
-        d = data_met(KOP + "- a [8.13.01, 8.13.02, 8.13.03]\n")
+    def test_nummering_per_paragraaf_ook_in_kader(self):
+        tekst = KOP + "### 3.1 A\n\n- een [8.13.01]\n  vervolg\n- twee [8.13.02]\n\n::: als beheer=eigen\n- drie [8.13.03]\n:::\n\n### 3.2 B\n\n- een\n"
+        d = data_met(tekst)
         md = b.genereer_stuk(d["bouwstenen"][0], d, {})["markdown"]
-        self.assertIn("zonder overheidsmaatregel: 8.13.03 (Back-up)", md)
-        self.assertNotIn("andere domeinen", md)
+        self.assertIn("1. een [8.13.01]\n   vervolg\n2. twee [8.13.02]", md)
+        self.assertIn("> 3. drie [8.13.03]", md)
+        self.assertIn("### 3.2 B\n\n1. een", md)
+
+    def test_titelblad_en_afkortingen(self):
+        d = data_met(KOP + "- de CISO doet het [8.13.01]\n")
+        md = b.genereer_stuk(d["bouwstenen"][0], d, {})["markdown"]
+        self.assertIn("| Eigenaar | **[eigenaar van dit beleid]** |", md)
+        self.assertIn("- **eigenaar van dit beleid**: de manager", md)
+        self.assertIn("| CISO | Chief Information Security Officer |", md)
+        self.assertNotIn("| BIO |", md)
 
     def test_maatregel_van_ander_domein_apart_genoemd(self):
         d = data_met(KOP + "- a [8.13.01, 8.13.02, 5.01.01]\n")
@@ -148,30 +162,68 @@ class Rekenregel(unittest.TestCase):
         self.assertIn("mee in: 5.01.01 (Beleid)", md)
 
 
+def vorm(regels: str, controle: str = "| PRF-01 | kijk | 8.13.01, 8.13.02, 8.13.03 |") -> str:
+    """Een bouwsteen in de vaste vorm, met `regels` als inhoud van hoofdstuk 3."""
+    return (KOP + "## 1. Doel en reikwijdte\n\ntekst\n\n## 2. Uitgangspunten\n\n- x\n\n## 3. Beleidsregels\n\n"
+            + regels + "\n\n## 4. Rollen en verantwoordelijkheden\n\n| Rol | Wat |\n|---|---|\n| CISO | kijkt |\n\n"
+            "## 5. Naleving en controle\n\n| Nr | Controle | Maatregelen |\n|---|---|---|\n" + controle + "\n\n"
+            "## 6. Samenhang\n\ntekst\n")
+
+
+def meldingen(tekst: str) -> list[str]:
+    return [m for m in b.toets(data_met(tekst)) if "vraag '" not in m]
+
+
 class Dekking(unittest.TestCase):
     def test_gat_bij_een_profiel_wordt_gevonden(self):
-        tekst = KOP + "- a [8.13.01]\n::: als beheer=uitbesteed\n- b [8.13.02]\n:::\n"
-        meldingen = b.toets(data_met(tekst))
-        self.assertTrue(any("8.13.02" in m and '"beheer": "eigen"' in m for m in meldingen), meldingen)
+        tekst = vorm("- a [8.13.01, 8.13.03]\n::: als beheer=uitbesteed\n- b [8.13.02]\n:::")
+        self.assertTrue(any("8.13.02" in m and '"beheer": "eigen"' in m for m in meldingen(tekst)), meldingen(tekst))
 
     def test_gat_bij_een_combinatie_van_meer_antwoorden(self):
         # met 'niet' valt een regel weg zodra saas meedoet, ook naast eigen-dc
-        tekst = KOP + "- a [8.13.01]\n::: als hosting!=saas\n- b [8.13.02]\n:::\n::: als hosting=saas en hosting!=eigen-dc\n- c [8.13.02]\n:::\n"
-        meldingen = b.toets(data_met(tekst))
-        self.assertTrue(any('"eigen-dc", "saas"' in m for m in meldingen), meldingen)
+        tekst = vorm("- a [8.13.01, 8.13.03]\n::: als hosting!=saas\n- b [8.13.02]\n:::\n::: als hosting=saas en hosting!=eigen-dc\n- c [8.13.02]\n:::")
+        self.assertTrue(any('"eigen-dc", "saas"' in m for m in meldingen(tekst)), meldingen(tekst))
 
     def test_volledige_dekking_geeft_geen_meldingen(self):
-        tekst = KOP + "- a [8.13.01]\n::: als beheer=uitbesteed\n- b [8.13.02]\n:::\n::: als beheer!=uitbesteed\n- c [8.13.02]\n:::\n"
-        meldingen = [m for m in b.toets(data_met(tekst)) if "vraag 'hosting'" not in m]
-        self.assertEqual(meldingen, [])
+        tekst = vorm("- a [8.13.01, 8.13.03]\n::: als beheer=uitbesteed\n- b [8.13.02]\n:::\n::: als beheer!=uitbesteed\n- c [8.13.02]\n:::")
+        self.assertEqual(meldingen(tekst), [])
 
     def test_onbekend_nummer(self):
-        meldingen = b.toets(data_met(KOP + "- a [8.13.01, 8.13.02, 9.99.99]\n"))
-        self.assertTrue(any("9.99.99" in m for m in meldingen))
+        self.assertTrue(any("9.99.99" in m for m in meldingen(vorm("- a [8.13.01, 8.13.02, 9.99.99]"))))
 
     def test_inhoudsvraag_die_nergens_iets_doet(self):
-        meldingen = b.toets(data_met(KOP + "- a [8.13.01, 8.13.02]\n"))
-        self.assertTrue(any("vraag 'beheer'" in m for m in meldingen))
+        self.assertTrue(any("vraag 'beheer'" in m for m in b.toets(data_met(vorm("- a [8.13.01, 8.13.02]")))))
+
+    def test_iso_maatregel_zonder_regel_of_controle(self):
+        self.assertTrue(any("niet ingevuld: 8.13.03" in m for m in meldingen(vorm("- a [8.13.01, 8.13.02]"))))
+        tekst = vorm("- a [8.13.01, 8.13.02, 8.13.03]", "| PRF-01 | kijk | 8.13.01, 8.13.02 |")
+        self.assertTrue(any("zonder controle: 8.13.03" in m for m in meldingen(tekst)), meldingen(tekst))
+
+
+class Vorm(unittest.TestCase):
+    GOED = vorm("- a [8.13.01, 8.13.02, 8.13.03]")
+
+    def test_goede_vorm_geeft_niets(self):
+        self.assertEqual(meldingen(self.GOED), [])
+
+    def test_hoofdstukken_vast(self):
+        self.assertTrue(any("hoofdstukken" in m for m in meldingen(self.GOED.replace("## 6. Samenhang", "## 6. Relaties"))))
+
+    def test_regel_in_hoofdstuk_3_zonder_maatregel(self):
+        tekst = vorm("- a [8.13.01, 8.13.02, 8.13.03]\n- los\n  vervolg")
+        self.assertTrue(any("regel zonder maatregel" in m and "los" in m for m in meldingen(tekst)), meldingen(tekst))
+
+    def test_regel_buiten_hoofdstuk_3_mag_zonder_maatregel(self):
+        self.assertEqual(meldingen(self.GOED.replace("- x", "- x\n  vervolg\n- y")), [])
+
+    def test_geen_controleraamwerk(self):
+        self.assertTrue(any("geen controleraamwerk" in m for m in meldingen(vorm("- a [8.13.01, 8.13.02, 8.13.03]", ""))))
+
+    def test_onbekende_afkorting(self):
+        self.assertTrue(any("afkorting" in m and "OWASP" in m for m in meldingen(self.GOED.replace("tekst\n", "OWASP\n", 1))))
+
+    def test_controle_id_en_invulveld_zijn_geen_afkorting(self):
+        self.assertEqual(meldingen(self.GOED.replace("| CISO | kijkt |", "| [[rol: de ROL]] | kijkt |")), [])
 
 
 class EchteSet(unittest.TestCase):

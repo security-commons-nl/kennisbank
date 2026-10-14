@@ -9,133 +9,191 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid back-up en recovery</span></nav><!-- /kruimelpad -->
 <h1>Beleid back-up en recovery</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="back-up.md">Markdown-bron</a></p>
-<p>Beleid informatiebeveiliging, BIO 2.0-domein <em>Back-up &amp; Recovery</em>. Status: concept, vast te stellen door de organisatie zelf.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documenttype</td>
+<td>Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein <em>Back-up &amp; Recovery</em></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Concept, vast te stellen door de organisatie</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td><strong>[eigenaar van dit beleid]</strong></td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td><strong>[vaststeller]</strong></td>
+</tr>
+<tr>
+<td>Evaluatie</td>
+<td>Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging</td>
+</tr>
+</tbody>
+</table>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het maken, bewaren, beschermen en
-terugzetten van back-ups. Het geldt voor alle informatie waarvan de organisatie eigenaar is, waar die ook
-staat: in een eigen omgeving, bij een hostingpartij of in een SaaS-dienst. Het gaat om gegevens en om wat
-nodig is om systemen te herstellen: configuraties, instellingen van netwerk en applicaties, en de inrichting
-van clouddiensten. Het gaat over ISO-beheersmaatregel 8.13.</p>
-<p>Een back-up is geen archief. De bewaarplicht van overheidsinformatie valt onder het archiefbeleid. Uitwijk en
-de keuze welke systemen kritiek zijn, staan in het continuïteitsbeleid.</p>
+terugzetten van back-ups. Het legt vast welke hersteleisen gelden, hoe de back-up beschermd is tegen een
+aanvaller met beheerrechten, waar de kopieën staan en hoe het terugzetten wordt getest, zodat de organisatie
+na verlies, vernietiging of versleuteling van gegevens haar processen binnen de afgesproken tijd hervat. Het
+gaat over ISO-beheersmaatregel 8.13.</p>
+<p><strong>Voor wie.</strong> Het beleid is primair bedoeld voor de beheerorganisatie die de back-up uitvoert of bij
+leveranciers regisseert, voor functioneel beheer van clouddiensten en voor de proces- en systeemeigenaren
+die de hersteleisen vaststellen. Het geldt ook voor leveranciers die back-up en herstel voor de organisatie
+verzorgen.</p>
+<p><strong>Waarop.</strong> Alle informatie waarvan de organisatie eigenaar is, waar die ook staat: in een eigen omgeving,
+bij een hostingpartij of in een SaaS-dienst. Het gaat om gegevens en om wat nodig is om systemen te
+herstellen: configuraties, instellingen van netwerk en applicaties, en de inrichting van clouddiensten. Is
+back-up of herstel uitbesteed, dan gelden de eisen uit dit beleid als minimumeis voor die partij. De
+organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring, zoals een
+ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid
+informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.</p>
+<p>Buiten dit beleid vallen de archivering van overheidsinformatie (een back-up is geen archief; de bewaarplicht
+staat in het archiefbeleid), de uitwijk en de keuze welke systemen kritiek zijn (continuïteitsbeleid), het
+sleutelbeheer voor de versleuteling (beleid cryptografie) en de fysieke beveiliging van opslaglocaties (beleid
+fysieke toegang en beveiliging).</p>
 <h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
 <ol>
-<li>De organisatie is eigenaar van haar gegevens, ook als een leverancier ze verwerkt. Ze zorgt dat er een
-   back-up is die bij het belang van het proces past, of ze die nu zelf maakt of laat maken.</li>
-<li>Ransomware is het scenario waarop de back-up wordt ingericht: een aanvaller met beheerrechten mag de back-up
-   niet kunnen wissen of versleutelen.</li>
-<li>Een back-up waarvan het terugzetten niet getest is, geldt niet als back-up.</li>
+<li>De organisatie is eigenaar van haar gegevens, ook als een leverancier ze verwerkt. Zij zorgt dat er een
+   back-up is die bij het impactniveau van het proces past, of zij die nu zelf maakt of laat maken.</li>
+<li>Ransomware is het scenario waarop de back-up is ingericht: een aanvaller met beheerrechten op de
+   productieomgeving kan de back-up niet wissen of versleutelen.</li>
+<li>Een back-up waarvan het terugzetten niet is getest, geldt niet als back-up.</li>
+<li>Hoe hoger het impactniveau van een systeem, hoe korter de hersteltijd en hoe strikter de scheiding van
+   de kopieën.</li>
 </ol>
 <h2 id="3-beleidsregels">3. Beleidsregels</h2>
-<h3>3.1 Back-upbeleid en scenario's</h3>
-<ul>
-<li>Dit beleid en de back-upplannen per omgeving leggen samen vast wat wordt bewaard, hoe lang, waar en hoe het
-  beschermd is. De back-upplannen volgen dit beleid en worden opgesteld door
-  <strong>[eigenaar back-upplannen]</strong>.
-  [8.13.01]</li>
+<h3>3.1 Back-upplannen en scenario's</h3>
+<ol>
+<li>Dit beleid en de back-upplannen per omgeving leggen samen vast wat wordt bewaard, hoe vaak, hoe lang, waar
+   en hoe het is beschermd. <strong>[eigenaar back-upplannen]</strong>
+   stelt de plannen op, de systeemeigenaar keurt ze goed en zij worden jaarlijks en na elke grote wijziging
+   herzien. [8.13.01]</li>
 <li>De back-up is ten minste ingericht op deze scenario's: een aanval met ransomware of wiperware op de eigen
-  omgeving, een grote verstoring van een datacenter, gegevensverlies in een SaaS-dienst en het per ongeluk of
-  bewust verwijderen van veel gegevens door een gebruiker. [8.13.01]</li>
-</ul>
+   omgeving, een grote verstoring van een datacenter, gegevensverlies in een SaaS-dienst en het per ongeluk of
+   bewust verwijderen van veel gegevens door een gebruiker. Het back-upplan beschrijft per scenario hoe het
+   herstel verloopt. [8.13.01]</li>
+<li><strong>[lijneigenaar back-up]</strong> houdt
+   een back-upregister bij met per systeem en per SaaS-dienst: het back-upplan, de hersteleisen, de locaties
+   van de kopieën, de onveranderbare kopie en de datum van de laatste hersteltest. [8.13.01]</li>
+</ol>
 <h3>3.2 Hersteleisen</h3>
-<ul>
+<ol>
 <li>Per systeem of gegevensverzameling stelt de proceseigenaar het maximale gegevensverlies (RPO) en de
-  maximale hersteltijd (RTO) vast, met een expliciete risicoafweging. Hij legt ook het detailniveau van herstel
-  vast (bijvoorbeeld één bericht, een mailbox of een hele omgeving) en de bewaartermijn van de back-ups.
-  [8.13.02]</li>
-<li>Zolang er voor een systeem geen afweging is, geldt een standaardregime: ten hoogste 24 uur gegevensverlies
-  en een hersteltijd van ten hoogste
-  <strong>[standaard hersteltijd]</strong>.
-  [8.13.02]</li>
-<li>De hersteltijd van een kritiek systeem is korter dan de maximale uitvalsduur van het proces, want na het
-  terugzetten volgen nog controle, koppelingen en communicatie. [8.13.02]</li>
-</ul>
+   maximale hersteltijd (RTO) vast, met een vastgelegde risicoafweging. De proceseigenaar legt ook het
+   detailniveau van herstel vast (bijvoorbeeld één bericht, een mailbox of een hele omgeving) en de
+   bewaartermijn van de back-ups. [8.13.02]</li>
+<li>Zolang er voor een systeem geen afweging is, geldt een standaardregime: ten hoogste 24 uur
+   gegevensverlies en een hersteltijd van ten hoogste <strong>[standaard hersteltijd]</strong>.
+   De eigenaar van de back-upplannen rapporteert jaarlijks welke systemen nog op het standaardregime
+   draaien. [8.13.02]</li>
+<li>De hersteltijd van een systeem met impactniveau kritiek of hoger is korter dan de maximale uitvalsduur
+   van het proces, want na het terugzetten volgen nog controle, koppelingen en communicatie. De
+   proceseigenaar legt de marge vast in het back-upplan. [8.13.02]</li>
+</ol>
 <blockquote>
 <p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
-<ul>
+<ol start="4">
 <li>De hersteleisen voor kritieke systemen komen uit de BIA en het overzicht van kritieke systemen uit het
-  continuïteitsbeleid. Wijkt een back-upplan daarvan af, dan beslist de proceseigenaar. [8.13.02]</li>
-</ul>
+   continuïteitsbeleid. Wijkt een back-upplan daarvan af, dan beslist de proceseigenaar en legt die het
+   besluit vast. [8.13.02]</li>
+</ol>
 <p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen» of «Een crisisteam, zonder BCM-functie»</strong></p>
-<ul>
-<li>Er is geen BIA. De proceseigenaar stelt de hersteleisen vast met de CISO en de systeemeigenaar, op basis van
-  de classificatie van de gegevens en het overzicht van kritieke systemen. [8.13.02]</li>
-</ul>
+<ol start="5">
+<li>Er is geen BIA. De proceseigenaar stelt de hersteleisen vast met de CISO en de systeemeigenaar, op basis
+   van het impactniveau van de gegevens en het overzicht van kritieke systemen, en legt ze vast in het
+   back-upplan. [8.13.02]</li>
+</ol>
 </blockquote>
 <h3>3.3 Bescherming van de back-up</h3>
-<ul>
-<li>Ten minste één kopie van de back-up kan niet worden gewijzigd of gewist binnen de bewaartermijn (immutable of
-  offline), ook niet met de beheerrechten van de productieomgeving. [8.13.01]</li>
-<li>Back-ups zijn versleuteld. De sleutels staan gescheiden van de back-up, in een beheerde sleutelkluis, en zijn
-  ook beschikbaar als de productieomgeving niet werkt. [8.13.01]</li>
-<li>Beheer van de back-upomgeving gaat met aparte, persoonsgebonden accounts met meerfactorauthenticatie, die
-  niet in het gewone domein of de gewone tenant zitten. Verwijderen of verkorten van bewaartermijnen vraagt
-  goedkeuring van een tweede persoon. [8.13.01]</li>
-<li>Elke back-uptaak wordt gecontroleerd op succes. Een mislukte taak wordt dezelfde of de volgende werkdag
-  hersteld of gemeld. [8.13.01]</li>
+<ol>
+<li>Ten minste één kopie van de back-up is binnen de bewaartermijn niet te wijzigen of te wissen
+   (onveranderbaar of offline), ook niet met de beheerrechten van de productieomgeving. De beheerorganisatie
+   toont dat bij elke hersteltest aan. [8.13.01]</li>
+<li>Back-ups zijn versleuteld volgens het beleid cryptografie. De sleutels staan gescheiden van de back-up,
+   in een beheerde sleutelkluis, en zijn ook beschikbaar als de productieomgeving niet werkt. [8.13.01]</li>
+<li>Beheer van de back-upomgeving gaat met aparte, persoonsgebonden accounts met MFA, die niet in het gewone
+   domein of de gewone tenant zitten. Verwijderen of verkorten van bewaartermijnen vraagt goedkeuring van een
+   tweede persoon en wordt gelogd. [8.13.01]</li>
+<li>De beheerorganisatie controleert elke werkdag of alle back-uptaken zijn geslaagd. Een mislukte taak is
+   dezelfde of de volgende werkdag hersteld, of gemeld aan de systeemeigenaar met de reden. De controle en
+   de afhandeling staan in het logboek. [8.13.01]</li>
 <li>Bewaartermijnen passen bij het doel en bij de wet. Gegevens die volgens de archief- of privacyregels
-  vernietigd moeten zijn, verdwijnen uit de back-up aan het eind van de bewaartermijn. [8.13.01]</li>
-</ul>
+   vernietigd moeten zijn, verwijdert de beheerorganisatie uit de back-up aan het eind van de bewaartermijn
+   en legt dat vast. [8.13.01]</li>
+</ol>
 <h3>3.4 Gescheiden opslag</h3>
-<ul>
-<li>Back-ups van kritieke systemen staan op ten minste twee plekken, waarvan één zo gescheiden van de
-  productieomgeving dat een incident op de ene plek (brand, stroomuitval, een aanval op het netwerk of de
-  beheeromgeving) de andere niet raakt. Een vuistregel is 3-2-1: drie kopieën, op twee soorten opslag, één
-  daarvan op een andere locatie. [8.13.03]</li>
-</ul>
+<ol>
+<li>Back-ups van systemen met impactniveau kritiek of hoger staan op ten minste twee plekken, waarvan één zo
+   gescheiden van de productieomgeving dat een incident op de ene plek (brand, stroomuitval, een aanval op
+   het netwerk of de beheeromgeving) de andere niet raakt. Een vuistregel is 3-2-1: drie kopieën, op twee
+   soorten opslag, één daarvan op een andere locatie. Het back-upregister noemt de locaties. [8.13.03]</li>
+</ol>
 <blockquote>
 <p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
-<ul>
+<ol start="2">
 <li>Bij een eigen datacenter staat de gescheiden kopie op een andere fysieke locatie of bij een externe
-  opslagdienst, met een eigen beheeromgeving. Media die worden vervoerd, zijn versleuteld en er is een logboek
-  van waar ze zijn. [8.13.03]</li>
-</ul>
+   opslagdienst, met een eigen beheeromgeving. Media die worden vervoerd, zijn versleuteld en de
+   beheerorganisatie houdt een logboek bij van waar ze zijn. [8.13.03]</li>
+</ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
-<ul>
-<li>Bij een hostingpartij is een gespiegeld tweede datacenter niet genoeg: dat deelt meestal de kwetsbaarheden
-  van het eerste. Het contract regelt daarnaast een kopie bij een andere partij of in een gescheiden omgeving,
-  waar de organisatie zelf bij kan. [8.13.03]</li>
-</ul>
+<ol start="3">
+<li>Bij een hostingpartij is een gespiegeld tweede datacenter niet genoeg, omdat dat de kwetsbaarheden van het
+   eerste deelt. Het contract regelt daarnaast een kopie bij een andere partij of in een gescheiden
+   omgeving, waar de organisatie zelf bij kan. De contracteigenaar controleert dat jaarlijks. [8.13.03]</li>
+</ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
-<ul>
-<li>Voor elke SaaS-dienst die een kritiek proces ondersteunt, weet de organisatie hoe de leverancier back-ups
-  maakt, waar ze staan en hoe lang ze bewaard worden. Biedt de leverancier geen gescheiden kopie, of kan de
-  organisatie er niet zelf bij, dan exporteert de organisatie de gegevens periodiek naar eigen opslag of neemt
-  ze een back-updienst van een andere partij af. [8.13.03]</li>
-</ul>
+<ol start="4">
+<li>Voor elke SaaS-dienst die een kritiek proces ondersteunt, legt functioneel beheer in het back-upregister
+   vast hoe de leverancier back-ups maakt, waar ze staan en hoe lang ze bewaard worden. Biedt de leverancier
+   geen gescheiden kopie, of kan de organisatie er niet zelf bij, dan exporteert de organisatie de gegevens
+   periodiek naar eigen opslag of neemt zij een back-updienst van een andere partij af. [8.13.03]</li>
+</ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)» of «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
-<ul>
+<ol start="5">
 <li>De cloudwerkplek (mail, bestanden, samenwerkruimtes) heeft een eigen back-up buiten de tenant. De
-  ingebouwde prullenbak en versiebeheer van de aanbieder gelden niet als back-up. De back-up omvat ook de
-  inrichting die nodig is voor herstel, zoals groepen, rechten en beleidsinstellingen, voor zover de aanbieder
-  dat mogelijk maakt. [8.13.03]</li>
-</ul>
+   ingebouwde prullenbak en het versiebeheer van de aanbieder gelden niet als back-up. De back-up omvat ook de
+   inrichting die nodig is voor herstel, zoals groepen, rechten en beleidsinstellingen, voor zover de
+   aanbieder dat mogelijk maakt. Functioneel beheer controleert elk kwartaal dat de back-up alle actieve
+   onderdelen dekt. [8.13.03]</li>
+</ol>
 </blockquote>
 <h3>3.5 Herstel en testen</h3>
-<ul>
-<li>Herstel uit een back-up gebeurt na toestemming van de systeemeigenaar. Bij een groot incident of ransomware
-  beslist de proceseigenaar over de opties, op advies van ICT en de CISO. Elke hersteloperatie wordt gelogd.
-  [8.13.04]</li>
-<li>De herstelprocedure wordt elk jaar getest en na elke grote wijziging, zoals een migratie of een nieuwe
-  back-upvoorziening. De test zet echte gegevens terug, controleert of ze volledig en bruikbaar zijn en meet de
-  benodigde tijd tegen de hersteltijd. [8.13.04]</li>
-<li>Ten minste één test per jaar gaat uit van het ransomwarescenario: herstel uit de onveranderbare kopie, in een
-  schone omgeving. [8.13.04]</li>
-</ul>
+<ol>
+<li>Herstel uit een back-up gebeurt na toestemming van de systeemeigenaar. Bij een groot incident of
+   ransomware beslist de proceseigenaar over de opties, op advies van de beheerorganisatie en de CISO. De
+   beheerorganisatie logt elke hersteloperatie met aanvrager, tijdstip en resultaat. [8.13.04]</li>
+<li>De beheerorganisatie test de herstelprocedure van elk systeem met impactniveau kritiek of hoger elk
+   jaar en na elke grote wijziging, zoals een migratie of een nieuwe back-upvoorziening. De test zet echte
+   gegevens terug, controleert of ze volledig en bruikbaar zijn en meet de benodigde tijd tegen de
+   hersteltijd. De uitkomst staat in een testverslag. [8.13.04]</li>
+<li>Ten minste één test per jaar gaat uit van het ransomwarescenario: herstel uit de onveranderbare kopie,
+   in een schone omgeving, zonder gebruik van de beheeraccounts van productie. [8.13.04]</li>
+<li>Haalt een test de hersteltijd niet, dan past de systeemeigenaar binnen drie maanden het back-upplan of de
+   voorziening aan, of accepteert de proceseigenaar het risico vastgelegd. [8.13.04, 8.13.02]</li>
+</ol>
 <blockquote>
 <p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
-<ul>
-<li>De eigen beheerorganisatie voert de tests uit en legt ze vast in een testverslag met tijden en bevindingen.
-  [8.13.04]</li>
-</ul>
+<ol start="5">
+<li>De eigen beheerorganisatie voert de tests uit en legt ze vast in een testverslag met tijden, bevindingen
+   en opvolging. [8.13.04]</li>
+</ol>
 <p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
-<ul>
+<ol start="6">
 <li>Back-up en herstel liggen bij de beheerpartij. Het contract verplicht die partij om de tests uit te voeren
-  met de organisatie erbij, de verslagen te leveren en ook kopieën te maken en te testen van onderdelen die bij
-  andere leveranciers liggen, of dat expliciet uit te sluiten. De regieorganisatie houdt het overzicht welke
-  leverancier welk deel van de back-up doet. [8.13.04]</li>
-</ul>
+   met de organisatie erbij, de verslagen te leveren en ook kopieën te maken en te testen van onderdelen die
+   bij andere leveranciers liggen, of dat expliciet uit te sluiten. De regieorganisatie houdt in het
+   back-upregister bij welke leverancier welk deel van de back-up doet. [8.13.04]</li>
+</ol>
 </blockquote>
 <h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
 <table>
@@ -147,78 +205,228 @@ de keuze welke systemen kritiek zijn, staan in het continuïteitsbeleid.</p>
 </thead>
 <tbody>
 <tr>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Eigenaar van dit beleid; uitvoering of regie van back-up en herstel, dagelijkse controle, hersteltests en het back-upregister</td>
+</tr>
+<tr>
 <td>Proceseigenaar</td>
-<td>Hersteleisen en bewaartermijnen, besluit over herstel bij grote incidenten</td>
+<td>Hersteleisen en bewaartermijnen, besluit over herstel bij grote incidenten, acceptatie van een niet gehaalde hersteltijd</td>
 </tr>
 <tr>
 <td>Systeemeigenaar</td>
-<td>Back-upplan van zijn systeem, toestemming voor herstel</td>
+<td>Goedkeuring van het back-upplan van zijn systeem, toestemming voor herstel, aanpassing na een mislukte test</td>
 </tr>
 <tr>
-<td><strong>[lijneigenaar back-up]</strong></td>
-<td>Uitvoering, dagelijkse controle, tests en het back-upregister</td>
+<td><strong>[eigenaar back-upplannen]</strong></td>
+<td>Opstellen en jaarlijks herzien van de back-upplannen, rapportage over systemen op het standaardregime</td>
 </tr>
 <tr>
 <td>Functioneel beheer</td>
 <td>Back-up en herstel van SaaS-diensten en de cloudwerkplek, samen met de leverancier</td>
 </tr>
 <tr>
+<td>Contracteigenaar</td>
+<td>Vastleggen van de eisen uit dit beleid bij leveranciers en toetsen van hun verklaringen en testverslagen</td>
+</tr>
+<tr>
 <td>CISO</td>
-<td>Advies, toetsing van dit beleid en van de bescherming tegen ransomware</td>
+<td>Advies, jaarlijkse toetsing van dit beleid en van de bescherming tegen ransomware, beoordeling van afwijkingen</td>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-bewaking">5. Naleving en bewaking</h2>
-<ul>
-<li>Dagelijks: controle op mislukte back-uptaken; bewijs is het logboek met de afhandeling.</li>
-<li>Jaarlijks: overzicht van de hersteltests per kritiek systeem, met gemeten hersteltijd tegen de eis; bewijs
-  zijn de testverslagen.</li>
-<li>Jaarlijks: controle dat het back-upregister volledig is: elk kritiek systeem en elke SaaS-dienst met een
-  kritiek proces heeft een back-upplan, een gescheiden kopie en een onveranderbare kopie.</li>
-<li>Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.</li>
-</ul>
+<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>; afwijkingen gaan als bevinding naar het
+risicoregister.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+<th>Bewijs</th>
+<th>Maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BUR-01</td>
+<td>Alle back-uptaken van de afgelopen maand zijn gecontroleerd en elke mislukte taak is binnen een werkdag hersteld of gemeld</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Maandelijks</td>
+<td>Logboek van de back-uptaken met de afhandeling per mislukte taak</td>
+<td>8.13.01</td>
+</tr>
+<tr>
+<td>BUR-02</td>
+<td>Het back-upregister is volledig: elk systeem met impactniveau kritiek of hoger en elke SaaS-dienst met een kritiek proces heeft een goedgekeurd back-upplan van ten hoogste een jaar oud, vastgestelde hersteleisen, een gescheiden kopie en een onveranderbare kopie</td>
+<td><strong>[eigenaar back-upplannen]</strong></td>
+<td>Jaarlijks</td>
+<td>Back-upregister vergeleken met het overzicht van kritieke systemen en de inventaris van bedrijfsmiddelen</td>
+<td>8.13.01, 8.13.02, 8.13.03</td>
+</tr>
+<tr>
+<td>BUR-03</td>
+<td>Elk systeem heeft vastgestelde hersteleisen met een risicoafweging, of staat gemeld op het standaardregime; de hersteltijd van kritieke systemen ligt onder de maximale uitvalsduur</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Rapportage over het standaardregime, steekproef van vijf back-upplannen tegen de BIA of het overzicht van kritieke systemen</td>
+<td>8.13.02</td>
+</tr>
+<tr>
+<td>BUR-04</td>
+<td>De onveranderbare kopie is niet te wissen met de beheerrechten van productie, de back-upaccounts staan buiten het gewone domein met MFA, en het verkorten van bewaartermijnen vereist een tweede persoon</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+<td>Testpoging tot verwijderen met het resultaat, lijst van back-upaccounts, logging van de goedkeuringen</td>
+<td>8.13.01</td>
+</tr>
+<tr>
+<td>BUR-05</td>
+<td>De gescheiden kopie staat op een locatie die een incident op de productielocatie niet raakt, en bij leveranciers is dat in het contract en met een verklaring aangetoond</td>
+<td>Contracteigenaar</td>
+<td>Jaarlijks</td>
+<td>Back-upregister met de locaties, contracten, verklaringen en testverslagen van leveranciers</td>
+<td>8.13.03</td>
+</tr>
+<tr>
+<td>BUR-06</td>
+<td>Elk kritiek systeem heeft in het afgelopen jaar een hersteltest gehad die de hersteltijd haalde, waaronder ten minste één test van het ransomwarescenario uit de onveranderbare kopie</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Jaarlijks</td>
+<td>Testverslagen met gemeten tijd tegen de eis, opvolging van niet gehaalde tests</td>
+<td>8.13.04</td>
+</tr>
+<tr>
+<td>BUR-07</td>
+<td>Elke hersteloperatie is gelogd met toestemming van de systeemeigenaar</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Per kwartaal</td>
+<td>Logboek van hersteloperaties met de toestemmingen</td>
+<td>8.13.04</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Afwijkingen.</strong> Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+systeemeigenaar dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd.
+De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaar]</strong>
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
+<p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
 <h2 id="6-samenhang">6. Samenhang</h2>
-<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het hangt samen met het continuïteitsbeleid
-(kritieke systemen en uitwijk), het beleid informatiebeveiliging bij inkoop en contractbeheer (afspraken met
-leveranciers), het beleid cryptografie (sleutelbeheer), het beleid logische toegang (beheeraccounts) en het
-archiefbeleid (bewaartermijnen).</p>
-<h2 id="bijlage-bio-2-0-maatregelen">Bijlage: BIO 2.0-maatregelen</h2>
-<p>De overheidsmaatregelen van dit domein (4) en waar dit stuk ze invult. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP.</p>
+<p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het hangt samen met het
+continuïteitsbeleid (kritieke systemen, BIA en uitwijk), het beleid informatieclassificatie (impactniveau
+als maat voor de hersteleisen), het beleid informatiebeveiliging bij inkoop en contractbeheer (afspraken
+met en verklaringen van leveranciers), het beleid cryptografie (versleuteling en sleutelbeheer), het beleid
+logische toegangsbeveiliging (beheeraccounts), het beleid fysieke toegang en beveiliging (opslaglocaties),
+het beleid beveiligingsincidenten (herstel na ransomware) en het archiefbeleid (bewaartermijnen).</p>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<p>De maatregelen van dit domein (4, waarvan 4 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
 <table>
 <thead>
 <tr>
 <th>Maatregel</th>
 <th>Titel</th>
+<th>Soort</th>
 <th>In dit stuk</th>
+<th>Controle</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>8.13.01</td>
 <td>Back-up van informatie</td>
-<td>3.1 Back-upbeleid en scenario's</td>
+<td>overheidsmaatregel</td>
+<td>3.1 Back-upplannen en scenario's</td>
+<td>BUR-01, BUR-02, BUR-04</td>
 </tr>
 <tr>
 <td>8.13.02</td>
 <td>Back-up van informatie</td>
+<td>overheidsmaatregel</td>
 <td>3.2 Hersteleisen</td>
+<td>BUR-02, BUR-03</td>
 </tr>
 <tr>
 <td>8.13.03</td>
 <td>Back-up van informatie</td>
+<td>overheidsmaatregel</td>
 <td>3.4 Gescheiden opslag</td>
+<td>BUR-02, BUR-05</td>
 </tr>
 <tr>
 <td>8.13.04</td>
 <td>Back-up van informatie</td>
+<td>overheidsmaatregel</td>
 <td>3.5 Herstel en testen</td>
+<td>BUR-06, BUR-07</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<table>
+<thead>
+<tr>
+<th>Afkorting</th>
+<th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BCM</td>
+<td>Business continuity management, het beheer van bedrijfscontinuïteit</td>
+</tr>
+<tr>
+<td>BIA</td>
+<td>Business impact analyse</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Chief Information Security Officer</td>
+</tr>
+<tr>
+<td>ISAE</td>
+<td>International Standard on Assurance Engagements</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>International Organization for Standardization</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>Informatietechnologie</td>
+</tr>
+<tr>
+<td>IaaS</td>
+<td>Infrastructure as a service</td>
+</tr>
+<tr>
+<td>MFA</td>
+<td>Meerfactorauthenticatie</td>
+</tr>
+<tr>
+<td>RPO</td>
+<td>Recovery point objective, het maximaal toelaatbare gegevensverlies</td>
+</tr>
+<tr>
+<td>RTO</td>
+<td>Recovery time objective, de maximaal toelaatbare hersteltijd</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>Software as a service</td>
 </tr>
 </tbody>
 </table>
 <h2 id="nog-in-te-vullen">Nog in te vullen</h2>
 <ul>
 <li><strong>eigenaar back-upplannen</strong>: de functie die de back-upplannen opstelt, bijvoorbeeld de informatiemanager</li>
-<li><strong>standaard hersteltijd</strong>: bijvoorbeeld 16 werkuren</li>
 <li><strong>lijneigenaar back-up</strong>: de manager die back-up en herstel uitvoert of bij leveranciers regisseert</li>
+<li><strong>standaard hersteltijd</strong>: bijvoorbeeld 16 werkuren</li>
+<li><strong>registratie van controles</strong></li>
+<li><strong>risico-eigenaar</strong>: de manager die restrisico's accepteert</li>
+<li><strong>eigenaar van dit beleid</strong>: de manager die dit beleid uitvoert en laat naleven</li>
+<li><strong>vaststeller</strong>: wie het beleid vaststelt, bijvoorbeeld de directie of het bestuur</li>
 </ul>
 <!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

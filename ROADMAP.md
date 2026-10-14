@@ -22,7 +22,7 @@ handboek. De beleidsset informatiebeveiliging die op 12 oktober onder `governanc
 teruggetrokken: de meeste stukken waren nog onder BIO 1 vastgesteld, en een gemeente heeft actuele stukken
 nodig. Dezelfde dag kwam hij terug, herschreven op BIO 2.0 versie 1.3 als 21 bouwstenen met een generator
 die per antwoordprofiel op zestien contextvragen een eigen set maakt; een test bewijst bij elk profiel dat
-alle 117 overheidsmaatregelen gedekt zijn.
+alle 117 overheidsmaatregelen en de 40 ISO-beheersmaatregelen zonder overheidsmaatregel gedekt zijn, elk met een controle.
 
 ## Wat open staat
 

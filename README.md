@@ -40,7 +40,7 @@ is er [`llms.txt`](https://security-commons-nl.github.io/kennisbank/llms.txt), g
 **Beleid.** Onder governance staat een
 [beleidsset informatiebeveiliging op BIO 2.0](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/) die je op maat
 maakt: beantwoord een paar contextvragen en de [generator](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/beleidsset-generator.html) stelt per
-domein een conceptbeleid samen dat alle 117 overheidsmaatregelen dekt. Onder privacy staat een
+domein een conceptbeleid samen dat alle 117 overheidsmaatregelen en de 40 ISO-beheersmaatregelen dekt. Onder privacy staat een
 [privacybeleid met handboek](https://security-commons-nl.github.io/kennisbank/privacy/privacybeleid-en-handboek/),
 met een strategisch privacybeleid. Het is een voorbeeld van een samenwerking van gemeenten, geen model van
 de IBD; die staan er als bron bij.

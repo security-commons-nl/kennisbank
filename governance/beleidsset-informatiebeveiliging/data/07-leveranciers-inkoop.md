@@ -6,15 +6,29 @@ titel: Beleid informatiebeveiliging bij inkoop
 ## 1. Doel en reikwijdte
 
 Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de inkoop van producten en diensten
-waarbij informatie wordt verwerkt, opgeslagen of ontsloten. Het regelt wat de organisatie vastlegt vóórdat een
-contract wordt getekend: de eisen in de uitvraag, de voorwaarden in het contract, het bewijs dat de
-leverancier levert en de exit. Het geldt voor elke inkoop met een informatiecomponent, ook onderhands en ook
-bij verlenging of uitbreiding van een bestaand contract. Het gaat over de ISO-beheersmaatregelen 5.19, 5.20
-en 5.21 voor zover die vóór het contract spelen.
+waarbij een leverancier informatie van de organisatie verwerkt, opslaat of ontsluit, of toegang krijgt tot
+haar systemen. Het legt vast wat de organisatie regelt voordat een contract wordt getekend: de risicoafweging,
+de eisen in de uitvraag, de voorwaarden in het contract, het bewijs dat de leverancier levert, de meldplicht
+van de leverancier, de exit en de keten van toeleveranciers. Het gaat over de ISO-beheersmaatregelen 5.19,
+5.20 en 5.21, voor zover die vóór het contract spelen.
 
-Het beheer van de leverancier tijdens de looptijd (jaarlijkse beoordeling, ketenwijzigingen, register van
-contracten, beleid voor clouddiensten) staat in het beleid contractbeheer. De verwerkersovereenkomst volgt
-uit het privacybeleid; dit beleid verwijst ernaar.
+**Voor wie.** Het beleid is primair bedoeld voor de inkoopfunctie, de proceseigenaren die een inkoop starten
+en de CISO die adviseert. Het geldt voor iedereen die namens de organisatie een contract met een
+informatiecomponent voorbereidt of tekent, ook bij een onderhandse opdracht, een verlenging, een uitbreiding
+of een gratis dienst.
+
+**Waarop.** Elke inkoop waarbij de leverancier informatie van de organisatie verwerkt of bij haar systemen
+kan: software, clouddiensten, hosting, beheerdiensten, koppelingen, hardware met onderhoud op afstand en
+adviesdiensten met toegang tot informatie. Is het inkoopproces zelf uitbesteed, bijvoorbeeld aan een
+inkoopbureau of een samenwerkingsverband, dan gelden de eisen uit dit beleid als minimumeis voor die partij.
+De organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring, zoals
+een ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via dit beleid, het
+toetsen via het beleid contractbeheer.
+
+Buiten dit beleid vallen het beheer van de leverancier tijdens de looptijd, het register van contracten, de
+jaarlijkse beoordeling en de werkwijze voor clouddiensten (beleid contractbeheer), de inhoud van de
+verwerkersovereenkomst (privacybeleid) en de eisen aan software die een leverancier voor de organisatie
+ontwikkelt (beleid secure software development).
 
 ::: als beheer=regie,uitbesteed
 De organisatie heeft het beheer van haar IT uitbesteed. De contracten met beheer- en hostingpartijen zijn
@@ -27,8 +41,8 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
    certificaat of verklaring van de leverancier verandert daar niets aan.
 2. Beveiligingseisen staan in de uitvraag. Wat pas na de gunning wordt bedacht, is in de onderhandeling niet
    meer te krijgen.
-3. De zwaarte van de eisen volgt uit een risicoafweging per inkoop, op basis van de classificatie van de
-   informatie en het belang van het proces.
+3. De zwaarte van de eisen volgt uit een risicoafweging per inkoop, op basis van het impactniveau en het
+   vertrouwelijkheidslabel van de informatie (beleid informatieclassificatie) en het belang van het proces.
 4. Bij IT-inkoop gebruikt de organisatie een standaardset inkoopvoorwaarden voor IT, bijvoorbeeld de GIBIT
    voor gemeenten of de ARBIT voor het Rijk, en vult die per inkoop aan.
 
@@ -36,91 +50,105 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
 
 ### 3.1 Risicoafweging en eisen in de uitvraag
 
-- Bij elke inkoop met een informatiecomponent stelt de proceseigenaar met de inkoopadviseur en de CISO vast
-  welke informatie de leverancier verwerkt, welk classificatieniveau die heeft en welke eisen aan
-  beschikbaarheid, integriteit en vertrouwelijkheid daaruit volgen. De afweging wordt vastgelegd in het
-  inkoopdossier. [5.19.01]
-- De eisen uit die afweging staan in de offerteaanvraag of uitvraag, naast de functionele eisen, en wegen mee
-  in de beoordeling van de inschrijvingen. Een inschrijver die niet aan een eis kan voldoen, zegt dat in de
-  inschrijving. [5.19.01]
-- Bij een inkoop onder de drempel voor een risicoafweging (bijvoorbeeld een dienst zonder persoonsgegevens en
-  zonder koppeling met eigen systemen) volstaat de standaardset eisen. De drempel staat in
+- Bij elke inkoop met een informatiecomponent stelt de proceseigenaar vóór de uitvraag, samen met
+  [[inkoopadviseur: de functie die het inkoopproces begeleidt]] en de CISO, vast welke informatie de
+  leverancier verwerkt, welk impactniveau en welk vertrouwelijkheidslabel die heeft en welke eisen aan
+  beschikbaarheid, integriteit en vertrouwelijkheid daaruit volgen. De afweging staat in het inkoopdossier.
+  [5.19.01]
+- De inkoopadviseur neemt de eisen uit die afweging op in de offerteaanvraag of uitvraag, naast de
+  functionele eisen, en laat ze meewegen in de beoordeling van de inschrijvingen. Een inschrijver die niet
+  aan een eis kan voldoen, zegt dat in de inschrijving; de proceseigenaar legt vast of dat aanvaardbaar is.
+  [5.19.01]
+- Bij een inkoop onder de drempel voor een risicoafweging, bijvoorbeeld een dienst zonder persoonsgegevens
+  en zonder koppeling met eigen systemen, past de inkoopadviseur de standaardset eisen toe en legt dat vast
+  in het inkoopdossier. De drempel staat in
   [[drempel risicoafweging inkoop: de criteria waaronder een inkoop met de standaardset eisen kan]].
   [5.19.01]
+- De CISO houdt de standaardset eisen bij en stelt die jaarlijks opnieuw vast, zodat nieuwe dreigingen en
+  nieuwe wettelijke eisen erin landen. [5.19.01]
 
 ::: als cbw=essentieel,belangrijk
 - De organisatie valt onder de Cyberbeveiligingswet. De zorgplicht omvat de beveiliging van de
   toeleveringsketen. Bij inkoop van een dienst die een rol speelt in de dienstverlening onder die wet, legt de
-  risicoafweging ook vast hoe de leverancier bijdraagt aan het voldoen aan de meldplicht en welke eisen de
-  bestuurder daarvoor heeft goedgekeurd. [5.19.01]
+  proceseigenaar in de risicoafweging ook vast hoe de leverancier bijdraagt aan het voldoen aan de meldplicht
+  en welke eisen de bestuurder daarvoor heeft goedgekeurd. [5.19.01]
 :::
 
 ### 3.2 Voorwaarden in het contract
 
-- Alle beveiligingseisen uit de uitvraag komen letterlijk of als verwijzing in het contract, met de
-  afspraken die in de onderhandeling zijn gemaakt. Een eis die in de uitvraag stond en niet in het contract,
-  geldt als vervallen en vraagt een besluit van de proceseigenaar. [5.20.01]
+- De inkoopadviseur zet alle beveiligingseisen uit de uitvraag letterlijk of als verwijzing in het contract,
+  met de afspraken uit de onderhandeling. Een eis die in de uitvraag stond en niet in het contract, geldt als
+  vervallen en vraagt een vastgelegd besluit van de proceseigenaar vóór ondertekening. [5.20.01]
 - De organisatie verklaart haar eigen inkoopvoorwaarden van toepassing en wijst de algemene voorwaarden van
-  de leverancier uitdrukkelijk van de hand. [5.20.02]
+  de leverancier in het contract uitdrukkelijk van de hand. [5.20.02]
 - Lukt dat niet, bijvoorbeeld bij een standaarddienst van een grote aanbieder, dan beoordeelt de CISO de
-  voorwaarden van de leverancier. De beoordeling noemt welke gevolgen de organisatie accepteert, welke ze met
-  eigen maatregelen afdekt en welke voorwaarden ze nooit accepteert. De proceseigenaar tekent voor de
-  geaccepteerde risico's. [5.20.02]
+  voorwaarden van de leverancier vóór ondertekening. De beoordeling noemt welke gevolgen de organisatie
+  accepteert, welke ze met eigen maatregelen afdekt en welke voorwaarden ze nooit accepteert. De
+  proceseigenaar tekent voor de geaccepteerde risico's en de beoordeling gaat in het inkoopdossier. [5.20.02]
 - Voorwaarden die de organisatie nooit accepteert, staan in
   [[lijst onaanvaardbare voorwaarden: bijvoorbeeld eenzijdig wijzigen van de beveiligingsafspraken of gebruik van gegevens voor eigen doelen van de leverancier]].
-  [5.20.02]
-- Verwerkt de leverancier persoonsgegevens, of kan hij erbij, dan sluit de organisatie een
-  verwerkersovereenkomst volgens het privacybeleid, voordat de verwerking begint.
+  De CISO stelt die lijst jaarlijks opnieuw vast. [5.20.02]
+- Verwerkt de leverancier persoonsgegevens, of kan hij erbij, dan sluit de proceseigenaar een
+  verwerkersovereenkomst volgens het privacybeleid voordat de verwerking begint. De inkoopadviseur legt in
+  het inkoopdossier vast dat die overeenkomst er is. [5.20.01]
 
 ### 3.3 Bewijs van de leverancier en eigen onderzoek
 
 - Het contract verplicht de leverancier om aan te tonen dat hij aan de eisen voldoet, in opzet, bestaan en
   werking, met een rapport van een onafhankelijke derde. Voorbeelden zijn een ISAE 3000- of ISAE
-  3402-rapport type II of een ISO 27001-certificaat met een verklaring van toepasselijkheid. [5.20.03]
-- De reikwijdte van dat rapport dekt de gecontracteerde dienst, inclusief de manier waarop de leverancier zijn
-  eigen toeleveranciers beheert. Valt een deel van de dienst buiten de reikwijdte, dan levert de leverancier
-  voor dat deel ander bewijs. [5.20.03]
-- De leverancier levert het bewijs bij het sluiten van het contract en daarna elk jaar opnieuw. [5.20.03]
+  3402-rapport van type 2 of een ISO 27001-certificaat met een verklaring van toepasselijkheid. [5.20.03]
+- De CISO controleert vóór ondertekening dat de reikwijdte van dat rapport de gecontracteerde dienst dekt,
+  inclusief de manier waarop de leverancier zijn eigen toeleveranciers beheert. Valt een deel van de dienst
+  buiten de reikwijdte, dan levert de leverancier voor dat deel ander bewijs, en de CISO legt vast of dat
+  volstaat. [5.20.03]
+- Het contract verplicht de leverancier om het bewijs bij het sluiten van het contract te leveren en daarna
+  elk jaar opnieuw. De jaarlijkse levering wordt bewaakt volgens het beleid contractbeheer. [5.20.03]
 - Het contract geeft de organisatie het recht om zelf een audit of een technisch onderzoek te laten doen,
   bijvoorbeeld een penetratietest, ook om de rapporten van de leverancier te controleren. De verdeling van de
   kosten staat in het contract. [5.20.04]
-- Restrisico's uit het bewijs of het eigen onderzoek gaan naar het risicoregister en worden behandeld volgens
-  de risicomanagementmethodiek van de organisatie. [5.20.04]
+- Restrisico's uit het bewijs of het eigen onderzoek zet de proceseigenaar vóór ondertekening in het
+  risicoregister en behandelt ze volgens de risicomanagementmethodiek van de organisatie. [5.20.04]
 
 ### 3.4 Transparantie over kwetsbaarheden en incidenten
 
 - Het contract verplicht de leverancier om beveiligingsincidenten, datalekken en kwetsbaarheden die de dienst
-  aan de organisatie kunnen raken, te melden bij het meldpunt van de organisatie. De termijn staat in het
-  contract en is kort genoeg om de wettelijke meldtermijnen van de organisatie te halen. [5.20.05]
-- De leverancier geeft bij een melding wat de organisatie nodig heeft om te reageren: wat er is gebeurd,
-  welke gegevens en welke gebruikers geraakt zijn, en welke maatregelen hij neemt. [5.20.05]
+  aan de organisatie kunnen raken, te melden bij het meldloket van de organisatie (beleid
+  beveiligingsincidenten). De termijn staat in het contract en is kort genoeg om de wettelijke meldtermijnen
+  van de organisatie te halen; voor een datalek is dat ten hoogste 24 uur na ontdekking, zodat de melding
+  aan de Autoriteit Persoonsgegevens binnen 72 uur kan. [5.20.05]
+- Het contract legt vast wat de leverancier bij een melding aanlevert: wat er is gebeurd, welke gegevens en
+  welke gebruikers geraakt zijn, welke maatregelen hij neemt en wanneer hij de melding aanvult. [5.20.05]
 
 ::: als cbw=essentieel,belangrijk
 - Voor diensten die onder de Cyberbeveiligingswet vallen, is de meldtermijn van de leverancier ten hoogste
   [[meldtermijn leverancier: bijvoorbeeld 12 uur, zodat de vroege waarschuwing binnen 24 uur kan]]
-  na ontdekking. Het contract regelt ook dat de leverancier meewerkt aan de vervolgmeldingen. [5.20.05]
+  na ontdekking. Het contract regelt ook dat de leverancier meewerkt aan de vervolgmeldingen binnen 72 uur en
+  aan het eindrapport binnen een maand. [5.20.05]
 :::
 
 ### 3.5 Afhankelijkheid en exit
 
 - Vóór het contract beoordeelt de proceseigenaar of de afhankelijkheid van de leverancier beheersbaar is: zijn
-  er alternatieven, hoe lang duurt een overstap, en kan de organisatie haar gegevens in een bruikbaar formaat
-  terugkrijgen. [5.20.06]
-- Elk contract voor een dienst die een kritiek proces ondersteunt of vertrouwelijke informatie verwerkt, bevat
-  een uitgewerkte exitregeling: het teruggeven van gegevens in een open of gedocumenteerd formaat, de
-  medewerking bij overdracht aan een opvolger, de termijn waarin de leverancier gegevens verwijdert en het
-  bewijs daarvan. [5.20.06]
+  er alternatieven, hoe lang duurt een overstap en kan de organisatie haar gegevens in een bruikbaar formaat
+  terugkrijgen. De uitkomst staat in het inkoopdossier. [5.20.06]
+- Elk contract voor een dienst die een kritiek proces ondersteunt of informatie met het label vertrouwelijk
+  of hoger verwerkt, bevat een uitgewerkte exitregeling: het teruggeven van gegevens in een open of
+  gedocumenteerd formaat, de medewerking bij overdracht aan een opvolger, de termijn waarin de leverancier
+  gegevens verwijdert en het bewijs daarvan. De inkoopadviseur controleert vóór ondertekening dat de regeling
+  erin staat. [5.20.06]
 - Bij software die de organisatie in eigen beheer draait en die niet makkelijk te vervangen is, regelt het
   contract een escrow of een gelijkwaardige continuïteitsregeling. [5.20.06]
 
 ### 3.6 Keten van toeleveranciers
 
 - Vóór het contract geeft de leverancier een overzicht van de toeleveranciers die bij de dienst betrokken
-  zijn, met hun rol, de locatie van de verwerking en de risico's die hij daarin ziet. [5.21.02]
-- De CISO beoordeelt of die risico's acceptabel zijn. De proceseigenaar besluit, en legt het besluit vast in
-  het inkoopdossier. [5.21.02]
-- Het contract verbiedt de leverancier om zonder schriftelijke toestemming werk aan een nieuwe toeleverancier
-  over te dragen.
+  zijn, met hun rol, de locatie van de verwerking en de risico's die hij daarin ziet. De inkoopadviseur
+  neemt het overzicht op in het inkoopdossier. [5.21.02]
+- De CISO beoordeelt vóór ondertekening of de risico's in de keten aanvaardbaar zijn. De proceseigenaar
+  besluit en legt het besluit vast in het inkoopdossier. [5.21.02]
+- Het contract verbiedt de leverancier om zonder schriftelijke toestemming van de organisatie werk aan een
+  nieuwe toeleverancier over te dragen, en verplicht hem om de beveiligingseisen aan zijn toeleveranciers
+  door te geven. [5.21.02]
 
 ### 3.7 Eisen per soort dienst
 
@@ -148,7 +176,9 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   staan zonder tussenkomst van een Europese rechter. De leverancier geeft daarover een verklaring, en het
   contract regelt wat er gebeurt als dat verandert. [5.20.01]
 - Waar de markt geen dienst levert die hieraan voldoet, legt de proceseigenaar de afwijking met het restrisico
-  vast en beoordeelt de CISO die. [[besluitvormer afwijking soevereiniteit: wie de afwijking goedkeurt]]
+  vast, beoordeelt de CISO die en keurt
+  [[besluitvormer afwijking soevereiniteit: wie de afwijking goedkeurt]] de afwijking goed vóór
+  ondertekening. [5.20.01]
 :::
 
 ::: als beheer=eigen
@@ -163,32 +193,55 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   (patchen, kwetsbaarheden, wijzigingen, back-up). [5.20.01]
 :::
 
+### 3.8 Inkoopdossier en overdracht
+
+- Elk inkoopdossier bevat vóór ondertekening: de risicoafweging, de eisen, de beoordeling van de voorwaarden,
+  het eerste bewijs van de leverancier, het overzicht en de beoordeling van de keten, de exitregeling en, waar
+  nodig, de verwerkersovereenkomst. Zonder die stukken geeft de CISO geen positief advies en tekent de
+  proceseigenaar niet. [5.19.01, 5.20.01]
+- Na ondertekening draagt de inkoopadviseur het inkoopdossier binnen een maand over aan
+  [[contracteigenaar: de functie die het contract na ondertekening beheert]], zodat het contract in het
+  register van leveranciers en contracten komt (beleid contractbeheer). [5.20.01]
+
 ## 4. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
-| Proceseigenaar | Risicoafweging per inkoop, besluit over restrisico's, afhankelijkheid en exit |
-| [[inkoopadviseur: de functie die het inkoopproces begeleidt]] | Opnemen van de eisen in uitvraag en contract, het inkoopdossier |
-| CISO | Advies over de eisen, beoordeling van voorwaarden, bewijs en keten van toeleveranciers |
+| Proceseigenaar | Risicoafweging per inkoop, besluit over vervallen eisen en restrisico's, afhankelijkheid en exit, keten van toeleveranciers, verwerkersovereenkomst |
+| [[inkoopadviseur]] | Opnemen van de eisen in uitvraag en contract, van de hand wijzen van algemene voorwaarden, het inkoopdossier en de overdracht aan contractbeheer |
+| CISO | Eigenaar van dit beleid, de standaardset eisen en de lijst onaanvaardbare voorwaarden; advies per inkoop; beoordeling van voorwaarden, bewijs en keten; jaarlijkse toetsing van opzet en werking |
 | Privacy officer of FG | Advies over de verwerkersovereenkomst en de verwerking van persoonsgegevens |
-| [[contracteigenaar: de functie die het contract na ondertekening beheert]] | Overdracht van het inkoopdossier naar contractbeheer |
+| [[contracteigenaar]] | Ontvangst van het inkoopdossier en opname in het register van leveranciers en contracten |
 
-## 5. Naleving en bewaking
+## 5. Naleving en controle
 
-- Per inkoop: het inkoopdossier bevat de risicoafweging, de eisen, de beoordeling van de keten van
-  toeleveranciers en het eerste bewijs van de leverancier. Zonder die stukken geeft de CISO geen positief
-  advies.
-- Jaarlijks: steekproef van ten minste
-  [[aantal steekproef inkoop: bijvoorbeeld vijf inkopen met een informatiecomponent]]
-  op de aanwezigheid en kwaliteit van die stukken en op het van de hand wijzen van algemene voorwaarden;
-  bewijs is het verslag van de steekproef.
-- Jaarlijks: controle of de standaardset eisen en de lijst onaanvaardbare voorwaarden nog actueel zijn.
-- Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.
+**Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
+afwijkingen gaan als bevinding naar het risicoregister.
+
+| Nr | Controle | Uitvoerder | Frequentie | Bewijs | Maatregelen |
+|---|---|---|---|---|---|
+| INK-01 | Het inkoopdossier bevat vóór ondertekening de risicoafweging en de eisen, en de eisen staan in de uitvraag en het contract | CISO | Per inkoop boven de drempel | Advies van de CISO in het inkoopdossier | 5.19.01, 5.20.01 |
+| INK-02 | De algemene voorwaarden van de leverancier zijn van de hand gewezen, of de beoordeling van de voorwaarden en de ondertekening voor de geaccepteerde risico's zitten in het dossier | [[inkoopadviseur]] | Per inkoop | Contract en beoordeling in het inkoopdossier | 5.20.02 |
+| INK-03 | Het eerste bewijs van de leverancier is geleverd, dekt de dienst en het auditrecht staat in het contract; restrisico's staan in het risicoregister | CISO | Per inkoop boven de drempel | Rapport of certificaat, beoordeling van de reikwijdte, contract, risicoregister | 5.20.03, 5.20.04 |
+| INK-04 | De meldplicht van de leverancier met termijn en inhoud, de exitregeling en, waar nodig, de escrow staan in het contract | [[inkoopadviseur]] | Per inkoop boven de drempel | Contract met de betreffende artikelen | 5.20.05, 5.20.06 |
+| INK-05 | Het overzicht van toeleveranciers is geleverd en beoordeeld, en het verbod op overdracht zonder toestemming staat in het contract | CISO | Per inkoop boven de drempel | Overzicht, beoordeling en besluit in het inkoopdossier | 5.21.02 |
+| INK-06 | Steekproef van ten minste [[aantal steekproef inkoop: bijvoorbeeld vijf inkopen met een informatiecomponent]] op volledigheid van het inkoopdossier, toepassing van de drempel en overdracht aan contractbeheer binnen een maand | CISO | Jaarlijks | Verslag van de steekproef met de bevindingen | 5.19.01, 5.20.01, 5.20.02, 5.20.03, 5.20.04, 5.20.05, 5.20.06, 5.21.02 |
+| INK-07 | De standaardset eisen en de lijst onaanvaardbare voorwaarden zijn opnieuw vastgesteld | CISO | Jaarlijks | Vastgestelde versie met datum | 5.19.01, 5.20.02 |
+
+**Afwijkingen.** Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+proceseigenaar dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd. De
+afwijking geldt pas na acceptatie van het risico door [[risico-eigenaar: de manager die restrisico's accepteert]]
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.
+
+**Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
 ## 6. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en het inkoopbeleid van de organisatie. Het
-loopt door in het beleid contractbeheer. Het raakt het classificatiebeleid (niveau van de eisen), het
-beleid back-up en recovery (afspraken met leveranciers over back-up), het continuïteitsbeleid (exit en
-uitwijk), het beleid secure software development (eisen aan ontwikkeling door leveranciers) en het
-privacybeleid (verwerkersovereenkomst).
+loopt door in het beleid contractbeheer (register, jaarlijkse beoordeling, clouddiensten, beëindiging). Het
+raakt het beleid informatieclassificatie (niveau van de eisen), het beleid beveiligingsincidenten (meldplicht
+van leveranciers), het beleid back-up en recovery (afspraken met leveranciers over back-up), het
+continuïteitsbeleid (exit en uitwijk), het beleid secure software development (eisen aan ontwikkeling door
+leveranciers) en het privacybeleid (verwerkersovereenkomst).

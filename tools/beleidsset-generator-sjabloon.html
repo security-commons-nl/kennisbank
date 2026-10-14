@@ -36,7 +36,7 @@ button.zacht{background:var(--vlak);color:var(--tekst);border-color:var(--lijn)}
 <p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt per BIO 2.0-domein een
 conceptbeleid waarin de regels staan die bij jouw organisatie passen. Een vraag die je overslaat, laat beide
 varianten staan, elk in een kader met de vraag erboven. Alles gebeurt in je browser: er gaat niets naar een server.</p>
-<p class="uitleg">Elke regel eindigt op de nummers van de BIO 2.0-overheidsmaatregelen die hij invult. Wat vetgedrukt
+<p class="uitleg">Elke regel eindigt op de nummers van de BIO 2.0-maatregelen die hij invult, en een controleraamwerk zegt hoe je de naleving aantoont. Wat vetgedrukt
 tussen haken staat, vul je zelf in; de lijst onderaan elk stuk zegt wat er nog open staat.</p>
 <form id="vragen"><div class="vragen" id="velden"></div>
 <div class="knoppen"><button type="submit">Maak de set</button><button type="button" class="zacht" id="wis">Antwoorden wissen</button></div></form>
@@ -86,13 +86,14 @@ var DATA = /*DATA*/;
       }
       if (/^(- |\d+\. )/.test(r)) {
         var genummerd = /^\d+\. /.test(r), items = [];
+        var start = genummerd ? parseInt(r, 10) : 1;
         while (i < regels.length && /^(- |\d+\. |  +\S)/.test(regels[i])) {
           if (/^(- |\d+\. )/.test(regels[i])) items.push(regels[i].replace(/^(- |\d+\. )/, ""));
           else items[items.length - 1] += " " + regels[i].trim();
           i++;
         }
         var tag = genummerd ? "ol" : "ul";
-        uit.push("<" + tag + ">" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</" + tag + ">"); continue;
+        uit.push("<" + tag + (start > 1 ? ' start="' + start + '"' : "") + ">" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</" + tag + ">"); continue;
       }
       if (!r.trim()) { i++; continue; }
       var alinea = [];

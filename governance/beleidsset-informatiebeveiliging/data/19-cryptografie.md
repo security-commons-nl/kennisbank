@@ -7,17 +7,29 @@ titel: Beleid cryptografie
 
 Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het gebruik van cryptografie:
 versleuteling van gegevens bij transport en opslag, digitale handtekeningen, certificaten en het beheer van
-cryptografische sleutels. Het geldt voor alle systemen, applicaties en gegevens waarvoor de organisatie
-verantwoordelijk is, ook als een leverancier ze host of beheert. Het gaat over de ISO-beheersmaatregel 8.24.
+cryptografische sleutels. Het legt vast wanneer de organisatie versleutelt, met welke middelen en wie de
+sleutels beheert, zodat vertrouwelijkheid en integriteit van informatie ook buiten de eigen muren overeind
+blijven. Het gaat over de ISO-beheersmaatregel 8.24.
 
-Buiten dit beleid vallen de classificatie zelf (beleid informatieclassificatie), de verplichte
-internetstandaarden voor websites en mail voor zover ze over de inrichting van diensten gaan (beleid
-informatieclassificatie en beleid netwerkbeveiliging) en de versleuteling van mobiele apparaten (beleid
-mobile device management).
+**Voor wie.** Het beleid is primair bedoeld voor de functie die cryptografie implementeert, de
+sleutelbeheerder en de systeemeigenaren. De gedragsregels over tokens, sleutels en het verzenden van
+vertrouwelijke informatie gelden voor alle medewerkers en inhuur.
+
+**Waarop.** Alle systemen, applicaties, verbindingen, back-ups, gegevensdragers en gegevens waarvoor de
+organisatie verantwoordelijk is, en alle sleutels en certificaten die daarbij horen. Is een systeem gehost
+of beheerd door een leverancier, dan gelden de eisen uit dit beleid als minimumeis voor die partij. De
+organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring, zoals een
+ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid
+informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.
+
+Buiten dit beleid vallen de classificatie zelf (beleid informatieclassificatie), de inrichting van de
+netwerkverbindingen die versleuteld worden (beleid netwerkbeveiliging), de versleuteling van mobiele
+apparaten (beleid mobile device management) en het wissen van gegevensdragers (beleid afvoer en hergebruik
+van gegevensdragers).
 
 ## 2. Uitgangspunten
 
-1. Cryptografie volgt de classificatie: hoe hoger het betrouwbaarheidsniveau van de informatie, hoe
+1. Cryptografie volgt de classificatie: hoe hoger het vertrouwelijkheidslabel van de informatie, hoe
    zwaarder de versleuteling.
 2. De organisatie gebruikt alleen erkende, openbare algoritmen en protocollen in een actuele versie, geen
    eigen of geheime constructies.
@@ -29,72 +41,77 @@ mobile device management).
 
 ### 3.1 Wanneer de organisatie cryptografie inzet
 
-- De organisatie zet cryptografie in volgens deze minimumtabel, die per classificatieniveau aansluit op het
-  classificatiebeleid: [8.24.01]
-  - laag: versleuteld transport over elk netwerk buiten het eigen interne netwerk;
-  - midden: versleuteld transport over elk netwerk, ook intern, en versleutelde opslag op draagbare
+- De systeemeigenaar zet cryptografie in volgens deze minimumtabel, die per vertrouwelijkheidslabel
+  aansluit op het beleid informatieclassificatie, en legt het gekozen niveau vast in het systeemdossier:
+  [8.24.01]
+  - intern: versleuteld transport over elk netwerk buiten het eigen interne netwerk;
+  - vertrouwelijk: versleuteld transport over elk netwerk, ook intern, en versleutelde opslag op draagbare
     apparaten en gegevensdragers;
-  - hoog: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij uitwisseling, versleuteling
-    van het bericht zelf.
-- Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en een herstel met die
-  sleutels wordt jaarlijks getest. [8.24.01]
+  - confidentieel en geheim: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij
+    uitwisseling, versleuteling van het bericht zelf.
+- Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en de
+  [[sleutelbeheerder: de functie die verantwoordelijk is voor het sleutel- en certificaatbeheer]] test
+  jaarlijks met de eigenaar van de back-up een herstel met die sleutels. [8.24.01]
 - Voor integriteit en onweerlegbaarheid gebruikt de organisatie digitale handtekeningen of gekwalificeerde
   elektronische zegels waar een wet of de risicoanalyse dat vraagt, bijvoorbeeld bij besluiten die digitaal
-  worden verzonden. [8.24.01]
-- Vertrouwelijke informatie gaat niet via persoonlijke webmail, privé-opslagdiensten of sociale media. [8.24.01]
+  worden verzonden; de systeemeigenaar legt vast welke documenten dat zijn. [8.24.01]
+- Medewerkers sturen informatie met het label vertrouwelijk of hoger niet via persoonlijke webmail,
+  privé-opslagdiensten of sociale media. [8.24.01]
 
 ### 3.2 Normen en sterkte
 
 - De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
   Voor websites en mail zijn dat in elk geval HTTPS met HSTS, TLS, DNSSEC, DKIM, DMARC, SPF en STARTTLS met
-  DANE. Afwijkingen worden gemotiveerd en jaarlijks gerapporteerd. [8.24.01]
+  DANE. [[eigenaar cryptografie: de functie die verantwoordelijk is voor de implementatie, bijvoorbeeld de IT-architect of het hoofd IT]]
+  motiveert afwijkingen en rapporteert ze jaarlijks aan de CISO. [8.24.01]
 - De keuze van algoritmen, sleutellengten en protocolversies volgt de actuele adviezen van het NCSC (onder
-  meer de ICT-beveiligingsrichtlijnen voor TLS) en van het Nationaal Bureau voor Verbindingsbeveiliging van de
-  AIVD. Instellingen die als onvoldoende of uit te faseren gelden, worden binnen
-  [[termijn uitfaseren: bijvoorbeeld zes maanden na publicatie van het advies]]
-  uitgezet. [8.24.04]
-- De beheerder van de cryptografische inventaris controleert elk halfjaar of er nieuwe adviezen zijn en of
-  de inzet nog voldoet. Dit omvat de voorbereiding op quantumveilige cryptografie: de inventaris laat zien
-  welke toepassingen eerst over moeten. [8.24.04]
-- Het beschermingsniveau van een toepassing volgt uit de classificatie van de informatie en de
-  risicoanalyse van het systeem. De systeemeigenaar legt het vast in het systeemdossier. [8.24.01]
+  meer de ICT-beveiligingsrichtlijnen voor TLS) en van het NBV. Instellingen die als onvoldoende of uit te
+  faseren gelden, zet [[eigenaar cryptografie]] binnen
+  [[termijn uitfaseren: bijvoorbeeld zes maanden na publicatie van het advies]] uit. [8.24.04]
+- [[eigenaar cryptografie]] controleert elk halfjaar of er nieuwe adviezen zijn en of de inzet nog voldoet,
+  en legt de uitkomst vast. Dit omvat de voorbereiding op quantumveilige cryptografie: de inventaris laat
+  zien welke toepassingen eerst over moeten. [8.24.04]
 - Wisselt de organisatie versleutelde informatie uit met een andere organisatie, dan leggen beide partijen
   vooraf vast welke versleuteling, welke certificaten en welk sleutelbeheer ze gebruiken, bijvoorbeeld in een
-  aansluitovereenkomst of verwerkersovereenkomst. [8.24.01]
+  aansluitovereenkomst of verwerkersovereenkomst. De systeemeigenaar bewaart die afspraak in het
+  systeemdossier. [8.24.01]
 
 ### 3.3 Verantwoordelijkheden en registratie
 
-- [[eigenaar cryptografie: de functie die verantwoordelijk is voor de implementatie, bijvoorbeeld de IT-architect of het hoofd IT]]
-  is verantwoordelijk voor de implementatie van cryptografie. [8.24.01]
-- [[sleutelbeheerder: de functie die verantwoordelijk is voor het sleutel- en certificaatbeheer]]
-  is verantwoordelijk voor het beheer van sleutels en certificaten gedurende de hele levenscyclus. [8.24.01]
+- [[eigenaar cryptografie]] is verantwoordelijk voor de implementatie van cryptografie en legt per
+  toepassing vast welk middel is gekozen en waarom. [8.24.01]
+- [[sleutelbeheerder]] is verantwoordelijk voor het beheer van sleutels en certificaten gedurende de hele
+  levenscyclus en houdt daarvan een register bij. [8.24.01]
 - Elk certificaat, elke sleutel met een functie in productie en elke versleutelingsvoorziening staat in de
   inventaris van bedrijfsmiddelen, met waar het wordt gebruikt, wie de eigenaar is, het algoritme en de
-  sleutellengte, de vervaldatum en hoe het actueel wordt gehouden. [8.24.02]
-- De inventaris geeft
-  [[waarschuwingstermijn verlopen: bijvoorbeeld 60 dagen]]
-  voor het verlopen van een certificaat automatisch een signaal aan de eigenaar. [8.24.02]
+  sleutellengte, de vervaldatum en hoe het actueel wordt gehouden. [[sleutelbeheerder]] controleert de
+  inventaris elk halfjaar op volledigheid. [8.24.02]
+- De inventaris geeft [[waarschuwingstermijn verlopen: bijvoorbeeld 60 dagen]] voor het verlopen van een
+  certificaat automatisch een signaal aan de eigenaar; de eigenaar vervangt het certificaat voor de
+  vervaldatum. [8.24.02]
 
 ### 3.4 Sleutel- en certificaatbeheer
 
 - Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
   overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01]
-- Voor elke fase is vastgelegd wie wat doet: aanvragen (na vaststelling van de identiteit van de aanvrager),
-  genereren, distribueren, opslaan, vervangen, herstellen, intrekken, archiveren en vernietigen. [8.24.01]
+- [[sleutelbeheerder]] legt in de procedure sleutelbeheer voor elke fase vast wie wat doet: aanvragen (na
+  vaststelling van de identiteit van de aanvrager), genereren, distribueren, opslaan, vervangen, herstellen,
+  intrekken, archiveren en vernietigen. [8.24.01]
 - Een privésleutel is alleen toegankelijk voor de houder of de voorziening die hem gebruikt. Sleutels staan
   in een sleutelkluis of beveiligde hardware; nooit in broncode, scripts of gedeelde mappen. [8.24.01]
 - Verlies, diefstal of een vermoeden van misbruik van een sleutel of token meldt de medewerker direct, en
-  uiterlijk binnen vier uur, bij de servicedesk. De sleutelbeheerder trekt het certificaat in en publiceert
+  uiterlijk binnen vier uur, bij de servicedesk. [[sleutelbeheerder]] trekt het certificaat in en publiceert
   de intrekking via de gebruikelijke kanalen (CRL of OCSP). [8.24.01]
 - Voor certificaten waarvan de dienstverlening afhangt (bijvoorbeeld voor websites, koppelingen en
-  ketenaansluitingen) bepaalt de risicoafweging of de organisatie reservecertificaten van een andere
-  leverancier nodig heeft. Is dat zo, dan liggen er afspraken met die leverancier en is de vervanging
-  beschreven in het continuïteitsplan. [8.24.05]
+  ketenaansluitingen) bepaalt de systeemeigenaar in de risicoafweging of de organisatie reservecertificaten
+  van een andere leverancier nodig heeft. Is dat zo, dan liggen er afspraken met die leverancier, is de
+  vervanging beschreven in het continuïteitsplan en oefent [[sleutelbeheerder]] de vervanging jaarlijks.
+  [8.24.05]
 
 ::: als hosting=eigen-dc
 - Sleutels voor de eigen systemen worden in de eigen omgeving gegenereerd en beheerd. Sleutels voor
-  informatie met classificatie hoog staan in een hardware security module of een gelijkwaardige
-  voorziening. [8.24.01]
+  informatie met het label confidentieel of geheim staan in een HSM of een gelijkwaardige voorziening.
+  [8.24.01]
 :::
 
 ::: als hosting=hostingpartij
@@ -105,8 +122,8 @@ mobile device management).
 
 ::: als hosting=saas
 - Bij SaaS en publieke cloud toetst de organisatie bij inkoop of de leverancier versleutelt bij transport en
-  opslag volgens dit beleid. Voor informatie met classificatie hoog kiest de organisatie waar het kan voor
-  sleutels die zij zelf beheert (customer-managed keys) of die buiten de leverancier liggen. [8.24.01]
+  opslag volgens dit beleid. Voor informatie met het label confidentieel of geheim kiest de organisatie waar
+  het kan voor sleutels die zij zelf beheert of die buiten de leverancier liggen. [8.24.01]
 - De versleutelingsinstellingen van elke clouddienst staan in de inventaris, ook als de leverancier de
   sleutels beheert. [8.24.02]
 :::
@@ -127,26 +144,42 @@ mobile device management).
 
 | Rol | Verantwoordelijk voor |
 |---|---|
-| [[lijneigenaar cryptografie: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT]] | Uitvoering van dit beleid en de inventaris van cryptografische middelen |
-| Eigenaar cryptografie | Implementatie van versleuteling en de halfjaarlijkse toets op de adviezen van NCSC en NBV |
-| Sleutelbeheerder | Levenscyclus van sleutels en certificaten, intrekking bij misbruik |
-| Systeemeigenaar | Beschermingsniveau per systeem en afspraken met leveranciers |
-| CISO | Advies, toetsing van dit beleid en van afwijkingen op de standaarden |
-| Medewerkers | Zorgvuldig gebruik van tokens en sleutels, direct melden van verlies |
+| [[lijneigenaar cryptografie: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT]] | Eigenaar van dit beleid en van de inventaris van cryptografische middelen |
+| [[eigenaar cryptografie]] | Implementatie van versleuteling, de halfjaarlijkse toets op de adviezen van NCSC en NBV, rapportage over afwijkingen van de standaarden |
+| [[sleutelbeheerder]] | Levenscyclus van sleutels en certificaten, de procedure sleutelbeheer, intrekking bij misbruik, hersteltest en oefening met reservecertificaten |
+| Systeemeigenaar | Beschermingsniveau per systeem, afspraken met leveranciers en ketenpartners, risicoafweging voor reservecertificaten |
+| CISO | Advies, toetsing van dit beleid, beoordeling van afwijkingen op de standaarden en van afwijkingen van dit beleid |
+| Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers en toetsen van hun verklaringen |
+| Medewerkers | Zorgvuldig gebruik van tokens en sleutels, direct melden van verlies, geen vertrouwelijke informatie via privékanalen |
 
-## 5. Naleving en bewaking
+## 5. Naleving en controle
 
-- Doorlopend: meting van websites en maildomeinen tegen de verplichte standaarden, bijvoorbeeld met
-  internet.nl; bewijs is de maandelijkse uitslag en de afhandeling van afwijkingen.
-- Halfjaarlijks: controle van de inventaris op volledigheid, vervaldata en zwakke instellingen; bewijs is
-  het bijgewerkte overzicht met acties.
-- Jaarlijks: test van herstel van een versleutelde back-up en, waar reservecertificaten zijn afgesproken,
-  een oefening met de vervanging.
-- Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.
+**Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
+afwijkingen gaan als bevinding naar het risicoregister.
+
+| Nr | Controle | Uitvoerder | Frequentie | Bewijs | Maatregelen |
+|---|---|---|---|---|---|
+| CRY-01 | Websites en maildomeinen voldoen aan de verplichte standaarden van het Forum Standaardisatie en elke afwijking is gemotiveerd | [[eigenaar cryptografie]] | Maandelijks, rapportage jaarlijks | Meetuitslag per domein, bijvoorbeeld van internet.nl, en de afhandeling van afwijkingen | 8.24.01 |
+| CRY-02 | De inventaris van certificaten, sleutels en versleutelingsvoorzieningen is volledig, elk middel heeft een eigenaar en een vervaldatum, en verlopen certificaten zijn op tijd vervangen | [[sleutelbeheerder]] | Halfjaarlijks | Bijgewerkte inventaris met acties, overzicht van signalen en vervangingen | 8.24.02 |
+| CRY-03 | De gebruikte algoritmen, sleutellengten en protocolversies voldoen aan de actuele adviezen van NCSC en NBV en afgekeurde instellingen zijn binnen de termijn uitgezet | [[eigenaar cryptografie]] | Halfjaarlijks | Toetsverslag tegen de adviezen, scanrapport van de instellingen, lijst van uitgefaseerde instellingen | 8.24.04 |
+| CRY-04 | Elk systeem met het label vertrouwelijk of hoger versleutelt bij transport en opslag volgens de minimumtabel, en back-ups zijn versleuteld met gescheiden sleutels | CISO | Jaarlijks | Steekproef van systeemdossiers, configuratierapport van de back-upvoorziening, verslag van de hersteltest | 8.24.01 |
+| CRY-05 | Sleutels staan in een sleutelkluis of beveiligde hardware en niet in broncode, scripts of gedeelde mappen; de procedure sleutelbeheer is gevolgd | [[sleutelbeheerder]] | Jaarlijks | Scanrapport op sleutels in repositories en gedeelde mappen, steekproef van aanvragen en intrekkingen | 8.24.01 |
+| CRY-06 | Voor certificaten waarvan de dienstverlening afhangt is de risicoafweging over reservecertificaten gemaakt en, waar afgesproken, de vervanging geoefend | [[sleutelbeheerder]] | Jaarlijks | Risicoafwegingen per certificaat, afspraken met de reserveleverancier, oefenverslag | 8.24.05 |
+
+**Afwijkingen.** Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+systeemeigenaar dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd.
+De afwijking geldt pas na acceptatie van het risico door [[risico-eigenaar: de manager die restrisico's accepteert]]
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.
+
+**Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
 ## 6. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
-informatieclassificatie (niveaus), het beleid bedrijfsmiddelenbeheer (inventaris), het beleid back-up en
-recovery, het beleid mobile device management, het beleid leveranciersbeheer (afspraken over versleuteling)
-en het continuïteitsbeleid (reservecertificaten).
+informatieclassificatie (vertrouwelijkheidslabels), het beleid bedrijfsmiddelenbeheer (inventaris), het
+beleid back-up en recovery (versleutelde back-ups), het beleid netwerkbeveiliging (versleuteling onderweg),
+het beleid mobile device management (versleuteling van apparaten), het beleid veilige softwareontwikkeling
+(geen sleutels in broncode), het beleid informatiebeveiliging bij inkoop en contractbeheer (afspraken over
+versleuteling) en het beleid ICT-continuïteit en uitwijk (reservecertificaten).

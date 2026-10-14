@@ -5,15 +5,31 @@ titel: Beleid IT-compliance
 
 ## 1. Doel en reikwijdte
 
-Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de naleving van wet- en
-regelgeving en contractuele eisen die op informatie en informatiesystemen van de organisatie rusten. Het
-regelt hoe de organisatie weet welke eisen gelden, hoe registraties en bewaartermijnen zijn ingericht,
-hoe werkplekken en schermen worden afgeschermd en hoe systemen tijdens audits beschermd blijven. Het gaat
-over de ISO-beheersmaatregelen 5.31 tot en met 5.34, 7.07, 8.06, 8.11, 8.12, 8.17 en 8.34.
+Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de naleving van wet- en regelgeving
+en contractuele eisen die op informatie en informatiesystemen van de organisatie rusten. Het regelt hoe de
+organisatie weet welke eisen gelden, hoe registraties en bewaartermijnen zijn ingericht, hoe
+persoonsgegevens en intellectueel eigendom worden beschermd, hoe werkplekken en schermen worden
+afgeschermd, welke technische voorzieningen de naleving ondersteunen en hoe systemen tijdens audits
+beschermd blijven. Het gaat over de ISO-beheersmaatregelen 5.31 tot en met 5.34, 7.7, 8.6, 8.11, 8.12,
+8.17 en 8.34.
 
-Het beleid geldt voor alle informatiesystemen in de scope van het managementsysteem en voor iedereen die
-ermee werkt. Het is bedoeld voor proceseigenaren, de archieffunctie, de privacy officer, de IT-organisatie en
-de CISO.
+**Voor wie.** Het beleid is primair bedoeld voor proceseigenaren, de archieffunctie, de privacy officer,
+de juridische functie, de IT-organisatie en de CISO. De regels over clear desk en clear screen gelden voor
+iedereen die onder verantwoordelijkheid van de organisatie met informatie werkt: medewerkers, inhuur,
+stagiairs en vrijwilligers.
+
+**Waarop.** Alle informatiesystemen in de scope van het managementsysteem, de registraties die de
+organisatie wettelijk of contractueel moet bijhouden, de werkplekken en vergaderruimten waar informatie
+wordt gebruikt, en de test- en ontwikkelomgevingen. Is het beheer van systemen, de archivering of de
+bewaking van capaciteit uitbesteed, dan gelden de eisen uit dit beleid als minimumeis voor die partij. De
+organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring, zoals
+een ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid
+informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.
+
+Buiten dit beleid vallen de privacymaatregelen zelf (privacybeleid), de inhoud en bewaring van logging
+(beleid logging en monitoring), het toekennen van toegangsrechten (beleid logische toegangsbeveiliging), de
+fysieke beveiliging van ruimten (beleid fysieke toegang en beveiliging) en het auditplan van het
+managementsysteem (strategisch informatiebeveiligingsbeleid).
 
 ## 2. Uitgangspunten
 
@@ -21,6 +37,9 @@ de CISO.
    voor de naleving.
 2. Informatie wordt niet langer bewaard dan nodig, en niet korter dan de wet voorschrijft.
 3. Naleving is aantoonbaar met registraties die de organisatie zelf bijhoudt.
+4. Echte gegevens horen in productie; test- en ontwikkelomgevingen werken met gemaskeerde of fictieve
+   gegevens.
+5. Informatie is alleen zichtbaar voor wie haar nodig heeft, ook op het bureau en op het scherm.
 
 ## 3. Beleidsregels
 
@@ -29,158 +48,263 @@ de CISO.
 - De CISO houdt samen met de privacy officer en de juridische functie een register bij van de wet- en
   regelgeving en de contractuele eisen die gelden voor informatiebeveiliging, met per eis de eigenaar en het
   beleidsstuk waarin hij is uitgewerkt. Het register wordt jaarlijks en bij elke relevante wetswijziging
-  bijgewerkt.
-- Het register bevat ten minste de AVG, de Archiefwet, de Cyberbeveiligingswet waar die geldt en de
-  sectorale wetgeving van de eigen taken.
-- De organisatie gebruikt alleen software waarvoor een geldige licentie is. De IT-organisatie houdt de
-  licenties bij en vergelijkt ze jaarlijks met de geïnstalleerde software.
+  bijgewerkt; de versie met datum is het bewijs. [5.31.01]
+- Het register bevat ten minste de AVG, de Archiefwet, de Wet open overheid, de Cyberbeveiligingswet waar
+  die geldt, de sectorale wetgeving van de eigen taken en de beveiligingseisen uit contracten met
+  leveranciers en ketenpartners. [5.31.01]
+- De proceseigenaar stelt jaarlijks vast welke eisen uit het register op het eigen proces rusten en toont
+  met de controleraamwerken van de materie-specifieke stukken aan dat ze worden nageleefd. Een eis zonder
+  beleidsstuk of controle meldt de proceseigenaar als bevinding bij de CISO. [5.31.01]
+- Bij een nieuw systeem of een nieuwe verwerking beoordeelt de proceseigenaar met de risicoafweging uit het
+  beleid informatiebeveiliging in projecten welke eisen uit het register gelden en neemt ze op in het
+  programma van eisen. [5.31.01]
+- De organisatie gebruikt alleen software waarvoor zij een geldige licentie heeft. De IT-organisatie houdt
+  een licentieregister bij, vergelijkt het jaarlijks met de geïnstalleerde software en verwijdert of
+  legaliseert wat niet klopt. [5.32.01]
+- Medewerkers installeren geen software en gebruiken geen inhoud (teksten, beelden, muziek, broncode)
+  waarvoor de organisatie geen gebruiksrecht heeft. De gedragsregels voor informatiegebruik noemen dit; de
+  IT-organisatie staat alleen installatie toe vanuit de goedgekeurde bronnen uit het beleid
+  bedrijfsmiddelenbeheer. [5.32.01]
+- Voor software, documenten en gegevens die de organisatie zelf laat maken, legt de opdrachtgever in het
+  contract vast wie de eigenaar is en welke gebruiksrechten de organisatie heeft. Bij open-sourcesoftware
+  legt de IT-organisatie vast onder welke licentie die wordt gebruikt en of de organisatie aan de
+  voorwaarden voldoet. [5.32.01]
 
 ::: als politiegegevens=ja
 - De organisatie verwerkt politiegegevens, bijvoorbeeld door boa's of bij handhaving en opsporing. Voor die
   verwerkingen geldt de Wet politiegegevens naast de AVG. Het register noemt per verwerking het doel uit de
-  Wpg, de geautoriseerde functies en de bewaartermijn.
+  Wpg, de geautoriseerde functies en de bewaartermijn. [5.31.01, 5.34.01]
 - Autorisaties voor politiegegevens worden per persoon verleend en ten minste halfjaarlijks door de
-  proceseigenaar gecontroleerd. Elke raadpleging en wijziging wordt gelogd; de logging wordt bewaard
-  zolang de Wpg voorschrijft.
+  proceseigenaar gecontroleerd. Elke raadpleging en wijziging wordt gelogd; de logging wordt bewaard zolang
+  de Wpg voorschrijft. [5.31.01, 5.33.01]
 - Over de verwerking van politiegegevens laat de organisatie de periodieke privacy-audit uitvoeren die de
-  Wpg voorschrijft en stuurt het rapport naar de Autoriteit Persoonsgegevens.
+  Wpg voorschrijft en stuurt de proceseigenaar het rapport naar de Autoriteit Persoonsgegevens. [5.31.01]
 :::
 
 ::: als ketens=digid,suwinet,brp,bag,anders
 - De organisatie is aangesloten op landelijke voorzieningen met een eigen beveiligings- en auditregime. Het
-  register noemt per aansluiting het normenkader, de eigenaar en de termijn van de verantwoording.
+  register noemt per aansluiting het normenkader, de eigenaar en de termijn van de verantwoording. [5.31.01]
 :::
 
 ::: als ketens=digid
-- Voor de DigiD-aansluiting laat de organisatie jaarlijks een ICT-beveiligingsassessment door een
-  onafhankelijke auditor uitvoeren en levert het rapport op tijd aan bij de beheerder van DigiD.
+- Voor de DigiD-aansluiting laat de proceseigenaar jaarlijks een ICT-beveiligingsassessment door een
+  onafhankelijke auditor uitvoeren en levert het rapport op tijd aan bij de beheerder van DigiD. [5.31.01]
 :::
 
 ::: als ketens=suwinet
 - Voor Suwinet legt de organisatie jaarlijks verantwoording af over de normen voor gebruik en beveiliging.
   De proceseigenaar controleert per kwartaal de autorisaties en steekproefsgewijs de raadplegingen op
-  doelbinding.
+  doelbinding. [5.31.01]
 :::
 
 ::: als ketens=brp
 - Voor de BRP voert de organisatie de jaarlijkse zelfevaluatie of audit uit die de beheerder van de BRP
-  voorschrijft, en controleert de proceseigenaar de autorisaties ten minste jaarlijks.
+  voorschrijft, en controleert de proceseigenaar de autorisaties ten minste jaarlijks. [5.31.01]
 :::
 
 ::: als ketens=bag
-- Voor de BAG en andere basisregistraties waarvoor de organisatie bronhouder is, voert de organisatie de
-  verplichte kwaliteitscontroles en audits uit en volgt de bevindingen op.
+- Voor de BAG en andere basisregistraties waarvoor de organisatie bronhouder is, voert de proceseigenaar de
+  verplichte kwaliteitscontroles en audits uit en volgt de bevindingen op. [5.31.01]
 :::
 
 ::: als ketens=anders
 - Voor andere ketens met eigen beveiligingseisen staat het normenkader en de wijze van verantwoording in
-  [[overzicht overige ketens: per keten het normenkader, de eigenaar en de auditcyclus]].
+  [[overzicht overige ketens: per keten het normenkader, de eigenaar en de auditcyclus]], dat de CISO
+  jaarlijks met de keteneigenaren doorneemt. [5.31.01]
 :::
 
 ### 3.2 Registraties en bewaartermijnen
 
 - De proceseigenaar legt voor elk informatiesysteem en elke categorie informatie de bewaartermijn vast, op
   basis van de geldende selectielijst, de Archiefwet, de privacywetgeving en de eigen bedrijfsdoelen. De
-  termijnen staan in het verwerkingsregister of in een overzicht dat de archieffunctie bijhoudt. [5.33.01]
+  termijnen staan in het verwerkingsregister of in een overzicht dat
+  [[lijneigenaar archief: de functie die de archieffunctie uitvoert, bijvoorbeeld de DIV-coördinator]]
+  bijhoudt. [5.33.01]
 - De proceseigenaar zorgt dat het systeem de termijnen ook uitvoert: vernietiging, overbrenging of
-  anonimisering na afloop, automatisch waar het systeem dat kan en volgens een vast schema waar dat niet kan.
-  [5.33.01]
+  anonimisering na afloop, automatisch waar het systeem dat kan en volgens een vast schema waar dat niet
+  kan. Het vernietigingsverslag of de overbrengingsverklaring is het bewijs. [5.33.01]
 - De proceseigenaar toetst ten minste jaarlijks met een steekproef of informatie na afloop van de termijn
   daadwerkelijk is vernietigd of overgebracht, en legt de uitkomst vast. [5.33.01]
 - Bij aanschaf of vervanging van een systeem is de mogelijkheid om bewaartermijnen uit te voeren een eis in
   het programma van eisen. [5.33.01]
-- Registraties die als bewijs dienen (zoals logging, besluiten en audit trails) zijn beschermd tegen
-  wijziging en voortijdige verwijdering.
+- Registraties die als bewijs dienen, zoals logging, besluiten, contracten en audittrails, zijn beschermd
+  tegen wijziging en voortijdige verwijdering: de IT-organisatie richt ze zo in dat alleen een beperkte
+  groep ze kan wijzigen, dat elke wijziging wordt gelogd en dat ze in de back-up zitten volgens het beleid
+  back-up en recovery. [5.33.01]
+- Registraties die de organisatie jarenlang moet bewaren, blijven leesbaar: de archieffunctie bewaakt dat
+  bestandsformaten en opslagmedia bij elke systeemvervanging worden omgezet of gemigreerd, en legt dat vast
+  in het overzicht van bewaartermijnen. [5.33.01]
 
 ### 3.3 Privacy en persoonsgegevens
 
-- De privacymaatregelen staan in het privacybeleid. Dit beleid regelt alleen de raakvlakken: het register
-  van eisen (3.1) en de bewaartermijnen (3.2) gelden ook voor persoonsgegevens.
-- In test- en ontwikkelomgevingen worden geen echte persoonsgegevens gebruikt, tenzij ze zijn gemaskeerd of
-  gepseudonimiseerd en de privacy officer heeft ingestemd.
-- De IT-organisatie zet maatregelen in tegen het onbedoeld weglekken van gevoelige gegevens, zoals
-  waarschuwingen of blokkades bij het versturen van gegevens met een hoge classificatie naar externe
-  adressen. De keuze volgt uit de risicoanalyse.
+- De privacymaatregelen staan in het privacybeleid. Dit beleid regelt de raakvlakken: het register van eisen
+  (paragraaf 3.1) en de bewaartermijnen (paragraaf 3.2) gelden ook voor persoonsgegevens, en de
+  proceseigenaar neemt de privacyeisen mee in dezelfde jaarlijkse toets. [5.34.01]
+- De organisatie heeft een privacybeleid dat het bestuur vaststelt, een functionaris gegevensbescherming
+  die onafhankelijk toezicht houdt en een verwerkingsregister dat de privacy officer bijhoudt. Elke
+  verwerking van persoonsgegevens staat in dat register voordat ze start; de proceseigenaar meldt nieuwe
+  verwerkingen bij de privacy officer. [5.34.01]
+- Bij elke nieuwe verwerking of wijziging van een verwerking beoordeelt de privacy officer of een DPIA
+  nodig is, volgens het beleid informatiebeveiliging in projecten. Een datalek wordt gemeld en afgehandeld
+  volgens het beleid beveiligingsincidenten, met de FG in de meldroute naar de Autoriteit Persoonsgegevens.
+  [5.34.01]
+- De proceseigenaar beperkt de toegang tot persoonsgegevens tot de functies die ze voor hun taak nodig
+  hebben en legt die functies vast in de autorisatiematrix uit het beleid logische toegangsbeveiliging; de
+  privacy officer toetst de matrix jaarlijks op doelbinding. [5.34.01]
+- In test-, ontwikkel- en opleidingsomgevingen gebruikt de organisatie geen echte persoonsgegevens en geen
+  andere informatie met het label vertrouwelijk of hoger. Wie zo'n omgeving vult, gebruikt fictieve
+  gegevens of een gemaskeerde kopie. [8.11.01]
+- Is een gemaskeerde kopie van productiegegevens nodig, dan maskeert of pseudonimiseert de IT-organisatie
+  de gegevens voordat ze de productieomgeving verlaten, zo dat een persoon of een vertrouwelijk gegeven niet
+  meer te herleiden is. De privacy officer stemt vooraf in; de proceseigenaar legt vast welke velden zijn
+  gemaskeerd en met welke techniek. [8.11.01]
+- Maakt een productiesysteem gegevens zichtbaar aan gebruikers die niet alles mogen zien, dan toont het
+  systeem alleen het deel dat voor de taak nodig is, bijvoorbeeld een gedeeltelijk burgerservicenummer of
+  bankrekeningnummer. De proceseigenaar legt bij de autorisatiematrix vast welke gegevens voor welke
+  functie worden afgeschermd. [8.11.01]
+- De IT-organisatie zet technische maatregelen in tegen het onbedoeld weglekken van informatie met het
+  label vertrouwelijk of hoger: ten minste een waarschuwing of blokkade bij het versturen naar externe
+  adressen, bij het uploaden naar niet-goedgekeurde clouddiensten en bij het kopiëren naar verwisselbare
+  media. De keuze per kanaal volgt uit de risicoanalyse en staat in
+  [[overzicht DLP-maatregelen: het overzicht van kanalen met de maatregel per kanaal, bijvoorbeeld in het beheerdossier van de werkplek]].
+  [8.12.01]
+- De CISO beoordeelt elk kwartaal de meldingen van die maatregelen op patronen (welke kanalen, welke
+  afdelingen, welke labels) en legt de uitkomst en de opvolging vast; een bevestigd lek wordt behandeld als
+  incident volgens het beleid beveiligingsincidenten. [8.12.01]
+
+::: als politiegegevens=ja
+- Testomgevingen bevatten nooit politiegegevens, ook niet gemaskeerd; de proceseigenaar gebruikt
+  uitsluitend fictieve gegevens. [8.11.01]
+:::
 
 ### 3.4 Clear desk en clear screen
 
-- Medewerkers laten geen vertrouwelijke informatie onbeheerd achter op hun werkplek, printer of in
-  vergaderruimten, en vergrendelen hun scherm wanneer zij de werkplek verlaten.
-- Werkplekken vergrendelen automatisch na
+- Medewerkers laten geen informatie met het label intern of hoger onbeheerd achter op hun werkplek, in
+  vergaderruimten of op gedeelde plekken. Aan het einde van de werkdag en bij het verlaten van een gedeelde
+  werkplek bergen zij documenten en gegevensdragers op in een afsluitbare kast of lade. [7.07.01]
+- Wie de werkplek verlaat, vergrendelt het scherm, ook voor een korte onderbreking. Medewerkers zetten
+  schermen met informatie met het label vertrouwelijk of hoger zo neer dat bezoekers en voorbijgangers niet
+  kunnen meekijken; waar dat niet kan, gebruiken zij een privacyfilter. [7.07.01]
+- De IT-organisatie stelt op alle werkplekken en mobiele apparaten een automatische vergrendeling in na
   [[vergrendeltijd: het aantal minuten inactiviteit, bijvoorbeeld 10]]
-  minuten zonder activiteit.
+  minuten zonder activiteit, centraal beheerd, zodat gebruikers de instelling niet kunnen uitzetten.
+  [7.07.01]
 - Waar toegang tot systemen werkt met een chipcard, pas of andere fysieke token, vergrendelt de werkplek
-  automatisch zodra het token wordt verwijderd. De IT-organisatie stelt dat centraal in, zodat gebruikers het
-  niet kunnen uitzetten. [7.07.01]
-- Werkt de organisatie niet met een fysieke token, dan geldt de vorige regel voor elke toekomstige invoering
-  ervan en is hij een eis bij de aanschaf. [7.07.01]
+  automatisch zodra het token wordt verwijderd. De IT-organisatie stelt dat centraal in. Werkt de
+  organisatie nog niet met een fysieke token, dan is die vergrendeling een eis bij de invoering en bij de
+  aanschaf. [7.07.01]
+- Afdrukken van informatie met het label intern of hoger worden direct uit de printer gehaald. Printers op
+  gedeelde plekken drukken alleen af na identificatie van de gebruiker bij het apparaat. De IT-organisatie
+  verwijdert afdruktaken die na
+  [[bewaartermijn afdruktaken: de termijn waarna een niet-opgehaalde afdruktaak vervalt, bijvoorbeeld 24 uur]]
+  niet zijn opgehaald. [7.07.01]
+- Na een vergadering wist de voorzitter whiteboards en flip-overs en neemt hij achtergebleven documenten
+  mee. Medewerkers gooien informatie met het label intern of hoger alleen weg via de afgesloten
+  papiercontainer of de versnipperaar. [7.07.01]
+- [[lijneigenaar werkplek: de manager die de werkplekken beheert, bijvoorbeeld facilitaire zaken]] loopt
+  elk halfjaar een rondgang clear desk over alle locaties, legt de bevindingen per afdeling vast en meldt
+  ze aan de leidinggevenden, die medewerkers aanspreken. [7.07.01]
 
 ### 3.5 Techniek ter ondersteuning van naleving
 
-- De IT-organisatie bewaakt de capaciteit van kritieke systemen (opslag, rekenkracht, netwerk) en signaleert
-  tekorten voordat ze de beschikbaarheid raken.
-- Alle systemen synchroniseren hun klok met een betrouwbare tijdbron, zodat logging uit verschillende
-  systemen vergelijkbaar is.
+- De IT-organisatie bewaakt doorlopend de capaciteit van de kritieke systemen uit het overzicht van
+  kritieke systemen: opslag, rekenkracht, geheugen en netwerk. De bewaking geeft een melding bij
+  [[drempel capaciteit: het gebruikspercentage waarbij een melding volgt, bijvoorbeeld 80 procent]]
+  van de beschikbare capaciteit, zodat de IT-organisatie uitbreidt voordat de beschikbaarheid wordt geraakt.
+  [8.06.01]
+- De IT-organisatie stelt jaarlijks met de proceseigenaren een capaciteitsprognose op voor de komende twaalf
+  maanden, op basis van het gebruik van het afgelopen jaar en de verwachte veranderingen (nieuwe systemen,
+  meer gebruikers, langere bewaartermijnen), en legt vast welke uitbreidingen daaruit volgen. [8.06.01]
+- Is de hosting uitbesteed, dan legt de organisatie in het contract vast welke capaciteit is afgesproken en
+  hoe de leverancier dreigende tekorten meldt; contractbeheer toetst dat met de rapportage van de
+  leverancier. [8.06.01]
+- Alle systemen, netwerkapparaten en werkplekken synchroniseren hun klok met
+  [[tijdbron: de betrouwbare tijdbron van de organisatie, bijvoorbeeld de eigen NTP-servers of de tijdservers van de overheid]],
+  die zelf is gekoppeld aan een betrouwbare externe bron. Alle logging gebruikt die tijd, in één
+  vastgelegde tijdzone of met de tijdzone erbij, zodat logging uit verschillende systemen vergelijkbaar is.
+  [8.17.01]
+- De IT-organisatie controleert elk kwartaal dat de systemen in de scope met de tijdbron synchroniseren en
+  dat de afwijking kleiner is dan één seconde, en herstelt afwijkingen. De rapportage uit de bewaking is het
+  bewijs. [8.17.01]
 
 ### 3.6 Audits op informatiesystemen
 
-- Audits en technische tests op productiesystemen worden vooraf afgestemd met de systeemeigenaar en de
-  IT-organisatie: wat wordt getest, door wie, wanneer en met welke rechten.
-- Auditors krijgen bij voorkeur alleen-lezen toegang. Rechten worden na afloop direct ingetrokken.
-- Tests die de beschikbaarheid kunnen raken, gebeuren buiten piektijden of op een kopie.
+- Audits, pentests en andere technische tests op productiesystemen worden vooraf afgestemd tussen de
+  auditor, de systeemeigenaar en de IT-organisatie en vastgelegd in een testopdracht: wat wordt getest, door
+  wie, wanneer, met welke rechten, vanaf welke adressen en wie bij een verstoring wordt gewaarschuwd.
+  [8.34.01]
+- Auditors krijgen alleen-lezen toegang, tenzij de testopdracht anders zegt. De IT-organisatie verleent de
+  rechten op een apart account voor de duur van de test en trekt ze direct na afloop in; de aanvraag en de
+  intrekking staan in het ticketsysteem. [8.34.01]
+- Tests die de beschikbaarheid kunnen raken of gegevens kunnen wijzigen, gebeuren buiten piektijden, op een
+  kopie of in een afgeschermde testomgeving. Een test op productie die gegevens kan wijzigen, vraagt vooraf
+  toestemming van de systeemeigenaar en een actuele back-up. [8.34.01]
+- De auditor krijgt alleen kopieën of exports van de gegevens die voor de audit nodig zijn, met de
+  classificatie erbij. De auditor bewaart ze volgens die classificatie en vernietigt ze na afloop van de
+  audit; dat staat in de testopdracht of het contract. [8.34.01]
+- De IT-organisatie logt de handelingen van de auditor op de productiesystemen en bewaart de logging volgens
+  het beleid logging en monitoring, zodat na de audit is na te gaan wat is gedaan. [8.34.01]
 
 ::: als capaciteit=geen
 - Zonder eigen ISO houdt
   [[functionaris informatiebeveiliging: de medewerker met de neventaak informatiebeveiliging]]
-  het register uit 3.1 bij. De jaarlijkse controle op het register en op de steekproef bewaartermijnen wordt
-  belegd bij de CISO-invulling of de interne controle.
+  het register uit paragraaf 3.1 bij. De jaarlijkse controle op het register en op de steekproef
+  bewaartermijnen wordt belegd bij de CISO-invulling of de interne controle. [5.31.01, 5.33.01]
 :::
 
 ::: als capaciteit=parttime,team
-- De ISO of CISO houdt het register uit 3.1 bij en voert de jaarlijkse controle op de bewaartermijnen uit
-  samen met de archieffunctie.
+- De ISO of CISO houdt het register uit paragraaf 3.1 bij en voert de jaarlijkse controle op de
+  bewaartermijnen uit samen met de archieffunctie. [5.31.01, 5.33.01]
 :::
 
 ## 4. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
-| Proceseigenaar | Naleving van de eisen op het eigen proces, bewaartermijnen vastleggen, uitvoeren en toetsen |
-| [[lijneigenaar archief: de functie die de archieffunctie uitvoert, bijvoorbeeld de DIV-coördinator]] | Overzicht van bewaartermijnen, selectielijst, ondersteuning bij vernietiging en overbrenging |
-| CISO of ISO | Register van eisen, advies, controle op naleving |
-| Privacy officer en FG | Privacyeisen, maskeren in testomgevingen; de FG houdt toezicht |
-| IT-organisatie | Automatische vergrendeling, licenties, capaciteit, kloksynchronisatie, begeleiding van audits |
-| Medewerkers | Clear desk en clear screen |
+| Proceseigenaar | Naleving van de eisen op het eigen proces, bewaartermijnen vastleggen, uitvoeren en toetsen, afscherming van gegevens per functie, toestemming voor tests op productie |
+| [[lijneigenaar archief]] | Overzicht van bewaartermijnen, selectielijst, leesbaarheid van registraties, ondersteuning bij vernietiging en overbrenging |
+| CISO of ISO | Register van eisen, beoordeling van meldingen van gegevenslekken, advies, controle op naleving |
+| Privacy officer en FG | Privacyeisen, verwerkingsregister, DPIA-plicht, instemming met maskeren; de FG houdt toezicht |
+| Juridische functie | Toets van het register van eisen en van de contracten over eigendom en gebruiksrechten |
+| IT-organisatie | Licentieregister, automatische vergrendeling, maskeren, maatregelen tegen gegevenslekken, capaciteit, kloksynchronisatie, begeleiding van audits |
+| [[lijneigenaar werkplek]] | Rondgang clear desk, afsluitbare opslag, printers en papiercontainers |
+| Contractbeheer | Toets van capaciteit en naleving bij uitbestede hosting en beheer |
+| Medewerkers | Clear desk en clear screen, geen software of inhoud zonder gebruiksrecht |
 
-## 5. Naleving en bewaking
+## 5. Naleving en controle
 
-- Jaarlijks: actualisering van het register van wettelijke en contractuele eisen; bewijs is de versie met
-  datum en de lijst van wijzigingen.
-- Jaarlijks: steekproef per kritiek systeem op de uitvoering van bewaartermijnen; bewijs is het
-  vernietigingsverslag of de overbrengingsverklaring.
-- Jaarlijks: technische controle dat automatische vergrendeling (op inactiviteit en bij verwijderen van een
-  token) op alle werkplekken aanstaat; bewijs is de configuratie-export.
-- Halfjaarlijks: rondgang clear desk door de ISO of de lijneigenaar, met een kort verslag.
+**Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
+het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
+afwijkingen gaan als bevinding naar het risicoregister.
 
-::: als volwassenheid=startend,bio1
-- De controles hierboven worden eerst ingevoerd voor de systemen met de hoogste classificatie. Binnen twee
-  jaar dekken ze alle systemen in de scope.
-:::
+| Nr | Controle | Uitvoerder | Frequentie | Bewijs | Maatregelen |
+|---|---|---|---|---|---|
+| ITC-01 | Het register van wettelijke en contractuele eisen is in het afgelopen jaar bijgewerkt, elke eis heeft een eigenaar en een beleidsstuk, en elke proceseigenaar heeft de toets op het eigen proces uitgevoerd | CISO | Jaarlijks | Register met datum en lijst van wijzigingen, toetsverslagen van de proceseigenaren | 5.31.01 |
+| ITC-02 | De geïnstalleerde software komt overeen met het licentieregister en voor zelf gemaakte software en inhoud is het eigendom in het contract vastgelegd | IT-organisatie | Jaarlijks | Vergelijking van de software-inventarisatie met het licentieregister, steekproef van vijf contracten | 5.32.01 |
+| ITC-03 | Voor elk kritiek systeem zijn de bewaartermijnen vastgelegd en uitgevoerd, en de registraties die als bewijs dienen zijn beschermd tegen wijziging | Proceseigenaar | Jaarlijks | Steekproef per kritiek systeem: overzicht van termijnen, vernietigingsverslag of overbrengingsverklaring, autorisaties op de registraties | 5.33.01 |
+| ITC-04 | Elke verwerking van persoonsgegevens staat in het verwerkingsregister, de autorisaties op persoonsgegevens zijn op doelbinding getoetst en test- en ontwikkelomgevingen bevatten geen ongemaskeerde persoonsgegevens | Privacy officer | Jaarlijks | Verwerkingsregister, toetsverslag van de autorisatiematrix, steekproef van ten minste drie testomgevingen met de maskeringsregistratie | 5.34.01, 8.11.01 |
+| ITC-05 | De maatregelen tegen gegevenslekken staan aan op alle kanalen uit het overzicht en de meldingen zijn elk kwartaal beoordeeld en opgevolgd | CISO | Per kwartaal | Configuratie-export per kanaal, beoordelingsverslag met de opgevolgde meldingen | 8.12.01 |
+| ITC-06 | Automatische vergrendeling op inactiviteit en bij verwijderen van een token staat aan op alle werkplekken en mobiele apparaten, en de rondgang clear desk is uitgevoerd en opgevolgd | [[lijneigenaar werkplek]] | Halfjaarlijks | Configuratie-export uit het werkplekbeheer, verslag van de rondgang met de bevindingen per afdeling | 7.07.01 |
+| ITC-07 | De capaciteit van de kritieke systemen is bewaakt, meldingen boven de drempel zijn opgevolgd en de jaarlijkse capaciteitsprognose is opgesteld | IT-organisatie | Per kwartaal | Rapportage uit de bewaking, opgevolgde meldingen, capaciteitsprognose, rapportage van de hostingleverancier | 8.06.01 |
+| ITC-08 | Alle systemen in de scope synchroniseren met de tijdbron en de afwijking is kleiner dan één seconde | IT-organisatie | Per kwartaal | Rapportage uit de bewaking van de kloksynchronisatie | 8.17.01 |
+| ITC-09 | Elke audit of test op een productiesysteem had een testopdracht, de rechten zijn na afloop ingetrokken en de handelingen zijn gelogd | CISO | Jaarlijks | Testopdrachten van het afgelopen jaar, tickets van verlening en intrekking, logging | 8.34.01 |
 
-::: als volwassenheid=bio2-opbouw,bio2-werkend
-- Elke controle hierboven is een control in het controleraamwerk, met eigenaar, frequentie en bewijs.
-:::
+**Afwijkingen.** Afwijken van een eis kan alleen op basis van een gedocumenteerde risicoafweging. De
+proceseigenaar dient het verzoek in bij de CISO, met de reden, de compenserende maatregelen en de looptijd.
+De afwijking geldt pas na acceptatie van het risico door [[risico-eigenaar: de manager die restrisico's accepteert]]
+en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.
 
-::: als politiegegevens=ja
-- Halfjaarlijks: controle van de autorisaties voor politiegegevens; periodiek: de Wpg-audit en de
-  opvolging van de bevindingen.
-:::
-
-- Afwijkingen gaan als bevinding naar het risicoregister van de organisatie.
+**Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
+het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
 ## 6. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het privacybeleid
-(persoonsgegevens en bewaartermijnen), het beleid logische toegangsbeveiliging (vergrendeling en
-autorisaties), het beleid logging en monitoring (bewaren van logging en kloksynchronisatie), het beleid
-informatieclassificatie (gegevenslekken) en het beleid secure software development (testdata).
+(persoonsgegevens, verwerkingsregister en bewaartermijnen), het beleid logische toegangsbeveiliging
+(vergrendeling en autorisaties), het beleid logging en monitoring (bewaren van logging en
+kloksynchronisatie), het beleid informatieclassificatie (labels voor clear desk, maskeren en
+gegevenslekken), het beleid bedrijfsmiddelenbeheer (goedgekeurde software en gegevensdragers), het beleid
+back-up en recovery (bescherming van registraties), het beleid beveiligingsincidenten (datalekken), het
+beleid informatiebeveiliging in projecten (eisen en DPIA bij nieuwe systemen), het beleid secure software
+development (testdata) en het beleid informatiebeveiliging bij inkoop en het beleid contractbeheer
+(capaciteit en eigendom bij leveranciers).
