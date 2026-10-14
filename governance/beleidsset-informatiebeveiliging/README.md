@@ -12,6 +12,8 @@ bronnen: [ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid,
 
 # Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen
 
+> **Lees de beleidsset online:** [security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/)
+>
 > **Maak je eigen set:** [beleidsset op maat](beleidsset-generator.html). Beantwoord de vragen die je kunt
 > beantwoorden en download per domein een conceptbeleid, of de hele set in één keer.
 
