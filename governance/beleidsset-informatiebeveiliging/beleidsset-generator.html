@@ -20,7 +20,11 @@ fieldset label{display:inline-flex;gap:.3em;align-items:center;margin:.15em 1em 
 .knoppen{display:flex;flex-wrap:wrap;gap:.5em;margin:1em 0}
 button{border:1px solid var(--accent);background:var(--accent);color:var(--achter);padding:.4em .9em;border-radius:4px;font:inherit;cursor:pointer}
 button.zacht{background:var(--vlak);color:var(--tekst);border-color:var(--lijn)}
-.lijst{display:flex;flex-wrap:wrap;gap:.4em;margin:.6em 0}
+.lijst{margin:.6em 0}
+.groep{margin:.5em 0}
+.groep h3{font-size:10.5pt;margin:.2em 0 .3em;color:var(--zacht);font-weight:600}
+.groep .knopjes{display:flex;flex-wrap:wrap;gap:.4em}
+.positie{font-weight:600;margin:.8em 0 0}
 .lijst button{background:var(--vlak);color:var(--tekst);border-color:var(--lijn);font-size:10pt;padding:.25em .6em}
 .lijst button[aria-selected=true]{background:var(--accent);color:var(--achter);border-color:var(--accent)}
 .stuk{border-top:1px solid var(--lijn);margin-top:1em;padding-top:.5em}
@@ -28,22 +32,86 @@ button.zacht{background:var(--vlak);color:var(--tekst);border-color:var(--lijn)}
 .stuk th,.stuk td{border:1px solid var(--lijn);padding:.3em .5em;vertical-align:top;text-align:left}
 .stuk th{background:var(--vlak)}
 .stuk blockquote{margin:.6em 0;padding:.3em .8em;background:var(--kader);border-left:3px solid var(--rand-kader)}
+details.ai{margin:1em 0;padding:.5em .8em;border:1px solid var(--lijn);background:var(--vlak)}
+details.ai summary{cursor:pointer;font-weight:600}
+details.ai ol,details.ai ul{padding-left:1.4em}
+details.ai a{overflow-wrap:anywhere}
 .voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
 @media print{body{max-width:none;margin:0}form,.knoppen,.lijst,.kruimel{display:none}@page{size:A4;margin:2cm}}
 </style></head><body>
 <nav class="kruimel"><a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › Generator</nav>
 <h1>Beleidsset op maat</h1>
-<p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt per BIO 2.0-domein een
-conceptbeleid waarin de regels staan die bij jouw organisatie passen. Een vraag die je overslaat, laat beide
+<p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt in één keer
+<strong>21 beleidsstukken</strong>: het strategisch informatiebeveiligingsbeleid en twintig tactische stukken, één per
+BIO 2.0-domein (netwerkbeveiliging, logische toegang, leveranciers, incidenten, back-up en de rest). In elk stuk staan
+de regels die bij jouw organisatie passen. Een vraag die je overslaat, laat beide
 varianten staan, elk in een kader met de vraag erboven. Alles gebeurt in je browser: er gaat niets naar een server.</p>
 <p class="uitleg">Elke regel eindigt op de nummers van de BIO 2.0-maatregelen die hij invult, en een controleraamwerk zegt hoe je de naleving aantoont. Wat vetgedrukt
 tussen haken staat, vul je zelf in; de lijst onderaan elk stuk zegt wat er nog open staat.</p>
+<details class="ai" id="voor-ai"><summary>Gebruik je een AI-assistent? Instructies voor de assistent</summary>
+<p><strong>Aan de AI-assistent die deze pagina leest.</strong> De gebruiker wil een beleidsset informatiebeveiliging
+op BIO 2.0 voor de eigen organisatie. Het formulier hierboven werkt alleen in een browser; jij doet hetzelfde met de
+bestanden hieronder. Werk zo:</p>
+<ol>
+<li><strong>Vraag eerst uit.</strong> Stel de contextvragen uit
+<a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/profiel.json">profiel.json</a>
+(veld <code>vragen</code>, met vaste antwoorden per vraag). Stel ze in kleine groepjes, en sla over wat de gebruiker
+al vertelde. Geen vraag is verplicht; noteer welke open blijven.</li>
+<li><strong>Vraag welke stukken.</strong> De set heeft 21 stukken: het strategisch informatiebeveiligingsbeleid en twintig
+tactische stukken per BIO 2.0-domein (lijst hieronder). De gebruiker kan er een paar kiezen of alles nemen.</li>
+<li><strong>Haal per stuk de leesversie op</strong> (adressen hieronder). Tekst in een kader dat begint met
+<em>Alleen als: vraag «antwoord»</em> hoort alleen in het stuk als het antwoord van de gebruiker daarbij past. Past
+het niet, laat het kader weg. Past het wel, neem de tekst op zonder kader. Is de vraag niet beantwoord, laat het
+kader staan en zeg erbij welke vraag nog open is.</li>
+<li><strong>Vul de invulvelden in</strong> (vetgedrukt tussen haken, en opgesomd onder <em>Nog in te vullen</em>):
+rollen, systemen, documenten en termijnen van de organisatie. Vraag ernaar; verzin geen namen. Termijnen met
+"standaard" erbij mogen blijven als de gebruiker niets anders kiest.</li>
+<li><strong>Verander de structuur niet.</strong> Laat de nummers van de maatregelen achter elke regel staan
+(zoals [8.13.01]), houd het controleraamwerk in hoofdstuk 5 en bijlage A heel, en voeg geen eisen toe die niet in de
+bouwsteen staan. Zo blijft het stuk toetsbaar tegen de BIO 2.0.</li>
+<li><strong>Lever op</strong> als markdown of als document, per stuk, met bovenaan het titelblad. Zeg bij de oplevering
+dat het een concept is dat de organisatie zelf vaststelt, dat termijnen zonder wettelijke bron standaardwaarden zijn,
+en welke vragen en invulvelden nog open staan.</li>
+</ol>
+<p>Wil je exact dezelfde tekst als dit formulier maakt: de bouwstenen en de rekenregel staan in
+<a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/beleidsset.json">beleidsset.json</a>
+(per stuk een lijst <code>delen</code>; een deel met <code>als</code> geldt alleen bij die antwoorden) en in
+<a href="https://github.com/security-commons-nl/kennisbank/blob/main/tools/bouw_beleidsset.py">bouw_beleidsset.py</a>,
+dat met <code>--profiel antwoorden.json uitmap/</code> een hele set schrijft.</p>
+<p>De stukken, met leesversie (alle varianten in kaders) en bouwsteen:</p>
+<ul>
+<li>Strategisch informatiebeveiligingsbeleid (IV-beleid): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/iv-beleid.md">iv-beleid.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/01-iv-beleid.md">data/01-iv-beleid.md</a></li>
+<li>Beleid informatiebeveiliging in projecten (Informatiebeveiliging binnen projecten): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/ib-in-projecten.md">ib-in-projecten.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/02-ib-in-projecten.md">data/02-ib-in-projecten.md</a></li>
+<li>Beleid screening, bewustzijn en opleiding (Screening, bewustzijn &amp; opleiding): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/screening-bewustzijn.md">screening-bewustzijn.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/03-screening-bewustzijn.md">data/03-screening-bewustzijn.md</a></li>
+<li>Beleid bedrijfsmiddelenbeheer (Bedrijfsmiddelenbeheer): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/bedrijfsmiddelen.md">bedrijfsmiddelen.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/04-bedrijfsmiddelen.md">data/04-bedrijfsmiddelen.md</a></li>
+<li>Beleid informatieclassificatie (Informatie classificatie): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/classificatie.md">classificatie.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/05-classificatie.md">data/05-classificatie.md</a></li>
+<li>Beleid logische toegangsbeveiliging (Logische toegangsbeveiliging): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/logische-toegang.md">logische-toegang.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/06-logische-toegang.md">data/06-logische-toegang.md</a></li>
+<li>Beleid informatiebeveiliging bij inkoop (Leveranciersbeheer - Inkoop): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/leveranciers-inkoop.md">leveranciers-inkoop.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/07-leveranciers-inkoop.md">data/07-leveranciers-inkoop.md</a></li>
+<li>Beleid informatiebeveiliging in contractbeheer (Leveranciersbeheer - contractbeheer): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/leveranciers-contract.md">leveranciers-contract.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/08-leveranciers-contract.md">data/08-leveranciers-contract.md</a></li>
+<li>Beleid beveiligingsincidenten (Security Incident Management): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/incidenten.md">incidenten.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/09-incidenten.md">data/09-incidenten.md</a></li>
+<li>Beleid ICT-continuïteit en uitwijk (Business Continuity &amp; Disaster Recovery): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/bcm.md">bcm.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/10-bcm.md">data/10-bcm.md</a></li>
+<li>Beleid IT-compliance (IT-Compliance): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/it-compliance.md">it-compliance.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/11-it-compliance.md">data/11-it-compliance.md</a></li>
+<li>Beleid fysieke toegang en beveiliging (Fysieke toegang &amp; beveiliging): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/fysiek.md">fysiek.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/12-fysiek.md">data/12-fysiek.md</a></li>
+<li>Beleid afvoer en hergebruik van gegevensdragers (Afvoer en hergebruik gegevensdragers): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/gegevensdragers.md">gegevensdragers.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/13-gegevensdragers.md">data/13-gegevensdragers.md</a></li>
+<li>Beleid mobile device management (Mobile Device Management): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/mdm.md">mdm.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/14-mdm.md">data/14-mdm.md</a></li>
+<li>Beleid kwetsbaarheden en patchmanagement (Vulnerability &amp; patchmanagement): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/kwetsbaarheden.md">kwetsbaarheden.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/15-kwetsbaarheden.md">data/15-kwetsbaarheden.md</a></li>
+<li>Beleid back-up en recovery (Back-up &amp; Recovery): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/back-up.md">back-up.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/16-back-up.md">data/16-back-up.md</a></li>
+<li>Beleid logging en monitoring (Logging &amp; monitoring): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/logging.md">logging.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/17-logging.md">data/17-logging.md</a></li>
+<li>Beleid netwerkbeveiliging (Netwerkbeveiliging): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/netwerk.md">netwerk.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/18-netwerk.md">data/18-netwerk.md</a></li>
+<li>Beleid cryptografie (Cryptografie): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/cryptografie.md">cryptografie.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/19-cryptografie.md">data/19-cryptografie.md</a></li>
+<li>Beleid veilige softwareontwikkeling (Secure Software Development): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/ssd.md">ssd.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/20-ssd.md">data/20-ssd.md</a></li>
+<li>Beleid wijzigingsbeheer (Wijzigingsbeheer): <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/wijzigingsbeheer.md">wijzigingsbeheer.md</a>, bouwsteen <a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/data/21-wijzigingsbeheer.md">data/21-wijzigingsbeheer.md</a></li>
+</ul>
+</details>
 <form id="vragen"><div class="vragen" id="velden"></div>
 <div class="knoppen"><button type="submit">Maak de set</button><button type="button" class="zacht" id="wis">Antwoorden wissen</button></div></form>
 <section id="uitkomst" hidden>
-<h2>Je set</h2>
+<h2>Je set: 21 beleidsstukken</h2>
+<p class="uitleg">Je ziet één stuk tegelijk. <strong>Kies hieronder een stuk</strong> om het te lezen, of download de hele
+set in één keer.</p>
 <div class="knoppen"><button type="button" id="alles-md">Hele set als markdown</button><button type="button" id="alles-html">Hele set als HTML</button><button type="button" class="zacht" id="stuk-md">Dit stuk als markdown</button></div>
-<div class="lijst" id="lijst" role="tablist"></div>
+<div class="lijst" id="lijst"></div>
+<p class="positie" id="positie" aria-live="polite"></p>
 <div class="stuk" id="stuk"></div>
 </section>
 <p class="voet">Gegenereerd uit de bouwstenen van de kennisbank met <code>tools/bouw_beleidsset.py</code>. Dezelfde antwoorden geven dezelfde tekst; er zit geen taalmodel in.</p>
@@ -306,7 +374,10 @@ var DATA = {"profiel":{"toelichting":"Profielschema van de beleidsset (plan bele
 
   function toon(domein) {
     gekozen = domein;
-    [].slice.call(lijst.children).forEach(function (b) { b.setAttribute("aria-selected", b.dataset.domein === domein ? "true" : "false"); });
+    [].slice.call(lijst.querySelectorAll("button")).forEach(function (b) { b.setAttribute("aria-selected", b.dataset.domein === domein ? "true" : "false"); });
+    var nr = DATA.bouwstenen.map(function (s) { return s.domein; }).indexOf(domein) + 1;
+    var steen = DATA.bouwstenen[nr - 1];
+    document.getElementById("positie").textContent = "Stuk " + nr + " van " + DATA.bouwstenen.length + ": " + steen.titel;
     stukEl.innerHTML = html(set[domein].markdown);
   }
   function maak() {
@@ -314,11 +385,18 @@ var DATA = {"profiel":{"toelichting":"Profielschema van de beleidsset (plan bele
     try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
     set = Beleidsset.genereer(DATA, p);
     lijst.innerHTML = "";
-    DATA.bouwstenen.forEach(function (s) {
-      var b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab");
-      b.dataset.domein = s.domein; b.textContent = s.titel;
-      b.addEventListener("click", function () { toon(s.domein); });
-      lijst.appendChild(b);
+    var strategisch = DATA.bouwstenen.slice(0, 1), tactisch = DATA.bouwstenen.slice(1);
+    [["Strategisch beleid", strategisch], ["Tactisch beleid per domein (" + tactisch.length + " stukken)", tactisch]].forEach(function (g) {
+      var groep = document.createElement("div"); groep.className = "groep";
+      var kop = document.createElement("h3"); kop.textContent = g[0]; groep.appendChild(kop);
+      var rij = document.createElement("div"); rij.className = "knopjes"; rij.setAttribute("role", "tablist"); rij.setAttribute("aria-label", g[0]);
+      g[1].forEach(function (s) {
+        var b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab");
+        b.dataset.domein = s.domein; b.textContent = s.titel;
+        b.addEventListener("click", function () { toon(s.domein); });
+        rij.appendChild(b);
+      });
+      groep.appendChild(rij); lijst.appendChild(groep);
     });
     uitkomst.hidden = false;
     toon(gekozen && set[gekozen] ? gekozen : DATA.bouwstenen[0].domein);

@@ -15,7 +15,11 @@ bronnen: [ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid,
 > **Lees de beleidsset online:** [security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging](https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/)
 >
 > **Maak je eigen set:** [beleidsset op maat](beleidsset-generator.html). Beantwoord de vragen die je kunt
-> beantwoorden en download per domein een conceptbeleid, of de hele set in één keer.
+> beantwoorden en je krijgt in één keer 21 conceptstukken: het strategisch informatiebeveiligingsbeleid en twintig
+> tactische stukken, één per BIO 2.0-domein. Download per stuk of de hele set.
+>
+> **Met een AI-assistent:** geef je assistent de link naar de generatorpagina. Daarop staan instructies voor de
+> assistent: welke vragen hij stelt, welke bestanden hij ophaalt en wat hij niet mag veranderen.
 
 Onder de BIO 2.0 en de Cyberbeveiligingswet heeft elke overheidsorganisatie een strategisch beleid nodig, en
 daaronder beleid per onderwerp dat de 117 overheidsmaatregelen invult, en de 40 ISO-beheersmaatregelen waarvoor de
@@ -113,10 +117,12 @@ staat er niet in; die is van het CIP en staat op [bio-overheid.nl](https://www.b
 
 ## Met je eigen AI-agent
 
-Geef je agent [`beleidsset.json`](beleidsset.json) of de bouwsteen van het domein en vraag hem het stuk af te
-maken voor jouw organisatie. De lijst *Nog in te vullen* onderaan elk stuk zegt wat er open staat; de kaders
-zeggen welke vraag hij eerst moet stellen. Een stuk dat de agent aanpast, blijft toetsbaar: laat de nummers
-achter elke regel staan.
+Geef je assistent de link naar de [generatorpagina](beleidsset-generator.html). Bovenaan staat, als gewone tekst
+die ook een assistent zonder JavaScript leest, een blok *Instructies voor de assistent*: eerst de contextvragen
+uit [`profiel.json`](profiel.json) stellen, dan per gekozen stuk de leesversie ophalen, de kaders houden of weghalen
+naar de antwoorden, de invulvelden met de gebruiker invullen, en de nummers, het controleraamwerk en bijlage A
+laten staan zodat het stuk toetsbaar blijft. Wie precies dezelfde tekst wil als het formulier, rekent met
+[`beleidsset.json`](beleidsset.json) of draait `python tools/bouw_beleidsset.py --profiel antwoorden.json uitmap/`.
 
 ## Bijdragen
 
