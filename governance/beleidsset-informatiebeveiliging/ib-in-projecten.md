@@ -43,6 +43,8 @@ informatieclassificatie).
 3. De risicoafweging gebruikt de risicomanagementmethodiek die de organisatie heeft vastgesteld; een project
    gebruikt geen eigen methode.
 4. Een project gaat pas live als de restrisico's bekend zijn en zijn geaccepteerd door wie dat mag.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -88,7 +90,7 @@ informatieclassificatie).
 > **Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd» of «Gezondheid (WvGGZ, NTA 7516)»**
 >
 > 7. Verwerkt het systeem gegevens uit het sociaal domein, over jeugd of over gezondheid, dan is een DPIA altijd
->    verplicht en geldt voor vertrouwelijkheid ten minste het label confidentieel, tenzij de risicoafweging met
+>    verplicht en geldt voor vertrouwelijkheid ten minste het label strikt vertrouwelijk, tenzij de risicoafweging met
 >    redenen een lager label onderbouwt. [5.08.01]
 > 8. De risicoafweging behandelt in dat geval ook toegang door ketenpartners en zorgaanbieders, de logging van
 >    inzage en de vraag of gegevens buiten de Europese Economische Ruimte terechtkomen. De FG wordt om advies

@@ -45,6 +45,8 @@ fysieke toegang en beveiliging).
 3. Een back-up waarvan het terugzetten niet is getest, geldt niet als back-up.
 4. Hoe hoger het impactniveau van een systeem, hoe korter de hersteltijd en hoe strikter de scheiding van
    de kopieën.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -227,6 +229,7 @@ De maatregelen van dit domein (4, waarvan 4 overheidsmaatregelen), waar dit stuk
 |---|---|
 | BCM | Business continuity management, het beheer van bedrijfscontinuïteit |
 | BIA | Business impact analyse |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CISO | Chief Information Security Officer |
 | ISAE | International Standard on Assurance Engagements |
 | ISO | International Organization for Standardization |

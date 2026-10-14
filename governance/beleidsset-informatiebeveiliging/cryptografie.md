@@ -43,6 +43,8 @@ van gegevensdragers).
 3. Elk cryptografisch middel (certificaat, sleutel, versleutelingsvoorziening) heeft een eigenaar en staat
    in de inventaris.
 4. Sleutels zijn net zo goed beschermd als de informatie die ze beschermen.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -54,7 +56,7 @@ van gegevensdragers).
    - intern: versleuteld transport over elk netwerk buiten het eigen interne netwerk;
    - vertrouwelijk: versleuteld transport over elk netwerk, ook intern, en versleutelde opslag op draagbare
      apparaten en gegevensdragers;
-   - confidentieel en geheim: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij
+   - strikt vertrouwelijk en geheim: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij
      uitwisseling, versleuteling van het bericht zelf.
 2. Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en de
    **[sleutelbeheerder]** test
@@ -118,7 +120,7 @@ van gegevensdragers).
 > **Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»**
 >
 > 6. Sleutels voor de eigen systemen worden in de eigen omgeving gegenereerd en beheerd. Sleutels voor
->    informatie met het label confidentieel of geheim staan in een HSM of een gelijkwaardige voorziening.
+>    informatie met het label strikt vertrouwelijk of geheim staan in een HSM of een gelijkwaardige voorziening.
 >    [8.24.01]
 
 > **Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»**
@@ -130,7 +132,7 @@ van gegevensdragers).
 > **Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»**
 >
 > 8. Bij SaaS en publieke cloud toetst de organisatie bij inkoop of de leverancier versleutelt bij transport en
->    opslag volgens dit beleid. Voor informatie met het label confidentieel of geheim kiest de organisatie waar
+>    opslag volgens dit beleid. Voor informatie met het label strikt vertrouwelijk of geheim kiest de organisatie waar
 >    het kan voor sleutels die zij zelf beheert of die buiten de leverancier liggen. [8.24.01]
 > 9. De versleutelingsinstellingen van elke clouddienst staan in de inventaris, ook als de leverancier de
 >    sleutels beheert. [8.24.02]
@@ -206,6 +208,7 @@ De maatregelen van dit domein (4, waarvan 4 overheidsmaatregelen), waar dit stuk
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | BYOD | Bring your own device: eigen apparaten van medewerkers voor het werk |
 | CISO | Chief Information Security Officer |
 | CRL | Certificate revocation list, de lijst van ingetrokken certificaten |

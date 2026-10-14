@@ -42,6 +42,8 @@ beveiliging).
    erin zit, en wat ermee verbonden is, voldoet aan dat niveau.
 3. Toegang hangt af van de identiteit van gebruiker en apparaat, ook binnen het eigen netwerk.
 4. Beheer van het netwerk loopt via een eigen, afgeschermde route.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -247,6 +249,7 @@ De maatregelen van dit domein (8, waarvan 7 overheidsmaatregelen), waar dit stuk
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CERT | Computer emergency response team |
 | CISO | Chief Information Security Officer |
 | IEC | International Electrotechnical Commission |

@@ -51,6 +51,8 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
    gebruik gaat. Hoe hoger het impactniveau van de informatie, hoe zwaarder de eisen en de toets.
 3. Voor uitbestede ontwikkeling gelden dezelfde eisen als voor eigen ontwikkeling.
 4. Er wordt getest met fictieve gegevens; persoonsgegevens in test zijn een onderbouwde uitzondering.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -80,7 +82,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
    uit het impactniveau, de vertrouwelijkheidsklasse en de risicoanalyse, en legt ze vast in het programma
    van eisen of de ontwerpdocumentatie. Voor webapplicaties en koppelingen gebruikt de organisatie een
    erkende eisenset als basis, bijvoorbeeld de OWASP ASVS: niveau 1 bij impactniveau gering of lager, niveau
-   2 bij gemiddeld of hoger en niveau 3 bij informatie met het label confidentieel of geheim. [8.26.01]
+   2 bij gemiddeld of hoger en niveau 3 bij informatie met het label strikt vertrouwelijk of geheim. [8.26.01]
 2. Voor webapplicaties gelden in elk geval: veilig sessiebeheer met een time-out, bescherming tegen
    brute-force-aanmeldingen, controle van alle invoer, geen gevoelige gegevens in de URL,
    beveiligingsheaders (zoals HSTS en een Content Security Policy) en registratie van de website of
@@ -237,6 +239,7 @@ Daarnaast vult dit stuk maatregelen van andere domeinen mee in: 8.33.01 (Testgeg
 |---|---|
 | API | Application programming interface, een koppelvlak tussen systemen |
 | ASVS | Application Security Verification Standard, de eisenset van OWASP voor applicatiebeveiliging |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CISO | Chief Information Security Officer |
 | FG | Functionaris gegevensbescherming |
 | HSTS | HTTP Strict Transport Security, een beveiligingsheader die alleen versleutelde verbindingen toestaat |

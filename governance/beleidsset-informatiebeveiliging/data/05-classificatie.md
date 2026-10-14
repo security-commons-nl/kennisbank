@@ -39,6 +39,8 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    de zwaarste informatie die het verwerkt, tenzij het systeem die informatie apart afschermt.
 4. Eén schaal voor de hele organisatie: de vijf impactniveaus uit dit beleid sturen de zones, de
    toegangsrechten, de versleuteling en de bewaring, zodat een classificatie overal hetzelfde betekent.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -59,11 +61,11 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
   | verwaarloosbaar | uitval langer dan een week en verlies van een week aan gegevens zijn aanvaardbaar | fouten hebben geen gevolgen voor besluiten of dienstverlening | geen schade bij openbaarmaking; label openbaar |
   | gering | uitval tot een week, gegevensverlies tot een werkdag | fouten geven hinder en extra werk, zijn achteraf te herstellen | beperkte schade, zoals ongemak of een klacht; label intern |
   | gemiddeld | uitval tot een werkdag, gegevensverlies tot vier uur | fouten leiden tot verkeerde besluiten of betalingen met herstelbare schade | schade voor burgers, partners of de organisatie, zoals een datalek met meldplicht; label vertrouwelijk |
-  | kritiek of zeer ernstig | uitval tot vier uur, gegevensverlies tot een uur | fouten geven rechtsgevolgen of financiële schade die moeilijk te herstellen is | ernstige schade voor personen (veiligheid, bestaanszekerheid) of voor het functioneren van de organisatie; label confidentieel |
+  | ernstig | uitval tot vier uur, gegevensverlies tot een uur | fouten geven rechtsgevolgen of financiële schade die moeilijk te herstellen is | ernstige schade voor personen (veiligheid, bestaanszekerheid) of voor het functioneren van de organisatie; label strikt vertrouwelijk |
   | catastrofaal | uitval tot een uur, geen gegevensverlies | fouten raken leven, gezondheid of de rechtsstaat | schade voor de staat, de openbare orde of levens; weerstand tegen statelijke actoren en georganiseerde criminaliteit; label geheim |
 
 - De proceseigenaar classificeert de informatie in elk informatiesysteem op basis van een expliciete
-  risicoafweging vóór ingebruikname, daarna bij elke ingrijpende wijziging en ten minste elke drie jaar. De
+  risicoafweging vóór ingebruikname, daarna bij elke ingrijpende wijziging en ten minste elke [[herzieningstermijn classificatie: standaard drie jaar]]. De
   uitkomst staat in een classificatierapport met de ingevulde vragenlijsten, door de proceseigenaar
   ondertekend als besluit. [5.12.01]
 - De systeemeigenaar registreert de classificatie per systeem en per gegevensverzameling in de inventaris van
@@ -88,7 +90,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
   | openbaar | geen eis voor lezen; persoonsgebonden account voor wijzigen | iedereen mag lezen; wijzigen alleen door aangewezen medewerkers | integriteit van de bron bewaakt; transport via de standaarden voor internetverkeer |
   | intern | persoonsgebonden account; meerfactor bij toegang van buiten | toegang voor medewerkers van de organisatie | versleuteld transport buiten het eigen netwerk |
   | vertrouwelijk | meerfactor | toegang per rol, door de eigenaar toegekend en jaarlijks beoordeeld | versleuteld transport en versleutelde opslag; zo min mogelijk kopieën; niet op verwijderbare media zonder uitzondering |
-  | confidentieel | meerfactor met een sterk middel; geen toegang vanaf niet-beheerde apparaten | toegang per persoon met doelbinding, door de eigenaar toegekend en elk halfjaar beoordeeld; vierogenprincipe bij wijzigingen met rechtsgevolg | versleuteld met sleutels in eigen beheer; opslag alleen in systemen in zone 3 of hoger of bij een leverancier met gelijkwaardige verklaring; logging van elke toegang |
+  | strikt vertrouwelijk | meerfactor met een sterk middel; geen toegang vanaf niet-beheerde apparaten | toegang per persoon met doelbinding, door de eigenaar toegekend en elk halfjaar beoordeeld; vierogenprincipe bij wijzigingen met rechtsgevolg | versleuteld met sleutels in eigen beheer; opslag alleen in systemen in zone 3 of hoger of bij een leverancier met gelijkwaardige verklaring; logging van elke toegang |
   | geheim | meerfactor met een sterk middel, geen single sign-on | toegang per persoon, vierogenprincipe bij toegang en wijziging | aanvullende maatregelen op basis van een eigen risicoanalyse door de CISO |
 
 - Voor integriteit van gemiddeld en hoger geldt het vierogenprincipe bij wijzigingen van gegevens die
@@ -107,7 +109,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 :::
 
 ::: als gevoelig=gezondheid
-- Gezondheidsinformatie is een bijzonder persoonsgegeven en krijgt ten minste confidentieel. Ad-hoc
+- Gezondheidsinformatie is een bijzonder persoonsgegeven en krijgt ten minste strikt vertrouwelijk. Ad-hoc
   uitwisseling per e-mail of chat voldoet aan de NTA 7516: gezondheidsinformatie hoort in het vakinhoudelijke
   systeem, gaat per e-mail alleen als dat niet kan en dan alleen versleuteld via beveiligde mail, met een
   vastgestelde grond om te verzenden en een gecontroleerde ontvanger. Automatisch doorsturen,
@@ -120,7 +122,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 
 ::: als politiegegevens=ja
 - Politiegegevens die de organisatie verwerkt (bijvoorbeeld door boa's of in de handhaving) worden apart
-  geclassificeerd en krijgen ten minste confidentieel. Ze worden gescheiden gehouden van de overige informatie
+  geclassificeerd en krijgen ten minste strikt vertrouwelijk. Ze worden gescheiden gehouden van de overige informatie
   in een systeem of omgeving waarvoor de autorisatie-, logging- en bewaareisen van de Wet politiegegevens
   gelden, en gaan niet via gewone e-mail of chat naar ontvangers buiten de kring die de wet toestaat.
   [5.12.01]
@@ -136,7 +138,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
   publiceert, doet dat alleen na een besluit van de proceseigenaar. [5.13.01]
 - Systemen die labels ondersteunen, passen bij het label automatisch de bijbehorende beveiliging toe:
   versleuteling, beperking van delen en afdrukken, en blokkering van verzending naar ontvangers buiten de
-  organisatie bij confidentieel en geheim. De systeemeigenaar richt dat in en test het bij elke wijziging van
+  organisatie bij strikt vertrouwelijk en geheim. De systeemeigenaar richt dat in en test het bij elke wijziging van
   het labelbeleid. [5.13.01]
 - Een label verandert alleen als de proceseigenaar daartoe besluit, bijvoorbeeld bij openbaarmaking na een
   besluit op grond van de Wet open overheid; de wijziging wordt vastgelegd met datum en reden. [5.13.01]
@@ -172,7 +174,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
   controleert haar ten minste elk halfjaar. [5.14.05]
 - Wie informatie met het label vertrouwelijk of hoger buiten de organisatie deelt, gebruikt een
   overdrachtsvoorziening die bij het label past (beveiligde mail, een beveiligd uitwisselplatform of een
-  gecontroleerde koppeling) en controleert vooraf de ontvanger. Informatie met het label confidentieel of
+  gecontroleerde koppeling) en controleert vooraf de ontvanger. Informatie met het label strikt vertrouwelijk of
   hoger gaat alleen naar ontvangers met wie een schriftelijke afspraak over vertrouwelijkheid bestaat.
   [5.14.01]
 
@@ -197,7 +199,7 @@ afwijkingen gaan als bevinding naar het risicoregister.
 | Nr | Controle | Uitvoerder | Frequentie | Bewijs | Maatregelen |
 |---|---|---|---|---|---|
 | CLS-01 | Elk systeem en elke gegevensverzameling in de inventaris heeft een classificatie per BIV-aspect die niet ouder is dan drie jaar, met een ondertekend classificatierapport | CISO | Jaarlijks | Lijst uit de inventaris met ontbrekende of verlopen classificaties en de afhandeling | 5.12.01 |
-| CLS-02 | De systemen met het label confidentieel of geheim voldoen aan de minimumeisen voor authenticatie, autorisatie, opslag en zone | CISO | Jaarlijks | Toetsverslag per systeem met de afwijkingen | 5.12.01 |
+| CLS-02 | De systemen met het label strikt vertrouwelijk of geheim voldoen aan de minimumeisen voor authenticatie, autorisatie, opslag en zone | CISO | Jaarlijks | Toetsverslag per systeem met de afwijkingen | 5.12.01 |
 | CLS-03 | Informatie in de documentopslag en de systemen van de proceseigenaar draagt het juiste label en systemen passen bij het label de beveiliging toe | Proceseigenaar | Jaarlijks | Steekproef van ten minste twintig documenten of gegevensverzamelingen, testverslag van de automatische toepassing | 5.13.01 |
 | CLS-04 | Alle domeinen voldoen aan de verplichte internetstandaarden; tekortkomingen zijn binnen drie maanden omgezet in een wijziging of een geaccepteerd risico | [[beheerder internetfacing systemen]] | Maandelijks, met een kwartaaloverzicht aan de CISO | internet.nl-scores per domein, overzicht van de opvolging | 5.14.01 |
 | CLS-05 | De registratie van internetfacing systemen en het Register Internetdomeinen Overheid komen overeen met een externe scan van de domeinen en IP-reeksen van de organisatie | [[beheerder internetfacing systemen]] | Halfjaarlijks | Scanrapport met de vergelijking en de afhandeling van verschillen | 5.14.04, 5.14.05 |

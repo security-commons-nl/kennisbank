@@ -44,6 +44,8 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
    configuratie is vastgelegd, zodat een afwijking meetbaar is.
 4. Kan een kwetsbaarheid niet op tijd worden verholpen, dan is er een vastgelegde risicoafweging met
    tijdelijke maatregelen, een einddatum en een eigenaar.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -133,9 +135,9 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 
    | Risico | Termijn |
    |---|---|
-   | Kans op misbruik hoog en schade hoog | zo snel mogelijk, uiterlijk binnen een week |
-   | Overig hoog | binnen een maand |
-   | Gemiddeld | binnen drie maanden |
+   | Kans op misbruik hoog en schade hoog | zo snel mogelijk, uiterlijk binnen **[patchtermijn hoog en hoog]** |
+   | Overig hoog | binnen **[patchtermijn hoog]** |
+   | Gemiddeld | binnen **[patchtermijn gemiddeld]** |
    | Laag | bij de eerstvolgende reguliere update |
 
 3. Bij hoge kans en hoge schade zijn de beperkende maatregelen uiterlijk binnen een week getroffen. Bij
@@ -261,6 +263,7 @@ De maatregelen van dit domein (10, waarvan 9 overheidsmaatregelen), waar dit stu
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CERT | Computer emergency response team |
 | CIS | Center for Internet Security, uitgever van hardeningsrichtlijnen (CIS Benchmarks) |
 | CISO | Chief Information Security Officer |
@@ -278,6 +281,9 @@ De maatregelen van dit domein (10, waarvan 9 overheidsmaatregelen), waar dit stu
 - **beheerorganisatie**: de eigen afdeling of de leverancier die de systemen beheert
 - **configuratieregister**: het systeem waarin de configuraties staan, bijvoorbeeld de configuratiedatabase van het beheertool
 - **register testrapporten**: de plek waar pentestrapporten en opvolging staan, bijvoorbeeld het managementsysteem
+- **patchtermijn hoog en hoog**: standaard een week, de BIO 2.0 noemt een week als grens voor tijdelijke maatregelen
+- **patchtermijn hoog**: standaard een maand
+- **patchtermijn gemiddeld**: standaard drie maanden
 - **termijn uitfaseren**
 - **kwetsbaarhedenregister**: het systeem waarin open kwetsbaarheden staan, bijvoorbeeld de scantool of het ticketsysteem
 - **functionaris informatiebeveiliging**

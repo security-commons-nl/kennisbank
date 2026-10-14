@@ -69,6 +69,8 @@ inrichting van het netwerk (beleid netwerkbeveiliging).</p>
    configuratie is vastgelegd, zodat een afwijking meetbaar is.</li>
 <li>Kan een kwetsbaarheid niet op tijd worden verholpen, dan is er een vastgelegde risicoafweging met
    tijdelijke maatregelen, een einddatum en een eigenaar.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
 <h2 id="3-beleidsregels">3. Beleidsregels</h2>
 <h3>3.1 Bescherming tegen malware</h3>
@@ -167,15 +169,15 @@ inrichting van het netwerk (beleid netwerkbeveiliging).</p>
 <tbody>
 <tr>
 <td>Kans op misbruik hoog en schade hoog</td>
-<td>zo snel mogelijk, uiterlijk binnen een week</td>
+<td>zo snel mogelijk, uiterlijk binnen <strong>[patchtermijn hoog en hoog]</strong></td>
 </tr>
 <tr>
 <td>Overig hoog</td>
-<td>binnen een maand</td>
+<td>binnen <strong>[patchtermijn hoog]</strong></td>
 </tr>
 <tr>
 <td>Gemiddeld</td>
-<td>binnen drie maanden</td>
+<td>binnen <strong>[patchtermijn gemiddeld]</strong></td>
 </tr>
 <tr>
 <td>Laag</td>
@@ -477,6 +479,10 @@ het beleid screening, bewustzijn en opleiding (voorlichting en phishing-simulati
 </thead>
 <tbody>
 <tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
 <td>CERT</td>
 <td>Computer emergency response team</td>
 </tr>
@@ -527,6 +533,9 @@ het beleid screening, bewustzijn en opleiding (voorlichting en phishing-simulati
 <li><strong>beheerorganisatie</strong>: de eigen afdeling of de leverancier die de systemen beheert</li>
 <li><strong>configuratieregister</strong>: het systeem waarin de configuraties staan, bijvoorbeeld de configuratiedatabase van het beheertool</li>
 <li><strong>register testrapporten</strong>: de plek waar pentestrapporten en opvolging staan, bijvoorbeeld het managementsysteem</li>
+<li><strong>patchtermijn hoog en hoog</strong>: standaard een week, de BIO 2.0 noemt een week als grens voor tijdelijke maatregelen</li>
+<li><strong>patchtermijn hoog</strong>: standaard een maand</li>
+<li><strong>patchtermijn gemiddeld</strong>: standaard drie maanden</li>
 <li><strong>termijn uitfaseren</strong></li>
 <li><strong>kwetsbaarhedenregister</strong>: het systeem waarin open kwetsbaarheden staan, bijvoorbeeld de scantool of het ticketsysteem</li>
 <li><strong>functionaris informatiebeveiliging</strong></li>

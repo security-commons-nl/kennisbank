@@ -36,6 +36,8 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
    gebeurt bij een afwijking.
 4. Logging met persoonsgegevens dient alleen beveiliging, beheer en verantwoording, niet het volgen van
    medewerkers.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 

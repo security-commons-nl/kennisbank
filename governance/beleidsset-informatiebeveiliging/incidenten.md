@@ -46,7 +46,9 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 4. Wettelijke meldtermijnen gaan vóór interne afstemming. Een melding die later moet worden aangevuld, is
    beter dan een te late melding.
 5. De ernst van een incident volgt het impactniveau van de geraakte informatie en processen (beleid
-   informatieclassificatie): verwaarloosbaar, gering, gemiddeld, kritiek of zeer ernstig, catastrofaal.
+   informatieclassificatie): verwaarloosbaar, gering, gemiddeld, ernstig, catastrofaal.
+6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -291,6 +293,7 @@ De maatregelen van dit domein (13, waarvan 12 overheidsmaatregelen), waar dit st
 | AVG | Algemene verordening gegevensbescherming |
 | BCM | Business continuity management, het beheer van bedrijfscontinuïteit |
 | BIA | Business impact analyse |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CERT | Computer emergency response team |
 | CISO | Chief Information Security Officer |
 | CSIRT | Computer security incident response team |

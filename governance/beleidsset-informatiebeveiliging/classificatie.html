@@ -71,6 +71,8 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    de zwaarste informatie die het verwerkt, tenzij het systeem die informatie apart afschermt.</li>
 <li>Eén schaal voor de hele organisatie: de vijf impactniveaus uit dit beleid sturen de zones, de
    toegangsrechten, de versleuteling en de bewaring, zodat een classificatie overal hetzelfde betekent.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
 <h2 id="3-beleidsregels">3. Beleidsregels</h2>
 <h3>3.1 Classificatiemethode</h3>
@@ -114,10 +116,10 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 <td>schade voor burgers, partners of de organisatie, zoals een datalek met meldplicht; label vertrouwelijk</td>
 </tr>
 <tr>
-<td>kritiek of zeer ernstig</td>
+<td>ernstig</td>
 <td>uitval tot vier uur, gegevensverlies tot een uur</td>
 <td>fouten geven rechtsgevolgen of financiële schade die moeilijk te herstellen is</td>
-<td>ernstige schade voor personen (veiligheid, bestaanszekerheid) of voor het functioneren van de organisatie; label confidentieel</td>
+<td>ernstige schade voor personen (veiligheid, bestaanszekerheid) of voor het functioneren van de organisatie; label strikt vertrouwelijk</td>
 </tr>
 <tr>
 <td>catastrofaal</td>
@@ -129,7 +131,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 </table>
 <ol start="3">
 <li>De proceseigenaar classificeert de informatie in elk informatiesysteem op basis van een expliciete
-   risicoafweging vóór ingebruikname, daarna bij elke ingrijpende wijziging en ten minste elke drie jaar. De
+   risicoafweging vóór ingebruikname, daarna bij elke ingrijpende wijziging en ten minste elke <strong>[herzieningstermijn classificatie]</strong>. De
    uitkomst staat in een classificatierapport met de ingevulde vragenlijsten, door de proceseigenaar
    ondertekend als besluit. [5.12.01]</li>
 <li>De systeemeigenaar registreert de classificatie per systeem en per gegevensverzameling in de inventaris van
@@ -180,7 +182,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 <td>versleuteld transport en versleutelde opslag; zo min mogelijk kopieën; niet op verwijderbare media zonder uitzondering</td>
 </tr>
 <tr>
-<td>confidentieel</td>
+<td>strikt vertrouwelijk</td>
 <td>meerfactor met een sterk middel; geen toegang vanaf niet-beheerde apparaten</td>
 <td>toegang per persoon met doelbinding, door de eigenaar toegekend en elk halfjaar beoordeeld; vierogenprincipe bij wijzigingen met rechtsgevolg</td>
 <td>versleuteld met sleutels in eigen beheer; opslag alleen in systemen in zone 3 of hoger of bij een leverancier met gelijkwaardige verklaring; logging van elke toegang</td>
@@ -212,7 +214,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 </ol>
 <p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
 <ol start="6">
-<li>Gezondheidsinformatie is een bijzonder persoonsgegeven en krijgt ten minste confidentieel. Ad-hoc
+<li>Gezondheidsinformatie is een bijzonder persoonsgegeven en krijgt ten minste strikt vertrouwelijk. Ad-hoc
    uitwisseling per e-mail of chat voldoet aan de NTA 7516: gezondheidsinformatie hoort in het vakinhoudelijke
    systeem, gaat per e-mail alleen als dat niet kan en dan alleen versleuteld via beveiligde mail, met een
    vastgestelde grond om te verzenden en een gecontroleerde ontvanger. Automatisch doorsturen,
@@ -225,7 +227,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 <p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
 <ol start="8">
 <li>Politiegegevens die de organisatie verwerkt (bijvoorbeeld door boa's of in de handhaving) worden apart
-   geclassificeerd en krijgen ten minste confidentieel. Ze worden gescheiden gehouden van de overige informatie
+   geclassificeerd en krijgen ten minste strikt vertrouwelijk. Ze worden gescheiden gehouden van de overige informatie
    in een systeem of omgeving waarvoor de autorisatie-, logging- en bewaareisen van de Wet politiegegevens
    gelden, en gaan niet via gewone e-mail of chat naar ontvangers buiten de kring die de wet toestaat.
    [5.12.01]</li>
@@ -241,7 +243,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    publiceert, doet dat alleen na een besluit van de proceseigenaar. [5.13.01]</li>
 <li>Systemen die labels ondersteunen, passen bij het label automatisch de bijbehorende beveiliging toe:
    versleuteling, beperking van delen en afdrukken, en blokkering van verzending naar ontvangers buiten de
-   organisatie bij confidentieel en geheim. De systeemeigenaar richt dat in en test het bij elke wijziging van
+   organisatie bij strikt vertrouwelijk en geheim. De systeemeigenaar richt dat in en test het bij elke wijziging van
    het labelbeleid. [5.13.01]</li>
 <li>Een label verandert alleen als de proceseigenaar daartoe besluit, bijvoorbeeld bij openbaarmaking na een
    besluit op grond van de Wet open overheid; de wijziging wordt vastgelegd met datum en reden. [5.13.01]</li>
@@ -277,7 +279,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    controleert haar ten minste elk halfjaar. [5.14.05]</li>
 <li>Wie informatie met het label vertrouwelijk of hoger buiten de organisatie deelt, gebruikt een
    overdrachtsvoorziening die bij het label past (beveiligde mail, een beveiligd uitwisselplatform of een
-   gecontroleerde koppeling) en controleert vooraf de ontvanger. Informatie met het label confidentieel of
+   gecontroleerde koppeling) en controleert vooraf de ontvanger. Informatie met het label strikt vertrouwelijk of
    hoger gaat alleen naar ontvangers met wie een schriftelijke afspraak over vertrouwelijkheid bestaat.
    [5.14.01]</li>
 </ol>
@@ -346,7 +348,7 @@ afwijkingen gaan als bevinding naar het risicoregister.</p>
 </tr>
 <tr>
 <td>CLS-02</td>
-<td>De systemen met het label confidentieel of geheim voldoen aan de minimumeisen voor authenticatie, autorisatie, opslag en zone</td>
+<td>De systemen met het label strikt vertrouwelijk of geheim voldoen aan de minimumeisen voor authenticatie, autorisatie, opslag en zone</td>
 <td>CISO</td>
 <td>Jaarlijks</td>
 <td>Toetsverslag per systeem met de afwijkingen</td>
@@ -535,6 +537,7 @@ de eisen aan leveranciers.</p>
 <h2 id="nog-in-te-vullen">Nog in te vullen</h2>
 <ul>
 <li><strong>classificatiemethode</strong>: het vastgestelde document met vragenlijsten en impactschaal</li>
+<li><strong>herzieningstermijn classificatie</strong>: standaard drie jaar</li>
 <li><strong>beheerder internetfacing systemen</strong>: de functie die de metingen uitvoert, bijvoorbeeld de netwerkbeheerder</li>
 <li><strong>registratie van controles</strong>: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem</li>
 <li><strong>risico-eigenaar</strong>: de manager die restrisico's accepteert</li>

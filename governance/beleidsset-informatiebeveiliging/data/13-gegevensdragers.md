@@ -38,6 +38,8 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
    transport daarvoor bedoeld is en beveiligd is.
 3. Wissen is pas klaar als het is gecontroleerd en vastgelegd.
 4. Informatie die niet meer nodig is, wordt gewist: bewaren zonder doel vergroot de schade bij een incident.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -73,7 +75,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 - Na het wissen controleert de uitvoerder per drager met een steekproef of een verificatiefunctie van het
   wisproduct dat er geen informatie meer te herstellen is. Van elke gewiste of vernietigde drager maakt de
   uitvoerder een verslag met: kenmerk uit de inventaris, methode, product en versie, datum, uitvoerder en
-  uitkomst van de controle. Het verslag wordt ten minste zeven jaar bewaard. [7.10.02]
+  uitkomst van de controle. Het verslag wordt bewaard gedurende [[bewaartermijn wisverslag: standaard zeven jaar]]. [7.10.02]
 - Laat de organisatie het wissen of vernietigen uitvoeren door een leverancier, dan staan de methode, de
   controle en het verslag per drager (vernietigingscertificaat met serienummers) in het contract.
   [[uitgiftepunt apparatuur]] vergelijkt elke levering van certificaten met de lijst van afgegeven dragers en

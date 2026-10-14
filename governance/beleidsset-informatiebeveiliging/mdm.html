@@ -67,6 +67,8 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
 <li>De gebruiker weet wat de risico's van mobiel werken zijn en heeft getekend dat hij veilig werkt.</li>
 <li>Een apparaat dat niet meer aan de eisen voldoet, verliest zijn toegang automatisch; de techniek dwingt
    het beleid af, de gebruiker hoeft er niet aan te denken.</li>
+<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
 <h2 id="3-beleidsregels">3. Beleidsregels</h2>
 <h3>3.1 Zero footprint en bescherming op het apparaat</h3>
@@ -80,9 +82,9 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
    dwingt die instellingen af. [8.01.01]</li>
 <li>Van elk apparaat met toegang tot bedrijfsinformatie kan de organisatie de bedrijfsinformatie op afstand
    wissen. Bij verlies of diefstal meldt de gebruiker dat direct bij de servicedesk; de servicedesk wist
-   binnen vier uur na de melding, blokkeert de toegang van het apparaat en registreert de melding als
+   binnen <strong>[wistermijn]</strong>, blokkeert de toegang van het apparaat en registreert de melding als
    beveiligingsincident volgens het beleid beveiligingsincidenten. [8.01.01]</li>
-<li>Informatie met het label confidentieel of geheim uit het beleid informatieclassificatie staat nooit lokaal
+<li>Informatie met het label strikt vertrouwelijk of geheim uit het beleid informatieclassificatie staat nooit lokaal
    op een mobiel apparaat; de beheerder MDM blokkeert downloaden en offline beschikbaar maken voor die labels
    waar de systemen dat ondersteunen. [8.01.01]</li>
 <li>Bij reizen naar landen waar de organisatie een verhoogd risico ziet, geeft de servicedesk op verzoek een
@@ -170,7 +172,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
    tekenen na een inhoudelijke wijziging. [8.01.02]</li>
 <li>De gebruiker werkt in openbare ruimten en in het openbaar vervoer zo dat anderen niet kunnen meekijken
    (privacyfilter op het scherm, geen gevoelige gesprekken), en voert geen handelingen met informatie met het
-   label confidentieel of hoger uit buiten een beveiligde verbinding. [8.01.01]</li>
+   label strikt vertrouwelijk of hoger uit buiten een beveiligde verbinding. [8.01.01]</li>
 <li>Op de locaties van de organisatie gebruiken beheerde apparaten het beveiligde bedrijfsnetwerk; niet-beheerde
    apparaten en gasten gebruiken een gastnetwerk dat logisch gescheiden is van het bedrijfsnetwerk, volgens
    het beleid netwerkbeveiliging. Er is geen open, onbeveiligd wifinetwerk. [8.01.02]</li>
@@ -197,7 +199,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
 </tr>
 <tr>
 <td>Servicedesk</td>
-<td>Uitgifte na getekende overeenkomst, melding van verlies of diefstal, wissen binnen vier uur, registratie als incident, reisapparatuur, inname bij vertrek</td>
+<td>Uitgifte na getekende overeenkomst, melding van verlies of diefstal, wissen binnen de wistermijn, registratie als incident, reisapparatuur, inname bij vertrek</td>
 </tr>
 <tr>
 <td>HR</td>
@@ -251,7 +253,7 @@ afwijkingen gaan als bevinding naar het risicoregister.</p>
 </tr>
 <tr>
 <td>MDM-03</td>
-<td>Wissen op afstand werkt en gemelde verliezen zijn binnen vier uur gewist en als incident geregistreerd</td>
+<td>Wissen op afstand werkt en gemelde verliezen zijn binnen de wistermijn gewist en als incident geregistreerd</td>
 <td>Beheerder MDM</td>
 <td>Jaarlijks</td>
 <td>Testverslag van wissen op een testapparaat, incidentregistratie met meldtijd en wistijd per verlies</td>
@@ -338,6 +340,10 @@ contractbeheer (uitbestede werkplekdienst).</p>
 </thead>
 <tbody>
 <tr>
+<td>BIO</td>
+<td>Baseline Informatiebeveiliging Overheid</td>
+</tr>
+<tr>
 <td>BYOD</td>
 <td>Bring your own device: eigen apparaten van medewerkers voor het werk</td>
 </tr>
@@ -373,6 +379,7 @@ contractbeheer (uitbestede werkplekdienst).</p>
 </table>
 <h2 id="nog-in-te-vullen">Nog in te vullen</h2>
 <ul>
+<li><strong>wistermijn</strong>: standaard vier uur na de melding</li>
 <li><strong>reisrichtlijn apparatuur</strong>: het document met de landen en de voorwaarden voor reisapparatuur</li>
 <li><strong>lijneigenaar mobiele apparatuur</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT</li>
 <li><strong>regeling eigen apparaten</strong>: welke apparaten, besturingssystemen en diensten zijn toegestaan</li>

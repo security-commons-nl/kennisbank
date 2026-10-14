@@ -51,6 +51,8 @@ IT-compliance) en het afvoeren van opslagmedia (beleid afvoer en hergebruik van 
    eigen toegangscontrole.
 4. Beveiligingsmaatregelen zijn niet zichtbaar voor wie ze niet hoeft te kennen: beveiligde ruimten zijn niet
    als zodanig aangeduid.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -65,7 +67,7 @@ IT-compliance) en het afvoeren van opslagmedia (beleid afvoer en hergebruik van 
    | 1 openbaar | verwaarloosbaar | buitenterrein, ontvangsthal, gedeelde ruimten in een gebouw met andere gebruikers |
    | 2 kantoor | gering | kantoor- en werkruimten, opslag van niet-kritieke apparatuur |
    | 3 beperkt | gemiddeld | knooppunten voor netwerk en stroom, noodstroomvoorziening, opslag van kritieke of kostbare apparatuur, statisch archief |
-   | 4 kritiek | kritiek of zeer ernstig | serverruimte, opslag van identiteitsbewijzen en andere waardedocumenten |
+   | 4 kritiek | ernstig | serverruimte, opslag van identiteitsbewijzen en andere waardedocumenten |
 
 2. Het classificatieschema kent ook het niveau catastrofaal. Daarvoor voorziet de organisatie geen zones op haar
    eigen locaties; blijkt uit het zoneringsplan dat een ruimte dat niveau toch vraagt, dan stelt de CISO de
@@ -130,7 +132,8 @@ Bovenop de eisen voor zone 2:
 1. Toegang vraagt doelbinding: alleen wie de ruimte voor zijn werk nodig heeft, krijgt toegang, na
    goedkeuring van de eigenaar van de zone en met een op naam geregistreerd toegangsmiddel. [7.02.01]
 2. De ruimte is afgesloten met een elektronisch toegangssysteem dat geslaagde en mislukte toegangspogingen
-   logt. De logging wordt ten minste een jaar bewaard. [7.02.01, 7.04.01]
+   logt. De logging wordt bewaard gedurende
+   **[bewaartermijn toegangslogging]**. [7.02.01, 7.04.01]
 3. Bezoekers en leveranciers zonder eigen toegangsrecht komen alleen binnen onder toezicht van een bevoegde
    medewerker, voor noodzakelijke werkzaamheden. [7.02.01]
 4. De eigenaar van de zone stelt elk halfjaar vast dat de uitgegeven toegangsmiddelen alleen in gebruik zijn
@@ -153,31 +156,30 @@ contract en een onafhankelijke verklaring (paragraaf 1).
 
 1. Toegang loopt via een toegangssysteem met een autorisatiestructuur en persoonlijke toegangsmiddelen.
    [7.02.01]
-2. De eigenaar van de zone stelt elk kwartaal vast dat de uitgegeven toegangsmiddelen alleen in gebruik zijn
-   bij bevoegde personen met een geldige doelbinding. [7.02.01]
-3. Leveranciers krijgen geen toegang zonder toezicht van een bevoegde medewerker, tenzij de eigenaar van de
+2. Leveranciers krijgen geen toegang zonder toezicht van een bevoegde medewerker, tenzij de eigenaar van de
    zone daar uitdrukkelijk toestemming voor geeft. [7.02.01]
-4. De identiteit van bezoekers en leveranciers wordt vastgesteld aan de hand van een identiteitsbewijs voordat
+3. De identiteit van bezoekers en leveranciers wordt vastgesteld aan de hand van een identiteitsbewijs voordat
    zij toegang krijgen. De begeleidende medewerker registreert datum en tijd van binnenkomst en vertrek.
    [7.02.01]
-5. Camera's registreren de toegang tot de ruimte. De beelden staan in het verwerkingsregister en worden niet
+4. Camera's registreren de toegang tot de ruimte. De beelden staan in het verwerkingsregister en worden niet
    langer bewaard dan **[bewaartermijn camerabeelden]**,
    tenzij een incident langer bewaren rechtvaardigt. [7.04.01]
-6. De ruimte heeft een noodstroomvoorziening (UPS) tegen stroomuitval en storingen in de nutsvoorzieningen,
-   en een voorziening die bij een langdurige storing stroom levert, zoals een aggregaat. De UPS wordt elk
-   halfjaar getest, de langdurige voorziening jaarlijks. [7.05.01]
-7. Een klimaatinstallatie regelt en bewaakt temperatuur en luchtvochtigheid. [7.05.01]
-8. De ruimte is beschermd tegen wateroverlast en tegen stroompieken, met een voorziening die waterschade
+5. De ruimte heeft een noodstroomvoorziening (UPS) tegen stroomuitval en storingen in de nutsvoorzieningen,
+   en een voorziening die bij een langdurige storing stroom levert, zoals een aggregaat. Beide worden getest volgens
+   **[testschema noodstroom]**.
+   [7.05.01]
+6. Een klimaatinstallatie regelt en bewaakt temperatuur en luchtvochtigheid. [7.05.01]
+7. De ruimte is beschermd tegen wateroverlast en tegen stroompieken, met een voorziening die waterschade
    signaleert en beperkt. [7.05.01]
-9. Automatische branddetectie is aangesloten op de alarmcentrale en er is een blusvoorziening die geschikt is
+8. Automatische branddetectie is aangesloten op de alarmcentrale en er is een blusvoorziening die geschikt is
    voor ICT-apparatuur. Beide worden jaarlijks gecontroleerd en onderhouden. [7.05.01]
-10. De eigenaar van de zone voert jaarlijks een risicobeoordeling uit op omgevingsdreigingen (oproer,
+9. De eigenaar van de zone voert jaarlijks een risicobeoordeling uit op omgevingsdreigingen (oproer,
    terrorisme, explosies), brand, overstroming en aardbeving, en op de ligging van de ruimte ten opzichte van
    water, breuklijnen en hoogte, en volgt de uitkomsten op. [7.05.01]
 
 > **Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's» of «Substantieel: bruggen, gemalen, verkeer, zuivering»**
 >
-> 11. Ruimten met operationele technologie (gemalen, sluizen, installaties, gebouwbeheer) staan in het
+> 10. Ruimten met operationele technologie (gemalen, sluizen, installaties, gebouwbeheer) staan in het
 >    zoneringsplan, in zone 3 of hoger. Besturingskasten en lokale bedieningspanelen zitten achter slot en
 >    worden bij elke inspectie gecontroleerd op sporen van openbreken. [7.01.02, 7.03.01]
 
@@ -205,15 +207,15 @@ Ongeacht de zone:
 1. Bezoekers, leveranciers en andere externen dragen hun pas zichtbaar zolang zij in een gebouw van de
    organisatie zijn. De pas laat alleen zien dat de drager een externe is, bijvoorbeeld met de tekst
    "Bezoeker". [7.02.01]
-2. Medewerkers hoeven hun pas niet zichtbaar te dragen. Op de pas staat zo min mogelijk informatie, zodat een
-   verloren of gestolen pas weinig prijsgeeft. [7.02.01]
+2. Of medewerkers hun pas zichtbaar dragen, staat in **[pasregels medewerkers]**.
+   Op de pas staat zo min mogelijk informatie, zodat een verloren of gestolen pas weinig prijsgeeft. [7.02.01]
 
 ## 4. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
 | **[lijneigenaar fysieke beveiliging]** | Eigenaar van dit beleid en van het zoneringsplan; beheer van het toegangssysteem en van de uitgifte en inname van toegangsmiddelen; bewaking, alarmopvolging en receptie; maandelijkse beoordeling van logging en alarmmeldingen |
-| Eigenaar van een zone | Goedkeuren van toegangsverzoeken, periodieke controle van de toegangsmiddelen (halfjaarlijks in zone 3, per kwartaal in zone 4), jaarlijkse beoordeling van het niveau van de zone en van de omgevingsdreigingen |
+| Eigenaar van een zone | Goedkeuren van toegangsverzoeken, halfjaarlijkse controle van de toegangsmiddelen, jaarlijkse beoordeling van het niveau van de zone en van de omgevingsdreigingen |
 | CISO | Advies over dit beleid, jaarlijkse toetsing van opzet en werking, beoordeling van afwijkingen, ontvangst van waarschuwingen bij concrete dreigingen |
 | **[meldpunt fysieke beveiliging]** | Waarschuwen van de partners in het beveiligingsdomein van de overheid |
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers die ruimten beheren of toegang krijgen, en toetsen van hun verklaringen |
@@ -230,7 +232,7 @@ afwijkingen gaan als bevinding naar het risicoregister.
 | FYS-01 | Het zoneringsplan is actueel: elke ruimte heeft een zone en een eigenaar, elke ruimte van zone 4 ligt binnen zone 3, en de zones in het toegangssysteem komen overeen met het plan | Eigenaar van elke zone van zone 3 of hoger | Jaarlijks | Zoneringsplan, rapport uit het toegangssysteem, vastgelegde beoordeling | 7.01.02 |
 | FYS-02 | Toegang tot zone 3 en 4 wordt alleen toegekend na goedkeuring van de eigenaar van de zone | Eigenaar van de zone | Per aanvraag | Aanvraag en goedkeuring in de registratie | 7.02.01 |
 | FYS-03 | Toegangsmiddelen worden na uitdiensttreding, einde opdracht of functiewijziging uiterlijk op de laatste werkdag ingenomen of aangepast | **[lijneigenaar fysieke beveiliging]** | Maandelijks | Vergelijking van de personeelsmutaties met de mutaties in het toegangssysteem | 7.02.01 |
-| FYS-04 | De uitgegeven toegangsmiddelen per zone zijn alleen in gebruik bij bevoegde personen met een doelbinding | Eigenaar van de zone | Halfjaarlijks (zone 3), per kwartaal (zone 4) | Rapport uit het toegangssysteem met de beoordeling per persoon | 7.02.01 |
+| FYS-04 | De uitgegeven toegangsmiddelen per zone zijn alleen in gebruik bij bevoegde personen met een doelbinding | Eigenaar van de zone | Halfjaarlijks | Rapport uit het toegangssysteem met de beoordeling per persoon | 7.02.01 |
 | FYS-05 | De fysieke voorzieningen voldoen aan de eisen per zone: bouwkundige schil, alarm, bewaking, klimaat, noodstroom, brand- en waterbeveiliging, bekabeling | **[lijneigenaar fysieke beveiliging]** | Halfjaarlijks | Ingevulde checklist per locatie, testrapporten van UPS, aggregaat en brandvoorzieningen | 7.03.01, 7.04.01, 7.05.01, 7.12.01 |
 | FYS-06 | Logging van het toegangssysteem en alarmmeldingen zijn beoordeeld op afwijkingen en afwijkingen zijn opgevolgd | **[lijneigenaar fysieke beveiliging]** | Maandelijks | Beoordelingsverslag met de opgevolgde afwijkingen | 7.04.01 |
 | FYS-07 | De jaarlijkse risicobeoordeling van omgevingsdreigingen voor elke zone 4 is uitgevoerd en opgevolgd | Eigenaar van de zone | Jaarlijks | Risicobeoordeling en opvolging | 7.05.01 |
@@ -271,6 +273,7 @@ De maatregelen van dit domein (6, waarvan 2 overheidsmaatregelen), waar dit stuk
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CISO | Chief Information Security Officer |
 | ICT | Informatie- en communicatietechnologie |
 | ISAE | International Standard on Assurance Engagements |
@@ -284,9 +287,12 @@ De maatregelen van dit domein (6, waarvan 2 overheidsmaatregelen), waar dit stuk
 ## Nog in te vullen
 
 - **lijneigenaar fysieke beveiliging**: de manager van de afdeling die gebouwen en toegangsmiddelen beheert, bijvoorbeeld facilitaire zaken
+- **bewaartermijn toegangslogging**: standaard een jaar
 - **bewaartermijn camerabeelden**: de vastgestelde termijn, bijvoorbeeld vier weken
+- **testschema noodstroom**: hoe vaak de UPS en de langdurige voorziening worden getest, bijvoorbeeld halfjaarlijks en jaarlijks
 - **meldpunt fysieke beveiliging**: de functie die de waarschuwing doet, bijvoorbeeld de coördinator beveiliging
 - **afsprakenlijst waarschuwingen**: document met de contactpersonen en kanalen per partner
+- **pasregels medewerkers**: de huisregel over het dragen van de pas
 - **registratie van controles**: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem
 - **risico-eigenaar**: de manager die restrisico's accepteert
 - **eigenaar van dit beleid**: de manager die dit beleid uitvoert en laat naleven

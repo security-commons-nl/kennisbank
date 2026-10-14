@@ -43,6 +43,8 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
    gebeurt bij een afwijking.
 4. Logging met persoonsgegevens dient alleen beveiliging, beheer en verantwoording, niet het volgen van
    medewerkers.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -242,6 +244,7 @@ De maatregelen van dit domein (10, waarvan 10 overheidsmaatregelen), waar dit st
 | Afkorting | Betekenis |
 |---|---|
 | BAG | Basisregistratie Adressen en Gebouwen |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | BRP | Basisregistratie Personen |
 | CERT | Computer emergency response team |
 | CISO | Chief Information Security Officer |

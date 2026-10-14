@@ -59,6 +59,8 @@ toegangsbeveiliging).
    impactniveau van de betrokken informatie weegt daarin mee.
 5. Terugkerend beheerwerk staat beschreven, zodat het niet van één persoon afhangt en elke uitvoerder
    het op dezelfde manier doet.
+6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -253,6 +255,7 @@ De maatregelen van dit domein (8, waarvan 6 overheidsmaatregelen), waar dit stuk
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CAB | Change advisory board, het overleg dat wijzigingen beoordeelt |
 | CISO | Chief Information Security Officer |
 | IEC | International Electrotechnical Commission |

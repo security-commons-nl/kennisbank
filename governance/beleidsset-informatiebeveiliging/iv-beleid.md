@@ -80,6 +80,9 @@ het continuïteitsbeleid zijn eigen stukken met dezelfde eigenaren.
 >    norm voor de overheid en toetst jaarlijks of de aanwijzing nog klopt, bijvoorbeeld na een wijziging van
 >    taken of een nieuwe aanwijzing door de sector.
 
+9. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
+
 ## 3. Beleidsregels
 
 ### 3.1 Inhoud, vaststelling en inbedding van het beleid

@@ -42,6 +42,8 @@ medewerkers blijft een besluit van de organisatie zelf.
    de inhoud van de gegevens die ze beheren, tenzij de systeemeigenaar dat vastlegt en erop toeziet.
 5. Hoe zwaarder de rechten of hoe hoger het vertrouwelijkheidslabel van de informatie, hoe sterker de
    authenticatie en hoe vaker de controle.
+6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -232,7 +234,7 @@ medewerkers blijft een besluit van de organisatie zelf.
 
 ### 3.8 Informatie met een hoog vertrouwelijkheidslabel
 
-- Informatie met het label vertrouwelijk, confidentieel of geheim (beleid informatieclassificatie) staat in
+- Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
   aparte systemen, databases of omgevingen die fysiek of logisch gescheiden zijn van de algemene
   werkomgeving, met een eigen autorisatie die de systeemeigenaar vaststelt. [8.03.01]
 

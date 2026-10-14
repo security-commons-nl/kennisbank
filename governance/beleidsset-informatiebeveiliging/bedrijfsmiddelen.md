@@ -45,6 +45,8 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
 3. Wie een bedrijfsmiddel gebruikt, kent de gedragsregels en heeft dat aantoonbaar bevestigd.
 4. Apparatuur staat, werkt en wordt onderhouden op een manier die past bij het impactniveau van de informatie
    die zij verwerkt en bij de zone waarin zij staat (beleid fysieke toegang en beveiliging).
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -124,7 +126,7 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
    verlies of diefstal. **[lijneigenaar bedrijfsmiddelen]**
    stelt de gedragsregels vast en beoordeelt ze jaarlijks. [5.10.01]
 2. De gedragsregels zeggen per vertrouwelijkheidslabel uit het beleid informatieclassificatie (openbaar,
-   intern, vertrouwelijk, confidentieel, geheim) hoe de gebruiker informatie mag bewaren, delen, afdrukken en
+   intern, vertrouwelijk, strikt vertrouwelijk, geheim) hoe de gebruiker informatie mag bewaren, delen, afdrukken en
    meenemen, en dat de gebruiker informatie en apparatuur alleen gebruikt voor het werk waarvoor hij ze heeft
    gekregen. [5.10.01]
 3. Elke medewerker krijgt de gedragsregels bij indiensttreding en bevestigt met een handtekening of een
@@ -186,7 +188,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
    netwerkapparatuur staat in afgesloten kasten. [7.08.01]
 3. De eigenaar van het bedrijfsmiddel beschermt apparatuur tegen stof, water, warmte, trillingen en
    elektromagnetische storing, en beoordeelt dat bij elke verplaatsing. [7.08.01]
-4. Apparatuur met impactniveau kritiek of zeer ernstig of hoger voor beschikbaarheid staat zo dat één
+4. Apparatuur met impactniveau ernstig of hoger voor beschikbaarheid staat zo dat één
    gebeurtenis (brand, water, stroomuitval) niet alle exemplaren tegelijk treft; redundante onderdelen staan
    in gescheiden ruimten. De eigenaar beoordeelt dat jaarlijks. [7.08.01]
 
@@ -200,7 +202,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
    minste jaarlijks. De testrapporten zijn het bewijs. Noodstroom (UPS en aggregaat) volgt de eisen en
    testfrequenties uit het beleid fysieke toegang en beveiliging. [7.11.01]
 3. Noodverlichting en noodschakelaars voor stroom zijn aanwezig bij de in- en uitgangen van zone 3 en 4.
-   Aansluitingen op stroom en netwerk voor apparatuur met impactniveau kritiek of zeer ernstig of hoger hebben
+   Aansluitingen op stroom en netwerk voor apparatuur met impactniveau ernstig of hoger hebben
    meer dan één toevoer. [7.11.01]
 4. De leveranciers van nutsvoorzieningen en de contactgegevens voor storingen staan in
    **[storingslijst nutsvoorzieningen]**; de
@@ -309,6 +311,7 @@ De maatregelen van dit domein (10, waarvan 3 overheidsmaatregelen), waar dit stu
 
 | Afkorting | Betekenis |
 |---|---|
+| BIO | Baseline Informatiebeveiliging Overheid |
 | BYOD | Bring your own device: eigen apparaten van medewerkers voor het werk |
 | CISO | Chief Information Security Officer |
 | CMDB | Configuration management database, de inventaris van bedrijfsmiddelen en hun samenhang |

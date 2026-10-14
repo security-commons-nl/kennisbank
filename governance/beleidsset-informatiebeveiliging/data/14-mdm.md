@@ -35,6 +35,8 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 3. De gebruiker weet wat de risico's van mobiel werken zijn en heeft getekend dat hij veilig werkt.
 4. Een apparaat dat niet meer aan de eisen voldoet, verliest zijn toegang automatisch; de techniek dwingt
    het beleid af, de gebruiker hoeft er niet aan te denken.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -49,9 +51,9 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
   dwingt die instellingen af. [8.01.01]
 - Van elk apparaat met toegang tot bedrijfsinformatie kan de organisatie de bedrijfsinformatie op afstand
   wissen. Bij verlies of diefstal meldt de gebruiker dat direct bij de servicedesk; de servicedesk wist
-  binnen vier uur na de melding, blokkeert de toegang van het apparaat en registreert de melding als
+  binnen [[wistermijn: standaard vier uur na de melding]], blokkeert de toegang van het apparaat en registreert de melding als
   beveiligingsincident volgens het beleid beveiligingsincidenten. [8.01.01]
-- Informatie met het label confidentieel of geheim uit het beleid informatieclassificatie staat nooit lokaal
+- Informatie met het label strikt vertrouwelijk of geheim uit het beleid informatieclassificatie staat nooit lokaal
   op een mobiel apparaat; de beheerder MDM blokkeert downloaden en offline beschikbaar maken voor die labels
   waar de systemen dat ondersteunen. [8.01.01]
 - Bij reizen naar landen waar de organisatie een verhoogd risico ziet, geeft de servicedesk op verzoek een
@@ -137,7 +139,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
   tekenen na een inhoudelijke wijziging. [8.01.02]
 - De gebruiker werkt in openbare ruimten en in het openbaar vervoer zo dat anderen niet kunnen meekijken
   (privacyfilter op het scherm, geen gevoelige gesprekken), en voert geen handelingen met informatie met het
-  label confidentieel of hoger uit buiten een beveiligde verbinding. [8.01.01]
+  label strikt vertrouwelijk of hoger uit buiten een beveiligde verbinding. [8.01.01]
 - Op de locaties van de organisatie gebruiken beheerde apparaten het beveiligde bedrijfsnetwerk; niet-beheerde
   apparaten en gasten gebruiken een gastnetwerk dat logisch gescheiden is van het bedrijfsnetwerk, volgens
   het beleid netwerkbeveiliging. Er is geen open, onbeveiligd wifinetwerk. [8.01.02]
@@ -151,7 +153,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 |---|---|
 | [[lijneigenaar mobiele apparatuur]] | Eigenaar van dit beleid, de inrichting van MDM en MAM, de gebruikersovereenkomst en de reisrichtlijn; ontvangst van de kwartaalrapportage |
 | Beheerder MDM | Inschrijving, nalevingsregels, voorwaardelijke toegang, app-beleid, updates, nalevingsrapportage en wissen op afstand |
-| Servicedesk | Uitgifte na getekende overeenkomst, melding van verlies of diefstal, wissen binnen vier uur, registratie als incident, reisapparatuur, inname bij vertrek |
+| Servicedesk | Uitgifte na getekende overeenkomst, melding van verlies of diefstal, wissen binnen de wistermijn, registratie als incident, reisapparatuur, inname bij vertrek |
 | HR | Gebruikersovereenkomst mobiel werken en instemming met wissen bij indiensttreding en bij uitgifte |
 | CISO | Advies, jaarlijkse toetsing van opzet en werking van dit beleid, beoordeling van de nalevingsrapportages en van afwijkingen |
 | Inkoop en contractbeheer | Eisen uit dit beleid in het contract met een uitbestede werkplek- of beheerdienst, toetsen van de verklaring |
@@ -167,7 +169,7 @@ afwijkingen gaan als bevinding naar het risicoregister.
 |---|---|---|---|---|---|
 | MDM-01 | Elk apparaat met toegang tot bedrijfsinformatie is ingeschreven in MDM of MAM, voldoet aan de nalevingsregels en heeft een ondersteund en bijgewerkt besturingssysteem | Beheerder MDM | Per kwartaal | Nalevingsrapportage: aantal apparaten met toegang tegenover aantal ingeschreven, aantal apparaten met verouderd systeem of ontbrekende updates, afhandeling | 8.01.02 |
 | MDM-02 | Elke mobiele gebruiker heeft een getekende gebruikersovereenkomst en, bij een eigen apparaat, een instemming met wissen op afstand | HR | Per kwartaal | Vergelijking van de lijst mobiele gebruikers uit MDM en MAM met de getekende overeenkomsten | 8.01.02 |
-| MDM-03 | Wissen op afstand werkt en gemelde verliezen zijn binnen vier uur gewist en als incident geregistreerd | Beheerder MDM | Jaarlijks | Testverslag van wissen op een testapparaat, incidentregistratie met meldtijd en wistijd per verlies | 8.01.01 |
+| MDM-03 | Wissen op afstand werkt en gemelde verliezen zijn binnen de wistermijn gewist en als incident geregistreerd | Beheerder MDM | Jaarlijks | Testverslag van wissen op een testapparaat, incidentregistratie met meldtijd en wistijd per verlies | 8.01.01 |
 | MDM-04 | Niet-beheerde apparaten krijgen geen toegang tot bedrijfsinformatie en de regels voor voorwaardelijke toegang en de blokkering van lokaal opslaan werken zoals ingericht | CISO | Jaarlijks | Testverslag met een niet-beheerd apparaat en een beheerd apparaat per route, configuratiestandaard | 8.01.01, 8.01.02 |
 | MDM-05 | De geïnstalleerde apps op beheerde apparaten zijn toegestaan en apparaten zonder contact in drie maanden zijn geblokkeerd | Beheerder MDM | Per kwartaal | Applijst met de beoordeling, lijst van geblokkeerde apparaten en de opvolging | 8.01.02 |
 | MDM-06 | Een uitbestede werkplek- of beheerdienst levert een geldige onafhankelijke verklaring over het apparaatbeheer | Contractbeheer | Jaarlijks | Verklaring van de leverancier, beoordeling van de uitzonderingen | 8.01.01, 8.01.02 |

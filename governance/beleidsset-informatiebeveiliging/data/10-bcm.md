@@ -42,12 +42,14 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
 1. De lijn bepaalt welke processen kritiek zijn en in welke volgorde ze terugkomen. ICT vertaalt dat naar
    systemen, hersteleisen en voorzieningen.
 2. De maximale hersteltijd en het toelaatbare gegevensverlies van een proces volgen uit zijn impactniveau
-   volgens het beleid informatieclassificatie (verwaarloosbaar, gering, gemiddeld, kritiek of zeer ernstig,
+   volgens het beleid informatieclassificatie (verwaarloosbaar, gering, gemiddeld, ernstig,
    catastrofaal). Dat beleid zegt per niveau welke hersteltijd en welk gegevensverlies hoogstens toelaatbaar
    zijn.
 3. Een continuïteitsplan dat niet getest is, telt niet als maatregel.
 4. Tijdens een verstoring gelden dezelfde beveiligingseisen als daarbuiten, tenzij een vooraf vastgestelde
    noodprocedure iets anders zegt.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 

@@ -42,6 +42,8 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
 3. De risico's in de keten van toeleveranciers horen bij de risico's van de organisatie zelf.
 4. De zwaarte van de beoordeling volgt uit het impactniveau en het vertrouwelijkheidslabel van de informatie
    die de leverancier verwerkt (beleid informatieclassificatie).
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 

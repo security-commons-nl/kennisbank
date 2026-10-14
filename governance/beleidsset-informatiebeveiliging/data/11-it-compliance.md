@@ -40,6 +40,8 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
 4. Echte gegevens horen in productie; test- en ontwikkelomgevingen werken met gemaskeerde of fictieve
    gegevens.
 5. Informatie is alleen zichtbaar voor wie haar nodig heeft, ook op het bureau en op het scherm.
+6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -77,8 +79,10 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
 - Autorisaties voor politiegegevens worden per persoon verleend en ten minste halfjaarlijks door de
   proceseigenaar gecontroleerd. Elke raadpleging en wijziging wordt gelogd; de logging wordt bewaard zolang
   de Wpg voorschrijft. [5.31.01, 5.33.01]
-- Over de verwerking van politiegegevens laat de organisatie de periodieke privacy-audit uitvoeren die de
-  Wpg voorschrijft en stuurt de proceseigenaar het rapport naar de Autoriteit Persoonsgegevens. [5.31.01]
+- Over de verwerking van politiegegevens laat de verwerkingsverantwoordelijke eenmaal in de vier jaar de
+  privacy-audit uitvoeren door een onafhankelijke auditor (artikel 33 Wpg, artikel 6:5 Besluit
+  politiegegevens), zendt een afschrift van de controleresultaten aan de Autoriteit Persoonsgegevens en laat
+  bij tekortkomingen binnen een jaar een hercontrole uitvoeren. [5.31.01]
 :::
 
 ::: als ketens=digid,suwinet,brp,bag,anders

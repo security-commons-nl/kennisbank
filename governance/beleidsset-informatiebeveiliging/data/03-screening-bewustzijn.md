@@ -36,6 +36,8 @@ integriteitsbeleid van de organisatie).
 3. Fouten en incidenten worden gemeld zodat de organisatie ervan leert. Wie meldt, wordt daar niet op
    afgerekend; herhaald of verwijtbaar onveilig gedrag heeft wel gevolgen.
 4. Geheimhouding en zorgvuldig gebruik van informatie eindigen niet met het dienstverband.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 

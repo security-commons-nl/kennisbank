@@ -49,6 +49,8 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
    de inhoud van de gegevens die ze beheren, tenzij de systeemeigenaar dat vastlegt en erop toeziet.
 5. Hoe zwaarder de rechten of hoe hoger het vertrouwelijkheidslabel van de informatie, hoe sterker de
    authenticatie en hoe vaker de controle.
+6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -239,7 +241,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 
 ### 3.8 Informatie met een hoog vertrouwelijkheidslabel
 
-1. Informatie met het label vertrouwelijk, confidentieel of geheim (beleid informatieclassificatie) staat in
+1. Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
    aparte systemen, databases of omgevingen die fysiek of logisch gescheiden zijn van de algemene
    werkomgeving, met een eigen autorisatie die de systeemeigenaar vaststelt. [8.03.01]
 
@@ -335,6 +337,7 @@ De maatregelen van dit domein (16, waarvan 14 overheidsmaatregelen), waar dit st
 | Afkorting | Betekenis |
 |---|---|
 | BAG | Basisregistratie Adressen en Gebouwen |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | BRP | Basisregistratie Personen |
 | CISO | Chief Information Security Officer |
 | ISAE | International Standard on Assurance Engagements |

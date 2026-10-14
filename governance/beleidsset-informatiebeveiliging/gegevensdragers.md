@@ -45,6 +45,8 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
    transport daarvoor bedoeld is en beveiligd is.
 3. Wissen is pas klaar als het is gecontroleerd en vastgelegd.
 4. Informatie die niet meer nodig is, wordt gewist: bewaren zonder doel vergroot de schade bij een incident.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -80,7 +82,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 4. Na het wissen controleert de uitvoerder per drager met een steekproef of een verificatiefunctie van het
    wisproduct dat er geen informatie meer te herstellen is. Van elke gewiste of vernietigde drager maakt de
    uitvoerder een verslag met: kenmerk uit de inventaris, methode, product en versie, datum, uitvoerder en
-   uitkomst van de controle. Het verslag wordt ten minste zeven jaar bewaard. [7.10.02]
+   uitkomst van de controle. Het verslag wordt bewaard gedurende **[bewaartermijn wisverslag]**. [7.10.02]
 5. Laat de organisatie het wissen of vernietigen uitvoeren door een leverancier, dan staan de methode, de
    controle en het verslag per drager (vernietigingscertificaat met serienummers) in het contract.
    **[uitgiftepunt apparatuur]** vergelijkt elke levering van certificaten met de lijst van afgegeven dragers en
@@ -212,6 +214,7 @@ De maatregelen van dit domein (5, waarvan 3 overheidsmaatregelen), waar dit stuk
 | Afkorting | Betekenis |
 |---|---|
 | AVG | Algemene verordening gegevensbescherming |
+| BIO | Baseline Informatiebeveiliging Overheid |
 | CISO | Chief Information Security Officer |
 | ISAE | International Standard on Assurance Engagements |
 | ISO | International Organization for Standardization |
@@ -224,6 +227,7 @@ De maatregelen van dit domein (5, waarvan 3 overheidsmaatregelen), waar dit stuk
 - **aanvraagpunt uitzonderingen**: de functie die uitzonderingen op dit beleid registreert, bijvoorbeeld de servicedesk
 - **uitgiftepunt apparatuur**: de functie die apparatuur en media uitgeeft en inneemt, bijvoorbeeld de servicedesk
 - **lijneigenaar gegevensdragers**: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT
+- **bewaartermijn wisverslag**: standaard zeven jaar
 - **eisen aan koeriers**: het document met de betrouwbaarheidseisen, zoals VOG of screening van chauffeurs, verzegeling, volgsysteem en overdrachtsprotocol
 - **registratie van controles**: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem
 - **risico-eigenaar**: de manager die restrisico's accepteert

@@ -37,6 +37,8 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
    configuratie is vastgelegd, zodat een afwijking meetbaar is.
 4. Kan een kwetsbaarheid niet op tijd worden verholpen, dan is er een vastgelegde risicoafweging met
    tijdelijke maatregelen, een einddatum en een eigenaar.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
@@ -126,9 +128,9 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 
   | Risico | Termijn |
   |---|---|
-  | Kans op misbruik hoog en schade hoog | zo snel mogelijk, uiterlijk binnen een week |
-  | Overig hoog | binnen een maand |
-  | Gemiddeld | binnen drie maanden |
+  | Kans op misbruik hoog en schade hoog | zo snel mogelijk, uiterlijk binnen [[patchtermijn hoog en hoog: standaard een week, de BIO 2.0 noemt een week als grens voor tijdelijke maatregelen]] |
+  | Overig hoog | binnen [[patchtermijn hoog: standaard een maand]] |
+  | Gemiddeld | binnen [[patchtermijn gemiddeld: standaard drie maanden]] |
   | Laag | bij de eerstvolgende reguliere update |
 
 - Bij hoge kans en hoge schade zijn de beperkende maatregelen uiterlijk binnen een week getroffen. Bij

@@ -45,6 +45,8 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
    vertrouwelijkheidslabel van de informatie (beleid informatieclassificatie) en het belang van het proces.
 4. Bij IT-inkoop gebruikt de organisatie een standaardset inkoopvoorwaarden voor IT, bijvoorbeeld de GIBIT
    voor gemeenten of de ARBIT voor het Rijk, en vult die per inkoop aan.
+5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
 ## 3. Beleidsregels
 
