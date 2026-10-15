@@ -7,7 +7,8 @@ invoeren:
   - Stel gedragsregels op voor het gebruik van informatie en bedrijfsmiddelen (hoofdstuk 5).
   - Regel dat medewerkers de gedragsregels bevestigen voordat zij account of apparatuur krijgen (hoofdstuk 5).
   - Neem een vaste clausule met de gedragsregels op in contracten voor inhuur en vrijwilligers (hoofdstuk 5).
-  - Richt een uitgifte- en innameprocedure in met bruikleenovereenkomst en registratie per bedrijfsmiddel (hoofdstuk 6).
+  - Laat wie apparatuur in bruikleen krijgt een bruikleenovereenkomst met de gedragsregels tekenen (hoofdstuk 5).
+  - Richt een innameprocedure in met registratie per bedrijfsmiddel bij vertrek (hoofdstuk 6).
   - Leg per ruimte in zone 3 en 4 de benodigde nutsvoorzieningen en capaciteit vast (hoofdstuk 9).
   - Stel per locatie een storingslijst op met leveranciers en storingsnummers van nutsvoorzieningen (hoofdstuk 9).
   - Richt een onderhoudsregistratie in voor onderhoud, storingen en reparaties per apparaat (hoofdstuk 11).

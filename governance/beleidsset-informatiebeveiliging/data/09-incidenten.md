@@ -4,7 +4,8 @@ titel: Beleid beveiligingsincidenten
 samenvatting: Over het melden, beoordelen, afhandelen en leren van beveiligingsincidenten en datalekken. Behandelt het meldloket, de classificatie, detectie en escalatie, de afhandeling, meldingen aan externe partijen, coordinated vulnerability disclosure, het veiligstellen van bewijs en de evaluatie achteraf.
 invoeren:
   - Richt één meldloket in met een bereikbaarheidsregeling en registratie van elke melding (hoofdstuk 3).
-  - Stel een incidentprocedure op met rollen, vervangers, termijnen, categorieën en ernstniveaus (hoofdstuk 3).
+  - Stel een incidentprocedure op met rollen, vervangers en termijnen (hoofdstuk 3).
+  - Leg in de incidentprocedure de categorieën en ernstniveaus vast, met per niveau wie wordt geïnformeerd (hoofdstuk 4).
   - Laat nieuwe medewerkers en externen de meldprocedure bevestigen en registreer die bevestiging (hoofdstuk 3).
   - Leg in de incidentprocedure vast wanneer een incident naar crisisbeheersing gaat (hoofdstuk 6).
   - Start een maandrapport incidenten voor de eindverantwoordelijke bedrijfsvoering (hoofdstuk 6).

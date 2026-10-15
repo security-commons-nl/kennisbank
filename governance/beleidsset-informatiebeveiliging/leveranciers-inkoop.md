@@ -10,7 +10,7 @@
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
 
-**In het kort.** Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier.
+**In het kort.** Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers, eisen per soort dienst en het inkoopdossier.
 
 **Onderwerpen.** 3. Risicoafweging en eisen in de uitvraag; 4. Voorwaarden in het contract; 5. Bewijs van de leverancier en eigen onderzoek; 6. Transparantie over kwetsbaarheden en incidenten; 7. Afhankelijkheid en exit; 8. Keten van toeleveranciers; 9. Eisen per soort dienst; 10. Inkoopdossier en overdracht.
 
