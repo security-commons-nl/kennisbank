@@ -3,12 +3,13 @@ titel: Security Annex voor leveranciers
 vakgebied: security
 type: sjabloon
 normen: [BIO2, ISO 27001, NIS2, CRA, AI Act, GIBIT 2025]
-versie: 1.3 (herzien BIO2), 2026-08
+versie: 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10
 herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 status: in gebruik
 samenvatting: Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico's die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.
 barrieres: [technicalvendor, residual]
 rol: fundering
+bronnen: [bzk-help-update-met-ai, vng-kenniskaart-inkoopvoorwaarden-ai, vng-utrecht-aansluitvoorwaarden-ai]
 ---
 
 # Security Annex voor leveranciers
@@ -17,7 +18,7 @@ rol: fundering
 
 Een contractbijlage die vastlegt wat een gemeente van een leverancier verwacht op het gebied van informatiebeveiliging: 20 artikelen, van normenkader en cloudsoevereiniteit tot FIDO2, SSDLC en AI. Ontwikkeld door en in gebruik bij een Nederlandse gemeente, hier gedeeld als sjabloon.
 
-**Bestand:** [`security-annex-v1.3.md`](security-annex-v1.3.md) (bron) en [`index.html`](index.html) (plakbaar in Word).
+**Bestand:** [`security-annex-v1.4.md`](security-annex-v1.4.md) (bron) en [`index.html`](index.html) (plakbaar in Word).
 
 ## Lees dit eerst: risico's, niet de norm
 
@@ -67,6 +68,7 @@ Het doel is een volwassen partnership: open over kwetsbaarheden en risico's, lev
 ## Herkomst en licentie
 
 - Opgesteld door de CISO-organisatie van een Nederlandse gemeente en daar in gebruik. Versie 1.3, herzien op BIO2, augustus 2026.
+- Versie 1.4 (oktober 2026) voegt in artikel 19 lid 19.1a toe: AI-functionaliteiten gaan pas aan na schriftelijke toestemming van de gemeente, ook als ze via een update binnenkomen. Aanleiding is de vraag uit de praktijk wat je doet als een lopende dienst ineens AI bevat; de handreiking van BZK daarover noemt dezelfde opt-in als afspraak voor een addendum. De gemeente waar de Annex vandaan komt, werkt nog met versie 1.3.
 - Gedeeld met toestemming van de auteur, op diens verzoek met de risicogedreven toelichting hierboven. Organisatie- en persoonsgegevens zijn verwijderd of vervangen door invulvelden.
 - Licentie: EUPL-1.2, zoals de hele kennisbank.
 

@@ -124,6 +124,8 @@ geldt.
 - [GitHub Advisory GHSA-5mg7-485q-xm76](https://github.com/advisories/GHSA-5mg7-485q-xm76): twee LiteLLM-versies met malware die inloggegevens verzamelt
 - [LiteLLM, security update maart 2026](https://docs.litellm.ai/blog/security-update-march-2026): tijdlijn, oorzaak en de niet-geraakte container
 - [OSV](https://osv.dev/list?ecosystem=PyPI&q=litellm): de beveiligingsadviezen voor LiteLLM, peildatum 25 september 2026
+- [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/): de toeleveringsketen staat er als eigen risico (LLM03:2025)
+- [MITRE ATLAS](https://atlas.mitre.org/): aanvalstechnieken op AI-systemen, ook via gecompromitteerde componenten en modellen
 
 ## Licentie
 

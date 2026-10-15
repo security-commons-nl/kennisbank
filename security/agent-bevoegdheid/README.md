@@ -117,6 +117,12 @@ Dit is het agent-hoofdstuk van [Just-in-time beheerrechten](../just-in-time-behe
 een identiteit die geen mens is. De vijf auditvragen landen in [Richt centrale logverzameling in](../centrale-logverzameling/).
 Voor het meten van AI-gebruik voordat je agents toelaat: [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/).
 
+## Bronnen
+
+- [OWASP Top 10 for Agentic Applications for 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/):
+  de risico's van AI-agents die zelf handelen. Dit stuk beperkt wat een agent mag; de lijst van OWASP zegt
+  waar het daarnaast mis kan gaan.
+
 ## Licentie
 
 [EUPL-1.2](../../LICENSE).

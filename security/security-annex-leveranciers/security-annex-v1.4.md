@@ -1,9 +1,9 @@
 ---
-titel: Security Annex Informatiebeveiliging, versie 1.3 (herzien BIO2)
+titel: Security Annex Informatiebeveiliging, versie 1.4 (herzien BIO2)
 vakgebied: security
 type: sjabloon
 normen: [BIO2, ISO 27001, NIS2, CRA, AI Act, GIBIT 2025]
-versie: 1.3 (herzien BIO2), 2026-08
+versie: 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10
 herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 status: sjabloon
 samenvatting: De volledige tekst van de Security Annex, 20 artikelen met BIO2-verwijzingen per artikel. Invulvelden staan tussen [ ]. Lees eerst de README voor de risicogedreven leeswijzer.
@@ -589,6 +589,8 @@ Leverancier meldt voorafgaand schriftelijk indien binnen de dienstverlening gebr
 - AI-functionaliteiten van derden;
 
 - AI-functionaliteiten die inhoud genereren, analyseren, classificeren, voorspellen of geautomatiseerde besluitvorming ondersteunen.
+
+19.1a Leverancier zet AI-functionaliteiten binnen de dienstverlening pas in gebruik na voorafgaande, expliciete en schriftelijke toestemming van Opdrachtgever. Dit geldt ook voor AI-functionaliteiten die via een update, een nieuwe versie of een wijziging bij een onderaannemer beschikbaar komen. Tot die toestemming staan zulke functionaliteiten uit. Opdrachtgever kan een gegeven toestemming intrekken; Leverancier schakelt de functionaliteit dan uit zonder dat de overige dienstverlening daardoor wordt aangetast.
 
 19.2 Leverancier beschikt over aantoonbaar ingerichte governance voor het beheersen van risico's die voortvloeien uit het gebruik van AI binnen de dienstverlening.
 
