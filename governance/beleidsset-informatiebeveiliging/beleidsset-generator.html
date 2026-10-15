@@ -15,7 +15,7 @@ p{margin:.5em 0}a{color:var(--accent)}
 fieldset{border:1px solid var(--lijn);border-radius:4px;margin:.6em 0;padding:.5em .8em}
 legend{font-weight:bold;padding:0 .3em}
 fieldset .toel{font-size:9.5pt;color:var(--zacht);margin:.1em 0 .3em}
-fieldset label{display:inline-flex;gap:.3em;align-items:center;margin:.15em 1em .15em 0;font-size:10.5pt}
+fieldset label{display:flex;gap:.45em;align-items:flex-start;margin:.25em 0;font-size:10.5pt}fieldset label input{margin-top:.2em;flex:none}
 .vragen{display:grid;grid-template-columns:repeat(auto-fill,minmax(20em,1fr));gap:0 1em}
 .knoppen{display:flex;flex-wrap:wrap;gap:.5em;margin:1em 0}
 button{border:1px solid var(--accent);background:var(--accent);color:var(--achter);padding:.4em .9em;border-radius:4px;font:inherit;cursor:pointer}
@@ -45,8 +45,8 @@ table.voorstel th,table.voorstel td{border:1px solid var(--lijn);padding:.3em .5
 table.voorstel th{background:var(--vlak)}
 .voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
 @media print{body{max-width:none;margin:0}form,.knoppen,.lijst,.kruimel{display:none}@page{size:A4;margin:2cm}}
-</style><!-- huisstijl --><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}body,button,input,select,textarea{font-family:var(--sans)}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff}html body .kruimel span{color:#c9d6e4}}</style><!-- /huisstijl --></head><body>
-<nav class="kruimel"><a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › Generator</nav>
+</style><!-- huisstijl --><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}body,button,input,select,textarea{font-family:var(--sans)}h1{color:var(--inkt)}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}}</style><!-- /huisstijl --></head><body>
+<nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › <span>Generator</span></nav>
 <h1>Beleidsset op maat</h1>
 <p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt in één keer
 <strong>21 beleidsstukken</strong>: het strategisch informatiebeveiligingsbeleid en twintig tactische stukken, één per
