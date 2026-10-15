@@ -20,6 +20,10 @@ bronnen: [ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid,
 >
 > **Met een AI-assistent:** geef je assistent de link naar de generatorpagina. Daarop staan instructies voor de
 > assistent: welke vragen hij stelt, welke bestanden hij ophaalt en wat hij niet mag veranderen.
+>
+> **Met je eigen API-sleutel:** de [AI-hulp](beleidsset-ai.html) leest je eigen documenten en stelt de antwoorden
+> op de contextvragen of de waarden voor de invulvelden voor, elk met een citaat. Jij kiest in de generator wat je
+> overneemt.
 
 Onder de BIO 2.0 en de Cyberbeveiligingswet heeft elke overheidsorganisatie een strategisch beleid nodig, en
 daaronder beleid per onderwerp dat de 117 overheidsmaatregelen invult, en de 40 ISO-beheersmaatregelen waarvoor de
@@ -123,6 +127,25 @@ uit [`profiel.json`](profiel.json) stellen, dan per gekozen stuk de leesversie o
 naar de antwoorden, de invulvelden met de gebruiker invullen, en de nummers, het controleraamwerk en bijlage A
 laten staan zodat het stuk toetsbaar blijft. Wie precies dezelfde tekst wil als het formulier, rekent met
 [`beleidsset.json`](beleidsset.json) of draait `python tools/bouw_beleidsset.py --profiel antwoorden.json uitmap/`.
+
+## AI-hulp met je eigen sleutel
+
+De [AI-hulp](beleidsset-ai.html) volgt het patroon van de andere instrumenten van de commons: een aparte pagina,
+je eigen sleutel (alleen in de tab, weg als je hem sluit), een leverancier naar keuze (standaard Mistral, ook een
+lokale Ollama), en toestemming per sessie. Twee opdrachten:
+
+- **Contextvragen beantwoorden** uit een beschrijving van je organisatie, zoals een jaarverslag of een eerdere
+  ENSIA-verantwoording.
+- **Invulvelden invullen** uit je eigen documenten, zoals een organisatiebesluit, een mandaatregeling of een lijst
+  met systemen.
+
+Het model schrijft geen beleid: de regels staan in de bouwstenen. Het levert een voorstel als bestand. Elke regel
+draagt een letterlijk citaat, en een regel waarvan het citaat niet in je document staat, staat in de generator
+standaard uit. Pas na *Overnemen* verandert er iets, en onder elk stuk staat dan welke velden uit een AI-voorstel
+komen. De prompts en schema's staan als data in
+[`tools/beleidsset-ai/opdrachten.json`](https://github.com/security-commons-nl/kennisbank/blob/main/tools/beleidsset-ai/opdrachten.json);
+de controles (schema, citaat) delen een kern met de andere instrumenten. Uitleg over wat er waarheen gaat:
+[AI-hulp met je eigen sleutel](https://security-commons-nl.github.io/ai-hulp/).
 
 ## Bijdragen
 

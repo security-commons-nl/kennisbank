@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hBXqn6ptqLC2XFYJBsGxlcPdUdXvNT6NbnKQC/b6H78='; style-src 'sha256-4FihZ8LvVv9UX6mV6NmsY7KpjgOhJ0ZjZD0ttwSTVGA='; connect-src https: http://localhost:* http://127.0.0.1:*; img-src data:; form-action 'none'; base-uri 'none'">
+<title>Beleidsset op maat: AI-hulp</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTZWN1cml0eSBDb21tb25zIE5MIj4KICA8dGl0bGU+U2VjdXJpdHkgQ29tbW9ucyBOTDwvdGl0bGU+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2MTAuMkM0IDI0IDkuMiAyOC42IDE2IDMwLjUgMjIuOCAyOC42IDI4IDI0IDI4IDE2LjdWNi41TDE2IDJ6IiBmaWxsPSIjMTU0MjczIi8+CiAgPHBhdGggZD0iTTE2IDIgNCA2LjV2My4yTDE2IDUuMmwxMiA0LjVWNi41TDE2IDJ6IiBmaWxsPSIjZTE3MDAwIi8+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNSIgcj0iMy42IiBmaWxsPSIjZmZmIi8+CiAgPHBhdGggZD0iTTE0LjYgMTcuNGgyLjhsMS4xIDYuMmgtNWwxLjEtNi4yeiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4K" type="image/svg+xml">
+<meta name="description" content="Laat met je eigen AI-sleutel de contextvragen en invulvelden van de beleidsset informatiebeveiliging voorstellen uit je eigen documenten. Jij kiest in de generator wat je overneemt.">
+<style>/* De AI-hulp van de beleidsset, gekopieerd uit procescheck. Geen externe fonts, geen inline stijlen: het Content-Security-Policy staat allebei
+   niet toe, en dat is precies de bedoeling. Kleuren volgen de rijkshuisstijl-achtige tinten die de
+   rest van de commons ook gebruikt. */
+
+:root {
+  --blauw: #154273;
+  --blauw-licht: #e6edf5;
+  --oranje: #e17000;
+  --grijs: #4b5563;
+  --lijn: #d3d8de;
+  --vlak: #f6f7f9;
+  --groen: #2e7d32;
+  --rood: #a4262c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 16px/1.55 "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: #14171a;
+  background: #fff;
+}
+
+.binnen { max-width: 1180px; margin: 0 auto; padding: 0 1rem; }
+
+header { background: var(--blauw); color: #fff; padding: .8rem 0 1rem; }
+header .kruimel { font-size: .82rem; opacity: .85; }
+header .kruimel a { color: #fff; }
+header .naam { font-size: 1.5rem; font-weight: 700; margin-top: .2rem; }
+header .sub { font-size: .88rem; opacity: .9; }
+
+.balk { background: var(--vlak); border-bottom: 1px solid var(--lijn); padding: .6rem 0 0; position: sticky; top: 0; z-index: 5; }
+.knoppen { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.knoppen a { font-size: .85rem; margin-left: .3rem; }
+
+button {
+  font: inherit; font-size: .88rem; padding: .35rem .7rem; cursor: pointer;
+  border: 1px solid var(--blauw); background: #fff; color: var(--blauw); border-radius: 3px;
+}
+button:hover { background: var(--blauw-licht); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+#dossier-status { margin: .5rem 0 .4rem; font-size: .86rem; color: var(--grijs); }
+#dossier-status.let-op { color: var(--rood); font-weight: 600; }
+
+.tabs { display: flex; flex-wrap: wrap; gap: .2rem; }
+.tabs button { border: 1px solid var(--lijn); border-bottom: none; border-radius: 4px 4px 0 0; background: #fff; color: var(--grijs); }
+.tabs button[aria-selected="true"] { background: var(--blauw); color: #fff; border-color: var(--blauw); font-weight: 600; }
+
+main { padding: 1.3rem 0 3rem; }
+h1 { font-size: 1.45rem; margin: 0 0 .4rem; color: var(--blauw); }
+h2 { font-size: 1.1rem; margin: 0 0 .6rem; color: var(--blauw); }
+h3 { font-size: .98rem; margin: 1.1rem 0 .4rem; }
+.leid { margin: 0 0 1rem; max-width: 62em; color: var(--grijs); }
+.klein { font-size: .84rem; color: var(--grijs); }
+
+.kaart { border: 1px solid var(--lijn); border-radius: 5px; padding: 1rem; margin-bottom: 1.1rem; }
+blockquote { margin: 0 0 .8rem; padding: .5rem .9rem; border-left: 3px solid var(--oranje); background: var(--vlak); font-size: .9rem; }
+
+.raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem; }
+label { display: block; font-size: .85rem; font-weight: 600; color: var(--grijs); }
+label.breed { display: block; margin-top: .7rem; }
+label.vink { font-weight: 600; display: flex; align-items: center; gap: .35rem; }
+input[type="text"], input[type="date"], input[type="search"], select, textarea {
+  font: inherit; font-size: .9rem; font-weight: 400; color: #14171a;
+  width: 100%; margin-top: .18rem; padding: .32rem .4rem;
+  border: 1px solid var(--lijn); border-radius: 3px; background: #fff;
+}
+textarea { resize: vertical; }
+input:focus, select:focus, textarea:focus, button:focus { outline: 2px solid var(--oranje); outline-offset: 1px; }
+
+.waarschuwing {
+  border-left: 4px solid var(--oranje); background: #fff6ec;
+  padding: .55rem .8rem; margin: 0 0 1rem; font-size: .9rem;
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; margin-bottom: .7rem; }
+.filters label { min-width: 150px; }
+.filters .teller { font-size: .85rem; color: var(--grijs); padding-bottom: .35rem; }
+
+.rol { overflow-x: auto; border: 1px solid var(--lijn); border-radius: 5px; }
+table { border-collapse: collapse; width: 100%; }
+.regels { font-size: .84rem; }
+.regels th, .regels td { border-bottom: 1px solid var(--lijn); padding: .35rem .45rem; text-align: left; vertical-align: top; }
+.regels thead th { background: var(--blauw-licht); position: sticky; top: 0; font-size: .8rem; }
+.regels td.tekst { min-width: 22rem; max-width: 34rem; white-space: pre-line; }
+.regels td.kort { min-width: 9rem; }
+.regels input { font-size: .82rem; min-width: 8rem; }
+/* De keuzelijsten moeten hun langste optie tonen; anders leest "nog geen sta..." als een fout. */
+.regels select { font-size: .82rem; min-width: 10.5rem; }
+.regels tr.grijs td { color: #8a9099; background: #fbfbfc; }
+.regels tr.paragraaf td { background: var(--blauw-licht); font-weight: 600; padding: .5rem .45rem; }
+.regels tr.paragraaf .thema { font-weight: 400; color: var(--grijs); }
+
+.vlag { display: inline-block; padding: .05rem .4rem; border-radius: 3px; font-size: .78rem; white-space: nowrap; }
+.prio-critical { background: #f7e3e4; color: var(--rood); font-weight: 600; }
+.prio-high { background: #fff1de; color: #8a5000; font-weight: 600; }
+.prio-medium { background: #eceff2; color: var(--grijs); }
+.prio-low { background: transparent; color: #9aa0a6; }
+.klasse-1 { background: #f7e3e4; color: var(--rood); }
+.klasse-2 { background: #fff1de; color: #8a5000; }
+.klasse-3 { background: #fdf6e0; color: #6b5b00; }
+.klasse-4 { background: #e8eef7; color: var(--blauw); }
+.klasse-5 { background: #e4f1e4; color: var(--groen); }
+.melding { border-left: 4px solid var(--rood); background: #fdf0f0; padding: .5rem .8rem; font-size: .88rem; }
+
+/* De tekening: drie kolommen, ci links, app in het midden, proces rechts. Edges binnen een kolom
+   lopen als gebogen pad linksom buiten de kolom; een rechte lijn zou dwars door de nodes gaan. */
+#blast-graaf { display: block; width: 100%; min-width: 560px; height: auto; background: #fff; }
+#blast-graaf .node rect { fill: #fff; stroke: var(--lijn); stroke-width: 1; }
+#blast-graaf .node text { font-size: 9px; fill: #14171a; }
+#blast-graaf .node.kritiek rect { stroke: var(--rood); stroke-width: 2; fill: #fdf0f0; }
+#blast-graaf .node.gekozen rect { stroke: var(--blauw); stroke-width: 2.5; }
+#blast-graaf .node.geraakt rect { fill: var(--blauw-licht); stroke: var(--blauw); }
+#blast-graaf .node { cursor: pointer; }
+#blast-graaf .edge { stroke: #b9c0c9; stroke-width: 1; fill: none; }
+#blast-graaf .edge.geraakt { stroke: var(--blauw); stroke-width: 1.8; }
+#blast-graaf .kop { font-size: 11px; font-weight: 600; fill: var(--grijs); }
+
+.tellerraster { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .7rem; margin-bottom: 1rem; }
+.tellerraster .cel { border: 1px solid var(--lijn); border-radius: 5px; padding: .6rem .7rem; }
+.tellerraster .cel .getal { font-size: 1.6rem; font-weight: 700; color: var(--blauw); display: block; }
+.tellerraster .cel .naam { font-size: .82rem; color: var(--grijs); }
+
+details { margin-top: .35rem; font-weight: 400; }
+details summary { cursor: pointer; font-size: .84rem; color: var(--blauw); }
+details ul { margin: .35rem 0 .2rem 1.1rem; padding: 0; font-size: .84rem; }
+details li { margin-bottom: .12rem; }
+details .rol-label { color: var(--grijs); font-size: .78rem; }
+
+.uitkomst { font-size: .9rem; margin-bottom: .8rem; }
+.uitkomst th, .uitkomst td { border-bottom: 1px solid var(--lijn); padding: .3rem .5rem; text-align: left; }
+.uitkomst th { font-weight: 600; color: var(--grijs); width: 60%; }
+.uitkomst tr.tweede th, .uitkomst tr.tweede td { color: var(--grijs); font-style: italic; }
+.keten { font-size: .88rem; margin: .5rem 0 .8rem; }
+.keten th, .keten td { border-bottom: 1px solid var(--lijn); padding: .3rem .4rem; text-align: left; }
+
+.paneel { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; }
+.tegel { border: 1px solid var(--lijn); border-radius: 5px; padding: .8rem; }
+.tegel h3 { margin-top: 0; }
+progress { width: 100%; height: .7rem; }
+
+a { color: var(--blauw); }
+footer { border-top: 1px solid var(--lijn); background: var(--vlak); font-size: .82rem; color: var(--grijs); padding: 1rem 0 2rem; }
+footer .rechten { margin-top: .5rem; }
+
+#scherm-uitdraai h2 { margin-top: 1.6rem; border-bottom: 2px solid var(--blauw); padding-bottom: .2rem; }
+#scherm-uitdraai table { font-size: .84rem; margin-bottom: .8rem; }
+#scherm-uitdraai th, #scherm-uitdraai td { border: 1px solid var(--lijn); padding: .3rem .45rem; text-align: left; vertical-align: top; }
+#scherm-uitdraai th { background: var(--vlak); }
+#scherm-uitdraai .leeg { color: var(--grijs); font-style: italic; }
+
+@media print {
+  header, .balk, footer, .nietprint { display: none !important; }
+  .scherm { display: none !important; }
+  #scherm-uitdraai { display: block !important; }
+  #scherm-uitdraai h1 { font-size: 14pt; }
+  #scherm-uitdraai h2 { font-size: 11pt; page-break-after: avoid; }
+  #scherm-uitdraai h2 + table, #scherm-uitdraai h2 + p { page-break-before: avoid; }
+  body { font-size: 9.5pt; color: #000; }
+  .binnen { max-width: none; padding: 0; }
+  main { padding: 0; }
+  table { font-size: 8.5pt !important; }
+  tr, blockquote { page-break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+  @page { size: A4 portrait; margin: 16mm; }
+}
+
+/* De AI-hulp: zeven stappen onder elkaar; een stap die nog niet aan de beurt is, staat gedimd. */
+.stap { border: 1px solid var(--lijn); border-radius: 5px; padding: 1rem; margin-bottom: 1rem; }
+.stap[data-actief="nee"] { opacity: .5; }
+.stap[data-actief="nee"] input, .stap[data-actief="nee"] select, .stap[data-actief="nee"] textarea, .stap[data-actief="nee"] button { pointer-events: none; }
+.stap h2 .nummer { display: inline-block; min-width: 1.6em; color: #fff; background: var(--blauw); border-radius: 50%; text-align: center; margin-right: .4rem; font-size: .85rem; line-height: 1.6em; }
+.status-ok { color: var(--groen); font-weight: 600; }
+.status-fout { color: var(--rood); font-weight: 600; }
+.toestemming { border-left: 4px solid var(--oranje); background: #fff6ec; padding: .7rem .9rem; margin: .6rem 0; }
+#voortgang { font-size: .9rem; color: var(--grijs); margin: .5rem 0; }
+.niet-in-bron td { color: #8a5000; background: #fff8ee; }</style>
+</head>
+<body>
+<header>
+  <div class="binnen">
+    <nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> &rsaquo; <a href="../../">Kennisbank</a> &rsaquo; <a href="./">Beleidsset informatiebeveiliging</a> &rsaquo; <a href="beleidsset-generator.html">Generator</a> &rsaquo; <span>AI-hulp</span></nav>
+    <div class="naam">Beleidsset op maat &middot; AI-hulp</div>
+    <div class="sub">Eigen sleutel, eigen leverancier &nbsp;|&nbsp; de AI stelt voor, jij beslist per regel</div>
+  </div>
+</header>
+
+<main class="binnen">
+  <noscript>
+    <section class="kaart">
+      <h1>AI-hulp</h1>
+      <p>Deze pagina roept met jouw eigen API-sleutel een taalmodel aan en heeft daarvoor JavaScript nodig.
+      De opdrachten, prompts en schema's staan open in <code>tools/beleidsset-ai/opdrachten.json</code> in de repository van de kennisbank.</p>
+    </section>
+  </noscript>
+
+  <h1>AI-hulp bij de beleidsset</h1>
+  <p class="leid">Deze pagina leest met een taalmodel jouw eigen documenten en maakt een <strong>voorstel</strong>: de
+  antwoorden op de contextvragen, of de waarden voor de invulvelden (rollen, systemen, documenten). Elk voorstel
+  draagt een letterlijk citaat uit je document. Het voorstel is een bestand dat je in de generator laadt; daar kies je
+  per regel wat je overneemt. Het model schrijft geen beleid: de regels staan in de bouwstenen. De generator zelf
+  praat nooit met een leverancier; alleen deze pagina, alleen als jij dat zegt, en alleen met de sleutel die jij hier
+  invult.</p>
+
+  <section class="stap" id="stap-leverancier" data-actief="ja">
+    <h2><span class="nummer">1</span>Leverancier en sleutel</h2>
+    <div id="lev-keuzes"></div>
+    <div class="raster">
+      <label>Basis-URL<input type="text" id="lev-basis" placeholder="https://api.mistral.ai"></label>
+      <label>Model<input type="text" id="lev-model" placeholder="mistral-medium-latest"></label>
+      <label>API-sleutel<input type="password" id="lev-sleutel" autocomplete="off"></label>
+    </div>
+    <p class="klein" id="lev-uitleg"></p>
+    <p class="klein">De sleutel blijft in deze tab (sessionStorage) en verdwijnt zodra je de tab sluit. Hij komt
+    niet in het voorstel, niet in de tool en niet in een adresbalk.</p>
+    <button type="button" id="knop-verbinding">Verbinding testen</button>
+    <button type="button" id="knop-sleutel-vergeten">Sleutel vergeten</button>
+    <span id="lev-status"></span>
+  </section>
+
+  <section class="stap" id="stap-opdracht" data-actief="nee">
+    <h2><span class="nummer">2</span>Opdracht</h2>
+    <label>Wat wil je omzetten?<select id="opdracht-keuze"></select></label>
+    <p class="klein" id="opdracht-uitleg"></p>
+  </section>
+
+  <section class="stap" id="stap-invoer" data-actief="nee">
+    <h2><span class="nummer">3</span>Invoer</h2>
+    <p class="klein">Plak tekst, of kies een bestand: <span id="invoer-soorten"></span>. Een xlsx wordt in je
+    browser gelezen (eerste werkblad); een pdf of docx niet, plak daarvan de tekst.</p>
+    <label class="breed">Tekst<textarea id="invoer-tekst" rows="10"></textarea></label>
+    <div class="knoppen">
+      <button type="button" id="knop-invoer-bestand">Bestand kiezen</button>
+      <input type="file" id="invoer-bestand" hidden>
+      <span class="klein" id="invoer-info"></span>
+    </div>
+  </section>
+
+  <section class="stap" id="stap-toestemming" data-actief="nee">
+    <h2><span class="nummer">4</span>Toestemming</h2>
+    <div class="toestemming" id="toestemming-tekst"></div>
+    <label class="vink"><input type="checkbox" id="toestemming"> Ik begrijp wat er waarheen gaat en stuur geen
+    persoonsgegevens mee die daar niet horen.</label>
+    <p class="klein">Staan er persoonsnamen in je document? Haal ze er eerst uit met de
+    <a href="https://security-commons-nl.github.io/anonimizer-browser/" rel="noopener">anonimizer</a>.
+    Twijfel je of dit mag met deze invoer? <a href="https://security-commons-nl.github.io/ai-hulp/" rel="noopener">AI-hulp met je
+    eigen sleutel</a> legt uit wat er waarheen gaat, wat je niet meestuurt en hoe het risico per
+    leverancierskeuze verschilt.</p>
+  </section>
+
+  <section class="stap" id="stap-uitvoeren" data-actief="nee">
+    <h2><span class="nummer">5</span>Uitvoeren</h2>
+    <button type="button" id="knop-uitvoeren">Voorstel maken</button>
+    <button type="button" id="knop-stoppen" disabled>Stoppen</button>
+    <p id="voortgang"></p>
+  </section>
+
+  <section class="stap" id="stap-voorstel" data-actief="nee">
+    <h2><span class="nummer">6</span>Voorstel</h2>
+    <p class="klein" id="voorstel-samenvatting"></p>
+    <div class="rol" tabindex="0"><table class="regels" id="tabel-voorstel"></table></div>
+    <h3>Wat het model niet zeker wist</h3>
+    <ul id="onzeker"></ul>
+    <div id="waarschuwingen"></div>
+    <button type="button" id="knop-voorstel-opslaan">Voorstel opslaan</button>
+  </section>
+
+  <section class="stap" id="stap-verder" data-actief="nee">
+    <h2><span class="nummer">7</span>Verder in de tool</h2>
+    <p>Ga naar de <a href="beleidsset-generator.html">generator</a>, kies <em>AI-voorstel laden</em> en kies het
+    bestand dat je net hebt opgeslagen. Je ziet dan per regel het voorstel met het citaat, en je vinkt aan wat je
+    overneemt. Regels waarvan het citaat niet in je document staat, staan standaard uit. Niets verandert voordat
+    je op <em>Overnemen</em> klikt.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="binnen">
+    <p>Beleidsset op maat &middot; AI-hulp &middot; <span id="versie"></span> &middot;
+    <a href="https://github.com/security-commons-nl/kennisbank/tree/main/tools/beleidsset-ai" rel="noopener">bron en opdrachten op GitHub</a> &middot;
+    licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE" rel="noopener">EUPL-1.2</a>.
+    Deze pagina stuurt alleen wat jij invoert naar de leverancier die jij kiest, met jouw sleutel. Het model krijgt
+    nooit je antwoorden in de generator en schrijft geen beleidstekst. De uitleg staat op
+    <a href="https://security-commons-nl.github.io/ai-hulp/" rel="noopener">AI-hulp met je eigen sleutel</a>.</p>
+  </div>
+</footer>
+
+<script>window.__OPDRACHTEN__ = {"versie":"2026-10","tool":"beleidsset","voorstel_formaat":"beleidsset-voorstel","toelichting":"De opdrachten van de AI-hulp bij de beleidsset informatiebeveiliging, volgens het patroon AI-hulp met eigen sleutel. Per opdracht de systeemprompt, het JSON-schema van de uitkomst en de toegestane invoer. De lijst met contextvragen en de lijst met invulvelden komen bij het bouwen uit profiel.json en de bouwstenen en gaan als parameter mee in de prompt. Geen opdracht vraagt het model om een eis, een termijn of een beleidsregel: die staan in de bouwstenen. Het model zet alleen materiaal van de gebruiker om naar antwoorden en invulwaarden, elk met een letterlijk citaat.","leveranciers":[{"id":"mistral","naam":"Mistral","basis":"https://api.mistral.ai","model":"mistral-medium-latest","uitleg":"Europese partij, hosting in de EU. De standaard. Ken de bewaartermijnen van je eigen abonnement."},{"id":"ollama","naam":"Ollama (lokaal)","basis":"http://localhost:11434","model":"","uitleg":"Draait op je eigen machine; niets verlaat je netwerk. Start Ollama met OLLAMA_ORIGINS gezet op deze site, anders weigert hij de aanroep."},{"id":"anders","naam":"Andere leverancier","basis":"","model":"","uitleg":"Elke endpoint met /v1/chat/completions (OpenAI-compatibel). Vul basis-URL en model zelf in."}],"vaste_regels":"Verzin niets: wat niet in de tekst staat, laat je weg. Gebruik de bewoordingen van de tekst. Zet in bronregel een letterlijk citaat uit de invoer waar het item vandaan komt, hoogstens twee zinnen; dat citaat moet woordelijk in de invoer voorkomen. Noteer in onzeker, in gewone taal, wat je niet zeker weet of hebt weggelaten. Bedenk geen beleidsregels, eisen of termijnen; die staan al in het beleid. Antwoord uitsluitend met JSON volgens het schema, zonder tekst ervoor of erna en zonder markdown.","opdrachten":[{"id":"profiel","titel":"Contextvragen beantwoorden uit een beschrijving van je organisatie","uitleg":"Plak een beschrijving van je organisatie: een jaarverslag, een informatiebeveiligingsplan, een organisatiebeschrijving of een eerdere ENSIA-verantwoording. Het model zoekt per contextvraag het antwoord dat de tekst geeft, met het citaat waar het staat. Vragen waar de tekst niets over zegt, blijven open.","invoer":["tekst","txt","md","csv","xlsx"],"systeemprompt":"Je bent een assistent van een informatiebeveiliger bij een Nederlandse overheidsorganisatie. Je krijgt tekst over de organisatie. Hieronder staan contextvragen, elk met een id en een vaste lijst antwoorden (id en omschrijving). Geef per vraag waar de tekst een antwoord op geeft een item met code (het id van de vraag), antwoorden (een lijst met een of meer antwoord-id's uit de vaste lijst van die vraag; meer dan een alleen als de vraag meerdere antwoorden toestaat) en bronregel. Kies alleen antwoord-id's die in de lijst staan. Een vraag waar de tekst niets over zegt, laat je weg en noem je in onzeker.","schema":{"type":"object","additionalProperties":false,"required":["items","onzeker"],"properties":{"items":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["code","antwoorden","bronregel"],"properties":{"code":{"type":"string"},"antwoorden":{"type":"array","items":{"type":"string"}},"bronregel":{"type":"string"}}}},"onzeker":{"type":"array","items":{"type":"string"}}}},"parameter":"vragen"},{"id":"velden","titel":"Invulvelden invullen uit je eigen documenten","uitleg":"Plak een organisatiebesluit, een mandaatregeling, een RASCI, een bestaand beleidsstuk of een lijst met systemen. Het model zoekt per invulveld uit het beleid (zoals de lijneigenaar van de werkplekken of het ticketsysteem) de waarde die de tekst geeft, met het citaat waar het staat. Velden waar de tekst niets over zegt, blijven open.","invoer":["tekst","txt","md","csv","xlsx"],"systeemprompt":"Je bent een assistent van een informatiebeveiliger bij een Nederlandse overheidsorganisatie. Je krijgt tekst uit de eigen documenten van de organisatie. Hieronder staan de invulvelden van een beleidsset, elk met een naam en een toelichting. Geef per invulveld waar de tekst een waarde voor geeft een item met code (de naam van het veld, letterlijk zoals hieronder), waarde (een functie, afdeling, systeem, document of termijn zoals de tekst die noemt, kort) en bronregel. Gebruik functies en afdelingen, geen persoonsnamen; staat er alleen een persoonsnaam, laat het veld weg en noem het in onzeker. Een veld waar de tekst niets over zegt, laat je weg.","schema":{"type":"object","additionalProperties":false,"required":["items","onzeker"],"properties":{"items":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["code","waarde","bronregel"],"properties":{"code":{"type":"string"},"waarde":{"type":"string"},"bronregel":{"type":"string"}}}},"onzeker":{"type":"array","items":{"type":"string"}}}},"parameter":"velden"}],"grenzen":{"max_tekens_per_aanroep":24000,"max_aanroepen_per_opdracht":12,"timeout_seconden":90,"wachttijden_bij_429_seconden":[2,4,8]},"vragen":[{"id":"type","vraag":"Wat voor organisatie ben je?","meerdere":false,"antwoorden":[{"id":"gemeente","label":"Gemeente"},{"id":"gr","label":"Gemeenschappelijke regeling of uitvoeringsorganisatie"},{"id":"provincie","label":"Provincie"},{"id":"waterschap","label":"Waterschap"},{"id":"ministerie","label":"Ministerie of kerndepartement"},{"id":"rijksdienst","label":"Rijksdienst, agentschap of inspectie"},{"id":"zbo","label":"Zelfstandig bestuursorgaan"},{"id":"veiligheidsregio","label":"Veiligheidsregio"},{"id":"overig","label":"Overige publieke organisatie"}]},{"id":"grootte","vraag":"Hoe groot is je organisatie?","meerdere":false,"antwoorden":[{"id":"klein","label":"Klein (gemeente tot 30.000 inwoners; anders tot 250 medewerkers)"},{"id":"middel","label":"Middel (30.000 tot 100.000 inwoners; anders 250 tot 1.000 medewerkers)"},{"id":"groot","label":"Groot (meer dan 100.000 inwoners; anders meer dan 1.000 medewerkers)"}]},{"id":"samenwerking","vraag":"Hoe is je bedrijfsvoering georganiseerd?","meerdere":false,"antwoorden":[{"id":"zelfstandig","label":"Zelfstandig"},{"id":"centrum","label":"Centrumorganisatie die de bedrijfsvoering ook voor anderen doet"},{"id":"aangesloten","label":"Aangesloten bij een uitvoeringsorganisatie of centrumorganisatie"}]},{"id":"capaciteit","vraag":"Welke eigen security-capaciteit heb je?","meerdere":false,"antwoorden":[{"id":"geen","label":"Geen eigen ISO; informatiebeveiliging is een neventaak"},{"id":"parttime","label":"Een ISO of CISO in deeltijd"},{"id":"team","label":"Een eigen team (CISO met ISO's)"}]},{"id":"cbw","vraag":"Wat is je status onder de Cyberbeveiligingswet?","meerdere":false,"antwoorden":[{"id":"essentieel","label":"Essentiële entiteit"},{"id":"belangrijk","label":"Belangrijke entiteit"},{"id":"niet","label":"Niet aangewezen"}]},{"id":"beheer","vraag":"Wie beheert je IT?","meerdere":false,"antwoorden":[{"id":"eigen","label":"Eigen beheer"},{"id":"regie","label":"Regie: eigen organisatie stuurt, beheer is uitbesteed"},{"id":"uitbesteed","label":"Volledig uitbesteed"}]},{"id":"hosting","vraag":"Waar draaien je systemen?","meerdere":true,"antwoorden":[{"id":"eigen-dc","label":"Eigen datacenter of serverruimte"},{"id":"hostingpartij","label":"Hostingpartij (IaaS, gedeeld datacenter)"},{"id":"saas","label":"Vooral SaaS en publieke cloud"}]},{"id":"soevereiniteit","vraag":"Stel je eisen aan Europese of soevereine cloud?","meerdere":false,"antwoorden":[{"id":"ja","label":"Ja: alleen EU of soevereine dienstverlening"},{"id":"nee","label":"Nee"}]},{"id":"werkplek","vraag":"Hoe ziet je werkplek eruit?","meerdere":false,"antwoorden":[{"id":"cloud","label":"Cloudwerkplek (bijvoorbeeld Microsoft 365)"},{"id":"hybride","label":"Hybride: cloud naast een virtuele of lokale werkplek"},{"id":"on-premises","label":"On-premises"}]},{"id":"byod","vraag":"Mogen medewerkers eigen apparaten gebruiken (BYOD)?","meerdere":false,"antwoorden":[{"id":"ja","label":"Ja, onder voorwaarden"},{"id":"nee","label":"Nee"}]},{"id":"detectie","vraag":"Wie bewaakt je omgeving op aanvallen?","meerdere":false,"antwoorden":[{"id":"eigen-soc","label":"Eigen SOC"},{"id":"uitbesteed","label":"Uitbesteed SOC of MDR-dienst"},{"id":"geen","label":"Geen structurele detectie"}]},{"id":"ontwikkeling","vraag":"Bouwt je organisatie zelf software, apps of koppelingen?","meerdere":false,"antwoorden":[{"id":"ja","label":"Ja"},{"id":"nee","label":"Nee, alleen inkoop en configuratie"}]},{"id":"ot","vraag":"Heb je operationele technologie (OT)?","meerdere":false,"antwoorden":[{"id":"geen","label":"Geen"},{"id":"beperkt","label":"Beperkt: gebouwbeheer, toegang, camera's"},{"id":"substantieel","label":"Substantieel: bruggen, gemalen, verkeer, zuivering"}]},{"id":"politiegegevens","vraag":"Verwerk je politiegegevens (boa's, opsporing, handhaving)?","meerdere":false,"antwoorden":[{"id":"ja","label":"Ja"},{"id":"nee","label":"Nee"}]},{"id":"ketens","vraag":"Op welke landelijke voorzieningen ben je aangesloten?","meerdere":true,"antwoorden":[{"id":"digid","label":"DigiD"},{"id":"suwinet","label":"Suwinet"},{"id":"brp","label":"BRP (als bronhouder of afnemer)"},{"id":"bag","label":"BAG of andere basisregistraties"},{"id":"anders","label":"Andere ketens met eigen beveiligingseisen"},{"id":"geen","label":"Geen"}]},{"id":"gevoelig","vraag":"In welke gevoelige domeinen verwerk je persoonsgegevens?","meerdere":true,"antwoorden":[{"id":"sociaal","label":"Sociaal domein"},{"id":"jeugd","label":"Jeugd"},{"id":"gezondheid","label":"Gezondheid (WvGGZ, NTA 7516)"},{"id":"geen","label":"Geen van deze"}]},{"id":"bcm","vraag":"Hoe is je crisis- en continuïteitsorganisatie geregeld?","meerdere":false,"antwoorden":[{"id":"geen","label":"Geen"},{"id":"crisisteam","label":"Een crisisteam, zonder BCM-functie"},{"id":"bcm","label":"Een BCM-functie met continuïteitsplannen en een BIA"}]},{"id":"volwassenheid","vraag":"Waar sta je met informatiebeveiliging?","meerdere":false,"antwoorden":[{"id":"startend","label":"Startend: nog geen samenhangend beleid"},{"id":"bio1","label":"BIO 1 op orde, verantwoording via ENSIA"},{"id":"bio2-opbouw","label":"BIO 2.0-ISMS in opbouw"},{"id":"bio2-werkend","label":"BIO 2.0-ISMS werkend, met controleraamwerk"}]}],"velden":[{"naam":"CISO-invulling","toelichting":"bijvoorbeeld een gedeelde CISO via een samenwerkingsverband of een externe partij"},{"naam":"aantal mislukte pogingen","toelichting":"bijvoorbeeld 5"},{"naam":"aantal steekproef beoordelingen","toelichting":"bijvoorbeeld drie beoordelingen van kritieke diensten"},{"naam":"aantal steekproef inkoop","toelichting":"bijvoorbeeld vijf inkopen met een informatiecomponent"},{"naam":"aanvraagpunt uitzonderingen","toelichting":"de functie die uitzonderingen op dit beleid registreert, bijvoorbeeld de servicedesk"},{"naam":"afsprakenlijst waarschuwingen","toelichting":"document met de contactpersonen en kanalen per partner"},{"naam":"ambtelijk eindverantwoordelijke","toelichting":"de hoogste ambtelijke functie, bijvoorbeeld de secretaris of algemeen directeur"},{"naam":"architectuurdocument","toelichting":"het document of de omgeving waarin de architectuurprincipes staan"},{"naam":"beheerder internetfacing systemen","toelichting":"de functie die de metingen uitvoert, bijvoorbeeld de netwerkbeheerder"},{"naam":"beheerder inventaris","toelichting":"de functie die de inventaris bijhoudt, bijvoorbeeld de configuratiebeheerder"},{"naam":"beheerder logvoorziening","toelichting":"de afdeling of leverancier die de centrale logging beheert"},{"naam":"beheerdocumentatie","toelichting":"de plek waar werkinstructies staan, bijvoorbeeld de kennisbank van de beheerorganisatie"},{"naam":"beheerorganisatie","toelichting":"de eigen afdeling of de leverancier die de systemen beheert"},{"naam":"beoordelingstermijn dreigingsinformatie","toelichting":"de termijn waarbinnen een waarschuwing is beoordeeld, bijvoorbeeld twee werkdagen"},{"naam":"beoordelingstermijn ketenwijziging","toelichting":"bijvoorbeeld tien werkdagen"},{"naam":"besluitvormer afwijking soevereiniteit","toelichting":"wie de afwijking goedkeurt"},{"naam":"bewaartermijn afdruktaken","toelichting":"de termijn waarna een niet-opgehaalde afdruktaak vervalt, bijvoorbeeld 24 uur"},{"naam":"bewaartermijn beveiligingslogging","toelichting":"de minimale termijn, bijvoorbeeld twaalf maanden"},{"naam":"bewaartermijn camerabeelden","toelichting":"de vastgestelde termijn, bijvoorbeeld vier weken"},{"naam":"bewaartermijn toegangslogging","toelichting":"standaard een jaar"},{"naam":"bewaartermijn wisverslag","toelichting":"standaard zeven jaar"},{"naam":"bewaking","toelichting":"het eigen SOC, de SOC-dienstverlener of de beheerder die de meldingen beoordeelt"},{"naam":"bewaking aanmeldingen","toelichting":"het SOC, de SOC-dienstverlener of de beheerder die de meldingen beoordeelt"},{"naam":"classificatiemethode","toelichting":"het vastgestelde document met vragenlijsten en impactschaal"},{"naam":"configuratieregister","toelichting":"het systeem waarin de configuraties staan, bijvoorbeeld de configuratiedatabase van het beheertool"},{"naam":"contracteigenaar","toelichting":"de functie die het contract na ondertekening beheert"},{"naam":"drempel capaciteit","toelichting":"het gebruikspercentage waarbij een melding volgt, bijvoorbeeld 80 procent"},{"naam":"drempel risicoafweging inkoop","toelichting":"de criteria waaronder een inkoop met de standaardset eisen kan"},{"naam":"eigenaar IT-middelen","toelichting":"de functie die eigenaar is van werkplekken en infrastructuur, bijvoorbeeld het hoofd IT"},{"naam":"eigenaar back-upplannen","toelichting":"de functie die de back-upplannen opstelt, bijvoorbeeld de informatiemanager"},{"naam":"eigenaar cryptografie","toelichting":"de functie die verantwoordelijk is voor de implementatie, bijvoorbeeld de IT-architect of het hoofd IT"},{"naam":"eigenaar gebouwgebonden OT","toelichting":"de manager die de installaties beheert, bijvoorbeeld facilitaire zaken"},{"naam":"eigenaar overzicht kritieke systemen","toelichting":"de functie die het overzicht van kritieke systemen bijhoudt, bijvoorbeeld de informatiemanager"},{"naam":"eigenaar van dit beleid","toelichting":"de manager die dit beleid uitvoert en laat naleven"},{"naam":"eindverantwoordelijke bedrijfsvoering","toelichting":"de functie, bijvoorbeeld de secretaris of directeur"},{"naam":"eisen aan koeriers","toelichting":"het document met de betrouwbaarheidseisen, zoals VOG of screening van chauffeurs, verzegeling, volgsysteem en overdrachtsprotocol"},{"naam":"format leveranciersbeoordeling","toelichting":"het sjabloon met de vragen en het bewijs per vraag"},{"naam":"formulier testgegevens","toelichting":"het formulier of de registratie voor testen met persoonsgegevens"},{"naam":"functionaris informatiebeveiliging","toelichting":"de medewerker die de neventaak heeft, met het aantal uren per week"},{"naam":"gedragsregels bedrijfsmiddelen","toelichting":"het document met de huisregels of de gedragscode voor ICT-gebruik"},{"naam":"herhaaltermijn screening","toelichting":"bijvoorbeeld elke vijf jaar of bij een nieuwe functie op de lijst"},{"naam":"hersteltermijn rechten","toelichting":"bijvoorbeeld tien werkdagen"},{"naam":"herzieningstermijn classificatie","toelichting":"standaard drie jaar"},{"naam":"incidentcoördinator","toelichting":"de functionaris die informatiebeveiliging als neventaak heeft"},{"naam":"inkoopadviseur","toelichting":"de functie die het inkoopproces begeleidt"},{"naam":"kwetsbaarhedenregister","toelichting":"het systeem waarin open kwetsbaarheden staan, bijvoorbeeld de scantool of het ticketsysteem"},{"naam":"lijneigenaar ICT-continuïteit","toelichting":"de manager die de ICT-voorzieningen voor continuïteit uitvoert"},{"naam":"lijneigenaar archief","toelichting":"de functie die de archieffunctie uitvoert, bijvoorbeeld de DIV-coördinator"},{"naam":"lijneigenaar back-up","toelichting":"de manager die back-up en herstel uitvoert of bij leveranciers regisseert"},{"naam":"lijneigenaar bedrijfsmiddelen","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijneigenaar cryptografie","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijneigenaar fysieke beveiliging","toelichting":"de manager van de afdeling die gebouwen en toegangsmiddelen beheert, bijvoorbeeld facilitaire zaken"},{"naam":"lijneigenaar gegevensdragers","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijneigenaar kwetsbaarhedenbeheer","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd ICT"},{"naam":"lijneigenaar leveranciersmanagement","toelichting":"de manager die het contractmanagement uitvoert"},{"naam":"lijneigenaar logging","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijneigenaar logische toegang","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT of informatievoorziening"},{"naam":"lijneigenaar mobiele apparatuur","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijneigenaar netwerkbeveiliging","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd ICT"},{"naam":"lijneigenaar personeel","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd HR"},{"naam":"lijneigenaar projectportfolio","toelichting":"de functie die het overzicht van projecten bijhoudt, bijvoorbeeld het projectbureau"},{"naam":"lijneigenaar veilige ontwikkeling","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT of informatievoorziening"},{"naam":"lijneigenaar werkplek","toelichting":"de manager die de werkplekken beheert, bijvoorbeeld facilitaire zaken"},{"naam":"lijneigenaar wijzigingsbeheer","toelichting":"de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT"},{"naam":"lijst onaanvaardbare voorwaarden","toelichting":"bijvoorbeeld eenzijdig wijzigen van de beveiligingsafspraken of gebruik van gegevens voor eigen doelen van de leverancier"},{"naam":"maximale activeringsduur","toelichting":"bijvoorbeeld 14 dagen"},{"naam":"maximum aantal hoogste beheerders","toelichting":"bijvoorbeeld drie benoemde personen plus een noodaccount"},{"naam":"meldloket incidenten","toelichting":"het loket, bijvoorbeeld de servicedesk, met telefoonnummer en mailadres"},{"naam":"meldpunt beveiligde zones","toelichting":"de functie die weet wie er in een beveiligde zone werkt, bijvoorbeeld de receptie of de servicedesk"},{"naam":"meldpunt fysieke beveiliging","toelichting":"de functie die de waarschuwing doet, bijvoorbeeld de coördinator beveiliging"},{"naam":"meldpunt projecten","toelichting":"waar projecten worden aangemeld, bijvoorbeeld het projectbureau of een intakeformulier"},{"naam":"meldtermijn leverancier","toelichting":"bijvoorbeeld 12 uur, zodat de vroege waarschuwing binnen 24 uur kan"},{"naam":"meldtermijn personeelsmutaties","toelichting":"de termijn waarbinnen HR een mutatie doorgeeft, bijvoorbeeld twee werkdagen"},{"naam":"minimale wachtwoordlengte","toelichting":"bijvoorbeeld 12 tekens voor gebruikers en 16 voor beheerders"},{"naam":"netwerkarchitect","toelichting":"de functie die het netwerkontwerp opstelt, eigen of bij de leverancier"},{"naam":"netwerkbeheer","toelichting":"de eigen afdeling of de leverancier die de componenten beheert"},{"naam":"ondersteuning CISO","toelichting":"bijvoorbeeld een ISO van een samenwerkingspartner of ingehuurde capaciteit"},{"naam":"ontwikkelrichtlijn","toelichting":"het document dat de werkwijze van de bouwstraat beschrijft"},{"naam":"overzicht DLP-maatregelen","toelichting":"het overzicht van kanalen met de maatregel per kanaal, bijvoorbeeld in het beheerdossier van de werkplek"},{"naam":"overzicht functiescheiding","toelichting":"het overzicht van taken die niet in één hand mogen liggen, bijvoorbeeld als bijlage bij het mandaat"},{"naam":"overzicht overige ketens","toelichting":"per keten het normenkader, de eigenaar en de auditcyclus"},{"naam":"pasregels medewerkers","toelichting":"de huisregel over het dragen van de pas"},{"naam":"patchtermijn gemiddeld","toelichting":"standaard drie maanden"},{"naam":"patchtermijn hoog","toelichting":"standaard een maand"},{"naam":"patchtermijn hoog en hoog","toelichting":"standaard een week, de BIO 2.0 noemt een week als grens voor tijdelijke maatregelen"},{"naam":"publicatieplek beleid","toelichting":"de plek waar het beleid voor iedereen vindbaar is, bijvoorbeeld het intranet"},{"naam":"regeling eigen apparaten","toelichting":"welke apparaten, besturingssystemen en diensten zijn toegestaan"},{"naam":"register OT-eigenaren","toelichting":"overzicht van installatiesoorten met eigenaar en beheerpartij"},{"naam":"register eigenaren","toelichting":"het overzicht van processen en systemen met hun eigenaar, bijvoorbeeld het register van bedrijfsmiddelen"},{"naam":"register leveranciers","toelichting":"de plaats of het systeem waar het register wordt bijgehouden"},{"naam":"register testrapporten","toelichting":"de plek waar pentestrapporten en opvolging staan, bijvoorbeeld het managementsysteem"},{"naam":"registratie dreigingsinformatie","toelichting":"waar beoordeelde waarschuwingen worden vastgelegd, bijvoorbeeld het ticketsysteem"},{"naam":"registratie van controles","toelichting":"het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem"},{"naam":"reisrichtlijn apparatuur","toelichting":"het document met de landen en de voorwaarden voor reisapparatuur"},{"naam":"risico-acceptant","toelichting":"de functie die hoge restrisico's mag accepteren, bijvoorbeeld de directie"},{"naam":"risico-eigenaar","toelichting":"de manager die restrisico's accepteert"},{"naam":"sleutelbeheerder","toelichting":"de functie die verantwoordelijk is voor het sleutel- en certificaatbeheer"},{"naam":"spoedgoedkeurder","toelichting":"de functie die buiten het overleg mag goedkeuren, bijvoorbeeld de dienstdoende IT-manager"},{"naam":"standaard hersteltijd","toelichting":"bijvoorbeeld 16 werkuren"},{"naam":"storingslijst nutsvoorzieningen","toelichting":"het document met leveranciers en storingsnummers per locatie"},{"naam":"termijn inactiviteit","toelichting":"bijvoorbeeld 60 dagen"},{"naam":"termijn intrekken noodvoorzieningen","toelichting":"bijvoorbeeld vijf werkdagen"},{"naam":"termijn uitfaseren","toelichting":"bijvoorbeeld zes maanden na publicatie van het advies"},{"naam":"termijn verwijderen accounts","toelichting":"bijvoorbeeld 90 dagen na blokkade"},{"naam":"termijn verwijderen software","toelichting":"bijvoorbeeld vijf werkdagen"},{"naam":"testschema noodstroom","toelichting":"hoe vaak de UPS en de langdurige voorziening worden getest, bijvoorbeeld halfjaarlijks en jaarlijks"},{"naam":"tijdbron","toelichting":"de betrouwbare tijdbron van de organisatie, bijvoorbeeld de eigen NTP-servers of de tijdservers van de overheid"},{"naam":"uitgiftepunt apparatuur","toelichting":"de functie die apparatuur uitgeeft en inneemt, bijvoorbeeld de servicedesk"},{"naam":"vaststeller","toelichting":"wie het beleid vaststelt, bijvoorbeeld de directie of het bestuur"},{"naam":"vaststeller materiebeleid","toelichting":"wie de materie-specifieke stukken vaststelt, bijvoorbeeld de directie"},{"naam":"vaststeller screeningsbeleid","toelichting":"de functie of het orgaan dat het screeningsbeleid vaststelt, bijvoorbeeld de directie"},{"naam":"vergrendeltijd","toelichting":"het aantal minuten inactiviteit, bijvoorbeeld 10"},{"naam":"waarschuwingstermijn verlopen","toelichting":"bijvoorbeeld 60 dagen"},{"naam":"wijzigingsregister","toelichting":"het systeem waarin wijzigingen worden vastgelegd, bijvoorbeeld het ticketsysteem"},{"naam":"wistermijn","toelichting":"standaard vier uur na de melding"}],"set_vingerafdruk":"98a9ec1a0809b37889c9cb0dca132aab50615628081d9f25bc7104dc61b47f89"};
+/* De deterministische kern van de AI-hulp, gespiegeld uit ai/kern.py onder dezelfde namen.
+ *
+ * Dit bestand gaat ook mee in de tool zelf (voor vergelijk en pas_toe) en kent daarom GEEN netwerk:
+ * geen fetch, geen XMLHttpRequest. De aanroep van de leverancier zit alleen in ai.js.
+ */
+(function () {
+  'use strict';
+
+  var kern = {};
+
+  // ── Schema-controle ───────────────────────────────────────────────────────
+
+  var TYPEN = {
+    object: function (w) { return w !== null && typeof w === 'object' && !Array.isArray(w); },
+    array: function (w) { return Array.isArray(w); },
+    string: function (w) { return typeof w === 'string'; },
+    boolean: function (w) { return typeof w === 'boolean'; },
+    number: function (w) { return typeof w === 'number'; },
+    integer: function (w) { return typeof w === 'number' && Math.floor(w) === w; },
+    'null': function (w) { return w === null; }
+  };
+
+  function typeNaam(w) {
+    if (w === null) return 'null';
+    if (Array.isArray(w)) return 'list';
+    return { string: 'str', number: 'float', boolean: 'bool', object: 'dict' }[typeof w] || typeof w;
+  }
+
+  kern.valideer = function (schema, data, pad) {
+    pad = pad || '';
+    var fouten = [];
+    var hier = pad || '(wortel)';
+    var soort = schema.type;
+    if (soort && !TYPEN[soort](data)) {
+      return [hier + ': verwacht ' + soort + ', kreeg ' + typeNaam(data)];
+    }
+    if (schema['enum'] && schema['enum'].indexOf(data) < 0) {
+      return [hier + ': waarde ' + JSON.stringify(data) + ' niet uit ' + JSON.stringify(schema['enum'])];
+    }
+    if (soort === 'object') {
+      (schema.required || []).forEach(function (veld) {
+        if (!(veld in data)) fouten.push(hier + ": veld '" + veld + "' ontbreekt");
+      });
+      var eigenschappen = schema.properties || {};
+      if (schema.additionalProperties === false) {
+        Object.keys(data).forEach(function (veld) {
+          if (!(veld in eigenschappen)) fouten.push(hier + ": onbekend veld '" + veld + "'");
+        });
+      }
+      Object.keys(eigenschappen).forEach(function (veld) {
+        if (veld in data) {
+          fouten = fouten.concat(kern.valideer(eigenschappen[veld], data[veld], pad ? pad + '.' + veld : veld));
+        }
+      });
+    } else if (soort === 'array' && schema.items) {
+      data.forEach(function (item, i) {
+        fouten = fouten.concat(kern.valideer(schema.items, item, pad + '[' + i + ']'));
+      });
+    }
+    return fouten;
+  };
+
+  kern.strip_hekken = function (tekst) {
+    var t = String(tekst).trim();
+    var m = t.match(/^```[a-zA-Z]*\s*\n([\s\S]*?)\n?```\s*$/);
+    return m ? m[1].trim() : t;
+  };
+
+  kern.parse_antwoord = function (schema, tekst) {
+    var schoon = kern.strip_hekken(tekst);
+    var data;
+    try {
+      data = JSON.parse(schoon);
+    } catch (fout) {
+      return { data: null, fouten: ['geen geldige JSON: ' + fout.message] };
+    }
+    var fouten = kern.valideer(schema, data);
+    return { data: fouten.length ? null : data, fouten: fouten };
+  };
+
+  // ── Chunking en samenvoegen ───────────────────────────────────────────────
+
+  kern.chunk = function (tekst, maxTekens) {
+    tekst = String(tekst).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if (tekst.length <= maxTekens) return tekst.trim() ? [tekst] : [];
+    var stukken = [], huidig = '';
+    function sluitAf() {
+      if (huidig.trim()) stukken.push(huidig.replace(/\n+$/, ''));
+      huidig = '';
+    }
+    tekst.split('\n\n').forEach(function (alinea) {
+      var blok = alinea + '\n\n';
+      if (blok.length > maxTekens) {
+        alinea.split('\n').forEach(function (regel) {
+          var r = regel + '\n';
+          if (huidig.length + r.length > maxTekens) sluitAf();
+          huidig += r;
+        });
+        huidig += '\n';
+        return;
+      }
+      if (huidig.length + blok.length > maxTekens) sluitAf();
+      huidig += blok;
+    });
+    sluitAf();
+    return stukken;
+  };
+
+  kern.voeg_stukken_samen = function (opdracht, delen) {
+    var uit = { onzeker: [], waarschuwingen: [] };
+    var sleutels = ['items', 'nodes', 'edges'].filter(function (k) { return k in opdracht.schema.properties; });
+    sleutels.forEach(function (k) { uit[k] = []; });
+    var gezien = { items: {}, nodes: {} };
+    delen.forEach(function (deel, index) {
+      var i = index + 1;
+      sleutels.forEach(function (k) {
+        (deel[k] || []).forEach(function (record) {
+          record = Object.assign({}, record);
+          var sleutelveld = k === 'items' ? 'code' : (k === 'nodes' ? 'id' : null);
+          if (sleutelveld) {
+            var basis = record[sleutelveld] || '', waarde = basis, n = 1;
+            while (gezien[k][waarde]) { n += 1; waarde = basis + '-' + n; }
+            if (waarde !== basis) {
+              uit.waarschuwingen.push(sleutelveld + ' ' + basis + ' kwam vaker voor (stuk ' + i + '); hernoemd naar ' + waarde);
+            }
+            record[sleutelveld] = waarde;
+            gezien[k][waarde] = true;
+          }
+          uit[k].push(record);
+        });
+      });
+      (deel.onzeker || []).forEach(function (regel) {
+        if (uit.onzeker.indexOf(regel) < 0) uit.onzeker.push(regel);
+      });
+    });
+    return uit;
+  };
+
+  // ── Invoer lezen ──────────────────────────────────────────────────────────
+
+  function splitsCsvRegel(regel) {
+    var uit = [], huidig = '', inAanhaling = false;
+    for (var i = 0; i < regel.length; i++) {
+      var teken = regel[i];
+      if (inAanhaling) {
+        if (teken === '"' && regel[i + 1] === '"') { huidig += '"'; i++; }
+        else if (teken === '"') inAanhaling = false;
+        else huidig += teken;
+      } else if (teken === '"') inAanhaling = true;
+      else if (teken === ',') { uit.push(huidig); huidig = ''; }
+      else huidig += teken;
+    }
+    uit.push(huidig);
+    return uit;
+  }
+
+  kern.rijen_naar_tekst = function (rijen) {
+    rijen = rijen.filter(function (r) { return r.some(function (c) { return String(c).trim() !== ''; }); });
+    if (!rijen.length) return '';
+    var breedte = Math.max.apply(null, rijen.map(function (r) { return r.length; }));
+    rijen = rijen.map(function (r) {
+      var kopie = r.slice();
+      while (kopie.length < breedte) kopie.push('');
+      return kopie;
+    });
+    function cel(c) { return String(c).trim().replace(/\|/g, '/'); }
+    var kop = '| ' + rijen[0].map(cel).join(' | ') + ' |';
+    var lijn = '|' + new Array(breedte + 1).join('---|');
+    var lijf = rijen.slice(1).map(function (r) { return '| ' + r.map(cel).join(' | ') + ' |'; });
+    return [kop, lijn].concat(lijf).join('\n') + '\n';
+  };
+
+  kern.csv_naar_tekst = function (tekst) {
+    var regels = String(tekst).replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n')
+      .filter(function (r) { return r.trim() !== ''; });
+    return kern.rijen_naar_tekst(regels.map(splitsCsvRegel));
+  };
+
+  /* Een xlsx is een zip. Zonder bibliotheek: de centrale directory lezen, elk deel inflaten met
+     DecompressionStream('deflate-raw'), en de XML met DOMParser lezen. Eerste werkblad, inline strings,
+     gedeelde strings en getallen; geen formules of opmaak. Geeft een Promise van rijen. */
+  function lees32(bytes, i) { return bytes[i] | (bytes[i + 1] << 8) | (bytes[i + 2] << 16) | ((bytes[i + 3] << 24) >>> 0); }
+  function lees16(bytes, i) { return bytes[i] | (bytes[i + 1] << 8); }
+
+  function zipDelen(bytes) {
+    var eocd = -1;
+    for (var i = bytes.length - 22; i >= 0 && i >= bytes.length - 66000; i--) {
+      if (lees32(bytes, i) === 0x06054b50) { eocd = i; break; }
+    }
+    if (eocd < 0) throw new Error('geen zip-bestand');
+    var aantal = lees16(bytes, eocd + 10), start = lees32(bytes, eocd + 16);
+    var delen = {}, p = start;
+    var decoder = new TextDecoder('utf-8');
+    for (var n = 0; n < aantal; n++) {
+      if (lees32(bytes, p) !== 0x02014b50) break;
+      var methode = lees16(bytes, p + 10), gecomprimeerd = lees32(bytes, p + 20), grootte = lees32(bytes, p + 24);
+      var naamLengte = lees16(bytes, p + 28), extraLengte = lees16(bytes, p + 30), commentaarLengte = lees16(bytes, p + 32);
+      var lokaal = lees32(bytes, p + 42);
+      var naam = decoder.decode(bytes.subarray(p + 46, p + 46 + naamLengte));
+      var lokaalNaam = lees16(bytes, lokaal + 26), lokaalExtra = lees16(bytes, lokaal + 28);
+      var dataStart = lokaal + 30 + lokaalNaam + lokaalExtra;
+      delen[naam] = { methode: methode, data: bytes.subarray(dataStart, dataStart + gecomprimeerd), grootte: grootte };
+      p += 46 + naamLengte + extraLengte + commentaarLengte;
+    }
+    return delen;
+  }
+
+  function inflate(deel) {
+    if (deel.methode === 0) return Promise.resolve(new TextDecoder('utf-8').decode(deel.data));
+    if (deel.methode !== 8) return Promise.reject(new Error('onbekende compressie ' + deel.methode));
+    var stroom = new Blob([deel.data]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+    return new Response(stroom).text();
+  }
+
+  function kolomIndex(ref) {
+    var letters = (ref.match(/^[A-Z]+/) || ['A'])[0], kolom = 0;
+    for (var i = 0; i < letters.length; i++) kolom = kolom * 26 + (letters.charCodeAt(i) - 64);
+    return kolom - 1;
+  }
+
+  kern.xlsx_naar_rijen = function (arrayBuffer) {
+    var bytes = new Uint8Array(arrayBuffer);
+    var delen = zipDelen(bytes);
+    var bladen = Object.keys(delen).filter(function (n) { return /^xl\/worksheets\/sheet\d+\.xml$/.test(n); }).sort();
+    if (!bladen.length) return Promise.resolve([]);
+    var parser = new DOMParser();
+    var gedeeldBelofte = delen['xl/sharedStrings.xml'] ? inflate(delen['xl/sharedStrings.xml']).then(function (xml) {
+      var doc = parser.parseFromString(xml, 'application/xml');
+      return Array.prototype.map.call(doc.getElementsByTagName('si'), function (si) {
+        return Array.prototype.map.call(si.getElementsByTagName('t'), function (t) { return t.textContent; }).join('');
+      });
+    }) : Promise.resolve([]);
+    return Promise.all([gedeeldBelofte, inflate(delen[bladen[0]])]).then(function (uitkomsten) {
+      var gedeeld = uitkomsten[0];
+      var doc = parser.parseFromString(uitkomsten[1], 'application/xml');
+      var rijen = [];
+      Array.prototype.forEach.call(doc.getElementsByTagName('row'), function (rij) {
+        var cellen = {}, maxKolom = -1;
+        Array.prototype.forEach.call(rij.getElementsByTagName('c'), function (c) {
+          var kolom = kolomIndex(c.getAttribute('r') || 'A');
+          var soort = c.getAttribute('t') || '', waarde = '';
+          if (soort === 'inlineStr') {
+            waarde = Array.prototype.map.call(c.getElementsByTagName('t'), function (t) { return t.textContent; }).join('');
+          } else {
+            var v = c.getElementsByTagName('v')[0];
+            if (v && v.textContent !== null) {
+              waarde = (soort === 's' && /^\d+$/.test(v.textContent)) ? gedeeld[parseInt(v.textContent, 10)] : v.textContent;
+            }
+          }
+          cellen[kolom] = waarde;
+          if (kolom > maxKolom) maxKolom = kolom;
+        });
+        if (maxKolom >= 0) {
+          var r = [];
+          for (var i = 0; i <= maxKolom; i++) r.push(cellen[i] === undefined ? '' : cellen[i]);
+          rijen.push(r);
+        }
+      });
+      return rijen;
+    });
+  };
+
+  kern.xlsx_naar_tekst = function (arrayBuffer) {
+    return kern.xlsx_naar_rijen(arrayBuffer).then(kern.rijen_naar_tekst);
+  };
+
+  // ── Vergelijken en toepassen ──────────────────────────────────────────────
+
+  function norm(tekst) {
+    return String(tekst === null || tekst === undefined ? '' : tekst)
+      .replace(/[*#`|_>]/g, ' ').split(/\s+/).filter(Boolean).join(' ').toLowerCase();
+  }
+
+  kern.bronregel_klopt = function (item, invoer) {
+    var tekst = norm(invoer);
+    var citaat = String(item.bronregel || '');
+    var stukken = citaat.split(/(?<=[.;:!?])\s+|\s*\|\s*|\.\.\.|…/).map(norm);
+    var lang = stukken.filter(function (s) { return s.length >= 12; });
+    if (!lang.length) {
+      var heel = norm(citaat);
+      return !!heel && tekst.indexOf(heel) >= 0;
+    }
+    return lang.every(function (s) { return tekst.indexOf(s) >= 0; });
+  };
+
+  kern.vergelijk = function (dossier, voorstel, invoer) {
+    var opdracht = voorstel.opdracht, uit = [];
+    var metBron = invoer !== undefined && invoer !== null;
+    if (opdracht === 'processen' || opdracht === 'applicaties') {
+      var bestaand = dossier[opdracht] || [];
+      var perCode = {}, perNaam = {};
+      bestaand.forEach(function (p) { perCode[p.code] = p; if (norm(p.naam)) perNaam[norm(p.naam)] = p; });
+      (voorstel.items || []).forEach(function (item) {
+        var status = 'nieuw', huidig = null;
+        if (item.code in perCode) {
+          huidig = perCode[item.code];
+          status = (norm(huidig.naam) === norm(item.naam) || !norm(huidig.naam)) ? 'bestaand' : 'conflict';
+        } else if (norm(item.naam) in perNaam) {
+          huidig = perNaam[norm(item.naam)];
+          status = 'bestaand';
+        }
+        if (metBron && !kern.bronregel_klopt(item, invoer)) status = 'niet_in_bron';
+        uit.push({ sleutel: item.code, status: status, item: item, huidig_code: huidig ? huidig.code : null });
+      });
+    } else if (opdracht === 'landschap') {
+      var ci = {}, apps = {}, procs = {};
+      (dossier.componenten || []).forEach(function (c) { ci[c.id] = true; });
+      (dossier.applicaties || []).forEach(function (a) { apps[a.code] = true; });
+      (dossier.processen || []).forEach(function (p) { procs[p.code] = true; });
+      (voorstel.nodes || []).forEach(function (node) {
+        var bekend = node.type === 'ci' ? ci[node.id] : node.type === 'app' ? apps[node.id] : procs[node.id];
+        var status = bekend ? 'bestaand' : 'nieuw';
+        if (metBron && !kern.bronregel_klopt(node, invoer)) status = 'niet_in_bron';
+        uit.push({ sleutel: node.id, status: status, item: node, huidig_code: bekend ? node.id : null });
+      });
+      var paren = {};
+      (dossier.component_edges || []).forEach(function (e) { paren[e.from + '|' + e.to] = true; });
+      (dossier.processen || []).forEach(function (p) {
+        (p.applicaties || []).forEach(function (a) { paren[a + '|' + p.code] = true; });
+      });
+      (voorstel.edges || []).forEach(function (edge) {
+        var status = paren[edge.from + '|' + edge.to] ? 'bestaand' : 'nieuw';
+        if (metBron && !kern.bronregel_klopt(edge, invoer)) status = 'niet_in_bron';
+        uit.push({ sleutel: edge.from + '|' + edge.to, status: status, item: edge, huidig_code: null });
+      });
+    }
+    return uit;
+  };
+
+  kern.standaardkeuze = function (status) {
+    return { nieuw: 'overnemen', bestaand: 'samenvoegen', conflict: 'overslaan', niet_in_bron: 'overslaan' }[status];
+  };
+
+  var PROCESVELDEN = ['naam', 'beschrijving', 'doelstelling', 'eigenaar', 'afdeling', 'reden_kritiek'];
+  var APPVELDEN = ['naam', 'beschrijving', 'eigenaar_business', 'eigenaar_technisch', 'soort'];
+  var CONTEXTVELDEN = ['partners', 'activiteiten', 'middelen', 'propositie', 'klantrelaties', 'kanalen', 'segmenten',
+    'kosten', 'opbrengsten', 'wettelijke_basis', 'stakeholders', 'ketenpositie', 'kernaspecten', 'continuiteitseisen',
+    'reviewdatum', 'notities'];
+
+  function leegProces(code) {
+    var bia = { onderbouwing: {} };
+    ['b1', 'b2', 'b3', 'b4', 'i1', 'v1'].forEach(function (k) { bia[k] = null; bia.onderbouwing[k] = ''; });
+    bia.interviewer = ''; bia.interviewdatum = ''; bia.beschrijving = ''; bia.ketenafhankelijkheden = '';
+    bia.afwijking_eigenaar = ''; bia.notities = '';
+    var context = {};
+    CONTEXTVELDEN.forEach(function (v) { context[v] = ''; });
+    context.persoonsgegevens = false; context.bijzondere_persoonsgegevens = false;
+    return { code: code, naam: '', beschrijving: '', doelstelling: '', eigenaar: '', afdeling: '', kritiek: false,
+      reden_kritiek: '', laatste_beoordeling: '', notities: '', applicaties: [], bia: bia,
+      rto_rpo: { rto: '', rto_eenheid: '', rpo: '', rpo_eenheid: '', toelichting: '' }, context: context };
+  }
+
+  function legeApp(code) {
+    return { code: code, naam: '', beschrijving: '', eigenaar_business: '', eigenaar_technisch: '', soort: 'applicatie',
+      csir_dossier: { bestand: '', vingerafdruk: '' }, notities: '', reviewdatum: '' };
+  }
+
+  function leeg(w) { return String(w === null || w === undefined ? '' : w).trim() === ''; }
+
+  kern.pas_toe = function (dossier, voorstel, keuzes) {
+    keuzes = keuzes || {};
+    var nieuw = JSON.parse(JSON.stringify(dossier));
+    var telling = { overgenomen: 0, samengevoegd: 0, overgeslagen: 0 };
+    var opdracht = voorstel.opdracht;
+    var vergelijking = kern.vergelijk(dossier, voorstel);
+
+    if (opdracht === 'processen' || opdracht === 'applicaties') {
+      if (!nieuw[opdracht]) nieuw[opdracht] = [];
+      var lijst = nieuw[opdracht], perCode = {};
+      lijst.forEach(function (p) { perCode[p.code] = p; });
+      var velden = opdracht === 'processen' ? PROCESVELDEN : APPVELDEN;
+      var maak = opdracht === 'processen' ? leegProces : legeApp;
+      vergelijking.forEach(function (regel) {
+        var keuze = keuzes[regel.sleutel] || kern.standaardkeuze(regel.status);
+        var item = regel.item;
+        if (keuze === 'overslaan') { telling.overgeslagen += 1; return; }
+        if (keuze === 'samenvoegen' && !regel.huidig_code) keuze = 'overnemen';
+        if (keuze === 'overnemen') {
+          var doel = perCode[item.code];
+          if (!doel) { doel = maak(item.code); lijst.push(doel); perCode[item.code] = doel; }
+          velden.forEach(function (veld) { doel[veld] = item[veld] !== undefined ? item[veld] : (doel[veld] || ''); });
+          if (opdracht === 'processen') doel.kritiek = !!item.kritiek;
+          telling.overgenomen += 1;
+        } else {
+          var bestaand = perCode[regel.huidig_code];
+          velden.forEach(function (veld) { if (leeg(bestaand[veld]) && item[veld]) bestaand[veld] = item[veld]; });
+          if (opdracht === 'processen' && item.kritiek && !bestaand.kritiek) bestaand.kritiek = true;
+          telling.samengevoegd += 1;
+        }
+      });
+    } else if (opdracht === 'landschap') {
+      var apps = {}, procs = {}, ci = {}, typen = {};
+      (nieuw.applicaties || []).forEach(function (a) { apps[a.code] = true; });
+      (nieuw.processen || []).forEach(function (p) { procs[p.code] = p; });
+      if (!nieuw.componenten) nieuw.componenten = [];
+      nieuw.componenten.forEach(function (c) { ci[c.id] = c; });
+      vergelijking.forEach(function (regel) {
+        var item = regel.item;
+        if ('type' in item) typen[item.id] = item.type;
+        var keuze = keuzes[regel.sleutel] || kern.standaardkeuze(regel.status);
+        if (keuze === 'overslaan') { telling.overgeslagen += 1; return; }
+        if ('type' in item) {
+          if (item.type === 'ci') {
+            if (!ci[item.id]) {
+              ci[item.id] = { id: item.id, label: item.label || item.id, kritiek: !!item.kritiek };
+              nieuw.componenten.push(ci[item.id]);
+              telling.overgenomen += 1;
+            } else { if (item.kritiek) ci[item.id].kritiek = true; telling.samengevoegd += 1; }
+          } else if (item.type === 'app') {
+            if (!apps[item.id]) {
+              var app = legeApp(item.id); app.naam = item.label || item.id;
+              if (!nieuw.applicaties) nieuw.applicaties = [];
+              nieuw.applicaties.push(app); apps[item.id] = true; telling.overgenomen += 1;
+            } else telling.samengevoegd += 1;
+          } else {
+            if (!procs[item.id]) {
+              var proces = leegProces(item.id); proces.naam = item.label || item.id; proces.kritiek = !!item.kritiek;
+              if (!nieuw.processen) nieuw.processen = [];
+              nieuw.processen.push(proces); procs[item.id] = proces; telling.overgenomen += 1;
+            } else { if (item.kritiek) procs[item.id].kritiek = true; telling.samengevoegd += 1; }
+          }
+        } else {
+          var van = item.from, naar = item.to;
+          var vanType = typen[van] || (ci[van] ? 'ci' : apps[van] ? 'app' : null);
+          var naarType = typen[naar] || (procs[naar] ? 'proces' : apps[naar] ? 'app' : ci[naar] ? 'ci' : null);
+          if (vanType === 'app' && naarType === 'proces' && procs[naar]) {
+            var lijstA = procs[naar].applicaties || (procs[naar].applicaties = []);
+            if (lijstA.indexOf(van) < 0) { lijstA.push(van); telling.overgenomen += 1; } else telling.samengevoegd += 1;
+          } else if (vanType === 'ci' && (naarType === 'app' || naarType === 'ci')) {
+            var edges = nieuw.component_edges || (nieuw.component_edges = []);
+            var dubbel = edges.some(function (e) { return e.from === van && e.to === naar; });
+            if (!dubbel) { edges.push({ from: van, to: naar, relatie: item.relatie || 'ondersteunt' }); telling.overgenomen += 1; }
+            else telling.samengevoegd += 1;
+          } else telling.overgeslagen += 1;
+        }
+      });
+    }
+
+    if (!nieuw.herkomst_ai) nieuw.herkomst_ai = [];
+    nieuw.herkomst_ai.push({
+      opdracht: opdracht, leverancier: voorstel.leverancier || '', model: voorstel.model || '',
+      gemaakt: voorstel.gemaakt || '', invoer_sha256: (voorstel.invoer || {}).sha256 || '',
+      overgenomen: telling.overgenomen, samengevoegd: telling.samengevoegd, overgeslagen: telling.overgeslagen
+    });
+    return { dossier: nieuw, telling: telling };
+  };
+
+  window.kern = kern;
+})();
+/* De AI-hulp van de beleidsset: zeven stappen, van sleutel tot voorstel.
+ *
+ * Overgenomen uit procescheck (ai/bron/ai.js); het patroon staat in het plan AI-hulp met eigen sleutel.
+ * Dit is het enige bestand dat naar buiten praat. De sleutel staat in sessionStorage en nergens anders;
+ * het voorstel bevat de sha256 van de invoer, niet de invoer zelf en niet de sleutel. Het model krijgt de
+ * systeemprompt van de opdracht, de lijst met vragen of invulvelden en een stuk invoer; nooit het beleid zelf.
+ */
+(function () {
+  'use strict';
+
+  var OPDRACHTEN = window.__OPDRACHTEN__;
+  var kern = window.kern;
+  var SLEUTEL_OPSLAG = 'beleidsset-ai-sleutel';
+  var LEVERANCIER_OPSLAG = 'beleidsset-ai-leverancier';
+
+  function el(id) { return document.getElementById(id); }
+  function maak(tag, tekst, attributen) {
+    var knoop = document.createElement(tag);
+    if (tekst !== null && tekst !== undefined) knoop.textContent = String(tekst);
+    if (attributen) Object.keys(attributen).forEach(function (n) { knoop.setAttribute(n, String(attributen[n])); });
+    return knoop;
+  }
+  function leegMaken(knoop) { while (knoop.firstChild) knoop.removeChild(knoop.firstChild); return knoop; }
+  function vandaag() {
+    var nu = new Date();
+    return nu.getFullYear() + '-' + String(nu.getMonth() + 1).padStart(2, '0') + '-' + String(nu.getDate()).padStart(2, '0');
+  }
+  function sha256(tekst) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(tekst)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+    });
+  }
+
+  var stand = {
+    leverancier: null, basis: '', model: '', sleutel: '', verbonden: false,
+    opdracht: null, invoerNaam: '', invoerTekst: '', toestemming: false,
+    bezig: false, stoppen: false, voorstel: null
+  };
+
+  // ── De parameter van een opdracht: de vragen of de invulvelden ─────────────
+
+  function vraagVan(id) {
+    return OPDRACHTEN.vragen.filter(function (v) { return v.id === id; })[0] || null;
+  }
+
+  function parameterTekst(opdracht) {
+    if (opdracht.parameter === 'vragen') {
+      return 'Contextvragen:\n' + OPDRACHTEN.vragen.map(function (v) {
+        return '- ' + v.id + ': ' + v.vraag + (v.meerdere ? ' (meerdere antwoorden mogelijk)' : ' (een antwoord)') +
+          '\n  antwoorden: ' + v.antwoorden.map(function (a) { return a.id + ' = ' + a.label; }).join('; ');
+      }).join('\n');
+    }
+    return 'Invulvelden:\n' + OPDRACHTEN.velden.map(function (v) {
+      return '- ' + v.naam + (v.toelichting ? ': ' + v.toelichting : '');
+    }).join('\n');
+  }
+
+  /* Wat het model teruggeeft, gelegd tegen de vaste lijsten. Een vraag of veld dat niet bestaat, een
+     antwoord dat niet in de lijst staat en een tweede item voor dezelfde code gaan eruit, met een melding.
+     Elk item krijgt citaat_klopt uit de citaatcontrole van de kern. */
+  function legTegenLijsten(opdracht, samen, invoer) {
+    var items = [], gezien = {}, waarschuwingen = [], onzeker = samen.onzeker.slice();
+    (samen.items || []).forEach(function (item) {
+      var code = String(item.code || '').replace(/-\d+$/, function (staart) {
+        return (opdracht.parameter === 'vragen' ? vraagVan(item.code) : OPDRACHTEN.velden.some(function (v) { return v.naam === item.code; }))
+          ? staart : '';
+      });
+      if (gezien[code]) {
+        onzeker.push('Voor "' + code + '" gaf de tekst meer dan een kandidaat; de eerste staat in het voorstel, de andere was: ' +
+          (item.waarde || (item.antwoorden || []).join(', ')) + '.');
+        return;
+      }
+      var uit = { code: code, bronregel: item.bronregel };
+      if (opdracht.parameter === 'vragen') {
+        var vraag = vraagVan(code);
+        if (!vraag) { waarschuwingen.push('Onbekende vraag "' + code + '" weggelaten.'); return; }
+        var geldig = vraag.antwoorden.map(function (a) { return a.id; });
+        var antwoorden = (item.antwoorden || []).filter(function (a) { return geldig.indexOf(a) >= 0; });
+        if (antwoorden.length < (item.antwoorden || []).length) {
+          waarschuwingen.push('Bij "' + code + '" stond een antwoord dat niet in de lijst staat; weggelaten.');
+        }
+        if (!antwoorden.length) return;
+        if (!vraag.meerdere && antwoorden.length > 1) {
+          onzeker.push('Bij "' + vraag.vraag + '" noemde de tekst meer dan een antwoord; alleen het eerste staat in het voorstel.');
+          antwoorden = antwoorden.slice(0, 1);
+        }
+        uit.antwoorden = antwoorden;
+      } else {
+        if (!OPDRACHTEN.velden.some(function (v) { return v.naam === code; })) {
+          waarschuwingen.push('Onbekend invulveld "' + code + '" weggelaten.');
+          return;
+        }
+        if (!String(item.waarde || '').trim()) return;
+        uit.waarde = String(item.waarde).trim();
+      }
+      uit.citaat_klopt = kern.bronregel_klopt(uit, invoer);
+      gezien[code] = true;
+      items.push(uit);
+    });
+    return { items: items, onzeker: onzeker, waarschuwingen: waarschuwingen };
+  }
+
+  // ── Sleutel ───────────────────────────────────────────────────────────────
+
+  function leesSleutel() {
+    try { return window.sessionStorage.getItem(SLEUTEL_OPSLAG) || ''; } catch (f) { return ''; }
+  }
+  function bewaarSleutel(sleutel) {
+    try {
+      if (sleutel) window.sessionStorage.setItem(SLEUTEL_OPSLAG, sleutel);
+      else window.sessionStorage.removeItem(SLEUTEL_OPSLAG);
+    } catch (f) { /* privémodus: dan alleen in het geheugen */ }
+  }
+
+  // ── Stappen aan en uit ────────────────────────────────────────────────────
+
+  function zetStap(id, actief) {
+    el(id).setAttribute('data-actief', actief ? 'ja' : 'nee');
+  }
+
+  function werkStappenBij() {
+    zetStap('stap-opdracht', stand.verbonden);
+    zetStap('stap-invoer', stand.verbonden && !!stand.opdracht);
+    var heeftInvoer = stand.invoerTekst.trim().length > 0;
+    zetStap('stap-toestemming', stand.verbonden && !!stand.opdracht && heeftInvoer);
+    zetStap('stap-uitvoeren', stand.verbonden && !!stand.opdracht && heeftInvoer && stand.toestemming);
+    el('knop-uitvoeren').disabled = !(stand.verbonden && stand.opdracht && heeftInvoer && stand.toestemming) || stand.bezig;
+    zetStap('stap-voorstel', !!stand.voorstel);
+    zetStap('stap-verder', !!stand.voorstel);
+    el('knop-verbinding').disabled = !stand.sleutel || !stand.basis;
+    tekenToestemming();
+  }
+
+  // ── Stap 1: leverancier ───────────────────────────────────────────────────
+
+  function kiesLeverancier(id, behoudVelden) {
+    var lev = OPDRACHTEN.leveranciers.filter(function (l) { return l.id === id; })[0] || OPDRACHTEN.leveranciers[0];
+    stand.leverancier = lev.id;
+    if (!behoudVelden) {
+      stand.basis = lev.basis;
+      stand.model = lev.model;
+      el('lev-basis').value = lev.basis;
+      el('lev-model').value = lev.model;
+    }
+    el('lev-uitleg').textContent = lev.uitleg;
+    try { window.localStorage.setItem(LEVERANCIER_OPSLAG, lev.id); } catch (f) { /* niets */ }
+    stand.verbonden = false;
+    el('lev-status').textContent = '';
+    werkStappenBij();
+  }
+
+  function tekenLeveranciers() {
+    var doel = leegMaken(el('lev-keuzes'));
+    OPDRACHTEN.leveranciers.forEach(function (lev) {
+      var label = maak('label', null, { 'class': 'vink' });
+      var radio = maak('input', null, { type: 'radio', name: 'leverancier', value: lev.id, 'data-leverancier': lev.id });
+      radio.addEventListener('change', function () { kiesLeverancier(lev.id, false); });
+      label.appendChild(radio);
+      label.appendChild(document.createTextNode(' ' + lev.naam));
+      doel.appendChild(label);
+    });
+  }
+
+  function testVerbinding() {
+    var status = el('lev-status');
+    status.textContent = 'verbinden...';
+    status.className = '';
+    stand.verbonden = false;
+    return fetch(stand.basis.replace(/\/+$/, '') + '/v1/models', {
+      method: 'GET', headers: { Authorization: 'Bearer ' + stand.sleutel }
+    }).then(function (antwoord) {
+      if (antwoord.status === 401 || antwoord.status === 403) throw new Error('sleutel geweigerd (HTTP ' + antwoord.status + ')');
+      if (!antwoord.ok) throw new Error('HTTP ' + antwoord.status);
+      stand.verbonden = true;
+      status.textContent = 'verbonden';
+      status.className = 'status-ok';
+    }).catch(function (fout) {
+      status.textContent = 'niet verbonden: ' + fout.message +
+        (fout.message === 'Failed to fetch' ? ' (geen verbinding; bij Ollama: staat OLLAMA_ORIGINS goed?)' : '');
+      status.className = 'status-fout';
+    }).then(werkStappenBij);
+  }
+
+  // ── Stap 2 en 3: opdracht en invoer ───────────────────────────────────────
+
+  function tekenOpdrachten() {
+    var keuze = el('opdracht-keuze');
+    keuze.appendChild(maak('option', 'kies een opdracht', { value: '' }));
+    OPDRACHTEN.opdrachten.forEach(function (o) { keuze.appendChild(maak('option', o.titel, { value: o.id })); });
+  }
+
+  function opdrachtVan(id) {
+    return OPDRACHTEN.opdrachten.filter(function (o) { return o.id === id; })[0] || null;
+  }
+
+  function kiesOpdracht(id) {
+    stand.opdracht = opdrachtVan(id);
+    el('opdracht-uitleg').textContent = stand.opdracht ? stand.opdracht.uitleg : '';
+    el('invoer-soorten').textContent = stand.opdracht ? stand.opdracht.invoer.filter(function (s) { return s !== 'tekst'; })
+      .map(function (s) { return '.' + s; }).join(', ') : '';
+    el('invoer-bestand').setAttribute('accept', stand.opdracht ? stand.opdracht.invoer
+      .filter(function (s) { return s !== 'tekst'; }).map(function (s) { return '.' + s; }).join(',') : '');
+    werkStappenBij();
+  }
+
+  function zetInvoer(naam, tekst) {
+    stand.invoerNaam = naam;
+    stand.invoerTekst = tekst;
+    el('invoer-tekst').value = tekst;
+    var stukken = kern.chunk(tekst, OPDRACHTEN.grenzen.max_tekens_per_aanroep);
+    el('invoer-info').textContent = tekst.trim() ? (naam ? naam + ': ' : '') + tekst.length + ' tekens, ' +
+      stukken.length + ' aanroep' + (stukken.length === 1 ? '' : 'en') : '';
+    stand.toestemming = false;
+    el('toestemming').checked = false;
+    werkStappenBij();
+  }
+
+  function leesBestand(bestand) {
+    var naam = bestand.name;
+    if (/\.xlsx$/i.test(naam)) {
+      return bestand.arrayBuffer().then(kern.xlsx_naar_tekst).then(function (tekst) { zetInvoer(naam, tekst); });
+    }
+    return bestand.text().then(function (tekst) {
+      zetInvoer(naam, /\.csv$/i.test(naam) ? kern.csv_naar_tekst(tekst) : tekst);
+    });
+  }
+
+  // ── Stap 4: toestemming ───────────────────────────────────────────────────
+
+  function tekenToestemming() {
+    var doel = leegMaken(el('toestemming-tekst'));
+    if (!stand.opdracht || !stand.invoerTekst.trim()) return;
+    var stukken = kern.chunk(stand.invoerTekst, OPDRACHTEN.grenzen.max_tekens_per_aanroep);
+    doel.appendChild(maak('p', 'Wat er verstuurd wordt: ' + (stand.invoerNaam ? 'het bestand ' + stand.invoerNaam :
+      'de geplakte tekst') + ' (' + stand.invoerTekst.length + ' tekens, in ' + stukken.length + ' aanroep' +
+      (stukken.length === 1 ? '' : 'en') + '), met de opdracht "' + stand.opdracht.titel + '" en de lijst met ' +
+      (stand.opdracht.parameter === 'vragen' ? 'contextvragen' : 'invulvelden') + ' uit de beleidsset.'));
+    doel.appendChild(maak('p', 'Waarheen: ' + stand.basis + ' (model ' + stand.model + '), onder de voorwaarden van die leverancier.'));
+    doel.appendChild(maak('p', 'Wat er niet gaat: je antwoorden in de generator, je sleutel in een bestand, en de tekst van het beleid.'));
+  }
+
+  // ── Stap 5: uitvoeren ─────────────────────────────────────────────────────
+
+  function wacht(ms) { return new Promise(function (klaar) { setTimeout(klaar, ms); }); }
+
+  function roepAan(berichten, vorm) {
+    var body = { model: stand.model, messages: berichten, temperature: 0, response_format: vorm };
+    return fetch(stand.basis.replace(/\/+$/, '') + '/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + stand.sleutel },
+      body: JSON.stringify(body)
+    });
+  }
+
+  /* Eerst json_schema; bij een 400 daarover terugvallen op json_object. Bij 429 wachten en opnieuw. */
+  function vraagModel(berichten, schema, meld) {
+    var vormen = [
+      { type: 'json_schema', json_schema: { name: 'voorstel', schema: schema, strict: true } },
+      { type: 'json_object' }
+    ];
+    var wachttijden = OPDRACHTEN.grenzen.wachttijden_bij_429_seconden;
+    function probeer(vormIndex, poging) {
+      if (stand.stoppen) return Promise.reject(new Error('gestopt'));
+      return roepAan(berichten, vormen[vormIndex]).then(function (antwoord) {
+        if (antwoord.status === 400 && vormIndex === 0) {
+          meld('json_schema niet geaccepteerd, opnieuw met json_object');
+          return probeer(1, 0);
+        }
+        if (antwoord.status === 429 && poging < wachttijden.length) {
+          meld('te veel verzoeken, wachten ' + wachttijden[poging] + ' s');
+          return wacht(wachttijden[poging] * 1000).then(function () { return probeer(vormIndex, poging + 1); });
+        }
+        if (antwoord.status === 401 || antwoord.status === 403) throw new Error('sleutel geweigerd (HTTP ' + antwoord.status + ')');
+        if (!antwoord.ok) throw new Error('HTTP ' + antwoord.status);
+        return antwoord.json().then(function (data) {
+          return data.choices[0].message.content;
+        });
+      });
+    }
+    return probeer(0, 0);
+  }
+
+  function voerUit() {
+    if (stand.bezig) return;
+    stand.bezig = true;
+    stand.stoppen = false;
+    stand.voorstel = null;
+    el('knop-stoppen').disabled = false;
+    werkStappenBij();
+    var voortgang = el('voortgang');
+    var opdracht = stand.opdracht;
+    var stukken = kern.chunk(stand.invoerTekst, OPDRACHTEN.grenzen.max_tekens_per_aanroep)
+      .slice(0, OPDRACHTEN.grenzen.max_aanroepen_per_opdracht);
+    var systeem = opdracht.systeemprompt + '\n\n' + parameterTekst(opdracht) + '\n\n' + OPDRACHTEN.vaste_regels;
+    var delen = [], waarschuwingen = [];
+    var teller = 0;
+
+    function meld(tekst) { voortgang.textContent = 'aanroep ' + (teller + 1) + ' van ' + stukken.length + ': ' + tekst; }
+
+    function volgende() {
+      if (teller >= stukken.length) return Promise.resolve();
+      meld('bezig');
+      var berichten = [{ role: 'system', content: systeem }, { role: 'user', content: stukken[teller] }];
+      return vraagModel(berichten, opdracht.schema, meld).then(function (ruw) {
+        var uitkomst = kern.parse_antwoord(opdracht.schema, ruw);
+        if (uitkomst.fouten.length) {
+          meld('antwoord voldeed niet aan het schema, een keer opnieuw');
+          berichten.push({ role: 'assistant', content: ruw });
+          berichten.push({ role: 'user', content: 'Je antwoord voldeed niet aan het schema: ' +
+            uitkomst.fouten.slice(0, 5).join('; ') + '. Antwoord opnieuw, alleen JSON.' });
+          return vraagModel(berichten, opdracht.schema, meld).then(function (ruw2) {
+            var tweede = kern.parse_antwoord(opdracht.schema, ruw2);
+            if (tweede.fouten.length) {
+              waarschuwingen.push('Aanroep ' + (teller + 1) + ' gaf twee keer een ongeldig antwoord en is overgeslagen: ' + tweede.fouten[0]);
+            } else {
+              waarschuwingen.push('Aanroep ' + (teller + 1) + ' gaf eerst ongeldige JSON en is een keer opnieuw gedaan.');
+              delen.push(tweede.data);
+            }
+          });
+        }
+        delen.push(uitkomst.data);
+      }).then(function () { teller += 1; return volgende(); });
+    }
+
+    volgende().then(function () {
+      return sha256(stand.invoerTekst);
+    }).then(function (hash) {
+      var samen = kern.voeg_stukken_samen(opdracht, delen);
+      var gelegd = legTegenLijsten(opdracht, samen, stand.invoerTekst);
+      stand.voorstel = {
+        formaat: OPDRACHTEN.voorstel_formaat, versie: 1, tool: OPDRACHTEN.tool,
+        opdrachten_versie: OPDRACHTEN.versie, set_vingerafdruk: OPDRACHTEN.set_vingerafdruk,
+        opdracht: opdracht.id, gemaakt: vandaag(), leverancier: stand.leverancier, model: stand.model,
+        invoer: { naam: stand.invoerNaam || 'geplakte tekst', sha256: hash, tekens: stand.invoerTekst.length, aanroepen: stukken.length },
+        items: gelegd.items, onzeker: gelegd.onzeker,
+        waarschuwingen: waarschuwingen.concat(gelegd.waarschuwingen)
+      };
+      voortgang.textContent = 'klaar: ' + stukken.length + ' aanroep' + (stukken.length === 1 ? '' : 'en') + '.';
+      tekenVoorstel();
+    }).catch(function (fout) {
+      voortgang.textContent = fout.message === 'gestopt' ? 'gestopt' : 'mislukt: ' + fout.message +
+        (fout.message === 'Failed to fetch' ? ' (geen verbinding; staat de endpoint in de CSP van deze pagina, en bij Ollama OLLAMA_ORIGINS?)' : '');
+    }).then(function () {
+      stand.bezig = false;
+      el('knop-stoppen').disabled = true;
+      werkStappenBij();
+    });
+  }
+
+  // ── Stap 6: voorstel ──────────────────────────────────────────────────────
+
+  function omschrijving(item) {
+    if (item.waarde !== undefined) return item.waarde;
+    var vraag = vraagVan(item.code);
+    return item.antwoorden.map(function (a) {
+      var gevonden = vraag.antwoorden.filter(function (x) { return x.id === a; })[0];
+      return gevonden ? gevonden.label : a;
+    }).join(', ');
+  }
+
+  function tekenVoorstel() {
+    var v = stand.voorstel;
+    var tabel = leegMaken(el('tabel-voorstel'));
+    var vragen = v.opdracht === 'profiel';
+    var thead = maak('thead'), kop = maak('tr');
+    [vragen ? 'vraag' : 'invulveld', vragen ? 'antwoord' : 'waarde', 'citaat uit de bron'].forEach(function (k) {
+      kop.appendChild(maak('th', k, { scope: 'col' }));
+    });
+    thead.appendChild(kop);
+    tabel.appendChild(thead);
+    var tbody = maak('tbody');
+    var nietInBron = 0;
+    v.items.forEach(function (item) {
+      if (!item.citaat_klopt) nietInBron += 1;
+      var tr = maak('tr', null, { 'data-item': item.code, 'class': item.citaat_klopt ? '' : 'niet-in-bron' });
+      tr.appendChild(maak('td', vragen ? vraagVan(item.code).vraag : item.code));
+      tr.appendChild(maak('td', omschrijving(item)));
+      tr.appendChild(maak('td', (item.citaat_klopt ? '' : 'niet in de bron: ') + item.bronregel, { 'class': 'tekst' }));
+      tbody.appendChild(tr);
+    });
+    tabel.appendChild(tbody);
+    el('voorstel-samenvatting').textContent = v.items.length + (vragen ? ' beantwoorde vragen' : ' ingevulde velden') +
+      (nietInBron ? ', waarvan ' + nietInBron + ' met een citaat dat niet in de bron staat (die staan in de generator standaard uit)' : '') + '.';
+    var onzeker = leegMaken(el('onzeker'));
+    (v.onzeker.length ? v.onzeker : ['niets gemeld']).forEach(function (t) { onzeker.appendChild(maak('li', t)); });
+    var waarschuwingen = leegMaken(el('waarschuwingen'));
+    v.waarschuwingen.forEach(function (t) { waarschuwingen.appendChild(maak('p', t, { 'class': 'waarschuwing' })); });
+  }
+
+  function slaVoorstelOp() {
+    var v = stand.voorstel;
+    var blob = new Blob([JSON.stringify(v, null, 1)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'beleidsset-voorstel-' + v.opdracht + '-' + v.gemaakt + '.json';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 0);
+  }
+
+  // ── Opstarten ─────────────────────────────────────────────────────────────
+
+  function start() {
+    el('versie').textContent = 'opdrachten ' + OPDRACHTEN.versie + ' · set ' + String(OPDRACHTEN.set_vingerafdruk).slice(0, 12);
+    tekenLeveranciers();
+    tekenOpdrachten();
+
+    var onthouden = null;
+    try { onthouden = window.localStorage.getItem(LEVERANCIER_OPSLAG); } catch (f) { onthouden = null; }
+    var eerste = onthouden || OPDRACHTEN.leveranciers[0].id;
+    document.querySelector('[data-leverancier="' + eerste + '"]').checked = true;
+    kiesLeverancier(eerste, false);
+    stand.sleutel = leesSleutel();
+    el('lev-sleutel').value = stand.sleutel;
+
+    el('lev-basis').addEventListener('input', function () { stand.basis = el('lev-basis').value.trim(); stand.verbonden = false; werkStappenBij(); });
+    el('lev-model').addEventListener('input', function () { stand.model = el('lev-model').value.trim(); });
+    el('lev-sleutel').addEventListener('input', function () {
+      stand.sleutel = el('lev-sleutel').value.trim();
+      bewaarSleutel(stand.sleutel);
+      stand.verbonden = false;
+      werkStappenBij();
+    });
+    el('knop-verbinding').addEventListener('click', testVerbinding);
+    el('knop-sleutel-vergeten').addEventListener('click', function () {
+      stand.sleutel = '';
+      el('lev-sleutel').value = '';
+      bewaarSleutel('');
+      stand.verbonden = false;
+      el('lev-status').textContent = 'sleutel vergeten';
+      el('lev-status').className = '';
+      werkStappenBij();
+    });
+
+    el('opdracht-keuze').addEventListener('change', function () { kiesOpdracht(el('opdracht-keuze').value); });
+    el('invoer-tekst').addEventListener('input', function () { zetInvoer('', el('invoer-tekst').value); });
+    el('knop-invoer-bestand').addEventListener('click', function () { el('invoer-bestand').click(); });
+    el('invoer-bestand').addEventListener('change', function (g) {
+      var bestand = g.target.files[0];
+      if (bestand) leesBestand(bestand).catch(function (fout) { el('invoer-info').textContent = 'niet te lezen: ' + fout.message; });
+      g.target.value = '';
+    });
+    el('toestemming').addEventListener('change', function () { stand.toestemming = el('toestemming').checked; werkStappenBij(); });
+    el('knop-uitvoeren').addEventListener('click', voerUit);
+    el('knop-stoppen').addEventListener('click', function () { stand.stoppen = true; });
+    el('knop-voorstel-opslaan').addEventListener('click', slaVoorstelOp);
+
+    werkStappenBij();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
+})();</script>
+</body>
+</html>

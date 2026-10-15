@@ -1,0 +1,96 @@
+{
+ "versie": "2026-10",
+ "tool": "beleidsset",
+ "voorstel_formaat": "beleidsset-voorstel",
+ "toelichting": "De opdrachten van de AI-hulp bij de beleidsset informatiebeveiliging, volgens het patroon AI-hulp met eigen sleutel. Per opdracht de systeemprompt, het JSON-schema van de uitkomst en de toegestane invoer. De lijst met contextvragen en de lijst met invulvelden komen bij het bouwen uit profiel.json en de bouwstenen en gaan als parameter mee in de prompt. Geen opdracht vraagt het model om een eis, een termijn of een beleidsregel: die staan in de bouwstenen. Het model zet alleen materiaal van de gebruiker om naar antwoorden en invulwaarden, elk met een letterlijk citaat.",
+ "leveranciers": [
+  {
+   "id": "mistral",
+   "naam": "Mistral",
+   "basis": "https://api.mistral.ai",
+   "model": "mistral-medium-latest",
+   "uitleg": "Europese partij, hosting in de EU. De standaard. Ken de bewaartermijnen van je eigen abonnement."
+  },
+  {
+   "id": "ollama",
+   "naam": "Ollama (lokaal)",
+   "basis": "http://localhost:11434",
+   "model": "",
+   "uitleg": "Draait op je eigen machine; niets verlaat je netwerk. Start Ollama met OLLAMA_ORIGINS gezet op deze site, anders weigert hij de aanroep."
+  },
+  {
+   "id": "anders",
+   "naam": "Andere leverancier",
+   "basis": "",
+   "model": "",
+   "uitleg": "Elke endpoint met /v1/chat/completions (OpenAI-compatibel). Vul basis-URL en model zelf in."
+  }
+ ],
+ "vaste_regels": "Verzin niets: wat niet in de tekst staat, laat je weg. Gebruik de bewoordingen van de tekst. Zet in bronregel een letterlijk citaat uit de invoer waar het item vandaan komt, hoogstens twee zinnen; dat citaat moet woordelijk in de invoer voorkomen. Noteer in onzeker, in gewone taal, wat je niet zeker weet of hebt weggelaten. Bedenk geen beleidsregels, eisen of termijnen; die staan al in het beleid. Antwoord uitsluitend met JSON volgens het schema, zonder tekst ervoor of erna en zonder markdown.",
+ "opdrachten": [
+  {
+   "id": "profiel",
+   "titel": "Contextvragen beantwoorden uit een beschrijving van je organisatie",
+   "uitleg": "Plak een beschrijving van je organisatie: een jaarverslag, een informatiebeveiligingsplan, een organisatiebeschrijving of een eerdere ENSIA-verantwoording. Het model zoekt per contextvraag het antwoord dat de tekst geeft, met het citaat waar het staat. Vragen waar de tekst niets over zegt, blijven open.",
+   "invoer": ["tekst", "txt", "md", "csv", "xlsx"],
+   "systeemprompt": "Je bent een assistent van een informatiebeveiliger bij een Nederlandse overheidsorganisatie. Je krijgt tekst over de organisatie. Hieronder staan contextvragen, elk met een id en een vaste lijst antwoorden (id en omschrijving). Geef per vraag waar de tekst een antwoord op geeft een item met code (het id van de vraag), antwoorden (een lijst met een of meer antwoord-id's uit de vaste lijst van die vraag; meer dan een alleen als de vraag meerdere antwoorden toestaat) en bronregel. Kies alleen antwoord-id's die in de lijst staan. Een vraag waar de tekst niets over zegt, laat je weg en noem je in onzeker.",
+   "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["items", "onzeker"],
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": ["code", "antwoorden", "bronregel"],
+       "properties": {
+        "code": {"type": "string"},
+        "antwoorden": {"type": "array", "items": {"type": "string"}},
+        "bronregel": {"type": "string"}
+       }
+      }
+     },
+     "onzeker": {"type": "array", "items": {"type": "string"}}
+    }
+   },
+   "parameter": "vragen"
+  },
+  {
+   "id": "velden",
+   "titel": "Invulvelden invullen uit je eigen documenten",
+   "uitleg": "Plak een organisatiebesluit, een mandaatregeling, een RASCI, een bestaand beleidsstuk of een lijst met systemen. Het model zoekt per invulveld uit het beleid (zoals de lijneigenaar van de werkplekken of het ticketsysteem) de waarde die de tekst geeft, met het citaat waar het staat. Velden waar de tekst niets over zegt, blijven open.",
+   "invoer": ["tekst", "txt", "md", "csv", "xlsx"],
+   "systeemprompt": "Je bent een assistent van een informatiebeveiliger bij een Nederlandse overheidsorganisatie. Je krijgt tekst uit de eigen documenten van de organisatie. Hieronder staan de invulvelden van een beleidsset, elk met een naam en een toelichting. Geef per invulveld waar de tekst een waarde voor geeft een item met code (de naam van het veld, letterlijk zoals hieronder), waarde (een functie, afdeling, systeem, document of termijn zoals de tekst die noemt, kort) en bronregel. Gebruik functies en afdelingen, geen persoonsnamen; staat er alleen een persoonsnaam, laat het veld weg en noem het in onzeker. Een veld waar de tekst niets over zegt, laat je weg.",
+   "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["items", "onzeker"],
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": ["code", "waarde", "bronregel"],
+       "properties": {
+        "code": {"type": "string"},
+        "waarde": {"type": "string"},
+        "bronregel": {"type": "string"}
+       }
+      }
+     },
+     "onzeker": {"type": "array", "items": {"type": "string"}}
+    }
+   },
+   "parameter": "velden"
+  }
+ ],
+ "grenzen": {
+  "max_tekens_per_aanroep": 24000,
+  "max_aanroepen_per_opdracht": 12,
+  "timeout_seconden": 90,
+  "wachttijden_bij_429_seconden": [2, 4, 8]
+ }
+}
