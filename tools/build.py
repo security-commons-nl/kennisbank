@@ -1394,7 +1394,7 @@ def zet_ankers(tekst: str) -> str:
     # In de head: daar schuift het niet mee met wat later voor </body> wordt gezet (de bronvoet).
     if 'class="anker"' not in tekst or "</head>" not in tekst:
         return tekst
-    blok = f"{ANKER_START}<style>{ANKER_CSS}</style><script>{ANKER_JS}</script>{ANKER_EIND}"
+    blok = f"{ANKER_START}<style>{ANKER_CSS}</style><script data-ankers>{ANKER_JS}</script>{ANKER_EIND}"
     return tekst.replace("</head>", blok + "</head>", 1)
 
 
