@@ -2,11 +2,11 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Beleid veilige softwareontwikkeling</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid veilige softwareontwikkeling</span></nav><!-- /kruimelpad -->
 <h1>Beleid veilige softwareontwikkeling</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="ssd.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
 <table>
@@ -40,7 +40,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
-<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het ontwerpen, bouwen, aanpassen en
 testen van software. Het legt vast welke beveiligingsprincipes en eisen vooraf gelden, hoe veilig wordt
 gebouwd, welke bewijzen bij een oplevering horen en wat de organisatie van een leverancier eist, zodat
@@ -68,7 +68,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 aan leveranciers bij inkoop, maatwerk en configuratie. Ook configuratie met logica (formulieren, workflows,
 koppelingen in een standaardpakket) door functioneel beheer valt eronder.</p>
 </blockquote>
-<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
 <li>Beveiliging en privacy zitten in het ontwerp (security en privacy by design) en de veiligste instelling
    is de standaard (security by default).</li>
@@ -79,10 +79,10 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.</p>
 <li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels</h2>
-<h3>3.1 Architectuurprincipes</h3>
+<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="3-1-architectuurprincipes">3.1 Architectuurprincipes<a class="anker" href="#3-1-architectuurprincipes" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>De architect stelt beveiligingsprincipes voor het ontwerp van informatiesystemen vast en houdt ze bij in
+<li id="eis-3-1-1">De architect stelt beveiligingsprincipes voor het ontwerp van informatiesystemen vast en houdt ze bij in
    <strong>[architectuurdocument]</strong>. Ze gelden
    voor elke ontwikkeling en aanschaf. Ten minste: [8.27.01]
    - toegang standaard geweigerd en per rol expliciet toegekend, voor elke pagina, functie, koppeling en
@@ -94,111 +94,111 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.</p>
    - scheiding tussen klanten of omgevingen bij gedeelde (multi-tenant) platforms;
    - foutafhandeling die geen technische details prijsgeeft en invoer die aan de serverkant wordt
      gecontroleerd;
-   - logging van beveiligingsrelevante gebeurtenissen volgens het beleid logging en monitoring.</li>
-<li>De architect en de CISO herzien de principes jaarlijks; <strong>[lijneigenaar veilige ontwikkeling]</strong>
-   stelt ze na elke herziening vast. [8.27.01]</li>
-<li>Bij elk project of elke aanschaf toetst de architect het ontwerp aan de principes en legt de toets vast.
-   Een afwijking wordt vastgelegd en door de systeemeigenaar als risico geaccepteerd. [8.27.01]</li>
+   - logging van beveiligingsrelevante gebeurtenissen volgens het beleid logging en monitoring. <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-2">De architect en de CISO herzien de principes jaarlijks; <strong>[lijneigenaar veilige ontwikkeling]</strong>
+   stelt ze na elke herziening vast. [8.27.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-3">Bij elk project of elke aanschaf toetst de architect het ontwerp aan de principes en legt de toets vast.
+   Een afwijking wordt vastgelegd en door de systeemeigenaar als risico geaccepteerd. [8.27.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.2 Beveiligingseisen per toepassing</h3>
+<h3 id="3-2-beveiligingseisen-per-toepassing">3.2 Beveiligingseisen per toepassing<a class="anker" href="#3-2-beveiligingseisen-per-toepassing" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Voor elke nieuwe toepassing of grote wijziging stelt de systeemeigenaar beveiligingseisen op, afgeleid
+<li id="eis-3-2-1">Voor elke nieuwe toepassing of grote wijziging stelt de systeemeigenaar beveiligingseisen op, afgeleid
    uit het impactniveau, de vertrouwelijkheidsklasse en de risicoanalyse, en legt ze vast in het programma
    van eisen of de ontwerpdocumentatie. Voor webapplicaties en koppelingen gebruikt de organisatie een
    erkende eisenset als basis, bijvoorbeeld de OWASP ASVS: niveau 1 bij impactniveau gering of lager, niveau
-   2 bij gemiddeld of hoger en niveau 3 bij informatie met het label strikt vertrouwelijk of geheim. [8.26.01]</li>
-<li>Voor webapplicaties gelden in elk geval: veilig sessiebeheer met een time-out, bescherming tegen
+   2 bij gemiddeld of hoger en niveau 3 bij informatie met het label strikt vertrouwelijk of geheim. [8.26.01] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-2">Voor webapplicaties gelden in elk geval: veilig sessiebeheer met een time-out, bescherming tegen
    brute-force-aanmeldingen, controle van alle invoer, geen gevoelige gegevens in de URL,
    beveiligingsheaders (zoals HSTS en een Content Security Policy) en registratie van de website of
    koppeling in de inventaris van bedrijfsmiddelen. De systeemeigenaar toont dat bij de acceptatie aan.
-   [8.26.01]</li>
-<li>De beveiligingseisen gaan over de hele keten van de toepassing: de toegang, de verwerking, de opslag, de
+   [8.26.01] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-3">De beveiligingseisen gaan over de hele keten van de toepassing: de toegang, de verwerking, de opslag, de
    koppelingen met andere systemen en de gegevens die de toepassing uitwisselt. Bij een transactie met een
    burger of bedrijf eist de systeemeigenaar dat de identiteit van beide kanten vaststaat, de transactie
-   niet te wijzigen of te ontkennen is en de gegevens onderweg en in rust versleuteld zijn. [8.26.01]</li>
-<li>Een internetvoorziening krijgt voor ingebruikname een penetratietest; de bevindingen met een hoog risico
-   zijn opgelost voordat de voorziening live gaat. Het rapport hoort bij het acceptatiedossier. [8.26.01]</li>
+   niet te wijzigen of te ontkennen is en de gegevens onderweg en in rust versleuteld zijn. [8.26.01] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-4">Een internetvoorziening krijgt voor ingebruikname een penetratietest; de bevindingen met een hoog risico
+   zijn opgelost voordat de voorziening live gaat. Het rapport hoort bij het acceptatiedossier. [8.26.01] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.3 Veilig ontwikkelen</h3>
+<h3 id="3-3-veilig-ontwikkelen">3.3 Veilig ontwikkelen<a class="anker" href="#3-3-veilig-ontwikkelen" aria-label="Link naar deze kop">#</a></h3>
 <blockquote>
 <p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
 <ol>
-<li><strong>[lijneigenaar veilige ontwikkeling]</strong> stelt een richtlijn voor veilig programmeren vast per gebruikte
+<li id="eis-3-3-1"><strong>[lijneigenaar veilige ontwikkeling]</strong> stelt een richtlijn voor veilig programmeren vast per gebruikte
    taal of platform, gebaseerd op een erkende bron zoals de OWASP-richtlijnen, en herziet die jaarlijks.
    Ontwikkelaars werken volgens die richtlijn en krijgen jaarlijks training in veilig ontwikkelen; de
-   deelname staat in het opleidingsregister. [8.28.01]</li>
-<li>De organisatie legt het ontwikkelproces vast in <strong>[ontwikkelrichtlijn]</strong>:
+   deelname staat in het opleidingsregister. [8.28.01] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-2">De organisatie legt het ontwikkelproces vast in <strong>[ontwikkelrichtlijn]</strong>:
    wie welke stap doet, welke beveiligingsactiviteit bij elke fase hoort (eisen, ontwerp, bouw, test,
    release), welke controles de bouwstraat afdwingt en hoe de omgevingen en de broncode beveiligd zijn. De
-   lijneigenaar herziet de beschrijving jaarlijks. [8.25.01]</li>
-<li>Elke wijziging in code gaat via versiebeheer en wordt beoordeeld door een tweede ontwikkelaar voordat hij
+   lijneigenaar herziet de beschrijving jaarlijks. [8.25.01] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-3">Elke wijziging in code gaat via versiebeheer en wordt beoordeeld door een tweede ontwikkelaar voordat hij
    in de hoofdtak komt. De beoordeling let ook op beveiliging en is terug te vinden in het versiebeheer.
-   [8.25.01, 8.28.01]</li>
-<li>De bouwstraat controleert elke wijziging automatisch met statische codeanalyse, controle op kwetsbare
+   [8.25.01, 8.28.01] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-4">De bouwstraat controleert elke wijziging automatisch met statische codeanalyse, controle op kwetsbare
    bibliotheken en op geheimen (wachtwoorden, sleutels) in de code. Bevindingen met een hoog risico houden de
-   release tegen en de uitkomst van elke controle wordt bewaard. [8.25.01, 8.28.01]</li>
-<li>Ontwikkelaars gebruiken alleen bibliotheken en componenten uit bronnen die de organisatie heeft
+   release tegen en de uitkomst van elke controle wordt bewaard. [8.25.01, 8.28.01] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-5">Ontwikkelaars gebruiken alleen bibliotheken en componenten uit bronnen die de organisatie heeft
    goedgekeurd, met een onderhouden versie, en vernieuwen ze binnen de termijnen van het beleid
    kwetsbaarheden en patchmanagement. Van elke applicatie is een overzicht van gebruikte componenten (SBOM)
-   beschikbaar dat bij elke release wordt bijgewerkt. [8.25.01, 8.28.01]</li>
-<li>Geheimen staan in een sleutelkluis en niet in code of configuratiebestanden in de repository. De
-   bouwstraat blokkeert een wijziging waarin een geheim staat. [8.28.01]</li>
-<li>Ontwikkel- en testomgevingen van de bouwstraat zijn beveiligd volgens het beleid logische
+   beschikbaar dat bij elke release wordt bijgewerkt. [8.25.01, 8.28.01] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-6">Geheimen staan in een sleutelkluis en niet in code of configuratiebestanden in de repository. De
+   bouwstraat blokkeert een wijziging waarin een geheim staat. [8.28.01] <a class="anker" href="#eis-3-3-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-7">Ontwikkel- en testomgevingen van de bouwstraat zijn beveiligd volgens het beleid logische
    toegangsbeveiliging: persoonlijke accounts, rechten per rol en geen schrijfrechten van ontwikkelaars in
-   productie. [8.25.01]</li>
+   productie. [8.25.01] <a class="anker" href="#eis-3-3-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Nee, alleen inkoop en configuratie»</strong></p>
 <ol start="8">
-<li>Bij inkoop van software of maatwerk vraagt de inkoopadviseur de leverancier hoe die veilig ontwikkelt:
+<li id="eis-3-3-8">Bij inkoop van software of maatwerk vraagt de inkoopadviseur de leverancier hoe die veilig ontwikkelt:
    een richtlijn voor veilig programmeren, codereview, geautomatiseerde controle op kwetsbare componenten,
    beveiliging van de ontwikkelomgeving en een proces voor kwetsbaarheden. Het antwoord weegt mee in de
-   gunning en wordt bij het contract bewaard. [8.25.01, 8.28.01]</li>
-<li>De systeemeigenaar vraagt bij elke grote release een recente pentestrapportage of een ASVS-verklaring, en
+   gunning en wordt bij het contract bewaard. [8.25.01, 8.28.01] <a class="anker" href="#eis-3-3-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-9">De systeemeigenaar vraagt bij elke grote release een recente pentestrapportage of een ASVS-verklaring, en
    een overzicht van gebruikte componenten (SBOM) als de toepassing informatie met impactniveau kritiek of
-   hoger verwerkt. [8.25.01]</li>
-<li>Configuratie met logica door functioneel beheer (formulieren, workflows, koppelingen) volgt de
+   hoger verwerkt. [8.25.01] <a class="anker" href="#eis-3-3-9" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-10">Configuratie met logica door functioneel beheer (formulieren, workflows, koppelingen) volgt de
    architectuurprincipes, wordt door een tweede functioneel beheerder beoordeeld en gaat via het beleid
-   wijzigingsbeheer. [8.25.01, 8.28.01]</li>
+   wijzigingsbeheer. [8.25.01, 8.28.01] <a class="anker" href="#eis-3-3-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.4 Uitbestede ontwikkeling</h3>
+<h3 id="3-4-uitbestede-ontwikkeling">3.4 Uitbestede ontwikkeling<a class="anker" href="#3-4-uitbestede-ontwikkeling" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>De eisen uit dit beleid gelden onverkort voor ontwikkeling door een leverancier, voor maatwerk en voor
+<li id="eis-3-4-1">De eisen uit dit beleid gelden onverkort voor ontwikkeling door een leverancier, voor maatwerk en voor
    SaaS-diensten. De inkoopadviseur en de systeemeigenaar nemen ze op in het programma van eisen en in het
-   contract. [8.30.01]</li>
-<li>Daarbovenop regelt het contract: het recht op audit of een onafhankelijke verklaring over het
+   contract. [8.30.01] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-2">Daarbovenop regelt het contract: het recht op audit of een onafhankelijke verklaring over het
    ontwikkelproces, het eigendom van of de toegang tot de broncode (bijvoorbeeld via escrow als de
    continuïteit dat vraagt), de termijn voor het oplossen van kwetsbaarheden, een regeling voor het melden
-   van kwetsbaarheden bij de leverancier en de manier van opleveren en accepteren. [8.30.01]</li>
-<li>De systeemeigenaar controleert bij elke oplevering of de afgesproken bewijzen er zijn (testverslag,
+   van kwetsbaarheden bij de leverancier en de manier van opleveren en accepteren. [8.30.01] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-3">De systeemeigenaar controleert bij elke oplevering of de afgesproken bewijzen er zijn (testverslag,
    penetratietest, componentenoverzicht) en accepteert pas daarna. Het acceptatiebesluit en de bewijzen
-   staan in het acceptatiedossier bij de wijziging. [8.30.01]</li>
-<li>De contracteigenaar beoordeelt jaarlijks per leverancier of de verklaring over het ontwikkelproces nog
-   geldig is en of de leverancier de termijnen voor kwetsbaarheden heeft gehaald. [8.30.01]</li>
+   staan in het acceptatiedossier bij de wijziging. [8.30.01] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-4">De contracteigenaar beoordeelt jaarlijks per leverancier of de verklaring over het ontwikkelproces nog
+   geldig is en of de leverancier de termijnen voor kwetsbaarheden heeft gehaald. [8.30.01] <a class="anker" href="#eis-3-4-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
 <ol start="5">
-<li>Huurt de organisatie ontwikkelaars in voor het eigen team, dan werken die in de eigen bouwstraat, met
+<li id="eis-3-4-5">Huurt de organisatie ontwikkelaars in voor het eigen team, dan werken die in de eigen bouwstraat, met
    persoonlijke accounts en volgens dezelfde richtlijnen als eigen ontwikkelaars. Hun rechten vervallen op
-   de laatste werkdag van de opdracht. [8.30.01]</li>
+   de laatste werkdag van de opdracht. [8.30.01] <a class="anker" href="#eis-3-4-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.5 Testgegevens</h3>
+<h3 id="3-5-testgegevens">3.5 Testgegevens<a class="anker" href="#3-5-testgegevens" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Er wordt getest met fictieve gegevens. Kan een test daar aantoonbaar niet mee, dan beoordeelt de
+<li id="eis-3-5-1">Er wordt getest met fictieve gegevens. Kan een test daar aantoonbaar niet mee, dan beoordeelt de
    opdrachtgever van de test stap voor stap of het kan met geanonimiseerde gegevens, daarna met
-   gepseudonimiseerde gegevens en pas als laatste met productiegegevens. [8.33.01]</li>
-<li>Voor het maken van een geanonimiseerde of gepseudonimiseerde set en voor testen met gepseudonimiseerde of
+   gepseudonimiseerde gegevens en pas als laatste met productiegegevens. [8.33.01] <a class="anker" href="#eis-3-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5-2">Voor het maken van een geanonimiseerde of gepseudonimiseerde set en voor testen met gepseudonimiseerde of
    productiegegevens vult de opdrachtgever
    <strong>[formulier testgegevens]</strong> in met doel,
    onderbouwing, benodigde gegevens en bewaartermijn. De privacy officer en de CISO geven advies. Volgt de
-   opdrachtgever het advies niet, dan accepteert de proceseigenaar het risico schriftelijk. [8.33.01]</li>
-<li>Een testomgeving met persoonsgegevens krijgt dezelfde beveiliging als productie, alleen de minimaal
+   opdrachtgever het advies niet, dan accepteert de proceseigenaar het risico schriftelijk. [8.33.01] <a class="anker" href="#eis-3-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5-3">Een testomgeving met persoonsgegevens krijgt dezelfde beveiliging als productie, alleen de minimaal
    nodige gegevens en een vaste einddatum waarop de beheerder de gegevens verwijdert. Het verwijderen wordt
-   vastgelegd. [8.33.01]</li>
+   vastgelegd. [8.33.01] <a class="anker" href="#eis-3-5-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -241,7 +241,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>; afwijkingen gaan als bevinding naar het
 risicoregister.</p>
@@ -321,7 +321,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang</h2>
+<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatiebeveiliging in projecten (de toets aan het begin), het beleid wijzigingsbeheer (testen, acceptatie
 en scheiding van omgevingen), het beleid informatieclassificatie (impactniveau en vertrouwelijkheidslabel
@@ -330,7 +330,7 @@ contract), het beleid logische toegangsbeveiliging (toegang tot broncode en omge
 cryptografie (versleutelde verbindingen en sleutelkluis), het beleid kwetsbaarheden en patchmanagement
 (kwetsbare componenten en penetratietesten na ingebruikname) en het privacybeleid (privacy by design en
 testen met persoonsgegevens).</p>
-<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen<a class="anker" href="#bijlage-a-bio-2-0-maatregelen" aria-label="Link naar deze kop">#</a></h2>
 <p>De maatregelen van dit domein (5, waarvan 2 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
 <table>
 <thead>
@@ -381,7 +381,7 @@ testen met persoonsgegevens).</p>
 </tbody>
 </table>
 <p>Daarnaast vult dit stuk maatregelen van andere domeinen mee in: 8.33.01 (Testgegevens).</p>
-<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen<a class="anker" href="#bijlage-b-afkortingen" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -452,7 +452,7 @@ testen met persoonsgegevens).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<h2 id="nog-in-te-vullen">Nog in te vullen<a class="anker" href="#nog-in-te-vullen" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>architectuurdocument</strong>: het document of de omgeving waarin de architectuurprincipes staan</li>
 <li><strong>lijneigenaar veilige ontwikkeling</strong>: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT of informatievoorziening</li>

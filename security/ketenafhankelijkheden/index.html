@@ -8,7 +8,7 @@ table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{bor
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Ketenafhankelijkheden in beeld</span></nav><!-- /kruimelpad -->
 <h1 id="ketenafhankelijkheden-in-beeld">Ketenafhankelijkheden in
 beeld</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.9">5.9</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.19">5.19</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.21">5.21</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/GV.SC-04">GV.SC-04</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.AM-04">ID.AM-04</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.AM-05">ID.AM-05</a><span class="kader">AVG</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A28">A28</a><span class="kader">Wpg</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W13">W13</a></p><!-- /bewijs-voor -->
@@ -22,11 +22,11 @@ van die ketens uitvalt.</p>
 voor welke processen. Wanneer een leverancier uitvalt, door incident,
 faillissement, of contract-eind, is de eerste vraag 'wat raakt dit?' en
 niemand heeft het antwoord paraat.</p>
-<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
 <p>Past voor elke organisatie met meerdere kritieke leveranciers.
 Wanneer niet als statisch overzicht: een ketenanalyse die niet wordt
 geactualiseerd verliest binnen een jaar haar waarde.</p>
-<h2 id="zo-richt-je-het-in">Zo richt je het in</h2>
+<h2 id="zo-richt-je-het-in">Zo richt je het in<a class="anker" href="#zo-richt-je-het-in" aria-label="Link naar deze kop">#</a></h2>
 <p>Per kritiek proces in kaart: welke leveranciers, koppelingen,
 datastromen zijn nodig. Wat is de impact bij uitval, en wat is de
 fallback? De analyse voedt het IR-proces, het crisisplan en de
@@ -43,7 +43,7 @@ leveranciers.</li>
 <li>Actualiseer jaarlijks en bij grote contractwisselingen.</li>
 </ol>
 <h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
-oplevert</h2>
+oplevert<a class="anker" href="#wat-het-kost-en-wat-het-oplevert" aria-label="Link naar deze kop">#</a></h2>
 <p>Kosten: laag.</p>
 <p><strong>Wat het oplevert</strong></p>
 <ul>
@@ -61,7 +61,7 @@ schijnzekerheid.</li>
 <li>Vraagt samenwerking met inkoop, IT en proceseigenaren,
 afstemmingstijd.</li>
 </ul>
-<h2 id="bewijs">Bewijs</h2>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li>Het overzicht van kritieke processen met de onderliggende systemen
 en leveranciers.</li>
@@ -72,7 +72,7 @@ is.</li>
 <li>Wat het overzicht heeft opgeleverd: welke afhankelijkheid kende
 niemand.</li>
 </ul>
-<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit<a class="anker" href="#zo-leg-je-het-uit" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Aan de directie.</strong> Wij weten globaal welke
 leveranciers belangrijk zijn, niet welke onmisbaar zijn voor welk
 proces. Bij een crisis is dat het eerste wat we willen weten. De
@@ -83,7 +83,7 @@ register.</p>
 <p><strong>Aan het MT.</strong> Per kritiek proces wordt eens per jaar
 de keten opnieuw nagelopen. Beperkte structurele inspanning,
 fundamenteel inzicht.</p>
-<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
 <p>Deze handleiding hoort bij barriere <code>dependencies</code> uit de
 <a href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
 aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
@@ -94,6 +94,6 @@ aanvalspad naar norm</a>.</p>
 href="../leveranciersbeoordeling/">Leveranciersbeoordeling</a> en <a
 href="../security-annex-leveranciers/">Security Annex voor
 leveranciers</a>.</p>
-<h2 id="licentie">Licentie</h2>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
 <p><a href="../../LICENSE">EUPL-1.2</a>.</p>
 <!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/ketenafhankelijkheden">security/ketenafhankelijkheden</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

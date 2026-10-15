@@ -5,7 +5,7 @@ h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4e
 table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
-@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style><!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style><!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Passkeys invoeren</span></nav><!-- /kruimelpad --><div class="kop"><b>Passkeys invoeren</b> · handleiding, versie 2026-08 · security-commons-nl, EUPL-1.2<br>Bijlagen (directiememo, managersmail, FAQ, herstelprocedure) staan als markdown in dezelfde map op GitHub.</div><h1 id="passkeys-invoeren">Passkeys invoeren</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.16">5.16</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.17">5.17</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/8.5">8.5</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/PR.AA-01">PR.AA-01</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/PR.AA-03">PR.AA-03</a><span class="kader">AVG</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A05-1f">A05-1f</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A32">A32</a><span class="kader">Wpg</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/B4-2">B4-2</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W06">W06</a></p><!-- /bewijs-voor -->
 <p>Als je digitale dreiging platslaat, komt het meestal neer op drie
 dingen: iemand probeert je inloggegevens te stelen (phishing,
@@ -53,7 +53,7 @@ href="herstelprocedure-tap.html"><code>herstelprocedure-tap.md</code></a></td>
 </tbody>
 </table>
 <h2 id="waarom-je-huidige-mfa-niet-genoeg-is">Waarom je huidige MFA niet
-genoeg is</h2>
+genoeg is<a class="anker" href="#waarom-je-huidige-mfa-niet-genoeg-is" aria-label="Link naar deze kop">#</a></h2>
 <p>Push-notificaties en number matching zijn "MFA" op papier, maar beide
 vertrouwen op je sessie en je aandacht. Een aanvaller die een proxy
 tussen jou en de echte inlogpagina zet (adversary-in-the-middle), laat
@@ -74,8 +74,8 @@ apparaat (een privé-pc), dan scan je een QR-code met de Authenticator;
 die legt via bluetooth kort contact om te bevestigen dat je fysiek in de
 buurt bent. Op afstand inloggen met jouw account kan dan niet meer,
 omdat jouw apparaat er letterlijk bij moet zijn.</p>
-<h2 id="de-aanpak-in-negen-stappen">De aanpak in negen stappen</h2>
-<h3 id="1-inzicht-en-keuze">1. Inzicht en keuze</h3>
+<h2 id="de-aanpak-in-negen-stappen">De aanpak in negen stappen<a class="anker" href="#de-aanpak-in-negen-stappen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-inzicht-en-keuze">1. Inzicht en keuze<a class="anker" href="#1-inzicht-en-keuze" aria-label="Link naar deze kop">#</a></h3>
 <p>Begin niet met techniek maar met begrijpen waar je staat.</p>
 <ul>
 <li>Draait je identity centraal via Microsoft Entra ID, en zijn je
@@ -95,7 +95,7 @@ landschap in kaart zodat duidelijk was waar risico's zouden blijven.
 Voor de leveranciersscope werkte een afbakening op de kritieke
 processen: alle leveranciers die onderdeel zijn van een kritiek proces,
 aan SSO.</p>
-<h3 id="2-bestuurlijke-aftrap">2. Bestuurlijke aftrap</h3>
+<h3 id="2-bestuurlijke-aftrap">2. Bestuurlijke aftrap<a class="anker" href="#2-bestuurlijke-aftrap" aria-label="Link naar deze kop">#</a></h3>
 <p>Zorg dat dit een organisatiebesluit wordt. Het verhaal aan de
 directie was simpel: makkelijker inloggen, geen wachtwoorden meer om te
 vergeten, minder druk op het shared service center, meer productiviteit.
@@ -107,13 +107,13 @@ vraag akkoord op richting, globale planning en benodigde capaciteit.
 Zonder bestuurlijke steun strandt de uitrol vroeg of laat omdat het "te
 lastig" is of "de business door moet". De <a
 href="directiememo.html">directiememo</a> is het sjabloon.</p>
-<h3 id="3-projectteam">3. Projectteam</h3>
+<h3 id="3-projectteam">3. Projectteam<a class="anker" href="#3-projectteam" aria-label="Link naar deze kop">#</a></h3>
 <p>Stel een team samen met IT, informatiebeveiliging én het shared
 service center: niet alleen techniek, maar juist de mensen die dagelijks
 met gebruikers werken. Spreek rollen af (techniek, communicatie,
 support) en neem het team mee in wat passkeys zijn en wat er voor
 gebruikers verandert.</p>
-<h3 id="4-technische-basis">4. Technische basis</h3>
+<h3 id="4-technische-basis">4. Technische basis<a class="anker" href="#4-technische-basis" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>Zet passkey-registratie aan in de Microsoft Authenticator.</li>
 <li>Richt een TAP-procedure in (Temporary Access Pass): dat wordt de
@@ -128,7 +128,7 @@ YubiKey (via toegestane AAGUID's).</li>
 Conditional Access vrij snel aan; in de praktijk breek je dan je eigen
 omgeving omdat gebruikers nog niet klaar zijn. Eerst registratie, dan
 gebruik, pas daarna afdwingen.</p>
-<h3 id="5-pilot">5. Pilot</h3>
+<h3 id="5-pilot">5. Pilot<a class="anker" href="#5-pilot" aria-label="Link naar deze kop">#</a></h3>
 <p>Test niet alleen of het werkt, maar hoe het voelt in dagelijks
 gebruik. Begin met een kleine testgroep en breid uit met key users uit
 verschillende afdelingen. Test de scenario's laptop (Windows Hello),
@@ -138,7 +138,7 @@ werken, devices zonder bluetooth, leveranciers.</p>
 goed omgaan met passkeys, cloud-pc's zonder Windows Hello, devices
 zonder bluetooth, en mobiele apps met halfwerkende webviews waardoor de
 authenticatieflow stukloopt.</p>
-<h3 id="6-keuzes-en-uitzonderingen">6. Keuzes en uitzonderingen</h3>
+<h3 id="6-keuzes-en-uitzonderingen">6. Keuzes en uitzonderingen<a class="anker" href="#6-keuzes-en-uitzonderingen" aria-label="Link naar deze kop">#</a></h3>
 <p>Hier maak je het verschil tussen theorie en praktijk.</p>
 <ul>
 <li><strong>Fallback tijdens registratie: nee.</strong> De bootstrap- en
@@ -153,7 +153,7 @@ gecontroleerd.</li>
 <li><strong>Leg vast welke uitzonderingen tijdelijk zijn en wanneer je
 ze afbouwt.</strong></li>
 </ul>
-<h3 id="7-voorbereiding-uitrol">7. Voorbereiding uitrol</h3>
+<h3 id="7-voorbereiding-uitrol">7. Voorbereiding uitrol<a class="anker" href="#7-voorbereiding-uitrol" aria-label="Link naar deze kop">#</a></h3>
 <p>Zorg dat de organisatie klaar is voordat je afdwingt. Informeer
 managers en laat hen hun teams activeren (de <a
 href="mail-managers.html">managersmail</a>). Publiceer uitleg op het
@@ -164,7 +164,7 @@ service center voor op veelgestelde vragen en registratiehulp.</p>
 misgaat, maar omdat mensen het spannend vinden en geholpen willen
 worden. Daar moet je capaciteit op plannen.</p>
 <h3 id="8-gefaseerde-uitrol-en-afdwingen">8. Gefaseerde uitrol en
-afdwingen</h3>
+afdwingen<a class="anker" href="#8-gefaseerde-uitrol-en-afdwingen" aria-label="Link naar deze kop">#</a></h3>
 <p>Verdeel de organisatie in groepen (per afdeling) en zet Conditional
 Access gefaseerd aan. Kies het moment slim: 's avonds omzetten, want de
 meeste mensen loggen 's ochtends in, de sessie verloopt 's avonds, en je
@@ -183,7 +183,7 @@ passkey in de Authenticator. Toegang verlies je alleen nog als je je
 device kwijt bent of je toegangscode niet meer weet. Dat is een heel
 ander risicoprofiel.</p>
 <h3 id="9-borging-en-doorontwikkeling">9. Borging en
-doorontwikkeling</h3>
+doorontwikkeling<a class="anker" href="#9-borging-en-doorontwikkeling" aria-label="Link naar deze kop">#</a></h3>
 <p>Na livegang begint het echte werk: eisen richting leveranciers (SSO
 verplicht, FIDO2 ondersteunen), uitzonderingen afbouwen, gebruik en
 incidenten monitoren. Wat na de eigen organisatie overblijft, zijn de
@@ -193,7 +193,7 @@ je architectuur; de <a href="../security-annex-leveranciers/">Security
 Annex voor leveranciers</a> in deze kennisbank doet precies dat (artikel
 14).</p>
 <h2 id="keuzes-die-het-verschil-maken">Keuzes die het verschil
-maken</h2>
+maken<a class="anker" href="#keuzes-die-het-verschil-maken" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Alleen je Microsoft-omgeving, of alles via SSO?</strong>
 Idealiter werkt elke applicatie via SSO, maar dat lukt niet altijd,
 omdat je organisatie er nog niet aan toe is of je leverancier niet. Twee
@@ -234,7 +234,7 @@ IT-leverancier, dan kan dat een veelzeggend signaal zijn.
 IT-leveranciers hebben dit vaak nog niet voorhanden en maken het
 daardoor onnodig ingewikkeld en duur.</p>
 <h2 id="wat-er-in-de-praktijk-tegenzat">Wat er in de praktijk
-tegenzat</h2>
+tegenzat<a class="anker" href="#wat-er-in-de-praktijk-tegenzat" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>Printers en apps met een webview.</strong> Een printer
 waarop je moet inloggen maar die geen bluetooth heeft, breekt de
@@ -261,7 +261,7 @@ beveiligt je accounts. Wie alleen Windows Hello heeft, is veilig op de
 laptop, maar niet automatisch op de telefoon of een onbeheerd apparaat.
 De FAQ (vraag 25) heeft de uitleg.</li>
 </ul>
-<h2 id="wat-het-oplevert">Wat het oplevert</h2>
+<h2 id="wat-het-oplevert">Wat het oplevert<a class="anker" href="#wat-het-oplevert" aria-label="Link naar deze kop">#</a></h2>
 <p>Het lijkt een enorme technische exercitie, maar de kern is verrassend
 simpel: registratie mogelijk maken, Conditional Access goed inrichten,
 gebruikers registreren, gefaseerd afdwingen, goed begeleiden. De
@@ -274,7 +274,7 @@ van de meest effectieve maatregelen die je kunt nemen.</p>
 <p>BIO2-verankering: maatregel 5.17.01 (authenticatie-informatie) vraagt
 sterke, moderne authenticatiemiddelen. Passkeys zijn daarvan op dit
 moment de veiligste en meest toekomstbestendige vorm.</p>
-<h2 id="bronnen">Bronnen</h2>
+<h2 id="bronnen">Bronnen<a class="anker" href="#bronnen" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><a
 href="https://learn.microsoft.com/nl-nl/entra/identity/authentication/how-to-register-passkey-authenticator">Passkeys
@@ -289,7 +289,7 @@ AAGUID's van YubiKey-hardware (Yubico)</a></li>
 Microsoft-identity-specialist (publiek blog) is als vertrekpunt
 gebruikt, met de afwijkingen die hierboven staan.</li>
 </ul>
-<h2 id="licentie">Licentie</h2>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
 <p><a href="../../LICENSE">EUPL-1.2</a>, vrij te hergebruiken en aan te
 passen. Feedback en verbeteringen welkom via een <a
 href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">issue</a>.</p>

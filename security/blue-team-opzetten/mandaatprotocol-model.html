@@ -2,17 +2,17 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Mandaatprotocol (model)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Een blue team opzetten</a> › <span>Mandaatprotocol (model)</span></nav><!-- /kruimelpad -->
 <h1>Mandaatprotocol (model)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een blue team opzetten</a> · <a href="mandaatprotocol-model.md">Markdown-bron</a></p>
 <p>Bijlage bij <a href="./">Een blue team opzetten</a>, stap 4. Dit is een model met voorbeeldclausules, geen
 vastgesteld protocol. Laat het door je eigen bestuur of CIO vaststellen vóór de eerste ingreep. Vul de
 drempels tussen <code>[ ]</code> in met bedragen die bij jouw organisatie passen.</p>
-<h2 id="1-trigger-de-rood-score">1. Trigger: de Rood-score</h2>
+<h2 id="1-trigger-de-rood-score">1. Trigger: de Rood-score<a class="anker" href="#1-trigger-de-rood-score" aria-label="Link naar deze kop">#</a></h2>
 <p>Een mandaat-actie wordt geactiveerd door een R/E/C-score <strong>Rood</strong> (R = ja, E = direct, C = niets).
 Geldige bronnen voor een Rood-score:</p>
 <ul>
@@ -22,7 +22,7 @@ Geldige bronnen voor een Rood-score:</p>
 <li>een signaal van mogelijke compromittering;</li>
 <li>een pentest met directe exploiteerbaarheid.</li>
 </ul>
-<h2 id="2-bevoegdheden-zonder-akkoord-per-geval">2. Bevoegdheden zonder akkoord per geval</h2>
+<h2 id="2-bevoegdheden-zonder-akkoord-per-geval">2. Bevoegdheden zonder akkoord per geval<a class="anker" href="#2-bevoegdheden-zonder-akkoord-per-geval" aria-label="Link naar deze kop">#</a></h2>
 <p><em>Modelclausule.</em> Het team mag, na een vier-ogen-besluit en met melding aan de beslisser:</p>
 <ol>
 <li>kritieke beveiligingsupdates uitrollen buiten reguliere change-vensters, ook bij tijdelijke
@@ -33,7 +33,7 @@ Geldige bronnen voor een Rood-score:</p>
 </ol>
 <p>Met vooraf vastgestelde technische toegang, read-only waar mogelijk, in zes categorieën: identity,
 monitoring en logging, netwerk, kwetsbaarheden, endpoints, back-up.</p>
-<h2 id="3-financieel-mandaat">3. Financieel mandaat</h2>
+<h2 id="3-financieel-mandaat">3. Financieel mandaat<a class="anker" href="#3-financieel-mandaat" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -56,7 +56,7 @@ monitoring en logging, netwerk, kwetsbaarheden, endpoints, back-up.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="4-drie-escalatieniveaus">4. Drie escalatieniveaus</h2>
+<h2 id="4-drie-escalatieniveaus">4. Drie escalatieniveaus<a class="anker" href="#4-drie-escalatieniveaus" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Niveau 1, kernteam beslist.</strong> Bij Rood, geen merkbare impact bij ketenpartners, impact van ten hoogste
 vier uur en budget onder de lage grens. Vier-ogen-vereiste. Melding: beslisser zo snel mogelijk; tweede
 lijn cc binnen 24 uur; derde lijn via steekproef. Register binnen 24 uur.</p>
@@ -66,7 +66,7 @@ geraakt, of budget boven de lage grens. Opdrachtgever binnen twee uur geïnforme
 verstoring, datalek met meldplicht, of brede of onduidelijke scope. Overdracht telefonisch; het kernteam
 blijft beschikbaar onder die aansturing. Heeft de organisatie geen calamiteitenteam, dan geldt de
 bestaande crisisroute, hoe die ook heet.</p>
-<h2 id="5-vier-ogen-en-vastlegging">5. Vier ogen en vastlegging</h2>
+<h2 id="5-vier-ogen-en-vastlegging">5. Vier ogen en vastlegging<a class="anker" href="#5-vier-ogen-en-vastlegging" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>Vier ogen:</strong> minimaal twee kernteamleden zijn het eens dat R = ja, E = direct, C = niets.</li>
 <li><strong>Besluitenregister</strong>, binnen 24 uur: datum · besluit · onderbouwing · hersteltijd · betrokkenen ·
@@ -74,10 +74,10 @@ bestaande crisisroute, hoe die ook heet.</p>
 <li><strong>Reguliere registratie:</strong> change- of incidentregistratie in het gewone systeem, ook voor de
   mandaat-bypass.</li>
 </ul>
-<h2 id="6-looptijd">6. Looptijd</h2>
+<h2 id="6-looptijd">6. Looptijd<a class="anker" href="#6-looptijd" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit protocol geldt van <code>[startdatum]</code> tot <code>[einddatum venster]</code>. Uiterlijk <code>[datum, ruim vóór einde]</code>
 besluit de opdrachtgever over afbouw, overdracht aan de lijn of verlenging.</p>
-<h2 id="7-vaststelling">7. Vaststelling</h2>
+<h2 id="7-vaststelling">7. Vaststelling<a class="anker" href="#7-vaststelling" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>

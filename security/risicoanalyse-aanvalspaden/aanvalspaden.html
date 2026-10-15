@@ -2,11 +2,11 @@
 <html lang="nl"><head><meta charset="utf-8"><title>De vijf aanvalspaden voor lokale overheid</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Risicoanalyse langs aanvalspaden</a> › <span>De vijf aanvalspaden voor lokale overheid</span></nav><!-- /kruimelpad -->
 <h1>De vijf aanvalspaden voor lokale overheid</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Risicoanalyse langs aanvalspaden</a> · <a href="aanvalspaden.md">Markdown-bron</a></p>
 <p>Bijlage bij <a href="./">Risicoanalyse langs aanvalspaden</a>, stap 2. Vijf paden, elk in hetzelfde
@@ -17,7 +17,7 @@ een pad schrappen omdat het "bij ons niet speelt" is de aanname die je wilt toet
 een echte aanval loopt vaak over twee of drie paden (binnen via 1 of 2, verder via 5). Dat is geen
 dubbeltelling; het betekent dat één dicht chokepoint meerdere paden breekt.</p>
 <hr />
-<h2 id="pad-1-gecompromitteerd-account">Pad 1. Gecompromitteerd account</h2>
+<h2 id="pad-1-gecompromitteerd-account">Pad 1. Gecompromitteerd account<a class="anker" href="#pad-1-gecompromitteerd-account" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Kern.</strong> De aanvaller logt gewoon in. Niet met een exploit, maar met de inloggegevens van een
 medewerker, verkregen via phishing, een adversary-in-the-middle-pagina, een hergebruikt wachtwoord uit
 een eerder lek, of door de gebruiker net zo lang MFA-verzoeken te sturen tot hij op "ja" drukt.</p>
@@ -45,7 +45,7 @@ gecompromitteerde mailbox is de perfecte springplank naar de volgende organisati
 - P: export uit de identity provider: welk percentage van de beheeraccounts dwingt FIDO2 af? Welk
   percentage van alle accounts? Hoeveel accounts hebben nog sms of push als enige tweede factor?</p>
 <hr />
-<h2 id="pad-2-werkplek-via-de-gebruiker">Pad 2. Werkplek via de gebruiker</h2>
+<h2 id="pad-2-werkplek-via-de-gebruiker">Pad 2. Werkplek via de gebruiker<a class="anker" href="#pad-2-werkplek-via-de-gebruiker" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Kern.</strong> De gebruiker voert zelf de code van de aanvaller uit. Een nepfoutmelding ("uw browser moet
 geverifieerd worden") vraagt om een toetscombinatie en een plakactie in het Uitvoeren-venster;
 daarmee start een PowerShell-commando dat de eigenlijke lading ophaalt. Bekend als ClickFix, met
@@ -76,7 +76,7 @@ als de echte foutmeldingen die mensen dagelijks wegklikken.</p>
 <p>Dit pad is volledig uitgewerkt, tot aan de query's, in
 <a href="../meten-voordat-je-ingrijpt/">Meten voordat je ingrijpt</a>.</p>
 <hr />
-<h2 id="pad-3-kwetsbare-internetgerichte-dienst">Pad 3. Kwetsbare internetgerichte dienst</h2>
+<h2 id="pad-3-kwetsbare-internetgerichte-dienst">Pad 3. Kwetsbare internetgerichte dienst<a class="anker" href="#pad-3-kwetsbare-internetgerichte-dienst" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Kern.</strong> Iets wat aan het internet hangt heeft een bekende kwetsbaarheid, en de patch is er wel
 maar staat nog niet. VPN-concentrators, firewalls, mailgateways, portalen, een vergeten testserver.
 De tijd tussen "kwetsbaarheid bekend" en "actief misbruikt" is teruggelopen van weken naar dagen,
@@ -103,7 +103,7 @@ allemaal aan het internet hangt. En een apparaat dat gepatcht is, is niet automa
 - P: het overzicht van internetgerichte systemen met per systeem de laatste patchdatum, en het aantal
   kritieke kwetsbaarheden ouder dan een week.</p>
 <hr />
-<h2 id="pad-4-leverancier-en-keten">Pad 4. Leverancier en keten</h2>
+<h2 id="pad-4-leverancier-en-keten">Pad 4. Leverancier en keten<a class="anker" href="#pad-4-leverancier-en-keten" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Kern.</strong> De aanvaller komt niet bij jou binnen maar bij je leverancier, en gebruikt diens toegang,
 account of omgeving als opstap. Een beheerder van de leverancier met een gecompromitteerd account, een
 SaaS-dienst die jouw gegevens verwerkt, een ontwikkelstraat waar de code voor jouw applicatie vandaan
@@ -135,7 +135,7 @@ leverancier een incident heeft, hoor je het te laat.</p>
 <a href="../security-annex-leveranciers/">Security Annex voor leveranciers</a>, die precies deze drie eisen
 centraal stelt.</p>
 <hr />
-<h2 id="pad-5-misbruik-van-beheerrechten">Pad 5. Misbruik van beheerrechten</h2>
+<h2 id="pad-5-misbruik-van-beheerrechten">Pad 5. Misbruik van beheerrechten<a class="anker" href="#pad-5-misbruik-van-beheerrechten" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Kern.</strong> Dit is het pad na de voordeur. Eenmaal binnen met een gewoon account of op een gewone
 werkplek zoekt de aanvaller de weg naar beheerrechten: opgeslagen wachtwoorden, service-accounts met
 te veel rechten, beheerders die met hun beheeraccount ook mail lezen, een werkplek waar een
@@ -167,14 +167,14 @@ hetzelfde domein als wat ze moeten beschermen.</p>
   <a href="https://github.com/security-commons-nl/iamscan">iamscan</a> de vraag "wie kan root worden" uit de
   configuratie.</p>
 <hr />
-<h2 id="wat-hier-bewust-niet-bij-staat">Wat hier bewust niet bij staat</h2>
+<h2 id="wat-hier-bewust-niet-bij-staat">Wat hier bewust niet bij staat<a class="anker" href="#wat-hier-bewust-niet-bij-staat" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>DDoS en hacktivisme.</strong> Dat is geen pad naar binnen maar uitval van buitenaf, en het raakt vooral de
 publieke website en online dienstverlening. Het hoort in je continuïteitsplan en bij je hostingpartij,
 niet in deze matrix. Wil je het toch meenemen, dan als kolom 6 met alleen R en P: is er een wasstraat,
 en is de omschakeling geoefend.</p>
 <p><strong>Insider.</strong> Een kwaadwillende medewerker loopt langs pad 5 zonder de voordeur nodig te hebben. De
 chokepoints van pad 5 zijn precies de maatregelen die ook daar werken; een apart pad voegt niets toe.</p>
-<h2 id="bronnen">Bronnen</h2>
+<h2 id="bronnen">Bronnen<a class="anker" href="#bronnen" aria-label="Link naar deze kop">#</a></h2>
 <p>De paden zijn een samenvatting van wat publiek is over incidenten bij Nederlandse gemeenten en
 waterschappen sinds 2023, en van de adviezen van het Nationaal Cyber Security Centrum, de
 Informatiebeveiligingsdienst voor gemeenten en ENISA over dezelfde periode. Per pad zijn de technieken

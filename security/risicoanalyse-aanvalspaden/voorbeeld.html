@@ -2,17 +2,17 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Voorbeeld: gemeente Duinstad (verzonnen)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Risicoanalyse langs aanvalspaden</a> › <span>Voorbeeld: gemeente Duinstad (verzonnen)</span></nav><!-- /kruimelpad -->
 <h1>Voorbeeld: gemeente Duinstad (verzonnen)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Risicoanalyse langs aanvalspaden</a> · <a href="voorbeeld.md">Markdown-bron</a></p>
 <p>Bijlage bij <a href="./">Risicoanalyse langs aanvalspaden</a>. Gemeente Duinstad bestaat niet; de cijfers
 zijn gekozen omdat ze herkenbaar zijn. Eén dag werk: ochtend stap 1 en 2 met de directie en de
 CISO, middag stap 3 met de beheerders, stap 4 aan het eind van de dag.</p>
-<h2 id="stap-1-kroonjuwelen">Stap 1. Kroonjuwelen</h2>
+<h2 id="stap-1-kroonjuwelen">Stap 1. Kroonjuwelen<a class="anker" href="#stap-1-kroonjuwelen" aria-label="Link naar deze kop">#</a></h2>
 <p>De directie kwam tot twaalf en schrapte er twee ("als dat een dag plat ligt, merkt niemand het").</p>
 <table>
 <thead>
@@ -86,7 +86,7 @@ CISO, middag stap 3 met de beheerders, stap 4 aan het eind van de dag.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="stap-3-matrix">Stap 3. Matrix</h2>
+<h2 id="stap-3-matrix">Stap 3. Matrix<a class="anker" href="#stap-3-matrix" aria-label="Link naar deze kop">#</a></h2>
 <p>Ingevuld op basis van exports (Entra, endpointplatform, firewall, SIEM-regels, leverancierslijst) en
 twee uur met de beheerders. Groen alleen waar een export of testverslag ligt.</p>
 <table>
@@ -197,7 +197,7 @@ twee uur met de beheerders. Groen alleen waar een export of testverslag ligt.</p
 <li><strong>Kolom 1 P is overal geel:</strong> MFA staat aan, maar via pushnotificatie. Vier beheeraccounts hebben
   FIDO2, de overige 31 niet.</li>
 </ul>
-<h2 id="stap-4-risicolijst">Stap 4. Risicolijst</h2>
+<h2 id="stap-4-risicolijst">Stap 4. Risicolijst<a class="anker" href="#stap-4-risicolijst" aria-label="Link naar deze kop">#</a></h2>
 <p>Zeventien rode cellen. Tien in deze ronde, gesorteerd op impact en op wat nu gebeurt.</p>
 <table>
 <thead>
@@ -285,7 +285,7 @@ twee uur met de beheerders. Groen alleen waar een export of testverslag ligt.</p
 <p>Zeven rode cellen blijven open, allemaal in kolom 4 en 5 op kroonjuwelen 3, 6 en 9. De directeur
 Bedrijfsvoering heeft die als risico-eigenaar expliciet geaccepteerd tot de volgende ronde, met de
 aantekening dat regel 1 en 2 hierboven de meeste ervan meenemen.</p>
-<h2 id="wat-de-directie-eruit-haalde">Wat de directie eruit haalde</h2>
+<h2 id="wat-de-directie-eruit-haalde">Wat de directie eruit haalde<a class="anker" href="#wat-de-directie-eruit-haalde" aria-label="Link naar deze kop">#</a></h2>
 <p>Niet "we scoren 40% op detectie", maar: <em>als een van onze zeven leveranciers gehackt wordt, kunnen ze
 bij de uitkeringen, en dat merken we niet.</em> Die ene zin deed meer dan de matrix. De matrix is voor de
 CISO en de beheerders; de risicolijst is voor de lijn.</p>

@@ -8,7 +8,7 @@ table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{bor
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Netwerk en firewall analyseren uit data</span></nav><!-- /kruimelpad -->
 <h1 id="netwerk-en-firewall-analyseren-uit-data">Netwerk en firewall
 analyseren uit data</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/8.3">8.3</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/8.20">8.20</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/8.22">8.22</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/PR.AA-05">PR.AA-05</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/PR.IR-01">PR.IR-01</a><span class="kader">AVG</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A25">A25</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A32">A32</a><span class="kader">Wpg</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W06">W06</a></p><!-- /bewijs-voor -->
@@ -27,15 +27,15 @@ uit de data, niet uit het plaatje.</p>
 toegang, ontbrekend zicht en ontbrekende beperking, om die te
 verkleinen. De aanpak is vendor-neutraal; voorbeelden zijn
 indicatief.</p>
-<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
 <p>Doe dit zodra er segmentatie op papier staat en je wilt weten of hij
 ook echt geldt. Wanneer niet als eerste stap: zonder een vastgesteld
 segmentatiebeleid weet je niet waar je de meting tegen afzet. Begin dan
 bij <a href="../netwerksegmentatie/">Netwerksegmentatie</a>.</p>
 <h2 id="wat-je-exporteert-en-analyseert">Wat je exporteert en
-analyseert</h2>
+analyseert<a class="anker" href="#wat-je-exporteert-en-analyseert" aria-label="Link naar deze kop">#</a></h2>
 <h3 id="1-regels-op-feitelijk-gebruik-hit-counts">1. Regels op feitelijk
-gebruik (hit-counts)</h3>
+gebruik (hit-counts)<a class="anker" href="#1-regels-op-feitelijk-gebruik-hit-counts" aria-label="Link naar deze kop">#</a></h3>
 <p>Exporteer de regelset met <strong>hit-counters</strong> en, indien
 beschikbaar, applicatie-identificatie (bijvoorbeeld App-ID of
 Apps-Seen). Doel: vind brede of "any"-achtige regels en rangschik ze op
@@ -49,7 +49,7 @@ traffic-logs met App-ID; Cisco <code>show access-list</code> met
 hit-counts, en NetFlow of IPFIX voor het werkelijke verkeer.</li>
 </ul>
 <h3 id="2-werkplek-naar-datacenter-beweegt-verkeer-langs-de-firewall">2.
-Werkplek naar datacenter: beweegt verkeer langs de firewall?</h3>
+Werkplek naar datacenter: beweegt verkeer langs de firewall?<a class="anker" href="#2-werkplek-naar-datacenter-beweegt-verkeer-langs-de-firewall" aria-label="Link naar deze kop">#</a></h3>
 <p>Toets of oost-west-verkeer daadwerkelijk <strong>langs</strong> de
 firewall gaat, of er onderling omheen beweegt. Oost-west is verkeer
 binnen je eigen netwerk, bijvoorbeeld tussen onderdelen in het
@@ -71,7 +71,7 @@ is eveneens een risico. Toets dit; ga niet uit van "het is
 gescheiden".</p>
 </blockquote>
 <h3 id="3-beheertoegang-tot-firewall-en-core">3. Beheertoegang tot
-firewall en core</h3>
+firewall en core<a class="anker" href="#3-beheertoegang-tot-firewall-en-core" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li><strong>MFA op beheeraccounts.</strong> Tel de beheeraccounts en
 controleer of ze allemaal een koppeling met MFA, SAML of RADIUS hebben.
@@ -89,7 +89,7 @@ regelwijzigingen, en een audit-log naar een onafhankelijke
 bestemming.</li>
 </ul>
 <h3 id="4-zicht-op-versleuteld-verkeer">4. Zicht op versleuteld
-verkeer</h3>
+verkeer<a class="anker" href="#4-zicht-op-versleuteld-verkeer" aria-label="Link naar deze kop">#</a></h3>
 <p>Staat er <strong>TLS-decryptie of IPS</strong> op het uitgaande
 werkplek- en serververkeer? Zonder decryptie blijft veel moderne
 malware- en C2-verkeer onzichtbaar, want dat gaat versleuteld over 443.
@@ -100,7 +100,7 @@ bescherming van onder meer persoonsgegevens tegen cyberaanvallen. De
 Autoriteit Persoonsgegevens heeft hier meerdere opinies over
 gepubliceerd.</p>
 <h3 id="5-core-routers-en-switches-vaak-een-blinde-vlek">5. Core-routers
-en switches, vaak een blinde vlek</h3>
+en switches, vaak een blinde vlek<a class="anker" href="#5-core-routers-en-switches-vaak-een-blinde-vlek" aria-label="Link naar deze kop">#</a></h3>
 <p>Deze laag blijft in analyses vaak op "te bevestigen" staan. Toets
 actief:</p>
 <ul>
@@ -112,11 +112,11 @@ werkpleknetwerken;</li>
 de routering verkeer langs de firewall dwingt.</li>
 </ul>
 <h3 id="6-egress-hygiene-richting-derden">6. Egress-hygiene richting
-derden</h3>
+derden<a class="anker" href="#6-egress-hygiene-richting-derden" aria-label="Link naar deze kop">#</a></h3>
 <p>Brede uitgaande regels naar keten- en leveranciersnetwerken. Het
 eigen risico is vaak laag, maar het is slordig ontwerp. Versmal ze in
 eigen tempo, in dialoog met de ketenpartners.</p>
-<h3 id="7-onbeheerde-paden">7. Onbeheerde paden</h3>
+<h3 id="7-onbeheerde-paden">7. Onbeheerde paden<a class="anker" href="#7-onbeheerde-paden" aria-label="Link naar deze kop">#</a></h3>
 <p>Let op werkplekken en op VPN- of externe toegangsroutes die wel
 routering naar het datacenter kennen maar niet in beheer zijn. Stel de
 bewegingsvrijheid vast met een gerichte scan vanaf zo'n apparaat; neem
@@ -125,7 +125,7 @@ het niet aan. Zorg dat een leverancier voor regulier beheer
 <strong>nooit</strong> directe RDP via een eigen VPN zonder
 restricties.</p>
 <h2 id="hoe-je-brede-regels-veilig-versmalt">Hoe je brede regels veilig
-versmalt</h2>
+versmalt<a class="anker" href="#hoe-je-brede-regels-veilig-versmalt" aria-label="Link naar deze kop">#</a></h2>
 <p>Hetzelfde principe als bij de werkplek: <strong>meet voordat je
 ingrijpt.</strong> Zet brede regels niet blind dicht.</p>
 <ol type="1">
@@ -142,7 +142,7 @@ regels waar productie overheen rijdt, hebben een hoog break-risk;
 maatregelen op beheer en zicht (MFA op beheer, het besluit over
 decryptie) zijn meestal onafhankelijk door te voeren met laag
 risico.</p>
-<h2 id="volgorde">Volgorde</h2>
+<h2 id="volgorde">Volgorde<a class="anker" href="#volgorde" aria-label="Link naar deze kop">#</a></h2>
 <ol type="1">
 <li><strong>Nu, laag risico:</strong> MFA of passkey op alle
 beheeraccounts, out-of-band beheer, en een besluit over
@@ -154,7 +154,7 @@ any-regels versmallen via meten en schaduwregels.</li>
 <li><strong>Langere termijn:</strong> segmentatiebeleid vaststellen, en
 L7 tussen de meest kritische segmenten.</li>
 </ol>
-<h2 id="bewijs">Bewijs</h2>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li>De regelexport met hit-counts, met de brede regels gemarkeerd en
 gerangschikt op gebruik.</li>
@@ -168,7 +168,7 @@ voorafging, en wat er is teruggerold.</li>
 <li>Het besluit over TLS-decryptie met de onderbouwing, en de DPIA als
 het is ingevoerd.</li>
 </ul>
-<h2 id="zo-leg-je-het-uit">Zo leg je het uit</h2>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit<a class="anker" href="#zo-leg-je-het-uit" aria-label="Link naar deze kop">#</a></h2>
 <p>De netwerktekening is de bedoeling, niet de werkelijkheid. Deze
 analyse zegt wat er feitelijk gebeurt: welke regels echt gebruikt
 worden, of verkeer werkelijk langs de firewall komt, en wie er bij de
@@ -180,7 +180,7 @@ heeft opgeruimd.</p>
 we werk. We meten eerst wat er overheen gaat, bouwen een specifiekere
 regel ernaast, en pas als die het verkeer dekt gaat de brede regel
 dicht. Dat kost meer tijd en levert een uitrol op die niemand merkt.</p>
-<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt</h2>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
 <p>Deze handleiding hoort bij barriere <code>segment</code> uit de <a
 href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
 aanvalspaden</a>. Wat je hiermee aantoont in BIO 2.0, NIST CSF, het
@@ -195,6 +195,6 @@ werklastniveau. Deze handleiding gaat over de vraag die daaraan
 voorafgaat en erop volgt: klopt wat we denken dat er staat? De methode
 erachter staat in <a href="../meten-voordat-je-ingrijpt/">Meten voordat
 je ingrijpt</a>.</p>
-<h2 id="licentie">Licentie</h2>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
 <p><a href="../../LICENSE">EUPL-1.2</a>.</p>
 <!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/netwerkanalyse-uit-data">security/netwerkanalyse-uit-data</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

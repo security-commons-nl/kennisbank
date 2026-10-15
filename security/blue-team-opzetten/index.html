@@ -5,7 +5,7 @@ h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4e
 table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
-@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style><!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style><!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Een blue team opzetten</span></nav><!-- /kruimelpad --><div class="kop"><b>Een blue team opzetten</b> · handleiding, versie 2026-08 · security-commons-nl, EUPL-1.2<br>Bijlagen (mandaatprotocol, memo's per gremium, voorbeeldcasus) staan als markdown in dezelfde map op GitHub.</div><h1 id="een-blue-team-opzetten">Een blue team opzetten</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span></p><!-- /normen --><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</a></li><li><a href="#stap-1-een-trigger-en-een-eerlijke-foto">Stap 1. Een trigger en
 een eerlijke foto</a></li><li><a href="#stap-2-eén-opdracht-en-een-einddatum">Stap 2. Eén opdracht en
 een einddatum</a></li><li><a href="#stap-3-een-team-op-kunnen-niet-op-positie">Stap 3. Een team op
@@ -55,7 +55,7 @@ eruitziet als je het invult</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet</h2>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
 <p>Een blue team is geen nieuwe afdeling en geen vervanging van je
 IV-operatie of verbeterprogramma. Het is wel:</p>
 <ul>
@@ -75,7 +75,7 @@ is dit het instrument. Is het probleem dat je de gaten niet kent, begin
 dan bij stap 1 en stop mogelijk daar: een goede nulmeting kan al genoeg
 zijn om de lijn in beweging te krijgen.</p>
 <h2 id="stap-1-een-trigger-en-een-eerlijke-foto">Stap 1. Een trigger en
-een eerlijke foto</h2>
+een eerlijke foto<a class="anker" href="#stap-1-een-trigger-en-een-eerlijke-foto" aria-label="Link naar deze kop">#</a></h2>
 <p>Een interventieteam verdien je niet met "het zou kunnen". Je hebt
 twee dingen nodig: een aantoonbare externe trigger en een nuchter beeld
 van je eigen stand.</p>
@@ -131,7 +131,7 @@ voorbeeld met verzonnen cijfers staat in <a
 href="voorbeeldcasus.html"><code>voorbeeldcasus.md</code></a>; daar zie je
 ook hoe hard zo'n foto binnenkomt bij een directie.</p>
 <h2 id="stap-2-eén-opdracht-en-een-einddatum">Stap 2. Eén opdracht en
-een einddatum</h2>
+een einddatum<a class="anker" href="#stap-2-eén-opdracht-en-een-einddatum" aria-label="Link naar deze kop">#</a></h2>
 <p>Formuleer de opdracht in één zin: <em>de meest urgente gaten dicht,
 detectie ingericht en reactie geoefend vóór het venster sluit.</em> Meer
 hoeft niet. Alles wat je erbij zet, wordt een reden om het niet te
@@ -152,7 +152,7 @@ overdragen aan de SOC- of MDR-partner.</li>
 beproeven, zodat "kunnen ingrijpen" geen papier is.</li>
 </ol>
 <h2 id="stap-3-een-team-op-kunnen-niet-op-positie">Stap 3. Een team op
-kunnen, niet op positie</h2>
+kunnen, niet op positie<a class="anker" href="#stap-3-een-team-op-kunnen-niet-op-positie" aria-label="Link naar deze kop">#</a></h2>
 <p>Selecteer op kennis, lef en netwerk, niet op functieprofiel. Een
 klein team dat mag, doet meer dan een groot team dat moet afstemmen.</p>
 <table>
@@ -191,7 +191,7 @@ lijn (risico-advies, geen veto) · derde lijn (onafhankelijke toets)</td>
 lang, en wie in de lijn dat weet. Dedicated capaciteit plus een
 WIP-limiet is wat het team beschermt tegen "kun je dit er even bij
 doen".</p>
-<h2 id="stap-4-het-mandaat-op-één-a4">Stap 4. Het mandaat op één A4</h2>
+<h2 id="stap-4-het-mandaat-op-één-a4">Stap 4. Het mandaat op één A4<a class="anker" href="#stap-4-het-mandaat-op-één-a4" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit is de stap die het verschil maakt tussen een werkgroep en een
 interventieteam. Het mandaat regelt vooraf wat het team mag zonder
 akkoord per geval. Drie handelingen:</p>
@@ -226,7 +226,7 @@ mandaat dat achteraf wordt betwist, is geen mandaat.</p>
 eenduidige oorzaak" had. Het hoeft geen systeem te zijn; een lijst die
 iedereen kan vinden, volstaat.</p>
 <h2 id="stap-5-de-organisatie-meenemen">Stap 5. De organisatie
-meenemen</h2>
+meenemen<a class="anker" href="#stap-5-de-organisatie-meenemen" aria-label="Link naar deze kop">#</a></h2>
 <p>Een team met mandaat schrikt mensen af als ze het niet zien aankomen.
 Informeer daarom vooraf, per gremium, met dezelfde kern en een eigen
 invalshoek. De volgorde is niet toevallig: eerst wie het groen licht
@@ -288,7 +288,7 @@ dit concreet kan betekenen (drie scenario's), waarborgen, wat wij u
 vragen, wat u van ons krijgt. Vul de scenario's in met jouw diensten;
 abstracte memo's overtuigen niemand.</p>
 <h2 id="stap-6-eén-dreiging-van-begin-tot-eind">Stap 6. Eén dreiging van
-begin tot eind</h2>
+begin tot eind<a class="anker" href="#stap-6-eén-dreiging-van-begin-tot-eind" aria-label="Link naar deze kop">#</a></h2>
 <p>De werkwijze is een herhaalbaar recept: één concrete dreiging als
 drager, langs zeven stappen. Draai hem de eerste keer helemaal uit
 voordat je opschaalt; daar leer je het meest van.</p>
@@ -367,7 +367,7 @@ vinkje is een gekoppelde, actieve detectieregel én een
 beproevingsverslag. Twee vormen van bewijs: bestaan (export, contract,
 playbook) én beproeving (oefenverslag, test). Geen bewijs, dan geen
 groen.</p>
-<h2 id="stap-7-ritme-en-bord">Stap 7. Ritme en bord</h2>
+<h2 id="stap-7-ritme-en-bord">Stap 7. Ritme en bord<a class="anker" href="#stap-7-ritme-en-bord" aria-label="Link naar deze kop">#</a></h2>
 <p>Kies een werkvorm die je al kent. Een eenvoudig bord en een vast
 ritme zijn genoeg; gebruik wat er al is.</p>
 <table>
@@ -408,7 +408,7 @@ zes regels: wat is er aan de hand en waar weet je dat vandaan · wat
 raakt het (systemen, processen, mensen) · hoe urgent is het echt (laag,
 serieus, acuut) · wie beslist mee · hoe draai je het terug · wie moet
 het weten en wie schrijft het op.</p>
-<h2 id="stap-8-opschalen-en-afbouwen">Stap 8. Opschalen en afbouwen</h2>
+<h2 id="stap-8-opschalen-en-afbouwen">Stap 8. Opschalen en afbouwen<a class="anker" href="#stap-8-opschalen-en-afbouwen" aria-label="Link naar deze kop">#</a></h2>
 <p>Hoe groter de impact, hoe hoger je het optilt. Koppel de drie niveaus
 aan wat je al hebt; niet elke organisatie heeft een apart digitaal
 calamiteitenteam, en dat hoeft ook niet.</p>
@@ -451,7 +451,7 @@ gele kaarten met eigenaar, de detectieregels bij de SOC-partner, en een
 eindbeeld van de heatmap naast de nulmeting. Dat laatste is je
 verantwoording naar het bestuur.</p>
 <h2 id="de-weerstand-die-je-krijgt-en-je-antwoord">De weerstand die je
-krijgt, en je antwoord</h2>
+krijgt, en je antwoord<a class="anker" href="#de-weerstand-die-je-krijgt-en-je-antwoord" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -512,7 +512,7 @@ inhoud van mailboxen of bestanden. Alles via de FG en het register.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="uit-de-praktijk">Uit de praktijk</h2>
+<h2 id="uit-de-praktijk">Uit de praktijk<a class="anker" href="#uit-de-praktijk" aria-label="Link naar deze kop">#</a></h2>
 
 <p><strong>Het mandaat was de helft van het werk.</strong> De technische
 gaten waren in een week bekend; het duurde langer om vast te leggen wie
@@ -531,7 +531,7 @@ van het dashboard die je een vals gevoel van veiligheid gaven.</p>
 het college wilde weten: wie beslist, wat merken inwoners, wie doet
 woordvoering. De drie scenario's (spoedpatch 's avonds, een dienst een
 dag stil, een externe partij op locatie) deden meer dan elke tabel.</p>
-<h2 id="begrippen">Begrippen</h2>
+<h2 id="begrippen">Begrippen<a class="anker" href="#begrippen" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -584,7 +584,7 @@ bevinding</td>
 </tr>
 </tbody>
 </table>
-<h2 id="bronnen-en-tooling">Bronnen en tooling</h2>
+<h2 id="bronnen-en-tooling">Bronnen en tooling<a class="anker" href="#bronnen-en-tooling" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>MITRE ATT&amp;CK</strong> (attack.mitre.org): het
 referentiekader voor TTP's in stap 6.</li>
@@ -600,7 +600,7 @@ die bij deze aanpak hoort, waaronder <code>kill-chain-analysis</code>
 <code>dreigingsanalyse</code> (scenario's). In ontwikkeling; richting en
 voorbeeld, nog geen afgeronde producten.</li>
 </ul>
-<h2 id="licentie">Licentie</h2>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
 <p><a href="../../LICENSE">EUPL-1.2</a>, vrij te hergebruiken en aan te
 passen. Feedback en verbeteringen welkom via een <a
 href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">issue</a>.</p>
