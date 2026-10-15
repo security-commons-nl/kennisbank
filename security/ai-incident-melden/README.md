@@ -7,6 +7,7 @@ peildatum: 2026-09-25
 herkomst: uitgewerkt vanuit de CISO-praktijk bij gemeenten, op basis van de Cyberbeveiligingsregeling sector overheid, de AVG en de AI Act
 status: concept
 samenvatting: Bij een incident met een AI-toepassing kunnen drie meldplichten gelden: Cbw, AVG en AI Act, elk met een eigen drempel en termijn. Voor gemeenten telt onder de Cbw vooral uitval van dienstverlening van vier uur of meer; een lek via een AI-assistent haalt die drempel meestal niet, maar is vaak wel een datalek. Vijf scenario's uitgewerkt, met wat je vooraf regelt.
+bronnen: [ibd-stappenplan-voor-ai-incidenten]
 ---
 
 # Wanneer meld je een AI-incident?

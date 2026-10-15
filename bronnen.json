@@ -2788,6 +2788,48 @@
       "partij": "cip",
       "toegang": "open",
       "gezien": "2026-09-25"
+    },
+    "bzk-help-update-met-ai": {
+      "titel": "Help! Mijn huidige dienst krijgt een update met AI erin, wat te doen?",
+      "url": "https://open.overheid.nl/details/eae6482f-3fc4-42b4-acb3-7d60ce8fa336",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "bzk-handreiking-generatieve-ai": {
+      "titel": "Verantwoorde inzet van generatieve AI, overheidsbrede handreiking",
+      "url": "https://open.overheid.nl/documenten/9c273b71-cebb-4e11-b06f-fa20f7b4b90e/file",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "bzk-algoritmekader": {
+      "titel": "Algoritmekader, met de beslishulp voor risicoklasse en rol onder de AI-verordening",
+      "url": "https://minbzk.github.io/Algoritmekader/",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "vng-kenniskaart-inkoopvoorwaarden-ai": {
+      "titel": "Inkoopvoorwaarden (kenniskaart VNG AI Governancekader, met GIBIT artikel 13 en de voorwaarden van Amsterdam en Utrecht)",
+      "url": "https://aigovernance.vng.nl/knowledge_card/Inkoopvoorwaarden",
+      "partij": "vng",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "vng-kenniskaart-monitoring-ai": {
+      "titel": "Instrumenten en kaders voor implementatie, monitoring en beheer van AI en algoritmen (kenniskaart VNG AI Governancekader)",
+      "url": "https://aigovernance.vng.nl/knowledge_card/Instrumenten-en-kaders-voor-monitoring-en-beheer-van-AI-en-algoritmen",
+      "partij": "vng",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "vng-utrecht-aansluitvoorwaarden-ai": {
+      "titel": "Aansluitvoorwaarden voor algoritmen en AI, gemeente Utrecht (versie 0.98, via het VNG AI Governancekader)",
+      "url": "https://storage.googleapis.com/aigovernance.appspot.com/assets/Aansluitvoorwaarden%20%20AI%20&%20algoritmen%20-%20Gemeente%20Utrecht.pdf",
+      "partij": "vng",
+      "toegang": "open",
+      "gezien": "2026-10-15"
     }
   }
 }
