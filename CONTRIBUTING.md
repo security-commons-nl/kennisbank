@@ -156,10 +156,13 @@ python tools/leesversie.py security/<mapnaam>   # maakt index.html uit README.md
 python tools/build.py                           # controleert, bouwt de indexpagina's en de export
 ```
 
-Op het scherm krijgt elke leesversie met de standaardopmaak de huisstijl van de voorpagina: `build.py` zet daarvoor
-een huisstijlblok (met de viewport-regel) in de pagina. Afdrukken en plakken in Word gebruiken het sjabloon
-`tools/leesversie-sjabloon.html`; pas dat dus niet aan om het scherm te veranderen. Een instrument met een eigen
-opmaak krijgt het blok niet.
+Op het scherm krijgt elke pagina de huisstijl van de voorpagina. De opmaak staat op een plek,
+`tools/huisstijl.py`; `build.py`, `bouw_beleidsset.py` en `bouw_risicoregister.py` zetten hem als blok in de
+pagina, met een viewport-regel als die ontbreekt. Een leesversie krijgt de volle huisstijl, een instrument met
+een eigen ontwerp alleen de letter, de kleuren en de donkere balk met het kruimelpad. Afdrukken en plakken in
+Word gebruiken het sjabloon `tools/leesversie-sjabloon.html`; pas dat dus niet aan om het scherm te veranderen.
+Staat het kruimelpad van een instrument buiten de inhoudskolom, zet dan in de eigen CSS `--kruimel-breedte` (de
+breedte van de tekstkolom) en `--kruimel-rand`, anders plakt de tekst in de balk tegen de schermrand.
 
 `leesversie.py` is bedoeld voor nieuwe items. Een paar bestaande leesversies zijn met de hand gemaakt;
 overschrijf die alleen als je hebt gekeken wat je kwijtraakt.
