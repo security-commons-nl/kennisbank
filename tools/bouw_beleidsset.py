@@ -687,8 +687,8 @@ def stukkenblok(data: dict, stukken: dict) -> str:
     domeinen = {d["id"]: d["naam"] for d in data["profiel"]["domeinen"]}
     for s in data["bouwstenen"]:
         stuk, naam = stukken[s["domein"]], bestandsnaam(s)[:-3]
-        regels.append(f"| {domeinen[s['domein']]} | [{s['titel']}]({naam}.md) ([Word]({naam}.docx), "
-                      f"[bouwsteen](data/{s['bestand']})) | {s.get('samenvatting', '')} | {len(stuk['overheid'])} | "
+        regels.append(f"| {domeinen[s['domein']]} | [{s['titel']}]({naam}.md) "
+                      f"([bouwsteen](data/{s['bestand']})) | {s.get('samenvatting', '')} | {len(stuk['overheid'])} | "
                       f"{len(stuk['eigen']) - len(stuk['overheid'])} |")
     overheid = sum(len(stukken[s["domein"]]["overheid"]) for s in data["bouwstenen"])
     totaal = sum(len(stukken[s["domein"]]["eigen"]) for s in data["bouwstenen"])
@@ -705,32 +705,29 @@ def met_blok(readme: str, blok: str) -> str:
     return voor + BEGIN + nl + blok.replace("\n", nl) + nl + EINDE + na
 
 
-SET_DOCX = "beleidsset-informatiebeveiliging.docx"
 OVERZICHTEN = {"maatregelen": "maatregelenoverzicht", "invoeren": "invoeren"}
+GENERATORREGEL = ("Word nodig? Kies dit stuk in de [generator](beleidsset-generator.html) en download het daar, "
+                  "zonder of met je eigen antwoorden.")
 
 
-def met_downloadregel(markdown: str, naam: str) -> str:
-    """De leesversie in de kennisbank: onder de titel een link naar het Word-bestand en naar de generator."""
+def met_generatorregel(markdown: str) -> str:
+    """De leesversie in de kennisbank: onder de titel de weg naar Word. Het Word-bestand zelf maakt de generator in
+    de browser; in de repo staan geen binaire bestanden waar markdown volstaat (redactiestatuut B3)."""
     kop, rest = markdown.split("\n\n", 1)
-    return (f"{kop}\n\n[Download als Word]({naam}.docx) · [Maak je eigen versie in de generator]"
-            f"(beleidsset-generator.html)\n\n{rest}")
+    return f"{kop}\n\n{GENERATORREGEL}\n\n{rest}"
 
 
-def uitvoer(data: dict) -> dict[Path, str | bytes]:
+def uitvoer(data: dict) -> dict[Path, str]:
     stukken = genereer(data, {})
     over = overzichten(data, {}, stukken)
-    uit: dict[Path, str | bytes] = {}
+    uit: dict[Path, str] = {}
     readme = ITEM / "README.md"
     if readme.exists():
         uit[readme] = met_blok(readme.read_bytes().decode("utf-8"), stukkenblok(data, stukken))
     for s in data["bouwstenen"]:
-        naam = bestandsnaam(s)[:-3]
-        uit[ITEM / f"{naam}.md"] = met_downloadregel(stukken[s["domein"]]["markdown"], naam)
-        uit[ITEM / f"{naam}.docx"] = word.docx([stukken[s["domein"]]["markdown"]])
+        uit[ITEM / bestandsnaam(s)] = met_generatorregel(stukken[s["domein"]]["markdown"])
     for sleutel, naam in OVERZICHTEN.items():
-        uit[ITEM / f"{naam}.md"] = met_downloadregel(over[sleutel], naam)
-        uit[ITEM / f"{naam}.docx"] = word.docx([over[sleutel]])
-    uit[ITEM / SET_DOCX] = word.docx([stukken[s["domein"]]["markdown"] for s in data["bouwstenen"]])
+        uit[ITEM / f"{naam}.md"] = met_generatorregel(over[sleutel])
     uit[DATA] = json.dumps(data, ensure_ascii=False, indent=1) + "\n"
     uit[PAGINA] = pagina(data)
     uit[AI_PAGINA] = ai_pagina(data)
@@ -778,20 +775,13 @@ def main(argv: list[str]) -> int:
         return 1
     achter = []
     for pad, inhoud in uitvoer(data).items():
-        if isinstance(inhoud, bytes):
-            # Een Word-bestand: dezelfde onderdelen tellen, de compressie verschilt per zlib-versie.
-            if pad.exists() and word.zelfde_inhoud(pad.read_bytes(), inhoud):
-                continue
-            nieuw = inhoud
-        else:
-            oud = pad.read_bytes().decode("utf-8") if pad.exists() else None
-            if oud == inhoud:
-                continue
-            nieuw = inhoud.encode("utf-8")
+        oud = pad.read_bytes().decode("utf-8") if pad.exists() else None
+        if oud == inhoud:
+            continue
         if "--check" in argv:
             achter.append(pad.relative_to(ROOT).as_posix())
         else:
-            pad.write_bytes(nieuw)
+            pad.write_bytes(inhoud.encode("utf-8"))
             print(f"geschreven: {pad.relative_to(ROOT).as_posix()}")
     if achter:
         print("Loopt achter op de bouwstenen, draai python tools/bouw_beleidsset.py: " + ", ".join(achter))

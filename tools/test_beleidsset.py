@@ -540,13 +540,18 @@ class Overzichten(unittest.TestCase):
         self.assertIn("Opgesteld voor dit profiel: ", over["maatregelen"])
         self.assertIn("Zonder profiel", self.over["invoeren"])
 
-    def test_leesversies_en_word_bestanden_staan_in_de_kennisbank(self):
+    def test_leesversies_wijzen_naar_de_generator_voor_word(self):
         uit = b.uitvoer(self.data)
         for naam in list(b.OVERZICHTEN.values()) + [b.bestandsnaam(s)[:-3] for s in self.data["bouwstenen"]]:
             self.assertIn(b.ITEM / f"{naam}.md", uit)
-            self.assertIn(b.ITEM / f"{naam}.docx", uit)
-            self.assertIn(f"[Download als Word]({naam}.docx)", uit[b.ITEM / f"{naam}.md"])
-        self.assertIn(b.ITEM / b.SET_DOCX, uit)
+            self.assertIn(b.GENERATORREGEL, uit[b.ITEM / f"{naam}.md"])
+
+    def test_geen_binaire_bestanden_in_de_kennisbank(self):
+        # Redactiestatuut B3: markdown is de bron; Word maakt de generator in de browser, niet de repo.
+        uit = b.uitvoer(self.data)
+        self.assertTrue(all(isinstance(v, str) for v in uit.values()))
+        binair = [p.name for p in b.ITEM.rglob("*") if p.suffix.lower() in (".docx", ".xlsx", ".pptx", ".pdf")]
+        self.assertEqual(binair, [])
 
 
 class Word(unittest.TestCase):
