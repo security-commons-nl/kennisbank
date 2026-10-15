@@ -21,7 +21,11 @@ naslag in het midden, verwijzingen naar het werk van anderen onderaan. `tools/bu
 lijst en blokkeert als een item ontbreekt of niet bestaat.
 
 1. [Kritieke processen en herstelprioriteiten vaststellen](kritieke-processen-vaststellen/)
-2. [Een digitaal calamiteitenteam opzetten](calamiteitenteam-digitaal-opzetten/)
+2. [BIA en risicoanalyse per kritieke dienst, een basissjabloon](bia-en-risicoanalyse-sjabloon/)
+3. [Uitwijk regelen voor kritieke diensten](uitwijk-regelen/)
+4. [Bedrijfscontinuïteitsplan, een compact sjabloon](bedrijfscontinuiteitsplan-sjabloon/)
+5. [Een digitaal calamiteitenteam opzetten](calamiteitenteam-digitaal-opzetten/)
+6. [BCM uitleggen aan de bestuurder](bcm-voor-de-bestuurder/)
 
 ## Bijdragen
 
