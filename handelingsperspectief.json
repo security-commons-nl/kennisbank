@@ -73,6 +73,13 @@
     },
     {
       "barriere": "crisis",
+      "item": "bcm/bedrijfscontinuiteitsplan-sjabloon",
+      "titel": "Bedrijfscontinuïteitsplan, een compact sjabloon",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/bedrijfscontinuiteitsplan-sjabloon/"
+    },
+    {
+      "barriere": "crisis",
       "item": "security/crisiscommunicatie",
       "titel": "Cyber-crisiscommunicatie",
       "rol": "verdieping",
@@ -86,11 +93,25 @@
       "url": "https://security-commons-nl.github.io/kennisbank/bcm/kritieke-processen-vaststellen/"
     },
     {
+      "barriere": "critical",
+      "item": "bcm/bia-en-risicoanalyse-sjabloon",
+      "titel": "BIA en risicoanalyse per kritieke dienst, een basissjabloon",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/"
+    },
+    {
       "barriere": "dependencies",
       "item": "security/ketenafhankelijkheden",
       "titel": "Ketenafhankelijkheden in beeld",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/ketenafhankelijkheden/"
+    },
+    {
+      "barriere": "dependencies",
+      "item": "bcm/uitwijk-regelen",
+      "titel": "Uitwijk regelen voor kritieke diensten",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen/"
     },
     {
       "barriere": "edr",
@@ -308,6 +329,13 @@
       "titel": "Hersteltest tegen RTO en RPO",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/hersteltest/"
+    },
+    {
+      "barriere": "restore",
+      "item": "bcm/uitwijk-regelen",
+      "titel": "Uitwijk regelen voor kritieke diensten",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen/"
     },
     {
       "barriere": "review",

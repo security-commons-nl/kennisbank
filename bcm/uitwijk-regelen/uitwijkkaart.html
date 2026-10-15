@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Uitwijkkaart per kritieke dienst</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">Uitwijk regelen voor kritieke diensten</a> › <span>Uitwijkkaart per kritieke dienst</span></nav><!-- /kruimelpad -->
+<h1>Uitwijkkaart per kritieke dienst</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Uitwijk regelen voor kritieke diensten</a> · <a href="uitwijkkaart.md">Markdown-bron</a></p>
+<p>Een kaart per kritieke dienst, en een overzichtsblad over alle diensten. Wat al in de BIA staat, neem je over;
+de kaart vraagt alleen wat nieuw is. De toelichting staat in de <a href="./">handleiding</a>.</p>
+<p>Werk je in een spreadsheet: een tabblad per dienst plus het overzichtsblad. De kolommen hieronder zijn de
+velden.</p>
+<h2 id="de-kaart">De kaart<a class="anker" href="#de-kaart" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+<th>Komt uit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dienst en eigenaar</td>
+<td></td>
+<td>BIA</td>
+</tr>
+<tr>
+<td>Kriticiteitsklasse</td>
+<td></td>
+<td>BIA</td>
+</tr>
+<tr>
+<td>MTPD, RTO, RPO</td>
+<td></td>
+<td>BIA</td>
+</tr>
+<tr>
+<td>Noodniveau: wat minimaal door moet</td>
+<td></td>
+<td>BIA</td>
+</tr>
+<tr>
+<td>Minimale noodorganisatie: mensen, systemen, werkplekken</td>
+<td></td>
+<td>nieuw</td>
+</tr>
+<tr>
+<td>Laag die uitvalt</td>
+<td>eigen platform · hosting · SaaS of PaaS · leverancier · locatie · mensen</td>
+<td>nieuw</td>
+</tr>
+<tr>
+<td>Leverancier(s), contractvorm, einddatum</td>
+<td></td>
+<td>contractbeheer</td>
+</tr>
+<tr>
+<td>Concentratie: welke andere kritieke diensten zitten bij dezelfde leverancier of op hetzelfde platform</td>
+<td></td>
+<td>ketenoverzicht</td>
+</tr>
+<tr>
+<td>Wat staat buiten de dienst</td>
+<td>back-up buiten de dienst (ja of nee, waar, hoe oud) · configuratie · documentatie om op te bouwen · exportformaat</td>
+<td>nieuw</td>
+</tr>
+<tr>
+<td>Gekozen uitwijkvorm</td>
+<td>geen · bewust uitstel · analoge terugval · herstel uit back-up op schone omgeving · cold, warm, hot of gespiegeld · onderlinge uitwijk met ... · tweede leverancier · eigen landingsplaats</td>
+<td>nieuw</td>
+</tr>
+<tr>
+<td>Haalt deze vorm de RTO en het noodniveau</td>
+<td>ja of nee, met de verwachte hersteltijd</td>
+<td>nieuw</td>
+</tr>
+<tr>
+<td>Exitplan, geplande exit</td>
+<td>aanwezig ja of nee, laatst beoordeeld</td>
+<td>contract</td>
+</tr>
+<tr>
+<td>Exitplan, disruptieve onderbreking</td>
+<td>aanwezig ja of nee, laatst beoordeeld</td>
+<td>contract</td>
+</tr>
+<tr>
+<td>Contractueel geregeld</td>
+<td>dataportabiliteit · step-in · escrow · inzicht in onderaannemers · opzegging bij dreigend faillissement</td>
+<td>contract</td>
+</tr>
+<tr>
+<td>Budget voor een acute exit</td>
+<td>gereserveerd ja of nee, bedrag</td>
+<td>begroting</td>
+</tr>
+<tr>
+<td>Wie activeert, wie besluit</td>
+<td></td>
+<td>BCP</td>
+</tr>
+<tr>
+<td>Laatste test</td>
+<td>datum · soort (tafeloefening, deeltest, echte uitwijk) · gemeten hersteltijd · restpunten</td>
+<td>testverslag</td>
+</tr>
+<tr>
+<td>Volgende test en herziening</td>
+<td></td>
+<td>planning</td>
+</tr>
+</tbody>
+</table>
+<h2 id="het-overzichtsblad">Het overzichtsblad<a class="anker" href="#het-overzichtsblad" aria-label="Link naar deze kop">#</a></h2>
+<p>Een regel per dienst, alleen de kolommen waar de directie op stuurt. Rood is wat aandacht vraagt.</p>
+<table>
+<thead>
+<tr>
+<th>Dienst</th>
+<th>RTO</th>
+<th>Gekozen vorm</th>
+<th>Haalt RTO</th>
+<th>Exitplan (beide scenario's)</th>
+<th>Laatste echte test</th>
+<th>Restpunten open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Drie vragen die dit blad moet beantwoorden:</p>
+<ol>
+<li>Welke diensten halen hun hersteltijd niet met de uitwijk die er nu is?</li>
+<li>Welke clouddienst heeft geen exitplan voor onverwachte uitval?</li>
+<li>Welke uitwijk is nooit echt uitgevoerd?</li>
+</ol>
+<h2 id="voorbeeld-1-een-saas-dienst-verzonnen">Voorbeeld 1: een SaaS-dienst (verzonnen)<a class="anker" href="#voorbeeld-1-een-saas-dienst-verzonnen" aria-label="Link naar deze kop">#</a></h2>
+<p>Een gemeente gebruikt een SaaS-zaaksysteem voor vergunningen.</p>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dienst en eigenaar</td>
+<td>Omgevingsvergunningen verlenen; teamleider vergunningen</td>
+</tr>
+<tr>
+<td>MTPD, RTO, RPO</td>
+<td>MTPD 5 werkdagen (wettelijke termijnen lopen door); RTO 2 werkdagen; RPO 1 werkdag</td>
+</tr>
+<tr>
+<td>Noodniveau</td>
+<td>Spoedaanvragen en lopende termijnen bewaken; nieuwe reguliere aanvragen mogen wachten</td>
+</tr>
+<tr>
+<td>Laag die uitvalt</td>
+<td>SaaS</td>
+</tr>
+<tr>
+<td>Concentratie</td>
+<td>Dezelfde leverancier levert ook het zaaksysteem voor sociaal domein</td>
+</tr>
+<tr>
+<td>Wat staat buiten de dienst</td>
+<td>Dagelijkse export van zaakgegevens en documenten naar eigen opslag, formaat CSV plus pdf; configuratie niet</td>
+</tr>
+<tr>
+<td>Gekozen uitwijkvorm</td>
+<td>Analoge terugval op de export (termijnbewaking in een spreadsheet), herstel bij de leverancier</td>
+</tr>
+<tr>
+<td>Haalt RTO</td>
+<td>Ja voor het noodniveau; nee voor volledige dienstverlening als de leverancier stopt</td>
+</tr>
+<tr>
+<td>Exitplan</td>
+<td>Geplande exit: ja, in het contract. Disruptief: nee</td>
+</tr>
+<tr>
+<td>Contractueel</td>
+<td>Dataportabiliteit ja; step-in nee; opzegging bij dreigend faillissement nee</td>
+</tr>
+<tr>
+<td>Budget acute exit</td>
+<td>Niet gereserveerd</td>
+</tr>
+<tr>
+<td>Laatste test</td>
+<td>Tafeloefening, vorig jaar; de export bleek drie dagen oud</td>
+</tr>
+<tr>
+<td>Restpunten</td>
+<td>Disruptief exitplan opstellen; exportcontrole dagelijks automatiseren; opzeggingsrecht meenemen bij de verlenging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="voorbeeld-2-een-eigen-platform-verzonnen">Voorbeeld 2: een eigen platform (verzonnen)<a class="anker" href="#voorbeeld-2-een-eigen-platform-verzonnen" aria-label="Link naar deze kop">#</a></h2>
+<p>Een waterschap draait de financiële administratie op een eigen virtueel platform in een datacenter van een
+hostingpartij.</p>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dienst en eigenaar</td>
+<td>Betalingen aan leveranciers en uitkeringen; hoofd financiën</td>
+</tr>
+<tr>
+<td>MTPD, RTO, RPO</td>
+<td>MTPD 3 werkdagen; RTO 1 werkdag; RPO 4 uur</td>
+</tr>
+<tr>
+<td>Noodniveau</td>
+<td>Betaalbatch van vaste lasten en uitkeringen moet draaien</td>
+</tr>
+<tr>
+<td>Laag die uitvalt</td>
+<td>ICT-platform en data</td>
+</tr>
+<tr>
+<td>Wat staat buiten de dienst</td>
+<td>Onveranderbare back-up in een tweede datacenter van een andere partij; configuratie als code in een eigen repository</td>
+</tr>
+<tr>
+<td>Gekozen uitwijkvorm</td>
+<td>Warm site bij de tweede partij, herstel uit back-up</td>
+</tr>
+<tr>
+<td>Haalt RTO</td>
+<td>Ja, gemeten 14 uur bij de laatste test</td>
+</tr>
+<tr>
+<td>Laatste test</td>
+<td>Echte uitwijk van de betaalbatch, vorig najaar; terugkeer naar de primaire omgeving duurde twee dagen langer dan gepland</td>
+</tr>
+<tr>
+<td>Restpunten</td>
+<td>Terugkeerprocedure herschrijven; certificaten op de uitwijkomgeving liepen af zonder melding</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/uitwijk-regelen">bcm/uitwijk-regelen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

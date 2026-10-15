@@ -9,9 +9,9 @@ herziening toe.
 
 ## Waar het staat
 
-Zevenenzestig items: eenenveertig handleidingen, zestien aanpakken, vier sjablonen, twee beleidsstukken en
-een handvol referenties, lesmateriaal en een dataset. Per vakgebied: eenenvijftig onder `security`, negen
-onder `privacy`, vijf onder `governance`, twee onder `bcm`. De vorm ligt vast in het
+Tweeënzeventig items: tweeënveertig handleidingen, zeventien aanpakken, zes sjablonen, drie beleidsstukken
+en een handvol referenties, lesmateriaal en een dataset. Per vakgebied: eenenvijftig onder `security`, negen
+onder `privacy`, zes onder `governance`, zes onder `bcm`. De vorm ligt vast in het
 [redactiestatuut](https://github.com/security-commons-nl/.github/blob/main/REDACTIESTATUUT.md) en wordt
 gehandhaafd door `tools/build.py`: frontmatter (B2), map per stuk (B1), gegenereerde indexpagina's (B4),
 bronnenregister (B15) en de anonimizer-check op elke pull request.
@@ -29,14 +29,20 @@ naast gaat zitten. De security-annex ging naar versie 1.4: artikel 19 lid 19.1a 
 leverancier pas aan na schriftelijke toestemming, ook als ze via een update binnenkomen. De stelselkaart wordt
 sindsdien gebouwd uit de data, met een check in de CI.
 
+Op 15 oktober kwamen er vier stukken onder `bcm` bij, uitgewerkt voor een interbestuurlijke werkgroep
+bedrijfscontinuïteit: een basissjabloon voor de BIA en de risicoanalyse per kritieke dienst, een handleiding
+om uitwijk te regelen (met de uitwijkkaart als invulformat, ook voor clouddiensten), een compact
+bedrijfscontinuïteitsplan voor elke bestuurslaag, en een twee-pager om BCM aan de bestuurder uit te leggen.
+
 ## Wat open staat
 
 **De handleidingen afmaken.** Niet elke barrière uit de aanvalspaden heeft een handleiding. De lijst van wat
 nog gevraagd is, staat als `gevraagd.json` in de aanvalspaden-repository; die lijst is afgeleid, dus hij
 loopt niet achter.
 
-**BCM vullen.** Twee items onder `bcm` terwijl de voorpagina het vakgebied wel belooft. Een BCP-sjabloon,
-een risicosessie per proces of een calamiteitenplan is genoeg om te beginnen.
+**BCM verder vullen.** Zes items onder `bcm`, van kritieke processen tot het continuïteitsplan. Wat nog
+ontbreekt: een uitgewerkte oefening per scenario uit het plan, en een tweede herkomst; alle zes komen uit
+dezelfde hoek.
 
 **Meer dan één herkomst.** Vrijwel alles komt nog uit dezelfde hoek. Een commons met kennis uit één
 organisatie is een archief, geen commons. Het plan voor de AI-securitylijn (hieronder) zoekt die tweede

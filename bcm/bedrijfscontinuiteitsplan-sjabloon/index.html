@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Bedrijfscontinuïteitsplan,
+een compact
+sjabloon</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <span>Bedrijfscontinuïteitsplan, een compact sjabloon</span></nav><!-- /kruimelpad -->
+<h1
+id="bedrijfscontinuïteitsplan-een-compact-sjabloon">Bedrijfscontinuïteitsplan,
+een compact sjabloon</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span><span class="norm">ISO 22301</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.24">5.24</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.27">5.27</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.29">5.29</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.IM-02">ID.IM-02</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/RC.CO-03">RC.CO-03</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/RC.RP-01">RC.RP-01</a><span class="kader">AVG</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A32">A32</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A33">A33</a><span class="kader">Wpg</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W30">W30</a></p><!-- /bewijs-voor -->
+<blockquote>
+<p><strong>Barriere:</strong> oefen het ransomware- en
+crisisherstelplan. Dit is het plan zelf, in een vorm die je kunt
+oefenen: wie besluit, in welke volgorde je herstelt, en wat je op papier
+nodig hebt als de systemen weg zijn.</p>
+</blockquote>
+<p>Een bedrijfscontinuïteitsplan wordt gelezen op de slechtste dag van
+het jaar, door mensen onder druk, vaak zonder de systemen waar het plan
+op staat. Dat bepaalt de vorm: kort, met tabellen in plaats van proza,
+een actielijst per fase, en alles wat je op de dag zelf moet opzoeken
+als bijlage op papier.</p>
+<p>Het sjabloon staat in <a href="bcp-sjabloon.html">bcp-sjabloon.md</a>.
+Het is generiek voor de publieke sector; waar de bestuurslaag verschil
+maakt, staat het als invulveld.</p>
+<h2 id="wanneer-gebruik-je-het">Wanneer gebruik je het<a class="anker" href="#wanneer-gebruik-je-het" aria-label="Link naar deze kop">#</a></h2>
+<p>Als er een lijst kritieke diensten met hersteltijden ligt, of die in
+dezelfde ronde ontstaat. Tabel 1 van het plan wordt gevuld vanuit de
+BIA; het <a href="../bia-en-risicoanalyse-sjabloon/">BIA-sjabloon</a>
+levert precies die kolommen.</p>
+<p>Heb je nog geen team dat een digitale calamiteit bestuurt, begin dan
+bij <a href="../calamiteitenteam-digitaal-opzetten/">een digitaal
+calamiteitenteam opzetten</a>. Dat stuk gaat over het team en de
+werkwijze; dit sjabloon is het plan dat dat team gebruikt.</p>
+<h2 id="hoe-het-plan-is-opgebouwd">Hoe het plan is opgebouwd<a class="anker" href="#hoe-het-plan-is-opgebouwd" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Deel</th>
+<th>Hoofdstuk</th>
+<th>Wat erin staat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weten</td>
+<td>1. Crisisteam</td>
+<td>Samenstelling met plaatsvervangers, taken, vergaderplaats en
+uitwijk</td>
+</tr>
+<tr>
+<td></td>
+<td>2. Kritieke diensten</td>
+<td>Tabel 1: herstelvolgorde met MTPD, RTO, RPO en noodniveau. Tabel 2:
+wat elke dienst nodig heeft, met de enkelvoudige afhankelijkheden</td>
+</tr>
+<tr>
+<td>Doen</td>
+<td>3. Opschaling en activering</td>
+<td>Wie meldt, wie besluit, en de drempels</td>
+</tr>
+<tr>
+<td></td>
+<td>4. De drie fasen</td>
+<td>Actielijst voor de acute fase, het noodbedrijf en de terugkeer</td>
+</tr>
+<tr>
+<td></td>
+<td>5. Scenario's</td>
+<td>Terugvalmaatregelen bij uitval van mensen, huisvesting,
+nutsvoorzieningen, ICT en leveranciers</td>
+</tr>
+<tr>
+<td></td>
+<td>6. Noodcommunicatie en meldingen</td>
+<td>Kanalen buiten de eigen ICT, de wettelijke meldingen met termijn,
+kernboodschappen</td>
+</tr>
+<tr>
+<td>Onderhouden</td>
+<td>7. OTO en beheer</td>
+<td>Wat je hoe vaak oefent en test</td>
+</tr>
+<tr>
+<td></td>
+<td>8. Waar het plan aan voldoet</td>
+<td>De verplichtingen uit Cbw, Wwke en BIO2, met de plek in het
+plan</td>
+</tr>
+<tr>
+<td>Bijlagen</td>
+<td>1 tot en met 4</td>
+<td>Bereikbaarheidslijst, logboek, crisiskoffer, actiekaarten</td>
+</tr>
+</tbody>
+</table>
+<h2 id="drie-keuzes-die-het-verschil-maken">Drie keuzes die het verschil
+maken<a class="anker" href="#drie-keuzes-die-het-verschil-maken" aria-label="Link naar deze kop">#</a></h2>
+<ol type="1">
+<li><strong>Een exemplaar buiten de eigen ICT.</strong> Een plan dat
+alleen op het netwerk staat, is weg op het moment dat je het nodig hebt.
+Drie plekken: de crisiskoffer, bij elk lid van het crisisteam, en de
+uitwijklocatie.</li>
+<li><strong>De enkelvoudige afhankelijkheid als eerste kolom die je
+leest.</strong> Tabel 2 eindigt met de vraag of een dienst op een
+persoon, een systeem of een leverancier drijft. Dat is de dienst waar
+het plan het eerst over gaat, en meestal de dienst waar niemand aan
+dacht.</li>
+<li><strong>De meldplicht loopt los van de opschaling.</strong> Een
+significant incident onder de Cbw moet je binnen 24 uur melden, ook als
+het crisisteam nog niet bijeen is. Wie dat doet en hoe die persoon
+bereikbaar is, staat in hoofdstuk 6.2 en in de bereikbaarheidslijst.
+Welke organisaties onder de Cbw vallen staat in <a
+href="../../governance/val-ik-onder-de-cbw/">val ik onder de
+Cbw</a>.</li>
+</ol>
+<h2 id="wat-je-per-bestuurslaag-invult">Wat je per bestuurslaag
+invult<a class="anker" href="#wat-je-per-bestuurslaag-invult" aria-label="Link naar deze kop">#</a></h2>
+<p>Het sjabloon laat open wat per laag anders is:</p>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Gemeente, provincie, waterschap</th>
+<th>Rijk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wie het plan vaststelt</td>
+<td>Gemeentesecretaris, provinciesecretaris, secretaris-directeur</td>
+<td>Secretaris-generaal of directeur van het onderdeel</td>
+</tr>
+<tr>
+<td>Opschaling</td>
+<td>Eigen crisisorganisatie, zo nodig de veiligheidsregio</td>
+<td>Departementaal coördinatiecentrum crisisbeheersing, bij nationale
+opschaling het nationale crisiscentrum</td>
+</tr>
+<tr>
+<td>Prioritering van diensten</td>
+<td>Uitkomst van de BIA</td>
+<td>Uitkomst van de BIA, naast de classificatie van te beschermen
+belangen</td>
+</tr>
+<tr>
+<td>Rubricering van het plan</td>
+<td>Eigen classificatiebeleid</td>
+<td>Voorschrift vertrouwelijkheid rijksdienst</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waar-dit-vandaan-komt">Waar dit vandaan komt<a class="anker" href="#waar-dit-vandaan-komt" aria-label="Link naar deze kop">#</a></h2>
+<p>De opbouw (crisisteam, opschaling, drie fasen, scenario's, logboek,
+koffer, actiekaarten) volgt een Engelstalig BCP-sjabloon voor
+organisaties van Leicestershire County Council (Verenigd Koninkrijk). De
+tekst is nieuw geschreven voor de Nederlandse publieke sector.
+Weggelaten zijn de Britse delen over bommeldingen en verdachte post, die
+in Nederland in het calamiteitenplan van het gebouw staan. Toegevoegd
+zijn de wettelijke meldingen, de BIO2-maatregelen, het toelaatbare
+dataverlies (RPO) en een eigen hoofdstuk noodcommunicatie. De
+vertaalkeuzes per term staan in de <a
+href="termenlijst.html">termenlijst</a>.</p>
+<p>De IBD heeft voor gemeenten een uitgebreider model continuïteitsplan
+en zeven scenariokaarten voor het crisisteam; die staan hieronder bij
+<em>Wat anderen al hebben</em>. Dit sjabloon is korter en niet
+gemeentelijk van opzet. De scenariokaarten zijn goed te gebruiken naast
+hoofdstuk 5.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
+<p>Dit sjabloon hoort bij barriere <code>crisis</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>, als verdieping naast <a
+href="../../security/crisisoefening/">crisisoefening voor ransomware en
+uitval</a> en <a href="../calamiteitenteam-digitaal-opzetten/">een
+digitaal calamiteitenteam opzetten</a>. De uitwijk per dienst (hoofdstuk
+5.4) werk je uit met de <a href="../uitwijk-regelen/">uitwijkkaart</a>.
+Voor de communicatie naar buiten: <a
+href="../../security/crisiscommunicatie/">cyber-crisiscommunicatie</a>.</p>
+<h2 id="wat-er-in-deze-map-staat">Wat er in deze map staat<a class="anker" href="#wat-er-in-deze-map-staat" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li><a href="bcp-sjabloon.html">bcp-sjabloon.md</a>: het plan, met vier
+bijlagen</li>
+<li><a href="termenlijst.html">termenlijst.md</a>: Engelse BCM-termen en
+de Nederlandse term in het sjabloon, met de vertaalkeuzes</li>
+</ul>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#1f4e79}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsplan/">Model Continuïteitsplan BIO (BCM)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsstrategie/">Model Continuïteitsstrategie BIO (BCM)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-bedrijfscontinuiteitsbeheer/">Handreiking Bedrijfscontinuïteitsbeheer (BCM)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-1-uitval-gebouw/">Scenariokaart 1 – Uitval gebouw</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-2-uitval-door-stroomstoring/">Scenariokaart 2 – Uitval door stroomstoring</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-3-uitval-ict/">Scenariokaart 3 – Uitval ICT</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-7-uitval-personeel/">Scenariokaart 7 – Uitval Personeel</a> <span class="partij">· IBD</span></li><li><a href="https://www.cip-overheid.nl/producten-en-diensten/ketencommunicatiebijcrises">Ketencommunicatie bij crisis</a> <span class="partij">· CIP</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/bedrijfscontinuiteitsplan-sjabloon">bcm/bedrijfscontinuiteitsplan-sjabloon</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

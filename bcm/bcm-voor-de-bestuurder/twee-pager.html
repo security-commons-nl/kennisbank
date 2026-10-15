@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>BCM voor de bestuurder</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">BCM uitleggen aan de bestuurder</a> › <span>BCM voor de bestuurder</span></nav><!-- /kruimelpad -->
+<h1>BCM voor de bestuurder</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">BCM uitleggen aan de bestuurder</a> · <a href="twee-pager.md">Markdown-bron</a></p>
+<p><strong>Wat bedrijfscontinuïteit is, wat de wet erbij zegt, en wat u zelf doet.</strong> Twee pagina's voor de ambtelijke
+top van een overheidsorganisatie. Vervang de voorbeelden door diensten van uw eigen organisatie; de
+toelichting staat in de <a href="./">README</a>.</p>
+<h2 id="1-de-vraag-waar-het-om-gaat">1. De vraag waar het om gaat<a class="anker" href="#1-de-vraag-waar-het-om-gaat" aria-label="Link naar deze kop">#</a></h2>
+<p>Uw organisatie levert diensten waar inwoners, bedrijven en andere overheden op rekenen. Sommige kunnen een
+week stilliggen zonder dat iemand het merkt. Andere leggen binnen een dag iets stil dat niet stil mag liggen:
+een uitkering die niet wordt betaald, een vergunning die niet binnen de termijn valt, een register waar de
+keten op wacht. Bedrijfscontinuïteitsmanagement, kortweg BCM, beantwoordt een vraag: welke diensten zijn dat,
+en wat gebeurt er als ze uitvallen.</p>
+<p>Die vraag is dringender dan tien jaar geleden, omdat de analoge terugval is afgebouwd. De dienst is de ICT
+geworden. Uitval bij een leverancier of een ketenpartner is daarmee uitval van uw dienstverlening, ook als er
+bij u zelf niets kapot is.</p>
+<h2 id="2-bcm-in-vier-vragen">2. BCM in vier vragen<a class="anker" href="#2-bcm-in-vier-vragen" aria-label="Link naar deze kop">#</a></h2>
+<ol>
+<li id="punt-2-1"><strong>Welke diensten zijn werkelijk kritiek?</strong> Zonder die keuze beschermt u alles een beetje en niets goed. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2"><strong>Hoe lang mogen ze uitvallen?</strong> Een getal per dienst, vastgesteld door de lijn en niet door de techniek.
+   Dat getal stuurt alle investeringen die erachter hangen. <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3"><strong>Waar hangen ze van af?</strong> ICT, leveranciers, personeel, gebouwen. Meestal blijkt hier dat een dienst op
+   een schakel drijft die niemand had aangewezen. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4"><strong>Werkt het?</strong> Het bewijs zit in de hersteltest en de oefening. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<p>Een managementsysteem voor bedrijfscontinuïteit is de vaste cyclus die die vier antwoorden actueel houdt:
+vaststellen, plannen, oefenen, testen, evalueren, bijstellen. De norm ISO 22301 beschrijft die cyclus.</p>
+<h2 id="3-wat-de-wet-erbij-zegt">3. Wat de wet erbij zegt<a class="anker" href="#3-wat-de-wet-erbij-zegt" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>De Cyberbeveiligingswet (Cbw)</strong>, de Nederlandse uitwerking van de Europese NIS2-richtlijn, is op 15 augustus
+2026 in werking getreden. Voor de overheid betekent dat: registreren, een zorgplicht met passende maatregelen
+inclusief de keten, significante incidenten binnen 24 uur melden, en een opleidingsplicht voor het bestuur.</p>
+<p><strong>De Wet weerbaarheid kritieke entiteiten (Wwke)</strong> werkt via aanwijzing. Pas na aanwijzing lopen de termijnen.
+Een aangewezen organisatie moet onder meer een crisismanagementplan en een bedrijfscontinuïteitsplan hebben,
+en die oefenen.</p>
+<p><strong>De BIO2</strong> is het normenkader waarmee de overheid de zorgplicht invult. Vier maatregelen raken BCM direct:
+informatiebeveiliging tijdens een verstoring (5.29), ICT-gereedheid voor bedrijfscontinuïteit (5.30),
+back-up (8.13) en redundantie (8.14).</p>
+<h3 id="wie-is-het-bestuur">Wie is "het bestuur"?<a class="anker" href="#wie-is-het-bestuur" aria-label="Link naar deze kop">#</a></h3>
+<p>Artikel 24 van de Cbw wijst per bestuurslaag aan wie het bestuur is: bij gemeenten het college van burgemeester
+en wethouders, bij provincies gedeputeerde staten, bij ministeries de minister. Dat bestuur keurt de
+maatregelen goed en volgt zelf een opleiding. Op een bestuurder die dat nalaat kan de toezichthouder een
+sanctie leggen.</p>
+<p><strong>Wat bij u ligt.</strong> De wet adresseert de ambtelijke top niet in dat artikel. U bent wel degene die zorgt dat
+het bestuur kan tekenen en weet waarvoor: risicoanalyse gedaan, keuze voorgelegd, opleiding geregeld, bewijs op
+orde. En u stuurt op het deel waarvoor geen wet nodig is: of de dienst doorloopt.</p>
+<h2 id="4-waarom-dit-ook-zonder-de-wet-op-uw-bord-ligt">4. Waarom dit ook zonder de wet op uw bord ligt<a class="anker" href="#4-waarom-dit-ook-zonder-de-wet-op-uw-bord-ligt" aria-label="Link naar deze kop">#</a></h2>
+<p>De wetgever heeft opgeschreven welke maat hij aanlegt. Voor de sector overheid is een verstoring onder de Wwke
+onder meer aanzienlijk bij vier uur uitval van een essentiële dienst. Die maat is ook zonder aanwijzing bruikbaar, want
+hij zegt wat de buitenwereld van een overheidsdienst verwacht.</p>
+<p>Continuïteit is daarnaast een keuze over geld en prioriteit, en die keuze ligt bij de bedrijfsvoering. Een
+hersteltijd van vier uur kost een veelvoud van een hersteltijd van twee dagen. Wie dat niet expliciet kiest,
+kiest impliciet, en merkt het pas tijdens de storing.</p>
+<h2 id="5-drie-vragen-die-u-stelt">5. Drie vragen die u stelt<a class="anker" href="#5-drie-vragen-die-u-stelt" aria-label="Link naar deze kop">#</a></h2>
+<p>Aan wie over continuïteit rapporteert:</p>
+<ol>
+<li id="punt-5-1">Welke diensten staan op onze kritieke lijst, en wanneer is die lijst voor het laatst vastgesteld? <a class="anker" href="#punt-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-2">Wanneer is er voor het laatst een herstel getest, en wat ging er toen mis? <a class="anker" href="#punt-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-3">Wat zou er nu gebeuren als onze grootste leverancier een week uitvalt? <a class="anker" href="#punt-5-3" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<p>Op geen van de drie is "dat staat in een plan" het antwoord. Vraag door tot er een datum in het antwoord zit.</p>
+<h2 id="6-vier-stappen-die-u-zelf-zet">6. Vier stappen die u zelf zet<a class="anker" href="#6-vier-stappen-die-u-zelf-zet" aria-label="Link naar deze kop">#</a></h2>
+<ol>
+<li id="punt-6-1"><strong>Laat de lijst maken:</strong> welke diensten zijn kritiek, met per dienst een hersteltijd. Vraag om hooguit tien. <a class="anker" href="#punt-6-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-6-2"><strong>Beleg het eigenaarschap in de lijn.</strong> De eigenaar van de dienst is verantwoordelijk voor de continuïteit
+   ervan, zodat het geen ICT-onderwerp wordt dat elders ligt. <a class="anker" href="#punt-6-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-6-3"><strong>Laat een dienst testen en woon de evaluatie bij.</strong> Een test zegt meer over de stand dan een kast vol
+   plannen. <a class="anker" href="#punt-6-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-6-4"><strong>Zet het op de agenda waar het hoort:</strong> het overleg dat over bedrijfsvoering en geld gaat, met een vast
+   ritme. <a class="anker" href="#punt-6-4" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/bcm-voor-de-bestuurder">bcm/bcm-voor-de-bestuurder</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
