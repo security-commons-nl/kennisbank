@@ -57,6 +57,12 @@ resultaat te delen in plaats van in een la te leggen.
 
 Beide JSON-bestanden bevatten een `meta`-blok met het vocabulaire, zodat de codes zelfverklarend zijn.
 
+**De JSON is de bron, de pagina wordt eruit gebouwd.** `index.html` heeft de data ingebakken zodat hij
+offline werkt; [`tools/bouw_stelselkaart.py`](../../tools/bouw_stelselkaart.py) schrijft die opnieuw uit
+de twee JSON-bestanden. Wijzig dus een regel in de JSON, nooit de data in de pagina, en draai daarna
+`python tools/bouw_stelselkaart.py`. Met `--check` meldt het script of pagina en data uit elkaar lopen; de
+tests staan in [`tools/test_stelselkaart.py`](../../tools/test_stelselkaart.py).
+
 ### De vijf weergaven in `index.html`
 
 | | Wat het laat zien |
