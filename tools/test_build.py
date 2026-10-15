@@ -835,8 +835,9 @@ class Huisstijl(unittest.TestCase):
         self.assertNotIn("<style>oud</style>", nieuw)
         self.assertEqual(nieuw.count(build.HUISSTIJL_START), 1)
 
-    def test_brede_tabel_scrolt_op_een_smal_scherm(self):
-        self.assertIn("@media (max-width:700px){table{display:block;overflow-x:auto", build.HUISSTIJL_CSS)
+    def test_brede_tabel_en_code_scrollen_de_pagina_niet(self):
+        self.assertIn("display:block;overflow-x:auto;max-width:100%;width:fit-content", build.HUISSTIJL_CSS)
+        self.assertIn("pre{white-space:pre-wrap", build.HUISSTIJL_CSS)
         self.assertNotIn("overflow:hidden", build.HUISSTIJL_CSS)
 
 

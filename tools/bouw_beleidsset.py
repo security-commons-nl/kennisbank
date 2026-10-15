@@ -732,7 +732,9 @@ def uitvoer(data: dict) -> dict[Path, str]:
     uit[DATA] = json.dumps(data, ensure_ascii=False, indent=1) + "\n"
     # Huisstijl van de voorpagina op het scherm (tools/huisstijl.py); de eigen opbouw blijft staan.
     uit[PAGINA] = huisstijl.zet(pagina(data), "instrument")
-    uit[AI_PAGINA] = huisstijl.zet(ai_pagina(data), "instrument")
+    # De AI-pagina niet: die heeft een CSP op de hash van zijn eigen stijl, een los blok wordt geblokkeerd.
+    # Zijn kop staat in ai.css al in de huisstijl (donkerblauw, zoals procescheck en CSIR).
+    uit[AI_PAGINA] = ai_pagina(data)
     return uit
 
 

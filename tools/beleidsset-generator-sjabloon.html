@@ -15,7 +15,7 @@ p{margin:.5em 0}a{color:var(--accent)}
 fieldset{border:1px solid var(--lijn);border-radius:4px;margin:.6em 0;padding:.5em .8em}
 legend{font-weight:bold;padding:0 .3em}
 fieldset .toel{font-size:9.5pt;color:var(--zacht);margin:.1em 0 .3em}
-fieldset label{display:inline-flex;gap:.3em;align-items:center;margin:.15em 1em .15em 0;font-size:10.5pt}
+fieldset label{display:flex;gap:.45em;align-items:flex-start;margin:.25em 0;font-size:10.5pt}fieldset label input{margin-top:.2em;flex:none}
 .vragen{display:grid;grid-template-columns:repeat(auto-fill,minmax(20em,1fr));gap:0 1em}
 .knoppen{display:flex;flex-wrap:wrap;gap:.5em;margin:1em 0}
 button{border:1px solid var(--accent);background:var(--accent);color:var(--achter);padding:.4em .9em;border-radius:4px;font:inherit;cursor:pointer}
@@ -46,7 +46,7 @@ table.voorstel th{background:var(--vlak)}
 .voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
 @media print{body{max-width:none;margin:0}form,.knoppen,.lijst,.kruimel{display:none}@page{size:A4;margin:2cm}}
 </style></head><body>
-<nav class="kruimel"><a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › Generator</nav>
+<nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging</a> › <span>Generator</span></nav>
 <h1>Beleidsset op maat</h1>
 <p>Beantwoord de vragen die je kunt beantwoorden en kies <strong>Maak de set</strong>. Je krijgt in één keer
 <strong>21 beleidsstukken</strong>: het strategisch informatiebeveiligingsbeleid en twintig tactische stukken, één per
