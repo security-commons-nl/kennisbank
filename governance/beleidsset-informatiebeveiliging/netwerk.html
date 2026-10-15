@@ -2,13 +2,13 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Beleid netwerkbeveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid netwerkbeveiliging</span></nav><!-- /kruimelpad -->
-<h1>Beleid netwerkbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="netwerk.md">Markdown-bron</a></p>
+<h1>Beleid netwerkbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="netwerk.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
 <table>
 <thead>
 <tr>
@@ -40,7 +40,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
-<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het ontwerp, de inrichting, het
 beheer en de bewaking van de netwerken van de organisatie, inclusief wifi en externe koppelingen. Het doel
 is dat een aanvaller die ergens binnenkomt niet vrij verder kan, dat aanvallen op het netwerk worden gezien
@@ -59,7 +59,7 @@ het toetsen via het beleid contractbeheer.</p>
 cryptografische middelen in het algemeen (beleid cryptografie), de beheeraccounts zelf (beleid logische
 toegangsbeveiliging) en de fysieke beveiliging van patchkasten en bekabeling (beleid fysieke toegang en
 beveiliging).</p>
-<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
 <li>Het netwerk is opgedeeld in segmenten. Verkeer tussen segmenten is standaard dicht en wordt alleen
    toegestaan waar dat nodig is.</li>
@@ -70,150 +70,150 @@ beveiliging).</p>
 <li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels</h2>
-<h3>3.1 Netwerkontwerp en segmentatie</h3>
+<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="3-1-netwerkontwerp-en-segmentatie">3.1 Netwerkontwerp en segmentatie<a class="anker" href="#3-1-netwerkontwerp-en-segmentatie" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li><strong>[netwerkarchitect]</strong> houdt een
+<li id="eis-3-1-1"><strong>[netwerkarchitect]</strong> houdt een
    actueel netwerkontwerp bij met de segmenten, hun beveiligingsniveau, de koppelpunten en de toegestane
    verkeersstromen, werkt het bij bij elke grote wijziging en beoordeelt het ten minste jaarlijks; de
-   beoordeling is vastgelegd. [8.22.01]</li>
-<li>Elk segment heeft een vastgelegd beveiligingsniveau, afgeleid van het hoogste impactniveau van de
+   beoordeling is vastgelegd. [8.22.01] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-2">Elk segment heeft een vastgelegd beveiligingsniveau, afgeleid van het hoogste impactniveau van de
    informatie en systemen erin. Ten minste gescheiden zijn: gebruikers, servers, beheer, gasten en
-   voorzieningen van derden. [8.22.01]</li>
-<li><strong>[netwerkbeheer]</strong> beoordeelt de
+   voorzieningen van derden. [8.22.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-3"><strong>[netwerkbeheer]</strong> beoordeelt de
    firewallregels tussen segmenten en naar buiten ten minste jaarlijks en verwijdert regels zonder eigenaar
-   of zonder aantoonbare noodzaak; elke regel heeft een eigenaar en een reden in de regelset. [8.21.01, 8.22.01]</li>
-<li>Werkplekken kunnen geen verkeer tussen segmenten doorsturen; <strong>[netwerkbeheer]</strong> dwingt dat af in de
-   configuratie van de werkplek en van de switches. [8.22.01]</li>
+   of zonder aantoonbare noodzaak; elke regel heeft een eigenaar en een reden in de regelset. [8.21.01, 8.22.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-4">Werkplekken kunnen geen verkeer tussen segmenten doorsturen; <strong>[netwerkbeheer]</strong> dwingt dat af in de
+   configuratie van de werkplek en van de switches. [8.22.01] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Heb je operationele technologie (OT)? «Beperkt: gebouwbeheer, toegang, camera's»</strong></p>
 <ol start="5">
-<li>Gebouwbeheer, toegangscontrole en camera's staan in een eigen segment met een eigen beveiligingsniveau.
+<li id="eis-3-1-5">Gebouwbeheer, toegangscontrole en camera's staan in een eigen segment met een eigen beveiligingsniveau.
    Vanuit dit segment is er geen verbinding met het kantoornetwerk; de leverancier krijgt beheertoegang
-   alleen via de beheerroute van de organisatie. [8.22.01]</li>
+   alleen via de beheerroute van de organisatie. [8.22.01] <a class="anker" href="#eis-3-1-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Heb je operationele technologie (OT)? «Substantieel: bruggen, gemalen, verkeer, zuivering»</strong></p>
 <ol start="6">
-<li>Operationele technologie (gemalen, bruggen, sluizen, verkeersinstallaties, zuivering) staat in een
+<li id="eis-3-1-6">Operationele technologie (gemalen, bruggen, sluizen, verkeersinstallaties, zuivering) staat in een
    eigen netwerk, gescheiden van het kantoornetwerk volgens een zonemodel, bijvoorbeeld uit IEC 62443.
    Elke zone heeft een beveiligingsniveau en elke verbinding tussen zones loopt via een gecontroleerd
-   koppelpunt dat de netwerkarchitect in het ontwerp vastlegt. [8.22.01]</li>
-<li>Het OT-netwerk heeft geen directe verbinding met internet. Toegang op afstand, ook van leveranciers,
-   verloopt via een aparte beheeromgeving met MFA, op verzoek aangezet en per sessie gelogd. [8.20.02]</li>
-<li>Verkeer van en naar het OT-netwerk wordt apart bewaakt met detectie die OT-protocollen herkent. [8.21.02]</li>
+   koppelpunt dat de netwerkarchitect in het ontwerp vastlegt. [8.22.01] <a class="anker" href="#eis-3-1-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-7">Het OT-netwerk heeft geen directe verbinding met internet. Toegang op afstand, ook van leveranciers,
+   verloopt via een aparte beheeromgeving met MFA, op verzoek aangezet en per sessie gelogd. [8.20.02] <a class="anker" href="#eis-3-1-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-8">Verkeer van en naar het OT-netwerk wordt apart bewaakt met detectie die OT-protocollen herkent. [8.21.02] <a class="anker" href="#eis-3-1-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.2 Netwerkcomponenten en beheer</h3>
+<h3 id="3-2-netwerkcomponenten-en-beheer">3.2 Netwerkcomponenten en beheer<a class="anker" href="#3-2-netwerkcomponenten-en-beheer" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Netwerkcomponenten voldoen ten minste aan het beveiligingsniveau van het segment waarin ze staan: een
+<li id="eis-3-2-1">Netwerkcomponenten voldoen ten minste aan het beveiligingsniveau van het segment waarin ze staan: een
    component in een segment met impactniveau kritiek of hoger heeft de hardening, firmware-updates en
    beheerbeveiliging die bij dat niveau horen. <strong>[netwerkbeheer]</strong> legt per component vast welke
-   hardeningsrichtlijn geldt. [8.20.01]</li>
-<li>De beheerinterfaces van netwerkcomponenten zijn alleen bereikbaar vanuit een apart beheersegment en
+   hardeningsrichtlijn geldt. [8.20.01] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-2">De beheerinterfaces van netwerkcomponenten zijn alleen bereikbaar vanuit een apart beheersegment en
    niet vanuit het gebruikersnetwerk of internet. Beheer gebeurt met persoonsgebonden accounts en MFA.
-   [8.20.02]</li>
-<li><strong>[netwerkbeheer]</strong> verwijdert standaardwachtwoorden en ongebruikte diensten op netwerkcomponenten voor
+   [8.20.02] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-3"><strong>[netwerkbeheer]</strong> verwijdert standaardwachtwoorden en ongebruikte diensten op netwerkcomponenten voor
    ingebruikname. De configuratie van elke component staat in een back-up en wijzigingen lopen via
-   wijzigingsbeheer. [8.20.01]</li>
-<li>Een apparaat krijgt pas toegang tot het bedrijfsnetwerk na authenticatie van apparaat en gebruiker, via
-   netwerktoegangscontrole die <strong>[netwerkbeheer]</strong> inricht. [8.20.02]</li>
-<li><strong>[netwerkbeheer]</strong> patcht netwerkcomponenten binnen de termijnen uit het beleid kwetsbaarheden en
-   patchmanagement en vervangt componenten die geen beveiligingsupdates meer krijgen. [8.20.01]</li>
+   wijzigingsbeheer. [8.20.01] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-4">Een apparaat krijgt pas toegang tot het bedrijfsnetwerk na authenticatie van apparaat en gebruiker, via
+   netwerktoegangscontrole die <strong>[netwerkbeheer]</strong> inricht. [8.20.02] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-5"><strong>[netwerkbeheer]</strong> patcht netwerkcomponenten binnen de termijnen uit het beleid kwetsbaarheden en
+   patchmanagement en vervangt componenten die geen beveiligingsupdates meer krijgen. [8.20.01] <a class="anker" href="#eis-3-2-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
 <ol start="6">
-<li>De eigen netwerkbeheerders beheren de componenten. Een beheerder die netwerkcomponenten beheert,
-   beoordeelt niet zelf de monitoring van dat beheer; de CISO wijst aan wie dat doet. [8.20.02]</li>
+<li id="eis-3-2-6">De eigen netwerkbeheerders beheren de componenten. Een beheerder die netwerkcomponenten beheert,
+   beoordeelt niet zelf de monitoring van dat beheer; de CISO wijst aan wie dat doet. [8.20.02] <a class="anker" href="#eis-3-2-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
 <ol start="7">
-<li>De netwerkdienst is uitbesteed. Het contract legt de beveiligingseisen uit dit beleid vast:
+<li id="eis-3-2-7">De netwerkdienst is uitbesteed. Het contract legt de beveiligingseisen uit dit beleid vast:
    segmentatie, beheer via een apart beheersegment, patchtermijnen voor netwerkcomponenten, de levering
-   van logging en een jaarlijkse rapportage waarmee de leverancier aantoont dat hij eraan voldoet. [8.20.01, 8.20.02]</li>
-<li>De partij die het netwerk beheert, controleert niet zelf de beveiliging ervan; de organisatie laat de
-   controle doen door een andere partij of doet die zelf. [8.20.02]</li>
+   van logging en een jaarlijkse rapportage waarmee de leverancier aantoont dat hij eraan voldoet. [8.20.01, 8.20.02] <a class="anker" href="#eis-3-2-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-8">De partij die het netwerk beheert, controleert niet zelf de beveiliging ervan; de organisatie laat de
+   controle doen door een andere partij of doet die zelf. [8.20.02] <a class="anker" href="#eis-3-2-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.3 Koppelpunten en bewaking</h3>
+<h3 id="3-3-koppelpunten-en-bewaking">3.3 Koppelpunten en bewaking<a class="anker" href="#3-3-koppelpunten-en-bewaking" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Elk koppelpunt met internet of een andere onvertrouwde zone heeft een firewall en maatregelen tegen
+<li id="eis-3-3-1">Elk koppelpunt met internet of een andere onvertrouwde zone heeft een firewall en maatregelen tegen
    aanvallen op de beschikbaarheid, zoals DDoS-bescherming. Tussen segmenten met een verschillend
-   beveiligingsniveau zijn maatregelen die het misbruik van één segment beperken tot dat segment. [8.21.01]</li>
-<li>Verkeer van en naar de vertrouwde omgeving wordt bewaakt met detectievoorzieningen die verdacht verkeer
-   signaleren, zoals een netwerkdetectiesysteem of de detectiefunctie van de firewall. [8.21.02]</li>
-<li>Nieuwe dreigingen die bij deze bewaking worden ontdekt, worden binnen de juridische kaders gedeeld met
+   beveiligingsniveau zijn maatregelen die het misbruik van één segment beperken tot dat segment. [8.21.01] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-2">Verkeer van en naar de vertrouwde omgeving wordt bewaakt met detectievoorzieningen die verdacht verkeer
+   signaleren, zoals een netwerkdetectiesysteem of de detectiefunctie van de firewall. [8.21.02] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-3">Nieuwe dreigingen die bij deze bewaking worden ontdekt, worden binnen de juridische kaders gedeeld met
    de sectorale CERT, zodat andere overheden zich kunnen beschermen; wat is gedeeld, wordt vastgelegd.
-   [8.21.03]</li>
-<li>Een systeemeigenaar die een nieuwe koppeling met een externe partij nodig heeft, vraagt die aan bij de
+   [8.21.03] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-4">Een systeemeigenaar die een nieuwe koppeling met een externe partij nodig heeft, vraagt die aan bij de
    netwerkarchitect, die de koppeling toetst aan het ontwerp en vastlegt welke verkeersstromen zijn
-   toegestaan. [8.21.01]</li>
+   toegestaan. [8.21.01] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC» of «Uitbesteed SOC of MDR-dienst»</strong></p>
 <ol start="5">
-<li>Het SOC beoordeelt de meldingen van de netwerkdetectie binnen de afgesproken termijn en deelt nieuwe
-   dreigingen volgens de procedure met de CERT. [8.21.02, 8.21.03]</li>
+<li id="eis-3-3-5">Het SOC beoordeelt de meldingen van de netwerkdetectie binnen de afgesproken termijn en deelt nieuwe
+   dreigingen volgens de procedure met de CERT. [8.21.02, 8.21.03] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Geen structurele detectie»</strong></p>
 <ol start="6">
-<li>Er is geen SOC. De meldingen van de netwerkdetectie gaan naar <strong>[netwerkbeheer]</strong>, die ze elke werkdag
+<li id="eis-3-3-6">Er is geen SOC. De meldingen van de netwerkdetectie gaan naar <strong>[netwerkbeheer]</strong>, die ze elke werkdag
    beoordeelt en opvallende meldingen aan de CISO doorzet. De CISO deelt nieuwe dreigingen met de CERT.
-   [8.21.02, 8.21.03]</li>
+   [8.21.02, 8.21.03] <a class="anker" href="#eis-3-3-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
 <ol start="7">
-<li>Het eigen datacenter heeft een eigen koppelpunt met internet. De organisatie neemt DDoS-bescherming af
-   bij de internetleverancier en <strong>[netwerkbeheer]</strong> test die jaarlijks. [8.21.01]</li>
+<li id="eis-3-3-7">Het eigen datacenter heeft een eigen koppelpunt met internet. De organisatie neemt DDoS-bescherming af
+   bij de internetleverancier en <strong>[netwerkbeheer]</strong> test die jaarlijks. [8.21.01] <a class="anker" href="#eis-3-3-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
 <ol start="8">
-<li>De verbinding met de hostingpartij loopt over een versleutelde verbinding of een eigen lijn. De
+<li id="eis-3-3-8">De verbinding met de hostingpartij loopt over een versleutelde verbinding of een eigen lijn. De
    hostingpartij scheidt de omgeving van de organisatie van die van andere klanten en levert
-   DDoS-bescherming op het koppelpunt met internet, vastgelegd in het contract. [8.21.01, 8.21.04]</li>
+   DDoS-bescherming op het koppelpunt met internet, vastgelegd in het contract. [8.21.01, 8.21.04] <a class="anker" href="#eis-3-3-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
 <ol start="9">
-<li>De meeste diensten draaien bij SaaS- en cloudleveranciers. Werkplekken maken daarom rechtstreeks
+<li id="eis-3-3-9">De meeste diensten draaien bij SaaS- en cloudleveranciers. Werkplekken maken daarom rechtstreeks
    verbinding met internet. Toegang tot clouddiensten hangt af van identiteit en apparaatstatus; de
    leverancier levert de bescherming tegen aanvallen op de beschikbaarheid. De organisatie bewaakt het
-   verkeer naar clouddiensten via de werkplek en de logging van de clouddienst. [8.21.01, 8.21.02]</li>
+   verkeer naar clouddiensten via de werkplek en de logging van de clouddienst. [8.21.01, 8.21.02] <a class="anker" href="#eis-3-3-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.4 Webfilter</h3>
+<h3 id="3-4-webfilter">3.4 Webfilter<a class="anker" href="#3-4-webfilter" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Internetverkeer van werkplekken en servers loopt via een webfilter dat bekende kwaadaardige sites,
+<li id="eis-3-4-1">Internetverkeer van werkplekken en servers loopt via een webfilter dat bekende kwaadaardige sites,
    phishingsites en sites met malware blokkeert en dat verkeer naar anonimiseringsdiensten en onbeheerde
-   opslagdiensten tegenhoudt. <strong>[netwerkbeheer]</strong> houdt de blokkeerlijsten automatisch actueel. [8.23.01]</li>
-<li>De CISO stelt vast welke categorieën websites geblokkeerd zijn en beoordeelt die lijst jaarlijks. Een
+   opslagdiensten tegenhoudt. <strong>[netwerkbeheer]</strong> houdt de blokkeerlijsten automatisch actueel. [8.23.01] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-2">De CISO stelt vast welke categorieën websites geblokkeerd zijn en beoordeelt die lijst jaarlijks. Een
    uitzondering vraagt de leidinggevende aan bij de servicedesk, met een reden en een einddatum; de
-   servicedesk legt de uitzondering vast. [8.23.01]</li>
-<li>Medewerkers horen via het bewustzijnsprogramma welke sites geblokkeerd zijn en waarom, en hoe ze een
-   geblokkeerde site melden die ze voor hun werk nodig hebben. [8.23.01]</li>
+   servicedesk legt de uitzondering vast. [8.23.01] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-3">Medewerkers horen via het bewustzijnsprogramma welke sites geblokkeerd zijn en waarom, en hoe ze een
+   geblokkeerde site melden die ze voor hun werk nodig hebben. [8.23.01] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.5 Versleuteling onderweg</h3>
+<h3 id="3-5-versleuteling-onderweg">3.5 Versleuteling onderweg<a class="anker" href="#3-5-versleuteling-onderweg" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Gegevens die over draadloze verbindingen gaan, en over bedrade verbindingen buiten het gebied dat de
+<li id="eis-3-5-1">Gegevens die over draadloze verbindingen gaan, en over bedrade verbindingen buiten het gebied dat de
    organisatie fysiek beheert, worden versleuteld. Alleen gegevens die nodig zijn om de verbinding tot
-   stand te brengen, blijven onversleuteld. [8.21.04]</li>
-<li>De sterkte van de versleuteling volgt uit het vertrouwelijkheidslabel en uit hoe lang de gegevens
+   stand te brengen, blijven onversleuteld. [8.21.04] <a class="anker" href="#eis-3-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5-2">De sterkte van de versleuteling volgt uit het vertrouwelijkheidslabel en uit hoe lang de gegevens
    beschermd moeten blijven. Waar mogelijk gebruikt de organisatie middelen met een positief inzetadvies van
    het NBV. Is er geen geadviseerd middel, dan kiest de netwerkarchitect in overleg met de CISO een andere
-   geschikte methode en legt die keuze vast. [8.21.04]</li>
-<li>Verbindingen tussen locaties en met externe partijen lopen via een VPN of versleutelde lijn. Thuiswerkers
-   maken verbinding via een versleutelde verbinding met MFA. [8.21.04]</li>
+   geschikte methode en legt die keuze vast. [8.21.04] <a class="anker" href="#eis-3-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5-3">Verbindingen tussen locaties en met externe partijen lopen via een VPN of versleutelde lijn. Thuiswerkers
+   maken verbinding via een versleutelde verbinding met MFA. [8.21.04] <a class="anker" href="#eis-3-5-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.6 Wifi</h3>
+<h3 id="3-6-wifi">3.6 Wifi<a class="anker" href="#3-6-wifi" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Het bedrijfswifi is alleen toegankelijk voor beheerde apparaten, na authenticatie van apparaat en
-   gebruiker, en is versleuteld volgens de geldende standaard. [8.21.04]</li>
-<li>Gastwifi, ook een landelijk roamingnetwerk voor bezoekende ambtenaren, staat in een apart segment zonder
-   toegang tot het bedrijfsnetwerk. Er is geen open en onversleuteld netwerk. [8.22.01]</li>
-<li><strong>[netwerkbeheer]</strong> zoekt jaarlijks naar toegangspunten die niet van de organisatie zijn, schakelt ze uit
-   en legt de uitkomst vast. [8.20.01]</li>
+<li id="eis-3-6-1">Het bedrijfswifi is alleen toegankelijk voor beheerde apparaten, na authenticatie van apparaat en
+   gebruiker, en is versleuteld volgens de geldende standaard. [8.21.04] <a class="anker" href="#eis-3-6-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-6-2">Gastwifi, ook een landelijk roamingnetwerk voor bezoekende ambtenaren, staat in een apart segment zonder
+   toegang tot het bedrijfsnetwerk. Er is geen open en onversleuteld netwerk. [8.22.01] <a class="anker" href="#eis-3-6-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-6-3"><strong>[netwerkbeheer]</strong> zoekt jaarlijks naar toegangspunten die niet van de organisatie zijn, schakelt ze uit
+   en legt de uitkomst vast. [8.20.01] <a class="anker" href="#eis-3-6-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -252,7 +252,7 @@ beveiliging).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
 afwijkingen gaan als bevinding naar het risicoregister.</p>
@@ -340,7 +340,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang</h2>
+<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid logging en
 monitoring (logging en detectie op netwerkcomponenten), het beleid cryptografie (versleutelingsmiddelen),
 het beleid logische toegangsbeveiliging (beheeraccounts en MFA), het beleid kwetsbaarheden en
@@ -348,7 +348,7 @@ patchmanagement (patchtermijnen), het beleid wijzigingsbeheer (netwerkwijziginge
 toegang en beveiliging (patchkasten en bekabeling), het beleid screening, bewustzijn en opleiding (het
 webfilter in het bewustzijnsprogramma) en het beleid informatiebeveiliging bij inkoop en contractbeheer
 (contracten met netwerk- en hostingleveranciers).</p>
-<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen<a class="anker" href="#bijlage-a-bio-2-0-maatregelen" aria-label="Link naar deze kop">#</a></h2>
 <p>De maatregelen van dit domein (8, waarvan 7 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
 <table>
 <thead>
@@ -419,7 +419,7 @@ webfilter in het bewustzijnsprogramma) en het beleid informatiebeveiliging bij i
 </tr>
 </tbody>
 </table>
-<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen<a class="anker" href="#bijlage-b-afkortingen" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -490,7 +490,7 @@ webfilter in het bewustzijnsprogramma) en het beleid informatiebeveiliging bij i
 </tr>
 </tbody>
 </table>
-<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<h2 id="nog-in-te-vullen">Nog in te vullen<a class="anker" href="#nog-in-te-vullen" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>netwerkarchitect</strong>: de functie die het netwerkontwerp opstelt, eigen of bij de leverancier</li>
 <li><strong>netwerkbeheer</strong>: de eigen afdeling of de leverancier die de componenten beheert</li>

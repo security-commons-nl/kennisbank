@@ -2,11 +2,11 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Data Protection Impact Assessment</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <a href="./">Een DPIA in vijf stappen, met sjablonen</a> › <span>Data Protection Impact Assessment</span></nav><!-- /kruimelpad -->
 <h1>Data Protection Impact Assessment</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een DPIA in vijf stappen, met sjablonen</a> · <a href="sjabloon-dpia.md">Markdown-bron</a></p>
 <p><strong>[Naam werkproces]</strong></p>
@@ -65,22 +65,22 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<h2 id="managementsamenvatting">Managementsamenvatting<a class="anker" href="#managementsamenvatting" aria-label="Link naar deze kop">#</a></h2>
 <p><em>[Vat de resultaten samen: de scope, waarom de DPIA is uitgevoerd, de risico's, de maatregelen en de conclusie.]</em> (Actie: privacy officer)</p>
-<h2 id="1-beschrijving-proces">1. Beschrijving proces</h2>
-<h3>1.1 Waar gaat de DPIA over?</h3>
+<h2 id="1-beschrijving-proces">1. Beschrijving proces<a class="anker" href="#1-beschrijving-proces" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-1-waar-gaat-de-dpia-over">1.1 Waar gaat de DPIA over?<a class="anker" href="#1-1-waar-gaat-de-dpia-over" aria-label="Link naar deze kop">#</a></h3>
 <p><em>[De aanleiding. Het doel van het werkproces en de context waarin het plaatsvindt, op hoofdlijnen.]</em></p>
 <p><strong>Waar gaat de DPIA niet over?</strong></p>
 <p><em>[Wat expliciet buiten de scope valt, als dat nodig is.]</em></p>
-<h3>1.2 Procesbeschrijving</h3>
+<h3 id="1-2-procesbeschrijving">1.2 Procesbeschrijving<a class="anker" href="#1-2-procesbeschrijving" aria-label="Link naar deze kop">#</a></h3>
 <p>Beschrijf het proces stap voor stap, met per stap de tabel hieronder. Titels van stappen kunnen zijn:</p>
 <ol>
-<li>Verzoek komt binnen via het zaaksysteem</li>
-<li>Verzoek wordt in applicatie X gezet</li>
-<li>Inhoudelijke behandeling in applicatie X door de klantmanager</li>
-<li>Klantmanager neemt een besluit over de aanvraag</li>
-<li>Besluit gaat naar de inwoner via beveiligde mail</li>
-<li>Besluit wordt gearchiveerd en X jaar bewaard</li>
+<li id="punt-1-2-1">Verzoek komt binnen via het zaaksysteem <a class="anker" href="#punt-1-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-2">Verzoek wordt in applicatie X gezet <a class="anker" href="#punt-1-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-3">Inhoudelijke behandeling in applicatie X door de klantmanager <a class="anker" href="#punt-1-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-4">Klantmanager neemt een besluit over de aanvraag <a class="anker" href="#punt-1-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-5">Besluit gaat naar de inwoner via beveiligde mail <a class="anker" href="#punt-1-2-5" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-6">Besluit wordt gearchiveerd en X jaar bewaard <a class="anker" href="#punt-1-2-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p>Voeg een procesplaat toe als die er is.</p>
 <table>
@@ -133,17 +133,17 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>1.3 Register van verwerkingen</h3>
+<h3 id="1-3-register-van-verwerkingen">1.3 Register van verwerkingen<a class="anker" href="#1-3-register-van-verwerkingen" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>[ ] De verwerking is <strong>wel</strong> opgenomen in het register van verwerkingen.</li>
 <li>[ ] De verwerking is <strong>niet</strong> opgenomen in het register van verwerkingen.</li>
 </ul>
-<h3>1.4 Procesbeschrijving of werkinstructie</h3>
+<h3 id="1-4-procesbeschrijving-of-werkinstructie">1.4 Procesbeschrijving of werkinstructie<a class="anker" href="#1-4-procesbeschrijving-of-werkinstructie" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>[ ] Dit proces is <strong>wel</strong> vastgelegd in een procesbeschrijving of werkinstructie.</li>
 <li>[ ] Dit proces is <strong>niet</strong> vastgelegd in een procesbeschrijving of werkinstructie.</li>
 </ul>
-<h2 id="2-samenwerking">2. Samenwerking</h2>
+<h2 id="2-samenwerking">2. Samenwerking<a class="anker" href="#2-samenwerking" aria-label="Link naar deze kop">#</a></h2>
 <p>Met welke externe partijen wordt in dit proces samengewerkt? Dat zijn leveranciers van wie een applicatie wordt afgenomen, en andere partijen waarmee de organisatie persoonsgegevens uitwisselt.</p>
 <table>
 <thead>
@@ -175,9 +175,9 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="3-persoonsgegevens-grondslag-en-doelbinding">3. Persoonsgegevens, grondslag en doelbinding</h2>
+<h2 id="3-persoonsgegevens-grondslag-en-doelbinding">3. Persoonsgegevens, grondslag en doelbinding<a class="anker" href="#3-persoonsgegevens-grondslag-en-doelbinding" aria-label="Link naar deze kop">#</a></h2>
 <p><em>Met welke persoonsgegevens wordt gewerkt, waarom is dat noodzakelijk, op welke grondslag, en worden ze hergebruikt?</em></p>
-<h3>3.1 Persoonsgegevens</h3>
+<h3 id="3-1-persoonsgegevens">3.1 Persoonsgegevens<a class="anker" href="#3-1-persoonsgegevens" aria-label="Link naar deze kop">#</a></h3>
 <p><strong>Gewone persoonsgegevens</strong></p>
 <ul>
 <li>[ ] Voor- en achternaam</li>
@@ -224,7 +224,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <li>[ ] Opgelegde strafmaatregelen</li>
 <li>[ ] Anders, namelijk:</li>
 </ul>
-<h3>3.2 Noodzakelijkheid en subsidiariteit</h3>
+<h3 id="3-2-noodzakelijkheid-en-subsidiariteit">3.2 Noodzakelijkheid en subsidiariteit<a class="anker" href="#3-2-noodzakelijkheid-en-subsidiariteit" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -243,7 +243,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>3.3 Grondslag</h3>
+<h3 id="3-3-grondslag">3.3 Grondslag<a class="anker" href="#3-3-grondslag" aria-label="Link naar deze kop">#</a></h3>
 <p>Tip: betrek de privacy officer bij deze vraag.</p>
 <table>
 <thead>
@@ -277,7 +277,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>3.4 Doelbinding</h3>
+<h3 id="3-4-doelbinding">3.4 Doelbinding<a class="anker" href="#3-4-doelbinding" aria-label="Link naar deze kop">#</a></h3>
 <p><em>Worden de persoonsgegevens ook gebruikt voor een ander doel dan hierboven? Vul dan de tabel in. Anders: "n.v.t."</em></p>
 <table>
 <thead>
@@ -299,10 +299,10 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="4-juistheid">4. Juistheid</h2>
+<h2 id="4-juistheid">4. Juistheid<a class="anker" href="#4-juistheid" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Borging kwaliteit.</strong> <em>Hoe blijven de gegevens actueel, juist en volledig?</em></p>
 <p><strong>Logging.</strong> <em>Is er logging ingericht, op welke onderdelen, hoe lang wordt die bewaard en wordt er op gemonitord?</em></p>
-<h2 id="5-opslag">5. Opslag</h2>
+<h2 id="5-opslag">5. Opslag<a class="anker" href="#5-opslag" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -325,9 +325,9 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="6-bescherming">6. Bescherming</h2>
+<h2 id="6-bescherming">6. Bescherming<a class="anker" href="#6-bescherming" aria-label="Link naar deze kop">#</a></h2>
 <p>Betrek een security officer om te toetsen of de organisatie en de leverancier genoeg beveiligingsmaatregelen nemen. Voor de leverancier kan dat met het <a href="security-assessment-leverancier.html">security-assessment</a>.</p>
-<h3>6.1 Beveiliging bij de organisatie</h3>
+<h3 id="6-1-beveiliging-bij-de-organisatie">6.1 Beveiliging bij de organisatie<a class="anker" href="#6-1-beveiliging-bij-de-organisatie" aria-label="Link naar deze kop">#</a></h3>
 <p><strong>Organisatiebrede maatregelen</strong></p>
 <ul>
 <li>[ ] Centrale identiteitsdienst met single sign-on of MFA</li>
@@ -362,15 +362,15 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <ul>
 <li>[ ] [eigen aanvulling]</li>
 </ul>
-<h3>6.2 Beveiliging leverancier(s)</h3>
+<h3 id="6-2-beveiliging-leverancier-s">6.2 Beveiliging leverancier(s)<a class="anker" href="#6-2-beveiliging-leverancier-s" aria-label="Link naar deze kop">#</a></h3>
 <p><strong>[Naam verwerker 1]</strong></p>
 <ul>
 <li>[ ] De verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Neem Bijlage 2 van de getekende overeenkomst hieronder over.</li>
 <li>[ ] Met de verwerker is een andere verwerkersovereenkomst gesloten. Hieronder de belangrijkste maatregelen van de leverancier.</li>
 <li>[ ] Met de verwerker is <strong>geen</strong> verwerkersovereenkomst gesloten.</li>
 </ul>
-<h2 id="7-transparantie">7. Transparantie</h2>
-<h3>7.1 Gebruikte technieken</h3>
+<h2 id="7-transparantie">7. Transparantie<a class="anker" href="#7-transparantie" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="7-1-gebruikte-technieken">7.1 Gebruikte technieken<a class="anker" href="#7-1-gebruikte-technieken" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -397,7 +397,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>7.2 Transparantie richting betrokkenen</h3>
+<h3 id="7-2-transparantie-richting-betrokkenen">7.2 Transparantie richting betrokkenen<a class="anker" href="#7-2-transparantie-richting-betrokkenen" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -420,9 +420,9 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="8-risico-s-en-maatregelen">8. Risico's en maatregelen</h2>
+<h2 id="8-risico-s-en-maatregelen">8. Risico's en maatregelen<a class="anker" href="#8-risico-s-en-maatregelen" aria-label="Link naar deze kop">#</a></h2>
 <p>Tip: betrek de privacy officer bij dit hoofdstuk.</p>
-<h3>8.1 Risico's</h3>
+<h3 id="8-1-risico-s">8.1 Risico's<a class="anker" href="#8-1-risico-s" aria-label="Link naar deze kop">#</a></h3>
 <p><em>Welke privacyrisico's lopen betrokkenen in dit werkproces? Risicoclassificatie: hoog / midden / laag / geen.</em></p>
 <table>
 <thead>
@@ -472,7 +472,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>8.2 Beheersmaatregelen</h3>
+<h3 id="8-2-beheersmaatregelen">8.2 Beheersmaatregelen<a class="anker" href="#8-2-beheersmaatregelen" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -534,12 +534,12 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Wordt een maatregel niet uitgevoerd, dan motiveert de proceseigenaar waarom het risico wordt geaccepteerd.</p>
-<h3>8.3 Restrisico</h3>
+<h3 id="8-3-restrisico">8.3 Restrisico<a class="anker" href="#8-3-restrisico" aria-label="Link naar deze kop">#</a></h3>
 <p><em>[Beschrijf de resterende risico's en bepaal of de verwerking door kan gaan, of dat een voorafgaande raadpleging van de Autoriteit Persoonsgegevens nodig is.]</em></p>
-<h2 id="9-advies-functionaris-gegevensbescherming">9. Advies functionaris gegevensbescherming</h2>
+<h2 id="9-advies-functionaris-gegevensbescherming">9. Advies functionaris gegevensbescherming<a class="anker" href="#9-advies-functionaris-gegevensbescherming" aria-label="Link naar deze kop">#</a></h2>
 <p><em>[Het advies van de FG is een verplicht onderdeel van de DPIA. De FG plaatst het advies hier.]</em></p>
-<h2 id="10-ondertekening">10. Ondertekening</h2>
-<h3>Proceseigenaar</h3>
+<h2 id="10-ondertekening">10. Ondertekening<a class="anker" href="#10-ondertekening" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="proceseigenaar">Proceseigenaar<a class="anker" href="#proceseigenaar" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>[ ] De beschrijving van het werkproces is juist en volledig</li>
 <li>[ ] De belangrijkste organisatorische en technische oorzaken zijn in kaart gebracht</li>
@@ -547,7 +547,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <li>[ ] De maatregelen worden uitgevoerd en gereedgemeld bij de privacy officer</li>
 </ul>
 <p>Naam: | Handtekening: | Datum:</p>
-<h3>Privacy officer</h3>
+<h3 id="privacy-officer">Privacy officer<a class="anker" href="#privacy-officer" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>[ ] Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</li>
 <li>[ ] Een andere privacy officer heeft een kwaliteitscheck gedaan, namelijk:</li>

@@ -2,14 +2,14 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Toelichting bij het DPIA-sjabloon</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Privacy</a> › <a href="./">Een DPIA in vijf stappen, met sjablonen</a> › <span>Toelichting bij het DPIA-sjabloon</span></nav><!-- /kruimelpad -->
 <h1>Toelichting bij het DPIA-sjabloon</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Een DPIA in vijf stappen, met sjablonen</a> · <a href="toelichting-sjabloon-dpia.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#managementsamenvatting">Managementsamenvatting</a></li><li><a href="#scope">Scope</a></li><li><a href="#governance">Governance</a></li><li><a href="#cultuur">Cultuur</a></li><li><a href="#grondslag-en-doelbinding">Grondslag en doelbinding</a></li><li><a href="#juistheid">Juistheid</a></li><li><a href="#dataminimalisatie">Dataminimalisatie</a></li><li><a href="#opslag">Opslag</a></li><li><a href="#bescherming">Bescherming</a></li><li><a href="#transparantie">Transparantie</a></li><li><a href="#11-risico-s">11 Risico’s</a></li><li><a href="#advies-functionaris-gegevensbescherming">Advies Functionaris Gegevensbescherming</a></li><li><a href="#ondertekening-dpia-rapportage">Ondertekening DPIA-rapportage</a></li><li><a href="#bijlage-1-uitgebreide-procesbeschrijving">Bijlage 1 – Uitgebreide procesbeschrijving</a></li></ol></nav><!-- /inhoudsopgave -->
-<h3>Afkortingen</h3>
+<h3 id="afkortingen">Afkortingen<a class="anker" href="#afkortingen" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -36,7 +36,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>Relevante beleidsdocumenten</h3>
+<h3 id="relevante-beleidsdocumenten">Relevante beleidsdocumenten<a class="anker" href="#relevante-beleidsdocumenten" aria-label="Link naar deze kop">#</a></h3>
 <ul>
 <li>
 <p>Procedure risicoanalyses (DPIA)</p>
@@ -45,9 +45,9 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>DPIA-template</p>
 </li>
 </ul>
-<h3>Inleiding</h3>
+<h3 id="inleiding">Inleiding<a class="anker" href="#inleiding" aria-label="Link naar deze kop">#</a></h3>
 <p>Dit document is te gebruiken ter informatie en als naslagwerk voor de proceseigenaar bij het doorlopen van het DPIA-proces en het invullen van het bijbehorend DPIA-template. Een DPIA moet worden uitgevoerd indien de verwerking waarschijnlijk een hoog privacy risico inhoudt. Omdat er in de DPIA mogelijk lastige termen of vragen staan, wordt in dit document uitgelegd wat er met iedere vraag wordt bedoeld. In hoofdstuk 2 staan enkele begrippen. In hoofdstuk 3 wordt per vraag uit het formulier uitgelegd wat er mee wordt bedoeld.</p>
-<h3>Begrippen</h3>
+<h3 id="begrippen">Begrippen<a class="anker" href="#begrippen" aria-label="Link naar deze kop">#</a></h3>
 <p>Persoonsgegeven: alle informatie over een geïdentificeerde of identificeerbare natuurlijke persoon. Identificatie kan ook indirect. Het hoeft niet altijd een naam te zijn om informatie te kunnen herleiden naar een persoon. Ook maakt de vorm van de informatie niet uit; het kan zowel schriftelijke informatie betreffen, als bijvoorbeeld een foto, film of geluidsopname. Voorbeelden van persoonsgegevens: NAW-gegevens, rekeningnummer, identificatienummer, locatiegegevens, online identificator of elementen die kenmerkend zijn voor de fysieke, fysiologische, genetische, psychische, economische, culturele of sociale identiteit van een persoon.</p>
 <p>Bijzondere persoonsgegevens: persoonsgegevens waaruit ras of etnische afkomst, politieke opvattingen, religieuze of levensbeschouwelijke overtuigingen, of het lidmaatschap van een vakbond blijken, genetische gegevens, gezondheidsgegevens of gegevens met betrekking tot iemands seksueel gedrag of seksuele gerichtheid.</p>
 <p>Gevoelige persoonsgegevens: gegevens die naar hun aard gevoelig zijn en daarom extra bescherming behoeven. Hierbij kan gedacht worden aan inloggegevens, financiële gegevens, BSN, locatiegegevens, gegevens waarmee identiteitsfraude gepleegd kan worden, gegevens die onder een wettelijke geheimhoudingsplicht vallen of over minderjarigen/kwetsbare groepen.</p>
@@ -67,8 +67,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Het opstellen van profielen (profilering) bestaat doorgaans uit het verzamelen van (veel) data over een persoon om zo een profiel over die persoon op te stellen, aan de hand waarvan besluiten kunnen worden genomen. Het profiel van iemand zegt bijvoorbeeld iets over diens leefwijze, uitgavepatroon of interesses. Een profiel kan worden gebruikt door een organisatie om in te schatten of te voorspellen hoe iemand zich gaat gedragen.</p>
 <p>Automatische besluitvorming</p>
 <p>Automatische besluitvorming volgt vaak op het opstellen van profielen, maar dit hoeft niet. Bij deze vorm van besluitvorming nemen organisaties besluiten over mensen op basis van automatisch verwerkte gegevens. Het is dan niet een persoon die het besluit neemt, maar de computer. Bijvoorbeeld de automatische beoordeling van een online ingediende kredietaanvraag. Of verwerking van sollicitaties via internet zonder menselijke tussenkomst. Deze vorm van besluitvorming is meestal verboden. Een organisatie mag alleen een automatisch besluit nemen wanneer dit noodzakelijk is om een overeenkomst met die persoon af te sluiten; wanneer expliciet in een wet staat dat het mag; of wanneer de betrokkene uitdrukkelijk toestemming heeft gegeven. Ook dan zijn bepaalde waarborgen nodig.</p>
-<h3>Toelichting vragenlijst</h3>
-<h2 id="managementsamenvatting">Managementsamenvatting</h2>
+<h3 id="toelichting-vragenlijst">Toelichting vragenlijst<a class="anker" href="#toelichting-vragenlijst" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="managementsamenvatting">Managementsamenvatting<a class="anker" href="#managementsamenvatting" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -84,8 +84,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>De managementsamenvatting wordt opgesteld door de Privacy Officer.</p>
 <p>In het tekstvak moet worden beschreven wat de belangrijkste bevindingen en resultaten zijn van de met de afdeling uitgevoerde DPIA. Een lezer kan daarmee snel zien waarop de DPIA is uitgevoerd en wat de conclusie is.</p>
 <p>De beschrijving moet onder meer bevatten wat de scope is van deze DPIA (zie paragraaf 2.1), de reden voor uitvoering van de DPIA (zie paragraaf 2.3), de vastgestelde risico’s (zie paragrafen 11.1 en 11.2), de maatregelen (zie paragraaf 11.4) en de conclusie (zie paragraaf 11.5).</p>
-<h2 id="scope">Scope</h2>
-<h3>2.1 Scope</h3>
+<h2 id="scope">Scope<a class="anker" href="#scope" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="2-1-scope">2.1 Scope<a class="anker" href="#2-1-scope" aria-label="Link naar deze kop">#</a></h3>
 <p>Binnen scope</p>
 <table>
 <thead>
@@ -118,7 +118,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Ook expliciet beschrijven wat buiten het proces valt is belangrijk om het proces en de context te begrijpen. Als er rapportages worden gemaakt van behaalde resultaten binnen een werkproces, maar die rapportages worden opgesteld door een andere afdeling, kan het zijn dat er sprake is van een geheel nieuw werkproces en dat die handeling(en) niet onder het eerste werkproces vallen. Het is dan handig om dat hier te beschrijven. De betrokken Privacy Officer kan hier tevens bij helpen.</p>
 <p>Voorbeeld:</p>
 <p>De individuele resultaten van de onderzoeken vallen buiten de scope van deze DPIA.</p>
-<h3>2.2 Procesbeschrijving op hoofdlijnen</h3>
+<h3 id="2-2-procesbeschrijving-op-hoofdlijnen">2.2 Procesbeschrijving op hoofdlijnen<a class="anker" href="#2-2-procesbeschrijving-op-hoofdlijnen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vink aan wat van toepassing is]</p>
 <p>☐ Dit betreft wel een ingewikkeld werkproces. Bijlage 1 is eveneens ingevuld.</p>
 <p>☐ Dit betreft geen ingewikkeld werkproces. Het werkproces stapsgewijs is hieronder aangevuld.</p>
@@ -204,11 +204,11 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>In bovenstaand vak wordt gevraagd om een afbeelding (of een link naar een afbeelding) van het werkproces toe te voegen. Dit kan een bestaande visuele procesomschrijving zijn of eentje die speciaal is gemaakt voor het uitvoeren van de DPIA. De afbeelding moet duidelijk laten zien hoe het werkproces verloopt. Wanneer een afbeelding toegevoegd wordt is het goed om aan te geven wanneer dit plaatje is opgesteld. Wanneer een dergelijke afbeelding ontbreekt, kan in het vak ‘N.v.t.’ worden geschreven.</p>
 <p>Voorbeeld:</p>
 <p>Publicatiedatum: 13-06-2024</p>
-<h3>Register van verwerkingen</h3>
+<h3 id="register-van-verwerkingen">Register van verwerkingen<a class="anker" href="#register-van-verwerkingen" aria-label="Link naar deze kop">#</a></h3>
 <p>☐ De verwerking is wel opgenomen in het register van verwerkingen.</p>
 <p>☐ De verwerking is niet opgenomen in het register van verwerkingen.</p>
 <p>Het is verplicht om iedere verwerking op te nemen in het register van verwerkingen. Dit is een wettelijk verplicht overzicht waarin de gemeente bij moet houden welke gegevensverwerkingen er allemaal zijn. Geef aan of dit proces in dat register is opgenomen.</p>
-<h2 id="governance">Governance</h2>
+<h2 id="governance">Governance<a class="anker" href="#governance" aria-label="Link naar deze kop">#</a></h2>
 <p>Proceseigenaar</p>
 <p>[Beschrijf in de tabel de verschillende rollen (per stap) binnen het werkproces]</p>
 <table>
@@ -233,7 +233,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>☐ De burgemeester</p>
 <p>☐ De ambtenaar belast met heffing en invordering</p>
 <p>De verwerkingsverantwoordelijke voor het werkproces is een natuurlijk persoon of rechtspersoon, een dienst of een ander orgaan die, alleen of samen met anderen, de doeleinden bepaalt waarvoor en de middelen waarmee persoonsgegevens worden verwerkt. Er zijn drie mogelijkheden: 1) het college van B&amp;W, 2) de burgemeester en 3) de ambtenaar belast met heffing en invordering. Wanneer de verwerkingsverantwoordelijke niet bekend is, kan hierover altijd overlegd worden met de betrokken Privacy Officer.</p>
-<h3>3.1 Overzicht EXTERNE partijen en systemen in het werkproces</h3>
+<h3 id="3-1-overzicht-externe-partijen-en-systemen-in-het-werkproces">3.1 Overzicht EXTERNE partijen en systemen in het werkproces<a class="anker" href="#3-1-overzicht-externe-partijen-en-systemen-in-het-werkproces" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul het overzicht hieronder aan met alle externe partijen die een rol spelen bij de verwerking van persoonsgegevens in dit werkproces, en verwijder of wijzig de vooraf in de tabel ingevulde partijen die geen rol spelen bij het werkproces]</p>
 <table>
 <thead>
@@ -274,7 +274,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>In de tabel hierboven moeten alle bij het werkproces betrokken externe partijen worden beschreven. Als een systeem of applicatie wordt gebruikt van een andere partij dan moet dit ook worden beschreven in de bovenstaande tabel. Het is belangrijk om goed te weten of er met (ICT-)partijen overeenkomsten zijn gesloten en of die overeenkomsten ook zien op de verwerking van persoonsgegevens. Als niet duidelijk is of er een verwerkersovereenkomst is gesloten met een partij die persoonsgegevens voor de gemeente verwerkt binnen dit proces, dan is dat een risico. Geef in die situatie hierboven aan dat het onbekend is. Hierboven zijn enkele voorbeelden gegeven. De rolverdeling tussen partijen is een lastige zaak. Zie paragraaf Basisbegrippen voor de definities van de diverse rollen onder de AVG. Wanneer het onduidelijk blijft, kan de Privacy Officer worden ingeschakeld.</p>
-<h3>3.2 Overzicht INTERNE partijen en systemen in het werkproces</h3>
+<h3 id="3-2-overzicht-interne-partijen-en-systemen-in-het-werkproces">3.2 Overzicht INTERNE partijen en systemen in het werkproces<a class="anker" href="#3-2-overzicht-interne-partijen-en-systemen-in-het-werkproces" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul voor alle gemeentelijke partijen die een rol spelen in de verwerking van persoonsgegevens in dit werkproces de tabel aan]</p>
 <table>
 <thead>
@@ -307,7 +307,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Vul in de tabel hierboven alle interne partijen (afdelingen, teams), applicaties, systemen en hardware in die een rol spelen binnen dit werkproces. Leg tevens kort uit wat de rol van de betreffende afdeling of team is binnen het proces. De bronhouder is ‘eigenaar’ van de gegevensset (of: dataset); wanneer een partij uitvoerende werkzaamheden verricht dan is die partij ‘uitvoerend’; de ‘ontvanger’ is de partij die informatie uit de gegevensset (of de gehele gegevensset) verkrijgt; de ‘toezichthouder’ ziet toe op behoud van kwaliteit binnen een proces of kan een andere interne toezichthouder zijn die bijvoorbeeld om advies wordt gevraagd tijdens het werkproces. Een interne partij kan meerdere rollen hebben binnen het werkproces. De vooraf ingevulde tekst kan als basis worden gebruikt eventueel kan daar nog bepaalde informatie aan toegevoegd worden.</p>
-<h2 id="cultuur">Cultuur</h2>
+<h2 id="cultuur">Cultuur<a class="anker" href="#cultuur" aria-label="Link naar deze kop">#</a></h2>
 <p>[Beschrijf hieronder per betrokken afdeling (binnen de scope van het werkproces) wat het privacybewustzijn is en hoe</p>
 <p>medewerkers omgaan met persoonsgegevens. Maak gebruik van de volgende kleuren:</p>
 <ul>
@@ -340,8 +340,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>De tabel moet een overzicht bevatten van de betrokken afdelingen binnen het werkproces. In de kolom “Privacybewustzijn” moet worden beschreven hoe privacybewust de medewerkers zijn (bijv. of er regelmatig opfriscursussen AVG worden gevolgd; of dat medewerkers steeds een handleiding met aandacht voor privacy moeten volgen voor het uitvoeren van bepaalde taken binnen het werkproces, etc.). In de kolom “Omgang met persoonsgegevens” kan aangegeven worden hoe goed al wordt omgegaan met persoonsgegevens (bijv. zijn er richtlijnen opgesteld binnen de afdeling waaraan de medewerkers zich moeten houden; wordt regelmatig aandacht besteed aan het juist werken met persoonsgegevens; etc.).</p>
 <p>De afdeling waarbinnen het werkproces zich afspeelt moet hier in ieder geval genoemd worden. Daarnaast kan gedacht worden aan afdelingen of teams waarmee intensief wordt samengewerkt en die daarmee binnen de scope van het werkproces vallen. Dus niet Facilitaire Zaken invullen als zij enkel worden ingeschakeld aan het eind van het werkproces voor het verzenden van een brief.</p>
 <p>De vakken in de kolommen ‘Privacybewustzijn medewerkers’ en ‘Omgang met persoonsgegevens’ moeten één van de drie aangegeven kleuren krijgen middels de optie in Word ‘Arcering’ (het icoontje van een kantelende emmer met verf). In het vak is het dan nog gewoon mogelijk om de toelichting te schrijven. De gekozen kleur hangt samen met de toelichting, in die zin, dat wanneer de toelichting aangeeft dat er bijvoorbeeld geen privacyrichtlijnen worden gehanteerd binnen de afdeling en er amper tot geen aandacht wordt besteed aan privacy en omgang met persoonsgegevens, dat voor de kleur rood moet worden gekozen.</p>
-<h2 id="grondslag-en-doelbinding">Grondslag en doelbinding</h2>
-<h3>5.1 Grondslag</h3>
+<h2 id="grondslag-en-doelbinding">Grondslag en doelbinding<a class="anker" href="#grondslag-en-doelbinding" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="5-1-grondslag">5.1 Grondslag<a class="anker" href="#5-1-grondslag" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul onderstaande tabellen in]</p>
 <table>
 <thead>
@@ -377,7 +377,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>De tweede tabel moet een opsomming bevatten van de diverse wetten en andere regelingen die van toepassing zijn op het werkproces of die een andere rol spelen binnen het werkproces. De AVG hoeft hierbij niet genoemd te worden. Denk bij deze tabel eerder aan de Gemeentewet, de Wet basisregistratie personen, de Participatiewet, de Algemene wet bestuursrecht en specifieke Beleidsregels of Regelingen. De eisen die volgen uit de genoemde wet- en regelgeving en die van toepassing zijn op het werkproces moeten worden benoemd. Tot slot moet worden aangegeven op welke manier aan deze eisen wordt voldaan.</p>
-<h3>5.2 Doelbinding</h3>
+<h3 id="5-2-doelbinding">5.2 Doelbinding<a class="anker" href="#5-2-doelbinding" aria-label="Link naar deze kop">#</a></h3>
 <p>[Wanneer de in dit werkproces gebruikte persoonsgegevens worden verwerkt voor een ander dan het hierboven beschreven doel, dan moet onderstaande tabel ingevuld worden. Wanneer dit niet van toepassing is vul dan in ‘N.v.t.’]</p>
 <table>
 <thead>
@@ -400,8 +400,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Volgens de AVG mogen persoonsgegevens alleen voor welbepaalde, uitdrukkelijk omschreven en gerechtvaardigde doeleinden worden verzameld en mogen zij vervolgens niet verder op een met die doeleinden onverenigbare wijze worden verwerkt. Dit geldt niet in het kader van archivering in het algemeen belang, voor wetenschappelijk of historisch onderzoek of voor statistische doeleinden. Indien de persoonsgegevens binnen dit werkproces dus ook voor een ander doel worden gebruikt dan het doel beschreven in de tabel bij paragraaf 5.1, dan moet de tabel hierboven ingevuld te worden. Het wordt aangeraden om te overleggen met de betrokken Privacy Officer om vast te stellen óf er sprake is van andere doelen en of deze verenigbaar zijn of dat het om geheel nieuwe doelen met een andere grondslag gaat.</p>
-<h2 id="juistheid">Juistheid</h2>
-<h3>6.1 Borging kwaliteit</h3>
+<h2 id="juistheid">Juistheid<a class="anker" href="#juistheid" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="6-1-borging-kwaliteit">6.1 Borging kwaliteit<a class="anker" href="#6-1-borging-kwaliteit" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -415,7 +415,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>In het tekstvak moet beschreven worden hoe de kwaliteit van de data die wordt verwerkt binnen het werkproces gewaarborgd wordt. Dit ziet voornamelijk op de data die persoonsgegevens bevatten. Geef bijvoorbeeld aan of gegevens (automatisch) worden gecontroleerd wanneer het wordt verzonden, of dat er een directe koppeling is met de BRP of KVK (waarvan verwacht mag worden dat de data juist en up-to-date is). Schenk ook aandacht aan de wijze van updaten van de (persoons)gegevens en hoe vaak dit gebeurt.</p>
-<h3>6.2 Logging</h3>
+<h3 id="6-2-logging">6.2 Logging<a class="anker" href="#6-2-logging" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -443,7 +443,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Wordt waar nodig actie ondernomen (intrekken bevoegdheden, veranderen beveiliging, etc.)?</p>
 </li>
 </ul>
-<h3>6.3 Audits</h3>
+<h3 id="6-3-audits">6.3 Audits<a class="anker" href="#6-3-audits" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -457,8 +457,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Audits kunnen worden omschreven als (uitgebreide) controles op diverse aandachtspunten binnen het werkproces. Soms worden deze uitgevoerd door externe partijen. De vraag die in het tekstvak beantwoord moet worden is of (periodiek) audits worden uitgevoerd op het werkproces in zijn geheel of op onderdelen ervan. Zulke controles zouden kunnen zien op het feit dat beleid en voorschriften worden gevolgd binnen het werkproces, of dat eerder voorgestelde (beheers)maatregelen in de praktijk zijn uitgevoerd en goed werken.</p>
-<h2 id="dataminimalisatie">Dataminimalisatie</h2>
-<h3>7.1 Categorieën betrokkenen</h3>
+<h2 id="dataminimalisatie">Dataminimalisatie<a class="anker" href="#dataminimalisatie" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="7-1-categorie-n-betrokkenen">7.1 Categorieën betrokkenen<a class="anker" href="#7-1-categorie-n-betrokkenen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Beschrijf de categorieën van betrokkenen en de grootte van deze groep(en). Geef ook aan of er sprake is van kwetsbare groepen categorieën, bijvoorbeeld kinderen]</p>
 <table>
 <thead>
@@ -490,7 +490,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Voorbeeld: Het werkproces waarbij een aanvraag van een inwoner om een nieuw paspoort te verkrijgen het doel is, levert als betrokkene de inwoner op; de persoonsgegevens van die inwoner worden immers verwerkt om uiteindelijk een nieuw paspoort af te kunnen geven. In de tabel wordt dan als categorie betrokkenen ‘Inwoners gemeente’ aangegeven - de inwoner is immers een inwoner van de gemeente.</p>
 <p>Wanneer er andere betrokkenen zijn – zoals in werkprocessen waarbij ook persoonsgegevens van collega’s worden verwerkt (de categorie betrokkenen is dan: Werknemers gemeente), dan moet dat aangevuld worden in de tabel.</p>
 <p>Geef naast de categorie(ën) ook een (geschat) aantal per categorie aan en licht dit aantal toe. Als er uitgebreide jaarrapportages worden bijgehouden waarin exacte cijfers worden genoemd, dan vul je het exacte cijfer in mét in de toelichting dat het aantal volgt uit die jaarrapportage.</p>
-<h3>7.2 Beoordeling gebruikte persoonsgegevens</h3>
+<h3 id="7-2-beoordeling-gebruikte-persoonsgegevens">7.2 Beoordeling gebruikte persoonsgegevens<a class="anker" href="#7-2-beoordeling-gebruikte-persoonsgegevens" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul de tabel hieronder aan met de beoordelingen per gebruikt persoonsgegeven binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
 <table>
 <thead>
@@ -648,7 +648,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>7.3 Gevoelige persoonsgegevens</h3>
+<h3 id="7-3-gevoelige-persoonsgegevens">7.3 Gevoelige persoonsgegevens<a class="anker" href="#7-3-gevoelige-persoonsgegevens" aria-label="Link naar deze kop">#</a></h3>
 <p>[Indien gevoelige persoonsgegevens worden verwerkt binnen dit werkproces, dan moet aangegeven worden hoe hiermee wordt omgegaan - denk aan extra beveiliging of andere maatregelen]</p>
 <table>
 <thead>
@@ -722,7 +722,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </ul>
 <p>Naast de beoordeling op de diverse categorieën uit de vorige tabel, moet voor deze gegevens ook worden aangegeven of ze extra worden beschermd en beveiligd (wordt bijvoorbeeld extra goed gelet op de omgang met deze persoonsgegevens, of heeft slechts een klein(er) groepje collega’s toegang tot deze informatie, etc.) en hoe dat gebeurt.</p>
 <p>Specifiek voor het BSN geldt dat deze niet mag worden verwerkt, tenzij er een wettelijke grondslag voor verwerking is – dus als er ergens in een wet of regeling staat beschreven dat de gemeente het BSN van inwoners mag verwerken (denk bijvoorbeeld aan artikel 68 uit de Participatiewet). Dit moet ook aangegeven worden in de tabel.</p>
-<h3>7.4 Bijzondere persoonsgegevens</h3>
+<h3 id="7-4-bijzondere-persoonsgegevens">7.4 Bijzondere persoonsgegevens<a class="anker" href="#7-4-bijzondere-persoonsgegevens" aria-label="Link naar deze kop">#</a></h3>
 <p>[Indien bijzondere persoonsgegevens worden verwerkt binnen dit werkproces, dan moet worden aangegeven hoe hiermee wordt omgegaan - denk aan extra beveiliging of andere maatregelen - en moet de wettelijke uitzondering op het verwerkingsverbod worden benoemd]</p>
 <table>
 <thead>
@@ -815,7 +815,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </li>
 </ul>
 <p>Biometrische persoonsgegevens zijn persoonsgegevens die het resultaat zijn van een specifieke technische verwerking van fysieke, fysiologische of gedrag gerelateerde kenmerken van een persoon. Op grond hiervan is eenduidige identificatie van die persoon mogelijk, of wordt zijn/haar identiteit bevestigd. Voorbeelden van biometrische persoonsgegevens zijn vingerafdrukken, iris- of netvliesscan, stemherkenning of gezichtsafbeeldingen (die worden gebruikt ter herkenning van de persoon).</p>
-<h3>7.5 Persoonsgegevens van strafrechtelijke aard</h3>
+<h3 id="7-5-persoonsgegevens-van-strafrechtelijke-aard">7.5 Persoonsgegevens van strafrechtelijke aard<a class="anker" href="#7-5-persoonsgegevens-van-strafrechtelijke-aard" aria-label="Link naar deze kop">#</a></h3>
 <p>[Indien persoonsgegevens van strafrechtelijke aard worden verwerkt binnen dit werkproces, dan dient aangegeven te worden hoe hiermee wordt omgegaan - denk aan extra beveiliging of andere maatregelen - en dient de wettelijke uitzondering op het verwerkingsverbod benoemd te worden]</p>
 <table>
 <thead>
@@ -852,7 +852,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Persoonsgegevens van strafrechtelijke aard vormen ook een aparte categorie, deze staan wél in de AVG vermeld. Voorbeelden van strafrechtelijke persoonsgegevens zijn een strafblad, strafbare feiten, verdenkingen en veiligheidsmaatregelen. Voor het gebruiken van persoonsgegevens van strafrechtelijke aard geldt dat dit verboden is, tenzij er een wettelijke uitzondering geldt. Deze uitzonderingen staan onder andere in artikel 32 en 33 van de Uitvoeringswet AVG (UAVG). Betrek de Privacy Officer als dit het geval is.</p>
-<h2 id="opslag">Opslag</h2>
+<h2 id="opslag">Opslag<a class="anker" href="#opslag" aria-label="Link naar deze kop">#</a></h2>
 <p>[Beschrijf voor iedere in paragraaf 2.2 beschreven stap in het werkproces</p>
 <p>waar persoonsgegevens worden opgeslagen, de betreffende bewaartermijnen</p>
 <p>en eventueel of er archivering plaatsvindt]</p>
@@ -912,8 +912,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </table>
 <p>Voor het invullen van de tabel kan worden teruggegrepen op de deelstappen binnen het werkproces die zijn beschreven in paragraaf 2.2. In sommige werkprocessen zijn meerdere bewaartermijnen van toepassing, het is dan zaak om deze goed te beschrijven in de tabel.</p>
 <p>Per stap wordt aangegeven waar de data met persoonsgegevens worden opgeslagen, denk hierbij aan een afdelingsschijf, een specifieke ‘ruimte’ binnen Microsoft Teams, het zaaksysteem, Outlook of aan een vakapplicatie. Voor iedere stap moet ook worden aangegeven wat de bewaartermijn is van de persoonsgegevens die worden gebruikt binnen die stap. het team informatiebeheer kan ondersteunen bij het formuleren van de bewaartermijnen en de manier waarop persoonsgegevens worden gearchiveerd. Als er geen bewaartermijnen zijn ingeregeld, is dit een risico.</p>
-<h2 id="bescherming">Bescherming</h2>
-<h3>9.1 Beveiliging bij de gemeente</h3>
+<h2 id="bescherming">Bescherming<a class="anker" href="#bescherming" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="9-1-beveiliging-bij-de-gemeente">9.1 Beveiliging bij de gemeente<a class="anker" href="#9-1-beveiliging-bij-de-gemeente" aria-label="Link naar deze kop">#</a></h3>
 <p>[Kruis aan op welke wijze de persoonsgegevens worden beschermd binnen</p>
 <p>de gemeente, voeg maatregelen toe waar nodig. Betrek bij hoofdstuk 9 altijd een Information Security Officer]</p>
 <p>Gemeentebrede beveiligingsmaatregelen</p>
@@ -947,7 +947,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>☐ [Eigen aanvulling]</p>
 <p>☐ [Eigen aanvulling]</p>
 <p>Het is belangrijk dat de gemeente persoonsgegevens zorgvuldig bewaard, verwerkt én beveiligd. Bovenstaande opsommingen zijn voorbeelden van maatregelen die van toepassing zouden kunnen zijn op het werkproces. Kruis aan door op het vakje voor de maatregel te klikken om aan te geven dat die maatregel van toepassing is/wordt ingezet/of anderszins geldt voor het werkproces waarvoor de DPIA wordt uitgevoerd. Wanneer er beveiligingsmaatregelen van toepassing zijn, maar die niet in één van de opsommingen staan, is het mogelijk om die toe te voegen op een plek waar nu [Eigen aanvulling] staat. Het is nuttig om ook beleidstukken of richtlijnen van de afdeling erbij te pakken om na te gaan welke maatregelen van toepassing zijn. Ook is advies om hierbij een Information Security Officer (ISO) te betrekken.</p>
-<h3>9.2 Beveiliging bij (sub)verwerkers</h3>
+<h3 id="9-2-beveiliging-bij-sub-verwerkers">9.2 Beveiliging bij (sub)verwerkers<a class="anker" href="#9-2-beveiliging-bij-sub-verwerkers" aria-label="Link naar deze kop">#</a></h3>
 <p>[Geef per verwerker aan welke verwerkersovereenkomst is getekend en vul aan waar nodig]</p>
 <p>[Vul in naam verwerker 1]</p>
 <p>☐Verwerker heeft de VNG Standaard Verwerkersovereenkomst ondertekend. Hieronder staat Bijlage 2 van de getekende verwerkersovereenkomst</p>
@@ -1036,8 +1036,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Naast dat de gemeente persoonsgegevens goed moet beveiligen, verwacht de gemeente dit ook van (sub)verwerkers die zij inschakelt.</p>
 <p>In deze paragraaf moeten de verschillende verwerkers worden beschreven (gebruik hiervoor paragraaf 3.1) en de beveiligingsmaatregelen die zij (moeten) treffen. De beveiligingsmaatregelen staan vaak beschreven in de (verwerkers)overeenkomst die de gemeente heeft gesloten met deze partij. Omdat de gemeente gewoonlijk de algemene VNG standaard-verwerkersovereenkomst hanteert, kan worden aangevinkt dat deze overeenkomst is gesloten met de betreffende verwerker (de externe partij). Als dat zo is, dan moet Bijlage 2 van die overeenkomst worden opgezocht en overgenomen (geplakt worden) in deze paragraaf. In Bijlage 2 van die overeenkomst wordt namelijk beschreven welke (beveiligings)maatregelen de verwerker en de gemeente zijn overeengekomen.</p>
 <p>Wanneer de externe partij en de gemeente de VNG standaard-verwerkersovereenkomst niet hebben afgesloten, dan dient uitvoeriger beschreven te worden wat de partijen zijn overeengekomen met betrekking tot beveiliging van persoonsgegevens. Hiervoor kan het tekstvak worden gebruikt.</p>
-<h2 id="transparantie">Transparantie</h2>
-<h3>10.1 Gebruikte technieken</h3>
+<h2 id="transparantie">Transparantie<a class="anker" href="#transparantie" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="10-1-gebruikte-technieken">10.1 Gebruikte technieken<a class="anker" href="#10-1-gebruikte-technieken" aria-label="Link naar deze kop">#</a></h3>
 <p>[Beschrijf in onderstaande tabel of er gebruik wordt gemaakt van algoritmes, artificial intelligence, profilering en automatische besluitvorming]</p>
 <table>
 <thead>
@@ -1067,7 +1067,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </table>
 <p>In de tabel moet worden beschreven hoe de gemeente omgaat met bepaalde (nieuwe) technieken, tools en processen. Als sprake is van een algoritme of artificial intelligence binnen het werkproces dan dient uitgebreid aangegeven te worden hoe en waarom dit wordt toegepast binnen de verschillende stappen van het werkproces.</p>
 <p>De diverse termen uit de tabel staan uitgelegd in het hoofdstuk “Begrippen”. De betrokken Privacy Officer kan daarnaast om hulp worden gevraagd bij het beoordelen of een specifieke techniek van toepassing is en wat er vervolgens beschreven moet worden in de tabel.</p>
-<h3>Transparantie richting betrokkenen</h3>
+<h3 id="transparantie-richting-betrokkenen">Transparantie richting betrokkenen<a class="anker" href="#transparantie-richting-betrokkenen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Beschrijf in de tabel op welke wijze betrokkenen geïnformeerd worden over dit werkproces en hoe de afhandeling van verzoeken in het kader van rechten van betrokkenen geregeld is; verwijder of pas de vooraf ingevulde tekst eventueel aan]</p>
 <table>
 <thead>
@@ -1116,10 +1116,10 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Het recht om niet te worden onderworpen aan een op geautomatiseerde verwerking gebaseerd besluit (zie hiervoor ook de toelichting in paragraaf 10.1: besluiten met rechtsgevolgen gebaseerd hierop zijn verboden en dit is dus als recht opgenomen in de AVG).</p>
 </li>
 </ul>
-<h2 id="11-risico-s">11 Risico’s</h2>
+<h2 id="11-risico-s">11 Risico’s<a class="anker" href="#11-risico-s" aria-label="Link naar deze kop">#</a></h2>
 <p>Met de verwerking (het werkproces) worden bepaalde risico’s gelopen. Dit zijn risico’s die de gemeente loopt en risico’s die de betrokkenen (de inwoners, werknemers, etc.) lopen. In hoofdstuk 11 moeten deze risico’s zo uitvoerig mogelijk worden beschreven en beoordeeld. Een risico wordt geduid als KANS x IMPACT; dat wil zeggen dat de risicoclassificatie een waarde krijgt beoordeeld op de kans dat een risico gaat plaatsvinden binnen of naar aanleiding van het werkproces afgewogen tegen het gevolg van dat risico (de ‘impact’ die het plaatsvinden van dat risico teweegbrengt). Wanneer het bijvoorbeeld onwaarschijnlijk is dat iets gaat plaatsvinden, maar de gevolgen wanneer het toch plaatsvindt enorm zijn, dan wordt dit risico geschat op een waarde van ‘Midden’ (oftewel een middelhoog risico).</p>
 <p>Voor dit onderdeel van de DPIA is bijzondere privacy (en juridische) expertise vereist. Het is aanbevolen om dit hoofdstuk samen of in goed overleg met de betrokken Privacy Officer in te vullen.</p>
-<h3>11.1 Betrokkenen</h3>
+<h3 id="11-1-betrokkenen">11.1 Betrokkenen<a class="anker" href="#11-1-betrokkenen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul de tabel hieronder aan met de privacyrisico’s die betrokkenen lopen binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
 <table>
 <thead>
@@ -1169,7 +1169,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </ul>
 <p>Geef specifiek in de kolom ‘Beschrijving risico’ aan wat het risico inhoudt, hoe het tot uiting zou kunnen komen en wat het gevolg is of kan zijn. Beschrijf dus ook hoe het risico kan ontstaan; als er binnen het werkproces wordt gewerkt met e-mail en er is geen tweede paar ogen of extra controle ingebouwd in het proces om te kijken naar de juiste aanhef of adressering van een mail, dan kan het voorkomen dat de collega die de mail verzendt, dit naar de verkeerde doet – er is dan zeer waarschijnlijk sprake van een datalek. De oorzaak is dan het ontbreken van een controle op het juist verzenden van e-mails. Het is eveneens mogelijk dat er meerdere oorzaken zijn binnen het werkproces die tot een bepaald risico leiden. Wanneer er geen controle is op het juist verzenden van mails én er wordt niet gewerkt met een beveiligd mailprogramma zoals beveiligde mail, dan zijn er twee mogelijke oorzaken voor het ontstaan van een datalek – geef dit ook apart aan in de toelichting.</p>
 <p>Let op: het gaat hier in principe om risico’s die betrokkenen lopen binnen of naar aanleiding van het werkproces. Een risico kan echter worden overgenomen in de tabel hieronder, wanneer het eveneens een risico voor de gemeente betreft. Zo kan een datalek tot gevolg hebben dat de betrokkenen reputatieschade oplopen, maar de gemeente ook. In dat geval is het wijs om de regel te kopiëren naar de tabel hieronder en de tekst waar nodig aan te passen.</p>
-<h3>11.2 Gemeente [aanvullen]</h3>
+<h3 id="11-2-gemeente-aanvullen">11.2 Gemeente [aanvullen]<a class="anker" href="#11-2-gemeente-aanvullen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul de tabel hieronder aan met de privacyrisico’s die de gemeente loopt binnen dit werkproces, en verwijder of pas de vooraf in de tabel ingevulde voorbeelden aan wanneer die niet van toepassing zijn]</p>
 <table>
 <thead>
@@ -1243,11 +1243,11 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </ul>
 <p>Geef specifiek in de kolom ‘Beschrijving risico’ aan wat het risico inhoudt, hoe het tot uiting zou kunnen komen en wat het gevolg is of kan zijn. Het is mogelijk dat er meerdere oorzaken zijn binnen het werkproces die tot een bepaald risico leiden. Wanneer er geen controle is op het juist verzenden van mails, en er wordt ook niet gewerkt met een beveiligd mailprogramma, dan zijn er twee mogelijke oorzaken voor het ontstaan van een datalek – geef dit ook apart aan in de toelichting.</p>
 <p>Let op: het gaat hier om risico’s die de gemeente loopt binnen of naar aanleiding van het werkproces. Een risico kan echter worden overgenomen in de tabel hierboven, wanneer het eveneens een risico voor de betrokkenen betreft. Zo kan een datalek tot gevolg hebben dat de gemeente reputatieschade oploopt, maar de betrokkenen ook. In dat geval is het wijs om de regel te kopiëren naar de tabel hierboven en de tekst waar nodig aan te passen.</p>
-<h3>11.3 Risicoclassificatie werkproces</h3>
+<h3 id="11-3-risicoclassificatie-werkproces">11.3 Risicoclassificatie werkproces<a class="anker" href="#11-3-risicoclassificatie-werkproces" aria-label="Link naar deze kop">#</a></h3>
 <p>[Selecteer en sleep de ‘X’ naar de juiste plek in de risicomatrix hieronder om het totale risico van het werkproces aan te geven. Het gaat om de classificatie van de som van alle beschreven risico’s binnen het werkproces vóór het opvolgen en implementeren van de beheersmaatregelen. Om een juiste risicoscore aan het werkproces toe te kennen kan overleg plaatsvinden met de privacycoördinator]</p>
 <p>In de bovenstaande ‘matrix’ moet de risicoclassificatie van het gehele werkproces worden geplot. Dit is de totale risicoclassificatie van alle risico’s die zijn gesignaleerd in de vorige twee paragrafen. Hiervoor kan de grote ‘X’ uit het vak worden gesleept naar een vakje in de matrix. Wanneer het werkproces bijvoorbeeld slechts twee risico’s bevat; één geclassificeerd als ‘hoog’ voor de betrokkenen en eentje geclassificeerd als ‘laag’ voor de gemeente zelf, dan moet de X worden geplaatst in het vak rechts onderin (vak C1/1C). De meeste werkprocessen zullen echter veel meer risico’s bevatten, hiervoor komt dan iets meer rekenwerk om de hoek kijken.</p>
 <p>Het is belangrijk om te onthouden dat het risico dat wordt weergegeven in deze matrix ziet op het totale risicoplaatje van het gehele werkproces voordat er maatregelen zijn genomen om de gesignaleerde risico’s te verkleinen (mitigeren). Het betreft dus een momentopname ten tijde van het invullen van de DPIA. De maatregelen die worden beschreven in de paragraaf hierna gaan dat totale risico – als het goed is – (flink) verkleinen.</p>
-<h3>11.4 Beheersmaatregelen</h3>
+<h3 id="11-4-beheersmaatregelen">11.4 Beheersmaatregelen<a class="anker" href="#11-4-beheersmaatregelen" aria-label="Link naar deze kop">#</a></h3>
 <p>[Vul per gesignaleerd risico onderstaande tabel verder in]</p>
 <table>
 <thead>
@@ -1396,7 +1396,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <p>Beheersmaatregelen zijn dus eigenlijk acties die de organisatie of specifiek de betreffende afdeling waar het werkproces plaatsvindt kan nemen om bepaalde risico’s te verkleinen. Wanneer de beheersmaatregelen zijn beschreven in de derde kolom, dan kan in de vierde kolom een inschatting worden gegeven van het ‘restrisico’. Het restrisico is wederom de KANS x IMPACT die overblijft wanneer alle beschreven beheersmaatregelen worden uitgevoerd door de organisatie c.q. de betreffende afdeling (en waardoor de in paragrafen 11.1 en 11.2 beschreven risico’s worden verkleind).</p>
 <p>Als de risicoclassificatie van risiconummer 1 op ‘Midden’ is gezet en er zijn twee duidelijke beheersmaatregelen die waarschijnlijk veel impact gaan opleveren beschreven, dan is de kans groot dat het risico – na het uitvoeren en implementeren van de beheersmaatregelen – kleiner is geworden of misschien zelfs helemaal is verdwenen. In de vierde kolom kan dan ‘Laag’ of misschien zelfs wel ‘Geen’ worden aangegeven. Het is verstandig om dit in overleg met de betrokken Privacy Officer te doen.</p>
 <p>De vijfde kolom betreft de goedkeuring van de proceseigenaar. De proceseigenaar is verantwoordelijk voor het verloop van het werkproces, daarbij hoort ook het oppakken en (laten) uitvoeren van beheersmaatregelen. Het is de bedoeling dat de proceseigenaar in de vijfde kolom aangeeft of de beschreven risico’s door hem of haar worden geaccepteerd en of deze maatregelen dan ook gaan worden uitgevoerd. In de laatste kolom kan de procesexpert aangeven of een bepaalde maatregel al is of wordt opgepakt en uitgevoerd ten tijde van het uitvoeren van de DPIA. Veelal zijn de beschreven beheersmaatregelen nieuw en wordt hier dus ‘Nee’ aangekruist.</p>
-<h3>11.5 Restrisico</h3>
+<h3 id="11-5-restrisico">11.5 Restrisico<a class="anker" href="#11-5-restrisico" aria-label="Link naar deze kop">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -1410,7 +1410,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>In deze paragraaf wordt kort beschreven wat de conclusie is en wat het eindadvies omtrent (de voortgang van) het werkproces betreft. Beschrijf kort wat de restrisico’s zijn zoals beschreven in de voorgaande paragraaf en stem met de Privacy Officer af wat het advies is voor wat betreft de doorgang of de start van het werkproces. Zo kan het zijn dat de overgebleven risico’s na de te nemen maatregelen nog steeds te hoog zijn om een veilige en rechtmatige manier van werken te garanderen, waardoor een voorafgaande raadpleging (een advies) van de toezichthouder nodig is (de Autoriteit Persoonsgegevens).</p>
-<h2 id="advies-functionaris-gegevensbescherming">Advies Functionaris Gegevensbescherming</h2>
+<h2 id="advies-functionaris-gegevensbescherming">Advies Functionaris Gegevensbescherming<a class="anker" href="#advies-functionaris-gegevensbescherming" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -1423,8 +1423,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="ondertekening-dpia-rapportage">Ondertekening DPIA-rapportage</h2>
-<h3>13.1 Proceseigenaar</h3>
+<h2 id="ondertekening-dpia-rapportage">Ondertekening DPIA-rapportage<a class="anker" href="#ondertekening-dpia-rapportage" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="13-1-proceseigenaar">13.1 Proceseigenaar<a class="anker" href="#13-1-proceseigenaar" aria-label="Link naar deze kop">#</a></h3>
 <p>[vink aan wat van toepassing is]</p>
 <p>☐ De beschrijving van het werkproces is juist en volledig</p>
 <p>☐ De belangrijkste organisatorische en technische oorzaken zijn in kaart gebracht</p>
@@ -1467,7 +1467,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>13.2 Privacy Officer</h3>
+<h3 id="13-2-privacy-officer">13.2 Privacy Officer<a class="anker" href="#13-2-privacy-officer" aria-label="Link naar deze kop">#</a></h3>
 <p>[vink aan wat van toepassing is]</p>
 <p>☐ Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</p>
 <p>☐ Er is een kwaliteitscheck uitgevoerd op de DPIA</p>
@@ -1515,7 +1515,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h3>13.3 Functionaris Gegevensbescherming</h3>
+<h3 id="13-3-functionaris-gegevensbescherming">13.3 Functionaris Gegevensbescherming<a class="anker" href="#13-3-functionaris-gegevensbescherming" aria-label="Link naar deze kop">#</a></h3>
 <p>[vink aan wat van toepassing is]</p>
 <p>☐ Mijn belangrijkste adviezen zijn meegenomen in deze DPIA</p>
 <p>☐ De belangrijkste risico’s die een inbreuk op de rechten en vrijheden van betrokkenen</p>
@@ -1579,7 +1579,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
-<h2 id="bijlage-1-uitgebreide-procesbeschrijving">Bijlage 1 – Uitgebreide procesbeschrijving</h2>
+<h2 id="bijlage-1-uitgebreide-procesbeschrijving">Bijlage 1 – Uitgebreide procesbeschrijving<a class="anker" href="#bijlage-1-uitgebreide-procesbeschrijving" aria-label="Link naar deze kop">#</a></h2>
 <p>[Let op: Bijlage 1 dient alleen ingevuld te worden bij uitgebreide en complexe processen en niet bij eenvoudige en korte processen, zie paragraaf 2.2]</p>
 <p>Gegevensverwerking per stap</p>
 <p>[Vul per stap in het werkproces de onderstaande tabel in, zodat een gedetailleerd inzicht wordt verkregen in de gegevensverwerking.</p>

@@ -624,7 +624,7 @@ def stukpagina(md: Path, vak: str, fm: dict, sectie: dict) -> str:
                  f'<a href="{md.name}">Markdown-bron</a></p>')
     sjabloon = (Path(__file__).resolve().parent / "leesversie-sjabloon.html").read_text(encoding="utf-8")
     pagina = sjabloon.replace("$title$", html.escape(titel)).replace("$body$", lichaam)
-    pagina = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(zet_favicon(pagina))), vak, md.parent.name)
+    pagina = zet_bronvoet(zet_inhoudsopgave(zet_ankers(zorg_voor_ids(zet_favicon(pagina)))), vak, md.parent.name)
     # Na de inhoudsopgave gezet, zodat de weg terug direct onder de titel staat en het blok erna.
     pagina = re.sub(r"(</h1>)", lambda m: m.group(1) + bronregel, pagina, count=1)
     kruimels = kruimels_van_item(fm, sectie)[:-1] + [(str(fm["titel"]), "./"), (titel, "")]
@@ -1312,9 +1312,90 @@ def zorg_voor_ids(tekst: str) -> str:
         gebruikt.add(s)
         return s
 
-    return re.sub(r"<h2(?![^>]*\bid=)([^>]*)>(.*?)</h2>",
-                  lambda m: f'<h2 id="{slug(m.group(2))}"{m.group(1)}>{m.group(2)}</h2>',
+    return re.sub(r"<(h[234])(?![^>]*\bid=)([^>]*)>(.*?)</\1>",
+                  lambda m: f'<{m.group(1)} id="{slug(m.group(3))}"{m.group(2)}>{m.group(3)}</{m.group(1)}>',
                   tekst, flags=re.S)
+
+
+# Ankers: elke kop op niveau 2 tot en met 4 en elk punt van een genummerde lijst onder een genummerde
+# kop ("3.2 ...") krijgt een vaste plek waar je naar kunt linken, en een #-link die bij aanwijzen
+# verschijnt en de link kopieert. Onder het hoofdstuk Beleidsregels heet een punt een eis (eis-3-2-4),
+# elders een punt (punt-3-2-4).
+ANKER_START = "<!-- ankers -->"
+ANKER_EIND = "<!-- /ankers -->"
+ANKER = re.compile(r'<a class="anker" href="#[^"]*" aria-label="[^"]*">#</a>')
+ANKER_CSS = (
+    ".anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}"
+    "h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}"
+    "@media (hover:none){.anker{opacity:.45}}"
+    ".anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}"
+    ":target{scroll-margin-top:1em}li:target{background:#fff3c4}"
+    "@media print{.anker{display:none}}"
+)
+ANKER_JS = (
+    "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');"
+    "if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');"
+    "navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');"
+    "setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});"
+)
+
+
+def kale_kop(kop: str) -> str:
+    """De tekst van een kop zonder #-link en zonder tags."""
+    return re.sub(r"<[^>]+>", "", ANKER.sub("", kop)).strip()
+
+
+def zet_ankers(tekst: str) -> str:
+    """Ids op genummerde punten, #-links bij koppen en punten, en het stijl- en scriptblok. Idempotent."""
+    tekst = re.sub(re.escape(ANKER_START) + ".*?" + re.escape(ANKER_EIND), "", tekst, flags=re.S)
+    tekst = ANKER.sub("", tekst)
+    gebruikt = set(re.findall(r'id="([^"]+)"', tekst))
+    uit, pos = [], 0
+    hoofdstuk, nummer, stapel = "", None, []
+    patroon = re.compile(r"<(h[234])\b[^>]*>(.*?)</\1>|<(ol|ul)\b([^>]*)>|</(ol|ul)>|<li\b([^>]*)>", re.S)
+    for m in patroon.finditer(tekst):
+        uit.append(tekst[pos:m.start()])
+        pos = m.end()
+        stuk = m.group(0)
+        if m.group(1):
+            kop = kale_kop(m.group(2))
+            if m.group(1) == "h2":
+                hoofdstuk, nummer = kop, None
+            else:
+                n = re.match(r"^(\d+(?:\.\d+)*)\.?\s", kop)
+                nummer = n.group(1) if n else None
+            stapel = []
+            k = re.search(r'\bid="([^"]+)"', stuk)
+            if k:
+                stuk = re.sub(r"(</h[234]>)$", f'<a class="anker" href="#{k.group(1)}" aria-label="Link naar deze kop">#</a>'
+                              + r"\1", stuk)
+        elif m.group(3):
+            start = re.search(r'\bstart="(\d+)"', m.group(4) or "")
+            stapel.append([m.group(3), int(start.group(1)) - 1 if start else 0])
+        elif m.group(5):
+            if stapel:
+                stapel.pop()
+        elif stapel and stapel[-1][0] == "ol" and len(stapel) == 1 and nummer:
+            stapel[-1][1] += 1
+            if "id=" not in (m.group(6) or ""):
+                soort = "eis" if re.search(r"beleidsregels", hoofdstuk, re.I) else "punt"
+                anker = f"{soort}-{nummer.replace('.', '-')}-{stapel[-1][1]}"
+                if anker not in gebruikt:
+                    gebruikt.add(anker)
+                    stuk = f'<li id="{anker}"{m.group(6) or ""}>'
+        uit.append(stuk)
+    uit.append(tekst[pos:])
+    tekst = "".join(uit)
+    # Een #-link aan het eind van elk punt met een anker, voor het sluiten van het punt.
+    tekst = re.sub(r'(<li id="((?:eis|punt)-[0-9-]+)"[^>]*>)(.*?)(?=</li>|<ol\b|<ul\b)',
+                   lambda m: m.group(1) + m.group(3).rstrip() +
+                   f' <a class="anker" href="#{m.group(2)}" aria-label="Link naar dit punt">#</a>',
+                   tekst, flags=re.S)
+    # In de head: daar schuift het niet mee met wat later voor </body> wordt gezet (de bronvoet).
+    if 'class="anker"' not in tekst or "</head>" not in tekst:
+        return tekst
+    blok = f"{ANKER_START}<style>{ANKER_CSS}</style><script>{ANKER_JS}</script>{ANKER_EIND}"
+    return tekst.replace("</head>", blok + "</head>", 1)
 
 
 def inhoudsopgave(tekst: str) -> str:
@@ -1323,7 +1404,7 @@ def inhoudsopgave(tekst: str) -> str:
     if not koppen:
         return ""
     items = "".join(
-        f'<li><a href="#{h}">{re.sub(r"<[^>]+>", "", k).strip()}</a></li>' for h, k in koppen
+        f'<li><a href="#{h}">{kale_kop(k)}</a></li>' for h, k in koppen
     )
     klasse = "inhoud zijbalk" if LEESKOLOM in tekst else "inhoud"
     return (INHOUD_START + f"<style>{INHOUD_CSS}</style>"
@@ -1637,8 +1718,8 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     origineel = pad.read_text(encoding="utf-8")
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
     vak, item = pad.parent.parent.name, pad.parent.name
-    tekst = zet_bronvoet(zet_inhoudsopgave(zorg_voor_ids(
-        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))), vak, item)
+    tekst = zet_bronvoet(zet_inhoudsopgave(zet_ankers(zorg_voor_ids(
+        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))))), vak, item)
     tekst = koppel_stukken(tekst, pad.parent)
     # Eerst het pijlerblok, dan de normenregel: beide gaan vlak achter </h1>, dus wat als laatste
     # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.

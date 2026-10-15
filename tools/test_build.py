@@ -770,6 +770,47 @@ class BewijsVoor(Basis):
             self.assertNotIn(verboden, regel)
 
 
+class Ankers(unittest.TestCase):
+    """Naar elke kop en elk genummerd punt onder een genummerde kop kun je linken."""
+
+    PAGINA = ("<html><head><title>T</title></head><body><h1>T</h1><h2>1. Doel</h2><ol><li>niet genummerd</li></ol>"
+              "<h2>3. Beleidsregels</h2><h3>3.2 Zone 1</h3><ol><li>een<ul><li>sub</li></ul></li><li>twee</li></ol>"
+              "<blockquote><ol start=\"3\"><li>drie</li></ol></blockquote>"
+              "<h2>5. Naleving</h2><h3>5.1 Controles</h3><ol><li>a</li></ol></body></html>")
+
+    def bouw(self, tekst):
+        return build.zet_ankers(build.zorg_voor_ids(tekst))
+
+    def test_koppen_tot_en_met_h4_krijgen_een_id_en_een_link(self):
+        uit = self.bouw(self.PAGINA)
+        self.assertIn('<h3 id="3-2-zone-1">3.2 Zone 1<a class="anker" href="#3-2-zone-1"', uit)
+        self.assertIn('<h2 id="3-beleidsregels">', uit)
+
+    def test_eisen_onder_beleidsregels_en_punten_elders(self):
+        uit = self.bouw(self.PAGINA)
+        for anker in ("eis-3-2-1", "eis-3-2-2", "eis-3-2-3", "punt-5-1-1"):
+            self.assertIn(f'<li id="{anker}"', uit)
+        self.assertNotIn('<li id="eis-3-2-4"', uit)  # het punt in de sublijst telt niet mee
+        self.assertEqual(uit.count('id="eis-'), 3)
+        self.assertNotIn("niet genummerd</li>".replace("</li>", ' <a class="anker"'), uit)
+
+    def test_idempotent_en_een_blok(self):
+        een = self.bouw(self.PAGINA)
+        self.assertEqual(self.bouw(een), een)
+        self.assertEqual(een.count(build.ANKER_START), 1)
+
+    def test_blok_staat_in_de_head_en_schuift_niet_met_de_bronvoet(self):
+        een = self.bouw(self.PAGINA)
+        self.assertLess(een.index(build.ANKER_START), een.index("</head>"))
+        met_voet = een.replace("</body>", "<p>bronvoet</p></body>")
+        self.assertEqual(self.bouw(met_voet), met_voet)
+
+    def test_inhoudsopgave_zonder_hekje(self):
+        uit = self.bouw(self.PAGINA)
+        self.assertIn(">3. Beleidsregels</a>", build.inhoudsopgave(uit))
+        self.assertNotIn(">#<", build.inhoudsopgave(uit))
+
+
 class EchteKennisbank(unittest.TestCase):
     """De controle over de echte inhoud; dit is het net onder alle regels samen."""
 

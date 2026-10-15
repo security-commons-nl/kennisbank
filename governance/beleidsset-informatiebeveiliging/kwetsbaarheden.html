@@ -2,11 +2,11 @@
 <html lang="nl"><head><meta charset="utf-8"><title>Beleid kwetsbaarheden en patchmanagement</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
 h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
 h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
-table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
 blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
 .kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --></head>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid kwetsbaarheden en patchmanagement</span></nav><!-- /kruimelpad -->
 <h1>Beleid kwetsbaarheden en patchmanagement</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="kwetsbaarheden.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
 <table>
@@ -40,7 +40,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tbody>
 </table>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
-<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte</h2>
+<h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het vinden, beoordelen en verhelpen
 van technische kwetsbaarheden, voor het beheren van de configuratie van systemen en voor de bescherming
 tegen malware. Het legt vast wie scant, wie beoordeelt, binnen welke termijn een kwetsbaarheid verholpen is
@@ -59,7 +59,7 @@ informatiebeveiliging bij inkoop, het toetsen via het beleid contractbeheer.</p>
 buiten (CVD), beide in het beleid beveiligingsincidenten, het doorvoeren van een patch als wijziging (beleid
 wijzigingsbeheer), het veilig bouwen van eigen software (beleid veilige softwareontwikkeling) en de
 inrichting van het netwerk (beleid netwerkbeveiliging).</p>
-<h2 id="2-uitgangspunten">2. Uitgangspunten</h2>
+<h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
 <li>Wat de organisatie niet kent, kan zij niet patchen. Het overzicht van ICT-middelen uit het beleid
    bedrijfsmiddelenbeheer is de basis voor scannen, patchen en configuratiebeheer.</li>
@@ -72,92 +72,92 @@ inrichting van het netwerk (beleid netwerkbeveiliging).</p>
 <li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels</h2>
-<h3>3.1 Bescherming tegen malware</h3>
+<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="3-1-bescherming-tegen-malware">3.1 Bescherming tegen malware<a class="anker" href="#3-1-bescherming-tegen-malware" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li><strong>[beheerorganisatie]</strong> zorgt dat op alle
+<li id="eis-3-1-1"><strong>[beheerorganisatie]</strong> zorgt dat op alle
    werkplekken, servers en mailvoorzieningen antimalware-software draait die zichzelf en de bijbehorende
    herstelsoftware automatisch bijwerkt. Een apparaat dat langer dan zeven dagen geen update heeft ontvangen,
    verschijnt als afwijking in het beheeroverzicht en is binnen een week hersteld of van het netwerk
-   gehaald. [8.07.03]</li>
-<li>De antimalware-software scant alle omgevingen (werkplekken, servers, mailverkeer en apparaten die
+   gehaald. [8.07.03] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-2">De antimalware-software scant alle omgevingen (werkplekken, servers, mailverkeer en apparaten die
    verbinding maken met het netwerk), alle downloads vóór ze worden geopend of opgeslagen en alle bestanden
    die via mail, een koppeling of een opslagmedium binnenkomen, vóór gebruik. De scanlogging is voor de
-   beheerorganisatie en de CISO in te zien. [8.07.04]</li>
-<li>Downloaden is beperkt op basis van risico en noodzaak. Uitvoerbare bestanden en scripts van internet
+   beheerorganisatie en de CISO in te zien. [8.07.04] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-3">Downloaden is beperkt op basis van risico en noodzaak. Uitvoerbare bestanden en scripts van internet
    houdt de werkplekbeveiliging standaard tegen; een uitzondering vraagt de gebruiker aan bij de servicedesk
-   en de beheerorganisatie legt de toekenning vast. [8.07.01]</li>
-<li>Medewerkers krijgen bij indiensttreding en daarna elk jaar voorlichting over veilig surfen, phishing en
+   en de beheerorganisatie legt de toekenning vast. [8.07.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-1-4">Medewerkers krijgen bij indiensttreding en daarna elk jaar voorlichting over veilig surfen, phishing en
    het klikken op onbekende links. Een phishing-simulatie maakt deel uit van het jaarprogramma
-   bewustwording; de deelname en de uitkomst staan in het verslag van dat programma. [8.07.02]</li>
+   bewustwording; de deelname en de uitkomst staan in het verslag van dat programma. [8.07.02] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.2 Configuratiebeheer en hardening</h3>
+<h3 id="3-2-configuratiebeheer-en-hardening">3.2 Configuratiebeheer en hardening<a class="anker" href="#3-2-configuratiebeheer-en-hardening" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Voor elk type systeem (werkplek, server, netwerkcomponent, database, clouddienst) stelt de
+<li id="eis-3-2-1">Voor elk type systeem (werkplek, server, netwerkcomponent, database, clouddienst) stelt de
    beheerorganisatie een basisconfiguratie vast, gebaseerd op een erkende baseline zoals de CIS Benchmarks of
    de richtlijnen van de leverancier. Overbodige diensten, poorten, software en accounts staan uit of zijn
    verwijderd en standaardwachtwoorden zijn vóór ingebruikname vervangen. De basisconfiguraties zijn
-   vastgelegd en worden jaarlijks herzien. [8.09.01]</li>
-<li>De beheerorganisatie legt van elk systeem de werkelijke configuratie vast in
+   vastgelegd en worden jaarlijks herzien. [8.09.01] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-2">De beheerorganisatie legt van elk systeem de werkelijke configuratie vast in
    <strong>[configuratieregister]</strong>,
    met de verwijzing naar de basisconfiguratie en de goedgekeurde afwijkingen. Een wijziging van de
-   configuratie loopt via het beleid wijzigingsbeheer. [8.09.01]</li>
-<li>De beheerorganisatie meet elk kwartaal geautomatiseerd de afwijkingen van de basisconfiguratie. Een
+   configuratie loopt via het beleid wijzigingsbeheer. [8.09.01] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-3">De beheerorganisatie meet elk kwartaal geautomatiseerd de afwijkingen van de basisconfiguratie. Een
    afwijking is binnen een maand hersteld of staat als uitzondering vastgelegd met een risicoafweging en een
-   einddatum. [8.09.01]</li>
-<li>Alleen beheerders installeren software of activeren functies. Gebruikers hebben op hun werkplek geen
-   beheerrechten; de technische handhaving daarvan staat in het beleid wijzigingsbeheer. [8.09.01, 8.07.01]</li>
+   einddatum. [8.09.01] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2-4">Alleen beheerders installeren software of activeren functies. Gebruikers hebben op hun werkplek geen
+   beheerrechten; de technische handhaving daarvan staat in het beleid wijzigingsbeheer. [8.09.01, 8.07.01] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3>3.3 Kwetsbaarheden vinden</h3>
+<h3 id="3-3-kwetsbaarheden-vinden">3.3 Kwetsbaarheden vinden<a class="anker" href="#3-3-kwetsbaarheden-vinden" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>De beheerorganisatie scant alle ICT-middelen ten minste maandelijks op kwetsbaarheden en
+<li id="eis-3-3-1">De beheerorganisatie scant alle ICT-middelen ten minste maandelijks op kwetsbaarheden en
    misconfiguraties, en opnieuw na een grote wijziging. Waar mogelijk gebruikt zij agents op de eindpunten,
    zodat ook apparaten buiten kantoor meetellen. De scanresultaten staan in het kwetsbaarhedenregister
-   (paragraaf 3.5). [8.08.01, 8.08.02]</li>
-<li>De CISO volgt de waarschuwingen van het NCSC en de sectorale CERT. Een waarschuwing die een gebruikt
+   (paragraaf 3.5). [8.08.01, 8.08.02] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-2">De CISO volgt de waarschuwingen van het NCSC en de sectorale CERT. Een waarschuwing die een gebruikt
    product raakt, zet de CISO binnen één werkdag door aan de systeemeigenaar en de beheerorganisatie, met
-   een registratie van de doorzetting en de reactie. [8.08.01]</li>
-<li>De CISO stelt jaarlijks een testprogramma vast waarin elk informatiesysteem wordt gecontroleerd op
+   een registratie van de doorzetting en de reactie. [8.08.01] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-3">De CISO stelt jaarlijks een testprogramma vast waarin elk informatiesysteem wordt gecontroleerd op
    technische naleving van de beveiligingseisen, met een kwetsbaarheidsanalyse, een penetratietest of een
-   red-teamtest. Welke vorm per systeem, bepaalt de CISO op basis van het impactniveau. [8.08.04]</li>
-<li>Systemen die vanaf internet bereikbaar zijn, worden continu op kwetsbaarheden gescand, bijvoorbeeld met
-   een geautomatiseerde externe scan, en ten minste jaarlijks met een penetratietest getest. [8.08.04, 8.08.05]</li>
-<li>Bij elke nieuwe release of grote update van een internetbereikbaar systeem volgt een penetratietest,
+   red-teamtest. Welke vorm per systeem, bepaalt de CISO op basis van het impactniveau. [8.08.04] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-4">Systemen die vanaf internet bereikbaar zijn, worden continu op kwetsbaarheden gescand, bijvoorbeeld met
+   een geautomatiseerde externe scan, en ten minste jaarlijks met een penetratietest getest. [8.08.04, 8.08.05] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-5">Bij elke nieuwe release of grote update van een internetbereikbaar systeem volgt een penetratietest,
    waar mogelijk geautomatiseerd. Een bevinding met hoog risico die niet op een andere manier kan worden
    beperkt, houdt de release tegen: het systeem gaat dan niet in productie. Het testrapport hoort bij de
-   wijziging in het wijzigingsregister. [8.08.05]</li>
-<li>Penetratietesten voert een partij uit die onafhankelijk is van de bouwer en de beheerder van het
+   wijziging in het wijzigingsregister. [8.08.05] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-6">Penetratietesten voert een partij uit die onafhankelijk is van de bouwer en de beheerder van het
    systeem, met een vooraf afgesproken methode en reikwijdte. De CISO bewaart de rapporten en de opvolging
    in <strong>[register testrapporten]</strong>.
-   [8.08.04, 8.08.05]</li>
+   [8.08.04, 8.08.05] <a class="anker" href="#eis-3-3-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»</strong></p>
 <ol start="7">
-<li>Voor software die de organisatie zelf bouwt, scant de bouwstraat de broncode en de gebruikte
+<li id="eis-3-3-7">Voor software die de organisatie zelf bouwt, scant de bouwstraat de broncode en de gebruikte
    bibliotheken bij elke build automatisch op bekende kwetsbaarheden. Een kritieke bevinding in een
    bibliotheek stopt de build. Elke applicatie heeft een actuele lijst van gebruikte componenten (SBOM),
-   zodat een nieuwe kwetsbaarheid in een bibliotheek direct te vinden is. [8.08.05, 8.08.01]</li>
-<li>De penetratietest bij een release van een zelfgebouwde internetbereikbare applicatie staat in de
-   releaseprocedure als poort; de ontwikkelaar levert het testrapport aan bij de wijzigingsaanvraag. [8.08.05]</li>
+   zodat een nieuwe kwetsbaarheid in een bibliotheek direct te vinden is. [8.08.05, 8.08.01] <a class="anker" href="#eis-3-3-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3-8">De penetratietest bij een release van een zelfgebouwde internetbereikbare applicatie staat in de
+   releaseprocedure als poort; de ontwikkelaar levert het testrapport aan bij de wijzigingsaanvraag. [8.08.05] <a class="anker" href="#eis-3-3-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Nee, alleen inkoop en configuratie»</strong></p>
 <ol start="9">
-<li>De organisatie bouwt zelf geen software. Bij inkoop en contractverlenging eist zij van de leverancier
+<li id="eis-3-3-9">De organisatie bouwt zelf geen software. Bij inkoop en contractverlenging eist zij van de leverancier
    een penetratietest bij elke grote release van een internetbereikbaar systeem, inzage in het rapport en het
    verhelpen van hoge bevindingen vóór de release in productie gaat. De contracteigenaar controleert dat bij
-   elke release. [8.08.05]</li>
+   elke release. [8.08.05] <a class="anker" href="#eis-3-3-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.4 Beoordelen en verhelpen</h3>
+<h3 id="3-4-beoordelen-en-verhelpen">3.4 Beoordelen en verhelpen<a class="anker" href="#3-4-beoordelen-en-verhelpen" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Elke gevonden kwetsbaarheid krijgt van de systeemeigenaar, op advies van de beheerorganisatie, een
+<li id="eis-3-4-1">Elke gevonden kwetsbaarheid krijgt van de systeemeigenaar, op advies van de beheerorganisatie, een
    risico-inschatting op basis van kans op misbruik en verwachte schade. Daarin wegen de ernstscore van de
    leverancier of het CVE-register, het impactniveau van het systeem en de bereikbaarheid vanaf internet mee.
    Op basis van die vastgelegde afweging kiest de systeemeigenaar de maatregel: patchen, de configuratie
-   aanpassen, de functie uitzetten of het systeem afschermen. [8.08.02]</li>
-<li>De beheerorganisatie verhelpt een kwetsbaarheid binnen de termijn die bij het risico hoort, gerekend
-   vanaf het moment dat de kwetsbaarheid bekend is: [8.08.01, 8.08.02]</li>
+   aanpassen, de functie uitzetten of het systeem afschermen. [8.08.02] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-2">De beheerorganisatie verhelpt een kwetsbaarheid binnen de termijn die bij het risico hoort, gerekend
+   vanaf het moment dat de kwetsbaarheid bekend is: [8.08.01, 8.08.02] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <table>
 <thead>
@@ -186,66 +186,66 @@ inrichting van het netwerk (beleid netwerkbeveiliging).</p>
 </tbody>
 </table>
 <ol start="3">
-<li>Bij hoge kans en hoge schade zijn de beperkende maatregelen uiterlijk binnen een week getroffen. Bij
+<li id="eis-3-4-3">Bij hoge kans en hoge schade zijn de beperkende maatregelen uiterlijk binnen een week getroffen. Bij
    actief misbruik in het wild handelt de beheerorganisatie dezelfde dag en meldt zij de stand aan de CISO.
-   [8.08.01]</li>
-<li>Kan de patch niet binnen de termijn, of is er nog geen patch, dan treft de systeemeigenaar direct
+   [8.08.01] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-4">Kan de patch niet binnen de termijn, of is er nog geen patch, dan treft de systeemeigenaar direct
    tijdelijke maatregelen op basis van een vastgelegde risicoafweging, bijvoorbeeld de functie uitzetten,
    de toegang beperken of extra bewaking. De afweging noemt het restrisico, de einddatum en wie het
-   restrisico accepteert, en staat in het kwetsbaarhedenregister. [8.08.03]</li>
-<li>Software waarvoor de leverancier geen beveiligingsupdates meer levert, vervangt de systeemeigenaar
+   restrisico accepteert, en staat in het kwetsbaarhedenregister. [8.08.03] <a class="anker" href="#eis-3-4-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-5">Software waarvoor de leverancier geen beveiligingsupdates meer levert, vervangt de systeemeigenaar
    binnen <strong>[termijn uitfaseren]</strong>. Zolang dat niet is gebeurd, staat het systeem afgeschermd en als risico
-   in het risicoregister, met een risico-eigenaar. [8.08.03]</li>
-<li>Na het verhelpen stelt de beheerorganisatie met een herhaalscan vast dat de kwetsbaarheid weg is. Pas
-   dan sluit zij de melding in het kwetsbaarhedenregister. [8.08.01]</li>
+   in het risicoregister, met een risico-eigenaar. [8.08.03] <a class="anker" href="#eis-3-4-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-6">Na het verhelpen stelt de beheerorganisatie met een herhaalscan vast dat de kwetsbaarheid weg is. Pas
+   dan sluit zij de melding in het kwetsbaarhedenregister. [8.08.01] <a class="anker" href="#eis-3-4-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
 <ol start="7">
-<li>De eigen beheerorganisatie installeert beveiligingsupdates voor werkplekken, servers en
+<li id="eis-3-4-7">De eigen beheerorganisatie installeert beveiligingsupdates voor werkplekken, servers en
    netwerkcomponenten volgens een vast maandelijks venster, met een spoedprocedure voor de weektermijn.
    Patchen loopt als standaardwijziging via het beleid wijzigingsbeheer; een spoedpatch mag achteraf worden
-   geregistreerd. [8.08.01]</li>
+   geregistreerd. [8.08.01] <a class="anker" href="#eis-3-4-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
 <ol start="8">
-<li>Het beheer is uitbesteed. Het contract met de beheerpartij bevat de termijnen uit de tabel hierboven,
+<li id="eis-3-4-8">Het beheer is uitbesteed. Het contract met de beheerpartij bevat de termijnen uit de tabel hierboven,
    de plicht om binnen één werkdag te melden welke systemen een kritieke waarschuwing raakt, en een
-   maandelijkse rapportage over openstaande kwetsbaarheden en de patchstand. [8.08.01]</li>
-<li>De organisatie ontvangt de scanresultaten zelf of laat de scan doen door een andere partij dan de
+   maandelijkse rapportage over openstaande kwetsbaarheden en de patchstand. [8.08.01] <a class="anker" href="#eis-3-4-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4-9">De organisatie ontvangt de scanresultaten zelf of laat de scan doen door een andere partij dan de
    beheerder, zodat zij de rapportage van de beheerpartij kan controleren. De contracteigenaar legt de
-   vergelijking elk kwartaal vast. [8.08.02, 8.08.04]</li>
+   vergelijking elk kwartaal vast. [8.08.02, 8.08.04] <a class="anker" href="#eis-3-4-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie beheert je IT? «Volledig uitbesteed»</strong></p>
 <ol start="10">
-<li>Omdat er geen eigen beheerorganisatie is, wijst de organisatie een contractmanager aan die de
+<li id="eis-3-4-10">Omdat er geen eigen beheerorganisatie is, wijst de organisatie een contractmanager aan die de
    patchrapportage elke maand bespreekt met de leverancier, het verslag vastlegt en afwijkingen aan de CISO
-   meldt. [8.08.01]</li>
+   meldt. [8.08.01] <a class="anker" href="#eis-3-4-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3>3.5 Registreren en rapporteren</h3>
+<h3 id="3-5-registreren-en-rapporteren">3.5 Registreren en rapporteren<a class="anker" href="#3-5-registreren-en-rapporteren" aria-label="Link naar deze kop">#</a></h3>
 <ol>
-<li>Alle open kwetsbaarheden met risico gemiddeld of hoger staan in
+<li id="eis-3-5-1">Alle open kwetsbaarheden met risico gemiddeld of hoger staan in
    <strong>[kwetsbaarhedenregister]</strong>,
    met systeem, risico, eigenaar, termijn en status. Termijnoverschrijdingen zijn zichtbaar en de
-   beheerorganisatie houdt het register dagelijks bij. [8.08.01, 8.08.02]</li>
-<li>De CISO rapporteert maandelijks aan de directie het aantal open kwetsbaarheden per risiconiveau, de
-   termijnoverschrijdingen, de geaccepteerde restrisico's en de patchstand. [8.08.01, 8.08.03]</li>
+   beheerorganisatie houdt het register dagelijks bij. [8.08.01, 8.08.02] <a class="anker" href="#eis-3-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5-2">De CISO rapporteert maandelijks aan de directie het aantal open kwetsbaarheden per risiconiveau, de
+   termijnoverschrijdingen, de geaccepteerde restrisico's en de patchstand. [8.08.01, 8.08.03] <a class="anker" href="#eis-3-5-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak»</strong></p>
 <ol start="3">
-<li>Er is geen eigen informatiebeveiligingsfunctionaris met voldoende tijd. De scans en de risico-inschatting
+<li id="eis-3-5-3">Er is geen eigen informatiebeveiligingsfunctionaris met voldoende tijd. De scans en de risico-inschatting
    voert een externe partij uit; <strong>[functionaris informatiebeveiliging]</strong> bespreekt de maandrapportage met die
-   partij, legt de besluiten vast en zet open punten uit bij de systeemeigenaren. [8.08.02]</li>
+   partij, legt de besluiten vast en zet open punten uit bij de systeemeigenaren. [8.08.02] <a class="anker" href="#eis-3-5-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een ISO of CISO in deeltijd» of «Een eigen team (CISO met ISO's)»</strong></p>
 <ol start="4">
-<li>De informatiebeveiligingsfunctionaris beoordeelt elke maand de scanresultaten, filtert valse meldingen,
-   legt dat vast en zet open punten uit bij de systeemeigenaren. [8.08.02]</li>
+<li id="eis-3-5-4">De informatiebeveiligingsfunctionaris beoordeelt elke maand de scanresultaten, filtert valse meldingen,
+   legt dat vast en zet open punten uit bij de systeemeigenaren. [8.08.02] <a class="anker" href="#eis-3-5-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</h2>
+<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -280,7 +280,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle</h2>
+<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>; afwijkingen gaan als bevinding naar het
 risicoregister.</p>
@@ -376,7 +376,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang</h2>
+<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (het overzicht van ICT-middelen), het beleid wijzigingsbeheer (patches en
 configuratiewijzigingen als wijziging, lijst van toegestane software), het beleid veilige
@@ -384,7 +384,7 @@ softwareontwikkeling (scannen van eigen code en bibliotheken), het beleid beveil
 misbruik van een kwetsbaarheid), het beleid informatieclassificatie (impactniveau als maat voor de schade),
 het beleid informatiebeveiliging bij inkoop en contractbeheer (termijnen en rapportages in contracten) en
 het beleid screening, bewustzijn en opleiding (voorlichting en phishing-simulatie).</p>
-<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</h2>
+<h2 id="bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen<a class="anker" href="#bijlage-a-bio-2-0-maatregelen" aria-label="Link naar deze kop">#</a></h2>
 <p>De maatregelen van dit domein (10, waarvan 9 overheidsmaatregelen), waar dit stuk ze invult en welke controle ze aantoont. Nummers volgens BIO2 v1.3 definitief - 9 januari 2026; de tekst van de maatregel staat bij het CIP. Waar de BIO 2.0 geen overheidsmaatregel kent, geldt de ISO 27002-beheersmaatregel.</p>
 <table>
 <thead>
@@ -469,7 +469,7 @@ het beleid screening, bewustzijn en opleiding (voorlichting en phishing-simulati
 </tr>
 </tbody>
 </table>
-<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen</h2>
+<h2 id="bijlage-b-afkortingen">Bijlage B: Afkortingen<a class="anker" href="#bijlage-b-afkortingen" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -528,7 +528,7 @@ het beleid screening, bewustzijn en opleiding (voorlichting en phishing-simulati
 </tr>
 </tbody>
 </table>
-<h2 id="nog-in-te-vullen">Nog in te vullen</h2>
+<h2 id="nog-in-te-vullen">Nog in te vullen<a class="anker" href="#nog-in-te-vullen" aria-label="Link naar deze kop">#</a></h2>
 <ul>
 <li><strong>beheerorganisatie</strong>: de eigen afdeling of de leverancier die de systemen beheert</li>
 <li><strong>configuratieregister</strong>: het systeem waarin de configuraties staan, bijvoorbeeld de configuratiedatabase van het beheertool</li>
