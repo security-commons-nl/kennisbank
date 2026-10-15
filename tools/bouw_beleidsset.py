@@ -316,6 +316,51 @@ def genereer(data: dict, profiel: dict) -> dict[str, dict]:
     return {s["domein"]: genereer_stuk(s, data, profiel) for s in data["bouwstenen"]}
 
 
+LIJSTKOP = "\n## Nog in te vullen\n"
+
+
+def vul_waarden(markdown: str, waarden: dict, herkomst: dict | None = None) -> str:
+    """Zet waarden in de invulvelden van een gegenereerd stuk: `**[naam]**` wordt de waarde, het veld gaat
+    van de lijst *Nog in te vullen* af, en met een herkomst (een AI-voorstel) komt er een regel onder het stuk
+    die zegt welke velden zo zijn ingevuld. Spiegel: vulWaarden in tools/beleidsset.js."""
+    gevuld = []
+    for naam in sorted(waarden):
+        waarde = str(waarden[naam]).strip()
+        doel = f"**[{naam}]**"
+        if waarde and doel in markdown:
+            markdown = markdown.replace(doel, waarde)
+            gevuld.append(naam)
+    if not gevuld:
+        return markdown
+    if LIJSTKOP in markdown:
+        voor, lijst = markdown.split(LIJSTKOP, 1)
+        blijft = [r for r in lijst.split("\n")
+                  if r.startswith("- **") and r[4:].split("**", 1)[0] not in gevuld]
+        markdown = voor.rstrip("\n") + "\n"
+        if blijft:
+            markdown += LIJSTKOP + "\n" + "\n".join(blijft) + "\n"
+    if herkomst:
+        markdown += ("\n## Herkomst van ingevulde waarden\n\n"
+                     f"Ingevuld uit een AI-voorstel ({herkomst.get('leverancier', '?')}, model "
+                     f"{herkomst.get('model', '?')}, {herkomst.get('gemaakt', '?')}, invoer sha256 "
+                     f"{str(herkomst.get('sha256', ''))[:12]}): {', '.join(gevuld)}. Controleer elke waarde "
+                     "voordat je het stuk vaststelt.\n")
+    return markdown
+
+
+def invulvelden(data: dict) -> list[dict]:
+    """Alle invulvelden van de set, met de eerste toelichting die erbij staat; ook die van het titelblad."""
+    velden: dict[str, str] = {}
+    for s in data["bouwstenen"]:
+        stuk = genereer_stuk(s, data, {})["markdown"]
+        lijst = stuk.split(LIJSTKOP, 1)[1] if LIJSTKOP in stuk else ""
+        for r in lijst.split("\n"):
+            m = re.match(r"^- \*\*(.+?)\*\*(?:: (.*))?$", r)
+            if m and (m.group(1) not in velden or not velden[m.group(1)]):
+                velden[m.group(1)] = m.group(2) or ""
+    return [{"naam": n, "toelichting": velden[n]} for n in sorted(velden)]
+
+
 # ---------------------------------------------------------------------------------------------
 # Toetsen
 # ---------------------------------------------------------------------------------------------
@@ -472,6 +517,43 @@ def pagina(data: dict) -> str:
             .replace("/*CODE*/", code).replace("/*DATA*/", gegevens))
 
 
+AI_MAP = ROOT / "tools" / "beleidsset-ai"
+AI_PAGINA = ITEM / "beleidsset-ai.html"
+CONNECT_SRC = "https: http://localhost:* http://127.0.0.1:*"
+
+
+def csp_hash(inhoud: str) -> str:
+    import base64
+    import hashlib
+    return base64.b64encode(hashlib.sha256(inhoud.encode("utf-8")).digest()).decode()
+
+
+def ai_pagina(data: dict) -> str:
+    """De AI-hulp: zelfde recept als procescheck/ai/bouw.py. Opdrachten, de vragen en de invulvelden als JSON
+    in dezelfde scripttag als kern.js en ai.js, en een CSP op de sha256 van script en stijl."""
+    import hashlib
+    opdrachten = lees_json(AI_MAP / "opdrachten.json")
+    opdrachten["vragen"] = [{"id": v["id"], "vraag": v["vraag"], "meerdere": bool(v.get("meerdere")),
+                             "antwoorden": [{"id": a["id"], "label": a["label"]} for a in v["antwoorden"]]}
+                            for v in data["profiel"]["vragen"]]
+    opdrachten["velden"] = invulvelden(data)
+    opdrachten["set_vingerafdruk"] = hashlib.sha256(
+        json.dumps(data, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+    lees = lambda naam: (AI_MAP / naam).read_bytes().decode("utf-8").replace("\r\n", "\n")
+    css, kern, ai, sjabloon = lees("ai.css").strip(), lees("kern.js").strip(), lees("ai.js").strip(), lees("pagina.html")
+    if "fetch(" in kern:
+        raise BouwsteenFout("kern.js mag geen netwerk kennen")
+    json_bron = json.dumps(opdrachten, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    script = "window.__OPDRACHTEN__ = " + json_bron + ";\n" + kern + "\n" + ai
+    html = (sjabloon.replace("__CSS__", css).replace("__SCRIPT__", script)
+            .replace("__SCRIPT_HASH__", csp_hash(script)).replace("__STYLE_HASH__", csp_hash(css))
+            .replace("__CONNECT_SRC__", CONNECT_SRC))
+    for rest in ("__CSS__", "__SCRIPT__", "__SCRIPT_HASH__", "__STYLE_HASH__", "__CONNECT_SRC__"):
+        if rest in html:
+            raise BouwsteenFout(f"AI-pagina: {rest} niet ingevuld")
+    return html
+
+
 BEGIN, EINDE = "<!-- stukken:begin -->", "<!-- stukken:einde -->"
 
 
@@ -509,6 +591,7 @@ def uitvoer(data: dict) -> dict[Path, str]:
         uit[ITEM / bestandsnaam(s)] = stukken[s["domein"]]["markdown"]
     uit[DATA] = json.dumps(data, ensure_ascii=False, indent=1) + "\n"
     uit[PAGINA] = pagina(data)
+    uit[AI_PAGINA] = ai_pagina(data)
     return uit
 
 

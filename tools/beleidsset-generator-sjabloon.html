@@ -36,6 +36,13 @@ details.ai{margin:1em 0;padding:.5em .8em;border:1px solid var(--lijn);backgroun
 details.ai summary{cursor:pointer;font-weight:600}
 details.ai ol,details.ai ul{padding-left:1.4em}
 details.ai a{overflow-wrap:anywhere}
+.ai-hulp{margin:1.2em 0;padding:.6em .9em;border:1px solid var(--lijn);border-left:3px solid var(--accent)}
+.ai-hulp h2{font-size:12pt;margin:.2em 0 .4em}
+.melding{margin-left:.6em;font-size:10pt}
+.rol{overflow-x:auto}
+table.voorstel{border-collapse:collapse;width:100%;font-size:10pt}
+table.voorstel th,table.voorstel td{border:1px solid var(--lijn);padding:.3em .5em;vertical-align:top;text-align:left}
+table.voorstel th{background:var(--vlak)}
 .voet{margin-top:2em;font-size:9.5pt;color:var(--zacht);border-top:1px solid var(--lijn);padding-top:.5em}
 @media print{body{max-width:none;margin:0}form,.knoppen,.lijst,.kruimel{display:none}@page{size:A4;margin:2cm}}
 </style></head><body>
@@ -85,6 +92,21 @@ dat met <code>--profiel antwoorden.json uitmap/</code> een hele set schrijft.</p
 </details>
 <form id="vragen"><div class="vragen" id="velden"></div>
 <div class="knoppen"><button type="submit">Maak de set</button><button type="button" class="zacht" id="wis">Antwoorden wissen</button></div></form>
+<section class="ai-hulp" id="ai-hulp">
+<h2>Laat een AI meelezen in je eigen documenten (optioneel)</h2>
+<p>Met de <a href="beleidsset-ai.html">AI-hulp</a> en je eigen API-sleutel laat je een taalmodel de contextvragen
+beantwoorden uit een beschrijving van je organisatie, of de invulvelden (rollen, systemen, documenten) uit je
+organisatiebesluit of bestaand beleid. Dat gebeurt op een aparte pagina; deze pagina praat met niemand. Je krijgt
+een voorstel als bestand, met per regel het citaat uit je document, en kiest hier wat je overneemt.</p>
+<div class="knoppen"><button type="button" class="zacht" id="knop-voorstel">AI-voorstel laden</button>
+<input type="file" id="bestand-voorstel" accept=".json" hidden><span id="voorstel-melding" class="melding"></span></div>
+</section>
+<section id="ai-voorstel" hidden>
+<h2 id="voorstel-kop">AI-voorstel</h2>
+<p class="uitleg" id="voorstel-herkomst"></p>
+<div class="rol"><table class="voorstel" id="voorstel-tabel"></table></div>
+<div class="knoppen"><button type="button" id="voorstel-overnemen">Overnemen</button><button type="button" class="zacht" id="voorstel-sluiten">Sluiten zonder overnemen</button></div>
+</section>
 <section id="uitkomst" hidden>
 <h2>Je set: 21 beleidsstukken</h2>
 <p class="uitleg">Je ziet één stuk tegelijk. <strong>Kies hieronder een stuk</strong> om het te lezen, of download de hele
@@ -186,10 +208,16 @@ var DATA = /*DATA*/;
     document.getElementById("positie").textContent = "Stuk " + nr + " van " + DATA.bouwstenen.length + ": " + steen.titel;
     stukEl.innerHTML = html(set[domein].markdown);
   }
+  // Ingevulde waarden uit een AI-voorstel: alleen in deze browser, te wissen met Antwoorden wissen.
+  var WAARDEN_OPSLAG = "beleidsset-waarden";
+  var ingevuld = { waarden: {}, herkomst: null };
+  try { ingevuld = JSON.parse(localStorage.getItem(WAARDEN_OPSLAG) || "null") || ingevuld; } catch (e) {}
+
   function maak() {
     var p = profiel();
     try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
     set = Beleidsset.genereer(DATA, p);
+    Object.keys(set).forEach(function (d) { set[d].markdown = Beleidsset.vulWaarden(set[d].markdown, ingevuld.waarden, ingevuld.herkomst); });
     lijst.innerHTML = "";
     var strategisch = DATA.bouwstenen.slice(0, 1), tactisch = DATA.bouwstenen.slice(1);
     [["Strategisch beleid", strategisch], ["Tactisch beleid per domein (" + tactisch.length + " stukken)", tactisch]].forEach(function (g) {
@@ -217,7 +245,77 @@ var DATA = /*DATA*/;
     return DATA.bouwstenen.map(function (s) { return set[s.domein].markdown; }).join("\n\n---\n\n");
   }
   document.getElementById("vragen").addEventListener("submit", function (e) { e.preventDefault(); maak(); });
-  document.getElementById("wis").addEventListener("click", function () { zet({}); try { localStorage.removeItem(OPSLAG); } catch (e) {} });
+  document.getElementById("wis").addEventListener("click", function () {
+    zet({}); ingevuld = { waarden: {}, herkomst: null };
+    try { localStorage.removeItem(OPSLAG); localStorage.removeItem(WAARDEN_OPSLAG); } catch (e) {}
+  });
+
+  // ── AI-voorstel laden: tonen, per regel kiezen, pas bij Overnemen iets veranderen ──
+  var voorstel = null;
+  function vraagVan(id) { return DATA.profiel.vragen.filter(function (v) { return v.id === id; })[0]; }
+  function cel(tr, tekst) { var td = document.createElement("td"); td.textContent = tekst; tr.appendChild(td); return td; }
+  function laadVoorstel(v) {
+    var melding = document.getElementById("voorstel-melding");
+    if (!v || v.formaat !== "beleidsset-voorstel" || v.tool !== "beleidsset" || ["profiel", "velden"].indexOf(v.opdracht) < 0 || !Array.isArray(v.items)) {
+      melding.textContent = "Dit is geen voorstel van de AI-hulp van de beleidsset."; return;
+    }
+    melding.textContent = "";
+    voorstel = v;
+    var vragen = v.opdracht === "profiel";
+    document.getElementById("voorstel-kop").textContent = "AI-voorstel: " + (vragen ? "antwoorden op de contextvragen" : "invulvelden");
+    document.getElementById("voorstel-herkomst").textContent = "Gemaakt op " + v.gemaakt + " met " + v.leverancier + " (model " + v.model +
+      ") uit " + v.invoer.naam + ". Vink aan wat je overneemt. Regels waarvan het citaat niet in je document staat, staan uit." +
+      (v.onzeker && v.onzeker.length ? " Het model was onzeker over: " + v.onzeker.join(" ") : "");
+    var tabel = document.getElementById("voorstel-tabel"); tabel.innerHTML = "";
+    var kop = document.createElement("tr");
+    ["", vragen ? "Vraag" : "Invulveld", vragen ? "Antwoord" : "Waarde", "Citaat uit je document"].forEach(function (t) {
+      var th = document.createElement("th"); th.textContent = t; kop.appendChild(th);
+    });
+    tabel.appendChild(kop);
+    v.items.forEach(function (item, i) {
+      var vraag = vragen ? vraagVan(item.code) : null;
+      if (vragen && !vraag) return;
+      var tr = document.createElement("tr"); tr.dataset.voorstel = item.code;
+      var td = document.createElement("td"), vink = document.createElement("input");
+      vink.type = "checkbox"; vink.checked = item.citaat_klopt === true; vink.dataset.index = i; vink.setAttribute("aria-label", "overnemen");
+      td.appendChild(vink); tr.appendChild(td);
+      cel(tr, vragen ? vraag.vraag : item.code);
+      cel(tr, vragen ? item.antwoorden.map(function (a) {
+        var x = vraag.antwoorden.filter(function (b) { return b.id === a; })[0]; return x ? x.label : a;
+      }).join(", ") : item.waarde);
+      cel(tr, (item.citaat_klopt ? "" : "niet in je document: ") + item.bronregel);
+      tabel.appendChild(tr);
+    });
+    document.getElementById("ai-voorstel").hidden = false;
+    document.getElementById("ai-voorstel").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("knop-voorstel").addEventListener("click", function () { document.getElementById("bestand-voorstel").click(); });
+  document.getElementById("bestand-voorstel").addEventListener("change", function (g) {
+    var b = g.target.files[0]; g.target.value = "";
+    if (!b) return;
+    b.text().then(function (t) { laadVoorstel(JSON.parse(t)); }).catch(function () {
+      document.getElementById("voorstel-melding").textContent = "Dit bestand is niet te lezen als voorstel.";
+    });
+  });
+  document.getElementById("voorstel-sluiten").addEventListener("click", function () { voorstel = null; document.getElementById("ai-voorstel").hidden = true; });
+  document.getElementById("voorstel-overnemen").addEventListener("click", function () {
+    if (!voorstel) return;
+    var gekozenItems = [].slice.call(document.querySelectorAll("#voorstel-tabel input:checked")).map(function (x) { return voorstel.items[+x.dataset.index]; });
+    if (voorstel.opdracht === "profiel") {
+      var p = profiel();
+      gekozenItems.forEach(function (item) { var v = vraagVan(item.code); p[item.code] = v.meerdere ? item.antwoorden : item.antwoorden[0]; });
+      zet(p);
+      try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
+    } else {
+      gekozenItems.forEach(function (item) { ingevuld.waarden[item.code] = item.waarde; });
+      ingevuld.herkomst = { leverancier: voorstel.leverancier, model: voorstel.model, gemaakt: voorstel.gemaakt, sha256: voorstel.invoer.sha256 };
+      try { localStorage.setItem(WAARDEN_OPSLAG, JSON.stringify(ingevuld)); } catch (e) {}
+    }
+    document.getElementById("voorstel-melding").textContent = gekozenItems.length + " overgenomen uit het AI-voorstel" +
+      (voorstel.opdracht === "profiel" ? "; kies Maak de set om de stukken te zien." : "; ze staan in de stukken zodra je de set maakt.");
+    voorstel = null; document.getElementById("ai-voorstel").hidden = true;
+    if (set) maak();
+  });
   document.getElementById("stuk-md").addEventListener("click", function () {
     var s = DATA.bouwstenen.filter(function (x) { return x.domein === gekozen; })[0];
     bewaar(s.bestand.replace(/^\d+-/, ""), set[gekozen].markdown, "text/markdown");

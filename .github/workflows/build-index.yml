@@ -78,6 +78,10 @@ jobs:
       - name: Beleidsset past bij de bouwstenen
         run: python tools/bouw_beleidsset.py --check
 
+      # De AI-hulp gebruikt de kern van procescheck; twee citaatcontroles is er een te veel.
+      - name: Kern van de AI-hulp gelijk aan procescheck
+        run: python tools/beleidsset-ai/haal_kern.py --check
+
       # Op een PR: alleen controleren. Elke overtreding blokkeert (exit 1).
       - name: Controleer (PR)
         if: github.event_name == 'pull_request'

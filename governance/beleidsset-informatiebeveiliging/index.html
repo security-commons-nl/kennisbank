@@ -299,6 +299,31 @@ controleraamwerk en bijlage A laten staan zodat het stuk toetsbaar
 blijft. Wie precies dezelfde tekst wil als het formulier, rekent met <a
 href="beleidsset.json"><code>beleidsset.json</code></a> of draait
 <code>python tools/bouw_beleidsset.py --profiel antwoorden.json uitmap/</code>.</p>
+<h2 id="ai-hulp-met-je-eigen-sleutel">AI-hulp met je eigen sleutel</h2>
+<p>De <a href="beleidsset-ai.html">AI-hulp</a> volgt het patroon van de
+andere instrumenten van de commons: een aparte pagina, je eigen sleutel
+(alleen in de tab, weg als je hem sluit), een leverancier naar keuze
+(standaard Mistral, ook een lokale Ollama), en toestemming per sessie.
+Twee opdrachten:</p>
+<ul>
+<li><strong>Contextvragen beantwoorden</strong> uit een beschrijving van
+je organisatie, zoals een jaarverslag of een eerdere
+ENSIA-verantwoording.</li>
+<li><strong>Invulvelden invullen</strong> uit je eigen documenten, zoals
+een organisatiebesluit, een mandaatregeling of een lijst met
+systemen.</li>
+</ul>
+<p>Het model schrijft geen beleid: de regels staan in de bouwstenen. Het
+levert een voorstel als bestand. Elke regel draagt een letterlijk
+citaat, en een regel waarvan het citaat niet in je document staat, staat
+in de generator standaard uit. Pas na <em>Overnemen</em> verandert er
+iets, en onder elk stuk staat dan welke velden uit een AI-voorstel
+komen. De prompts en schema's staan als data in <a
+href="https://github.com/security-commons-nl/kennisbank/blob/main/tools/beleidsset-ai/opdrachten.json"><code>tools/beleidsset-ai/opdrachten.json</code></a>;
+de controles (schema, citaat) delen een kern met de andere instrumenten.
+Uitleg over wat er waarheen gaat: <a
+href="https://security-commons-nl.github.io/ai-hulp/">AI-hulp met je
+eigen sleutel</a>.</p>
 <h2 id="bijdragen">Bijdragen</h2>
 <p>Een regel die bij jullie anders is, een vraag die ontbreekt of een
 domein dat beter kan: pas de bouwsteen aan en draai

@@ -168,7 +168,39 @@
     return uit;
   }
 
-  var api = { genereer: genereer, genereerStuk: genereerStuk, beoordeel: beoordeel };
+  var LIJSTKOP = "\n## Nog in te vullen\n";
+
+  // Spiegel van vul_waarden in tools/bouw_beleidsset.py.
+  function vulWaarden(markdown, waarden, herkomst) {
+    var gevuld = [];
+    Object.keys(waarden).sort().forEach(function (naam) {
+      var waarde = String(waarden[naam]).trim();
+      var doel = "**[" + naam + "]**";
+      if (waarde && markdown.indexOf(doel) >= 0) {
+        markdown = markdown.split(doel).join(waarde);
+        gevuld.push(naam);
+      }
+    });
+    if (!gevuld.length) return markdown;
+    var i = markdown.indexOf(LIJSTKOP);
+    if (i >= 0) {
+      var voor = markdown.slice(0, i), lijst = markdown.slice(i + LIJSTKOP.length);
+      var blijft = lijst.split("\n").filter(function (r) {
+        return r.indexOf("- **") === 0 && gevuld.indexOf(r.slice(4).split("**")[0]) < 0;
+      });
+      markdown = voor.replace(/\n+$/, "") + "\n";
+      if (blijft.length) markdown += LIJSTKOP + "\n" + blijft.join("\n") + "\n";
+    }
+    if (herkomst) {
+      markdown += "\n## Herkomst van ingevulde waarden\n\n" +
+        "Ingevuld uit een AI-voorstel (" + (herkomst.leverancier || "?") + ", model " + (herkomst.model || "?") + ", " +
+        (herkomst.gemaakt || "?") + ", invoer sha256 " + String(herkomst.sha256 || "").slice(0, 12) + "): " +
+        gevuld.join(", ") + ". Controleer elke waarde voordat je het stuk vaststelt.\n";
+    }
+    return markdown;
+  }
+
+  var api = { genereer: genereer, genereerStuk: genereerStuk, beoordeel: beoordeel, vulWaarden: vulWaarden };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else wereld.Beleidsset = api;
 })(this);

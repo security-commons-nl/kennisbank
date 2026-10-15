@@ -268,7 +268,122 @@ class EchteSet(unittest.TestCase):
         self.assertEqual(kopie["maatregelen"], [{k: m[k] for k in ("id", "titel", "thema", "soort")} for m in bron["maatregelen"]])
 
 
+class AIHulp(unittest.TestCase):
+    """De AI-hulp met eigen sleutel: opdrachten als data, de kern gelijk aan procescheck, de pagina dicht."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.data = b.laad()
+        cls.opdrachten = json.loads((b.AI_MAP / "opdrachten.json").read_text(encoding="utf-8"))
+        cls.pagina = b.ai_pagina(cls.data)
+        cls.generator = b.pagina(cls.data)
+
+    def test_schemas_zijn_dicht_en_eisen_een_citaat(self):
+        def dicht(schema, pad):
+            if schema.get("type") == "object":
+                self.assertIs(schema.get("additionalProperties"), False, pad)
+                for k, sub in schema.get("properties", {}).items():
+                    dicht(sub, pad + "." + k)
+            if schema.get("type") == "array":
+                dicht(schema["items"], pad + "[]")
+        for o in self.opdrachten["opdrachten"]:
+            dicht(o["schema"], o["id"])
+            self.assertIn("onzeker", o["schema"]["required"], o["id"])
+            self.assertIn("bronregel", o["schema"]["properties"]["items"]["items"]["required"], o["id"])
+            self.assertIn(o["parameter"], ("vragen", "velden"))
+
+    def test_prompts_verzinnen_niets_en_schrijven_geen_beleid(self):
+        regels = self.opdrachten["vaste_regels"]
+        self.assertIn("Verzin niets", regels)
+        self.assertIn("uitsluitend met JSON", regels)
+        self.assertIn("Bedenk geen beleidsregels", regels)
+        for o in self.opdrachten["opdrachten"]:
+            for woord in ("score", "prioriteit", "schrijf beleid"):
+                self.assertNotIn(woord, o["systeemprompt"].lower(), o["id"])
+
+    def test_kern_gelijk_aan_procescheck(self):
+        bron = b.ROOT.parent / "procescheck" / "ai" / "bron" / "kern.js"
+        if not bron.exists():
+            self.skipTest("procescheck niet naast de kennisbank; CI draait haal_kern.py --check")
+        kopie = (b.AI_MAP / "kern.js").read_bytes().replace(b"\r\n", b"\n")
+        self.assertEqual(kopie, bron.read_bytes().replace(b"\r\n", b"\n"))
+
+    def test_pagina_heeft_csp_op_de_hash_van_script_en_stijl(self):
+        import re as _re
+        csp = _re.search(r'http-equiv="Content-Security-Policy" content="([^"]+)"', self.pagina).group(1)
+        script = _re.search(r"<script>(.*)</script>", self.pagina, _re.S).group(1)
+        stijl = _re.search(r"<style>(.*)</style>", self.pagina, _re.S).group(1)
+        self.assertIn("default-src 'none'", csp)
+        self.assertIn("connect-src " + b.CONNECT_SRC, csp)
+        self.assertIn("'sha256-" + b.csp_hash(script) + "'", csp)
+        self.assertIn("'sha256-" + b.csp_hash(stijl) + "'", csp)
+        self.assertEqual(self.pagina.count("<script"), 1)
+
+    def test_sleutel_alleen_in_sessionstorage(self):
+        ai = (b.AI_MAP / "ai.js").read_text(encoding="utf-8")
+        self.assertIn("sessionStorage.setItem(SLEUTEL_OPSLAG", ai)
+        self.assertEqual(ai.count("localStorage.setItem("), 1)
+        self.assertIn("localStorage.setItem(LEVERANCIER_OPSLAG", ai)
+        self.assertNotIn("console.log", ai)
+
+    def test_generator_praat_met_niemand(self):
+        self.assertNotIn("fetch(", self.generator)
+        self.assertNotIn("XMLHttpRequest", self.generator)
+        self.assertIn('href="beleidsset-ai.html"', self.generator)
+
+    def test_vragen_en_velden_gaan_mee(self):
+        data = json.loads(self.pagina.split("window.__OPDRACHTEN__ = ", 1)[1].split(";\n", 1)[0])
+        self.assertEqual(len(data["vragen"]), len(self.data["profiel"]["vragen"]))
+        namen = [v["naam"] for v in data["velden"]]
+        self.assertIn("eigenaar van dit beleid", namen)
+        self.assertIn("lijneigenaar fysieke beveiliging", namen)
+        self.assertEqual(len(namen), len(set(namen)))
+        alles = "".join(s["markdown"] for s in b.genereer(self.data, {}).values())
+        for n in namen:
+            self.assertIn("**[" + n + "]**", alles, n)
+
+
+class VulWaarden(unittest.TestCase):
+    MD = ("# T\n\nDe **[eigenaar]** doet het en **[eigenaar]** tekent; **[systeem]** logt.\n\n"
+          "## Nog in te vullen\n\n- **eigenaar**: de rol\n- **systeem**: het systeem\n")
+
+    def test_vult_in_en_haalt_van_de_lijst(self):
+        md = b.vul_waarden(self.MD, {"eigenaar": "manager facilitair", "onbekend": "x"})
+        self.assertIn("De manager facilitair doet het en manager facilitair tekent", md)
+        self.assertNotIn("- **eigenaar**", md)
+        self.assertIn("- **systeem**: het systeem", md)
+        self.assertNotIn("Herkomst", md)
+
+    def test_lijst_weg_als_alles_is_ingevuld_en_herkomst_erbij(self):
+        md = b.vul_waarden(self.MD, {"eigenaar": "A", "systeem": "B"},
+                           {"leverancier": "mistral", "model": "m", "gemaakt": "2026-10-15", "sha256": "abcdef0123456789"})
+        self.assertNotIn("Nog in te vullen", md)
+        self.assertIn("## Herkomst van ingevulde waarden", md)
+        self.assertIn("(mistral, model m, 2026-10-15, invoer sha256 abcdef012345): eigenaar, systeem.", md)
+
+    def test_lege_waarde_vult_niets(self):
+        self.assertEqual(b.vul_waarden(self.MD, {"eigenaar": "  "}), self.MD)
+
+
 class Spiegel(unittest.TestCase):
+    def test_vul_waarden_python_en_javascript_gelijk(self):
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node ontbreekt")
+        data = b.laad()
+        stukken = b.genereer(data, {})
+        velden = [v["naam"] for v in b.invulvelden(data)]
+        gevallen = [({velden[0]: "A"}, None), ({n: "waarde " + n for n in velden[:9]},
+                    {"leverancier": "mistral", "model": "m", "gemaakt": "2026-10-15", "sha256": "0123456789abcdef"})]
+        invoer = [{"md": s["markdown"], "w": w, "h": h} for s in stukken.values() for w, h in gevallen]
+        script = ("const B=require(process.argv[1]);const fs=require('fs');"
+                  "const inv=JSON.parse(fs.readFileSync(0,'utf8'));"
+                  "process.stdout.write(JSON.stringify(inv.map(x=>B.vulWaarden(x.md,x.w,x.h))));")
+        uit = json.loads(subprocess.run([node, "-e", script, str(b.JS)], input=json.dumps(invoer), capture_output=True,
+                                        text=True, encoding="utf-8", check=True).stdout)
+        for x, j in zip(invoer, uit):
+            self.assertEqual(b.vul_waarden(x["md"], x["w"], x["h"]), j)
+
     """De generatorpagina rekent in JavaScript; die moet woord voor woord hetzelfde maken."""
 
     def test_python_en_javascript_gelijk(self):
