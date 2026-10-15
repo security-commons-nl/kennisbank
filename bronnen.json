@@ -2830,6 +2830,34 @@
       "partij": "vng",
       "toegang": "open",
       "gezien": "2026-10-15"
+    },
+    "bzk-herziening-rijksbreed-cloudbeleid-2026": {
+      "titel": "Herziening rijksbreed cloudbeleid 2026 (paragraaf 3.2: exitplan met geplande exit en disruptieve onderbreking)",
+      "url": "https://www.tweedekamer.nl/downloads/document?id=2026D35295",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "ciorijk-implementatiekader-risicoafweging-cloudgebruik": {
+      "titel": "Implementatiekader risicoafweging cloudgebruik, versie 1.1 (artikel 7: exitstrategie)",
+      "url": "https://zoek.officielebekendmakingen.nl/blg-1070754.pdf",
+      "partij": "ciorijk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "bzk-abdtopconsult-van-kwetsbaar-naar-weerbaar": {
+      "titel": "Van kwetsbaar naar weerbaar: geleerde lessen uit dreigende acute en langdurige uitval van uitbestede ICT-dienstverlening bij overheidsorganisaties (ABDTOPConsult, februari 2025)",
+      "url": "https://www.algemenebestuursdienst.nl/site/binaries/site-content/collections/documents/2025/02/25/van-kwetsbaar-naar-weerbaar/ABDTOPConsult+Rapport+geleerde+lessen+ICT+uitbesteding+Februari+2025+Definitief+Openbaar.pdf",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-15"
+    },
+    "ncsc-herstel-van-een-cyberincident": {
+      "titel": "Hoe herstel ik van een cyberincident?",
+      "url": "https://www.ncsc.nl/incidenten-en-herstellen/herstel-van-een-cyberincident",
+      "partij": "ncsc",
+      "toegang": "open",
+      "gezien": "2026-10-15"
     }
   }
 }
