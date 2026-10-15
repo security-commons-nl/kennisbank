@@ -37,7 +37,9 @@ bedrijfscontinuïteitsplan voor elke bestuurslaag, en een twee-pager om BCM aan 
 Dezelfde dag kregen alle leesversies en de overzichtspagina's op het scherm de opmaak van de voorpagina (kleuren,
 letter, de donkere balk met het kruimelpad), via een huisstijlblok dat `tools/build.py` in elke pagina zet. Afdrukken
 en plakken in Word gebruiken nog steeds het sjabloon. Het blok bracht ook de viewport-regel mee die de leesversies
-misten, zodat ze op een telefoon niet langer verkleind worden.
+misten, zodat ze op een telefoon niet langer verkleind worden. Daarna volgden de instrumenten (de toetsen, de
+stelselkaart, de generator en de verkenner): dezelfde letter, kleuren en balk, met hun eigen opbouw. De opmaak
+staat sindsdien op een plek, `tools/huisstijl.py`.
 
 ## Wat open staat
 
