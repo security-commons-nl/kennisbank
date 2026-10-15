@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>BIA en risicoanalyse
+per kritieke dienst, een
+basissjabloon</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <span>BIA en risicoanalyse per kritieke dienst, een basissjabloon</span></nav><!-- /kruimelpad -->
+<h1 id="bia-en-risicoanalyse-per-kritieke-dienst-een-basissjabloon">BIA
+en risicoanalyse per kritieke dienst, een basissjabloon</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">ISO 22301</span><span class="norm">BIO2</span><span class="norm">Cbw</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.29">5.29</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.30">5.30</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.AM-05">ID.AM-05</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/RC.RP-02">RC.RP-02</a></p><!-- /bewijs-voor -->
+<blockquote>
+<p><strong>Barriere:</strong> stel kritieke processen en
+herstelprioriteiten vast. Dit sjabloon is de invulvorm bij die stap: per
+dienst de impact, de hersteleisen en de risico's, op een schaal die
+tussen organisaties vergelijkbaar is.</p>
+</blockquote>
+<p>Formats voor een business impact analyse (BIA) en een risicoanalyse
+zijn er genoeg. De IBD heeft een publieke set voor gemeenten, NIST een
+sjabloon voor de Amerikaanse federale overheid, en verschillende
+overheden hebben een eigen versie. Wat ontbreekt is een sjabloon dat
+elke overheidslaag kan gebruiken en dat de BIA en de risicoanalyse op
+dezelfde impactschaal zet. Zonder die gedeelde schaal krijgt een dienst
+twee kriticiteitsbepalingen, een uit de BIA en een uit de risicoanalyse,
+en die spreken elkaar tegen.</p>
+<p>Dit sjabloon volgt in de opbouw <a
+href="https://www.iso.org/standard/79000.html">ISO/TS 22317</a>, de
+technische specificatie voor de BIA bij ISO 22301, en in de vulling de
+formats die in gemeenten al in gebruik zijn.</p>
+<h2 id="wanneer-gebruik-je-het">Wanneer gebruik je het<a class="anker" href="#wanneer-gebruik-je-het" aria-label="Link naar deze kop">#</a></h2>
+<p>Als je per kritieke dienst de hersteleisen wilt vastleggen en de
+lijst kritieke diensten er al ligt, of in dezelfde ronde ontstaat. Hoe
+je die lijst met de lijn maakt staat in <a
+href="../kritieke-processen-vaststellen/">kritieke processen en
+herstelprioriteiten vaststellen</a>.</p>
+<p>Wil je de BIA en de BIV-classificatie per proces liever in een
+instrument doen dat zelf rekent, gebruik dan <a
+href="https://security-commons-nl.github.io/procescheck/">procescheck</a>.
+Dit sjabloon is de papieren vorm, voor wie de uitkomst in een eigen
+register of spreadsheet wil houden en wil kunnen vergelijken met andere
+organisaties.</p>
+<h2 id="het-sjabloon">Het sjabloon<a class="anker" href="#het-sjabloon" aria-label="Link naar deze kop">#</a></h2>
+<p>Het sjabloon zelf staat in <a href="sjabloon.html">sjabloon.md</a>:
+blad 1 de BIA per dienst (blokken A tot en met H), blad 2 de
+risicotabel. Kort wat erin zit:</p>
+<table>
+<thead>
+<tr>
+<th>Blok</th>
+<th>Wat je vastlegt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Identificatie</td>
+<td>Organisatie, bestuurslaag, dienst, eigenaar, versie, en de koppeling
+aan een procesregister</td>
+</tr>
+<tr>
+<td>B. Wat de dienst levert</td>
+<td>Product, doelgroep, wettelijke grondslag, de keten waar de dienst in
+zit</td>
+</tr>
+<tr>
+<td>C. Impact per tijdvenster</td>
+<td>Vaste vensters (4 uur, 1 dag, 3 dagen, 1 week, 1 maand) tegen vaste
+impactcategorieën</td>
+</tr>
+<tr>
+<td>D. Hersteleisen</td>
+<td>MTPD, RTO, RPO en noodniveau, elk met de onderbouwing</td>
+</tr>
+<tr>
+<td>E. Middelen en afhankelijkheden</td>
+<td>De zeven MAPGOOD-middelen plus ketenpartners en leveranciers, met
+per middel of het een enkelvoudig punt van uitval is</td>
+</tr>
+<tr>
+<td>F. Terugval</td>
+<td>Welke alternatieve werkwijze er is, hoe lang die volhoudt</td>
+</tr>
+<tr>
+<td>G. Dreigingen en bestaande maatregelen</td>
+<td>De brug naar de risicotabel</td>
+</tr>
+<tr>
+<td>H. Uitkomst</td>
+<td>Kriticiteitsklasse, en als je dat wilt de BIV-classificatie, uit
+dezelfde impactscores</td>
+</tr>
+</tbody>
+</table>
+<p>De risicotabel op blad 2 gebruikt per risico dezelfde
+impactcategorieën als blok C. Dat is de belangrijkste winst van een
+gezamenlijk sjabloon.</p>
+<h2 id="vier-keuzes-voordat-je-invult">Vier keuzes voordat je
+invult<a class="anker" href="#vier-keuzes-voordat-je-invult" aria-label="Link naar deze kop">#</a></h2>
+<ol type="1">
+<li><strong>Proces of dienst als eenheid.</strong> Een dienst is wat de
+inwoner en de keten zien, een proces is wat de organisatie stuurt. Het
+advies is de dienst als eenheid, met de processen als regels eronder.
+Dan sluit de BIA aan op hoe ketenpartners en toezichthouders naar je
+kijken, en blijft hij bruikbaar als de organisatie zich anders
+indeelt.</li>
+<li><strong>Tijdvensters en niveaus.</strong> Begin bij vier uur. Die
+grens komt terug in de regelgeving voor de sector overheid: de regeling
+onder de Wet weerbaarheid kritieke entiteiten legt de drempel voor een
+aanzienlijke verstoring onder meer bij vier uur uitval. Gebruik een
+schaal met een beschrijving per niveau, zodat "hoog" in de ene
+organisatie hetzelfde betekent als in de andere. Voor gemeenten ligt de
+schaal er al: de vijf niveaus uit de BIO2 kans- en impacttabellen van de
+IBD. Die teksten staan niet in dit sjabloon, want ze vallen onder een
+licentie die niet-commercieel gebruik voorschrijft; haal ze bij de
+IBD.</li>
+<li><strong>BIV wel of niet in de BIA.</strong> Informatiebeveiligers
+willen de classificatie op beschikbaarheid, integriteit en
+vertrouwelijkheid erin; ISO 22317 kent haar niet. Het advies: leid haar
+af in blok H uit dezelfde impactscores, en doe geen aparte
+beoordeling.</li>
+<li><strong>Een scoringslogica in de hele organisatie.</strong> Gebruikt
+de organisatie al een impactschaal voor informatiebeveiliging of voor de
+classificatie van te beschermen belangen, neem die dan over in blok C.
+Twee schalen naast elkaar is de versnippering die dit sjabloon moet
+voorkomen.</li>
+</ol>
+<h2 id="wat-er-al-is-en-wat-elk-format-mist">Wat er al is, en wat elk
+format mist<a class="anker" href="#wat-er-al-is-en-wat-elk-format-mist" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Van</th>
+<th>Vorm</th>
+<th>Eenheid</th>
+<th>Wat het mist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bedrijfsimpactanalyse (BIA)</td>
+<td>IBD</td>
+<td>Excel: intake, impactanalyse, resultaat</td>
+<td>Proces</td>
+<td>Meet alleen beschikbaarheid, levert een beveiligingsniveau op in
+plaats van een continuïteitsprofiel</td>
+</tr>
+<tr>
+<td>BIO2 Kritieke processen gemeenten</td>
+<td>IBD</td>
+<td>Excel, twaalf uitgewerkte processen met RPO en RTO</td>
+<td>Proces</td>
+<td>Landelijk voorbeeld, geen eigen analyse; bruikbaar om je uitkomst te
+kalibreren</td>
+</tr>
+<tr>
+<td>Business Impact Analysis Template bij <a
+href="https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final">SP
+800-34</a></td>
+<td>NIST</td>
+<td>Word, drie stappen</td>
+<td>Informatiesysteem</td>
+<td>Vertrekt bij het systeem in plaats van de dienst; wel de beste
+uitleg waarom elke hersteltijd een onderbouwing nodig heeft</td>
+</tr>
+<tr>
+<td><a href="https://www.iso.org/standard/79000.html">ISO/TS
+22317</a></td>
+<td>ISO</td>
+<td>Specificatie, geen sjabloon; betaald</td>
+<td>Product of dienst, activiteit</td>
+<td>Het skelet: MTPD, RTO, RPO, minimaal dienstverleningsniveau,
+middelen en afhankelijkheden</td>
+</tr>
+<tr>
+<td>Diepgaande Risicoanalyse Methode Gemeenten</td>
+<td>IBD</td>
+<td>Excel met berekeningen, plus handreiking</td>
+<td>Proces of systeem</td>
+<td>Sinds versie 3.1 met bedrijfscontinuïteit erin; gemeentelijk
+vocabulaire</td>
+</tr>
+<tr>
+<td>BIO2 Handreiking risicomanagement en risicoanalysetabel</td>
+<td>IBD</td>
+<td>Handreiking, Excel-tabel en sjablonen</td>
+<td>Proces</td>
+<td>Compleet en recent; de invalshoek via een business model canvas
+vraagt uitleg</td>
+</tr>
+<tr>
+<td><a href="https://csrc.nist.gov/pubs/sp/800/30/r1/final">SP
+800-30</a></td>
+<td>NIST</td>
+<td>Gids met schalen</td>
+<td>Organisatie, missie, systeem</td>
+<td>Referentie voor schalen, als invulformat te zwaar</td>
+</tr>
+<tr>
+<td><a
+href="https://www.ncsc.gov.uk/collection/risk-management/a-basic-risk-assessment-and-management-method">A
+basic risk assessment and management method</a></td>
+<td>NCSC (VK)</td>
+<td>Webmethode, elf stappen</td>
+<td>Organisatie</td>
+<td>Geen sjabloon, wel de eenvoudigste uitleg; geschikt voor kleine
+organisaties</td>
+</tr>
+</tbody>
+</table>
+<p>Elk BIA-format hierboven mist minstens een onderdeel van het
+ISO-skelet: de IBD-formats het minimale dienstverleningsniveau, NIST de
+dienst als vertrekpunt. Het sjabloon in deze map vult die aan.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
+<p>Dit sjabloon hoort bij barriere <code>critical</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>, als verdieping naast <a
+href="../kritieke-processen-vaststellen/">kritieke processen en
+herstelprioriteiten vaststellen</a>. De hersteleisen uit blok D zijn de
+invoer voor de <a href="../uitwijk-regelen/">uitwijkkaart</a> en voor
+tabel 1 van het <a
+href="../bedrijfscontinuiteitsplan-sjabloon/">bedrijfscontinuïteitsplan</a>.
+De afhankelijkheden uit blok E zijn het startpunt voor <a
+href="../../security/ketenafhankelijkheden/">ketenafhankelijkheden in
+beeld</a>. Een risicoanalyse die bij de aanvaller begint in plaats van
+bij de dienst staat in <a
+href="../../security/risicoanalyse-aanvalspaden/">risicoanalyse langs
+aanvalspaden</a>.</p>
+<h2 id="wat-er-in-deze-map-staat">Wat er in deze map staat<a class="anker" href="#wat-er-in-deze-map-staat" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li><a href="sjabloon.html">sjabloon.md</a>: blad 1 (BIA per dienst,
+blokken A tot en met H) en blad 2 (risicotabel), met de
+impactschaal</li>
+</ul>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#1f4e79}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bedrijfsimpactanalyse-bia/">Bedrijfsimpactanalyse (BIA)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bio2-kans-en-impact-tabellen-gemeenten/">BIO2 Kans en Impact tabellen gemeenten</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bio2-kritieke-processen-gemeenten/">BIO2 Kritieke processen gemeenten</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bepalen-bedrijfscontinuiteitsvereisten/">Bepalen bedrijfscontinuïteitsvereisten</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bio-2-template-risicoanalyse-tabel/">BIO 2 Template Risicoanalyse tabel</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/bio-handreiking-risicomanagement-voor-gemeenten/">BIO2 Handreiking risicomanagement voor gemeenten</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/diepgaande-risicoanalyse-methode-excel/">Diepgaande Risicoanalyse Methode Gemeenten (Excel)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-diepgaande-risicoanalyse-methode-gemeenten/">Handreiking Diepgaande Risicoanalyse Methode Gemeenten</a> <span class="partij">· IBD</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/bia-en-risicoanalyse-sjabloon">bcm/bia-en-risicoanalyse-sjabloon</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

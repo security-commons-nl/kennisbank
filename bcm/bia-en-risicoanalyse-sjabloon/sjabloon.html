@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: BIA en risicoanalyse per kritieke dienst</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">BIA en risicoanalyse per kritieke dienst, een basissjabloon</a> › <span>Sjabloon: BIA en risicoanalyse per kritieke dienst</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: BIA en risicoanalyse per kritieke dienst</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">BIA en risicoanalyse per kritieke dienst, een basissjabloon</a> · <a href="sjabloon.md">Markdown-bron</a></p>
+<p>Twee bladen. Blad 1 vul je per dienst in, blad 2 is een tabel voor alle risico's samen. De keuzes die je
+vooraf maakt en de vergelijking met bestaande formats staan in de <a href="./">toelichting</a>.</p>
+<p>Werk je in een spreadsheet: een tabblad per dienst voor blad 1, een tabblad voor blad 2, en een tabblad met
+de impactschaal die je gebruikt.</p>
+<h2 id="instellingen">Instellingen<a class="anker" href="#instellingen" aria-label="Link naar deze kop">#</a></h2>
+<p>Leg deze drie vooraf vast, voor de hele organisatie. Ze bepalen hoe de uitkomst in blok H wordt afgeleid.</p>
+<table>
+<thead>
+<tr>
+<th>Instelling</th>
+<th>Voorstel</th>
+<th>Waarom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Impactschaal</td>
+<td>Vijf niveaus (1 zeer laag tot 5 zeer hoog), met een beschrijving per categorie en niveau. Gemeenten: de BIO2 kans- en impacttabellen van de IBD</td>
+<td>Een schaal voor BIA en risicoanalyse; een tweede schaal geeft twee uitkomsten voor dezelfde dienst</td>
+</tr>
+<tr>
+<td>Drempel kritiek</td>
+<td>Een dienst is kritiek als binnen <strong>2 dagen</strong> op een categorie score <strong>4</strong> of hoger wordt bereikt</td>
+<td>Twee dagen is een gangbare grens voor gouden processen; 4 is het niveau van ernstige schade</td>
+</tr>
+<tr>
+<td>Venster voor beschikbaarheid</td>
+<td>De beschikbaarheidsklasse volgt uit de hoogste score bij <strong>1 dag</strong> uitval</td>
+<td>Zo levert de BIA de BIV-classificatie zonder tweede beoordeling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="blad-1-bia-per-dienst">Blad 1: BIA per dienst<a class="anker" href="#blad-1-bia-per-dienst" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="a-identificatie">A. Identificatie<a class="anker" href="#a-identificatie" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organisatie</td>
+<td></td>
+</tr>
+<tr>
+<td>Bestuurslaag</td>
+<td>Rijk · provincie · gemeente · waterschap · uitvoeringsorganisatie · gemeenschappelijke regeling</td>
+</tr>
+<tr>
+<td>Naam van de dienst</td>
+<td></td>
+</tr>
+<tr>
+<td>Eigenaar (functie)</td>
+<td></td>
+</tr>
+<tr>
+<td>Kenmerk in eigen register</td>
+<td>bijvoorbeeld GEMMA-proces, dienstencatalogus</td>
+</tr>
+<tr>
+<td>Datum en versie</td>
+<td></td>
+</tr>
+<tr>
+<td>Opgesteld met</td>
+<td>functies van wie er aan tafel zat</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-wat-de-dienst-levert-en-aan-wie">B. Wat de dienst levert en aan wie<a class="anker" href="#b-wat-de-dienst-levert-en-aan-wie" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Omschrijving van de dienst</td>
+<td></td>
+</tr>
+<tr>
+<td>Voor wie</td>
+<td>inwoners · bedrijven · andere overheden · keten</td>
+</tr>
+<tr>
+<td>Wettelijke grondslag</td>
+<td></td>
+</tr>
+<tr>
+<td>Processen die de dienst leveren</td>
+<td></td>
+</tr>
+<tr>
+<td>Keten: wie levert aan deze dienst</td>
+<td></td>
+</tr>
+<tr>
+<td>Keten: aan wie levert deze dienst</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="c-impact-bij-uitval-per-tijdvenster">C. Impact bij uitval, per tijdvenster<a class="anker" href="#c-impact-bij-uitval-per-tijdvenster" aria-label="Link naar deze kop">#</a></h3>
+<p>Score 1 tot 5 volgens de impactschaal; leeg als de categorie niet speelt. De hoogste score per venster telt.</p>
+<table>
+<thead>
+<tr>
+<th>Categorie</th>
+<th>4 uur</th>
+<th>1 dag</th>
+<th>2 dagen</th>
+<th>1 week</th>
+<th>1 maand</th>
+<th>Waarom deze score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maatschappelijke impact</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Schade aan vitale processen</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Belang voor de organisatie</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Financiële impact</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Politieke en bestuurlijke schade</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Imagoschade en verlies van vertrouwen</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Letsel</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inbreuk op de persoonlijke levenssfeer</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Medewerkers (motivatie, belasting)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Verlies van sturing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Diplomatieke schade (alleen waar het speelt, bijvoorbeeld bij het Rijk)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hoogste score per venster</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>C2. Integriteit en vertrouwelijkheid.</strong> Twee scores op dezelfde schaal, nodig voor blok H:</p>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Score</th>
+<th>Waarom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zwaarste gevolg als gegevens van deze dienst onjuist of onvolledig zijn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Zwaarste gevolg als gegevens van deze dienst bij onbevoegden terechtkomen</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="d-hersteleisen">D. Hersteleisen<a class="anker" href="#d-hersteleisen" aria-label="Link naar deze kop">#</a></h3>
+<p>Elke eis met een onderbouwing: wet, werklast, contract of bestuurlijke afspraak. Een hersteltijd zonder
+onderbouwing wordt bij de eerste budgetdiscussie onderhandelbaar.</p>
+<table>
+<thead>
+<tr>
+<th>Eis</th>
+<th>Waarde</th>
+<th>Onderbouwing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MTPD-indicatie uit blok C</td>
+<td>het eerste venster waarin de drempel wordt bereikt</td>
+<td>afgeleid, geen besluit</td>
+</tr>
+<tr>
+<td>MTPD, vastgesteld: hoe lang mag de dienst uitvallen voordat de schade onaanvaardbaar is</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RTO: binnen welke tijd draait de dienst weer op noodniveau (korter dan de MTPD)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RPO: tot welk moment terug mogen gegevens verloren gaan</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Noodniveau: wat moet er minimaal door tijdens de verstoring</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="e-middelen-en-afhankelijkheden">E. Middelen en afhankelijkheden<a class="anker" href="#e-middelen-en-afhankelijkheden" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Middel</th>
+<th>Enkelvoudig punt van uitval?</th>
+<th>Hersteltijd van het middel</th>
+<th>Wat precies, en welke afspraken (leverancier, SLA, uitwijk)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mensen</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Apparatuur</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Programmatuur</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Gegevens</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Organisatie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Omgeving (gebouwen, nutsvoorzieningen)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Diensten van derden (leveranciers, cloud)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ketenpartners en andere overheden</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Andere diensten van de eigen organisatie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>De eerste zeven zijn de MAPGOOD-indeling. Een middel met een hersteltijd die langer is dan de RTO van de
+dienst, is de eerste vraag voor de <a href="../uitwijk-regelen/uitwijkkaart.md">uitwijkkaart</a>.</p>
+<h3 id="f-terugval">F. Terugval<a class="anker" href="#f-terugval" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alternatieve werkwijze (handmatig, papier, uitwijk, beperkte dienst)</td>
+<td></td>
+</tr>
+<tr>
+<td>Hoe lang is die vol te houden</td>
+<td></td>
+</tr>
+<tr>
+<td>Is dit vooraf afgesproken en geoefend</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="g-dreigingen-en-bestaande-maatregelen">G. Dreigingen en bestaande maatregelen<a class="anker" href="#g-dreigingen-en-bestaande-maatregelen" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vraag</th>
+<th>Antwoord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reële scenario's (uitval leverancier, ransomware, stroomuitval, uitval personeel)</td>
+<td></td>
+</tr>
+<tr>
+<td>Bestaande maatregelen voor continuïteit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Werk elk scenario uit op blad 2.</p>
+<h3 id="h-uitkomst">H. Uitkomst<a class="anker" href="#h-uitkomst" aria-label="Link naar deze kop">#</a></h3>
+<p>Afgeleid uit blok C en C2 met de instellingen bovenaan. Het oordeel blijft bij de eigenaar.</p>
+<table>
+<thead>
+<tr>
+<th>Uitkomst</th>
+<th>Regel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hoogste impact over alle vensters</td>
+<td>de hoogste score in blok C</td>
+</tr>
+<tr>
+<td>Kritieke dienst</td>
+<td>ja als de drempel binnen het ingestelde venster wordt bereikt</td>
+</tr>
+<tr>
+<td>Beschikbaarheid</td>
+<td>de hoogste score in het venster voor beschikbaarheid</td>
+</tr>
+<tr>
+<td>Integriteit</td>
+<td>de score uit C2</td>
+</tr>
+<tr>
+<td>Vertrouwelijkheid</td>
+<td>de score uit C2</td>
+</tr>
+<tr>
+<td>Oordeel en besluit eigenaar, met datum</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="blad-2-risicotabel">Blad 2: Risicotabel<a class="anker" href="#blad-2-risicotabel" aria-label="Link naar deze kop">#</a></h2>
+<p>Een regel per risico. Kans 1 tot 5, impact 1 tot 5 op dezelfde schaal als blok C. Risico is kans maal impact.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Dienst</th>
+<th>Scenario of dreiging</th>
+<th>Middel (MAPGOOD)</th>
+<th>BIV-aspect</th>
+<th>Kans</th>
+<th>Impact</th>
+<th>Risico</th>
+<th>Behandeling</th>
+<th>Maatregel</th>
+<th>BIO2-maatregel</th>
+<th>Kans na</th>
+<th>Impact na</th>
+<th>Restrisico</th>
+<th>Eigenaar</th>
+<th>Datum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Behandeling is een van vier: verminderen, accepteren, overdragen, vermijden. Accepteren is een besluit van de
+eigenaar met een datum; zie <a href="../../governance/risicogestuurd-managementsysteem/">risicogestuurd managementsysteem</a>
+voor hoe je dat vastlegt.</p>
+<p>Een indeling van het risico in niveaus, als je die wilt, afgeleid van de risicotabel van de IBD: 1 zeer laag, 2 tot 3 laag, 4 tot 6 gemiddeld, 8 tot
+16 hoog, 20 tot 25 extreem. Waar de grenzen liggen hangt af van de risicobereidheid van de organisatie; leg
+dat vast bij de instellingen.</p>
+<h2 id="voorbeeld-verzonnen">Voorbeeld (verzonnen)<a class="anker" href="#voorbeeld-verzonnen" aria-label="Link naar deze kop">#</a></h2>
+<p>Een gemeente vult blad 1 in voor het verstrekken van een uitkering levensonderhoud.</p>
+<table>
+<thead>
+<tr>
+<th>Blok</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>Inwoners zonder voldoende inkomen krijgen maandelijks een uitkering. De betaalrun is maandelijks, aanvragen en mutaties lopen doorlopend. Keten: inkomensgegevens van het Rijk, de basisregistratie personen, de bank, de leverancier van de uitkeringssoftware.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Maatschappelijke impact 1 bij 4 uur, 2 bij 1 dag, 4 bij 2 dagen, 5 bij een week. Buiten de betaalrun weinig merkbaar; rond de betaalrun raken duizenden huishoudens binnen dagen in de problemen. Financiële impact 3 bij 1 dag en 4 bij 2 dagen. Politieke schade 3 bij 1 dag en 4 bij 2 dagen.</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Integriteit 4: onjuiste bedragen raken direct het inkomen en leiden tot terugvordering. Vertrouwelijkheid 4: financiële en bijzondere gegevens van kwetsbare inwoners.</td>
+</tr>
+<tr>
+<td>D</td>
+<td>MTPD-indicatie 2 dagen. MTPD vastgesteld 2 dagen (daarna betalingsachterstanden bij huur en energie). RTO 1 dag. RPO 1 dag. Noodniveau: voorschot aan bestaande klanten op basis van het vorige betaalbestand.</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Programmatuur: SaaS-uitkeringsadministratie, enkelvoudig, uitwijk contractueel geregeld en niet getest. Diensten van derden: de bank voor de betaalbestanden.</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Voorschot via het bankbestand van de vorige maand; houdt een betaalrun vol; afgesproken, niet geoefend.</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Kritiek: score 4 binnen 2 dagen. Beschikbaarheid 3 (hoogste score bij 1 dag), integriteit 4, vertrouwelijkheid 4.</td>
+</tr>
+</tbody>
+</table>
+<p>En de eerste regel op blad 2: de leverancier van de uitkeringssoftware valt langer dan twee dagen uit rond de
+betaalrun. Kans 2, impact 5, risico 10. Behandeling: verminderen, met een geteste voorschotprocedure en een
+exitplan voor onverwachte uitval in het contract.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/bia-en-risicoanalyse-sjabloon">bcm/bia-en-risicoanalyse-sjabloon</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
