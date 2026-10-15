@@ -794,8 +794,37 @@ class Huisstijl(unittest.TestCase):
             if diepte == 0:
                 self.assertEqual(i, len(build.HUISSTIJL_CSS) - 1, "regel buiten @media screen")
 
-    def test_instrument_met_eigen_opmaak_blijft_ongemoeid(self):
-        self.assertEqual(build.zet_huisstijl(self.INSTRUMENT), self.INSTRUMENT)
+    def test_instrument_krijgt_alleen_letter_tokens_en_balk(self):
+        uit = build.zet_huisstijl(self.INSTRUMENT)
+        self.assertIn(build.huisstijl.INSTRUMENT_CSS, uit)
+        self.assertNotIn(build.huisstijl.LEESVERSIE_CSS, uit)
+        self.assertNotIn("max-width:46rem", uit)  # de eigen opbouw van het instrument blijft staan
+
+    def test_instrument_css_ook_alleen_op_het_scherm(self):
+        self.assertTrue(build.huisstijl.INSTRUMENT_CSS.startswith("@media screen{"))
+
+    def test_geen_tweede_viewport_als_de_pagina_er_al_een_heeft(self):
+        met = self.STANDAARD.replace("<head>", '<head><meta name="viewport" content="width=device-width">')
+        uit = build.zet_huisstijl(met)
+        self.assertEqual(uit.count('name="viewport"'), 1)
+        self.assertEqual(build.zet_huisstijl(uit), uit)
+
+    def test_soort_kan_worden_opgelegd(self):
+        # De generator heeft het Calibri-sjabloon als basis maar is een instrument; het bouwscript zegt dat.
+        uit = build.huisstijl.zet(self.STANDAARD, "instrument")
+        self.assertIn(build.huisstijl.INSTRUMENT_CSS, uit)
+        self.assertEqual(build.huisstijl.zet(uit, "instrument"), uit)
+
+    def test_kruimelpad_buiten_de_kolom_geeft_zijn_breedte_door(self):
+        # Pagina's waar build.py het kruimelpad buiten de inhoudskolom zet, moeten de kolombreedte noemen;
+        # anders plakt de tekst in de balk tegen de schermrand.
+        self.assertIn("var(--kruimel-breedte,100%)", build.huisstijl.KRUIMEL)
+        for pad in ("security/stelselkaart-security-gremia/index.html", "governance/ai-beleid/index.html"):
+            self.assertIn("--kruimel-breedte:", (HIER.parent / pad).read_text(encoding="utf-8"), pad)
+
+    def test_geen_oud_blauw_meer_in_de_bronnen(self):
+        for naam in ("build.py", "huisstijl.py", "bouw_risicoregister.py", "beleidsset-generator-sjabloon.html"):
+            self.assertNotIn("#1f4e79", (HIER / naam).read_text(encoding="utf-8").lower(), naam)
 
     def test_idempotent_en_vervangt_een_oud_blok(self):
         een = build.zet_huisstijl(self.STANDAARD)

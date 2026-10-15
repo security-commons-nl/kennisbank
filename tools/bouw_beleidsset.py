@@ -45,6 +45,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import beleidsset_word as word  # noqa: E402
+import huisstijl  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 ITEM = ROOT / "governance" / "beleidsset-informatiebeveiliging"
@@ -729,8 +730,9 @@ def uitvoer(data: dict) -> dict[Path, str]:
     for sleutel, naam in OVERZICHTEN.items():
         uit[ITEM / f"{naam}.md"] = met_generatorregel(over[sleutel])
     uit[DATA] = json.dumps(data, ensure_ascii=False, indent=1) + "\n"
-    uit[PAGINA] = pagina(data)
-    uit[AI_PAGINA] = ai_pagina(data)
+    # Huisstijl van de voorpagina op het scherm (tools/huisstijl.py); de eigen opbouw blijft staan.
+    uit[PAGINA] = huisstijl.zet(pagina(data), "instrument")
+    uit[AI_PAGINA] = huisstijl.zet(ai_pagina(data), "instrument")
     return uit
 
 

@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stelselkaart security-gremia · wie organiseert de digitale weerbaarheid van de Nederlandse overheid</title>
-<style>
+<style>/* breedte van de tekstkolom, voor de balk met het kruimelpad (tools/huisstijl.py) */:root{--kruimel-breedte:1240px;--kruimel-rand:20px}
 :root{
   --bg:#f6f7f9; --card:#fff; --ink:#1a1d21; --muted:#5c6570; --line:#dfe3e8;
-  --accent:#1f4e79; --accent2:#2e7d68;
-  --wet:#1f4e79; --wet-bg:#e8f0f7;
+  --accent:#154273; --accent2:#2e7d68;
+  --wet:#154273; --wet-bg:#e8f0f7;
   --conv:#6b4fa0; --conv-bg:#f0ebf8;
   --ver:#2e7d68; --ver-bg:#e6f2ee;
   --inf:#a06a2c; --inf-bg:#faf1e3;
   --weg:#8b1a1a; --weg-bg:#fbeaea;
   --gap:#b3261e; --gap-bg:#fdecea;
-  --tafel:#0b6b3a; --aangeb:#a8620a; --haal:#1f4e79; --indir:#6b7280; --geen:#9aa2ad;
+  --tafel:#0b6b3a; --aangeb:#a8620a; --haal:#154273; --indir:#6b7280; --geen:#9aa2ad;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -75,7 +75,7 @@ small.src{color:var(--muted);font-size:12px}
 .dr.gap .dp{display:flex;align-items:center;color:var(--gap);font-weight:600;font-size:13px}
 .dr.gap .dd{border-top-color:#f3c2bd}
 .dr.hot .dc{color:var(--gap)}
-.bar{position:absolute;left:236px;top:0;bottom:0;background:linear-gradient(90deg,rgba(31,78,121,.055),rgba(31,78,121,0));
+.bar{position:absolute;left:236px;top:0;bottom:0;background:linear-gradient(90deg,rgba(21,66,115,.055),rgba(21,66,115,0));
   pointer-events:none}
 .bandkop{display:grid;grid-template-columns:190px 46px 1fr;background:#eef1f5;font-size:12px;
   color:var(--muted);border-bottom:1px solid var(--line)}
@@ -149,8 +149,8 @@ svg.graph .el{font-size:9.5px;fill:#4a525c;stroke:#fff;stroke-width:3px;paint-or
 .ring.r1>h4{color:#0b6b3a}
 .ring.r2{border-color:#a8620a;background:#fdf7ef}
 .ring.r2>h4{color:#a8620a}
-.ring.r3{border-color:#1f4e79;background:#f3f7fb}
-.ring.r3>h4{color:#1f4e79}
+.ring.r3{border-color:#154273;background:#f3f7fb}
+.ring.r3>h4{color:#154273}
 .ring.r4{border-color:#c0c7d0;background:#fafbfc}
 
 /* partijen */
@@ -198,16 +198,16 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:v
   @page{size:A4 landscape;margin:12mm}
 }
 </style>
-<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
-<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Stelselkaart security-gremia</span></nav><!-- /kruimelpad -->
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}body,button,input,select,textarea{font-family:var(--sans)}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff}html body .kruimel span{color:#c9d6e4}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Stelselkaart security-gremia</span></nav><!-- /kruimelpad -->
 <div class="wrap">
 
 <header class="top">
-  <h1>Stelselkaart security-gremia</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">NIS2</span><span class="norm">Cbw</span></p><!-- /normen -->
+  <h1>Stelselkaart security-gremia</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#154273;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">NIS2</span><span class="norm">Cbw</span></p><!-- /normen -->
   <div class="sub">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid, en hoe verhouden ze zich tot elkaar
   &middot; peildatum 11 augustus 2026 &middot; samengesteld vanuit een gemeentelijke CISO-praktijk
   <span class="badge" style="background:#e9f5ee;color:#0b6b3a;border-color:#a8d5bd">open dataset &middot; EUPL-1.2</span></div>
-</header><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#hoe-dit-is-samengesteld">Hoe dit is samengesteld</a></li><li><a href="#tegenstrijdigheden-tussen-officiele-bronnen">Tegenstrijdigheden tussen officiele bronnen</a></li><li><a href="#partijen-die-zijn-gestopt-of-stil-gevallen">Partijen die zijn gestopt of stil gevallen</a></li><li><a href="#wat-niet-is-vastgesteld">Wat niet is vastgesteld</a></li><li><a href="#methodische-kanttekeningen">Methodische kanttekeningen</a></li><li><a href="#de-dubbelgangers-op-een-rij">De dubbelgangers, op een rij</a></li></ol></nav><!-- /inhoudsopgave -->
+</header><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#154273;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#hoe-dit-is-samengesteld">Hoe dit is samengesteld</a></li><li><a href="#tegenstrijdigheden-tussen-officiele-bronnen">Tegenstrijdigheden tussen officiele bronnen</a></li><li><a href="#partijen-die-zijn-gestopt-of-stil-gevallen">Partijen die zijn gestopt of stil gevallen</a></li><li><a href="#wat-niet-is-vastgesteld">Wat niet is vastgesteld</a></li><li><a href="#methodische-kanttekeningen">Methodische kanttekeningen</a></li><li><a href="#de-dubbelgangers-op-een-rij">De dubbelgangers, op een rij</a></li></ol></nav><!-- /inhoudsopgave -->
 
 <div class="note" style="margin:16px 0 0">
   <b>Open dataset uit de kennisbank van security-commons-nl.</b> 83 partijen en 19 concrete diensten die samen de
@@ -631,8 +631,8 @@ const chip=(id,extra="")=>{const r=byId[id];if(!r)return"";
 (function(){
   const N=[
     {id:"eu",l:"EU",s:"ENISA, NIS-CG, CSIRTs Network",x:400,y:34,w:190,h:36,c:"#6b4fa0"},
-    {id:"jenv",l:"JenV / NCTV",s:"kaderstellend",x:170,y:120,w:140,h:36,c:"#1f4e79"},
-    {id:"bzk",l:"BZK",s:"stelsel BIO en ENSIA",x:620,y:120,w:150,h:36,c:"#1f4e79"},
+    {id:"jenv",l:"JenV / NCTV",s:"kaderstellend",x:170,y:120,w:140,h:36,c:"#154273"},
+    {id:"bzk",l:"BZK",s:"stelsel BIO en ENSIA",x:620,y:120,w:150,h:36,c:"#154273"},
     {id:"ncsc",l:"NCSC",s:"CSIRT, detectie, CWN",x:150,y:212,w:180,h:42,c:"#123f66"},
     {id:"rdi",l:"RDI",s:"toezicht",x:390,y:212,w:110,h:36,c:"#8a4b00"},
     {id:"cip",l:"CIP",s:"beheer BIO2",x:640,y:212,w:130,h:36,c:"#2e7d68"},
@@ -723,7 +723,7 @@ const D=[
   D.forEach(d=>{
     const n=d[1].length, gap=n===0, hot=n>=5, wip=d[3]||[];
     const w=gap?0:Math.round(n/max*100);
-    const bg=gap?'':` style="background:linear-gradient(90deg,rgba(31,78,121,.07) ${w}%,rgba(31,78,121,0) ${w}%)"`;
+    const bg=gap?'':` style="background:linear-gradient(90deg,rgba(21,66,115,.07) ${w}%,rgba(21,66,115,0) ${w}%)"`;
     h+=`<div class="dr${gap?' gap':''}${hot?' hot':''}">`;
     h+=`<div class="dn">${d[0]}</div><div class="dc">${gap?'✖':n}</div>`;
     h+=`<div class="dp"${bg}>${gap?(wip.length?'niets vastgesteld, in ontwikkeling bij '+wip.map(id=>chip(id)).join(''):'geen enkele partij belegt dit'):d[1].map(id=>chip(id)).join('')}</div>`;
@@ -831,5 +831,5 @@ document.querySelectorAll('.fmt button').forEach(b=>{
   };
 });
 </script>
-<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/stelselkaart-security-gremia">security/stelselkaart-security-gremia</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/stelselkaart-security-gremia">security/stelselkaart-security-gremia</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body>
 </html>

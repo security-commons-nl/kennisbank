@@ -558,7 +558,7 @@ def bepaal_weergave(vak: str, map_: Path) -> tuple[str, str]:
 # gemaakt door dit script, zodat hij niet achter kan lopen op de markdown (statuut B3).
 STUKBRON_CSS = (
     ".stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}"
-    ".stukbron a{color:#1f4e79}"
+    ".stukbron a{color:#154273}"
 )
 
 
@@ -760,7 +760,7 @@ a{color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 a.item{display:block;background:var(--card);border:1px solid var(--line);border-radius:8px;
   padding:16px 18px;text-decoration:none;color:inherit;transition:border-color .12s,box-shadow .12s}
-a.item:hover{border-color:var(--accent);box-shadow:0 1px 6px rgba(31,78,121,.10)}
+a.item:hover{border-color:var(--accent);box-shadow:0 1px 6px rgba(21,66,115,.10)}
 .itemtop{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px}
 h3.groep{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px}
 .itemtitle{font-size:15.5px;font-weight:600;color:var(--accent);letter-spacing:-.1px}
@@ -1229,7 +1229,7 @@ schrijfrechten: GitHub maakt van je wijziging automatisch een voorstel.</p>
 
 KRUIMEL_CSS = (
     ".kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}"
-    ".kruimel a{color:#1f4e79;text-decoration:none}"
+    ".kruimel a{color:#154273;text-decoration:none}"
     ".kruimel a:hover{text-decoration:underline}"
 )
 
@@ -1280,59 +1280,17 @@ def zet_favicon(tekst: str) -> str:
 # past een zijbalk naast. Pagina's met een eigen, bredere opmaak krijgen het blok bovenaan.
 LEESKOLOM = "font-family:Calibri"
 
-# Huisstijl op het scherm. Het sjabloon blijft de basis voor afdrukken en plakken in Word (statuut B3);
-# dit blok zet daar op het scherm de opmaak van de voorpagina overheen (kleuren en letter uit
-# site/thema.css van de root-site). Alleen op pagina's met de standaard leesopmaak: een instrument met
-# een eigen ontwerp blijft zoals het is. Het blok brengt ook de viewport mee, die het sjabloon miste;
-# zonder die regel toonde een telefoon de pagina verkleind op desktopbreedte.
-HUISSTIJL_START = "<!-- huisstijl -->"
-HUISSTIJL_EIND = "<!-- /huisstijl -->"
-HUISSTIJL_CSS = (
-    "@media screen{"
-    ":root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;"
-    "--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}"
-    "html{background:#fff}"
-    "body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;"
-    "margin:0 auto;padding:0 1.25rem 4rem}"
-    # Het kruimelpad wordt de donkere balk van de voorpagina, over de volle breedte.
-    # html body ervoor: de eigen stijl van het kruimelpad staat later in de pagina en zou anders winnen.
-    "html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding:1.05rem 0;"
-    "box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(0 -100vmax);font:14px/1.5 var(--sans)}"
-    "html body .kruimel a{color:#fff}html body .kruimel span{color:#c9d6e4}"
-    "h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;"
-    "letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}"
-    "h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;"
-    "background:var(--oranje);margin-top:.9rem}"
-    "h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);"
-    "margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}"
-    "h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}"
-    "p{margin:.7em 0}li{margin:.3em 0}"
-    "a{color:var(--blauw);text-underline-offset:2px}"
-    "table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;"
-    "border-spacing:0;margin:1em 0}"
-    "th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}"
-    "tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}"
-    "blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;"
-    "padding:.8em 1.1em;margin:1.3em 0}"
-    "code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;"
-    "background:var(--vlak);padding:.1em .35em;border-radius:4px}"
-    # Een brede tabel scrolt op een smal scherm binnen zichzelf, net als in het sjabloon.
-    "@media (max-width:700px){table{display:block;overflow-x:auto;max-width:100%}}"
-    "@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}"
-    "}"
-)
-HUISSTIJL = (f'{HUISSTIJL_START}<meta name="viewport" content="width=device-width, initial-scale=1">'
-             f"<style>{HUISSTIJL_CSS}</style>{HUISSTIJL_EIND}")
+# Huisstijl op het scherm: zie tools/huisstijl.py, de enige plek voor die opmaak. Een leesversie krijgt de
+# volle huisstijl, een instrument met eigen ontwerp alleen letter, kleurtokens en de balk met het kruimelpad.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import huisstijl  # noqa: E402
+
+HUISSTIJL_START, HUISSTIJL_EIND, HUISSTIJL_CSS = huisstijl.START, huisstijl.EIND, huisstijl.LEESVERSIE_CSS
 
 
 def zet_huisstijl(tekst: str) -> str:
-    """Huisstijl en viewport in de </head>, alleen bij de standaard leesopmaak. Idempotent."""
-    if LEESKOLOM not in tekst:
-        return tekst
-    if HUISSTIJL_START in tekst:
-        return re.sub(re.escape(HUISSTIJL_START) + ".*?" + re.escape(HUISSTIJL_EIND), HUISSTIJL, tekst,
-                      flags=re.S)
-    return tekst.replace("</head>", HUISSTIJL + "</head>", 1)
+    """Huisstijl en zo nodig een viewport in de </head>. Idempotent."""
+    return huisstijl.zet(tekst)
 
 INHOUD_CSS = (
     # Blok bovenaan: werkt op elke pagina en op elke breedte.
@@ -1350,7 +1308,7 @@ INHOUD_CSS = (
     ".inhoud.zijbalk li{margin:.3em 0}"
     "}"
     ".inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}"
-    ".inhoud a{color:#1f4e79;text-decoration:none}"
+    ".inhoud a{color:#154273;text-decoration:none}"
     ".inhoud a:hover{text-decoration:underline}"
     "@media print{.inhoud{display:none}}"
 )
@@ -1498,7 +1456,7 @@ def zet_inhoudsopgave(tekst: str) -> str:
 BRON_CSS = (
     ".bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;"
     "font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}"
-    ".bronvoet a{color:#1f4e79}"
+    ".bronvoet a{color:#154273}"
     "@media print{.bronvoet{display:none}}"
 )
 
@@ -1533,11 +1491,11 @@ def zet_bronvoet(tekst: str, vak: str, item: str) -> str:
 
 PIJLER_CSS = (
     ".pijlerblok{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.6em;padding:.9em 1.1em;"
-    "background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}"
-    ".pijlerblok b{display:block;margin-bottom:.4em;color:#1f4e79}"
+    "background:#f4f7fa;border-left:3px solid #154273;border-radius:0 3px 3px 0}"
+    ".pijlerblok b{display:block;margin-bottom:.4em;color:#154273}"
     ".pijlerblok ul{margin:0;padding-left:1.2em}"
     ".pijlerblok li{margin:.2em 0}"
-    ".pijlerblok a{color:#1f4e79}"
+    ".pijlerblok a{color:#154273}"
     ".pijlerblok .rol{color:#5a6675}"
 )
 
@@ -1587,7 +1545,7 @@ def zet_pijlerblok(tekst: str, kinderen: list[dict]) -> str:
 
 NORM_CSS = (
     ".normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}"
-    ".normenregel b{color:#1f4e79;font-weight:600}"
+    ".normenregel b{color:#154273;font-weight:600}"
     ".normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;"
     "padding:0 7px;margin-left:5px;white-space:nowrap}"
 )
@@ -1621,12 +1579,12 @@ def zet_normen(tekst: str, normen: list[str]) -> str:
 
 ELDERS_CSS = (
     ".elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;"
-    "background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}"
-    ".elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}"
+    "background:#f4f7fa;border-left:3px solid #154273;border-radius:0 3px 3px 0}"
+    ".elders b.elders-kop{display:block;margin-bottom:.2em;color:#154273}"
     ".elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}"
     ".elders ul{margin:0;padding-left:1.2em}"
     ".elders li{margin:.3em 0}"
-    ".elders a{color:#1f4e79}"
+    ".elders a{color:#154273}"
     ".elders .partij{color:#5a6675}"
     ".elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;"
     "border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}"

@@ -36,6 +36,9 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import huisstijl  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 ITEM = ROOT / "governance" / "risicogestuurd-managementsysteem"
 INVOER = ITEM / "voorbeeld-register.json"
@@ -403,8 +406,8 @@ def stand_tekst(m: dict) -> str:
 # ---- verkenner -------------------------------------------------------------------------------
 
 CSS = """
-:root{--tekst:#111;--zacht:#5a6675;--lijn:#c9d1dc;--vlak:#f3f6fa;--accent:#1f4e79;--achter:#fff;
---n0:#fbe3e1;--n1:#fdf0d5;--n2:#e6effa;--n3:#e2f3e6;--rand-n0:#c0392b;--rand-n1:#b9770e;--rand-n2:#1f4e79;--rand-n3:#1e7b3a}
+:root{--tekst:#111;--zacht:#5a6675;--lijn:#c9d1dc;--vlak:#f3f6fa;--accent:#154273;--achter:#fff;
+--n0:#fbe3e1;--n1:#fdf0d5;--n2:#e6effa;--n3:#e2f3e6;--rand-n0:#c0392b;--rand-n1:#b9770e;--rand-n2:#154273;--rand-n3:#1e7b3a}
 @media (prefers-color-scheme:dark){:root{--tekst:#e8ecf1;--zacht:#a7b2bf;--lijn:#3a4654;--vlak:#1c2530;--accent:#8db8e8;
 --achter:#11161c;--n0:#3d1f1c;--n1:#3a2f17;--n2:#18283a;--n3:#17301f;--rand-n0:#e57367;--rand-n1:#e0a64a;--rand-n2:#8db8e8;--rand-n3:#6cc68a}}
 *{box-sizing:border-box}
@@ -601,7 +604,8 @@ def bouw(invoer: Path, uitmap: Path) -> dict[Path, str]:
     meldingen = toets(reg)
     u = reken(reg)
     return {uitmap / "voorbeeld-register.md": markdown(u, meldingen),
-            uitmap / "voorbeeld-register-verkenner.html": verkenner(u)}
+            # Huisstijl van de voorpagina op het scherm (tools/huisstijl.py); de eigen opbouw blijft staan.
+            uitmap / "voorbeeld-register-verkenner.html": huisstijl.zet(verkenner(u), "instrument")}
 
 
 def main(argv: list[str]) -> int:
