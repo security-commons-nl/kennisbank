@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Uitwijk regelen voor
+kritieke
+diensten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <span>Uitwijk regelen voor kritieke diensten</span></nav><!-- /kruimelpad -->
+<h1 id="uitwijk-regelen-voor-kritieke-diensten">Uitwijk regelen voor
+kritieke diensten</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#1f4e79;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">ISO 22301</span></p><!-- /normen --><!-- bewijs-voor --><style>.bewijsregel{font:13px/1.8 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.8em 0 1.4em}.bewijsregel b{color:#1c6b4a;font-weight:600;margin-right:4px}.bewijsregel a.maatregel{display:inline-block;background:#e6f2ee;border:1px solid #a8d5bd;border-radius:4px;padding:0 7px;margin:0 0 0 5px;color:#1c6b4a;text-decoration:none;white-space:nowrap;line-height:1.6}.bewijsregel a.maatregel:hover{text-decoration:underline}.bewijsregel .kader{margin-left:10px}</style><p class="bewijsregel"><b>Levert bewijs voor</b><span class="kader">BIO</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.9">5.9</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.19">5.19</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.21">5.21</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.29">5.29</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/5.30">5.30</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#bio2/8.13">8.13</a><span class="kader">NIST CSF</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/GV.SC-04">GV.SC-04</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.AM-04">ID.AM-04</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/ID.AM-05">ID.AM-05</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/PR.DS-11">PR.DS-11</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/RC.RP-01">RC.RP-01</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#nist-csf/RC.RP-05">RC.RP-05</a><span class="kader">AVG</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A28">A28</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#avg/A32">A32</a><span class="kader">Wpg</span><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W06">W06</a><a class="maatregel" href="https://security-commons-nl.github.io/normen/normwijzer.html#wpg/W13">W13</a></p><!-- /bewijs-voor -->
+<blockquote>
+<p><strong>Barrieres:</strong> test herstel tegen de afgesproken RTO en
+RPO, en breng kritieke systemen en leveranciers in samenhang in beeld.
+Deze handleiding legt de schakel ertussen: welke uitwijk je per dienst
+kiest, en hoe je laat zien dat die werkt.</p>
+</blockquote>
+<p>Uitwijk is het vooraf geregelde alternatief waarmee een kritieke
+dienst doorloopt, of binnen de afgesproken hersteltijd terugkomt, als de
+normale voorziening wegvalt. Het is een van de keuzes in een
+continuïteitsstrategie, naast redundantie, een alternatieve (vaak
+analoge) werkwijze en bewust uitstel.</p>
+<p>De bouwstenen liggen er al, verspreid. De IBD beschrijft uitwijk als
+strategiekeuze en als scenariokaart voor het crisisteam. Het Rijk eist
+sinds 2026 per materiële clouddienst een exitplan met een scenario voor
+onverwachte uitval. De internationale standaarden leveren de begrippen.
+Wat meestal ontbreekt is het stuk ertussen: een route die een
+organisatie van haar kritieke diensten naar een geteste uitwijkkeuze
+brengt, en een plek waar die keuze per dienst staat. Dat is deze
+handleiding, met de <a href="uitwijkkaart.html">uitwijkkaart</a> als
+invulformat.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
+<p>Gebruik deze handleiding als je een lijst kritieke diensten hebt met
+per dienst een hersteltijd. Heb je die nog niet, begin dan bij <a
+href="../kritieke-processen-vaststellen/">kritieke processen en
+herstelprioriteiten vaststellen</a> en het <a
+href="../bia-en-risicoanalyse-sjabloon/">BIA- en
+risicoanalysesjabloon</a>. Zonder hersteleis valt er niets te kiezen:
+elke uitwijkvorm is dan goed of te duur, en je weet niet welke.</p>
+<p>De kern gaat over drie lagen: ICT-platform en data, clouddienst en
+leverancier, en de mensen die het herstel doen. Gebouw, stroom en
+werkplekken staan in het <a
+href="../bedrijfscontinuiteitsplan-sjabloon/">bedrijfscontinuïteitsplan</a>;
+hier komen ze alleen langs voor zover een ICT-uitwijk ervan afhangt.</p>
+<h2 id="vier-lagen-vier-uitwijkvragen">Vier lagen, vier
+uitwijkvragen<a class="anker" href="#vier-lagen-vier-uitwijkvragen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Laag</th>
+<th>Wat valt uit</th>
+<th>Uitwijkvormen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Werkplek en locatie</td>
+<td>Gebouw, stroom, netwerk, telefonie</td>
+<td>Tweede locatie, buurorganisatie, thuiswerken, noodstroom,
+noodcommunicatie</td>
+</tr>
+<tr>
+<td>ICT-platform en data</td>
+<td>Eigen datacenter, hostingpartij, servers, opslag</td>
+<td>Tweede datacenter (gespiegeld of warm), herstel uit back-up op een
+schone omgeving, onderlinge uitwijk met een andere
+overheidsorganisatie</td>
+</tr>
+<tr>
+<td>Clouddienst en leverancier</td>
+<td>SaaS of PaaS valt uit, leverancier failliet of gestopt, toegang
+geblokkeerd</td>
+<td>Back-up buiten de clouddienst, tweede leverancier of eigen
+landingsplaats, escrow, step-in-rechten, geplande en acute exit</td>
+</tr>
+<tr>
+<td>Mensen en proces</td>
+<td>Beheerders, sleutelkennis, ketenpartner</td>
+<td>Minimale noodorganisatie, handmatige terugvalprocedure, afspraken
+met ketenpartners</td>
+</tr>
+</tbody>
+</table>
+<p>De cloudlaag verschilt op twee punten van de andere drie. Er is geen
+eigen hardware om naar uit te wijken, dus je enige ruimte is wat je
+vooraf buiten de dienst zet (data, configuratie, documentatie, kennis)
+en wat je contractueel afdwingt. En het scenario is niet alleen een
+storing maar ook stoppen: faillissement, opzegging, een geopolitieke
+blokkade. Een uitwijkkeuze voor een clouddienst moet beide dekken.</p>
+<h2 id="zo-richt-je-het-in">Zo richt je het in<a class="anker" href="#zo-richt-je-het-in" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="stap-1-weten-wat-er-moet-doorlopen">Stap 1. Weten wat er moet
+doorlopen<a class="anker" href="#stap-1-weten-wat-er-moet-doorlopen" aria-label="Link naar deze kop">#</a></h3>
+<p>Neem per kritieke dienst de rij uit je BIA over: eigenaar, maximaal
+toelaatbare uitvalduur (MTPD), hersteltijd (RTO), toelaatbaar
+dataverlies (RPO) en het noodniveau, dus wat minimaal door moet. Vraag
+die gegevens niet opnieuw uit; de uitwijkkaart pakt ze over.</p>
+<p>Leg daarbij vast wat de kleinste organisatie is die de dienst op
+noodniveau draait: welke mensen, welke systemen, welke werkplekken. Dat
+is de maat voor de uitwijk. Wie de volledige dienst wil uitwijken,
+betaalt voor capaciteit die op de dag zelf niemand nodig heeft.</p>
+<h3 id="stap-2-weten-waar-het-van-afhangt">Stap 2. Weten waar het van
+afhangt<a class="anker" href="#stap-2-weten-waar-het-van-afhangt" aria-label="Link naar deze kop">#</a></h3>
+<p>Zet per dienst de bouwstenen en leveranciers op een rij. <a
+href="../../security/ketenafhankelijkheden/">Ketenafhankelijkheden in
+beeld</a> is daar de handleiding voor. Voor uitwijk tellen twee vragen
+extra:</p>
+<ol type="1">
+<li><strong>Wat van de dienst staat buiten de dienst?</strong> De data,
+de configuratie, de documentatie om opnieuw op te bouwen, de kennis van
+wie het kan. Bij een SaaS-dienst is dit vaak niets, en dat is de
+bevinding.</li>
+<li><strong>Waar zit concentratie?</strong> Vijf diensten bij dezelfde
+leverancier, of op hetzelfde platform, vallen samen uit. Uitwijk per
+dienst helpt dan niet als de uitwijk van alle vijf ook daar zit.</li>
+</ol>
+<h3 id="stap-3-de-uitwijkkeuze-maken">Stap 3. De uitwijkkeuze maken<a class="anker" href="#stap-3-de-uitwijkkeuze-maken" aria-label="Link naar deze kop">#</a></h3>
+<p>Uitwijk is een schaal van kosten tegen hersteltijd. Voor een eigen
+platform is de klassieke indeling uit <a
+href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf">NIST
+SP 800-34</a> nog steeds de helderste:</p>
+<table>
+<thead>
+<tr>
+<th>Vorm</th>
+<th>Wat er klaarstaat</th>
+<th>Hersteltijd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cold site</td>
+<td>Ruimte, stroom, koeling; geen apparatuur</td>
+<td>Weken</td>
+</tr>
+<tr>
+<td>Warm site</td>
+<td>Apparatuur, geen actuele data</td>
+<td>Dagen</td>
+</tr>
+<tr>
+<td>Hot site</td>
+<td>Apparatuur en actuele data</td>
+<td>Uren</td>
+</tr>
+<tr>
+<td>Mirrored site</td>
+<td>Gespiegelde omgeving die meedraait</td>
+<td>Vrijwel geen</td>
+</tr>
+<tr>
+<td>Mobile site</td>
+<td>Verplaatsbare voorziening op afroep</td>
+<td>Afhankelijk van levering</td>
+</tr>
+</tbody>
+</table>
+<p>Daarnaast zijn er vormen die in de publieke sector vaak goedkoper
+uitkomen:</p>
+<ul>
+<li><strong>Herstel uit back-up op een schone omgeving.</strong> Werkt
+alleen als de back-up buiten het bereik van de aanvaller staat; zie <a
+href="../../security/onveranderbare-backups/">onveranderbare
+back-ups</a>.</li>
+<li><strong>Onderlinge uitwijk.</strong> Twee overheden zijn elkaars
+uitwijk. Een bekend Nederlands voorbeeld zijn twee Gelderse gemeenten
+die dat in 2008 deden over een bestaande glasvezelverbinding, betaald
+uit bestaande vervangings- en uitwijkbudgetten (Computable, juli 2008).
+Randvoorwaarden: een verbinding, gelijke platformkeuzes en een
+gezamenlijke beheerafspraak.</li>
+<li><strong>Tweede leverancier of eigen landingsplaats</strong> voor een
+clouddienst, met de data er al in of in een formaat dat je daar binnen
+de RTO kunt inlezen.</li>
+<li><strong>Analoge terugval.</strong> Papier, telefoon, handmatig.
+Goedkoop, en houdt het vaak een paar dagen vol.</li>
+<li><strong>Bewust uitstel.</strong> Voor een dienst die een week kan
+wachten is dat de juiste keuze, mits je het opschrijft.</li>
+</ul>
+<p>De keuzeregel is eenvoudig: <strong>de goedkoopste vorm die de RTO en
+het noodniveau haalt.</strong> Haalt geen enkele betaalbare vorm de RTO,
+dan klopt de RTO niet of het budget niet. Dat is een besluit voor de
+eigenaar van de dienst, niet voor ICT.</p>
+<h3 id="stap-4-vastleggen-en-afdwingen">Stap 4. Vastleggen en
+afdwingen<a class="anker" href="#stap-4-vastleggen-en-afdwingen" aria-label="Link naar deze kop">#</a></h3>
+<p>Voor een clouddienst of uitbestede dienst zit de helft van de uitwijk
+in het contract. Het rijksbrede cloudbeleid van 2026 vraagt bij
+materieel cloudgebruik een exitplan met twee scenario's, en die indeling
+werkt voor elke publieke organisatie:</p>
+<ol type="1">
+<li><strong>Geplande exit.</strong> Hoe je naar een andere leverancier
+of eigen beheer gaat zonder verstoring: hoe data, metadata en
+applicaties worden overgedragen, met de minimale termijn die dat
+kost.</li>
+<li><strong>Disruptieve onderbreking.</strong> Wat je doet als de dienst
+onverwacht wegvalt, welke maatregelen je daarvoor vooraf hebt genomen
+(zoals een back-up buiten de clouddienst) en hoe je de meest kritieke
+processen herstelt.</li>
+</ol>
+<p>Wat in het contract hoort: beide scenario's, data- en
+serviceportabiliteit, step-in-rechten, escrow waar het zin heeft,
+inzicht in de onderaannemers, en een opzeggingsrecht bij dreigend
+faillissement. En in de eigen begroting: geld voor een acute exit. Het
+implementatiekader cloudgebruik van CIO Rijk noemt budget twee keer als
+onderdeel van een exitstrategie, en dat is geen toeval: een exit die
+niet begroot is, gebeurt niet.</p>
+<p>Leg ook vast wie de uitwijk activeert en wie dat besluit neemt. Dat
+staat in het <a
+href="../bedrijfscontinuiteitsplan-sjabloon/">bedrijfscontinuïteitsplan</a>,
+hoofdstuk 3.</p>
+<h3 id="stap-5-testen-en-bijhouden">Stap 5. Testen en bijhouden<a class="anker" href="#stap-5-testen-en-bijhouden" aria-label="Link naar deze kop">#</a></h3>
+<p>Een uitwijk die nooit is uitgevoerd, is een aanname. Drie dingen:</p>
+<ol type="1">
+<li><strong>Echt uitwijken, niet alleen een tafeloefening.</strong> Een
+volwassen vorm is periodiek wisselen tussen de primaire en de
+uitwijkomgeving, zodat de uitwijk de gewone gang van zaken wordt.</li>
+<li><strong>De isolatietoets op back-ups.</strong> Staat de back-up
+buiten bereik van wie de primaire omgeving overneemt? Het Britse NCSC
+heeft daar <a
+href="https://www.ncsc.gov.uk/collection/ransomware-resistant-backups">principes
+voor ransomware-bestendige back-ups</a> voor, een set voor eigen opslag
+en een voor cloud, bruikbaar als toetslijst richting leveranciers.</li>
+<li><strong>Jaarlijks herzien.</strong> De BIO2 vraagt jaarlijks testen
+van continuïteitsplannen en herstelprocedures. Neem het exitplan per
+clouddienst in dezelfde ronde mee.</li>
+</ol>
+<p>De uitvoering van de test zelf staat in <a
+href="../../security/hersteltest/">hersteltest tegen RTO en RPO</a>.</p>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert<a class="anker" href="#wat-het-kost-en-wat-het-oplevert" aria-label="Link naar deze kop">#</a></h2>
+<p>De analyse kost per dienst een tot twee uur met de eigenaar en een
+beheerder, als de BIA er al ligt. De uitwijk zelf kost wat de keuze
+kost, en dat is precies het punt: per dienst wordt zichtbaar wat een uur
+kortere hersteltijd kost, en de eigenaar beslist.</p>
+<p>Wat het oplevert: een overzicht dat in een oogopslag laat zien welke
+kritieke diensten hun hersteltijd niet halen, welke clouddienst geen
+exitplan heeft en welke uitwijk nooit is getest. Dat overzichtsblad is
+wat naar de directie gaat.</p>
+<p>Waar je op moet letten:</p>
+<ul>
+<li>Een uitwijk die op dezelfde leverancier of hetzelfde platform leunt
+als de dienst zelf, wijkt nergens heen.</li>
+<li>Exitplannen gaan vaak uit van voldoende tijd. Toets of het plan ook
+werkt als de leverancier morgen stopt.</li>
+<li>De uitwijkkaart veroudert bij elke contractwijziging. Koppel de
+herziening aan het contractbeheer.</li>
+</ul>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
+<p>Wat je aan het eind kunt laten zien, aan je directie, je accountant
+of je toezichthouder:</p>
+<ul>
+<li>De <strong>uitwijkkaart</strong> per kritieke dienst, met de gekozen
+vorm en of die de RTO haalt.</li>
+<li>Per clouddienst of uitbestede dienst een <strong>exitplan met beide
+scenario's</strong>, en de contractbepalingen die het afdwingen.</li>
+<li>Het <strong>verslag van de laatste uitwijktest</strong>: welke
+dienst, welke datum, welke soort test (tafeloefening, deeltest, echte
+uitwijk), de gemeten hersteltijd en de restpunten.</li>
+<li>Het <strong>overzichtsblad</strong> over alle diensten, met de datum
+waarop de directie het zag.</li>
+</ul>
+<p>Wat je hiermee niet aantoont: dat de back-up zelf onaantastbaar is.
+Dat bewijs hoort bij <a
+href="../../security/onveranderbare-backups/">onveranderbare
+back-ups</a>.</p>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit<a class="anker" href="#zo-leg-je-het-uit" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Aan de directie.</strong> "Voor elke kritieke dienst hebben
+we nu op een rij wat er gebeurt als de leverancier of het platform
+wegvalt, en of dat snel genoeg gaat. Bij drie diensten haalt de uitwijk
+de hersteltijd niet. U kunt kiezen: meer uitgeven aan uitwijk, of de
+hersteltijd verruimen. Niet kiezen is ook een keuze, alleen merkt u die
+pas tijdens de storing."</p>
+<p><strong>Aan de informatiemanager.</strong> "Elke clouddienst krijgt
+een exitplan met twee scenario's, en de contractbepalingen die daarbij
+horen. Bij nieuwe aanbestedingen nemen we die op in het programma van
+eisen; bij bestaande contracten bij de eerstvolgende verlenging."</p>
+<p><strong>Aan het MT.</strong> "Per dienst een uur of twee met de
+eigenaar, daarna een test per jaar. Het levert een lijst op van wat we
+zouden doen als het misgaat, en welke gaten we vooraf kennen."</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
+<p>Deze handleiding hoort bij de barrieres <code>restore</code> en
+<code>dependencies</code> uit de <a
+href="https://security-commons-nl.github.io/aanvalspaden/">zelfcheck
+aanvalspaden</a>, als verdieping naast <a
+href="../../security/hersteltest/">hersteltest tegen RTO en RPO</a> en
+<a href="../../security/ketenafhankelijkheden/">ketenafhankelijkheden in
+beeld</a>. Wat dit aantoont in de BIO2 staat op <a
+href="https://security-commons-nl.github.io/aanvalspaden/normen/">van
+aanvalspad naar norm</a>.</p>
+<p>De hersteleisen komen uit het <a
+href="../bia-en-risicoanalyse-sjabloon/">BIA- en
+risicoanalysesjabloon</a>, het besluit om uit te wijken staat in het <a
+href="../bedrijfscontinuiteitsplan-sjabloon/">bedrijfscontinuïteitsplan</a>,
+en het beleid erboven in <a
+href="../../governance/beleidsset-informatiebeveiliging/bcm.html">beleid
+ICT-continuïteit en uitwijk</a> uit de beleidsset.</p>
+<p>Normatief kader, voor wie het wil nalopen:</p>
+<ul>
+<li><strong>BIO2</strong>, maatregelen 5.30 (ICT-gereedheid voor
+bedrijfscontinuïteit) en 8.13 (back-up): continuïteitsplannen en
+herstelprocedures minimaal jaarlijks testen, back-up op een locatie die
+niet door hetzelfde incident wordt geraakt.</li>
+<li><strong>Cbw en NIS2</strong> artikel 21: bedrijfscontinuïteit,
+back-upbeheer en crisisbeheer horen bij de zorgplicht.</li>
+<li><strong>Rijksbreed cloudbeleid 2026</strong>, paragraaf 3.2:
+exitplan met twee scenario's bij materieel cloudgebruik.</li>
+<li><strong>ISO 22301</strong> hoofdstuk 8.3 (strategieën en
+oplossingen) en <a
+href="https://www.iso.org/standard/80975.html">ISO/IEC 27031</a>
+(ICT-gereedheid voor bedrijfscontinuïteit), voor de begrippen.</li>
+</ul>
+<h2 id="wat-er-in-deze-map-staat">Wat er in deze map staat<a class="anker" href="#wat-er-in-deze-map-staat" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li><a href="uitwijkkaart.html">uitwijkkaart.md</a>: het invulformat, een
+kaart per kritieke dienst plus het overzichtsblad, met twee ingevulde
+voorbeelden (verzonnen)</li>
+</ul>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #1f4e79;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#1f4e79}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#1f4e79}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://www.informatiebeveiligingsdienst.nl/product/model-continuiteitsstrategie/">Model Continuïteitsstrategie BIO (BCM)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-bedrijfscontinuiteitsbeheer/">Handreiking Bedrijfscontinuïteitsbeheer (BCM)</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/scenariokaart-3-uitval-ict/">Scenariokaart 3 – Uitval ICT</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/aandachtspunten-back-up-en-recovery-inclusief-saas-leveranciers/">Aandachtspunten back-up en recovery inclusief SaaS-leveranciers</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/praktische-aanpak-3-2-1-back-up-regel/">Praktische aanpak 3-2-1 back-up regel</a> <span class="partij">· IBD</span></li><li><a href="https://www.cip-overheid.nl/producten-en-diensten/clouddiensten">BIO Thema-uitwerking Clouddiensten</a> <span class="partij">· CIP</span></li><li><a href="https://www.tweedekamer.nl/downloads/document?id=2026D35295">Herziening rijksbreed cloudbeleid 2026 (paragraaf 3.2: exitplan met geplande exit en disruptieve onderbreking)</a> <span class="partij">· BZK</span></li><li><a href="https://zoek.officielebekendmakingen.nl/blg-1070754.pdf">Implementatiekader risicoafweging cloudgebruik, versie 1.1 (artikel 7: exitstrategie)</a> <span class="partij">· CIO Rijk en CIO-beraad</span></li><li><a href="https://www.algemenebestuursdienst.nl/site/binaries/site-content/collections/documents/2025/02/25/van-kwetsbaar-naar-weerbaar/ABDTOPConsult+Rapport+geleerde+lessen+ICT+uitbesteding+Februari+2025+Definitief+Openbaar.pdf">Van kwetsbaar naar weerbaar: geleerde lessen uit dreigende acute en langdurige uitval van uitbestede ICT-dienstverlening bij overheidsorganisaties (ABDTOPConsult, februari 2025)</a> <span class="partij">· BZK</span></li><li><a href="https://www.ncsc.nl/incidenten-en-herstellen/herstel-van-een-cyberincident">Hoe herstel ik van een cyberincident?</a> <span class="partij">· NCSC</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/uitwijk-regelen">bcm/uitwijk-regelen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
