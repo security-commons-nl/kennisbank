@@ -2,7 +2,7 @@
 
 > Gedeelde kennisbank voor CISO's en ISO's in de publieke sector.
 
-Peildatum: 14 oktober 2026. Loopt deze datum ver achter op wat de site laat zien, dan is dit stuk aan
+Peildatum: 15 oktober 2026. Loopt deze datum ver achter op wat de site laat zien, dan is dit stuk aan
 herziening toe.
 
 ---
@@ -24,6 +24,11 @@ nodig. Dezelfde dag kwam hij terug, herschreven op BIO 2.0 versie 1.3 als 21 bou
 die per antwoordprofiel op zestien contextvragen een eigen set maakt; een test bewijst bij elk profiel dat
 alle 117 overheidsmaatregelen en de 40 ISO-beheersmaatregelen zonder overheidsmaatregel gedekt zijn, elk met een controle.
 
+Op 15 oktober kregen de AI-stukken verwijzingen naar wat BZK, VNG en de IBD al hebben, zodat de kennisbank daar niet
+naast gaat zitten. De security-annex ging naar versie 1.4: artikel 19 lid 19.1a zet AI-functionaliteiten van een
+leverancier pas aan na schriftelijke toestemming, ook als ze via een update binnenkomen. De stelselkaart wordt
+sindsdien gebouwd uit de data, met een check in de CI.
+
 ## Wat open staat
 
 **De handleidingen afmaken.** Niet elke barrière uit de aanvalspaden heeft een handleiding. De lijst van wat
@@ -34,12 +39,19 @@ loopt niet achter.
 een risicosessie per proces of een calamiteitenplan is genoeg om te beginnen.
 
 **Meer dan één herkomst.** Vrijwel alles komt nog uit dezelfde hoek. Een commons met kennis uit één
-organisatie is een archief, geen commons. Het plan hieronder maakt daar werk van.
+organisatie is een archief, geen commons. Het plan voor de AI-securitylijn (hieronder) zoekt die tweede
+herkomst via de VNG-werkgroep AI en Algoritmen.
 
 **De beleidsset verder op maat.** De set staat, met generator. Open in het plan
 [beleidsset op maat](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-12-beleidsset-op-maat.md):
 IBD-materiaal en stukken van andere organisaties verwerken als regel of blok, en AI-hulp met eigen sleutel
 bij het invullen.
+
+**De AI-securitylijn.** Het plan
+[AI-securitylijn](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-15-ai-securitylijn.md)
+(issue #83) loopt tot 1 december in vier sporen: verwijzen naar wat er al is (klaar), zeven nieuwe stukken met als
+eerste de Copilot-configuratiekeuzes, materiaal van Amsterdam en Utrecht via de VNG-werkgroep, en verdediging met
+AI: agent-patronen, een use-case-lijst en een keuzeblad.
 
 ---
 
