@@ -2775,7 +2775,8 @@
     "Stel gedragsregels op voor het gebruik van informatie en bedrijfsmiddelen (hoofdstuk 5).",
     "Regel dat medewerkers de gedragsregels bevestigen voordat zij account of apparatuur krijgen (hoofdstuk 5).",
     "Neem een vaste clausule met de gedragsregels op in contracten voor inhuur en vrijwilligers (hoofdstuk 5).",
-    "Richt een uitgifte- en innameprocedure in met bruikleenovereenkomst en registratie per bedrijfsmiddel (hoofdstuk 6).",
+    "Laat wie apparatuur in bruikleen krijgt een bruikleenovereenkomst met de gedragsregels tekenen (hoofdstuk 5).",
+    "Richt een innameprocedure in met registratie per bedrijfsmiddel bij vertrek (hoofdstuk 6).",
     "Leg per ruimte in zone 3 en 4 de benodigde nutsvoorzieningen en capaciteit vast (hoofdstuk 9).",
     "Stel per locatie een storingslijst op met leveranciers en storingsnummers van nutsvoorzieningen (hoofdstuk 9).",
     "Richt een onderhoudsregistratie in voor onderhoud, storingen en reparaties per apparaat (hoofdstuk 11)."
@@ -4015,7 +4016,7 @@
   {
    "domein": "leveranciers-inkoop",
    "titel": "Beleid informatiebeveiliging bij inkoop",
-   "samenvatting": "Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier.",
+   "samenvatting": "Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers, eisen per soort dienst en het inkoopdossier.",
    "invoeren": [
     "Stel een standaardset beveiligingseisen voor inkoop op en stel die jaarlijks opnieuw vast (hoofdstuk 3).",
     "Leg de drempel vast waaronder een inkoop met de standaardset eisen kan (hoofdstuk 3).",
@@ -4735,7 +4736,8 @@
    "samenvatting": "Over het melden, beoordelen, afhandelen en leren van beveiligingsincidenten en datalekken. Behandelt het meldloket, de classificatie, detectie en escalatie, de afhandeling, meldingen aan externe partijen, coordinated vulnerability disclosure, het veiligstellen van bewijs en de evaluatie achteraf.",
    "invoeren": [
     "Richt één meldloket in met een bereikbaarheidsregeling en registratie van elke melding (hoofdstuk 3).",
-    "Stel een incidentprocedure op met rollen, vervangers, termijnen, categorieën en ernstniveaus (hoofdstuk 3).",
+    "Stel een incidentprocedure op met rollen, vervangers en termijnen (hoofdstuk 3).",
+    "Leg in de incidentprocedure de categorieën en ernstniveaus vast, met per niveau wie wordt geïnformeerd (hoofdstuk 4).",
     "Laat nieuwe medewerkers en externen de meldprocedure bevestigen en registreer die bevestiging (hoofdstuk 3).",
     "Leg in de incidentprocedure vast wanneer een incident naar crisisbeheersing gaat (hoofdstuk 6).",
     "Start een maandrapport incidenten voor de eindverantwoordelijke bedrijfsvoering (hoofdstuk 6).",

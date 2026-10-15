@@ -1,7 +1,7 @@
 ---
 domein: leveranciers-inkoop
 titel: Beleid informatiebeveiliging bij inkoop
-samenvatting: Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier.
+samenvatting: Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers, eisen per soort dienst en het inkoopdossier.
 invoeren:
   - Stel een standaardset beveiligingseisen voor inkoop op en stel die jaarlijks opnieuw vast (hoofdstuk 3).
   - Leg de drempel vast waaronder een inkoop met de standaardset eisen kan (hoofdstuk 3).
