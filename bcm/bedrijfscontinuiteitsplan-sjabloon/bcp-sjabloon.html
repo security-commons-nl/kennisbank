@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Bedrijfscontinuïteitsplan (BCP)</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">Bedrijfscontinuïteitsplan, een compact sjabloon</a> › <span>Bedrijfscontinuïteitsplan (BCP)</span></nav><!-- /kruimelpad -->
+<h1>Bedrijfscontinuïteitsplan (BCP)</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Bedrijfscontinuïteitsplan, een compact sjabloon</a> · <a href="bcp-sjabloon.md">Markdown-bron</a></p>
+<p><strong>[Naam organisatie of organisatieonderdeel]</strong> · sjabloon · de toelichting staat in de <a href="./">README</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organisatieonderdeel</strong></td>
+<td>[naam]</td>
+</tr>
+<tr>
+<td><strong>Plan-eigenaar</strong></td>
+<td>[functie]</td>
+</tr>
+<tr>
+<td><strong>Versie en datum</strong></td>
+<td>[versie] · [datum]</td>
+</tr>
+<tr>
+<td><strong>Rubricering</strong></td>
+<td>[volgens het eigen classificatiebeleid; een BCP met bereikbaarheidsgegevens is in de regel vertrouwelijk]</td>
+</tr>
+<tr>
+<td><strong>Volgende toets</strong></td>
+<td>[datum, uiterlijk twaalf maanden na vaststelling]</td>
+</tr>
+<tr>
+<td><strong>Vastgesteld door</strong></td>
+<td>[ambtelijk eindverantwoordelijke: gemeentesecretaris, provinciesecretaris, secretaris-directeur, secretaris-generaal of directeur] op [datum]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hoe-dit-plan-werkt">Hoe dit plan werkt<a class="anker" href="#hoe-dit-plan-werkt" aria-label="Link naar deze kop">#</a></h2>
+<p>Dit plan is een werkdocument voor het moment dat een kritieke dienst uitvalt of dreigt uit te vallen. Het is
+geschreven om uitgeprint te gebruiken: op de dag zelf is de ICT misschien precies wat niet werkt.</p>
+<p>Het plan heeft drie delen:</p>
+<ol>
+<li><strong>Weten</strong> (hoofdstuk 1 en 2): wie het crisisteam vormt en welke diensten voorrang hebben.</li>
+<li><strong>Doen</strong> (hoofdstuk 3 tot en met 6): opschaling, de drie fasen van een verstoring, de scenario's en de
+   noodcommunicatie.</li>
+<li><strong>Onderhouden</strong> (hoofdstuk 7 en 8): oefenen, beheer en de verplichtingen waar het plan aan voldoet.</li>
+</ol>
+<p>De bijlagen zijn de formulieren voor de dag zelf: de bereikbaarheidslijst, het logboek, de crisiskoffer en de
+actiekaarten.</p>
+<p>Houd een actueel exemplaar op drie plaatsen: in de crisiskoffer, bij elk lid van het crisisteam buiten de
+eigen ICT, en op de uitwijklocatie. Het plan hoort bij het calamiteitenplan van het gebouw en bij de
+crisisorganisatie van de organisatie; wat daar geregeld is, herhaalt dit plan niet.</p>
+<h2 id="1-crisisteam">1. Crisisteam<a class="anker" href="#1-crisisteam" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-1-samenstelling">1.1 Samenstelling<a class="anker" href="#1-1-samenstelling" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Naam</th>
+<th>Plaatsvervanger</th>
+<th>Bereikbaar via (buiten de eigen ICT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voorzitter crisisteam</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Secretaris en logboek</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bedrijfsvoering en huisvesting</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ICT (eigen ICT en dienstverlener)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Informatiebeveiliging (CISO)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Communicatie en woordvoering</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HR (medewerkers)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Juridische zaken en inkoop (contracten)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Eigenaar van de getroffen dienst</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Verbinding met de crisisorganisatie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Wie hier zit, kan niet tegelijk een rol in de bredere crisisorganisatie vervullen. Loop dat vooraf na.</p>
+<h3 id="1-2-taken-van-het-crisisteam">1.2 Taken van het crisisteam<a class="anker" href="#1-2-taken-van-het-crisisteam" aria-label="Link naar deze kop">#</a></h3>
+<ol>
+<li id="punt-1-2-1">Vaststellen wat er aan de hand is, welke diensten geraakt zijn en of het plan wordt geactiveerd. <a class="anker" href="#punt-1-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-2">De volgorde van herstel bepalen aan de hand van tabel 1 (kritieke diensten). <a class="anker" href="#punt-1-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-3">Besluiten over uitwijk, noodstroom, terugvalprocedures en de inzet van medewerkers. <a class="anker" href="#punt-1-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-4">De wettelijke meldingen laten doen (hoofdstuk 6.2). <a class="anker" href="#punt-1-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-5">Informeren: medewerkers, ketenpartners, het bestuur via de lijn, en bij opschaling de crisisorganisatie. <a class="anker" href="#punt-1-2-5" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-6">Het logboek bijhouden (bijlage 2): elk besluit, elke actie, elk contact, met tijd en naam. <a class="anker" href="#punt-1-2-6" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2-7">Afschalen zodra het noodniveau stabiel is, en de evaluatie organiseren. <a class="anker" href="#punt-1-2-7" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h3 id="1-3-vergaderplaats">1.3 Vergaderplaats<a class="anker" href="#1-3-vergaderplaats" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Locatie</th>
+<th>Adres en toegang</th>
+<th>Voorzieningen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eerste keus</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Uitwijk (ander kantoor, buurorganisatie, of online buiten de eigen ICT)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-kritieke-diensten">2. Kritieke diensten<a class="anker" href="#2-kritieke-diensten" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="tabel-1-diensten-in-volgorde-van-herstel">Tabel 1: diensten in volgorde van herstel<a class="anker" href="#tabel-1-diensten-in-volgorde-van-herstel" aria-label="Link naar deze kop">#</a></h3>
+<p>Vul deze tabel vanuit de business impact analyse (BIA); het <a href="../bia-en-risicoanalyse-sjabloon/">BIA-sjabloon</a>
+levert precies deze kolommen.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Dienst of proces</th>
+<th>Eigenaar</th>
+<th>Kriticiteit</th>
+<th>MTPD</th>
+<th>RTO</th>
+<th>RPO</th>
+<th>Noodniveau (wat minimaal door moet)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>MTPD: maximaal toelaatbare uitvalduur. RTO: binnen hoeveel tijd de dienst op noodniveau terug moet zijn. RPO:
+hoeveel gegevensverlies aanvaardbaar is; dat stuurt de back-upfrequentie (BIO2 8.13).</p>
+<h3 id="tabel-2-wat-elke-dienst-nodig-heeft">Tabel 2: wat elke dienst nodig heeft<a class="anker" href="#tabel-2-wat-elke-dienst-nodig-heeft" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Dienst</th>
+<th>Medewerkers (aantal, rollen)</th>
+<th>Systemen en gegevens</th>
+<th>Huisvesting en werkplekken</th>
+<th>Leveranciers en ketenpartners</th>
+<th>Enkelvoudige afhankelijkheid?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>De laatste kolom is de belangrijkste. Een dienst die op een persoon, een systeem of een leverancier drijft, is
+de dienst waar het plan het eerst over gaat.</p>
+<h2 id="3-opschaling-en-activering">3. Opschaling en activering<a class="anker" href="#3-opschaling-en-activering" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="3-1-wie-meldt-wie-besluit">3.1 Wie meldt, wie besluit<a class="anker" href="#3-1-wie-meldt-wie-besluit" aria-label="Link naar deze kop">#</a></h3>
+<ol>
+<li id="punt-3-1-1">Iedere medewerker die een verstoring ziet die een kritieke dienst raakt, meldt dit bij [servicedesk of
+   piketnummer]. Bij levensgevaar eerst 112, dan de BHV. <a class="anker" href="#punt-3-1-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-1-2">De piketfunctionaris beoordeelt binnen [30 minuten] met de eigenaar van de dienst of de verstoring de MTPD
+   van een dienst in tabel 1 kan raken. <a class="anker" href="#punt-3-1-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-1-3">Is dat zo, dan belt de piketfunctionaris de voorzitter van het crisisteam. Die besluit of het plan wordt
+   geactiveerd en roept het crisisteam bijeen, in persoon of via het noodcommunicatiekanaal. <a class="anker" href="#punt-3-1-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-1-4">De voorzitter informeert de ambtelijk eindverantwoordelijke (als die niet zelf voorzit) en de
+   crisisorganisatie. <a class="anker" href="#punt-3-1-4" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h3 id="3-2-drempels">3.2 Drempels<a class="anker" href="#3-2-drempels" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Wanneer</th>
+<th>Wie stuurt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verstoring</td>
+<td>Een dienst hapert, herstel binnen de RTO is waarschijnlijk</td>
+<td>Eigenaar van de dienst met ICT</td>
+</tr>
+<tr>
+<td>Activering BCP</td>
+<td>De RTO van een dienst in tabel 1 komt in gevaar, of meerdere diensten zijn geraakt</td>
+<td>Crisisteam</td>
+</tr>
+<tr>
+<td>Opschaling</td>
+<td>De uitval raakt de samenleving, andere overheden of de media</td>
+<td>Crisisteam met de crisisorganisatie: [gemeente en provincie: de eigen crisisorganisatie, zo nodig de veiligheidsregio · Rijk: het departementaal coördinatiecentrum crisisbeheersing]</td>
+</tr>
+</tbody>
+</table>
+<p>De meldplicht loopt los van deze drempels; zie hoofdstuk 6.2.</p>
+<h2 id="4-de-drie-fasen">4. De drie fasen<a class="anker" href="#4-de-drie-fasen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="fase-1-acute-fase-eerste-24-uur">Fase 1: acute fase (eerste 24 uur)<a class="anker" href="#fase-1-acute-fase-eerste-24-uur" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Actie</th>
+<th>Toelichting</th>
+<th>Gedaan</th>
+<th>Door</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Eerste beeld: wat is uitgevallen, sinds wanneer, wie is geraakt</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Veiligheid van medewerkers en bezoekers</td>
+<td>Via BHV en calamiteitenplan</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Logboek openen</td>
+<td>Bijlage 2, vanaf het eerste telefoontje</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Crisisteam bijeen, rollen bevestigen</td>
+<td>Tabel 1.1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Diensten in tabel 1 langslopen: wat loopt, wat niet, wat dreigt</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Besluit over uitwijk, noodstroom en terugvalprocedures</td>
+<td>Hoofdstuk 5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Vroegtijdige melding significant incident (24 uur)</td>
+<td>Hoofdstuk 6.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Eerste bericht aan medewerkers en ketenpartners</td>
+<td>Hoofdstuk 6, via noodcommunicatie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Informatiebeveiliging tijdens de verstoring: wie heeft nu toegang tot wat</td>
+<td>BIO2 5.29</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Volgend overleg plannen, vast ritme (bijvoorbeeld elke drie uur)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fase-2-continu-teitsfase-noodbedrijf">Fase 2: continuïteitsfase (noodbedrijf)<a class="anker" href="#fase-2-continu-teitsfase-noodbedrijf" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Actie</th>
+<th>Toelichting</th>
+<th>Gedaan</th>
+<th>Door</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Diensten op noodniveau brengen, in de volgorde van tabel 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Terugvalmaatregelen per scenario uitvoeren</td>
+<td>Hoofdstuk 5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Inzet van medewerkers regelen: wie werkt waar, roosters, rust</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Leveranciers en ketenpartners aansturen op hun herstel</td>
+<td>Escalatiecontacten in bijlage 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Incidentmelding (72 uur)</td>
+<td>Hoofdstuk 6.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Dagelijks bericht aan medewerkers, ketenpartners en zo nodig het publiek</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Kosten en besluiten vastleggen voor de verantwoording achteraf</td>
+<td>Logboek</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fase-3-herstel-en-terugkeer-naar-normaal-bedrijf">Fase 3: herstel en terugkeer naar normaal bedrijf<a class="anker" href="#fase-3-herstel-en-terugkeer-naar-normaal-bedrijf" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Actie</th>
+<th>Toelichting</th>
+<th>Gedaan</th>
+<th>Door</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Volgorde van terugkeer bepalen (niet per se dezelfde als de herstelvolgorde)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Gegevens inhalen en controleren die tijdens het noodbedrijf buiten de systemen zijn vastgelegd</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Terugkeer naar de eigen locatie en systemen, met controle vooraf</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Afschaling: besluit van de voorzitter, melding aan crisisorganisatie en ketenpartners</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Eindverslag van het incident</td>
+<td>Hoofdstuk 6.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Evaluatie binnen [vier weken]: wat werkte, wat niet, welke wijziging in dit plan</td>
+<td>Hoofdstuk 7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Nazorg voor medewerkers</td>
+<td>HR</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-scenario-s-en-terugvalmaatregelen">5. Scenario's en terugvalmaatregelen<a class="anker" href="#5-scenario-s-en-terugvalmaatregelen" aria-label="Link naar deze kop">#</a></h2>
+<p>Per scenario: wat er dan in gang gaat en wie dat doet. Vul alleen in wat voor de eigen organisatie geldt en
+schrap de rest.</p>
+<h3 id="5-1-uitval-van-medewerkers">5.1 Uitval van medewerkers<a class="anker" href="#5-1-uitval-van-medewerkers" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terugvalmaatregel</th>
+<th>Ingeregeld?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vervangers per kritieke rol (minimaal twee diep)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Thuiswerken</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Tijdelijke inhuur en herverdeling van taken</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Werkinstructies voor kritieke taken op papier beschikbaar</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-2-uitval-van-de-huisvesting">5.2 Uitval van de huisvesting<a class="anker" href="#5-2-uitval-van-de-huisvesting" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terugvalmaatregel</th>
+<th>Ingeregeld?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitwijklocatie voor het crisisteam (adres, toegang, afspraak)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Uitwijklocatie voor de kritieke diensten (aantal werkplekken, binnen hoeveel uur)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Thuiswerken als uitwijk</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Post, archief en fysieke middelen</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-3-uitval-van-nutsvoorzieningen-stroom-water-klimaat">5.3 Uitval van nutsvoorzieningen (stroom, water, klimaat)<a class="anker" href="#5-3-uitval-van-nutsvoorzieningen-stroom-water-klimaat" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terugvalmaatregel</th>
+<th>Ingeregeld?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noodstroom: welke systemen hangen eraan, hoeveel uur, wie test het</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Afspraak met de gebouwbeheerder over brandstof en onderhoud</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wat er gebeurt als de noodstroom op is (gecontroleerd afschakelen)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-4-ict-uitval-systemen-netwerk-telefonie-cyberaanval">5.4 ICT-uitval (systemen, netwerk, telefonie, cyberaanval)<a class="anker" href="#5-4-ict-uitval-systemen-netwerk-telefonie-cyberaanval" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terugvalmaatregel</th>
+<th>Ingeregeld?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitwijkvoorziening ICT per kritieke dienst (zie de <a href="../uitwijk-regelen/uitwijkkaart.md">uitwijkkaart</a>)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Back-up en herstel getest tegen de RPO en RTO uit tabel 1 (BIO2 8.13)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Terugvalprocedures op papier voor de kritieke diensten</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Isolatie en herstel bij een cyberaanval, met het CSIRT en de dienstverlener</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Werkende communicatie buiten de eigen ICT (hoofdstuk 6)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-5-uitval-van-een-leverancier-of-ketenpartner">5.5 Uitval van een leverancier of ketenpartner<a class="anker" href="#5-5-uitval-van-een-leverancier-of-ketenpartner" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terugvalmaatregel</th>
+<th>Ingeregeld?</th>
+<th>Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per kritieke leverancier: continuïteitseisen in het contract, escalatiecontact, exitplan</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Alternatieve leverancier of handmatige werkwijze</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Afspraken met ketenpartners over elkaars uitval (ketenoefening)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-6-fysieke-dreiging-ontruiming-verdachte-post">5.6 Fysieke dreiging, ontruiming, verdachte post<a class="anker" href="#5-6-fysieke-dreiging-ontruiming-verdachte-post" aria-label="Link naar deze kop">#</a></h3>
+<p>Staat in het calamiteitenplan en het BHV-plan van het gebouw: [verwijzing]. Dit BCP regelt alleen wat daarna
+nodig is om de dienst door te laten lopen.</p>
+<h2 id="6-noodcommunicatie-en-meldingen">6. Noodcommunicatie en meldingen<a class="anker" href="#6-noodcommunicatie-en-meldingen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="6-1-kanalen">6.1 Kanalen<a class="anker" href="#6-1-kanalen" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Doel</th>
+<th>Kanaal</th>
+<th>Werkt zonder de eigen ICT?</th>
+<th>Beheerder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alarmeren crisisteam</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Berichten aan alle medewerkers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Contact met de crisisorganisatie</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Contact met ketenpartners en leveranciers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Contact met het CSIRT en de bevoegde autoriteit</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Publiek en media</td>
+<td>Woordvoering</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Minstens een kanaal moet werken als de eigen mail, telefonie en het netwerk uitvallen. Test dat kanaal bij
+elke oefening.</p>
+<h3 id="6-2-meldingen-die-de-wet-voorschrijft">6.2 Meldingen die de wet voorschrijft<a class="anker" href="#6-2-meldingen-die-de-wet-voorschrijft" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Melding</th>
+<th>Termijn</th>
+<th>Aan wie</th>
+<th>Wie doet het</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vroegtijdige waarschuwing significant incident (Cbw)</td>
+<td>24 uur na kennisname</td>
+<td>CSIRT en de bevoegde autoriteit van de sector [invullen]</td>
+<td></td>
+</tr>
+<tr>
+<td>Incidentmelding (Cbw)</td>
+<td>72 uur na kennisname</td>
+<td>CSIRT en bevoegde autoriteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Eindverslag (Cbw)</td>
+<td>Een maand na de incidentmelding</td>
+<td>CSIRT en bevoegde autoriteit</td>
+<td></td>
+</tr>
+<tr>
+<td>Melding verstoring (Wwke, alleen na aanwijzing als kritieke entiteit)</td>
+<td>[termijn uit de aanwijzing]</td>
+<td>[bevoegde autoriteit]</td>
+<td></td>
+</tr>
+<tr>
+<td>Datalek (AVG)</td>
+<td>72 uur</td>
+<td>Autoriteit Persoonsgegevens, via de FG</td>
+<td></td>
+</tr>
+<tr>
+<td>Interne lijn</td>
+<td>Direct</td>
+<td>Ambtelijk eindverantwoordelijke, bestuur, crisisorganisatie</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Welke organisaties onder de Cbw vallen en wie hun bevoegde autoriteit is, staat in
+<a href="../../governance/val-ik-onder-de-cbw/">val ik onder de Cbw</a>.</p>
+<h3 id="6-3-kernboodschappen">6.3 Kernboodschappen<a class="anker" href="#6-3-kernboodschappen" aria-label="Link naar deze kop">#</a></h3>
+<p>Zet hier drie standaardberichten klaar die alleen nog ingevuld hoeven te worden: aan medewerkers, aan
+ketenpartners en aan het publiek. Wat is er aan de hand, wat doen we, wat vragen we van u, wanneer volgt het
+volgende bericht.</p>
+<h2 id="7-opleiden-trainen-en-oefenen-oto-en-beheer">7. Opleiden, trainen en oefenen (OTO) en beheer<a class="anker" href="#7-opleiden-trainen-en-oefenen-oto-en-beheer" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Activiteit</th>
+<th>Frequentie</th>
+<th>Verantwoordelijk</th>
+<th>Laatst gedaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Briefing nieuwe leden crisisteam</td>
+<td>Bij aantreden</td>
+<td>Plan-eigenaar</td>
+<td></td>
+</tr>
+<tr>
+<td>Tafeloefening crisisteam op een scenario uit hoofdstuk 5</td>
+<td>Jaarlijks</td>
+<td>Plan-eigenaar</td>
+<td></td>
+</tr>
+<tr>
+<td>Hersteltest ICT tegen RTO en RPO</td>
+<td>Jaarlijks, per kritiek systeem</td>
+<td>ICT</td>
+<td></td>
+</tr>
+<tr>
+<td>Test van het noodcommunicatiekanaal</td>
+<td>Halfjaarlijks</td>
+<td>Beheerder kanaal</td>
+<td></td>
+</tr>
+<tr>
+<td>Ketenoefening met een of meer ketenpartners</td>
+<td>Tweejaarlijks</td>
+<td>Eigenaar dienst</td>
+<td></td>
+</tr>
+<tr>
+<td>Toets van dit plan en de bijlagen</td>
+<td>Jaarlijks en na elke activering</td>
+<td>Plan-eigenaar</td>
+<td></td>
+</tr>
+<tr>
+<td>Training van het bestuur (Cbw)</td>
+<td>[volgens de regels die daarvoor gelden]</td>
+<td>[CISO of bestuursondersteuning]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>De plan-eigenaar houdt het plan actueel en legt elke wijziging vast in de versietabel voorin. De
+bereikbaarheidslijst (bijlage 1) wordt elk kwartaal gecontroleerd.</p>
+<h2 id="8-waar-dit-plan-aan-voldoet">8. Waar dit plan aan voldoet<a class="anker" href="#8-waar-dit-plan-aan-voldoet" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Verplichting</th>
+<th>Bron</th>
+<th>Waar in dit plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zorgplicht met passende maatregelen, inclusief de keten</td>
+<td>Cbw artikel 21; BIO2 5.19 tot en met 5.23</td>
+<td>Hoofdstuk 2 en 5.5</td>
+</tr>
+<tr>
+<td>Goedkeuring van de maatregelen en training door het bestuur</td>
+<td>Cbw artikel 24</td>
+<td>Voorblad en hoofdstuk 7</td>
+</tr>
+<tr>
+<td>Melding van significante incidenten</td>
+<td>Cbw</td>
+<td>Hoofdstuk 6.2</td>
+</tr>
+<tr>
+<td>Crisismanagementplan en bedrijfscontinuïteitsplan, inclusief oefenen</td>
+<td>Wwke en het besluit daaronder (na aanwijzing)</td>
+<td>Dit plan en hoofdstuk 7</td>
+</tr>
+<tr>
+<td>Informatiebeveiliging tijdens een verstoring</td>
+<td>BIO2 5.29</td>
+<td>Fase 1, actie 9</td>
+</tr>
+<tr>
+<td>ICT-gereedheid voor bedrijfscontinuïteit</td>
+<td>BIO2 5.30</td>
+<td>Hoofdstuk 5.4 en 7</td>
+</tr>
+<tr>
+<td>Back-up</td>
+<td>BIO2 8.13</td>
+<td>Tabel 1 (RPO) en 5.4</td>
+</tr>
+<tr>
+<td>Redundantie van ICT-voorzieningen</td>
+<td>BIO2 8.14</td>
+<td>Hoofdstuk 5.3 en 5.4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-1-bereikbaarheidslijst">Bijlage 1: Bereikbaarheidslijst<a class="anker" href="#bijlage-1-bereikbaarheidslijst" aria-label="Link naar deze kop">#</a></h2>
+<p>Alleen op papier in de crisiskoffer en bij de leden van het crisisteam. Privénummers alleen met toestemming.</p>
+<table>
+<thead>
+<tr>
+<th>Naam</th>
+<th>Rol</th>
+<th>Mobiel (werk)</th>
+<th>Mobiel (privé, met toestemming)</th>
+<th>Ander kanaal buiten de eigen ICT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Externe partij</th>
+<th>Contactpersoon</th>
+<th>Nummer</th>
+<th>Escalatie</th>
+<th>Contract of afspraak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crisisorganisatie</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CSIRT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bevoegde autoriteit en toezichthouder</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ICT-dienstverlener</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Gebouwbeheer en beveiliging</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[leverancier 1]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ketenpartner 1]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-2-logboek-crisisteam">Bijlage 2: Logboek crisisteam<a class="anker" href="#bijlage-2-logboek-crisisteam" aria-label="Link naar deze kop">#</a></h2>
+<p>Begin bij het eerste telefoontje, een regel per gebeurtenis. Dit logboek is ook het bewijs voor de
+verantwoording achteraf. Een uitgebreider logboekformat staat bij
+<a href="../calamiteitenteam-digitaal-opzetten/logboekformat.md">een digitaal calamiteitenteam opzetten</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Datum en tijd</th>
+<th>Gebeurtenis, besluit of actie</th>
+<th>Wie</th>
+<th>Vervolg of afgerond</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-3-crisiskoffer">Bijlage 3: Crisiskoffer<a class="anker" href="#bijlage-3-crisiskoffer" aria-label="Link naar deze kop">#</a></h2>
+<p>Een fysiek exemplaar buiten het gebouw en een digitaal exemplaar buiten de eigen ICT. Controle elk kwartaal,
+verantwoordelijk: [functie].</p>
+<table>
+<thead>
+<tr>
+<th>Inhoud</th>
+<th>Aanwezig</th>
+<th>Laatst gecontroleerd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dit plan, uitgeprint, met bijlagen</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bereikbaarheidslijst (bijlage 1)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Calamiteitenplan en plattegronden van het gebouw</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Contracten en escalatiecontacten van kritieke leveranciers</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Werkinstructies op papier voor de kritieke diensten</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Logboekformulieren, pennen, hesjes voor het crisisteam</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Toegangspassen en sleutels van de uitwijklocatie</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Noodcommunicatiemiddelen (opgeladen, getest)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Laptop met offline toegang tot de terugvalprocedures</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Betaalmiddel voor noodaankopen</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-4-actiekaarten">Bijlage 4: Actiekaarten<a class="anker" href="#bijlage-4-actiekaarten" aria-label="Link naar deze kop">#</a></h2>
+<p>Een kaart per rol in het crisisteam, een A4, bij de rol zelf en in de koffer. Uitgewerkte kaarten per rol
+staan bij <a href="../calamiteitenteam-digitaal-opzetten/taakkaarten.md">een digitaal calamiteitenteam opzetten</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Actiekaart: [rol]</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eerste uur</td>
+<td>1. [ ] 2. [ ] 3. [ ]</td>
+</tr>
+<tr>
+<td>Eerste dag</td>
+<td>1. [ ] 2. [ ] 3. [ ]</td>
+</tr>
+<tr>
+<td>Dagelijks tijdens het noodbedrijf</td>
+<td>1. [ ] 2. [ ]</td>
+</tr>
+<tr>
+<td>Bij afschaling</td>
+<td>1. [ ] 2. [ ]</td>
+</tr>
+<tr>
+<td>Wie ik bel</td>
+<td>[namen uit bijlage 1]</td>
+</tr>
+<tr>
+<td>Wat ik niet zelf besluit</td>
+<td>[wat bij de voorzitter of de ambtelijk eindverantwoordelijke ligt]</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/bedrijfscontinuiteitsplan-sjabloon">bcm/bedrijfscontinuiteitsplan-sjabloon</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
