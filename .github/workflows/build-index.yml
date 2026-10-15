@@ -53,6 +53,14 @@ jobs:
       - name: Voorbeeldregister past bij de gegevens
         run: python tools/bouw_risicoregister.py --check
 
+      # De stelselkaart wordt gebouwd uit data/partijen.json en data/diensten.json. Loopt de pagina
+      # achter op de data, dan blokkeert de check: draai python tools/bouw_stelselkaart.py.
+      - name: Tests van de stelselkaart
+        run: python tools/test_stelselkaart.py
+
+      - name: Stelselkaart past bij de data
+        run: python tools/bouw_stelselkaart.py --check
+
       # De Cbw-toets rekent in de browser, dus die logica is JavaScript. Zonder deze stap zou een
       # herschrijving van de criteria er ongemerkt doorheen komen.
       - uses: actions/setup-node@v7

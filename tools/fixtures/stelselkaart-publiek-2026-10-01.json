@@ -1,0 +1,339 @@
+{
+  "toelichting": "De partijen op de publieke stelselkaart vlak voor de omzetting naar partijen.json als bron (peildatum 2026-10-01). De test vergelijkt de herbouwde kaart hiermee, zodat een partij niet stil kan verdwijnen. Komt er bewust een partij bij of af, pas deze lijst dan in dezelfde wijziging aan.",
+  "peildatum": "2026-10-01",
+  "aantal": 83,
+  "partijen": [
+    {
+      "id": "enisa",
+      "naam": "ENISA"
+    },
+    {
+      "id": "niscg",
+      "naam": "NIS Cooperation Group"
+    },
+    {
+      "id": "csirtnet",
+      "naam": "CSIRTs Network"
+    },
+    {
+      "id": "cyclone",
+      "naam": "EU-CyCLONe"
+    },
+    {
+      "id": "eccc",
+      "naam": "ECCC en NCC-NL"
+    },
+    {
+      "id": "certeu",
+      "naam": "CERT-EU"
+    },
+    {
+      "id": "ec3",
+      "naam": "Europol EC3"
+    },
+    {
+      "id": "gfce",
+      "naam": "GFCE"
+    },
+    {
+      "id": "first",
+      "naam": "FIRST"
+    },
+    {
+      "id": "ti",
+      "naam": "TF-CSIRT en Trusted Introducer"
+    },
+    {
+      "id": "ncsc",
+      "naam": "NCSC"
+    },
+    {
+      "id": "nctv",
+      "naam": "NCTV"
+    },
+    {
+      "id": "csr",
+      "naam": "Cyber Security Raad"
+    },
+    {
+      "id": "nbv",
+      "naam": "NBV (AIVD)"
+    },
+    {
+      "id": "aivd",
+      "naam": "AIVD, MIVD en JSCU"
+    },
+    {
+      "id": "ndn",
+      "naam": "Nationaal Detectie Netwerk"
+    },
+    {
+      "id": "cyclotron",
+      "naam": "Cyclotron"
+    },
+    {
+      "id": "hoc",
+      "naam": "House of Cyber"
+    },
+    {
+      "id": "rdi",
+      "naam": "RDI"
+    },
+    {
+      "id": "ilt",
+      "naam": "ILT"
+    },
+    {
+      "id": "ap",
+      "naam": "Autoriteit Persoonsgegevens"
+    },
+    {
+      "id": "bzk",
+      "naam": "BZK"
+    },
+    {
+      "id": "ciorijk",
+      "naam": "CIO Rijk en CIO-beraad"
+    },
+    {
+      "id": "cisorijk",
+      "naam": "CISO Rijk"
+    },
+    {
+      "id": "vssr",
+      "naam": "VSSR"
+    },
+    {
+      "id": "abro",
+      "naam": "ABRO 2026"
+    },
+    {
+      "id": "logius",
+      "naam": "Logius"
+    },
+    {
+      "id": "forum",
+      "naam": "Forum Standaardisatie"
+    },
+    {
+      "id": "ndd",
+      "naam": "Nederlandse Digitale Dienst"
+    },
+    {
+      "id": "digilab",
+      "naam": "Digilab"
+    },
+    {
+      "id": "politie",
+      "naam": "Politie: THTC en regionale cybercrimeteams"
+    },
+    {
+      "id": "om",
+      "naam": "Openbaar Ministerie"
+    },
+    {
+      "id": "melissa",
+      "naam": "Convenant Melissa"
+    },
+    {
+      "id": "nipv",
+      "naam": "NIPV"
+    },
+    {
+      "id": "cwn",
+      "naam": "Cyberweerbaarheidsnetwerk"
+    },
+    {
+      "id": "ibd",
+      "naam": "IBD"
+    },
+    {
+      "id": "ibdraad",
+      "naam": "IBD-adviesraad"
+    },
+    {
+      "id": "zcert",
+      "naam": "Z-CERT"
+    },
+    {
+      "id": "certwm",
+      "naam": "CERT-WM"
+    },
+    {
+      "id": "surf",
+      "naam": "SURFcert en SURFsoc"
+    },
+    {
+      "id": "isac",
+      "naam": "ISAC's (sectoraal)"
+    },
+    {
+      "id": "vrisac",
+      "naam": "VR-ISAC"
+    },
+    {
+      "id": "nrn",
+      "naam": "Nationaal Respons Netwerk"
+    },
+    {
+      "id": "adc",
+      "naam": "Anti-DDoS-Coalitie"
+    },
+    {
+      "id": "nbip",
+      "naam": "NBIP en NaWas"
+    },
+    {
+      "id": "c2t",
+      "naam": "Connect2Trust"
+    },
+    {
+      "id": "divd",
+      "naam": "DIVD"
+    },
+    {
+      "id": "abuseix",
+      "naam": "Abuse Information Exchange"
+    },
+    {
+      "id": "vng",
+      "naam": "VNG en VNG Realisatie"
+    },
+    {
+      "id": "vngkbg",
+      "naam": "VNG-klankbordgroep Digitale Veiligheid"
+    },
+    {
+      "id": "cominfo",
+      "naam": "VNG-commissie Informatiesamenleving"
+    },
+    {
+      "id": "ggi",
+      "naam": "GGI-Veilig, SCG en Bizob"
+    },
+    {
+      "id": "ensia",
+      "naam": "ENSIA"
+    },
+    {
+      "id": "bio",
+      "naam": "BIO2 en de interbestuurlijke werkgroep"
+    },
+    {
+      "id": "cip",
+      "naam": "CIP"
+    },
+    {
+      "id": "g4",
+      "naam": "G4-CISO-overleg"
+    },
+    {
+      "id": "kringen",
+      "naam": "IBD-collectieven en regionale CISO-kringen"
+    },
+    {
+      "id": "commons",
+      "naam": "security-commons"
+    },
+    {
+      "id": "codepf",
+      "naam": "Codeplatform"
+    },
+    {
+      "id": "ipo",
+      "naam": "IPO en het interprovinciaal CSIRT"
+    },
+    {
+      "id": "uvw",
+      "naam": "Unie van Waterschappen en Het Waterschapshuis"
+    },
+    {
+      "id": "nds",
+      "naam": "NDS"
+    },
+    {
+      "id": "nds52",
+      "naam": "NDS 5.2 Federatief SOC-stelsel"
+    },
+    {
+      "id": "nds53",
+      "naam": "NDS 5.3 Continuiteit en BCM"
+    },
+    {
+      "id": "nds54",
+      "naam": "NDS 5.4 Inzicht kritieke dienstverlening"
+    },
+    {
+      "id": "rsv",
+      "naam": "Regionale samenwerkingsverbanden (categorie)"
+    },
+    {
+      "id": "rsiv",
+      "naam": "RSIV Den Haag"
+    },
+    {
+      "id": "pvo",
+      "naam": "PVO Regio Den Haag"
+    },
+    {
+      "id": "vrhm",
+      "naam": "Veiligheidsregio Hollands Midden"
+    },
+    {
+      "id": "hr",
+      "naam": "Holland Rijnland"
+    },
+    {
+      "id": "ccv",
+      "naam": "Netwerk Lokale Weerbaarheid Cybercrime en CCV"
+    },
+    {
+      "id": "cwc",
+      "naam": "Regionale cyberweerbaarheidscentra"
+    },
+    {
+      "id": "ecp",
+      "naam": "ECP"
+    },
+    {
+      "id": "otc",
+      "naam": "Online Trust Coalitie"
+    },
+    {
+      "id": "hsd",
+      "naam": "Security Delta (HSD)"
+    },
+    {
+      "id": "cvd",
+      "naam": "Centrum voor Veiligheid en Digitalisering"
+    },
+    {
+      "id": "sdv",
+      "naam": "Samen Digitaal Veilig"
+    },
+    {
+      "id": "dcypher",
+      "naam": "dcypher"
+    },
+    {
+      "id": "cs4nl",
+      "naam": "CS4NL"
+    },
+    {
+      "id": "cvn",
+      "naam": "Cyberveilig Nederland"
+    },
+    {
+      "id": "nldig",
+      "naam": "NLdigital"
+    },
+    {
+      "id": "pvib",
+      "naam": "PvIB"
+    },
+    {
+      "id": "norea",
+      "naam": "NOREA"
+    }
+  ]
+}
