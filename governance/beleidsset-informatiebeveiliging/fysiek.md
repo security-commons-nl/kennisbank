@@ -1,6 +1,6 @@
 # Beleid fysieke toegang en beveiliging
 
-[Download als Word](fysiek.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+Word nodig? Kies dit stuk in de [generator](beleidsset-generator.html) en download het daar, zonder of met je eigen antwoorden.
 
 | | |
 |---|---|

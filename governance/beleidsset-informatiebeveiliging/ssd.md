@@ -1,6 +1,6 @@
 # Beleid veilige softwareontwikkeling
 
-[Download als Word](ssd.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+Word nodig? Kies dit stuk in de [generator](beleidsset-generator.html) en download het daar, zonder of met je eigen antwoorden.
 
 | | |
 |---|---|
