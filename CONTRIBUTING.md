@@ -156,6 +156,11 @@ python tools/leesversie.py security/<mapnaam>   # maakt index.html uit README.md
 python tools/build.py                           # controleert, bouwt de indexpagina's en de export
 ```
 
+Op het scherm krijgt elke leesversie met de standaardopmaak de huisstijl van de voorpagina: `build.py` zet daarvoor
+een huisstijlblok (met de viewport-regel) in de pagina. Afdrukken en plakken in Word gebruiken het sjabloon
+`tools/leesversie-sjabloon.html`; pas dat dus niet aan om het scherm te veranderen. Een instrument met een eigen
+opmaak krijgt het blok niet.
+
 `leesversie.py` is bedoeld voor nieuwe items. Een paar bestaande leesversies zijn met de hand gemaakt;
 overschrijf die alleen als je hebt gekeken wat je kwijtraakt.
 

@@ -34,6 +34,11 @@ bedrijfscontinuïteit: een basissjabloon voor de BIA en de risicoanalyse per kri
 om uitwijk te regelen (met de uitwijkkaart als invulformat, ook voor clouddiensten), een compact
 bedrijfscontinuïteitsplan voor elke bestuurslaag, en een twee-pager om BCM aan de bestuurder uit te leggen.
 
+Dezelfde dag kregen alle leesversies en de overzichtspagina's op het scherm de opmaak van de voorpagina (kleuren,
+letter, de donkere balk met het kruimelpad), via een huisstijlblok dat `tools/build.py` in elke pagina zet. Afdrukken
+en plakken in Word gebruiken nog steeds het sjabloon. Het blok bracht ook de viewport-regel mee die de leesversies
+misten, zodat ze op een telefoon niet langer verkleind worden.
+
 ## Wat open staat
 
 **De handleidingen afmaken.** Niet elke barrière uit de aanvalspaden heeft een handleiding. De lijst van wat
