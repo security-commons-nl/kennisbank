@@ -770,6 +770,47 @@ class BewijsVoor(Basis):
             self.assertNotIn(verboden, regel)
 
 
+class Huisstijl(unittest.TestCase):
+    """Een leesversie krijgt op het scherm de opmaak van de voorpagina; afdrukken blijft het sjabloon."""
+
+    STANDAARD = ("<html><head><style>body{font-family:Calibri,Arial,sans-serif}</style></head>"
+                 "<body><h1>T</h1></body></html>")
+    INSTRUMENT = "<html><head><style>body{font-family:system-ui}</style></head><body><h1>T</h1></body></html>"
+
+    def test_standaardpagina_krijgt_huisstijl_en_viewport(self):
+        uit = build.zet_huisstijl(self.STANDAARD)
+        self.assertIn(build.HUISSTIJL_START, uit)
+        self.assertIn('<meta name="viewport" content="width=device-width, initial-scale=1">', uit)
+        self.assertLess(uit.index(build.HUISSTIJL_START), uit.index("</head>"))
+
+    def test_alleen_op_het_scherm(self):
+        # Alles binnen @media screen, zodat afdrukken en plakken in Word het sjabloon houden (B3).
+        self.assertTrue(build.HUISSTIJL_CSS.startswith("@media screen{"))
+        self.assertTrue(build.HUISSTIJL_CSS.endswith("}"))
+        eerste = build.HUISSTIJL_CSS.index("{")
+        diepte = 0
+        for i, teken in enumerate(build.HUISSTIJL_CSS[eerste:], start=eerste):
+            diepte += {"{": 1, "}": -1}.get(teken, 0)
+            if diepte == 0:
+                self.assertEqual(i, len(build.HUISSTIJL_CSS) - 1, "regel buiten @media screen")
+
+    def test_instrument_met_eigen_opmaak_blijft_ongemoeid(self):
+        self.assertEqual(build.zet_huisstijl(self.INSTRUMENT), self.INSTRUMENT)
+
+    def test_idempotent_en_vervangt_een_oud_blok(self):
+        een = build.zet_huisstijl(self.STANDAARD)
+        self.assertEqual(build.zet_huisstijl(een), een)
+        oud = self.STANDAARD.replace("</head>", build.HUISSTIJL_START + "<style>oud</style>"
+                                     + build.HUISSTIJL_EIND + "</head>")
+        nieuw = build.zet_huisstijl(oud)
+        self.assertNotIn("<style>oud</style>", nieuw)
+        self.assertEqual(nieuw.count(build.HUISSTIJL_START), 1)
+
+    def test_brede_tabel_scrolt_op_een_smal_scherm(self):
+        self.assertIn("@media (max-width:700px){table{display:block;overflow-x:auto", build.HUISSTIJL_CSS)
+        self.assertNotIn("overflow:hidden", build.HUISSTIJL_CSS)
+
+
 class Ankers(unittest.TestCase):
     """Naar elke kop en elk genummerd punt onder een genummerde kop kun je linken."""
 

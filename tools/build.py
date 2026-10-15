@@ -624,7 +624,8 @@ def stukpagina(md: Path, vak: str, fm: dict, sectie: dict) -> str:
                  f'<a href="{md.name}">Markdown-bron</a></p>')
     sjabloon = (Path(__file__).resolve().parent / "leesversie-sjabloon.html").read_text(encoding="utf-8")
     pagina = sjabloon.replace("$title$", html.escape(titel)).replace("$body$", lichaam)
-    pagina = zet_bronvoet(zet_inhoudsopgave(zet_ankers(zorg_voor_ids(zet_favicon(pagina)))), vak, md.parent.name)
+    pagina = zet_bronvoet(zet_inhoudsopgave(zet_ankers(zorg_voor_ids(zet_huisstijl(zet_favicon(pagina))))), vak,
+                          md.parent.name)
     # Na de inhoudsopgave gezet, zodat de weg terug direct onder de titel staat en het blok erna.
     pagina = re.sub(r"(</h1>)", lambda m: m.group(1) + bronregel, pagina, count=1)
     kruimels = kruimels_van_item(fm, sectie)[:-1] + [(str(fm["titel"]), "./"), (titel, "")]
@@ -735,20 +736,23 @@ def controleer_alles() -> dict[str, list[dict]]:
 
 # ----------------------------------------------------------------------------- genereren
 CSS = """
-:root{--bg:#f6f7f9;--card:#fff;--ink:#1a1d21;--muted:#5c6570;--line:#dfe3e8;--accent:#1f4e79;--accent2:#2e7d68}
+:root{--bg:#f4f6f9;--card:#fff;--ink:#14202b;--muted:#4b5563;--line:#dde3ea;--accent:#154273;--accent2:#2e7d68;
+  --navy:#0d2b4d;--oranje:#e17000}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-.wrap{max-width:960px;margin:0 auto;padding:24px 20px 80px}
-.backlink{font-size:13px;margin:0 0 14px;color:var(--muted)}
-.backlink a{color:var(--muted);text-decoration:none}
-.backlink a:hover{color:var(--accent);text-decoration:underline}
-.backlink span{color:var(--muted)}
-header.top{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:22px}
-h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+  font:15px/1.55 system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 80px}
+.backlink{font-size:14px;margin:0 0 34px;padding:16px 0;color:#c9d6e4;background:var(--navy);
+  box-shadow:0 0 0 100vmax var(--navy);clip-path:inset(0 -100vmax)}
+.backlink a{color:#fff;text-decoration:none}
+.backlink a:hover{text-decoration:underline}
+.backlink span{color:#c9d6e4}
+header.top{margin-bottom:26px}
+header.top::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--oranje);margin-top:14px}
+h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;line-height:1.15;margin:0 0 6px;letter-spacing:-.025em}
 .sub{color:var(--muted);font-size:13.5px}
 .lead{font-size:16px;color:#33383e;border-left:3px solid var(--accent);padding-left:14px;margin:0 0 26px}
-h2{font-size:19px;margin:34px 0 6px;letter-spacing:-.2px}
+h2{font-size:21px;font-weight:750;margin:38px 0 6px;letter-spacing:-.02em}
 h2:first-of-type{margin-top:0}
 .h2sub{color:var(--muted);font-size:13.5px;margin:0 0 14px}
 p{margin:0 0 11px}
@@ -1276,6 +1280,60 @@ def zet_favicon(tekst: str) -> str:
 # past een zijbalk naast. Pagina's met een eigen, bredere opmaak krijgen het blok bovenaan.
 LEESKOLOM = "font-family:Calibri"
 
+# Huisstijl op het scherm. Het sjabloon blijft de basis voor afdrukken en plakken in Word (statuut B3);
+# dit blok zet daar op het scherm de opmaak van de voorpagina overheen (kleuren en letter uit
+# site/thema.css van de root-site). Alleen op pagina's met de standaard leesopmaak: een instrument met
+# een eigen ontwerp blijft zoals het is. Het blok brengt ook de viewport mee, die het sjabloon miste;
+# zonder die regel toonde een telefoon de pagina verkleind op desktopbreedte.
+HUISSTIJL_START = "<!-- huisstijl -->"
+HUISSTIJL_EIND = "<!-- /huisstijl -->"
+HUISSTIJL_CSS = (
+    "@media screen{"
+    ":root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;"
+    "--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}"
+    "html{background:#fff}"
+    "body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;"
+    "margin:0 auto;padding:0 1.25rem 4rem}"
+    # Het kruimelpad wordt de donkere balk van de voorpagina, over de volle breedte.
+    # html body ervoor: de eigen stijl van het kruimelpad staat later in de pagina en zou anders winnen.
+    "html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding:1.05rem 0;"
+    "box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(0 -100vmax);font:14px/1.5 var(--sans)}"
+    "html body .kruimel a{color:#fff}html body .kruimel span{color:#c9d6e4}"
+    "h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;"
+    "letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}"
+    "h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;"
+    "background:var(--oranje);margin-top:.9rem}"
+    "h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);"
+    "margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}"
+    "h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}"
+    "p{margin:.7em 0}li{margin:.3em 0}"
+    "a{color:var(--blauw);text-underline-offset:2px}"
+    "table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;"
+    "border-spacing:0;margin:1em 0}"
+    "th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}"
+    "tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}"
+    "blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;"
+    "padding:.8em 1.1em;margin:1.3em 0}"
+    "code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;"
+    "background:var(--vlak);padding:.1em .35em;border-radius:4px}"
+    # Een brede tabel scrolt op een smal scherm binnen zichzelf, net als in het sjabloon.
+    "@media (max-width:700px){table{display:block;overflow-x:auto;max-width:100%}}"
+    "@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}"
+    "}"
+)
+HUISSTIJL = (f'{HUISSTIJL_START}<meta name="viewport" content="width=device-width, initial-scale=1">'
+             f"<style>{HUISSTIJL_CSS}</style>{HUISSTIJL_EIND}")
+
+
+def zet_huisstijl(tekst: str) -> str:
+    """Huisstijl en viewport in de </head>, alleen bij de standaard leesopmaak. Idempotent."""
+    if LEESKOLOM not in tekst:
+        return tekst
+    if HUISSTIJL_START in tekst:
+        return re.sub(re.escape(HUISSTIJL_START) + ".*?" + re.escape(HUISSTIJL_EIND), HUISSTIJL, tekst,
+                      flags=re.S)
+    return tekst.replace("</head>", HUISSTIJL + "</head>", 1)
+
 INHOUD_CSS = (
     # Blok bovenaan: werkt op elke pagina en op elke breedte.
     ".inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;"
@@ -1721,7 +1779,7 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
     eigen = f"{SITE}/{pad.parent.parent.name}/{pad.parent.name}/"
     vak, item = pad.parent.parent.name, pad.parent.name
     tekst = zet_bronvoet(zet_inhoudsopgave(zet_ankers(zorg_voor_ids(
-        zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen)))))), vak, item)
+        zet_huisstijl(zet_favicon(verwijder_dubbele_titel(verwijder_zelflink(origineel, eigen))))))), vak, item)
     tekst = koppel_stukken(tekst, pad.parent)
     # Eerst het pijlerblok, dan de normenregel: beide gaan vlak achter </h1>, dus wat als laatste
     # wordt gezet staat bovenaan. De normen zijn een etiket bij de titel, het pijlerblok is een kader.
@@ -1735,7 +1793,7 @@ def zet_kruimelpad(pad: Path, kruimels: list[tuple[str, str]], alleen_check: boo
         fout(pad, "B10", "geen </body> gevonden; de bronvoet kan er niet in")
         return False
     if tekst != origineel and alleen_check:
-        fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, "
+        fout(pad, "B3", "leesversie is niet bijgewerkt (zelflink, dubbele titel, favicon, huisstijl, "
                           "inhoudsopgave, pijlerblok, normenregel, bewijsregel, bronnenblok of bronvoet); "
                           "draai python tools/build.py")
         return False
