@@ -276,17 +276,17 @@
     },
     {
       "barriere": "owner",
-      "item": "governance/risicogestuurd-managementsysteem",
-      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
-    },
-    {
-      "barriere": "owner",
       "item": "security/risicoanalyse-aanvalspaden",
       "titel": "Risicoanalyse langs aanvalspaden",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
+    },
+    {
+      "barriere": "owner",
+      "item": "governance/risicogestuurd-managementsysteem",
+      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
     },
     {
       "barriere": "patch",
@@ -444,17 +444,17 @@
     },
     {
       "barriere": "treatment",
-      "item": "governance/risicogestuurd-managementsysteem",
-      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
-      "rol": "fundering",
-      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
-    },
-    {
-      "barriere": "treatment",
       "item": "security/risicoanalyse-aanvalspaden",
       "titel": "Risicoanalyse langs aanvalspaden",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/"
+    },
+    {
+      "barriere": "treatment",
+      "item": "governance/risicogestuurd-managementsysteem",
+      "titel": "GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/"
     },
     {
       "barriere": "unmanaged",
