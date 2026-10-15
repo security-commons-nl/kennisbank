@@ -1,5 +1,7 @@
 # Beleid afvoer en hergebruik van gegevensdragers
 
+[Download als Word](gegevensdragers.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Afvoer en hergebruik gegevensdragers* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over gegevensdragers, van USB-stick en harde schijf tot papier, en over informatie in systemen die niet meer nodig is. Behandelt het gebruik van verwijderbare media, wissen en vernietigen, afvoer en hergebruik van apparatuur, wissen in systemen en transport.
+
+**Onderwerpen.** 3. Gebruik van verwijderbare media; 4. Wissen en vernietigen; 5. Afvoer en hergebruik van apparatuur; 6. Wissen van informatie in systemen; 7. Transport.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -48,9 +54,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Gebruik van verwijderbare media
+## 3. Gebruik van verwijderbare media
 
 1. Het opslaan van informatie op verwijderbare media is standaard niet toegestaan en technisch geblokkeerd op
    beheerde werkplekken. Een uitzondering vraagt de gebruiker aan bij
@@ -64,9 +68,9 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
    het niet gebruikt, en meldt hij bij verlies direct als beveiligingsincident. [7.10.01]
 4. Media die de organisatie niet meer nodig heeft, levert de gebruiker in bij
    **[uitgiftepunt apparatuur]**;
-   het uitgiftepunt wist of vernietigt ze volgens paragraaf 3.2. [7.10.01]
+   het uitgiftepunt wist of vernietigt ze volgens hoofdstuk 4. [7.10.01]
 
-### 3.2 Wissen en vernietigen
+## 4. Wissen en vernietigen
 
 1. **[lijneigenaar gegevensdragers]** stelt een
    verwijderinstructie voor gegevensdragers vast en beoordeelt die jaarlijks. Die schrijft voor dat van elk
@@ -90,7 +94,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 6. Papier met informatie met het label intern of hoger gaat in afgesloten containers voor vernietiging; de
    vernietigingsleverancier levert per lediging een certificaat. [7.10.01]
 
-### 3.3 Afvoer en hergebruik van apparatuur
+## 5. Afvoer en hergebruik van apparatuur
 
 1. Apparatuur met vaste opslag die de organisatie verlaat of een andere gebruiker krijgt (verkoop, schenking,
    einde lease, hergebruik binnen de organisatie, afvoer als afval) gaat eerst langs
@@ -111,7 +115,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
    huur- of leasecontract staat in het contract dat de leverancier de opslag wist of afgeeft en daarvan een
    verslag levert. [7.14.01]
 
-### 3.4 Wissen van informatie in systemen
+## 6. Wissen van informatie in systemen
 
 1. De proceseigenaar legt per gegevensverzameling vast hoe lang de informatie nodig is, op basis van de
    bewaartermijnen uit de selectielijst en de wet, en zorgt dat de systeemeigenaar de informatie na afloop van
@@ -133,7 +137,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
    samenwerkingsomgevingen hebben bewaard; de gedragsregels uit het beleid bedrijfsmiddelenbeheer verbieden
    het bewaren van eigen kopieën buiten de systemen van de organisatie. [8.10.01]
 
-### 3.5 Transport
+## 7. Transport
 
 1. Gegevensdragers met informatie worden vervoerd volgens een vaste transportprocedure: versleuteld, in een
    verzegelde verpakking en met een registratie van inhoud, afzender, ontvanger, vervoerder, datum van
@@ -151,7 +155,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 5. Back-upmedia die naar een andere locatie gaan, volgen dezelfde transportprocedure; het beleid back-up en
    recovery zegt hoe vaak en waarheen. [7.10.03]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -163,7 +167,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 | CISO | Advies, jaarlijkse toetsing van opzet en werking van dit beleid, akkoord op uitzonderingen voor vertrouwelijk en hoger, besluit bij afwijking van het NBV-advies |
 | Medewerkers en inhuur | Geen informatie op losse dragers zonder uitzondering, media achter slot bewaren, verlies van een drager direct melden als incident |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -187,7 +191,7 @@ worden ten minste jaarlijks opnieuw beoordeeld.
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (inventaris, inname en gedragsregels), het beleid informatieclassificatie (labels die
@@ -203,11 +207,11 @@ De maatregelen van dit domein (5, waarvan 3 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 7.10.01 | Opslagmedia | overheidsmaatregel | 3.1 Gebruik van verwijderbare media | AHG-01, AHG-03 |
-| 7.10.02 | Opslagmedia | overheidsmaatregel | 3.2 Wissen en vernietigen | AHG-01, AHG-02 |
-| 7.10.03 | Opslagmedia | overheidsmaatregel | 3.5 Transport | AHG-04 |
-| 7.14.01 | Veilig verwijderen of hergebruiken van apparatuur | ISO-beheersmaatregel | 3.3 Afvoer en hergebruik van apparatuur | AHG-01, AHG-06 |
-| 8.10.01 | Wissen van informatie | ISO-beheersmaatregel | 3.4 Wissen van informatie in systemen | AHG-05 |
+| 7.10.01 | Opslagmedia | overheidsmaatregel | 3. Gebruik van verwijderbare media | AHG-01, AHG-03 |
+| 7.10.02 | Opslagmedia | overheidsmaatregel | 4. Wissen en vernietigen | AHG-01, AHG-02 |
+| 7.10.03 | Opslagmedia | overheidsmaatregel | 7. Transport | AHG-04 |
+| 7.14.01 | Veilig verwijderen of hergebruiken van apparatuur | ISO-beheersmaatregel | 5. Afvoer en hergebruik van apparatuur | AHG-01, AHG-06 |
+| 8.10.01 | Wissen van informatie | ISO-beheersmaatregel | 6. Wissen van informatie in systemen | AHG-05 |
 
 ## Bijlage B: Afkortingen
 

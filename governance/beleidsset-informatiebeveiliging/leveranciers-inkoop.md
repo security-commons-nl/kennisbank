@@ -1,5 +1,7 @@
 # Beleid informatiebeveiliging bij inkoop
 
+[Download als Word](leveranciers-inkoop.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Leveranciersbeheer - Inkoop* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier.
+
+**Onderwerpen.** 3. Risicoafweging en eisen in de uitvraag; 4. Voorwaarden in het contract; 5. Bewijs van de leverancier en eigen onderzoek; 6. Transparantie over kwetsbaarheden en incidenten; 7. Afhankelijkheid en exit; 8. Keten van toeleveranciers; 9. Eisen per soort dienst; 10. Inkoopdossier en overdracht.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -55,9 +61,7 @@ ontwikkelt (beleid secure software development).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Risicoafweging en eisen in de uitvraag
+## 3. Risicoafweging en eisen in de uitvraag
 
 1. Bij elke inkoop met een informatiecomponent stelt de proceseigenaar vóór de uitvraag, samen met
    **[inkoopadviseur]** en de CISO, vast welke informatie de
@@ -83,7 +87,7 @@ ontwikkelt (beleid secure software development).
 >    proceseigenaar in de risicoafweging ook vast hoe de leverancier bijdraagt aan het voldoen aan de meldplicht
 >    en welke eisen de bestuurder daarvoor heeft goedgekeurd. [5.19.01]
 
-### 3.2 Voorwaarden in het contract
+## 4. Voorwaarden in het contract
 
 1. De inkoopadviseur zet alle beveiligingseisen uit de uitvraag letterlijk of als verwijzing in het contract,
    met de afspraken uit de onderhandeling. Een eis die in de uitvraag stond en niet in het contract, geldt als
@@ -101,7 +105,7 @@ ontwikkelt (beleid secure software development).
    verwerkersovereenkomst volgens het privacybeleid voordat de verwerking begint. De inkoopadviseur legt in
    het inkoopdossier vast dat die overeenkomst er is. [5.20.01]
 
-### 3.3 Bewijs van de leverancier en eigen onderzoek
+## 5. Bewijs van de leverancier en eigen onderzoek
 
 1. Het contract verplicht de leverancier om aan te tonen dat hij aan de eisen voldoet, in opzet, bestaan en
    werking, met een rapport van een onafhankelijke derde. Voorbeelden zijn een ISAE 3000- of ISAE
@@ -118,7 +122,7 @@ ontwikkelt (beleid secure software development).
 5. Restrisico's uit het bewijs of het eigen onderzoek zet de proceseigenaar vóór ondertekening in het
    risicoregister en behandelt ze volgens de risicomanagementmethodiek van de organisatie. [5.20.04]
 
-### 3.4 Transparantie over kwetsbaarheden en incidenten
+## 6. Transparantie over kwetsbaarheden en incidenten
 
 1. Het contract verplicht de leverancier om beveiligingsincidenten, datalekken en kwetsbaarheden die de dienst
    aan de organisatie kunnen raken, te melden bij het meldloket van de organisatie (beleid
@@ -135,7 +139,7 @@ ontwikkelt (beleid secure software development).
 >    na ontdekking. Het contract regelt ook dat de leverancier meewerkt aan de vervolgmeldingen binnen 72 uur en
 >    aan het eindrapport binnen een maand. [5.20.05]
 
-### 3.5 Afhankelijkheid en exit
+## 7. Afhankelijkheid en exit
 
 1. Vóór het contract beoordeelt de proceseigenaar of de afhankelijkheid van de leverancier beheersbaar is: zijn
    er alternatieven, hoe lang duurt een overstap en kan de organisatie haar gegevens in een bruikbaar formaat
@@ -148,7 +152,7 @@ ontwikkelt (beleid secure software development).
 3. Bij software die de organisatie in eigen beheer draait en die niet makkelijk te vervangen is, regelt het
    contract een escrow of een gelijkwaardige continuïteitsregeling. [5.20.06]
 
-### 3.6 Keten van toeleveranciers
+## 8. Keten van toeleveranciers
 
 1. Vóór het contract geeft de leverancier een overzicht van de toeleveranciers die bij de dienst betrokken
    zijn, met hun rol, de locatie van de verwerking en de risico's die hij daarin ziet. De inkoopadviseur
@@ -159,7 +163,7 @@ ontwikkelt (beleid secure software development).
    nieuwe toeleverancier over te dragen, en verplicht hem om de beveiligingseisen aan zijn toeleveranciers
    door te geven. [5.21.02]
 
-### 3.7 Eisen per soort dienst
+## 9. Eisen per soort dienst
 
 > **Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»**
 >
@@ -202,7 +206,7 @@ ontwikkelt (beleid secure software development).
 >    beheerhandelingen die de organisatie kan inzien, en rapportage over de afgesproken beveiligingsprocessen
 >    (patchen, kwetsbaarheden, wijzigingen, back-up). [5.20.01]
 
-### 3.8 Inkoopdossier en overdracht
+## 10. Inkoopdossier en overdracht
 
 1. Elk inkoopdossier bevat vóór ondertekening: de risicoafweging, de eisen, de beoordeling van de voorwaarden,
    het eerste bewijs van de leverancier, het overzicht en de beoordeling van de keten, de exitregeling en, waar
@@ -212,7 +216,7 @@ ontwikkelt (beleid secure software development).
    **[contracteigenaar]**, zodat het contract in het
    register van leveranciers en contracten komt (beleid contractbeheer). [5.20.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 11. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -222,7 +226,7 @@ ontwikkelt (beleid secure software development).
 | Privacy officer of FG | Advies over de verwerkersovereenkomst en de verwerking van persoonsgegevens |
 | **[contracteigenaar]** | Ontvangst van het inkoopdossier en opname in het register van leveranciers en contracten |
 
-## 5. Naleving en controle
+## 12. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -246,7 +250,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 13. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en het inkoopbeleid van de organisatie. Het
 loopt door in het beleid contractbeheer (register, jaarlijkse beoordeling, clouddiensten, beëindiging). Het
@@ -261,14 +265,14 @@ De maatregelen van dit domein (8, waarvan 8 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.19.01 | Informatiebeveiliging in leveranciersrelaties | overheidsmaatregel | 3.1 Risicoafweging en eisen in de uitvraag | INK-01, INK-06, INK-07 |
-| 5.20.01 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.2 Voorwaarden in het contract | INK-01, INK-06 |
-| 5.20.02 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.2 Voorwaarden in het contract | INK-02, INK-06, INK-07 |
-| 5.20.03 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.3 Bewijs van de leverancier en eigen onderzoek | INK-03, INK-06 |
-| 5.20.04 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.3 Bewijs van de leverancier en eigen onderzoek | INK-03, INK-06 |
-| 5.20.05 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.4 Transparantie over kwetsbaarheden en incidenten | INK-04, INK-06 |
-| 5.20.06 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 3.5 Afhankelijkheid en exit | INK-04, INK-06 |
-| 5.21.02 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 3.6 Keten van toeleveranciers | INK-05, INK-06 |
+| 5.19.01 | Informatiebeveiliging in leveranciersrelaties | overheidsmaatregel | 3. Risicoafweging en eisen in de uitvraag | INK-01, INK-06, INK-07 |
+| 5.20.01 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 4. Voorwaarden in het contract | INK-01, INK-06 |
+| 5.20.02 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 4. Voorwaarden in het contract | INK-02, INK-06, INK-07 |
+| 5.20.03 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 5. Bewijs van de leverancier en eigen onderzoek | INK-03, INK-06 |
+| 5.20.04 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 5. Bewijs van de leverancier en eigen onderzoek | INK-03, INK-06 |
+| 5.20.05 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 6. Transparantie over kwetsbaarheden en incidenten | INK-04, INK-06 |
+| 5.20.06 | Adresseren van informatiebeveiliging in leveranciersovereenkomsten | overheidsmaatregel | 7. Afhankelijkheid en exit | INK-04, INK-06 |
+| 5.21.02 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 8. Keten van toeleveranciers | INK-05, INK-06 |
 
 ## Bijlage B: Afkortingen
 

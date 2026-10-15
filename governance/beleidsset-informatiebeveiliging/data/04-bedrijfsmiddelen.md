@@ -1,6 +1,16 @@
 ---
 domein: bedrijfsmiddelen
 titel: Beleid bedrijfsmiddelenbeheer
+samenvatting: Regelt welke bedrijfsmiddelen de organisatie heeft, wie er eigenaar van is en hoe ze gebruikt, beschermd en ingeleverd worden. Behandelt de inventaris, eigendom, aanvaardbaar gebruik, teruggeven bij vertrek, werken in beveiligde zones, plaatsing en nutsvoorzieningen, apparatuur buiten de locaties en onderhoud.
+invoeren:
+  - Richt één inventaris van bedrijfsmiddelen in, bijvoorbeeld een CMDB, met de vereiste velden (hoofdstuk 3).
+  - Stel gedragsregels op voor het gebruik van informatie en bedrijfsmiddelen (hoofdstuk 5).
+  - Regel dat medewerkers de gedragsregels bevestigen voordat zij account of apparatuur krijgen (hoofdstuk 5).
+  - Neem een vaste clausule met de gedragsregels op in contracten voor inhuur en vrijwilligers (hoofdstuk 5).
+  - Richt een uitgifte- en innameprocedure in met bruikleenovereenkomst en registratie per bedrijfsmiddel (hoofdstuk 6).
+  - Leg per ruimte in zone 3 en 4 de benodigde nutsvoorzieningen en capaciteit vast (hoofdstuk 9).
+  - Stel per locatie een storingslijst op met leveranciers en storingsnummers van nutsvoorzieningen (hoofdstuk 9).
+  - Richt een onderhoudsregistratie in voor onderhoud, storingen en reparaties per apparaat (hoofdstuk 11).
 ---
 
 ## 1. Doel en reikwijdte
@@ -41,9 +51,7 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Inventaris
+## 3. Inventaris
 
 - [[beheerder inventaris: de functie die de inventaris bijhoudt, bijvoorbeeld de configuratiebeheerder]]
   houdt één inventaris bij van alle bedrijfsmiddelen die van belang zijn voor de informatieverwerking,
@@ -99,7 +107,7 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
   akkoord van de eigenaar van de installatie. [5.09.01]
 :::
 
-### 3.2 Eigendom
+## 4. Eigendom
 
 - Elk bedrijfsmiddel in de inventaris heeft een eigenaar. Voor werkplekken, infrastructuur en ondersteunende
   software is dat
@@ -110,7 +118,7 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
   wordt afgevoerd als het niet meer nodig is. De eigenaar bevestigt dat jaarlijks bij de inventariscontrole.
   [5.09.01]
 
-### 3.3 Aanvaardbaar gebruik
+## 5. Aanvaardbaar gebruik
 
 - De organisatie heeft gedragsregels voor het gebruik van informatie en bedrijfsmiddelen, vastgelegd in
   [[gedragsregels bedrijfsmiddelen: het document met de huisregels of de gedragscode voor ICT-gebruik]].
@@ -139,7 +147,7 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
   management. [5.10.01]
 :::
 
-### 3.4 Teruggeven
+## 6. Teruggeven
 
 - Bij vertrek, einde van een contract of functiewijziging levert de gebruiker alle bedrijfsmiddelen in op of
   voor de laatste werkdag: apparatuur, toegangsmiddelen, authenticatiemiddelen, software en licenties, en
@@ -157,9 +165,9 @@ ruimten (beleid fysieke toegang en beveiliging) en clear desk en clear screen (b
   afstand volgens het beleid mobile device management; anders bevestigt de gebruiker schriftelijk dat de
   informatie is verwijderd. [5.11.01]
 
-### 3.5 Werken in beveiligde zones
+## 7. Werken in beveiligde zones
 
-De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
+De zones staan in het beleid fysieke toegang en beveiliging, hoofdstuk 3.
 
 - Werken in zone 3 of 4 gebeurt alleen door personen die de eigenaar van de zone daarvoor heeft
   geautoriseerd, en alleen voor werkzaamheden die daar nodig zijn. De eigenaar van de zone legt werkzaamheden
@@ -171,7 +179,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
 - Een beveiligde zone die niet in gebruik is, is afgesloten. De eigenaar van de zone controleert elk kwartaal
   dat de zone afgesloten is en dat er geen apparatuur of informatie onbeheerd is achtergelaten. [7.06.01]
 
-### 3.6 Apparatuur plaatsen en beschermen
+## 8. Apparatuur plaatsen en beschermen
 
 - Servers, netwerkapparatuur en opslag staan in een zone die past bij het impactniveau van de informatie die
   ze verwerken, volgens de tabel in het beleid fysieke toegang en beveiliging. De eigenaar van het
@@ -185,7 +193,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
   gebeurtenis (brand, water, stroomuitval) niet alle exemplaren tegelijk treft; redundante onderdelen staan
   in gescheiden ruimten. De eigenaar beoordeelt dat jaarlijks. [7.08.01]
 
-### 3.7 Nutsvoorzieningen
+## 9. Nutsvoorzieningen
 
 - Apparatuur in zone 3 en 4 heeft stroom, koeling, netwerk en waar nodig water met een capaciteit en
   continuïteit die passen bij de hersteltijd uit het continuïteitsbeleid. [[lijneigenaar bedrijfsmiddelen]]
@@ -201,7 +209,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
   [[storingslijst nutsvoorzieningen: het document met leveranciers en storingsnummers per locatie]]; de
   beheerder van de ruimte controleert die lijst jaarlijks. [7.11.01]
 
-### 3.8 Apparatuur buiten de locaties
+## 10. Apparatuur buiten de locaties
 
 - Apparatuur die buiten de locaties van de organisatie wordt gebruikt (laptops, telefoons, tokens, apparatuur
   op thuiswerkplekken) staat in de inventaris met de gebruiker als beheerder. De gebruiker laat de apparatuur
@@ -217,7 +225,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
   ruimte die de gebruiker kan afsluiten, geen meekijken door huisgenoten of bezoekers, geen gedeeld gebruik
   van de apparatuur en geen aansluiting van onbekende randapparatuur. [7.09.01]
 
-### 3.9 Onderhoud van apparatuur
+## 11. Onderhoud van apparatuur
 
 - De eigenaar van het bedrijfsmiddel laat apparatuur onderhouden volgens het schema en de specificaties van
   de fabrikant, door bevoegde en geautoriseerde personen, en legt het onderhoudsschema in de inventaris vast.
@@ -233,7 +241,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
   of de apparatuur werkt zoals voor het onderhoud en of er geen ongeautoriseerde wijzigingen in hardware of
   configuratie zijn aangebracht, en legt dat vast in de onderhoudsregistratie. [7.13.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 12. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -246,7 +254,7 @@ De zones staan in het beleid fysieke toegang en beveiliging, paragraaf 3.1.
 | CISO | Advies over dit beleid, jaarlijkse toetsing van opzet en werking, beoordeling van afwijkingen |
 | Medewerkers en inhuur | Gedragsregels naleven, apparatuur buiten de locaties beschermen, verlies of diefstal direct melden, bedrijfsmiddelen inleveren bij vertrek |
 
-## 5. Naleving en controle
+## 13. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -272,7 +280,7 @@ worden ten minste jaarlijks opnieuw beoordeeld.
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 14. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatieclassificatie (classificatie in de inventaris en de labels in de gedragsregels), het beleid fysieke

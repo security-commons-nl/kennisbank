@@ -8,7 +8,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid logging en monitoring</span></nav><!-- /kruimelpad -->
-<h1>Beleid logging en monitoring</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="logging.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<h1>Beleid logging en monitoring</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="logging.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-wat-er-gelogd-wordt">3. Wat er gelogd wordt</a></li><li><a href="#4-bewaren-en-beschermen">4. Bewaren en beschermen</a></li><li><a href="#5-monitoren-en-detecteren">5. Monitoren en detecteren</a></li><li><a href="#6-rollen-en-verantwoordelijkheden">6. Rollen en verantwoordelijkheden</a></li><li><a href="#7-naleving-en-controle">7. Naleving en controle</a></li><li><a href="#8-samenhang">8. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><a href="logging.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
 <table>
 <thead>
 <tr>
@@ -39,6 +40,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
+<p><strong>In het kort.</strong> Regelt wat systemen moeten loggen, hoe logbestanden veilig worden bewaard en hoe de omgeving wordt bewaakt op aanvallen. Behandelt minimale loggebeurtenissen, het overzicht van logbronnen, bewaartermijnen, centrale opslag buiten bereik van beheerders, detectie met escalatieregels en het delen van dreigingen met de CERT.</p>
+<p><strong>Onderwerpen.</strong> 3. Wat er gelogd wordt; 4. Bewaren en beschermen; 5. Monitoren en detecteren.</p>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het vastleggen, bewaren en
@@ -60,154 +63,153 @@ beveiligingsincidenten), de tijdsynchronisatie en de netwerkinrichting (beleid n
 toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveiliging).</p>
 <h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li>Wat gelogd wordt, volgt uit risico: hoe hoger het impactniveau van een systeem, hoe meer er wordt
-   vastgelegd en hoe langer het wordt bewaard.</li>
-<li>Logbestanden zijn zelf informatie met ten minste het label vertrouwelijk. Ze worden beschermd tegen
-   inzage, wijziging en verwijdering.</li>
-<li>Logging zonder beoordeling heeft weinig waarde. Voor elke logbron staat vast wie hem bekijkt en wat er
-   gebeurt bij een afwijking.</li>
-<li>Logging met persoonsgegevens dient alleen beveiliging, beheer en verantwoording, niet het volgen van
-   medewerkers.</li>
-<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
-   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+<li id="punt-2-1">Wat gelogd wordt, volgt uit risico: hoe hoger het impactniveau van een systeem, hoe meer er wordt
+   vastgelegd en hoe langer het wordt bewaard. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2">Logbestanden zijn zelf informatie met ten minste het label vertrouwelijk. Ze worden beschermd tegen
+   inzage, wijziging en verwijdering. <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3">Logging zonder beoordeling heeft weinig waarde. Voor elke logbron staat vast wie hem bekijkt en wat er
+   gebeurt bij een afwijking. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4">Logging met persoonsgegevens dient alleen beveiliging, beheer en verantwoording, niet het volgen van
+   medewerkers. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-5">Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid. <a class="anker" href="#punt-2-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
-<h3 id="3-1-wat-er-gelogd-wordt">3.1 Wat er gelogd wordt<a class="anker" href="#3-1-wat-er-gelogd-wordt" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="3-wat-er-gelogd-wordt">3. Wat er gelogd wordt<a class="anker" href="#3-wat-er-gelogd-wordt" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-1-1">De systeemeigenaar zorgt dat elk systeem ten minste logt: aanmeldingen en mislukte aanmeldpogingen, het
+<li id="eis-3-1">De systeemeigenaar zorgt dat elk systeem ten minste logt: aanmeldingen en mislukte aanmeldpogingen, het
    gebruik van beheerrechten, wijzigingen in accounts en rechten, wijzigingen in de beveiligingsinstellingen,
    het starten en stoppen van de logging zelf, en de toegang tot gegevens met het label vertrouwelijk of
-   hoger. [8.15.01] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-2">Elke logregel bevat: de handeling, het object waarop de handeling betrekking had, het resultaat, het
+   hoger. [8.15.01] <a class="anker" href="#eis-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2">Elke logregel bevat: de handeling, het object waarop de handeling betrekking had, het resultaat, het
    apparaat of netwerkadres van herkomst, de persoon of het proces dat de handeling startte, en datum en
-   tijd. Alle systemen gebruiken dezelfde tijdbron. [8.15.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-3">Logregels bevatten geen wachtwoorden, sessietokens, sleutels of andere gegevens waarmee de beveiliging
+   tijd. Alle systemen gebruiken dezelfde tijdbron. [8.15.01] <a class="anker" href="#eis-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3">Logregels bevatten geen wachtwoorden, sessietokens, sleutels of andere gegevens waarmee de beveiliging
    kan worden doorbroken. Bij de ingebruikname van een nieuwe logbron controleert
    <strong>[beheerder logvoorziening]</strong> een steekproef
-   van de logregels hierop en legt de uitkomst vast. [8.15.02] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-4"><strong>[beheerder logvoorziening]</strong> houdt een overzicht bij van alle logbronnen: per systeem welke gebeurtenissen
+   van de logregels hierop en legt de uitkomst vast. [8.15.02] <a class="anker" href="#eis-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4"><strong>[beheerder logvoorziening]</strong> houdt een overzicht bij van alle logbronnen: per systeem welke gebeurtenissen
    worden gelogd, waar de logbestanden staan, de bewaartermijn, wie ze beheert en wie ze beoordeelt. Een
    nieuw systeem gaat pas in productie als het in dit overzicht staat; wijzigingsbeheer controleert dat bij
-   elke ingebruikname. [8.15.03] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
+   elke ingebruikname. [8.15.03] <a class="anker" href="#eis-3-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
 <ol start="5">
-<li id="eis-3-1-5">Voor SaaS- en clouddiensten legt de organisatie bij inkoop in het contract vast welke auditlogs de
+<li id="eis-3-5">Voor SaaS- en clouddiensten legt de organisatie bij inkoop in het contract vast welke auditlogs de
    leverancier beschikbaar stelt, hoe lang die bewaard blijven en hoe de organisatie ze kan exporteren naar
    de eigen centrale logvoorziening. Waar de leverancier de logs korter bewaart dan de eigen termijn, haalt
-   <strong>[beheerder logvoorziening]</strong> ze zelf op. [8.15.03, 8.15.04] <a class="anker" href="#eis-3-1-5" aria-label="Link naar dit punt">#</a></li>
+   <strong>[beheerder logvoorziening]</strong> ze zelf op. [8.15.03, 8.15.04] <a class="anker" href="#eis-3-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
 <ol start="6">
-<li id="eis-3-1-6">Bij een hostingpartij logt de organisatie zelf op het niveau van besturingssysteem en applicatie. De
+<li id="eis-3-6">Bij een hostingpartij logt de organisatie zelf op het niveau van besturingssysteem en applicatie. De
    logging van de platformlaag (hypervisor, beheerportaal, netwerk van de hostingpartij) levert de
-   hostingpartij op verzoek binnen de termijn uit het contract. [8.15.03] <a class="anker" href="#eis-3-1-6" aria-label="Link naar dit punt">#</a></li>
+   hostingpartij op verzoek binnen de termijn uit het contract. [8.15.03] <a class="anker" href="#eis-3-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
 <ol start="7">
-<li id="eis-3-1-7">In het eigen datacenter verzamelt een centrale logvoorziening de logging van servers, opslag,
-   virtualisatie en netwerkcomponenten. De logvoorziening staat in een eigen beheersegment. [8.15.03] <a class="anker" href="#eis-3-1-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-7">In het eigen datacenter verzamelt een centrale logvoorziening de logging van servers, opslag,
+   virtualisatie en netwerkcomponenten. De logvoorziening staat in een eigen beheersegment. [8.15.03] <a class="anker" href="#eis-3-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
 <ol start="8">
-<li id="eis-3-1-8">Voor systemen met politiegegevens logt de organisatie elke raadpleging en elke verstrekking, met de
+<li id="eis-3-8">Voor systemen met politiegegevens logt de organisatie elke raadpleging en elke verstrekking, met de
    persoon die raadpleegt en, waar het systeem dat toelaat, het doel van de raadpleging. Deze logging is
-   nodig voor de verantwoording onder de Wpg. [8.15.01, 8.15.03] <a class="anker" href="#eis-3-1-8" aria-label="Link naar dit punt">#</a></li>
+   nodig voor de verantwoording onder de Wpg. [8.15.01, 8.15.03] <a class="anker" href="#eis-3-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD» of «Suwinet» of «BRP (als bronhouder of afnemer)» of «BAG of andere basisregistraties» of «Andere ketens met eigen beveiligingseisen»</strong></p>
 <ol start="9">
-<li id="eis-3-1-9">Voor de aansluiting op landelijke voorzieningen volgt de systeemeigenaar bovendien de logeisen uit het
+<li id="eis-3-9">Voor de aansluiting op landelijke voorzieningen volgt de systeemeigenaar bovendien de logeisen uit het
    normenkader van die voorziening en staan de betreffende systemen apart in het overzicht van logbronnen,
-   met het normenkader erbij. [8.15.03] <a class="anker" href="#eis-3-1-9" aria-label="Link naar dit punt">#</a></li>
+   met het normenkader erbij. [8.15.03] <a class="anker" href="#eis-3-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-2-bewaren-en-beschermen">3.2 Bewaren en beschermen<a class="anker" href="#3-2-bewaren-en-beschermen" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="4-bewaren-en-beschermen">4. Bewaren en beschermen<a class="anker" href="#4-bewaren-en-beschermen" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-2-1">De bewaartermijn per logbron staat in het overzicht en volgt uit een risicoafweging door de
+<li id="eis-4-1">De bewaartermijn per logbron staat in het overzicht en volgt uit een risicoafweging door de
    systeemeigenaar. Omdat aanvallers vaak maanden onopgemerkt in een omgeving zitten, is de termijn voor
    beveiligingsrelevante logging en voor de gegevens in het SIEM ten minste
    <strong>[bewaartermijn beveiligingslogging]</strong>.
-   Logging die bij een incident hoort, valt onder de termijn van het incidentdossier (drie jaar). [8.15.04] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-2">Logging die persoonsgegevens bevat, wordt niet langer bewaard dan de vastgestelde termijn en alleen
+   Logging die bij een incident hoort, valt onder de termijn van het incidentdossier (drie jaar). [8.15.04] <a class="anker" href="#eis-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-2">Logging die persoonsgegevens bevat, wordt niet langer bewaard dan de vastgestelde termijn en alleen
    gebruikt voor beveiliging, beheer en verantwoording. De verwerking staat in het verwerkingsregister; de
-   privacy officer toetst dat jaarlijks. [8.15.04] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-3"><strong>[beheerder logvoorziening]</strong> kopieert logbestanden zo snel mogelijk na het ontstaan naar een centrale
-   opslag waar de beheerders van het bronsysteem geen schrijf- of verwijderrechten hebben. [8.15.05] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-4">Een poging om loggegevens oneigenlijk te wijzigen of te verwijderen, of het onverwacht stoppen van de
+   privacy officer toetst dat jaarlijks. [8.15.04] <a class="anker" href="#eis-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-3"><strong>[beheerder logvoorziening]</strong> kopieert logbestanden zo snel mogelijk na het ontstaan naar een centrale
+   opslag waar de beheerders van het bronsysteem geen schrijf- of verwijderrechten hebben. [8.15.05] <a class="anker" href="#eis-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-4">Een poging om loggegevens oneigenlijk te wijzigen of te verwijderen, of het onverwacht stoppen van de
    logging, wordt direct als beveiligingsincident gemeld via de incidentprocedure. De centrale
-   logvoorziening geeft hierop een automatische melding aan <strong>[bewaking]</strong>. [8.15.05] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-5">Op basis van een risicoafweging stelt de CISO vast hoe vaak wordt getoetst dat de logbestanden
+   logvoorziening geeft hierop een automatische melding aan <strong>[bewaking]</strong>. [8.15.05] <a class="anker" href="#eis-4-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-5">Op basis van een risicoafweging stelt de CISO vast hoe vaak wordt getoetst dat de logbestanden
    gedurende de bewaartermijn ongewijzigd en volledig aanwezig zijn, met ten minste een jaarlijkse toets.
    De toets wordt uitgevoerd door iemand die geen beheertaken heeft op de logvoorziening of de
-   bronsystemen. [8.15.06] <a class="anker" href="#eis-3-2-5" aria-label="Link naar dit punt">#</a></li>
+   bronsystemen. [8.15.06] <a class="anker" href="#eis-4-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Geen eigen ISO; informatiebeveiliging is een neventaak» of «Een ISO of CISO in deeltijd»</strong></p>
 <ol start="6">
-<li id="eis-3-2-6">De organisatie heeft geen eigen team dat onafhankelijk is van het beheer. De toets op ongewijzigde
-   logbestanden laat zij uitvoeren door een externe auditor of door de interne controle. [8.15.06] <a class="anker" href="#eis-3-2-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-6">De organisatie heeft geen eigen team dat onafhankelijk is van het beheer. De toets op ongewijzigde
+   logbestanden laat zij uitvoeren door een externe auditor of door de interne controle. [8.15.06] <a class="anker" href="#eis-4-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Welke eigen security-capaciteit heb je? «Een eigen team (CISO met ISO's)»</strong></p>
 <ol start="7">
-<li id="eis-3-2-7">De toets op ongewijzigde logbestanden voert een ISO uit die geen beheerrechten heeft op de logging. [8.15.06] <a class="anker" href="#eis-3-2-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-7">De toets op ongewijzigde logbestanden voert een ISO uit die geen beheerrechten heeft op de logging. [8.15.06] <a class="anker" href="#eis-4-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
 <ol start="8">
-<li id="eis-3-2-8">De logging van systemen met politiegegevens wordt bewaard volgens de termijn uit de Wpg en is onderwerp
+<li id="eis-4-8">De logging van systemen met politiegegevens wordt bewaard volgens de termijn uit de Wpg en is onderwerp
    van de periodieke Wpg-audit. Alleen de privacy officer, de CISO en de functionaris die de Wpg-controle
-   uitvoert, mogen deze logging raadplegen; elke raadpleging wordt zelf ook gelogd. [8.15.04, 8.15.05] <a class="anker" href="#eis-3-2-8" aria-label="Link naar dit punt">#</a></li>
+   uitvoert, mogen deze logging raadplegen; elke raadpleging wordt zelf ook gelogd. [8.15.04, 8.15.05] <a class="anker" href="#eis-4-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-3-monitoren-en-detecteren">3.3 Monitoren en detecteren<a class="anker" href="#3-3-monitoren-en-detecteren" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="5-monitoren-en-detecteren">5. Monitoren en detecteren<a class="anker" href="#5-monitoren-en-detecteren" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-3-1">De organisatie bewaakt de omgeving met een detectie- en responsvoorziening die de logging van
+<li id="eis-5-1">De organisatie bewaakt de omgeving met een detectie- en responsvoorziening die de logging van
    werkplekken, servers, identiteiten, clouddiensten en netwerkcomponenten bij elkaar brengt, bijvoorbeeld
    een SIEM met EDR. <strong>[bewaking]</strong> beoordeelt afwijkingen binnen de termijn per ernstniveau en legt de
-   beoordeling vast. [8.16.03] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-2">Actieve netwerkcomponenten (firewalls, routers, switches, toegangspunten voor wifi en VPN) sturen hun
+   beoordeling vast. [8.16.03] <a class="anker" href="#eis-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-2">Actieve netwerkcomponenten (firewalls, routers, switches, toegangspunten voor wifi en VPN) sturen hun
    logging naar deze voorziening. <strong>[bewaking]</strong> onderhoudt detectieregels voor afwijkend gedrag zoals
-   ongebruikelijk verkeer, wijzigingen in de configuratie en aanmeldingen buiten de beheerroute. [8.16.04] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-3">De CISO legt vaste regels vast over wanneer een melding als incident aan het management gaat: per
+   ongebruikelijk verkeer, wijzigingen in de configuratie en aanmeldingen buiten de beheerroute. [8.16.04] <a class="anker" href="#eis-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-3">De CISO legt vaste regels vast over wanneer een melding als incident aan het management gaat: per
    ernstniveau de termijn en de ontvanger. Een melding met ernst hoog of kritiek gaat altijd direct naar de
-   CISO, die bepaalt of de directie wordt ingelicht. [8.16.02] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-4">Nieuwe dreigingen of aanvalstechnieken die bij de monitoring worden ontdekt, deelt <strong>[bewaking]</strong> binnen
+   CISO, die bepaalt of de directie wordt ingelicht. [8.16.02] <a class="anker" href="#eis-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-4">Nieuwe dreigingen of aanvalstechnieken die bij de monitoring worden ontdekt, deelt <strong>[bewaking]</strong> binnen
    de juridische kaders met de aangewezen CERT, zo nodig zonder persoonsgegevens, en legt vast wat is
-   gedeeld. [8.16.01] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-5"><strong>[bewaking]</strong> rapporteert maandelijks aan de CISO over meldingen, escalaties en gedeelde dreigingen.
-   [8.16.02, 8.16.03] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
+   gedeeld. [8.16.01] <a class="anker" href="#eis-5-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-5"><strong>[bewaking]</strong> rapporteert maandelijks aan de CISO over meldingen, escalaties en gedeelde dreigingen.
+   [8.16.02, 8.16.03] <a class="anker" href="#eis-5-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC»</strong></p>
 <ol start="6">
-<li id="eis-3-3-6">Het eigen SOC beoordeelt de meldingen uit de detectievoorziening, ook buiten kantoortijd via een
+<li id="eis-5-6">Het eigen SOC beoordeelt de meldingen uit de detectievoorziening, ook buiten kantoortijd via een
    bereikbaarheidsdienst. Het SOC beheert de detectieregels en past ze aan na elk incident en na elke
-   relevante dreigingsmelding. [8.16.03, 8.16.04] <a class="anker" href="#eis-3-3-6" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-7">Het SOC heeft een vastgelegde procedure voor het delen van nieuwe dreigingen met de CERT. [8.16.01] <a class="anker" href="#eis-3-3-7" aria-label="Link naar dit punt">#</a></li>
+   relevante dreigingsmelding. [8.16.03, 8.16.04] <a class="anker" href="#eis-5-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-7">Het SOC heeft een vastgelegde procedure voor het delen van nieuwe dreigingen met de CERT. [8.16.01] <a class="anker" href="#eis-5-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Uitbesteed SOC of MDR-dienst»</strong></p>
 <ol start="8">
-<li id="eis-3-3-8">Een SOC- of MDR-dienstverlener bewaakt de omgeving. Het contract regelt: welke logbronnen zijn
+<li id="eis-5-8">Een SOC- of MDR-dienstverlener bewaakt de omgeving. Het contract regelt: welke logbronnen zijn
    aangesloten, de reactietijd per ernstniveau, de escalatie naar de organisatie, de bevoegdheid om in te
-   grijpen, het delen van nieuwe dreigingen met de CERT en een maandelijkse rapportage. [8.16.01, 8.16.02, 8.16.03] <a class="anker" href="#eis-3-3-8" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-9"><strong>[beheerder logvoorziening]</strong> controleert elk kwartaal of alle logbronnen uit het overzicht ook bij de
-   dienstverlener binnenkomen en legt de uitkomst vast. [8.16.03, 8.16.04] <a class="anker" href="#eis-3-3-9" aria-label="Link naar dit punt">#</a></li>
+   grijpen, het delen van nieuwe dreigingen met de CERT en een maandelijkse rapportage. [8.16.01, 8.16.02, 8.16.03] <a class="anker" href="#eis-5-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-9"><strong>[beheerder logvoorziening]</strong> controleert elk kwartaal of alle logbronnen uit het overzicht ook bij de
+   dienstverlener binnenkomen en legt de uitkomst vast. [8.16.03, 8.16.04] <a class="anker" href="#eis-5-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie bewaakt je omgeving op aanvallen? «Geen structurele detectie»</strong></p>
 <ol start="10">
-<li id="eis-3-3-10">Er is nog geen structurele detectie. Als minimum zijn op werkplekken en servers detectie- en
+<li id="eis-5-10">Er is nog geen structurele detectie. Als minimum zijn op werkplekken en servers detectie- en
    responsfuncties actief met automatische meldingen aan de beheerder, die ze elke werkdag bekijkt. De CISO
    neemt het ontbreken van een SOC op als risico in het risicoregister en legt in het jaarplan vast wanneer de
-   organisatie structurele detectie heeft ingericht, zelf of uitbesteed. [8.16.03, 8.16.04] <a class="anker" href="#eis-3-3-10" aria-label="Link naar dit punt">#</a></li>
+   organisatie structurele detectie heeft ingericht, zelf of uitbesteed. [8.16.03, 8.16.04] <a class="anker" href="#eis-5-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud» of «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
 <ol start="11">
-<li id="eis-3-3-11">De logging van clouddiensten en van de hostingpartij is aangesloten op de detectievoorziening. Waar dat
+<li id="eis-5-11">De logging van clouddiensten en van de hostingpartij is aangesloten op de detectievoorziening. Waar dat
    technisch niet kan, legt de systeemeigenaar vast welke meldingen de leverancier zelf geeft en hoe snel.
-   [8.16.03] <a class="anker" href="#eis-3-3-11" aria-label="Link naar dit punt">#</a></li>
+   [8.16.03] <a class="anker" href="#eis-5-11" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="6-rollen-en-verantwoordelijkheden">6. Rollen en verantwoordelijkheden<a class="anker" href="#6-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -246,7 +248,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="7-naleving-en-controle">7. Naleving en controle<a class="anker" href="#7-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
 afwijkingen gaan als bevinding naar het risicoregister.</p>
@@ -326,7 +328,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="8-samenhang">8. Samenhang<a class="anker" href="#8-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 beveiligingsincidenten (melden van incidenten en bewaren van bewijs), het beleid netwerkbeveiliging
 (bewaking van dataverkeer en tijdsynchronisatie), het beleid logische toegangsbeveiliging (logging van
@@ -350,70 +352,70 @@ contractbeheer (logs van leveranciers) en het privacybeleid (logging met persoon
 <td>8.15.01</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Wat er gelogd wordt</td>
+<td>3. Wat er gelogd wordt</td>
 <td>LOG-02</td>
 </tr>
 <tr>
 <td>8.15.02</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Wat er gelogd wordt</td>
+<td>3. Wat er gelogd wordt</td>
 <td>LOG-02</td>
 </tr>
 <tr>
 <td>8.15.03</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Wat er gelogd wordt</td>
+<td>3. Wat er gelogd wordt</td>
 <td>LOG-01</td>
 </tr>
 <tr>
 <td>8.15.04</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Wat er gelogd wordt</td>
+<td>3. Wat er gelogd wordt</td>
 <td>LOG-03</td>
 </tr>
 <tr>
 <td>8.15.05</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Bewaren en beschermen</td>
+<td>4. Bewaren en beschermen</td>
 <td>LOG-01, LOG-04</td>
 </tr>
 <tr>
 <td>8.15.06</td>
 <td>Logging</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Bewaren en beschermen</td>
+<td>4. Bewaren en beschermen</td>
 <td>LOG-04</td>
 </tr>
 <tr>
 <td>8.16.01</td>
 <td>Monitoren van activiteiten</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Monitoren en detecteren</td>
+<td>5. Monitoren en detecteren</td>
 <td>LOG-07</td>
 </tr>
 <tr>
 <td>8.16.02</td>
 <td>Monitoren van activiteiten</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Monitoren en detecteren</td>
+<td>5. Monitoren en detecteren</td>
 <td>LOG-06</td>
 </tr>
 <tr>
 <td>8.16.03</td>
 <td>Monitoren van activiteiten</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Monitoren en detecteren</td>
+<td>5. Monitoren en detecteren</td>
 <td>LOG-05</td>
 </tr>
 <tr>
 <td>8.16.04</td>
 <td>Monitoren van activiteiten</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Monitoren en detecteren</td>
+<td>5. Monitoren en detecteren</td>
 <td>LOG-05</td>
 </tr>
 </tbody>

@@ -8,13 +8,17 @@ Gebruik:
 
 Per BIO 2.0-domein staat in `data/` één markdownbestand. Daarin:
 
-- heeft elk stuk dezelfde zes hoofdstukken (KOPPEN hieronder);
+- staan in de frontmatter domein, titel, samenvatting en onder `invoeren` een lijst met wat de organisatie
+  moet inrichten, elk eindigend op `(hoofdstuk N).`;
+- begint elk stuk met doel en reikwijdte en uitgangspunten, staat daarna elk onderwerp als eigen hoofdstuk
+  en eindigt het met rollen, naleving en controle, en samenhang (VOOR en ACHTER hieronder), doorlopend
+  genummerd;
 - eindigt een beleidsregel op de nummers van de maatregelen die hij invult: `[8.13.01]` of
-  `[8.13.01, 8.13.02]`. In hoofdstuk 3 moet elke regel zo'n nummer hebben;
-- is een regel een opsommingsteken (`- `); de generator nummert ze per paragraaf, zodat een reviewer of
-  een controle naar "eis 3.2.4" kan wijzen;
-- staat in hoofdstuk 5 een controleraamwerk: een tabel met per rij een controle `XXX-01`, en in de laatste
-  kolom de maatregelen die de controle aantoont (zonder haken);
+  `[8.13.01, 8.13.02]`. In een onderwerphoofdstuk moet elke regel zo'n nummer hebben;
+- is een regel een opsommingsteken (`- `); de generator nummert ze per hoofdstuk, zodat een reviewer of
+  een controle naar "eis 5.4" kan wijzen;
+- staat bij naleving en controle een controleraamwerk: een tabel met per rij een controle `XXX-01`, en in de
+  laatste kolom de maatregelen die de controle aantoont (zonder haken);
 - staat tekst die van een contextvraag afhangt tussen `::: als vraag=antwoord` en `:::`. Meer antwoorden
   scheid je met een komma (`hosting=saas,hostingpartij`), meer voorwaarden met ` en `, en `!=` keert om.
   Blokken nesten niet;
@@ -39,6 +43,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import beleidsset_word as word  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 ITEM = ROOT / "governance" / "beleidsset-informatiebeveiliging"
 BOUWSTENEN = ITEM / "data"
@@ -48,6 +55,7 @@ DATA = ITEM / "beleidsset.json"
 PAGINA = ITEM / "beleidsset-generator.html"
 SJABLOON = ROOT / "tools" / "beleidsset-generator-sjabloon.html"
 JS = ROOT / "tools" / "beleidsset.js"
+WORD_JS = ROOT / "tools" / "beleidsset-word.js"
 
 TAG = re.compile(r"\[(\d\.\d{2}\.\d{2}(?:,\s*\d\.\d{2}\.\d{2})*)\]")
 NUMMER = re.compile(r"(?<![\d.])(\d\.\d{2}\.\d{2})(?![\d.])")
@@ -57,8 +65,11 @@ VOORWAARDE = re.compile(r"^([a-z0-9-]+)\s*(!?=)\s*([a-z0-9-]+(?:,[a-z0-9-]+)*)$"
 CONTROLE = re.compile(r"^\|\s*([A-Z]{2,5}-\d{2,3})\s*\|")
 AFKORTING = re.compile(r"(?<![\w&])([A-Z][A-Z&]{1,7})(?![\w])")
 MAX_PROFIELEN = 20000  # bovengrens per domein bij het toetsen van de dekking
-KOPPEN = ["1. Doel en reikwijdte", "2. Uitgangspunten", "3. Beleidsregels", "4. Rollen en verantwoordelijkheden",
-          "5. Naleving en controle", "6. Samenhang"]
+# De vaste hoofdstukken: twee vooraan, drie achteraan. Daartussen staan de onderwerpen van het domein, elk als
+# eigen hoofdstuk met de beleidsregels.
+VOOR = ["Doel en reikwijdte", "Uitgangspunten"]
+ACHTER = ["Rollen en verantwoordelijkheden", "Naleving en controle", "Samenhang"]
+HOOFDSTUK = re.compile(r"^## (\d+)\. (.+)$")
 
 
 class BouwsteenFout(Exception):
@@ -78,11 +89,17 @@ def frontmatter(tekst: str, waar: str) -> tuple[dict, str]:
     if not tekst.startswith("---\n"):
         raise BouwsteenFout(f"{waar}: frontmatter ontbreekt")
     kop, _, romp = tekst[4:].partition("\n---\n")
-    fm = {}
+    fm, laatste = {}, None
     for regel in kop.split("\n"):
-        if regel.strip():
+        if regel.startswith("  - ") and laatste:
+            # Een lijst onder een sleutel zonder waarde, zoals invoeren.
+            if not isinstance(fm[laatste], list):
+                fm[laatste] = []
+            fm[laatste].append(regel[4:].strip())
+        elif regel.strip():
             sleutel, _, waarde = regel.partition(":")
-            fm[sleutel.strip()] = waarde.strip()
+            laatste = sleutel.strip()
+            fm[laatste] = waarde.strip()
     return fm, romp.lstrip("\n")
 
 
@@ -134,7 +151,9 @@ def parse_bouwsteen(tekst: str, vragen: dict, waar: str) -> dict:
         raise BouwsteenFout(f"{waar}: blok zonder afsluitende ':::'")
     if huidig:
         delen.append({"als": None, "regels": huidig})
-    return {"domein": fm["domein"], "titel": fm["titel"], "delen": delen}
+    invoeren = fm.get("invoeren") or []
+    return {"domein": fm["domein"], "titel": fm["titel"], "samenvatting": fm.get("samenvatting", ""),
+            "invoeren": invoeren if isinstance(invoeren, list) else [], "delen": delen}
 
 
 def laad(map_: Path = ITEM) -> dict:
@@ -212,7 +231,7 @@ def vul_velden(regel: str, velden: list[list[str]]) -> str:
 
 
 def nummer_regels(regels: list[str]) -> list[str]:
-    """Opsommingstekens worden per paragraaf genummerde eisen; ook in een kader (regels met '> ').
+    """Opsommingstekens worden per hoofdstuk genummerde eisen; ook in een kader (regels met '> ').
     Vervolgregels van een eis krijgen één spatie extra, zodat ze onder het nummer blijven hangen."""
     uit, teller = [], 0
     for r in regels:
@@ -281,6 +300,12 @@ def genereer_stuk(steen: dict, data: dict, profiel: dict) -> dict:
     ]
     uit += [vul_velden(r, velden) for r in titelblad]
     uit.append("")
+    if steen.get("samenvatting"):
+        uit += ["**In het kort.** " + steen["samenvatting"], ""]
+    koppen = [m for m in map(HOOFDSTUK.match, (r for deel in steen["delen"] for r in deel["regels"])) if m]
+    onderwerpen = koppen[len(VOOR):len(koppen) - len(ACHTER)]
+    if onderwerpen:
+        uit += ["**Onderwerpen.** " + "; ".join(f"{m.group(1)}. {m.group(2)}" for m in onderwerpen) + ".", ""]
     if beantwoord:
         uit.append("Opgesteld voor dit profiel: " + "; ".join(f"{v} {a}" for v, a in beantwoord) + ".")
     else:
@@ -309,7 +334,7 @@ def genereer_stuk(steen: dict, data: dict, profiel: dict) -> dict:
         uit += ["", "## Nog in te vullen", ""]
         uit += [f"- **{naam}**" + (f": {uitleg}" if uitleg else "") for naam, uitleg in velden]
     return {"markdown": "\n".join(uit) + "\n", "gedekt": sorted(gedekt), "controles": sorted(controles),
-            "eigen": [m["id"] for m in eigen], "overheid": overheid}
+            "eigen": [m["id"] for m in eigen], "overheid": overheid, "waar": gedekt, "controle_per": controles}
 
 
 def genereer(data: dict, profiel: dict) -> dict[str, dict]:
@@ -346,6 +371,78 @@ def vul_waarden(markdown: str, waarden: dict, herkomst: dict | None = None) -> s
                      f"{str(herkomst.get('sha256', ''))[:12]}): {', '.join(gevuld)}. Controleer elke waarde "
                      "voordat je het stuk vaststelt.\n")
     return markdown
+
+
+def profielzin(data: dict, profiel: dict) -> str:
+    vragen = {v["id"]: v for v in data["profiel"]["vragen"]}
+    beantwoord = [(vragen[k]["vraag"], ", ".join(label(vragen, k, a) for a in antwoorden_van(profiel, k)))
+                  for k in vragen if antwoorden_van(profiel, k) is not None]
+    if beantwoord:
+        return "Opgesteld voor dit profiel: " + "; ".join(f"{v} {a}" for v, a in beantwoord) + "."
+    return "Zonder profiel: tekst die van een contextvraag afhangt, telt mee."
+
+
+RIJ = re.compile(r"^(?:> )?\|\s*([A-Z]{2,5}-\d{2,3})\s*\|")
+WEBPLEK = "https://security-commons-nl.github.io/kennisbank/governance/"
+
+
+def cellen(regel: str) -> list[str]:
+    regel = regel[2:] if regel.startswith("> ") else regel
+    return [c.strip() for c in regel.strip().strip("|").split("|")]
+
+
+def velden_van(markdown: str) -> list[str]:
+    """De namen onder Nog in te vullen van een gegenereerd stuk."""
+    if LIJSTKOP not in markdown:
+        return []
+    lijst = markdown.split(LIJSTKOP, 1)[1].split("\n## ", 1)[0]
+    return [r[4:].split("**", 1)[0] for r in lijst.split("\n") if r.startswith("- **")]
+
+
+def overzichten(data: dict, profiel: dict, stukken: dict) -> dict[str, str]:
+    """Twee overzichten over de hele set, uit de gegenereerde stukken: welke maatregel waar staat, en wat er
+    moet gebeuren om het beleid in te voeren. Spiegel: overzichten in tools/beleidsset.js."""
+    domeinen = {d["id"]: d["naam"] for d in data["profiel"]["domeinen"]}
+    thema = {domeinen[s["domein"]]: s for s in data["bouwstenen"]}
+    zin = profielzin(data, profiel)
+
+    m = ["# Maatregelenoverzicht", "", zin, "",
+         "Per BIO 2.0-maatregel het beleidsstuk dat hem invult, het hoofdstuk waar dat gebeurt en de controle die de "
+         f"naleving aantoont. Nummers volgens {data['maatregelen']['versie']}. Komt een maatregel ook in een ander stuk "
+         "terug, dan staat dat in de laatste kolom.", "",
+         "| Maatregel | Titel | Soort | Beleidsstuk | Hoofdstuk | Controle | Ook in |", "|---|---|---|---|---|---|---|"]
+    for mr in sorted(data["maatregelen"]["maatregelen"], key=lambda x: x["id"]):
+        steen = thema.get(mr["thema"])
+        if not steen:
+            continue
+        stuk = stukken[steen["domein"]]
+        ook = [s["titel"] for s in data["bouwstenen"] if s is not steen and mr["id"] in stukken[s["domein"]]["waar"]]
+        m.append(f"| {mr['id']} | {mr['titel']} | {'overheid' if mr['soort'] == 'overheid' else 'ISO'} | "
+                 f"{steen['titel']} | {stuk['waar'].get(mr['id'], 'niet ingevuld')} | "
+                 f"{', '.join(stuk['controle_per'].get(mr['id'], [])) or 'geen'} | {', '.join(ook)} |")
+
+    v = ["# Invoeren: wat er nog moet gebeuren", "", zin, "",
+         "Een vastgesteld beleid werkt pas als de organisatie het inricht. Deze lijst zet per stuk op een rij wat "
+         "daarvoor nodig is: wat de organisatie inricht, welke controles zij gaat uitvoeren en wat zij nog moet "
+         "invullen. Een plan met volgorde, eigenaar per thema en urenraming staat in "
+         f"[BIO 2.0 invoeren]({WEBPLEK}bio2-implementeren/).", "",
+         "## Voor de hele set", "",
+         "- Wijs per stuk de eigenaar aan en laat het stuk vaststellen.",
+         "- Richt één registratie van controles in: per controle de uitvoerder, de frequentie, het bewijs en de uitkomst.",
+         "- Richt het risicoregister in voor afwijkingen en bevindingen, met een risico-eigenaar die restrisico's accepteert.",
+         "- Zet alle controles in een jaarkalender, zodat elke controle op tijd wordt uitgevoerd."]
+    for nr, s in enumerate(data["bouwstenen"], 1):
+        md = stukken[s["domein"]]["markdown"]
+        rijen = [cellen(r) for r in md.split("\n") if RIJ.match(r)]
+        v += ["", f"## {nr}. {s['titel']}", ""]
+        if s.get("invoeren"):
+            v += ["**Inrichten**", ""] + [f"- {a}" for a in s["invoeren"]] + [""]
+        if rijen:
+            v += [f"**Controles inrichten ({len(rijen)})**", "", "| Nr | Controle | Uitvoerder | Frequentie |",
+                  "|---|---|---|---|"] + [f"| {c[0]} | {c[1]} | {c[2]} | {c[3]} |" for c in rijen] + [""]
+        velden = velden_van(md)
+        v.append(f"**Nog in te vullen ({len(velden)}).** " + ("; ".join(velden) + "." if velden else "Niets."))
+    return {"maatregelen": "\n".join(m) + "\n", "invoeren": "\n".join(v) + "\n"}
 
 
 def invulvelden(data: dict) -> list[dict]:
@@ -395,20 +492,46 @@ def profielen_voor(steen: dict, data: dict):
         yield dict(zip([q for q, _ in assen], combinatie))
 
 
+def regelhoofdstukken(regels: list[str]) -> list[str]:
+    """De nummers van de hoofdstukken met beleidsregels: alles tussen de vaste hoofdstukken voor en achter."""
+    nummers = [m.group(1) for m in map(HOOFDSTUK.match, regels) if m]
+    return nummers[len(VOOR):len(nummers) - len(ACHTER)]
+
+
 def toets_vorm(steen: dict, data: dict) -> list[str]:
-    """De vaste opbouw van een bouwsteen: zes hoofdstukken, elke regel in hoofdstuk 3 met een maatregel,
-    een controleraamwerk in hoofdstuk 5, bekende afkortingen."""
+    """De vaste opbouw van een bouwsteen: doel en uitgangspunten, dan elk onderwerp als hoofdstuk met regels die
+    elk een maatregel noemen, dan rollen, naleving met een controleraamwerk en samenhang; doorlopend genummerd,
+    bekende afkortingen."""
     meldingen, waar = [], steen["bestand"]
     regels = [r for deel in steen["delen"] for r in deel["regels"]]
     koppen = [r[3:].strip() for r in regels if r.startswith("## ")]
-    if koppen != KOPPEN:
-        meldingen.append(f"{waar}: de hoofdstukken zijn {koppen}; verwacht {KOPPEN}")
+    titels = [HOOFDSTUK.match("## " + k).group(2) if HOOFDSTUK.match("## " + k) else k for k in koppen]
+    nummers = [HOOFDSTUK.match("## " + k).group(1) if HOOFDSTUK.match("## " + k) else "?" for k in koppen]
+    verwacht = f"{', '.join(VOOR)}, de onderwerpen, {', '.join(ACHTER)}"
+    if (len(titels) < len(VOOR) + len(ACHTER) + 1 or titels[:len(VOOR)] != VOOR
+            or titels[len(titels) - len(ACHTER):] != ACHTER):
+        meldingen.append(f"{waar}: de hoofdstukken zijn {koppen}; verwacht {verwacht}")
+    if nummers != [str(i) for i in range(1, len(koppen) + 1)]:
+        meldingen.append(f"{waar}: de hoofdstukken zijn niet doorlopend genummerd: {', '.join(nummers)}")
+    for r in regels:
+        if r.startswith("### "):
+            meldingen.append(f"{waar}: '{r.strip()}' is een subkop; maak er een eigen hoofdstuk van")
+    met_regels = set(regelhoofdstukken(regels))
+    if not steen.get("samenvatting"):
+        meldingen.append(f"{waar}: frontmatter mist 'samenvatting' (twee of drie zinnen over waar het stuk over gaat)")
+    if not steen.get("invoeren"):
+        meldingen.append(f"{waar}: frontmatter mist 'invoeren' (wat de organisatie moet doen om het beleid in te voeren)")
+    for actie in steen.get("invoeren", []):
+        h = re.search(r"\(hoofdstuk (\d+)\)\.$", actie)
+        if not h or h.group(1) not in nummers:
+            meldingen.append(f"{waar}: invoeren '{actie[:60]}' eindigt niet op een bestaand '(hoofdstuk N).'")
     hoofdstuk, item, items = "", None, []
     for r in regels + ["## einde"]:
         if r.startswith("## "):
             if item:
                 items.append((hoofdstuk, item))
-            hoofdstuk, item = r[3:4], None
+            m = HOOFDSTUK.match(r)
+            hoofdstuk, item = (m.group(1) if m else ""), None
             continue
         if r.startswith("- "):
             if item:
@@ -421,8 +544,8 @@ def toets_vorm(steen: dict, data: dict) -> list[str]:
                 items.append((hoofdstuk, item))
             item = None
     for h, tekst in items:
-        if h == "3" and not TAG.search(tekst):
-            meldingen.append(f"{waar}: regel zonder maatregel in hoofdstuk 3: '{tekst[:70]}'")
+        if h in met_regels and not TAG.search(tekst):
+            meldingen.append(f"{waar}: regel zonder maatregel in hoofdstuk {h}: '{tekst[:70]}'")
     controles = [CONTROLE.match(r).group(1) for r in regels if CONTROLE.match(r)]
     if not controles:
         meldingen.append(f"{waar}: geen controleraamwerk (rijen die beginnen met een controle zoals XXX-01)")
@@ -511,7 +634,7 @@ def agentlijst(data: dict) -> str:
 
 def pagina(data: dict) -> str:
     sjabloon = SJABLOON.read_text(encoding="utf-8")
-    code = JS.read_text(encoding="utf-8")
+    code = JS.read_text(encoding="utf-8") + "\n" + WORD_JS.read_text(encoding="utf-8")
     gegevens = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (sjabloon.replace("/*AGENTLIJST*/", agentlijst(data))
             .replace("/*CODE*/", code).replace("/*DATA*/", gegevens))
@@ -559,12 +682,13 @@ BEGIN, EINDE = "<!-- stukken:begin -->", "<!-- stukken:einde -->"
 
 def stukkenblok(data: dict, stukken: dict) -> str:
     """De tabel in de README: per domein de leesversie, de bouwsteen en de dekking."""
-    regels = ["| BIO 2.0-domein | Stuk | Bouwsteen | Overheidsmaatregelen | ISO-maatregelen |", "|---|---|---|---|---|"]
+    regels = ["| BIO 2.0-domein | Stuk | Waar het over gaat | Overheidsmaatregelen | ISO-maatregelen |",
+              "|---|---|---|---|---|"]
     domeinen = {d["id"]: d["naam"] for d in data["profiel"]["domeinen"]}
     for s in data["bouwstenen"]:
-        stuk = stukken[s["domein"]]
-        regels.append(f"| {domeinen[s['domein']]} | [{s['titel']}]({bestandsnaam(s)}) | "
-                      f"[{s['bestand']}](data/{s['bestand']}) | {len(stuk['overheid'])} | "
+        stuk, naam = stukken[s["domein"]], bestandsnaam(s)[:-3]
+        regels.append(f"| {domeinen[s['domein']]} | [{s['titel']}]({naam}.md) ([Word]({naam}.docx), "
+                      f"[bouwsteen](data/{s['bestand']})) | {s.get('samenvatting', '')} | {len(stuk['overheid'])} | "
                       f"{len(stuk['eigen']) - len(stuk['overheid'])} |")
     overheid = sum(len(stukken[s["domein"]]["overheid"]) for s in data["bouwstenen"])
     totaal = sum(len(stukken[s["domein"]]["eigen"]) for s in data["bouwstenen"])
@@ -581,14 +705,32 @@ def met_blok(readme: str, blok: str) -> str:
     return voor + BEGIN + nl + blok.replace("\n", nl) + nl + EINDE + na
 
 
-def uitvoer(data: dict) -> dict[Path, str]:
+SET_DOCX = "beleidsset-informatiebeveiliging.docx"
+OVERZICHTEN = {"maatregelen": "maatregelenoverzicht", "invoeren": "invoeren"}
+
+
+def met_downloadregel(markdown: str, naam: str) -> str:
+    """De leesversie in de kennisbank: onder de titel een link naar het Word-bestand en naar de generator."""
+    kop, rest = markdown.split("\n\n", 1)
+    return (f"{kop}\n\n[Download als Word]({naam}.docx) · [Maak je eigen versie in de generator]"
+            f"(beleidsset-generator.html)\n\n{rest}")
+
+
+def uitvoer(data: dict) -> dict[Path, str | bytes]:
     stukken = genereer(data, {})
-    uit = {}
+    over = overzichten(data, {}, stukken)
+    uit: dict[Path, str | bytes] = {}
     readme = ITEM / "README.md"
     if readme.exists():
         uit[readme] = met_blok(readme.read_bytes().decode("utf-8"), stukkenblok(data, stukken))
     for s in data["bouwstenen"]:
-        uit[ITEM / bestandsnaam(s)] = stukken[s["domein"]]["markdown"]
+        naam = bestandsnaam(s)[:-3]
+        uit[ITEM / f"{naam}.md"] = met_downloadregel(stukken[s["domein"]]["markdown"], naam)
+        uit[ITEM / f"{naam}.docx"] = word.docx([stukken[s["domein"]]["markdown"]])
+    for sleutel, naam in OVERZICHTEN.items():
+        uit[ITEM / f"{naam}.md"] = met_downloadregel(over[sleutel], naam)
+        uit[ITEM / f"{naam}.docx"] = word.docx([over[sleutel]])
+    uit[ITEM / SET_DOCX] = word.docx([stukken[s["domein"]]["markdown"] for s in data["bouwstenen"]])
     uit[DATA] = json.dumps(data, ensure_ascii=False, indent=1) + "\n"
     uit[PAGINA] = pagina(data)
     uit[AI_PAGINA] = ai_pagina(data)
@@ -614,9 +756,14 @@ def main(argv: list[str]) -> int:
         profiel, map_ = lees_json(Path(argv[i + 1])), Path(argv[i + 2])
         map_.mkdir(parents=True, exist_ok=True)
         data = laad()
+        stukken = genereer(data, profiel)
         for s in data["bouwstenen"]:
-            (map_ / bestandsnaam(s)).write_text(genereer_stuk(s, data, profiel)["markdown"], encoding="utf-8")
-        print(f"{len(data['bouwstenen'])} stukken in {map_}")
+            md = stukken[s["domein"]]["markdown"]
+            (map_ / bestandsnaam(s)).write_text(md, encoding="utf-8")
+            (map_ / (bestandsnaam(s)[:-3] + ".docx")).write_bytes(word.docx([md]))
+        for sleutel, inhoud in overzichten(data, profiel, stukken).items():
+            (map_ / f"{OVERZICHTEN[sleutel]}.md").write_text(inhoud, encoding="utf-8")
+        print(f"{len(data['bouwstenen'])} stukken, met Word-versie en de twee overzichten, in {map_}")
         return 0
     try:
         data = laad()
@@ -631,13 +778,20 @@ def main(argv: list[str]) -> int:
         return 1
     achter = []
     for pad, inhoud in uitvoer(data).items():
-        oud = pad.read_bytes().decode("utf-8") if pad.exists() else None
-        if oud == inhoud:
-            continue
+        if isinstance(inhoud, bytes):
+            # Een Word-bestand: dezelfde onderdelen tellen, de compressie verschilt per zlib-versie.
+            if pad.exists() and word.zelfde_inhoud(pad.read_bytes(), inhoud):
+                continue
+            nieuw = inhoud
+        else:
+            oud = pad.read_bytes().decode("utf-8") if pad.exists() else None
+            if oud == inhoud:
+                continue
+            nieuw = inhoud.encode("utf-8")
         if "--check" in argv:
             achter.append(pad.relative_to(ROOT).as_posix())
         else:
-            pad.write_bytes(inhoud.encode("utf-8"))
+            pad.write_bytes(nieuw)
             print(f"geschreven: {pad.relative_to(ROOT).as_posix()}")
     if achter:
         print("Loopt achter op de bouwstenen, draai python tools/bouw_beleidsset.py: " + ", ".join(achter))

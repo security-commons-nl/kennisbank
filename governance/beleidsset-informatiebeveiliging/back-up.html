@@ -8,7 +8,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid back-up en recovery</span></nav><!-- /kruimelpad -->
-<h1>Beleid back-up en recovery</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="back-up.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<h1>Beleid back-up en recovery</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="back-up.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-back-upplannen-en-scenario-s">3. Back-upplannen en scenario's</a></li><li><a href="#4-hersteleisen">4. Hersteleisen</a></li><li><a href="#5-bescherming-van-de-back-up">5. Bescherming van de back-up</a></li><li><a href="#6-gescheiden-opslag">6. Gescheiden opslag</a></li><li><a href="#7-herstel-en-testen">7. Herstel en testen</a></li><li><a href="#8-rollen-en-verantwoordelijkheden">8. Rollen en verantwoordelijkheden</a></li><li><a href="#9-naleving-en-controle">9. Naleving en controle</a></li><li><a href="#10-samenhang">10. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><a href="back-up.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
 <table>
 <thead>
 <tr>
@@ -39,6 +40,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
+<p><strong>In het kort.</strong> Over het maken, beschermen en terugzetten van back-ups, met ransomware als leidend scenario. Behandelt back-upplannen en het back-upregister, hersteleisen per systeem, een onveranderbare kopie, gescheiden opslag op meerdere plekken en het jaarlijks testen van herstel.</p>
+<p><strong>Onderwerpen.</strong> 3. Back-upplannen en scenario's; 4. Hersteleisen; 5. Bescherming van de back-up; 6. Gescheiden opslag; 7. Herstel en testen.</p>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het maken, bewaren, beschermen en
@@ -63,141 +66,140 @@ sleutelbeheer voor de versleuteling (beleid cryptografie) en de fysieke beveilig
 fysieke toegang en beveiliging).</p>
 <h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li>De organisatie is eigenaar van haar gegevens, ook als een leverancier ze verwerkt. Zij zorgt dat er een
-   back-up is die bij het impactniveau van het proces past, of zij die nu zelf maakt of laat maken.</li>
-<li>Ransomware is het scenario waarop de back-up is ingericht: een aanvaller met beheerrechten op de
-   productieomgeving kan de back-up niet wissen of versleutelen.</li>
-<li>Een back-up waarvan het terugzetten niet is getest, geldt niet als back-up.</li>
-<li>Hoe hoger het impactniveau van een systeem, hoe korter de hersteltijd en hoe strikter de scheiding van
-   de kopieën.</li>
-<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
-   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+<li id="punt-2-1">De organisatie is eigenaar van haar gegevens, ook als een leverancier ze verwerkt. Zij zorgt dat er een
+   back-up is die bij het impactniveau van het proces past, of zij die nu zelf maakt of laat maken. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2">Ransomware is het scenario waarop de back-up is ingericht: een aanvaller met beheerrechten op de
+   productieomgeving kan de back-up niet wissen of versleutelen. <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3">Een back-up waarvan het terugzetten niet is getest, geldt niet als back-up. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4">Hoe hoger het impactniveau van een systeem, hoe korter de hersteltijd en hoe strikter de scheiding van
+   de kopieën. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-5">Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid. <a class="anker" href="#punt-2-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
-<h3 id="3-1-back-upplannen-en-scenario-s">3.1 Back-upplannen en scenario's<a class="anker" href="#3-1-back-upplannen-en-scenario-s" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="3-back-upplannen-en-scenario-s">3. Back-upplannen en scenario's<a class="anker" href="#3-back-upplannen-en-scenario-s" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-1-1">Dit beleid en de back-upplannen per omgeving leggen samen vast wat wordt bewaard, hoe vaak, hoe lang, waar
+<li id="eis-3-1">Dit beleid en de back-upplannen per omgeving leggen samen vast wat wordt bewaard, hoe vaak, hoe lang, waar
    en hoe het is beschermd. <strong>[eigenaar back-upplannen]</strong>
    stelt de plannen op, de systeemeigenaar keurt ze goed en zij worden jaarlijks en na elke grote wijziging
-   herzien. [8.13.01] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-2">De back-up is ten minste ingericht op deze scenario's: een aanval met ransomware of wiperware op de eigen
+   herzien. [8.13.01] <a class="anker" href="#eis-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2">De back-up is ten minste ingericht op deze scenario's: een aanval met ransomware of wiperware op de eigen
    omgeving, een grote verstoring van een datacenter, gegevensverlies in een SaaS-dienst en het per ongeluk of
    bewust verwijderen van veel gegevens door een gebruiker. Het back-upplan beschrijft per scenario hoe het
-   herstel verloopt. [8.13.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-3"><strong>[lijneigenaar back-up]</strong> houdt
+   herstel verloopt. [8.13.01] <a class="anker" href="#eis-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3"><strong>[lijneigenaar back-up]</strong> houdt
    een back-upregister bij met per systeem en per SaaS-dienst: het back-upplan, de hersteleisen, de locaties
-   van de kopieën, de onveranderbare kopie en de datum van de laatste hersteltest. [8.13.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
+   van de kopieën, de onveranderbare kopie en de datum van de laatste hersteltest. [8.13.01] <a class="anker" href="#eis-3-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-2-hersteleisen">3.2 Hersteleisen<a class="anker" href="#3-2-hersteleisen" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="4-hersteleisen">4. Hersteleisen<a class="anker" href="#4-hersteleisen" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-2-1">Per systeem of gegevensverzameling stelt de proceseigenaar het maximale gegevensverlies (RPO) en de
+<li id="eis-4-1">Per systeem of gegevensverzameling stelt de proceseigenaar het maximale gegevensverlies (RPO) en de
    maximale hersteltijd (RTO) vast, met een vastgelegde risicoafweging. De proceseigenaar legt ook het
    detailniveau van herstel vast (bijvoorbeeld één bericht, een mailbox of een hele omgeving) en de
-   bewaartermijn van de back-ups. [8.13.02] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-2">Zolang er voor een systeem geen afweging is, geldt een standaardregime: ten hoogste 24 uur
+   bewaartermijn van de back-ups. [8.13.02] <a class="anker" href="#eis-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-2">Zolang er voor een systeem geen afweging is, geldt een standaardregime: ten hoogste 24 uur
    gegevensverlies en een hersteltijd van ten hoogste <strong>[standaard hersteltijd]</strong>.
    De eigenaar van de back-upplannen rapporteert jaarlijks welke systemen nog op het standaardregime
-   draaien. [8.13.02] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-3">De hersteltijd van een systeem met impactniveau kritiek of hoger is korter dan de maximale uitvalsduur
+   draaien. [8.13.02] <a class="anker" href="#eis-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-3">De hersteltijd van een systeem met impactniveau kritiek of hoger is korter dan de maximale uitvalsduur
    van het proces, want na het terugzetten volgen nog controle, koppelingen en communicatie. De
-   proceseigenaar legt de marge vast in het back-upplan. [8.13.02] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
+   proceseigenaar legt de marge vast in het back-upplan. [8.13.02] <a class="anker" href="#eis-4-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Een BCM-functie met continuïteitsplannen en een BIA»</strong></p>
 <ol start="4">
-<li id="eis-3-2-4">De hersteleisen voor kritieke systemen komen uit de BIA en het overzicht van kritieke systemen uit het
+<li id="eis-4-4">De hersteleisen voor kritieke systemen komen uit de BIA en het overzicht van kritieke systemen uit het
    continuïteitsbeleid. Wijkt een back-upplan daarvan af, dan beslist de proceseigenaar en legt die het
-   besluit vast. [8.13.02] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
+   besluit vast. [8.13.02] <a class="anker" href="#eis-4-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen» of «Een crisisteam, zonder BCM-functie»</strong></p>
 <ol start="5">
-<li id="eis-3-2-5">Er is geen BIA. De proceseigenaar stelt de hersteleisen vast met de CISO en de systeemeigenaar, op basis
+<li id="eis-4-5">Er is geen BIA. De proceseigenaar stelt de hersteleisen vast met de CISO en de systeemeigenaar, op basis
    van het impactniveau van de gegevens en het overzicht van kritieke systemen, en legt ze vast in het
-   back-upplan. [8.13.02] <a class="anker" href="#eis-3-2-5" aria-label="Link naar dit punt">#</a></li>
+   back-upplan. [8.13.02] <a class="anker" href="#eis-4-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-3-bescherming-van-de-back-up">3.3 Bescherming van de back-up<a class="anker" href="#3-3-bescherming-van-de-back-up" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="5-bescherming-van-de-back-up">5. Bescherming van de back-up<a class="anker" href="#5-bescherming-van-de-back-up" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-3-1">Ten minste één kopie van de back-up is binnen de bewaartermijn niet te wijzigen of te wissen
+<li id="eis-5-1">Ten minste één kopie van de back-up is binnen de bewaartermijn niet te wijzigen of te wissen
    (onveranderbaar of offline), ook niet met de beheerrechten van de productieomgeving. De beheerorganisatie
-   toont dat bij elke hersteltest aan. [8.13.01] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-2">Back-ups zijn versleuteld volgens het beleid cryptografie. De sleutels staan gescheiden van de back-up,
-   in een beheerde sleutelkluis, en zijn ook beschikbaar als de productieomgeving niet werkt. [8.13.01] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-3">Beheer van de back-upomgeving gaat met aparte, persoonsgebonden accounts met MFA, die niet in het gewone
+   toont dat bij elke hersteltest aan. [8.13.01] <a class="anker" href="#eis-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-2">Back-ups zijn versleuteld volgens het beleid cryptografie. De sleutels staan gescheiden van de back-up,
+   in een beheerde sleutelkluis, en zijn ook beschikbaar als de productieomgeving niet werkt. [8.13.01] <a class="anker" href="#eis-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-3">Beheer van de back-upomgeving gaat met aparte, persoonsgebonden accounts met MFA, die niet in het gewone
    domein of de gewone tenant zitten. Verwijderen of verkorten van bewaartermijnen vraagt goedkeuring van een
-   tweede persoon en wordt gelogd. [8.13.01] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-4">De beheerorganisatie controleert elke werkdag of alle back-uptaken zijn geslaagd. Een mislukte taak is
+   tweede persoon en wordt gelogd. [8.13.01] <a class="anker" href="#eis-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-4">De beheerorganisatie controleert elke werkdag of alle back-uptaken zijn geslaagd. Een mislukte taak is
    dezelfde of de volgende werkdag hersteld, of gemeld aan de systeemeigenaar met de reden. De controle en
-   de afhandeling staan in het logboek. [8.13.01] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-5">Bewaartermijnen passen bij het doel en bij de wet. Gegevens die volgens de archief- of privacyregels
+   de afhandeling staan in het logboek. [8.13.01] <a class="anker" href="#eis-5-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-5">Bewaartermijnen passen bij het doel en bij de wet. Gegevens die volgens de archief- of privacyregels
    vernietigd moeten zijn, verwijdert de beheerorganisatie uit de back-up aan het eind van de bewaartermijn
-   en legt dat vast. [8.13.01] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
+   en legt dat vast. [8.13.01] <a class="anker" href="#eis-5-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-4-gescheiden-opslag">3.4 Gescheiden opslag<a class="anker" href="#3-4-gescheiden-opslag" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="6-gescheiden-opslag">6. Gescheiden opslag<a class="anker" href="#6-gescheiden-opslag" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-4-1">Back-ups van systemen met impactniveau kritiek of hoger staan op ten minste twee plekken, waarvan één zo
+<li id="eis-6-1">Back-ups van systemen met impactniveau kritiek of hoger staan op ten minste twee plekken, waarvan één zo
    gescheiden van de productieomgeving dat een incident op de ene plek (brand, stroomuitval, een aanval op
    het netwerk of de beheeromgeving) de andere niet raakt. Een vuistregel is 3-2-1: drie kopieën, op twee
-   soorten opslag, één daarvan op een andere locatie. Het back-upregister noemt de locaties. [8.13.03] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
+   soorten opslag, één daarvan op een andere locatie. Het back-upregister noemt de locaties. [8.13.03] <a class="anker" href="#eis-6-1" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
 <ol start="2">
-<li id="eis-3-4-2">Bij een eigen datacenter staat de gescheiden kopie op een andere fysieke locatie of bij een externe
+<li id="eis-6-2">Bij een eigen datacenter staat de gescheiden kopie op een andere fysieke locatie of bij een externe
    opslagdienst, met een eigen beheeromgeving. Media die worden vervoerd, zijn versleuteld en de
-   beheerorganisatie houdt een logboek bij van waar ze zijn. [8.13.03] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
+   beheerorganisatie houdt een logboek bij van waar ze zijn. [8.13.03] <a class="anker" href="#eis-6-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
 <ol start="3">
-<li id="eis-3-4-3">Bij een hostingpartij is een gespiegeld tweede datacenter niet genoeg, omdat dat de kwetsbaarheden van het
+<li id="eis-6-3">Bij een hostingpartij is een gespiegeld tweede datacenter niet genoeg, omdat dat de kwetsbaarheden van het
    eerste deelt. Het contract regelt daarnaast een kopie bij een andere partij of in een gescheiden
-   omgeving, waar de organisatie zelf bij kan. De contracteigenaar controleert dat jaarlijks. [8.13.03] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
+   omgeving, waar de organisatie zelf bij kan. De contracteigenaar controleert dat jaarlijks. [8.13.03] <a class="anker" href="#eis-6-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
 <ol start="4">
-<li id="eis-3-4-4">Voor elke SaaS-dienst die een kritiek proces ondersteunt, legt functioneel beheer in het back-upregister
+<li id="eis-6-4">Voor elke SaaS-dienst die een kritiek proces ondersteunt, legt functioneel beheer in het back-upregister
    vast hoe de leverancier back-ups maakt, waar ze staan en hoe lang ze bewaard worden. Biedt de leverancier
    geen gescheiden kopie, of kan de organisatie er niet zelf bij, dan exporteert de organisatie de gegevens
-   periodiek naar eigen opslag of neemt zij een back-updienst van een andere partij af. [8.13.03] <a class="anker" href="#eis-3-4-4" aria-label="Link naar dit punt">#</a></li>
+   periodiek naar eigen opslag of neemt zij een back-updienst van een andere partij af. [8.13.03] <a class="anker" href="#eis-6-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)» of «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
 <ol start="5">
-<li id="eis-3-4-5">De cloudwerkplek (mail, bestanden, samenwerkruimtes) heeft een eigen back-up buiten de tenant. De
+<li id="eis-6-5">De cloudwerkplek (mail, bestanden, samenwerkruimtes) heeft een eigen back-up buiten de tenant. De
    ingebouwde prullenbak en het versiebeheer van de aanbieder gelden niet als back-up. De back-up omvat ook de
    inrichting die nodig is voor herstel, zoals groepen, rechten en beleidsinstellingen, voor zover de
    aanbieder dat mogelijk maakt. Functioneel beheer controleert elk kwartaal dat de back-up alle actieve
-   onderdelen dekt. [8.13.03] <a class="anker" href="#eis-3-4-5" aria-label="Link naar dit punt">#</a></li>
+   onderdelen dekt. [8.13.03] <a class="anker" href="#eis-6-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-5-herstel-en-testen">3.5 Herstel en testen<a class="anker" href="#3-5-herstel-en-testen" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="7-herstel-en-testen">7. Herstel en testen<a class="anker" href="#7-herstel-en-testen" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-5-1">Herstel uit een back-up gebeurt na toestemming van de systeemeigenaar. Bij een groot incident of
+<li id="eis-7-1">Herstel uit een back-up gebeurt na toestemming van de systeemeigenaar. Bij een groot incident of
    ransomware beslist de proceseigenaar over de opties, op advies van de beheerorganisatie en de CISO. De
-   beheerorganisatie logt elke hersteloperatie met aanvrager, tijdstip en resultaat. [8.13.04] <a class="anker" href="#eis-3-5-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-2">De beheerorganisatie test de herstelprocedure van elk systeem met impactniveau kritiek of hoger elk
+   beheerorganisatie logt elke hersteloperatie met aanvrager, tijdstip en resultaat. [8.13.04] <a class="anker" href="#eis-7-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-2">De beheerorganisatie test de herstelprocedure van elk systeem met impactniveau kritiek of hoger elk
    jaar en na elke grote wijziging, zoals een migratie of een nieuwe back-upvoorziening. De test zet echte
    gegevens terug, controleert of ze volledig en bruikbaar zijn en meet de benodigde tijd tegen de
-   hersteltijd. De uitkomst staat in een testverslag. [8.13.04] <a class="anker" href="#eis-3-5-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-3">Ten minste één test per jaar gaat uit van het ransomwarescenario: herstel uit de onveranderbare kopie,
-   in een schone omgeving, zonder gebruik van de beheeraccounts van productie. [8.13.04] <a class="anker" href="#eis-3-5-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-4">Haalt een test de hersteltijd niet, dan past de systeemeigenaar binnen drie maanden het back-upplan of de
-   voorziening aan, of accepteert de proceseigenaar het risico vastgelegd. [8.13.04, 8.13.02] <a class="anker" href="#eis-3-5-4" aria-label="Link naar dit punt">#</a></li>
+   hersteltijd. De uitkomst staat in een testverslag. [8.13.04] <a class="anker" href="#eis-7-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-3">Ten minste één test per jaar gaat uit van het ransomwarescenario: herstel uit de onveranderbare kopie,
+   in een schone omgeving, zonder gebruik van de beheeraccounts van productie. [8.13.04] <a class="anker" href="#eis-7-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-4">Haalt een test de hersteltijd niet, dan past de systeemeigenaar binnen drie maanden het back-upplan of de
+   voorziening aan, of accepteert de proceseigenaar het risico vastgelegd. [8.13.04, 8.13.02] <a class="anker" href="#eis-7-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
 <ol start="5">
-<li id="eis-3-5-5">De eigen beheerorganisatie voert de tests uit en legt ze vast in een testverslag met tijden, bevindingen
-   en opvolging. [8.13.04] <a class="anker" href="#eis-3-5-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-5">De eigen beheerorganisatie voert de tests uit en legt ze vast in een testverslag met tijden, bevindingen
+   en opvolging. [8.13.04] <a class="anker" href="#eis-7-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
 <ol start="6">
-<li id="eis-3-5-6">Back-up en herstel liggen bij de beheerpartij. Het contract verplicht die partij om de tests uit te voeren
+<li id="eis-7-6">Back-up en herstel liggen bij de beheerpartij. Het contract verplicht die partij om de tests uit te voeren
    met de organisatie erbij, de verslagen te leveren en ook kopieën te maken en te testen van onderdelen die
    bij andere leveranciers liggen, of dat expliciet uit te sluiten. De regieorganisatie houdt in het
-   back-upregister bij welke leverancier welk deel van de back-up doet. [8.13.04] <a class="anker" href="#eis-3-5-6" aria-label="Link naar dit punt">#</a></li>
+   back-upregister bij welke leverancier welk deel van de back-up doet. [8.13.04] <a class="anker" href="#eis-7-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="8-rollen-en-verantwoordelijkheden">8. Rollen en verantwoordelijkheden<a class="anker" href="#8-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -236,7 +238,7 @@ fysieke toegang en beveiliging).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="9-naleving-en-controle">9. Naleving en controle<a class="anker" href="#9-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>; afwijkingen gaan als bevinding naar het
 risicoregister.</p>
@@ -316,7 +318,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="10-samenhang">10. Samenhang<a class="anker" href="#10-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het hangt samen met het
 continuïteitsbeleid (kritieke systemen, BIA en uitwijk), het beleid informatieclassificatie (impactniveau
 als maat voor de hersteleisen), het beleid informatiebeveiliging bij inkoop en contractbeheer (afspraken
@@ -340,28 +342,28 @@ het beleid beveiligingsincidenten (herstel na ransomware) en het archiefbeleid (
 <td>8.13.01</td>
 <td>Back-up van informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Back-upplannen en scenario's</td>
+<td>3. Back-upplannen en scenario's</td>
 <td>BUR-01, BUR-02, BUR-04</td>
 </tr>
 <tr>
 <td>8.13.02</td>
 <td>Back-up van informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Hersteleisen</td>
+<td>4. Hersteleisen</td>
 <td>BUR-02, BUR-03</td>
 </tr>
 <tr>
 <td>8.13.03</td>
 <td>Back-up van informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.4 Gescheiden opslag</td>
+<td>6. Gescheiden opslag</td>
 <td>BUR-02, BUR-05</td>
 </tr>
 <tr>
 <td>8.13.04</td>
 <td>Back-up van informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.5 Herstel en testen</td>
+<td>7. Herstel en testen</td>
 <td>BUR-06, BUR-07</td>
 </tr>
 </tbody>

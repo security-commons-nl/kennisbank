@@ -1,5 +1,7 @@
 # Beleid veilige softwareontwikkeling
 
+[Download als Word](ssd.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Secure Software Development* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over beveiliging in software die de organisatie bouwt, laat bouwen of afneemt, voordat die in gebruik gaat. Behandelt architectuurprincipes, beveiligingseisen per toepassing, veilig ontwikkelen of de eisen daarvoor aan leveranciers, afspraken bij uitbestede ontwikkeling en testen met fictieve gegevens.
+
+**Onderwerpen.** 3. Architectuurprincipes; 4. Beveiligingseisen per toepassing; 5. Veilig ontwikkelen; 6. Uitbestede ontwikkeling; 7. Testgegevens.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -54,9 +60,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Architectuurprincipes
+## 3. Architectuurprincipes
 
 1. De architect stelt beveiligingsprincipes voor het ontwerp van informatiesystemen vast en houdt ze bij in
    **[architectuurdocument]**. Ze gelden
@@ -76,7 +80,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 3. Bij elk project of elke aanschaf toetst de architect het ontwerp aan de principes en legt de toets vast.
    Een afwijking wordt vastgelegd en door de systeemeigenaar als risico geaccepteerd. [8.27.01]
 
-### 3.2 Beveiligingseisen per toepassing
+## 4. Beveiligingseisen per toepassing
 
 1. Voor elke nieuwe toepassing of grote wijziging stelt de systeemeigenaar beveiligingseisen op, afgeleid
    uit het impactniveau, de vertrouwelijkheidsklasse en de risicoanalyse, en legt ze vast in het programma
@@ -95,7 +99,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 4. Een internetvoorziening krijgt voor ingebruikname een penetratietest; de bevindingen met een hoog risico
    zijn opgelost voordat de voorziening live gaat. Het rapport hoort bij het acceptatiedossier. [8.26.01]
 
-### 3.3 Veilig ontwikkelen
+## 5. Veilig ontwikkelen
 
 > **Alleen als: Bouwt je organisatie zelf software, apps of koppelingen? «Ja»**
 >
@@ -136,7 +140,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 >    architectuurprincipes, wordt door een tweede functioneel beheerder beoordeeld en gaat via het beleid
 >    wijzigingsbeheer. [8.25.01, 8.28.01]
 
-### 3.4 Uitbestede ontwikkeling
+## 6. Uitbestede ontwikkeling
 
 1. De eisen uit dit beleid gelden onverkort voor ontwikkeling door een leverancier, voor maatwerk en voor
    SaaS-diensten. De inkoopadviseur en de systeemeigenaar nemen ze op in het programma van eisen en in het
@@ -157,7 +161,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 >    persoonlijke accounts en volgens dezelfde richtlijnen als eigen ontwikkelaars. Hun rechten vervallen op
 >    de laatste werkdag van de opdracht. [8.30.01]
 
-### 3.5 Testgegevens
+## 7. Testgegevens
 
 1. Er wordt getest met fictieve gegevens. Kan een test daar aantoonbaar niet mee, dan beoordeelt de
    opdrachtgever van de test stap voor stap of het kan met geanonimiseerde gegevens, daarna met
@@ -171,7 +175,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
    nodige gegevens en een vaste einddatum waarop de beheerder de gegevens verwijdert. Het verwijderen wordt
    vastgelegd. [8.33.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -184,7 +188,7 @@ beveiligingstoets aan het begin van een project (beleid informatiebeveiliging in
 | CISO | Advies, jaarlijkse herziening van de principes met de architect, toetsing van dit beleid en van afwijkingen |
 | Leveranciers | Bouwen volgens de eisen en aanleveren van bewijs bij elke oplevering |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**; afwijkingen gaan als bevinding naar het
@@ -208,7 +212,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatiebeveiliging in projecten (de toets aan het begin), het beleid wijzigingsbeheer (testen, acceptatie
@@ -225,11 +229,11 @@ De maatregelen van dit domein (5, waarvan 2 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.25.01 | Beveiligen tijdens de ontwikkelcyclus | ISO-beheersmaatregel | 3.3 Veilig ontwikkelen | SSD-04, SSD-05, SSD-06 |
-| 8.26.01 | Toepassingsbeveiligingseisen | ISO-beheersmaatregel | 3.2 Beveiligingseisen per toepassing | SSD-02, SSD-03 |
-| 8.27.01 | Veilige systeemarchitectuur en technische uitgangspunten | overheidsmaatregel | 3.1 Architectuurprincipes | SSD-01 |
-| 8.28.01 | Veilig coderen | ISO-beheersmaatregel | 3.3 Veilig ontwikkelen | SSD-04, SSD-05, SSD-06 |
-| 8.30.01 | Uitbestede systeemontwikkeling | overheidsmaatregel | 3.4 Uitbestede ontwikkeling | SSD-06 |
+| 8.25.01 | Beveiligen tijdens de ontwikkelcyclus | ISO-beheersmaatregel | 5. Veilig ontwikkelen | SSD-04, SSD-05, SSD-06 |
+| 8.26.01 | Toepassingsbeveiligingseisen | ISO-beheersmaatregel | 4. Beveiligingseisen per toepassing | SSD-02, SSD-03 |
+| 8.27.01 | Veilige systeemarchitectuur en technische uitgangspunten | overheidsmaatregel | 3. Architectuurprincipes | SSD-01 |
+| 8.28.01 | Veilig coderen | ISO-beheersmaatregel | 5. Veilig ontwikkelen | SSD-04, SSD-05, SSD-06 |
+| 8.30.01 | Uitbestede systeemontwikkeling | overheidsmaatregel | 6. Uitbestede ontwikkeling | SSD-06 |
 
 Daarnaast vult dit stuk maatregelen van andere domeinen mee in: 8.33.01 (Testgegevens).
 

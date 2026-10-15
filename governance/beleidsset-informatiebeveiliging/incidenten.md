@@ -1,5 +1,7 @@
 # Beleid beveiligingsincidenten
 
+[Download als Word](incidenten.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Security Incident Management* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over het melden, beoordelen, afhandelen en leren van beveiligingsincidenten en datalekken. Behandelt het meldloket, de classificatie, detectie en escalatie, de afhandeling, meldingen aan externe partijen, coordinated vulnerability disclosure, het veiligstellen van bewijs en de evaluatie achteraf.
+
+**Onderwerpen.** 3. Meldloket en meldprocedure; 4. Beoordelen en classificeren; 5. Detectie en escalatie; 6. Afhandelen; 7. Melden aan externe partijen; 8. Coordinated vulnerability disclosure; 9. Bewijs verzamelen en bewaren; 10. Leren van incidenten.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -50,9 +56,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Meldloket en meldprocedure
+## 3. Meldloket en meldprocedure
 
 1. Medewerkers en externen melden een vermoed incident direct bij
    **[meldloket incidenten]**.
@@ -71,7 +75,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 5. Wie een incident meldt, meldt alleen wat hij zelf heeft waargenomen en onderneemt geen eigen onderzoek of
    herstelactie, tenzij het loket of de CISO daarom vraagt. [6.08.01]
 
-### 3.2 Beoordelen en classificeren
+## 4. Beoordelen en classificeren
 
 1. De CISO, of bij afwezigheid de vervanger, beoordeelt elke melding binnen één werkdag: is dit een incident,
    welke categorie en welke ernst. De CISO legt het besluit met de onderbouwing vast bij de melding; een
@@ -101,7 +105,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 >    per dienst. Voor forensisch onderzoek dat het team niet zelf kan doen, is een externe partij
 >    gecontracteerd. [5.24.01]
 
-### 3.3 Detectie en escalatie
+## 5. Detectie en escalatie
 
 > **Alleen als: Wie bewaakt je omgeving op aanvallen? «Eigen SOC»**
 >
@@ -122,7 +126,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 >    van de sectorale CERT en meldingen van buiten. De CISO zet het ontbreken van detectie als risico in het
 >    risicoregister, met een besluit van de directie over de aanpak. [5.24.03]
 
-### 3.4 Afhandelen
+## 6. Afhandelen
 
 1. De proceseigenaar handelt elk incident in zijn proces af via het incidentbeheerproces en wijst daarvoor
    direct na de beoordeling een behandelaar aan. De behandelaar beperkt eerst de schade, stelt daarna de
@@ -154,7 +158,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
    opgelost, welke maatregelen lopen nog. De CISO bundelt dit tot een maandrapport voor de
    eindverantwoordelijke bedrijfsvoering. [5.24.04]
 
-### 3.5 Melden aan externe partijen
+## 7. Melden aan externe partijen
 
 1. De incidentprocedure regelt de meldingen buiten de organisatie, elk met eigen termijn en eigenaar:
    het CSIRT en de toezichthouder volgens de Cyberbeveiligingswet waar die van toepassing is, de Autoriteit
@@ -188,7 +192,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 > 8. De organisatie is niet aangewezen onder de Cyberbeveiligingswet. De CISO meldt ernstige incidenten
 >    vrijwillig aan de sectorale CERT, zodat andere overheden gewaarschuwd kunnen worden. [5.24.07]
 
-### 3.6 Coordinated vulnerability disclosure
+## 8. Coordinated vulnerability disclosure
 
 1. De CISO is eigenaar van de CVD-procedure volgens de leidraad van het NCSC, gepubliceerd op de website met
    een meldadres en een security.txt-bestand. De procedure noemt de reactietermijn, de afspraken over openbaar
@@ -198,7 +202,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
    de melder binnen de reactietermijn uit de procedure. De meldingen en hun afhandeling zijn onderdeel van het
    maandrapport incidenten. [5.24.08]
 
-### 3.7 Bewijs verzamelen en bewaren
+## 9. Bewijs verzamelen en bewaren
 
 1. Bij een vermoed incident stelt de behandelaar eerst bewijs veilig en herstelt daarna pas, tenzij de schade
    dat niet toelaat. Wie bewijs verzamelt, legt vast wat, wanneer, door wie en waar het is opgeslagen, zodat de
@@ -209,7 +213,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
    maatregelen, de externe meldingen en het advies. De CISO bewaart het dossier ten minste drie jaar na
    afsluiting, ook als het vermoeden ongegrond bleek. [5.28.01]
 
-### 3.8 Leren van incidenten
+## 10. Leren van incidenten
 
 1. Na elk incident met ernst kritiek of hoger, en na elk meldplichtig datalek, organiseert de CISO binnen een
    maand een evaluatie met de proceseigenaar: oorzaak, wat werkte, wat niet, en welke maatregelen nodig zijn.
@@ -220,7 +224,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 3. Lessen die voor andere overheden waardevol zijn, deelt de CISO geanonimiseerd met de sectorale CERT of
    samenwerkingspartners, na toestemming van de proceseigenaar. [5.27.02]
 
-## 4. Rollen en verantwoordelijkheden
+## 11. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -232,7 +236,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 | **[lijneigenaar personeel]** | Registratie van de bevestiging van de meldprocedure door medewerkers en externen |
 | Medewerkers en externen | Direct melden van een vermoed incident, geen eigen onderzoek, meewerken aan het onderzoek |
 
-## 5. Naleving en controle
+## 12. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -256,7 +260,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 13. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De ernstniveaus volgen het beleid
 informatieclassificatie. Het beleid raakt het beleid logging en monitoring (detectie en bewijs), het beleid
@@ -272,19 +276,19 @@ De maatregelen van dit domein (13, waarvan 12 overheidsmaatregelen), waar dit st
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.24.01 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.1 Meldloket en meldprocedure | SIM-03, SIM-06 |
-| 5.24.02 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.1 Meldloket en meldprocedure | SIM-03, SIM-06 |
-| 5.24.03 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.3 Detectie en escalatie | SIM-03 |
-| 5.24.04 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.4 Afhandelen | SIM-01 |
-| 5.24.05 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.4 Afhandelen | SIM-05 |
-| 5.24.07 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.5 Melden aan externe partijen | SIM-03, SIM-05, SIM-07 |
-| 5.24.08 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3.6 Coordinated vulnerability disclosure | SIM-01, SIM-06 |
-| 5.25.02 | Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen | ISO-beheersmaatregel | 3.2 Beoordelen en classificeren | SIM-03, SIM-05 |
-| 5.26.02 | Reageren op informatiebeveiligings-incidenten | overheidsmaatregel | 3.4 Afhandelen | SIM-03 |
-| 5.27.01 | Leren van informatiebeveiligingsincidenten | overheidsmaatregel | 3.5 Melden aan externe partijen | SIM-03 |
-| 5.27.02 | Leren van informatiebeveiligingsincidenten | overheidsmaatregel | 3.8 Leren van incidenten | SIM-02 |
-| 5.28.01 | Verzamelen van bewijsmateriaal | overheidsmaatregel | 3.7 Bewijs verzamelen en bewaren | SIM-03 |
-| 6.08.01 | Melden van informatiebeveiligings-gebeurtenissen | overheidsmaatregel | 3.1 Meldloket en meldprocedure | SIM-04 |
+| 5.24.01 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3. Meldloket en meldprocedure | SIM-03, SIM-06 |
+| 5.24.02 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 3. Meldloket en meldprocedure | SIM-03, SIM-06 |
+| 5.24.03 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 5. Detectie en escalatie | SIM-03 |
+| 5.24.04 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 6. Afhandelen | SIM-01 |
+| 5.24.05 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 6. Afhandelen | SIM-05 |
+| 5.24.07 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 7. Melden aan externe partijen | SIM-03, SIM-05, SIM-07 |
+| 5.24.08 | Plannen en voorbereiden van het beheer van informatie-beveiligingsincidenten | overheidsmaatregel | 8. Coordinated vulnerability disclosure | SIM-01, SIM-06 |
+| 5.25.02 | Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen | ISO-beheersmaatregel | 4. Beoordelen en classificeren | SIM-03, SIM-05 |
+| 5.26.02 | Reageren op informatiebeveiligings-incidenten | overheidsmaatregel | 6. Afhandelen | SIM-03 |
+| 5.27.01 | Leren van informatiebeveiligingsincidenten | overheidsmaatregel | 7. Melden aan externe partijen | SIM-03 |
+| 5.27.02 | Leren van informatiebeveiligingsincidenten | overheidsmaatregel | 10. Leren van incidenten | SIM-02 |
+| 5.28.01 | Verzamelen van bewijsmateriaal | overheidsmaatregel | 9. Bewijs verzamelen en bewaren | SIM-03 |
+| 6.08.01 | Melden van informatiebeveiligings-gebeurtenissen | overheidsmaatregel | 3. Meldloket en meldprocedure | SIM-04 |
 
 ## Bijlage B: Afkortingen
 

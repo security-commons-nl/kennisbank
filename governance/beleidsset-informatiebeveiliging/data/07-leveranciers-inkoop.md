@@ -1,6 +1,16 @@
 ---
 domein: leveranciers-inkoop
 titel: Beleid informatiebeveiliging bij inkoop
+samenvatting: Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier.
+invoeren:
+  - Stel een standaardset beveiligingseisen voor inkoop op en stel die jaarlijks opnieuw vast (hoofdstuk 3).
+  - Leg de drempel vast waaronder een inkoop met de standaardset eisen kan (hoofdstuk 3).
+  - Stel een lijst op van voorwaarden van leveranciers die de organisatie nooit accepteert (hoofdstuk 4).
+  - Neem in contracten jaarlijks onafhankelijk bewijs en een auditrecht voor de organisatie op (hoofdstuk 5).
+  - Neem in contracten een meldplicht met termijn op voor incidenten, datalekken en kwetsbaarheden (hoofdstuk 6).
+  - Neem een exitregeling op in contracten voor kritieke processen of vertrouwelijke informatie (hoofdstuk 7).
+  - Richt per inkoop een inkoopdossier in met de vereiste stukken vóór ondertekening (hoofdstuk 10).
+  - Regel de overdracht van het inkoopdossier aan de contracteigenaar binnen een maand (hoofdstuk 10).
 ---
 
 ## 1. Doel en reikwijdte
@@ -48,9 +58,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Risicoafweging en eisen in de uitvraag
+## 3. Risicoafweging en eisen in de uitvraag
 
 - Bij elke inkoop met een informatiecomponent stelt de proceseigenaar vóór de uitvraag, samen met
   [[inkoopadviseur: de functie die het inkoopproces begeleidt]] en de CISO, vast welke informatie de
@@ -76,7 +84,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   en welke eisen de bestuurder daarvoor heeft goedgekeurd. [5.19.01]
 :::
 
-### 3.2 Voorwaarden in het contract
+## 4. Voorwaarden in het contract
 
 - De inkoopadviseur zet alle beveiligingseisen uit de uitvraag letterlijk of als verwijzing in het contract,
   met de afspraken uit de onderhandeling. Een eis die in de uitvraag stond en niet in het contract, geldt als
@@ -94,7 +102,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   verwerkersovereenkomst volgens het privacybeleid voordat de verwerking begint. De inkoopadviseur legt in
   het inkoopdossier vast dat die overeenkomst er is. [5.20.01]
 
-### 3.3 Bewijs van de leverancier en eigen onderzoek
+## 5. Bewijs van de leverancier en eigen onderzoek
 
 - Het contract verplicht de leverancier om aan te tonen dat hij aan de eisen voldoet, in opzet, bestaan en
   werking, met een rapport van een onafhankelijke derde. Voorbeelden zijn een ISAE 3000- of ISAE
@@ -111,7 +119,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
 - Restrisico's uit het bewijs of het eigen onderzoek zet de proceseigenaar vóór ondertekening in het
   risicoregister en behandelt ze volgens de risicomanagementmethodiek van de organisatie. [5.20.04]
 
-### 3.4 Transparantie over kwetsbaarheden en incidenten
+## 6. Transparantie over kwetsbaarheden en incidenten
 
 - Het contract verplicht de leverancier om beveiligingsincidenten, datalekken en kwetsbaarheden die de dienst
   aan de organisatie kunnen raken, te melden bij het meldloket van de organisatie (beleid
@@ -128,7 +136,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   aan het eindrapport binnen een maand. [5.20.05]
 :::
 
-### 3.5 Afhankelijkheid en exit
+## 7. Afhankelijkheid en exit
 
 - Vóór het contract beoordeelt de proceseigenaar of de afhankelijkheid van de leverancier beheersbaar is: zijn
   er alternatieven, hoe lang duurt een overstap en kan de organisatie haar gegevens in een bruikbaar formaat
@@ -141,7 +149,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
 - Bij software die de organisatie in eigen beheer draait en die niet makkelijk te vervangen is, regelt het
   contract een escrow of een gelijkwaardige continuïteitsregeling. [5.20.06]
 
-### 3.6 Keten van toeleveranciers
+## 8. Keten van toeleveranciers
 
 - Vóór het contract geeft de leverancier een overzicht van de toeleveranciers die bij de dienst betrokken
   zijn, met hun rol, de locatie van de verwerking en de risico's die hij daarin ziet. De inkoopadviseur
@@ -152,7 +160,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   nieuwe toeleverancier over te dragen, en verplicht hem om de beveiligingseisen aan zijn toeleveranciers
   door te geven. [5.21.02]
 
-### 3.7 Eisen per soort dienst
+## 9. Eisen per soort dienst
 
 ::: als hosting=eigen-dc
 - Bij inkoop van hardware en software voor het eigen datacenter regelt het contract hoe de leverancier op
@@ -195,7 +203,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   (patchen, kwetsbaarheden, wijzigingen, back-up). [5.20.01]
 :::
 
-### 3.8 Inkoopdossier en overdracht
+## 10. Inkoopdossier en overdracht
 
 - Elk inkoopdossier bevat vóór ondertekening: de risicoafweging, de eisen, de beoordeling van de voorwaarden,
   het eerste bewijs van de leverancier, het overzicht en de beoordeling van de keten, de exitregeling en, waar
@@ -205,7 +213,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
   [[contracteigenaar: de functie die het contract na ondertekening beheert]], zodat het contract in het
   register van leveranciers en contracten komt (beleid contractbeheer). [5.20.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 11. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -215,7 +223,7 @@ daarmee de zwaarste inkopen onder dit beleid: wat daar niet in staat, kan de org
 | Privacy officer of FG | Advies over de verwerkersovereenkomst en de verwerking van persoonsgegevens |
 | [[contracteigenaar]] | Ontvangst van het inkoopdossier en opname in het register van leveranciers en contracten |
 
-## 5. Naleving en controle
+## 12. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -239,7 +247,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 13. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en het inkoopbeleid van de organisatie. Het
 loopt door in het beleid contractbeheer (register, jaarlijkse beoordeling, clouddiensten, beëindiging). Het

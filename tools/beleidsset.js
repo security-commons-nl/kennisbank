@@ -7,6 +7,10 @@
   var NUMMER = /(?<![\d.])(\d\.\d{2}\.\d{2})(?![\d.])/g;
   var VELD = /\[\[([^\]:]+?)(?::\s*([^\]]+?))?\]\]/g;
   var CONTROLE = /^\|\s*([A-Z]{2,5}-\d{2,3})\s*\|/;
+  var HOOFDSTUK = /^## (\d+)\. (.+)$/;
+  var VOOR = 2, ACHTER = 3;  // vaste hoofdstukken voor en na de onderwerpen
+  var RIJ = /^(?:> )?\|\s*([A-Z]{2,5}-\d{2,3})\s*\|/;
+  var WEBPLEK = "https://security-commons-nl.github.io/kennisbank/governance/";
 
 
   function nummerRegels(regels) {
@@ -126,6 +130,15 @@
     ];
     titelblad.forEach(function (r) { uit.push(vulVelden(r, velden)); });
     uit.push("");
+    if (steen.samenvatting) uit.push("**In het kort.** " + steen.samenvatting, "");
+    var koppen = [];
+    steen.delen.forEach(function (deel) {
+      deel.regels.forEach(function (r) { var m = HOOFDSTUK.exec(r); if (m) koppen.push(m); });
+    });
+    var onderwerpen = koppen.slice(VOOR, koppen.length - ACHTER);
+    if (onderwerpen.length) {
+      uit.push("**Onderwerpen.** " + onderwerpen.map(function (m) { return m[1] + ". " + m[2]; }).join("; ") + ".", "");
+    }
     if (beantwoord.length) {
       uit.push("Opgesteld voor dit profiel: " + beantwoord.map(function (b) { return b[0] + " " + b[1]; }).join("; ") + ".");
     } else {
@@ -159,7 +172,84 @@
       velden.forEach(function (v) { uit.push("- **" + v[0] + "**" + (v[1] ? ": " + v[1] : "")); });
     }
     return { markdown: uit.join("\n") + "\n", gedekt: Object.keys(gedekt).sort(), controles: Object.keys(controles).sort(),
-             eigen: eigenIds, overheid: overheid };
+             eigen: eigenIds, overheid: overheid, waar: gedekt, controle_per: controles };
+  }
+
+  function profielzin(data, profiel) {
+    var vragen = {}, beantwoord = [];
+    data.profiel.vragen.forEach(function (v) { vragen[v.id] = v; });
+    data.profiel.vragen.forEach(function (v) {
+      var a = antwoordenVan(profiel, v.id);
+      if (a !== null) beantwoord.push(v.vraag + " " + a.map(function (x) { return label(vragen, v.id, x); }).join(", "));
+    });
+    return beantwoord.length ? "Opgesteld voor dit profiel: " + beantwoord.join("; ") + "."
+      : "Zonder profiel: tekst die van een contextvraag afhangt, telt mee.";
+  }
+
+  function cellen(regel) {
+    if (regel.indexOf("> ") === 0) regel = regel.slice(2);
+    return regel.trim().replace(/^\|+/, "").replace(/\|+$/, "").split("|").map(function (c) { return c.trim(); });
+  }
+
+  function veldenVan(markdown) {
+    var i = markdown.indexOf(LIJSTKOP);
+    if (i < 0) return [];
+    var lijst = markdown.slice(i + LIJSTKOP.length).split("\n## ")[0];
+    return lijst.split("\n").filter(function (r) { return r.indexOf("- **") === 0; })
+      .map(function (r) { return r.slice(4).split("**")[0]; });
+  }
+
+  // Spiegel van overzichten in tools/bouw_beleidsset.py.
+  function overzichten(data, profiel, stukken) {
+    var domeinen = {}, thema = {};
+    data.profiel.domeinen.forEach(function (d) { domeinen[d.id] = d.naam; });
+    data.bouwstenen.forEach(function (s) { thema[domeinen[s.domein]] = s; });
+    var zin = profielzin(data, profiel);
+
+    var m = ["# Maatregelenoverzicht", "", zin, "",
+      "Per BIO 2.0-maatregel het beleidsstuk dat hem invult, het hoofdstuk waar dat gebeurt en de controle die de " +
+      "naleving aantoont. Nummers volgens " + data.maatregelen.versie + ". Komt een maatregel ook in een ander stuk " +
+      "terug, dan staat dat in de laatste kolom.", "",
+      "| Maatregel | Titel | Soort | Beleidsstuk | Hoofdstuk | Controle | Ook in |", "|---|---|---|---|---|---|---|"];
+    data.maatregelen.maatregelen.slice().sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; }).forEach(function (mr) {
+      var steen = thema[mr.thema];
+      if (!steen) return;
+      var stuk = stukken[steen.domein];
+      var ook = data.bouwstenen.filter(function (s) { return s !== steen && mr.id in stukken[s.domein].waar; })
+        .map(function (s) { return s.titel; });
+      m.push("| " + mr.id + " | " + mr.titel + " | " + (mr.soort === "overheid" ? "overheid" : "ISO") + " | " + steen.titel + " | " +
+        (mr.id in stuk.waar ? stuk.waar[mr.id] : "niet ingevuld") + " | " +
+        ((stuk.controle_per[mr.id] || []).join(", ") || "geen") + " | " + ook.join(", ") + " |");
+    });
+
+    var v = ["# Invoeren: wat er nog moet gebeuren", "", zin, "",
+      "Een vastgesteld beleid werkt pas als de organisatie het inricht. Deze lijst zet per stuk op een rij wat " +
+      "daarvoor nodig is: wat de organisatie inricht, welke controles zij gaat uitvoeren en wat zij nog moet " +
+      "invullen. Een plan met volgorde, eigenaar per thema en urenraming staat in " +
+      "[BIO 2.0 invoeren](" + WEBPLEK + "bio2-implementeren/).", "",
+      "## Voor de hele set", "",
+      "- Wijs per stuk de eigenaar aan en laat het stuk vaststellen.",
+      "- Richt één registratie van controles in: per controle de uitvoerder, de frequentie, het bewijs en de uitkomst.",
+      "- Richt het risicoregister in voor afwijkingen en bevindingen, met een risico-eigenaar die restrisico's accepteert.",
+      "- Zet alle controles in een jaarkalender, zodat elke controle op tijd wordt uitgevoerd."];
+    data.bouwstenen.forEach(function (s, i) {
+      var md = stukken[s.domein].markdown;
+      var rijen = md.split("\n").filter(function (r) { return RIJ.test(r); }).map(cellen);
+      v.push("", "## " + (i + 1) + ". " + s.titel, "");
+      if (s.invoeren && s.invoeren.length) {
+        v.push("**Inrichten**", "");
+        s.invoeren.forEach(function (a) { v.push("- " + a); });
+        v.push("");
+      }
+      if (rijen.length) {
+        v.push("**Controles inrichten (" + rijen.length + ")**", "", "| Nr | Controle | Uitvoerder | Frequentie |", "|---|---|---|---|");
+        rijen.forEach(function (c) { v.push("| " + c[0] + " | " + c[1] + " | " + c[2] + " | " + c[3] + " |"); });
+        v.push("");
+      }
+      var velden = veldenVan(md);
+      v.push("**Nog in te vullen (" + velden.length + ").** " + (velden.length ? velden.join("; ") + "." : "Niets."));
+    });
+    return { maatregelen: m.join("\n") + "\n", invoeren: v.join("\n") + "\n" };
   }
 
   function genereer(data, profiel) {
@@ -200,7 +290,8 @@
     return markdown;
   }
 
-  var api = { genereer: genereer, genereerStuk: genereerStuk, beoordeel: beoordeel, vulWaarden: vulWaarden };
+  var api = { genereer: genereer, genereerStuk: genereerStuk, beoordeel: beoordeel, vulWaarden: vulWaarden,
+              overzichten: overzichten };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else wereld.Beleidsset = api;
 })(this);

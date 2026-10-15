@@ -1,5 +1,7 @@
 # Beleid informatieclassificatie
 
+[Download als Word](classificatie.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Informatie classificatie* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over het classificeren, labelen en veilig overdragen van informatie op beschikbaarheid, integriteit en vertrouwelijkheid. Behandelt de classificatiemethode met vijf impactniveaus, de minimumeisen per label, het labelen van documenten en hardware, en de eisen aan websites, e-mail, certificaten en andere overdracht.
+
+**Onderwerpen.** 3. Classificatiemethode; 4. Eisen per niveau; 5. Labelen; 6. Overdragen van informatie.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -49,9 +55,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Classificatiemethode
+## 3. Classificatiemethode
 
 1. De organisatie classificeert met een vastgestelde impactmethode die deel uitmaakt van de
    risicomanagementmethode van de organisatie, bijvoorbeeld een baselinetoets of een BIA. De methode staat in
@@ -86,7 +90,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 >    Voorschrift Informatiebeveiliging Rijksdienst Bijzondere Informatie. De classificatiemethode legt vast
 >    welke rubricering bij welk label hoort; bij verschil geldt de zwaarste eis. [5.12.01]
 
-### 3.2 Eisen per niveau
+## 4. Eisen per niveau
 
 1. Elk vertrouwelijkheidslabel heeft een vaste set minimumeisen; de basis is de BIO 2.0 en de
    risicoafweging van de proceseigenaar. De systeemeigenaar past ten minste de volgende eisen toe en toont
@@ -104,7 +108,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    rechtsgevolgen hebben, en logt het systeem elke wijziging met wie, wat en wanneer volgens het beleid logging
    en monitoring. [5.12.01]
 3. Voor beschikbaarheid legt de proceseigenaar per systeem de hersteltijd en het toelaatbaar gegevensverlies
-   vast in het continuïteitsbeleid, op basis van het impactniveau uit de tabel in paragraaf 3.1. [5.12.01]
+   vast in het continuïteitsbeleid, op basis van het impactniveau uit de tabel in hoofdstuk 3. [5.12.01]
 4. De zone-indeling in het beleid fysieke toegang en beveiliging volgt de impactniveaus: een systeem staat in
    de zone die bij zijn hoogste impactniveau hoort. De systeemeigenaar controleert dat bij ingebruikname en bij
    elke herclassificatie. [5.12.01]
@@ -135,7 +139,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 >    gelden, en gaan niet via gewone e-mail of chat naar ontvangers buiten de kring die de wet toestaat.
 >    [5.12.01]
 
-### 3.3 Labelen
+## 5. Labelen
 
 1. Informatie met het label vertrouwelijk of hoger is herkenbaar gelabeld: digitaal met een
    classificatielabel in de metagegevens van het document, het bericht of de gegevensverzameling, en op
@@ -155,7 +159,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 6. De proceseigenaar controleert jaarlijks met een steekproef of de informatie in zijn systemen en
    documentopslag juist is gelabeld, en laat afwijkingen binnen een maand herstellen. [5.13.01]
 
-### 3.4 Overdragen van informatie
+## 6. Overdragen van informatie
 
 1. Websites, webapplicaties, API's en het e-mailverkeer van de organisatie die vanaf internet bereikbaar zijn,
    voldoen aan de verplichte standaarden van de lijst van het Forum Standaardisatie en aan de eisen uit het
@@ -185,7 +189,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
    hoger gaat alleen naar ontvangers met wie een schriftelijke afspraak over vertrouwelijkheid bestaat.
    [5.14.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -197,7 +201,7 @@ beveiliging) en het wissen en vernietigen van dragers (beleid afvoer en hergebru
 | Inkoop en contractbeheer | Eisen uit dit beleid in uitvragen en contracten, toetsen van verklaringen van leveranciers |
 | Medewerkers en inhuur | Informatie labelen, volgens het label behandelen en via de passende voorziening overdragen |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -221,7 +225,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De classificatie stuurt het beleid
 logische toegangsbeveiliging (rechten per label), het beleid cryptografie (versleuteling per label), het
@@ -238,13 +242,13 @@ De maatregelen van dit domein (7, waarvan 6 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.12.01 | Classificeren van informatie | overheidsmaatregel | 3.1 Classificatiemethode | CLS-01, CLS-02 |
-| 5.13.01 | Labelen van informatie | ISO-beheersmaatregel | 3.3 Labelen | CLS-03 |
-| 5.14.01 | Overdragen van informatie | overheidsmaatregel | 3.2 Eisen per niveau | CLS-04 |
-| 5.14.02 | Overdragen van informatie | overheidsmaatregel | 3.4 Overdragen van informatie | CLS-06 |
-| 5.14.03 | Overdragen van informatie | overheidsmaatregel | 3.4 Overdragen van informatie | CLS-07 |
-| 5.14.04 | Overdragen van informatie | overheidsmaatregel | 3.4 Overdragen van informatie | CLS-05 |
-| 5.14.05 | Overdragen van informatie | overheidsmaatregel | 3.4 Overdragen van informatie | CLS-05 |
+| 5.12.01 | Classificeren van informatie | overheidsmaatregel | 3. Classificatiemethode | CLS-01, CLS-02 |
+| 5.13.01 | Labelen van informatie | ISO-beheersmaatregel | 5. Labelen | CLS-03 |
+| 5.14.01 | Overdragen van informatie | overheidsmaatregel | 4. Eisen per niveau | CLS-04 |
+| 5.14.02 | Overdragen van informatie | overheidsmaatregel | 6. Overdragen van informatie | CLS-06 |
+| 5.14.03 | Overdragen van informatie | overheidsmaatregel | 6. Overdragen van informatie | CLS-07 |
+| 5.14.04 | Overdragen van informatie | overheidsmaatregel | 6. Overdragen van informatie | CLS-05 |
+| 5.14.05 | Overdragen van informatie | overheidsmaatregel | 6. Overdragen van informatie | CLS-05 |
 
 ## Bijlage B: Afkortingen
 

@@ -1,6 +1,16 @@
 ---
 domein: leveranciers-contract
 titel: Beleid informatiebeveiliging in contractbeheer
+samenvatting: Regelt hoe de organisatie zicht houdt op leveranciers met een informatiecomponent zolang een contract loopt. Gaat over het register van leveranciers en contracten, de jaarlijkse beoordeling van de leverancier, de keten van toeleveranciers, clouddiensten en het beëindigen van een contract.
+invoeren:
+  - Zet een register van leveranciers en contracten op met de verplichte velden per contract (hoofdstuk 3).
+  - Spreek met inkoop een kwartaalvergelijking af tussen het register en de contractadministratie (hoofdstuk 3).
+  - Stel een format voor de leveranciersbeoordeling op met de vragen en het bewijs per vraag (hoofdstuk 4).
+  - Plan de jaarlijkse beoordeling per leverancier en leg de datum vast in het register (hoofdstuk 4).
+  - Neem de toeleveringsketen van elke kritieke dienst op in de risicoanalyse (hoofdstuk 5).
+  - Inventariseer alle clouddiensten, ook gratis en zelf afgenomen diensten, en zet ze in het register (hoofdstuk 6).
+  - Controleer of elk cloudcontract de gronden voor ontbinding noemt (hoofdstuk 6).
+  - Zet kritieke contracten zonder exitregeling in het risicoregister tot de eerstvolgende verlenging (hoofdstuk 7).
 ---
 
 ## 1. Doel en reikwijdte
@@ -45,9 +55,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Register van leveranciers en contracten
+## 3. Register van leveranciers en contracten
 
 - [[contracteigenaar: de functie die het contract beheert]] houdt per contract het register van leveranciers
   en contracten met een informatiecomponent bij. Per contract staat erin: de dienst, de contracteigenaar, de
@@ -62,7 +70,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
   register en stelt elk kwartaal vast dat het register overeenkomt met de contractadministratie van inkoop.
   [5.22.02]
 
-### 3.2 Jaarlijkse beoordeling van de leverancier
+## 4. Jaarlijkse beoordeling van de leverancier
 
 - De proceseigenaar beoordeelt elk jaar of de leverancier aan de afgesproken beveiligingseisen voldoet. Hij
   gebruikt daarvoor het bewijs dat de leverancier volgens het contract aanlevert (beleid informatiebeveiliging
@@ -93,7 +101,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
   van de software en de meldingen van de leverancier over kwetsbaarheden. [5.22.01]
 :::
 
-### 3.3 Keten van toeleveranciers
+## 5. Keten van toeleveranciers
 
 - Het contract verplicht de leverancier om de beveiligingseisen ook op zijn toeleveranciers toe te passen.
   Laat hij een eis voor een toeleverancier vallen omdat die eis voor diens rol niet van toepassing is, dan
@@ -120,11 +128,11 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
   het stelsel eigen voorwaarden stelt aan locatie en uitbesteding. [5.22.02]
 :::
 
-### 3.4 Clouddiensten
+## 6. Clouddiensten
 
 - De organisatie past een vaste werkwijze toe voor clouddiensten. Die beschrijft hoe de organisatie
   clouddiensten inventariseert, classificeert op de informatie die ze verwerken, selecteert, beoordeelt en
-  beheert, en hoe ze de dienst beëindigt. Deze paragraaf en het beleid informatiebeveiliging bij inkoop zijn
+  beheert, en hoe ze de dienst beëindigt. Dit hoofdstuk en het beleid informatiebeveiliging bij inkoop zijn
   samen die werkwijze; de CISO is er eigenaar van en herziet haar ten minste eens per drie jaar. [5.23.01]
 - Inventariseren: de contracteigenaar zet elke clouddienst in het register, ook gratis diensten en diensten
   die een afdeling zelf afneemt. Wie een clouddienst gebruikt die niet in het register staat, meldt dat bij de
@@ -146,7 +154,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
   wijziging aan de proceseigenaar en de CISO. [5.23.01]
 :::
 
-### 3.5 Beëindigen van een contract
+## 7. Beëindigen van een contract
 
 - Bij het einde van een contract voert de contracteigenaar de exitregeling uit: gegevens terug in het
   afgesproken formaat, overdracht aan de opvolger, intrekken van alle toegang van de leverancier op de
@@ -156,7 +164,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
   vertrouwelijk of hoger, dan spreekt de contracteigenaar die alsnog af bij de eerstvolgende verlenging, en
   staat het ontbreken tot die tijd in het risicoregister. [5.22.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -167,7 +175,7 @@ per contract voor welke deelnemers het geldt, en de deelnemers krijgen de uitkom
 | Privacy officer of FG | Toezicht op verwerkersovereenkomsten en meldingen van datalekken door leveranciers |
 | Medewerkers | Melden van clouddiensten die niet in het register staan |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -192,7 +200,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en volgt op het beleid informatiebeveiliging
 bij inkoop (eisen, eerste bewijs, exitregeling). Het raakt het beleid informatieclassificatie (welke informatie

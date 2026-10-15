@@ -1,5 +1,7 @@
 # Beleid back-up en recovery
 
+[Download als Word](back-up.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Back-up & Recovery* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over het maken, beschermen en terugzetten van back-ups, met ransomware als leidend scenario. Behandelt back-upplannen en het back-upregister, hersteleisen per systeem, een onveranderbare kopie, gescheiden opslag op meerdere plekken en het jaarlijks testen van herstel.
+
+**Onderwerpen.** 3. Back-upplannen en scenario's; 4. Hersteleisen; 5. Bescherming van de back-up; 6. Gescheiden opslag; 7. Herstel en testen.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -48,9 +54,7 @@ fysieke toegang en beveiliging).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Back-upplannen en scenario's
+## 3. Back-upplannen en scenario's
 
 1. Dit beleid en de back-upplannen per omgeving leggen samen vast wat wordt bewaard, hoe vaak, hoe lang, waar
    en hoe het is beschermd. **[eigenaar back-upplannen]**
@@ -64,7 +68,7 @@ fysieke toegang en beveiliging).
    een back-upregister bij met per systeem en per SaaS-dienst: het back-upplan, de hersteleisen, de locaties
    van de kopieën, de onveranderbare kopie en de datum van de laatste hersteltest. [8.13.01]
 
-### 3.2 Hersteleisen
+## 4. Hersteleisen
 
 1. Per systeem of gegevensverzameling stelt de proceseigenaar het maximale gegevensverlies (RPO) en de
    maximale hersteltijd (RTO) vast, met een vastgelegde risicoafweging. De proceseigenaar legt ook het
@@ -90,7 +94,7 @@ fysieke toegang en beveiliging).
 >    van het impactniveau van de gegevens en het overzicht van kritieke systemen, en legt ze vast in het
 >    back-upplan. [8.13.02]
 
-### 3.3 Bescherming van de back-up
+## 5. Bescherming van de back-up
 
 1. Ten minste één kopie van de back-up is binnen de bewaartermijn niet te wijzigen of te wissen
    (onveranderbaar of offline), ook niet met de beheerrechten van de productieomgeving. De beheerorganisatie
@@ -107,7 +111,7 @@ fysieke toegang en beveiliging).
    vernietigd moeten zijn, verwijdert de beheerorganisatie uit de back-up aan het eind van de bewaartermijn
    en legt dat vast. [8.13.01]
 
-### 3.4 Gescheiden opslag
+## 6. Gescheiden opslag
 
 1. Back-ups van systemen met impactniveau kritiek of hoger staan op ten minste twee plekken, waarvan één zo
    gescheiden van de productieomgeving dat een incident op de ene plek (brand, stroomuitval, een aanval op
@@ -141,7 +145,7 @@ fysieke toegang en beveiliging).
 >    aanbieder dat mogelijk maakt. Functioneel beheer controleert elk kwartaal dat de back-up alle actieve
 >    onderdelen dekt. [8.13.03]
 
-### 3.5 Herstel en testen
+## 7. Herstel en testen
 
 1. Herstel uit een back-up gebeurt na toestemming van de systeemeigenaar. Bij een groot incident of
    ransomware beslist de proceseigenaar over de opties, op advies van de beheerorganisatie en de CISO. De
@@ -167,7 +171,7 @@ fysieke toegang en beveiliging).
 >    bij andere leveranciers liggen, of dat expliciet uit te sluiten. De regieorganisatie houdt in het
 >    back-upregister bij welke leverancier welk deel van de back-up doet. [8.13.04]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -179,7 +183,7 @@ fysieke toegang en beveiliging).
 | Contracteigenaar | Vastleggen van de eisen uit dit beleid bij leveranciers en toetsen van hun verklaringen en testverslagen |
 | CISO | Advies, jaarlijkse toetsing van dit beleid en van de bescherming tegen ransomware, beoordeling van afwijkingen |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**; afwijkingen gaan als bevinding naar het
@@ -203,7 +207,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het hangt samen met het
 continuïteitsbeleid (kritieke systemen, BIA en uitwijk), het beleid informatieclassificatie (impactniveau
@@ -218,10 +222,10 @@ De maatregelen van dit domein (4, waarvan 4 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.13.01 | Back-up van informatie | overheidsmaatregel | 3.1 Back-upplannen en scenario's | BUR-01, BUR-02, BUR-04 |
-| 8.13.02 | Back-up van informatie | overheidsmaatregel | 3.2 Hersteleisen | BUR-02, BUR-03 |
-| 8.13.03 | Back-up van informatie | overheidsmaatregel | 3.4 Gescheiden opslag | BUR-02, BUR-05 |
-| 8.13.04 | Back-up van informatie | overheidsmaatregel | 3.5 Herstel en testen | BUR-06, BUR-07 |
+| 8.13.01 | Back-up van informatie | overheidsmaatregel | 3. Back-upplannen en scenario's | BUR-01, BUR-02, BUR-04 |
+| 8.13.02 | Back-up van informatie | overheidsmaatregel | 4. Hersteleisen | BUR-02, BUR-03 |
+| 8.13.03 | Back-up van informatie | overheidsmaatregel | 6. Gescheiden opslag | BUR-02, BUR-05 |
+| 8.13.04 | Back-up van informatie | overheidsmaatregel | 7. Herstel en testen | BUR-06, BUR-07 |
 
 ## Bijlage B: Afkortingen
 

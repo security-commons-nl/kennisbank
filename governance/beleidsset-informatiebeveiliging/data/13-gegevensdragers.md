@@ -1,6 +1,16 @@
 ---
 domein: gegevensdragers
 titel: Beleid afvoer en hergebruik van gegevensdragers
+samenvatting: Over gegevensdragers, van USB-stick en harde schijf tot papier, en over informatie in systemen die niet meer nodig is. Behandelt het gebruik van verwijderbare media, wissen en vernietigen, afvoer en hergebruik van apparatuur, wissen in systemen en transport.
+invoeren:
+  - Blokkeer verwijderbare media op beheerde werkplekken en richt een uitzonderingenregister in (hoofdstuk 3).
+  - Stel een verwijderinstructie op met de methode per type drager en per label (hoofdstuk 4).
+  - Kies wisproducten met een positief NBV-inzetadvies of leg het alternatief vast (hoofdstuk 4).
+  - Richt een wisverslag per drager in met kenmerk, methode, product, datum en controle (hoofdstuk 4).
+  - Neem methode, controle en vernietigingscertificaat per drager op in contracten met vernietigingsleveranciers (hoofdstuk 4).
+  - Leg per gegevensverzameling de bewaartermijn vast en richt automatisch wissen in (hoofdstuk 6).
+  - Stel een transportprocedure met transportregistratie op voor gegevensdragers (hoofdstuk 7).
+  - Leg de betrouwbaarheidseisen voor koeriers en transporteurs vast in een document (hoofdstuk 7).
 ---
 
 ## 1. Doel en reikwijdte
@@ -41,9 +51,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Gebruik van verwijderbare media
+## 3. Gebruik van verwijderbare media
 
 - Het opslaan van informatie op verwijderbare media is standaard niet toegestaan en technisch geblokkeerd op
   beheerde werkplekken. Een uitzondering vraagt de gebruiker aan bij
@@ -57,9 +65,9 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
   het niet gebruikt, en meldt hij bij verlies direct als beveiligingsincident. [7.10.01]
 - Media die de organisatie niet meer nodig heeft, levert de gebruiker in bij
   [[uitgiftepunt apparatuur: de functie die apparatuur en media uitgeeft en inneemt, bijvoorbeeld de servicedesk]];
-  het uitgiftepunt wist of vernietigt ze volgens paragraaf 3.2. [7.10.01]
+  het uitgiftepunt wist of vernietigt ze volgens hoofdstuk 4. [7.10.01]
 
-### 3.2 Wissen en vernietigen
+## 4. Wissen en vernietigen
 
 - [[lijneigenaar gegevensdragers: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT]] stelt een
   verwijderinstructie voor gegevensdragers vast en beoordeelt die jaarlijks. Die schrijft voor dat van elk
@@ -83,7 +91,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 - Papier met informatie met het label intern of hoger gaat in afgesloten containers voor vernietiging; de
   vernietigingsleverancier levert per lediging een certificaat. [7.10.01]
 
-### 3.3 Afvoer en hergebruik van apparatuur
+## 5. Afvoer en hergebruik van apparatuur
 
 - Apparatuur met vaste opslag die de organisatie verlaat of een andere gebruiker krijgt (verkoop, schenking,
   einde lease, hergebruik binnen de organisatie, afvoer als afval) gaat eerst langs
@@ -104,7 +112,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
   huur- of leasecontract staat in het contract dat de leverancier de opslag wist of afgeeft en daarvan een
   verslag levert. [7.14.01]
 
-### 3.4 Wissen van informatie in systemen
+## 6. Wissen van informatie in systemen
 
 - De proceseigenaar legt per gegevensverzameling vast hoe lang de informatie nodig is, op basis van de
   bewaartermijnen uit de selectielijst en de wet, en zorgt dat de systeemeigenaar de informatie na afloop van
@@ -126,7 +134,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
   samenwerkingsomgevingen hebben bewaard; de gedragsregels uit het beleid bedrijfsmiddelenbeheer verbieden
   het bewaren van eigen kopieën buiten de systemen van de organisatie. [8.10.01]
 
-### 3.5 Transport
+## 7. Transport
 
 - Gegevensdragers met informatie worden vervoerd volgens een vaste transportprocedure: versleuteld, in een
   verzegelde verpakking en met een registratie van inhoud, afzender, ontvanger, vervoerder, datum van
@@ -144,7 +152,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 - Back-upmedia die naar een andere locatie gaan, volgen dezelfde transportprocedure; het beleid back-up en
   recovery zegt hoe vaak en waarheen. [7.10.03]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -156,7 +164,7 @@ versleutelingseisen zelf (beleid cryptografie), de bewaartermijnen uit de Archie
 | CISO | Advies, jaarlijkse toetsing van opzet en werking van dit beleid, akkoord op uitzonderingen voor vertrouwelijk en hoger, besluit bij afwijking van het NBV-advies |
 | Medewerkers en inhuur | Geen informatie op losse dragers zonder uitzondering, media achter slot bewaren, verlies van een drager direct melden als incident |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -180,7 +188,7 @@ worden ten minste jaarlijks opnieuw beoordeeld.
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (inventaris, inname en gedragsregels), het beleid informatieclassificatie (labels die

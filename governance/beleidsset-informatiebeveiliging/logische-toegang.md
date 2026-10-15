@@ -1,5 +1,7 @@
 # Beleid logische toegangsbeveiliging
 
+[Download als Word](logische-toegang.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Logische toegangsbeveiliging* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt de toegang tot informatiesystemen, netwerken en gegevens: hoe accounts ontstaan en vervallen, hoe gebruikers zich aanmelden en wie welke rechten krijgt. Behandelt accounts, MFA, wachtwoorden, werken op afstand, periodieke beoordeling van rechten, beheeraccounts, toegang voor leveranciers, hoog gelabelde informatie en broncode.
+
+**Onderwerpen.** 3. Identiteiten en accounts; 4. Authenticatie en MFA; 5. Wachtwoorden; 6. Toegang tot de vertrouwde zone en werken op afstand; 7. Toegangsrechten en periodieke beoordeling; 8. Accounts met bijzondere rechten; 9. Toegang voor leveranciers; 10. Informatie met een hoog vertrouwelijkheidslabel; 11. Broncode.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -52,9 +58,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Identiteiten en accounts
+## 3. Identiteiten en accounts
 
 1. **[lijneigenaar logische toegang]**
    richt één accountproces in, gekoppeld aan de personeelsadministratie en de registratie van inhuur:
@@ -81,7 +85,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
    ingebruikname. Een technisch account heeft een eigenaar, kan niet interactief aanmelden en staat in het
    register van accounts met bijzondere rechten. [5.16.02, 5.18.01]
 
-### 3.2 Authenticatie en MFA
+## 4. Authenticatie en MFA
 
 1. MFA is verplicht bij het aanmelden op de digitale werkomgeving, bij elk account op een voorziening die via
    internet bereikbaar is en bij elk account met beheerrechten. Waar de risicoanalyse van een systeem dat
@@ -113,7 +117,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 > 9. Op de on-premises werkplek geldt MFA bij elke toegang van buiten het kantoornetwerk (VPN of remote
 >    desktop) en bij elk beheeraccount. Op kantoor loopt het primaire aanmelden met een pas of token. [5.17.01]
 
-### 3.3 Wachtwoorden
+## 5. Wachtwoorden
 
 1. Elke medewerker krijgt een wachtwoordmanager van de organisatie. Wachtwoorden voor werk staan niet in
    browsers op privéapparaten, in documenten of op papier. [5.17.02]
@@ -125,7 +129,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 3. Wachtwoorden verlopen niet periodiek. Bij een vermoeden van lekken vervangt de gebruiker het wachtwoord
    direct. [5.17.03]
 
-### 3.4 Toegang tot de vertrouwde zone en werken op afstand
+## 6. Toegang tot de vertrouwde zone en werken op afstand
 
 1. Toegang tot het interne netwerk en de interne systemen krijgt alleen apparatuur die de organisatie kent en
    heeft geauthenticeerd, of programmatuur in een afgeschermde omgeving zoals een virtuele werkplek of een
@@ -147,7 +151,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 >    (netwerktoegangscontrole). Toegang van buiten loopt via een VPN of virtuele werkplek die ook het apparaat
 >    controleert. [5.15.01]
 
-### 3.5 Toegangsrechten en periodieke beoordeling
+## 7. Toegangsrechten en periodieke beoordeling
 
 1. Een bevoegde leidinggevende vraagt rechten aan via het ticketsysteem; functioneel beheer toetst de aanvraag
    aan de autorisatiematrix en richt de rechten in. Het ticket toont aanvraag, goedkeuring en inrichting.
@@ -194,7 +198,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 > 10. De systeemeigenaar beoordeelt de autorisaties voor politiegegevens elk halfjaar, en elke raadpleging wordt
 >    vastgelegd, zodat de periodieke Wpg-audit kan aantonen wie wat heeft ingezien. [5.18.02]
 
-### 3.6 Accounts met bijzondere rechten
+## 8. Accounts met bijzondere rechten
 
 1. Een beheerder heeft een apart beheeraccount, zonder mail en internettoegang. [8.02.01]
 2. Beheerrechten worden waar het kan alleen voor de duur van een taak toegekend (just-in-time), met een
@@ -228,7 +232,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 > 10. Het contract bepaalt dat de beheerpartij systeemhulpmiddelen alleen inzet voor de afgesproken
 >    dienstverlening en de logging daarvan zes maanden bewaart en op verzoek levert. [8.18.01, 8.18.02]
 
-### 3.7 Toegang voor leveranciers
+## 9. Toegang voor leveranciers
 
 1. Een leverancier krijgt toegang tot het netwerk of een systeem pas na een risicoafweging door de
    systeemeigenaar: welke systemen, welke rechten, vanaf waar en voor hoe lang. Een leidinggevende van de
@@ -239,7 +243,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 3. Het register van leveranciersaccounts laat zien wie toegang heeft, wie die heeft goedgekeurd en wanneer
    ze is geactiveerd en beëindigd. [8.05.01]
 
-### 3.8 Informatie met een hoog vertrouwelijkheidslabel
+## 10. Informatie met een hoog vertrouwelijkheidslabel
 
 1. Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
    aparte systemen, databases of omgevingen die fysiek of logisch gescheiden zijn van de algemene
@@ -252,7 +256,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 >    buiten de eigen caseload wordt gelogd en door de systeemeigenaar elk kwartaal steekproefsgewijs
 >    gecontroleerd. [8.03.01, 8.03.02]
 
-### 3.9 Broncode
+## 11. Broncode
 
 1. Toegang tot broncode, scripts en configuratiebestanden in een repository is beperkt tot de ontwikkelaars
    en beheerders die eraan werken; de eigenaar van de repository kent lees- en schrijfrechten apart toe en
@@ -261,7 +265,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
    dat af en legt vast wie wat heeft goedgekeurd. Broncode van systemen met het label vertrouwelijk of hoger
    staat niet in een openbare repository. [8.04.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 12. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -275,7 +279,7 @@ logging zelf (beleid logging en monitoring) en de vergrendeling van werkplekken 
 | Inkoop en contractbeheer | Eisen uit dit beleid vastleggen bij beheerpartijen en hun verklaringen toetsen |
 | Medewerkers | Persoonlijk gebruik van account en tweede factor, melden van verlies of misbruik |
 
-## 5. Naleving en controle
+## 13. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -301,7 +305,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 14. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid screening,
 bewustzijn en opleiding (in- en uitdiensttreding), het beleid informatieclassificatie (labels), het beleid
@@ -315,22 +319,22 @@ De maatregelen van dit domein (16, waarvan 14 overheidsmaatregelen), waar dit st
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.15.01 | Toegangsbeveiliging | overheidsmaatregel | 3.4 Toegang tot de vertrouwde zone en werken op afstand | LTB-05 |
-| 5.16.01 | Identiteitsbeheer | overheidsmaatregel | 3.1 Identiteiten en accounts | LTB-01 |
-| 5.16.02 | Identiteitsbeheer | overheidsmaatregel | 3.1 Identiteiten en accounts | LTB-02 |
-| 5.17.01 | Authenticatie-informatie | overheidsmaatregel | 3.2 Authenticatie en MFA | LTB-03 |
-| 5.17.02 | Authenticatie-informatie | overheidsmaatregel | 3.3 Wachtwoorden | LTB-04 |
-| 5.17.03 | Authenticatie-informatie | overheidsmaatregel | 3.2 Authenticatie en MFA | LTB-04 |
-| 5.18.01 | Toegangsrechten | overheidsmaatregel | 3.1 Identiteiten en accounts | LTB-02, LTB-07 |
-| 5.18.02 | Toegangsrechten | overheidsmaatregel | 3.5 Toegangsrechten en periodieke beoordeling | LTB-06 |
-| 6.07.01 | Werken op afstand | ISO-beheersmaatregel | 3.4 Toegang tot de vertrouwde zone en werken op afstand | LTB-05 |
-| 8.02.01 | Speciale toegangsrechten | overheidsmaatregel | 3.5 Toegangsrechten en periodieke beoordeling | LTB-07 |
-| 8.03.01 | Beperking toegang tot informatie | overheidsmaatregel | 3.5 Toegangsrechten en periodieke beoordeling | LTB-06 |
-| 8.03.02 | Beperking toegang tot informatie | overheidsmaatregel | 3.5 Toegangsrechten en periodieke beoordeling | LTB-06 |
-| 8.04.01 | Toegangsbeveiliging op broncode | ISO-beheersmaatregel | 3.9 Broncode | LTB-09 |
-| 8.05.01 | Beveiligde authenticatie | overheidsmaatregel | 3.7 Toegang voor leveranciers | LTB-08 |
-| 8.18.01 | Gebruik van speciale systeemhulpmiddelen | overheidsmaatregel | 3.6 Accounts met bijzondere rechten | LTB-07 |
-| 8.18.02 | Gebruik van speciale systeemhulpmiddelen | overheidsmaatregel | 3.6 Accounts met bijzondere rechten | LTB-07 |
+| 5.15.01 | Toegangsbeveiliging | overheidsmaatregel | 6. Toegang tot de vertrouwde zone en werken op afstand | LTB-05 |
+| 5.16.01 | Identiteitsbeheer | overheidsmaatregel | 3. Identiteiten en accounts | LTB-01 |
+| 5.16.02 | Identiteitsbeheer | overheidsmaatregel | 3. Identiteiten en accounts | LTB-02 |
+| 5.17.01 | Authenticatie-informatie | overheidsmaatregel | 4. Authenticatie en MFA | LTB-03 |
+| 5.17.02 | Authenticatie-informatie | overheidsmaatregel | 5. Wachtwoorden | LTB-04 |
+| 5.17.03 | Authenticatie-informatie | overheidsmaatregel | 4. Authenticatie en MFA | LTB-04 |
+| 5.18.01 | Toegangsrechten | overheidsmaatregel | 3. Identiteiten en accounts | LTB-02, LTB-07 |
+| 5.18.02 | Toegangsrechten | overheidsmaatregel | 7. Toegangsrechten en periodieke beoordeling | LTB-06 |
+| 6.07.01 | Werken op afstand | ISO-beheersmaatregel | 6. Toegang tot de vertrouwde zone en werken op afstand | LTB-05 |
+| 8.02.01 | Speciale toegangsrechten | overheidsmaatregel | 7. Toegangsrechten en periodieke beoordeling | LTB-07 |
+| 8.03.01 | Beperking toegang tot informatie | overheidsmaatregel | 7. Toegangsrechten en periodieke beoordeling | LTB-06 |
+| 8.03.02 | Beperking toegang tot informatie | overheidsmaatregel | 7. Toegangsrechten en periodieke beoordeling | LTB-06 |
+| 8.04.01 | Toegangsbeveiliging op broncode | ISO-beheersmaatregel | 11. Broncode | LTB-09 |
+| 8.05.01 | Beveiligde authenticatie | overheidsmaatregel | 9. Toegang voor leveranciers | LTB-08 |
+| 8.18.01 | Gebruik van speciale systeemhulpmiddelen | overheidsmaatregel | 8. Accounts met bijzondere rechten | LTB-07 |
+| 8.18.02 | Gebruik van speciale systeemhulpmiddelen | overheidsmaatregel | 8. Accounts met bijzondere rechten | LTB-07 |
 
 ## Bijlage B: Afkortingen
 

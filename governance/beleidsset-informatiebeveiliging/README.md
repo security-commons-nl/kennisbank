@@ -37,33 +37,44 @@ overslaat, krijgt beide varianten, elk in een kader met de vraag erboven.
 
 ## De stukken
 
-Elk stuk hieronder is de leesversie zonder profiel: alle varianten staan erin. Onderaan elk stuk staat welke
-maatregelen het invult, waar, met welke controle, en wat de organisatie zelf nog moet invullen.
+Elk stuk hieronder is de leesversie zonder profiel: alle varianten staan erin. Bovenaan elk stuk staat in het
+kort waar het over gaat en welke onderwerpen het regelt; onderaan staat welke maatregelen het invult, waar, met
+welke controle, en wat de organisatie zelf nog moet invullen. Elk stuk is ook te downloaden als Word-bestand.
+
+- **Hele set in Word:** [beleidsset-informatiebeveiliging.docx](beleidsset-informatiebeveiliging.docx), alle 21
+  stukken achter elkaar, elk op een nieuwe pagina.
+- **[Maatregelenoverzicht](maatregelenoverzicht.md)** ([Word](maatregelenoverzicht.docx)): per BIO 2.0-maatregel
+  het stuk, het hoofdstuk en de controle.
+- **[Invoeren: wat er nog moet gebeuren](invoeren.md)** ([Word](invoeren.docx)): per stuk wat de organisatie
+  inricht, welke controles zij gaat uitvoeren en wat zij nog moet invullen.
+
+Maak je een set op maat in de [generator](beleidsset-generator.html), dan krijg je dezelfde overzichten voor jouw
+antwoorden, en ook alles als Word.
 
 <!-- stukken:begin -->
-| BIO 2.0-domein | Stuk | Bouwsteen | Overheidsmaatregelen | ISO-maatregelen |
+| BIO 2.0-domein | Stuk | Waar het over gaat | Overheidsmaatregelen | ISO-maatregelen |
 |---|---|---|---|---|
-| IV-beleid | [Strategisch informatiebeveiligingsbeleid](iv-beleid.md) | [01-iv-beleid.md](data/01-iv-beleid.md) | 7 | 3 |
-| Informatiebeveiliging binnen projecten | [Beleid informatiebeveiliging in projecten](ib-in-projecten.md) | [02-ib-in-projecten.md](data/02-ib-in-projecten.md) | 1 | 0 |
-| Screening, bewustzijn & opleiding | [Beleid screening, bewustzijn en opleiding](screening-bewustzijn.md) | [03-screening-bewustzijn.md](data/03-screening-bewustzijn.md) | 7 | 3 |
-| Bedrijfsmiddelenbeheer | [Beleid bedrijfsmiddelenbeheer](bedrijfsmiddelen.md) | [04-bedrijfsmiddelen.md](data/04-bedrijfsmiddelen.md) | 3 | 7 |
-| Informatie classificatie | [Beleid informatieclassificatie](classificatie.md) | [05-classificatie.md](data/05-classificatie.md) | 6 | 1 |
-| Logische toegangsbeveiliging | [Beleid logische toegangsbeveiliging](logische-toegang.md) | [06-logische-toegang.md](data/06-logische-toegang.md) | 14 | 2 |
-| Leveranciersbeheer - Inkoop | [Beleid informatiebeveiliging bij inkoop](leveranciers-inkoop.md) | [07-leveranciers-inkoop.md](data/07-leveranciers-inkoop.md) | 8 | 0 |
-| Leveranciersbeheer - contractbeheer | [Beleid informatiebeveiliging in contractbeheer](leveranciers-contract.md) | [08-leveranciers-contract.md](data/08-leveranciers-contract.md) | 6 | 0 |
-| Security Incident Management | [Beleid beveiligingsincidenten](incidenten.md) | [09-incidenten.md](data/09-incidenten.md) | 12 | 1 |
-| Business Continuity & Disaster Recovery | [Beleid ICT-continuïteit en uitwijk](bcm.md) | [10-bcm.md](data/10-bcm.md) | 2 | 2 |
-| IT-Compliance | [Beleid IT-compliance](it-compliance.md) | [11-it-compliance.md](data/11-it-compliance.md) | 2 | 8 |
-| Fysieke toegang & beveiliging | [Beleid fysieke toegang en beveiliging](fysiek.md) | [12-fysiek.md](data/12-fysiek.md) | 2 | 4 |
-| Afvoer en hergebruik gegevensdragers | [Beleid afvoer en hergebruik van gegevensdragers](gegevensdragers.md) | [13-gegevensdragers.md](data/13-gegevensdragers.md) | 3 | 2 |
-| Mobile Device Management | [Beleid mobile device management](mdm.md) | [14-mdm.md](data/14-mdm.md) | 2 | 0 |
-| Vulnerability & patchmanagement | [Beleid kwetsbaarheden en patchmanagement](kwetsbaarheden.md) | [15-kwetsbaarheden.md](data/15-kwetsbaarheden.md) | 9 | 1 |
-| Back-up & Recovery | [Beleid back-up en recovery](back-up.md) | [16-back-up.md](data/16-back-up.md) | 4 | 0 |
-| Logging & monitoring | [Beleid logging en monitoring](logging.md) | [17-logging.md](data/17-logging.md) | 10 | 0 |
-| Netwerkbeveiliging | [Beleid netwerkbeveiliging](netwerk.md) | [18-netwerk.md](data/18-netwerk.md) | 7 | 1 |
-| Cryptografie | [Beleid cryptografie](cryptografie.md) | [19-cryptografie.md](data/19-cryptografie.md) | 4 | 0 |
-| Secure Software Development | [Beleid veilige softwareontwikkeling](ssd.md) | [20-ssd.md](data/20-ssd.md) | 2 | 3 |
-| Wijzigingsbeheer | [Beleid wijzigingsbeheer](wijzigingsbeheer.md) | [21-wijzigingsbeheer.md](data/21-wijzigingsbeheer.md) | 6 | 2 |
+| IV-beleid | [Strategisch informatiebeveiligingsbeleid](iv-beleid.md) ([Word](iv-beleid.docx), [bouwsteen](data/01-iv-beleid.md)) | Het bovenliggende kader voor informatiebeveiliging: wat de organisatie wil bereiken, wie verantwoordelijk is en hoe zij aantoont dat het werkt. Behandelt de vaststelling en inbedding van het beleid, de samenhang met privacy, OT en continuïteit, de organisatie van de beveiligingsfunctie, bewustzijn, contacten en dreigingsinformatie, audit en verantwoording, en de evaluatie. | 7 | 3 |
+| Informatiebeveiliging binnen projecten | [Beleid informatiebeveiliging in projecten](ib-in-projecten.md) ([Word](ib-in-projecten.docx), [bouwsteen](data/02-ib-in-projecten.md)) | Regelt hoe beveiliging en privacy vanaf de start meegaan in projecten en significante wijzigingen aan informatiesystemen. Behandelt wanneer een risicoafweging nodig is, hoe die wordt uitgevoerd, de beslismomenten van start tot overdracht naar beheer, en de inbedding in de projectmethodiek. | 1 | 0 |
+| Screening, bewustzijn & opleiding | [Beleid screening, bewustzijn en opleiding](screening-bewustzijn.md) ([Word](screening-bewustzijn.docx), [bouwsteen](data/03-screening-bewustzijn.md)) | Over de mens als onderdeel van de beveiliging, van werving tot vertrek. Behandelt screening, aanstelling en geheimhouding, training en bewustzijn, scholing van het bestuur, functiewijziging en vertrek, en de disciplinaire procedure bij niet naleven. | 7 | 3 |
+| Bedrijfsmiddelenbeheer | [Beleid bedrijfsmiddelenbeheer](bedrijfsmiddelen.md) ([Word](bedrijfsmiddelen.docx), [bouwsteen](data/04-bedrijfsmiddelen.md)) | Regelt welke bedrijfsmiddelen de organisatie heeft, wie er eigenaar van is en hoe ze gebruikt, beschermd en ingeleverd worden. Behandelt de inventaris, eigendom, aanvaardbaar gebruik, teruggeven bij vertrek, werken in beveiligde zones, plaatsing en nutsvoorzieningen, apparatuur buiten de locaties en onderhoud. | 3 | 7 |
+| Informatie classificatie | [Beleid informatieclassificatie](classificatie.md) ([Word](classificatie.docx), [bouwsteen](data/05-classificatie.md)) | Over het classificeren, labelen en veilig overdragen van informatie op beschikbaarheid, integriteit en vertrouwelijkheid. Behandelt de classificatiemethode met vijf impactniveaus, de minimumeisen per label, het labelen van documenten en hardware, en de eisen aan websites, e-mail, certificaten en andere overdracht. | 6 | 1 |
+| Logische toegangsbeveiliging | [Beleid logische toegangsbeveiliging](logische-toegang.md) ([Word](logische-toegang.docx), [bouwsteen](data/06-logische-toegang.md)) | Regelt de toegang tot informatiesystemen, netwerken en gegevens: hoe accounts ontstaan en vervallen, hoe gebruikers zich aanmelden en wie welke rechten krijgt. Behandelt accounts, MFA, wachtwoorden, werken op afstand, periodieke beoordeling van rechten, beheeraccounts, toegang voor leveranciers, hoog gelabelde informatie en broncode. | 14 | 2 |
+| Leveranciersbeheer - Inkoop | [Beleid informatiebeveiliging bij inkoop](leveranciers-inkoop.md) ([Word](leveranciers-inkoop.docx), [bouwsteen](data/07-leveranciers-inkoop.md)) | Over wat de organisatie regelt voordat zij een contract tekent met een leverancier die haar informatie verwerkt of bij haar systemen kan. Behandelt de risicoafweging en eisen in de uitvraag, contractvoorwaarden, bewijs van de leverancier, meldplicht bij incidenten, afhankelijkheid en exit, de keten van toeleveranciers en het inkoopdossier. | 8 | 0 |
+| Leveranciersbeheer - contractbeheer | [Beleid informatiebeveiliging in contractbeheer](leveranciers-contract.md) ([Word](leveranciers-contract.docx), [bouwsteen](data/08-leveranciers-contract.md)) | Regelt hoe de organisatie zicht houdt op leveranciers met een informatiecomponent zolang een contract loopt. Gaat over het register van leveranciers en contracten, de jaarlijkse beoordeling van de leverancier, de keten van toeleveranciers, clouddiensten en het beëindigen van een contract. | 6 | 0 |
+| Security Incident Management | [Beleid beveiligingsincidenten](incidenten.md) ([Word](incidenten.docx), [bouwsteen](data/09-incidenten.md)) | Over het melden, beoordelen, afhandelen en leren van beveiligingsincidenten en datalekken. Behandelt het meldloket, de classificatie, detectie en escalatie, de afhandeling, meldingen aan externe partijen, coordinated vulnerability disclosure, het veiligstellen van bewijs en de evaluatie achteraf. | 12 | 1 |
+| Business Continuity & Disaster Recovery | [Beleid ICT-continuïteit en uitwijk](bcm.md) ([Word](bcm.docx), [bouwsteen](data/10-bcm.md)) | Regelt de continuïteit van informatie en ICT als systemen uitvallen. Gaat over het bepalen van kritieke processen en systemen met hun hersteleisen, uitwijk en redundantie, de beveiliging tijdens een verstoring en het opstellen en testen van continuïteitsplannen. | 2 | 2 |
+| IT-Compliance | [Beleid IT-compliance](it-compliance.md) ([Word](it-compliance.docx), [bouwsteen](data/11-it-compliance.md)) | Over de naleving van wet- en regelgeving en contractuele eisen voor informatie en systemen. Behandelt het register van eisen, licenties, bewaartermijnen, privacy en testgegevens, clear desk en clear screen, capaciteit en kloksynchronisatie, en audits op productiesystemen. | 2 | 8 |
+| Fysieke toegang & beveiliging | [Beleid fysieke toegang en beveiliging](fysiek.md) ([Word](fysiek.docx), [bouwsteen](data/12-fysiek.md)) | Regelt de fysieke beveiliging van locaties en ruimten waar informatie wordt verwerkt of bewaard. Gaat over de indeling in vier beveiligingszones, de eisen per zone, de omgang met incidenten, monitoring en waarschuwingen, en het dragen van toegangspassen. | 2 | 4 |
+| Afvoer en hergebruik gegevensdragers | [Beleid afvoer en hergebruik van gegevensdragers](gegevensdragers.md) ([Word](gegevensdragers.docx), [bouwsteen](data/13-gegevensdragers.md)) | Over gegevensdragers, van USB-stick en harde schijf tot papier, en over informatie in systemen die niet meer nodig is. Behandelt het gebruik van verwijderbare media, wissen en vernietigen, afvoer en hergebruik van apparatuur, wissen in systemen en transport. | 3 | 2 |
+| Mobile Device Management | [Beleid mobile device management](mdm.md) ([Word](mdm.docx), [bouwsteen](data/14-mdm.md)) | Regelt de inrichting, het beheer en het gebruik van laptops, smartphones en tablets met toegang tot bedrijfsinformatie. Gaat over zero footprint en bescherming op het apparaat, beheer via MDM en MAM, en de gebruikersovereenkomst mobiel werken. | 2 | 0 |
+| Vulnerability & patchmanagement | [Beleid kwetsbaarheden en patchmanagement](kwetsbaarheden.md) ([Word](kwetsbaarheden.docx), [bouwsteen](data/15-kwetsbaarheden.md)) | Regelt hoe de organisatie technische kwetsbaarheden vindt, beoordeelt en binnen vaste termijnen verhelpt. Behandelt bescherming tegen malware, basisconfiguraties en hardening, scannen en penetratietesten, patchtermijnen per risico en het kwetsbaarhedenregister met een maandrapportage aan de directie. | 9 | 1 |
+| Back-up & Recovery | [Beleid back-up en recovery](back-up.md) ([Word](back-up.docx), [bouwsteen](data/16-back-up.md)) | Over het maken, beschermen en terugzetten van back-ups, met ransomware als leidend scenario. Behandelt back-upplannen en het back-upregister, hersteleisen per systeem, een onveranderbare kopie, gescheiden opslag op meerdere plekken en het jaarlijks testen van herstel. | 4 | 0 |
+| Logging & monitoring | [Beleid logging en monitoring](logging.md) ([Word](logging.docx), [bouwsteen](data/17-logging.md)) | Regelt wat systemen moeten loggen, hoe logbestanden veilig worden bewaard en hoe de omgeving wordt bewaakt op aanvallen. Behandelt minimale loggebeurtenissen, het overzicht van logbronnen, bewaartermijnen, centrale opslag buiten bereik van beheerders, detectie met escalatieregels en het delen van dreigingen met de CERT. | 10 | 0 |
+| Netwerkbeveiliging | [Beleid netwerkbeveiliging](netwerk.md) ([Word](netwerk.docx), [bouwsteen](data/18-netwerk.md)) | Over het ontwerp, de inrichting en de bewaking van de netwerken, zodat een aanvaller die binnenkomt niet vrij verder kan. Behandelt segmentatie, beheer van netwerkcomponenten, firewalls en detectie op koppelpunten, het webfilter, versleuteling onderweg en wifi. | 7 | 1 |
+| Cryptografie | [Beleid cryptografie](cryptografie.md) ([Word](cryptografie.docx), [bouwsteen](data/19-cryptografie.md)) | Regelt wanneer en hoe de organisatie versleutelt en wie sleutels en certificaten beheert. Behandelt de minimale versleuteling per vertrouwelijkheidslabel, verplichte standaarden en adviezen van NCSC en NBV, de inventaris van certificaten en sleutels, en de procedure sleutelbeheer met intrekking en reservecertificaten. | 4 | 0 |
+| Secure Software Development | [Beleid veilige softwareontwikkeling](ssd.md) ([Word](ssd.docx), [bouwsteen](data/20-ssd.md)) | Over beveiliging in software die de organisatie bouwt, laat bouwen of afneemt, voordat die in gebruik gaat. Behandelt architectuurprincipes, beveiligingseisen per toepassing, veilig ontwikkelen of de eisen daarvoor aan leveranciers, afspraken bij uitbestede ontwikkeling en testen met fictieve gegevens. | 2 | 3 |
+| Wijzigingsbeheer | [Beleid wijzigingsbeheer](wijzigingsbeheer.md) ([Word](wijzigingsbeheer.docx), [bouwsteen](data/21-wijzigingsbeheer.md)) | Regelt hoe een wijziging in productie wordt aangevraagd, beoordeeld, getest, goedgekeurd en doorgevoerd. Behandelt het wijzigingsproces met standaard-, normale en spoedwijzigingen, werkinstructies voor beheertaken, het installeren van software, de scheiding van omgevingen en acceptatietesten. | 6 | 2 |
 | **Totaal** | | | **117** | **40** |
 <!-- stukken:einde -->
 
@@ -78,7 +89,7 @@ raakt. Geen vraag is verplicht.
 met vier afspraken:
 
 - een beleidsregel eindigt op de nummers van de maatregelen die hij invult, zoals `[8.13.01]`; de
-  generator nummert de regels per paragraaf, zodat een controle of een reviewer naar "eis 3.2.4" kan wijzen;
+  generator nummert de regels per hoofdstuk, zodat een controle of een reviewer naar "eis 5.4" kan wijzen;
 - tekst die van een vraag afhangt, staat tussen `::: als hosting=saas` en `:::`;
 - wat de organisatie zelf invult, staat als `[[eigenaar back-up: de rol die de back-up bewaakt]]`;
 - het controleraamwerk is een tabel met per rij een controle (`FYS-01`) en de maatregelen die hij aantoont.
@@ -86,22 +97,26 @@ met vier afspraken:
 **De lat: waar elk stuk aan voldoet.** De opbouw is afgekeken van een gemeentelijk beleidsstuk dat op
 BIO 2.0 is geschreven, en de build bewaakt hem:
 
-1. Zes vaste hoofdstukken: 1 doel en reikwijdte (voor wie, waarop, wat erbuiten valt, en wat geldt als
-   een voorziening is uitbesteed), 2 uitgangspunten, 3 beleidsregels, 4 rollen en verantwoordelijkheden,
-   5 naleving en controle, 6 samenhang.
-2. Elke regel in hoofdstuk 3 zegt wie wat doet, hoe vaak en waaruit dat blijkt, en noemt de maatregel die
-   hij invult. Dat geldt voor alle maatregelen van het domein: de overheidsmaatregelen én de
+1. Vaste hoofdstukken voor en achter: 1 doel en reikwijdte (voor wie, waarop, wat erbuiten valt, en wat
+   geldt als een voorziening is uitbesteed), 2 uitgangspunten, dan elk onderwerp van het domein als eigen
+   hoofdstuk met de beleidsregels (bij back-up bijvoorbeeld 3 back-upplannen en scenario's, 4 hersteleisen),
+   en daarna rollen en verantwoordelijkheden, naleving en controle, en samenhang. De nummers lopen door.
+2. Elke regel in een onderwerphoofdstuk zegt wie wat doet, hoe vaak en waaruit dat blijkt, en noemt de
+   maatregel die hij invult. Dat geldt voor alle maatregelen van het domein: de overheidsmaatregelen én de
    ISO-beheersmaatregelen waarvoor de BIO 2.0 geen overheidsmaatregel kent; daarvoor geldt de tekst van
    ISO 27002.
-3. Hoofdstuk 5 bevat een controleraamwerk: per controle wat, wie, hoe vaak, welk bewijs en welke
+3. Het hoofdstuk naleving en controle bevat een controleraamwerk: per controle wat, wie, hoe vaak, welk bewijs en welke
    maatregelen. Elke maatregel van het domein heeft ten minste één controle. Daarna een vaste
    afwijkingsprocedure (gedocumenteerde risicoafweging, acceptatie door een risico-eigenaar, in het
    risicoregister, jaarlijks herbeoordeeld) en wat er gebeurt bij niet naleven.
 4. Organisatie-inrichting (rollen, systemen, termijnen die de organisatie zelf kiest) is een invulveld;
    termijnen die uit een norm of wet komen, staan als getal.
-5. De generator zet er een titelblad voor (documenttype, status, eigenaar, vaststeller, evaluatie) en
-   twee bijlagen achter: A de maatregeltabel met per maatregel soort, paragraaf en controle, B de gebruikte
-   afkortingen uit [`afkortingen.json`](data/afkortingen.json).
+5. In de frontmatter van de bouwsteen staan een `samenvatting` (twee of drie zinnen over waar het stuk over
+   gaat) en onder `invoeren` wat de organisatie moet inrichten om het beleid in te voeren, elk met het
+   hoofdstuk waar het vandaan komt.
+6. De generator zet er een titelblad voor (documenttype, status, eigenaar, vaststeller, evaluatie), dan de
+   samenvatting en de onderwerpen, en twee bijlagen achter: A de maatregeltabel met per maatregel soort,
+   hoofdstuk en controle, B de gebruikte afkortingen uit [`afkortingen.json`](data/afkortingen.json).
 
 Een nieuwe versie van de BIO of een beter stuk van een andere organisatie verandert de bouwstenen, niet
 de generator.

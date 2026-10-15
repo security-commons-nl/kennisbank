@@ -8,7 +8,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 @media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid logische toegangsbeveiliging</span></nav><!-- /kruimelpad -->
-<h1>Beleid logische toegangsbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="logische-toegang.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-beleidsregels">3. Beleidsregels</a></li><li><a href="#4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden</a></li><li><a href="#5-naleving-en-controle">5. Naleving en controle</a></li><li><a href="#6-samenhang">6. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<h1>Beleid logische toegangsbeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="logische-toegang.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#1-doel-en-reikwijdte">1. Doel en reikwijdte</a></li><li><a href="#2-uitgangspunten">2. Uitgangspunten</a></li><li><a href="#3-identiteiten-en-accounts">3. Identiteiten en accounts</a></li><li><a href="#4-authenticatie-en-mfa">4. Authenticatie en MFA</a></li><li><a href="#5-wachtwoorden">5. Wachtwoorden</a></li><li><a href="#6-toegang-tot-de-vertrouwde-zone-en-werken-op-afstand">6. Toegang tot de vertrouwde zone en werken op afstand</a></li><li><a href="#7-toegangsrechten-en-periodieke-beoordeling">7. Toegangsrechten en periodieke beoordeling</a></li><li><a href="#8-accounts-met-bijzondere-rechten">8. Accounts met bijzondere rechten</a></li><li><a href="#9-toegang-voor-leveranciers">9. Toegang voor leveranciers</a></li><li><a href="#10-informatie-met-een-hoog-vertrouwelijkheidslabel">10. Informatie met een hoog vertrouwelijkheidslabel</a></li><li><a href="#11-broncode">11. Broncode</a></li><li><a href="#12-rollen-en-verantwoordelijkheden">12. Rollen en verantwoordelijkheden</a></li><li><a href="#13-naleving-en-controle">13. Naleving en controle</a></li><li><a href="#14-samenhang">14. Samenhang</a></li><li><a href="#bijlage-a-bio-2-0-maatregelen">Bijlage A: BIO 2.0-maatregelen</a></li><li><a href="#bijlage-b-afkortingen">Bijlage B: Afkortingen</a></li><li><a href="#nog-in-te-vullen">Nog in te vullen</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><a href="logische-toegang.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
 <table>
 <thead>
 <tr>
@@ -39,6 +40,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
+<p><strong>In het kort.</strong> Regelt de toegang tot informatiesystemen, netwerken en gegevens: hoe accounts ontstaan en vervallen, hoe gebruikers zich aanmelden en wie welke rechten krijgt. Behandelt accounts, MFA, wachtwoorden, werken op afstand, periodieke beoordeling van rechten, beheeraccounts, toegang voor leveranciers, hoog gelabelde informatie en broncode.</p>
+<p><strong>Onderwerpen.</strong> 3. Identiteiten en accounts; 4. Authenticatie en MFA; 5. Wachtwoorden; 6. Toegang tot de vertrouwde zone en werken op afstand; 7. Toegangsrechten en periodieke beoordeling; 8. Accounts met bijzondere rechten; 9. Toegang voor leveranciers; 10. Informatie met een hoog vertrouwelijkheidslabel; 11. Broncode.</p>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor de toegang tot informatiesystemen,
@@ -64,238 +67,237 @@ medewerkers blijft een besluit van de organisatie zelf.</p>
 </blockquote>
 <h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li>Elke handeling op een systeem is herleidbaar tot één natuurlijke persoon. Accounts zijn persoonsgebonden;
-   gedeelde accounts zijn een gemotiveerde uitzondering.</li>
-<li>Iemand krijgt alleen de rechten die nodig zijn voor de eigen taak, en niet langer dan nodig (need-to-know
-   en least privilege).</li>
-<li>Rechten volgen een rol uit een autorisatiematrix. Losse rechten buiten een rol zijn een uitzondering met
-   een einddatum.</li>
-<li>Beschikken, uitvoeren en controleren liggen niet bij dezelfde persoon. Beheerders hebben geen toegang tot
-   de inhoud van de gegevens die ze beheren, tenzij de systeemeigenaar dat vastlegt en erop toeziet.</li>
-<li>Hoe zwaarder de rechten of hoe hoger het vertrouwelijkheidslabel van de informatie, hoe sterker de
-   authenticatie en hoe vaker de controle.</li>
-<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
-   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+<li id="punt-2-1">Elke handeling op een systeem is herleidbaar tot één natuurlijke persoon. Accounts zijn persoonsgebonden;
+   gedeelde accounts zijn een gemotiveerde uitzondering. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2">Iemand krijgt alleen de rechten die nodig zijn voor de eigen taak, en niet langer dan nodig (need-to-know
+   en least privilege). <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3">Rechten volgen een rol uit een autorisatiematrix. Losse rechten buiten een rol zijn een uitzondering met
+   een einddatum. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4">Beschikken, uitvoeren en controleren liggen niet bij dezelfde persoon. Beheerders hebben geen toegang tot
+   de inhoud van de gegevens die ze beheren, tenzij de systeemeigenaar dat vastlegt en erop toeziet. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-5">Hoe zwaarder de rechten of hoe hoger het vertrouwelijkheidslabel van de informatie, hoe sterker de
+   authenticatie en hoe vaker de controle. <a class="anker" href="#punt-2-5" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-6">Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid. <a class="anker" href="#punt-2-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
-<h3 id="3-1-identiteiten-en-accounts">3.1 Identiteiten en accounts<a class="anker" href="#3-1-identiteiten-en-accounts" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="3-identiteiten-en-accounts">3. Identiteiten en accounts<a class="anker" href="#3-identiteiten-en-accounts" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-1-1"><strong>[lijneigenaar logische toegang]</strong>
+<li id="eis-3-1"><strong>[lijneigenaar logische toegang]</strong>
    richt één accountproces in, gekoppeld aan de personeelsadministratie en de registratie van inhuur:
    indiensttreding of start van een opdracht levert een account op, een functiewijziging past de rechten aan
    en vertrek blokkeert het account uiterlijk op de laatste werkdag. Elke stap staat in het ticketsysteem.
-   [5.16.01] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-2">Een geblokkeerd account wordt na <strong>[termijn verwijderen accounts]</strong>
+   [5.16.01] <a class="anker" href="#eis-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2">Een geblokkeerd account wordt na <strong>[termijn verwijderen accounts]</strong>
    verwijderd. Accounts van inhuur en stagiairs hebben een einddatum gelijk aan het einde van de opdracht.
-   [5.16.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-3">De identiteitsvoorziening blokkeert automatisch elk account dat
-   <strong>[termijn inactiviteit]</strong> niet is gebruikt. [5.16.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-4">De systeemeigenaar stelt per systeem een autorisatieprocedure en een autorisatiematrix op met de
+   [5.16.01] <a class="anker" href="#eis-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3">De identiteitsvoorziening blokkeert automatisch elk account dat
+   <strong>[termijn inactiviteit]</strong> niet is gebruikt. [5.16.01] <a class="anker" href="#eis-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4">De systeemeigenaar stelt per systeem een autorisatieprocedure en een autorisatiematrix op met de
    proceseigenaren en beoordeelt die jaarlijks. De CISO toetst de procedure voor vaststelling. Een
-   mandaatregister legt vast wie rechten mag aanvragen en goedkeuren. [5.16.01] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-5">De proceseigenaar gebruikt een gedeeld account alleen als een persoonlijk account aantoonbaar niet kan.
+   mandaatregister legt vast wie rechten mag aanvragen en goedkeuren. [5.16.01] <a class="anker" href="#eis-3-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5">De proceseigenaar gebruikt een gedeeld account alleen als een persoonlijk account aantoonbaar niet kan.
    Hij motiveert dat schriftelijk, stemt het af met de CISO en wijst een leidinggevende aan die
-   verantwoordelijk is voor gebruik en tijdig opzeggen. [5.16.02] <a class="anker" href="#eis-3-1-5" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-6">Een gedeeld account krijgt een herkenbare naam, geen toegang van buiten en geen beheerrechten.
-   <strong>[lijneigenaar logische toegang]</strong> loopt het register van gedeelde accounts jaarlijks door. [5.16.02] <a class="anker" href="#eis-3-1-6" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-7">Een functionele postbus (op naam van een team, project of product) heeft een eigenaar en wordt geopend
+   verantwoordelijk is voor gebruik en tijdig opzeggen. [5.16.02] <a class="anker" href="#eis-3-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-6">Een gedeeld account krijgt een herkenbare naam, geen toegang van buiten en geen beheerrechten.
+   <strong>[lijneigenaar logische toegang]</strong> loopt het register van gedeelde accounts jaarlijks door. [5.16.02] <a class="anker" href="#eis-3-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-7">Een functionele postbus (op naam van een team, project of product) heeft een eigenaar en wordt geopend
    met persoonlijke accounts die rechten op de postbus krijgen. Niemand meldt zich met een gedeeld wachtwoord
-   op de postbus zelf aan. [5.16.02] <a class="anker" href="#eis-3-1-7" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-8">De beheerder schakelt standaardaccounts uit of hernoemt ze en geeft ze een nieuw wachtwoord voor
+   op de postbus zelf aan. [5.16.02] <a class="anker" href="#eis-3-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-8">De beheerder schakelt standaardaccounts uit of hernoemt ze en geeft ze een nieuw wachtwoord voor
    ingebruikname. Een technisch account heeft een eigenaar, kan niet interactief aanmelden en staat in het
-   register van accounts met bijzondere rechten. [5.16.02, 5.18.01] <a class="anker" href="#eis-3-1-8" aria-label="Link naar dit punt">#</a></li>
+   register van accounts met bijzondere rechten. [5.16.02, 5.18.01] <a class="anker" href="#eis-3-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-2-authenticatie-en-mfa">3.2 Authenticatie en MFA<a class="anker" href="#3-2-authenticatie-en-mfa" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="4-authenticatie-en-mfa">4. Authenticatie en MFA<a class="anker" href="#4-authenticatie-en-mfa" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-2-1">MFA is verplicht bij het aanmelden op de digitale werkomgeving, bij elk account op een voorziening die via
+<li id="eis-4-1">MFA is verplicht bij het aanmelden op de digitale werkomgeving, bij elk account op een voorziening die via
    internet bereikbaar is en bij elk account met beheerrechten. Waar de risicoanalyse van een systeem dat
-   vraagt, geldt MFA ook voor andere accounts. [5.17.01] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-2">De voorkeur gaat naar wachtwoordloze authenticatie met een persoonsgebonden sleutel, zoals een passkey of
+   vraagt, geldt MFA ook voor andere accounts. [5.17.01] <a class="anker" href="#eis-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-2">De voorkeur gaat naar wachtwoordloze authenticatie met een persoonsgebonden sleutel, zoals een passkey of
    een hardwaretoken met pincode; anders een wachtwoord met een tweede factor. Een sms-code is alleen
-   toegestaan als er geen andere tweede factor beschikbaar is. [5.17.01] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-3">Waar het kan, loopt aanmelden via de centrale identiteitsvoorziening met SSO. Beheerders bereiken
-   beheeromgevingen via een beveiligde tussenstap (jumpserver) waarop ook MFA geldt. [5.17.01] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-4">Kan een systeem geen MFA, dan stelt de systeemeigenaar met de CISO aanvullende maatregelen op, zoals
+   toegestaan als er geen andere tweede factor beschikbaar is. [5.17.01] <a class="anker" href="#eis-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-3">Waar het kan, loopt aanmelden via de centrale identiteitsvoorziening met SSO. Beheerders bereiken
+   beheeromgevingen via een beveiligde tussenstap (jumpserver) waarop ook MFA geldt. [5.17.01] <a class="anker" href="#eis-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-4">Kan een systeem geen MFA, dan stelt de systeemeigenaar met de CISO aanvullende maatregelen op, zoals
    toegang alleen vanaf beheerde apparaten. De proceseigenaar keurt ze goed; het systeem staat ermee in het
-   risicoregister. [5.17.01] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-5">De servicedesk reikt inloggegevens, tokens en resets pas uit nadat de identiteit van de ontvanger is
-   vastgesteld, en legt dat vast in het ticket. [5.17.01] <a class="anker" href="#eis-3-2-5" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-6">De identiteitsvoorziening meldt ten minste: aanmelden vanaf een ongebruikelijke locatie of een
+   risicoregister. [5.17.01] <a class="anker" href="#eis-4-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-5">De servicedesk reikt inloggegevens, tokens en resets pas uit nadat de identiteit van de ontvanger is
+   vastgesteld, en legt dat vast in het ticket. [5.17.01] <a class="anker" href="#eis-4-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-6">De identiteitsvoorziening meldt ten minste: aanmelden vanaf een ongebruikelijke locatie of een
    onmogelijke reisafstand, en een piek in mislukte aanmeldingen.
    <strong>[bewaking aanmeldingen]</strong>
-   beoordeelt elke melding en handelt haar zo nodig af als beveiligingsincident. [5.17.01] <a class="anker" href="#eis-3-2-6" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-7">Na <strong>[aantal mislukte pogingen]</strong> mislukte aanmeldingen blokkeert het systeem het account
-   tijdelijk. [5.17.03] <a class="anker" href="#eis-3-2-7" aria-label="Link naar dit punt">#</a></li>
+   beoordeelt elke melding en handelt haar zo nodig af als beveiligingsincident. [5.17.01] <a class="anker" href="#eis-4-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-7">Na <strong>[aantal mislukte pogingen]</strong> mislukte aanmeldingen blokkeert het systeem het account
+   tijdelijk. [5.17.03] <a class="anker" href="#eis-4-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)» of «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
 <ol start="8">
-<li id="eis-3-2-8">Op de cloudwerkplek dwingt de identiteitsvoorziening MFA af met regels voor voorwaardelijke toegang.
-   Verouderde aanmeldprotocollen zonder MFA staan uit. [5.17.01] <a class="anker" href="#eis-3-2-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-8">Op de cloudwerkplek dwingt de identiteitsvoorziening MFA af met regels voor voorwaardelijke toegang.
+   Verouderde aanmeldprotocollen zonder MFA staan uit. [5.17.01] <a class="anker" href="#eis-4-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «On-premises»</strong></p>
 <ol start="9">
-<li id="eis-3-2-9">Op de on-premises werkplek geldt MFA bij elke toegang van buiten het kantoornetwerk (VPN of remote
-   desktop) en bij elk beheeraccount. Op kantoor loopt het primaire aanmelden met een pas of token. [5.17.01] <a class="anker" href="#eis-3-2-9" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-9">Op de on-premises werkplek geldt MFA bij elke toegang van buiten het kantoornetwerk (VPN of remote
+   desktop) en bij elk beheeraccount. Op kantoor loopt het primaire aanmelden met een pas of token. [5.17.01] <a class="anker" href="#eis-4-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-3-wachtwoorden">3.3 Wachtwoorden<a class="anker" href="#3-3-wachtwoorden" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="5-wachtwoorden">5. Wachtwoorden<a class="anker" href="#5-wachtwoorden" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-3-1">Elke medewerker krijgt een wachtwoordmanager van de organisatie. Wachtwoorden voor werk staan niet in
-   browsers op privéapparaten, in documenten of op papier. [5.17.02] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-2">De beheerder dwingt de eisen aan wachtwoorden technisch af in de identiteitsvoorziening en in elk systeem
+<li id="eis-5-1">Elke medewerker krijgt een wachtwoordmanager van de organisatie. Wachtwoorden voor werk staan niet in
+   browsers op privéapparaten, in documenten of op papier. [5.17.02] <a class="anker" href="#eis-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-2">De beheerder dwingt de eisen aan wachtwoorden technisch af in de identiteitsvoorziening en in elk systeem
    met een eigen accountbeheer: minimaal
    <strong>[minimale wachtwoordlengte]</strong>,
    controle tegen lijsten van gelekte en veelgebruikte wachtwoorden en geen hergebruik van eerdere
-   wachtwoorden. [5.17.03] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-3">Wachtwoorden verlopen niet periodiek. Bij een vermoeden van lekken vervangt de gebruiker het wachtwoord
-   direct. [5.17.03] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
+   wachtwoorden. [5.17.03] <a class="anker" href="#eis-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-3">Wachtwoorden verlopen niet periodiek. Bij een vermoeden van lekken vervangt de gebruiker het wachtwoord
+   direct. [5.17.03] <a class="anker" href="#eis-5-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-4-toegang-tot-de-vertrouwde-zone-en-werken-op-afstand">3.4 Toegang tot de vertrouwde zone en werken op afstand<a class="anker" href="#3-4-toegang-tot-de-vertrouwde-zone-en-werken-op-afstand" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="6-toegang-tot-de-vertrouwde-zone-en-werken-op-afstand">6. Toegang tot de vertrouwde zone en werken op afstand<a class="anker" href="#6-toegang-tot-de-vertrouwde-zone-en-werken-op-afstand" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-4-1">Toegang tot het interne netwerk en de interne systemen krijgt alleen apparatuur die de organisatie kent en
+<li id="eis-6-1">Toegang tot het interne netwerk en de interne systemen krijgt alleen apparatuur die de organisatie kent en
    heeft geauthenticeerd, of programmatuur in een afgeschermde omgeving zoals een virtuele werkplek of een
-   beveiligde browser. Een onbekend of privéapparaat komt niet rechtstreeks in de vertrouwde zone. [5.15.01] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-2">Werken op afstand gebeurt alleen via de voorzieningen die de organisatie daarvoor biedt, met MFA. De
+   beveiligde browser. Een onbekend of privéapparaat komt niet rechtstreeks in de vertrouwde zone. [5.15.01] <a class="anker" href="#eis-6-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-2">Werken op afstand gebeurt alleen via de voorzieningen die de organisatie daarvoor biedt, met MFA. De
    medewerker opent informatie met het label vertrouwelijk of hoger op afstand alleen op een apparaat van de
    organisatie en werkt niet op een plek waar anderen kunnen meekijken. <strong>[lijneigenaar logische toegang]</strong>
    legt in de regeling thuiswerken vast welke apparatuur en werkplekken zijn toegestaan en beoordeelt die
-   regeling jaarlijks. [6.07.01] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
+   regeling jaarlijks. [6.07.01] <a class="anker" href="#eis-6-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)» of «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
 <ol start="3">
-<li id="eis-3-4-3">In de cloudomgeving geldt een apparaat als geauthenticeerd als het in het apparaatbeheer staat en aan het
-   nalevingsbeleid voldoet. Andere apparaten krijgen hooguit de webversie zonder downloaden. [5.15.01] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-3">In de cloudomgeving geldt een apparaat als geauthenticeerd als het in het apparaatbeheer staat en aan het
+   nalevingsbeleid voldoet. Andere apparaten krijgen hooguit de webversie zonder downloaden. [5.15.01] <a class="anker" href="#eis-6-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «On-premises» of «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
 <ol start="4">
-<li id="eis-3-4-4">Op het interne netwerk krijgt een apparaat pas toegang na authenticatie met een apparaatcertificaat
+<li id="eis-6-4">Op het interne netwerk krijgt een apparaat pas toegang na authenticatie met een apparaatcertificaat
    (netwerktoegangscontrole). Toegang van buiten loopt via een VPN of virtuele werkplek die ook het apparaat
-   controleert. [5.15.01] <a class="anker" href="#eis-3-4-4" aria-label="Link naar dit punt">#</a></li>
+   controleert. [5.15.01] <a class="anker" href="#eis-6-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-5-toegangsrechten-en-periodieke-beoordeling">3.5 Toegangsrechten en periodieke beoordeling<a class="anker" href="#3-5-toegangsrechten-en-periodieke-beoordeling" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="7-toegangsrechten-en-periodieke-beoordeling">7. Toegangsrechten en periodieke beoordeling<a class="anker" href="#7-toegangsrechten-en-periodieke-beoordeling" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-5-1">Een bevoegde leidinggevende vraagt rechten aan via het ticketsysteem; functioneel beheer toetst de aanvraag
+<li id="eis-7-1">Een bevoegde leidinggevende vraagt rechten aan via het ticketsysteem; functioneel beheer toetst de aanvraag
    aan de autorisatiematrix en richt de rechten in. Het ticket toont aanvraag, goedkeuring en inrichting.
-   [5.18.02, 8.03.02] <a class="anker" href="#eis-3-5-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-2">Gebruikers zien en bewerken alleen de informatie die ze voor hun taak nodig hebben. Een systeem met het
+   [5.18.02, 8.03.02] <a class="anker" href="#eis-7-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-2">Gebruikers zien en bewerken alleen de informatie die ze voor hun taak nodig hebben. Een systeem met het
    label vertrouwelijk of hoger beperkt de toegang tot de dossiers of zaken waar de gebruiker bij betrokken
-   is, waar het systeem dat ondersteunt. [8.03.02] <a class="anker" href="#eis-3-5-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-3">De systeemeigenaar beoordeelt jaarlijks alle uitgegeven rechten van zijn systeem, met een overzicht van
+   is, waar het systeem dat ondersteunt. [8.03.02] <a class="anker" href="#eis-7-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-3">De systeemeigenaar beoordeelt jaarlijks alle uitgegeven rechten van zijn systeem, met een overzicht van
    functioneel beheer, en legt de uitkomst vast. Voor systemen met het label vertrouwelijk of hoger is dat
    elk halfjaar. Onjuiste rechten worden binnen
-   <strong>[hersteltermijn rechten]</strong> ingetrokken. [5.18.02] <a class="anker" href="#eis-3-5-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-4">Kan functiescheiding door een kleine bezetting niet, dan legt de systeemeigenaar vast wie welke rollen
+   <strong>[hersteltermijn rechten]</strong> ingetrokken. [5.18.02] <a class="anker" href="#eis-7-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-4">Kan functiescheiding door een kleine bezetting niet, dan legt de systeemeigenaar vast wie welke rollen
    combineert en waarom, en controleert hij elk kwartaal de handelingen van die persoon in de logging.
-   [5.18.02] <a class="anker" href="#eis-3-5-4" aria-label="Link naar dit punt">#</a></li>
+   [5.18.02] <a class="anker" href="#eis-7-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD» of «Suwinet» of «BRP (als bronhouder of afnemer)» of «BAG of andere basisregistraties» of «Andere ketens met eigen beveiligingseisen»</strong></p>
 <ol start="5">
-<li id="eis-3-5-5">Voor elke aansluiting op een landelijke voorziening geldt aanvullend het normenkader van die voorziening.
+<li id="eis-7-5">Voor elke aansluiting op een landelijke voorziening geldt aanvullend het normenkader van die voorziening.
    De systeemeigenaar toont de naleving van de autorisatie-eisen aan in de jaarlijkse verantwoording over de
-   aansluiting. [5.18.02] <a class="anker" href="#eis-3-5-5" aria-label="Link naar dit punt">#</a></li>
+   aansluiting. [5.18.02] <a class="anker" href="#eis-7-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «Suwinet»</strong></p>
 <ol start="6">
-<li id="eis-3-5-6">Toegang tot Suwinet-Inkijk verloopt per rol die aansluit op de taak (bijvoorbeeld werk en inkomen of
+<li id="eis-7-6">Toegang tot Suwinet-Inkijk verloopt per rol die aansluit op de taak (bijvoorbeeld werk en inkomen of
    schuldhulpverlening). De systeemeigenaar beoordeelt de Suwinet-autorisaties elk kwartaal en laat het
-   gebruik steekproefsgewijs controleren op raadplegingen zonder dossier of zaak. [5.18.02, 8.03.02] <a class="anker" href="#eis-3-5-6" aria-label="Link naar dit punt">#</a></li>
+   gebruik steekproefsgewijs controleren op raadplegingen zonder dossier of zaak. [5.18.02, 8.03.02] <a class="anker" href="#eis-7-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «BRP (als bronhouder of afnemer)»</strong></p>
 <ol start="7">
-<li id="eis-3-5-7">Raadpleging en wijziging van de BRP gebeuren alleen met rechten per rol volgens de autorisatie van de
+<li id="eis-7-7">Raadpleging en wijziging van de BRP gebeuren alleen met rechten per rol volgens de autorisatie van de
    organisatie als afnemer of bronhouder. De systeemeigenaar beoordeelt de rechten om persoonslijsten te
-   wijzigen elk kwartaal. [5.18.02, 8.03.02] <a class="anker" href="#eis-3-5-7" aria-label="Link naar dit punt">#</a></li>
+   wijzigen elk kwartaal. [5.18.02, 8.03.02] <a class="anker" href="#eis-7-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Op welke landelijke voorzieningen ben je aangesloten? «DigiD»</strong></p>
 <ol start="8">
-<li id="eis-3-5-8">De systeemeigenaar beoordeelt elk kwartaal de beheerrechten op de webapplicaties en infrastructuur achter
-   de DigiD-aansluiting, als voorbereiding op het DigiD-assessment. [8.02.01] <a class="anker" href="#eis-3-5-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-8">De systeemeigenaar beoordeelt elk kwartaal de beheerrechten op de webapplicaties en infrastructuur achter
+   de DigiD-aansluiting, als voorbereiding op het DigiD-assessment. [8.02.01] <a class="anker" href="#eis-7-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Verwerk je politiegegevens (boa's, opsporing, handhaving)? «Ja»</strong></p>
 <ol start="9">
-<li id="eis-3-5-9">Politiegegevens (bijvoorbeeld van boa's) staan in een omgeving die alleen toegankelijk is voor
+<li id="eis-7-9">Politiegegevens (bijvoorbeeld van boa's) staan in een omgeving die alleen toegankelijk is voor
    medewerkers die de organisatie daartoe schriftelijk heeft geautoriseerd onder de Wpg. De autorisatie
-   noemt per persoon het doel en de categorie gegevens. [8.03.01, 8.03.02] <a class="anker" href="#eis-3-5-9" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-5-10">De systeemeigenaar beoordeelt de autorisaties voor politiegegevens elk halfjaar, en elke raadpleging wordt
-   vastgelegd, zodat de periodieke Wpg-audit kan aantonen wie wat heeft ingezien. [5.18.02] <a class="anker" href="#eis-3-5-10" aria-label="Link naar dit punt">#</a></li>
+   noemt per persoon het doel en de categorie gegevens. [8.03.01, 8.03.02] <a class="anker" href="#eis-7-9" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-7-10">De systeemeigenaar beoordeelt de autorisaties voor politiegegevens elk halfjaar, en elke raadpleging wordt
+   vastgelegd, zodat de periodieke Wpg-audit kan aantonen wie wat heeft ingezien. [5.18.02] <a class="anker" href="#eis-7-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-6-accounts-met-bijzondere-rechten">3.6 Accounts met bijzondere rechten<a class="anker" href="#3-6-accounts-met-bijzondere-rechten" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="8-accounts-met-bijzondere-rechten">8. Accounts met bijzondere rechten<a class="anker" href="#8-accounts-met-bijzondere-rechten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-6-1">Een beheerder heeft een apart beheeraccount, zonder mail en internettoegang. [8.02.01] <a class="anker" href="#eis-3-6-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-2">Beheerrechten worden waar het kan alleen voor de duur van een taak toegekend (just-in-time), met een
+<li id="eis-8-1">Een beheerder heeft een apart beheeraccount, zonder mail en internettoegang. [8.02.01] <a class="anker" href="#eis-8-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-2">Beheerrechten worden waar het kan alleen voor de duur van een taak toegekend (just-in-time), met een
    aanvraag en een reden. Permanente rechten op het hoogste niveau (domein- of tenantbeheer) hebben ten
    hoogste
    <strong>[maximum aantal hoogste beheerders]</strong>.
-   [8.02.01] <a class="anker" href="#eis-3-6-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-3"><strong>[lijneigenaar logische toegang]</strong> houdt een register bij van accounts met bijzondere rechten:
+   [8.02.01] <a class="anker" href="#eis-8-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-3"><strong>[lijneigenaar logische toegang]</strong> houdt een register bij van accounts met bijzondere rechten:
    beheeraccounts, technische accounts, noodaccounts en accounts van leveranciers. De systeemeigenaar en de
-   CISO beoordelen elk kwartaal opzet, bestaan en gebruik van die rechten en tekenen het verslag. [8.02.01] <a class="anker" href="#eis-3-6-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-4">Het aanmaken van een account met bijzondere rechten en elke wijziging van zijn rechten levert automatisch
-   een melding op. Een wijziging zonder goedgekeurde aanvraag is een beveiligingsincident. [5.18.01] <a class="anker" href="#eis-3-6-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-5">Een noodaccount ligt in een kluis met vier-ogentoegang; elk gebruik levert een melding op die de CISO
-   beoordeelt. [5.18.01] <a class="anker" href="#eis-3-6-5" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-6">Systeemhulpmiddelen die beveiligingsmaatregelen kunnen omzeilen (beheerconsoles, scripttools, debuggers,
+   CISO beoordelen elk kwartaal opzet, bestaan en gebruik van die rechten en tekenen het verslag. [8.02.01] <a class="anker" href="#eis-8-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-4">Het aanmaken van een account met bijzondere rechten en elke wijziging van zijn rechten levert automatisch
+   een melding op. Een wijziging zonder goedgekeurde aanvraag is een beveiligingsincident. [5.18.01] <a class="anker" href="#eis-8-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-5">Een noodaccount ligt in een kluis met vier-ogentoegang; elk gebruik levert een melding op die de CISO
+   beoordeelt. [5.18.01] <a class="anker" href="#eis-8-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-6">Systeemhulpmiddelen die beveiligingsmaatregelen kunnen omzeilen (beheerconsoles, scripttools, debuggers,
    tools voor het lezen van geheugen of register) staan alleen ter beschikking van bevoegde beheerders en
-   alleen als hun taak dat vraagt. Op werkplekken van gebruikers zijn ze geblokkeerd. [8.18.01] <a class="anker" href="#eis-3-6-6" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-7">Het gebruik van systeemhulpmiddelen wordt gelogd. De logging blijft ten minste zes maanden beschikbaar voor
-   onderzoek. [8.18.02] <a class="anker" href="#eis-3-6-7" aria-label="Link naar dit punt">#</a></li>
+   alleen als hun taak dat vraagt. Op werkplekken van gebruikers zijn ze geblokkeerd. [8.18.01] <a class="anker" href="#eis-8-6" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-7">Het gebruik van systeemhulpmiddelen wordt gelogd. De logging blijft ten minste zes maanden beschikbaar voor
+   onderzoek. [8.18.02] <a class="anker" href="#eis-8-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Wie beheert je IT? «Eigen beheer»</strong></p>
 <ol start="8">
-<li id="eis-3-6-8">De eigen IT-afdeling houdt het register van accounts met bijzondere rechten bij en richt de meldingen in.
-   De beoordeling per kwartaal gebeurt door iemand buiten het beheerteam. [5.18.01, 8.02.01] <a class="anker" href="#eis-3-6-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-8">De eigen IT-afdeling houdt het register van accounts met bijzondere rechten bij en richt de meldingen in.
+   De beoordeling per kwartaal gebeurt door iemand buiten het beheerteam. [5.18.01, 8.02.01] <a class="anker" href="#eis-8-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Wie beheert je IT? «Regie: eigen organisatie stuurt, beheer is uitbesteed» of «Volledig uitbesteed»</strong></p>
 <ol start="9">
-<li id="eis-3-6-9">De beheerpartij levert elk kwartaal een overzicht van alle accounts met bijzondere rechten op de systemen
+<li id="eis-8-9">De beheerpartij levert elk kwartaal een overzicht van alle accounts met bijzondere rechten op de systemen
    van de organisatie, met de wijzigingen. De organisatie beoordeelt dat overzicht; de beheerpartij meldt een
-   niet goedgekeurde wijziging als beveiligingsincident binnen de termijn uit het contract. [5.18.01, 8.02.01] <a class="anker" href="#eis-3-6-9" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-6-10">Het contract bepaalt dat de beheerpartij systeemhulpmiddelen alleen inzet voor de afgesproken
-   dienstverlening en de logging daarvan zes maanden bewaart en op verzoek levert. [8.18.01, 8.18.02] <a class="anker" href="#eis-3-6-10" aria-label="Link naar dit punt">#</a></li>
+   niet goedgekeurde wijziging als beveiligingsincident binnen de termijn uit het contract. [5.18.01, 8.02.01] <a class="anker" href="#eis-8-9" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-8-10">Het contract bepaalt dat de beheerpartij systeemhulpmiddelen alleen inzet voor de afgesproken
+   dienstverlening en de logging daarvan zes maanden bewaart en op verzoek levert. [8.18.01, 8.18.02] <a class="anker" href="#eis-8-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-7-toegang-voor-leveranciers">3.7 Toegang voor leveranciers<a class="anker" href="#3-7-toegang-voor-leveranciers" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="9-toegang-voor-leveranciers">9. Toegang voor leveranciers<a class="anker" href="#9-toegang-voor-leveranciers" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-7-1">Een leverancier krijgt toegang tot het netwerk of een systeem pas na een risicoafweging door de
+<li id="eis-9-1">Een leverancier krijgt toegang tot het netwerk of een systeem pas na een risicoafweging door de
    systeemeigenaar: welke systemen, welke rechten, vanaf waar en voor hoe lang. Een leidinggevende van de
-   organisatie is verantwoordelijk voor het account en zegt het op als het werk klaar is. [8.05.01] <a class="anker" href="#eis-3-7-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-7-2">Een leveranciersaccount staat standaard uit en wordt per werkzaamheid geactiveerd, voor ten hoogste
+   organisatie is verantwoordelijk voor het account en zegt het op als het werk klaar is. [8.05.01] <a class="anker" href="#eis-9-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-9-2">Een leveranciersaccount staat standaard uit en wordt per werkzaamheid geactiveerd, voor ten hoogste
    <strong>[maximale activeringsduur]</strong>, altijd met MFA en via een afgeschermde
-   beheeromgeving. [8.05.01] <a class="anker" href="#eis-3-7-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-7-3">Het register van leveranciersaccounts laat zien wie toegang heeft, wie die heeft goedgekeurd en wanneer
-   ze is geactiveerd en beëindigd. [8.05.01] <a class="anker" href="#eis-3-7-3" aria-label="Link naar dit punt">#</a></li>
+   beheeromgeving. [8.05.01] <a class="anker" href="#eis-9-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-9-3">Het register van leveranciersaccounts laat zien wie toegang heeft, wie die heeft goedgekeurd en wanneer
+   ze is geactiveerd en beëindigd. [8.05.01] <a class="anker" href="#eis-9-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-8-informatie-met-een-hoog-vertrouwelijkheidslabel">3.8 Informatie met een hoog vertrouwelijkheidslabel<a class="anker" href="#3-8-informatie-met-een-hoog-vertrouwelijkheidslabel" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="10-informatie-met-een-hoog-vertrouwelijkheidslabel">10. Informatie met een hoog vertrouwelijkheidslabel<a class="anker" href="#10-informatie-met-een-hoog-vertrouwelijkheidslabel" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-8-1">Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
+<li id="eis-10-1">Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
    aparte systemen, databases of omgevingen die fysiek of logisch gescheiden zijn van de algemene
-   werkomgeving, met een eigen autorisatie die de systeemeigenaar vaststelt. [8.03.01] <a class="anker" href="#eis-3-8-1" aria-label="Link naar dit punt">#</a></li>
+   werkomgeving, met een eigen autorisatie die de systeemeigenaar vaststelt. [8.03.01] <a class="anker" href="#eis-10-1" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd» of «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
 <ol start="2">
-<li id="eis-3-8-2">Dossiers in het sociaal domein, over jeugd of over gezondheid staan in een zaak- of dossiersysteem met
+<li id="eis-10-2">Dossiers in het sociaal domein, over jeugd of over gezondheid staan in een zaak- of dossiersysteem met
    autorisatie per dossier of per team, niet op gedeelde netwerkschijven of in algemene teamsites. Inzage
    buiten de eigen caseload wordt gelogd en door de systeemeigenaar elk kwartaal steekproefsgewijs
-   gecontroleerd. [8.03.01, 8.03.02] <a class="anker" href="#eis-3-8-2" aria-label="Link naar dit punt">#</a></li>
+   gecontroleerd. [8.03.01, 8.03.02] <a class="anker" href="#eis-10-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-9-broncode">3.9 Broncode<a class="anker" href="#3-9-broncode" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="11-broncode">11. Broncode<a class="anker" href="#11-broncode" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-9-1">Toegang tot broncode, scripts en configuratiebestanden in een repository is beperkt tot de ontwikkelaars
+<li id="eis-11-1">Toegang tot broncode, scripts en configuratiebestanden in een repository is beperkt tot de ontwikkelaars
    en beheerders die eraan werken; de eigenaar van de repository kent lees- en schrijfrechten apart toe en
-   beoordeelt elk halfjaar wie toegang heeft. [8.04.01] <a class="anker" href="#eis-3-9-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-9-2">Een wijziging op de hoofdtak komt er alleen in na review door een tweede persoon; de repository dwingt
+   beoordeelt elk halfjaar wie toegang heeft. [8.04.01] <a class="anker" href="#eis-11-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-11-2">Een wijziging op de hoofdtak komt er alleen in na review door een tweede persoon; de repository dwingt
    dat af en legt vast wie wat heeft goedgekeurd. Broncode van systemen met het label vertrouwelijk of hoger
-   staat niet in een openbare repository. [8.04.01] <a class="anker" href="#eis-3-9-2" aria-label="Link naar dit punt">#</a></li>
+   staat niet in een openbare repository. [8.04.01] <a class="anker" href="#eis-11-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="12-rollen-en-verantwoordelijkheden">12. Rollen en verantwoordelijkheden<a class="anker" href="#12-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -342,7 +344,7 @@ medewerkers blijft een besluit van de organisatie zelf.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="13-naleving-en-controle">13. Naleving en controle<a class="anker" href="#13-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
 afwijkingen gaan als bevinding naar het risicoregister.</p>
@@ -438,7 +440,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="14-samenhang">14. Samenhang<a class="anker" href="#14-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid screening,
 bewustzijn en opleiding (in- en uitdiensttreding), het beleid informatieclassificatie (labels), het beleid
 informatiebeveiliging bij inkoop en contractbeheer (beheerpartijen), het beleid logging en monitoring
@@ -461,112 +463,112 @@ softwareontwikkeling (repositories) en het beleid mobile device management (appa
 <td>5.15.01</td>
 <td>Toegangsbeveiliging</td>
 <td>overheidsmaatregel</td>
-<td>3.4 Toegang tot de vertrouwde zone en werken op afstand</td>
+<td>6. Toegang tot de vertrouwde zone en werken op afstand</td>
 <td>LTB-05</td>
 </tr>
 <tr>
 <td>5.16.01</td>
 <td>Identiteitsbeheer</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Identiteiten en accounts</td>
+<td>3. Identiteiten en accounts</td>
 <td>LTB-01</td>
 </tr>
 <tr>
 <td>5.16.02</td>
 <td>Identiteitsbeheer</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Identiteiten en accounts</td>
+<td>3. Identiteiten en accounts</td>
 <td>LTB-02</td>
 </tr>
 <tr>
 <td>5.17.01</td>
 <td>Authenticatie-informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Authenticatie en MFA</td>
+<td>4. Authenticatie en MFA</td>
 <td>LTB-03</td>
 </tr>
 <tr>
 <td>5.17.02</td>
 <td>Authenticatie-informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Wachtwoorden</td>
+<td>5. Wachtwoorden</td>
 <td>LTB-04</td>
 </tr>
 <tr>
 <td>5.17.03</td>
 <td>Authenticatie-informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Authenticatie en MFA</td>
+<td>4. Authenticatie en MFA</td>
 <td>LTB-04</td>
 </tr>
 <tr>
 <td>5.18.01</td>
 <td>Toegangsrechten</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Identiteiten en accounts</td>
+<td>3. Identiteiten en accounts</td>
 <td>LTB-02, LTB-07</td>
 </tr>
 <tr>
 <td>5.18.02</td>
 <td>Toegangsrechten</td>
 <td>overheidsmaatregel</td>
-<td>3.5 Toegangsrechten en periodieke beoordeling</td>
+<td>7. Toegangsrechten en periodieke beoordeling</td>
 <td>LTB-06</td>
 </tr>
 <tr>
 <td>6.07.01</td>
 <td>Werken op afstand</td>
 <td>ISO-beheersmaatregel</td>
-<td>3.4 Toegang tot de vertrouwde zone en werken op afstand</td>
+<td>6. Toegang tot de vertrouwde zone en werken op afstand</td>
 <td>LTB-05</td>
 </tr>
 <tr>
 <td>8.02.01</td>
 <td>Speciale toegangsrechten</td>
 <td>overheidsmaatregel</td>
-<td>3.5 Toegangsrechten en periodieke beoordeling</td>
+<td>7. Toegangsrechten en periodieke beoordeling</td>
 <td>LTB-07</td>
 </tr>
 <tr>
 <td>8.03.01</td>
 <td>Beperking toegang tot informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.5 Toegangsrechten en periodieke beoordeling</td>
+<td>7. Toegangsrechten en periodieke beoordeling</td>
 <td>LTB-06</td>
 </tr>
 <tr>
 <td>8.03.02</td>
 <td>Beperking toegang tot informatie</td>
 <td>overheidsmaatregel</td>
-<td>3.5 Toegangsrechten en periodieke beoordeling</td>
+<td>7. Toegangsrechten en periodieke beoordeling</td>
 <td>LTB-06</td>
 </tr>
 <tr>
 <td>8.04.01</td>
 <td>Toegangsbeveiliging op broncode</td>
 <td>ISO-beheersmaatregel</td>
-<td>3.9 Broncode</td>
+<td>11. Broncode</td>
 <td>LTB-09</td>
 </tr>
 <tr>
 <td>8.05.01</td>
 <td>Beveiligde authenticatie</td>
 <td>overheidsmaatregel</td>
-<td>3.7 Toegang voor leveranciers</td>
+<td>9. Toegang voor leveranciers</td>
 <td>LTB-08</td>
 </tr>
 <tr>
 <td>8.18.01</td>
 <td>Gebruik van speciale systeemhulpmiddelen</td>
 <td>overheidsmaatregel</td>
-<td>3.6 Accounts met bijzondere rechten</td>
+<td>8. Accounts met bijzondere rechten</td>
 <td>LTB-07</td>
 </tr>
 <tr>
 <td>8.18.02</td>
 <td>Gebruik van speciale systeemhulpmiddelen</td>
 <td>overheidsmaatregel</td>
-<td>3.6 Accounts met bijzondere rechten</td>
+<td>8. Accounts met bijzondere rechten</td>
 <td>LTB-07</td>
 </tr>
 </tbody>

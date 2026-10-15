@@ -773,7 +773,8 @@ class BewijsVoor(Basis):
 class Ankers(unittest.TestCase):
     """Naar elke kop en elk genummerd punt onder een genummerde kop kun je linken."""
 
-    PAGINA = ("<html><head><title>T</title></head><body><h1>T</h1><h2>1. Doel</h2><ol><li>niet genummerd</li></ol>"
+    PAGINA = ("<html><head><title>T</title></head><body><h1>T</h1><h2>1. Doel</h2><ol><li>onder een hoofdstuk</li></ol>"
+              "<h2>Zonder nummer</h2><ol><li>niet genummerd</li></ol>"
               "<h2>3. Beleidsregels</h2><h3>3.2 Zone 1</h3><ol><li>een<ul><li>sub</li></ul></li><li>twee</li></ol>"
               "<blockquote><ol start=\"3\"><li>drie</li></ol></blockquote>"
               "<h2>5. Naleving</h2><h3>5.1 Controles</h3><ol><li>a</li></ol></body></html>")
@@ -792,7 +793,18 @@ class Ankers(unittest.TestCase):
             self.assertIn(f'<li id="{anker}"', uit)
         self.assertNotIn('<li id="eis-3-2-4"', uit)  # het punt in de sublijst telt niet mee
         self.assertEqual(uit.count('id="eis-'), 3)
-        self.assertNotIn("niet genummerd</li>".replace("</li>", ' <a class="anker"'), uit)
+        self.assertIn('<li id="punt-1-1"', uit)  # direct onder een genummerd hoofdstuk
+        self.assertNotIn("niet genummerd <a class", uit)
+
+    def test_eis_direct_onder_een_onderwerphoofdstuk_herkend_aan_de_maatregel(self):
+        # De beleidsset: elk onderwerp is een eigen hoofdstuk en elke eis noemt de maatregel die hij invult.
+        pagina = ("<html><head><title>T</title></head><body><h2>2. Uitgangspunten</h2><ol><li>uitgangspunt</li></ol>"
+                  "<h2>5. Bescherming van de back-up</h2><ol><li>een [8.13.01]</li><li>twee [8.13.01, 8.13.02]</li></ol>"
+                  "<blockquote><p>Alleen als</p><ol start=\"3\"><li>drie [8.13.03]</li></ol></blockquote></body></html>")
+        uit = self.bouw(pagina)
+        for anker in ("punt-2-1", "eis-5-1", "eis-5-2", "eis-5-3"):
+            self.assertIn(f'<li id="{anker}"', uit)
+        self.assertNotIn('id="eis-2-1"', uit)
 
     def test_idempotent_en_een_blok(self):
         een = self.bouw(self.PAGINA)

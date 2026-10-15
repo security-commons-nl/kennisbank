@@ -1,6 +1,16 @@
 ---
 domein: fysiek
 titel: Beleid fysieke toegang en beveiliging
+samenvatting: Regelt de fysieke beveiliging van locaties en ruimten waar informatie wordt verwerkt of bewaard. Gaat over de indeling in vier beveiligingszones, de eisen per zone, de omgang met incidenten, monitoring en waarschuwingen, en het dragen van toegangspassen.
+invoeren:
+  - Stel per locatie een zoneringsplan op met vier zones en een eigenaar per zone (hoofdstuk 3).
+  - Sluit het alarm aan op een gecertificeerde alarmcentrale met een procedure voor opvolging (hoofdstuk 4).
+  - Regel de uitgifte en inname van toegangsmiddelen op naam, gekoppeld aan personeelsmutaties (hoofdstuk 5).
+  - Richt voor zone 3 en hoger een elektronisch toegangssysteem met logging in (hoofdstuk 6).
+  - Voorzie zone 4 van noodstroom, klimaatinstallatie, branddetectie en blusvoorziening, met een testschema (hoofdstuk 7).
+  - Voer voor elke zone 4 een risicobeoordeling op omgevingsdreigingen uit (hoofdstuk 7).
+  - Stel een afsprakenlijst waarschuwingen op met contactpersonen en kanalen per partner (hoofdstuk 8).
+  - Leg in een huisregel vast of medewerkers hun pas zichtbaar dragen (hoofdstuk 9).
 ---
 
 ## 1. Doel en reikwijdte
@@ -47,9 +57,7 @@ netwerk- en stroomvoorzieningen op die locaties en de eisen die de organisatie a
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Beveiligingszones
+## 3. Beveiligingszones
 
 - De organisatie deelt elke locatie in in vier zones en legt dat vast in een zoneringsplan per locatie,
   beheerd door [[lijneigenaar fysieke beveiliging: de manager van de afdeling die gebouwen en toegangsmiddelen beheert, bijvoorbeeld facilitaire zaken]].
@@ -84,7 +92,7 @@ netwerk- en stroomvoorzieningen op die locaties en de eisen die de organisatie a
 - Ook op de eigen locaties liggen de netwerk- en stroomknooppunten in zone 3, binnen zone 2. [7.01.02]
 :::
 
-### 3.2 Eisen voor zone 1, openbaar
+## 4. Eisen voor zone 1, openbaar
 
 - Vrije toegang voor bezoekers en leveranciers tot het terrein en de ontvangsthal is er alleen tijdens
   openingstijden. [7.03.01]
@@ -103,7 +111,7 @@ netwerk- en stroomvoorzieningen op die locaties en de eisen die de organisatie a
   Aansluitpunten in openbaar toegankelijke ruimten zijn uitgeschakeld of afgeschermd, en patchkasten zijn
   afgesloten. [7.12.01]
 
-### 3.3 Eisen voor zone 2, kantoor
+## 5. Eisen voor zone 2, kantoor
 
 Bovenop de eisen voor zone 1:
 
@@ -118,7 +126,7 @@ Bovenop de eisen voor zone 1:
 - Verlies of diefstal van een toegangsmiddel wordt direct gemeld en het middel wordt direct geblokkeerd.
   [7.02.01]
 
-### 3.4 Eisen voor zone 3, beperkt
+## 6. Eisen voor zone 3, beperkt
 
 Bovenop de eisen voor zone 2:
 
@@ -142,10 +150,10 @@ Bovenop de eisen voor zone 2:
 - Netwerk- en stroombekabeling naar de ruimte loopt niet door openbare ruimten, of is daar afgeschermd.
   [7.12.01]
 
-### 3.5 Eisen voor zone 4, kritiek
+## 7. Eisen voor zone 4, kritiek
 
 Bovenop de eisen voor zone 3. Is de ruimte uitbesteed, dan voldoet de leverancier aan deze eisen via het
-contract en een onafhankelijke verklaring (paragraaf 1).
+contract en een onafhankelijke verklaring (hoofdstuk 1).
 
 - Toegang loopt via een toegangssysteem met een autorisatiestructuur en persoonlijke toegangsmiddelen.
   [7.02.01]
@@ -176,7 +184,7 @@ contract en een onafhankelijke verklaring (paragraaf 1).
   worden bij elke inspectie gecontroleerd op sporen van openbreken. [7.01.02, 7.03.01]
 :::
 
-### 3.6 Incidenten, monitoring en waarschuwingen
+## 8. Incidenten, monitoring en waarschuwingen
 
 Ongeacht de zone:
 
@@ -195,7 +203,7 @@ Ongeacht de zone:
   [[afsprakenlijst waarschuwingen: document met de contactpersonen en kanalen per partner]] en worden
   jaarlijks gecontroleerd. [7.02.01]
 
-### 3.7 Toegangspassen dragen
+## 9. Toegangspassen dragen
 
 - Bezoekers, leveranciers en andere externen dragen hun pas zichtbaar zolang zij in een gebouw van de
   organisatie zijn. De pas laat alleen zien dat de drager een externe is, bijvoorbeeld met de tekst
@@ -203,7 +211,7 @@ Ongeacht de zone:
 - Of medewerkers hun pas zichtbaar dragen, staat in [[pasregels medewerkers: de huisregel over het dragen van de pas]].
   Op de pas staat zo min mogelijk informatie, zodat een verloren of gestolen pas weinig prijsgeeft. [7.02.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 10. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -214,7 +222,7 @@ Ongeacht de zone:
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers die ruimten beheren of toegang krijgen, en toetsen van hun verklaringen |
 | Medewerkers en inhuur | Hun toegangsmiddel persoonlijk gebruiken en niet uitlenen, niemand mee laten lopen door een beveiligde deur, bezoekers begeleiden, verlies en verdachte situaties direct melden |
 
-## 5. Naleving en controle
+## 11. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -240,7 +248,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 12. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De zones volgen het beleid
 informatieclassificatie. Het beleid raakt het beleid bedrijfsmiddelenbeheer (werken in beveiligde zones,

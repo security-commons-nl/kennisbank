@@ -1,6 +1,16 @@
 ---
 domein: logging
 titel: Beleid logging en monitoring
+samenvatting: Regelt wat systemen moeten loggen, hoe logbestanden veilig worden bewaard en hoe de omgeving wordt bewaakt op aanvallen. Behandelt minimale loggebeurtenissen, het overzicht van logbronnen, bewaartermijnen, centrale opslag buiten bereik van beheerders, detectie met escalatieregels en het delen van dreigingen met de CERT.
+invoeren:
+  - Richt op elk systeem de minimale loggebeurtenissen en verplichte velden in, met één tijdbron (hoofdstuk 3).
+  - Stel een overzicht van logbronnen op met gebeurtenissen, opslag, bewaartermijn en beoordelaar per systeem (hoofdstuk 3).
+  - Leg per logbron de bewaartermijn vast op basis van een risicoafweging (hoofdstuk 4).
+  - Neem logging met persoonsgegevens op in het verwerkingsregister (hoofdstuk 4).
+  - Kopieer logbestanden naar centrale opslag waar beheerders van het bronsysteem niets kunnen wijzigen (hoofdstuk 4).
+  - Stel een automatische melding in bij het wijzigen, verwijderen of stoppen van logging (hoofdstuk 4).
+  - Richt een detectievoorziening in die de logging van alle bronnen samenbrengt, bijvoorbeeld een SIEM (hoofdstuk 5).
+  - Leg escalatieregels vast met per ernstniveau de termijn en de ontvanger (hoofdstuk 5).
 ---
 
 ## 1. Doel en reikwijdte
@@ -39,9 +49,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wat er gelogd wordt
+## 3. Wat er gelogd wordt
 
 - De systeemeigenaar zorgt dat elk systeem ten minste logt: aanmeldingen en mislukte aanmeldpogingen, het
   gebruik van beheerrechten, wijzigingen in accounts en rechten, wijzigingen in de beveiligingsinstellingen,
@@ -89,7 +97,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
   met het normenkader erbij. [8.15.03]
 :::
 
-### 3.2 Bewaren en beschermen
+## 4. Bewaren en beschermen
 
 - De bewaartermijn per logbron staat in het overzicht en volgt uit een risicoafweging door de
   systeemeigenaar. Omdat aanvallers vaak maanden onopgemerkt in een omgeving zitten, is de termijn voor
@@ -124,7 +132,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
   uitvoert, mogen deze logging raadplegen; elke raadpleging wordt zelf ook gelogd. [8.15.04, 8.15.05]
 :::
 
-### 3.3 Monitoren en detecteren
+## 5. Monitoren en detecteren
 
 - De organisatie bewaakt de omgeving met een detectie- en responsvoorziening die de logging van
   werkplekken, servers, identiteiten, clouddiensten en netwerkcomponenten bij elkaar brengt, bijvoorbeeld
@@ -170,7 +178,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
   [8.16.03]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 6. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -182,7 +190,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 | Privacy officer en FG | Toetsing van het gebruik van logging met persoonsgegevens (de FG houdt toezicht) |
 | Inkoop en contractbeheer | Vastleggen van de logeisen bij leveranciers en toetsen van hun verklaringen |
 
-## 5. Naleving en controle
+## 7. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -206,7 +214,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 8. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 beveiligingsincidenten (melden van incidenten en bewaren van bewijs), het beleid netwerkbeveiliging

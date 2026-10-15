@@ -1,5 +1,7 @@
 # Beleid wijzigingsbeheer
 
+[Download als Word](wijzigingsbeheer.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Wijzigingsbeheer* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt hoe een wijziging in productie wordt aangevraagd, beoordeeld, getest, goedgekeurd en doorgevoerd. Behandelt het wijzigingsproces met standaard-, normale en spoedwijzigingen, werkinstructies voor beheertaken, het installeren van software, de scheiding van omgevingen en acceptatietesten.
+
+**Onderwerpen.** 3. Het wijzigingsproces; 4. Bedieningsprocedures; 5. Software installeren; 6. Scheiding van omgevingen; 7. Testen en acceptatie.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -62,9 +68,7 @@ toegangsbeveiliging).
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Het wijzigingsproces
+## 3. Het wijzigingsproces
 
 1. **[lijneigenaar wijzigingsbeheer]** richt
    wijzigingsbeheer in volgens een algemeen geaccepteerd beheerraamwerk, bijvoorbeeld ITIL of ISO/IEC 20000
@@ -108,7 +112,7 @@ toegangsbeveiliging).
 >    wijzigingsoverleg van de leverancier. Het wijzigingsregister van de leverancier is voor de organisatie in
 >    te zien en de contracteigenaar toetst het jaarlijks aan dit beleid. [8.32.01, 8.32.02]
 
-### 3.2 Bedieningsprocedures
+## 4. Bedieningsprocedures
 
 1. Voor terugkerende beheertaken (starten en stoppen van systemen, back-up en herstel, standaardwijzigingen,
    verwerken van batches, afhandelen van storingen en meldingen, onderhoud en opschonen van logging) legt de
@@ -127,7 +131,7 @@ toegangsbeveiliging).
 > 4. De leverancier houdt de werkinstructies voor de uitbestede taken bij; de organisatie heeft inzage in de
 >    instructies die haar systemen raken en in de instructies voor herstel na een storing. [5.37.01]
 
-### 3.3 Software installeren
+## 5. Software installeren
 
 1. Gebruikers hebben geen lokale beheerrechten op hun werkplek. Software komt alleen op werkplekken en
    servers via de softwarecatalogus of een goedgekeurde wijziging, geïnstalleerd door de beheerorganisatie
@@ -143,7 +147,7 @@ toegangsbeveiliging).
    is om terug te kunnen, en verwijdert zij versies die de leverancier niet meer ondersteunt volgens het
    beleid kwetsbaarheden en patchmanagement. [8.19.01]
 
-### 3.4 Scheiding van omgevingen
+## 6. Scheiding van omgevingen
 
 1. Ontwikkeling, test, acceptatie en productie zijn gescheiden omgevingen, met eigen accounts en rechten,
    zodat een fout of een aanval in de ene omgeving de andere niet raakt. Voor een systeem zonder eigen
@@ -163,7 +167,7 @@ toegangsbeveiliging).
    productie en verwijdert de beheerorganisatie de gegevens direct na de test; het verwijderen staat in het
    register bij de wijziging. [8.33.01]
 
-### 3.5 Testen en acceptatie
+## 7. Testen en acceptatie
 
 1. Acceptatietesten volgen een vaste testmethode: een testplan met testgevallen afgeleid van de
    functionele eisen en de beveiligingseisen, uitgevoerd door of namens de systeemeigenaar. Bij een wijziging
@@ -187,7 +191,7 @@ toegangsbeveiliging).
 >    processen, koppelingen en autorisaties, naast het testverslag van de leverancier, voordat de
 >    systeemeigenaar de versie accepteert. [8.29.01, 8.31.02]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -201,7 +205,7 @@ toegangsbeveiliging).
 | CISO | Advies bij wijzigingen met een hoog risico en bij nieuwe software met toegang tot kritieke informatie, jaarlijkse toetsing van dit beleid |
 | Leveranciers | Wijzigingen aanmelden en doorvoeren volgens dit beleid, werkinstructies voor uitbestede taken bijhouden |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**; afwijkingen gaan als bevinding naar het
@@ -226,7 +230,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid veilige
 softwareontwikkeling (testgegevens, bouwstraat en acceptatie van opleveringen), het beleid kwetsbaarheden
@@ -242,14 +246,14 @@ De maatregelen van dit domein (8, waarvan 6 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.37.01 | Gedocumenteerde bedieningsprocedures | ISO-beheersmaatregel | 3.2 Bedieningsprocedures | WZB-04 |
-| 8.19.01 | Installeren van software op operationele systemen | overheidsmaatregel | 3.3 Software installeren | WZB-05 |
-| 8.29.01 | Testen van de beveiliging tijdens ontwikkeling en acceptatie | overheidsmaatregel | 3.5 Testen en acceptatie | WZB-07 |
-| 8.31.01 | Scheiding van ontwikkel-, test- en productieomgevingen | overheidsmaatregel | 3.4 Scheiding van omgevingen | WZB-06 |
-| 8.31.02 | Scheiding van ontwikkel-, test- en productieomgevingen | overheidsmaatregel | 3.4 Scheiding van omgevingen | WZB-06 |
-| 8.32.01 | Wijzigingsbeheer | overheidsmaatregel | 3.1 Het wijzigingsproces | WZB-01, WZB-02 |
-| 8.32.02 | Wijzigingsbeheer | overheidsmaatregel | 3.1 Het wijzigingsproces | WZB-03 |
-| 8.33.01 | Testgegevens | ISO-beheersmaatregel | 3.4 Scheiding van omgevingen | WZB-08 |
+| 5.37.01 | Gedocumenteerde bedieningsprocedures | ISO-beheersmaatregel | 4. Bedieningsprocedures | WZB-04 |
+| 8.19.01 | Installeren van software op operationele systemen | overheidsmaatregel | 5. Software installeren | WZB-05 |
+| 8.29.01 | Testen van de beveiliging tijdens ontwikkeling en acceptatie | overheidsmaatregel | 7. Testen en acceptatie | WZB-07 |
+| 8.31.01 | Scheiding van ontwikkel-, test- en productieomgevingen | overheidsmaatregel | 6. Scheiding van omgevingen | WZB-06 |
+| 8.31.02 | Scheiding van ontwikkel-, test- en productieomgevingen | overheidsmaatregel | 6. Scheiding van omgevingen | WZB-06 |
+| 8.32.01 | Wijzigingsbeheer | overheidsmaatregel | 3. Het wijzigingsproces | WZB-01, WZB-02 |
+| 8.32.02 | Wijzigingsbeheer | overheidsmaatregel | 3. Het wijzigingsproces | WZB-03 |
+| 8.33.01 | Testgegevens | ISO-beheersmaatregel | 6. Scheiding van omgevingen | WZB-08 |
 
 ## Bijlage B: Afkortingen
 

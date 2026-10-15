@@ -1,5 +1,7 @@
 # Beleid logging en monitoring
 
+[Download als Word](logging.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Logging & monitoring* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt wat systemen moeten loggen, hoe logbestanden veilig worden bewaard en hoe de omgeving wordt bewaakt op aanvallen. Behandelt minimale loggebeurtenissen, het overzicht van logbronnen, bewaartermijnen, centrale opslag buiten bereik van beheerders, detectie met escalatieregels en het delen van dreigingen met de CERT.
+
+**Onderwerpen.** 3. Wat er gelogd wordt; 4. Bewaren en beschermen; 5. Monitoren en detecteren.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -46,9 +52,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wat er gelogd wordt
+## 3. Wat er gelogd wordt
 
 1. De systeemeigenaar zorgt dat elk systeem ten minste logt: aanmeldingen en mislukte aanmeldpogingen, het
    gebruik van beheerrechten, wijzigingen in accounts en rechten, wijzigingen in de beveiligingsinstellingen,
@@ -96,7 +100,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 >    normenkader van die voorziening en staan de betreffende systemen apart in het overzicht van logbronnen,
 >    met het normenkader erbij. [8.15.03]
 
-### 3.2 Bewaren en beschermen
+## 4. Bewaren en beschermen
 
 1. De bewaartermijn per logbron staat in het overzicht en volgt uit een risicoafweging door de
    systeemeigenaar. Omdat aanvallers vaak maanden onopgemerkt in een omgeving zitten, is de termijn voor
@@ -131,7 +135,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 >    van de periodieke Wpg-audit. Alleen de privacy officer, de CISO en de functionaris die de Wpg-controle
 >    uitvoert, mogen deze logging raadplegen; elke raadpleging wordt zelf ook gelogd. [8.15.04, 8.15.05]
 
-### 3.3 Monitoren en detecteren
+## 5. Monitoren en detecteren
 
 1. De organisatie bewaakt de omgeving met een detectie- en responsvoorziening die de logging van
    werkplekken, servers, identiteiten, clouddiensten en netwerkcomponenten bij elkaar brengt, bijvoorbeeld
@@ -177,7 +181,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 >    technisch niet kan, legt de systeemeigenaar vast welke meldingen de leverancier zelf geeft en hoe snel.
 >    [8.16.03]
 
-## 4. Rollen en verantwoordelijkheden
+## 6. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -189,7 +193,7 @@ toekenning van rechten die de logging vastlegt (beleid logische toegangsbeveilig
 | Privacy officer en FG | Toetsing van het gebruik van logging met persoonsgegevens (de FG houdt toezicht) |
 | Inkoop en contractbeheer | Vastleggen van de logeisen bij leveranciers en toetsen van hun verklaringen |
 
-## 5. Naleving en controle
+## 7. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -213,7 +217,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 8. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 beveiligingsincidenten (melden van incidenten en bewaren van bewijs), het beleid netwerkbeveiliging
@@ -228,16 +232,16 @@ De maatregelen van dit domein (10, waarvan 10 overheidsmaatregelen), waar dit st
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.15.01 | Logging | overheidsmaatregel | 3.1 Wat er gelogd wordt | LOG-02 |
-| 8.15.02 | Logging | overheidsmaatregel | 3.1 Wat er gelogd wordt | LOG-02 |
-| 8.15.03 | Logging | overheidsmaatregel | 3.1 Wat er gelogd wordt | LOG-01 |
-| 8.15.04 | Logging | overheidsmaatregel | 3.1 Wat er gelogd wordt | LOG-03 |
-| 8.15.05 | Logging | overheidsmaatregel | 3.2 Bewaren en beschermen | LOG-01, LOG-04 |
-| 8.15.06 | Logging | overheidsmaatregel | 3.2 Bewaren en beschermen | LOG-04 |
-| 8.16.01 | Monitoren van activiteiten | overheidsmaatregel | 3.3 Monitoren en detecteren | LOG-07 |
-| 8.16.02 | Monitoren van activiteiten | overheidsmaatregel | 3.3 Monitoren en detecteren | LOG-06 |
-| 8.16.03 | Monitoren van activiteiten | overheidsmaatregel | 3.3 Monitoren en detecteren | LOG-05 |
-| 8.16.04 | Monitoren van activiteiten | overheidsmaatregel | 3.3 Monitoren en detecteren | LOG-05 |
+| 8.15.01 | Logging | overheidsmaatregel | 3. Wat er gelogd wordt | LOG-02 |
+| 8.15.02 | Logging | overheidsmaatregel | 3. Wat er gelogd wordt | LOG-02 |
+| 8.15.03 | Logging | overheidsmaatregel | 3. Wat er gelogd wordt | LOG-01 |
+| 8.15.04 | Logging | overheidsmaatregel | 3. Wat er gelogd wordt | LOG-03 |
+| 8.15.05 | Logging | overheidsmaatregel | 4. Bewaren en beschermen | LOG-01, LOG-04 |
+| 8.15.06 | Logging | overheidsmaatregel | 4. Bewaren en beschermen | LOG-04 |
+| 8.16.01 | Monitoren van activiteiten | overheidsmaatregel | 5. Monitoren en detecteren | LOG-07 |
+| 8.16.02 | Monitoren van activiteiten | overheidsmaatregel | 5. Monitoren en detecteren | LOG-06 |
+| 8.16.03 | Monitoren van activiteiten | overheidsmaatregel | 5. Monitoren en detecteren | LOG-05 |
+| 8.16.04 | Monitoren van activiteiten | overheidsmaatregel | 5. Monitoren en detecteren | LOG-05 |
 
 ## Bijlage B: Afkortingen
 

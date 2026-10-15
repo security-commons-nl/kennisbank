@@ -1318,9 +1318,10 @@ def zorg_voor_ids(tekst: str) -> str:
 
 
 # Ankers: elke kop op niveau 2 tot en met 4 en elk punt van een genummerde lijst onder een genummerde
-# kop ("3.2 ...") krijgt een vaste plek waar je naar kunt linken, en een #-link die bij aanwijzen
-# verschijnt en de link kopieert. Onder het hoofdstuk Beleidsregels heet een punt een eis (eis-3-2-4),
-# elders een punt (punt-3-2-4).
+# kop ("5. ..." of "3.2 ...") krijgt een vaste plek waar je naar kunt linken, en een #-link die bij aanwijzen
+# verschijnt en de link kopieert. Een punt dat een BIO-maatregel noemt ([8.13.01]) of onder het hoofdstuk
+# Beleidsregels staat, heet een eis (eis-5-4, eis-3-2-4), elders een punt (punt-5-4).
+MAATREGELTAG = re.compile(r"\[\d\.\d{2}\.\d{2}(?:,\s*\d\.\d{2}\.\d{2})*\]")
 ANKER_START = "<!-- ankers -->"
 ANKER_EIND = "<!-- /ankers -->"
 ANKER = re.compile(r'<a class="anker" href="#[^"]*" aria-label="[^"]*">#</a>')
@@ -1359,11 +1360,10 @@ def zet_ankers(tekst: str) -> str:
         stuk = m.group(0)
         if m.group(1):
             kop = kale_kop(m.group(2))
+            n = re.match(r"^(\d+(?:\.\d+)*)\.?\s", kop)
+            nummer = n.group(1) if n else None
             if m.group(1) == "h2":
-                hoofdstuk, nummer = kop, None
-            else:
-                n = re.match(r"^(\d+(?:\.\d+)*)\.?\s", kop)
-                nummer = n.group(1) if n else None
+                hoofdstuk = kop
             stapel = []
             k = re.search(r'\bid="([^"]+)"', stuk)
             if k:
@@ -1378,7 +1378,9 @@ def zet_ankers(tekst: str) -> str:
         elif stapel and stapel[-1][0] == "ol" and len(stapel) == 1 and nummer:
             stapel[-1][1] += 1
             if "id=" not in (m.group(6) or ""):
-                soort = "eis" if re.search(r"beleidsregels", hoofdstuk, re.I) else "punt"
+                inhoud = re.split(r"</li>|<li\b|<ol\b|<ul\b", tekst[m.end():], maxsplit=1)[0]
+                eis = re.search(r"beleidsregels", hoofdstuk, re.I) or MAATREGELTAG.search(inhoud)
+                soort = "eis" if eis else "punt"
                 anker = f"{soort}-{nummer.replace('.', '-')}-{stapel[-1][1]}"
                 if anker not in gebruikt:
                     gebruikt.add(anker)

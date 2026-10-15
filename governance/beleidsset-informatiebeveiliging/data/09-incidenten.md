@@ -1,6 +1,16 @@
 ---
 domein: incidenten
 titel: Beleid beveiligingsincidenten
+samenvatting: Over het melden, beoordelen, afhandelen en leren van beveiligingsincidenten en datalekken. Behandelt het meldloket, de classificatie, detectie en escalatie, de afhandeling, meldingen aan externe partijen, coordinated vulnerability disclosure, het veiligstellen van bewijs en de evaluatie achteraf.
+invoeren:
+  - Richt één meldloket in met een bereikbaarheidsregeling en registratie van elke melding (hoofdstuk 3).
+  - Stel een incidentprocedure op met rollen, vervangers, termijnen, categorieën en ernstniveaus (hoofdstuk 3).
+  - Laat nieuwe medewerkers en externen de meldprocedure bevestigen en registreer die bevestiging (hoofdstuk 3).
+  - Leg in de incidentprocedure vast wanneer een incident naar crisisbeheersing gaat (hoofdstuk 6).
+  - Start een maandrapport incidenten voor de eindverantwoordelijke bedrijfsvoering (hoofdstuk 6).
+  - Leg de externe meldingen vast in de incidentprocedure, met termijn en eigenaar per melding (hoofdstuk 7).
+  - Richt een vast adres in voor meldingen van het CSIRT en de sectorale CERT (hoofdstuk 7).
+  - Publiceer een CVD-procedure op de website met een meldadres en een security.txt-bestand (hoofdstuk 8).
 ---
 
 ## 1. Doel en reikwijdte
@@ -43,9 +53,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Meldloket en meldprocedure
+## 3. Meldloket en meldprocedure
 
 - Medewerkers en externen melden een vermoed incident direct bij
   [[meldloket incidenten: het loket, bijvoorbeeld de servicedesk, met telefoonnummer en mailadres]].
@@ -64,7 +72,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 - Wie een incident meldt, meldt alleen wat hij zelf heeft waargenomen en onderneemt geen eigen onderzoek of
   herstelactie, tenzij het loket of de CISO daarom vraagt. [6.08.01]
 
-### 3.2 Beoordelen en classificeren
+## 4. Beoordelen en classificeren
 
 - De CISO, of bij afwezigheid de vervanger, beoordeelt elke melding binnen één werkdag: is dit een incident,
   welke categorie en welke ernst. De CISO legt het besluit met de onderbouwing vast bij de melding; een
@@ -94,7 +102,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   gecontracteerd. [5.24.01]
 :::
 
-### 3.3 Detectie en escalatie
+## 5. Detectie en escalatie
 
 ::: als detectie=eigen-soc
 - Het eigen SOC beoordeelt meldingen uit de detectievoorzieningen binnen de termijn per ernstniveau uit de
@@ -115,7 +123,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   risicoregister, met een besluit van de directie over de aanpak. [5.24.03]
 :::
 
-### 3.4 Afhandelen
+## 6. Afhandelen
 
 - De proceseigenaar handelt elk incident in zijn proces af via het incidentbeheerproces en wijst daarvoor
   direct na de beoordeling een behandelaar aan. De behandelaar beperkt eerst de schade, stelt daarna de
@@ -147,7 +155,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   opgelost, welke maatregelen lopen nog. De CISO bundelt dit tot een maandrapport voor de
   eindverantwoordelijke bedrijfsvoering. [5.24.04]
 
-### 3.5 Melden aan externe partijen
+## 7. Melden aan externe partijen
 
 - De incidentprocedure regelt de meldingen buiten de organisatie, elk met eigen termijn en eigenaar:
   het CSIRT en de toezichthouder volgens de Cyberbeveiligingswet waar die van toepassing is, de Autoriteit
@@ -181,7 +189,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   vrijwillig aan de sectorale CERT, zodat andere overheden gewaarschuwd kunnen worden. [5.24.07]
 :::
 
-### 3.6 Coordinated vulnerability disclosure
+## 8. Coordinated vulnerability disclosure
 
 - De CISO is eigenaar van de CVD-procedure volgens de leidraad van het NCSC, gepubliceerd op de website met
   een meldadres en een security.txt-bestand. De procedure noemt de reactietermijn, de afspraken over openbaar
@@ -191,7 +199,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   de melder binnen de reactietermijn uit de procedure. De meldingen en hun afhandeling zijn onderdeel van het
   maandrapport incidenten. [5.24.08]
 
-### 3.7 Bewijs verzamelen en bewaren
+## 9. Bewijs verzamelen en bewaren
 
 - Bij een vermoed incident stelt de behandelaar eerst bewijs veilig en herstelt daarna pas, tenzij de schade
   dat niet toelaat. Wie bewijs verzamelt, legt vast wat, wanneer, door wie en waar het is opgeslagen, zodat de
@@ -202,7 +210,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
   maatregelen, de externe meldingen en het advies. De CISO bewaart het dossier ten minste drie jaar na
   afsluiting, ook als het vermoeden ongegrond bleek. [5.28.01]
 
-### 3.8 Leren van incidenten
+## 10. Leren van incidenten
 
 - Na elk incident met ernst kritiek of hoger, en na elk meldplichtig datalek, organiseert de CISO binnen een
   maand een evaluatie met de proceseigenaar: oorzaak, wat werkte, wat niet, en welke maatregelen nodig zijn.
@@ -213,7 +221,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 - Lessen die voor andere overheden waardevol zijn, deelt de CISO geanonimiseerd met de sectorale CERT of
   samenwerkingspartners, na toestemming van de proceseigenaar. [5.27.02]
 
-## 4. Rollen en verantwoordelijkheden
+## 11. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -225,7 +233,7 @@ zover ze geen informatie raken (beleid fysieke toegang en beveiliging).
 | [[lijneigenaar personeel]] | Registratie van de bevestiging van de meldprocedure door medewerkers en externen |
 | Medewerkers en externen | Direct melden van een vermoed incident, geen eigen onderzoek, meewerken aan het onderzoek |
 
-## 5. Naleving en controle
+## 12. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -249,7 +257,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 13. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De ernstniveaus volgen het beleid
 informatieclassificatie. Het beleid raakt het beleid logging en monitoring (detectie en bewijs), het beleid
