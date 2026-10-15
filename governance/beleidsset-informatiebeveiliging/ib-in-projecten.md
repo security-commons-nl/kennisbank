@@ -1,5 +1,7 @@
 # Beleid informatiebeveiliging in projecten
 
+[Download als Word](ib-in-projecten.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Informatiebeveiliging binnen projecten* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt hoe beveiliging en privacy vanaf de start meegaan in projecten en significante wijzigingen aan informatiesystemen. Behandelt wanneer een risicoafweging nodig is, hoe die wordt uitgevoerd, de beslismomenten van start tot overdracht naar beheer, en de inbedding in de projectmethodiek.
+
+**Onderwerpen.** 3. Wanneer een risicoafweging nodig is; 4. Uitvoering van de risicoafweging; 5. Projectfasen en beslismomenten; 6. Projectmethodiek.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -23,7 +29,7 @@ De regels gelden ook voor projectleiders en projectmedewerkers die zijn ingehuur
 
 **Waarop.** Alle projecten en programma's van de organisatie waarin informatie of informatiesystemen een
 rol spelen, ook als een leverancier het project uitvoert of als het project vooral een organisatie- of
-procesverandering is, en alle wijzigingen buiten projectverband die als significant gelden (paragraaf 3.1).
+procesverandering is, en alle wijzigingen buiten projectverband die als significant gelden (hoofdstuk 3).
 Is de uitvoering van een project uitbesteed, dan gelden de eisen uit dit beleid als minimumeis voor die
 partij. De organisatie legt dat vast in het contract en toetst de naleving met een onafhankelijke verklaring,
 zoals een ISO 27001-certificaat of een ISAE 3402- of ISAE 3000-rapport; het vastleggen loopt via het beleid
@@ -46,9 +52,7 @@ informatieclassificatie).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wanneer een risicoafweging nodig is
+## 3. Wanneer een risicoafweging nodig is
 
 1. De opdrachtgever laat een risicoafweging uitvoeren bij elk nieuw informatiesysteem en bij elke
    significante wijziging op een bestaand systeem, voordat de keuze voor een oplossing of leverancier valt.
@@ -65,7 +69,7 @@ informatieclassificatie).
    houdt een overzicht bij van alle lopende projecten en significante wijzigingen met per project de datum
    van de melding, de classificatie en de status van de risicoafweging. [5.08.01]
 
-### 3.2 Uitvoering van de risicoafweging
+## 4. Uitvoering van de risicoafweging
 
 1. De opdrachtgever laat de risicoafweging uitvoeren met de vastgestelde methodiek. Het resultaat is een
    verslag met de classificatie van het systeem, de dreigingen, de risico's, de gekozen maatregelen en de
@@ -102,7 +106,7 @@ informatieclassificatie).
 >    berichtenbox) aan NEN 7510 en NTA 7516 waar die van toepassing zijn, en legt vast welke eisen daaruit
 >    in het programma van eisen zijn opgenomen. [5.08.01]
 
-### 3.3 Projectfasen en beslismomenten
+## 5. Projectfasen en beslismomenten
 
 1. Bij de start meldt de projectleider het project, bepaalt de proceseigenaar een eerste classificatie en
    stelt de CISO vast of het project of de wijziging significant is. De uitkomst staat in het startdocument.
@@ -120,22 +124,22 @@ informatieclassificatie).
    de lijst van open risico's en de beheerafspraken, en registreert het systeem in het register van
    bedrijfsmiddelen volgens het beleid bedrijfsmiddelenbeheer. De proceseigenaar bevestigt de ontvangst.
    [5.08.01]
-6. Verandert de scope van een lopend project zodanig dat een van de criteria uit paragraaf 3.1 alsnog
+6. Verandert de scope van een lopend project zodanig dat een van de criteria uit hoofdstuk 3 alsnog
    geldt, dan actualiseert de opdrachtgever de risicoafweging voordat het project verder gaat. [5.08.01]
 
-### 3.4 Projectmethodiek
+## 6. Projectmethodiek
 
-1. De projectmethodiek van de organisatie bevat de beslismomenten uit paragraaf 3.3 als vaste stappen, met
+1. De projectmethodiek van de organisatie bevat de beslismomenten uit hoofdstuk 5 als vaste stappen, met
    een sjabloon voor de risicoafweging en een sjabloon voor de risicoacceptatie. De eigenaar van de
    methodiek toetst elk jaar met de CISO of de stappen en sjablonen nog aansluiten op dit beleid en op het
    beleid informatieclassificatie. [5.08.01]
 2. Dezelfde stappen gelden voor projecten die met een agile of iteratieve aanpak werken: de risicoafweging
-   loopt mee met de eerste oplevering en wordt bij elke oplevering die een criterium uit paragraaf 3.1 raakt
+   loopt mee met de eerste oplevering en wordt bij elke oplevering die een criterium uit hoofdstuk 3 raakt
    bijgewerkt. [5.08.01]
 3. Projectleiders kennen de methodiek. Nieuwe projectleiders, ook inhuur, krijgen binnen een maand na de
    start een instructie van de ISO of CISO; de deelname wordt vastgelegd. [5.08.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -147,7 +151,7 @@ informatieclassificatie).
 | **[lijneigenaar projectportfolio]** | Overzicht van lopende projecten met de status van hun risicoafweging |
 | **[risico-acceptant]** | Acceptatie van restrisico's boven de risicobereidheid |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -169,7 +173,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het gebruikt de classificatie uit het
 beleid informatieclassificatie en de methodiek uit het risicomanagementbeleid. Het raakt het privacybeleid
@@ -184,7 +188,7 @@ De maatregelen van dit domein (1, waarvan 1 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.08.01 | Informatiebeveiliging in projectmanagement | overheidsmaatregel | 3.1 Wanneer een risicoafweging nodig is | PRJ-01, PRJ-02, PRJ-03, PRJ-04, PRJ-05 |
+| 5.08.01 | Informatiebeveiliging in projectmanagement | overheidsmaatregel | 3. Wanneer een risicoafweging nodig is | PRJ-01, PRJ-02, PRJ-03, PRJ-04, PRJ-05 |
 
 ## Bijlage B: Afkortingen
 

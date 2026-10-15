@@ -1,6 +1,16 @@
 ---
 domein: logische-toegang
 titel: Beleid logische toegangsbeveiliging
+samenvatting: Regelt de toegang tot informatiesystemen, netwerken en gegevens: hoe accounts ontstaan en vervallen, hoe gebruikers zich aanmelden en wie welke rechten krijgt. Behandelt accounts, MFA, wachtwoorden, werken op afstand, periodieke beoordeling van rechten, beheeraccounts, toegang voor leveranciers, hoog gelabelde informatie en broncode.
+invoeren:
+  - Richt één accountproces in, gekoppeld aan de personeelsadministratie en de registratie van inhuur (hoofdstuk 3).
+  - Stel per systeem een autorisatieprocedure en autorisatiematrix op, met een mandaatregister (hoofdstuk 3).
+  - Houd een register bij van gedeelde accounts met motivering en verantwoordelijke leidinggevende (hoofdstuk 3).
+  - Richt MFA in voor de werkomgeving, internetvoorzieningen en accounts met beheerrechten (hoofdstuk 4).
+  - Geef elke medewerker een wachtwoordmanager en dwing de wachtwoordeisen technisch af (hoofdstuk 5).
+  - Leg in een regeling thuiswerken vast welke apparatuur en werkplekken zijn toegestaan (hoofdstuk 6).
+  - Houd een register bij van accounts met bijzondere rechten, inclusief nood- en technische accounts (hoofdstuk 8).
+  - Houd een register van leveranciersaccounts bij met goedkeuring, activering en beëindiging (hoofdstuk 9).
 ---
 
 ## 1. Doel en reikwijdte
@@ -45,9 +55,7 @@ medewerkers blijft een besluit van de organisatie zelf.
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Identiteiten en accounts
+## 3. Identiteiten en accounts
 
 - [[lijneigenaar logische toegang: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT of informatievoorziening]]
   richt één accountproces in, gekoppeld aan de personeelsadministratie en de registratie van inhuur:
@@ -74,7 +82,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   ingebruikname. Een technisch account heeft een eigenaar, kan niet interactief aanmelden en staat in het
   register van accounts met bijzondere rechten. [5.16.02, 5.18.01]
 
-### 3.2 Authenticatie en MFA
+## 4. Authenticatie en MFA
 
 - MFA is verplicht bij het aanmelden op de digitale werkomgeving, bij elk account op een voorziening die via
   internet bereikbaar is en bij elk account met beheerrechten. Waar de risicoanalyse van een systeem dat
@@ -106,7 +114,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   desktop) en bij elk beheeraccount. Op kantoor loopt het primaire aanmelden met een pas of token. [5.17.01]
 :::
 
-### 3.3 Wachtwoorden
+## 5. Wachtwoorden
 
 - Elke medewerker krijgt een wachtwoordmanager van de organisatie. Wachtwoorden voor werk staan niet in
   browsers op privéapparaten, in documenten of op papier. [5.17.02]
@@ -118,7 +126,7 @@ medewerkers blijft een besluit van de organisatie zelf.
 - Wachtwoorden verlopen niet periodiek. Bij een vermoeden van lekken vervangt de gebruiker het wachtwoord
   direct. [5.17.03]
 
-### 3.4 Toegang tot de vertrouwde zone en werken op afstand
+## 6. Toegang tot de vertrouwde zone en werken op afstand
 
 - Toegang tot het interne netwerk en de interne systemen krijgt alleen apparatuur die de organisatie kent en
   heeft geauthenticeerd, of programmatuur in een afgeschermde omgeving zoals een virtuele werkplek of een
@@ -140,7 +148,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   controleert. [5.15.01]
 :::
 
-### 3.5 Toegangsrechten en periodieke beoordeling
+## 7. Toegangsrechten en periodieke beoordeling
 
 - Een bevoegde leidinggevende vraagt rechten aan via het ticketsysteem; functioneel beheer toetst de aanvraag
   aan de autorisatiematrix en richt de rechten in. Het ticket toont aanvraag, goedkeuring en inrichting.
@@ -187,7 +195,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   vastgelegd, zodat de periodieke Wpg-audit kan aantonen wie wat heeft ingezien. [5.18.02]
 :::
 
-### 3.6 Accounts met bijzondere rechten
+## 8. Accounts met bijzondere rechten
 
 - Een beheerder heeft een apart beheeraccount, zonder mail en internettoegang. [8.02.01]
 - Beheerrechten worden waar het kan alleen voor de duur van een taak toegekend (just-in-time), met een
@@ -221,7 +229,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   dienstverlening en de logging daarvan zes maanden bewaart en op verzoek levert. [8.18.01, 8.18.02]
 :::
 
-### 3.7 Toegang voor leveranciers
+## 9. Toegang voor leveranciers
 
 - Een leverancier krijgt toegang tot het netwerk of een systeem pas na een risicoafweging door de
   systeemeigenaar: welke systemen, welke rechten, vanaf waar en voor hoe lang. Een leidinggevende van de
@@ -232,7 +240,7 @@ medewerkers blijft een besluit van de organisatie zelf.
 - Het register van leveranciersaccounts laat zien wie toegang heeft, wie die heeft goedgekeurd en wanneer
   ze is geactiveerd en beëindigd. [8.05.01]
 
-### 3.8 Informatie met een hoog vertrouwelijkheidslabel
+## 10. Informatie met een hoog vertrouwelijkheidslabel
 
 - Informatie met het label vertrouwelijk, strikt vertrouwelijk of geheim (beleid informatieclassificatie) staat in
   aparte systemen, databases of omgevingen die fysiek of logisch gescheiden zijn van de algemene
@@ -245,7 +253,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   gecontroleerd. [8.03.01, 8.03.02]
 :::
 
-### 3.9 Broncode
+## 11. Broncode
 
 - Toegang tot broncode, scripts en configuratiebestanden in een repository is beperkt tot de ontwikkelaars
   en beheerders die eraan werken; de eigenaar van de repository kent lees- en schrijfrechten apart toe en
@@ -254,7 +262,7 @@ medewerkers blijft een besluit van de organisatie zelf.
   dat af en legt vast wie wat heeft goedgekeurd. Broncode van systemen met het label vertrouwelijk of hoger
   staat niet in een openbare repository. [8.04.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 12. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -268,7 +276,7 @@ medewerkers blijft een besluit van de organisatie zelf.
 | Inkoop en contractbeheer | Eisen uit dit beleid vastleggen bij beheerpartijen en hun verklaringen toetsen |
 | Medewerkers | Persoonlijk gebruik van account en tweede factor, melden van verlies of misbruik |
 
-## 5. Naleving en controle
+## 13. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -294,7 +302,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 14. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid screening,
 bewustzijn en opleiding (in- en uitdiensttreding), het beleid informatieclassificatie (labels), het beleid

@@ -1,5 +1,7 @@
 # Beleid screening, bewustzijn en opleiding
 
+[Download als Word](screening-bewustzijn.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Screening, bewustzijn & opleiding* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over de mens als onderdeel van de beveiliging, van werving tot vertrek. Behandelt screening, aanstelling en geheimhouding, training en bewustzijn, scholing van het bestuur, functiewijziging en vertrek, en de disciplinaire procedure bij niet naleven.
+
+**Onderwerpen.** 3. Screening; 4. Aanstelling en geheimhouding; 5. Training en bewustzijn; 6. Scholing van het bestuur; 7. Functiewijziging en vertrek; 8. Niet naleven en disciplinaire procedure.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -46,9 +52,7 @@ integriteitsbeleid van de organisatie).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Screening
+## 3. Screening
 
 1. De organisatie heeft een screeningsbeleid dat
    **[vaststeller screeningsbeleid]**
@@ -74,7 +78,7 @@ integriteitsbeleid van de organisatie).
    waarvoor de screening nodig is. De leidinggevende legt de afgeronde screening vast voordat de toegang
    wordt aangevraagd. [6.01.01]
 
-### 3.2 Aanstelling en geheimhouding
+## 4. Aanstelling en geheimhouding
 
 1. Bij aanstelling of functiewisseling wijst de leidinggevende de medewerker op de eigen verantwoordelijkheden
    voor informatiebeveiliging en privacy. De medewerker bevestigt de gedragsregels voor
@@ -98,7 +102,7 @@ integriteitsbeleid van de organisatie).
    opdrachtgevende leidinggevende die persoon vooraf een geheimhoudingsverklaring tekenen en bewaart die.
    [6.06.01]
 
-### 3.3 Training en bewustzijn
+## 5. Training en bewustzijn
 
 1. Iedere medewerker en iedere contractant die met de informatiesystemen werkt, rondt binnen drie maanden na
    indiensttreding een training informatiebewustzijn met een toets af. HR registreert de deelname en het
@@ -112,7 +116,7 @@ integriteitsbeleid van de organisatie).
 4. Waar medewerkers met gerubriceerde informatie of in een omgeving met eigen eisen werken, krijgen zij van
    de leidinggevende aanvullende instructie over die eisen voordat zij ermee werken; de instructie wordt
    vastgelegd. [6.03.01]
-5. Functies met een verhoogd risico (paragraaf 3.1) krijgen jaarlijks aanvullende training die past bij hun
+5. Functies met een verhoogd risico (hoofdstuk 3) krijgen jaarlijks aanvullende training die past bij hun
    rol, zoals beheerders, ontwikkelaars en medewerkers die met bijzondere persoonsgegevens werken. De CISO
    bepaalt per functiegroep de inhoud; HR registreert de deelname. [6.03.01]
 6. Leidinggevenden bespreken informatiebeveiliging bij aanstelling, overplaatsing en ten minste eenmaal per
@@ -122,7 +126,7 @@ integriteitsbeleid van de organisatie).
    phishingsimulatie, en gebruikt de uitkomst voor het programma van het volgende jaar. De uitkomst staat in
    de rapportage aan het bestuur. [6.03.01]
 
-### 3.4 Scholing van het bestuur
+## 6. Scholing van het bestuur
 
 1. Bestuurders volgen bij aantreden en daarna ten minste jaarlijks scholing over cyberrisico's: welke
    dreigingen de organisatie raken, wat de gevolgen zijn voor de dienstverlening en wat hun eigen rol is bij
@@ -133,7 +137,7 @@ integriteitsbeleid van de organisatie).
 3. Bestuurders doen ten minste eenmaal per twee jaar mee aan een oefening met een cyberincident. De CISO
    plant de oefening en legt de deelname en de leerpunten vast. [5.04.01]
 
-### 3.5 Functiewijziging en vertrek
+## 7. Functiewijziging en vertrek
 
 1. Bij vertrek of functiewijziging voert de leidinggevende een vertrekgesprek of overdrachtsgesprek waarin
    hij de medewerker wijst op de geheimhoudingsplicht die na het dienstverband doorloopt en op de
@@ -151,7 +155,7 @@ integriteitsbeleid van de organisatie).
 5. Bij inhuur en detachering gelden dezelfde stappen; de inhurende leidinggevende voert ze uit op de laatste
    dag van de opdracht. [6.05.01]
 
-### 3.6 Niet naleven en disciplinaire procedure
+## 8. Niet naleven en disciplinaire procedure
 
 1. Onveilig of onzorgvuldig gedrag bespreekt de leidinggevende eerst met de medewerker, gericht op herhaling
    voorkomen. De leidinggevende legt het gesprek vast als het gedrag tot een incident heeft geleid. [6.04.01]
@@ -164,13 +168,13 @@ integriteitsbeleid van de organisatie).
    of het de eerste keer is, de opzet en de schade. De CISO adviseert over de ernst; HR legt het besluit
    vast in het personeelsdossier. [6.04.01]
 4. Voordat een maatregel wordt opgelegd, stelt de leidinggevende met HR vast dat de medewerker de regel
-   kende of had kunnen kennen, met de bevestiging uit paragraaf 3.2 en de trainingsregistratie uit paragraaf
-   3.3 als bewijs. [6.04.01]
+   kende of had kunnen kennen, met de bevestiging uit hoofdstuk 4 en de trainingsregistratie uit hoofdstuk
+   5 als bewijs. [6.04.01]
 5. HR rapporteert jaarlijks aan de CISO, geanonimiseerd, hoeveel disciplinaire trajecten over
    informatiebeveiliging zijn gestart en wat de uitkomst was, zodat de CISO het bewustwordingsprogramma kan
    bijstellen. [6.04.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 9. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -182,7 +186,7 @@ integriteitsbeleid van de organisatie).
 | Bestuur | Eigen scholing, oefening en de jaarlijkse bespreking van het risicobeeld |
 | Medewerkers | Training volgen, regels naleven, geheimhouding ook na vertrek, incidenten melden |
 
-## 5. Naleving en controle
+## 10. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -207,7 +211,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 11. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en staat naast het privacybeleid en de
 gedragscode. Het raakt het beleid logische toegangsbeveiliging (rechten bij in-, door- en uitstroom), het
@@ -222,16 +226,16 @@ De maatregelen van dit domein (10, waarvan 7 overheidsmaatregelen), waar dit stu
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.04.01 | Managementverantwoordelijkheden | overheidsmaatregel | 3.3 Training en bewustzijn | SBO-05 |
-| 6.01.01 | Screening | overheidsmaatregel | 3.1 Screening | SBO-01 |
-| 6.02.01 | Arbeidsovereenkomst | overheidsmaatregel | 3.2 Aanstelling en geheimhouding | SBO-02 |
-| 6.03.01 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 3.3 Training en bewustzijn | SBO-03, SBO-07 |
-| 6.03.02 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 3.3 Training en bewustzijn | SBO-03 |
-| 6.03.03 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 3.3 Training en bewustzijn | SBO-04 |
-| 6.03.04 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 3.3 Training en bewustzijn | SBO-03 |
-| 6.04.01 | Disciplinaire procedure | ISO-beheersmaatregel | 3.6 Niet naleven en disciplinaire procedure | SBO-07, SBO-08 |
-| 6.05.01 | Verantwoordelijkheden na beëindiging of wijziging van het dienstverband | ISO-beheersmaatregel | 3.5 Functiewijziging en vertrek | SBO-06 |
-| 6.06.01 | Vertrouwelijkheids- of geheimhoudingsovereenkomsten | ISO-beheersmaatregel | 3.2 Aanstelling en geheimhouding | SBO-02 |
+| 5.04.01 | Managementverantwoordelijkheden | overheidsmaatregel | 5. Training en bewustzijn | SBO-05 |
+| 6.01.01 | Screening | overheidsmaatregel | 3. Screening | SBO-01 |
+| 6.02.01 | Arbeidsovereenkomst | overheidsmaatregel | 4. Aanstelling en geheimhouding | SBO-02 |
+| 6.03.01 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 5. Training en bewustzijn | SBO-03, SBO-07 |
+| 6.03.02 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 5. Training en bewustzijn | SBO-03 |
+| 6.03.03 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 5. Training en bewustzijn | SBO-04 |
+| 6.03.04 | Bewustwording van, opleiding en training in informatiebeveiliging | overheidsmaatregel | 5. Training en bewustzijn | SBO-03 |
+| 6.04.01 | Disciplinaire procedure | ISO-beheersmaatregel | 8. Niet naleven en disciplinaire procedure | SBO-07, SBO-08 |
+| 6.05.01 | Verantwoordelijkheden na beëindiging of wijziging van het dienstverband | ISO-beheersmaatregel | 7. Functiewijziging en vertrek | SBO-06 |
+| 6.06.01 | Vertrouwelijkheids- of geheimhoudingsovereenkomsten | ISO-beheersmaatregel | 4. Aanstelling en geheimhouding | SBO-02 |
 
 ## Bijlage B: Afkortingen
 

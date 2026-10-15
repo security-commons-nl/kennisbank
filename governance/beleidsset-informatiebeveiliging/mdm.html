@@ -9,6 +9,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid mobile device management</span></nav><!-- /kruimelpad -->
 <h1>Beleid mobile device management</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="mdm.md">Markdown-bron</a></p>
+<p><a href="mdm.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
 <table>
 <thead>
 <tr>
@@ -39,6 +40,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
+<p><strong>In het kort.</strong> Regelt de inrichting, het beheer en het gebruik van laptops, smartphones en tablets met toegang tot bedrijfsinformatie. Gaat over zero footprint en bescherming op het apparaat, beheer via MDM en MAM, en de gebruikersovereenkomst mobiel werken.</p>
+<p><strong>Onderwerpen.</strong> 3. Zero footprint en bescherming op het apparaat; 4. Beheer van apparaten; 5. Gebruikersovereenkomst en gedrag.</p>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor mobiele apparatuur waarmee
@@ -61,126 +64,125 @@ de accounts en de meerfactorauthenticatie (beleid logische toegangsbeveiliging) 
 apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
 <h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li>Bedrijfsinformatie blijft zo veel mogelijk in de centrale systemen. Op het apparaat staat niets, of zo min
-   mogelijk en dan versleuteld.</li>
-<li>Alleen beheerde apparaten of beheerde apps krijgen toegang tot bedrijfsinformatie.</li>
-<li>De gebruiker weet wat de risico's van mobiel werken zijn en heeft getekend dat hij veilig werkt.</li>
-<li>Een apparaat dat niet meer aan de eisen voldoet, verliest zijn toegang automatisch; de techniek dwingt
-   het beleid af, de gebruiker hoeft er niet aan te denken.</li>
-<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
-   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+<li id="punt-2-1">Bedrijfsinformatie blijft zo veel mogelijk in de centrale systemen. Op het apparaat staat niets, of zo min
+   mogelijk en dan versleuteld. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2">Alleen beheerde apparaten of beheerde apps krijgen toegang tot bedrijfsinformatie. <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3">De gebruiker weet wat de risico's van mobiel werken zijn en heeft getekend dat hij veilig werkt. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4">Een apparaat dat niet meer aan de eisen voldoet, verliest zijn toegang automatisch; de techniek dwingt
+   het beleid af, de gebruiker hoeft er niet aan te denken. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-5">Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid. <a class="anker" href="#punt-2-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
-<h3 id="3-1-zero-footprint-en-bescherming-op-het-apparaat">3.1 Zero footprint en bescherming op het apparaat<a class="anker" href="#3-1-zero-footprint-en-bescherming-op-het-apparaat" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="3-zero-footprint-en-bescherming-op-het-apparaat">3. Zero footprint en bescherming op het apparaat<a class="anker" href="#3-zero-footprint-en-bescherming-op-het-apparaat" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-1-1">De beheerder MDM richt apps en diensten voor mobiele apparaten zo in dat bedrijfsinformatie niet standaard
+<li id="eis-3-1">De beheerder MDM richt apps en diensten voor mobiele apparaten zo in dat bedrijfsinformatie niet standaard
    op het apparaat wordt opgeslagen: werken gebeurt via de browser, een virtuele werkplek of een beheerde app
-   die geen lokale kopie bewaart. [8.01.01] <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-2">Waar dat nog niet kan, staat bedrijfsinformatie alleen in een beheerde, versleutelde container of op een
+   die geen lokale kopie bewaart. [8.01.01] <a class="anker" href="#eis-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2">Waar dat nog niet kan, staat bedrijfsinformatie alleen in een beheerde, versleutelde container of op een
    volledig versleuteld apparaat. Het apparaat is beveiligd met een pincode van ten minste zes cijfers, een
    wachtwoord of biometrie, met automatische vergrendeling na ten hoogste vijf minuten; de beheerder MDM
-   dwingt die instellingen af. [8.01.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-3">Van elk apparaat met toegang tot bedrijfsinformatie kan de organisatie de bedrijfsinformatie op afstand
+   dwingt die instellingen af. [8.01.01] <a class="anker" href="#eis-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3">Van elk apparaat met toegang tot bedrijfsinformatie kan de organisatie de bedrijfsinformatie op afstand
    wissen. Bij verlies of diefstal meldt de gebruiker dat direct bij de servicedesk; de servicedesk wist
    binnen <strong>[wistermijn]</strong>, blokkeert de toegang van het apparaat en registreert de melding als
-   beveiligingsincident volgens het beleid beveiligingsincidenten. [8.01.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-4">Informatie met het label strikt vertrouwelijk of geheim uit het beleid informatieclassificatie staat nooit lokaal
+   beveiligingsincident volgens het beleid beveiligingsincidenten. [8.01.01] <a class="anker" href="#eis-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4">Informatie met het label strikt vertrouwelijk of geheim uit het beleid informatieclassificatie staat nooit lokaal
    op een mobiel apparaat; de beheerder MDM blokkeert downloaden en offline beschikbaar maken voor die labels
-   waar de systemen dat ondersteunen. [8.01.01] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-5">Bij reizen naar landen waar de organisatie een verhoogd risico ziet, geeft de servicedesk op verzoek een
+   waar de systemen dat ondersteunen. [8.01.01] <a class="anker" href="#eis-3-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-5">Bij reizen naar landen waar de organisatie een verhoogd risico ziet, geeft de servicedesk op verzoek een
    schoon reisapparaat uit, dat na terugkomst wordt gewist; welke landen dat zijn, staat in
    <strong>[reisrichtlijn apparatuur]</strong>.
-   [8.01.01] <a class="anker" href="#eis-3-1-5" aria-label="Link naar dit punt">#</a></li>
+   [8.01.01] <a class="anker" href="#eis-3-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-2-beheer-van-apparaten">3.2 Beheer van apparaten<a class="anker" href="#3-2-beheer-van-apparaten" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="4-beheer-van-apparaten">4. Beheer van apparaten<a class="anker" href="#4-beheer-van-apparaten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-2-1">Elk mobiel apparaat met toegang tot bedrijfsinformatie valt onder een MDM-oplossing (beheer van het hele
+<li id="eis-4-1">Elk mobiel apparaat met toegang tot bedrijfsinformatie valt onder een MDM-oplossing (beheer van het hele
    apparaat) of, voor eigen apparaten, een MAM-oplossing (beheer van de bedrijfsapps). De beheerder MDM
-   schrijft het apparaat in vóór uitgifte; inschrijving is een voorwaarde voor toegang. [8.01.02] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-2">Via MDM of MAM dwingt de beheerder MDM ten minste af: versleuteling, schermvergrendeling, een ondersteunde
+   schrijft het apparaat in vóór uitgifte; inschrijving is een voorwaarde voor toegang. [8.01.02] <a class="anker" href="#eis-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-2">Via MDM of MAM dwingt de beheerder MDM ten minste af: versleuteling, schermvergrendeling, een ondersteunde
    versie van het besturingssysteem, geen root of jailbreak, geen onbekende appbronnen en wissen op afstand.
    Een apparaat dat niet voldoet, verliest automatisch de toegang tot bedrijfsinformatie en de gebruiker
-   krijgt een melding met wat hij moet doen. [8.01.02] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-3">Mobiele apparaten vallen onder patchmanagement en hardening volgens het beleid vulnerability- en
+   krijgt een melding met wat hij moet doen. [8.01.02] <a class="anker" href="#eis-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-3">Mobiele apparaten vallen onder patchmanagement en hardening volgens het beleid vulnerability- en
    patchmanagement. De beheerder MDM installeert beveiligingsupdates van het besturingssysteem en de
    bedrijfsapps binnen de termijnen uit dat beleid, of dwingt de installatie af bij de gebruiker; apparaten
-   waarvoor de fabrikant geen updates meer levert, worden binnen drie maanden uitgefaseerd. [8.01.02] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-4">Apps op beheerde apparaten komen uit de officiële winkel of uit de beheerde bedrijfscatalogus. De
+   waarvoor de fabrikant geen updates meer levert, worden binnen drie maanden uitgefaseerd. [8.01.02] <a class="anker" href="#eis-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-4">Apps op beheerde apparaten komen uit de officiële winkel of uit de beheerde bedrijfscatalogus. De
    beheerder MDM beoordeelt elk kwartaal de lijst van geïnstalleerde apps op apps die bedrijfsinformatie
-   kunnen lezen of doorsturen, en blokkeert apps die niet zijn toegestaan. [8.01.02] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-5">De beheerder MDM houdt een nalevingsrapportage bij met per apparaat de inschrijving, de versie van het
+   kunnen lezen of doorsturen, en blokkeert apps die niet zijn toegestaan. [8.01.02] <a class="anker" href="#eis-4-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-5">De beheerder MDM houdt een nalevingsrapportage bij met per apparaat de inschrijving, de versie van het
    besturingssysteem, de laatste contactdatum en de nalevingsstatus, en rapporteert die elk kwartaal aan
    <strong>[lijneigenaar mobiele apparatuur]</strong> en de
    CISO. Apparaten zonder contact in de afgelopen drie maanden worden geblokkeerd en bij de gebruiker
-   nagevraagd. [8.01.02] <a class="anker" href="#eis-3-2-5" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-6">De beheerder MDM legt de inrichting van MDM en MAM (nalevingsregels, app-beleid, voorwaardelijke toegang)
-   vast als configuratiestandaard en beheert wijzigingen daarin via het beleid wijzigingsbeheer. [8.01.02] <a class="anker" href="#eis-3-2-6" aria-label="Link naar dit punt">#</a></li>
+   nagevraagd. [8.01.02] <a class="anker" href="#eis-4-5" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-6">De beheerder MDM legt de inrichting van MDM en MAM (nalevingsregels, app-beleid, voorwaardelijke toegang)
+   vast als configuratiestandaard en beheert wijzigingen daarin via het beleid wijzigingsbeheer. [8.01.02] <a class="anker" href="#eis-4-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Ja, onder voorwaarden»</strong></p>
 <ol start="7">
-<li id="eis-3-2-7">Eigen apparaten zijn toegestaan onder de voorwaarden in
+<li id="eis-4-7">Eigen apparaten zijn toegestaan onder de voorwaarden in
    <strong>[regeling eigen apparaten]</strong>.
    Op een eigen apparaat staat bedrijfsinformatie alleen in beheerde apps (MAM); de organisatie wist bij vertrek
    of verlies alleen die apps en hun gegevens, niet het hele apparaat. De medewerker stemt daar vooraf
-   schriftelijk mee in; HR bewaart de instemming bij de gebruikersovereenkomst. [8.01.01] <a class="anker" href="#eis-3-2-7" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-8">Een eigen apparaat krijgt pas toegang als het een ondersteunde versie van het besturingssysteem heeft, een
+   schriftelijk mee in; HR bewaart de instemming bij de gebruikersovereenkomst. [8.01.01] <a class="anker" href="#eis-4-7" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-8">Een eigen apparaat krijgt pas toegang als het een ondersteunde versie van het besturingssysteem heeft, een
    schermvergrendeling en versleuteling van de opslag. De toegangsvoorziening controleert dat bij elke
    aanmelding; de beheerder MDM ziet eigen apparaten in dezelfde nalevingsrapportage als apparaten van de
-   organisatie. [8.01.02] <a class="anker" href="#eis-3-2-8" aria-label="Link naar dit punt">#</a></li>
+   organisatie. [8.01.02] <a class="anker" href="#eis-4-8" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Nee»</strong></p>
 <ol start="9">
-<li id="eis-3-2-9">Eigen apparaten krijgen geen toegang tot bedrijfsinformatie, ook niet via webmail of de browser. De
+<li id="eis-4-9">Eigen apparaten krijgen geen toegang tot bedrijfsinformatie, ook niet via webmail of de browser. De
    toegangsvoorziening laat alleen apparaten toe die de organisatie beheert; de beheerder MDM test dat
-   jaarlijks met een niet-beheerd apparaat. [8.01.01] <a class="anker" href="#eis-3-2-9" aria-label="Link naar dit punt">#</a></li>
+   jaarlijks met een niet-beheerd apparaat. [8.01.01] <a class="anker" href="#eis-4-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Cloudwerkplek (bijvoorbeeld Microsoft 365)»</strong></p>
 <ol start="10">
-<li id="eis-3-2-10">Toegang tot de cloudwerkplek vanaf een mobiel apparaat loopt via voorwaardelijke toegang: meerfactor plus
+<li id="eis-4-10">Toegang tot de cloudwerkplek vanaf een mobiel apparaat loopt via voorwaardelijke toegang: meerfactor plus
    een apparaat of app die volgens het MDM of MAM aan de eisen voldoet. Opslaan, kopiëren naar niet-beheerde
    apps en lokaal synchroniseren van bestanden zijn op niet-beheerde apparaten uitgeschakeld. De beheerder MDM
-   test de regels voor voorwaardelijke toegang bij elke wijziging en ten minste jaarlijks. [8.01.01, 8.01.02] <a class="anker" href="#eis-3-2-10" aria-label="Link naar dit punt">#</a></li>
+   test de regels voor voorwaardelijke toegang bij elke wijziging en ten minste jaarlijks. [8.01.01, 8.01.02] <a class="anker" href="#eis-4-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «Hybride: cloud naast een virtuele of lokale werkplek»</strong></p>
 <ol start="11">
-<li id="eis-3-2-11">Mobiele apparaten krijgen toegang tot clouddiensten via voorwaardelijke toegang op basis van de MDM- of
+<li id="eis-4-11">Mobiele apparaten krijgen toegang tot clouddiensten via voorwaardelijke toegang op basis van de MDM- of
    MAM-status, en tot de lokale of virtuele werkplek alleen via een beveiligde verbinding (bijvoorbeeld een
    VPN of een gateway voor de virtuele werkplek) vanaf een beheerd apparaat. De beheerder MDM stemt de
    beheerinstellingen voor beide routes op elkaar af, zodat een apparaat dat voor de ene route is
-   geblokkeerd, ook de andere verliest, en test dat ten minste jaarlijks. [8.01.02] <a class="anker" href="#eis-3-2-11" aria-label="Link naar dit punt">#</a></li>
+   geblokkeerd, ook de andere verliest, en test dat ten minste jaarlijks. [8.01.02] <a class="anker" href="#eis-4-11" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Hoe ziet je werkplek eruit? «On-premises»</strong></p>
 <ol start="12">
-<li id="eis-3-2-12">Mobiele apparaten krijgen toegang tot de interne omgeving alleen via een beveiligde verbinding
+<li id="eis-4-12">Mobiele apparaten krijgen toegang tot de interne omgeving alleen via een beveiligde verbinding
    (bijvoorbeeld een VPN of een gateway voor een virtuele werkplek) vanaf een apparaat dat onder MDM valt.
    Mail en agenda op smartphones lopen via een beheerde app. Werken via een virtuele werkplek is de standaard,
    zodat er geen bedrijfsinformatie op het apparaat komt; de beheerder MDM controleert jaarlijks dat er geen
-   andere routes naar de interne omgeving openstaan. [8.01.01, 8.01.02] <a class="anker" href="#eis-3-2-12" aria-label="Link naar dit punt">#</a></li>
+   andere routes naar de interne omgeving openstaan. [8.01.01, 8.01.02] <a class="anker" href="#eis-4-12" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h3 id="3-3-gebruikersovereenkomst-en-gedrag">3.3 Gebruikersovereenkomst en gedrag<a class="anker" href="#3-3-gebruikersovereenkomst-en-gedrag" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="5-gebruikersovereenkomst-en-gedrag">5. Gebruikersovereenkomst en gedrag<a class="anker" href="#5-gebruikersovereenkomst-en-gedrag" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-3-1">Voordat een medewerker mobiel werkt, tekent hij een gebruikersovereenkomst mobiel werken. Daarin verklaart
+<li id="eis-5-1">Voordat een medewerker mobiel werkt, tekent hij een gebruikersovereenkomst mobiel werken. Daarin verklaart
    hij de risico's te kennen en veilig te werken. De overeenkomst geldt voor alle mobiele apparatuur die hij
    zakelijk gebruikt, ook een eigen apparaat. HR bewaart de getekende overeenkomst in het personeelsdossier of
-   het uitgiftesysteem; de servicedesk geeft geen apparaat uit zonder getekende overeenkomst. [8.01.02] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-2">De overeenkomst gaat ten minste over: direct melden van verlies of diefstal, geen bedrijfsinformatie in
+   het uitgiftesysteem; de servicedesk geeft geen apparaat uit zonder getekende overeenkomst. [8.01.02] <a class="anker" href="#eis-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-2">De overeenkomst gaat ten minste over: direct melden van verlies of diefstal, geen bedrijfsinformatie in
    privéapps of privécloudopslag, geen gedeeld gebruik van het apparaat met anderen, updates installeren, het
    apparaat niet onbeheerd achterlaten, voorzichtig zijn met openbare wifi en het accepteren van wissen op
    afstand. <strong>[lijneigenaar mobiele apparatuur]</strong> beoordeelt de overeenkomst jaarlijks en laat haar opnieuw
-   tekenen na een inhoudelijke wijziging. [8.01.02] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-3">De gebruiker werkt in openbare ruimten en in het openbaar vervoer zo dat anderen niet kunnen meekijken
+   tekenen na een inhoudelijke wijziging. [8.01.02] <a class="anker" href="#eis-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-3">De gebruiker werkt in openbare ruimten en in het openbaar vervoer zo dat anderen niet kunnen meekijken
    (privacyfilter op het scherm, geen gevoelige gesprekken), en voert geen handelingen met informatie met het
-   label strikt vertrouwelijk of hoger uit buiten een beveiligde verbinding. [8.01.01] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-4">Op de locaties van de organisatie gebruiken beheerde apparaten het beveiligde bedrijfsnetwerk; niet-beheerde
+   label strikt vertrouwelijk of hoger uit buiten een beveiligde verbinding. [8.01.01] <a class="anker" href="#eis-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-4">Op de locaties van de organisatie gebruiken beheerde apparaten het beveiligde bedrijfsnetwerk; niet-beheerde
    apparaten en gasten gebruiken een gastnetwerk dat logisch gescheiden is van het bedrijfsnetwerk, volgens
-   het beleid netwerkbeveiliging. Er is geen open, onbeveiligd wifinetwerk. [8.01.02] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-5">Bij vertrek of functiewijziging levert de gebruiker het apparaat in volgens het beleid
+   het beleid netwerkbeveiliging. Er is geen open, onbeveiligd wifinetwerk. [8.01.02] <a class="anker" href="#eis-5-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-5">Bij vertrek of functiewijziging levert de gebruiker het apparaat in volgens het beleid
    bedrijfsmiddelenbeheer; de servicedesk wist het apparaat of de beheerde apps op de laatste werkdag en
-   verwijdert het uit het apparaatbeheer. [8.01.01] <a class="anker" href="#eis-3-3-5" aria-label="Link naar dit punt">#</a></li>
+   verwijdert het uit het apparaatbeheer. [8.01.01] <a class="anker" href="#eis-5-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="6-rollen-en-verantwoordelijkheden">6. Rollen en verantwoordelijkheden<a class="anker" href="#6-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -219,7 +221,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="7-naleving-en-controle">7. Naleving en controle<a class="anker" href="#7-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
 afwijkingen gaan als bevinding naar het risicoregister.</p>
@@ -292,7 +294,7 @@ maatregelen en de looptijd. De afwijking geldt pas na acceptatie van het risico 
 worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="8-samenhang">8. Samenhang<a class="anker" href="#8-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (uitgifte, inventaris, inname en gedragsregels), het beleid informatieclassificatie
 (labels die niet lokaal mogen staan), het beleid cryptografie (versleuteling op het apparaat), het beleid
@@ -318,14 +320,14 @@ contractbeheer (uitbestede werkplekdienst).</p>
 <td>8.01.01</td>
 <td>User endpoint devices</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Zero footprint en bescherming op het apparaat</td>
+<td>3. Zero footprint en bescherming op het apparaat</td>
 <td>MDM-03, MDM-04, MDM-06</td>
 </tr>
 <tr>
 <td>8.01.02</td>
 <td>User endpoint devices</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Beheer van apparaten</td>
+<td>4. Beheer van apparaten</td>
 <td>MDM-01, MDM-02, MDM-04, MDM-05, MDM-06</td>
 </tr>
 </tbody>

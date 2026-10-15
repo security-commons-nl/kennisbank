@@ -1,5 +1,7 @@
 # Beleid ICT-continuïteit en uitwijk
 
+[Download als Word](bcm.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Business Continuity & Disaster Recovery* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt de continuïteit van informatie en ICT als systemen uitvallen. Gaat over het bepalen van kritieke processen en systemen met hun hersteleisen, uitwijk en redundantie, de beveiliging tijdens een verstoring en het opstellen en testen van continuïteitsplannen.
+
+**Onderwerpen.** 3. Kritieke processen en systemen; 4. Uitwijk en redundantie; 5. Beveiliging tijdens een verstoring; 6. Continuïteitsplannen en testen.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -42,7 +48,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 > **Alleen als: Hoe is je crisis- en continuïteitsorganisatie geregeld? «Geen» of «Een crisisteam, zonder BCM-functie»**
 >
 > De organisatie heeft geen BCM-functie met een BIA. Dit beleid legt daarom zelf de minimale stappen vast om
-> kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de stappen in paragraaf 3.1.
+> kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de stappen in hoofdstuk 3.
 
 ## 2. Uitgangspunten
 
@@ -58,9 +64,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Kritieke processen en systemen
+## 3. Kritieke processen en systemen
 
 1. De proceseigenaren stellen vast welke processen niet mogen uitvallen, omdat inwoners of bedrijven er direct
    last van hebben of omdat er een wettelijke termijn op zit. Per proces leggen ze vast: het impactniveau, de
@@ -99,7 +103,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 > 8. Operationele technologie staat in hetzelfde overzicht. Per installatie staat erbij of hij bij uitval van
 >    de ICT lokaal of met de hand te bedienen is en wie dat kan. [5.30.02]
 
-### 3.2 Uitwijk en redundantie
+## 4. Uitwijk en redundantie
 
 1. Voor elk kritiek systeem richt de systeemeigenaar een voorziening in waarmee de hersteltijd en het
    toelaatbare gegevensverlies haalbaar zijn: dubbele uitvoering, een uitwijklocatie of een herstel uit
@@ -128,7 +132,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 >    kan volhouden. De OT-omgeving kan bij een aanval op de kantoor-ICT worden losgekoppeld zonder dat de
 >    installatie stopt; de systeemeigenaar test dat jaarlijks. [5.30.01, 8.14.01]
 
-### 3.3 Beveiliging tijdens een verstoring
+## 5. Beveiliging tijdens een verstoring
 
 1. Elk continuïteitsplan beschrijft welke beveiligingsmaatregelen tijdens uitwijk of noodbedrijf gelden en
    welke tijdelijk vervallen. Een noodaccount, een handmatige werkwijze of een tijdelijke verbinding staat
@@ -147,7 +151,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
    toegankelijk voor bevoegden; een handmatige werkwijze voor die informatie staat alleen in het plan als de
    CISO heeft vastgesteld dat de bescherming gelijkwaardig is. [5.29.01]
 
-### 3.4 Continuïteitsplannen en testen
+## 6. Continuïteitsplannen en testen
 
 1. Voor elk kritiek proces stelt de proceseigenaar een continuïteitsplan op dat beschrijft hoe het proces
    doorgaat en wordt hersteld bij uitval van de ICT, met contactgegevens, beslissers, de herstelvolgorde en
@@ -179,7 +183,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 > 7. De tests dekken ook de meldplicht onder de Cyberbeveiligingswet: wie stelt vast of een incident
 >    significant is, en lukt de vroege waarschuwing binnen 24 uur. [5.30.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -190,7 +194,7 @@ van het incident dat de verstoring veroorzaakt (beleid beveiligingsincidenten). 
 | **[lijneigenaar ICT-continuïteit]** | Eigenaar van dit beleid; gedeelde voorzieningen, uitwijkvoorzieningen en herstelprocedures, ook bij leveranciers; jaarlijkse omschakeltest |
 | CISO | Advies, goedkeuring van de beveiliging tijdens een verstoring, vrijgave na een cyberincident, jaarlijkse toetsing van opzet en werking |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -213,7 +217,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De hersteleisen volgen het beleid
 informatieclassificatie. Het beleid hangt nauw samen met het beleid back-up en recovery (hersteltijden en
@@ -228,10 +232,10 @@ De maatregelen van dit domein (4, waarvan 2 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.29.01 | Informatiebeveiliging tijdens een verstoring | ISO-beheersmaatregel | 3.3 Beveiliging tijdens een verstoring | BCDR-06 |
-| 5.30.01 | ICT-gereedheid voor bedrijfscontinuïteit | overheidsmaatregel | 3.2 Uitwijk en redundantie | BCDR-02, BCDR-03, BCDR-05 |
-| 5.30.02 | ICT-gereedheid voor bedrijfscontinuïteit | overheidsmaatregel | 3.1 Kritieke processen en systemen | BCDR-01 |
-| 8.14.01 | Redundantie van informatieverwerkende faciliteiten | ISO-beheersmaatregel | 3.2 Uitwijk en redundantie | BCDR-04, BCDR-05 |
+| 5.29.01 | Informatiebeveiliging tijdens een verstoring | ISO-beheersmaatregel | 5. Beveiliging tijdens een verstoring | BCDR-06 |
+| 5.30.01 | ICT-gereedheid voor bedrijfscontinuïteit | overheidsmaatregel | 4. Uitwijk en redundantie | BCDR-02, BCDR-03, BCDR-05 |
+| 5.30.02 | ICT-gereedheid voor bedrijfscontinuïteit | overheidsmaatregel | 3. Kritieke processen en systemen | BCDR-01 |
+| 8.14.01 | Redundantie van informatieverwerkende faciliteiten | ISO-beheersmaatregel | 4. Uitwijk en redundantie | BCDR-04, BCDR-05 |
 
 ## Bijlage B: Afkortingen
 

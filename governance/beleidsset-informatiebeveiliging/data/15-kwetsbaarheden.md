@@ -1,6 +1,16 @@
 ---
 domein: kwetsbaarheden
 titel: Beleid kwetsbaarheden en patchmanagement
+samenvatting: Regelt hoe de organisatie technische kwetsbaarheden vindt, beoordeelt en binnen vaste termijnen verhelpt. Behandelt bescherming tegen malware, basisconfiguraties en hardening, scannen en penetratietesten, patchtermijnen per risico en het kwetsbaarhedenregister met een maandrapportage aan de directie.
+invoeren:
+  - Richt op alle werkplekken, servers en mailvoorzieningen antimalware in die zichzelf automatisch bijwerkt (hoofdstuk 3).
+  - Blokkeer uitvoerbare bestanden en scripts van internet en regel uitzonderingen via de servicedesk (hoofdstuk 3).
+  - Stel per type systeem een basisconfiguratie vast op basis van een erkende baseline (hoofdstuk 4).
+  - Leg de werkelijke configuratie van elk systeem vast in een configuratieregister (hoofdstuk 4).
+  - Richt maandelijkse scans op kwetsbaarheden in voor alle ICT-middelen, waar mogelijk met agents (hoofdstuk 5).
+  - Stel een jaarlijks testprogramma vast met per systeem kwetsbaarheidsanalyse, penetratietest of red-teamtest (hoofdstuk 5).
+  - Richt een kwetsbaarhedenregister in met systeem, risico, eigenaar, termijn en status (hoofdstuk 7).
+  - Richt een maandrapportage aan de directie in over open kwetsbaarheden en de patchstand (hoofdstuk 7).
 ---
 
 ## 1. Doel en reikwijdte
@@ -40,9 +50,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Bescherming tegen malware
+## 3. Bescherming tegen malware
 
 - [[beheerorganisatie: de eigen afdeling of de leverancier die de systemen beheert]] zorgt dat op alle
   werkplekken, servers en mailvoorzieningen antimalware-software draait die zichzelf en de bijbehorende
@@ -60,7 +68,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
   het klikken op onbekende links. Een phishing-simulatie maakt deel uit van het jaarprogramma
   bewustwording; de deelname en de uitkomst staan in het verslag van dat programma. [8.07.02]
 
-### 3.2 Configuratiebeheer en hardening
+## 4. Configuratiebeheer en hardening
 
 - Voor elk type systeem (werkplek, server, netwerkcomponent, database, clouddienst) stelt de
   beheerorganisatie een basisconfiguratie vast, gebaseerd op een erkende baseline zoals de CIS Benchmarks of
@@ -77,12 +85,12 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 - Alleen beheerders installeren software of activeren functies. Gebruikers hebben op hun werkplek geen
   beheerrechten; de technische handhaving daarvan staat in het beleid wijzigingsbeheer. [8.09.01, 8.07.01]
 
-### 3.3 Kwetsbaarheden vinden
+## 5. Kwetsbaarheden vinden
 
 - De beheerorganisatie scant alle ICT-middelen ten minste maandelijks op kwetsbaarheden en
   misconfiguraties, en opnieuw na een grote wijziging. Waar mogelijk gebruikt zij agents op de eindpunten,
   zodat ook apparaten buiten kantoor meetellen. De scanresultaten staan in het kwetsbaarhedenregister
-  (paragraaf 3.5). [8.08.01, 8.08.02]
+  (hoofdstuk 7). [8.08.01, 8.08.02]
 - De CISO volgt de waarschuwingen van het NCSC en de sectorale CERT. Een waarschuwing die een gebruikt
   product raakt, zet de CISO binnen één werkdag door aan de systeemeigenaar en de beheerorganisatie, met
   een registratie van de doorzetting en de reactie. [8.08.01]
@@ -116,7 +124,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
   elke release. [8.08.05]
 :::
 
-### 3.4 Beoordelen en verhelpen
+## 6. Beoordelen en verhelpen
 
 - Elke gevonden kwetsbaarheid krijgt van de systeemeigenaar, op advies van de beheerorganisatie, een
   risico-inschatting op basis van kans op misbruik en verwachte schade. Daarin wegen de ernstscore van de
@@ -168,7 +176,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
   meldt. [8.08.01]
 :::
 
-### 3.5 Registreren en rapporteren
+## 7. Registreren en rapporteren
 
 - Alle open kwetsbaarheden met risico gemiddeld of hoger staan in
   [[kwetsbaarhedenregister: het systeem waarin open kwetsbaarheden staan, bijvoorbeeld de scantool of het ticketsysteem]],
@@ -188,7 +196,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
   legt dat vast en zet open punten uit bij de systeemeigenaren. [8.08.02]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -199,7 +207,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 | Contracteigenaar | Vastleggen van de termijnen en rapportageplichten bij de beheerpartij en leveranciers, controle van pentestbewijs bij releases van leveranciers |
 | Medewerkers en inhuur | Geen software installeren buiten de regels om, uitzonderingen aanvragen bij de servicedesk, verdachte bestanden of links melden |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles]]; afwijkingen gaan als bevinding naar het
@@ -225,7 +233,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (het overzicht van ICT-middelen), het beleid wijzigingsbeheer (patches en

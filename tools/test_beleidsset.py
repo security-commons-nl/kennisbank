@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bouw_beleidsset as b  # noqa: E402
+import beleidsset_word as word  # noqa: E402
 
 VRAGEN = {
     "hosting": {"id": "hosting", "vraag": "Waar draaien je systemen?", "meerdere": True, "doel": "inhoud",
@@ -39,7 +40,8 @@ def data_met(tekst: str) -> dict:
     return {"profiel": profiel, "maatregelen": maatregelen, "afkortingen": afkortingen, "bouwstenen": [steen]}
 
 
-KOP = "---\ndomein: proef\ntitel: Proefbeleid\n---\n\n"
+KOP = ("---\ndomein: proef\ntitel: Proefbeleid\nsamenvatting: Over proeven.\ninvoeren:\n"
+       "  - Richt een proefregister in (hoofdstuk 3).\n---\n\n")
 
 
 class Formaat(unittest.TestCase):
@@ -140,13 +142,13 @@ class Rekenregel(unittest.TestCase):
         self.assertEqual(stuk["eigen"], ["8.13.01", "8.13.02", "8.13.03"])
         self.assertEqual(stuk["overheid"], ["8.13.01", "8.13.02"])
 
-    def test_nummering_per_paragraaf_ook_in_kader(self):
-        tekst = KOP + "### 3.1 A\n\n- een [8.13.01]\n  vervolg\n- twee [8.13.02]\n\n::: als beheer=eigen\n- drie [8.13.03]\n:::\n\n### 3.2 B\n\n- een\n"
+    def test_nummering_per_hoofdstuk_ook_in_kader(self):
+        tekst = KOP + "## 3. A\n\n- een [8.13.01]\n  vervolg\n- twee [8.13.02]\n\n::: als beheer=eigen\n- drie [8.13.03]\n:::\n\n## 4. B\n\n- een\n"
         d = data_met(tekst)
         md = b.genereer_stuk(d["bouwstenen"][0], d, {})["markdown"]
         self.assertIn("1. een [8.13.01]\n   vervolg\n2. twee [8.13.02]", md)
         self.assertIn("> 3. drie [8.13.03]", md)
-        self.assertIn("### 3.2 B\n\n1. een", md)
+        self.assertIn("## 4. B\n\n1. een", md)
 
     def test_titelblad_en_afkortingen(self):
         d = data_met(KOP + "- de CISO doet het [8.13.01]\n")
@@ -163,8 +165,8 @@ class Rekenregel(unittest.TestCase):
 
 
 def vorm(regels: str, controle: str = "| PRF-01 | kijk | 8.13.01, 8.13.02, 8.13.03 |") -> str:
-    """Een bouwsteen in de vaste vorm, met `regels` als inhoud van hoofdstuk 3."""
-    return (KOP + "## 1. Doel en reikwijdte\n\ntekst\n\n## 2. Uitgangspunten\n\n- x\n\n## 3. Beleidsregels\n\n"
+    """Een bouwsteen in de vaste vorm, met `regels` als inhoud van het onderwerphoofdstuk 3."""
+    return (KOP + "## 1. Doel en reikwijdte\n\ntekst\n\n## 2. Uitgangspunten\n\n- x\n\n## 3. Proefonderwerp\n\n"
             + regels + "\n\n## 4. Rollen en verantwoordelijkheden\n\n| Rol | Wat |\n|---|---|\n| CISO | kijkt |\n\n"
             "## 5. Naleving en controle\n\n| Nr | Controle | Maatregelen |\n|---|---|---|\n" + controle + "\n\n"
             "## 6. Samenhang\n\ntekst\n")
@@ -209,12 +211,34 @@ class Vorm(unittest.TestCase):
     def test_hoofdstukken_vast(self):
         self.assertTrue(any("hoofdstukken" in m for m in meldingen(self.GOED.replace("## 6. Samenhang", "## 6. Relaties"))))
 
-    def test_regel_in_hoofdstuk_3_zonder_maatregel(self):
+    def test_regel_in_onderwerphoofdstuk_zonder_maatregel(self):
         tekst = vorm("- a [8.13.01, 8.13.02, 8.13.03]\n- los\n  vervolg")
         self.assertTrue(any("regel zonder maatregel" in m and "los" in m for m in meldingen(tekst)), meldingen(tekst))
 
-    def test_regel_buiten_hoofdstuk_3_mag_zonder_maatregel(self):
+    def test_regel_buiten_onderwerphoofdstuk_mag_zonder_maatregel(self):
         self.assertEqual(meldingen(self.GOED.replace("- x", "- x\n  vervolg\n- y")), [])
+
+    def test_meer_onderwerpen_elk_eigen_hoofdstuk(self):
+        tekst = self.GOED.replace("## 4. Rollen", "## 4. Tweede onderwerp\n\n- b [8.13.01]\n- los\n\n## 5. Rollen")
+        tekst = tekst.replace("## 5. Naleving", "## 6. Naleving").replace("## 6. Samenhang", "## 7. Samenhang")
+        self.assertTrue(any("hoofdstuk 4" in m and "los" in m for m in meldingen(tekst)), meldingen(tekst))
+        self.assertEqual(meldingen(tekst.replace("- los\n", "")), [])
+
+    def test_subkop_en_gaten_in_de_nummering(self):
+        sub = self.GOED.replace("## 3. Proefonderwerp", "## 3. Proefonderwerp\n\n### 3.1 Sub")
+        self.assertTrue(any("subkop" in m for m in meldingen(sub)))
+        self.assertTrue(any("doorlopend" in m for m in meldingen(self.GOED.replace("## 6. Samenhang", "## 7. Samenhang"))))
+
+    def test_zonder_onderwerphoofdstuk(self):
+        zonder = self.GOED.split("## 3. Proefonderwerp")[0] + "## 3. Rollen" + self.GOED.split("## 4. Rollen")[1]
+        zonder = zonder.replace("## 5. Naleving", "## 4. Naleving").replace("## 6. Samenhang", "## 5. Samenhang")
+        self.assertTrue(any("hoofdstukken" in m for m in meldingen(zonder)), meldingen(zonder))
+
+    def test_samenvatting_en_invoeren_verplicht(self):
+        self.assertTrue(any("samenvatting" in m for m in meldingen(self.GOED.replace("samenvatting: Over proeven.\n", ""))))
+        self.assertTrue(any("invoeren" in m for m in meldingen(self.GOED.replace("(hoofdstuk 3)", "(hoofdstuk 9)"))))
+        geen = self.GOED.replace("  - Richt een proefregister in (hoofdstuk 3).\n", "")
+        self.assertTrue(any("invoeren" in m for m in meldingen(geen)), meldingen(geen))
 
     def test_geen_controleraamwerk(self):
         self.assertTrue(any("geen controleraamwerk" in m for m in meldingen(vorm("- a [8.13.01, 8.13.02, 8.13.03]", ""))))
@@ -414,6 +438,151 @@ class Spiegel(unittest.TestCase):
                 self.assertEqual(py[domein]["markdown"], j[domein]["markdown"], f"{domein} bij {p}")
                 self.assertEqual(py[domein]["gedekt"], j[domein]["gedekt"], f"{domein} bij {p}")
 
+
+    def test_overzichten_en_word_python_en_javascript_gelijk(self):
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node ontbreekt")
+        data = b.laad()
+        profielen = [{}, {"beheer": "uitbesteed", "hosting": ["saas"], "werkplek": "cloud"}]
+        waarden = {"lijneigenaar back-up": "Hoofd ICT", "eigenaar van dit beleid": "Directeur bedrijfsvoering"}
+        script = ("const B=require(process.argv[1]);const W=require(process.argv[2]);const fs=require('fs');"
+                  "const inv=JSON.parse(fs.readFileSync(0,'utf8'));"
+                  "process.stdout.write(JSON.stringify(inv.profielen.map(p=>{const s=B.genereer(inv.data,p);"
+                  "for(const k in s)s[k].markdown=B.vulWaarden(s[k].markdown,inv.waarden,null);"
+                  "const o=B.overzichten(inv.data,p,s);const mds=Object.keys(s).map(k=>s[k].markdown).concat([o.maatregelen,o.invoeren]);"
+                  "return {o:o,delen:W.delen(mds),zip:Buffer.from(W.docx(mds)).toString('base64')};})));")
+        uit = json.loads(subprocess.run([node, "-e", script, str(b.JS), str(b.WORD_JS)],
+                                        input=json.dumps({"data": data, "profielen": profielen, "waarden": waarden}),
+                                        capture_output=True, text=True, encoding="utf-8", check=True).stdout)
+        import base64
+        for p, j in zip(profielen, uit):
+            stukken = b.genereer(data, copy.deepcopy(p))
+            for k in stukken:
+                stukken[k]["markdown"] = b.vul_waarden(stukken[k]["markdown"], waarden)
+            over = b.overzichten(data, p, stukken)
+            self.assertEqual(over, j["o"], p)
+            mds = [s["markdown"] for s in stukken.values()] + [over["maatregelen"], over["invoeren"]]
+            self.assertEqual(word.delen(mds), dict(j["delen"]), p)
+            self.assertTrue(word.zelfde_inhoud(base64.b64decode(j["zip"]), word.docx(mds)), p)
+
+class InHetKort(unittest.TestCase):
+    """Bovenaan elk stuk: waar het over gaat en welke onderwerpen het regelt."""
+
+    def test_samenvatting_en_onderwerpen_onder_het_titelblad(self):
+        d = data_met(vorm("- a [8.13.01, 8.13.02, 8.13.03]").replace("## 4. Rollen", "## 4. Tweede\n\n- b [8.13.01]\n\n## 5. Rollen")
+                     .replace("## 5. Naleving", "## 6. Naleving").replace("## 6. Samenhang", "## 7. Samenhang"))
+        md = b.genereer_stuk(d["bouwstenen"][0], d, {})["markdown"]
+        self.assertIn("**In het kort.** Over proeven.", md)
+        self.assertIn("**Onderwerpen.** 3. Proefonderwerp; 4. Tweede.", md)
+        self.assertLess(md.index("| Evaluatie |"), md.index("**In het kort.**"))
+        self.assertLess(md.index("**Onderwerpen.**"), md.index("## 1. Doel"))
+
+    def test_echte_set_heeft_bij_elk_stuk_een_samenvatting_en_onderwerpen(self):
+        data = b.laad()
+        for s, stuk in zip(data["bouwstenen"], b.genereer(data, {}).values()):
+            self.assertIn("**In het kort.** " + s["samenvatting"], stuk["markdown"], s["bestand"])
+            self.assertIn("**Onderwerpen.** 3. ", stuk["markdown"], s["bestand"])
+            self.assertTrue(4 <= len(s["invoeren"]) <= 10, s["bestand"])
+            self.assertNotIn("Beleidsregels", stuk["markdown"], s["bestand"])
+
+
+class Overzichten(unittest.TestCase):
+    """Het maatregelenoverzicht over alle stukken en de lijst met wat er moet gebeuren om in te voeren."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.data = b.laad()
+        cls.stukken = b.genereer(cls.data, {})
+        cls.over = b.overzichten(cls.data, {}, cls.stukken)
+
+    def test_elke_maatregel_een_regel_met_stuk_hoofdstuk_en_controle(self):
+        rijen = [r for r in self.over["maatregelen"].split("\n") if b.NUMMER.match(r[2:])]
+        self.assertEqual(len(rijen), len(self.data["maatregelen"]["maatregelen"]))
+        rij = next(r for r in rijen if r.startswith("| 8.13.04 |"))
+        self.assertEqual(rij, "| 8.13.04 | Back-up van informatie | overheid | Beleid back-up en recovery | "
+                              "7. Herstel en testen | BUR-06, BUR-07 |  |")
+        for r in rijen:
+            self.assertNotIn("niet ingevuld", r)
+            self.assertNotIn("| geen |", r)
+
+    def test_ook_in_noemt_de_andere_stukken(self):
+        # testgegevens horen bij wijzigingsbeheer en komen ook terug in veilige softwareontwikkeling
+        rij = next(r for r in self.over["maatregelen"].split("\n") if r.startswith("| 8.33.01 |"))
+        ook = [s["titel"] for s in self.data["bouwstenen"] if s["domein"] != "wijzigingsbeheer"
+               and "8.33.01" in self.stukken[s["domein"]]["waar"]]
+        self.assertTrue(ook)
+        self.assertTrue(rij.endswith(" | " + ", ".join(ook) + " |"), rij)
+
+    def test_invoeren_per_stuk_inrichten_controles_en_velden(self):
+        v = self.over["invoeren"]
+        self.assertIn("## Voor de hele set", v)
+        for nr, s in enumerate(self.data["bouwstenen"], 1):
+            self.assertIn(f"## {nr}. {s['titel']}", v)
+            for a in s["invoeren"]:
+                self.assertIn("- " + a, v)
+        self.assertIn("| BUR-01 | Alle back-uptaken", v)
+        controles = sum(len([r for r in st["markdown"].split("\n") if b.RIJ.match(r)]) for st in self.stukken.values())
+        self.assertEqual(len([r for r in v.split("\n") if b.RIJ.match(r)]), controles)
+        self.assertIn("lijneigenaar back-up", v)
+
+    def test_ingevulde_velden_verdwijnen_uit_de_invoerlijst(self):
+        stukken = b.genereer(self.data, {})
+        for k in stukken:
+            stukken[k]["markdown"] = b.vul_waarden(stukken[k]["markdown"], {"lijneigenaar back-up": "Hoofd ICT"})
+        v = b.overzichten(self.data, {}, stukken)["invoeren"]
+        deel = v.split("Beleid back-up en recovery")[1].split("\n## ")[0]
+        self.assertNotIn("lijneigenaar back-up", deel.split("**Nog in te vullen")[1])
+        self.assertIn("| Hoofd ICT |", deel)
+
+    def test_profiel_staat_bovenaan(self):
+        over = b.overzichten(self.data, {"beheer": "uitbesteed"}, b.genereer(self.data, {"beheer": "uitbesteed"}))
+        self.assertIn("Opgesteld voor dit profiel: ", over["maatregelen"])
+        self.assertIn("Zonder profiel", self.over["invoeren"])
+
+    def test_leesversies_en_word_bestanden_staan_in_de_kennisbank(self):
+        uit = b.uitvoer(self.data)
+        for naam in list(b.OVERZICHTEN.values()) + [b.bestandsnaam(s)[:-3] for s in self.data["bouwstenen"]]:
+            self.assertIn(b.ITEM / f"{naam}.md", uit)
+            self.assertIn(b.ITEM / f"{naam}.docx", uit)
+            self.assertIn(f"[Download als Word]({naam}.docx)", uit[b.ITEM / f"{naam}.md"])
+        self.assertIn(b.ITEM / b.SET_DOCX, uit)
+
+
+class Word(unittest.TestCase):
+    """Het Word-bestand: geldige zip, de vaste stijlen, en wat de markdown zegt."""
+
+    MD = ("# Titel\n\n| | |\n|---|---|\n| Status | Concept |\n\nEen **vet** en *schuin* woord en een "
+          "[link](https://x.nl).\n\n## 3. Onderwerp\n\n1. een [8.13.01]\n   vervolg\n2. twee\n\n"
+          "> **Alleen als: vraag «ja»**\n>\n> 3. drie\n\n- los\n")
+
+    def test_onderdelen_en_stijlen(self):
+        xml = word.document_xml([self.MD])
+        self.assertIn('<w:pStyle w:val="Title"/></w:pPr><w:r><w:t xml:space="preserve">Titel</w:t></w:r>', xml)
+        self.assertIn('<w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">3. Onderwerp</w:t>', xml)
+        self.assertIn('<w:t xml:space="preserve">1.</w:t></w:r><w:r><w:tab/></w:r><w:r><w:t xml:space="preserve">een [8.13.01] vervolg</w:t>', xml)
+        self.assertIn('<w:pStyle w:val="Kader"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Alleen als: vraag «ja»</w:t>', xml)
+        self.assertIn('<w:pStyle w:val="Kaderlijst"/></w:pPr><w:r><w:t xml:space="preserve">3.</w:t>', xml)
+        self.assertIn('<w:t xml:space="preserve">\u2022</w:t>', xml)
+        self.assertIn('<w:t xml:space="preserve">link</w:t></w:r><w:r><w:t xml:space="preserve"> (https://x.nl)</w:t>', xml)
+        self.assertNotIn("<w:tblHeader/>", xml)  # de lege kopregel van het titelblad valt weg
+        for stijl in ("Title", "Heading1", "Lijst", "Kader", "Kaderlijst", "Tabel", "Tabeltekst"):
+            self.assertIn(f'w:styleId="{stijl}"', word.STYLES)
+
+    def test_geldige_zip_met_vaste_inhoud(self):
+        import io
+        import zipfile
+        een, twee = word.docx([self.MD, self.MD]), word.docx([self.MD, self.MD])
+        z = zipfile.ZipFile(io.BytesIO(een))
+        self.assertIsNone(z.testzip())
+        self.assertEqual(z.namelist()[0], "[Content_Types].xml")
+        self.assertEqual(z.read("word/document.xml").decode("utf-8").count('w:type="page"'), 1)
+        self.assertTrue(word.zelfde_inhoud(een, twee))
+        self.assertFalse(word.zelfde_inhoud(een, word.docx([self.MD])))
+
+    def test_tekens_worden_ontsnapt(self):
+        xml = word.document_xml(["Kosten < 5 & meer > 2 \"x\""])
+        self.assertIn("Kosten &lt; 5 &amp; meer &gt; 2 &quot;x&quot;", xml)
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

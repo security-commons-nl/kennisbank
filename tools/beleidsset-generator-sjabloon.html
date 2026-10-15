@@ -54,7 +54,9 @@ BIO 2.0-domein (netwerkbeveiliging, logische toegang, leveranciers, incidenten, 
 de regels die bij jouw organisatie passen. Een vraag die je overslaat, laat beide
 varianten staan, elk in een kader met de vraag erboven. Alles gebeurt in je browser: er gaat niets naar een server.</p>
 <p class="uitleg">Elke regel eindigt op de nummers van de BIO 2.0-maatregelen die hij invult, en een controleraamwerk zegt hoe je de naleving aantoont. Wat vetgedrukt
-tussen haken staat, vul je zelf in; de lijst onderaan elk stuk zegt wat er nog open staat.</p>
+tussen haken staat, vul je zelf in; de lijst onderaan elk stuk zegt wat er nog open staat. Bij de set horen twee
+overzichten: welke maatregel in welk stuk staat, en wat er moet gebeuren om het beleid in te voeren. Alles kun je
+downloaden als Word, markdown of HTML.</p>
 <details class="ai" id="voor-ai"><summary>Gebruik je een AI-assistent? Instructies voor de assistent</summary>
 <p><strong>Aan de AI-assistent die deze pagina leest.</strong> De gebruiker wil een beleidsset informatiebeveiliging
 op BIO 2.0 voor de eigen organisatie. Het formulier hierboven werkt alleen in een browser; jij doet hetzelfde met de
@@ -74,8 +76,8 @@ kader staan en zeg erbij welke vraag nog open is.</li>
 rollen, systemen, documenten en termijnen van de organisatie. Vraag ernaar; verzin geen namen. Termijnen met
 "standaard" erbij mogen blijven als de gebruiker niets anders kiest.</li>
 <li><strong>Verander de structuur niet.</strong> Laat de nummers van de maatregelen achter elke regel staan
-(zoals [8.13.01]), houd het controleraamwerk in hoofdstuk 5 en bijlage A heel, en voeg geen eisen toe die niet in de
-bouwsteen staan. Zo blijft het stuk toetsbaar tegen de BIO 2.0.</li>
+(zoals [8.13.01]), houd het controleraamwerk in het hoofdstuk Naleving en controle en bijlage A heel, en voeg geen
+eisen toe die niet in de bouwsteen staan. Zo blijft het stuk toetsbaar tegen de BIO 2.0.</li>
 <li><strong>Lever op</strong> als markdown of als document, per stuk, met bovenaan het titelblad. Zeg bij de oplevering
 dat het een concept is dat de organisatie zelf vaststelt, dat termijnen zonder wettelijke bron standaardwaarden zijn,
 en welke vragen en invulvelden nog open staan.</li>
@@ -110,8 +112,8 @@ een voorstel als bestand, met per regel het citaat uit je document, en kiest hie
 <section id="uitkomst" hidden>
 <h2>Je set: 21 beleidsstukken</h2>
 <p class="uitleg">Je ziet één stuk tegelijk. <strong>Kies hieronder een stuk</strong> om het te lezen, of download de hele
-set in één keer.</p>
-<div class="knoppen"><button type="button" id="alles-md">Hele set als markdown</button><button type="button" id="alles-html">Hele set als HTML</button><button type="button" class="zacht" id="stuk-md">Dit stuk als markdown</button></div>
+set in één keer. Onder <em>Overzichten</em> staan het maatregelenoverzicht en de lijst met wat er moet gebeuren om in te voeren.</p>
+<div class="knoppen"><button type="button" id="alles-docx">Hele set als Word</button><button type="button" id="alles-md">Hele set als markdown</button><button type="button" id="alles-html">Hele set als HTML</button><button type="button" class="zacht" id="stuk-docx">Dit stuk als Word</button><button type="button" class="zacht" id="stuk-md">Dit stuk als markdown</button></div>
 <div class="lijst" id="lijst"></div>
 <p class="positie" id="positie" aria-live="polite"></p>
 <div class="stuk" id="stuk"></div>
@@ -200,13 +202,19 @@ var DATA = /*DATA*/;
   }
   try { zet(JSON.parse(localStorage.getItem(OPSLAG) || "{}")); } catch (e) {}
 
+  var OVERZICHTEN = [["maatregelen", "Maatregelenoverzicht", "maatregelenoverzicht"], ["invoeren", "Invoeren: wat er nog moet gebeuren", "invoeren"]];
+  function overzicht(sleutel) { return OVERZICHTEN.filter(function (o) { return o[0] === sleutel; })[0]; }
   function toon(domein) {
     gekozen = domein;
     [].slice.call(lijst.querySelectorAll("button")).forEach(function (b) { b.setAttribute("aria-selected", b.dataset.domein === domein ? "true" : "false"); });
     var nr = DATA.bouwstenen.map(function (s) { return s.domein; }).indexOf(domein) + 1;
-    var steen = DATA.bouwstenen[nr - 1];
-    document.getElementById("positie").textContent = "Stuk " + nr + " van " + DATA.bouwstenen.length + ": " + steen.titel;
+    document.getElementById("positie").textContent = nr ? "Stuk " + nr + " van " + DATA.bouwstenen.length + ": " + DATA.bouwstenen[nr - 1].titel
+      : "Overzicht: " + overzicht(domein)[1];
     stukEl.innerHTML = html(set[domein].markdown);
+  }
+  function bestandsnaam(domein) {
+    var s = DATA.bouwstenen.filter(function (x) { return x.domein === domein; })[0];
+    return s ? s.bestand.replace(/^\d+-/, "").replace(/\.md$/, "") : overzicht(domein)[2];
   }
   // Ingevulde waarden uit een AI-voorstel: alleen in deze browser, te wissen met Antwoorden wissen.
   var WAARDEN_OPSLAG = "beleidsset-waarden";
@@ -218,9 +226,13 @@ var DATA = /*DATA*/;
     try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
     set = Beleidsset.genereer(DATA, p);
     Object.keys(set).forEach(function (d) { set[d].markdown = Beleidsset.vulWaarden(set[d].markdown, ingevuld.waarden, ingevuld.herkomst); });
+    var over = Beleidsset.overzichten(DATA, p, set);
+    OVERZICHTEN.forEach(function (o) { set[o[0]] = { markdown: over[o[0]] }; });
     lijst.innerHTML = "";
     var strategisch = DATA.bouwstenen.slice(0, 1), tactisch = DATA.bouwstenen.slice(1);
-    [["Strategisch beleid", strategisch], ["Tactisch beleid per domein (" + tactisch.length + " stukken)", tactisch]].forEach(function (g) {
+    var extra = OVERZICHTEN.map(function (o) { return { domein: o[0], titel: o[1] }; });
+    [["Strategisch beleid", strategisch], ["Tactisch beleid per domein (" + tactisch.length + " stukken)", tactisch],
+     ["Overzichten", extra]].forEach(function (g) {
       var groep = document.createElement("div"); groep.className = "groep";
       var kop = document.createElement("h3"); kop.textContent = g[0]; groep.appendChild(kop);
       var rij = document.createElement("div"); rij.className = "knopjes"; rij.setAttribute("role", "tablist"); rij.setAttribute("aria-label", g[0]);
@@ -238,11 +250,11 @@ var DATA = /*DATA*/;
   }
   function bewaar(naam, inhoud, soort) {
     var a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([inhoud], { type: soort + ";charset=utf-8" }));
+    a.href = URL.createObjectURL(new Blob([inhoud], { type: typeof inhoud === "string" ? soort + ";charset=utf-8" : soort }));
     a.download = naam; document.body.appendChild(a); a.click(); a.remove();
   }
   function geheel() {
-    return DATA.bouwstenen.map(function (s) { return set[s.domein].markdown; }).join("\n\n---\n\n");
+    return alles().join("\n\n---\n\n");
   }
   document.getElementById("vragen").addEventListener("submit", function (e) { e.preventDefault(); maak(); });
   document.getElementById("wis").addEventListener("click", function () {
@@ -316,14 +328,23 @@ var DATA = /*DATA*/;
     voorstel = null; document.getElementById("ai-voorstel").hidden = true;
     if (set) maak();
   });
+  var WORD = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+  function alles() {
+    return DATA.bouwstenen.map(function (s) { return set[s.domein].markdown; }).concat(OVERZICHTEN.map(function (o) { return set[o[0]].markdown; }));
+  }
   document.getElementById("stuk-md").addEventListener("click", function () {
-    var s = DATA.bouwstenen.filter(function (x) { return x.domein === gekozen; })[0];
-    bewaar(s.bestand.replace(/^\d+-/, ""), set[gekozen].markdown, "text/markdown");
+    bewaar(bestandsnaam(gekozen) + ".md", set[gekozen].markdown, "text/markdown");
+  });
+  document.getElementById("stuk-docx").addEventListener("click", function () {
+    bewaar(bestandsnaam(gekozen) + ".docx", BeleidssetWord.docx([set[gekozen].markdown]), WORD);
+  });
+  document.getElementById("alles-docx").addEventListener("click", function () {
+    bewaar("beleidsset-informatiebeveiliging.docx", BeleidssetWord.docx(alles()), WORD);
   });
   document.getElementById("alles-md").addEventListener("click", function () { bewaar("beleidsset.md", geheel(), "text/markdown"); });
   document.getElementById("alles-html").addEventListener("click", function () {
     var stijl = document.querySelector("style").textContent;
-    var body = DATA.bouwstenen.map(function (s) { return '<section class="stuk">' + html(set[s.domein].markdown) + "</section>"; }).join("\n");
+    var body = alles().map(function (md) { return '<section class="stuk">' + html(md) + "</section>"; }).join("\n");
     bewaar("beleidsset.html", '<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Beleidsset informatiebeveiliging</title><style>' +
       stijl + ".stuk{page-break-before:always}</style></head><body>" + body + "</body></html>", "text/html");
   });

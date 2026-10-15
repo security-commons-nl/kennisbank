@@ -1,5 +1,7 @@
 # Beleid kwetsbaarheden en patchmanagement
 
+[Download als Word](kwetsbaarheden.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Vulnerability & patchmanagement* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt hoe de organisatie technische kwetsbaarheden vindt, beoordeelt en binnen vaste termijnen verhelpt. Behandelt bescherming tegen malware, basisconfiguraties en hardening, scannen en penetratietesten, patchtermijnen per risico en het kwetsbaarhedenregister met een maandrapportage aan de directie.
+
+**Onderwerpen.** 3. Bescherming tegen malware; 4. Configuratiebeheer en hardening; 5. Kwetsbaarheden vinden; 6. Beoordelen en verhelpen; 7. Registreren en rapporteren.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -47,9 +53,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Bescherming tegen malware
+## 3. Bescherming tegen malware
 
 1. **[beheerorganisatie]** zorgt dat op alle
    werkplekken, servers en mailvoorzieningen antimalware-software draait die zichzelf en de bijbehorende
@@ -67,7 +71,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
    het klikken op onbekende links. Een phishing-simulatie maakt deel uit van het jaarprogramma
    bewustwording; de deelname en de uitkomst staan in het verslag van dat programma. [8.07.02]
 
-### 3.2 Configuratiebeheer en hardening
+## 4. Configuratiebeheer en hardening
 
 1. Voor elk type systeem (werkplek, server, netwerkcomponent, database, clouddienst) stelt de
    beheerorganisatie een basisconfiguratie vast, gebaseerd op een erkende baseline zoals de CIS Benchmarks of
@@ -84,12 +88,12 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 4. Alleen beheerders installeren software of activeren functies. Gebruikers hebben op hun werkplek geen
    beheerrechten; de technische handhaving daarvan staat in het beleid wijzigingsbeheer. [8.09.01, 8.07.01]
 
-### 3.3 Kwetsbaarheden vinden
+## 5. Kwetsbaarheden vinden
 
 1. De beheerorganisatie scant alle ICT-middelen ten minste maandelijks op kwetsbaarheden en
    misconfiguraties, en opnieuw na een grote wijziging. Waar mogelijk gebruikt zij agents op de eindpunten,
    zodat ook apparaten buiten kantoor meetellen. De scanresultaten staan in het kwetsbaarhedenregister
-   (paragraaf 3.5). [8.08.01, 8.08.02]
+   (hoofdstuk 7). [8.08.01, 8.08.02]
 2. De CISO volgt de waarschuwingen van het NCSC en de sectorale CERT. Een waarschuwing die een gebruikt
    product raakt, zet de CISO binnen één werkdag door aan de systeemeigenaar en de beheerorganisatie, met
    een registratie van de doorzetting en de reactie. [8.08.01]
@@ -123,7 +127,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 >    verhelpen van hoge bevindingen vóór de release in productie gaat. De contracteigenaar controleert dat bij
 >    elke release. [8.08.05]
 
-### 3.4 Beoordelen en verhelpen
+## 6. Beoordelen en verhelpen
 
 1. Elke gevonden kwetsbaarheid krijgt van de systeemeigenaar, op advies van de beheerorganisatie, een
    risico-inschatting op basis van kans op misbruik en verwachte schade. Daarin wegen de ernstscore van de
@@ -175,7 +179,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 >    patchrapportage elke maand bespreekt met de leverancier, het verslag vastlegt en afwijkingen aan de CISO
 >    meldt. [8.08.01]
 
-### 3.5 Registreren en rapporteren
+## 7. Registreren en rapporteren
 
 1. Alle open kwetsbaarheden met risico gemiddeld of hoger staan in
    **[kwetsbaarhedenregister]**,
@@ -195,7 +199,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 > 4. De informatiebeveiligingsfunctionaris beoordeelt elke maand de scanresultaten, filtert valse meldingen,
 >    legt dat vast en zet open punten uit bij de systeemeigenaren. [8.08.02]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -206,7 +210,7 @@ inrichting van het netwerk (beleid netwerkbeveiliging).
 | Contracteigenaar | Vastleggen van de termijnen en rapportageplichten bij de beheerpartij en leveranciers, controle van pentestbewijs bij releases van leveranciers |
 | Medewerkers en inhuur | Geen software installeren buiten de regels om, uitzonderingen aanvragen bij de servicedesk, verdachte bestanden of links melden |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**; afwijkingen gaan als bevinding naar het
@@ -232,7 +236,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (het overzicht van ICT-middelen), het beleid wijzigingsbeheer (patches en
@@ -248,16 +252,16 @@ De maatregelen van dit domein (10, waarvan 9 overheidsmaatregelen), waar dit stu
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.07.01 | Bescherming tegen malware | overheidsmaatregel | 3.1 Bescherming tegen malware | VPM-02 |
-| 8.07.02 | Bescherming tegen malware | overheidsmaatregel | 3.1 Bescherming tegen malware | VPM-02 |
-| 8.07.03 | Bescherming tegen malware | overheidsmaatregel | 3.1 Bescherming tegen malware | VPM-01 |
-| 8.07.04 | Bescherming tegen malware | overheidsmaatregel | 3.1 Bescherming tegen malware | VPM-01 |
-| 8.08.01 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 3.3 Kwetsbaarheden vinden | VPM-04, VPM-05, VPM-07, VPM-09 |
-| 8.08.02 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 3.3 Kwetsbaarheden vinden | VPM-04, VPM-05 |
-| 8.08.03 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 3.4 Beoordelen en verhelpen | VPM-06 |
-| 8.08.04 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 3.3 Kwetsbaarheden vinden | VPM-08 |
-| 8.08.05 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 3.3 Kwetsbaarheden vinden | VPM-08, VPM-09 |
-| 8.09.01 | Configuratiebeheer | ISO-beheersmaatregel | 3.2 Configuratiebeheer en hardening | VPM-03 |
+| 8.07.01 | Bescherming tegen malware | overheidsmaatregel | 3. Bescherming tegen malware | VPM-02 |
+| 8.07.02 | Bescherming tegen malware | overheidsmaatregel | 3. Bescherming tegen malware | VPM-02 |
+| 8.07.03 | Bescherming tegen malware | overheidsmaatregel | 3. Bescherming tegen malware | VPM-01 |
+| 8.07.04 | Bescherming tegen malware | overheidsmaatregel | 3. Bescherming tegen malware | VPM-01 |
+| 8.08.01 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 5. Kwetsbaarheden vinden | VPM-04, VPM-05, VPM-07, VPM-09 |
+| 8.08.02 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 5. Kwetsbaarheden vinden | VPM-04, VPM-05 |
+| 8.08.03 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 6. Beoordelen en verhelpen | VPM-06 |
+| 8.08.04 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 5. Kwetsbaarheden vinden | VPM-08 |
+| 8.08.05 | Beheer van technische kwetsbaarheden | overheidsmaatregel | 5. Kwetsbaarheden vinden | VPM-08, VPM-09 |
+| 8.09.01 | Configuratiebeheer | ISO-beheersmaatregel | 4. Configuratiebeheer en hardening | VPM-03 |
 
 ## Bijlage B: Afkortingen
 

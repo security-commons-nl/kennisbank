@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Invoeren: wat er nog moet gebeuren</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Invoeren: wat er nog moet gebeuren</span></nav><!-- /kruimelpad -->
+<h1>Invoeren: wat er nog moet gebeuren</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="invoeren.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#1f4e79;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#voor-de-hele-set">Voor de hele set</a></li><li><a href="#1-strategisch-informatiebeveiligingsbeleid">1. Strategisch informatiebeveiligingsbeleid</a></li><li><a href="#2-beleid-informatiebeveiliging-in-projecten">2. Beleid informatiebeveiliging in projecten</a></li><li><a href="#3-beleid-screening-bewustzijn-en-opleiding">3. Beleid screening, bewustzijn en opleiding</a></li><li><a href="#4-beleid-bedrijfsmiddelenbeheer">4. Beleid bedrijfsmiddelenbeheer</a></li><li><a href="#5-beleid-informatieclassificatie">5. Beleid informatieclassificatie</a></li><li><a href="#6-beleid-logische-toegangsbeveiliging">6. Beleid logische toegangsbeveiliging</a></li><li><a href="#7-beleid-informatiebeveiliging-bij-inkoop">7. Beleid informatiebeveiliging bij inkoop</a></li><li><a href="#8-beleid-informatiebeveiliging-in-contractbeheer">8. Beleid informatiebeveiliging in contractbeheer</a></li><li><a href="#9-beleid-beveiligingsincidenten">9. Beleid beveiligingsincidenten</a></li><li><a href="#10-beleid-ict-continu-teit-en-uitwijk">10. Beleid ICT-continuïteit en uitwijk</a></li><li><a href="#11-beleid-it-compliance">11. Beleid IT-compliance</a></li><li><a href="#12-beleid-fysieke-toegang-en-beveiliging">12. Beleid fysieke toegang en beveiliging</a></li><li><a href="#13-beleid-afvoer-en-hergebruik-van-gegevensdragers">13. Beleid afvoer en hergebruik van gegevensdragers</a></li><li><a href="#14-beleid-mobile-device-management">14. Beleid mobile device management</a></li><li><a href="#15-beleid-kwetsbaarheden-en-patchmanagement">15. Beleid kwetsbaarheden en patchmanagement</a></li><li><a href="#16-beleid-back-up-en-recovery">16. Beleid back-up en recovery</a></li><li><a href="#17-beleid-logging-en-monitoring">17. Beleid logging en monitoring</a></li><li><a href="#18-beleid-netwerkbeveiliging">18. Beleid netwerkbeveiliging</a></li><li><a href="#19-beleid-cryptografie">19. Beleid cryptografie</a></li><li><a href="#20-beleid-veilige-softwareontwikkeling">20. Beleid veilige softwareontwikkeling</a></li><li><a href="#21-beleid-wijzigingsbeheer">21. Beleid wijzigingsbeheer</a></li></ol></nav><!-- /inhoudsopgave -->
+<p><a href="invoeren.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
+<p>Zonder profiel: tekst die van een contextvraag afhangt, telt mee.</p>
+<p>Een vastgesteld beleid werkt pas als de organisatie het inricht. Deze lijst zet per stuk op een rij wat daarvoor nodig is: wat de organisatie inricht, welke controles zij gaat uitvoeren en wat zij nog moet invullen. Een plan met volgorde, eigenaar per thema en urenraming staat in <a href="https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/">BIO 2.0 invoeren</a>.</p>
+<h2 id="voor-de-hele-set">Voor de hele set<a class="anker" href="#voor-de-hele-set" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Wijs per stuk de eigenaar aan en laat het stuk vaststellen.</li>
+<li>Richt één registratie van controles in: per controle de uitvoerder, de frequentie, het bewijs en de uitkomst.</li>
+<li>Richt het risicoregister in voor afwijkingen en bevindingen, met een risico-eigenaar die restrisico's accepteert.</li>
+<li>Zet alle controles in een jaarkalender, zodat elke controle op tijd wordt uitgevoerd.</li>
+</ul>
+<h2 id="1-strategisch-informatiebeveiligingsbeleid">1. Strategisch informatiebeveiligingsbeleid<a class="anker" href="#1-strategisch-informatiebeveiligingsbeleid" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Leg het toepassingsgebied vast in een scopedocument op basis van de kritieke processen (hoofdstuk 3).</li>
+<li>Leg eigenaren van processen, systemen en ketens vast in een register eigenaren (hoofdstuk 4).</li>
+<li>Stel een mandaat voor de CISO op dat het bestuur schriftelijk vaststelt (hoofdstuk 5).</li>
+<li>Stel een overzicht functiescheiding op met taakcombinaties die niet in één hand mogen (hoofdstuk 5).</li>
+<li>Stel een jaarlijks bewustwordingsprogramma op met doelgroepen, onderwerpen en meetpunten (hoofdstuk 6).</li>
+<li>Leg contacten met instanties en samenwerkingsverbanden vast in een overzicht met plaatsvervangers (hoofdstuk 7).</li>
+<li>Richt een registratie van dreigingsinformatie in en stel jaarlijks een dreigingsbeeld op (hoofdstuk 7).</li>
+<li>Stel een risicogestuurd auditplan op dat het bestuur jaarlijks vaststelt (hoofdstuk 8).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IVB-01</td>
+<td>Dit beleid is in het afgelopen jaar beoordeeld en door het bestuur vastgesteld of bevestigd; het scopedocument en de doelstellingen zijn actueel</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>IVB-02</td>
+<td>Elk proces, systeem en elke keten in de scope heeft een benoemde eigenaar en die eigenaar weet dat</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>IVB-03</td>
+<td>De CISO heeft een vastgesteld mandaat, rapporteert rechtstreeks aan het bestuur en heeft geen beheertaken op systemen die de CISO beoordeelt</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>IVB-04</td>
+<td>De taakcombinaties uit het overzicht functiescheiding liggen bij verschillende personen, of de compenserende maatregel staat in het risicoregister</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>IVB-05</td>
+<td>Het overzicht van contacten met instanties en samenwerkingsverbanden is actueel en de organisatie heeft in het afgelopen kwartaal aan de uitwisseling deelgenomen</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>IVB-06</td>
+<td>Waarschuwingen van het CSIRT of de sectorale CERT zijn binnen de termijn beoordeeld en opgevolgd, en het dreigingsbeeld is in het afgelopen jaar opgesteld en gebruikt in de risicoanalyse</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>IVB-07</td>
+<td>Het auditplan is vastgesteld, de audits zijn uitgevoerd door een onafhankelijke partij en de bevindingen staan met eigenaar en termijn in het risicoregister</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>IVB-08</td>
+<td>De rapportage over informatiebeveiliging is elke P&amp;C-ronde opgeleverd en het bestuur heeft de jaarlijkse verklaring afgegeven op basis van die rapportage en de controleraamwerken</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (16).</strong> publicatieplek beleid; ambtelijk eindverantwoordelijke; register eigenaren; eigenaar gebouwgebonden OT; register OT-eigenaren; overzicht functiescheiding; functionaris informatiebeveiliging; CISO-invulling; ondersteuning CISO; beoordelingstermijn dreigingsinformatie; registratie dreigingsinformatie; vaststeller materiebeleid; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="2-beleid-informatiebeveiliging-in-projecten">2. Beleid informatiebeveiliging in projecten<a class="anker" href="#2-beleid-informatiebeveiliging-in-projecten" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt een meldpunt in waar projectleiders hun project bij de start aanmelden (hoofdstuk 3).</li>
+<li>Regel dat een project zonder melding geen budget krijgt voor de realisatiefase (hoofdstuk 3).</li>
+<li>Houd een overzicht bij van lopende projecten met de status van hun risicoafweging (hoofdstuk 3).</li>
+<li>Wijs een risico-acceptant aan voor restrisico's boven de risicobereidheid (hoofdstuk 5).</li>
+<li>Neem de beslismomenten uit dit beleid als vaste stappen op in de projectmethodiek (hoofdstuk 6).</li>
+<li>Maak sjablonen voor de risicoafweging en voor de risicoacceptatie (hoofdstuk 6).</li>
+<li>Geef nieuwe projectleiders binnen een maand een instructie en registreer de deelname (hoofdstuk 6).</li>
+</ul>
+<p><strong>Controles inrichten (5)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRJ-01</td>
+<td>Elk project en elke significante wijziging in het projectportfolio is gemeld bij de CISO en de privacy officer</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>PRJ-02</td>
+<td>Voor elk project dat de keuzefase heeft doorlopen, is de risicoafweging af en staan de beveiligingseisen in het programma van eisen of de opdracht</td>
+<td>CISO of ISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>PRJ-03</td>
+<td>Voor elk systeem dat live is gegaan, is de realisatie van de eisen aangetoond en zijn de restrisico's schriftelijk geaccepteerd door de bevoegde rol</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>PRJ-04</td>
+<td>Bij elk overgedragen systeem heeft de proceseigenaar het verslag, de open risico's en de beheerafspraken ontvangen en staat het systeem in het register van bedrijfsmiddelen</td>
+<td><strong>[lijneigenaar projectportfolio]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>PRJ-05</td>
+<td>De projectmethodiek bevat de beslismomenten en sjablonen uit dit beleid en nieuwe projectleiders hebben de instructie gevolgd</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (7).</strong> meldpunt projecten; lijneigenaar projectportfolio; risico-acceptant; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="3-beleid-screening-bewustzijn-en-opleiding">3. Beleid screening, bewustzijn en opleiding<a class="anker" href="#3-beleid-screening-bewustzijn-en-opleiding" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel een screeningsbeleid op met een lijst van functies met verhoogd risico (hoofdstuk 3).</li>
+<li>Neem een vaste tekst over informatiebeveiliging en geheimhouding op in arbeids- en inhuurcontracten (hoofdstuk 4).</li>
+<li>Bundel de regels en instructies voor medewerkers op één vindbare plek op het intranet (hoofdstuk 4).</li>
+<li>Richt een training informatiebewustzijn met toets in en registreer deelname en resultaat (hoofdstuk 5).</li>
+<li>Plan ten minste twee bewustzijnsmetingen per jaar, bijvoorbeeld een phishingsimulatie (hoofdstuk 5).</li>
+<li>Organiseer jaarlijkse scholing voor bestuurders en een cyberoefening eens per twee jaar (hoofdstuk 6).</li>
+<li>Maak een vertrekchecklist voor het intrekken van rechten en innemen van middelen (hoofdstuk 7).</li>
+<li>Leg een disciplinaire procedure vast die ook geldt voor overtredingen van beveiligingsregels (hoofdstuk 8).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SBO-01</td>
+<td>Voor elke medewerker en inhuurkracht in een functie met verhoogd risico is de screening uitgevoerd en vastgelegd voordat de toegang is verleend, en herhaald binnen de termijn</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SBO-02</td>
+<td>Elke nieuwe medewerker, inhuurkracht, stagiair en vrijwilliger heeft de bevestiging van de gedragsregels en een geheimhoudingsbepaling of -verklaring in het dossier</td>
+<td><strong>[lijneigenaar personeel]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>SBO-03</td>
+<td>Nieuwe medewerkers hebben binnen drie maanden de training met toets afgerond en alle medewerkers hebben een opfrissing van ten hoogste een jaar oud; functies met verhoogd risico hebben de aanvullende training gevolgd</td>
+<td><strong>[lijneigenaar personeel]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>SBO-04</td>
+<td>Leidinggevenden hebben informatiebeveiliging in het afgelopen jaar in het werkoverleg of jaargesprek besproken</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SBO-05</td>
+<td>Bestuurders hebben de jaarlijkse scholing gevolgd, het risicobeeld met de CISO besproken en binnen twee jaar aan een oefening deelgenomen</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SBO-06</td>
+<td>Bij elk vertrek en elke functiewijziging is de vertrekchecklist afgerond, de medewerker gewezen op de doorlopende geheimhouding en de mutatie binnen de termijn gemeld</td>
+<td><strong>[lijneigenaar personeel]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>SBO-07</td>
+<td>De bewustzijnsmetingen zijn uitgevoerd en de uitkomst en de disciplinaire trajecten zijn verwerkt in het programma van het volgende jaar</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SBO-08</td>
+<td>De disciplinaire procedure is vastgesteld, geldt voor overtredingen van de informatiebeveiligingsregels en is in het afgelopen jaar toegepast volgens de vastgelegde stappen</td>
+<td>Interne audit of accountant</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (8).</strong> vaststeller screeningsbeleid; lijneigenaar personeel; herhaaltermijn screening; meldtermijn personeelsmutaties; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="4-beleid-bedrijfsmiddelenbeheer">4. Beleid bedrijfsmiddelenbeheer<a class="anker" href="#4-beleid-bedrijfsmiddelenbeheer" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt één inventaris van bedrijfsmiddelen in, bijvoorbeeld een CMDB, met de vereiste velden (hoofdstuk 3).</li>
+<li>Stel gedragsregels op voor het gebruik van informatie en bedrijfsmiddelen (hoofdstuk 5).</li>
+<li>Regel dat medewerkers de gedragsregels bevestigen voordat zij account of apparatuur krijgen (hoofdstuk 5).</li>
+<li>Neem een vaste clausule met de gedragsregels op in contracten voor inhuur en vrijwilligers (hoofdstuk 5).</li>
+<li>Richt een uitgifte- en innameprocedure in met bruikleenovereenkomst en registratie per bedrijfsmiddel (hoofdstuk 6).</li>
+<li>Leg per ruimte in zone 3 en 4 de benodigde nutsvoorzieningen en capaciteit vast (hoofdstuk 9).</li>
+<li>Stel per locatie een storingslijst op met leveranciers en storingsnummers van nutsvoorzieningen (hoofdstuk 9).</li>
+<li>Richt een onderhoudsregistratie in voor onderhoud, storingen en reparaties per apparaat (hoofdstuk 11).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BMB-01</td>
+<td>De inventaris van werkplekken, mobiele apparatuur en clouddiensten komt overeen met een tweede bron; afwijkingen zijn binnen een maand afgehandeld</td>
+<td><strong>[beheerder inventaris]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>BMB-02</td>
+<td>Elk bedrijfsmiddel in de inventaris heeft een eigenaar, een classificatie en een onderhoudsschema, en de eigenaar heeft de registratie bevestigd</td>
+<td><strong>[beheerder inventaris]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BMB-03</td>
+<td>Nieuwe medewerkers hebben de gedragsregels bevestigd voordat zij een account of apparatuur kregen, en contracten van externen bevatten de gedragsclausule</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BMB-04</td>
+<td>Vertrokken medewerkers en beëindigde contracten hebben alle bedrijfsmiddelen ingeleverd; niet ingeleverde middelen zijn geblokkeerd en teruggevorderd</td>
+<td><strong>[uitgiftepunt apparatuur]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>BMB-05</td>
+<td>Apparatuur in zone 3 en 4 staat in de zone die bij het impactniveau hoort, is beschermd tegen meekijken en omgevingsinvloeden, en alleen geautoriseerde personen hebben er gewerkt</td>
+<td>Eigenaar van de zone</td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>BMB-06</td>
+<td>De nutsvoorzieningen van zone 3 en 4 zijn getest en onderhouden volgens schema, en het onderhoud aan apparatuur is uitgevoerd en geregistreerd</td>
+<td><strong>[lijneigenaar bedrijfsmiddelen]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BMB-07</td>
+<td>Apparatuur buiten de locaties is versleuteld, geregistreerd op de gebruiker en meldingen van verlies of diefstal zijn als incident afgehandeld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BMB-08</td>
+<td>Leveranciers die apparatuur, ruimten of clouddiensten beheren leveren een geldige onafhankelijke verklaring over hun bedrijfsmiddelenbeheer en onderhoud</td>
+<td>Contractbeheer</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (11).</strong> beheerder inventaris; eigenaar IT-middelen; gedragsregels bedrijfsmiddelen; lijneigenaar bedrijfsmiddelen; uitgiftepunt apparatuur; meldpunt beveiligde zones; storingslijst nutsvoorzieningen; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="5-beleid-informatieclassificatie">5. Beleid informatieclassificatie<a class="anker" href="#5-beleid-informatieclassificatie" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel een classificatiemethode vast met vragenlijsten en een impactschaal van vijf niveaus (hoofdstuk 3).</li>
+<li>Classificeer elk informatiesysteem in een ondertekend classificatierapport en registreer dat in de inventaris (hoofdstuk 3).</li>
+<li>Richt in systemen die labels ondersteunen de automatische beveiliging per label in (hoofdstuk 5).</li>
+<li>Voorzie hardware van een sticker met het inventariskenmerk, zonder de classificatie (hoofdstuk 5).</li>
+<li>Richt een maandelijkse meting van alle domeinen met internet.nl in (hoofdstuk 6).</li>
+<li>Zet een certificaatregister op met de vervaldatum per certificaat (hoofdstuk 6).</li>
+<li>Registreer alle internetfacing systemen, webapplicaties, IP-adressen en API's in de inventaris (hoofdstuk 6).</li>
+<li>Registreer alle publieke websites in het Register Internetdomeinen Overheid (hoofdstuk 6).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLS-01</td>
+<td>Elk systeem en elke gegevensverzameling in de inventaris heeft een classificatie per BIV-aspect die niet ouder is dan drie jaar, met een ondertekend classificatierapport</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CLS-02</td>
+<td>De systemen met het label strikt vertrouwelijk of geheim voldoen aan de minimumeisen voor authenticatie, autorisatie, opslag en zone</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CLS-03</td>
+<td>Informatie in de documentopslag en de systemen van de proceseigenaar draagt het juiste label en systemen passen bij het label de beveiliging toe</td>
+<td>Proceseigenaar</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CLS-04</td>
+<td>Alle domeinen voldoen aan de verplichte internetstandaarden; tekortkomingen zijn binnen drie maanden omgezet in een wijziging of een geaccepteerd risico</td>
+<td><strong>[beheerder internetfacing systemen]</strong></td>
+<td>Maandelijks, met een kwartaaloverzicht aan de CISO</td>
+</tr>
+<tr>
+<td>CLS-05</td>
+<td>De registratie van internetfacing systemen en het Register Internetdomeinen Overheid komen overeen met een externe scan van de domeinen en IP-reeksen van de organisatie</td>
+<td><strong>[beheerder internetfacing systemen]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>CLS-06</td>
+<td>Internetfacing systemen met gevoelige gegevens gebruiken certificaten van het vereiste type en geen certificaat is verlopen</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CLS-07</td>
+<td>Ondertekendiensten in gebruik voldoen aan de AdES Baseline Profiles en de eis staat in de uitvragen van dat jaar</td>
+<td>Systeemeigenaar van de ondertekendienst</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (7).</strong> classificatiemethode; herzieningstermijn classificatie; beheerder internetfacing systemen; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="6-beleid-logische-toegangsbeveiliging">6. Beleid logische toegangsbeveiliging<a class="anker" href="#6-beleid-logische-toegangsbeveiliging" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt één accountproces in, gekoppeld aan de personeelsadministratie en de registratie van inhuur (hoofdstuk 3).</li>
+<li>Stel per systeem een autorisatieprocedure en autorisatiematrix op, met een mandaatregister (hoofdstuk 3).</li>
+<li>Houd een register bij van gedeelde accounts met motivering en verantwoordelijke leidinggevende (hoofdstuk 3).</li>
+<li>Richt MFA in voor de werkomgeving, internetvoorzieningen en accounts met beheerrechten (hoofdstuk 4).</li>
+<li>Geef elke medewerker een wachtwoordmanager en dwing de wachtwoordeisen technisch af (hoofdstuk 5).</li>
+<li>Leg in een regeling thuiswerken vast welke apparatuur en werkplekken zijn toegestaan (hoofdstuk 6).</li>
+<li>Houd een register bij van accounts met bijzondere rechten, inclusief nood- en technische accounts (hoofdstuk 8).</li>
+<li>Houd een register van leveranciersaccounts bij met goedkeuring, activering en beëindiging (hoofdstuk 9).</li>
+</ul>
+<p><strong>Controles inrichten (9)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LTB-01</td>
+<td>Accounts van vertrokken medewerkers en beëindigde opdrachten zijn uiterlijk op de laatste werkdag geblokkeerd en na de termijn verwijderd; inactieve accounts zijn geblokkeerd</td>
+<td><strong>[lijneigenaar logische toegang]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>LTB-02</td>
+<td>Gedeelde accounts, functionele postbussen, technische accounts en standaardaccounts voldoen aan de eisen: motivering, eigenaar, geen beheerrechten, geen interactief aanmelden</td>
+<td><strong>[lijneigenaar logische toegang]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LTB-03</td>
+<td>MFA geldt voor alle accounts waar dit beleid het eist; elke uitzondering heeft goedgekeurde aanvullende maatregelen en staat in het risicoregister</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LTB-04</td>
+<td>De wachtwoordeisen en de blokkade na mislukte pogingen zijn technisch afgedwongen; resets volgden na identiteitsvaststelling</td>
+<td><strong>[lijneigenaar logische toegang]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LTB-05</td>
+<td>Alleen geauthenticeerde apparaten bereiken de vertrouwde zone; werken op afstand loopt via de eigen voorzieningen en de regeling thuiswerken is actueel</td>
+<td><strong>[lijneigenaar logische toegang]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LTB-06</td>
+<td>Alle uitgegeven rechten per systeem zijn beoordeeld door de systeemeigenaar en onjuiste rechten zijn binnen de hersteltermijn ingetrokken</td>
+<td>Systeemeigenaar</td>
+<td>Jaarlijks, halfjaarlijks voor systemen met het label vertrouwelijk of hoger</td>
+</tr>
+<tr>
+<td>LTB-07</td>
+<td>Het register van accounts met bijzondere rechten klopt in opzet, bestaan en gebruik; elke wijziging had een aanvraag; systeemhulpmiddelen zijn alleen door bevoegde beheerders gebruikt</td>
+<td>Systeemeigenaar en CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>LTB-08</td>
+<td>Leveranciersaccounts hebben een risicoafweging, een verantwoordelijke leidinggevende en zijn alleen actief geweest voor de afgesproken werkzaamheden</td>
+<td><strong>[lijneigenaar logische toegang]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>LTB-09</td>
+<td>Toegang tot repositories is beperkt tot wie eraan werkt en wijzigingen op de hoofdtak hebben een review</td>
+<td>Eigenaar van de repository</td>
+<td>Halfjaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (13).</strong> lijneigenaar logische toegang; termijn verwijderen accounts; termijn inactiviteit; bewaking aanmeldingen; aantal mislukte pogingen; minimale wachtwoordlengte; hersteltermijn rechten; maximum aantal hoogste beheerders; maximale activeringsduur; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="7-beleid-informatiebeveiliging-bij-inkoop">7. Beleid informatiebeveiliging bij inkoop<a class="anker" href="#7-beleid-informatiebeveiliging-bij-inkoop" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel een standaardset beveiligingseisen voor inkoop op en stel die jaarlijks opnieuw vast (hoofdstuk 3).</li>
+<li>Leg de drempel vast waaronder een inkoop met de standaardset eisen kan (hoofdstuk 3).</li>
+<li>Stel een lijst op van voorwaarden van leveranciers die de organisatie nooit accepteert (hoofdstuk 4).</li>
+<li>Neem in contracten jaarlijks onafhankelijk bewijs en een auditrecht voor de organisatie op (hoofdstuk 5).</li>
+<li>Neem in contracten een meldplicht met termijn op voor incidenten, datalekken en kwetsbaarheden (hoofdstuk 6).</li>
+<li>Neem een exitregeling op in contracten voor kritieke processen of vertrouwelijke informatie (hoofdstuk 7).</li>
+<li>Richt per inkoop een inkoopdossier in met de vereiste stukken vóór ondertekening (hoofdstuk 10).</li>
+<li>Regel de overdracht van het inkoopdossier aan de contracteigenaar binnen een maand (hoofdstuk 10).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INK-01</td>
+<td>Het inkoopdossier bevat vóór ondertekening de risicoafweging en de eisen, en de eisen staan in de uitvraag en het contract</td>
+<td>CISO</td>
+<td>Per inkoop boven de drempel</td>
+</tr>
+<tr>
+<td>INK-02</td>
+<td>De algemene voorwaarden van de leverancier zijn van de hand gewezen, of de beoordeling van de voorwaarden en de ondertekening voor de geaccepteerde risico's zitten in het dossier</td>
+<td><strong>[inkoopadviseur]</strong></td>
+<td>Per inkoop</td>
+</tr>
+<tr>
+<td>INK-03</td>
+<td>Het eerste bewijs van de leverancier is geleverd, dekt de dienst en het auditrecht staat in het contract; restrisico's staan in het risicoregister</td>
+<td>CISO</td>
+<td>Per inkoop boven de drempel</td>
+</tr>
+<tr>
+<td>INK-04</td>
+<td>De meldplicht van de leverancier met termijn en inhoud, de exitregeling en, waar nodig, de escrow staan in het contract</td>
+<td><strong>[inkoopadviseur]</strong></td>
+<td>Per inkoop boven de drempel</td>
+</tr>
+<tr>
+<td>INK-05</td>
+<td>Het overzicht van toeleveranciers is geleverd en beoordeeld, en het verbod op overdracht zonder toestemming staat in het contract</td>
+<td>CISO</td>
+<td>Per inkoop boven de drempel</td>
+</tr>
+<tr>
+<td>INK-06</td>
+<td>Steekproef van ten minste <strong>[aantal steekproef inkoop]</strong> op volledigheid van het inkoopdossier, toepassing van de drempel en overdracht aan contractbeheer binnen een maand</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>INK-07</td>
+<td>De standaardset eisen en de lijst onaanvaardbare voorwaarden zijn opnieuw vastgesteld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (11).</strong> inkoopadviseur; drempel risicoafweging inkoop; lijst onaanvaardbare voorwaarden; meldtermijn leverancier; besluitvormer afwijking soevereiniteit; contracteigenaar; registratie van controles; aantal steekproef inkoop; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="8-beleid-informatiebeveiliging-in-contractbeheer">8. Beleid informatiebeveiliging in contractbeheer<a class="anker" href="#8-beleid-informatiebeveiliging-in-contractbeheer" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Zet een register van leveranciers en contracten op met de verplichte velden per contract (hoofdstuk 3).</li>
+<li>Spreek met inkoop een kwartaalvergelijking af tussen het register en de contractadministratie (hoofdstuk 3).</li>
+<li>Stel een format voor de leveranciersbeoordeling op met de vragen en het bewijs per vraag (hoofdstuk 4).</li>
+<li>Plan de jaarlijkse beoordeling per leverancier en leg de datum vast in het register (hoofdstuk 4).</li>
+<li>Neem de toeleveringsketen van elke kritieke dienst op in de risicoanalyse (hoofdstuk 5).</li>
+<li>Inventariseer alle clouddiensten, ook gratis en zelf afgenomen diensten, en zet ze in het register (hoofdstuk 6).</li>
+<li>Controleer of elk cloudcontract de gronden voor ontbinding noemt (hoofdstuk 6).</li>
+<li>Zet kritieke contracten zonder exitregeling in het risicoregister tot de eerstvolgende verlenging (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEV-01</td>
+<td>Nieuwe en beëindigde contracten staan in het register, met alle verplichte velden, en het register komt overeen met de contractadministratie van inkoop</td>
+<td><strong>[lijneigenaar leveranciersmanagement]</strong></td>
+<td>Elk kwartaal</td>
+</tr>
+<tr>
+<td>LEV-02</td>
+<td>Elke leverancier in het register heeft een beoordeling van ten hoogste een jaar oud, met het verplichte advies van de CISO waar dat geldt, en het jaarlijkse bewijs is ontvangen</td>
+<td><strong>[lijneigenaar leveranciersmanagement]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LEV-03</td>
+<td>Steekproef op de kwaliteit van ten minste <strong>[aantal steekproef beoordelingen]</strong>: gebruikt bewijs, vastgestelde risico's, opvolging, oordeel over de onderbouwing van de leverancier over zijn toeleveranciers</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LEV-04</td>
+<td>Meldingen over wijzigingen, kwetsbaarheden en incidenten in de keten zijn binnen de beoordelingstermijn beoordeeld en het besluit staat in het register</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LEV-05</td>
+<td>De risicoanalyse van de organisatie bevat de toeleveringsketen van elke kritieke dienst en is in het afgelopen jaar bijgewerkt</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LEV-06</td>
+<td>Alle clouddiensten in gebruik staan in het register, elk cloudcontract bevat de ontbindingsgronden, en wijzigingen bij cloudleveranciers zijn binnen een maand beoordeeld</td>
+<td><strong>[lijneigenaar leveranciersmanagement]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LEV-07</td>
+<td>De werkwijze voor clouddiensten is in de afgelopen drie jaar herzien en vastgesteld</td>
+<td>CISO</td>
+<td>Eens per drie jaar</td>
+</tr>
+<tr>
+<td>LEV-08</td>
+<td>Beëindigde contracten hebben een afgeronde exit: gegevens terug, toegang ingetrokken op de einddatum, bevestiging van verwijdering ontvangen</td>
+<td><strong>[lijneigenaar leveranciersmanagement]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (10).</strong> contracteigenaar; register leveranciers; lijneigenaar leveranciersmanagement; format leveranciersbeoordeling; beoordelingstermijn ketenwijziging; registratie van controles; aantal steekproef beoordelingen; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="9-beleid-beveiligingsincidenten">9. Beleid beveiligingsincidenten<a class="anker" href="#9-beleid-beveiligingsincidenten" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt één meldloket in met een bereikbaarheidsregeling en registratie van elke melding (hoofdstuk 3).</li>
+<li>Stel een incidentprocedure op met rollen, vervangers, termijnen, categorieën en ernstniveaus (hoofdstuk 3).</li>
+<li>Laat nieuwe medewerkers en externen de meldprocedure bevestigen en registreer die bevestiging (hoofdstuk 3).</li>
+<li>Leg in de incidentprocedure vast wanneer een incident naar crisisbeheersing gaat (hoofdstuk 6).</li>
+<li>Start een maandrapport incidenten voor de eindverantwoordelijke bedrijfsvoering (hoofdstuk 6).</li>
+<li>Leg de externe meldingen vast in de incidentprocedure, met termijn en eigenaar per melding (hoofdstuk 7).</li>
+<li>Richt een vast adres in voor meldingen van het CSIRT en de sectorale CERT (hoofdstuk 7).</li>
+<li>Publiceer een CVD-procedure op de website met een meldadres en een security.txt-bestand (hoofdstuk 8).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIM-01</td>
+<td>Het maandrapport incidenten, inclusief CVD-meldingen, is opgesteld en aan de eindverantwoordelijke bedrijfsvoering verzonden</td>
+<td>CISO</td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>SIM-02</td>
+<td>De kwartaalanalyse op patronen is uitgevoerd en in de rapportage aan de directie opgenomen</td>
+<td>CISO</td>
+<td>Elk kwartaal</td>
+</tr>
+<tr>
+<td>SIM-03</td>
+<td>Steekproef van tien incidenten: beoordeling binnen één werkdag met vastgelegd besluit, volledigheid van het dossier, keten van bewaring van het bewijs, tijdigheid van de interne en externe meldingen, evaluatie en opvolging van de verbetermaatregelen</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SIM-04</td>
+<td>Alle medewerkers en externen met een account hebben de meldprocedure bevestigd</td>
+<td><strong>[lijneigenaar personeel]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SIM-05</td>
+<td>Een oefening met een incidentscenario is uitgevoerd, inclusief de beoordeling van de ernst, de overgang naar crisisbeheersing en het opstellen van een externe melding binnen de wettelijke termijn, en de verbeterpunten zijn belegd</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SIM-06</td>
+<td>De incidentprocedure en de CVD-procedure zijn opnieuw vastgesteld, de rollen en vervangers zijn belegd, en de publicatie van de CVD-procedure en het security.txt-bestand zijn actueel</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SIM-07</td>
+<td>Meldingen van het CSIRT of de sectorale CERT zijn binnen één werkdag beoordeeld en opgenomen in de risicobehandeling</td>
+<td>CISO</td>
+<td>Elk kwartaal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (8).</strong> meldloket incidenten; lijneigenaar personeel; incidentcoördinator; eindverantwoordelijke bedrijfsvoering; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="10-beleid-ict-continu-teit-en-uitwijk">10. Beleid ICT-continuïteit en uitwijk<a class="anker" href="#10-beleid-ict-continu-teit-en-uitwijk" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Laat proceseigenaren kritieke processen vastleggen met impactniveau, hersteltijd en toelaatbaar gegevensverlies (hoofdstuk 3).</li>
+<li>Stel een overzicht van kritieke systemen op met hersteleisen, afhankelijkheden en herstelvolgorde (hoofdstuk 3).</li>
+<li>Laat de directie de herstelvolgorde vaststellen (hoofdstuk 3).</li>
+<li>Richt per kritiek systeem een uitwijk- of redundantievoorziening in en leg de onderbouwing vast (hoofdstuk 4).</li>
+<li>Voer gedeelde voorzieningen dubbel uit of leg een noodroute vast, en test de omschakeling (hoofdstuk 4).</li>
+<li>Neem hersteleisen en uitwijk op in contracten met leveranciers van kritieke systemen (hoofdstuk 4).</li>
+<li>Stel per kritiek proces een continuïteitsplan op, met een deel over beveiliging tijdens verstoring (hoofdstuk 6).</li>
+<li>Test elk continuïteitsplan en leg bevindingen en verbeteringen vast in een testverslag (hoofdstuk 6).</li>
+</ul>
+<p><strong>Controles inrichten (6)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BCDR-01</td>
+<td>Het overzicht van kritieke systemen is volledig en actueel: elk kritiek proces heeft een impactniveau, hersteltijd en toelaatbaar gegevensverlies, elk kritiek systeem heeft afhankelijkheden en een plaats in de vastgestelde herstelvolgorde, en de actualisatie is niet ouder dan drie jaar</td>
+<td><strong>[eigenaar overzicht kritieke systemen]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BCDR-02</td>
+<td>Elk kritiek proces heeft een continuïteitsplan dat in het afgelopen jaar is getest, en eens per drie jaar een technische uitwijktest binnen de hersteleisen</td>
+<td><strong>[lijneigenaar ICT-continuïteit]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BCDR-03</td>
+<td>De verbeteringen uit de tests van het jaar ervoor zijn binnen drie maanden in de plannen doorgevoerd of staan in het risicoregister</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BCDR-04</td>
+<td>Elke gedeelde voorziening en elk kritiek systeem heeft een redundantie- of uitwijkvoorziening die past bij de hersteleisen, de omschakeling is getest, en restrisico's staan in het risicoregister</td>
+<td><strong>[lijneigenaar ICT-continuïteit]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BCDR-05</td>
+<td>Leveranciers van kritieke systemen hebben de hersteleisen en de uitwijk in het contract en hebben het bewijs van hun uitwijktests geleverd</td>
+<td>Proceseigenaar</td>
+<td>Jaarlijks, bij de leveranciersbeoordeling</td>
+</tr>
+<tr>
+<td>BCDR-06</td>
+<td>Elk continuïteitsplan bevat een door de CISO goedgekeurd deel over de beveiliging tijdens een verstoring, en na elke verstoring is het logboek aanwezig, zijn de noodvoorzieningen binnen de termijn ingetrokken en is de vrijgave na een cyberincident vastgelegd</td>
+<td>CISO</td>
+<td>Jaarlijks, en na elke verstoring</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (7).</strong> eigenaar overzicht kritieke systemen; lijneigenaar ICT-continuïteit; termijn intrekken noodvoorzieningen; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="11-beleid-it-compliance">11. Beleid IT-compliance<a class="anker" href="#11-beleid-it-compliance" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Zet een register op van wettelijke en contractuele eisen, met eigenaar en beleidsstuk per eis (hoofdstuk 3).</li>
+<li>Zet een licentieregister op en vergelijk het met de geïnstalleerde software (hoofdstuk 3).</li>
+<li>Leg per systeem en informatiecategorie de bewaartermijnen vast in een overzicht (hoofdstuk 4).</li>
+<li>Stel een overzicht DLP-maatregelen op met de maatregel per kanaal (hoofdstuk 5).</li>
+<li>Stel automatische schermvergrendeling centraal in op alle werkplekken en mobiele apparaten (hoofdstuk 6).</li>
+<li>Richt capaciteitsbewaking met een drempelmelding in voor kritieke systemen en maak een capaciteitsprognose (hoofdstuk 7).</li>
+<li>Koppel alle systemen, netwerkapparaten en werkplekken aan één betrouwbare tijdbron (hoofdstuk 7).</li>
+<li>Leg elke audit of technische test op productie vooraf vast in een testopdracht (hoofdstuk 8).</li>
+</ul>
+<p><strong>Controles inrichten (9)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ITC-01</td>
+<td>Het register van wettelijke en contractuele eisen is in het afgelopen jaar bijgewerkt, elke eis heeft een eigenaar en een beleidsstuk, en elke proceseigenaar heeft de toets op het eigen proces uitgevoerd</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>ITC-02</td>
+<td>De geïnstalleerde software komt overeen met het licentieregister en voor zelf gemaakte software en inhoud is het eigendom in het contract vastgelegd</td>
+<td>IT-organisatie</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>ITC-03</td>
+<td>Voor elk kritiek systeem zijn de bewaartermijnen vastgelegd en uitgevoerd, en de registraties die als bewijs dienen zijn beschermd tegen wijziging</td>
+<td>Proceseigenaar</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>ITC-04</td>
+<td>Elke verwerking van persoonsgegevens staat in het verwerkingsregister, de autorisaties op persoonsgegevens zijn op doelbinding getoetst en test- en ontwikkelomgevingen bevatten geen ongemaskeerde persoonsgegevens</td>
+<td>Privacy officer</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>ITC-05</td>
+<td>De maatregelen tegen gegevenslekken staan aan op alle kanalen uit het overzicht en de meldingen zijn elk kwartaal beoordeeld en opgevolgd</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>ITC-06</td>
+<td>Automatische vergrendeling op inactiviteit en bij verwijderen van een token staat aan op alle werkplekken en mobiele apparaten, en de rondgang clear desk is uitgevoerd en opgevolgd</td>
+<td><strong>[lijneigenaar werkplek]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>ITC-07</td>
+<td>De capaciteit van de kritieke systemen is bewaakt, meldingen boven de drempel zijn opgevolgd en de jaarlijkse capaciteitsprognose is opgesteld</td>
+<td>IT-organisatie</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>ITC-08</td>
+<td>Alle systemen in de scope synchroniseren met de tijdbron en de afwijking is kleiner dan één seconde</td>
+<td>IT-organisatie</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>ITC-09</td>
+<td>Elke audit of test op een productiesysteem had een testopdracht, de rechten zijn na afloop ingetrokken en de handelingen zijn gelogd</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (13).</strong> overzicht overige ketens; lijneigenaar archief; overzicht DLP-maatregelen; vergrendeltijd; bewaartermijn afdruktaken; lijneigenaar werkplek; drempel capaciteit; tijdbron; functionaris informatiebeveiliging; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="12-beleid-fysieke-toegang-en-beveiliging">12. Beleid fysieke toegang en beveiliging<a class="anker" href="#12-beleid-fysieke-toegang-en-beveiliging" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel per locatie een zoneringsplan op met vier zones en een eigenaar per zone (hoofdstuk 3).</li>
+<li>Sluit het alarm aan op een gecertificeerde alarmcentrale met een procedure voor opvolging (hoofdstuk 4).</li>
+<li>Regel de uitgifte en inname van toegangsmiddelen op naam, gekoppeld aan personeelsmutaties (hoofdstuk 5).</li>
+<li>Richt voor zone 3 en hoger een elektronisch toegangssysteem met logging in (hoofdstuk 6).</li>
+<li>Voorzie zone 4 van noodstroom, klimaatinstallatie, branddetectie en blusvoorziening, met een testschema (hoofdstuk 7).</li>
+<li>Voer voor elke zone 4 een risicobeoordeling op omgevingsdreigingen uit (hoofdstuk 7).</li>
+<li>Stel een afsprakenlijst waarschuwingen op met contactpersonen en kanalen per partner (hoofdstuk 8).</li>
+<li>Leg in een huisregel vast of medewerkers hun pas zichtbaar dragen (hoofdstuk 9).</li>
+</ul>
+<p><strong>Controles inrichten (9)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FYS-01</td>
+<td>Het zoneringsplan is actueel: elke ruimte heeft een zone en een eigenaar, elke ruimte van zone 4 ligt binnen zone 3, en de zones in het toegangssysteem komen overeen met het plan</td>
+<td>Eigenaar van elke zone van zone 3 of hoger</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>FYS-02</td>
+<td>Toegang tot zone 3 en 4 wordt alleen toegekend na goedkeuring van de eigenaar van de zone</td>
+<td>Eigenaar van de zone</td>
+<td>Per aanvraag</td>
+</tr>
+<tr>
+<td>FYS-03</td>
+<td>Toegangsmiddelen worden na uitdiensttreding, einde opdracht of functiewijziging uiterlijk op de laatste werkdag ingenomen of aangepast</td>
+<td><strong>[lijneigenaar fysieke beveiliging]</strong></td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>FYS-04</td>
+<td>De uitgegeven toegangsmiddelen per zone zijn alleen in gebruik bij bevoegde personen met een doelbinding</td>
+<td>Eigenaar van de zone</td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>FYS-05</td>
+<td>De fysieke voorzieningen voldoen aan de eisen per zone: bouwkundige schil, alarm, bewaking, klimaat, noodstroom, brand- en waterbeveiliging, bekabeling</td>
+<td><strong>[lijneigenaar fysieke beveiliging]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>FYS-06</td>
+<td>Logging van het toegangssysteem en alarmmeldingen zijn beoordeeld op afwijkingen en afwijkingen zijn opgevolgd</td>
+<td><strong>[lijneigenaar fysieke beveiliging]</strong></td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>FYS-07</td>
+<td>De jaarlijkse risicobeoordeling van omgevingsdreigingen voor elke zone 4 is uitgevoerd en opgevolgd</td>
+<td>Eigenaar van de zone</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>FYS-08</td>
+<td>Waarschuwingen bij concrete beveiligingsrisico's zijn volgens de afsprakenlijst verzonden en ontvangen waarschuwingen zijn opgevolgd; de afsprakenlijst is actueel</td>
+<td>CISO</td>
+<td>Jaarlijks, en na elke waarschuwing</td>
+</tr>
+<tr>
+<td>FYS-09</td>
+<td>Leveranciers die ruimten beheren leveren een geldige onafhankelijke verklaring over hun fysieke beveiliging</td>
+<td>Contractbeheer</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (11).</strong> lijneigenaar fysieke beveiliging; bewaartermijn toegangslogging; bewaartermijn camerabeelden; testschema noodstroom; meldpunt fysieke beveiliging; afsprakenlijst waarschuwingen; pasregels medewerkers; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="13-beleid-afvoer-en-hergebruik-van-gegevensdragers">13. Beleid afvoer en hergebruik van gegevensdragers<a class="anker" href="#13-beleid-afvoer-en-hergebruik-van-gegevensdragers" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Blokkeer verwijderbare media op beheerde werkplekken en richt een uitzonderingenregister in (hoofdstuk 3).</li>
+<li>Stel een verwijderinstructie op met de methode per type drager en per label (hoofdstuk 4).</li>
+<li>Kies wisproducten met een positief NBV-inzetadvies of leg het alternatief vast (hoofdstuk 4).</li>
+<li>Richt een wisverslag per drager in met kenmerk, methode, product, datum en controle (hoofdstuk 4).</li>
+<li>Neem methode, controle en vernietigingscertificaat per drager op in contracten met vernietigingsleveranciers (hoofdstuk 4).</li>
+<li>Leg per gegevensverzameling de bewaartermijn vast en richt automatisch wissen in (hoofdstuk 6).</li>
+<li>Stel een transportprocedure met transportregistratie op voor gegevensdragers (hoofdstuk 7).</li>
+<li>Leg de betrouwbaarheidseisen voor koeriers en transporteurs vast in een document (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (6)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AHG-01</td>
+<td>Elke drager en elk apparaat met opslag dat in de inventaris op afgevoerd, gerepareerd of hergebruikt staat, heeft een wisverslag of een vernietigingscertificaat met serienummer</td>
+<td><strong>[lijneigenaar gegevensdragers]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>AHG-02</td>
+<td>Gewiste dragers bevatten geen herstelbare informatie en de gebruikte wisproducten hebben een NBV-inzetadvies of een vastgelegd alternatief</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>AHG-03</td>
+<td>Uitzonderingen voor verwijderbare media zijn geregistreerd, goedgekeurd en niet ouder dan een jaar; de blokkering op beheerde werkplekken werkt</td>
+<td><strong>[aanvraagpunt uitzonderingen]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>AHG-04</td>
+<td>Transporten van dragers zijn geregistreerd met machtiging en ontvangstbevestiging, en ingezette koeriers en vernietigingsleveranciers voldoen aan de vastgestelde eisen</td>
+<td>Contractbeheer</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>AHG-05</td>
+<td>Informatie waarvan de bewaartermijn is verlopen is gewist, wisverzoeken van betrokkenen zijn binnen een maand afgehandeld en beëindigde leveranciers hebben wissing bevestigd</td>
+<td>Proceseigenaar, met een overzicht van de CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>AHG-06</td>
+<td>Hergebruikte en afgevoerde apparatuur is teruggezet naar de fabrieksinstellingen, uit de registraties verwijderd en in de inventaris bijgewerkt</td>
+<td><strong>[uitgiftepunt apparatuur]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (9).</strong> aanvraagpunt uitzonderingen; uitgiftepunt apparatuur; lijneigenaar gegevensdragers; bewaartermijn wisverslag; eisen aan koeriers; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="14-beleid-mobile-device-management">14. Beleid mobile device management<a class="anker" href="#14-beleid-mobile-device-management" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt wissen op afstand in, met een meldroute voor verlies via de servicedesk (hoofdstuk 3).</li>
+<li>Stel een reisrichtlijn apparatuur op met de landen en voorwaarden voor reisapparaten (hoofdstuk 3).</li>
+<li>Schrijf elk mobiel apparaat met toegang tot bedrijfsinformatie in bij MDM of MAM (hoofdstuk 4).</li>
+<li>Stel nalevingsregels in die versleuteling, vergrendeling, ondersteunde versie en wissen op afstand afdwingen (hoofdstuk 4).</li>
+<li>Leg de inrichting van MDM en MAM vast als configuratiestandaard (hoofdstuk 4).</li>
+<li>Richt een nalevingsrapportage per apparaat in voor de lijneigenaar en de CISO (hoofdstuk 4).</li>
+<li>Stel een gebruikersovereenkomst mobiel werken op en laat elke mobiele gebruiker tekenen (hoofdstuk 5).</li>
+<li>Richt een gastnetwerk in dat logisch gescheiden is van het bedrijfsnetwerk (hoofdstuk 5).</li>
+</ul>
+<p><strong>Controles inrichten (6)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MDM-01</td>
+<td>Elk apparaat met toegang tot bedrijfsinformatie is ingeschreven in MDM of MAM, voldoet aan de nalevingsregels en heeft een ondersteund en bijgewerkt besturingssysteem</td>
+<td>Beheerder MDM</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>MDM-02</td>
+<td>Elke mobiele gebruiker heeft een getekende gebruikersovereenkomst en, bij een eigen apparaat, een instemming met wissen op afstand</td>
+<td>HR</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>MDM-03</td>
+<td>Wissen op afstand werkt en gemelde verliezen zijn binnen de wistermijn gewist en als incident geregistreerd</td>
+<td>Beheerder MDM</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>MDM-04</td>
+<td>Niet-beheerde apparaten krijgen geen toegang tot bedrijfsinformatie en de regels voor voorwaardelijke toegang en de blokkering van lokaal opslaan werken zoals ingericht</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>MDM-05</td>
+<td>De geïnstalleerde apps op beheerde apparaten zijn toegestaan en apparaten zonder contact in drie maanden zijn geblokkeerd</td>
+<td>Beheerder MDM</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>MDM-06</td>
+<td>Een uitbestede werkplek- of beheerdienst levert een geldige onafhankelijke verklaring over het apparaatbeheer</td>
+<td>Contractbeheer</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (8).</strong> wistermijn; reisrichtlijn apparatuur; lijneigenaar mobiele apparatuur; regeling eigen apparaten; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="15-beleid-kwetsbaarheden-en-patchmanagement">15. Beleid kwetsbaarheden en patchmanagement<a class="anker" href="#15-beleid-kwetsbaarheden-en-patchmanagement" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt op alle werkplekken, servers en mailvoorzieningen antimalware in die zichzelf automatisch bijwerkt (hoofdstuk 3).</li>
+<li>Blokkeer uitvoerbare bestanden en scripts van internet en regel uitzonderingen via de servicedesk (hoofdstuk 3).</li>
+<li>Stel per type systeem een basisconfiguratie vast op basis van een erkende baseline (hoofdstuk 4).</li>
+<li>Leg de werkelijke configuratie van elk systeem vast in een configuratieregister (hoofdstuk 4).</li>
+<li>Richt maandelijkse scans op kwetsbaarheden in voor alle ICT-middelen, waar mogelijk met agents (hoofdstuk 5).</li>
+<li>Stel een jaarlijks testprogramma vast met per systeem kwetsbaarheidsanalyse, penetratietest of red-teamtest (hoofdstuk 5).</li>
+<li>Richt een kwetsbaarhedenregister in met systeem, risico, eigenaar, termijn en status (hoofdstuk 7).</li>
+<li>Richt een maandrapportage aan de directie in over open kwetsbaarheden en de patchstand (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (9)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPM-01</td>
+<td>Elk apparaat in het overzicht van ICT-middelen heeft actieve antimalware met een update van ten hoogste zeven dagen oud, en apparaten die daarbuiten vallen zijn hersteld of van het netwerk gehaald</td>
+<td><strong>[beheerorganisatie]</strong></td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>VPM-02</td>
+<td>Uitvoerbare bestanden en scripts van internet worden tegengehouden en elke toegestane uitzondering heeft een vastgelegde aanvraag; de jaarlijkse voorlichting en de phishing-simulatie zijn uitgevoerd</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>VPM-03</td>
+<td>Elk type systeem heeft een vastgestelde basisconfiguratie van ten hoogste een jaar oud, de gemeten afwijkingen zijn binnen een maand hersteld of als uitzondering vastgelegd, en het configuratieregister is volledig</td>
+<td><strong>[lijneigenaar kwetsbaarhedenbeheer]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>VPM-04</td>
+<td>Alle ICT-middelen uit het overzicht zijn in de afgelopen maand gescand en elke kwetsbaarheid met risico gemiddeld of hoger staat in het kwetsbaarhedenregister met eigenaar en termijn</td>
+<td>CISO</td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>VPM-05</td>
+<td>Kwetsbaarheden zijn binnen de termijn van de tabel verholpen en de herhaalscan bevestigt dat; overschrijdingen zijn aan de directie gerapporteerd</td>
+<td>CISO</td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>VPM-06</td>
+<td>Elke uitgestelde kwetsbaarheid en elk systeem zonder beveiligingsupdates heeft een volledige risicoafweging met tijdelijke maatregelen, einddatum en risico-eigenaar, en de einddatum is nagekomen</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>VPM-07</td>
+<td>Elke waarschuwing van NCSC of CERT die een gebruikt product raakte, is binnen één werkdag doorgezet en opgevolgd</td>
+<td><strong>[lijneigenaar kwetsbaarhedenbeheer]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>VPM-08</td>
+<td>Elk informatiesysteem en elk internetbereikbaar systeem is volgens het testprogramma getest, de bevindingen met hoog risico zijn opgevolgd en elke release van een internetbereikbaar systeem heeft een penetratietestrapport bij de wijziging</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>VPM-09</td>
+<td>De beheerpartij en de leveranciers van internetbereikbare systemen leveren de afgesproken rapportages en penetratietestbewijzen en halen de termijnen uit het contract</td>
+<td>Contracteigenaar</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (14).</strong> beheerorganisatie; configuratieregister; register testrapporten; patchtermijn hoog en hoog; patchtermijn hoog; patchtermijn gemiddeld; termijn uitfaseren; kwetsbaarhedenregister; functionaris informatiebeveiliging; lijneigenaar kwetsbaarhedenbeheer; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="16-beleid-back-up-en-recovery">16. Beleid back-up en recovery<a class="anker" href="#16-beleid-back-up-en-recovery" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel per omgeving een back-upplan op dat per scenario het herstel beschrijft, ook ransomware (hoofdstuk 3).</li>
+<li>Zet een back-upregister op met per systeem de hersteleisen, locaties en laatste hersteltest (hoofdstuk 3).</li>
+<li>Laat de proceseigenaar per systeem het maximale gegevensverlies en de hersteltijd vaststellen (hoofdstuk 4).</li>
+<li>Richt ten minste één onveranderbare of offline kopie van de back-up in (hoofdstuk 5).</li>
+<li>Versleutel de back-ups en bewaar de sleutels gescheiden in een beheerde sleutelkluis (hoofdstuk 5).</li>
+<li>Richt voor de back-upomgeving aparte beheeraccounts met MFA buiten het gewone domein in (hoofdstuk 5).</li>
+<li>Plaats back-ups van kritieke systemen op twee plekken die elkaar bij een incident niet raken (hoofdstuk 6).</li>
+<li>Voer een eerste hersteltest uit volgens het ransomwarescenario, in een schone omgeving (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BUR-01</td>
+<td>Alle back-uptaken van de afgelopen maand zijn gecontroleerd en elke mislukte taak is binnen een werkdag hersteld of gemeld</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>BUR-02</td>
+<td>Het back-upregister is volledig: elk systeem met impactniveau kritiek of hoger en elke SaaS-dienst met een kritiek proces heeft een goedgekeurd back-upplan van ten hoogste een jaar oud, vastgestelde hersteleisen, een gescheiden kopie en een onveranderbare kopie</td>
+<td><strong>[eigenaar back-upplannen]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BUR-03</td>
+<td>Elk systeem heeft vastgestelde hersteleisen met een risicoafweging, of staat gemeld op het standaardregime; de hersteltijd van kritieke systemen ligt onder de maximale uitvalsduur</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BUR-04</td>
+<td>De onveranderbare kopie is niet te wissen met de beheerrechten van productie, de back-upaccounts staan buiten het gewone domein met MFA, en het verkorten van bewaartermijnen vereist een tweede persoon</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BUR-05</td>
+<td>De gescheiden kopie staat op een locatie die een incident op de productielocatie niet raakt, en bij leveranciers is dat in het contract en met een verklaring aangetoond</td>
+<td>Contracteigenaar</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BUR-06</td>
+<td>Elk kritiek systeem heeft in het afgelopen jaar een hersteltest gehad die de hersteltijd haalde, waaronder ten minste één test van het ransomwarescenario uit de onveranderbare kopie</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>BUR-07</td>
+<td>Elke hersteloperatie is gelogd met toestemming van de systeemeigenaar</td>
+<td><strong>[lijneigenaar back-up]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (7).</strong> eigenaar back-upplannen; lijneigenaar back-up; standaard hersteltijd; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="17-beleid-logging-en-monitoring">17. Beleid logging en monitoring<a class="anker" href="#17-beleid-logging-en-monitoring" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Richt op elk systeem de minimale loggebeurtenissen en verplichte velden in, met één tijdbron (hoofdstuk 3).</li>
+<li>Stel een overzicht van logbronnen op met gebeurtenissen, opslag, bewaartermijn en beoordelaar per systeem (hoofdstuk 3).</li>
+<li>Leg per logbron de bewaartermijn vast op basis van een risicoafweging (hoofdstuk 4).</li>
+<li>Neem logging met persoonsgegevens op in het verwerkingsregister (hoofdstuk 4).</li>
+<li>Kopieer logbestanden naar centrale opslag waar beheerders van het bronsysteem niets kunnen wijzigen (hoofdstuk 4).</li>
+<li>Stel een automatische melding in bij het wijzigen, verwijderen of stoppen van logging (hoofdstuk 4).</li>
+<li>Richt een detectievoorziening in die de logging van alle bronnen samenbrengt, bijvoorbeeld een SIEM (hoofdstuk 5).</li>
+<li>Leg escalatieregels vast met per ernstniveau de termijn en de ontvanger (hoofdstuk 5).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOG-01</td>
+<td>Elke logbron uit het overzicht logt daadwerkelijk en komt in de centrale opslag binnen; elk productiesysteem staat in het overzicht</td>
+<td><strong>[beheerder logvoorziening]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>LOG-02</td>
+<td>Een steekproef van logregels uit vijf systemen bevat de verplichte velden, dezelfde tijdbron en geen wachtwoorden of sleutels</td>
+<td><strong>[beheerder logvoorziening]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LOG-03</td>
+<td>De bewaartermijn per logbron is vastgesteld, wordt gehaald en logging met persoonsgegevens staat in het verwerkingsregister</td>
+<td>Privacy officer</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LOG-04</td>
+<td>De logbestanden zijn over de bewaartermijn ongewijzigd en volledig aanwezig, getoetst door iemand zonder beheerrechten op de logging</td>
+<td>Onafhankelijke toetser aangewezen door de CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LOG-05</td>
+<td>Meldingen uit de detectievoorziening zijn binnen de termijn per ernstniveau beoordeeld en de detectieregels zijn na incidenten bijgewerkt</td>
+<td>CISO</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>LOG-06</td>
+<td>De escalatie werkt: een gesimuleerde melding met ernst hoog bereikt de CISO binnen de afgesproken termijn</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>LOG-07</td>
+<td>Nieuwe dreigingen die bij de monitoring zijn ontdekt, zijn volgens de procedure met de CERT gedeeld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (8).</strong> beheerder logvoorziening; bewaartermijn beveiligingslogging; bewaking; lijneigenaar logging; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="18-beleid-netwerkbeveiliging">18. Beleid netwerkbeveiliging<a class="anker" href="#18-beleid-netwerkbeveiliging" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Stel een netwerkontwerp op met segmenten, beveiligingsniveaus, koppelpunten en toegestane verkeersstromen (hoofdstuk 3).</li>
+<li>Geef elke firewallregel een eigenaar en een reden en verwijder overbodige regels (hoofdstuk 3).</li>
+<li>Leg per netwerkcomponent vast welke hardeningsrichtlijn geldt (hoofdstuk 4).</li>
+<li>Richt een apart beheersegment in met persoonsgebonden beheeraccounts en MFA (hoofdstuk 4).</li>
+<li>Richt netwerktoegangscontrole in met authenticatie van apparaat en gebruiker (hoofdstuk 4).</li>
+<li>Plaats op elk koppelpunt met internet een firewall, DDoS-bescherming en detectie (hoofdstuk 5).</li>
+<li>Richt een webfilter in en laat de CISO de geblokkeerde categorieën vaststellen (hoofdstuk 6).</li>
+<li>Plaats gastwifi in een apart segment zonder toegang tot het bedrijfsnetwerk (hoofdstuk 8).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NWB-01</td>
+<td>Het netwerkontwerp is actueel, elk segment heeft een beveiligingsniveau en de segmenten in de configuratie komen overeen met het ontwerp</td>
+<td><strong>[netwerkarchitect]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>NWB-02</td>
+<td>Alle firewallregels hebben een eigenaar en een reden; regels zonder noodzaak zijn verwijderd</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>NWB-03</td>
+<td>Netwerkcomponenten voldoen aan de hardening en de patchtermijnen van hun segment en zijn alleen beheerbaar vanuit het beheersegment met MFA</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>NWB-04</td>
+<td>Een segmentatietest vanuit het gebruikers- en het gastsegment bereikt het beheersegment en het serversegment niet</td>
+<td>Onafhankelijke tester aangewezen door de CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>NWB-05</td>
+<td>De DDoS-bescherming en de netwerkdetectie op de koppelpunten werken en meldingen zijn binnen de termijn beoordeeld</td>
+<td>CISO</td>
+<td>Jaarlijks, meldingen per maand</td>
+</tr>
+<tr>
+<td>NWB-06</td>
+<td>Nieuwe dreigingen uit de netwerkbewaking zijn volgens de procedure met de CERT gedeeld</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>NWB-07</td>
+<td>Het webfilter blokkeert de vastgestelde categorieën, de blokkeerlijsten zijn actueel en elke uitzondering heeft een reden en een einddatum</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>NWB-08</td>
+<td>Draadloze en externe verbindingen zijn versleuteld volgens de geldende adviezen, het bedrijfswifi vraagt authenticatie van apparaat en gebruiker, en er zijn geen onbekende toegangspunten</td>
+<td><strong>[netwerkbeheer]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (7).</strong> netwerkarchitect; netwerkbeheer; lijneigenaar netwerkbeveiliging; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="19-beleid-cryptografie">19. Beleid cryptografie<a class="anker" href="#19-beleid-cryptografie" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Leg per systeem het versleutelingsniveau volgens de minimumtabel vast in het systeemdossier (hoofdstuk 3).</li>
+<li>Breng websites en maildomeinen op de verplichte standaarden van het Forum Standaardisatie (hoofdstuk 4).</li>
+<li>Wijs een eigenaar cryptografie en een sleutelbeheerder aan (hoofdstuk 5).</li>
+<li>Neem elk certificaat, elke sleutel en elke versleutelingsvoorziening op in de inventaris (hoofdstuk 5).</li>
+<li>Stel in de inventaris een automatisch signaal in voor certificaten die bijna verlopen (hoofdstuk 5).</li>
+<li>Stel een procedure sleutelbeheer op voor alle fasen, van aanvragen tot vernietigen (hoofdstuk 6).</li>
+<li>Zet sleutels in een sleutelkluis of beveiligde hardware, niet in code of gedeelde mappen (hoofdstuk 6).</li>
+<li>Bepaal per kritiek certificaat of reservecertificaten nodig zijn en oefen de vervanging (hoofdstuk 6).</li>
+</ul>
+<p><strong>Controles inrichten (6)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRY-01</td>
+<td>Websites en maildomeinen voldoen aan de verplichte standaarden van het Forum Standaardisatie en elke afwijking is gemotiveerd</td>
+<td><strong>[eigenaar cryptografie]</strong></td>
+<td>Maandelijks, rapportage jaarlijks</td>
+</tr>
+<tr>
+<td>CRY-02</td>
+<td>De inventaris van certificaten, sleutels en versleutelingsvoorzieningen is volledig, elk middel heeft een eigenaar en een vervaldatum, en verlopen certificaten zijn op tijd vervangen</td>
+<td><strong>[sleutelbeheerder]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>CRY-03</td>
+<td>De gebruikte algoritmen, sleutellengten en protocolversies voldoen aan de actuele adviezen van NCSC en NBV en afgekeurde instellingen zijn binnen de termijn uitgezet</td>
+<td><strong>[eigenaar cryptografie]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>CRY-04</td>
+<td>Elk systeem met het label vertrouwelijk of hoger versleutelt bij transport en opslag volgens de minimumtabel, en back-ups zijn versleuteld met gescheiden sleutels</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CRY-05</td>
+<td>Sleutels staan in een sleutelkluis of beveiligde hardware en niet in broncode, scripts of gedeelde mappen; de procedure sleutelbeheer is gevolgd</td>
+<td><strong>[sleutelbeheerder]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>CRY-06</td>
+<td>Voor certificaten waarvan de dienstverlening afhangt is de risicoafweging over reservecertificaten gemaakt en, waar afgesproken, de vervanging geoefend</td>
+<td><strong>[sleutelbeheerder]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (9).</strong> sleutelbeheerder; eigenaar cryptografie; termijn uitfaseren; waarschuwingstermijn verlopen; lijneigenaar cryptografie; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="20-beleid-veilige-softwareontwikkeling">20. Beleid veilige softwareontwikkeling<a class="anker" href="#20-beleid-veilige-softwareontwikkeling" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Leg de beveiligingsprincipes voor het ontwerp van informatiesystemen vast in een architectuurdocument (hoofdstuk 3).</li>
+<li>Richt een vastgelegde toets van elk project en elke aanschaf aan de architectuurprincipes in (hoofdstuk 3).</li>
+<li>Stel per nieuwe toepassing beveiligingseisen op, op basis van een erkende eisenset zoals OWASP ASVS (hoofdstuk 4).</li>
+<li>Plan voor elke internetvoorziening een penetratietest vóór ingebruikname (hoofdstuk 4).</li>
+<li>Neem de eisen uit het beleid op in het programma van eisen en het contract (hoofdstuk 6).</li>
+<li>Regel in contracten auditrecht, toegang tot broncode, oplostermijnen en een meldregeling voor kwetsbaarheden (hoofdstuk 6).</li>
+<li>Richt per oplevering een acceptatiedossier in met testverslag, penetratietest en componentenoverzicht (hoofdstuk 6).</li>
+<li>Stel een formulier testgegevens op voor testen met persoonsgegevens (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSD-01</td>
+<td>De architectuurprincipes zijn in het afgelopen jaar herzien en vastgesteld, en elk project of elke aanschaf van het afgelopen jaar heeft een vastgelegde toets aan de principes</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SSD-02</td>
+<td>Elke nieuwe toepassing of grote wijziging heeft vastgelegde beveiligingseisen op het niveau dat bij het impactniveau past, en de eisen zijn bij de acceptatie aantoonbaar getoetst</td>
+<td><strong>[lijneigenaar veilige ontwikkeling]</strong></td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>SSD-03</td>
+<td>Elke internetvoorziening die in gebruik is gegaan, heeft een penetratietestrapport van vóór de ingebruikname zonder open bevindingen met hoog risico</td>
+<td>CISO</td>
+<td>Halfjaarlijks</td>
+</tr>
+<tr>
+<td>SSD-04</td>
+<td>De beschrijving van het ontwikkelproces en de richtlijn voor veilig programmeren zijn ten hoogste een jaar oud, elke ontwikkelaar heeft in het afgelopen jaar training gevolgd, en elke wijziging in de hoofdtak heeft een beoordeling door een tweede persoon en een geslaagde automatische controle</td>
+<td><strong>[lijneigenaar veilige ontwikkeling]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>SSD-05</td>
+<td>Elke applicatie heeft een actueel componentenoverzicht en er staan geen geheimen in de repository</td>
+<td><strong>[lijneigenaar veilige ontwikkeling]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>SSD-06</td>
+<td>Elke oplevering van een leverancier is pas geaccepteerd na controle van de afgesproken bewijzen, en elk contract voor ontwikkeling, maatwerk of SaaS bevat de eisen uit dit beleid</td>
+<td>Contracteigenaar</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>SSD-07</td>
+<td>Elke testomgeving met persoonsgegevens heeft een ingevuld formulier met advies en een einddatum, en de gegevens zijn op de einddatum verwijderd</td>
+<td>Privacy officer</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (8).</strong> architectuurdocument; lijneigenaar veilige ontwikkeling; ontwikkelrichtlijn; formulier testgegevens; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<h2 id="21-beleid-wijzigingsbeheer">21. Beleid wijzigingsbeheer<a class="anker" href="#21-beleid-wijzigingsbeheer" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Inrichten</strong></p>
+<ul>
+<li>Kies een beheerraamwerk, zoals ITIL of BiSL, en leg de processtappen vast (hoofdstuk 3).</li>
+<li>Richt een wijzigingsregister in met risicoklasse, testplan, rollbackplan en besluit per wijziging (hoofdstuk 3).</li>
+<li>Wijs een wijzigingsmanager en een spoedgoedkeurder aan (hoofdstuk 3).</li>
+<li>Leg de goedkeuring per soort wijziging vast en maak draaiboeken voor standaardwijzigingen (hoofdstuk 3).</li>
+<li>Leg werkinstructies voor terugkerende beheertaken vast in de beheerdocumentatie (hoofdstuk 4).</li>
+<li>Trek lokale beheerrechten in en stel een lijst van toegestane software op (hoofdstuk 5).</li>
+<li>Scheid ontwikkel-, test-, acceptatie- en productieomgevingen met eigen accounts en rechten (hoofdstuk 6).</li>
+<li>Stel een vaste testmethode voor acceptatietesten vast, met testplan en testverslag (hoofdstuk 7).</li>
+</ul>
+<p><strong>Controles inrichten (8)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Controle</th>
+<th>Uitvoerder</th>
+<th>Frequentie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WZB-01</td>
+<td>Elke doorgevoerde wijziging staat in het register met risicoafweging, rollbackplan, testverslag, goedkeuring door de juiste rol en de controle na doorvoeren</td>
+<td>Wijzigingsmanager</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>WZB-02</td>
+<td>Elke spoedwijziging is binnen vijf werkdagen achteraf beoordeeld en het aandeel spoedwijzigingen is gerapporteerd</td>
+<td><strong>[lijneigenaar wijzigingsbeheer]</strong></td>
+<td>Maandelijks</td>
+</tr>
+<tr>
+<td>WZB-03</td>
+<td>Het wijzigingsproces volgt het vastgelegde beheerraamwerk en is bij beheerpartijen in het contract vastgelegd en aantoonbaar toegepast</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>WZB-04</td>
+<td>Voor elke terugkerende beheertaak van een systeem met impactniveau kritiek of hoger bestaat een werkinstructie die ten hoogste een jaar oud is, de verplichte onderdelen bevat en alleen voor bevoegden toegankelijk is</td>
+<td><strong>[lijneigenaar wijzigingsbeheer]</strong></td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>WZB-05</td>
+<td>De geïnstalleerde software op werkplekken en servers komt overeen met de lijst van toegestane software, gebruikers hebben geen lokale beheerrechten en software buiten de lijst is binnen de termijn verwijderd</td>
+<td><strong>[beheerorganisatie]</strong></td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>WZB-06</td>
+<td>Ontwikkel-, test-, acceptatie- en productieomgevingen zijn gescheiden met eigen accounts en rechten, en elke test in productie of niet vooraf geteste significante wijziging heeft een voorafgaande goedkeuring van de proceseigenaar</td>
+<td>CISO</td>
+<td>Jaarlijks</td>
+</tr>
+<tr>
+<td>WZB-07</td>
+<td>Elke significante wijziging heeft een acceptatietestverslag volgens de vaste methode, met een beveiligingstest bij een hoog risico of een internetbereikbaar systeem, en een acceptatiebesluit van de systeemeigenaar</td>
+<td>Wijzigingsmanager</td>
+<td>Per kwartaal</td>
+</tr>
+<tr>
+<td>WZB-08</td>
+<td>Bij elke acceptatietest is vastgelegd welke testgegevens zijn gebruikt, en bij gebruik van productiegegevens zijn het advies en de verwijdering aantoonbaar</td>
+<td>Privacy officer</td>
+<td>Jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nog in te vullen (10).</strong> lijneigenaar wijzigingsbeheer; wijzigingsregister; spoedgoedkeurder; beheerdocumentatie; termijn verwijderen software; beheerorganisatie; registratie van controles; risico-eigenaar; eigenaar van dit beleid; vaststeller.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/beleidsset-informatiebeveiliging">governance/beleidsset-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

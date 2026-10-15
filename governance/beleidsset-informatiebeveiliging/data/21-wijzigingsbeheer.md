@@ -1,6 +1,16 @@
 ---
 domein: wijzigingsbeheer
 titel: Beleid wijzigingsbeheer
+samenvatting: Regelt hoe een wijziging in productie wordt aangevraagd, beoordeeld, getest, goedgekeurd en doorgevoerd. Behandelt het wijzigingsproces met standaard-, normale en spoedwijzigingen, werkinstructies voor beheertaken, het installeren van software, de scheiding van omgevingen en acceptatietesten.
+invoeren:
+  - Kies een beheerraamwerk, zoals ITIL of BiSL, en leg de processtappen vast (hoofdstuk 3).
+  - Richt een wijzigingsregister in met risicoklasse, testplan, rollbackplan en besluit per wijziging (hoofdstuk 3).
+  - Wijs een wijzigingsmanager en een spoedgoedkeurder aan (hoofdstuk 3).
+  - Leg de goedkeuring per soort wijziging vast en maak draaiboeken voor standaardwijzigingen (hoofdstuk 3).
+  - Leg werkinstructies voor terugkerende beheertaken vast in de beheerdocumentatie (hoofdstuk 4).
+  - Trek lokale beheerrechten in en stel een lijst van toegestane software op (hoofdstuk 5).
+  - Scheid ontwikkel-, test-, acceptatie- en productieomgevingen met eigen accounts en rechten (hoofdstuk 6).
+  - Stel een vaste testmethode voor acceptatietesten vast, met testplan en testverslag (hoofdstuk 7).
 ---
 
 ## 1. Doel en reikwijdte
@@ -55,9 +65,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Het wijzigingsproces
+## 3. Het wijzigingsproces
 
 - [[lijneigenaar wijzigingsbeheer: de manager die dit beleid uitvoert, bijvoorbeeld het hoofd IT]] richt
   wijzigingsbeheer in volgens een algemeen geaccepteerd beheerraamwerk, bijvoorbeeld ITIL of ISO/IEC 20000
@@ -101,7 +109,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
   te zien en de contracteigenaar toetst het jaarlijks aan dit beleid. [8.32.01, 8.32.02]
 :::
 
-### 3.2 Bedieningsprocedures
+## 4. Bedieningsprocedures
 
 - Voor terugkerende beheertaken (starten en stoppen van systemen, back-up en herstel, standaardwijzigingen,
   verwerken van batches, afhandelen van storingen en meldingen, onderhoud en opschonen van logging) legt de
@@ -120,7 +128,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
   instructies die haar systemen raken en in de instructies voor herstel na een storing. [5.37.01]
 :::
 
-### 3.3 Software installeren
+## 5. Software installeren
 
 - Gebruikers hebben geen lokale beheerrechten op hun werkplek. Software komt alleen op werkplekken en
   servers via de softwarecatalogus of een goedgekeurde wijziging, geïnstalleerd door de beheerorganisatie
@@ -136,7 +144,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
   is om terug te kunnen, en verwijdert zij versies die de leverancier niet meer ondersteunt volgens het
   beleid kwetsbaarheden en patchmanagement. [8.19.01]
 
-### 3.4 Scheiding van omgevingen
+## 6. Scheiding van omgevingen
 
 - Ontwikkeling, test, acceptatie en productie zijn gescheiden omgevingen, met eigen accounts en rechten,
   zodat een fout of een aanval in de ene omgeving de andere niet raakt. Voor een systeem zonder eigen
@@ -156,7 +164,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
   productie en verwijdert de beheerorganisatie de gegevens direct na de test; het verwijderen staat in het
   register bij de wijziging. [8.33.01]
 
-### 3.5 Testen en acceptatie
+## 7. Testen en acceptatie
 
 - Acceptatietesten volgen een vaste testmethode: een testplan met testgevallen afgeleid van de
   functionele eisen en de beveiligingseisen, uitgevoerd door of namens de systeemeigenaar. Bij een wijziging
@@ -180,7 +188,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
   systeemeigenaar de versie accepteert. [8.29.01, 8.31.02]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -194,7 +202,7 @@ ontvangt elke maand een overzicht van alle doorgevoerde wijzigingen.
 | CISO | Advies bij wijzigingen met een hoog risico en bij nieuwe software met toegang tot kritieke informatie, jaarlijkse toetsing van dit beleid |
 | Leveranciers | Wijzigingen aanmelden en doorvoeren volgens dit beleid, werkinstructies voor uitbestede taken bijhouden |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles]]; afwijkingen gaan als bevinding naar het
@@ -219,7 +227,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid veilige
 softwareontwikkeling (testgegevens, bouwstraat en acceptatie van opleveringen), het beleid kwetsbaarheden

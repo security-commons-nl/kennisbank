@@ -1,5 +1,7 @@
 # Beleid fysieke toegang en beveiliging
 
+[Download als Word](fysiek.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Fysieke toegang & beveiliging* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt de fysieke beveiliging van locaties en ruimten waar informatie wordt verwerkt of bewaard. Gaat over de indeling in vier beveiligingszones, de eisen per zone, de omgang met incidenten, monitoring en waarschuwingen, en het dragen van toegangspassen.
+
+**Onderwerpen.** 3. Beveiligingszones; 4. Eisen voor zone 1, openbaar; 5. Eisen voor zone 2, kantoor; 6. Eisen voor zone 3, beperkt; 7. Eisen voor zone 4, kritiek; 8. Incidenten, monitoring en waarschuwingen; 9. Toegangspassen dragen.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -54,9 +60,7 @@ IT-compliance) en het afvoeren van opslagmedia (beleid afvoer en hergebruik van 
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Beveiligingszones
+## 3. Beveiligingszones
 
 1. De organisatie deelt elke locatie in in vier zones en legt dat vast in een zoneringsplan per locatie,
    beheerd door **[lijneigenaar fysieke beveiliging]**.
@@ -91,7 +95,7 @@ IT-compliance) en het afvoeren van opslagmedia (beleid afvoer en hergebruik van 
 >    verklaring (ISO 27001-certificaat of ISAE 3402-rapport) die dat aantoont. [7.01.02]
 > 7. Ook op de eigen locaties liggen de netwerk- en stroomknooppunten in zone 3, binnen zone 2. [7.01.02]
 
-### 3.2 Eisen voor zone 1, openbaar
+## 4. Eisen voor zone 1, openbaar
 
 1. Vrije toegang voor bezoekers en leveranciers tot het terrein en de ontvangsthal is er alleen tijdens
    openingstijden. [7.03.01]
@@ -110,7 +114,7 @@ IT-compliance) en het afvoeren van opslagmedia (beleid afvoer en hergebruik van 
    Aansluitpunten in openbaar toegankelijke ruimten zijn uitgeschakeld of afgeschermd, en patchkasten zijn
    afgesloten. [7.12.01]
 
-### 3.3 Eisen voor zone 2, kantoor
+## 5. Eisen voor zone 2, kantoor
 
 Bovenop de eisen voor zone 1:
 
@@ -125,7 +129,7 @@ Bovenop de eisen voor zone 1:
 4. Verlies of diefstal van een toegangsmiddel wordt direct gemeld en het middel wordt direct geblokkeerd.
    [7.02.01]
 
-### 3.4 Eisen voor zone 3, beperkt
+## 6. Eisen voor zone 3, beperkt
 
 Bovenop de eisen voor zone 2:
 
@@ -149,10 +153,10 @@ Bovenop de eisen voor zone 2:
 9. Netwerk- en stroombekabeling naar de ruimte loopt niet door openbare ruimten, of is daar afgeschermd.
    [7.12.01]
 
-### 3.5 Eisen voor zone 4, kritiek
+## 7. Eisen voor zone 4, kritiek
 
 Bovenop de eisen voor zone 3. Is de ruimte uitbesteed, dan voldoet de leverancier aan deze eisen via het
-contract en een onafhankelijke verklaring (paragraaf 1).
+contract en een onafhankelijke verklaring (hoofdstuk 1).
 
 1. Toegang loopt via een toegangssysteem met een autorisatiestructuur en persoonlijke toegangsmiddelen.
    [7.02.01]
@@ -183,7 +187,7 @@ contract en een onafhankelijke verklaring (paragraaf 1).
 >    zoneringsplan, in zone 3 of hoger. Besturingskasten en lokale bedieningspanelen zitten achter slot en
 >    worden bij elke inspectie gecontroleerd op sporen van openbreken. [7.01.02, 7.03.01]
 
-### 3.6 Incidenten, monitoring en waarschuwingen
+## 8. Incidenten, monitoring en waarschuwingen
 
 Ongeacht de zone:
 
@@ -202,7 +206,7 @@ Ongeacht de zone:
    **[afsprakenlijst waarschuwingen]** en worden
    jaarlijks gecontroleerd. [7.02.01]
 
-### 3.7 Toegangspassen dragen
+## 9. Toegangspassen dragen
 
 1. Bezoekers, leveranciers en andere externen dragen hun pas zichtbaar zolang zij in een gebouw van de
    organisatie zijn. De pas laat alleen zien dat de drager een externe is, bijvoorbeeld met de tekst
@@ -210,7 +214,7 @@ Ongeacht de zone:
 2. Of medewerkers hun pas zichtbaar dragen, staat in **[pasregels medewerkers]**.
    Op de pas staat zo min mogelijk informatie, zodat een verloren of gestolen pas weinig prijsgeeft. [7.02.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 10. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -221,7 +225,7 @@ Ongeacht de zone:
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers die ruimten beheren of toegang krijgen, en toetsen van hun verklaringen |
 | Medewerkers en inhuur | Hun toegangsmiddel persoonlijk gebruiken en niet uitlenen, niemand mee laten lopen door een beveiligde deur, bezoekers begeleiden, verlies en verdachte situaties direct melden |
 
-## 5. Naleving en controle
+## 11. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -247,7 +251,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 12. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De zones volgen het beleid
 informatieclassificatie. Het beleid raakt het beleid bedrijfsmiddelenbeheer (werken in beveiligde zones,
@@ -262,12 +266,12 @@ De maatregelen van dit domein (6, waarvan 2 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 7.01.02 | Fysieke beveiligingszones | overheidsmaatregel | 3.1 Beveiligingszones | FYS-01, FYS-09 |
-| 7.02.01 | Fysieke toegangsbeveiliging | overheidsmaatregel | 3.2 Eisen voor zone 1, openbaar | FYS-02, FYS-03, FYS-04, FYS-08 |
-| 7.03.01 | Beveiligen van kantoren, ruimten en faciliteiten | ISO-beheersmaatregel | 3.2 Eisen voor zone 1, openbaar | FYS-05, FYS-09 |
-| 7.04.01 | Monitoren van de fysieke beveiliging | ISO-beheersmaatregel | 3.2 Eisen voor zone 1, openbaar | FYS-05, FYS-06 |
-| 7.05.01 | Beschermen tegen fysieke en omgevingsdreigingen | ISO-beheersmaatregel | 3.2 Eisen voor zone 1, openbaar | FYS-05, FYS-07, FYS-09 |
-| 7.12.01 | Beveiligen van bekabeling | ISO-beheersmaatregel | 3.2 Eisen voor zone 1, openbaar | FYS-05 |
+| 7.01.02 | Fysieke beveiligingszones | overheidsmaatregel | 3. Beveiligingszones | FYS-01, FYS-09 |
+| 7.02.01 | Fysieke toegangsbeveiliging | overheidsmaatregel | 4. Eisen voor zone 1, openbaar | FYS-02, FYS-03, FYS-04, FYS-08 |
+| 7.03.01 | Beveiligen van kantoren, ruimten en faciliteiten | ISO-beheersmaatregel | 4. Eisen voor zone 1, openbaar | FYS-05, FYS-09 |
+| 7.04.01 | Monitoren van de fysieke beveiliging | ISO-beheersmaatregel | 4. Eisen voor zone 1, openbaar | FYS-05, FYS-06 |
+| 7.05.01 | Beschermen tegen fysieke en omgevingsdreigingen | ISO-beheersmaatregel | 4. Eisen voor zone 1, openbaar | FYS-05, FYS-07, FYS-09 |
+| 7.12.01 | Beveiligen van bekabeling | ISO-beheersmaatregel | 4. Eisen voor zone 1, openbaar | FYS-05 |
 
 ## Bijlage B: Afkortingen
 

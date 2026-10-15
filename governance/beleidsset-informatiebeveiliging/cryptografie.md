@@ -1,5 +1,7 @@
 # Beleid cryptografie
 
+[Download als Word](cryptografie.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Cryptografie* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt wanneer en hoe de organisatie versleutelt en wie sleutels en certificaten beheert. Behandelt de minimale versleuteling per vertrouwelijkheidslabel, verplichte standaarden en adviezen van NCSC en NBV, de inventaris van certificaten en sleutels, en de procedure sleutelbeheer met intrekking en reservecertificaten.
+
+**Onderwerpen.** 3. Wanneer de organisatie cryptografie inzet; 4. Normen en sterkte; 5. Verantwoordelijkheden en registratie; 6. Sleutel- en certificaatbeheer.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -46,9 +52,7 @@ van gegevensdragers).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wanneer de organisatie cryptografie inzet
+## 3. Wanneer de organisatie cryptografie inzet
 
 1. De systeemeigenaar zet cryptografie in volgens deze minimumtabel, die per vertrouwelijkheidslabel
    aansluit op het beleid informatieclassificatie, en legt het gekozen niveau vast in het systeemdossier:
@@ -67,7 +71,7 @@ van gegevensdragers).
 4. Medewerkers sturen informatie met het label vertrouwelijk of hoger niet via persoonlijke webmail,
    privé-opslagdiensten of sociale media. [8.24.01]
 
-### 3.2 Normen en sterkte
+## 4. Normen en sterkte
 
 1. De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
    Voor websites en mail zijn dat in elk geval HTTPS met HSTS, TLS, DNSSEC, DKIM, DMARC, SPF en STARTTLS met
@@ -85,7 +89,7 @@ van gegevensdragers).
    aansluitovereenkomst of verwerkersovereenkomst. De systeemeigenaar bewaart die afspraak in het
    systeemdossier. [8.24.01]
 
-### 3.3 Verantwoordelijkheden en registratie
+## 5. Verantwoordelijkheden en registratie
 
 1. **[eigenaar cryptografie]** is verantwoordelijk voor de implementatie van cryptografie en legt per
    toepassing vast welk middel is gekozen en waarom. [8.24.01]
@@ -99,7 +103,7 @@ van gegevensdragers).
    certificaat automatisch een signaal aan de eigenaar; de eigenaar vervangt het certificaat voor de
    vervaldatum. [8.24.02]
 
-### 3.4 Sleutel- en certificaatbeheer
+## 6. Sleutel- en certificaatbeheer
 
 1. Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
    overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01]
@@ -149,7 +153,7 @@ van gegevensdragers).
 >    alleen over een kanaal dat versleuteling afdwingt en de ontvanger controleert, bijvoorbeeld beveiligde mail
 >    volgens NTA 7516. Zonder zo'n kanaal wordt de informatie niet gemaild. [8.24.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -161,7 +165,7 @@ van gegevensdragers).
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers en toetsen van hun verklaringen |
 | Medewerkers | Zorgvuldig gebruik van tokens en sleutels, direct melden van verlies, geen vertrouwelijke informatie via privékanalen |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -184,7 +188,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatieclassificatie (vertrouwelijkheidslabels), het beleid bedrijfsmiddelenbeheer (inventaris), het
@@ -199,10 +203,10 @@ De maatregelen van dit domein (4, waarvan 4 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.24.01 | Gebruik van cryptografie | overheidsmaatregel | 3.1 Wanneer de organisatie cryptografie inzet | CRY-01, CRY-04, CRY-05 |
-| 8.24.02 | Gebruik van cryptografie | overheidsmaatregel | 3.3 Verantwoordelijkheden en registratie | CRY-02 |
-| 8.24.04 | Gebruik van cryptografie | overheidsmaatregel | 3.2 Normen en sterkte | CRY-03 |
-| 8.24.05 | Gebruik van cryptografie | overheidsmaatregel | 3.4 Sleutel- en certificaatbeheer | CRY-06 |
+| 8.24.01 | Gebruik van cryptografie | overheidsmaatregel | 3. Wanneer de organisatie cryptografie inzet | CRY-01, CRY-04, CRY-05 |
+| 8.24.02 | Gebruik van cryptografie | overheidsmaatregel | 5. Verantwoordelijkheden en registratie | CRY-02 |
+| 8.24.04 | Gebruik van cryptografie | overheidsmaatregel | 4. Normen en sterkte | CRY-03 |
+| 8.24.05 | Gebruik van cryptografie | overheidsmaatregel | 6. Sleutel- en certificaatbeheer | CRY-06 |
 
 ## Bijlage B: Afkortingen
 

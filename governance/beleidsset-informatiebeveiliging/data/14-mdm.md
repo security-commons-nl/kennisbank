@@ -1,6 +1,16 @@
 ---
 domein: mdm
 titel: Beleid mobile device management
+samenvatting: Regelt de inrichting, het beheer en het gebruik van laptops, smartphones en tablets met toegang tot bedrijfsinformatie. Gaat over zero footprint en bescherming op het apparaat, beheer via MDM en MAM, en de gebruikersovereenkomst mobiel werken.
+invoeren:
+  - Richt wissen op afstand in, met een meldroute voor verlies via de servicedesk (hoofdstuk 3).
+  - Stel een reisrichtlijn apparatuur op met de landen en voorwaarden voor reisapparaten (hoofdstuk 3).
+  - Schrijf elk mobiel apparaat met toegang tot bedrijfsinformatie in bij MDM of MAM (hoofdstuk 4).
+  - Stel nalevingsregels in die versleuteling, vergrendeling, ondersteunde versie en wissen op afstand afdwingen (hoofdstuk 4).
+  - Leg de inrichting van MDM en MAM vast als configuratiestandaard (hoofdstuk 4).
+  - Richt een nalevingsrapportage per apparaat in voor de lijneigenaar en de CISO (hoofdstuk 4).
+  - Stel een gebruikersovereenkomst mobiel werken op en laat elke mobiele gebruiker tekenen (hoofdstuk 5).
+  - Richt een gastnetwerk in dat logisch gescheiden is van het bedrijfsnetwerk (hoofdstuk 5).
 ---
 
 ## 1. Doel en reikwijdte
@@ -38,9 +48,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Zero footprint en bescherming op het apparaat
+## 3. Zero footprint en bescherming op het apparaat
 
 - De beheerder MDM richt apps en diensten voor mobiele apparaten zo in dat bedrijfsinformatie niet standaard
   op het apparaat wordt opgeslagen: werken gebeurt via de browser, een virtuele werkplek of een beheerde app
@@ -61,7 +69,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
   [[reisrichtlijn apparatuur: het document met de landen en de voorwaarden voor reisapparatuur]].
   [8.01.01]
 
-### 3.2 Beheer van apparaten
+## 4. Beheer van apparaten
 
 - Elk mobiel apparaat met toegang tot bedrijfsinformatie valt onder een MDM-oplossing (beheer van het hele
   apparaat) of, voor eigen apparaten, een MAM-oplossing (beheer van de bedrijfsapps). De beheerder MDM
@@ -126,7 +134,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
   andere routes naar de interne omgeving openstaan. [8.01.01, 8.01.02]
 :::
 
-### 3.3 Gebruikersovereenkomst en gedrag
+## 5. Gebruikersovereenkomst en gedrag
 
 - Voordat een medewerker mobiel werkt, tekent hij een gebruikersovereenkomst mobiel werken. Daarin verklaart
   hij de risico's te kennen en veilig te werken. De overeenkomst geldt voor alle mobiele apparatuur die hij
@@ -147,7 +155,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
   bedrijfsmiddelenbeheer; de servicedesk wist het apparaat of de beheerde apps op de laatste werkdag en
   verwijdert het uit het apparaatbeheer. [8.01.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 6. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -159,7 +167,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 | Inkoop en contractbeheer | Eisen uit dit beleid in het contract met een uitbestede werkplek- of beheerdienst, toetsen van de verklaring |
 | Medewerkers en inhuur | Overeenkomst naleven, updates installeren, apparaat niet delen, verlies of diefstal direct melden |
 
-## 5. Naleving en controle
+## 7. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -183,7 +191,7 @@ worden ten minste jaarlijks opnieuw beoordeeld.
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 8. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (uitgifte, inventaris, inname en gedragsregels), het beleid informatieclassificatie

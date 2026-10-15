@@ -1,6 +1,16 @@
 ---
 domein: bcm
 titel: Beleid ICT-continuïteit en uitwijk
+samenvatting: Regelt de continuïteit van informatie en ICT als systemen uitvallen. Gaat over het bepalen van kritieke processen en systemen met hun hersteleisen, uitwijk en redundantie, de beveiliging tijdens een verstoring en het opstellen en testen van continuïteitsplannen.
+invoeren:
+  - Laat proceseigenaren kritieke processen vastleggen met impactniveau, hersteltijd en toelaatbaar gegevensverlies (hoofdstuk 3).
+  - Stel een overzicht van kritieke systemen op met hersteleisen, afhankelijkheden en herstelvolgorde (hoofdstuk 3).
+  - Laat de directie de herstelvolgorde vaststellen (hoofdstuk 3).
+  - Richt per kritiek systeem een uitwijk- of redundantievoorziening in en leg de onderbouwing vast (hoofdstuk 4).
+  - Voer gedeelde voorzieningen dubbel uit of leg een noodroute vast, en test de omschakeling (hoofdstuk 4).
+  - Neem hersteleisen en uitwijk op in contracten met leveranciers van kritieke systemen (hoofdstuk 4).
+  - Stel per kritiek proces een continuïteitsplan op, met een deel over beveiliging tijdens verstoring (hoofdstuk 6).
+  - Test elk continuïteitsplan en leg bevindingen en verbeteringen vast in een testverslag (hoofdstuk 6).
 ---
 
 ## 1. Doel en reikwijdte
@@ -34,7 +44,7 @@ beleid volgt de BIA: de hersteleisen voor systemen komen uit de hersteleisen voo
 
 ::: als bcm=geen,crisisteam
 De organisatie heeft geen BCM-functie met een BIA. Dit beleid legt daarom zelf de minimale stappen vast om
-kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de stappen in paragraaf 3.1.
+kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de stappen in hoofdstuk 3.
 :::
 
 ## 2. Uitgangspunten
@@ -51,9 +61,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Kritieke processen en systemen
+## 3. Kritieke processen en systemen
 
 - De proceseigenaren stellen vast welke processen niet mogen uitvallen, omdat inwoners of bedrijven er direct
   last van hebben of omdat er een wettelijke termijn op zit. Per proces leggen ze vast: het impactniveau, de
@@ -92,7 +100,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
   de ICT lokaal of met de hand te bedienen is en wie dat kan. [5.30.02]
 :::
 
-### 3.2 Uitwijk en redundantie
+## 4. Uitwijk en redundantie
 
 - Voor elk kritiek systeem richt de systeemeigenaar een voorziening in waarmee de hersteltijd en het
   toelaatbare gegevensverlies haalbaar zijn: dubbele uitvoering, een uitwijklocatie of een herstel uit
@@ -121,7 +129,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
   installatie stopt; de systeemeigenaar test dat jaarlijks. [5.30.01, 8.14.01]
 :::
 
-### 3.3 Beveiliging tijdens een verstoring
+## 5. Beveiliging tijdens een verstoring
 
 - Elk continuïteitsplan beschrijft welke beveiligingsmaatregelen tijdens uitwijk of noodbedrijf gelden en
   welke tijdelijk vervallen. Een noodaccount, een handmatige werkwijze of een tijdelijke verbinding staat
@@ -140,7 +148,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
   toegankelijk voor bevoegden; een handmatige werkwijze voor die informatie staat alleen in het plan als de
   CISO heeft vastgesteld dat de bescherming gelijkwaardig is. [5.29.01]
 
-### 3.4 Continuïteitsplannen en testen
+## 6. Continuïteitsplannen en testen
 
 - Voor elk kritiek proces stelt de proceseigenaar een continuïteitsplan op dat beschrijft hoe het proces
   doorgaat en wordt hersteld bij uitval van de ICT, met contactgegevens, beslissers, de herstelvolgorde en
@@ -172,7 +180,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
   significant is, en lukt de vroege waarschuwing binnen 24 uur. [5.30.01]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -183,7 +191,7 @@ kritieke processen en systemen te bepalen. Komt er een BIA, dan vervangt die de 
 | [[lijneigenaar ICT-continuïteit]] | Eigenaar van dit beleid; gedeelde voorzieningen, uitwijkvoorzieningen en herstelprocedures, ook bij leveranciers; jaarlijkse omschakeltest |
 | CISO | Advies, goedkeuring van de beveiliging tijdens een verstoring, vrijgave na een cyberincident, jaarlijkse toetsing van opzet en werking |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -206,7 +214,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. De hersteleisen volgen het beleid
 informatieclassificatie. Het beleid hangt nauw samen met het beleid back-up en recovery (hersteltijden en

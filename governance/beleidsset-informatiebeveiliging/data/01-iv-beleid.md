@@ -1,6 +1,16 @@
 ---
 domein: iv-beleid
 titel: Strategisch informatiebeveiligingsbeleid
+samenvatting: Het bovenliggende kader voor informatiebeveiliging: wat de organisatie wil bereiken, wie verantwoordelijk is en hoe zij aantoont dat het werkt. Behandelt de vaststelling en inbedding van het beleid, de samenhang met privacy, OT en continuïteit, de organisatie van de beveiligingsfunctie, bewustzijn, contacten en dreigingsinformatie, audit en verantwoording, en de evaluatie.
+invoeren:
+  - Leg het toepassingsgebied vast in een scopedocument op basis van de kritieke processen (hoofdstuk 3).
+  - Leg eigenaren van processen, systemen en ketens vast in een register eigenaren (hoofdstuk 4).
+  - Stel een mandaat voor de CISO op dat het bestuur schriftelijk vaststelt (hoofdstuk 5).
+  - Stel een overzicht functiescheiding op met taakcombinaties die niet in één hand mogen (hoofdstuk 5).
+  - Stel een jaarlijks bewustwordingsprogramma op met doelgroepen, onderwerpen en meetpunten (hoofdstuk 6).
+  - Leg contacten met instanties en samenwerkingsverbanden vast in een overzicht met plaatsvervangers (hoofdstuk 7).
+  - Richt een registratie van dreigingsinformatie in en stel jaarlijks een dreigingsbeeld op (hoofdstuk 7).
+  - Stel een risicogestuurd auditplan op dat het bestuur jaarlijks vaststelt (hoofdstuk 8).
 ---
 
 ## 1. Doel en reikwijdte
@@ -14,7 +24,7 @@ tot en met 5.3, 5.5 tot en met 5.7, 5.35 en 5.36.
 
 **Voor wie.** Het beleid is primair bedoeld voor het bestuur, de ambtelijke top, de lijnmanagers en
 proceseigenaren die eigenaar zijn van processen, systemen en ketens, en voor de CISO en de andere rollen in
-de tweede en derde lijn. De uitgangspunten en de gedragsregel in paragraaf 3.4 gelden voor iedereen die
+de tweede en derde lijn. De uitgangspunten en de gedragsregel in hoofdstuk 6 gelden voor iedereen die
 onder verantwoordelijkheid van de organisatie met informatie werkt: medewerkers, inhuur, stagiairs,
 vrijwilligers, leveranciers en ketenpartners.
 
@@ -35,14 +45,14 @@ het continuïteitsbeleid zijn eigen stukken met dezelfde eigenaren.
 
 ::: als samenwerking=centrum
 De organisatie voert de bedrijfsvoering ook uit voor andere organisaties. Dit beleid geldt dan voor alle
-deelnemers; per deelnemer is vastgelegd welk bestuur het vaststelt, wie de rollen uit hoofdstuk 4 vult en
-hoe de rapportage uit paragraaf 3.6 per deelnemer wordt uitgesplitst.
+deelnemers; per deelnemer is vastgelegd welk bestuur het vaststelt, wie de rollen uit hoofdstuk 10 vult en
+hoe de rapportage uit hoofdstuk 8 per deelnemer wordt uitgesplitst.
 :::
 
 ::: als samenwerking=aangesloten
 De organisatie heeft de bedrijfsvoering belegd bij een uitvoerings- of centrumorganisatie. Het bestuur van
 de organisatie blijft eindverantwoordelijk en stelt dit beleid zelf vast; de uitvoering van de maatregelen
-loopt via de dienstverleningsafspraken met die organisatie, met de verklaring uit paragraaf 1 als bewijs.
+loopt via de dienstverleningsafspraken met die organisatie, met de verklaring uit hoofdstuk 1 als bewijs.
 :::
 
 ## 2. Uitgangspunten
@@ -75,14 +85,12 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
 9. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Inhoud, vaststelling en inbedding van het beleid
+## 3. Inhoud, vaststelling en inbedding van het beleid
 
 - Het bestuur stelt dit beleid vast. Het beleid bevat ten minste: de strategische uitgangspunten
-  (hoofdstuk 2), de organisatie van de beveiligingsfunctie (paragraaf 3.3), de toewijzing van ketens, OT,
-  privacy en BCM aan de lijn (paragraaf 3.2), het normenkader (uitgangspunt 4), de evaluatiefrequentie
-  (paragraaf 3.7) en de bevordering van bewustzijn (paragraaf 3.4). Het vaststellingsbesluit is het
+  (hoofdstuk 2), de organisatie van de beveiligingsfunctie (hoofdstuk 5), de toewijzing van ketens, OT,
+  privacy en BCM aan de lijn (hoofdstuk 4), het normenkader (uitgangspunt 4), de evaluatiefrequentie
+  (hoofdstuk 9) en de bevordering van bewustzijn (hoofdstuk 6). Het vaststellingsbesluit is het
   bewijs. [5.01.01]
 - Het beleid sluit aan op het algemene beveiligingsbeleid (fysiek, personeel, integriteit) en op het
   informatievoorzieningsbeleid. De CISO toetst die aansluiting bij elke evaluatie; bij tegenstrijdigheid
@@ -98,7 +106,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   en meldt elke nieuwe versie aan de lijnmanagers en aan de leveranciers voor wie het als minimumeis geldt.
   [5.01.01]
 - Waar een eis uit deze set niet kan worden nageleefd, legt de eigenaar een uitzondering vast volgens de
-  afwijkingsprocedure in hoofdstuk 5. Een uitzondering zonder einddatum wordt niet geaccepteerd. [5.01.01]
+  afwijkingsprocedure in hoofdstuk 11. Een uitzondering zonder einddatum wordt niet geaccepteerd. [5.01.01]
 
 ::: als cbw=essentieel,belangrijk
 - Het scopedocument noemt ook de diensten waarvoor de organisatie onder de Cyberbeveiligingswet valt. De
@@ -119,7 +127,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   vast in een transitieplan dat het bestuur vaststelt. [5.01.01]
 :::
 
-### 3.2 Samenhang en toewijzing aan de lijn
+## 4. Samenhang en toewijzing aan de lijn
 
 - Informatiebeveiliging, privacybescherming, de beveiliging van OT en de continuïteit van de taakuitvoering
   raken dezelfde processen en hebben dezelfde eigenaren. De organisatie beheert ze daarom als één geheel:
@@ -162,7 +170,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   informatiebeveiligingsincident én als continuïteitsincident. [5.02.01]
 :::
 
-### 3.3 Organisatie van de beveiligingsfunctie
+## 5. Organisatie van de beveiligingsfunctie
 
 - De organisatie werkt met drie lijnen. De eerste lijn (directie en lijnmanagement) is eigenaar van risico
   en maatregel. De tweede lijn (CISO, privacy officer, FG) stelt kaders, adviseert en bewaakt. De derde lijn
@@ -209,7 +217,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   van domeinen over de ISO's staat in de jaarplanning van het managementsysteem. [5.02.02]
 :::
 
-### 3.4 Bewustzijn
+## 6. Bewustzijn
 
 - Het bestuur draagt informatiebeveiliging uit en volgt zelf de scholing die het beleid screening, bewustzijn
   en opleiding voorschrijft. Iedere medewerker kent de regels die voor de eigen functie gelden en meldt
@@ -224,7 +232,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   besluit en de registratie van de scholing zijn het bewijs. [5.01.01]
 :::
 
-### 3.5 Contacten met instanties, belangengroepen en dreigingsinformatie
+## 7. Contacten met instanties, belangengroepen en dreigingsinformatie
 
 - De CISO houdt een overzicht bij van welke functionaris formeel contact heeft met welke instantie over
   informatiebeveiliging, met per contact een plaatsvervanger. Het overzicht noemt functies; de namen staan
@@ -259,7 +267,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   incidenten worden gemeld en de aangewezen meldbevoegde met plaatsvervanger. [5.05.01]
 :::
 
-### 3.6 Audit en verantwoording
+## 8. Audit en verantwoording
 
 - Er is een auditplan dat het bestuur jaarlijks vaststelt. Het plan zegt welke systemen en onderwerpen dat
   jaar welk soort audit krijgen (bijvoorbeeld een opzet-, bestaans- of werkingstoets, een pentest of een
@@ -295,7 +303,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   lijn, zodat over een cyclus van drie jaar alle domeinen zijn getoetst. [5.35.02]
 :::
 
-### 3.7 Evaluatie van het beleid
+## 9. Evaluatie van het beleid
 
 - De CISO beoordeelt dit beleid ten minste jaarlijks, in aansluiting op de bestuurscyclus en de P&C-cyclus,
   en legt wijzigingen ter vaststelling voor aan het bestuur. Het verslag van de beoordeling is het bewijs,
@@ -306,7 +314,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
   het jaarlijks en legt wijzigingen voor aan [[vaststeller materiebeleid: wie de materie-specifieke stukken vaststelt, bijvoorbeeld de directie]].
   [5.01.02]
 
-## 4. Rollen en verantwoordelijkheden
+## 10. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -319,7 +327,7 @@ loopt via de dienstverleningsafspraken met die organisatie, met de verklaring ui
 | Interne audit of accountant | Onafhankelijke toetsing volgens het auditplan |
 | Medewerkers | Kennen en naleven van de regels voor de eigen functie, melden van incidenten |
 
-## 5. Naleving en controle
+## 11. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -349,7 +357,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 12. Samenhang
 
 Dit beleid is het bovenliggende kader voor alle materie-specifieke stukken van deze set. Het staat naast het
 privacybeleid en het continuïteitsbeleid, met dezelfde eigenaren en één risicoregister. De rolverdeling bij

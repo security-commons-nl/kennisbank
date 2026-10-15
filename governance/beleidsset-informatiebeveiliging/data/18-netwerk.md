@@ -1,6 +1,16 @@
 ---
 domein: netwerk
 titel: Beleid netwerkbeveiliging
+samenvatting: Over het ontwerp, de inrichting en de bewaking van de netwerken, zodat een aanvaller die binnenkomt niet vrij verder kan. Behandelt segmentatie, beheer van netwerkcomponenten, firewalls en detectie op koppelpunten, het webfilter, versleuteling onderweg en wifi.
+invoeren:
+  - Stel een netwerkontwerp op met segmenten, beveiligingsniveaus, koppelpunten en toegestane verkeersstromen (hoofdstuk 3).
+  - Geef elke firewallregel een eigenaar en een reden en verwijder overbodige regels (hoofdstuk 3).
+  - Leg per netwerkcomponent vast welke hardeningsrichtlijn geldt (hoofdstuk 4).
+  - Richt een apart beheersegment in met persoonsgebonden beheeraccounts en MFA (hoofdstuk 4).
+  - Richt netwerktoegangscontrole in met authenticatie van apparaat en gebruiker (hoofdstuk 4).
+  - Plaats op elk koppelpunt met internet een firewall, DDoS-bescherming en detectie (hoofdstuk 5).
+  - Richt een webfilter in en laat de CISO de geblokkeerde categorieën vaststellen (hoofdstuk 6).
+  - Plaats gastwifi in een apart segment zonder toegang tot het bedrijfsnetwerk (hoofdstuk 8).
 ---
 
 ## 1. Doel en reikwijdte
@@ -38,9 +48,7 @@ beveiliging).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Netwerkontwerp en segmentatie
+## 3. Netwerkontwerp en segmentatie
 
 - [[netwerkarchitect: de functie die het netwerkontwerp opstelt, eigen of bij de leverancier]] houdt een
   actueel netwerkontwerp bij met de segmenten, hun beveiligingsniveau, de koppelpunten en de toegestane
@@ -71,7 +79,7 @@ beveiliging).
 - Verkeer van en naar het OT-netwerk wordt apart bewaakt met detectie die OT-protocollen herkent. [8.21.02]
 :::
 
-### 3.2 Netwerkcomponenten en beheer
+## 4. Netwerkcomponenten en beheer
 
 - Netwerkcomponenten voldoen ten minste aan het beveiligingsniveau van het segment waarin ze staan: een
   component in een segment met impactniveau kritiek of hoger heeft de hardening, firmware-updates en
@@ -101,7 +109,7 @@ beveiliging).
   controle doen door een andere partij of doet die zelf. [8.20.02]
 :::
 
-### 3.3 Koppelpunten en bewaking
+## 5. Koppelpunten en bewaking
 
 - Elk koppelpunt met internet of een andere onvertrouwde zone heeft een firewall en maatregelen tegen
   aanvallen op de beschikbaarheid, zoals DDoS-bescherming. Tussen segmenten met een verschillend
@@ -144,7 +152,7 @@ beveiliging).
   verkeer naar clouddiensten via de werkplek en de logging van de clouddienst. [8.21.01, 8.21.02]
 :::
 
-### 3.4 Webfilter
+## 6. Webfilter
 
 - Internetverkeer van werkplekken en servers loopt via een webfilter dat bekende kwaadaardige sites,
   phishingsites en sites met malware blokkeert en dat verkeer naar anonimiseringsdiensten en onbeheerde
@@ -155,7 +163,7 @@ beveiliging).
 - Medewerkers horen via het bewustzijnsprogramma welke sites geblokkeerd zijn en waarom, en hoe ze een
   geblokkeerde site melden die ze voor hun werk nodig hebben. [8.23.01]
 
-### 3.5 Versleuteling onderweg
+## 7. Versleuteling onderweg
 
 - Gegevens die over draadloze verbindingen gaan, en over bedrade verbindingen buiten het gebied dat de
   organisatie fysiek beheert, worden versleuteld. Alleen gegevens die nodig zijn om de verbinding tot
@@ -167,7 +175,7 @@ beveiliging).
 - Verbindingen tussen locaties en met externe partijen lopen via een VPN of versleutelde lijn. Thuiswerkers
   maken verbinding via een versleutelde verbinding met MFA. [8.21.04]
 
-### 3.6 Wifi
+## 8. Wifi
 
 - Het bedrijfswifi is alleen toegankelijk voor beheerde apparaten, na authenticatie van apparaat en
   gebruiker, en is versleuteld volgens de geldende standaard. [8.21.04]
@@ -176,7 +184,7 @@ beveiliging).
 - [[netwerkbeheer]] zoekt jaarlijks naar toegangspunten die niet van de organisatie zijn, schakelt ze uit
   en legt de uitkomst vast. [8.20.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 9. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -188,7 +196,7 @@ beveiliging).
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij netwerk- en hostingleveranciers en toetsen van hun verklaringen |
 | Medewerkers | Alleen beheerde apparaten aansluiten, geen eigen toegangspunten plaatsen, geblokkeerde sites melden via de servicedesk |
 
-## 5. Naleving en controle
+## 10. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -213,7 +221,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 11. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid logging en
 monitoring (logging en detectie op netwerkcomponenten), het beleid cryptografie (versleutelingsmiddelen),

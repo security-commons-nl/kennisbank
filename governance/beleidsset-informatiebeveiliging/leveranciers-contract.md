@@ -1,5 +1,7 @@
 # Beleid informatiebeveiliging in contractbeheer
 
+[Download als Word](leveranciers-contract.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Leveranciersbeheer - contractbeheer* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt hoe de organisatie zicht houdt op leveranciers met een informatiecomponent zolang een contract loopt. Gaat over het register van leveranciers en contracten, de jaarlijkse beoordeling van de leverancier, de keten van toeleveranciers, clouddiensten en het beëindigen van een contract.
+
+**Onderwerpen.** 3. Register van leveranciers en contracten; 4. Jaarlijkse beoordeling van de leverancier; 5. Keten van toeleveranciers; 6. Clouddiensten; 7. Beëindigen van een contract.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -52,9 +58,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Register van leveranciers en contracten
+## 3. Register van leveranciers en contracten
 
 1. **[contracteigenaar]** houdt per contract het register van leveranciers
    en contracten met een informatiecomponent bij. Per contract staat erin: de dienst, de contracteigenaar, de
@@ -69,7 +73,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
    register en stelt elk kwartaal vast dat het register overeenkomt met de contractadministratie van inkoop.
    [5.22.02]
 
-### 3.2 Jaarlijkse beoordeling van de leverancier
+## 4. Jaarlijkse beoordeling van de leverancier
 
 1. De proceseigenaar beoordeelt elk jaar of de leverancier aan de afgesproken beveiligingseisen voldoet. Hij
    gebruikt daarvoor het bewijs dat de leverancier volgens het contract aanlevert (beleid informatiebeveiliging
@@ -100,7 +104,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
 >    lichtere jaarlijkse beoordeling door de proceseigenaar: geldigheid van het bewijs, ondersteuningstermijn
 >    van de software en de meldingen van de leverancier over kwetsbaarheden. [5.22.01]
 
-### 3.3 Keten van toeleveranciers
+## 5. Keten van toeleveranciers
 
 1. Het contract verplicht de leverancier om de beveiligingseisen ook op zijn toeleveranciers toe te passen.
    Laat hij een eis voor een toeleverancier vallen omdat die eis voor diens rol niet van toepassing is, dan
@@ -127,11 +131,11 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
 > 6. De contracteigenaar houdt de keten van toeleveranciers voor die diensten apart bij in het register, omdat
 >    het stelsel eigen voorwaarden stelt aan locatie en uitbesteding. [5.22.02]
 
-### 3.4 Clouddiensten
+## 6. Clouddiensten
 
 1. De organisatie past een vaste werkwijze toe voor clouddiensten. Die beschrijft hoe de organisatie
    clouddiensten inventariseert, classificeert op de informatie die ze verwerken, selecteert, beoordeelt en
-   beheert, en hoe ze de dienst beëindigt. Deze paragraaf en het beleid informatiebeveiliging bij inkoop zijn
+   beheert, en hoe ze de dienst beëindigt. Dit hoofdstuk en het beleid informatiebeveiliging bij inkoop zijn
    samen die werkwijze; de CISO is er eigenaar van en herziet haar ten minste eens per drie jaar. [5.23.01]
 2. Inventariseren: de contracteigenaar zet elke clouddienst in het register, ook gratis diensten en diensten
    die een afdeling zelf afneemt. Wie een clouddienst gebruikt die niet in het register staat, meldt dat bij de
@@ -153,7 +157,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
 >    locatie van gegevens, back-ups en beheer binnen de Europese Economische Ruimte nog klopt, en meldt elke
 >    wijziging aan de proceseigenaar en de CISO. [5.23.01]
 
-### 3.5 Beëindigen van een contract
+## 7. Beëindigen van een contract
 
 1. Bij het einde van een contract voert de contracteigenaar de exitregeling uit: gegevens terug in het
    afgesproken formaat, overdracht aan de opvolger, intrekken van alle toegang van de leverancier op de
@@ -163,7 +167,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
    vertrouwelijk of hoger, dan spreekt de contracteigenaar die alsnog af bij de eerstvolgende verlenging, en
    staat het ontbreken tot die tijd in het risicoregister. [5.22.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -174,7 +178,7 @@ en de afhandeling van incidenten die een leverancier meldt (beleid beveiligingsi
 | Privacy officer of FG | Toezicht op verwerkersovereenkomsten en meldingen van datalekken door leveranciers |
 | Medewerkers | Melden van clouddiensten die niet in het register staan |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -199,7 +203,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid en volgt op het beleid informatiebeveiliging
 bij inkoop (eisen, eerste bewijs, exitregeling). Het raakt het beleid informatieclassificatie (welke informatie
@@ -214,12 +218,12 @@ De maatregelen van dit domein (6, waarvan 6 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 5.21.03 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 3.3 Keten van toeleveranciers | LEV-03 |
-| 5.21.04 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 3.3 Keten van toeleveranciers | LEV-04 |
-| 5.21.05 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 3.3 Keten van toeleveranciers | LEV-05 |
-| 5.22.01 | Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten | overheidsmaatregel | 3.2 Jaarlijkse beoordeling van de leverancier | LEV-02, LEV-03, LEV-08 |
-| 5.22.02 | Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten | overheidsmaatregel | 3.1 Register van leveranciers en contracten | LEV-01 |
-| 5.23.01 | Informatiebeveiliging voor het gebruik van clouddiensten | overheidsmaatregel | 3.4 Clouddiensten | LEV-06, LEV-07, LEV-08 |
+| 5.21.03 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 5. Keten van toeleveranciers | LEV-03 |
+| 5.21.04 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 5. Keten van toeleveranciers | LEV-04 |
+| 5.21.05 | Beheren van informatiebeveiliging in de ICT-toeleveringsketen | overheidsmaatregel | 5. Keten van toeleveranciers | LEV-05 |
+| 5.22.01 | Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten | overheidsmaatregel | 4. Jaarlijkse beoordeling van de leverancier | LEV-02, LEV-03, LEV-08 |
+| 5.22.02 | Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten | overheidsmaatregel | 3. Register van leveranciers en contracten | LEV-01 |
+| 5.23.01 | Informatiebeveiliging voor het gebruik van clouddiensten | overheidsmaatregel | 6. Clouddiensten | LEV-06, LEV-07, LEV-08 |
 
 ## Bijlage B: Afkortingen
 

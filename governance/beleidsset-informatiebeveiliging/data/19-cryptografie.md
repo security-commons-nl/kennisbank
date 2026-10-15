@@ -1,6 +1,16 @@
 ---
 domein: cryptografie
 titel: Beleid cryptografie
+samenvatting: Regelt wanneer en hoe de organisatie versleutelt en wie sleutels en certificaten beheert. Behandelt de minimale versleuteling per vertrouwelijkheidslabel, verplichte standaarden en adviezen van NCSC en NBV, de inventaris van certificaten en sleutels, en de procedure sleutelbeheer met intrekking en reservecertificaten.
+invoeren:
+  - Leg per systeem het versleutelingsniveau volgens de minimumtabel vast in het systeemdossier (hoofdstuk 3).
+  - Breng websites en maildomeinen op de verplichte standaarden van het Forum Standaardisatie (hoofdstuk 4).
+  - Wijs een eigenaar cryptografie en een sleutelbeheerder aan (hoofdstuk 5).
+  - Neem elk certificaat, elke sleutel en elke versleutelingsvoorziening op in de inventaris (hoofdstuk 5).
+  - Stel in de inventaris een automatisch signaal in voor certificaten die bijna verlopen (hoofdstuk 5).
+  - Stel een procedure sleutelbeheer op voor alle fasen, van aanvragen tot vernietigen (hoofdstuk 6).
+  - Zet sleutels in een sleutelkluis of beveiligde hardware, niet in code of gedeelde mappen (hoofdstuk 6).
+  - Bepaal per kritiek certificaat of reservecertificaten nodig zijn en oefen de vervanging (hoofdstuk 6).
 ---
 
 ## 1. Doel en reikwijdte
@@ -39,9 +49,7 @@ van gegevensdragers).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wanneer de organisatie cryptografie inzet
+## 3. Wanneer de organisatie cryptografie inzet
 
 - De systeemeigenaar zet cryptografie in volgens deze minimumtabel, die per vertrouwelijkheidslabel
   aansluit op het beleid informatieclassificatie, en legt het gekozen niveau vast in het systeemdossier:
@@ -60,7 +68,7 @@ van gegevensdragers).
 - Medewerkers sturen informatie met het label vertrouwelijk of hoger niet via persoonlijke webmail,
   privé-opslagdiensten of sociale media. [8.24.01]
 
-### 3.2 Normen en sterkte
+## 4. Normen en sterkte
 
 - De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
   Voor websites en mail zijn dat in elk geval HTTPS met HSTS, TLS, DNSSEC, DKIM, DMARC, SPF en STARTTLS met
@@ -78,7 +86,7 @@ van gegevensdragers).
   aansluitovereenkomst of verwerkersovereenkomst. De systeemeigenaar bewaart die afspraak in het
   systeemdossier. [8.24.01]
 
-### 3.3 Verantwoordelijkheden en registratie
+## 5. Verantwoordelijkheden en registratie
 
 - [[eigenaar cryptografie]] is verantwoordelijk voor de implementatie van cryptografie en legt per
   toepassing vast welk middel is gekozen en waarom. [8.24.01]
@@ -92,7 +100,7 @@ van gegevensdragers).
   certificaat automatisch een signaal aan de eigenaar; de eigenaar vervangt het certificaat voor de
   vervaldatum. [8.24.02]
 
-### 3.4 Sleutel- en certificaatbeheer
+## 6. Sleutel- en certificaatbeheer
 
 - Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
   overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01]
@@ -142,7 +150,7 @@ van gegevensdragers).
   volgens NTA 7516. Zonder zo'n kanaal wordt de informatie niet gemaild. [8.24.01]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 7. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -154,7 +162,7 @@ van gegevensdragers).
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij leveranciers en toetsen van hun verklaringen |
 | Medewerkers | Zorgvuldig gebruik van tokens en sleutels, direct melden van verlies, geen vertrouwelijke informatie via privékanalen |
 
-## 5. Naleving en controle
+## 8. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -177,7 +185,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 9. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatieclassificatie (vertrouwelijkheidslabels), het beleid bedrijfsmiddelenbeheer (inventaris), het

@@ -87,17 +87,17 @@ register rekent daarom geen restrisico uit.</p>
 <p>Neem bronnen die er al zijn. Een register dat een nieuwe maatregelenlijst vraagt, haalt niemand bij.</p>
 <h2 id="3-relaties">3. Relaties<a class="anker" href="#3-relaties" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li><strong>SR naar OR: één op veel.</strong> Elk OR heeft precies één primair SR. Dat SR geeft het gewicht.
+<li id="punt-3-1"><strong>SR naar OR: één op veel.</strong> Elk OR heeft precies één primair SR. Dat SR geeft het gewicht.
    a. Een SR zonder OR is niet onderbouwd. Dat is een melding, geen fout.
    b. Een OR zonder passend SR hangt onder <em>buiten de risicoanalyse</em>. Dat zegt iets over de
-      risicoanalyse: ontbreekt er een strategisch risico?</li>
-<li><strong>OR naar maatregel: één OR per maatregel.</strong> Het OR volgt uit de standaardlijst van het eigen kader:
+      risicoanalyse: ontbreekt er een strategisch risico? <a class="anker" href="#punt-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-2"><strong>OR naar maatregel: één OR per maatregel.</strong> Het OR volgt uit de standaardlijst van het eigen kader:
    een BIO 2.0-maatregel via zijn ISO-control, een BCM- of privacymaatregel via zijn thema. Een maatregel
-   hangt nooit onder een OR van een ander kader.</li>
-<li><strong>Bevinding naar maatregel: veel op veel.</strong> Een bevinding noemt per maatregel wat aantoonbaar niet
-   werkt, met een reden. Het OR en het SR volgen daaruit (§4.2).</li>
-<li><strong>Maatregel naar control: veel op veel.</strong> Eén control kan meer maatregelen toetsen, en één maatregel
-   kan door meer controls worden getoetst.</li>
+   hangt nooit onder een OR van een ander kader. <a class="anker" href="#punt-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-3"><strong>Bevinding naar maatregel: veel op veel.</strong> Een bevinding noemt per maatregel wat aantoonbaar niet
+   werkt, met een reden. Het OR en het SR volgen daaruit (§4.2). <a class="anker" href="#punt-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-4"><strong>Maatregel naar control: veel op veel.</strong> Eén control kan meer maatregelen toetsen, en één maatregel
+   kan door meer controls worden getoetst. <a class="anker" href="#punt-3-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <h2 id="4-bevindingen">4. Bevindingen<a class="anker" href="#4-bevindingen" aria-label="Link naar deze kop">#</a></h2>
 <h3 id="4-1-wat-een-bevinding-is">4.1 Wat een bevinding is<a class="anker" href="#4-1-wat-een-bevinding-is" aria-label="Link naar deze kop">#</a></h3>
@@ -251,26 +251,26 @@ bewijs, en staat onder <em>aangetoond</em>. Breder is sterker, binnen drie grenz
 <h2 id="5-niveau-opzet-bestaan-werking">5. Niveau: opzet, bestaan, werking<a class="anker" href="#5-niveau-opzet-bestaan-werking" aria-label="Link naar deze kop">#</a></h2>
 <p>Het niveau van een maatregel is cumulatief: 0 niet in orde of onbekend, 1 opzet, 2 bestaan, 3 werking.</p>
 <ol>
-<li><strong>Uit de bron, per kader.</strong> Privacy: werking groen (met opzet en bestaan groen) is 3, anders bestaan
+<li id="punt-5-1"><strong>Uit de bron, per kader.</strong> Privacy: werking groen (met opzet en bestaan groen) is 3, anders bestaan
    groen is 2, anders opzet groen is 1, anders 0. Oranje telt niet. BCM: voltooid is 2, deels is 1, niets
-   is 0. BIO 2.0: geïmplementeerd is 2, anders 0. Een zelfbeoordeling komt nooit verder dan bestaan.</li>
-<li><strong>Controls.</strong> Heeft een maatregel getoetste controls, dan geldt de zwakste: het niveau is het laagste
-   niveau van de controls die hem toetsen. Alleen zo komt een maatregel op werking.</li>
-<li><strong>Geldigheid.</strong> Werking vervalt als een control een toetsronde mist. Het niveau zakt dan naar bestaan.</li>
-<li><strong>Meetellende bevinding.</strong> Een open bevinding op een maatregel betekent dat de werking aantoonbaar niet
-   in orde is: het niveau is hooguit 2.</li>
-<li><strong>Onbekend telt als niet in orde.</strong> Niet getoetst is 0.</li>
+   is 0. BIO 2.0: geïmplementeerd is 2, anders 0. Een zelfbeoordeling komt nooit verder dan bestaan. <a class="anker" href="#punt-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-2"><strong>Controls.</strong> Heeft een maatregel getoetste controls, dan geldt de zwakste: het niveau is het laagste
+   niveau van de controls die hem toetsen. Alleen zo komt een maatregel op werking. <a class="anker" href="#punt-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-3"><strong>Geldigheid.</strong> Werking vervalt als een control een toetsronde mist. Het niveau zakt dan naar bestaan. <a class="anker" href="#punt-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-4"><strong>Meetellende bevinding.</strong> Een open bevinding op een maatregel betekent dat de werking aantoonbaar niet
+   in orde is: het niveau is hooguit 2. <a class="anker" href="#punt-5-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-5"><strong>Onbekend telt als niet in orde.</strong> Niet getoetst is 0. <a class="anker" href="#punt-5-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <h2 id="6-prioriteit">6. Prioriteit<a class="anker" href="#6-prioriteit" aria-label="Link naar deze kop">#</a></h2>
 <p>Prioriteit is gewicht maal gat. De rangorde:</p>
 <ol>
-<li>Eerst de maatregelen onder een OR met een meetellende bevinding, want daar is het gat aangetoond.
+<li id="punt-6-1">Eerst de maatregelen onder een OR met een meetellende bevinding, want daar is het gat aangetoond.
    Daarbinnen op de score van het OR, dan op de score van het SR. De score van een OR is de hoogste score
    van de meetellende bevindingen waarvan het het primaire OR is. Een secundaire relatie telt niet mee,
-   anders weegt één bevinding meer keren.</li>
-<li>Daarna de maatregelen onder een OR zonder bevinding, op de score van het SR. <em>Buiten de
-   risicoanalyse</em> telt als laagste gewicht.</li>
-<li>Bij gelijke stand het laagste niveau eerst. Een maatregel op werking zakt naar achteren.</li>
+   anders weegt één bevinding meer keren. <a class="anker" href="#punt-6-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-6-2">Daarna de maatregelen onder een OR zonder bevinding, op de score van het SR. <em>Buiten de
+   risicoanalyse</em> telt als laagste gewicht. <a class="anker" href="#punt-6-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-6-3">Bij gelijke stand het laagste niveau eerst. Een maatregel op werking zakt naar achteren. <a class="anker" href="#punt-6-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p>Wat de lijst niet doet: een restrisico berekenen. Of een restrisico aanvaardbaar is, besluit de
 risico-eigenaar met de acceptatieladder van de eigen risicoanalyse. Een gebruikelijke ladder: kritiek naar
@@ -278,20 +278,20 @@ de directie, hoog naar het tactisch overleg met een termijn, gemiddeld bij het t
 de eigenaar.</p>
 <h2 id="7-twee-soorten-eigenaar">7. Twee soorten eigenaar<a class="anker" href="#7-twee-soorten-eigenaar" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li><strong>Beheerseigenaar</strong> van maatregel en control: richt in, voert uit en levert het bewijs. Staat in de
-   bron van het kader.</li>
-<li><strong>Risico-eigenaar</strong> van OR en SR: kiest de behandeling en accepteert restrisico. Staat in het
-   risicoregister van de organisatie.</li>
+<li id="punt-7-1"><strong>Beheerseigenaar</strong> van maatregel en control: richt in, voert uit en levert het bewijs. Staat in de
+   bron van het kader. <a class="anker" href="#punt-7-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-7-2"><strong>Risico-eigenaar</strong> van OR en SR: kiest de behandeling en accepteert restrisico. Staat in het
+   risicoregister van de organisatie. <a class="anker" href="#punt-7-2" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p>Het voorbeeld toont alleen de beheerseigenaar, als rol. Wie welk risico draagt, hoort in het eigen register.</p>
 <h2 id="8-wat-de-generator-doet">8. Wat de generator doet<a class="anker" href="#8-wat-de-generator-doet" aria-label="Link naar deze kop">#</a></h2>
 <p>Het script <code>tools/bouw_risicoregister.py</code> (of prompt 3 in <a href="prompts.html"><code>prompts.md</code></a>) doet drie dingen:</p>
 <ol>
-<li><strong>Toetsen.</strong> Het weigert een bevinding zonder maatregel of motivering, zonder bron of peildatum, met
+<li id="punt-8-1"><strong>Toetsen.</strong> Het weigert een bevinding zonder maatregel of motivering, zonder bron of peildatum, met
    een onbekende maatregelsleutel, een onbekende status of bronsoort, of een dubbele code. Een maatregel
-   onder een OR van een ander kader en een geaccepteerde bevinding zonder besluit worden ook geweigerd.</li>
-<li><strong>Afleiden.</strong> OR en SR uit de maatregel, het niveau per maatregel, de score per OR.</li>
-<li><strong>Melden.</strong> Uitzonderingen en feiten ouder dan twaalf maanden.</li>
+   onder een OR van een ander kader en een geaccepteerde bevinding zonder besluit worden ook geweigerd. <a class="anker" href="#punt-8-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-8-2"><strong>Afleiden.</strong> OR en SR uit de maatregel, het niveau per maatregel, de score per OR. <a class="anker" href="#punt-8-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-8-3"><strong>Melden.</strong> Uitzonderingen en feiten ouder dan twaalf maanden. <a class="anker" href="#punt-8-3" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p>Het bedenkt geen bevindingen. Wat erin staat, heeft een mens aangenomen.</p>
 <!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#1f4e79}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/risicogestuurd-managementsysteem">governance/risicogestuurd-managementsysteem</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

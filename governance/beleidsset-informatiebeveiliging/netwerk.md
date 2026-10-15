@@ -1,5 +1,7 @@
 # Beleid netwerkbeveiliging
 
+[Download als Word](netwerk.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Netwerkbeveiliging* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Over het ontwerp, de inrichting en de bewaking van de netwerken, zodat een aanvaller die binnenkomt niet vrij verder kan. Behandelt segmentatie, beheer van netwerkcomponenten, firewalls en detectie op koppelpunten, het webfilter, versleuteling onderweg en wifi.
+
+**Onderwerpen.** 3. Netwerkontwerp en segmentatie; 4. Netwerkcomponenten en beheer; 5. Koppelpunten en bewaking; 6. Webfilter; 7. Versleuteling onderweg; 8. Wifi.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -45,9 +51,7 @@ beveiliging).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Netwerkontwerp en segmentatie
+## 3. Netwerkontwerp en segmentatie
 
 1. **[netwerkarchitect]** houdt een
    actueel netwerkontwerp bij met de segmenten, hun beveiligingsniveau, de koppelpunten en de toegestane
@@ -78,7 +82,7 @@ beveiliging).
 >    verloopt via een aparte beheeromgeving met MFA, op verzoek aangezet en per sessie gelogd. [8.20.02]
 > 8. Verkeer van en naar het OT-netwerk wordt apart bewaakt met detectie die OT-protocollen herkent. [8.21.02]
 
-### 3.2 Netwerkcomponenten en beheer
+## 4. Netwerkcomponenten en beheer
 
 1. Netwerkcomponenten voldoen ten minste aan het beveiligingsniveau van het segment waarin ze staan: een
    component in een segment met impactniveau kritiek of hoger heeft de hardening, firmware-updates en
@@ -108,7 +112,7 @@ beveiliging).
 > 8. De partij die het netwerk beheert, controleert niet zelf de beveiliging ervan; de organisatie laat de
 >    controle doen door een andere partij of doet die zelf. [8.20.02]
 
-### 3.3 Koppelpunten en bewaking
+## 5. Koppelpunten en bewaking
 
 1. Elk koppelpunt met internet of een andere onvertrouwde zone heeft een firewall en maatregelen tegen
    aanvallen op de beschikbaarheid, zoals DDoS-bescherming. Tussen segmenten met een verschillend
@@ -151,7 +155,7 @@ beveiliging).
 >    leverancier levert de bescherming tegen aanvallen op de beschikbaarheid. De organisatie bewaakt het
 >    verkeer naar clouddiensten via de werkplek en de logging van de clouddienst. [8.21.01, 8.21.02]
 
-### 3.4 Webfilter
+## 6. Webfilter
 
 1. Internetverkeer van werkplekken en servers loopt via een webfilter dat bekende kwaadaardige sites,
    phishingsites en sites met malware blokkeert en dat verkeer naar anonimiseringsdiensten en onbeheerde
@@ -162,7 +166,7 @@ beveiliging).
 3. Medewerkers horen via het bewustzijnsprogramma welke sites geblokkeerd zijn en waarom, en hoe ze een
    geblokkeerde site melden die ze voor hun werk nodig hebben. [8.23.01]
 
-### 3.5 Versleuteling onderweg
+## 7. Versleuteling onderweg
 
 1. Gegevens die over draadloze verbindingen gaan, en over bedrade verbindingen buiten het gebied dat de
    organisatie fysiek beheert, worden versleuteld. Alleen gegevens die nodig zijn om de verbinding tot
@@ -174,7 +178,7 @@ beveiliging).
 3. Verbindingen tussen locaties en met externe partijen lopen via een VPN of versleutelde lijn. Thuiswerkers
    maken verbinding via een versleutelde verbinding met MFA. [8.21.04]
 
-### 3.6 Wifi
+## 8. Wifi
 
 1. Het bedrijfswifi is alleen toegankelijk voor beheerde apparaten, na authenticatie van apparaat en
    gebruiker, en is versleuteld volgens de geldende standaard. [8.21.04]
@@ -183,7 +187,7 @@ beveiliging).
 3. **[netwerkbeheer]** zoekt jaarlijks naar toegangspunten die niet van de organisatie zijn, schakelt ze uit
    en legt de uitkomst vast. [8.20.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 9. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -195,7 +199,7 @@ beveiliging).
 | Inkoop en contractbeheer | Vastleggen van de eisen uit dit beleid bij netwerk- en hostingleveranciers en toetsen van hun verklaringen |
 | Medewerkers | Alleen beheerde apparaten aansluiten, geen eigen toegangspunten plaatsen, geblokkeerde sites melden via de servicedesk |
 
-## 5. Naleving en controle
+## 10. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -220,7 +224,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 11. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid logging en
 monitoring (logging en detectie op netwerkcomponenten), het beleid cryptografie (versleutelingsmiddelen),
@@ -236,14 +240,14 @@ De maatregelen van dit domein (8, waarvan 7 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.20.01 | Beveiliging netwerkcomponenten | overheidsmaatregel | 3.2 Netwerkcomponenten en beheer | NWB-03, NWB-08 |
-| 8.20.02 | Beveiliging netwerkcomponenten | overheidsmaatregel | 3.1 Netwerkontwerp en segmentatie | NWB-03, NWB-04 |
-| 8.21.01 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3.1 Netwerkontwerp en segmentatie | NWB-02, NWB-05 |
-| 8.21.02 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3.1 Netwerkontwerp en segmentatie | NWB-05 |
-| 8.21.03 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3.3 Koppelpunten en bewaking | NWB-06 |
-| 8.21.04 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3.3 Koppelpunten en bewaking | NWB-08 |
-| 8.22.01 | Netwerksegmentatie | overheidsmaatregel | 3.1 Netwerkontwerp en segmentatie | NWB-01, NWB-02, NWB-04 |
-| 8.23.01 | Toepassen van webfilters | ISO-beheersmaatregel | 3.4 Webfilter | NWB-07 |
+| 8.20.01 | Beveiliging netwerkcomponenten | overheidsmaatregel | 4. Netwerkcomponenten en beheer | NWB-03, NWB-08 |
+| 8.20.02 | Beveiliging netwerkcomponenten | overheidsmaatregel | 3. Netwerkontwerp en segmentatie | NWB-03, NWB-04 |
+| 8.21.01 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3. Netwerkontwerp en segmentatie | NWB-02, NWB-05 |
+| 8.21.02 | Beveiliging van netwerkdiensten | overheidsmaatregel | 3. Netwerkontwerp en segmentatie | NWB-05 |
+| 8.21.03 | Beveiliging van netwerkdiensten | overheidsmaatregel | 5. Koppelpunten en bewaking | NWB-06 |
+| 8.21.04 | Beveiliging van netwerkdiensten | overheidsmaatregel | 5. Koppelpunten en bewaking | NWB-08 |
+| 8.22.01 | Netwerksegmentatie | overheidsmaatregel | 3. Netwerkontwerp en segmentatie | NWB-01, NWB-02, NWB-04 |
+| 8.23.01 | Toepassen van webfilters | ISO-beheersmaatregel | 6. Webfilter | NWB-07 |
 
 ## Bijlage B: Afkortingen
 

@@ -1,6 +1,16 @@
 ---
 domein: it-compliance
 titel: Beleid IT-compliance
+samenvatting: Over de naleving van wet- en regelgeving en contractuele eisen voor informatie en systemen. Behandelt het register van eisen, licenties, bewaartermijnen, privacy en testgegevens, clear desk en clear screen, capaciteit en kloksynchronisatie, en audits op productiesystemen.
+invoeren:
+  - Zet een register op van wettelijke en contractuele eisen, met eigenaar en beleidsstuk per eis (hoofdstuk 3).
+  - Zet een licentieregister op en vergelijk het met de geïnstalleerde software (hoofdstuk 3).
+  - Leg per systeem en informatiecategorie de bewaartermijnen vast in een overzicht (hoofdstuk 4).
+  - Stel een overzicht DLP-maatregelen op met de maatregel per kanaal (hoofdstuk 5).
+  - Stel automatische schermvergrendeling centraal in op alle werkplekken en mobiele apparaten (hoofdstuk 6).
+  - Richt capaciteitsbewaking met een drempelmelding in voor kritieke systemen en maak een capaciteitsprognose (hoofdstuk 7).
+  - Koppel alle systemen, netwerkapparaten en werkplekken aan één betrouwbare tijdbron (hoofdstuk 7).
+  - Leg elke audit of technische test op productie vooraf vast in een testopdracht (hoofdstuk 8).
 ---
 
 ## 1. Doel en reikwijdte
@@ -43,9 +53,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
 6. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Wettelijke en contractuele eisen
+## 3. Wettelijke en contractuele eisen
 
 - De CISO houdt samen met de privacy officer en de juridische functie een register bij van de wet- en
   regelgeving en de contractuele eisen die gelden voor informatiebeveiliging, met per eis de eigenaar en het
@@ -117,7 +125,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
   jaarlijks met de keteneigenaren doorneemt. [5.31.01]
 :::
 
-### 3.2 Registraties en bewaartermijnen
+## 4. Registraties en bewaartermijnen
 
 - De proceseigenaar legt voor elk informatiesysteem en elke categorie informatie de bewaartermijn vast, op
   basis van de geldende selectielijst, de Archiefwet, de privacywetgeving en de eigen bedrijfsdoelen. De
@@ -139,10 +147,10 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
   bestandsformaten en opslagmedia bij elke systeemvervanging worden omgezet of gemigreerd, en legt dat vast
   in het overzicht van bewaartermijnen. [5.33.01]
 
-### 3.3 Privacy en persoonsgegevens
+## 5. Privacy en persoonsgegevens
 
 - De privacymaatregelen staan in het privacybeleid. Dit beleid regelt de raakvlakken: het register van eisen
-  (paragraaf 3.1) en de bewaartermijnen (paragraaf 3.2) gelden ook voor persoonsgegevens, en de
+  (hoofdstuk 3) en de bewaartermijnen (hoofdstuk 4) gelden ook voor persoonsgegevens, en de
   proceseigenaar neemt de privacyeisen mee in dezelfde jaarlijkse toets. [5.34.01]
 - De organisatie heeft een privacybeleid dat het bestuur vaststelt, een functionaris gegevensbescherming
   die onafhankelijk toezicht houdt en een verwerkingsregister dat de privacy officer bijhoudt. Elke
@@ -181,7 +189,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
   uitsluitend fictieve gegevens. [8.11.01]
 :::
 
-### 3.4 Clear desk en clear screen
+## 6. Clear desk en clear screen
 
 - Medewerkers laten geen informatie met het label intern of hoger onbeheerd achter op hun werkplek, in
   vergaderruimten of op gedeelde plekken. Aan het einde van de werkdag en bij het verlaten van een gedeelde
@@ -209,7 +217,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
   elk halfjaar een rondgang clear desk over alle locaties, legt de bevindingen per afdeling vast en meldt
   ze aan de leidinggevenden, die medewerkers aanspreken. [7.07.01]
 
-### 3.5 Techniek ter ondersteuning van naleving
+## 7. Techniek ter ondersteuning van naleving
 
 - De IT-organisatie bewaakt doorlopend de capaciteit van de kritieke systemen uit het overzicht van
   kritieke systemen: opslag, rekenkracht, geheugen en netwerk. De bewaking geeft een melding bij
@@ -231,7 +239,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
   dat de afwijking kleiner is dan één seconde, en herstelt afwijkingen. De rapportage uit de bewaking is het
   bewijs. [8.17.01]
 
-### 3.6 Audits op informatiesystemen
+## 8. Audits op informatiesystemen
 
 - Audits, pentests en andere technische tests op productiesystemen worden vooraf afgestemd tussen de
   auditor, de systeemeigenaar en de IT-organisatie en vastgelegd in een testopdracht: wat wordt getest, door
@@ -252,16 +260,16 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
 ::: als capaciteit=geen
 - Zonder eigen ISO houdt
   [[functionaris informatiebeveiliging: de medewerker met de neventaak informatiebeveiliging]]
-  het register uit paragraaf 3.1 bij. De jaarlijkse controle op het register en op de steekproef
+  het register uit hoofdstuk 3 bij. De jaarlijkse controle op het register en op de steekproef
   bewaartermijnen wordt belegd bij de CISO-invulling of de interne controle. [5.31.01, 5.33.01]
 :::
 
 ::: als capaciteit=parttime,team
-- De ISO of CISO houdt het register uit paragraaf 3.1 bij en voert de jaarlijkse controle op de
+- De ISO of CISO houdt het register uit hoofdstuk 3 bij en voert de jaarlijkse controle op de
   bewaartermijnen uit samen met de archieffunctie. [5.31.01, 5.33.01]
 :::
 
-## 4. Rollen en verantwoordelijkheden
+## 9. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -275,7 +283,7 @@ managementsysteem (strategisch informatiebeveiligingsbeleid).
 | Contractbeheer | Toets van capaciteit en naleving bij uitbestede hosting en beheer |
 | Medewerkers | Clear desk en clear screen, geen software of inhoud zonder gebruiksrecht |
 
-## 5. Naleving en controle
+## 10. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles: het systeem waarin controles worden vastgelegd, bijvoorbeeld het ticketsysteem of het managementsysteem]];
@@ -301,7 +309,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 11. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het privacybeleid
 (persoonsgegevens, verwerkingsregister en bewaartermijnen), het beleid logische toegangsbeveiliging

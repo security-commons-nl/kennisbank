@@ -9,6 +9,7 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 <!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
 <body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#1f4e79;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> › <span>Beleid cryptografie</span></nav><!-- /kruimelpad -->
 <h1>Beleid cryptografie</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#1f4e79}</style><p class="stukbron">Onderdeel van <a href="./">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</a> · <a href="cryptografie.md">Markdown-bron</a></p>
+<p><a href="cryptografie.docx">Download als Word</a> · <a href="beleidsset-generator.html">Maak je eigen versie in de generator</a></p>
 <table>
 <thead>
 <tr>
@@ -39,6 +40,8 @@ blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;backgro
 </tr>
 </tbody>
 </table>
+<p><strong>In het kort.</strong> Regelt wanneer en hoe de organisatie versleutelt en wie sleutels en certificaten beheert. Behandelt de minimale versleuteling per vertrouwelijkheidslabel, verplichte standaarden en adviezen van NCSC en NBV, de inventaris van certificaten en sleutels, en de procedure sleutelbeheer met intrekking en reservecertificaten.</p>
+<p><strong>Onderwerpen.</strong> 3. Wanneer de organisatie cryptografie inzet; 4. Normen en sterkte; 5. Verantwoordelijkheden en registratie; 6. Sleutel- en certificaatbeheer.</p>
 <p>Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.</p>
 <h2 id="1-doel-en-reikwijdte">1. Doel en reikwijdte<a class="anker" href="#1-doel-en-reikwijdte" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid werkt het strategisch informatiebeveiligingsbeleid uit voor het gebruik van cryptografie:
@@ -61,121 +64,120 @@ apparaten (beleid mobile device management) en het wissen van gegevensdragers (b
 van gegevensdragers).</p>
 <h2 id="2-uitgangspunten">2. Uitgangspunten<a class="anker" href="#2-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li>Cryptografie volgt de classificatie: hoe hoger het vertrouwelijkheidslabel van de informatie, hoe
-   zwaarder de versleuteling.</li>
-<li>De organisatie gebruikt alleen erkende, openbare algoritmen en protocollen in een actuele versie, geen
-   eigen of geheime constructies.</li>
-<li>Elk cryptografisch middel (certificaat, sleutel, versleutelingsvoorziening) heeft een eigenaar en staat
-   in de inventaris.</li>
-<li>Sleutels zijn net zo goed beschermd als de informatie die ze beschermen.</li>
-<li>Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
-   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.</li>
+<li id="punt-2-1">Cryptografie volgt de classificatie: hoe hoger het vertrouwelijkheidslabel van de informatie, hoe
+   zwaarder de versleuteling. <a class="anker" href="#punt-2-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-2">De organisatie gebruikt alleen erkende, openbare algoritmen en protocollen in een actuele versie, geen
+   eigen of geheime constructies. <a class="anker" href="#punt-2-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-3">Elk cryptografisch middel (certificaat, sleutel, versleutelingsvoorziening) heeft een eigenaar en staat
+   in de inventaris. <a class="anker" href="#punt-2-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-4">Sleutels zijn net zo goed beschermd als de informatie die ze beschermen. <a class="anker" href="#punt-2-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-2-5">Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
+   De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid. <a class="anker" href="#punt-2-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h2 id="3-beleidsregels">3. Beleidsregels<a class="anker" href="#3-beleidsregels" aria-label="Link naar deze kop">#</a></h2>
-<h3 id="3-1-wanneer-de-organisatie-cryptografie-inzet">3.1 Wanneer de organisatie cryptografie inzet<a class="anker" href="#3-1-wanneer-de-organisatie-cryptografie-inzet" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="3-wanneer-de-organisatie-cryptografie-inzet">3. Wanneer de organisatie cryptografie inzet<a class="anker" href="#3-wanneer-de-organisatie-cryptografie-inzet" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-1-1">De systeemeigenaar zet cryptografie in volgens deze minimumtabel, die per vertrouwelijkheidslabel
+<li id="eis-3-1">De systeemeigenaar zet cryptografie in volgens deze minimumtabel, die per vertrouwelijkheidslabel
    aansluit op het beleid informatieclassificatie, en legt het gekozen niveau vast in het systeemdossier:
    [8.24.01]
    - intern: versleuteld transport over elk netwerk buiten het eigen interne netwerk;
    - vertrouwelijk: versleuteld transport over elk netwerk, ook intern, en versleutelde opslag op draagbare
      apparaten en gegevensdragers;
    - strikt vertrouwelijk en geheim: daarbovenop versleutelde opslag in databases en bestandsopslag en, bij
-     uitwisseling, versleuteling van het bericht zelf. <a class="anker" href="#eis-3-1-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-2">Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en de
+     uitwisseling, versleuteling van het bericht zelf. <a class="anker" href="#eis-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-2">Back-ups worden versleuteld opgeslagen. De sleutels staan gescheiden van de back-up, en de
    <strong>[sleutelbeheerder]</strong> test
-   jaarlijks met de eigenaar van de back-up een herstel met die sleutels. [8.24.01] <a class="anker" href="#eis-3-1-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-3">Voor integriteit en onweerlegbaarheid gebruikt de organisatie digitale handtekeningen of gekwalificeerde
+   jaarlijks met de eigenaar van de back-up een herstel met die sleutels. [8.24.01] <a class="anker" href="#eis-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-3">Voor integriteit en onweerlegbaarheid gebruikt de organisatie digitale handtekeningen of gekwalificeerde
    elektronische zegels waar een wet of de risicoanalyse dat vraagt, bijvoorbeeld bij besluiten die digitaal
-   worden verzonden; de systeemeigenaar legt vast welke documenten dat zijn. [8.24.01] <a class="anker" href="#eis-3-1-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-1-4">Medewerkers sturen informatie met het label vertrouwelijk of hoger niet via persoonlijke webmail,
-   privé-opslagdiensten of sociale media. [8.24.01] <a class="anker" href="#eis-3-1-4" aria-label="Link naar dit punt">#</a></li>
+   worden verzonden; de systeemeigenaar legt vast welke documenten dat zijn. [8.24.01] <a class="anker" href="#eis-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-3-4">Medewerkers sturen informatie met het label vertrouwelijk of hoger niet via persoonlijke webmail,
+   privé-opslagdiensten of sociale media. [8.24.01] <a class="anker" href="#eis-3-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-2-normen-en-sterkte">3.2 Normen en sterkte<a class="anker" href="#3-2-normen-en-sterkte" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="4-normen-en-sterkte">4. Normen en sterkte<a class="anker" href="#4-normen-en-sterkte" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-2-1">De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
+<li id="eis-4-1">De organisatie past de verplichte standaarden van het Forum Standaardisatie toe volgens pas toe of leg uit.
    Voor websites en mail zijn dat in elk geval HTTPS met HSTS, TLS, DNSSEC, DKIM, DMARC, SPF en STARTTLS met
    DANE. <strong>[eigenaar cryptografie]</strong>
-   motiveert afwijkingen en rapporteert ze jaarlijks aan de CISO. [8.24.01] <a class="anker" href="#eis-3-2-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-2">De keuze van algoritmen, sleutellengten en protocolversies volgt de actuele adviezen van het NCSC (onder
+   motiveert afwijkingen en rapporteert ze jaarlijks aan de CISO. [8.24.01] <a class="anker" href="#eis-4-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-2">De keuze van algoritmen, sleutellengten en protocolversies volgt de actuele adviezen van het NCSC (onder
    meer de ICT-beveiligingsrichtlijnen voor TLS) en van het NBV. Instellingen die als onvoldoende of uit te
    faseren gelden, zet <strong>[eigenaar cryptografie]</strong> binnen
-   <strong>[termijn uitfaseren]</strong> uit. [8.24.04] <a class="anker" href="#eis-3-2-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-3"><strong>[eigenaar cryptografie]</strong> controleert elk halfjaar of er nieuwe adviezen zijn en of de inzet nog voldoet,
+   <strong>[termijn uitfaseren]</strong> uit. [8.24.04] <a class="anker" href="#eis-4-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-3"><strong>[eigenaar cryptografie]</strong> controleert elk halfjaar of er nieuwe adviezen zijn en of de inzet nog voldoet,
    en legt de uitkomst vast. Dit omvat de voorbereiding op quantumveilige cryptografie: de inventaris laat
-   zien welke toepassingen eerst over moeten. [8.24.04] <a class="anker" href="#eis-3-2-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-2-4">Wisselt de organisatie versleutelde informatie uit met een andere organisatie, dan leggen beide partijen
+   zien welke toepassingen eerst over moeten. [8.24.04] <a class="anker" href="#eis-4-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-4-4">Wisselt de organisatie versleutelde informatie uit met een andere organisatie, dan leggen beide partijen
    vooraf vast welke versleuteling, welke certificaten en welk sleutelbeheer ze gebruiken, bijvoorbeeld in een
    aansluitovereenkomst of verwerkersovereenkomst. De systeemeigenaar bewaart die afspraak in het
-   systeemdossier. [8.24.01] <a class="anker" href="#eis-3-2-4" aria-label="Link naar dit punt">#</a></li>
+   systeemdossier. [8.24.01] <a class="anker" href="#eis-4-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-3-verantwoordelijkheden-en-registratie">3.3 Verantwoordelijkheden en registratie<a class="anker" href="#3-3-verantwoordelijkheden-en-registratie" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="5-verantwoordelijkheden-en-registratie">5. Verantwoordelijkheden en registratie<a class="anker" href="#5-verantwoordelijkheden-en-registratie" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-3-1"><strong>[eigenaar cryptografie]</strong> is verantwoordelijk voor de implementatie van cryptografie en legt per
-   toepassing vast welk middel is gekozen en waarom. [8.24.01] <a class="anker" href="#eis-3-3-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-2"><strong>[sleutelbeheerder]</strong> is verantwoordelijk voor het beheer van sleutels en certificaten gedurende de hele
-   levenscyclus en houdt daarvan een register bij. [8.24.01] <a class="anker" href="#eis-3-3-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-3">Elk certificaat, elke sleutel met een functie in productie en elke versleutelingsvoorziening staat in de
+<li id="eis-5-1"><strong>[eigenaar cryptografie]</strong> is verantwoordelijk voor de implementatie van cryptografie en legt per
+   toepassing vast welk middel is gekozen en waarom. [8.24.01] <a class="anker" href="#eis-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-2"><strong>[sleutelbeheerder]</strong> is verantwoordelijk voor het beheer van sleutels en certificaten gedurende de hele
+   levenscyclus en houdt daarvan een register bij. [8.24.01] <a class="anker" href="#eis-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-3">Elk certificaat, elke sleutel met een functie in productie en elke versleutelingsvoorziening staat in de
    inventaris van bedrijfsmiddelen, met waar het wordt gebruikt, wie de eigenaar is, het algoritme en de
    sleutellengte, de vervaldatum en hoe het actueel wordt gehouden. <strong>[sleutelbeheerder]</strong> controleert de
-   inventaris elk halfjaar op volledigheid. [8.24.02] <a class="anker" href="#eis-3-3-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-3-4">De inventaris geeft <strong>[waarschuwingstermijn verlopen]</strong> voor het verlopen van een
+   inventaris elk halfjaar op volledigheid. [8.24.02] <a class="anker" href="#eis-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-5-4">De inventaris geeft <strong>[waarschuwingstermijn verlopen]</strong> voor het verlopen van een
    certificaat automatisch een signaal aan de eigenaar; de eigenaar vervangt het certificaat voor de
-   vervaldatum. [8.24.02] <a class="anker" href="#eis-3-3-4" aria-label="Link naar dit punt">#</a></li>
+   vervaldatum. [8.24.02] <a class="anker" href="#eis-5-4" aria-label="Link naar dit punt">#</a></li>
 </ol>
-<h3 id="3-4-sleutel-en-certificaatbeheer">3.4 Sleutel- en certificaatbeheer<a class="anker" href="#3-4-sleutel-en-certificaatbeheer" aria-label="Link naar deze kop">#</a></h3>
+<h2 id="6-sleutel-en-certificaatbeheer">6. Sleutel- en certificaatbeheer<a class="anker" href="#6-sleutel-en-certificaatbeheer" aria-label="Link naar deze kop">#</a></h2>
 <ol>
-<li id="eis-3-4-1">Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
-   overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01] <a class="anker" href="#eis-3-4-1" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-2"><strong>[sleutelbeheerder]</strong> legt in de procedure sleutelbeheer voor elke fase vast wie wat doet: aanvragen (na
+<li id="eis-6-1">Voor PKIoverheid-certificaten volgt de organisatie de eisen van PKIoverheid aan het sleutelbeheer. Voor
+   overige sleutels volgt ze een erkende norm voor sleutelbeheer, zoals ISO/IEC 11770. [8.24.01] <a class="anker" href="#eis-6-1" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-2"><strong>[sleutelbeheerder]</strong> legt in de procedure sleutelbeheer voor elke fase vast wie wat doet: aanvragen (na
    vaststelling van de identiteit van de aanvrager), genereren, distribueren, opslaan, vervangen, herstellen,
-   intrekken, archiveren en vernietigen. [8.24.01] <a class="anker" href="#eis-3-4-2" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-3">Een privésleutel is alleen toegankelijk voor de houder of de voorziening die hem gebruikt. Sleutels staan
-   in een sleutelkluis of beveiligde hardware; nooit in broncode, scripts of gedeelde mappen. [8.24.01] <a class="anker" href="#eis-3-4-3" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-4">Verlies, diefstal of een vermoeden van misbruik van een sleutel of token meldt de medewerker direct, en
+   intrekken, archiveren en vernietigen. [8.24.01] <a class="anker" href="#eis-6-2" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-3">Een privésleutel is alleen toegankelijk voor de houder of de voorziening die hem gebruikt. Sleutels staan
+   in een sleutelkluis of beveiligde hardware; nooit in broncode, scripts of gedeelde mappen. [8.24.01] <a class="anker" href="#eis-6-3" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-4">Verlies, diefstal of een vermoeden van misbruik van een sleutel of token meldt de medewerker direct, en
    uiterlijk binnen vier uur, bij de servicedesk. <strong>[sleutelbeheerder]</strong> trekt het certificaat in en publiceert
-   de intrekking via de gebruikelijke kanalen (CRL of OCSP). [8.24.01] <a class="anker" href="#eis-3-4-4" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-5">Voor certificaten waarvan de dienstverlening afhangt (bijvoorbeeld voor websites, koppelingen en
+   de intrekking via de gebruikelijke kanalen (CRL of OCSP). [8.24.01] <a class="anker" href="#eis-6-4" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-5">Voor certificaten waarvan de dienstverlening afhangt (bijvoorbeeld voor websites, koppelingen en
    ketenaansluitingen) bepaalt de systeemeigenaar in de risicoafweging of de organisatie reservecertificaten
    van een andere leverancier nodig heeft. Is dat zo, dan liggen er afspraken met die leverancier, is de
    vervanging beschreven in het continuïteitsplan en oefent <strong>[sleutelbeheerder]</strong> de vervanging jaarlijks.
-   [8.24.05] <a class="anker" href="#eis-3-4-5" aria-label="Link naar dit punt">#</a></li>
+   [8.24.05] <a class="anker" href="#eis-6-5" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <blockquote>
 <p><strong>Alleen als: Waar draaien je systemen? «Eigen datacenter of serverruimte»</strong></p>
 <ol start="6">
-<li id="eis-3-4-6">Sleutels voor de eigen systemen worden in de eigen omgeving gegenereerd en beheerd. Sleutels voor
+<li id="eis-6-6">Sleutels voor de eigen systemen worden in de eigen omgeving gegenereerd en beheerd. Sleutels voor
    informatie met het label strikt vertrouwelijk of geheim staan in een HSM of een gelijkwaardige voorziening.
-   [8.24.01] <a class="anker" href="#eis-3-4-6" aria-label="Link naar dit punt">#</a></li>
+   [8.24.01] <a class="anker" href="#eis-6-6" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Hostingpartij (IaaS, gedeeld datacenter)»</strong></p>
 <ol start="7">
-<li id="eis-3-4-7">Waar de hostingpartij versleuteling of certificaten levert, staat in het contract wie de sleutels beheert,
+<li id="eis-6-7">Waar de hostingpartij versleuteling of certificaten levert, staat in het contract wie de sleutels beheert,
    dat de hostingpartij de normen uit dit beleid volgt en dat de organisatie inzage krijgt in het
-   sleutelbeheer. Interne certificaten van de hostingpartij staan ook in de inventaris van de organisatie. [8.24.01, 8.24.02] <a class="anker" href="#eis-3-4-7" aria-label="Link naar dit punt">#</a></li>
+   sleutelbeheer. Interne certificaten van de hostingpartij staan ook in de inventaris van de organisatie. [8.24.01, 8.24.02] <a class="anker" href="#eis-6-7" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Waar draaien je systemen? «Vooral SaaS en publieke cloud»</strong></p>
 <ol start="8">
-<li id="eis-3-4-8">Bij SaaS en publieke cloud toetst de organisatie bij inkoop of de leverancier versleutelt bij transport en
+<li id="eis-6-8">Bij SaaS en publieke cloud toetst de organisatie bij inkoop of de leverancier versleutelt bij transport en
    opslag volgens dit beleid. Voor informatie met het label strikt vertrouwelijk of geheim kiest de organisatie waar
-   het kan voor sleutels die zij zelf beheert of die buiten de leverancier liggen. [8.24.01] <a class="anker" href="#eis-3-4-8" aria-label="Link naar dit punt">#</a></li>
-<li id="eis-3-4-9">De versleutelingsinstellingen van elke clouddienst staan in de inventaris, ook als de leverancier de
-   sleutels beheert. [8.24.02] <a class="anker" href="#eis-3-4-9" aria-label="Link naar dit punt">#</a></li>
+   het kan voor sleutels die zij zelf beheert of die buiten de leverancier liggen. [8.24.01] <a class="anker" href="#eis-6-8" aria-label="Link naar dit punt">#</a></li>
+<li id="eis-6-9">De versleutelingsinstellingen van elke clouddienst staan in de inventaris, ook als de leverancier de
+   sleutels beheert. [8.24.02] <a class="anker" href="#eis-6-9" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: Mogen medewerkers eigen apparaten gebruiken (BYOD)? «Ja, onder voorwaarden»</strong></p>
 <ol start="10">
-<li id="eis-3-4-10">Op privéapparaten (BYOD) staan werkgegevens alleen in een beheerde, versleutelde app-omgeving met een
+<li id="eis-6-10">Op privéapparaten (BYOD) staan werkgegevens alleen in een beheerde, versleutelde app-omgeving met een
    eigen sleutel van de organisatie, die de organisatie op afstand kan wissen zonder de privégegevens te
-   raken. [8.24.01] <a class="anker" href="#eis-3-4-10" aria-label="Link naar dit punt">#</a></li>
+   raken. [8.24.01] <a class="anker" href="#eis-6-10" aria-label="Link naar dit punt">#</a></li>
 </ol>
 <p><strong>Alleen als: In welke gevoelige domeinen verwerk je persoonsgegevens? «Sociaal domein» of «Jeugd» of «Gezondheid (WvGGZ, NTA 7516)»</strong></p>
 <ol start="11">
-<li id="eis-3-4-11">Mail met bijzondere persoonsgegevens (sociaal domein, jeugd of gezondheid) gaat naar externe ontvangers
+<li id="eis-6-11">Mail met bijzondere persoonsgegevens (sociaal domein, jeugd of gezondheid) gaat naar externe ontvangers
    alleen over een kanaal dat versleuteling afdwingt en de ontvanger controleert, bijvoorbeeld beveiligde mail
-   volgens NTA 7516. Zonder zo'n kanaal wordt de informatie niet gemaild. [8.24.01] <a class="anker" href="#eis-3-4-11" aria-label="Link naar dit punt">#</a></li>
+   volgens NTA 7516. Zonder zo'n kanaal wordt de informatie niet gemaild. [8.24.01] <a class="anker" href="#eis-6-11" aria-label="Link naar dit punt">#</a></li>
 </ol>
 </blockquote>
-<h2 id="4-rollen-en-verantwoordelijkheden">4. Rollen en verantwoordelijkheden<a class="anker" href="#4-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="7-rollen-en-verantwoordelijkheden">7. Rollen en verantwoordelijkheden<a class="anker" href="#7-rollen-en-verantwoordelijkheden" aria-label="Link naar deze kop">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -214,7 +216,7 @@ van gegevensdragers).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="5-naleving-en-controle">5. Naleving en controle<a class="anker" href="#5-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="8-naleving-en-controle">8. Naleving en controle<a class="anker" href="#8-naleving-en-controle" aria-label="Link naar deze kop">#</a></h2>
 <p><strong>Controleraamwerk.</strong> De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in <strong>[registratie van controles]</strong>;
 afwijkingen gaan als bevinding naar het risicoregister.</p>
@@ -286,7 +288,7 @@ De afwijking geldt pas na acceptatie van het risico door <strong>[risico-eigenaa
 en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw beoordeeld.</p>
 <p><strong>Niet naleven.</strong> Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.</p>
-<h2 id="6-samenhang">6. Samenhang<a class="anker" href="#6-samenhang" aria-label="Link naar deze kop">#</a></h2>
+<h2 id="9-samenhang">9. Samenhang<a class="anker" href="#9-samenhang" aria-label="Link naar deze kop">#</a></h2>
 <p>Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatieclassificatie (vertrouwelijkheidslabels), het beleid bedrijfsmiddelenbeheer (inventaris), het
 beleid back-up en recovery (versleutelde back-ups), het beleid netwerkbeveiliging (versleuteling onderweg),
@@ -310,28 +312,28 @@ versleuteling) en het beleid ICT-continuïteit en uitwijk (reservecertificaten).
 <td>8.24.01</td>
 <td>Gebruik van cryptografie</td>
 <td>overheidsmaatregel</td>
-<td>3.1 Wanneer de organisatie cryptografie inzet</td>
+<td>3. Wanneer de organisatie cryptografie inzet</td>
 <td>CRY-01, CRY-04, CRY-05</td>
 </tr>
 <tr>
 <td>8.24.02</td>
 <td>Gebruik van cryptografie</td>
 <td>overheidsmaatregel</td>
-<td>3.3 Verantwoordelijkheden en registratie</td>
+<td>5. Verantwoordelijkheden en registratie</td>
 <td>CRY-02</td>
 </tr>
 <tr>
 <td>8.24.04</td>
 <td>Gebruik van cryptografie</td>
 <td>overheidsmaatregel</td>
-<td>3.2 Normen en sterkte</td>
+<td>4. Normen en sterkte</td>
 <td>CRY-03</td>
 </tr>
 <tr>
 <td>8.24.05</td>
 <td>Gebruik van cryptografie</td>
 <td>overheidsmaatregel</td>
-<td>3.4 Sleutel- en certificaatbeheer</td>
+<td>6. Sleutel- en certificaatbeheer</td>
 <td>CRY-06</td>
 </tr>
 </tbody>

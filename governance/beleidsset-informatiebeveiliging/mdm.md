@@ -1,5 +1,7 @@
 # Beleid mobile device management
 
+[Download als Word](mdm.docx) · [Maak je eigen versie in de generator](beleidsset-generator.html)
+
 | | |
 |---|---|
 | Documenttype | Beleid informatiebeveiliging onder het strategisch informatiebeveiligingsbeleid; BIO 2.0-domein *Mobile Device Management* |
@@ -7,6 +9,10 @@
 | Eigenaar | **[eigenaar van dit beleid]** |
 | Vaststeller | **[vaststeller]** |
 | Evaluatie | Jaarlijks, in de plan-do-check-act-cyclus van het managementsysteem voor informatiebeveiliging |
+
+**In het kort.** Regelt de inrichting, het beheer en het gebruik van laptops, smartphones en tablets met toegang tot bedrijfsinformatie. Gaat over zero footprint en bescherming op het apparaat, beheer via MDM en MAM, en de gebruikersovereenkomst mobiel werken.
+
+**Onderwerpen.** 3. Zero footprint en bescherming op het apparaat; 4. Beheer van apparaten; 5. Gebruikersovereenkomst en gedrag.
 
 Zonder profiel: tekst die van een contextvraag afhangt, staat in een kader met de vraag erboven.
 
@@ -45,9 +51,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Zero footprint en bescherming op het apparaat
+## 3. Zero footprint en bescherming op het apparaat
 
 1. De beheerder MDM richt apps en diensten voor mobiele apparaten zo in dat bedrijfsinformatie niet standaard
    op het apparaat wordt opgeslagen: werken gebeurt via de browser, een virtuele werkplek of een beheerde app
@@ -68,7 +72,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
    **[reisrichtlijn apparatuur]**.
    [8.01.01]
 
-### 3.2 Beheer van apparaten
+## 4. Beheer van apparaten
 
 1. Elk mobiel apparaat met toegang tot bedrijfsinformatie valt onder een MDM-oplossing (beheer van het hele
    apparaat) of, voor eigen apparaten, een MAM-oplossing (beheer van de bedrijfsapps). De beheerder MDM
@@ -133,7 +137,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 >    zodat er geen bedrijfsinformatie op het apparaat komt; de beheerder MDM controleert jaarlijks dat er geen
 >    andere routes naar de interne omgeving openstaan. [8.01.01, 8.01.02]
 
-### 3.3 Gebruikersovereenkomst en gedrag
+## 5. Gebruikersovereenkomst en gedrag
 
 1. Voordat een medewerker mobiel werkt, tekent hij een gebruikersovereenkomst mobiel werken. Daarin verklaart
    hij de risico's te kennen en veilig te werken. De overeenkomst geldt voor alle mobiele apparatuur die hij
@@ -154,7 +158,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
    bedrijfsmiddelenbeheer; de servicedesk wist het apparaat of de beheerde apps op de laatste werkdag en
    verwijdert het uit het apparaatbeheer. [8.01.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 6. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -166,7 +170,7 @@ apparatuur bij afvoer (beleid afvoer en hergebruik van gegevensdragers).
 | Inkoop en contractbeheer | Eisen uit dit beleid in het contract met een uitbestede werkplek- of beheerdienst, toetsen van de verklaring |
 | Medewerkers en inhuur | Overeenkomst naleven, updates installeren, apparaat niet delen, verlies of diefstal direct melden |
 
-## 5. Naleving en controle
+## 7. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in **[registratie van controles]**;
@@ -190,7 +194,7 @@ worden ten minste jaarlijks opnieuw beoordeeld.
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 8. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 bedrijfsmiddelenbeheer (uitgifte, inventaris, inname en gedragsregels), het beleid informatieclassificatie
@@ -207,8 +211,8 @@ De maatregelen van dit domein (2, waarvan 2 overheidsmaatregelen), waar dit stuk
 
 | Maatregel | Titel | Soort | In dit stuk | Controle |
 |---|---|---|---|---|
-| 8.01.01 | User endpoint devices | overheidsmaatregel | 3.1 Zero footprint en bescherming op het apparaat | MDM-03, MDM-04, MDM-06 |
-| 8.01.02 | User endpoint devices | overheidsmaatregel | 3.2 Beheer van apparaten | MDM-01, MDM-02, MDM-04, MDM-05, MDM-06 |
+| 8.01.01 | User endpoint devices | overheidsmaatregel | 3. Zero footprint en bescherming op het apparaat | MDM-03, MDM-04, MDM-06 |
+| 8.01.02 | User endpoint devices | overheidsmaatregel | 4. Beheer van apparaten | MDM-01, MDM-02, MDM-04, MDM-05, MDM-06 |
 
 ## Bijlage B: Afkortingen
 

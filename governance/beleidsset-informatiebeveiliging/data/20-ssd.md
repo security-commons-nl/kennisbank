@@ -1,6 +1,16 @@
 ---
 domein: ssd
 titel: Beleid veilige softwareontwikkeling
+samenvatting: Over beveiliging in software die de organisatie bouwt, laat bouwen of afneemt, voordat die in gebruik gaat. Behandelt architectuurprincipes, beveiligingseisen per toepassing, veilig ontwikkelen of de eisen daarvoor aan leveranciers, afspraken bij uitbestede ontwikkeling en testen met fictieve gegevens.
+invoeren:
+  - Leg de beveiligingsprincipes voor het ontwerp van informatiesystemen vast in een architectuurdocument (hoofdstuk 3).
+  - Richt een vastgelegde toets van elk project en elke aanschaf aan de architectuurprincipes in (hoofdstuk 3).
+  - Stel per nieuwe toepassing beveiligingseisen op, op basis van een erkende eisenset zoals OWASP ASVS (hoofdstuk 4).
+  - Plan voor elke internetvoorziening een penetratietest vóór ingebruikname (hoofdstuk 4).
+  - Neem de eisen uit het beleid op in het programma van eisen en het contract (hoofdstuk 6).
+  - Regel in contracten auditrecht, toegang tot broncode, oplostermijnen en een meldregeling voor kwetsbaarheden (hoofdstuk 6).
+  - Richt per oplevering een acceptatiedossier in met testverslag, penetratietest en componentenoverzicht (hoofdstuk 6).
+  - Stel een formulier testgegevens op voor testen met persoonsgegevens (hoofdstuk 7).
 ---
 
 ## 1. Doel en reikwijdte
@@ -47,9 +57,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
 5. Termijnen en frequenties in dit beleid die niet uit een wet of uit de BIO 2.0 komen, zijn standaardwaarden.
    De organisatie past ze aan op haar eigen risicoafweging en legt de keuze vast bij de vaststelling van dit beleid.
 
-## 3. Beleidsregels
-
-### 3.1 Architectuurprincipes
+## 3. Architectuurprincipes
 
 - De architect stelt beveiligingsprincipes voor het ontwerp van informatiesystemen vast en houdt ze bij in
   [[architectuurdocument: het document of de omgeving waarin de architectuurprincipes staan]]. Ze gelden
@@ -69,7 +77,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
 - Bij elk project of elke aanschaf toetst de architect het ontwerp aan de principes en legt de toets vast.
   Een afwijking wordt vastgelegd en door de systeemeigenaar als risico geaccepteerd. [8.27.01]
 
-### 3.2 Beveiligingseisen per toepassing
+## 4. Beveiligingseisen per toepassing
 
 - Voor elke nieuwe toepassing of grote wijziging stelt de systeemeigenaar beveiligingseisen op, afgeleid
   uit het impactniveau, de vertrouwelijkheidsklasse en de risicoanalyse, en legt ze vast in het programma
@@ -88,7 +96,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
 - Een internetvoorziening krijgt voor ingebruikname een penetratietest; de bevindingen met een hoog risico
   zijn opgelost voordat de voorziening live gaat. Het rapport hoort bij het acceptatiedossier. [8.26.01]
 
-### 3.3 Veilig ontwikkelen
+## 5. Veilig ontwikkelen
 
 ::: als ontwikkeling=ja
 - [[lijneigenaar veilige ontwikkeling]] stelt een richtlijn voor veilig programmeren vast per gebruikte
@@ -129,7 +137,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
   wijzigingsbeheer. [8.25.01, 8.28.01]
 :::
 
-### 3.4 Uitbestede ontwikkeling
+## 6. Uitbestede ontwikkeling
 
 - De eisen uit dit beleid gelden onverkort voor ontwikkeling door een leverancier, voor maatwerk en voor
   SaaS-diensten. De inkoopadviseur en de systeemeigenaar nemen ze op in het programma van eisen en in het
@@ -150,7 +158,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
   de laatste werkdag van de opdracht. [8.30.01]
 :::
 
-### 3.5 Testgegevens
+## 7. Testgegevens
 
 - Er wordt getest met fictieve gegevens. Kan een test daar aantoonbaar niet mee, dan beoordeelt de
   opdrachtgever van de test stap voor stap of het kan met geanonimiseerde gegevens, daarna met
@@ -164,7 +172,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
   nodige gegevens en een vaste einddatum waarop de beheerder de gegevens verwijdert. Het verwijderen wordt
   vastgelegd. [8.33.01]
 
-## 4. Rollen en verantwoordelijkheden
+## 8. Rollen en verantwoordelijkheden
 
 | Rol | Verantwoordelijk voor |
 |---|---|
@@ -177,7 +185,7 @@ koppelingen in een standaardpakket) door functioneel beheer valt eronder.
 | CISO | Advies, jaarlijkse herziening van de principes met de architect, toetsing van dit beleid en van afwijkingen |
 | Leveranciers | Bouwen volgens de eisen en aanleveren van bewijs bij elke oplevering |
 
-## 5. Naleving en controle
+## 9. Naleving en controle
 
 **Controleraamwerk.** De naleving van dit beleid wordt met de volgende controles aangetoond. De uitkomst en
 het bewijs worden vastgelegd in [[registratie van controles]]; afwijkingen gaan als bevinding naar het
@@ -201,7 +209,7 @@ en staat in het risicoregister; afwijkingen worden ten minste jaarlijks opnieuw 
 **Niet naleven.** Het niet naleven van dit beleid wordt behandeld als beveiligingsincident en kan leiden tot
 het intrekken van toegangsrechten of tot maatregelen volgens de rechtspositieregeling of het contract.
 
-## 6. Samenhang
+## 10. Samenhang
 
 Dit beleid valt onder het strategisch informatiebeveiligingsbeleid. Het raakt het beleid
 informatiebeveiliging in projecten (de toets aan het begin), het beleid wijzigingsbeheer (testen, acceptatie
