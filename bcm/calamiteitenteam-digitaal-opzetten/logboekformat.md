@@ -1,6 +1,6 @@
 # Logboekformat en sleutelbesluitprocedure
 
-Dit document beschrijft het standaard logboekformat en de procedure voor sleutelbesluiten ten behoeve van het digitale calamiteitenteam van de DE REGIO. Doel is om tijdens een digitale calamiteit eenduidige vastlegging en besluitvorming te waarborgen.
+Dit document beschrijft het standaard logboekformat en de procedure voor sleutelbesluiten ten behoeve van het digitale calamiteitenteam van een gemeente of regio. Doel is om tijdens een digitale calamiteit eenduidige vastlegging en besluitvorming te waarborgen.
 
 ## 1. Logboekformat
 

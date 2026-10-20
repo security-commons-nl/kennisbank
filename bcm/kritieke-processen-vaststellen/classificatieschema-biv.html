@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Classificatieschema voor beschikbaarheid, integriteit en vertrouwelijkheid</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">Kritieke processen en herstelprioriteiten vaststellen</a> › <span>Classificatieschema voor beschikbaarheid, integriteit en vertrouwelijkheid</span></nav><!-- /kruimelpad -->
+<h1>Classificatieschema voor beschikbaarheid, integriteit en vertrouwelijkheid</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Kritieke processen en herstelprioriteiten vaststellen</a> · <a href="classificatieschema-biv.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> classificatieschema en invulsjabloon van het team informatiebeveiliging, privacy en bedrijfscontinuïteit van een regionale samenwerking van gemeenten (2025), gebruikt in de risicosessies per kritiek proces. Voor de commons omgezet van spreadsheet naar tekst; de kanttekeningen zijn van de commons.</p>
+</blockquote>
+<p>Met dit schema classificeer je een proces of een systeem op vijf niveaus, per aspect: beschikbaarheid (B),
+integriteit (I) en vertrouwelijkheid (V). Het hoogste niveau van de drie bepaalt hoe kritiek het proces is.
+Gebruik het in een <a href="../risicosessie-per-proces/">risicosessie per proces</a>, samen met de proceseigenaar.</p>
+<h2 id="de-vijf-niveaus">De vijf niveaus<a class="anker" href="#de-vijf-niveaus" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Beschikbaarheid</th>
+<th>Integriteit</th>
+<th>Vertrouwelijkheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 Verwaarloosbaar</strong></td>
+<td>Een week of meer uitval of dataverlies wordt zonder merkbare schade opgevangen. Kernactiviteiten lopen door, hooguit met lichte vertraging.</td>
+<td>Beslissingen blijven correct; fraude is verwaarloosbaar; geen juridische gevolgen of extra kosten.</td>
+<td><em>Openbaar.</em> Mag met iedereen gedeeld worden, bijvoorbeeld op de website. Moet wel nog kloppen en beschikbaar zijn.</td>
+</tr>
+<tr>
+<td><strong>2 Gering</strong></td>
+<td>Tot een week uitval of 24 uur dataverlies geeft hinder, maar de dienstverlening loopt grotendeels door. Herstel vraagt enige planning.</td>
+<td>Beslissingen worden incidenteel beïnvloed; beperkt fraudrisico; kortdurende hinder; herstel relatief eenvoudig.</td>
+<td><em>Intern.</em> Hoort binnen de organisatie te blijven; openbaarmaking geeft hinder of lichte reputatieschade, maar is herstelbaar.</td>
+</tr>
+<tr>
+<td><strong>3 Gemiddeld</strong></td>
+<td>Tot twee werkdagen uitval of 8 tot 24 uur dataverlies raakt kernactiviteiten aanzienlijk: klachten, minder dienstverlening, extra kosten.</td>
+<td>Beleid of keuzes kunnen duidelijk ontsporen; significant fraudrisico; kernprocessen lopen vertraging op; herstel kostbaar.</td>
+<td><em>Vertrouwelijk.</em> Openbaarmaking is schadelijk: reputatieschade, juridische claims, verstoorde samenwerking. Minimaal BIO 2.0, aangevuld met risicomanagement.</td>
+</tr>
+<tr>
+<td><strong>4 Kritiek / zeer ernstig</strong></td>
+<td>Tot 8 uur uitval of 4 tot 8 uur dataverlies kan strategische processen stilleggen, met brede maatschappelijke ontwrichting en bestuurlijke druk.</td>
+<td>Bestuur beslist op verkeerde informatie; omvangrijke fraude aannemelijk; kernprocessen grotendeels stil; herstel zeer moeilijk.</td>
+<td><em>Confidentieel.</em> Openbaarmaking is ernstig schadelijk; staatsbelangen kunnen meespelen. BIO 2.0 alleen is dan niet genoeg.</td>
+</tr>
+<tr>
+<td><strong>5 Catastrofaal</strong></td>
+<td>Enkele uren uitval is onaanvaardbaar en kan leiden tot onherstelbare schade en een bestuurlijke crisis. Bijna permanente beschikbaarheid nodig.</td>
+<td>Structurele fouten in bestuur en beleid; grootschalige fraude; vertrouwen blijvend weg; schade grotendeels onomkeerbaar.</td>
+<td><em>Geheim.</em> Openbaarmaking heeft catastrofale gevolgen voor samenleving of nationale veiligheid. Komt bij gemeenten vrijwel niet voor.</td>
+</tr>
+</tbody>
+</table>
+<p>Op de niveaus confidentieel en geheim gelden naast BIO 2.0 de aanvullende beveiligingseisen voor
+rijksoverheids- of defensieopdrachten (ABRO, ABDO). Een gemeente komt daar zelden, maar het is goed te weten
+waar de grens ligt.</p>
+<h2 id="vertaling-naar-hersteleisen">Vertaling naar hersteleisen<a class="anker" href="#vertaling-naar-hersteleisen" aria-label="Link naar deze kop">#</a></h2>
+<p>De regio koppelde de eigen niveaus aan herstelnormen per niveau. Zo levert de classificatie meteen een
+uitgangspunt voor de hersteltijd (RTO) en het toelaatbare dataverlies (RPO), die in de afspraken met IT-beheer
+en leveranciers terugkomen.</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Impactniveau</th>
+<th>RPO (dataverlies)</th>
+<th>RTO (uitval en herstel)</th>
+<th>Impact op de organisatie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Verwaarloosbaar</td>
+<td>Zeer laag</td>
+<td>36 uur</td>
+<td>maximaal een week uitval, herstel in twee werkdagen</td>
+<td>Minimale invloed op kernactiviteiten</td>
+</tr>
+<tr>
+<td>2 Gering</td>
+<td>Laag</td>
+<td>24 uur</td>
+<td>maximaal twee dagen uitval, herstel in een werkdag</td>
+<td>Beperkte invloed op sommige kernactiviteiten; bevat persoonsgegevens</td>
+</tr>
+<tr>
+<td>3 Gemiddeld</td>
+<td>Midden</td>
+<td>12 uur</td>
+<td>maximaal een dag uitval, herstel in uren</td>
+<td>Duidelijke invloed op meerdere kernactiviteiten; bijzondere persoonsgegevens of meerdere collecties persoonsgegevens</td>
+</tr>
+<tr>
+<td>4 Kritiek / zeer ernstig</td>
+<td>Hoog</td>
+<td>4 uur</td>
+<td>maximaal vier uur uitval, herstel in een uur</td>
+<td>Strategische doelen ernstig in gevaar; meerdere collecties bijzondere persoonsgegevens</td>
+</tr>
+<tr>
+<td>5 Catastrofaal</td>
+<td>Zeer hoog</td>
+<td>1 uur</td>
+<td>maximaal een uur uitval, nauwelijks hersteltijd</td>
+<td>Voortbestaan van de organisatie in gevaar</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Kanttekening van de commons.</strong> In de bron zijn de uitvalduren in de beschikbaarheidskolom van het schema
+(bovenste tabel) ruimer dan in de hersteltabel. Op niveau 2 staat boven "tot een week", hieronder "maximaal
+twee dagen". Kies één set en leg die vast, anders spreken de proceseigenaar en IT-beheer bij een storing
+over verschillende normen. De impactniveaus hierboven zijn de eigen vertaling van de regio, geen tabel uit
+BIO 2.0 zelf.</p>
+</blockquote>
+<h2 id="invulvragen-voor-de-sessie">Invulvragen voor de sessie<a class="anker" href="#invulvragen-voor-de-sessie" aria-label="Link naar deze kop">#</a></h2>
+<p>Stel per aspect deze vragen en kies daarna het niveau dat het best past.</p>
+<p><strong>Beschikbaarheid</strong></p>
+<ul>
+<li>Dit proces valt morgenochtend volledig uit. Wanneer wordt dat echt een probleem, niet alleen vervelend?</li>
+<li>Op welk moment ga je naar je leidinggevende en zeg je: dit is geen gewoon incident meer?</li>
+<li>Zijn er wettelijke termijnen of contractuele afspraken die bepalen hoe lang het proces mag stilliggen?</li>
+<li>Als het systeem terug is maar de gegevens van de laatste uren zijn weg, is dat acceptabel?</li>
+<li>Hoe snel veranderen de gegevens: doorlopend of af en toe?</li>
+</ul>
+<p><strong>Integriteit</strong></p>
+<ul>
+<li>Wat gebeurt er als achteraf blijkt dat de gebruikte informatie niet klopte? Welke beslissingen zijn erop genomen?</li>
+<li>Hoeveel afwijking is nog acceptabel?</li>
+<li>Hoe makkelijk is een fout te herstellen, in tijd, moeite en impact?</li>
+<li>Wat gebeurt er als iemand de gegevens doelbewust aanpast, en hoe snel merken we dat?</li>
+</ul>
+<p><strong>Vertrouwelijkheid</strong></p>
+<ul>
+<li>Welke informatie mag absoluut niet bij onbevoegden komen? Waar ligt de grens van echt ernstig?</li>
+<li>De informatie ligt morgen bij iemand die haar niet mag zien. Wat zijn de gevolgen?</li>
+<li>Maakt het uit hoeveel er lekt: één dossier of alles?</li>
+<li>Is de schade nog te herstellen als het eenmaal op straat ligt?</li>
+</ul>
+<p><strong>Aanvullende impactgebieden</strong> om mee te wegen: politieke schade aan een bestuurder, diplomatieke schade,
+financiële gevolgen, directe imagoschade, verlies van publiek vertrouwen, organisatiebrede negatieve
+publiciteit, motivatieverlies bij medewerkers, verlies van managementcontrole.</p>
+<h2 id="bio-2-0">BIO 2.0<a class="anker" href="#bio-2-0" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Wat dit schema daarvoor levert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.12 Classificeren van informatie</td>
+<td>Vijf niveaus per aspect, met criteria</td>
+</tr>
+<tr>
+<td>5.30 ICT-gereedheid voor bedrijfscontinuïteit</td>
+<td>De hersteltabel vertaalt het niveau in RTO en RPO</td>
+</tr>
+<tr>
+<td>5.29 Informatiebeveiliging tijdens een verstoring</td>
+<td>De classificatie bepaalt welk beveiligingsniveau ook tijdens een verstoring moet blijven gelden</td>
+</tr>
+</tbody>
+</table>
+<p>Zie voor de procedure rond de classificatie de
+<a href="../../security/procedures-informatiebeveiliging/security-classificatie.md">procedure security classificatie</a>.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/kritieke-processen-vaststellen">bcm/kritieke-processen-vaststellen</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

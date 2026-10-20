@@ -1,6 +1,6 @@
 # Taakkaarten per rol
 
-Dit document bevat de generieke taakkaart voor alle leden van het digitale calamiteitenteam en rolspecifieke taakkaarten voor de kernrollen binnen het team. De inhoud is gebaseerd op het Cyber & IT Calamiteitenplan DE REGIO, bestaande taakkaarten en lessen uit evaluaties van eerdere incidenten.
+Dit document bevat de generieke taakkaart voor alle leden van het digitale calamiteitenteam en rolspecifieke taakkaarten voor de kernrollen binnen het team. De inhoud is gebaseerd op het cyber- en IT-calamiteitenplan van een regionale samenwerking, bestaande taakkaarten en lessen uit evaluaties van eerdere incidenten.
 
 ## Generieke Taakkaart - Alle Leden calamiteitenteam
 
@@ -40,7 +40,7 @@ Actieve bijdrage leveren aan de vergaderdiscipline.
 
 ### Checklist – Startfase
 
-Bevestig oproep en meld je bij de afgesproken (fysieke of digitale) werkplek: kamer 2.14 op Level.
+Bevestig oproep en meld je bij de afgesproken (fysieke of digitale) werkplek: [vaste ruimte of Teams-kanaal].
 
 Start eigen logboek (of stem af met secretaris over centrale logging).
 

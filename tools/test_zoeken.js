@@ -98,6 +98,10 @@ for (const [term, map] of [
   ['assurance', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'], ['defender', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
   ['reglement', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
   ['calamiteitenplan', 'calamiteitenteam-digitaal-opzetten'], ['opschalen', 'calamiteitenteam-digitaal-opzetten'],
+  ['risicosessie', 'risicosessie-per-proces'], ['proceseigenaar', 'risicosessie-per-proces'],
+  ['bedrijfsimpactanalyse', 'risicosessie-per-proces'], ['classificatieschema', 'kritieke-processen-vaststellen'],
+  ['rto', 'kritieke-processen-vaststellen'], ['klantcontactcentrum', 'bedrijfscontinuiteitsplan-sjabloon'],
+  ['proceskaart', 'bedrijfscontinuiteitsplan-sjabloon'], ['verstoring', 'bedrijfscontinuiteitsplan-sjabloon'],
 ]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.

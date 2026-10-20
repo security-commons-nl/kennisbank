@@ -9,7 +9,8 @@ status: in gebruik
 samenvatting: Hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke
   continuiteitseisen daarbij horen en in welke volgorde je herstelt. Met de vuistregels per proces als
   checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de
-  organisatie verandert.
+  organisatie verandert. Met een classificatieschema in vijf niveaus voor beschikbaarheid, integriteit en
+  vertrouwelijkheid (BIV), met de vertaling naar hersteltijd (RTO) en dataverlies (RPO).
 barrieres: [critical]
 rol: fundering
 ---
@@ -128,6 +129,10 @@ iedereen omheen werkt.
 
 - [vuistregels-per-proces.md](vuistregels-per-proces.md) — de zeven assen uitgewerkt, met per as wat er
   geregeld hoort te zijn en welke uitgangspunten daaronder liggen
+- [classificatieschema-biv.md](classificatieschema-biv.md) — vijf niveaus per aspect, de vertaling naar RTO
+  en RPO, en de vragen om het niveau samen met de proceseigenaar te bepalen
+
+Hoe je dit per proces ophaalt in een gesprek, staat in [Een risicosessie per kritiek proces](../risicosessie-per-proces/).
 
 ## Bewijs
 
