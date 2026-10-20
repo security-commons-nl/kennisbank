@@ -100,11 +100,25 @@
       "url": "https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/"
     },
     {
+      "barriere": "critical",
+      "item": "bcm/risicosessie-per-proces",
+      "titel": "Een risicosessie per kritiek proces, met de proceseigenaar aan tafel",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/risicosessie-per-proces/"
+    },
+    {
       "barriere": "dependencies",
       "item": "security/ketenafhankelijkheden",
       "titel": "Ketenafhankelijkheden in beeld",
       "rol": "fundering",
       "url": "https://security-commons-nl.github.io/kennisbank/security/ketenafhankelijkheden/"
+    },
+    {
+      "barriere": "dependencies",
+      "item": "bcm/risicosessie-per-proces",
+      "titel": "Een risicosessie per kritiek proces, met de proceseigenaar aan tafel",
+      "rol": "verdieping",
+      "url": "https://security-commons-nl.github.io/kennisbank/bcm/risicosessie-per-proces/"
     },
     {
       "barriere": "dependencies",

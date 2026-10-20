@@ -9,6 +9,8 @@ status: sjabloon
 samenvatting: Een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ICT eruit ligt:
   crisisteam, herstelvolgorde, opschaling, drie fasen, scenario's, noodcommunicatie en meldingen, met
   bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. Voor elke bestuurslaag, met een termenlijst.
+  Met een vragenlijst per kritiek proces langs zeven bronnen van verstoring, een ingevuld voorbeeld voor het
+  klantcontactcentrum en een proceskaart voor het gemeentelijke calamiteitenteam.
 barrieres: [crisis]
 rol: verdieping
 bronnen: [ibd-model-continuiteitsplan, ibd-model-continuiteitsstrategie, ibd-handreiking-bedrijfscontinuiteitsbeheer, ibd-scenariokaart-1-uitval-gebouw, ibd-scenariokaart-2-uitval-door-stroomstoring, ibd-scenariokaart-3-uitval-ict, ibd-scenariokaart-7-uitval-personeel, cip-ketencommunicatiebijcrises]
@@ -99,6 +101,12 @@ Dit sjabloon hoort bij barriere `crisis` uit de
 ## Wat er in deze map staat
 
 - [bcp-sjabloon.md](bcp-sjabloon.md): het plan, met vier bijlagen
+- [vragenlijst-per-proces.md](vragenlijst-per-proces.md): het gesprek per kritiek proces dat het plan vult,
+  langs gebouwen, mensen, nutsvoorzieningen, bedrijfsmiddelen, leveranciers, ICT en communicatiekanalen
+- [voorbeeld-klantcontactcentrum.md](voorbeeld-klantcontactcentrum.md): een ingevulde vragenlijst, ingekort
+  en geanonimiseerd, met wat goed werkt en wat open bleef
+- [proceskaart-calamiteitenteam.md](proceskaart-calamiteitenteam.md): een kaart van één pagina voor het
+  calamiteitenteam bij uitval van een kritiek proces, met agenda volgens beeld, oordeel en besluit
 - [termenlijst.md](termenlijst.md): Engelse BCM-termen en de Nederlandse term in het sjabloon, met de
   vertaalkeuzes
 
