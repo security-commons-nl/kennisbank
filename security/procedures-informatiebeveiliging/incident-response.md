@@ -123,18 +123,24 @@ organisatie. Wat hebben we geleerd en welke maatregelen volgen. Wat zijn de conc
 
 | Wat | Termijn | Aan wie |
 |---|---|---|
-| Vroegtijdige waarschuwing van een significant incident | binnen **24 uur** na kennisname | de bevoegde autoriteit en het CSIRT (voor gemeenten: de IBD als schakel naar het NCSC) |
-| Incidentmelding met eerste beoordeling | binnen **72 uur** | idem |
-| Eindverslag | binnen **een maand** | idem |
+| Vroegtijdige waarschuwing van een significant incident | onverwijld, uiterlijk **24 uur** na kennisname | het NCSC (voorlopig CSIRT voor gemeenten, in elk geval tot eind 2026), via het meld- en registratieportaal, dat doorgeleidt naar de RDI (bevoegde autoriteit) |
+| Melding met initiële beoordeling | uiterlijk **72 uur** na kennisname | idem |
+| Eindverslag | uiterlijk **een maand** na de melding van 72 uur | idem |
+| Kennisgeving aan ontvangers van diensten (informatieplicht) | onverwijld | inwoners, bedrijven en ketenpartners |
 | Datalek met persoonsgegevens | binnen **72 uur** | Autoriteit Persoonsgegevens, los van de Cbw-melding |
 
-Een incident is significant als het de dienstverlening ernstig verstoort of financiële schade veroorzaakt die
-de organisatie niet binnen de begroting kan opvangen, of als het anderen aanzienlijke schade toebrengt. Dat
-oordeel is geen IT-oordeel. Leg daarom vooraf vast wie het namens de organisatie geeft en hoe die persoon
-binnen 24 uur bereikbaar is, ook in het weekend. Zie [Val ik onder de Cbw?](../../governance/val-ik-onder-de-cbw/).
+Een incident is significant als het ten minste één van drie drempelwaarden voor decentrale overheden haalt of
+kan halen: **uitval van de dienstverlening voor ten minste vier uur**, **financiële gevolgen die niet binnen de
+begroting kunnen worden opgevangen**, of **ernstige verwonding of de dood van een persoon**. Het gaat om wat het
+incident kan veroorzaken, niet alleen om wat het al deed. Een datalek dat alleen de vertrouwelijkheid raakt, is
+op zichzelf geen Cbw-incident.
 
-Voeg aan stap 2 toe: bij elke P1 beoordeelt de CISO binnen een uur of het incident significant kan zijn, en
-start dan de klok van 24 uur.
+De drempel over de begroting is geen IT-oordeel. Leg daarom vooraf vast wie toetst en wie meldt, en hoe die
+binnen 24 uur bereikbaar zijn, ook in het weekend. De volledige uitwerking, met sjablonen en melden namens
+meerdere gemeenten, staat in [De Cbw-meldplicht inrichten](../../governance/cbw-meldplicht-inrichten/).
+
+Voeg aan stap 2 toe: bij elke P1 legt de (C)ISO het tijdstip van kennisname vast (T0) en toetst binnen een uur
+of het incident een drempelwaarde kan halen.
 
 ## Bewijs
 
