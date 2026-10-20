@@ -9,8 +9,7 @@ status: sjabloon
 samenvatting: Een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ICT eruit ligt:
   crisisteam, herstelvolgorde, opschaling, drie fasen, scenario's, noodcommunicatie en meldingen, met
   bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. Voor elke bestuurslaag, met een termenlijst.
-  Met een vragenlijst per kritiek proces langs zeven bronnen van verstoring, een ingevuld voorbeeld voor het
-  klantcontactcentrum en een proceskaart voor het gemeentelijke calamiteitenteam.
+  Met een vragenlijst per kritiek proces langs zeven bronnen van verstoring, een ingevuld voorbeeld voor het klantcontactcentrum en een proceskaart voor het gemeentelijke calamiteitenteam.
 barrieres: [crisis]
 rol: verdieping
 bronnen: [ibd-model-continuiteitsplan, ibd-model-continuiteitsstrategie, ibd-handreiking-bedrijfscontinuiteitsbeheer, ibd-scenariokaart-1-uitval-gebouw, ibd-scenariokaart-2-uitval-door-stroomstoring, ibd-scenariokaart-3-uitval-ict, ibd-scenariokaart-7-uitval-personeel, cip-ketencommunicatiebijcrises]
