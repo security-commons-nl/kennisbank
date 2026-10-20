@@ -105,6 +105,9 @@ for (const [term, map] of [
   ['meldplicht', 'cbw-meldplicht-inrichten'], ['registratieplicht', 'cbw-meldplicht-inrichten'],
   ['significant incident', 'cbw-meldplicht-inrichten'], ['ncsc', 'cbw-meldplicht-inrichten'],
   ['wwke', 'val-ik-onder-de-wwke'], ['kritieke entiteiten', 'val-ik-onder-de-wwke'], ['cer', 'val-ik-onder-de-wwke'],
+  ['managementsysteem', 'bio2-deel1-in-het-ims'], ['deel 1', 'bio2-deel1-in-het-ims'], ['risicomanagementbeleid', 'bio2-deel1-in-het-ims'],
+  ['auditprogramma', 'bio2-deel1-in-het-ims'], ['contextanalyse', 'bio2-deel1-in-het-ims'],
+  ['ims', 'ims-rapportage'], ['bronrapportage', 'ims-rapportage'], ['directiebeoordeling', 'ims-rapportage'], ['kpi', 'ims-rapportage'],
 ]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.

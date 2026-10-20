@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: doelstellingen en KPI-set voor het ISMS</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> › <span>Sjabloon: doelstellingen en KPI-set voor het ISMS</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: doelstellingen en KPI-set voor het ISMS</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> · <a href="doelstellingen-en-kpi-sjabloon.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> concept-doelstellingen en KPI-set van de CISO van een regionale samenwerking van gemeenten (september 2026), nog niet vastgesteld. Voor de commons generiek gemaakt: de nulmetingen van de regio zijn weggelaten, omdat ze de beveiligingsstand van een echte organisatie beschrijven. Norm: ISO/IEC 27001, clausule 6.2 en 9.1.</p>
+</blockquote>
+<p>De set heeft twee niveaus: acht bestuurlijke indicatoren voor directie en college, en daaronder meetpunten per
+onderwerp die uit een systeem komen. Deze set staat naast de <a href="../ims-rapportage/kpi-matrix.md">KPI-matrix van de IMS-rapportage</a>:
+die meet opzet, bestaan en werking van alle maatregelen; deze set meet of de organisatie de gekozen doelen haalt.</p>
+<h2 id="1-vijf-doelstellingen">1. Vijf doelstellingen<a class="anker" href="#1-vijf-doelstellingen" aria-label="Link naar deze kop">#</a></h2>
+<p>Leid de doelstellingen af uit de contextanalyse en de strategische risico's. Een voorbeeld dat voor veel gemeenten past:</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Doelstelling</th>
+<th>Waarom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Elk risico en elk ISMS-product heeft een eigenaar</td>
+<td>zonder eigenaar werkt niets in het managementsysteem</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Het managementsysteem draait één volledige PDCA-cyclus</td>
+<td>de Cbw eist opzet, bestaan én werking</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Beheerrechten en toegang zijn onder controle</td>
+<td>de snelste route van een aanvaller loopt via beheerders zonder MFA en met permanente rechten</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>De basishygiëne op werkplek, server en cloud is aantoonbaar op orde</td>
+<td>het gereedschap staat vaak uit terwijl het betaald is</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Herstel is bewezen, niet gekocht</td>
+<td>een back-up zonder hersteltest is een aanname</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-acht-bestuurlijke-indicatoren">2. Acht bestuurlijke indicatoren<a class="anker" href="#2-acht-bestuurlijke-indicatoren" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Indicator</th>
+<th>Nulmeting</th>
+<th>Doel</th>
+<th>Doelstelling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K1</td>
+<td>Strategische risico's met een eigenaar en een behandelplan</td>
+<td>«aantal van totaal, datum, bron»</td>
+<td>alle met eigenaar binnen een kwartaal; alle met plan binnen twee</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>K2</td>
+<td>ISMS-producten van deel 1 met een trekker, en vastgesteld door de aangewezen vaststeller</td>
+<td></td>
+<td></td>
+<td>D1, D2</td>
+</tr>
+<tr>
+<td>K3</td>
+<td>Tactisch beleid door een gremium vastgesteld</td>
+<td></td>
+<td>de eerste golf van deel 2</td>
+<td>D2</td>
+</tr>
+<tr>
+<td>K4</td>
+<td>Kritieke processen met vastgestelde eigenaar, en hun applicaties met BIV, RTO en RPO in de architectuurtool</td>
+<td></td>
+<td>100%</td>
+<td>D1, D5</td>
+</tr>
+<tr>
+<td>K5</td>
+<td>Beheeraccounts buiten de MFA-eis, en permanent actieve bevoorrechte rollen</td>
+<td></td>
+<td>0 uitzonderingen; permanent actief hooguit 10%; een klein aantal globale beheerders, waarvan twee noodaccounts</td>
+<td>D3</td>
+</tr>
+<tr>
+<td>K6</td>
+<td>Kritieke kwetsbaarheden met een patch die langer dan 60 dagen beschikbaar is, werkplek en server</td>
+<td></td>
+<td>0, en alle servers meetbaar</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>K7</td>
+<td>Beheerde mobiele apparaten en versleutelde werkplekken</td>
+<td></td>
+<td>mobiel 90% beheerd; werkplek 100% versleuteld met sleutel centraal opgeslagen</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>K8</td>
+<td>Hersteltests uitgevoerd en geslaagd, per kwartaal, op een kritiek systeem</td>
+<td></td>
+<td>vier per jaar met verslag, naam en datum; elk kritiek systeem minstens eens per jaar</td>
+<td>D5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Leesregel voor het bestuur.</strong> K1 en K2 zeggen of het managementsysteem bestaat. K5 tot en met K8 zeggen of de
+organisatie veiliger wordt. Bewegen K1 en K2 niet, dan bewegen de andere zes ook niet, want niemand is er dan van.</p>
+<h2 id="3-meetpunten-per-onderwerp">3. Meetpunten per onderwerp<a class="anker" href="#3-meetpunten-per-onderwerp" aria-label="Link naar deze kop">#</a></h2>
+<p>Per onderwerp van deel 2 een of twee meetpunten uit een systeem. Dit is de bron onder de indicatoren.</p>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Meetpunt</th>
+<th>Bron (voorbeeld)</th>
+<th>Hoe vaak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bedrijfsmiddelenbeheer</td>
+<td>applicaties in het servicedesksysteem en in de architectuurtool, en het verschil; kritieke applicaties met eigenaar</td>
+<td>assetregistratie, architectuurtool</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Informatieclassificatie</td>
+<td>gepubliceerde gevoeligheidslabels; actieve DLP-regels; applicaties met BIV-vulling</td>
+<td>compliance-portaal, architectuurtool</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Cryptografie</td>
+<td>verlopen certificaten en app-geheimen; VPN-tunnels met verouderde instellingen</td>
+<td>identiteitsplatform, certificaatinventaris, firewallexport</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Afvoer en hergebruik</td>
+<td>wipes gestart, afgerond, mislukt; apparaten hergebruikt zonder wipe-spoor</td>
+<td>apparaatbeheer, servicedesksysteem</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Cloud</td>
+<td>abonnementen met eigenaar; cloudbeveiliging aan; SaaS met verwerkersovereenkomst</td>
+<td>cloudportaal, register</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Logische toegang</td>
+<td>K5, plus accounts zonder verloopdatum; laatste toegangsreview</td>
+<td>identiteitsplatform, directory-export</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Fysieke toegang</td>
+<td>passen ingetrokken bij uitdiensttreding binnen een werkdag</td>
+<td>toegangssysteem, uitdienstsjabloon</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Patchbeheer</td>
+<td>K6, plus mediane tijd tot patch voor kritiek</td>
+<td>kwetsbaarheidsbeheer, update-rapportage</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Wijzigingsbeheer</td>
+<td>spoedwijzigingen als aandeel; wijzigingen met CAB-akkoord</td>
+<td>servicedesksysteem</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Netwerkbeveiliging</td>
+<td>firewallregels met "any"; segmenten; zicht op verkeer binnen het netwerk</td>
+<td>firewallexport, detectiedienst</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Veilig ontwikkelen</td>
+<td>repositories met branch protection en secret scanning</td>
+<td>codeplatform</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Mobiele apparaten</td>
+<td>K7</td>
+<td>apparaatbeheer</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Incidentmanagement</td>
+<td>open beveiligingsmeldingen en doorlooptijd; meldingen aan het NCSC binnen 24 en 72 uur</td>
+<td>servicedesksysteem, meldregister Cbw</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Logging en monitoring</td>
+<td>aangesloten bronnen; ingestie; bewaartermijn</td>
+<td>SIEM</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Back-up en herstel</td>
+<td>K8, plus laatste geslaagde back-up per kritiek systeem; onveranderbaar ja of nee</td>
+<td>back-upplatform</td>
+<td>maand</td>
+</tr>
+<tr>
+<td>Continuïteit</td>
+<td>BIA's met eigenaar; herstelplannen geaccordeerd; oefeningen per jaar</td>
+<td>BCM-werkmap</td>
+<td>halfjaar</td>
+</tr>
+<tr>
+<td>Screening en bewustzijn</td>
+<td>afgeronde e-learning; klikpercentage phishing-simulatie (na afspraak met de OR)</td>
+<td>leerplatform, simulatie</td>
+<td>halfjaar</td>
+</tr>
+<tr>
+<td>Inkoop en contracten</td>
+<td>aanbestedingen met IB-eisen; contracten met verwerkersovereenkomst</td>
+<td>inkoopdossiers, contractregister</td>
+<td>halfjaar</td>
+</tr>
+<tr>
+<td>Leveranciersbeheer</td>
+<td>leveranciers met eigenaar; uitgevoerde beoordelingen</td>
+<td>leveranciersregister</td>
+<td>halfjaar</td>
+</tr>
+<tr>
+<td>Projecten</td>
+<td>projecten met IB-toets vóór de start; DPIA's vóór ingebruikname</td>
+<td>projectportfolio, DPIA-register</td>
+<td>kwartaal</td>
+</tr>
+<tr>
+<td>Beleid</td>
+<td>K3</td>
+<td>beleidsbibliotheek</td>
+<td>halfjaar</td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td>auditbevindingen over termijn; afwijkingen in het register</td>
+<td><a href="afwijkingenprocedure-sjabloon.html">afwijkingenregister</a></td>
+<td>kwartaal</td>
+</tr>
+</tbody>
+</table>
+<p>Meetpunten waarvan de bron nog niet toegankelijk is of nog niet bestaat, staan er bewust in. De eerste meting is
+dan "bron ontbreekt", en dat is zelf een bevinding.</p>
+<h2 id="4-meetplan">4. Meetplan<a class="anker" href="#4-meetplan" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Afspraak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wie meet</td>
+<td>de eigenaar van het meetpunt levert; de ISO verzamelt; de CISO toetst een steekproef op de bron</td>
+</tr>
+<tr>
+<td>Hoe</td>
+<td>uit het systeem, met export of query en datum; per meting hetzelfde nummer, zodat de delta zichtbaar is</td>
+</tr>
+<tr>
+<td>Waar het landt</td>
+<td>maandcijfers bij de ISO, kwartaalcijfers op het teambord, halfjaarcijfers in de <a href="../ims-rapportage/">IMS-rapportage</a>, jaarcijfers in ENSIA en de directiebeoordeling</td>
+</tr>
+<tr>
+<td>Kleur</td>
+<td>groen op koers; oranje achter, met plan; rood achter zonder plan of bron ontbreekt. Volgens een vaste rekenregel per indicator</td>
+</tr>
+<tr>
+<td>Bij rood</td>
+<td>de eigenaar levert binnen 4 weken een plan; twee kwartalen rood is een afwijking</td>
+</tr>
+<tr>
+<td>Beheer</td>
+<td>de CISO is eigenaar; wijzigingen via het tactische overleg; doelwaarden jaarlijks door de directie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vaststeller.</strong> Laat de directie de set en de doelwaarden vaststellen, en geef de colleges de acht indicatoren
+jaarlijks in de ENSIA-verantwoording. Vier colleges laten stemmen over een KPI-set kost een jaar en levert niets op.</p>
+<h2 id="bijlage-rekenregels-voor-de-kleur-voorbeeld">Bijlage. Rekenregels voor de kleur (voorbeeld)<a class="anker" href="#bijlage-rekenregels-voor-de-kleur-voorbeeld" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Groen</th>
+<th>Oranje</th>
+<th>Rood</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K1</td>
+<td>alle met eigenaar</td>
+<td>ten minste de helft, met datum voor de rest</td>
+<td>minder, of geen datum</td>
+</tr>
+<tr>
+<td>K2</td>
+<td>op of boven het kwartaalpad</td>
+<td>tot 2 producten achter</td>
+<td>meer dan 2 achter</td>
+</tr>
+<tr>
+<td>K3</td>
+<td>eerste golf op schema</td>
+<td>1 stuk achter</td>
+<td>2 of meer achter</td>
+</tr>
+<tr>
+<td>K4</td>
+<td>100% eigenaar en 80% of meer BIV, RTO, RPO</td>
+<td>eigenaar 100%, vulling 50 tot 80%</td>
+<td>eigenaar onder 100% of vulling onder 50%</td>
+</tr>
+<tr>
+<td>K5</td>
+<td>0 uitzonderingen, permanent actief 10% of minder</td>
+<td>1 tot 3 uitzonderingen of permanent actief tot 25%</td>
+<td>meer</td>
+</tr>
+<tr>
+<td>K6</td>
+<td>0 kritiek ouder dan 60 dagen én servers meetbaar</td>
+<td>tot 10, of servers deels meetbaar</td>
+<td>meer dan 10, of servers niet meetbaar</td>
+</tr>
+<tr>
+<td>K7</td>
+<td>mobiel 90% of meer, werkplek 100% versleuteld</td>
+<td>mobiel 70 tot 90%, werkplek 95 tot 100%</td>
+<td>minder</td>
+</tr>
+<tr>
+<td>K8</td>
+<td>4 geslaagde tests per jaar met verslag</td>
+<td>2 of 3</td>
+<td>0 of 1, of geen verslag</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/bio2-deel1-in-het-ims">governance/bio2-deel1-in-het-ims</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

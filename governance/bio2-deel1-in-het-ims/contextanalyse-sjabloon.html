@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: contextanalyse en belanghebbenden</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> › <span>Sjabloon: contextanalyse en belanghebbenden</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: contextanalyse en belanghebbenden</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> · <a href="contextanalyse-sjabloon.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> opbouw van de concept-contextanalyse van de CISO van een regionale samenwerking van gemeenten (september 2026), nog niet vastgesteld. De inhoud van de regio (dreigingsbeeld, volwassenheid, SWOT) is weggelaten; wat blijft is de opbouw, het wettelijk kader en de belanghebbenden die voor elke gemeente gelden. Norm: ISO/IEC 27001, clausule 4.1 en 4.2.</p>
+</blockquote>
+<p>Dit stuk beantwoordt twee vragen: in welke omgeving werkt de organisatie (4.1), en wie stelt eisen aan haar
+informatiebeveiliging (4.2). Houd het feitelijk: elke bewering met een bron, elke meting met een datum. Oordelen en
+adviezen apart gemarkeerd.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Versie</td>
+<td>«versie, status, datum»</td>
+</tr>
+<tr>
+<td>Opsteller</td>
+<td>«CISO»</td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td>«één vaststeller voor het geheel; twee voor één document is onnodig»</td>
+</tr>
+<tr>
+<td>Herziening</td>
+<td>jaarlijks vóór de directiebeoordeling, en bij een wijziging in wet, organisatie of scope</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-wie-de-organisatie-is">1. Wie de organisatie is<a class="anker" href="#1-wie-de-organisatie-is" aria-label="Link naar deze kop">#</a></h2>
+<p>«Gemeente of samenwerking, wie voert wat uit voor wie, de gedeelde infrastructuur, de omvang.»</p>
+<h2 id="2-externe-factoren">2. Externe factoren<a class="anker" href="#2-externe-factoren" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="2-1-wettelijk-kader">2.1 Wettelijk kader<a class="anker" href="#2-1-wettelijk-kader" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li><strong>Cyberbeveiligingswet</strong>, in werking sinds 15 augustus 2026. De Cyberbeveiligingsregeling sector overheid maakt de
+  normen hard:</li>
+<li><strong>artikel 3:</strong> de essentiële entiteit past ISO/IEC 27001 toe op het managementsysteem en op het vaststellen van
+    het toepassingsgebied. Deze contextanalyse en het scopedocument zijn daarmee wettelijk verplicht;</li>
+<li><strong>artikel 5, eerste lid:</strong> ten minste de maatregelen van ISO/IEC 27002 (behalve 5.32 en 5.34) en de relevante
+    overheidsmaatregelen van BIO 2.0;</li>
+<li><strong>artikel 5, derde lid:</strong> opzet, bestaan én werking zijn aantoonbaar;</li>
+<li><strong>bijlage 2:</strong> de impactniveaus voor decentrale overheden; een systeem is cruciaal als het op één categorie
+    hoog of zeer hoog scoort.</li>
+<li><strong>Registratie- en meldplicht</strong> bij het NCSC, toezicht door de RDI. Zie
+  <a href="../cbw-meldplicht-inrichten/">De Cbw-meldplicht inrichten</a>.</li>
+<li>AVG en UAVG (Autoriteit Persoonsgegevens; de FG is toezichthoudend), Wet politiegegevens (boa's), Woo,
+  Archiefwet, en de ENSIA-verantwoording.</li>
+<li>De Wwke geldt voor gemeenten niet rechtstreeks; zie <a href="../val-ik-onder-de-wwke/">Valt een gemeente onder de Wwke?</a>.</li>
+</ul>
+<h3 id="2-2-dreigingsbeeld">2.2 Dreigingsbeeld<a class="anker" href="#2-2-dreigingsbeeld" aria-label="Link naar deze kop">#</a></h3>
+<p>«Dreigingsbeeld uit NCSC, IBD en eigen incidenten, met bron en datum.»</p>
+<h3 id="2-3-ketens-en-leveranciers">2.3 Ketens en leveranciers<a class="anker" href="#2-3-ketens-en-leveranciers" aria-label="Link naar deze kop">#</a></h3>
+<p>«De kernleveranciers en wat er bij hen ligt.»</p>
+<h3 id="2-4-technologie-en-markt">2.4 Technologie en markt<a class="anker" href="#2-4-technologie-en-markt" aria-label="Link naar deze kop">#</a></h3>
+<p>«Cloud, AI, soevereiniteit, wat verandert.»</p>
+<h2 id="3-interne-factoren">3. Interne factoren<a class="anker" href="#3-interne-factoren" aria-label="Link naar deze kop">#</a></h2>
+<p>«Volwassenheid (met de meting en de datum), beleid en documentatie (wat is vastgesteld, wat concept), mensen,
+capaciteit en cultuur, en een SWOT.»</p>
+<h2 id="4-belanghebbenden-en-hun-eisen">4. Belanghebbenden en hun eisen<a class="anker" href="#4-belanghebbenden-en-hun-eisen" aria-label="Link naar deze kop">#</a></h2>
+<p>Per belanghebbende: wat die verwacht, waar dat staat, en of het ISMS de eis adresseert. "Deels" en "nee" zijn
+expliciete keuzes die het scopedocument bevestigt.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Belanghebbende</th>
+<th>Soort</th>
+<th>Eis of verwachting</th>
+<th>Bron</th>
+<th>In het ISMS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>College(s) van B en W</td>
+<td>bestuurlijk</td>
+<td>aantoonbaar voldoen aan Cbw en BIO 2.0; inzicht in restrisico's; persoonlijke verantwoordelijkheid kunnen dragen; ENSIA-verklaring</td>
+<td>Cbw, regeling, ENSIA</td>
+<td>«ja, deels, nee»</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Gemeenteraad</td>
+<td>bestuurlijk</td>
+<td>verantwoording over incidenten en risico's; kaderstelling</td>
+<td>Gemeentewet, ENSIA</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Directieteam</td>
+<td>intern</td>
+<td>in control zijn; één risicobeeld; strategische ISMS-producten vaststellen</td>
+<td>IMS-handboek</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gemeentesecretarissen van partnergemeenten (bij een samenwerking)</td>
+<td>bestuurlijk</td>
+<td>weten wat de uitvoerende gemeente namens hen doet; werkafspraken over detectie, melding en bewijs</td>
+<td>dienstverleningsovereenkomst</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Rijksinspectie Digitale Infrastructuur</td>
+<td>toezicht</td>
+<td>opzet, bestaan en werking aantoonbaar; toepassingsgebied vastgesteld; registratie actueel</td>
+<td>regeling, artikel 3 en 5</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>NCSC</td>
+<td>toezicht en keten</td>
+<td>tijdige melding van significante incidenten; actuele contact- en netwerkgegevens</td>
+<td>Cbw</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Autoriteit Persoonsgegevens en de FG</td>
+<td>toezicht</td>
+<td>rechtmatige verwerking; meldplicht datalekken; DPIA's</td>
+<td>AVG, UAVG</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Inwoners en ondernemers</td>
+<td>extern</td>
+<td>beschikbare loketten; bescherming van hun gegevens; transparantie bij incidenten</td>
+<td>AVG, Woo, dienstverleningsnormen</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Medewerkers en de OR</td>
+<td>intern</td>
+<td>werkbare regels; duidelijke verantwoordelijkheden; afspraken over simulaties en monitoring</td>
+<td>Wet op de ondernemingsraden</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Lijnmanagement en proceseigenaren</td>
+<td>intern</td>
+<td>weten welk risico van hen is en wat acceptabel is; niet verrast worden</td>
+<td>IMS-handboek</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Kernleveranciers (beheer, detectie)</td>
+<td>leverancier</td>
+<td>duidelijke opdracht; één wijzigingsproces; afspraken over beheerrechten, logbronnen en mandaat</td>
+<td>contracten</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Interne en externe accountant</td>
+<td>toetsing</td>
+<td>toetsbare beheersing; opvolging van bevindingen</td>
+<td>verslag van bevindingen</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Gemeenschappelijke regelingen</td>
+<td>keten</td>
+<td>duidelijke verdeling: wie meldt, wie registreert</td>
+<td>Cbw</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Veiligheidsregio</td>
+<td>keten</td>
+<td>aansluiting van digitale crisisbeheersing op de crisisorganisatie</td>
+<td>crisisplan</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>VNG en IBD</td>
+<td>kennisnetwerk</td>
+<td>gebruik van landelijke kaders in plaats van eigen varianten</td>
+<td>handreikingen</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-eisen-die-uit-de-context-volgen">5. Eisen die uit de context volgen<a class="anker" href="#5-eisen-die-uit-de-context-volgen" aria-label="Link naar deze kop">#</a></h2>
+<p>De eisen waaraan het ISMS moet voldoen: input voor toepassingsgebied, beleid, risicoanalyse en verklaring van
+toepasselijkheid. Voor een samenwerking van gemeenten gelden er vaak deze tien:</p>
+<ol>
+<li id="punt-5-1">Eén ISMS voor alle gemeenten, met per gemeente een eigen verklaring van toepasselijkheid die zegt welke
+   maatregelen bij de uitvoerende gemeente liggen en welke bij de gemeente zelf. <a class="anker" href="#punt-5-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-2">Het toepassingsgebied is expliciet vastgesteld (artikel 3 van de regeling). <a class="anker" href="#punt-5-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-3">Opzet, bestaan en werking per maatregel aantoonbaar, met een bewijsdossier per gemeente en metingen met datum. <a class="anker" href="#punt-5-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-4">Elk risico heeft een eigenaar in de lijn; elk ISMS-product een trekker en een vaststeller. <a class="anker" href="#punt-5-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-5">De risicobereidheid is vastgesteld en reproduceerbaar: impactschalen uit bijlage 2, klassegrenzen door de directie. <a class="anker" href="#punt-5-5" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-6">Leveranciersafhankelijkheid is beheerst: register, eigenaar per leverancier, afspraken over beheerrechten,
+   logbronnen en meldtermijnen, een exitmogelijkheid. <a class="anker" href="#punt-5-6" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-7">De meldplicht werkt binnen de wettelijke termijnen voor alle gemeenten, met een belegd mandaat voor containment. <a class="anker" href="#punt-5-7" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-8">De werkafspraken met de partnergemeenten staan in de dienstverleningsovereenkomst of een module daarvan. <a class="anker" href="#punt-5-8" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-9">Het ISMS is niet persoonsafhankelijk: kennis, toegang en rollen hangen aan functies, niet aan personen. <a class="anker" href="#punt-5-9" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-5-10">Landelijke kaders gaan voor eigen schrijfwerk. <a class="anker" href="#punt-5-10" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h2 id="6-besluiten-die-dit-stuk-nodig-heeft">6. Besluiten die dit stuk nodig heeft<a class="anker" href="#6-besluiten-die-dit-stuk-nodig-heeft" aria-label="Link naar deze kop">#</a></h2>
+<p>«Bijvoorbeeld: het toepassingsgebied; werkafspraken met partnergemeenten; eigenaar per strategisch risico; trekker
+per ISMS-product; de vaststeller van dit stuk.»</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/bio2-deel1-in-het-ims">governance/bio2-deel1-in-het-ims</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

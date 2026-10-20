@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: risicomanagementbeleid informatiebeveiliging</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> › <span>Sjabloon: risicomanagementbeleid informatiebeveiliging</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: risicomanagementbeleid informatiebeveiliging</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> · <a href="risicomanagementbeleid-sjabloon.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> concept-risicomanagementbeleid van de CISO van een regionale samenwerking van gemeenten (september 2026), nog niet vastgesteld. Voor de commons generiek gemaakt: de eigen risico's, besluitnummers en voorbeelden zijn weggelaten. Vul in tussen «…».</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document</td>
+<td>Risicomanagementbeleid informatiebeveiliging</td>
+</tr>
+<tr>
+<td>Versie</td>
+<td>«versie, status, datum»</td>
+</tr>
+<tr>
+<td>Opsteller</td>
+<td>«CISO»</td>
+</tr>
+<tr>
+<td>Review</td>
+<td>«concernadviseur risicomanagement, BCM-manager, team IB&amp;P, CIO»</td>
+</tr>
+<tr>
+<td>Vaststeller</td>
+<td>«directieteam»</td>
+</tr>
+<tr>
+<td>Norm</td>
+<td>ISO/IEC 27001, clausule 6.1.2, 6.1.3, 8.2 en 8.3; ISO/IEC 27005 als leidraad; BIO 2.0 deel 1; Cyberbeveiligingsregeling sector overheid, bijlage 2 (impactniveaus)</td>
+</tr>
+<tr>
+<td>Herziening</td>
+<td>jaarlijks na de directiebeoordeling; direct bij een wijziging van bijlage 2 van de regeling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-doel-en-uitgangspunten">1. Doel en uitgangspunten<a class="anker" href="#1-doel-en-uitgangspunten" aria-label="Link naar deze kop">#</a></h2>
+<p>Elk besluit over informatiebeveiliging is terug te voeren op een risico dat iemand kent, heeft gewogen en waarvan
+iemand eigenaar is. Het beleid geldt voor het hele IMS (informatiebeveiliging, privacy, continuïteit): één register,
+één methode. DPIA en BIA leveren input en vervangen het niet.</p>
+<ol>
+<li id="punt-1-1"><strong>Geen herkomst, geen risico.</strong> Elk risico komt uit een analyse, meting, incident of audit, met datum en bron. <a class="anker" href="#punt-1-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-2"><strong>Geen eigenaar, dan ONBELEGD, en dat is een actie.</strong> Een risico zonder eigenaar staat op de agenda van het
+   tactische overleg tot het belegd is. <a class="anker" href="#punt-1-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-3"><strong>De impact volgt de wet.</strong> De impactschalen zijn die van bijlage 2 bij de Cyberbeveiligingsregeling. Een risico
+   dat in één categorie hoog of zeer hoog scoort, raakt een cruciaal systeem. <a class="anker" href="#punt-1-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-4"><strong>Klassen zijn narekenbaar.</strong> De klasse volgt uit een vaste tabel, niet uit een oordeel per geval. <a class="anker" href="#punt-1-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-1-5"><strong>Accepteren is een besluit met een naam, een datum, voorwaarden en een houdbaarheidsdatum.</strong> <a class="anker" href="#punt-1-5" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h2 id="2-toepassingsgebied-en-niveaus">2. Toepassingsgebied en niveaus<a class="anker" href="#2-toepassingsgebied-en-niveaus" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Wat</th>
+<th>Wie initieert</th>
+<th>Hoe vaak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strategisch</td>
+<td>de grootste risico's voor de organisatie als geheel</td>
+<td>concernadviseur risicomanagement, met CISO en BCM-manager; FG adviseert</td>
+<td>jaarlijks, vóór de directiebeoordeling</td>
+</tr>
+<tr>
+<td>Operationeel</td>
+<td>risico's op een proces, systeem, leverancier of locatie</td>
+<td>discipline-eigenaar of proceseigenaar</td>
+<td>doorlopend, bij de triggers in paragraaf 5</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>risico's van een nieuw of gewijzigd systeem, contract of verwerking</td>
+<td>projectleider of opdrachtgever; IB&amp;P toetst</td>
+<td>bij de start en bij elke belangrijke wijziging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-rollen">3. Rollen<a class="anker" href="#3-rollen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Doet</th>
+<th>Doet niet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risico-eigenaar (lijnmanager, proceseigenaar)</td>
+<td>kent het risico, kiest de behandeling, stelt het behandelplan op, accepteert binnen zijn mandaat, rapporteert</td>
+<td>het risico wegdelegeren naar een adviseur of leverancier</td>
+</tr>
+<tr>
+<td>Discipline-eigenaar (ISO, BCM-manager, privacy officer)</td>
+<td>voert operationele analyses uit, valideert scores, bewaakt de kwaliteit van het register</td>
+<td>risico's accepteren namens de lijn</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>stelt het kader, signaleert, escaleert, rapporteert onafhankelijk</td>
+<td>eigenaar zijn van een lijnrisico; assurance geven</td>
+</tr>
+<tr>
+<td>Concernadviseur risicomanagement</td>
+<td>initieert de strategische analyse, bewaakt de aansluiting op planning en control en de weerstandsparagraaf</td>
+<td></td>
+</tr>
+<tr>
+<td>FG</td>
+<td>adviseert bij risico's met persoonsgegevens; toezichthoudend</td>
+<td>operationele privacyrisico's beheren</td>
+</tr>
+<tr>
+<td>Tactisch IMS-overleg</td>
+<td>toetst acceptaties op klasse gemiddeld, beslist over behandelplannen, agendeert onbelegde risico's</td>
+<td>strategische risico's accepteren</td>
+</tr>
+<tr>
+<td>Stuurgroep</td>
+<td>adviseert de directie over klasse hoog; kan een acceptatie van het tactische overleg terugdraaien</td>
+<td></td>
+</tr>
+<tr>
+<td>Directieteam</td>
+<td>stelt risicobereidheid en klassegrenzen vast, beslist over kritiek en hoog, stelt de eigenaren van strategische risico's aan</td>
+<td></td>
+</tr>
+<tr>
+<td>Interne accountant</td>
+<td>toetst achteraf of het proces is gevolgd</td>
+<td>scoren of accepteren</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-methode">4. Methode<a class="anker" href="#4-methode" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="4-1-zes-stappen">4.1 Zes stappen<a class="anker" href="#4-1-zes-stappen" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stap</th>
+<th>Uitkomst</th>
+<th>Wie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Identificatie</td>
+<td>risico als gebeurtenis, oorzaak en gevolg; asset of proces; bron en datum; eigenaar</td>
+<td>discipline-eigenaar met proceseigenaar</td>
+</tr>
+<tr>
+<td>2 Analyse</td>
+<td>kans en impact onderbouwd; score en klasse</td>
+<td>discipline-eigenaar; CISO valideert bij hoog en kritiek</td>
+</tr>
+<tr>
+<td>3 Evaluatie</td>
+<td>vergelijking met de risicobereidheid; prioriteit; besluit behandelen of accepteren</td>
+<td>risico-eigenaar</td>
+</tr>
+<tr>
+<td>4 Behandeling</td>
+<td>behandelplan: maatregelen met eigenaar, datum, verwachte netto-score, kosten</td>
+<td>risico-eigenaar</td>
+</tr>
+<tr>
+<td>5 Acceptatie</td>
+<td>restrisico geaccepteerd op het juiste niveau, met voorwaarden en herbeoordelingsdatum</td>
+<td>risico-eigenaar, tactisch overleg, stuurgroep of directie, naar klasse</td>
+</tr>
+<tr>
+<td>6 Monitoring</td>
+<td>voortgang; herbeoordeling op datum of trigger; rapportage</td>
+<td>risico-eigenaar; CISO bewaakt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-2-kans-en-impact">4.2 Kans en impact<a class="anker" href="#4-2-kans-en-impact" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Kans</strong> in vijf stappen: 1% (hypothetisch), 10% (er is een kans), 30% (aanzienlijk), 50% (fifty-fifty), meer dan
+50% (waarschijnlijk). Onderbouwd met dreigingsbeeld, aanvalsvlak en aanwezige of ontbrekende maatregelen. Gebruik
+1% alleen als er bewijs is dat de gebeurtenis bij vergelijkbare organisaties niet voorkomt.</p>
+<p><strong>Impact</strong> in vijf niveaus (1 zeer laag tot 5 zeer hoog), op de zes categorieën van bijlage 2 bij de
+Cyberbeveiligingsregeling: dataverlies (RPO), hersteltijd (RTO), financieel, juridisch en bestuurlijk,
+maatschappelijk, veiligheid van personen. De hoogste ingevulde categorie bepaalt het niveau. Voor hoog en kritiek
+zijn ten minste drie categorieën ingevuld, altijd maatschappelijk en juridisch-bestuurlijk. Alleen financieel
+scoren onderschat risico's op bijvoorbeeld operationele technologie.</p>
+<p><strong>Score</strong> is kans (1 tot 5) maal impact (1 tot 5).</p>
+<h3 id="4-3-klassen">4.3 Klassen<a class="anker" href="#4-3-klassen" aria-label="Link naar deze kop">#</a></h3>
+<p>Een impact van 4 of 5 is nooit groen. Laat de grenzen vaststellen door het directieteam.</p>
+<table>
+<thead>
+<tr>
+<th>Impact ↓ / Kans →</th>
+<th>1%</th>
+<th>10%</th>
+<th>30%</th>
+<th>50%</th>
+<th>&gt;50%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 Zeer hoog</td>
+<td>Gemiddeld (5)</td>
+<td>Hoog (10)</td>
+<td>Kritiek (15)</td>
+<td>Kritiek (20)</td>
+<td>Kritiek (25)</td>
+</tr>
+<tr>
+<td>4 Hoog</td>
+<td>Gemiddeld (4)</td>
+<td>Gemiddeld (8)</td>
+<td>Hoog (12)</td>
+<td>Kritiek (16)</td>
+<td>Kritiek (20)</td>
+</tr>
+<tr>
+<td>3 Middel</td>
+<td>Laag (3)</td>
+<td>Gemiddeld (6)</td>
+<td>Hoog (9)</td>
+<td>Hoog (12)</td>
+<td>Kritiek (15)</td>
+</tr>
+<tr>
+<td>2 Laag</td>
+<td>Laag (2)</td>
+<td>Laag (4)</td>
+<td>Gemiddeld (6)</td>
+<td>Gemiddeld (8)</td>
+<td>Hoog (10)</td>
+</tr>
+<tr>
+<td>1 Zeer laag</td>
+<td>Laag (1)</td>
+<td>Laag (2)</td>
+<td>Laag (3)</td>
+<td>Laag (4)</td>
+<td>Gemiddeld (5)</td>
+</tr>
+</tbody>
+</table>
+<p>Kritiek: 15 en hoger. Hoog: 9 tot en met 12. Gemiddeld: 5 tot en met 8. Laag: 1 tot en met 4, behalve bij impact
+4 of 5.</p>
+<h3 id="4-4-risicobereidheid-en-acceptatieladder">4.4 Risicobereidheid en acceptatieladder<a class="anker" href="#4-4-risicobereidheid-en-acceptatieladder" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Klasse</th>
+<th>Wat er moet gebeuren</th>
+<th>Wie accepteert</th>
+<th>Termijn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kritiek</td>
+<td>direct via de stuurgroep naar de directie, met behandelplan; mitigeren is verplicht</td>
+<td>alleen de directie, en alleen tijdelijk met einddatum</td>
+<td>plan binnen 4 weken; herbeoordeling elke 3 maanden</td>
+</tr>
+<tr>
+<td>Hoog</td>
+<td>via het tactische overleg naar de stuurgroep, met plan; mitigeren tenzij de directie accepteert</td>
+<td>directie, op advies van de stuurgroep</td>
+<td>plan binnen 8 weken; maximaal 6 maanden onbehandeld met lopend plan; herbeoordeling halfjaarlijks</td>
+</tr>
+<tr>
+<td>Gemiddeld</td>
+<td>melden bij het tactische overleg met een voorstel</td>
+<td>tactisch overleg, onderbouwd; stuurgroep kan terugdraaien</td>
+<td>plan binnen 3 maanden; herbeoordeling jaarlijks</td>
+</tr>
+<tr>
+<td>Laag</td>
+<td>registreren; de eigenaar beslist</td>
+<td>risico- of discipline-eigenaar; tactisch overleg kan terugdraaien</td>
+<td>herbeoordeling jaarlijks</td>
+</tr>
+</tbody>
+</table>
+<p>Een acceptatie bevat altijd: naam en functie, datum, netto-score, voorwaarden, herbeoordelingsdatum. Vervalt een
+voorwaarde, dan vervalt de acceptatie.</p>
+<h3 id="4-5-behandeling">4.5 Behandeling<a class="anker" href="#4-5-behandeling" aria-label="Link naar deze kop">#</a></h3>
+<p>In volgorde van voorkeur: verminderen, vermijden, overdragen (contract, verzekering, leverancier; de
+verantwoordelijkheid gaat niet mee), accepteren. De gekozen maatregelen komen in de verklaring van toepasselijkheid
+met motivering; wat niet wordt toegepast in de bijlage uitzonderingen. Een maatregel zonder eigenaar is geen maatregel.</p>
+<h2 id="5-wanneer">5. Wanneer<a class="anker" href="#5-wanneer" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Triggers voor een (her)beoordeling:</strong> de start van een project; een belangrijke wijziging in organisatie, techniek
+of leverancier; een nieuw contract of verlenging; een significant incident of bijna-incident; een auditbevinding;
+een meting die een aanname weerlegt; een wijziging in wet- of regelgeving; een verzoek van een proceseigenaar of
+gremium. Een overeenkomst die wordt getekend zonder analyse vooraf, terwijl zij toegang of netwerk raakt, is precies
+wat deze paragraaf moet voorkomen.</p>
+<table>
+<thead>
+<tr>
+<th>Wanneer</th>
+<th>Wat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>strategische risicoanalyse, met herbeoordeling van de strategische risico's en hun eigenaren</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>risicoworkshop met de directie: risicobereidheid bevestigen of bijstellen</td>
+</tr>
+<tr>
+<td>doorlopend</td>
+<td>operationele en projectanalyses; onbelegde risico's op de agenda</td>
+</tr>
+<tr>
+<td>halfjaarlijks</td>
+<td>top-risico's, acceptaties, voortgang en het aantal onbelegde risico's in de <a href="../ims-rapportage/">halfjaarrapportage</a></td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>directiebeoordeling: register, acceptaties en effectiviteit van dit beleid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-het-register">6. Het register<a class="anker" href="#6-het-register" aria-label="Link naar deze kop">#</a></h2>
+<p>Eén register voor de drie disciplines. <strong>Rubriceer per veld, niet per document:</strong> beschrijving, score en eigenaar
+zijn werkmateriaal; de technische onderbouwing van een bevinding is need-to-know. Een register met exploiteerbare
+details is zelf een risico. Zie voor een opzet het <a href="../risicogestuurd-managementsysteem/sjabloon-register.md">sjabloonregister</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Vulling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>per niveau een prefix (strategisch, operationeel, project)</td>
+</tr>
+<tr>
+<td>Risico</td>
+<td>gebeurtenis, oorzaak, gevolg</td>
+</tr>
+<tr>
+<td>Domein</td>
+<td>ISMS, BCMS, PIMS of combinatie</td>
+</tr>
+<tr>
+<td>Asset of proces</td>
+<td>met verwijzing naar de lijst kritieke processen</td>
+</tr>
+<tr>
+<td>Herkomst</td>
+<td>analyse, meting, incident of audit, met datum en bron</td>
+</tr>
+<tr>
+<td>Kans en onderbouwing</td>
+<td></td>
+</tr>
+<tr>
+<td>Impact per categorie</td>
+<td>hoogste bepaalt</td>
+</tr>
+<tr>
+<td>Score en klasse</td>
+<td>bruto en netto</td>
+</tr>
+<tr>
+<td>Herkomst van de score</td>
+<td>vastgesteld, voorstel of gevalideerd, door wie en wanneer</td>
+</tr>
+<tr>
+<td>Eigenaar</td>
+<td>naam en functie, of ONBELEGD</td>
+</tr>
+<tr>
+<td>Behandeling en behandelplan</td>
+<td>maatregelen met eigenaar, datum, verwachte netto-score</td>
+</tr>
+<tr>
+<td>Acceptatie</td>
+<td>wie, datum, voorwaarden, herbeoordelingsdatum</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>open, in behandeling, geaccepteerd, gesloten</td>
+</tr>
+<tr>
+<td>Technische onderbouwing</td>
+<td>verwijzing naar het gerubriceerde dossier (need-to-know)</td>
+</tr>
+<tr>
+<td>Samenhang</td>
+<td>verwante risico's en maatregelen</td>
+</tr>
+<tr>
+<td>Planning-en-controllabel</td>
+<td>ja of nee, met financiële raming</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-rapportage">7. Rapportage<a class="anker" href="#7-rapportage" aria-label="Link naar deze kop">#</a></h2>
+<p>De CISO rapporteert onafhankelijk: aan het tactische overleg elke vergadering (onbelegde risico's, nieuwe
+acceptaties, verlopen herbeoordelingen), aan stuurgroep en directie halfjaarlijks, aan de colleges jaarlijks.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/bio2-deel1-in-het-ims">governance/bio2-deel1-in-het-ims</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>De KPI-matrix: opzet, bestaan en werking per domein</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Rapporteren over security, privacy en continuïteit uit één bronrapportage</a> › <span>De KPI-matrix: opzet, bestaan en werking per domein</span></nav><!-- /kruimelpad -->
+<h1>De KPI-matrix: opzet, bestaan en werking per domein</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Rapporteren over security, privacy en continuïteit uit één bronrapportage</a> · <a href="kpi-matrix.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> KPI-definities van het geïntegreerde managementsysteem van een regionale samenwerking van gemeenten, versie 0.2 (juli 2026). Voor de commons generiek gemaakt; de aantallen maatregelen zijn die van de bron en moet je vervangen door die van je eigen normenkader.</p>
+</blockquote>
+<h2 id="structuur">Structuur<a class="anker" href="#structuur" aria-label="Link naar deze kop">#</a></h2>
+<p>Drie domeinen maal drie fasen is negen KPI's.</p>
+<table>
+<thead>
+<tr>
+<th>Domein</th>
+<th>Normenkader</th>
+<th>Noemer in de bron</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Veiligheid (ISMS)</td>
+<td>BIO 2.0 / ISO 27001</td>
+<td>de toepasselijke BIO-maatregelen</td>
+</tr>
+<tr>
+<td>Privacy (PIMS)</td>
+<td>AVG / ISO 27701</td>
+<td>ongeveer 40 kernverplichtingen uit de AVG (de volledige set wordt beheerd, niet op KPI-niveau gerapporteerd)</td>
+</tr>
+<tr>
+<td>Continuïteit (BCMS)</td>
+<td>ISO 22301</td>
+<td>de BCM-maatregelen uit de eigen set</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Vraag</th>
+<th>In één woord</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzet</td>
+<td>Is er een maatregel ontworpen die het risico afdekt?</td>
+<td>Bedacht?</td>
+</tr>
+<tr>
+<td>Bestaan</td>
+<td>Bestaat de maatregel in de praktijk?</td>
+<td>Is het er?</td>
+</tr>
+<tr>
+<td>Werking</td>
+<td>Werkt de maatregel aantoonbaar?</td>
+<td>Doet het wat het moet?</td>
+</tr>
+</tbody>
+</table>
+<p>Beleid telt niet als eigen fase. Of er beleid is, is een randvoorwaarde die je kwalitatief duidt in het
+operationele beeld en de expert views.</p>
+<h2 id="de-negen-cellen">De negen cellen<a class="anker" href="#de-negen-cellen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Cel</th>
+<th>Meting</th>
+<th>Bron</th>
+<th>Eigenaar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEC-1</td>
+<td>Opzet veiligheid</td>
+<td>Aantal maatregelen met een gedocumenteerde beschrijving (wie, wat, wanneer, hoe), gedeeld door het totaal</td>
+<td>Maatregelenbibliotheek, interne controlecyclus in het servicedesksysteem</td>
+<td>Discipline-eigenaar ISMS</td>
+</tr>
+<tr>
+<td>SEC-2</td>
+<td>Bestaan veiligheid</td>
+<td>Aantal ontworpen maatregelen met bewijs van implementatie, gedeeld door het aantal ontworpen</td>
+<td>Bewijsregistratie, self-assessments, configuraties</td>
+<td>Discipline-eigenaar ISMS</td>
+</tr>
+<tr>
+<td>SEC-3</td>
+<td>Werking veiligheid</td>
+<td>Aantal geïmplementeerde maatregelen met een positief toetsresultaat, gedeeld door het aantal geïmplementeerde</td>
+<td>Audits, pentests, ENSIA, monitoring</td>
+<td>Discipline-eigenaar ISMS en interne auditor</td>
+</tr>
+<tr>
+<td>PRI-1</td>
+<td>Opzet privacy</td>
+<td>Aantal kernverplichtingen met een gedocumenteerde maatregel, gedeeld door het totaal</td>
+<td>Maatregelenbibliotheek, procesbeschrijvingen</td>
+<td>Privacy officer</td>
+</tr>
+<tr>
+<td>PRI-2</td>
+<td>Bestaan privacy</td>
+<td>Aantal ontworpen maatregelen met bewijs van bestaan, gedeeld door het aantal ontworpen</td>
+<td>Register van verwerkingen, DPIA-dossiers, verwerkersovereenkomsten, datalekregister</td>
+<td>Privacy officer</td>
+</tr>
+<tr>
+<td>PRI-3</td>
+<td>Werking privacy</td>
+<td>Aantal bestaande maatregelen met een positief toetsresultaat, gedeeld door het aantal bestaande</td>
+<td>Expert view FG, privacy-audit, datalekanalyse</td>
+<td>Privacy officer en FG</td>
+</tr>
+<tr>
+<td>BCM-1</td>
+<td>Opzet continuïteit</td>
+<td>Aantal BCM-maatregelen met een gedocumenteerde maatregel (BIA, herstelplan, uitwijk), gedeeld door het totaal</td>
+<td>BIA's, herstelplannen, uitwijkprocedures</td>
+<td>BCM-manager</td>
+</tr>
+<tr>
+<td>BCM-2</td>
+<td>Bestaan continuïteit</td>
+<td>Aantal ontworpen maatregelen met bewijs van bestaan</td>
+<td>Back-upconfiguraties, SLA's, uitwijklocaties</td>
+<td>BCM-manager</td>
+</tr>
+<tr>
+<td>BCM-3</td>
+<td>Werking continuïteit</td>
+<td>Aantal bestaande maatregelen met een positief testresultaat (oefening, test, echte inzet)</td>
+<td>Oefenverslagen, testresultaten, lessen na incidenten</td>
+<td>BCM-manager</td>
+</tr>
+</tbody>
+</table>
+<h2 id="meetregels">Meetregels<a class="anker" href="#meetregels" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Score.</strong> Elke cel is een percentage, of <strong>onbekend</strong>. Onbekend betekent: te weinig data voor een betrouwbare
+score. Dat is een governance gap en wordt nooit als nul weergegeven. Een cel kan ook een <strong>inschatting</strong> zijn,
+gebaseerd op expert judgement in plaats van data; dat wordt expliciet gemarkeerd.</p>
+<p><strong>Wanneer telt een maatregel mee?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Telt mee als</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzet</td>
+<td>er een gedocumenteerde beschrijving is (wie, wat, wanneer, hoe)</td>
+</tr>
+<tr>
+<td>Bestaan</td>
+<td>er bewijs is dat de maatregel is geïmplementeerd (configuratie, proces, registratie)</td>
+</tr>
+<tr>
+<td>Werking</td>
+<td>er een toetsresultaat is (audit, test, review) dat aantoont dat de maatregel effectief is</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cascade.</strong> Bestaan is nooit hoger dan opzet: je kunt niet hebben wat niet is ontworpen. Werking is nooit hoger
+dan bestaan: je kunt niet testen wat er niet is.</p>
+<p><strong>Geen totaalscore.</strong> Er wordt niet geaggregeerd naar één score per domein of één IMS-cijfer. Het doel is
+transparantie per fase, niet één getal.</p>
+<p><strong>Kleuren en trend.</strong> Rood onder 40%, oranje 40 tot 70%, groen boven 70%, grijs onbekend. Trend: hoger, lager,
+stabiel, of n.v.t. bij de eerste meting. Stem de drempels af in het tactische overleg en evalueer ze na de
+eerste meting.</p>
+<h2 id="dataverzameling-bij-de-eerste-meting">Dataverzameling bij de eerste meting<a class="anker" href="#dataverzameling-bij-de-eerste-meting" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Cellen</th>
+<th>Methode</th>
+<th>Verwachte kwaliteit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzet</td>
+<td>Review van de interne controlecyclus en expert judgement</td>
+<td>Matig, niet alles is gedocumenteerd</td>
+</tr>
+<tr>
+<td>Bestaan</td>
+<td>Self-assessment door de discipline-eigenaren</td>
+<td>Laag, geen structurele bewijsregistratie</td>
+</tr>
+<tr>
+<td>Werking</td>
+<td>Inventaris van bestaande audits, tests en oefeningen</td>
+<td>Zeer laag</td>
+</tr>
+</tbody>
+</table>
+<p>Werkwijze: (1) opzetscan per maatregel, (2) inschatting bestaan ja, nee of onbekend, (3) inventaris van
+toetsresultaten, (4) consolidatie tot de negen cellen door de CISO.</p>
+<p>Een realistische eerste meting in de bron: opzet veiligheid 40 tot 65%, bestaan grotendeels onbekend, werking
+onder 20% of onbekend; privacy en continuïteit lager. Dat is geen falen; het is het startpunt.</p>
+<h2 id="groeipad">Groeipad<a class="anker" href="#groeipad" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Eerste meting</th>
+<th>Tweede halfjaar</th>
+<th>Daarna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzet</td>
+<td>Controlecyclus en expert judgement</td>
+<td>Maatregelenbibliotheek met de kernmaatregelen gevuld</td>
+<td>Volledig uit het canonieke model</td>
+</tr>
+<tr>
+<td>Bestaan</td>
+<td>Self-assessment</td>
+<td>Eerste bewijsuploads</td>
+<td>Geautomatiseerde bewijsregistratie</td>
+</tr>
+<tr>
+<td>Werking</td>
+<td>Inventaris bestaande tests</td>
+<td>Eerste effectiviteitstoetsen</td>
+<td>Structureel testprogramma</td>
+</tr>
+<tr>
+<td>Datakwaliteit</td>
+<td>Laag</td>
+<td>Matig</td>
+<td>Hoog</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Streefwaarden.</strong> Zonder streefwaarden kun je tussentijds niet sturen. Stel ze per halfjaar vast in het
+tactische overleg, bijvoorbeeld opzet veiligheid 50% na een half jaar en 80% na een jaar. Een cel onder de
+streefwaarde is geen falen maar een stuursignaal.</p>
+<p><strong>Per cluster.</strong> Wil je sturen op organisatieonderdelen, registreer dan bij de dataverzameling de bron per
+cluster. De rapportage verandert niet; het wordt een extra doorsnede.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/ims-rapportage">governance/ims-rapportage</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

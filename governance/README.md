@@ -24,9 +24,11 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 4. [Ben ik aanbieder onder de AI Act?](aanbieder-onder-de-ai-act/)
 5. [Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen](beleidsset-informatiebeveiliging/)
 6. [BIO 2.0 invoeren, een plan van aanpak met urenraming](bio2-implementeren/)
-7. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
-8. [AI-beleid van een regionale samenwerking](ai-beleid/)
-9. [Zes hulpmiddelen voor apparatuur, toegang en leveranciers](hulpmiddelen-toegang-apparatuur-en-leveranciers/)
+7. [BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen](bio2-deel1-in-het-ims/)
+8. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
+9. [Rapporteren over security, privacy en continuïteit uit één bronrapportage](ims-rapportage/)
+10. [AI-beleid van een regionale samenwerking](ai-beleid/)
+11. [Zes hulpmiddelen voor apparatuur, toegang en leveranciers](hulpmiddelen-toegang-apparatuur-en-leveranciers/)
 
 ## Bijdragen
 

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Sjabloon: procedure afwijkingen en correctieve maatregelen</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> › <span>Sjabloon: procedure afwijkingen en correctieve maatregelen</span></nav><!-- /kruimelpad -->
+<h1>Sjabloon: procedure afwijkingen en correctieve maatregelen</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</a> · <a href="afwijkingenprocedure-sjabloon.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> conceptprocedure van de CISO van een regionale samenwerking van gemeenten (september 2026), nog niet vastgesteld. Voor de commons generiek gemaakt; de eerste vulling van het register (echte bevindingen) is weggelaten. Norm: ISO/IEC 27001, clausule 10.1 en 10.2.</p>
+</blockquote>
+<p>Een managementsysteem bewijst zichzelf niet in het beleid, maar in wat er gebeurt als iets niet klopt.</p>
+<h2 id="1-wat-een-afwijking-is-en-wat-niet">1. Wat een afwijking is, en wat niet<a class="anker" href="#1-wat-een-afwijking-is-en-wat-niet" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Begrip</th>
+<th>Definitie</th>
+<th>Waar het landt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afwijking (non-conformiteit)</td>
+<td>een eis uit norm, wet, eigen beleid of contract wordt niet nageleefd, of een maatregel uit de verklaring van toepasselijkheid bestaat niet of werkt niet zoals beschreven</td>
+<td>afwijkingenregister</td>
+</tr>
+<tr>
+<td>Incident</td>
+<td>een gebeurtenis die beschikbaarheid, integriteit of vertrouwelijkheid raakt of dreigt te raken</td>
+<td>incidentproces; een incident kan een afwijking blootleggen</td>
+</tr>
+<tr>
+<td>Risico</td>
+<td>een mogelijke toekomstige gebeurtenis met kans en impact</td>
+<td>risicoregister; een onbehandeld risico buiten de risicobereidheid is een afwijking</td>
+</tr>
+<tr>
+<td>Verbetermogelijkheid</td>
+<td>iets dat beter kan zonder dat een eis wordt geschonden</td>
+<td>verbeterregister</td>
+</tr>
+</tbody>
+</table>
+<p>Twee voorbeelden. Niemand kan een hersteltest met naam en datum noemen, terwijl het beleid "maandelijks" zegt: een
+afwijking, want de maatregel werkt niet zoals beschreven. De klimaatbeheersing van de serverruimte valt uit: een
+incident. Blijkt daarna dat niemand eigenaar is van die randvoorwaarde: een afwijking.</p>
+<h2 id="2-bronnen">2. Bronnen<a class="anker" href="#2-bronnen" aria-label="Link naar deze kop">#</a></h2>
+<p>Interne en externe audits; ENSIA en toezicht; metingen en KPI's (twee kwartalen rood zonder plan is een afwijking);
+incidenten en hun evaluatie; zelfassessments; meldingen van medewerkers; leveranciersrapportages; de
+directiebeoordeling. Elke bron levert aan bij de ISO, die registreert.</p>
+<h2 id="3-rollen">3. Rollen<a class="anker" href="#3-rollen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO (team IB&amp;P)</td>
+<td>registreert, kent nummer en voorlopige ernst toe, bewaakt termijnen, rapporteert</td>
+</tr>
+<tr>
+<td>Eigenaar van de afwijking (de proces- of discipline-eigenaar bij wie de eis hoort)</td>
+<td>oorzaakanalyse, correctie en corrigerende maatregel, uitvoering, gereedmelding</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>valideert de ernst bij hoog en kritiek, toetst de oorzaakanalyse, escaleert</td>
+</tr>
+<tr>
+<td>Tactisch IMS-overleg</td>
+<td>ziet elk kwartaal het register; beslist bij meningsverschil</td>
+</tr>
+<tr>
+<td>Stuurgroep en directie</td>
+<td>krijgen kritieke afwijkingen direct, de rest in de halfjaarrapportage</td>
+</tr>
+<tr>
+<td>Interne accountant</td>
+<td>toetst bij de volgende audit of de maatregel is uitgevoerd en werkt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-zeven-stappen">4. Zeven stappen<a class="anker" href="#4-zeven-stappen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Stap</th>
+<th>Wat</th>
+<th>Wie</th>
+<th>Termijn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Registreren</td>
+<td>bron, datum, eis, waarneming, voorlopige ernst, eigenaar</td>
+<td>ISO</td>
+<td>binnen 5 werkdagen</td>
+</tr>
+<tr>
+<td>2 Beheersen</td>
+<td>directe gevolgen beperken: gat dichten, toegang intrekken, bestand herstellen</td>
+<td>eigenaar</td>
+<td>direct; bij kritiek en hoog vóór stap 3</td>
+</tr>
+<tr>
+<td>3 Oorzaak</td>
+<td>waarom bestond de afwijking? Vijf keer waarom is genoeg; bij kritiek en hoog schriftelijk</td>
+<td>eigenaar met ISO</td>
+<td>binnen 4 weken (kritiek: 2 weken)</td>
+</tr>
+<tr>
+<td>4 Elders?</td>
+<td>komt dezelfde afwijking ook op andere plekken, systemen of gemeenten voor?</td>
+<td>eigenaar en ISO</td>
+<td>met stap 3</td>
+</tr>
+<tr>
+<td>5 Corrigerende maatregel</td>
+<td>neemt de oorzaak weg; met eigenaar, datum, verwacht effect. Structurele oorzaak (geen beleid, geen eigenaar): verbeteractie en zo nodig een risico</td>
+<td>eigenaar; CISO toetst bij kritiek en hoog</td>
+<td>plan binnen de termijn van stap 3</td>
+</tr>
+<tr>
+<td>6 Effect</td>
+<td>vaststellen dat het niet terugkomt (meting, steekproef, audit); pas dan sluiten</td>
+<td>ISO; interne accountant bij de volgende audit</td>
+<td>binnen 3 maanden na uitvoering</td>
+</tr>
+<tr>
+<td>7 Leren</td>
+<td>zit de oorzaak in het systeem zelf, dan het systeem bijwerken</td>
+<td>CISO, via het tactische overleg</td>
+<td>bij de eerstvolgende herziening</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-ernst-en-termijnen">5. Ernst en termijnen<a class="anker" href="#5-ernst-en-termijnen" aria-label="Link naar deze kop">#</a></h2>
+<p>De ernst volgt de klassen van het <a href="risicomanagementbeleid-sjabloon.html">risicomanagementbeleid</a>: kans dat de afwijking
+tot een incident leidt, maal de impact daarvan.</p>
+<table>
+<thead>
+<tr>
+<th>Ernst</th>
+<th>Voorbeeld</th>
+<th>Correctie</th>
+<th>Corrigerende maatregel uitgevoerd</th>
+<th>Melden aan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kritiek</td>
+<td>beheeraccounts zonder MFA; geen werkende back-up van een kritiek systeem; wettelijke meldtermijn gemist</td>
+<td>uiterlijk 5 werkdagen</td>
+<td>binnen 3 maanden</td>
+<td>directie via de stuurgroep, direct</td>
+</tr>
+<tr>
+<td>Hoog</td>
+<td>maatregel uit de VvT bestaat niet; auditbevinding na 4 weken zonder eigenaar; KPI twee kwartalen rood</td>
+<td>binnen 4 weken</td>
+<td>binnen 6 maanden</td>
+<td>stuurgroep via het tactische overleg</td>
+</tr>
+<tr>
+<td>Gemiddeld</td>
+<td>procedure niet gevolgd zonder gevolg; register niet actueel</td>
+<td>binnen 3 maanden</td>
+<td>binnen 12 maanden</td>
+<td>tactisch overleg</td>
+</tr>
+<tr>
+<td>Laag</td>
+<td>documentatie niet bijgewerkt; formele afwijking zonder risico</td>
+<td>bij de herziening</td>
+<td>binnen 12 maanden</td>
+<td>register</td>
+</tr>
+</tbody>
+</table>
+<p>Overschreden termijn: de ISO meldt het aan de CISO, die het agendeert. Twee keer over de termijn: de afwijking wordt
+een risico in het risicoregister, met de eigenaar van de afwijking als risico-eigenaar.</p>
+<h2 id="6-verbeterregister-en-verbeterplan">6. Verbeterregister en verbeterplan<a class="anker" href="#6-verbeterregister-en-verbeterplan" aria-label="Link naar deze kop">#</a></h2>
+<p>Naast het afwijkingenregister een verbeterregister voor verbetermogelijkheden: uit de directiebeoordeling, uit
+aanbevelingen van audits, uit evaluaties, uit medewerkers. Elk item met eigenaar, verwacht effect en status.
+Jaarlijks na de directiebeoordeling stelt het tactische overleg uit beide registers het <strong>verbeterplan</strong> op, met
+eigenaar, datum en de KPI waarop het effect zichtbaar moet worden. De directie stelt het vast.</p>
+<h2 id="7-waar-het-register-staat">7. Waar het register staat<a class="anker" href="#7-waar-het-register-staat" aria-label="Link naar deze kop">#</a></h2>
+<p>Een eigen register naast het risicoregister, met dezelfde opzet en eigenaarslogica, tot een GRC-voorziening er is.
+Het servicedesksysteem blijft de bron voor incidenten en wijzigingen; een afwijking uit een incident verwijst naar
+het ticketnummer. Kies je voor inrichting in het servicedesksysteem, beleg dan wie die inrichting doet en bewaakt.</p>
+<h2 id="8-rapportage">8. Rapportage<a class="anker" href="#8-rapportage" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Wanneer</th>
+<th>Wat</th>
+<th>Aan wie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direct</td>
+<td>nieuwe kritieke afwijking</td>
+<td>CISO, stuurgroep, directie</td>
+</tr>
+<tr>
+<td>elke vergadering</td>
+<td>nieuwe afwijkingen, overschreden termijnen, gesloten afwijkingen</td>
+<td>tactisch overleg</td>
+</tr>
+<tr>
+<td>halfjaarlijks</td>
+<td>totalen per klasse, bron en gemeente; doorlooptijd; openstaand over termijn</td>
+<td>stuurgroep, directie</td>
+</tr>
+<tr>
+<td>jaarlijks</td>
+<td>trend, effectiviteit, verbeterplan</td>
+<td>directie (directiebeoordeling)</td>
+</tr>
+<tr>
+<td>jaarlijks</td>
+<td>afwijkingen die de collegeverklaring raken</td>
+<td>colleges (ENSIA)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bijlage-velden">Bijlage. Velden<a class="anker" href="#bijlage-velden" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Afwijkingenregister:</strong> nummer (AFW-jjjj-nnn) · datum constatering · bron · eis (norm, wet, beleid, contract,
+VvT-nummer) · waarneming · gemeente(n) · ernst · eigenaar · correctie met datum · oorzaak · elders ja of nee ·
+corrigerende maatregel met eigenaar en datum · effect vastgesteld (hoe, wanneer, door wie) · status · verwijzing
+naar risico of verbeteractie.</p>
+<p><strong>Verbeterregister:</strong> nummer · bron · verbetermogelijkheid · eigenaar · verwacht effect · KPI · status · opgenomen in
+verbeterplan ja of nee.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/bio2-deel1-in-het-ims">governance/bio2-deel1-in-het-ims</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
