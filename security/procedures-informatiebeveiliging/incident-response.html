@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Procedure datalekken en beveiligingsincidenten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> › <span>Procedure datalekken en beveiligingsincidenten</span></nav><!-- /kruimelpad -->
+<h1>Procedure datalekken en beveiligingsincidenten</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> · <a href="incident-response.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> procedure van het team informatiebeveiliging en privacy (IB&amp;P) van een regionale samenwerking van gemeenten, versie 1.1.3 (november 2024), in gebruik sinds 2016. Voor de commons herschreven in een vaste opbouw; de meldplicht onder de Cyberbeveiligingswet en de bewijsregel zijn aanvullingen van de commons (2026) en staan als zodanig gemarkeerd.</p>
+</blockquote>
+<h2 id="doel">Doel<a class="anker" href="#doel" aria-label="Link naar deze kop">#</a></h2>
+<p>Elk datalek en elk beveiligingsincident wordt gemeld, beoordeeld, beperkt, opgelost en geëvalueerd, langs
+vaste rollen en binnen de wettelijke termijnen. Een datalek is een inbreuk op de beveiliging met een kans
+op nadelige gevolgen voor de bescherming van persoonsgegevens (AVG artikel 4). Een beveiligingsincident is
+een gebeurtenis die de vertrouwelijkheid, integriteit of beschikbaarheid van informatie of systemen
+daadwerkelijk heeft geraakt. Ze overlappen vaak, en daarom is dit één procedure.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
+<p>Altijd als iemand iets ziet dat een incident kan zijn. Melden mag iedereen: medewerker, inhuur, leverancier,
+inwoner. Niet melden is het risico, niet te veel melden. Een melding die achteraf geen incident blijkt,
+wordt afgesloten als gebeurtenis en kost een kwartier.</p>
+<p>Deze procedure gaat over de afhandeling binnen de organisatie. Groeit een incident uit tot een calamiteit,
+dan neemt het <a href="../../bcm/calamiteitenteam-digitaal-opzetten/">calamiteitenteam</a> de coördinatie over; deze
+procedure loopt dan door voor de registratie en de meldplichten.</p>
+<h2 id="rollen">Rollen<a class="anker" href="#rollen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Melder</td>
+<td>Meldt direct, beperkt waar mogelijk de blootstelling, noteert wat er is gezien</td>
+</tr>
+<tr>
+<td>Servicedesk</td>
+<td>Registreert, bepaalt of het een beveiligingsincident is, belt bij twijfel de (C)ISO</td>
+</tr>
+<tr>
+<td>(C)ISO</td>
+<td>Neemt de melding in ontvangst, stelt bewijs veilig, bepaalt prioriteit en of een responsteam nodig is; informeert CIO en FG</td>
+</tr>
+<tr>
+<td>Privacy officer en FG</td>
+<td>Beoordelen of er persoonsgegevens zijn geraakt, of er aan de Autoriteit Persoonsgegevens en aan betrokkenen gemeld moet worden; de FG beslist</td>
+</tr>
+<tr>
+<td>CIO</td>
+<td>Proceseigenaar; wordt altijd geïnformeerd, ook als er geen melding aan de AP nodig is</td>
+</tr>
+<tr>
+<td>Verantwoordelijk directeur of manager</td>
+<td>Eigenaar van het incident in de lijn; besluit over aangifte en responsteam, informeert betrokkenen</td>
+</tr>
+<tr>
+<td>Probleemeigenaar</td>
+<td>Voert de toegewezen maatregel uit</td>
+</tr>
+<tr>
+<td>Incidentcoördinator IT</td>
+<td>Verhelpt technisch; de (C)ISO is zelden de primaire behandelaar</td>
+</tr>
+</tbody>
+</table>
+<p>Betrek op afroep: communicatieadviseur, juridisch adviseur, functioneel beheer, de leverancier van het
+systeem, de IBD, de SOC-dienstverlener.</p>
+<h2 id="stappen">Stappen<a class="anker" href="#stappen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-melden-en-blootstelling-beperken">1. Melden en blootstelling beperken<a class="anker" href="#1-melden-en-blootstelling-beperken" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>De melder meldt bij de servicedesk, via het formulier, per mail of telefonisch. Vertrouwelijke zaken of
+  personen: ook rechtstreeks bij de CISO.</li>
+<li>Bij een mogelijk besmet apparaat: niet meer gebruiken, niet uitzetten, netwerk eraf maar de stroom erop.
+  Noteer hoe het is ontdekt, wanneer, op welk apparaat, in welke applicatie.</li>
+<li>De melder informeert de eigen leidinggevende.</li>
+</ul>
+<h3 id="2-ontvangen-en-classificeren">2. Ontvangen en classificeren<a class="anker" href="#2-ontvangen-en-classificeren" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>De servicedesk stelt vast of het een beveiligingsincident is (kennisitem) en belt in dat geval direct
+  een beschikbare ISO of de CISO.</li>
+<li>De (C)ISO stelt bewijsmateriaal veilig en opent het meldingsdossier.</li>
+<li>Acute situaties zijn een <strong>P1</strong>: direct risico op schade aan de bedrijfsvoering, inbreuk op een systeem
+  met gevoelige data, incidenten rond accounts van bestuurders of de gemeentesecretaris, spoedpatches, of het
+  loskoppelen van een systeem. Alle andere beveiligingsmeldingen lopen als tweedelijnsmelding bij IB&amp;P.</li>
+<li>CIO en FG worden direct geïnformeerd.</li>
+</ul>
+<h3 id="3-beoordelen-datalek-of-niet">3. Beoordelen: datalek of niet<a class="anker" href="#3-beoordelen-datalek-of-niet" aria-label="Link naar deze kop">#</a></h3>
+<p>Privacy officer en FG beoordelen samen:</p>
+<ol>
+<li id="punt-3-1">Zijn er persoonsgegevens geraakt? Zo nee, dan verder als beveiligingsincident (stap 5). <a class="anker" href="#punt-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-2">Wat zijn ernst en aard? <a class="anker" href="#punt-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-3">Moet het aan de Autoriteit Persoonsgegevens worden gemeld? De FG beslist, aan de hand van de richtsnoeren
+   van de AP. Niet elk datalek is meldplichtig; nodeloze meldingen worden voorkomen. <a class="anker" href="#punt-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-4">Moeten betrokkenen worden geïnformeerd? <a class="anker" href="#punt-3-4" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h3 id="4-datalek-direct-afhandelen">4. Datalek direct afhandelen<a class="anker" href="#4-datalek-direct-afhandelen" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>De FG informeert, afhankelijk van ernst: gemeentesecretaris of directeur, portefeuillehouder, CIO, manager
+  IT, persvoorlichter, de verantwoordelijk manager, de CISO.</li>
+<li>Bij criminele activiteit beslist de verantwoordelijk directeur over aangifte; de politie kan het onderzoek
+  overnemen.</li>
+<li>De verantwoordelijk directeur vormt zo nodig een crisisteam datalek, dat de repressieve en correctieve
+  maatregelen bepaalt. Per maatregel een probleemeigenaar.</li>
+<li>FG of privacy officer registreren het datalek, meldingsplichtig of niet: feiten, de tekst van de
+  kennisgeving aan betrokkenen, de maatregelen.</li>
+<li>Melding aan de AP via het meldloket, binnen <strong>72 uur</strong> na eerste constatering.</li>
+<li>De verantwoordelijk manager informeert betrokkenen als de inbreuk waarschijnlijk nadelige gevolgen heeft
+  voor hun persoonlijke levenssfeer. In de kennisgeving: aard van de inbreuk, waar meer informatie te
+  krijgen is, aanbevolen maatregelen. Persoonlijk bij een beperkt aantal betrokkenen; bij grote aantallen
+  via website en pers, in afstemming met communicatie en juridische zaken. Wees open over wat er is
+  gebeurd, bied excuses aan, zeg wat de betrokkene zelf kan doen.</li>
+<li>Na uitvoering wordt het crisisteam opgeheven.</li>
+</ul>
+<h3 id="5-beveiligingsincident-direct-afhandelen">5. Beveiligingsincident direct afhandelen<a class="anker" href="#5-beveiligingsincident-direct-afhandelen" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>De CISO informeert, afhankelijk van ernst: gemeentesecretaris, portefeuillehouder, CIO, IBD, manager IT,
+  functioneel beheer, persvoorlichter, de verantwoordelijk manager. Vaste opbouw van het bericht: korte
+  inleiding, actuele status, wat er nu gebeurt, wat er nog komt, wat er van de ontvanger wordt verwacht.</li>
+<li>De verantwoordelijk directeur vormt zo nodig een incident-responsteam; de IBD kan erbij. Spelregels:
+  niemand praat buiten het team zonder toestemming van management of CISO; alles wat het team schrijft is
+  feitelijk, want het kan in een strafrechtelijk onderzoek belanden; dagelijks overleg; tijd wordt
+  bijgehouden.</li>
+<li>Bewijs verzamelen en veiligstellen: images van schijven, netwerkverkeer, applicatie- en toegangslogs,
+  foto's van de omgeving. Inventarislijst met wie, wanneer, wat.</li>
+<li>Forensisch onderzoek: analyseer, reconstrueer, documenteer. Werk op een kopie, bewaar het origineel,
+  houd de resultaten herleidbaar.</li>
+<li>Maatregelen bepalen en uitvoeren, per maatregel een probleemeigenaar.</li>
+<li>Na uitvoering wordt het responsteam opgeheven; CIO en CISO worden geraadpleegd, de gemeentesecretaris
+  geïnformeerd.</li>
+</ul>
+<h3 id="6-structureel-oplossen">6. Structureel oplossen<a class="anker" href="#6-structureel-oplossen" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>De probleemeigenaar stelt een onderzoeksteam samen dat de oorzaak vaststelt en rapporteert.</li>
+<li>Op basis van het rapport komt een verbeterplan, afgestemd met leveranciers, functioneel beheer, FG, CISO en
+  juridisch adviseur. De verbeteracties komen in het meldingsregister.</li>
+<li>Na uitvoering worden FG en CISO geïnformeerd en wordt de status in het register bijgewerkt.</li>
+<li>Het register wordt periodiek met de CIO besproken.</li>
+</ul>
+<h3 id="7-vragen-tijdens-en-na-het-incident">7. Vragen tijdens en na het incident<a class="anker" href="#7-vragen-tijdens-en-na-het-incident" aria-label="Link naar deze kop">#</a></h3>
+<p>Wat is er precies gebeurd, om welk type incident ging het, wanneer en hoe ontdekt. Wat zijn de gevolgen
+voor organisatie en betrokkenen, en zijn die te kwantificeren. Wat was de oorzaak: techniek, mens of
+proces. Welke stappen zijn gezet, hoe snel, en is er nog actie nodig van iemand binnen of buiten de
+organisatie. Wat hebben we geleerd en welke maatregelen volgen. Wat zijn de conclusies en aanbevelingen.</p>
+<h2 id="aanvulling-van-de-commons-de-meldplicht-onder-de-cyberbeveiligingswet">Aanvulling van de commons: de meldplicht onder de Cyberbeveiligingswet<a class="anker" href="#aanvulling-van-de-commons-de-meldplicht-onder-de-cyberbeveiligingswet" aria-label="Link naar deze kop">#</a></h2>
+<blockquote>
+<p>De oorspronkelijke procedure kent alleen de AVG-meldplicht. Onder de Cyberbeveiligingswet (de Nederlandse
+uitwerking van NIS2) geldt voor gemeenten een tweede meldplicht, met kortere termijnen.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Wat</th>
+<th>Termijn</th>
+<th>Aan wie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vroegtijdige waarschuwing van een significant incident</td>
+<td>binnen <strong>24 uur</strong> na kennisname</td>
+<td>de bevoegde autoriteit en het CSIRT (voor gemeenten: de IBD als schakel naar het NCSC)</td>
+</tr>
+<tr>
+<td>Incidentmelding met eerste beoordeling</td>
+<td>binnen <strong>72 uur</strong></td>
+<td>idem</td>
+</tr>
+<tr>
+<td>Eindverslag</td>
+<td>binnen <strong>een maand</strong></td>
+<td>idem</td>
+</tr>
+<tr>
+<td>Datalek met persoonsgegevens</td>
+<td>binnen <strong>72 uur</strong></td>
+<td>Autoriteit Persoonsgegevens, los van de Cbw-melding</td>
+</tr>
+</tbody>
+</table>
+<p>Een incident is significant als het de dienstverlening ernstig verstoort of financiële schade veroorzaakt die
+de organisatie niet binnen de begroting kan opvangen, of als het anderen aanzienlijke schade toebrengt. Dat
+oordeel is geen IT-oordeel. Leg daarom vooraf vast wie het namens de organisatie geeft en hoe die persoon
+binnen 24 uur bereikbaar is, ook in het weekend. Zie <a href="../../governance/val-ik-onder-de-cbw/">Val ik onder de Cbw?</a>.</p>
+<p>Voeg aan stap 2 toe: bij elke P1 beoordeelt de CISO binnen een uur of het incident significant kan zijn, en
+start dan de klok van 24 uur.</p>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
+<p>Wat je aan het eind kunt laten zien:</p>
+<ul>
+<li>Het <strong>meldingsregister</strong> met alle incidenten en datalekken van het jaar, ook de niet-meldplichtige, met
+  per incident de classificatie, de maatregelen en de status van de verbeteracties.</li>
+<li>Per meldplichtig datalek: de <strong>melding aan de AP</strong> met tijdstempel, en de kennisgeving aan betrokkenen.</li>
+<li>Per significant incident: de <strong>vroegtijdige waarschuwing</strong>, de melding en het eindverslag, met tijdstempels.</li>
+<li>De <strong>inventarislijst van bewijsmateriaal</strong> van een incident waar forensisch onderzoek is gedaan.</li>
+<li>Het <strong>verslag van de periodieke bespreking</strong> van het register met de CIO.</li>
+</ul>
+<h2 id="bio-2-0">BIO 2.0<a class="anker" href="#bio-2-0" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Wat deze procedure daarvoor levert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.24 Plannen en voorbereiden van het beheer van informatiebeveiligingsincidenten</td>
+<td>De rollen, stappen en meldkanalen zijn vastgelegd en bekend</td>
+</tr>
+<tr>
+<td>5.25 Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen</td>
+<td>Stap 2 en 3: classificatie door servicedesk, (C)ISO, privacy officer en FG</td>
+</tr>
+<tr>
+<td>5.26 Reageren op informatiebeveiligingsincidenten</td>
+<td>Stap 4 en 5: maatregelen met probleemeigenaar, responsteam, communicatie</td>
+</tr>
+<tr>
+<td>5.27 Leren van informatiebeveiligingsincidenten</td>
+<td>Stap 6: onderzoek, verbeterplan, register, periodieke bespreking</td>
+</tr>
+<tr>
+<td>5.28 Verzamelen van bewijsmateriaal</td>
+<td>Stap 5: veiligstellen, inventarislijst, werken op een kopie</td>
+</tr>
+<tr>
+<td>6.8 Melden van informatiebeveiligingsgebeurtenissen</td>
+<td>Stap 1: iedereen meldt, via vaste kanalen</td>
+</tr>
+<tr>
+<td>5.34 Privacy en bescherming van persoonsgegevens</td>
+<td>Stap 3 en 4, met AVG artikel 33 en 34</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit<a class="anker" href="#zo-leg-je-het-uit" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Aan de directie.</strong> "Een incident kost ons altijd iets. Zonder procedure kost het ons daarnaast de
+meldtermijn, en die is niet in te halen. Deze procedure zorgt dat de juiste mensen binnen een uur weten wat
+er speelt en dat de klok voor de AP en de toezichthouder op tijd gaat lopen."</p>
+<p><strong>Aan de servicedesk.</strong> "Jullie zijn de eerste schakel. Twijfel je of iets een beveiligingsincident is, bel
+dan. Een telefoontje te veel is geen probleem, een melding die blijft liggen wel."</p>
+<p><strong>Aan een manager.</strong> "Als het in jouw afdeling gebeurt, ben jij de eigenaar. Niet omdat het jouw schuld is,
+maar omdat jij weet wat het voor jouw proces en jouw inwoners betekent. Wij ondersteunen."</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/procedures-informatiebeveiliging">security/procedures-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

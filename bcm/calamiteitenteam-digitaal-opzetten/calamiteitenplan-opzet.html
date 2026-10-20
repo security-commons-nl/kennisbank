@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Opzet van een cyber- en IT-calamiteitenplan</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">BCM</a> › <a href="./">Een digitaal calamiteitenteam opzetten</a> › <span>Opzet van een cyber- en IT-calamiteitenplan</span></nav><!-- /kruimelpad -->
+<h1>Opzet van een cyber- en IT-calamiteitenplan</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Een digitaal calamiteitenteam opzetten</a> · <a href="calamiteitenplan-opzet.md">Markdown-bron</a></p>
+<p>Het team staat, de taakkaarten liggen klaar. Wat dan nog ontbreekt is het plan dat zegt wanneer dat team in
+actie komt, wie het mag activeren en hoe het zich verhoudt tot de crisisorganisatie die er al is. Dit is
+de opzet van zo'n plan, afgeleid van een plan dat een gemeente sinds 2025 gebruikt voor zichzelf en de
+gemeenten waaraan zij de bedrijfsvoering levert. Neem de hoofdstukken over en vul ze in voor je eigen
+organisatie.</p>
+<p>In BIO 2.0 helpt een vastgesteld en geoefend plan bewijs leveren voor <strong>5.24</strong> <em>Plannen en voorbereiden van het
+beheer van informatiebeveiligingsincidenten</em>, <strong>5.26</strong> <em>Reageren op informatiebeveiligingsincidenten</em>, <strong>5.29</strong>
+<em>Informatiebeveiliging tijdens een verstoring</em> en <strong>5.30</strong> <em>ICT-gereedheid voor bedrijfscontinuïteit</em>. Het plan alleen
+is geen bewijs; het verslag van de oefening wel.</p>
+<h2 id="1-reikwijdte-wat-het-plan-wel-en-niet-doet">1. Reikwijdte: wat het plan wel en niet doet<a class="anker" href="#1-reikwijdte-wat-het-plan-wel-en-niet-doet" aria-label="Link naar deze kop">#</a></h2>
+<p>Leg drie grenzen vast, anders gaat het plan over alles en wordt het nergens gebruikt.</p>
+<ul>
+<li><strong>Alleen het hoogste escalatieniveau.</strong> De gewone storingen en beveiligingsincidenten lopen via
+  incidentmanagement en de procedures van IT-beheer en informatiebeveiliging. Het plan begint waar die
+  ophouden.</li>
+<li><strong>Alleen de eigen organisatie.</strong> Een ransomware-aanval op een zorginstelling in de gemeente of een
+  storing bij een internetprovider is maatschappelijk wel relevant, maar valt onder de gewone
+  crisisbeheersing, niet onder dit plan.</li>
+<li><strong>Niet bedrijfscontinuïteit.</strong> Het plan bestrijdt de calamiteit; wat afdelingen doen om door te werken
+  staat in hun continuïteitsplannen. Hoe beter die op orde zijn, hoe minder het team hoeft te
+  coördineren.</li>
+</ul>
+<p>Datalekken vallen alleen onder het plan als ze uit een IT- of cybercalamiteit voortkomen. Een verkeerd
+verstuurde brief blijft bij de gewone datalekprocedure.</p>
+<h2 id="2-drie-niveaus-en-het-onderscheid-tussen-storing-en-aanval">2. Drie niveaus, en het onderscheid tussen storing en aanval<a class="anker" href="#2-drie-niveaus-en-het-onderscheid-tussen-storing-en-aanval" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Wat het is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gebeurtenis</td>
+<td>Een waarneembaar signaal in een systeem: een melding van een beveiligingstool, een monitor die buiten de normale waarden komt. Kan onschuldig zijn, kan het begin van iets zijn.</td>
+</tr>
+<tr>
+<td>Incident</td>
+<td>Een verstoring van de dienstverlening, of informatie die ongeoorloofd is ingezien, gewijzigd of naar buiten gebracht.</td>
+</tr>
+<tr>
+<td>Calamiteit</td>
+<td>Een ernstig incident met risico op grote gevolgen voor de dienstverlening of grote schade (financieel, imago, bestuurlijk, veiligheid), of waarvoor geen standaardoplossing bestaat.</td>
+</tr>
+</tbody>
+</table>
+<p>Maak daarnaast onderscheid naar oorzaak. Een <strong>IT-calamiteit</strong> komt door een storing zonder kwade opzet:
+stroom, een leverancier, een menselijke fout. Een <strong>cybercalamiteit</strong> komt door een aanval. Het team is
+hetzelfde, maar wie alarmeert en wie bij afwezigheid voorzit verschilt (zie 5 en 6).</p>
+<h2 id="3-waar-het-team-zich-op-richt">3. Waar het team zich op richt<a class="anker" href="#3-waar-het-team-zich-op-richt" aria-label="Link naar deze kop">#</a></h2>
+<p>Vijf taken, en niet meer. Het team lost de storing niet zelf op; dat doen IT-beheer en, bij een aanval,
+het securityteam.</p>
+<ol>
+<li id="punt-3-1"><strong>Impact bepalen</strong>: wat werkt er niet, en wat dreigt nog uit te vallen. <a class="anker" href="#punt-3-1" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-2"><strong>Impact beperken</strong>: welke ingrepen de schade kleiner maken, en wat hun bijwerkingen zijn. <a class="anker" href="#punt-3-2" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-3"><strong>Oplossen faciliteren</strong>: externe hulp inschakelen, prioriteit stellen, knopen doorhakken. <a class="anker" href="#punt-3-3" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-4"><strong>Besluitvorming stroomlijnen</strong>: snel besluiten op onvolledige informatie, en dat navolgbaar vastleggen. <a class="anker" href="#punt-3-4" aria-label="Link naar dit punt">#</a></li>
+<li id="punt-3-5"><strong>Communicatie stroomlijnen</strong>: wie vertelt wat aan wie. <a class="anker" href="#punt-3-5" aria-label="Link naar dit punt">#</a></li>
+</ol>
+<h2 id="4-verhouding-tot-de-crisisorganisatie">4. Verhouding tot de crisisorganisatie<a class="anker" href="#4-verhouding-tot-de-crisisorganisatie" aria-label="Link naar deze kop">#</a></h2>
+<p>Het calamiteitenteam valt buiten de wettelijke crisisorganisatie. Leg daarom vast wanneer het overdraagt.</p>
+<ul>
+<li>Is de impact hoog, kritiek of langdurig, dan adviseert de voorzitter de gemeentesecretaris om het
+  team bevolkingszorg of een gemeentelijk crisisteam te activeren. De gemeentesecretaris besluit.</li>
+<li>Is de maatschappelijke impact groot, dan kan de gemeentesecretaris de burgemeester adviseren op te
+  schalen naar een GRIP-situatie.</li>
+<li>Omgekeerd kan de gemeentesecretaris het calamiteitenteam activeren bij een andersoortige crisis die
+  digitaal kan doorslaan.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hoogste actieve team</th>
+<th>Beslist</th>
+<th>Eindverantwoordelijk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team bevolkingszorg of gemeentelijk crisisteam</td>
+<td>Gemeentesecretaris</td>
+<td>Gemeentesecretaris</td>
+</tr>
+<tr>
+<td>Alleen het calamiteitenteam</td>
+<td>Voorzitter calamiteitenteam</td>
+<td>Gemeentesecretaris</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Noodprocedure.</strong> Moet er direct worden ingegrepen om verdere schade te voorkomen, bijvoorbeeld een
+applicatie uitzetten, dan mag de voorzitter of diens plaatsvervanger dat doen en meldt hij het zo snel
+mogelijk aan wie beslissingsbevoegd is. Ligt er een spoedbesluit vóór het eerste overleg, dan zijn de
+leden die op dat moment beschikbaar zijn bevoegd.</p>
+<p><strong>Zit het team grotendeels in het managementteam bedrijfsvoering?</strong> Maak dan het verschil scherp: het
+calamiteitenteam bestrijdt de calamiteit, het managementteam beheerst de gevolgen voor de rest van de
+eigen dienstverlening.</p>
+<p><strong>Lever je bedrijfsvoering aan andere gemeenten?</strong> Een calamiteit raakt dan bijna altijd iedereen.
+Spreek af dat de gemeentesecretaris van de leverende gemeente aanspreekpunt is en afstemt met de
+collega-secretarissen. Raakt het één afnemer, dan stuurt die zelf aan en wordt de leverende gemeente
+geïnformeerd. Zolang alleen het calamiteitenteam actief is, communiceert de voorzitter namens de
+gemeentesecretaris; is de crisisorganisatie actief, dan communiceert die.</p>
+<h2 id="5-samenstelling-en-vervanging">5. Samenstelling en vervanging<a class="anker" href="#5-samenstelling-en-vervanging" aria-label="Link naar deze kop">#</a></h2>
+<p>De vaste kern, met de rollen uitgewerkt in <a href="taakkaarten.html">taakkaarten.md</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Vervanger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voorzitter (directeur bedrijfsvoering of CIO)</td>
+<td>CIO, daarna manager IT-beheer</td>
+</tr>
+<tr>
+<td>Manager IT-beheer</td>
+<td>Teammanager regie en processen</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Information security officer</td>
+</tr>
+<tr>
+<td>Secretaris</td>
+<td>Vaste vervanger of pool</td>
+</tr>
+<tr>
+<td>Communicatieadviseur</td>
+<td>Vaste vervanger; extra capaciteit uit de crisiscommunicatiepool</td>
+</tr>
+</tbody>
+</table>
+<p>Bij afwezigheid van beide voorzitters zit bij een <strong>cybercalamiteit</strong> de CISO voor, bij een
+<strong>IT-calamiteit</strong> de manager IT-beheer. Op afroep sluiten aan: servicemanagement (als de beheerpartij
+betrokken is), relatiebeheer (bij veel afstemming met regiopartners), juridische zaken, externe
+specialisten, en bij langdurige calamiteiten een vertegenwoordiger van de getroffen afdeling.</p>
+<p>Loop vooraf na dat niemand tegelijk in het calamiteitenteam en in het team bevolkingszorg zit. Een
+dubbelfunctie blijkt pas tijdens de calamiteit, en dan is het te laat.</p>
+<h2 id="6-activeren">6. Activeren<a class="anker" href="#6-activeren" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>De <strong>manager IT-beheer</strong> (bij een IT-incident) of de <strong>CISO</strong> (bij een cyberincident) alarmeert het team
+  of informeert het alleen, via de afgesproken kanalen.</li>
+<li>De <strong>voorzitter</strong> besluit tot activeren, na overleg met de vaste leden.</li>
+<li>Tijdens kantoortijd is de kern <strong>binnen een half uur</strong> bij elkaar. Spreek af wat er buiten kantoortijd
+  geldt. Zonder piketregeling heb je alleen een bellijst ("zacht piket"), en dat is niet zeker.</li>
+<li>Leg de kanalen vast: een Teams-omgeving voor informatie, een chatkanaal voor signalering, en een
+  reservekanaal buiten de eigen omgeving voor als Teams zelf plat ligt. De secretaris beheert de
+  toegang.</li>
+</ul>
+<p><strong>Wanneer opschalen.</strong> Geen zwart-wit regels, wel richtsnoeren:</p>
+<ul>
+<li>Impact helder, protocollen bestaan, oplossing in zicht: niet opschalen.</li>
+<li>Risico op grote schade, breed opgevat (letsel, veiligheid, geld, imago, politiek, gegevens): opschalen.</li>
+<li>De hele organisatie of de kritieke dienstverlening geraakt, en onzeker hoe lang: opschalen. Kritieke
+  dienstverlening is alles in direct contact met inwoners (balie, klantcontact) en zaken als bruggen en
+  verkeerslichten; de lijst komt uit de bedrijfscontinuïteitsanalyse.</li>
+<li>Impact onduidelijk: mag opschalen.</li>
+<li>Alleen niet-kritieke processen, maar lange oplostijd: mag opschalen.</li>
+</ul>
+<p>Alleen incidenten met de hoogste twee prioriteiten in incidentmanagement komen in aanmerking.</p>
+<h2 id="7-communicatie">7. Communicatie<a class="anker" href="#7-communicatie" aria-label="Link naar deze kop">#</a></h2>
+<p>Twee stromen, en houd ze uit elkaar.</p>
+<ul>
+<li><strong>Over het incident zelf</strong> communiceert het calamiteitenteam, met de communicatieadviseur.</li>
+<li><strong>Over de gevolgen voor de dienstverlening</strong> communiceert de afdeling die de dienst levert, of de
+  crisisorganisatie als die actief is.</li>
+</ul>
+<p>Voorbeeld: het team meldt dat de gemeente is getroffen door malware op het systeem voor reisdocumenten.
+Burgerzaken meldt dat er tijdelijk geen paspoorten worden uitgegeven. IT-beheer blijft de gebruikers
+informeren via het vaste storingsprotocol: wat werkt niet, wanneer is het verwachte herstel, wat is het
+alternatief.</p>
+<h2 id="8-afschalen-nazorg-en-evaluatie">8. Afschalen, nazorg en evaluatie<a class="anker" href="#8-afschalen-nazorg-en-evaluatie" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Afschalen besluit de gemeentesecretaris (als de crisisorganisatie actief is) of de voorzitter.</li>
+<li>De voorzitter zorgt voor een warme overdracht naar de lijn. De secretaris sluit het dossier af.</li>
+<li>Bij een aanval regelt de CIO de aangifte, voor zover die nog niet is gedaan.</li>
+<li>Na elke inzet: een oorzaakanalyse (IT-beheer), de risicoanalyse bijwerken (CISO), nieuwe inzichten in
+  de architectuurtool vastleggen, en een evaluatie van het optreden van het team met het
+  <a href="evaluatiesessie-sjabloon.pptx">evaluatiesjabloon</a>.</li>
+<li>Vergeet de mensen niet. Wie dagen een calamiteit heeft bestreden, heeft na afloop aandacht nodig, en
+  tijdens de calamiteit ook: pauzes, eten, aflossing.</li>
+</ul>
+<h2 id="9-borging">9. Borging<a class="anker" href="#9-borging" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Elk lid van het team kent het plan en is getraind op de eigen rol.</li>
+<li>Het team oefent <strong>minstens eens per jaar</strong> met een realistisch scenario.</li>
+<li><strong>Eens per twee jaar</strong> een bestuurlijke oefening, met bestuur, team bevolkingszorg en calamiteitenteam.</li>
+<li>Het plan wordt jaarlijks herzien op basis van oefeningen en echte inzet.</li>
+</ul>
+<p>Een plan op papier is het begin, geen bewijs. Het bewijs is een team dat bereikbaar is, weet wie wat
+doet, het draaiboek op tafel legt en op tijd besluit om bij elkaar te komen. Dat haal je alleen uit
+oefenen.</p>
+<h2 id="do-s-en-don-ts">Do's en don'ts<a class="anker" href="#do-s-en-don-ts" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li><strong>Doe:</strong> geef je telefoon in beheer bij iemand die bepaalt of je gestoord moet worden.</li>
+<li><strong>Doe:</strong> zorg voor koffie, eten, pauzes en rust.</li>
+<li><strong>Niet:</strong> voicemail als bereikbaarheid.</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/bcm/calamiteitenteam-digitaal-opzetten">bcm/calamiteitenteam-digitaal-opzetten</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

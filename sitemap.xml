@@ -25,6 +25,10 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/hersteltest/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/identiteit-en-mail-meten/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/incident-response-procedures/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/ingrijpen-met-checklist/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/ingrijpen-met-checklist/actie-checklist-sjabloon.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/ingrijpen-met-checklist/actie-checklist-voorbeeld-clickfix.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/ingrijpen-met-checklist/windows-r-uitschakelen.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/just-in-time-beheerrechten/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/ketenafhankelijkheden/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/killchain-naast-je-controls/</loc></url>
@@ -48,6 +52,15 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/patchen-met-dekking/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/pentest-en-exit-bij-leveranciers/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/periodiek-pentesten/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/afwijking-van-beleid.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/cyberdreigingen-en-kwetsbaarheden.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/incident-response.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/inzage-mailbox-en-documenten.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/leveranciersmanagement.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/rapporteren.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/security-classificatie.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/procedures-informatiebeveiliging/vaststellen-strategisch-beleid.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/referenties-tooling/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/regionaal-soc/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/risicoanalyse-aanvalspaden/</loc></url>
@@ -135,6 +148,7 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/sjabloon.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/calamiteitenplan-opzet.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/logboekformat.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/scenariodenken-bob.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/sleutelbesluiten-format.html</loc></url>
@@ -175,6 +189,13 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/beleidsset-generator.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/bio2-implementeren/plan-van-aanpak-sjabloon.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/breakglass-account.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/bruikleenovereenkomst.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/checklist-assurance-verklaring.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/defender-beheerplan.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/geheimhoudingsverklaring.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/reglement-it-apparatuur.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/model.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/governance/risicogestuurd-managementsysteem/prompts.html</loc></url>

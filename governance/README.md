@@ -24,6 +24,7 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 4. [BIO 2.0 invoeren, een plan van aanpak met urenraming](bio2-implementeren/)
 5. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
 6. [AI-beleid van een regionale samenwerking](ai-beleid/)
+7. [Zes hulpmiddelen voor apparatuur, toegang en leveranciers](hulpmiddelen-toegang-apparatuur-en-leveranciers/)
 
 ## Bijdragen
 

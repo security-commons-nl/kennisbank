@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Procedure inzage in mailbox, SharePoint of document</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> › <span>Procedure inzage in mailbox, SharePoint of document</span></nav><!-- /kruimelpad -->
+<h1>Procedure inzage in mailbox, SharePoint of document</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> · <a href="inzage-mailbox-en-documenten.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> procedure van het team informatiebeveiliging en privacy (IB&amp;P) van een regionale samenwerking van gemeenten, in gebruik. Voor de commons herschreven in een vaste opbouw; de werkinstructie voor het servicedesksysteem is weggelaten omdat die aan één inrichting hangt.</p>
+</blockquote>
+<h2 id="doel">Doel<a class="anker" href="#doel" aria-label="Link naar deze kop">#</a></h2>
+<p>Soms moet een collega bij de mailbox of de documenten van een andere collega, bijvoorbeeld bij langdurige
+afwezigheid, ziekte of overlijden. Het gaat om zakelijke informatie, maar er staan altijd persoonsgegevens
+en privé-informatie tussen. Deze procedure regelt onder welke voorwaarden toegang wordt gegeven, wie dat
+toetst en wie het goedkeurt.</p>
+<h2 id="wanneer">Wanneer<a class="anker" href="#wanneer" aria-label="Link naar deze kop">#</a></h2>
+<p>Bij een praktische of wettelijke noodzaak: langdurige afwezigheid, overlijden, of een wettelijke
+verplichting zoals een verzoek onder de Wet open overheid, en alleen als de informatie op geen andere manier
+te krijgen is. Niet voor onderzoek bij een vermoeden van misbruik of bij ontslag op staande voet; daarvoor
+geldt de procedure uit het <a href="../../governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/reglement-it-apparatuur.md">reglement IT-apparatuur</a>, titel 3.</p>
+<h2 id="rollen">Rollen<a class="anker" href="#rollen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aanvrager</td>
+<td>Dient het verzoek in, informeert de eigen leidinggevende en, als dat kan, de persoon om wie het gaat</td>
+</tr>
+<tr>
+<td>Leidinggevende</td>
+<td>Is eindverantwoordelijk voor het verzoek</td>
+</tr>
+<tr>
+<td>Privacy officer</td>
+<td>Toetst op noodzaak, proportionaliteit en subsidiariteit en beperkt de toegang in omvang en duur; raadpleegt de FG bij ingewikkelde gevallen</td>
+</tr>
+<tr>
+<td>Gemeentesecretaris</td>
+<td>Keurt goed of af</td>
+</tr>
+<tr>
+<td>Functioneel beheer</td>
+<td>Verleent de toegang zoals goedgekeurd</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stappen">Stappen<a class="anker" href="#stappen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stap</th>
+<th>Wat</th>
+<th>R</th>
+<th>A</th>
+<th>C</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aanvraag</td>
+<td>Via het formulier in het servicedesksysteem. De aanvrager informeert de leidinggevende en de betrokken collega, tenzij dat echt niet kan</td>
+<td>Aanvrager</td>
+<td>Leidinggevende</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Toets</td>
+<td>De privacy officer beoordeelt: is de toegang nodig, is er geen minder ingrijpende manier, zijn de mails of documenten zo precies mogelijk afgebakend, is de termijn zo kort mogelijk. Het is niet bedoeld om zomaar de mailbox van een vertrokken collega in te zien</td>
+<td>Privacy officer</td>
+<td>Privacy officer</td>
+<td>FG bij ingewikkelde gevallen</td>
+<td>Aanvrager</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Besluit</td>
+<td>De gemeentesecretaris beoordeelt inhoudelijk en keurt goed of af; bij afwijzing eindigt het proces</td>
+<td>Gemeentesecretaris</td>
+<td>Gemeentesecretaris</td>
+<td></td>
+<td>Aanvrager</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Toegang</td>
+<td>Functioneel beheer geeft toegang, beperkt tot wat is goedgekeurd, en meldt waar de documenten staan</td>
+<td>Functioneel beheer</td>
+<td>Functioneel beheer</td>
+<td></td>
+<td>Aanvrager</td>
+</tr>
+</tbody>
+</table>
+<p>Het advies van de privacy officer benoemt altijd: doel, noodzaak, periode, zoektermen, informatieplicht en
+bezwaarrecht. Bij een Woo-verzoek geldt het bezwaarrecht niet; de betrokken medewerker leest dan mee met de
+documenten die ICT heeft opgehaald en juridische zaken heeft beoordeeld.</p>
+<h2 id="aanvulling-van-de-commons">Aanvulling van de commons<a class="anker" href="#aanvulling-van-de-commons" aria-label="Link naar deze kop">#</a></h2>
+<blockquote>
+<p>Drie punten die de oorspronkelijke procedure open laat.</p>
+</blockquote>
+<ul>
+<li><strong>Afwijkende bevoegdheden.</strong> Gaat het om een medewerker van de griffie, dan keurt de griffier goed; om de
+  gemeentesecretaris zelf, dan het college; om de griffier, dan de werkgeverscommissie. Leden van de
+  ondernemingsraad, vertrouwenspersonen en interne advocaten zijn uitgezonderd voor het mailverkeer in die
+  hoedanigheid. Dit staat in het reglement; neem het hier over.</li>
+<li><strong>Logging en einde van de toegang.</strong> Elke inzage wordt gelogd. Leg in stap 4 vast wanneer de toegang
+  automatisch vervalt en wie dat controleert.</li>
+<li><strong>Privé gemarkeerde mails</strong> worden nooit ingezien.</li>
+</ul>
+<h2 id="vastlegging-en-bewijs">Vastlegging en bewijs<a class="anker" href="#vastlegging-en-bewijs" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Het <strong>register van inzageverzoeken</strong> in het servicedesksysteem: aanvraag, advies, besluit, verleende
+  toegang, einddatum.</li>
+<li>De <strong>logging</strong> van de verleende toegang.</li>
+</ul>
+<h2 id="bio-2-0">BIO 2.0<a class="anker" href="#bio-2-0" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Wat deze procedure daarvoor levert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.15 Toegangsbeveiliging</td>
+<td>Toegang tot andermans informatie alleen na toets en besluit, beperkt in omvang en duur</td>
+</tr>
+<tr>
+<td>5.18 Toegangsrechten</td>
+<td>Rechten worden gericht verleend en weer ingetrokken</td>
+</tr>
+<tr>
+<td>5.34 Privacy en bescherming van persoonsgegevens</td>
+<td>De toets op noodzaak, proportionaliteit en subsidiariteit door de privacy officer</td>
+</tr>
+<tr>
+<td>8.15 Logging</td>
+<td>Elke inzage wordt vastgelegd</td>
+</tr>
+</tbody>
+</table>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/procedures-informatiebeveiliging">security/procedures-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

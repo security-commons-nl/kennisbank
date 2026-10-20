@@ -20,8 +20,8 @@ function element(attrs) {
     addEventListener(soort, f) { this._h[soort] = f; } };
 }
 
-const kaarten = [...html.matchAll(/<a class="item" href="[^"]*" data-vak="[^"]*" data-zoek="([^"]*)" data-barrieres="([^"]*)"/g)]
-  .map(m => element({ 'data-zoek': ontsnap(m[1]), 'data-barrieres': ontsnap(m[2]) }));
+const kaarten = [...html.matchAll(/<a class="item" href="([^"]*)" data-vak="[^"]*" data-zoek="([^"]*)" data-barrieres="([^"]*)"/g)]
+  .map(m => Object.assign(element({ 'data-zoek': ontsnap(m[2]), 'data-barrieres': ontsnap(m[3]) }), { href: m[1] }));
 const bronnen = [...html.matchAll(/<li data-zoek="([^"]*)"><a href="([^"]*)">([^<]*)<\/a>/g)]
   .map(m => Object.assign(element({ 'data-zoek': ontsnap(m[1]) }), { titel: ontsnap(m[3]) }));
 const syn = (html.match(/<script type="application\/json" id="synoniemen">([\s\S]*?)<\/script>/) || [])[1] || '[]';
@@ -49,7 +49,8 @@ function zoek(term, barriere) {
   els.zoek.value = term;
   els.barriere.value = barriere || '';
   els.zoek._h.input();
-  return { eigen: kaarten.filter(k => !k.hidden).length, anders: bronnen.filter(b => !b.hidden) };
+  return { eigen: kaarten.filter(k => !k.hidden).length, anders: bronnen.filter(b => !b.hidden),
+    kaarten: kaarten.filter(k => !k.hidden).map(k => k.href) };
 }
 const titels = r => r.anders.map(b => b.titel.toLowerCase());
 
@@ -82,6 +83,22 @@ r = zoek('ai');
 toets('ai vindt de AI-stukken, maar niet elk woord met die letters erin',
   r.anders.length > 0 && r.anders.every(b => /(^|[^a-z])ai/i.test(b.titel + ' ' + b.getAttribute('data-zoek'))),
   r.anders.map(b => b.titel).join(' | '));
+
+// Procedures, hulpmiddelen en het calamiteitenplan (portie 3) zijn te vinden op de woorden waarmee je ze zoekt.
+const vindt = (term, map) => zoek(term).kaarten.some(h => h.includes(map));
+for (const [term, map] of [
+  ['datalek', 'procedures-informatiebeveiliging'], ['incidentprocedure', 'procedures-informatiebeveiliging'],
+  ['meldplicht', 'procedures-informatiebeveiliging'], ['kwetsbaarheden', 'procedures-informatiebeveiliging'],
+  ['beleidsafwijking', 'procedures-informatiebeveiliging'], ['classificatie', 'procedures-informatiebeveiliging'],
+  ['biv', 'procedures-informatiebeveiliging'], ['inzage mailbox', 'procedures-informatiebeveiliging'],
+  ['leveranciersmanagement', 'procedures-informatiebeveiliging'], ['rapportage', 'procedures-informatiebeveiliging'],
+  ['clickfix', 'ingrijpen-met-checklist'], ['checklist', 'ingrijpen-met-checklist'], ['wijzigingsbeheer', 'ingrijpen-met-checklist'],
+  ['breakglass', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'], ['geheimhoudingsverklaring', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
+  ['bruikleen', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'], ['isae', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
+  ['assurance', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'], ['defender', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
+  ['reglement', 'hulpmiddelen-toegang-apparatuur-en-leveranciers'],
+  ['calamiteitenplan', 'calamiteitenteam-digitaal-opzetten'], ['opschalen', 'calamiteitenteam-digitaal-opzetten'],
+]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.
 toets('met een barriere gekozen blijven de bronnen van anderen weg', zoek('beleid', 'crisis').anders.length === 0);

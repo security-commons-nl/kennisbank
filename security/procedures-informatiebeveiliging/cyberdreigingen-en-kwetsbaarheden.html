@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Procedure cyberdreigingen en kwetsbaarheden</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> › <span>Procedure cyberdreigingen en kwetsbaarheden</span></nav><!-- /kruimelpad -->
+<h1>Procedure cyberdreigingen en kwetsbaarheden</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> · <a href="cyberdreigingen-en-kwetsbaarheden.md">Markdown-bron</a></p>
+<blockquote>
+<p><strong>Herkomst:</strong> procedure van de CISO van een regionale samenwerking van gemeenten, september 2025, opgesteld met de informatiebeveiliger, de technische en de business information security officer en de projectmanager BCM. Voor de commons herschreven in een vaste opbouw; de bewijsregel en de koppeling aan BIO 2.0 zijn aanvullingen van de commons.</p>
+</blockquote>
+<h2 id="doel">Doel<a class="anker" href="#doel" aria-label="Link naar deze kop">#</a></h2>
+<p>Een dreiging is nog geen incident: een kwetsbaarheid is bekend, maar het is onduidelijk of zij de eigen
+organisatie raakt. Voor incidenten bestaat een procedure; voor dreigingen meestal niet. Deze procedure zorgt
+dat dreigingen en kwetsbaarheden gestructureerd worden beoordeeld op urgentie, impact en risico, en dat er
+proportioneel en met duidelijk eigenaarschap wordt gehandeld. Het gaat over omgaan met onzekerheid: vlot
+uitzoeken, voldoende duidelijkheid krijgen, en dan kiezen.</p>
+<h2 id="wanneer-wel-wanneer-niet">Wanneer wel, wanneer niet<a class="anker" href="#wanneer-wel-wanneer-niet" aria-label="Link naar deze kop">#</a></h2>
+<p>Altijd bij een signaal van buiten (IBD, NCSC, leverancier, SOC-dienstverlener) of van binnen (scanner,
+beheerder) dat een kwetsbaarheid of dreiging meldt die mogelijk op de eigen omgeving van toepassing is.</p>
+<p>Niet voor kwetsbaarheden die via het reguliere patchproces worden opgelost zonder dat iemand ze hoeft te
+wegen; die lopen als change. Wel zodra er een afweging nodig is: misbruik is gaande, een patch is er niet,
+of de maatregel heeft gevolgen voor de dienstverlening.</p>
+<h2 id="rollen">Rollen<a class="anker" href="#rollen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO of informatiebeveiliger</td>
+<td>Ontvangt het signaal, maakt de inschatting, is actiehouder richting de proceseigenaar; beheert deze procedure</td>
+</tr>
+<tr>
+<td>Incidentcoördinator IT</td>
+<td>Stemt met de ISO af bij gemiddeld en acuut risico, registreert in het servicedesksysteem</td>
+</tr>
+<tr>
+<td>Proceseigenaar</td>
+<td>Eigenaar van het risico voor zijn proces; krijgt het advies</td>
+</tr>
+<tr>
+<td>CIO</td>
+<td>Eigenaar als het risico procesoverstijgend is (bijvoorbeeld de IT-infrastructuur)</td>
+</tr>
+<tr>
+<td>CISO</td>
+<td>Escalatiepunt; adviseert de CIO over het activeren van het calamiteitenteam</td>
+</tr>
+<tr>
+<td>Teammanager regie en processen</td>
+<td>Escalatiepunt bij prioriteitsconflicten</td>
+</tr>
+<tr>
+<td>Functioneel beheer, technisch applicatiebeheer, beheerpartij</td>
+<td>Voeren de maatregel uit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stappen">Stappen<a class="anker" href="#stappen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-signaal-ontvangen-en-de-klok-zetten">1. Signaal ontvangen en de klok zetten<a class="anker" href="#1-signaal-ontvangen-en-de-klok-zetten" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>CVSS-score boven 9, of een melding van IBD of leverancier dat het acuut is: binnen <strong>een uur</strong> de
+  risicoanalyse starten.</li>
+<li>Lagere dreiging: binnen <strong>een week</strong> behandelen.</li>
+<li>Als maatregelen nodig zijn of overwogen worden: altijd een melding in het servicedesksysteem.</li>
+</ul>
+<h3 id="2-kans-raakt-het-ons">2. Kans: raakt het ons?<a class="anker" href="#2-kans-raakt-het-ons" aria-label="Link naar deze kop">#</a></h3>
+<p>Verzamel de dreigingsinformatie (CVSS, duiding van NCSC en IBD). Bepaal of de kwetsbaarheid op de eigen
+systemen van toepassing is en welke aanvalspaden er zijn. Een actuele architectuurplaat en CMDB zijn hier de
+randvoorwaarde; zonder die twee blijft dit gissen.</p>
+<p>Lijkt het niet van toepassing, ga dan na hoe zeker dat is. Bij grote twijfel, een grote kans op misbruik en
+een mogelijk grote impact: tóch analyseren. Dat is de "assume breach"-houding: wat je niet ziet, bestaat
+daarmee niet niet.</p>
+<h3 id="3-impact-wat-raakt-het">3. Impact: wat raakt het?<a class="anker" href="#3-impact-wat-raakt-het" aria-label="Link naar deze kop">#</a></h3>
+<p>Toets tegen de kritieke processen en kroonjuwelen uit de bedrijfscontinuïteitsanalyse, op beschikbaarheid,
+integriteit, vertrouwelijkheid, privacy en bestuurlijke gevolgen. Eigenaar is de proceseigenaar; de ISO zorgt
+dat die het advies krijgt. Is de proceseigenaar onbekend, dan toch doorgaan. Raakt het de infrastructuur,
+dan is de CIO ook eigenaar en geldt het calamiteitenplan.</p>
+<h3 id="4-risico-en-handelingskader">4. Risico en handelingskader<a class="anker" href="#4-risico-en-handelingskader" aria-label="Link naar deze kop">#</a></h3>
+<p>Kans maal impact, beide op een schaal van 1 tot 5. Zolang de risicobereidheid van de organisatie niet is
+vastgesteld, is dit een vuistregel. Een niet-pluis-gevoel mag altijd escaleren; professionaliteit gaat boven
+de procedure.</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Score</th>
+<th>Aanpak</th>
+<th>Doorlooptijd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laag</td>
+<td>onder 5</td>
+<td>ISO schat de aanpak in, stemt af met functioneel beheer, technisch beheer en zo nodig de beheerpartij via het servicedesksysteem; reactie binnen een werkdag, oplossen via de reguliere planning</td>
+<td>maximaal 10 werkdagen</td>
+</tr>
+<tr>
+<td>Gemiddeld</td>
+<td>5 tot en met 14</td>
+<td>ISO en incidentcoördinator verkennen binnen een uur gezamenlijk de vervolgstappen; registratie in het servicedesksysteem; escalatie zo nodig naar CISO en teammanager regie en processen</td>
+<td>maximaal 5 werkdagen</td>
+</tr>
+<tr>
+<td>Acuut</td>
+<td>15 en hoger</td>
+<td>ISO en incidentcoördinator stemmen af en informeren hun coördinator; geen oplossing binnen een uur, dan escalatie naar de CISO; de CISO kan de CIO adviseren het calamiteitenteam te activeren</td>
+<td>zo kort mogelijk, bij voorkeur binnen een werkdag</td>
+</tr>
+</tbody>
+</table>
+<p>Bij acuut risico kan het nodig zijn preventief een systeem uit te zetten, ook als dat de kritieke
+dienstverlening raakt. Schakel dan het calamiteitenteam in en nodig de proceseigenaar uit. Is de dreiging
+echt acuut: eerst de maatregel, dan informeren.</p>
+<h3 id="5-opties-afwegen-en-kiezen">5. Opties afwegen en kiezen<a class="anker" href="#5-opties-afwegen-en-kiezen" aria-label="Link naar deze kop">#</a></h3>
+<p>Vermijden, verminderen, overdragen of accepteren (ISO 27005), getoetst aan de Cbw en BIO 2.0. Er zijn vaak
+meerdere maatregelen met verschillende kosten en restrisico's. Koppel terug aan de proceseigenaar en, als het
+de infrastructuur raakt, de systeemeigenaar. Leg een omvangrijke of langlopende maatregel vast in het
+servicedesksysteem.</p>
+<h3 id="6-uitvoeren-en-bewaken">6. Uitvoeren en bewaken<a class="anker" href="#6-uitvoeren-en-bewaken" aria-label="Link naar deze kop">#</a></h3>
+<p>Monitor de voortgang in het servicedesksysteem of het ISMS. Escaleer bij vertraging of onvoldoende effect.</p>
+<h3 id="7-risicoacceptatie">7. Risicoacceptatie<a class="anker" href="#7-risicoacceptatie" aria-label="Link naar deze kop">#</a></h3>
+<p>Zijn maatregelen niet of niet tijdig uitvoerbaar, leg het dan voor aan de bevoegde beslisser:
+gemeentesecretaris of directie, afhankelijk van het impactniveau. Documenteer expliciet in een
+risicoacceptatieformulier. Eigenaar is de bestuurder of directeur, na advies van de CISO.</p>
+<h2 id="wie-informeer-je-waarover-en-wie-doet-dat">Wie informeer je, waarover en wie doet dat<a class="anker" href="#wie-informeer-je-waarover-en-wie-doet-dat" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Wie</th>
+<th>Door wie</th>
+<th>Waarover</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laag</td>
+<td>Functioneel beheerder</td>
+<td>ISO</td>
+<td>Technische aard, aanpak, realistische termijn</td>
+</tr>
+<tr>
+<td></td>
+<td>Gebruikersgroepen</td>
+<td>Functioneel beheerder</td>
+<td>Tijdelijke beperkingen of alternatieven</td>
+</tr>
+<tr>
+<td>Gemiddeld</td>
+<td>Incidentcoördinator</td>
+<td>ISO</td>
+<td>Risico-inschatting, onzekerheden, oplossing en tijdpad</td>
+</tr>
+<tr>
+<td></td>
+<td>CISO en teammanager regie en processen (bij escalatie)</td>
+<td>Incidentcoördinator of ISO</td>
+<td>Dreigingsbeeld, knelpunten, noodzaak van prioriteit, bedrijfsimpact van de oplossing</td>
+</tr>
+<tr>
+<td></td>
+<td>Gebruikersorganisatie</td>
+<td>Incidentcoördinator of ISO</td>
+<td>Verwachte impact en alternatieven</td>
+</tr>
+<tr>
+<td>Acuut</td>
+<td>Incidentcoördinator</td>
+<td>ISO</td>
+<td>Als bij gemiddeld, plus de escalatieaanpak</td>
+</tr>
+<tr>
+<td></td>
+<td>CISO en teammanager</td>
+<td>Incidentcoördinator of ISO</td>
+<td>Onmogelijkheid van snelle mitigatie, besluit over het calamiteitenteam</td>
+</tr>
+<tr>
+<td></td>
+<td>CIO</td>
+<td>CISO</td>
+<td>Advies om het calamiteitenteam te activeren</td>
+</tr>
+<tr>
+<td></td>
+<td>Leden calamiteitenteam</td>
+<td>CISO of secretaris</td>
+<td>Dreigingsbeeld, besluitvorming, rollen</td>
+</tr>
+<tr>
+<td></td>
+<td>Communicatieadviseur</td>
+<td>CISO of secretaris</td>
+<td>Of en hoe intern en extern wordt gecommuniceerd (IBD, clusters, regio)</td>
+</tr>
+<tr>
+<td></td>
+<td>Direct betrokken afdelingen</td>
+<td>Communicatie of incidentcoördinator</td>
+<td>Aard van de verstoring, impact, herstelplanning, alternatieve werkwijze</td>
+</tr>
+</tbody>
+</table>
+<h2 id="samenwerking-en-vuistregels">Samenwerking en vuistregels<a class="anker" href="#samenwerking-en-vuistregels" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Vaste rollen met back-ups. Een warme start: direct contact per telefoon of videogesprek; het
+  servicedesksysteem is de plek voor registratie en bewaking, niet om de samenwerking mee te beginnen.</li>
+<li>Beslisbevoegdheden vooraf afgestemd, of expliciet aan het management gevraagd (mandaat om de stekker eruit
+  te trekken).</li>
+<li>ISO en incidentcoördinatoren stemmen periodiek af, bijvoorbeeld elk kwartaal.</li>
+<li><strong>Zien is doen.</strong> Wie het signaal ontvangt, zorgt dat het tot actie leidt. Je hoeft niet alles zelf op te
+  lossen; regie nemen is het werk.</li>
+<li><strong>We zijn er bijna? Toch escaleren.</strong> Hoeveel tijd het oplossen nog kost, is zelden goed in te schatten.
+  Te vaak te vroeg aan de bel? Dan passen we de procedure aan.</li>
+</ul>
+<h2 id="onderhoud">Onderhoud<a class="anker" href="#onderhoud" aria-label="Link naar deze kop">#</a></h2>
+<p>De ISO beheert deze procedure en past hem jaarlijks aan, of na een evaluatie. Een acute dreiging wordt
+binnen een week na afhandeling geëvalueerd.</p>
+<h2 id="aanvulling-van-de-commons">Aanvulling van de commons<a class="anker" href="#aanvulling-van-de-commons" aria-label="Link naar deze kop">#</a></h2>
+<blockquote>
+<p>Drie punten die de oorspronkelijke procedure open laat en die BIO 2.0 wel vraagt.</p>
+</blockquote>
+<ul>
+<li><strong>Leg de afspraken met de SOC-dienstverlener en de beheerpartij vast</strong> in de dienstverleningsovereenkomst:
+  mandaat, piket, alarmering en spoedmaatregelen. Zonder die afspraken hangt stap 4 bij acuut risico aan
+  goodwill.</li>
+<li><strong>Maak van het handelingskader een beslisboom</strong> en zet die in het servicedesksysteem als kennisitem, zodat
+  de servicedesk en functioneel beheer dezelfde route volgen als de ISO.</li>
+<li><strong>Bewaar per dreiging de afweging</strong>, ook als de uitkomst "niet van toepassing" was. Dat is het bewijs
+  voor 5.7: niet alleen dat je dreigingsinformatie ontvangt, maar dat je er iets mee doet.</li>
+</ul>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Het <strong>overzicht van behandelde dreigingen</strong> van het jaar: signaal, datum, score, besluit, doorlooptijd,
+  ook de afgewezen.</li>
+<li>Per acuut risico: de <strong>melding in het servicedesksysteem</strong> met de tijdstempels van signaal, eerste analyse
+  en maatregel, en het <strong>evaluatieverslag</strong> binnen een week.</li>
+<li>Per geaccepteerd risico: het <strong>risicoacceptatieformulier</strong> met handtekening van de beslisser.</li>
+<li>De <strong>vastgelegde afspraken</strong> met SOC-dienstverlener en beheerpartij over mandaat en spoedmaatregelen.</li>
+</ul>
+<h2 id="bio-2-0">BIO 2.0<a class="anker" href="#bio-2-0" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Maatregel</th>
+<th>Wat deze procedure daarvoor levert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.7 Informatie en analyses over dreigingen</td>
+<td>Stap 1 en 2: dreigingsinformatie ontvangen, duiden en omzetten in een besluit</td>
+</tr>
+<tr>
+<td>8.8 Beheer van technische kwetsbaarheden</td>
+<td>Het handelingskader met doorlooptijden per risiconiveau, de spoedroute bij CVSS boven 9</td>
+</tr>
+<tr>
+<td>5.25 Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen</td>
+<td>Stap 4: de weging en de escalatieroute naar incident of calamiteit</td>
+</tr>
+<tr>
+<td>5.4 Managementverantwoordelijkheden</td>
+<td>Stap 7: risicoacceptatie op het bevoegde niveau, vastgelegd</td>
+</tr>
+<tr>
+<td>5.19 en 5.20 Leveranciersrelaties en -overeenkomsten</td>
+<td>De aanvulling: mandaat en spoedmaatregelen contractueel vastleggen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zo-leg-je-het-uit">Zo leg je het uit<a class="anker" href="#zo-leg-je-het-uit" aria-label="Link naar deze kop">#</a></h2>
+<p><strong>Aan de directie.</strong> "Als het NCSC vandaag een kwetsbaarheid meldt, weten we morgen of die ons raakt, en
+niet pas als het misgaat. En als de oplossing betekent dat we een systeem uitzetten, is vooraf afgesproken
+wie dat mag beslissen."</p>
+<p><strong>Aan de proceseigenaar.</strong> "Je krijgt van ons geen technisch verhaal maar een advies: dit is het risico voor
+jouw proces, dit zijn de opties, dit kosten ze. Jij kiest, en als je accepteert, leggen we dat samen vast."</p>
+<p><strong>Aan de beheerders.</strong> "Zien is doen. Je hoeft het niet zelf op te lossen, maar je zorgt dat het bij de
+juiste persoon landt en niet blijft liggen. En escaleer liever een keer te veel dan te laat."</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/procedures-informatiebeveiliging">security/procedures-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
