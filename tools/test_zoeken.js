@@ -102,6 +102,9 @@ for (const [term, map] of [
   ['bedrijfsimpactanalyse', 'risicosessie-per-proces'], ['classificatieschema', 'kritieke-processen-vaststellen'],
   ['rto', 'kritieke-processen-vaststellen'], ['klantcontactcentrum', 'bedrijfscontinuiteitsplan-sjabloon'],
   ['proceskaart', 'bedrijfscontinuiteitsplan-sjabloon'], ['verstoring', 'bedrijfscontinuiteitsplan-sjabloon'],
+  ['meldplicht', 'cbw-meldplicht-inrichten'], ['registratieplicht', 'cbw-meldplicht-inrichten'],
+  ['significant incident', 'cbw-meldplicht-inrichten'], ['ncsc', 'cbw-meldplicht-inrichten'],
+  ['wwke', 'val-ik-onder-de-wwke'], ['kritieke entiteiten', 'val-ik-onder-de-wwke'], ['cer', 'val-ik-onder-de-wwke'],
 ]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.
