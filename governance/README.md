@@ -28,7 +28,8 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 8. [GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde](risicogestuurd-managementsysteem/)
 9. [Rapporteren over security, privacy en continuïteit uit één bronrapportage](ims-rapportage/)
 10. [AI-beleid van een regionale samenwerking](ai-beleid/)
-11. [Zes hulpmiddelen voor apparatuur, toegang en leveranciers](hulpmiddelen-toegang-apparatuur-en-leveranciers/)
+11. [Beleid als code, met een AI-agent die configuratie beheert onder menselijke goedkeuring](beleid-als-code/)
+12. [Zes hulpmiddelen voor apparatuur, toegang en leveranciers](hulpmiddelen-toegang-apparatuur-en-leveranciers/)
 
 ## Bijdragen
 

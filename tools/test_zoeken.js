@@ -108,6 +108,8 @@ for (const [term, map] of [
   ['managementsysteem', 'bio2-deel1-in-het-ims'], ['deel 1', 'bio2-deel1-in-het-ims'], ['risicomanagementbeleid', 'bio2-deel1-in-het-ims'],
   ['auditprogramma', 'bio2-deel1-in-het-ims'], ['contextanalyse', 'bio2-deel1-in-het-ims'],
   ['ims', 'ims-rapportage'], ['bronrapportage', 'ims-rapportage'], ['directiebeoordeling', 'ims-rapportage'], ['kpi', 'ims-rapportage'],
+  ['policy-as-code', 'beleid-als-code'], ['beleid als code', 'beleid-als-code'], ['configuratiebeheer', 'beleid-als-code'],
+  ['agentic', 'beleid-als-code'], ['logplatform', 'beleid-als-code'], ['wijzigingsbeheer', 'beleid-als-code'],
 ]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.
