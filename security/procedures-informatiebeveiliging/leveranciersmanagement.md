@@ -1,44 +1,82 @@
 # Procedure leveranciersmanagement
 
-## Inleiding: grip op leveranciers vanuit team IB&P
+> **Herkomst:** procedure van de CISO van een regionale samenwerking van gemeenten, versie 1 (maart 2024). Voor de commons herschreven in een vaste opbouw; de vragenlijst voor het leveranciersoverleg is in eigen woorden opgesteld.
 
-Niet elke leverancier is hetzelfde: sommige leveranciers verwerken gevoelige informatie van de organisatie. Deze leveranciers verdienen meer aandacht op het vlak van IB&P en het is aan de eigenaren binnen Gemeente VOORBEELDGEMEENTE of andere gemeenten om te zorgen dat zij voldoen aan de vereisten rondom team IB&P, als het gaat om leveranciersmanagement.
+## Doel
 
-De volgende SharePoint library wordt gebruikt om:
+Niet elke leverancier is hetzelfde. Sommige verwerken gevoelige informatie of leveren een dienst waar een
+kritiek proces van afhangt. Die leveranciers verdienen meer aandacht, en het is aan de eigenaar binnen de
+organisatie om te zorgen dat zij aan de eisen voldoen. Deze procedure geeft het team informatiebeveiliging
+en privacy grip op die leveranciers: wie ze zijn, welke eisen gelden, en of die worden nageleefd.
 
-- Te bepalen welke leveranciers kritiek zijn vanuit oogpunt van IB&P;
+## Wanneer
 
-- Welke eisen er gesteld zijn vanuit team IB&P aan de leverancier;
+Bij elke leverancier die persoonsgegevens verwerkt, toegang heeft tot de eigen systemen, of een dienst
+levert waarvan een kritiek proces afhangt. De classificatie van de applicatie (zie
+[security classificatie](security-classificatie.md)) bepaalt de zwaarte: hoe hoger het niveau, hoe vaker en
+dieper het overleg.
 
-- Gegevens over leveranciers op te slaan.
+## Rollen
 
-(interne SharePoint-pagina)
+| Rol | Doet |
+|---|---|
+| Contracteigenaar of proceseigenaar | Eigenaar van de leveranciersrelatie; voert het overleg, bewaakt de afspraken |
+| ISO of privacy officer | Stelt de eisen, beoordeelt de antwoorden en de verklaringen, signaleert risico's |
+| CISO | Eindverantwoordelijk voor het proces; escaleert naar het management |
+| Servicemanagement | Beheert de dienstverleningsovereenkomst en de rapportages van de leverancier |
 
-## Te nemen stappen
+## Stappen
 
-Onderstaand de te nemen stappen om te zorgen dat wij als organisatie grip krijgen op onze leveranciers, vanuit het oogpunt van Informatiebeveiliging & Privacy.
+1. **Inventariseren.** Welke leveranciers vallen onder deze procedure, met per leverancier: wat zij
+   verwerken of leveren, de classificatie, de contracteigenaar, de overeenkomst en de verwerkersovereenkomst.
+2. **Eisen stellen.** Vooraf, bij aanbesteding of contract: de beveiligingseisen en de verplichting om
+   periodiek te rapporteren. Zie de [Security Annex voor leveranciers](../security-annex-leveranciers/).
+3. **Periodiek overleg.** Minstens jaarlijks, bij kritieke leveranciers per kwartaal, langs de vragenlijst
+   hieronder. Vraag de antwoorden vooraf op en leg vast waar het antwoord staat: in de servicerapportage of
+   in het verslag van het overleg.
+4. **Beoordelen.** Verklaringen toetsen met de
+   [checklist assurance-verklaring](../../governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/checklist-assurance-verklaring.md);
+   openstaande acties en risico's vastleggen met eigenaar en termijn.
+5. **Escaleren.** Komt een leverancier afspraken niet na, dan naar de contracteigenaar en zo nodig het
+   management; een restrisico dat blijft, wordt vastgelegd als geaccepteerd risico in het register.
+6. **Rapporteren.** De stand per kritieke leverancier gaat mee in de periodieke [rapportage](rapporteren.md).
 
-| Stappen | Periodiciteit | Beschrijving stappen | R | A | C | I |
-|---|---|---|---|---|---|---|
-| 1. Risicoprofiel beschrijven | Elk kwartaal (laatste maand) | Dit betreft een kwalitatieve inschatting (op dit moment) van de risico’s en wordt bijgewerkt in de laatste maand van elk kwartaal opgehaald moeten worden. Het wordt hier bijgehouden: (interne SharePoint-pagina) | CISO | CISO | FG |  |
-| 2. Voortgang uitvoeringsprogramma’s | Elk kwartaal (laatste maand) | Dit betreft een kwalitatieve inschatting, afhankelijk van de geplande initiatieven. Dit wordt bijgewerkt in de laatste maand van elk kwartaal opgehaald moeten worden. Het wordt hier bijgehouden: (interne SharePoint-pagina) | CISO | CISO | CIO |  |
-| 3. Indicatoren ophalen en vastleggen | Elk kwartaal (laatste maand) | Een overzicht van de te meten indicatoren staat hier: (interne SharePoint-pagina) De daadwerkelijke metingen dienen in de laatste maand van elk kwartaal opgehaald te worden en staan hier: (interne SharePoint-pagina) Hieronder staat uitgebreide uitleg over deze stap. | ISO's & PO's | CISO |  |  |
-| 4. Problemen bijhouden | Continu | IB&P-problemen dienen continu te worden bijgehouden: toegevoegd, bijgewerkt en verwijderd indien het is afgehandeld. Deze worden hier bijgehouden: (interne SharePoint-pagina) Van belang is om de eigenaren van deze problemen te informeren van hun problemen, alvorens de rapportage finaal is per einde kwartaal, zodat zij niet verrast worden door management wanneer de rapportage wordt gedeeld. | ISO's & PO's | CISO | FG, TAB, B&A |  |
-| 5. Communicatie richting stakeholders | Elk kwartaal (laatste maand) | Het communiceren van onze rapportage naar management en andere stakeholders, door middel van het delen van de link naar ons dashboard. Van belang is om als ‘ondertiteling’ bij het delen zowel de kwalitatief gemeten onderdelen van de rapportage (risicoprofiel, voortgang uitvoeringsprogramma’s) en de kwantitatief gemeten onderdelen (indicatoren, problemen) te duiden in de vorm van wat tekstuele context. Te informeren management: MT bedrijfsvoering CIO directeur bedrijfsvoering Gemeenten (nader te bepalen contacten) | CISO | CISO |  |  |
+## Vragenlijst voor het leveranciersoverleg
 
-## Bijlage: overzicht van te behandelen onderwerpen in gesprekken met leveranciers
-
-Gebruik deze lijst in het periodieke gesprek met een leverancier die informatie van de gemeente verwerkt of een
-kritieke dienst levert. Vraag de antwoorden zo veel mogelijk vooraf op, en leg vast waar het antwoord staat: in de
-servicerapportage van de leverancier of in het verslag van het leveranciersoverleg.
-
-| Onderwerp | Vraag aan de leverancier | Wat leg je vast |
+| Onderwerp | Vraag aan de leverancier | Wat je vastlegt |
 |---|---|---|
-| Openstaande acties | Staan er nog acties open uit de eerste risicoanalyse, een eerdere toets of een eerder leveranciersoverleg? | Welke acties, voortgang en status |
-| Zekerheid (assurance) | Welke certificaten en verklaringen zijn er voor de dienst die de gemeente afneemt, bijvoorbeeld ISAE 3402, SOC 2 of ISO 27001? | Scope van de verklaring en datum |
-| Belangrijke wijzigingen | Is er iets wezenlijks veranderd in de beveiligingsorganisatie van de leverancier, in uitbesteding aan derden, in de locatie waar de dienst wordt geleverd, of in het gebruik van cloud? | Wat er veranderde en hoe het risico is afgedekt |
-| Incidenten | Zijn er sinds het vorige overleg beveiligings- of privacyincidenten geweest die de gemeente raken? | Welke gegevens geraakt zijn, wanneer het is gemeld, of het een datalek was, en de oorzaak |
-| Oefenen | Heeft de leverancier dit jaar een incident- of crisisoefening gehouden? | Datum, belangrijkste bevindingen en vervolgacties |
-| Herstel | Is dit jaar een hersteltest gedaan voor de dienst die de gemeente afneemt? | Welke test, datum, bevindingen en vervolgacties |
-| Kwetsbaarheden | Worden de systemen die vanaf internet bereikbaar zijn, en de applicaties zelf, regelmatig op kwetsbaarheden gescand? | Datum van de laatste scan, ernstige bevindingen en vervolgacties |
-| Penetratietest | Is dit jaar een penetratietest gedaan op de dienst die de gemeente afneemt? | Datum, ernstige bevindingen en vervolgacties |
+| Openstaande acties | Staan er nog acties open uit de eerste risicoanalyse, een eerdere toets of een eerder overleg? | Welke acties, voortgang en status |
+| Zekerheid (assurance) | Welke certificaten en verklaringen zijn er voor de dienst die wij afnemen, bijvoorbeeld ISAE 3402, SOC 2 of ISO 27001? | Scope en datum |
+| Belangrijke wijzigingen | Is er iets wezenlijks veranderd in de beveiligingsorganisatie, in uitbesteding aan derden, in de locatie van de dienst, of in het gebruik van cloud? | Wat er veranderde en hoe het risico is afgedekt |
+| Incidenten | Zijn er sinds het vorige overleg beveiligings- of privacyincidenten geweest die ons raken? | Welke gegevens, wanneer gemeld, datalek of niet, oorzaak |
+| Oefenen | Is er dit jaar een incident- of crisisoefening gehouden? | Datum, bevindingen, vervolgacties |
+| Herstel | Is er dit jaar een hersteltest gedaan voor onze dienst? | Welke test, datum, bevindingen, vervolgacties |
+| Kwetsbaarheden | Worden de systemen die vanaf internet bereikbaar zijn, en de applicaties zelf, regelmatig gescand? | Datum laatste scan, ernstige bevindingen, vervolgacties |
+| Penetratietest | Is er dit jaar een penetratietest gedaan op onze dienst? | Datum, ernstige bevindingen, vervolgacties |
+
+## Aanvulling van de commons
+
+> Wat de oorspronkelijke procedure open laat en BIO 2.0 en de Cbw wel vragen.
+
+- **Ketenafhankelijkheden.** Vraag ook naar de onderaannemers van de leverancier en of die aan dezelfde eisen
+  zijn gebonden. Zie [Ketenafhankelijkheden in beeld](../ketenafhankelijkheden/).
+- **Meldtermijn in het contract.** Een leverancier moet een incident dat jou raakt binnen uren melden,
+  anders haal je je eigen termijn van 24 uur onder de Cbw niet. Neem dat op in de overeenkomst.
+- **Exit.** Wat gebeurt er met de gegevens als het contract eindigt, en is dat getest? Zie
+  [Pentest- en exitverplichtingen bij leveranciers](../pentest-en-exit-bij-leveranciers/).
+
+## Vastlegging en bewijs
+
+- Het **leveranciersoverzicht** met classificatie, contracteigenaar en de datum van het laatste overleg.
+- Per kritieke leverancier het **verslag van het overleg** langs de vragenlijst, en de beoordeelde
+  verklaring.
+- De **actielijst** met openstaande punten, eigenaar en termijn.
+
+## BIO 2.0
+
+| Maatregel | Wat deze procedure daarvoor levert |
+|---|---|
+| 5.19 Informatiebeveiliging in leveranciersrelaties | Het proces als geheel: inventariseren, eisen, overleg, escaleren |
+| 5.20 Adresseren van informatiebeveiliging in leveranciersovereenkomsten | Stap 2: eisen en rapportageplicht in het contract |
+| 5.21 Beheren van informatiebeveiliging in de ICT-toeleveringsketen | De aanvulling over onderaannemers |
+| 5.22 Monitoren, beoordelen en het beheren van wijzigingen van leveranciersdiensten | Stap 3 en 4: het periodieke overleg en de beoordeling van verklaringen en wijzigingen |

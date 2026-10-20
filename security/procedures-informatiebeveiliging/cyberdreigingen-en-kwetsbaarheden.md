@@ -1,117 +1,167 @@
 # Procedure cyberdreigingen en kwetsbaarheden
 
-### Opdrachtgever/eigenaar
+> **Herkomst:** procedure van de CISO van een regionale samenwerking van gemeenten, september 2025, opgesteld met de informatiebeveiliger, de technische en de business information security officer en de projectmanager BCM. Voor de commons herschreven in een vaste opbouw; de bewijsregel en de koppeling aan BIO 2.0 zijn aanvullingen van de commons.
 
-CISO
+## Doel
 
-### Opdrachtnemer
+Een dreiging is nog geen incident: een kwetsbaarheid is bekend, maar het is onduidelijk of zij de eigen
+organisatie raakt. Voor incidenten bestaat een procedure; voor dreigingen meestal niet. Deze procedure zorgt
+dat dreigingen en kwetsbaarheden gestructureerd worden beoordeeld op urgentie, impact en risico, en dat er
+proportioneel en met duidelijk eigenaarschap wordt gehandeld. Het gaat over omgaan met onzekerheid: vlot
+uitzoeken, voldoende duidelijkheid krijgen, en dan kiezen.
 
-[naam] (informatiebeveiliger), [naam] (TISO) [naam] (BISO) en [naam] (BCM projectmanager)
+## Wanneer wel, wanneer niet
 
-### Aanleiding
+Altijd bij een signaal van buiten (IBD, NCSC, leverancier, SOC-dienstverlener) of van binnen (scanner,
+beheerder) dat een kwetsbaarheid of dreiging meldt die mogelijk op de eigen omgeving van toepassing is.
 
-Digitale dreigingen nemen toe in frequentie en impact. Een dreiging is een waargenomen risico waarvan nog onduidelijk is of het onze organisatie raakt; het is mogelijk dat er gebruik (of eigenlijk: misbruik) wordt gemaakt van kwetsbaarheden in de gemeentelijke, met als resultaat een daadwerkelijke verstoring. Die behandelen we dan als incident, hiervoor hebben we een duidelijk proces om het op te lossen, voor dreigingen is zo’n proces er nog niet.
+Niet voor kwetsbaarheden die via het reguliere patchproces worden opgelost zonder dat iemand ze hoeft te
+wegen; die lopen als change. Wel zodra er een afweging nodig is: misbruik is gaande, een patch is er niet,
+of de maatregel heeft gevolgen voor de dienstverlening.
 
-Recente voorbeelden, zoals de dreiging als gevolg van het lek in log4j en de cyberaanval op TU Eindhoven, laten zien hoe groot de gevolgen kunnen zijn als de dreigingen werkelijkheid worden en kwetsbaarhedne worden misbruikt. Deze procedure helpt ons om adequaat te reageren op dreigingen en schade te beperken.
+## Rollen
 
-### Doel en belang
+| Rol | Doet |
+|---|---|
+| ISO of informatiebeveiliger | Ontvangt het signaal, maakt de inschatting, is actiehouder richting de proceseigenaar; beheert deze procedure |
+| Incidentcoördinator IT | Stemt met de ISO af bij gemiddeld en acuut risico, registreert in het servicedesksysteem |
+| Proceseigenaar | Eigenaar van het risico voor zijn proces; krijgt het advies |
+| CIO | Eigenaar als het risico procesoverstijgend is (bijvoorbeeld de IT-infrastructuur) |
+| CISO | Escalatiepunt; adviseert de CIO over het activeren van het calamiteitenteam |
+| Teammanager regie en processen | Escalatiepunt bij prioriteitsconflicten |
+| Functioneel beheer, technisch applicatiebeheer, beheerpartij | Voeren de maatregel uit |
 
-Met deze procedure streven we ernaar om dreigingen en kwetsbaarheden gestructureerd te beoordelen en te behandelen, op basis van urgentie, impact en risico. Dit gaat over omgaan met onzekerheden, er voor zorgen dat zaken vlot worden uitgezocht en er daarmee voldoende duidelijkheid komt. Hierdoor kan risico gestuurd, proportioneel en met duidelijk eigenaarschap worden opgetreden.
+## Stappen
 
-### Centrale vragen
+### 1. Signaal ontvangen en de klok zetten
 
-- Hoe richten we een gestructureerde werkwijze in voor het inschatten, prioriteren en mitigeren van digitale dreigingen en kwetsbaarheden, met duidelijk eigenaarschap en verantwoordelijkheden?
+- CVSS-score boven 9, of een melding van IBD of leverancier dat het acuut is: binnen **een uur** de
+  risicoanalyse starten.
+- Lagere dreiging: binnen **een week** behandelen.
+- Als maatregelen nodig zijn of overwogen worden: altijd een melding in het servicedesksysteem.
 
-- Hoe organiseren we effectieve samenwerking tussen de betrokken stakeholders van de organisatie binnen deze werkwijze?
+### 2. Kans: raakt het ons?
 
-- Hoe gaan we om met bestaande kwetsbaarheden en geaccepteerde risico's rondom bekende kwetsbaarheden?
+Verzamel de dreigingsinformatie (CVSS, duiding van NCSC en IBD). Bepaal of de kwetsbaarheid op de eigen
+systemen van toepassing is en welke aanvalspaden er zijn. Een actuele architectuurplaat en CMDB zijn hier de
+randvoorwaarde; zonder die twee blijft dit gissen.
 
-- Hoe houden we deze werkwijze actueel en werkbaar in de praktijk?
+Lijkt het niet van toepassing, ga dan na hoe zeker dat is. Bij grote twijfel, een grote kans op misbruik en
+een mogelijk grote impact: tóch analyseren. Dat is de "assume breach"-houding: wat je niet ziet, bestaat
+daarmee niet niet.
 
-### Werkwijze
+### 3. Impact: wat raakt het?
 
-We willen vlot maar proportioneel handelen. Dat betekent dat we in moeten schatten wat de mogelijke impact is van de kwetsbaarheid, welke mogelijke oplossingen er zijn en wat de impact is van het implementeren van de oplossing. Op basis van die informatie kan een keuze worden gemaakt.
+Toets tegen de kritieke processen en kroonjuwelen uit de bedrijfscontinuïteitsanalyse, op beschikbaarheid,
+integriteit, vertrouwelijkheid, privacy en bestuurlijke gevolgen. Eigenaar is de proceseigenaar; de ISO zorgt
+dat die het advies krijgt. Is de proceseigenaar onbekend, dan toch doorgaan. Raakt het de infrastructuur,
+dan is de CIO ook eigenaar en geldt het calamiteitenplan.
 
-- Startpunt: Signaal van dreiging. Directe actie (binnen 1 uur na binnenkomst starten risico-analyse bij CVSS score > 9, of melding vanuit IBD of leverancier dat het een acuut issue is. Bij lagere dreiging: binnen een week behandelen. Als maatregelen nodig zijn of overwogen moeten worden, maak dan altijd een melding aan in het servicedesksysteem.
+### 4. Risico en handelingskader
 
-- Bepaal de kans de kwetsbaarheid zich ook bij ons voordoet: Verzamel dreigingsinformatie (o.a. CVSS-score, NCSC/NLCS-duidingen). Bepaal in hoeverre dit in VOORBEELDGEMEENTE van toepassing is, en of kan en impact overeenkomen of juist afwijken van de dreigingsinformatie. Identificeer de kwetsbaarheid voor onze systemen en mogelijke aanvalspaden. Is het niet van toepassing voor onze systemen?
+Kans maal impact, beide op een schaal van 1 tot 5. Zolang de risicobereidheid van de organisatie niet is
+vastgesteld, is dit een vuistregel. Een niet-pluis-gevoel mag altijd escaleren; professionaliteit gaat boven
+de procedure.
 
-- Bekijk impact eigen organisatie en toets tegen kritische processen (BIA, kroonjuwelen). Kijk naar dimensies: beschikbaarheid, integriteit, vertrouwelijkheid, privacy, bestuurlijke gevolgen. Eigenaar: Proceseigenaar. Actiehouder: ISO, die zorgt dat de proceseigenaar het advies krijgt. Is het niet bekend wie de proceseigenaar is? Dan willen we toch voortvarend handelen in deze onzekere situatie Is het risico proces overstijgend (bijvoorbeeld omdat het de IT infrastructuur raakt), dan ook de CIO als eigenaar behandelen. Volg ook het calamiteitenplan digitaal in dat geval.
-
-- Risico-inschatting
-
-Bepaal kans × impact (kwalitatief of kwantitatief) op een 5 puntsschaal. 1 is zeer laag, 5 is zeer hoog. Omdat de risk-appetite van de organisatie nog niet bepaald is, werken we hiermee als vuistregel. Vermenigvuldig de kans (zie punt 1 in deze werkwijze) met de impact (zie punt 2 in deze werkwijze) en neem dat getal als de risico-inschatting. Let wel: Als je een “niet-pluis-gevoel" hebt, dan mag je altijd escaleren. Professionaliteit gaat boven de procedure.
-
-Handelingskader:
-
-Laag Risico: score lager dan 5
-
-Voorbeeldaanpak: -ISO/informatiebeveiliger maakt inschatting aanpak. Neemt contact op met functioneel beheer, TAB en eventueel MSP; afstemming via het servicedesksysteem. Reactie in het servicedesksysteem binnen een werkdag, oplossen via reguliere planning. Doorlooptijd: maximaal 10 werkdagen. Gemiddeld Risico van 5 tot en met 14 Voorbeeldaanpak: - ISO stemt af met incidentcoördinator. - Binnen 1 uur gezamenlijke verkenning en bepaling vervolgstappen. - Rollen kunnen deels onduidelijk zijn → zo nodig herijken. - Registratie in het servicedesksysteem. Escalatie: indien nodig naar CISO en teammanager regie en processen. Doorlooptijd: maximaal 5 werkdagen, afhankelijk van de dreiging.
-
-Acuut Risico groter dan 15
-
-Voorbeeldaanpak: - ISO en incidentcoördinator stemmen af en informeren hun coördinator. - Indien aanpak onduidelijk of geen oplossing binnen 1 uur: escalatie naar CISO. - CISO kan adviseren aan CIO om het CTD te activeren. - Registratie in het servicedesksysteem.
-
-Bij acuut risico kan het nodig zijn dat preventief een (deel van een) systeem worden uitgeschakeld. Ook als dat impact heeft op de (kritische) dienstverlening. In dat geval is het goed om het CTD in te schakelen en daarbij de proceseigenaar uit te nodigen. Als de dreiging écht acuut is, dan is het belangrijk eerst de maatregel te nemen en daarna te informeren.
-
-Geen oplossing vandaag → CISO adviseert CTD te activeren. Doorlooptijd: zo kort mogelijk, bij voorkeur binnen één werkdag.
-
-- Beoordeel opties ISO 27005 noemt: risico vermijden, verminderen, overdragen, accepteren. Toets ook aan wettelijke eisen (Cbw, BIO2). Soms zijn er verschillende maatregelen mogelijk om een risico te mitigeren, met verschillende kostenplaatjes en restrisico’s. Koppel terug aan de proceseigenaar en de systeemeigenaar als het de (IT-)infrastructuur raakt. Is de proces- of systeemeigenaar onbekend, dan binnen de IT-organisatie escaleren.
-
-- Kies maatregelen en leg deze vast. Is de gekozen maatregel omvangrijk of vergt het doorlooptijd, leg dat dan vast in het servicedesksysteem.
-
-- Uitvoeren binnen acceptabele termijn Monitor voortgang (het servicedesksysteem of ISMS, P&C-cyclus). Escaleren bij vertraging of onvoldoende effect. Eigenaar: Projectleider / verantwoordelijke uitvoerder.
-
-- Besluit risico-acceptatie Als maatregelen niet (tijdig) uitvoerbaar zijn → voorleggen aan bevoegde beslisser (bv. gemeentesecretaris of directie, afhankelijk van impactniveau). Documenteer expliciet (waiver/risico-acceptatieformulier). Eigenaar: Bestuurder/Directeur, na advies CISO.
-
-### Samenwerking
-
-Algemene uitgangspunten in de samenwerking:
-
-- Werk met vaste rollen en back-ups,
-
-- Zorg altijd voor een warme opstart, dus direct contact (via telefoon, teamschat, videocall oid) bij deze aanpak. Tijdens het werken aan de oplossing kan de communicatie deels ook via het servicedesksysteem, het servicedesksysteem is niet de tool om de samenwerking mee op te starten omdat de interactie te beperkt is.
-
-- Gebruik het servicedesksysteem als centrale plek voor registratie én monitoring.
-
-- Zorg voor beslisbevoegdheden die vooraf zijn afgestemd, of vraag deze expliciet aan het management (mandaten, stekkermandaat).
-
-- Zorg regelmatig voor afstemming tussen ISO en incidentcoördinatoren. Bijvoorbeeld eens per kwartaal
-
-### Voortvarend omgaan met onzekerheid
-
-Dreigingen zijn niet altijd meteen helder in te schatten. Zowel het inschatten van de kans als van de impact is ingewikkeld. Hulpmiddelen zoals een actuele en volledige architectuurplaat en CMDB zijn een randvoorwaarde om de impact te kunnen inschatten. Als er een dreiging speelt op een bepaalde component, dan kan je op basis van de beschikbare informatie soms zekerheid krijgen dat de dreiging voor de organisatie relevant is.
-
-Lijkt het niet relevant op basis van de beschikbare informatie, dan het belangrijk goed na te gaan wat de zekerheid is waarmee je kan zeggen dat de dreiging dus niet speelt in VOORBEELDGEMEENTE. Is de twijfel groot of klein? Bij grote twijfel en een grote kans op misbruik, en (mogelijk) een grote impact op de business moet er tóch nader geanalyseerd worden, meer zekerheid komen. Het advies van IBD en andere bronnen is dan ook belangrijke input om wel of niet te escaleren.
-
-Sinds een paar jaar is de “Assume breach” aanpak in opkomst binnen de cybersecurity. We weten immers dan hetgeen we zien, niet alles is wat bestaat, dus dat er meer zekerheid en voorzichtigheid moet worden ingebouwd in processen. Dit betekent nogal wat voor de ISO’s: als er een dreiging is van niveau Midden of Acuut, dan wordt in onderling overleg meteen bepaald hoe er een risico-assessment gedaan wordt dat binnen een uur een eerste resultaat moet hebben. Dat passen we toe in deze procedure, die we uiteraard aanpassen als vanuit evaluaties blijkt dat het strakker of losser moet.
-
-### Vuistregels
-
-Deze procedure geeft wat richting aan de manier waarop we omgaan met concrete cyberdreigingen, zodat we proportioneel kunnen handelen. Onderstaande vuistregels gelden daarbij ook, en mogen we van onszelf en onze collega’s verwachten:
-
-- Zien = Doen! De persoon die het signaal ontvangt, is verantwoordelijk voor het initiëren van de actie. Neem de regie, je hoeft niet alles op te lossen, maar zorgen dat het signaal tot actie leidt is je werk. Je toont eigenaarschap: zorgt dat het voor elkaar komt.
-
-- We zijn er bijna? Toch escaleren! Ervaring leert dat het lastig in te schatten is hoeveel tijd het oplossen van een dreiging of incident nog kost. Escaleer dus als het tijd is, ben je (vaak) te snel met aan de bel trekken? Dan passen we na verloop van tijd de procedure aan.
-
-### Wie moet geïnformeerd worden, waarover en door wie?
-
-| Dreigingsniveau | Te informeren personen | Door wie | Onderwerpen van communicatie |
+| Niveau | Score | Aanpak | Doorlooptijd |
 |---|---|---|---|
-| Laag Risico | Functioneel beheerder | ISO/informatiebeveiliger | Technische aard van dreiging, mogelijk aanpak, overleg over realistische oplossingstermijn |
-|  | Gebruikersgroepen | Functioneel beheerder | Eventuele tijdelijke beperkingen of alternatieven |
-| Gemiddeld Risico | Incidentcoördinator | ISO/informatiebeveiliger | Risico-inschatting, onzekerheden, beoogde oplossing en tijdspad |
-|  | CISO, teammanager regie en processen (bij escalatie) | Incidentcoördinator / ISO | Dreigingsbeeld, knelpunten in aanpak, noodzaak prioriteit of escalatie, bedrijfsimpact beoogde oplossing |
-|  | Gebruikersorganisatie | Incidentcoördinator / ISO (evt. met communicatie of functioneel beheer) | Verwachte impact op dienstverlening en alternatieven |
-| Acuut Risico | Incidentcoördinator | ISO | Risico-inschatting, onzekerheden, beoogde oplossing en tijdspad, escalatie-aanpak |
-|  | CISO en teammanager regie en processen | Incidentcoördinator / ISO | Onmogelijkheid tot snelle mitigatie, besluitvorming over inzet CTD, beoogde oplossing inclusief bedrijfsimpact |
-|  | CIO (bij activering CTD) | CISO | Advies voor instellen CTD voor centrale aansturing oplossing |
-|  | CTD-leden (na besluit tot inzet) | CISO/secretaris CTD | Dreigingsbeeld, besluitvorming en rollen CTD |
-|  | Communicatieadviseur als deelnemer aan CTD | CISO/CTD-secretaris | Of en hoe (intranet, persoonlijk) er intern/extern gecommuniceerd moet worden (denk aan IBD, Gemeentelijke clusters, de organisatie) |
-|  | Direct betrokken afdelingen | Communicatie (CTD) of incidentcoördinator | Aard van verstoring, bedrijfsimpact, planning herstel, eventuele maatregelen en alternatieve werkwijze |
+| Laag | onder 5 | ISO schat de aanpak in, stemt af met functioneel beheer, technisch beheer en zo nodig de beheerpartij via het servicedesksysteem; reactie binnen een werkdag, oplossen via de reguliere planning | maximaal 10 werkdagen |
+| Gemiddeld | 5 tot en met 14 | ISO en incidentcoördinator verkennen binnen een uur gezamenlijk de vervolgstappen; registratie in het servicedesksysteem; escalatie zo nodig naar CISO en teammanager regie en processen | maximaal 5 werkdagen |
+| Acuut | 15 en hoger | ISO en incidentcoördinator stemmen af en informeren hun coördinator; geen oplossing binnen een uur, dan escalatie naar de CISO; de CISO kan de CIO adviseren het calamiteitenteam te activeren | zo kort mogelijk, bij voorkeur binnen een werkdag |
 
-### Actualiseren werkwijze
+Bij acuut risico kan het nodig zijn preventief een systeem uit te zetten, ook als dat de kritieke
+dienstverlening raakt. Schakel dan het calamiteitenteam in en nodig de proceseigenaar uit. Is de dreiging
+echt acuut: eerst de maatregel, dan informeren.
 
-Beheerder van deze procedure is ISO. Jaarlijks of als onderdeel van een evaluatie bij dreigingen wordt de procedure aanpast, in samenspraak met de incident coördinator.
+### 5. Opties afwegen en kiezen
 
-Bij dreigingen die acuut zijn, moet deze binnen een week na afhandeling worden geëvalueerd. Deze procedure geeft mee invulling aan het informatiebeveiligingsbeleid.
+Vermijden, verminderen, overdragen of accepteren (ISO 27005), getoetst aan de Cbw en BIO 2.0. Er zijn vaak
+meerdere maatregelen met verschillende kosten en restrisico's. Koppel terug aan de proceseigenaar en, als het
+de infrastructuur raakt, de systeemeigenaar. Leg een omvangrijke of langlopende maatregel vast in het
+servicedesksysteem.
+
+### 6. Uitvoeren en bewaken
+
+Monitor de voortgang in het servicedesksysteem of het ISMS. Escaleer bij vertraging of onvoldoende effect.
+
+### 7. Risicoacceptatie
+
+Zijn maatregelen niet of niet tijdig uitvoerbaar, leg het dan voor aan de bevoegde beslisser:
+gemeentesecretaris of directie, afhankelijk van het impactniveau. Documenteer expliciet in een
+risicoacceptatieformulier. Eigenaar is de bestuurder of directeur, na advies van de CISO.
+
+## Wie informeer je, waarover en wie doet dat
+
+| Niveau | Wie | Door wie | Waarover |
+|---|---|---|---|
+| Laag | Functioneel beheerder | ISO | Technische aard, aanpak, realistische termijn |
+| | Gebruikersgroepen | Functioneel beheerder | Tijdelijke beperkingen of alternatieven |
+| Gemiddeld | Incidentcoördinator | ISO | Risico-inschatting, onzekerheden, oplossing en tijdpad |
+| | CISO en teammanager regie en processen (bij escalatie) | Incidentcoördinator of ISO | Dreigingsbeeld, knelpunten, noodzaak van prioriteit, bedrijfsimpact van de oplossing |
+| | Gebruikersorganisatie | Incidentcoördinator of ISO | Verwachte impact en alternatieven |
+| Acuut | Incidentcoördinator | ISO | Als bij gemiddeld, plus de escalatieaanpak |
+| | CISO en teammanager | Incidentcoördinator of ISO | Onmogelijkheid van snelle mitigatie, besluit over het calamiteitenteam |
+| | CIO | CISO | Advies om het calamiteitenteam te activeren |
+| | Leden calamiteitenteam | CISO of secretaris | Dreigingsbeeld, besluitvorming, rollen |
+| | Communicatieadviseur | CISO of secretaris | Of en hoe intern en extern wordt gecommuniceerd (IBD, clusters, regio) |
+| | Direct betrokken afdelingen | Communicatie of incidentcoördinator | Aard van de verstoring, impact, herstelplanning, alternatieve werkwijze |
+
+## Samenwerking en vuistregels
+
+- Vaste rollen met back-ups. Een warme start: direct contact per telefoon of videogesprek; het
+  servicedesksysteem is de plek voor registratie en bewaking, niet om de samenwerking mee te beginnen.
+- Beslisbevoegdheden vooraf afgestemd, of expliciet aan het management gevraagd (mandaat om de stekker eruit
+  te trekken).
+- ISO en incidentcoördinatoren stemmen periodiek af, bijvoorbeeld elk kwartaal.
+- **Zien is doen.** Wie het signaal ontvangt, zorgt dat het tot actie leidt. Je hoeft niet alles zelf op te
+  lossen; regie nemen is het werk.
+- **We zijn er bijna? Toch escaleren.** Hoeveel tijd het oplossen nog kost, is zelden goed in te schatten.
+  Te vaak te vroeg aan de bel? Dan passen we de procedure aan.
+
+## Onderhoud
+
+De ISO beheert deze procedure en past hem jaarlijks aan, of na een evaluatie. Een acute dreiging wordt
+binnen een week na afhandeling geëvalueerd.
+
+## Aanvulling van de commons
+
+> Drie punten die de oorspronkelijke procedure open laat en die BIO 2.0 wel vraagt.
+
+- **Leg de afspraken met de SOC-dienstverlener en de beheerpartij vast** in de dienstverleningsovereenkomst:
+  mandaat, piket, alarmering en spoedmaatregelen. Zonder die afspraken hangt stap 4 bij acuut risico aan
+  goodwill.
+- **Maak van het handelingskader een beslisboom** en zet die in het servicedesksysteem als kennisitem, zodat
+  de servicedesk en functioneel beheer dezelfde route volgen als de ISO.
+- **Bewaar per dreiging de afweging**, ook als de uitkomst "niet van toepassing" was. Dat is het bewijs
+  voor 5.7: niet alleen dat je dreigingsinformatie ontvangt, maar dat je er iets mee doet.
+
+## Bewijs
+
+- Het **overzicht van behandelde dreigingen** van het jaar: signaal, datum, score, besluit, doorlooptijd,
+  ook de afgewezen.
+- Per acuut risico: de **melding in het servicedesksysteem** met de tijdstempels van signaal, eerste analyse
+  en maatregel, en het **evaluatieverslag** binnen een week.
+- Per geaccepteerd risico: het **risicoacceptatieformulier** met handtekening van de beslisser.
+- De **vastgelegde afspraken** met SOC-dienstverlener en beheerpartij over mandaat en spoedmaatregelen.
+
+## BIO 2.0
+
+| Maatregel | Wat deze procedure daarvoor levert |
+|---|---|
+| 5.7 Informatie en analyses over dreigingen | Stap 1 en 2: dreigingsinformatie ontvangen, duiden en omzetten in een besluit |
+| 8.8 Beheer van technische kwetsbaarheden | Het handelingskader met doorlooptijden per risiconiveau, de spoedroute bij CVSS boven 9 |
+| 5.25 Beoordelen van en besluiten over informatiebeveiligingsgebeurtenissen | Stap 4: de weging en de escalatieroute naar incident of calamiteit |
+| 5.4 Managementverantwoordelijkheden | Stap 7: risicoacceptatie op het bevoegde niveau, vastgelegd |
+| 5.19 en 5.20 Leveranciersrelaties en -overeenkomsten | De aanvulling: mandaat en spoedmaatregelen contractueel vastleggen |
+
+## Zo leg je het uit
+
+**Aan de directie.** "Als het NCSC vandaag een kwetsbaarheid meldt, weten we morgen of die ons raakt, en
+niet pas als het misgaat. En als de oplossing betekent dat we een systeem uitzetten, is vooraf afgesproken
+wie dat mag beslissen."
+
+**Aan de proceseigenaar.** "Je krijgt van ons geen technisch verhaal maar een advies: dit is het risico voor
+jouw proces, dit zijn de opties, dit kosten ze. Jij kiest, en als je accepteert, leggen we dat samen vast."
+
+**Aan de beheerders.** "Zien is doen. Je hoeft het niet zelf op te lossen, maar je zorgt dat het bij de
+juiste persoon landt en niet blijft liggen. En escaleer liever een keer te veel dan te laat."

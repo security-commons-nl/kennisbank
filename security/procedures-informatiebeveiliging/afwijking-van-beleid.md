@@ -1,37 +1,64 @@
 # Procedure afwijking van het beleid
 
-## Inleiding
-
-Het is mogelijk dat er afgeweken wordt of moet worden van ons informatiebeveiligingsbeleid of ons privacybeleid. In dat geval kan dit worden aangevraagd, waarna team IB&P vervolgens zal beoordelen welk risico de afwijking met zich mee brengt. Het management zal op basis van de aanbeveling vanuit team IB&P een definitieve keuze maken.
+> **Herkomst:** procedure van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten, versie 0.1 (maart 2024), geschreven onder de eerste BIO. Voor de commons herschreven in een vaste opbouw en gekoppeld aan BIO 2.0.
 
 ## Doel
 
-Doel van deze procedure is om de afwijkingen van het beleid te beheren en inzichtelijk te houden. In het geval van een ongeautoriseerde beleidsafwijking wordt deze beschouwd als een beveiligingsincident en dient ook op deze manier afgehandeld te worden
+Soms kan of moet een afdeling afwijken van het informatiebeveiligings- of privacybeleid. Dat mag, mits het
+is aangevraagd, gewogen, besloten en bijgehouden, met een einddatum en een plan om weer aan het beleid te
+voldoen. Een afwijking die niet is aangevraagd, is een beveiligingsincident en wordt zo behandeld.
 
-## Referentie BIO/Wetgeving
+## Wanneer
 
-> **Noot bij publicatie (2026).** Deze procedure is geschreven onder de eerste BIO. In BIO 2.0 valt het bijhouden van afwijkingen onder maatregel 5.36 *Naleving van beleid, regels en normen voor informatiebeveiliging*, en het besluit over een afwijking onder 5.4 *Managementverantwoordelijkheden*. De verwijzing naar 5.18 hieronder blijft relevant voor afwijkingen in toegangsrechten.
+Bij elke situatie waarin een regel uit het beleid niet kan worden nageleefd: een applicatie die geen MFA
+ondersteunt, een leverancier die een eis niet haalt, een werkproces dat een uitzondering nodig heeft. Niet
+voor eenmalige incidenten; wel voor alles wat langer dan een paar dagen duurt.
 
-Er is geen directe maatregel opgenomen in de BIO over afwijkingen van het beleid. Wel over ongeautoriseerde afwijkingen. Vandaar de onderstaande BIO maatregel om het belang van beleidsafwijkingen vast te leggen te benadrukken.
+## Rollen
 
-BIO 5.18 Toegangsrechten
+| Rol | Doet |
+|---|---|
+| Aanvrager | Dient de aanvraag in via het formulier en stelt na goedkeuring het verbeterplan op |
+| ISO's en privacy officers (team IB&P) | Registreren, maken het risicoprofiel, documenteren het besluit, eisen het verbeterplan |
+| CISO | Eindverantwoordelijk voor de beoordeling; controleert de lijst jaarlijks |
+| MT IT | Besluit over de aanvraag en koppelt terug |
 
-Toegangsrechten voor informatie en andere gerelateerde bedrijfsmiddelen behoren te worden verstrekt, beoordeeld, aangepast en verwijderd overeenkomstig het onderwerpspecifieke beleid en de regels inzake toegangsbeveiliging van de organisatie.
+## Stappen
 
-Bewerkstelligen dat de toegang tot informatie en andere gerelateerde bedrijfsmiddelen wordt vastgesteld en goedgekeurd overeenkomstig de bedrijfseisen.
-
-Ongeautoriseerde afwijkingen op of ongeautoriseerde aanpassingen aan uitgegeven toegangsrechten worden beschouwd als beveiligingsgebeurtenis en als zodanig vastgelegd en afgehandeld.
-
-## Taken en verantwoordelijkheden
-
-Onderstaand de te nemen stappen om te zorgen dat wij als organisatie grip krijgen op onze leveranciers, vanuit het oogpunt van Informatiebeveiliging & Privacy.
-
-| Stappen | Periodiciteit | Beschrijving stappen | R | A | C | I |
+| # | Stap | Wanneer | Wat | R | A | I |
 |---|---|---|---|---|---|---|
-| 1. Aanvraagprocedure | Continu | Indien een afwijking van ons informatiebeveiligingsbeleid of privacybeleid noodzakelijk is, kan deze worden aangevraagd via het formulier 'Aanvragen beleidsafwijking'. Deze is hier te vinden: Aanvragen beleidsafwijking. | Aanvrager | Aanvrager |  |  |
-| 2. Behandeling van aanvraag |  | De ingediende aanvraag wordt ontvangen en geregistreerd in de deze SharePoint list. Het team IB&P evalueert de aanvraag en maakt een risicoprofiel op basis van de aangeleverde informatie. | ISO's & PO's | CISO |  |  |
-| 3. Besluitvorming |  | Het risicoprofiel wordt voorgelegd aan het Management Team Informatievoorziening (MT IT) voor een definitief besluit. Het MT IT neemt een definitieve beslissing over de aanvraag. | ISO's & PO's | CISO |  | Aanvrager |
-| 4. Terugkoppeling |  | Het MT IT communiceert de definitieve beslissing aan zowel team IB&P als aan de aanvrager. In de lijst wordt gedocumenteerd of de aanvraag is goedgekeurd of afgewezen, met toevoeging van een vervaldatum indien goedgekeurd. | MT IT | MT IT | CISO | Aanvrager + team IB&P |
-| 5. Documentatie |  | Binnen deze lijst wordt de beslissing vanuit het MT gedocumenteerd. Indien goedgekeurd wordt er een verloop datum van de afwijking bijgezet. | ISO's & PO's | CISO |  |  |
-| 6. Verbeter plan |  | Team IB&P stelt de eis aan de aanvrager om een verbeterplan op te stellen zodat over verloop van tijd we weer compliant aan het beleid zijn. | ISO's & PO's | CISO |  | Aanvrager |
-| 7. Periodieke controle | Jaarlijks | De lijst van afwijkingen wordt jaarlijks gecontroleerd om de accuraatheid ervan te waarborgen. | CISO | CISO |  |  |
+| 1 | Aanvraag | Continu | Via het formulier "Aanvragen beleidsafwijking" | Aanvrager | Aanvrager | |
+| 2 | Beoordeling | | Registratie in de afwijkingenlijst; team IB&P maakt een risicoprofiel op basis van de aangeleverde informatie | ISO's en PO's | CISO | |
+| 3 | Besluit | | Het risicoprofiel gaat naar het MT IT, dat definitief beslist | ISO's en PO's | CISO | Aanvrager |
+| 4 | Terugkoppeling | | Het MT IT meldt het besluit aan team IB&P en de aanvrager; in de lijst komt goedgekeurd of afgewezen, bij goedkeuring met vervaldatum | MT IT | MT IT | Aanvrager, team IB&P |
+| 5 | Documentatie | | Het besluit en de vervaldatum staan in de lijst | ISO's en PO's | CISO | |
+| 6 | Verbeterplan | | Team IB&P eist van de aanvrager een plan om binnen de termijn weer aan het beleid te voldoen | ISO's en PO's | CISO | Aanvrager |
+| 7 | Controle | Jaarlijks | De lijst wordt nagelopen op juistheid en verlopen afwijkingen | CISO | CISO | |
+
+## Aanvulling van de commons
+
+> Twee punten die de oorspronkelijke procedure open laat.
+
+- **Een verlopen afwijking is een nieuwe aanvraag**, geen stilzwijgende verlenging. Zet in stap 7 dat elke
+  afwijking waarvan de vervaldatum is verstreken, terug naar stap 1 gaat, en dat de aanvrager daar een maand
+  vooraf op wordt gewezen.
+- **Koppel de afwijkingenlijst aan het risicoregister.** Een goedgekeurde afwijking is een geaccepteerd
+  risico en hoort met eigenaar en termijn in het register van het managementsysteem, niet alleen in een
+  losse lijst.
+
+## Vastlegging en bewijs
+
+- De **afwijkingenlijst** met per afwijking: aanvrager, risicoprofiel, besluit, vervaldatum, verbeterplan, status.
+- Het **verslag van de jaarlijkse controle** door de CISO.
+- De **MT-besluiten** over afwijkingen, terug te vinden in de verslagen van het MT IT.
+
+## BIO 2.0
+
+De oorspronkelijke procedure verwees naar BIO-maatregel 5.18 (toegangsrechten), omdat de eerste BIO geen
+maatregel over beleidsafwijkingen kende. In BIO 2.0 is dat anders.
+
+| Maatregel | Wat deze procedure daarvoor levert |
+|---|---|
+| 5.36 Naleving van beleid, regels en normen voor informatiebeveiliging | Afwijkingen worden geregistreerd, gewogen en periodiek gecontroleerd |
+| 5.4 Managementverantwoordelijkheden | Het besluit ligt bij het management (MT IT), niet bij de uitvoering |
+| 5.18 Toegangsrechten | Voor afwijkingen in toegangsrechten: een ongeautoriseerde afwijking is een beveiligingsgebeurtenis |

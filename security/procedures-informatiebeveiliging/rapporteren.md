@@ -1,41 +1,81 @@
 # Procedure rapporteren
 
-## Inleiding: rapporteren
+> **Herkomst:** procedure van de CISO van een regionale samenwerking van gemeenten, versie 1 (maart 2024). De regio is sindsdien overgestapt van een kwartaal- op een halfjaarcyclus binnen een geïntegreerd managementsysteem; de opbouw van de rapportage is gebleven. Voor de commons herschreven in een vaste opbouw.
 
-Onze IB&P-rapportage is één van de belangrijkste middelen die wij hebben om de huidige situatie rondom informatiebeveiliging en privacy te schetsen. Zowel richting management als richting onze klanten (gemeenten) maar ook richting de rest van de organisatie. Rapporteren is tevens de laatste stap van onze processen. Transparantie staat hierbij centraal.
+## Doel
 
-Onze IB&P-rapportage bestaat uit de volgende onderdelen:
+De rapportage over informatiebeveiliging en privacy is het belangrijkste middel om management, de
+aangesloten gemeenten en de rest van de organisatie te laten zien hoe het ervoor staat. Rapporteren is de
+laatste stap van elk proces. Transparantie staat voorop: de rapportage is voor iedereen in de organisatie
+in te zien, niet alleen voor het management.
 
-- Risicoprofiel – toont hoe het ervoor staat als het gaat om onze risico's: verlies van beschikbaarheid, integriteit, vertrouwelijkheid en rechtmatigheid.
+## De vier onderdelen
 
-- Voortgang uitvoeringsprogramma’s – toont in welke mate wij voortgang hebben geboekt op onze strategische doelstellingen.
+| Onderdeel | Wat het laat zien | Soort |
+|---|---|---|
+| Risicoprofiel | Hoe het staat met de risico's: verlies van beschikbaarheid, integriteit, vertrouwelijkheid en rechtmatigheid | kwalitatief |
+| Voortgang uitvoeringsprogramma's | In welke mate de strategische doelstellingen zijn gehaald | kwalitatief |
+| Indicatoren | Hoe het operationeel staat: incidenten, datalekken, technische gaten, status van risicoanalyses | kwantitatief, met drempels voor groen, oranje en rood |
+| Problemen | Welke problemen risico's veroorzaken en opgelost moeten worden | lijst met eigenaar |
 
-- Indicatoren – toont hoe wij er operationeel voor staan op het gebied van IB&P: op wat voor vlakken wij kwetsbaar zijn (incidenten, technische gaten, etc).
+## Wanneer
 
-- Problemen – toont welke IB&P-problemen er zijn die IB&P-risico’s introduceren en die opgelost dienen te worden.
+Oorspronkelijk elk kwartaal, in de laatste maand. Kies een ritme dat past bij de managementcyclus van de
+organisatie; de regio waar dit vandaan komt, rapporteert nu halfjaarlijks en koppelt dat aan de
+planning-en-controlcyclus.
 
-De input voor de rapportage wordt opgehaald uit een aantal SharePoint lijsten op onze ‘externe’ SharePoint site ((interne SharePoint-pagina) zie voor de locaties Te_nemen_stappen. Deze input wordt vervolgens gevisualiseerd op onze externe SharePoint site onder de tegel ‘IB&P-dashboard’: (interne SharePoint-pagina)
+## Rollen
 
-Communicatie van onze rapportage richting onze belangrijkste stakeholders is cruciaal. Dit is tevens de laatste stap van rapporteren. De rapportage kan te allen tijde door alle medewerkers van de organisatie worden ingezien, niet alleen door management.
+| Rol | Doet |
+|---|---|
+| CISO | Eigenaar van de rapportage; beschrijft risicoprofiel en voortgang; communiceert naar management en stakeholders |
+| ISO's en privacy officers | Halen de indicatoren op, houden de problemen bij |
+| FG | Geraadpleegd bij het risicoprofiel en de problemen |
+| CIO | Geraadpleegd bij de voortgang van de programma's |
+| Eigenaar per indicator | Levert de meting aan |
 
-## Te nemen stappen
+## Stappen
 
-Onderstaand de te nemen stappen om tot de rapportage te komen.
-
-| Stappen | Periodiciteit | Beschrijving stappen | R | A | C | I |
+| # | Stap | Wanneer | Wat | R | A | C |
 |---|---|---|---|---|---|---|
-| 1. Risicoprofiel beschrijven | Elk kwartaal (laatste maand) | Dit betreft een kwalitatieve inschatting (op dit moment) van de risico’s en wordt bijgewerkt in de laatste maand van elk kwartaal opgehaald moeten worden. Het wordt hier bijgehouden: (interne SharePoint-pagina) | CISO | CISO | FG |  |
-| 2. Voortgang uitvoeringsprogramma’s | Elk kwartaal (laatste maand) | Dit betreft een kwalitatieve inschatting, afhankelijk van de geplande initiatieven. Dit wordt bijgewerkt in de laatste maand van elk kwartaal opgehaald moeten worden. Het wordt hier bijgehouden: (interne SharePoint-pagina) | CISO | CISO | CIO |  |
-| 3. Indicatoren ophalen en vastleggen | Elk kwartaal (laatste maand) | Een overzicht van de te meten indicatoren staat hier: (interne SharePoint-pagina) De daadwerkelijke metingen dienen in de laatste maand van elk kwartaal opgehaald te worden en staan hier: (interne SharePoint-pagina) Hieronder staat uitgebreide uitleg over deze stap. | ISO's & PO's | CISO |  |  |
-| 4. Problemen bijhouden | Continu | IB&P-problemen dienen continu te worden bijgehouden: toegevoegd, bijgewerkt en verwijderd indien het is afgehandeld. Deze worden hier bijgehouden: (interne SharePoint-pagina) Van belang is om de eigenaren van deze problemen te informeren van hun problemen, alvorens de rapportage finaal is per einde kwartaal, zodat zij niet verrast worden door management wanneer de rapportage wordt gedeeld. | ISO's & PO's | CISO | FG, TAB, B&A |  |
-| 5. Communicatie richting stakeholders | Elk kwartaal (laatste maand) | Het communiceren van onze rapportage naar management en andere stakeholders, door middel van het delen van de link naar ons dashboard. Van belang is om als ‘ondertiteling’ bij het delen zowel de kwalitatief gemeten onderdelen van de rapportage (risicoprofiel, voortgang uitvoeringsprogramma’s) en de kwantitatief gemeten onderdelen (indicatoren, problemen) te duiden in de vorm van wat tekstuele context. Te informeren management: MT bedrijfsvoering CIO directeur bedrijfsvoering Gemeenten (nader te bepalen contacten) | CISO | CISO |  |  |
+| 1 | Risicoprofiel | laatste maand van de periode | Kwalitatieve inschatting van de risico's, bijgewerkt in de risicolijst | CISO | CISO | FG |
+| 2 | Voortgang programma's | idem | Kwalitatieve inschatting per gepland initiatief | CISO | CISO | CIO |
+| 3 | Indicatoren | idem | Per indicator een meting, volgens de vastgelegde berekening; geen data beschikbaar, dan "niet gemeten" | ISO's en PO's | CISO | |
+| 4 | Problemen | continu | Toevoegen, bijwerken, afsluiten; eigenaren vooraf informeren zodat niemand verrast wordt als de rapportage verschijnt | ISO's en PO's | CISO | FG, beheerteams |
+| 5 | Communicatie | laatste maand | Rapportage delen met management en stakeholders, met een korte duiding van de kwalitatieve en de kwantitatieve delen | CISO | CISO | |
 
-## Bijlage: Indicatoren ophalen en vastleggen
+Te informeren: het managementteam bedrijfsvoering, de CIO, de directeur bedrijfsvoering en de contacten bij
+de aangesloten gemeenten.
 
-Indicatoren geven een beeld van de operationele status van IB&P zoals incidenten, datalekken, allerlei technische aspecten en status van risico analyses. Deze helpen om een gevoel te schetsen rondom de borging van IB&P en om in de vorm van een trend te tonen of wij vooruit of achteruit gaan.
+## Indicatoren
 
-Een overzicht van de te meten indicatoren staat hier: (interne SharePoint-pagina) Hieronder een screenshot. Elke indicator heeft een ‘Eigenaar’ binnen team IB&P, die verantwoordelijk is voor het ophalen van de metingen, hieronder uitgelegd. Daarnaast is ook weergegeven hoe een indicator wordt berekend (kolom ‘ Berekening’). Deze lijst bevat ook de ‘thresholds’ per indicator: wanneer vinden wij het ‘Groen’, ‘Oranje’ of ‘Rood’. Dit wordt automatisch in ons IB&P-dashboard gevisualiseerd.
+Elke indicator heeft een eigenaar binnen het team die de meting ophaalt, een vastgelegde berekening en
+drempelwaarden voor groen, oranje en rood. De metingen worden per periode toegevoegd in een vaste lijst en
+automatisch in het dashboard gevisualiseerd, zodat een trend zichtbaar wordt. Ontbreekt data, dan wordt
+"niet gemeten" vastgelegd, niet nul.
 
-De daadwerkelijke metingen, die in de laatste maand van elk kwartaal opgehaald moeten worden. De metingen staan hier: (interne SharePoint-pagina) Hieronder een screenshot.
+## Aanvulling van de commons
 
-De uit te voeren acties zijn het toevoegen van een meting voor elke indicator, per laatste maand van elk kwartaal (maart, juni, september, december). Dat doen wij door op de locatie van de metingen ((interne SharePoint-pagina) te klikken op ‘Nieuw’, met vervolgens de data die benodigd is per meting van die indicator. Indien er geen data beschikbaar is, voegen wij ‘Niet gemeten’ toe.
+> Wat de oorspronkelijke procedure niet zegt en BIO 2.0 en ISO 27001 wel vragen.
+
+- **Een vaste set indicatoren met een reden.** Noem per indicator welke maatregel of welk risico hij
+  bewaakt. Een indicator zonder maatregel erachter is een getal, geen stuurinformatie.
+- **De directiebeoordeling.** ISO 27001 vraagt dat de directie de rapportage periodiek beoordeelt en daar
+  besluiten aan verbindt. Leg vast in welk gremium dat gebeurt en bewaar de besluiten; zie
+  [GRC voor security, privacy en continuïteit](../../governance/risicogestuurd-managementsysteem/).
+- **Twee bronnen is er een te veel.** Als het risicoregister in het managementsysteem leidend is, dan is de
+  rapportage daar een uittreksel van, geen eigen lijst.
+
+## Vastlegging en bewijs
+
+- De **rapportages** per periode, met datum van verzending en aan wie.
+- De **indicatorlijst** met per indicator eigenaar, berekening, drempels en de metingen over de tijd.
+- Het **besluit of verslag** van het gremium dat de rapportage heeft besproken.
+
+## BIO 2.0
+
+| Maatregel | Wat deze procedure daarvoor levert |
+|---|---|
+| 5.4 Managementverantwoordelijkheden | Het management krijgt periodiek het beeld en wordt aangesproken op de problemen |
+| 5.36 Naleving van beleid, regels en normen voor informatiebeveiliging | De indicatoren en het risicoprofiel laten zien of beleid werkt |
+| ISO 27001 9.1 en 9.3 (monitoren, meten, directiebeoordeling) | De rapportage is de input voor de directiebeoordeling |
