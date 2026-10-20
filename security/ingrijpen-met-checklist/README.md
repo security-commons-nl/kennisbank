@@ -6,7 +6,7 @@ normen: [BIO2]
 peildatum: 2026-10-20
 herkomst: actie-checklist van het interventieteam van een gemeente, opgesteld met de concernadviseur risicomanagement, mei 2026
 status: in gebruik
-samenvatting: Een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt. Dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. Met een leeg sjabloon, een ingevuld voorbeeld voor ClickFix en de registerinstelling om Windows + R uit te zetten.
+samenvatting: Een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt, als aanvulling op het gewone wijzigingsbeheer. Dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. Met een leeg sjabloon, een ingevuld voorbeeld voor ClickFix en de registerinstelling om Windows + R uit te zetten.
 barrieres: [execution]
 rol: verdieping
 pijler: meten-voordat-je-ingrijpt
