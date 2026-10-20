@@ -98,7 +98,7 @@ dan is dat een uitnodiging en geen fout.</p>
   <a class="item" href="security/">
     <span class="itemtop">
       <span class="itemtitle">Security</span>
-      <span class="tag tag-repo">51 stukken</span>
+      <span class="tag tag-repo">53 stukken</span>
     </span>
     <p class="itemdesc">Informatiebeveiliging</p>
   </a>
@@ -119,7 +119,7 @@ dan is dat een uitnodiging en geen fout.</p>
   <a class="item" href="governance/">
     <span class="itemtop">
       <span class="itemtitle">Governance</span>
-      <span class="tag tag-repo">6 stukken</span>
+      <span class="tag tag-repo">7 stukken</span>
     </span>
     <p class="itemdesc">Beleid, organisatie en inkoop rond digitale weerbaarheid</p>
   </a>
@@ -127,7 +127,7 @@ dan is dat een uitnodiging en geen fout.</p>
 </div>
 
 <h2>Zoek in de kennisbank</h2>
-<p class="h2sub">Zoek op onderwerp, norm of partij. Het zoekvak doorzoekt de 72 stukken hieronder en 399 stukken van 9 andere partijen, zoals de IBD, CIP en het Rijk. Zonder zoekterm zie je de stukken met een eigen pagina.</p>
+<p class="h2sub">Zoek op onderwerp, norm of partij. Het zoekvak doorzoekt de 75 stukken hieronder en 399 stukken van 9 andere partijen, zoals de IBD, CIP en het Rijk. Zonder zoekterm zie je de stukken met een eigen pagina.</p>
 
 <div class="filters" id="filters" hidden>
   <label class="visueel-verborgen" for="zoek">Zoeken</label>
@@ -135,16 +135,16 @@ dan is dat een uitnodiging en geen fout.</p>
   <label class="visueel-verborgen" for="barriere">Barriere</label>
   <select id="barriere">
   <option value="">Alle barrieres</option>
-  <option value="review">Beoordeel kritieke leveranciers periodiek en risicogestuurd (1)</option>
+  <option value="review">Beoordeel kritieke leveranciers periodiek en risicogestuurd (2)</option>
   <option value="consent">Beperk app-toestemming en richt gecontroleerde admin consent in (4)</option>
   <option value="segment">Beperk lateral movement met segmentatie en minimale rechten (4)</option>
-  <option value="execution">Beperk software- en scriptuitvoering met application control en ASR (4)</option>
+  <option value="execution">Beperk software- en scriptuitvoering met application control en ASR (5)</option>
   <option value="session">Beperk tokenmisbruik met apparaatbinding en sessiebeleid (3)</option>
   <option value="backup">Bescherm back-ups met onveranderbaarheid en gescheiden beheer (1)</option>
   <option value="legacy">Blokkeer legacy authentication (4)</option>
   <option value="soc">Borg 24/7 opvolging en escalatie van kritieke meldingen (5)</option>
-  <option value="vuln">Borg continu kwetsbaarhedenbeheer en spoedpatching (2)</option>
-  <option value="edr">Borg EDR, tamper protection en snelle endpointisolatie (3)</option>
+  <option value="vuln">Borg continu kwetsbaarhedenbeheer en spoedpatching (3)</option>
+  <option value="edr">Borg EDR, tamper protection en snelle endpointisolatie (4)</option>
   <option value="patch">Borg OS- en third-party-patching met controle op dekking (1)</option>
   <option value="upstream">Borg upstream DDoS-mitigatie en robuuste DNS (1)</option>
   <option value="dependencies">Breng kritieke systemen en leveranciers in samenhang in beeld (2)</option>
@@ -154,7 +154,7 @@ dan is dat een uitnodiging en geen fout.</p>
   <option value="adminhard">Hard de beheerwerkplek en dwing de toegestane toegang af (1)</option>
   <option value="pentest">Laat extern pentesten en verifieer herstel van bevindingen (1)</option>
   <option value="owner">Leg leveranciersrisico’s voor aan de risicohouder (2)</option>
-  <option value="treatment">Leg risicoacceptatie of maatregelen met eigenaar en termijn vast (2)</option>
+  <option value="treatment">Leg risicoacceptatie of maatregelen met eigenaar en termijn vast (3)</option>
   <option value="residual">Maak significante leveranciersrestrisico’s expliciet (1)</option>
   <option value="adminmonitor">Monitor privileged activiteiten en rolwijzigingen (1)</option>
   <option value="crisis">Oefen het ransomware- en crisisherstelplan (4)</option>
@@ -163,18 +163,18 @@ dan is dat een uitnodiging en geen fout.</p>
   <option value="model">Scheid privileged access technisch van dagelijks gebruik (1)</option>
   <option value="remote">Scherm publieke beheerinterfaces af (1)</option>
   <option value="critical">Stel kritieke processen en herstelprioriteiten vast (2)</option>
-  <option value="exploitresponse">Test detectie en response op externe exploits (1)</option>
+  <option value="exploitresponse">Test detectie en response op externe exploits (2)</option>
   <option value="restore">Test herstel tegen de afgesproken RTO en RPO (2)</option>
   <option value="mailresponse">Test mail-remediation en het phishing/BEC-playbook (1)</option>
   <option value="idresponse">Test response op identity- en app-compromise (1)</option>
   <option value="webtest">Test web/API-beveiliging en herstel kwetsbaarheden (1)</option>
-  <option value="technicalvendor">Toets technische maatregelen van kritieke leveranciers (2)</option>
+  <option value="technicalvendor">Toets technische maatregelen van kritieke leveranciers (3)</option>
   <option value="key">Vereis een aparte fysieke FIDO2-key voor elevation (1)</option>
   <option value="localadmin">Verwijder lokale administratorrechten (1)</option>
   <option value="jit">Verwijder permanente rollen en gebruik PIM/JIT (1)</option>
   <option value="fallback">Verwijder zwakke fallback- en herstelroutes (2)</option>
   </select>
-  <p class="telling" id="telling" aria-live="polite">72 stukken</p>
+  <p class="telling" id="telling" aria-live="polite">75 stukken</p>
 </div>
 
 <div class="grid" id="direct-te-lezen">
@@ -186,6 +186,15 @@ dan is dat een uitnodiging en geen fout.</p>
     </span>
     <p class="itemdesc">De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR, Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming, Blokkeer legacy authentication, Beperk tokenmisbruik met apparaatbinding en sessiebeleid, Beperk app-toestemming en richt gecontroleerde admin consent in, Beperk lateral movement met segmentatie en minimale rechten, Borg EDR, tamper protection en snelle endpointisolatie · verdieping</div>
+    <div class="normen"><span class="norm">BIO2</span></div>
+  </a>
+  <a class="item" href="security/ingrijpen-met-checklist/" data-vak="security" data-zoek="ingrijpen met een checklist, voordat je de knop omzet een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt. dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. met een leeg sjabloon, een ingevuld voorbeeld voor clickfix en de registerinstelling om windows + r uit te zetten. aanpak security bio2" data-barrieres="execution">
+    <span class="itemtop">
+      <span class="itemtitle">Ingrijpen met een checklist, voordat je de knop omzet</span>
+      <span class="tag tag-live">live</span>
+    </span>
+    <p class="itemdesc">Een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt. Dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. Met een leeg sjabloon, een ingevuld voorbeeld voor ClickFix en de registerinstelling om Windows + R uit te zetten.</p>
+    <div class="meta">security · aanpak · peildatum 2026-10-20 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR · verdieping · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
   <a class="item" href="security/sturen-op-weerbaarheid/" data-vak="security" data-zoek="sturen op weerbaarheid in plaats van op maatregelen voor bestuur, directie en ciso: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. met het lagenmodel, een raci-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting. aanpak security bio2" data-barrieres="">
@@ -610,6 +619,15 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test mail-remediation en het phishing/BEC-playbook, Test response op identity- en app-compromise, Test detectie en response op externe exploits · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
+  <a class="item" href="security/procedures-informatiebeveiliging/" data-vak="security" data-zoek="acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking de procedures die een ib&amp;p-team dagelijks nodig heeft, als startpunt voor je eigen set. datalekken en beveiligingsincidenten melden en afhandelen, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, systemen classificeren op beschikbaarheid, integriteit en vertrouwelijkheid, inzage in de mailbox van een collega, rapporteren, leveranciersmanagement en het vaststellen van strategisch beleid. per procedure staat erbij voor welke bio 2.0-maatregelen hij bewijs helpt leveren. aanpak security bio2 avg" data-barrieres="vuln exploitresponse review treatment">
+    <span class="itemtop">
+      <span class="itemtitle">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</span>
+      <span class="tag tag-live">live</span>
+    </span>
+    <p class="itemdesc">De procedures die een IB&amp;P-team dagelijks nodig heeft, als startpunt voor je eigen set. Datalekken en beveiligingsincidenten melden en afhandelen, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, systemen classificeren op beschikbaarheid, integriteit en vertrouwelijkheid, inzage in de mailbox van een collega, rapporteren, leveranciersmanagement en het vaststellen van strategisch beleid. Per procedure staat erbij voor welke BIO 2.0-maatregelen hij bewijs helpt leveren.</p>
+    <div class="meta">security · aanpak · peildatum 2026-10-20 · in gebruik · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching, Test detectie en response op externe exploits, Beoordeel kritieke leveranciers periodiek en risicogestuurd, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · alternatief</div>
+    <div class="normen"><span class="norm">BIO2</span><span class="norm">AVG</span></div>
+  </a>
   <a class="item" href="security/ketenafhankelijkheden/" data-vak="security" data-zoek="ketenafhankelijkheden in beeld in beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. uit bronnen die je vaak al hebt. met de opbouw, het actueel houden en het overzicht als bewijs. handleiding security bio2" data-barrieres="dependencies">
     <span class="itemtop">
       <span class="itemtitle">Ketenafhankelijkheden in beeld</span>
@@ -825,6 +843,15 @@ dan is dat een uitnodiging en geen fout.</p>
     <p class="itemdesc">Compleet AI-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. Waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, AI-geletterdheid. Acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen.</p>
     <div class="meta">governance · beleid · versie concept 1.0, 2026-08 · concept</div>
     <div class="normen"><span class="norm">AI Act</span><span class="norm">AVG</span><span class="norm">BIO2</span></div>
+  </a>
+  <a class="item" href="governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/" data-vak="governance" data-zoek="zes hulpmiddelen voor apparatuur, toegang en leveranciers losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. een reglement voor it-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een isae 3402- of soc 2-verklaring van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor microsoft defender met een raci tussen gemeente en beheerpartij. per hulpmiddel staat erbij bij welke bio 2.0-maatregel het hoort. sjabloon governance bio2 avg" data-barrieres="technicalvendor edr">
+    <span class="itemtop">
+      <span class="itemtitle">Zes hulpmiddelen voor apparatuur, toegang en leveranciers</span>
+      <span class="tag tag-live">live</span>
+    </span>
+    <p class="itemdesc">Losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. Een reglement voor IT-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een ISAE 3402- of SOC 2-verklaring van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor Microsoft Defender met een RACI tussen gemeente en beheerpartij. Per hulpmiddel staat erbij bij welke BIO 2.0-maatregel het hoort.</p>
+    <div class="meta">governance · sjabloon · peildatum 2026-10-20 · sjabloon · barriere: Toets technische maatregelen van kritieke leveranciers, Borg EDR, tamper protection en snelle endpointisolatie · verdieping</div>
+    <div class="normen"><span class="norm">BIO2</span><span class="norm">AVG</span></div>
   </a>
 
 </div>

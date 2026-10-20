@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Beheerplan Microsoft Defender</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Governance</a> › <a href="./">Zes hulpmiddelen voor apparatuur, toegang en leveranciers</a> › <span>Beheerplan Microsoft Defender</span></nav><!-- /kruimelpad -->
+<h1>Beheerplan Microsoft Defender</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Zes hulpmiddelen voor apparatuur, toegang en leveranciers</a> · <a href="defender-beheerplan.md">Markdown-bron</a></p>
+<h3 id="inleiding">Inleiding<a class="anker" href="#inleiding" aria-label="Link naar deze kop">#</a></h3>
+<p>Microsoft Defender biedt geavanceerde beveiligingsoplossingen voor organisaties om zich te beschermen tegen cyberdreigingen. Dit beheerplan beschrijft de strategieën, processen en best practices voor het effectief implementeren, configureren en onderhouden van Microsoft Defender binnen onze IT-omgeving. Het doel is om een robuuste beveiligingsstructuur te waarborgen die proactieve detectie, preventie en respons op bedreigingen mogelijk maakt.</p>
+<p>Dit document dient als leidraad voor IT-beheerders en securityteams bij het beheren van Microsoft Defender en bevat richtlijnen voor monitoring, incidentrespons, updates en continue verbetering van de beveiligingsinstellingen.</p>
+<h3 id="wat-is-microsoft-defender">Wat is Microsoft Defender?<a class="anker" href="#wat-is-microsoft-defender" aria-label="Link naar deze kop">#</a></h3>
+<p>Microsoft 365 Defender is een geïntegreerde enterprise defense-suite voor pre- en post-breach die systeemeigen detectie, preventie, onderzoek en reactie coördineert tussen eindpunten, identiteiten, e-mail en toepassingen om geïntegreerde bescherming te bieden tegen geavanceerde aanvallen.</p>
+<p>Met de geïntegreerde Microsoft 365 Defender-oplossing kunnen beveiligingsprofessionals de bedreigingssignalen die elk van deze producten ontvangen samenbrengen en bepalen wat het volledige bereik en de impact van de bedreiging is; hoe de bedreiging in de omgeving is terechtgekomen, wat de gevolgen ervan zijn en hoe dit op dit moment van invloed is op de organisatie. Microsoft 365 Defender automatisch actie onderneemt om de aanval te voorkomen of te stoppen en de getroffen postvakken, eindpunten en gebruikersidentiteiten zelf te herstellen.</p>
+<p>Uitgebreide documentatie staat op de site van Microsoft.</p>
+<p>Wat gebruiken wij?</p>
+<p>Microsoft Defender voor Eindpunt is een beveiligingsplatform voor bedrijfseindpunten dat is ontworpen om bedrijfsnetwerken te helpen geavanceerde bedreigingen te voorkomen, detecteren, onderzoeken en erop te reageren.</p>
+<p>Wat kan Microsoft Defender voor Eindpunt?</p>
+<ul>
+<li>
+<p>Gedragssensoren voor eindpunten: deze sensoren zijn ingesloten in Windows 10 en verzamelen en verwerken gedragssignalen van het besturingssysteem en verzenden deze sensorgegevens naar uw persoonlijke, geïsoleerde cloudexemplaar van Microsoft Defender for Endpoint.</p>
+</li>
+<li>
+<p>Cloudbeveiligingsanalyse: door gebruik te maken van big data, apparaatleren en unieke Microsoft-optica in het Windows-ecosysteem, zakelijke cloudproducten (zoals Office 365) en onlineactiva, worden gedragssignalen vertaald in inzichten, detecties en aanbevolen antwoorden op geavanceerde bedreigingen.</p>
+</li>
+<li>
+<p>Bedreigingsinformatie: gegenereerd door Microsoft-jagers, beveiligingsteams en uitgebreid met bedreigingsinformatie van partners, stelt bedreigingsinformatie Defender voor Eindpunt in staat om hulpprogramma's, technieken en procedures van aanvallers te identificeren en waarschuwingen te genereren wanneer ze worden waargenomen in verzamelde sensorgegevens.</p>
+</li>
+</ul>
+<h3 id="functionaliteiten-microsoft-defender">Functionaliteiten Microsoft Defender<a class="anker" href="#functionaliteiten-microsoft-defender" aria-label="Link naar deze kop">#</a></h3>
+<p>Incidenten, meldingen waarschuwingen Deze pagina biedt overzicht op incidenten, meldingen en waarschuwingen. Aan de rechterzijde van het scherm kan je eventueel ook meldingen en email notificaties instellen. Hieronder volgen de functionaliteiten welke op dit tabblad te vinden zijn:</p>
+<p>Functionaliteiten:</p>
+<p>Incidentbeheer: Groepeert meldingen in incidenten voor efficiënte analyse.</p>
+<p>Meldingen bekijken: Inzicht in verdachte activiteiten, inclusief tijdlijn en betrokken entiteiten.</p>
+<p>Impactanalyse: Beoordeel de impact op apparaten, gebruikers en cloud services.</p>
+<p>Responsacties: Neem maatregelen zoals isoleren van apparaten, blokkeren van bestanden of starten van geautomatiseerde onderzoeken.</p>
+<p>Filteren &amp; prioriteren: Sorteer meldingen op ernst, status en categorie.</p>
+<p>Geavanceerde opsporing (Advanced hunting) Op deze pagina kun je uitgebreide zoekopdrachten uitvoeren om beveiligingsbedreigingen en verdachte activiteiten te identificeren. Dit tabblad biedt een krachtige Kusto Query Language (KQL)-gestuurde zoekfunctie waarmee je diep in loggegevens kunt duiken. Hieronder volgt een overzicht van de verschillende mogelijkheden:</p>
+<p>Functionaliteiten:</p>
+<p>Geavanceerd zoeken naar bedreigingen</p>
+<ul>
+<li>
+<p>Handmatig zoeken naar verdachte activiteiten, zoals ongebruikelijke aanmeldingen of procesuitvoeringen.</p>
+</li>
+<li>
+<p>Identificeren van mogelijk geïnfecteerde apparaten of accounts met abnormaal gedrag.</p>
+</li>
+<li>
+<p>Correlaties maken tussen verschillende logbestanden, zoals device, identity, en cloud events.</p>
+</li>
+</ul>
+<p>Analyseren van loggegevens</p>
+<ul>
+<li>
+<p>Onderzoeken van endpoint-, netwerk- en cloudgebeurtenissen.</p>
+</li>
+<li>
+<p>Koppelen van data uit Microsoft Defender for Endpoint, Defender for Office 365, Defender for Cloud Apps en Defender for Identity.</p>
+</li>
+<li>
+<p>Controleren op indicatoren van compromittering (IoCs) zoals verdachte IP-adressen, domeinen of hashes.</p>
+</li>
+</ul>
+<p>Automatisering en detectieregels instellen</p>
+<ul>
+<li>
+<p>Aangepaste detectieregels maken op basis van specifieke dreigingspatronen.</p>
+</li>
+<li>
+<p>Automatisch meldingen genereren voor terugkerende verdachte activiteiten.</p>
+</li>
+<li>
+<p>Integratie met Microsoft Sentinel voor bredere SIEM-functionaliteit.</p>
+</li>
+</ul>
+<p>Data exporteren en rapportages maken</p>
+<ul>
+<li>
+<p>Query-resultaten exporteren naar CSV of JSON voor verdere analyse.</p>
+</li>
+<li>
+<p>Dashboards maken met inzichten over gedetecteerde bedreigingen en trends.</p>
+</li>
+</ul>
+<p>Kortom, Advanced Hunting geeft securityteams krachtige tools om proactief dreigingen te detecteren en te analyseren voordat ze schade aanrichten.</p>
+<p>Acties &amp; ingediende items</p>
+<p>Op de Acties en Inzendingen-pagina kun je beveiligingsmaatregelen uitvoeren en verdachte bestanden of URL’s indienen voor analyse.</p>
+<p>Functionaliteiten:</p>
+<ul>
+<li>
+<p>Actiebeheer – Bekijk en beheer lopende en voltooide beveiligingsacties.</p>
+</li>
+<li>
+<p>Geautomatiseerde acties – Overzicht van acties die Defender automatisch heeft uitgevoerd.</p>
+</li>
+<li>
+<p>Handmatige acties – Zelf maatregelen nemen zoals bestanden blokkeren, apparaten isoleren of gebruikersaccounts beperken.</p>
+</li>
+<li>
+<p>Bestandsinzendingen – Verdachte bestanden, URL’s of e-mails indienen bij Microsoft voor diepgaande analyse.</p>
+</li>
+<li>
+<p>Analyse-resultaten – Ontvang feedback van Microsoft over ingediende bestanden en mogelijke dreigingen.</p>
+</li>
+</ul>
+<p>Hieronder een voorbeeld van een URL inzending:</p>
+<p>Deze pagina helpt bij het actief mitigeren van bedreigingen en diepgaand onderzoeken van verdachte activiteiten.</p>
+<p>Bedreigingsanalyse (Threat Analytics)</p>
+<p>De Threat Analytics-pagina biedt diepgaande analyses van actuele en opkomende cyberdreigingen, inclusief impact op je organisatie en aanbevolen acties.</p>
+<p>Functionaliteiten:</p>
+<ul>
+<li>
+<p>Actuele dreigingsrapporten – Inzicht in de nieuwste cyberdreigingen en aanvallen.</p>
+</li>
+<li>
+<p>Impactanalyse – Controleer of en hoe je omgeving is blootgesteld aan specifieke dreigingen.</p>
+</li>
+<li>
+<p>Aanbevolen acties – Stappen om je verdediging te verbeteren, zoals updates of configuratiewijzigingen.</p>
+</li>
+<li>
+<p>Indicatoren van compromittering (IoCs) – Lijst met verdachte hashes, IP’s en domeinen om op te jagen in Advanced Hunting.</p>
+</li>
+<li>
+<p>Trendanalyse – Overzicht van dreigingsevoluties en hun relevantie voor je organisatie.</p>
+</li>
+</ul>
+<p>Met Threat Analytics kunnen securityteams proactief dreigingen begrijpen en beheersen voordat ze schade aanrichten.</p>
+<p>Secure Score</p>
+<p>De Secure Score-pagina geeft inzicht in de beveiligingsstatus van je organisatie en biedt aanbevelingen om deze te verbeteren.</p>
+<p>Functionaliteiten:</p>
+<ul>
+<li>
+<p>Beveiligingsscore – Een overzichtelijke score die aangeeft hoe goed je beveiliging is geconfigureerd.</p>
+</li>
+<li>
+<p>Aanbevolen verbeteringen – Concrete acties om risico’s te verkleinen, zoals het inschakelen van MFA of het updaten van kwetsbare software.</p>
+</li>
+<li>
+<p>Impactanalyse – Bekijk hoe elke maatregel je score en beveiligingsniveau beïnvloedt.</p>
+</li>
+<li>
+<p>Vergelijking met peers – Benchmark je beveiliging ten opzichte van vergelijkbare organisaties.</p>
+</li>
+<li>
+<p>Integratie met compliance – Koppeling met NIS2, ISO 27001 en andere standaarden.</p>
+</li>
+</ul>
+<p>Assets</p>
+<p>In Microsoft Defender verwijst Assets naar alle digitale en fysieke entiteiten die beveiligd en gemonitord worden. Dit omvat:</p>
+<ul>
+<li>
+<p>Apparaten – Werkstations, servers, mobiele apparaten en IoT-apparaten.</p>
+</li>
+<li>
+<p>Identiteiten – Gebruikersaccounts, serviceaccounts en beheerders.</p>
+</li>
+<li>
+<p>Applicaties &amp; Cloudresources – SaaS-apps, Azure-resources en andere cloudservices.</p>
+</li>
+</ul>
+<p>Functionaliteiten:</p>
+<ul>
+<li>
+<p>Overzicht van alle geregistreerde en actieve assets.</p>
+</li>
+<li>
+<p>Detectie van risico’s en beveiligingsproblemen per asset.</p>
+</li>
+<li>
+<p>Inzicht in de relatie tussen apparaten, identiteiten en cloudresources.</p>
+</li>
+</ul>
+<p>Door assets centraal te beheren, kunnen securityteams dreigingen sneller detecteren en risico’s minimaliseren.</p>
+<p>Bij het selecteren van een apparaat krijg je een Device Summary te zien met de volgende secties:</p>
+<ul>
+<li>
+<p>Overview: Basisinformatie over het apparaat, inclusief status en beveiligingsniveau.</p>
+</li>
+<li>
+<p>Alerts: Overzicht van meldingen en incidenten gekoppeld aan het apparaat.</p>
+</li>
+<li>
+<p>Timeline: Gedetailleerde weergave van alle (kern)processen en activiteiten.</p>
+</li>
+<li>
+<p>Security recommendations: Adviezen om kwetsbaarheden te verhelpen of de beveiliging te verbeteren.</p>
+</li>
+<li>
+<p>Software inventory: Lijst met alle geïnstalleerde software.</p>
+</li>
+<li>
+<p>Discovered vulnerabilities: Geïdentificeerde kwetsbaarheden op het apparaat.</p>
+</li>
+<li>
+<p>Advanced Features: Bevat functies zoals het blokkeren van kwetsbare applicatieversies, instellen van baseline-profielen en inzicht in browserextensies.</p>
+</li>
+<li>
+<p>Missing Security Updates: Overzicht van ontbrekende beveiligingsupdates.</p>
+</li>
+</ul>
+<p>Verder kan je ook:</p>
+<ul>
+<li>
+<p>Apparaat isoleren – Verbreek netwerkverbindingen om verdere besmetting te voorkomen.</p>
+</li>
+<li>
+<p>"Go Hunt": Voer aangepaste KQL-query’s uit op het apparaat om kwetsbaarheden, malware, events en andere security-inzichten te verkrijgen.</p>
+</li>
+<li>
+<p>Manage Tags: Wijs labels toe aan apparaten voor betere organisatie.</p>
+</li>
+</ul>
+<p>Vulnerability management Vulnerability Management helpt bij het identificeren, beoordelen en verhelpen van kwetsbaarheden binnen de IT-omgeving. Ook de “Exposure score” is hier zichtbaar.</p>
+<p>Functionaliteiten:</p>
+<ul>
+<li>
+<p>Overzicht kwetsbaarheden: Lijst met bekende kwetsbaarheden op apparaten en software.</p>
+</li>
+<li>
+<p>Risico-inschatting: Beoordeling van de impact en exploitkansen van kwetsbaarheden.</p>
+</li>
+<li>
+<p>Remediatie-acties: Aanbevolen stappen om beveiligingsrisico’s te verminderen.</p>
+</li>
+<li>
+<p>Software Inventory: Inzicht in geïnstalleerde software en bijbehorende kwetsbaarheden.</p>
+</li>
+<li>
+<p>Integratie met Threat Intelligence: Context over hoe kwetsbaarheden worden misbruikt in het wild.</p>
+</li>
+</ul>
+<p>Met Vulnerability Management kunnen securityteams proactief risico’s aanpakken en de beveiliging versterken.</p>
+<p>Evaluatie en zelfstudies</p>
+<ul>
+<li>
+<p>Zoals de tekst beschrijft kan je hier test devices in een lab omgeving zetten. Hiermee kan je aanvallen testen op je apparaten.</p>
+</li>
+<li>
+<p>Configuratiebeheer</p>
+</li>
+<li>
+<p>In configuratiebeheer kan ik de apparaten zien die “onboarded” zijn. Dit houd in dat ze in Microsoft defender staan.</p>
+</li>
+<li>
+<p>Verder kan je:</p>
+</li>
+<li>
+<p>Compliance aanmaken voor een Security Baseline.</p>
+</li>
+<li>
+<p>Web protection instellen - Whitelisten van websites - Blacklisten van websites - Vooraf ingestelde categorieën van websites blokkeren.</p>
+</li>
+</ul>
+<p>Wat nu ingesteld staat:</p>
+<p>RACI</p>
+<table>
+<thead>
+<tr>
+<th>TAKEN</th>
+<th>Responsible</th>
+<th>Accountable</th>
+<th>Consulted</th>
+<th>Informed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Incidenten/Meldingen</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie Bij P1 wachtdienst de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Threat Analytics</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Secure score</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Endpoints</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Configuratiebeheer</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij Microsoft</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Onboarding proces / sccm</td>
+<td>de hostingpartij</td>
+<td>de hostingpartij</td>
+<td>de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Web configuratie</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij (security)</td>
+</tr>
+<tr>
+<td>Remediation</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+<td>de uitvoeringsorganisatie/de hostingpartij</td>
+</tr>
+</tbody>
+</table>
+<p>Legenda:</p>
+<ul>
+<li>
+<p>de uitvoeringsorganisatie: Hierin is de uitvoeringsorganisatie verantwoordelijk – Informatiebeveiliging?</p>
+</li>
+<li>
+<p>de hostingpartij: Dit is in combinatie met het klantteam en het securityteam van de hostingpartij.</p>
+</li>
+<li>
+<p>Microsoft: Leverancier kan benaderd worden voor advies / hulp.</p>
+</li>
+</ul>
+<p>Taken kort uitgelegd:</p>
+<ul>
+<li>
+<p>Incidenten/meldingen: het registreren van meldingen die voortkomen uit Defender en deze oplossen.</p>
+</li>
+<li>
+<p>Threat analytics: Het onderzoeken van kwetsbaarheden/ security meldingen.</p>
+</li>
+<li>
+<p>Secure score: In de gaten houden van of verbeteren van de algemene veiligheid van alle apparaten.</p>
+</li>
+<li>
+<p>Endpoints: Het beheren, naleven en configureren van Defender + ATP.</p>
+</li>
+<li>
+<p>Configuratiebeheer: Het configureren van security-instellingen op onze devices.</p>
+</li>
+<li>
+<p>Onboardingproces / SCCM: Zorgen dat ATP goed op de werkplekapparaat komt.</p>
+</li>
+<li>
+<p>Web configuratie: Webfiltering white en blacklisting.</p>
+</li>
+<li>
+<p>Remediation: Oplossen van kwetsbaarheden en het up-to-date houden van devices.</p>
+</li>
+</ul>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/governance/hulpmiddelen-toegang-apparatuur-en-leveranciers">governance/hulpmiddelen-toegang-apparatuur-en-leveranciers</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

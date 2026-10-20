@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Procedure datalekken en beveiligingsincidenten</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> › <span>Procedure datalekken en beveiligingsincidenten</span></nav><!-- /kruimelpad -->
+<h1>Procedure datalekken en beveiligingsincidenten</h1><style>.stukbron{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:-.2em 0 1.4em}.stukbron a{color:#154273}</style><p class="stukbron">Onderdeel van <a href="./">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a> · <a href="incident-response.md">Markdown-bron</a></p><!-- inhoudsopgave --><style>.inhoud{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:1.4em auto 1.6em;max-width:19cm;border:1px solid #d7dee7;border-radius:8px;padding:.7em 1em;background:#f8fafc}.inhoud ol{margin:.4em 0 0;padding:0;list-style:none;columns:2;column-gap:1.5em}.inhoud li{margin:.25em 0;break-inside:avoid}@media (min-width:1450px){.inhoud.zijbalk{position:fixed;top:2cm;left:calc(50vw - 18.6cm);width:8cm;max-height:78vh;overflow:auto;font-size:12px;margin:0;border:0;border-radius:0;background:none;padding:0 .5em 0 0}.inhoud.zijbalk ol{columns:auto}.inhoud.zijbalk li{margin:.3em 0}}.inhoud b{display:block;color:#5a6675;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.inhoud a{color:#154273;text-decoration:none}.inhoud a:hover{text-decoration:underline}@media print{.inhoud{display:none}}</style><nav class="inhoud zijbalk" aria-label="Inhoudsopgave"><b>Op deze pagina</b><ol><li><a href="#inleiding">Inleiding</a></li><li><a href="#governance-en-organisatorische-borging-proces-melden-datalek-en-beveiligingsincident">Governance en organisatorische borging proces melden datalek en beveiligingsincident</a></li><li><a href="#proces-informatiebeveiligingsincident">Proces informatiebeveiligingsincident</a></li><li><a href="#security-incident-procedure">Security Incident Procedure</a></li><li><a href="#soorten-beveiligingsmeldingen">Soorten beveiligingsmeldingen</a></li></ol></nav><!-- /inhoudsopgave -->
+<h2 id="inleiding">Inleiding<a class="anker" href="#inleiding" aria-label="Link naar deze kop">#</a></h2>
+<p>Een datalek is een inbreuk op de beveiliging, waarbij een kans bestaat dat dit ernstige gevolgen dan wel ernstige nadelige gevolgen heeft voor de bescherming van de persoonsgegevens (artikel 4 AVG). Hierbij kan gedacht worden aan het kwijtraken van een USB stick met persoonsgegevens, het versturen van een mail met persoonsgegevens aan een verkeerde ontvanger, papieren documenten met persoonsgegevens of vertrouwelijke informatie die niet opgeborgen zijn, inbraak door een hacker, maar ook onbevoegde autorisaties in een informatiesysteem.</p>
+<p>Het melden van datalekken aan de Autoriteit Persoonsgegevens is een verplichting uit de AVG. Het gaat hier om datalekken waar de gemeente voor verantwoordelijk is. Daaronder vallen ook datalekken die ontstaan bij een derde partij (verwerker) die werkzaamheden uitvoert voor de gemeente. De Autoriteit Persoonsgegevens is bevoegd om datalekken te beboeten. Het melden van een datalek leidt hierdoor niet direct tot een boete, het niet melden echter wel. Het melden van datalekken moet binnen 72 uur plaatsvinden.</p>
+<p>Datalekken en beveiligingsincidenten zijn nauw met elkaar verbonden. Omdat er een nauwe samenhang is, is in dit document de procedure beschreven die gevolgd wordt wanneer zich een datalek en/of beveiligingsincident heeft voorgedaan. Deze procedure is gezamenlijk door de deelnemende gemeenten gemaakt en zal ook door deze organisaties worden uitgevoerd.</p>
+<h3 id="reikwijdte">Reikwijdte<a class="anker" href="#reikwijdte" aria-label="Link naar deze kop">#</a></h3>
+<p>Wanneer zich een datalek of beveiligingsincident voordoet is iedereen bevoegd om dit te melden. Om de AVG te kunnen naleven, willen de deelnemende gemeenten iedereen stimuleren dit te doen via de opgestelde procedure.</p>
+<h3 id="juridisch-kader">Juridisch kader<a class="anker" href="#juridisch-kader" aria-label="Link naar deze kop">#</a></h3>
+<p>Bij de verwerking van persoonsgegevens staat respect voor de persoonlijke levenssfeer van de betrokkene(n) voorop. Er moet voorkomen worden dat er onnodige of te vergaande inbreuken worden gemaakt. Het melden van datalekken is een verplichting vanuit de Algemene Verordening Gegevensbescherming (AVG).</p>
+<h3 id="ingangsdatum">Ingangsdatum<a class="anker" href="#ingangsdatum" aria-label="Link naar deze kop">#</a></h3>
+<p>Deze procedure zal vanaf 1 maart 2016 uitgevoerd worden. Elke twee jaar wordt de procedure geëvalueerd en bijgesteld waar nodig.</p>
+<h3 id="definities">Definities<a class="anker" href="#definities" aria-label="Link naar deze kop">#</a></h3>
+<p>Beveiligingmelding: an event is anything that is observed, either via security tools or by users of a system or process, which indicates activity which could lead to the compromise of the confidentiality, integrity, or availability of an information system and/or which shows a potential violation or imminent threat of violation of security policies, or security controls. Most events will not become incidents – for example because they are automatically remediated by security tools, have no measurable business impact or investigation shows that it was a false positive.</p>
+<p>Beveiligingsincident: an incident is an event or combination of events that which indicates activity which has led to an actual compromise of the confidentiality, integrity, or availability of an information system or which shows an actual violation of security policies or security controls and is deemed to have measurable business impact. That impact may be minor (e.g., an employee having to have their laptop rebuilt after a malware infection). It may also be major (e.g., a customer database being encrypted by ransomware).</p>
+<h2 id="governance-en-organisatorische-borging-proces-melden-datalek-en-beveiligingsincident">Governance en organisatorische borging proces melden datalek en beveiligingsincident<a class="anker" href="#governance-en-organisatorische-borging-proces-melden-datalek-en-beveiligingsincident" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="verantwoordelijk-vanuit-de-avg">Verantwoordelijk vanuit de AVG<a class="anker" href="#verantwoordelijk-vanuit-de-avg" aria-label="Link naar deze kop">#</a></h3>
+<p>Het college van burgemeester en wethouders is verantwoordelijk voor gegevensverwerking en informatiebeveiliging binnen de gemeenten.</p>
+<h3 id="eigenaar-proces-melden-datalek-en-beveiligingsincident">Eigenaar proces melden datalek en beveiligingsincident<a class="anker" href="#eigenaar-proces-melden-datalek-en-beveiligingsincident" aria-label="Link naar deze kop">#</a></h3>
+<p>De Chief Information Officer (CIO) is ambtelijk eigenaar van het proces melden datalek.</p>
+<h3 id="rollen-proces-melden-datalek-en-beveilingsincident">Rollen proces melden datalek en beveilingsincident<a class="anker" href="#rollen-proces-melden-datalek-en-beveilingsincident" aria-label="Link naar deze kop">#</a></h3>
+<p>Voor het uitvoeren van het proces melden datalek zijn de volgende rollen nodig:</p>
+<table>
+<thead>
+<tr>
+<th>Melder datalek</th>
+<th>Burger, medewerker, ICT leverancier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verantwoordelijk directeur/manager</td>
+<td></td>
+</tr>
+<tr>
+<td>Chief Information Officer (CIO)</td>
+<td>Alleen in VOORBEELDGEMEENTE benoemd, in de andere gemeenten wordt dit voorlopig opgepakt door de gemeentesecretaris..</td>
+</tr>
+<tr>
+<td>Functionaris Gegevensbescherming (FG)</td>
+<td>Regionaal ingevuld</td>
+</tr>
+<tr>
+<td>Coördinator Informatiebeveiliging (CISO)</td>
+<td>Regionaal ingevuld</td>
+</tr>
+<tr>
+<td>Privacy Officer</td>
+<td>Regionaal ingevuld</td>
+</tr>
+<tr>
+<td>Probleem eigenaar</td>
+<td>Afhankelijk van de aard van het probleem kan dit een verantwoordelijk directeur/manager zijn, een ICT leveranciers ect.</td>
+</tr>
+</tbody>
+</table>
+<p>Afhankelijk van de aard van de melding kunnen de volgende rollen worden betrokken:</p>
+<table>
+<thead>
+<tr>
+<th>Gemeentesecretaris</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portefeuillehouder</td>
+<td></td>
+</tr>
+<tr>
+<td>Teammanager FB</td>
+<td></td>
+</tr>
+<tr>
+<td>Directeur/manager (cluster/afdeling)</td>
+<td></td>
+</tr>
+<tr>
+<td>Communicatie adviseur</td>
+<td></td>
+</tr>
+<tr>
+<td>Juridisch adviseur</td>
+<td></td>
+</tr>
+<tr>
+<td>Functioneel beheerder</td>
+<td></td>
+</tr>
+<tr>
+<td>ICT Leverancier informatiesysteem</td>
+<td>Extern</td>
+</tr>
+<tr>
+<td>RVT/teamleider/senior medewerker</td>
+<td></td>
+</tr>
+<tr>
+<td>Manager ICT</td>
+<td></td>
+</tr>
+<tr>
+<td>Specialisten</td>
+<td></td>
+</tr>
+<tr>
+<td>Autoriteit Persoonsgegevens</td>
+<td>Extern</td>
+</tr>
+<tr>
+<td>Medewerker gemeente</td>
+<td></td>
+</tr>
+<tr>
+<td>Informatie Beveiligingsdienst gemeenten (IBD)</td>
+<td>Extern</td>
+</tr>
+</tbody>
+</table>
+<h2 id="proces-informatiebeveiligingsincident">Proces informatiebeveiligingsincident<a class="anker" href="#proces-informatiebeveiligingsincident" aria-label="Link naar deze kop">#</a></h2>
+<p>Onderstaande flowchart beschrijft de benodigde stappen en partijen in het proces om informatiebeveiligingsincidenten te beheren.</p>
+<h3 id="activiteiten-melden-datalek-of-beveiligingsincident">Activiteiten melden datalek of beveiligingsincident<a class="anker" href="#activiteiten-melden-datalek-of-beveiligingsincident" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mens</th>
+<th>Datalek geconstateerd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beschrijving</td>
+<td>Wanneer een datalek plaatsvindt of wordt geconstateerd, moet deze direct aangemeld. Na deze melding gaat het eerder beschreven proces van start.</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td>Melder datalek</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Datalek melden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Melder datalek</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Meld het geconstateerde datalek direct middels formulier, email of telefonisch.  Melding dient zo snel mogelijk te worden gedaan: omdat er kans bestaat dat er nog maatregelen te nemen zijn om de schade te beperken omdat melding aan de Autoriteit Persoonsgegevens binnen 72 uur na eerste constatering dient plaats te vinden.  Informeer ook de verantwoordelijke directeur/manager m.b.t. het datalek en de gemaakte melding.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Mens</th>
+<th>Beveiligingsincident geconstateerd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beschrijving</td>
+<td>Wanneer een beveiligingsincident plaatsvindt of wordt geconstateerd, moet deze direct worden aangemeld. Na deze melding gaat het eerder beschreven proces van start.</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td>Melder beveiligingsincident</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Beperk onmiddellijke blootstelling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Melder beveiligingsincident</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Wanneer mogelijk moet onmiddellijk blootstelling beperkt worden.</td>
+</tr>
+<tr>
+<td>Instructie</td>
+<td>Als je werkt op een PC, Laptop of eigen apparaat: Niet gebruiken (niet inloggen) of wijzigen van het apparaat Zet het apparaat niet uit Haal de netwerkverbindingen er af, maar NIET de voedingskabel  Werk je op een werkplekapparaat neem dan direct contact op met de ICT Servicedesk.  Noteer hoe het incident werd ontdekt en welke acties er tot nu toe genomen zijn. Geef een zo specifiek mogelijk antwoord, inclusief data, tijden, en welke apparaten gecompromitteerd zijn, applicaties, websites, et cetera.  Waarschuw dan onmiddellijk je leidinggevende en de CISO.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Melding incident (dossier)</td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Melding incident (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Logistiek</th>
+<th>Ontvangen melding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Neem de melding m.b.t. een datalek en/of beveiligingsincident in ontvangst.  De CIO en FG worden, ook wanneer er geen melding aan de Autoriteit Persoonsgegevens nodig is, direct op de hoogte gebracht.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd en geïnformeerd</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Controle</th>
+<th>Beoordelen melding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Privacy Officer en FG</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Privacy Officer en FG bespreken het datalek.  1. beoordeel of er sprake is van ongeautoriseerde toegang tot persoonsgegevens zijn bij het incident, indien dit niet het geval is wordt het incident opgepakt als beveiligingsincident.  2. Stel ernst en aard van het incident vast.  3. Beoordeel of het datalek moet worden gemeld aan de Autoriteit Persoonsgegevens.  4. Beoordeel of het datalek moet worden gemeld aan betrokkene(n).</td>
+</tr>
+<tr>
+<td>Instructie</td>
+<td>Hoe wordt bepaald of een melding aan de Autoriteit Persoonsgegevens noodzakelijk is? Dit wordt gedaan aan de hand van de richtsnoer van de Autoriteit Persoonsgegevens.  Niet elk datalek moet bij de Autoriteit Persoonsgegevens worden gemeld. Nodeloze meldingen moeten worden voorkomen. Er dient aan bepaalde criteria te worden voldaan. De Functionaris Gegevensbescherming (FG) zal uiteindelijk bepalen of een melding aan de Autoriteit Persoonsgegevens noodzakelijk is.</td>
+</tr>
+<tr>
+<td>Bron: IBD gemeenten - Leaflet-Meldplicht-Datalekken</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="activiteiten-direct-oplossen-melding-datalek">Activiteiten direct oplossen melding datalek<a class="anker" href="#activiteiten-direct-oplossen-melding-datalek" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Informeren CIO, GS, PH, AFD ICT, COM, CISO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Informeer afhankelijk van de ernst en aard de: Gemeentesecretaris/ Directeur; Portefeuillehouder; CIO; Manager ICT; Persvoorlichter; Verantwoordelijk directeur/manager; RVT, teamleider; Coördinator informatiebeveiliging; Privacy beheerder;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Aangifte doen bij politie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Gemeentesecretaris / Directeur</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Indien er sprake is van criminele activiteiten in verband met het incident moet bepaald worden of aangifte gedaan wordt. De politie zal mogelijk het onderzoek moeten overnemen. Als dat gebeurt zal dit het vervolg van dit schema beïnvloeden.</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Crisisteam datalek</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Crisisteam bijeen roepen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Gemeentesecretaris / Directeur</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Afhankelijk van de ernst en aard van het datalek wordt er een crisis team gevormd wat bestaat uit verantwoordelijken en specialisten. Dit crisis team bepaalt repressieve en correctieve maatregelen t.b.v. het beperken van (de gevolgen van) het datalek.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Bepalen welke repressieve en correctieve maatregelen worden getroffen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Privacy Officer, FG, en eventueel crisisteam datalek</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Bepaald welke repressieve en correctieve maatregelen zo spoedig mogelijk dienen te worden genomen om het effect van het datalek te beperken. Per maatregel wordt een probleemeigenaar aangewezen.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Uitvoeren maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Probleemeigenaar datalek</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Voert de toegewezen repressieve en correctieve maatregel door.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Registeren datalek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Functionaris Gegevensbescherming (FG) en/of Privacy Officer</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Registreer het datalek. (Alle privacy gerelateerde datalekken worden geregistreerd, niet alleen meldingsplichtige datalekken).  De volgende informatie wordt vastgelegd:  Feiten en gegevens omtrent de aard van de inbreuk; Alsmede de tekst van de kennisgeving aan betrokkenen; Indien van toepassing, de repressieve en correctieve maatregelen.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Logistiek</th>
+<th>Aanmelden datalek bij de Autoriteit Persoonsgegevens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Functionaris Gegevensbescherming (FG) en/of Privacy Officer</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Meld het datalek via meldingsformulier van de Autoriteit Persoonsgegevens https://datalekken.autoriteitpersoonsgegevens.nl/actionpage?0 .</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Logistiek</th>
+<th>Informatie aanleveren bij directeur/manager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Crisisteam datalek</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Informeer de verantwoordelijke directeur/manager, waar het datalek heeft plaatsgevonden om de betrokken te laten informeren (Incl. genomen maatregelen).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Betrokkene(n) informeren</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Gemeentesecretaris / Directeur</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>De betrokkene(n) (burger) wordt door de verantwoordelijke directeur/manager van de dienst waar de info vandaan gelekt is, geïnformeerd, indien de inbreuk waarschijnlijk ongunstige gevolgen zal hebben voor diens persoonlijke levenssfeer, tenzij de gemeente passende technische beschermingsmaatregelen heeft genomen waardoor de persoonsgegevens die het betreft onbegrijpelijk of ontoegankelijk zijn voor eenieder die geen recht heeft op kennisname van de gegevens.  Indien de verantwoordelijke directeur niet beschikbaar is, is de vervangingsregeling van toepassing.</td>
+</tr>
+<tr>
+<td>Instructie</td>
+<td>Op welke wijze worden betrokkene(n) geïnformeerd?  Het ligt in de rede om naast de melding aan betrokkene(n), hen ook adequaat te informeren om de kans op onvrede en imagoschade te voorkomen.  Welk communicatiemiddel er wordt gebruikt is afhankelijk van de aard van de inbreuk en de mogelijke gevolgen. Je kunt, in samenspraak met de afdeling Communicatie en Juridische Zaken, kiezen voor een persoonlijk bericht, een bericht op een website of een advertentie in de krant, afhankelijk van het beschikbare budget. Een persoonlijke benadering kan plaatsvinden als het geen grootschalige verwerking met een beperkt aantal betrokkenen betreft.  Ingeval van persoonlijke benadering van betrokkene(n) gelden de volgende aandachtspunten: Wees transparant en vertel wat er is gebeurd; leg in algemene termen wat er is gedaan om een hack c.q. lek te voorkomen; Vertel dat het ondanks de beveiliging toch is misgegaan; wees open als het bijvoorbeeld een geavanceerde hack was waartegen de beveiliging niet was opgewassen; Bied excuses aan en leg uit dat wordt gewerkt aan een betere beveiliging; Geef in heldere taal aan welke stappen de betrokkene zelf kan nemen om de schade zo beperkt mogelijk te houden; raad bijvoorbeeld aan om wachtwoorden te wijzigen; Bied de gedupeerden, waar nodig, iets extra's aan. Denk hierbij aan een rechtstreeks nummer waar ze terecht kunnen met vragen.  De kennisgeving aan betrokkenen omvat in ieder geval: De aard van de inbreuk (het datalek); De instanties waar meer informatie over de inbreuk (het datalek) kan worden verkregen; De aanbevolen maatregelen om negatieve gevolgen van de inbreuk te beperken.  Bij een groot aantal getroffenen kan worden afgezien van persoonlijke en gerichte benaderingen en kan worden volstaan met vermelding op een website en het plaatsen van een bericht in de dagbladen. Het is in ieder geval belangrijk dat de gemeente bij grootschalige incidenten zelf contact opneemt met de pers om hen te informeren over wat er is gebeurd. Hier ligt een rol voor de persvoorlichter of woordvoerder die namens de gemeente spreekt. Neem derhalve contact op met de persvoorlichter.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Opheffen crisisteam</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Crisisteam datalek</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Na uitvoeren van de maatregelen, maken van de melding en informeren van de betrokken kunnen de dagelijkse werkzaamheden weer worden opgepakt en wordt het crisisteam opgeheven.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="activiteiten-direct-oplossen-beveiligingsincident">Activiteiten direct oplossen beveiligingsincident<a class="anker" href="#activiteiten-direct-oplossen-beveiligingsincident" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Informeren CIO, GS, PH, AFD ICT, COM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Informeer afhankelijk van de ernst en aard de: Gemeentesecretaris/ Directeur de uitvoeringsorganisatie; Portefeuillehouder; CIO; IBD; Manager ICT; Teammanager ICT; Manager(s) FB; Persvoorlichter; Verantwoordelijk directeur/manager; RVT, teamleider; Coördinator informatiebeveiliging;</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Optioneel</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Manager ICT</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Verantwoordelijk RVT, teamleider</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Gemeentesecretaris</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Communicatie Adviseur</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Portefeuillehouder</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>IBD</td>
+</tr>
+<tr>
+<td>Instructie</td>
+<td>Bij communicatie naar bovenstaande, gebruik onderstaande opzet van het bericht: Korte inleiding Wat is de actuele status? Welke stappen worden nu ondernomen? Welke stappen gaan wij nog ondernemen? Wat wordt er van jou verwacht?</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Samenstellen incident response team</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Gemeentesecretaris / Directeur de uitvoeringsorganisatie</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Afhankelijk van de ernst en aard van het beveiligingsincident wordt er een incident response team gevormd wat bestaat uit verantwoordelijken en specialisten. Er kan voor gekozen worden om de IBD hierbij te betrekken. Dit incident response team bepaalt repressieve en correctieve maatregelen t.b.v. het beperken van (de gevolgen van) het beveiligingsincident.</td>
+</tr>
+<tr>
+<td>Instructie</td>
+<td>Wanneer de IBD ingezet kan worden is beschreven in https://www.ibdgemeenten.nl/wp-content/uploads/2014/04/Factsheet-Incidentcoordinatie-2.pdf  Handleiding: Aangaande het bespreken van de regels van de communicatie met het team in deze fase, is het vooral belangrijk om de nauwkeurigheid van de feiten te waarborgen tussen teamleden onderling en tussen het team en de juiste ambtenaren.  Zoals: a) Teamleden mogen niet praten met anderen buiten het team over het incident totdat er daarvoor toestemming is gegeven door het management of de CISO. b) Alle documentatie die door het team geschreven wordt moet op feiten gebaseerd zijn omdat het mogelijk in een strafrechtelijk onderzoek gebruikt kan worden. c) Er is dagelijks overleg tussen de teamleden. d) Het team moet bijhouden hoeveel tijd er besteed wordt en waaraan.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Optioneel</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Incident response team</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Verzamel en veiligstellen bewijsmateriaal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Incident response team</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Verzamel fysiek en digitaal bewijs die tezamen een duidelijke, gedetailleerde beschrijving geven van hoe de data gecompromitteerd kon worden. Maak een inventarisatielijst van alle bewijsmateriaal en houdt bij wie, wanneer, wat gedaan heeft met het bewijsmateriaal.  Voorbeelden: a) Images van de harddisk(en) b) Netwerkverkeersgegevens van en naar de gecompromitteerde apparatuur c) Werkplek applicatie logs d) Toegangslogs e) Foto’s van de omgeving waar het incident plaatsvindt</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Inventarisatielijst van al het bewijsmateriaal (documentatie, intern)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Incident response team</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Uitvoeren onderzoek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Incident response team</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Voer forensisch onderzoek uit en leg dit vast: 1. Analyseer bewijsmateriaal 2. Voer een reconstructie uit van het incident 3. Zorg voor gedetailleerde documentatie  Bewaar origineel bewijsmateriaal en werk alleen op een kopie van de data. Zorg voor minimale verstoring van de bedrijfsvoering, zorg voor herleidbare en herhaalbare resultaten.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Onderzoeksrapport (document)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Incident response team</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Probleemeigenaar datalek</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Manager ICT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Bepalen welke repressieve en correctieve maatregelen worden getroffen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Incident response team</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Bepaald welke repressieve en correctieve maatregelen zo spoedig mogelijk dienen te worden genomen om het effect van het beveiligingsincidenten te beperken. Per maatregel wordt een probleemeigenaar aangewezen.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Repressieve en correctieve maatregelen (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td></td>
+<td>Repressieve en correctieve maatregelen (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Probleemeigenaar datalek</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Manager ICT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Uitvoeren maatregelen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Probleemeigenaar beveiligingsincident</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Voert de toegewezen repressieve en correctieve maatregel door.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Optioneel</td>
+<td>Repressieve en correctieve maatregelen datalek (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Machtigen</th>
+<th>Opheffen incident response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Incident response team</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Na uitvoeren van de maatregelen, maken van de melding en informeren van de betrokken kunnen de dagelijkse werkzaamheden weer worden opgepakt en wordt het incident response team opgeheven.</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Verantwoordelijk directeur</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Gemeentesecretaris / Directeur de uitvoeringsorganisatie</td>
+</tr>
+</tbody>
+</table>
+<h3 id="activiteiten-structureel-oplossen-incident">Activiteiten structureel oplossen incident<a class="anker" href="#activiteiten-structureel-oplossen-incident" aria-label="Link naar deze kop">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Communicatie</th>
+<th>Samenstellen onderzoeksteam</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Probleemeigenaar datalek of beveiligingsincident</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Stelt een onderzoeksteam samen om de oorzaak van het datalek en/of beveiligingsincident te bepalen en de gevolgen af te handelen.  De samenstelling van het onderzoeksteam is afhankelijk van de aard van het incident, en kan bestaan uit zowel interne als externe specialisten.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Leverancier ICT systeem</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Privacy beheerder</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Onderzoeksteam datalek</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Uitvoeren onderzoek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Onderzoeksteam</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Voert onderzoek uit naar de oorzaak van het datalek en/of beveiligingsincident en de gevolgen. En brengt hierover een rapport uit.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Onderzoeksrapport (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Onderzoeksrapport (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td></td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Privacy beheerder</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Leverancier ICT systeem</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis (Gebruikersinitiatief)</th>
+<th>Opstellen verbeterplan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Onderzoeksteam</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur/manager</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Op basis van het onderzoeksrapport wordt wanneer mogelijk een verbeterplan opgesteld om in de toekomst een herhaling van het incident te voorkomen.  Dit verbeterplan wordt in samenspraak opgesteld met mogelijke betrokkenen zoals, leveranciers, functioneel beheerders, FG, CISO en juridisch adviseur etc.  De verbeteracties uit het plan worden geregistreerd in het melding register.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Gecreëerd</td>
+<td>Verbeterplan incident (document, papier, intern)</td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Verbeterplan incident (document, papier, intern)</td>
+</tr>
+<tr>
+<td></td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td></td>
+<td>Onderzoeksrapport (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Leverancier ICT systeem</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Privacy beheerder</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>ICT manager</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Uitvoeren verbeterplan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Projectteam verbeterplan</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Verantwoordelijk directeur</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Het verbeterplan wordt uitgevoerd. Na uitvoering worden de FG en CISO hierover geïnformeerd.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Verbeterplan incident (document, papier, intern)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Functionaris Gegevensbescherming (FG)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Geïnformeerd</td>
+<td>Privacy beheerder</td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>ICT manager</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Basis</th>
+<th>Bijwerken melding register</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uitvoerende</td>
+<td>Functionaris Gegevensbescherming (FG) of Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Na uitvoering van het verbeterplan wordt de status hiervan geregistreerd in het melding register.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Verbeterplan incident (document, papier, intern)</td>
+</tr>
+<tr>
+<td>Aangepast</td>
+<td>Melding register (document, Bestand, intern)</td>
+</tr>
+<tr>
+<td></td>
+<td>Meldingsdossier (dossier)</td>
+</tr>
+<tr>
+<td>Betrokkenen</td>
+<td></td>
+</tr>
+<tr>
+<td>Geraadpleegd</td>
+<td>Privacy beheerder</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tijd</th>
+<th>periodiek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Communicatie</td>
+<td>Bespreken melding register</td>
+</tr>
+<tr>
+<td>Uitvoerende</td>
+<td>Functionaris Gegevensbescherming (FG) of Coördinator informatiebeveiliging (CISO)</td>
+</tr>
+<tr>
+<td>Verantwoordelijke</td>
+<td>Chief Information Officer (CIO)</td>
+</tr>
+<tr>
+<td>Beschrijving</td>
+<td>Het register wordt periodiek gedeeld met de CIO.</td>
+</tr>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td>Verplicht</td>
+<td>Melding register (document, Bestand, intern)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security-incident-procedure">Security Incident Procedure<a class="anker" href="#security-incident-procedure" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="inleiding-2">Inleiding<a class="anker" href="#inleiding-2" aria-label="Link naar deze kop">#</a></h3>
+<p>100% beveiligen bestaat niet en niet alle incidenten zijn te voorkomen. Het is niet de vraag óf er iets gaat gebeuren maar wanneer. Beveiligingsincidenten staan vaak niet op zichzelf en kunnen een uitwerking hebben naar andere ketenpartners. Het is zaak de gevolgen voor de bedrijfsvoering te minimaliseren en de continuïteit van de dienstverlening te waarborgen.</p>
+<p>Sommige incidenten doen zich niet bij één gemeente voor maar bij meerdere. Een incident moet behalve intern opgelost soms ook extern geëscaleerd worden zodat anderen gewaarschuwd kunnen worden en daarmee de impact van het incident zo klein als mogelijk gehouden kan worden. Er zijn bijvoorbeeld heel veel gemeenten die gebruik maken van dezelfde (soort) applicaties en leveranciers. Extern escaleren gebeurt naar de IBD, zij hebben het overzicht, de contacten en de middelen om andere (keten)partners en gemeenten snel te kunnen waarschuwen en ook hebben zij een directe ingang bij het Nationaal Cyber Security Centrum (NCSC).</p>
+<p>Doelstelling: Het tijdig en juist afhandelen van beveiligingsincidenten/datalekken door storing zo snel mogelijk te verhelpen en optreden in de toekomst te voorkomen.</p>
+<p>Gerelateerde documenten:</p>
+<ul>
+<li>
+<p>Major incident escalatie procedure de uitvoeringsorganisatie (MIEP)</p>
+</li>
+<li>
+<p>Incident proces</p>
+</li>
+<li>
+<p>Melden van Datalekken</p>
+</li>
+<li>
+<p>IBD-handreiking Forensisch onderzoek</p>
+</li>
+<li>
+<p>Kennisitem meldingen registreren als beveiligingsincident.</p>
+</li>
+</ul>
+<p>Incidentcategorie</p>
+<p>Wanneer er sprake is van een acute situatie waarbij communicatie cruciaal is en medewerkers snel moeten worden bereikt of wanneer er sprake is van een inbreuk op de beveiliging wordt een melding behandeld als een P1 incident.</p>
+<p>De P1 procedure in geval van een beveiligingsincident geldt wanneer er direct risico bestaat op:</p>
+<ul>
+<li>
+<p>schade aan de bedrijfsvoering van een afdeling, gemeente, of de hele regio;</p>
+</li>
+<li>
+<p>inbreuk op een systeem met toegang tot gevoelige data;</p>
+</li>
+<li>
+<p>incidenten rond accounts van VIP’s (burgemeester, wethouders, gemeentesecretaris);</p>
+</li>
+<li>
+<p>het uitvoeren van spoedupdates/patches als gevolg van een ernstige kwetsbaarheid;</p>
+</li>
+<li>
+<p>het loskoppelen van een systeem of omgeving in verband met een ernstige kwetsbaarheid.</p>
+</li>
+</ul>
+<p>Overige beveiligingsmeldingen worden als 2e lijn melding afgewikkeld binnen naam@voorbeeldgemeente.nl</p>
+<h4 id="melding-van-een-informatiebeveiligingsincident">Melding van een informatiebeveiligingsincident<a class="anker" href="#melding-van-een-informatiebeveiligingsincident" aria-label="Link naar deze kop">#</a></h4>
+<p>Elke medewerker dient alert te zijn op bedreigingen met betrekking tot informatiebeveiliging en is verplicht om alle incidenten die hij/zij ontdekt of vermoedt te melden aan de helpdesk. In geval het vertrouwelijke zaken of personen betreft, moet de melding ook rechtstreeks aan de CISO gedaan worden.</p>
+<p>Iedere medewerker, zowel vast als tijdelijk, intern of extern is verplicht waar nodig gegevens en informatiesystemen te beschermen tegen ongeautoriseerde toegang, gebruik, verandering, openbaring, vernietiging, verlies of overdracht en bij vermeende inbreuken hiervan melding te maken.</p>
+<p>Meldingen komen via verschillende kanalen binnen:</p>
+<ul>
+<li>
+<p>de servicedesk</p>
+</li>
+<li>
+<p>Gegevensbescherming (PO, ISO, CISO, FG)</p>
+</li>
+<li>
+<p>SOC-dienstverlener</p>
+</li>
+<li>
+<p>de hostingpartij</p>
+</li>
+<li>
+<p>IBD</p>
+</li>
+<li>
+<p>Functioneel- en Applicatiebeheer al dan niet vanuit een leverancier</p>
+</li>
+<li>
+<p>Burger/ethical hacker (Responsible Disclosure melding via de website)</p>
+</li>
+</ul>
+<h4 id="toewijzen-en-escaleren-van-een-informatiebeveiligingsincident">Toewijzen en escaleren van een informatiebeveiligingsincident<a class="anker" href="#toewijzen-en-escaleren-van-een-informatiebeveiligingsincident" aria-label="Link naar deze kop">#</a></h4>
+<p>Wanneer er melding is gedaan bij de servicedesk moet deze vaststellen of de melding een beveiligingsincident betreft. (zie kennisitem meldingen registreren als beveiligingsincident)</p>
+<p>In dit geval neemt de helpdesk direct telefonisch contact op met een van de beschikbare Information Security Officers (ISO) of de CISO. De ISO moet direct een incident met hoge prioriteit oppakken, dan wel coördineren of adviseren.</p>
+<p>De (C)ISO neemt direct maatregelen om bewijsmateriaal en andere gegevens die in dit stadium als relevant worden beschouwd, veilig te stellen.</p>
+<p>De (C)ISO bepaalt hoeveel tijd en middelen nodig zijn voor afhandeling van het beveiligingsincident. Aan de hand hiervan en de ernst van het incident bepaalt de (C)ISO in overleg met het management de prioriteit en of een onderzoeks- c.q. crisisteam samengesteld moet worden.</p>
+<p>In veel gevallen zal de (C)ISO niet als primaire behandelaar optreden, immers het technisch verhelpen van een incident gebeurt niet door de Security Officer, maar in afstemming met de incident coördinatoren van ICT Regie en Processen.</p>
+<h4 id="alarmeringsprocedure">Alarmeringsprocedure<a class="anker" href="#alarmeringsprocedure" aria-label="Link naar deze kop">#</a></h4>
+<p>Indien de (C)ISO inschat dat de ernst van het incident dusdanig is óf acties nodig zijn die de handelingsbevoegdheid van de Security Officer te boven gaan, wordt de directe leidinggevende of de directie ingeschakeld.</p>
+<ul>
+<li>
+<p>Afwikkelen via reguliere incident procedure binnen de IT-organisatie.</p>
+</li>
+<li>
+<p>Opschakelen gemeentelijke/regionale Crisis-organisatie bij sprake van regio overstijgende impact.</p>
+</li>
+</ul>
+<p>Voor het opschakelen van de Crisisorganisatie in geval van een Cyberaanval wordt documentatie opgesteld. Er is een tijdelijk proces ingericht waarbij de CISO contact op kan nemen met de Officieren van Dienst van de OOV-organisatie.</p>
+<h3 id="vragen-die-je-kan-stellen-tijdens-incident">Vragen die je kan stellen tijdens incident:<a class="anker" href="#vragen-die-je-kan-stellen-tijdens-incident" aria-label="Link naar deze kop">#</a></h3>
+<ol>
+<li>Incidentbeschrijving:</li>
+</ol>
+<p>Wat is er precies gebeurd tijdens het incident? Om wat voor type incident ging het (bijvoorbeeld een datalek, malware-infectie, phishingaanval of systeeminbraak)? Wanneer heeft het incident plaatsgevonden en hoe werd het ontdekt?</p>
+<ol start="2">
+<li>Impactanalyse:</li>
+</ol>
+<p>Wat zijn de gevolgen van het incident voor de organisatie en mogelijke betrokkenen, zoals klanten, werknemers of partners? Heeft het incident geleid tot financiële schade, operationele verstoringen of reputatieschade? Kunnen deze effecten gekwantificeerd worden?</p>
+<ol start="3">
+<li>Oorzaakanalyse:</li>
+</ol>
+<p>Wat was de oorzaak van het incident? Was het te wijten aan een technische kwetsbaarheid, een menselijke fout, of wellicht een procesprobleem? Welke factoren hebben bijgedragen aan het ontstaan van het incident?</p>
+<ol start="4">
+<li>Incidentrespons en herstelacties:</li>
+</ol>
+<p>Welke stappen zijn er ondernomen om het incident onder controle te krijgen? Werden systemen geïsoleerd, data hersteld, beveiligingsmaatregelen versterkt, of betrokkenen geïnformeerd? Hoe snel en adequaat zijn deze acties uitgevoerd? Is er nog actie nodig van iemand, binnen of buiten de gemeenten?</p>
+<ol start="5">
+<li>Lessen en verbetermaatregelen:</li>
+</ol>
+<p>Wat hebben we geleerd van dit incident? Welke preventieve maatregelen worden nu ingevoerd om toekomstige incidenten te voorkomen? Is er sprake van verbeterde protocollen, extra training voor personeel of de inzet van nieuwe technologie?</p>
+<ol start="6">
+<li>Conclusie en aanbevelingen:</li>
+</ol>
+<p>Wat zijn de belangrijkste conclusies over het incident en de respons daarop? Welke aanbevelingen kunnen we doen voor verdere structurele verbeteringen in het beveiligingsbeleid? Zijn er specifieke acties nodig voor verder onderzoek?</p>
+<h2 id="soorten-beveiligingsmeldingen">Soorten beveiligingsmeldingen<a class="anker" href="#soorten-beveiligingsmeldingen" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="kwetsbaarhedenmeldingen-afwikkeling-binnen-de-servicedesk">Kwetsbaarhedenmeldingen (afwikkeling binnen de servicedesk)<a class="anker" href="#kwetsbaarhedenmeldingen-afwikkeling-binnen-de-servicedesk" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>
+<p>niet registreren als beveiligingsincident wanneer het als “change” behandelt wordt;</p>
+</li>
+<li>
+<p>wel registeren als beveiligingsincident wanneer er een acute dreiging is (bijv. het uitnutten van een exploit -n.a.v. berichtgeving IBD of bijv. SOC-dienstverlener) – P1 melding bij de hostingpartij en verder behandelen als security incident.</p>
+</li>
+<li>
+<p>Ontbrekende of onvolledige kennisitems in het servicedesksysteem</p>
+</li>
+<li>
+<p>Meldingen worden doorgezet en na terugkomst niet teruggezet op het securityteam</p>
+</li>
+<li>
+<p>Meldingen worden naar eigen interpretatie afgehandeld door Servicedesk ICT</p>
+</li>
+</ul>
+<h3 id="security-incidenten">Security-incidenten<a class="anker" href="#security-incidenten" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>
+<p>Gemeld door SOC-dienstverlener – n.a.v. verdachte activiteiten/trigger SOC dienst</p>
+</li>
+<li>
+<p>Gemeld door de hostingpartij – n.a.v. een situatie binnen de hostingpartij</p>
+</li>
+<li>
+<p>Gemeld door Gebruikers bij SD</p>
+</li>
+<li>
+<p>Gemeld door gebruikers bij naam@voorbeeldgemeente.nl</p>
+</li>
+<li>
+<p>Gemeld via Responsible Disclosure bij naam@voorbeeldgemeente.nl</p>
+</li>
+<li>
+<p>Gemeld door een ketenpartner</p>
+</li>
+<li>
+<p>Gemeld door een externe partij</p>
+</li>
+<li>
+<p>Gemeld vanuit Politie / Justitie als onderdeel van een lopend onderzoek</p>
+</li>
+<li>
+<p>Gemeld vanuit een (IT) audit</p>
+</li>
+<li>
+<p>Gemeld door een beveiligingsmiddel (mailfilter, antivirus, firewall, enzovoort)</p>
+</li>
+<li>
+<p>Grootschalige verstoring waardoor gegevens niet meer beschikbaar zijn (P1)</p>
+</li>
+</ul>
+<h3 id="datalekken">Datalekken<a class="anker" href="#datalekken" aria-label="Link naar deze kop">#</a></h3>
+<ul>
+<li>
+<p>Melding van gebruiker bij SD over verlies van gegevens, bedrijfsmiddelen, etc – toets door gegevensbescherming of er privacy-gevoelige informatie is buit gemaakt.</p>
+</li>
+<li>
+<p>Melding van gebruiker bij SD over verlies van privé apparatuur waarop zakelijke data is opgeslagen</p>
+</li>
+<li>
+<p>Melding van AP – komt vaak via FG of gegevensbescherming n.a.v. klacht burger</p>
+</li>
+<li>
+<p>Melding van technisch IB-incident door SOC-dienstverlener waarbij ook sprake is van een datalek</p>
+</li>
+<li>
+<p>Zie Security-incidenten punt 9. Dit is tevens een datalek.</p>
+</li>
+<li>
+<p>Melding verkeerd verzonden persoonsgegevens.</p>
+</li>
+<li>
+<p>Melding teveel rechten / verkeerde rechten met inzage privacy gevoelige gegevens</p>
+</li>
+</ul>
+<p>De afwikkeling van datalekken vindt plaats binnen team IB&amp;P – Privacy Officers, i.s.m. de Functionaris gegevensbescherming.</p>
+<!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/procedures-informatiebeveiliging">security/procedures-informatiebeveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>

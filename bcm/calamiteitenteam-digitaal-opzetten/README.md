@@ -117,6 +117,7 @@ werkwijze zonder dat er iets echt misgaat.
 
 ## Wat er in deze map staat
 
+- [calamiteitenplan-opzet.md](calamiteitenplan-opzet.md) — de opzet van het plan zelf: reikwijdte, niveaus, verhouding tot de crisisorganisatie, activeren en opschalen
 - [logboekformat.md](logboekformat.md) — de opzet van het logboek en de procedure voor sleutelbesluiten
 - [sleutelbesluiten-format.md](sleutelbesluiten-format.md) — invulformats voor de vier zware ingrepen
 - [taakkaarten.md](taakkaarten.md) — generieke taakkaart plus zes rolspecifieke kaarten
