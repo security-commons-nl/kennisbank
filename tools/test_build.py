@@ -450,6 +450,63 @@ class Volgorde(Basis):
         self.assertEqual(build.fouten, [])
 
 
+class Elders(Basis):
+    """Een stuk in de ene sectie kan in een andere sectie als verwijzing staan, onder '## Elders in de
+    kennisbank'. Een verwijzing die nergens heen wijst, blokkeert; een kaart verschijnt op de sectiepagina."""
+
+    README = """# Security
+
+## Volgorde
+
+1. [Eerste](eerste/)
+
+## Elders in de kennisbank
+
+- [Quantumveilig per laag](../governance/quantumveilig-per-laag/), staat onder governance
+
+## Bijdragen
+"""
+
+    def setUp(self):
+        super().setUp()
+        (self.map / "security").mkdir(parents=True, exist_ok=True)
+        (self.map / "security" / "README.md").write_text("x", encoding="utf-8")
+
+    def item(self, vak: str, naam: str) -> dict:
+        return {"_map": self.map / vak / naam, "_vak": vak, "_weergave": "live", "_link": f"{vak}/{naam}/",
+                "titel": "Quantumveilig per laag", "samenvatting": "Samenvatting.", "type": "aanpak",
+                "normen": ["BIO2"], "status": "concept"}
+
+    def test_leest_vakgebied_en_item(self):
+        self.assertEqual(build.lees_elders(self.README), [("governance", "quantumveilig-per-laag")])
+
+    def test_zonder_kopje_leeg(self):
+        self.assertEqual(build.lees_elders("# Security\n\n## Volgorde\n\n1. [A](../governance/a/)\n"), [])
+
+    def test_bestaand_doel_wordt_een_kaart(self):
+        items = {"governance": [self.item("governance", "quantumveilig-per-laag")], "security": []}
+        doelen = build.controleer_elders("security", {"elders": build.lees_elders(self.README)}, items)
+        self.assertEqual(build.fouten, [])
+        self.assertEqual(len(doelen), 1)
+        pagina = build.bouw_sectie("security", {"titel": "Security", "lead": "", "hoort": []}, [], doelen)
+        self.assertIn('href="../governance/quantumveilig-per-laag/"', pagina)
+        self.assertIn("Elders in de kennisbank", pagina)
+
+    def test_doel_dat_niet_bestaat_is_een_fout(self):
+        build.controleer_elders("security", {"elders": [("governance", "spook")]}, {"governance": []})
+        self.assertIn("spook", self.meldingen)
+
+    def test_verwijzing_naar_eigen_sectie_is_een_fout(self):
+        build.controleer_elders("security", {"elders": [("security", "eerste")]},
+                                {"security": [self.item("security", "eerste")]})
+        self.assertIn("deze sectie zelf", self.meldingen)
+
+    def test_sectie_zonder_elders_houdt_dezelfde_pagina(self):
+        sectie = {"titel": "Security", "lead": "", "hoort": []}
+        self.assertEqual(build.bouw_sectie("security", sectie, []), build.bouw_sectie("security", sectie, [], []))
+        self.assertNotIn("Elders in de kennisbank", build.bouw_sectie("security", sectie, []))
+
+
 PARTIJEN_JSON = json.dumps({"partijen": [
     {"id": "ncsc", "naam": "NCSC", "url": "https://www.ncsc.nl/"},
     {"id": "ibd", "naam": "IBD", "url": "https://www.informatiebeveiligingsdienst.nl/"},
