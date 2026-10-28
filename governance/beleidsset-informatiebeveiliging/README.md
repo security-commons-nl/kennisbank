@@ -170,6 +170,14 @@ Zie [CONTRIBUTING.md](../../CONTRIBUTING.md).
 **Invoeren.** Hoe je van deze set naar ingerichte maatregelen komt, met volgorde, eigenaar per thema en
 een urenraming: [BIO 2.0 invoeren, een plan van aanpak](../bio2-implementeren/).
 
+## Hoe dit samenhangt
+
+Het beleid cryptografie vraagt in hoofdstuk 4 een halfjaarlijkse toets op de adviezen van NCSC en NBV,
+inclusief de voorbereiding op quantumveilige cryptografie. Wat die voorbereiding per laag van de organisatie
+inhoudt, van bestuur tot inkoop, en welk tijdpad het Rijk daarvoor heeft gezet, staat in
+[Quantumveilig per laag](../quantumveilig-per-laag/). Het Rijksbreed Beleidskader Cryptografie, dat dat
+stuk als bron gebruikt, is ook de maat voor een eigen cryptografiebeleid.
+
 ## Wat dit niet is
 
 Geen vastgesteld beleid: elk stuk is een concept dat de organisatie zelf vaststelt. De test zegt dat er voor

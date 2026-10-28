@@ -73,6 +73,8 @@ toets('cbw vindt de stukken over de Cyberbeveiligingswet',
   titels(zoek('cbw')).some(t => t.includes('cyberbeveiligingswet')));
 toets('mfa vindt de stukken over 2FA', titels(zoek('mfa')).some(t => t.includes('2fa')));
 toets('awareness vindt bewustwording', titels(zoek('awareness')).some(t => t.includes('bewustwording')));
+toets('pqc vindt het stuk over quantumveilig', zoek('pqc').kaarten.some(h => h.includes('quantumveilig-per-laag')));
+toets('post-quantum vindt het handboek van AIVD, CWI en TNO', titels(zoek('post-quantum')).some(t => t.includes('pqc-migratie')));
 
 // Geen vervuiling: een gewoon woord mag niet een hele catalogus opleveren.
 r = zoek('privacy');
