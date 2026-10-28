@@ -74,6 +74,14 @@ lijst en blokkeert als een item ontbreekt of niet bestaat.
 52. [Leveranciersbeoordeling met vaste cyclus](leveranciersbeoordeling/)
 53. [Pentest- en exitverplichtingen bij leveranciers](pentest-en-exit-bij-leveranciers/)
 
+## Elders in de kennisbank
+
+Stukken die in een andere sectie staan, maar ook hier thuishoren.
+
+- [Quantumveilig per laag, wat bestuur, directie, CISO, IT en inkoop nu doen](../governance/quantumveilig-per-laag/):
+  staat onder governance omdat het over rollen en besluiten gaat; het IT-blok en de platen voor CISO en
+  architectuur horen bij cryptografie (BIO 2.0 maatregel 8.24).
+
 ## Bijdragen
 
 Zie [CONTRIBUTING.md](../CONTRIBUTING.md) voor instructies.

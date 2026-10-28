@@ -61,6 +61,16 @@ jobs:
       - name: Stelselkaart past bij de data
         run: python tools/bouw_stelselkaart.py --check
 
+      # De platen bij Quantumveilig per laag komen uit data/platen.json. De meetkundetoets heeft een
+      # letter en Pillow nodig; zonder Pillow slaat hij zichtbaar over, de rest draait altijd.
+      - name: Test quantumplaten
+        run: |
+          pip install pillow==12.1.0
+          python tools/test_quantumplaten.py
+
+      - name: Quantumplaten passen bij de data
+        run: python tools/bouw_quantumplaten.py --check
+
       # De Cbw-toets rekent in de browser, dus die logica is JavaScript. Zonder deze stap zou een
       # herschrijving van de criteria er ongemerkt doorheen komen.
       - uses: actions/setup-node@v7

@@ -170,6 +170,11 @@ overschrijf die alleen als je hebt gekeken wat je kwijtraakt.
 Zet de nieuwe map daarna in de lijst onder `## Volgorde` in `security/README.md`; de build blokkeert als
 een item daar ontbreekt.
 
+Hoort een stuk ook bij een andere sectie dan waar het staat, zet het daar dan onder
+`## Elders in de kennisbank`, als lijstregel met een link naar `../<vakgebied>/<item>/`. Het stuk staat
+maar op één plek; de andere sectie toont het als kaart. De build blokkeert als de verwijzing nergens heen
+wijst.
+
 Twee dingen die een aparte workflow controleert en die de build zelf niet vangt:
 
 - De regel met de **live-URL** moet binnen de eerste twintig regels van de README staan. De workflow

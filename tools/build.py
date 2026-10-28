@@ -661,6 +661,38 @@ def lees_volgorde(tekst: str) -> list[str]:
     return [m.group(1).rstrip("/") for m in re.finditer(r"^\s*\d+\.\s*\[[^\]]+\]\(([^)]+)\)", blok, re.M)]
 
 
+# Een stuk staat in een sectie, maar hoort soms ook bij een andere: een aanpak over quantumveilige
+# cryptografie staat onder governance omdat hij over rollen en besluiten gaat, en een CISO zoekt hem onder
+# security. Zo'n verwijzing staat in de README van de sectie onder '## Elders in de kennisbank', als
+# lijstregel met een link naar ../<vakgebied>/<item>/. De build controleert dat het doel bestaat en zet
+# het als kaart op de sectiepagina.
+SECTIE_VERWIJZING = re.compile(r"^\s*-\s*\[[^\]]+\]\(\.\./([a-z0-9-]+)/([a-z0-9-]+)/?\)", re.M)
+
+
+def lees_elders(tekst: str) -> list[tuple[str, str]]:
+    """(vakgebied, item) per verwijzing onder '## Elders in de kennisbank', in de volgorde van de lijst."""
+    if "## Elders in de kennisbank" not in tekst:
+        return []
+    blok = tekst.split("## Elders in de kennisbank", 1)[1].split("\n## ")[0]
+    return SECTIE_VERWIJZING.findall(blok)
+
+
+def controleer_elders(vak: str, sectie: dict, items: dict[str, list[dict]]) -> list[dict]:
+    """De items waar een sectie naar verwijst; een verwijzing die nergens heen wijst, blokkeert."""
+    readme = ROOT / vak / "README.md"
+    uit = []
+    for ander, naam in sectie.get("elders") or []:
+        if ander == vak:
+            fout(readme, "B4", f"'{naam}' staat onder Elders maar hoort in deze sectie zelf; zet het in de volgorde")
+            continue
+        doel = next((fm for fm in items.get(ander, []) if fm["_map"].name == naam), None)
+        if doel is None:
+            fout(readme, "B4", f"'../{ander}/{naam}/' onder Elders is geen item in de kennisbank")
+        else:
+            uit.append(doel)
+    return uit
+
+
 def lees_sectie(vak: str) -> dict:
     readme = ROOT / vak / "README.md"
     if not readme.exists():
@@ -679,7 +711,7 @@ def lees_sectie(vak: str) -> dict:
         kort = kort[:72].rsplit(" ", 1)[0].rstrip(",;")
     return {"titel": titel.group(1).strip() if titel else vak.title(),
             "lead": tekst_lead, "kort": kort[:1].upper() + kort[1:], "hoort": hoort,
-            "volgorde": lees_volgorde(tekst)}
+            "volgorde": lees_volgorde(tekst), "elders": lees_elders(tekst)}
 
 
 def zet_op_volgorde(vak: str, items: list[dict], sectie: dict) -> list[dict]:
@@ -1058,7 +1090,7 @@ FILTER_JS = """
 """
 
 
-def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
+def bouw_sectie(vak: str, sectie: dict, items: list[dict], elders: list[dict] | None = None) -> str:
     n = len(items)
     live = sum(1 for i in items if i["_weergave"] == "live")
     telling = {0: "Nog leeg.", 1: "Eén stuk."}.get(n, f"{n} stukken.")
@@ -1083,6 +1115,10 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict]) -> str:
                    handleidingen, "handleidingen"))
     if not items:
         grid = '<p class="h2sub">Nog geen stukken. Heb je iets liggen? Zie hieronder.</p>'
+    if elders:
+        ks = "".join(kaart(x, "../", True) for x in elders)
+        grid += ('<h3 class="groep" id="elders-in-de-kennisbank">Elders in de kennisbank, ook voor dit vakgebied</h3>' + NL
+                 + f'<div class="grid">{NL}{NL}{ks}{NL}</div>' + NL)
     hoort = "".join(f"  <li>{e(h)}</li>\n" for h in sectie["hoort"])
     body = f"""<header class="top">
   <h1>{e(sectie['titel'])}</h1>
@@ -1912,6 +1948,7 @@ def main() -> int:
     secties = {v: lees_sectie(v) for v in VAKGEBIEDEN if (ROOT / v).is_dir()}
     for vak, sectie in secties.items():
         items[vak] = zet_op_volgorde(vak, items[vak], sectie)
+    elders = {vak: controleer_elders(vak, sectie, items) for vak, sectie in secties.items()}
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
         for f in fouten:
@@ -1945,7 +1982,7 @@ def main() -> int:
         return 0
     gewijzigd = list(kruimel_gewijzigd)
     for vak in VAKGEBIEDEN:
-        if schrijf(ROOT / vak / "index.html", bouw_sectie(vak, secties[vak], items[vak])):
+        if schrijf(ROOT / vak / "index.html", bouw_sectie(vak, secties[vak], items[vak], elders.get(vak))):
             gewijzigd.append(f"{vak}/index.html")
     if schrijf(ROOT / "index.html", bouw_root(secties, items)):
         gewijzigd.append("index.html")
