@@ -1,0 +1,367 @@
+{
+  "toelichting": "Inhoud van de vijf platensets bij 'Quantumveilig per laag'. Bron voor tools/bouw_quantumplaten.py; de html-bestanden en de svg's in img/ worden hieruit gemaakt, nooit met de hand wijzigen. Soorten plaat: beeld (opener met svg), zin (een regel, onthul geeft de feiten), vraag (wat van dit gremium gevraagd wordt). Elke plaat noemt zijn bron.",
+  "decks": [
+    {
+      "id": "bestuur",
+      "titel": "Quantumveilig: wat het bestuur nu besluit",
+      "publiek": "Bestuur: college, raad, dagelijks bestuur, raad van toezicht",
+      "platen": [
+        {
+          "soort": "beeld",
+          "beeld": "op-straat",
+          "kop": "Wat we vandaag versleutelen, ligt in 2030 op straat.",
+          "tekst": "Een aanvaller hoeft niet te wachten. Hij kopieert nu en leest straks.",
+          "onthul": [
+            "Dit heet store now, decrypt later: onderscheppen en bewaren tot de quantumcomputer er is.",
+            "De AIVD adviseert te rekenen met een quantumcomputer in 2030."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "De bijstandsdossiers. De jeugdzorgverslagen. Het mailverkeer van dit bestuur.",
+          "onthul": [
+            "Alles wat na 2030 nog geheim moet zijn, is vandaag al kwetsbaar.",
+            "Het PQC-migratiehandboek noemt overheden met name als organisaties waarvoor de dreiging nu al groot is.",
+            "Er is nog geen wet die dit regelt. Het handboek verwacht wel dat beheerders van die gegevens later aanspreekbaar zijn."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        },
+        {
+          "soort": "zin",
+          "kop": "Het slot werkt nog. Maar de sleutel ligt al bij de inbreker in de 3D-printer.",
+          "onthul": [
+            "Kans op zo'n quantumcomputer in 2029: 5 tot 14 procent.",
+            "Kans in 2034: 19 tot 34 procent.",
+            "De AIVD: voor gevoelige informatie is een kleine kans al genoeg om nu maatregelen te nemen."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "Overstappen duurt langer dan vijf jaar. Wie in 2030 veilig wil zijn, begint nu.",
+          "onthul": [
+            "Dat leren eerdere, kleinere overgangen naar nieuwe versleuteling.",
+            "Apparatuur met een lange levensduur is na aanschaf vaak niet meer bij te werken.",
+            "Wat we dit jaar kopen, bepaalt of we in 2035 nog kwetsbaar zijn."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        },
+        {
+          "soort": "zin",
+          "kop": "Het Rijk heeft zijn datum gekozen: eind 2026 staat het op de lijst.",
+          "onthul": [
+            "Eind 2026: quantumrisico in het risicomanagement en een eigen cryptografiebeleid.",
+            "Eind 2027: migratieplanning en geld in de begroting. Eind 2030: hoog risico opgelost.",
+            "Voor rijksorganisaties verplicht, voor de rest van de publieke sector de maat waaraan we gemeten worden."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 5 oktober 2026"
+        },
+        {
+          "soort": "vraag",
+          "kop": "Wat we van u vragen: drie besluiten.",
+          "onthul": [
+            "Het quantumrisico op het risicoregister, met een eigenaar in de directie.",
+            "Opdracht voor een cryptografiebeleid langs het Rijksbreed Beleidskader Cryptografie.",
+            "Ruimte in de meerjarenbegroting voor de overstap."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 2026; Rijksbreed Beleidskader Cryptografie"
+        },
+        {
+          "soort": "zin",
+          "kop": "Eén vraag bij elke nieuwe aanschaf: is dit in 2030 nog dicht?",
+          "onthul": [
+            "Stel hem in het college, in de raad en bij elke grote investering.",
+            "Het antwoord hoort niet 'dat weet ICT' te zijn."
+          ],
+          "bron": "Digitale Overheid, Quantumveilige cryptografie: bereid je voor"
+        }
+      ]
+    },
+    {
+      "id": "directie",
+      "titel": "Quantumveilig: wat de directie nu regelt",
+      "publiek": "Directie, MT en CIO",
+      "platen": [
+        {
+          "soort": "beeld",
+          "beeld": "verbouwing",
+          "kop": "Een verbouwing van het hele pand, terwijl de winkel open blijft.",
+          "tekst": "Elke afdeling heeft gegevens. Elke afdeling heeft leveranciers.",
+          "onthul": [
+            "De overstap naar quantumveilige versleuteling duurt naar verwachting meer dan vijf jaar.",
+            "Tijdens die jaren moeten diensten soms even uit. Dat plan je vooraf."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        },
+        {
+          "soort": "zin",
+          "kop": "Dit is geen ICT-project.",
+          "onthul": [
+            "Persoonsdossiers, cliëntgegevens, juridische stukken: bewaartermijnen van tien jaar of langer zijn gewoon.",
+            "Elke afdeling die zulke gegevens heeft, hoort in de planning.",
+            "Elke afdeling die een systeem inkoopt, ook."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        },
+        {
+          "soort": "zin",
+          "kop": "Zonder kwartiermaker blijft het bij ICT liggen.",
+          "onthul": [
+            "Het handboek begint de planning met één persoon: de migratiemanager.",
+            "Iemand met overzicht over de hele organisatie en toegang tot alle afdelingen.",
+            "Met tijd, geld en faciliteiten om het te doen."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 3.2.1"
+        },
+        {
+          "soort": "zin",
+          "kop": "Elk nieuw project beantwoordt één vraag: hoe stapt dit over?",
+          "onthul": [
+            "Zet het in de projectportfolio als vaste toets.",
+            "Een systeem dat kan wisselen van versleuteling zonder vervanging heet crypto-agile.",
+            "Wat dat niet kan, krijgt een einddatum vóór 2030."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "Eind 2027 liggen er een planning, proeven en een begroting.",
+          "onthul": [
+            "Een conceptmigratieplanning met proeven voor de scenario's met hoog en gemiddeld risico.",
+            "Volwassen beheer van sleutels en certificaten.",
+            "Inzicht in de benodigde mensen en middelen, verwerkt in de begroting."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 5 oktober 2026"
+        },
+        {
+          "soort": "vraag",
+          "kop": "Wat we van de directie vragen.",
+          "onthul": [
+            "Wijs een migratiemanager aan.",
+            "Geef de inventarisatie opdracht, met een termijn en een eigenaar per afdeling.",
+            "Maak quantum een vaste vraag bij elk nieuw project en elke aanbesteding."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        }
+      ]
+    },
+    {
+      "id": "ciso-privacy",
+      "titel": "Quantumveilig: wat CISO, privacy en FG nu uitrekenen",
+      "publiek": "CISO, informatiebeveiliging, privacyofficer en FG",
+      "platen": [
+        {
+          "soort": "beeld",
+          "beeld": "mosca",
+          "kop": "Tel twee getallen op. Komt de som voorbij 2030, dan ben je al te laat.",
+          "tekst": "Hoe lang moet het geheim blijven, plus hoe lang duurt de overstap.",
+          "onthul": [
+            "Dit is de ongelijkheid van Mosca: vertrouwelijkheidstermijn plus migratietijd tegen de tijd tot de quantumcomputer.",
+            "Is de som groter, dan is de informatie vandaag al kwetsbaar."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "De foto die je vandaag veilig deelt, staat in 2030 naakt op internet.",
+          "onthul": [
+            "Versleuteling beschermt het verkeer, niet de kopie die iemand onderweg bewaart.",
+            "Persoonsgegevens met een lange bewaartermijn zijn daarom de urgentste categorie.",
+            "Het handboek rekent overheden, zorg en financiële instellingen tot de groep die nu al moet beginnen."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        },
+        {
+          "soort": "zin",
+          "kop": "Urgent of regulier? Twee vragen beslissen het.",
+          "onthul": [
+            "Moeten gegevens van ons na 2030 nog geheim zijn?",
+            "Draaien er systemen na 2030 die niet bij te werken zijn?",
+            "Eén keer ja: urgente adopter. Dan is 2026 het jaar van de diagnose, niet van de oriëntatie."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 2.1"
+        },
+        {
+          "soort": "zin",
+          "kop": "Inloggen mag even wachten. Geheimhouding niet.",
+          "onthul": [
+            "Authenticatie is niet kwetsbaar voor store now, decrypt later: een gestolen inlog van nu is in 2030 waardeloos.",
+            "Uitzondering: rootcertificaten met een lange geldigheid. Daar hoort nu al een migratieplan bij."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "Het cryptografiebeleid krijgt een kolom erbij: quantumveilig of niet.",
+          "onthul": [
+            "Per technisch aspect: aanbevolen, toegestaan, uit te faseren of niet toegestaan.",
+            "Een register van sleutels en certificaten met hun quantumveiligheidsniveau.",
+            "Crypto-agility als eis. Volg de hoofdstukindeling van het Rijksbreed Beleidskader Cryptografie."
+          ],
+          "bron": "Rijksbreed Beleidskader Cryptografie, CIO Rijk, 2025"
+        },
+        {
+          "soort": "zin",
+          "kop": "Zet in elke DPIA één vraag erbij: is dit na 2030 nog geheim?",
+          "onthul": [
+            "De bewaartermijn staat al in de DPIA. Leg hem naast 2030.",
+            "Ja betekent: deze verwerking komt vooraan in de migratieplanning."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "vraag",
+          "kop": "Wat we van CISO, privacy en FG vragen.",
+          "onthul": [
+            "Bepaal of de organisatie urgente of reguliere adopter is.",
+            "Voer de diagnose uit en geef elk gebruiksscenario een quantumrisicoscore.",
+            "Herzie het cryptografiebeleid en neem quantum op in de DPIA."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024"
+        }
+      ]
+    },
+    {
+      "id": "it",
+      "titel": "Quantumveilig: wat architectuur en IT-beheer nu doen",
+      "publiek": "Architectuur, IT-beheer, applicatiebeheer en netwerkbeheer",
+      "platen": [
+        {
+          "soort": "beeld",
+          "beeld": "inventaris",
+          "kop": "Van elke laptop weet je waar hij is. Van geen enkel certificaat.",
+          "tekst": "Zonder inventaris van je versleuteling is elke planning een gok.",
+          "onthul": [
+            "Een cryptografische inventaris is een CMDB voor sleutels, certificaten en algoritmen.",
+            "Hij helpt ook nu al: bij een gelekte sleutel of een verlopen certificaat weet je meteen waar je moet zijn."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 1.6"
+        },
+        {
+          "soort": "zin",
+          "kop": "Eerst tellen, dan vervangen.",
+          "onthul": [
+            "Welke algoritmen, sleutellengten, protocollen, certificaten en bibliotheken draaien waar.",
+            "Met eigenaar en levensduur per onderdeel.",
+            "Ook wat bij leveranciers draait. Daar zit bij de meeste overheden het grootste deel."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 2.3"
+        },
+        {
+          "soort": "zin",
+          "kop": "Twee dingen kun je morgen al doen.",
+          "onthul": [
+            "Symmetrische sleutels naar 256 bits. AES-256 geldt als quantumveilig.",
+            "TLS 1.2 naar TLS 1.3, en verouderde protocollen uit."
+          ],
+          "bron": "Digitale Overheid, Quantumveilige cryptografie: bereid je voor"
+        },
+        {
+          "soort": "zin",
+          "kop": "Hybride: twee sloten op dezelfde deur.",
+          "onthul": [
+            "Combineer de vertrouwde versleuteling met een post-quantumalgoritme. Een aanvaller moet beide breken.",
+            "Voor sleuteluitwisseling: ML-KEM of FrodoKEM. FrodoKEM waar je meer zekerheid wilt.",
+            "De algoritmen zijn betrouwbaar, de implementaties nog jong. Daarom hybride."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "Niet bij te werken is nog wel te omhullen.",
+          "onthul": [
+            "OT, meetapparatuur en oude koppelingen: tunnel ze door een symmetrisch beveiligde verbinding.",
+            "Wissel het gedeelde geheim dan op een quantumveilige manier uit, bijvoorbeeld offline.",
+            "Een tussenoplossing. Het systeem blijft op de vervangingslijst."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "De volgende wissel moet een gewone change zijn.",
+          "onthul": [
+            "Bouw crypto-agility in change management in: wie beslist, wie test, wie rolt uit.",
+            "Er komen meer standaarden. Wie nu flexibel bouwt, hoeft over vijf jaar niet opnieuw te beginnen."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 4.4"
+        },
+        {
+          "soort": "vraag",
+          "kop": "Wat we van architectuur en beheer vragen.",
+          "onthul": [
+            "Een cryptografische inventaris, in 2027 volwassen.",
+            "AES-256 en TLS 1.3 waar dat nog niet zo is.",
+            "Hybride waar het kan, eind 2030 hoog risico over."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 5 oktober 2026"
+        }
+      ]
+    },
+    {
+      "id": "inkoop",
+      "titel": "Quantumveilig: wat inkoop en contractmanagement nu vragen",
+      "publiek": "Inkoop, contractmanagement en leveranciersmanagement",
+      "platen": [
+        {
+          "soort": "beeld",
+          "beeld": "levensduur",
+          "kop": "Je koopt een gemaal dat tot 2045 draait, met een slot dat in 2030 open kan.",
+          "tekst": "Wat nu binnenkomt zonder quantumveilige versleuteling, gaat vijftien jaar mee.",
+          "onthul": [
+            "Apparatuur met een lange levensduur is na ingebruikname vaak niet meer bij te werken.",
+            "Denk aan OT, besturing, toegangspassen en meetnetten."
+          ],
+          "bron": "AIVD, Bescherm je nu tegen de dreiging van quantumcomputers, 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "De goedkoopste maatregel is één zin in de aanbesteding.",
+          "onthul": [
+            "Voorbeeld: de opdrachtnemer levert een product dat quantumveilige cryptografie ondersteunt, of legt een migratiepad met datum over.",
+            "Digitale Overheid noemt dit als stap voor nu, niet voor later."
+          ],
+          "bron": "Digitale Overheid, Quantumveilige cryptografie: bereid je voor"
+        },
+        {
+          "soort": "zin",
+          "kop": "Eén vraag aan elke leverancier: wanneer bent u quantumveilig?",
+          "onthul": [
+            "Stel hem bij het eerstvolgende leveranciersoverleg.",
+            "Leg het antwoord vast in het contractdossier.",
+            "De Infoset Quantumveilige Cryptografie van Digitale Overheid is de vragenlijst voor dat gesprek."
+          ],
+          "bron": "Digitale Overheid, Quantumveilige cryptografie: bereid je voor"
+        },
+        {
+          "soort": "zin",
+          "kop": "Een toezegging zonder datum is geen toezegging.",
+          "onthul": [
+            "Maak het migratiepad een contractuele mijlpaal.",
+            "Wie niet kan overstappen, krijgt een einddatum vóór 2030 op de vervangingskalender."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 5 oktober 2026"
+        },
+        {
+          "soort": "zin",
+          "kop": "Een leverancier beweegt sneller voor een sector dan voor één klant.",
+          "onthul": [
+            "Gebruik de collectieve kanalen en gezamenlijke inkoopvoorwaarden van je koepel.",
+            "Het handboek noemt samenwerken met gelijksoortige organisaties als stap die altijd loont."
+          ],
+          "bron": "AIVD, CWI en TNO, Het PQC-migratiehandboek, 2e editie, 2024, par. 1.6"
+        },
+        {
+          "soort": "vraag",
+          "kop": "Wat we van inkoop vragen.",
+          "onthul": [
+            "Vanaf nu de eis of het migratiepad in elke aanbesteding met versleuteling erin.",
+            "De vraag aan elke bestaande leverancier, met het antwoord in het dossier.",
+            "Rijk: eind 2028 structureel. Wie apparatuur met een lange levensduur koopt: nu."
+          ],
+          "bron": "Rijksbrede Quantumstrategie, 5 oktober 2026"
+        }
+      ]
+    }
+  ]
+}

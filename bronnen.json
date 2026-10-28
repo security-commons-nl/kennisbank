@@ -2858,6 +2858,48 @@
       "partij": "ncsc",
       "toegang": "open",
       "gezien": "2026-10-15"
+    },
+    "aivd-bescherm-je-nu-tegen-quantumcomputers-2026": {
+      "titel": "Bescherm je nu tegen de dreiging van quantumcomputers (2026)",
+      "url": "https://www.aivd.nl/documenten/2026/03/27/bescherm-je-nu-tegen-de-dreiging-van-quantumcomputer-2026",
+      "partij": "aivd",
+      "toegang": "open",
+      "gezien": "2026-10-28"
+    },
+    "aivd-pqc-migratie-handboek": {
+      "titel": "Het PQC-migratie handboek, 2e editie (AIVD, CWI, TNO)",
+      "url": "https://www.aivd.nl/onderwerpen/informatiebeveiliging/documenten/publicaties/2024/12/3/het-pqc-migratie-handboek",
+      "partij": "aivd",
+      "toegang": "open",
+      "gezien": "2026-10-28"
+    },
+    "ciorijk-rijksbreed-beleidskader-cryptografie": {
+      "titel": "Rijksbreed Beleidskader Cryptografie",
+      "url": "https://www.digitaleoverheid.nl/document/rijksbreed-beleidskader-cryptografie/",
+      "partij": "ciorijk",
+      "toegang": "open",
+      "gezien": "2026-10-28"
+    },
+    "ciorijk-pqc-migratie-tijdpad-quantumstrategie": {
+      "titel": "Rijksbrede Quantumstrategie, met het PQC-migratietijdpad voor de Rijksoverheid",
+      "url": "https://open.overheid.nl/details/e5ed8acc-e60c-49b0-bda9-fc32fd24b457",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-28"
+    },
+    "do-quantumveilig-bereid-je-voor": {
+      "titel": "Quantumveilige cryptografie: bereid je voor",
+      "url": "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/quantumveilige-cryptografie/bereid-je-voor/",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-28"
+    },
+    "do-quantumveilig-handige-hulpmiddelen": {
+      "titel": "Quantumveilige cryptografie: handige hulpmiddelen",
+      "url": "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/quantumveilige-cryptografie/handige-hulpmiddelen/",
+      "partij": "bzk",
+      "toegang": "open",
+      "gezien": "2026-10-28"
     }
   }
 }
