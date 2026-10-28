@@ -139,7 +139,8 @@ def beeld_mosca() -> str:
          tekst((x(2026) + x(2031)) / 2, 150, "overstap: 5 jaar", 17, True, DONKER),
          vlak(x(2031), 120, x(2041) - x(2031), 48, VLAK, r=4),
          tekst((x(2031) + x(2041)) / 2, 150, "moet geheim blijven: 10 jaar", 17, True, DONKER),
-         tekst(x0, 222, "quantumcomputer", 17, anker="start"),
+         # rechts uitgelijnd vlak voor de stippellijn van 2030, zodat een bredere letter er niet doorheen loopt
+         tekst(x(2030) - 10, 222, "quantumcomputer", 17, anker="end"),
          vlak(x(2026), 234, x(2030) - x(2026), 48, BLAUW, LICHT, 4),
          tekst((x(2026) + x(2030)) / 2, 264, "2030", 17, True, "#ffffff"),
          # de stippellijn van 2030 loopt van onder de bovenste balk naar de as, niet door een label
@@ -176,7 +177,7 @@ def beeld_inventaris() -> str:
 
 
 def beeld_levensduur() -> str:
-    x0, px = 80, 640 / 19  # 2026 tot 2045 over 640 pixels
+    x0, px = 100, 600 / 19  # 2026 tot 2045 over 600 pixels; ruimte aan beide kanten voor de jaarlabels
 
     def x(jaar: float) -> float:
         return x0 + (jaar - 2026) * px

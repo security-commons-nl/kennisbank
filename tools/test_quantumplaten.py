@@ -27,29 +27,44 @@ spec.loader.exec_module(bouw)
 DATA = json.loads(bouw.DATA.read_text(encoding="utf-8"))
 NS = "{http://www.w3.org/2000/svg}"
 
+# De pagina zegt system-ui, dus de lezer krijgt de letter van zijn eigen apparaat. De toets meet daarom met
+# elke letter die hij vindt: Segoe UI (Windows), DejaVu Sans (Linux, de CI, en breder) en wat matplotlib
+# meebrengt. Een label dat in de breedste letter past, past overal.
 LETTERS = [
-    (Path("C:/Windows/Fonts/segoeui.ttf"), Path("C:/Windows/Fonts/segoeuib.ttf")),
-    (Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+    ("Segoe UI", Path("C:/Windows/Fonts/segoeui.ttf"), Path("C:/Windows/Fonts/segoeuib.ttf")),
+    ("DejaVu Sans", Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
      Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")),
 ]
 
 
-def meetlat():
+def matplotlib_dejavu() -> list[tuple[str, Path, Path]]:
+    try:
+        import matplotlib  # noqa: F401
+    except ImportError:
+        return []
+    ttf = Path(matplotlib.__file__).resolve().parent / "mpl-data" / "fonts" / "ttf"
+    return [("DejaVu Sans (matplotlib)", ttf / "DejaVuSans.ttf", ttf / "DejaVuSans-Bold.ttf")]
+
+
+def meetlatten() -> list[tuple[str, object]]:
+    """(naam, breedtefunctie) per gevonden letter; leeg als er geen letter of geen Pillow is."""
     try:
         from PIL import ImageFont
     except ImportError:
-        return None
-    for gewoon, vet in LETTERS:
-        if gewoon.is_file() and vet.is_file():
-            cache: dict = {}
+        return []
+    uit = []
+    for naam, gewoon, vet in LETTERS + matplotlib_dejavu():
+        if not (gewoon.is_file() and vet.is_file()):
+            continue
+        cache: dict = {}
 
-            def breedte(s: str, maat: int, is_vet: bool) -> float:
-                sleutel = (maat, is_vet)
-                if sleutel not in cache:
-                    cache[sleutel] = ImageFont.truetype(str(vet if is_vet else gewoon), maat)
-                return cache[sleutel].getlength(s)
-            return breedte
-    return None
+        def breedte(s: str, maat: int, is_vet: bool, gewoon=gewoon, vet=vet, cache=cache) -> float:
+            sleutel = (maat, is_vet)
+            if sleutel not in cache:
+                cache[sleutel] = ImageFont.truetype(str(vet if is_vet else gewoon), maat)
+            return cache[sleutel].getlength(s)
+        uit.append((naam, breedte))
+    return uit
 
 
 def labels(svg_tekst: str) -> list[dict]:
@@ -138,57 +153,66 @@ class Meetkunde(unittest.TestCase):
     MARGE = 8
 
     def setUp(self):
-        self.breedte = meetlat()
-        if self.breedte is None:
+        self.letters = meetlatten()
+        if not self.letters:
             self.skipTest("geen letter of geen Pillow gevonden; meetkunde niet getoetst")
 
+    def per_letter(self):
+        """Elk beeld, met elke gevonden letter; de subtest noemt beide."""
+        for letter, breedte in self.letters:
+            for naam, maak in bouw.BEELDEN.items():
+                yield letter, breedte, naam, maak
+
+    def test_minstens_een_letter_gevonden(self):
+        self.assertGreaterEqual(len(self.letters), 1, [n for n, _ in self.letters])
+
     def test_labels_binnen_het_beeld(self):
-        for naam, maak in bouw.BEELDEN.items():
+        for letter, breedte, naam, maak in self.per_letter():
             for label in labels(maak()):
-                x1, y1, x2, y2 = kader(label, self.breedte)
-                with self.subTest(beeld=naam, label=label["tekst"]):
+                x1, y1, x2, y2 = kader(label, breedte)
+                with self.subTest(letter=letter, beeld=naam, label=label["tekst"]):
                     self.assertGreaterEqual(x1, self.MARGE)
                     self.assertLessEqual(x2, bouw.B - self.MARGE)
                     self.assertGreaterEqual(y1, self.MARGE)
                     self.assertLessEqual(y2, bouw.H - self.MARGE)
 
     def test_labels_raken_elkaar_niet(self):
-        for naam, maak in bouw.BEELDEN.items():
-            ls = [(lab["tekst"], kader(lab, self.breedte)) for lab in labels(maak())]
+        for letter, breedte, naam, maak in self.per_letter():
+            ls = [(lab["tekst"], kader(lab, breedte)) for lab in labels(maak())]
             for i, (ta, a) in enumerate(ls):
                 for tb, b in ls[i + 1:]:
-                    with self.subTest(beeld=naam, a=ta, b=tb):
+                    with self.subTest(letter=letter, beeld=naam, a=ta, b=tb):
                         overlap = a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
                         self.assertFalse(overlap, f"'{ta}' en '{tb}' overlappen in {naam}")
 
     def test_geen_lijn_door_een_label(self):
         """Een lijn die door een woord loopt, zie je pas bij het renderen; deze toets vangt hem eerder."""
-        for naam, maak in bouw.BEELDEN.items():
+        for letter, breedte, naam, maak in self.per_letter():
             wortel = ET.fromstring(maak())
-            kaders = [(lab["tekst"], kader(lab, self.breedte)) for lab in labels(maak())]
+            kaders = [(lab["tekst"], kader(lab, breedte)) for lab in labels(maak())]
             for ln in wortel.iter(NS + "line"):
                 x1, y1, x2, y2 = (float(ln.get(k)) for k in ("x1", "y1", "x2", "y2"))
                 for tekst_, (a, b, c, d) in kaders:
                     geraakt = any(a + 1 < x1 + (x2 - x1) * i / 200 < c - 1 and
                                   b + 1 < y1 + (y2 - y1) * i / 200 < d - 1 for i in range(201))
-                    with self.subTest(beeld=naam, label=tekst_):
+                    with self.subTest(letter=letter, beeld=naam, label=tekst_):
                         self.assertFalse(geraakt, f"een lijn loopt door '{tekst_}' in {naam}")
 
     def test_tekst_in_balk_past_in_de_balk(self):
         """Labels die midden in een gekleurde balk staan, moeten er met wat lucht in passen."""
-        for naam, maak in bouw.BEELDEN.items():
+        for letter, breedte, naam, maak in self.per_letter():
             wortel = ET.fromstring(maak())
             vlakken = [r for r in wortel.iter(NS + "rect")
                        if r.get("fill") not in (bouw.DONKER,) and float(r.get("height")) >= 30]
             for label in labels(maak()):
-                x1, y1, x2, y2 = kader(label, self.breedte)
+                x1, y1, x2, y2 = kader(label, breedte)
                 for r in vlakken:
                     rx, ry = float(r.get("x")), float(r.get("y"))
                     rb, rh = float(r.get("width")), float(r.get("height"))
                     # alleen een label waarvan het midden in de balk valt
                     mx, my = (x1 + x2) / 2, (y1 + y2) / 2
                     if rx < mx < rx + rb and ry < my < ry + rh and rb < 700:
-                        with self.subTest(beeld=naam, label=label["tekst"]):
+                        with self.subTest(letter=letter, beeld=naam, label=label["tekst"]):
                             self.assertGreaterEqual(x1, rx + 4, "label steekt links uit de balk")
                             self.assertLessEqual(x2, rx + rb - 4, "label steekt rechts uit de balk")
 
