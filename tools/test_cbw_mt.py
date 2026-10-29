@@ -206,6 +206,7 @@ class Invullen(unittest.TestCase):
         blok["stand"]["zorgplicht"]["c"] = {"status": "rood", "tekst": "Herstel nooit getest"}
         blok["stand"]["plichten"]["registratie"] = {"status": "groen", "tekst": "Geregistreerd in augustus"}
         blok["aanvullingen"] = {"tijdlijn": "Samen met de buurgemeenten", "stand-processen": ["Eigen regel"]}
+        blok["standbron"] = "Eigen halfjaarrapportage"
         (self.map / "blok.json").write_text(json.dumps(blok), encoding="utf-8")
         self.uit = self.map / "eigen.html"
         self.assertEqual(bouw.main(["--invul", str(self.map / "blok.json"), "--uit", str(self.uit)]), 0)
@@ -230,6 +231,10 @@ class Invullen(unittest.TestCase):
         processen = re.search(r'<section class="plaat p-stand" id="plaat-24".*?</section>', self.pagina, re.S).group(0)
         self.assertIn('<p class="lokaal">Eigen regel</p>', processen)
         self.assertEqual(self.pagina.count('class="lokaal"'), 2, "alleen waar gevraagd")
+
+    def test_standbron_vervangt_de_invulbron(self):
+        self.assertEqual(self.pagina.count("Bron: Eigen halfjaarrapportage"), 3)
+        self.assertNotIn("In te vullen door de eigen organisatie", self.pagina)
 
     def test_onbekende_plaat_is_een_fout(self):
         with self.assertRaises(ValueError):

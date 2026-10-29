@@ -693,7 +693,10 @@ def plaat_html(nr: int, totaal: int, plaat: dict, data: dict, invul: dict) -> st
     v = lambda s: vul(s, invul, refrein)  # noqa: E731
     kop = v(plaat["kop"])
     sub = f'<p class="sub">{v(plaat["tekst"])}</p>' if plaat.get("tekst") else ""
-    bron = f'<p class="bron">Bron: {e(plaat["bron"])}</p>' if plaat.get("bron") else ""
+    bronregel = plaat.get("bron", "")
+    if soort == "stand" and str(invul.get("standbron", "") or "").strip():
+        bronregel = invul["standbron"].strip()
+    bron = f'<p class="bron">Bron: {e(bronregel)}</p>' if bronregel else ""
     oog = f'<p class="oog">Deel {plaat["deel"]} &middot; {e(deelnaam)}</p>'
     refreinregel = ""
 
