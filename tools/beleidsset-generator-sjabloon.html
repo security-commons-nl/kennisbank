@@ -324,7 +324,15 @@ var DATA = /*DATA*/;
     var gekozenItems = [].slice.call(document.querySelectorAll("#voorstel-tabel input:checked")).map(function (x) { return voorstel.items[+x.dataset.index]; });
     if (voorstel.opdracht === "profiel") {
       var p = profiel();
-      gekozenItems.forEach(function (item) { var v = vraagVan(item.code); p[item.code] = v.meerdere ? item.antwoorden : item.antwoorden[0]; });
+      // Alleen antwoord-id's uit de vaste lijst van de vraag: het profiel is sinds 29-10-2026 van de hele commons
+      // (commons-profiel) en mag nooit vrije tekst bevatten, ook niet uit een met de hand bewerkt voorstelbestand.
+      gekozenItems.forEach(function (item) {
+        var v = vraagVan(item.code); if (!v) return;
+        var geldig = v.antwoorden.map(function (a) { return a.id; });
+        var antw = (Array.isArray(item.antwoorden) ? item.antwoorden : []).filter(function (a) { return geldig.indexOf(a) >= 0; });
+        if (!antw.length) return;
+        p[item.code] = v.meerdere ? antw : antw[0];
+      });
       zet(p);
       try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
     } else {
