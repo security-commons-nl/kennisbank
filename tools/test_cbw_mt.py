@@ -140,8 +140,13 @@ class Inhoud(unittest.TestCase):
             with self.subTest(eis=p["letter"]):
                 self.assertIsNotNone(blok, "plaat ontbreekt")
                 self.assertIn(refrein, blok.group(0))
-                for kop in ("Wat als", "De keuze", "Waar gepast"):
-                    self.assertIn(f"<dt>{kop}</dt>", blok.group(0))
+                self.assertIn(f'<p class="keuzevraag"><b>De keuze</b>{bouw.e(p["keuze"])}</p>', blok.group(0),
+                              "op de plaat zelf alleen de keuzevraag")
+                zichtbaar, _, achter = blok.group(0).partition('class="onthul extra"')
+                self.assertTrue(achter, "uitleg staat achter de knop")
+                for kop in ("Wat als", "Bijvoorbeeld", "De wet"):
+                    self.assertIn(f"<dt>{kop}</dt>", achter)
+                    self.assertNotIn(f"<dt>{kop}</dt>", zichtbaar)
 
     def test_schrijfregels(self):
         tekst = bouw.DATA.read_text(encoding="utf-8") + (bouw.MAP / "README.md").read_text(encoding="utf-8")
@@ -226,6 +231,8 @@ class Invullen(unittest.TestCase):
         self.assertIn("[Foto: een eigen kritiek proces]", self.pagina, "een lege foto blijft een invulveld")
 
     def test_aanvulling_in_groen_op_de_juiste_plaat(self):
+        eis = re.search(r'<section class="plaat p-eis" id="eis-c".*?</section>', self.pagina, re.S).group(0)
+        self.assertNotIn('class="lokaal"', eis)
         tijdlijn = re.search(r'<section class="plaat p-beeld" id="plaat-6".*?</section>', self.pagina, re.S).group(0)
         self.assertIn('<li class="lokaal">Samen met de buurgemeenten</li>', tijdlijn)
         processen = re.search(r'<section class="plaat p-stand" id="plaat-24".*?</section>', self.pagina, re.S).group(0)

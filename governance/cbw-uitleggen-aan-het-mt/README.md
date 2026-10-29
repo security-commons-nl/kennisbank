@@ -30,7 +30,9 @@ staat.
 ## Wat er in deze map staat
 
 - [De platen](platen.html): 26 platen voor een sessie van twee uur. Bladeren met de pijltjestoetsen; op een
-  plaat met een knop onthult de pijl eerst de rest. Print op A4 liggend.
+  plaat met een knop onthult de pijl eerst de rest. Op de tien zorgplicht-platen staat alleen de keuzevraag; de
+  uitleg staat achter de knop Meer uitleg, als reserve voor de spreker, en daar bladert de pijl gewoon door. Print op
+  A4 liggend.
 - [Het draaiboek](draaiboek.md): per plaat de tijd en wat je doet, met antwoordlijnen voor de vragen die
   altijd komen.
 - [De tekst van de platen](data/platen.json): wie een plaat wil aanpassen, doet dat hier.
