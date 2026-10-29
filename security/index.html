@@ -689,7 +689,7 @@ footer a{color:var(--muted)}
                       : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
                                : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
   link(kop, 'Profiel aanpassen', '/profiel/');
-  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+  if (uit || eerst) knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
     try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
     location.reload();
   });

@@ -895,7 +895,13 @@ def controleer_profielregels(items: dict[str, list[dict]]) -> None:
     if not schema_pad.exists():
         fout(pad, "C2", "profielregels.json zonder profiel.json op de root")
         return
-    vragen = {v["id"]: {a["id"] for a in v["antwoorden"]} for v in json.loads(schema_pad.read_text(encoding="utf-8"))["vragen"]}
+    # Een subvraag (hosting > soevereiniteit, werkplek > byod) is in het profiel een eigen sleutel, zoals de
+    # beleidsset-generator en /profiel/ hem schrijven; dus ook hier een eigen vraag.
+    vragen: dict[str, set] = {}
+    for v in json.loads(schema_pad.read_text(encoding="utf-8"))["vragen"]:
+        vragen[v["id"]] = {a["id"] for a in v["antwoorden"]}
+        if v.get("subvraag"):
+            vragen[v["subvraag"]["id"]] = {a["id"] for a in v["subvraag"]["antwoorden"]}
     alle = [fm for vak in items for fm in items[vak]]
     normen = {str(n) for fm in alle for n in (fm.get("normen") or [])}
     gedragen = {b for fm in alle for b in (fm.get("barrieres") or [])}
@@ -913,6 +919,9 @@ def controleer_profielregels(items: dict[str, list[dict]]) -> None:
             if vraag not in vragen:
                 fout(pad, "C2", f"{waar}: vraag '{vraag}' staat niet in profiel.json")
                 continue
+            if not isinstance(antwoorden, list) or not antwoorden:
+                fout(pad, "C2", f"{waar}: 'als' bij vraag '{vraag}' noemt geen antwoorden; zo'n regel vuurt nooit")
+                continue
             for a in antwoorden:
                 if a not in vragen[vraag]:
                     fout(pad, "C2", f"{waar}: antwoord '{a}' bestaat niet bij vraag '{vraag}' ({sorted(vragen[vraag])})")
@@ -922,6 +931,8 @@ def controleer_profielregels(items: dict[str, list[dict]]) -> None:
         for k in dan:
             if k not in PROFIEL_DAN:
                 fout(pad, "C2", f"{waar}: onbekende sleutel '{k}' in 'dan'")
+            elif dan[k] in ("", [], None):
+                fout(pad, "C2", f"{waar}: '{k}' in 'dan' is leeg; zo'n regel raakt niets")
         for n in dan.get("normen") or []:
             if n not in normen:
                 fout(pad, "C2", f"{waar}: norm '{n}' staat in geen enkel stuk")
@@ -935,6 +946,8 @@ def controleer_profielregels(items: dict[str, list[dict]]) -> None:
         for k in ("route", "situatie"):
             if k in dan and dan[k] not in routes():
                 fout(pad, "C2", f"{waar}: {k} '{dan[k]}' staat niet in routes.json")
+            elif k in dan and routes()[dan[k]].get("soort") and routes()[dan[k]]["soort"] != ("situatie" if k == "situatie" else "rol"):
+                fout(pad, "C2", f"{waar}: '{dan[k]}' is een {routes()[dan[k]]['soort']}, geen {k}")
         for inst in dan.get("instrumenten") or []:
             if not (isinstance(inst, dict) and inst.get("titel") and str(inst.get("url", "")).startswith("https://security-commons-nl.github.io/")):
                 fout(pad, "C2", f"{waar}: instrument heeft een titel en een adres op de site nodig")
@@ -1027,7 +1040,7 @@ PROFIEL_JS = """
                       : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
                                : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
   link(kop, 'Profiel aanpassen', '/profiel/');
-  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+  if (uit || eerst) knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
     try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
     location.reload();
   });

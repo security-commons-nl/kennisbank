@@ -1210,12 +1210,16 @@ class Profielregels(Basis):
     """profielregels.json (plan het profiel): elke regel wijst naar iets bestaands, en de kaart draagt de normen."""
 
     SCHEMA = {"vragen": [{"id": "cbw", "antwoorden": [{"id": "essentieel"}, {"id": "niet"}]},
-                         {"id": "detectie", "antwoorden": [{"id": "geen"}, {"id": "eigen-soc"}]}]}
+                         {"id": "detectie", "antwoorden": [{"id": "geen"}, {"id": "eigen-soc"}]},
+                         {"id": "werkplek", "antwoorden": [{"id": "cloud"}],
+                          "subvraag": {"id": "byod", "antwoorden": [{"id": "ja"}, {"id": "nee"}]}}]}
 
     def zet(self, regels: list) -> None:
         (self.map / "profiel.json").write_text(json.dumps(self.SCHEMA), encoding="utf-8")
         (self.map / "profielregels.json").write_text(json.dumps({"regels": regels}), encoding="utf-8")
-        (self.map / "routes.json").write_text(json.dumps({"routes": [{"id": "eerste-honderd-dagen", "rol": "x", "vraag": "?", "stappen": []}]}), encoding="utf-8")
+        (self.map / "routes.json").write_text(json.dumps({"routes": [
+            {"id": "eerste-honderd-dagen", "soort": "situatie", "rol": "x", "vraag": "?", "stappen": []},
+            {"id": "ciso", "soort": "rol", "rol": "CISO", "vraag": "?", "stappen": []}]}), encoding="utf-8")
         build._profielregels_cache = None
         build._routes_cache = None
 
@@ -1273,6 +1277,23 @@ class Profielregels(Basis):
         self.zet([self.regel(), self.regel()])
         build.controleer_profielregels(self.items())
         self.assertIn("id komt twee keer voor", self.meldingen)
+
+    def test_subvraag_is_een_eigen_vraag(self):
+        self.zet([self.regel(als={"byod": ["ja"]})])
+        build.controleer_profielregels(self.items())
+        self.assertEqual(self.meldingen, "")
+
+    def test_lege_als_of_dan_is_een_fout(self):
+        self.zet([self.regel(id="a", als={"cbw": []}), self.regel(id="b", dan={"normen": []})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("noemt geen antwoorden", self.meldingen)
+        self.assertIn("'normen' in 'dan' is leeg", self.meldingen)
+
+    def test_situatie_moet_een_situatie_zijn(self):
+        self.zet([self.regel(dan={"situatie": "ciso"}), self.regel(id="r2", dan={"route": "eerste-honderd-dagen"})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("'ciso' is een rol, geen situatie", self.meldingen)
+        self.assertIn("'eerste-honderd-dagen' is een situatie, geen route", self.meldingen)
 
     def test_instrument_moet_op_de_site_staan(self):
         self.zet([self.regel(dan={"instrumenten": [{"titel": "x", "url": "https://example.org/"}]})])
