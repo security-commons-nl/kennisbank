@@ -80,10 +80,13 @@ kennisbank zelf staan geen Word-bestanden; markdown is de bron.
 
 ## Hoe het werkt
 
-**De contextvragen.** [`profiel.json`](../../profiel.json) (sinds 29-10-2026 op de root van de kennisbank: het profiel is van de hele commons, en wat je hier invult geldt ook elders) bevat zestien vragen met vaste antwoorden: wie je IT
+**De contextvragen.** [`profiel.json`](../../profiel.json) (sinds 29-10-2026 op de root van de kennisbank: het profiel is van de hele commons) bevat zestien vragen met vaste antwoorden, twee daarvan met een vervolgvraag: wie je IT
 beheert, waar systemen draaien, hoe je werkplek eruitziet, of je onder de Cbw valt, wie je omgeving bewaakt,
 of je zelf software bouwt, of je OT of politiegegevens hebt, en meer. Per vraag staat welke domeinen hij
-raakt. Geen vraag is verplicht.
+raakt. Geen vraag is verplicht. Wat je hier invult, bewaart de browser als het profiel van de commons: je kunt het
+ook invullen of aanpassen op [jouw profiel](https://security-commons-nl.github.io/profiel/), en de voorpagina en de
+kennisbank lezen hetzelfde profiel om een route voor te stellen en de stukken die voor jou het eerst tellen bovenaan
+te zetten. Er staan alleen vaste keuzes in, geen naam en geen tekst uit je documenten.
 
 **De bouwstenen.** Per domein staat de tekst in een bouwsteen in de map `data/`, in gewone markdown
 met vier afspraken:
@@ -157,7 +160,8 @@ lokale Ollama), en toestemming per sessie. Twee opdrachten:
 Het model schrijft geen beleid: de regels staan in de bouwstenen. Het levert een voorstel als bestand. Elke regel
 draagt een letterlijk citaat, en een regel waarvan het citaat niet in je document staat, staat in de generator
 standaard uit. Pas na *Overnemen* verandert er iets, en onder elk stuk staat dan welke velden uit een AI-voorstel
-komen. De prompts en schema's staan als data in
+komen. Het voorstel voor de contextvragen kun je ook laden op [jouw profiel](https://security-commons-nl.github.io/profiel/);
+ook daar neem je per vraag over, en alleen vaste antwoorden komen in het profiel. De prompts en schema's staan als data in
 [`tools/beleidsset-ai/opdrachten.json`](https://github.com/security-commons-nl/kennisbank/blob/main/tools/beleidsset-ai/opdrachten.json);
 de controles (schema, citaat) delen een kern met de andere instrumenten. Uitleg over wat er waarheen gaat:
 [AI-hulp met je eigen sleutel](https://security-commons-nl.github.io/ai-hulp/).
