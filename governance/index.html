@@ -101,10 +101,21 @@ footer a{color:var(--muted)}
 <h2>Wat hier staat</h2>
 <p class="h2sub">14 stukken. Alle openen direct in de browser.</p>
 
+<style>
+.profielbalk{border:1px solid #c9dbe9;background:#f2f7fb;border-radius:8px;padding:9px 13px;margin:0 0 14px;font-size:14px}
+.profielbalk[hidden]{display:none}
+.profielbalk p{margin:0 0 4px}
+.profielbalk p:last-child{margin-bottom:0}
+.profielbalk a{color:var(--accent)}
+.profielbalk button{font:inherit;font-size:13px;margin-left:6px;padding:1px 8px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:5px;cursor:pointer}
+.profieletiket{display:block;margin-top:6px;font-size:12px;color:#1f5d3a;background:#eef7f1;border:1px solid #cfe6d7;border-radius:4px;padding:2px 7px}
+</style>
+<script type="application/json" id="profielregels">[{"id": "cbw-plicht", "als": {"cbw": ["essentieel", "belangrijk"]}, "dan": {"normen": ["Cbw", "NIS2"]}, "waarom": "Je valt onder de Cyberbeveiligingswet, dus de zorgplicht en de meldplicht gaan voor."}, {"id": "politiegegevens", "als": {"politiegegevens": ["ja"]}, "dan": {"normen": ["Wpg"]}, "waarom": "Je verwerkt politiegegevens, dus naast de AVG geldt de Wet politiegegevens."}, {"id": "gevoelige-domeinen", "als": {"gevoelig": ["sociaal", "jeugd", "gezondheid"]}, "dan": {"vakgebied": "privacy"}, "waarom": "Je verwerkt bijzondere persoonsgegevens, dus de privacystukken tellen het eerst."}, {"id": "geen-detectie", "als": {"detectie": ["geen"]}, "dan": {"barrieres": ["soc", "edr"]}, "waarom": "Zonder structurele detectie zie je een aanval pas als het te laat is."}, {"id": "uitbesteed-beheer", "als": {"beheer": ["regie", "uitbesteed"]}, "dan": {"barrieres": ["technicalvendor", "dependencies", "upstream"]}, "waarom": "Je beheer ligt bij een leverancier, dus de afspraken in de keten bepalen je weerbaarheid."}, {"id": "geen-bcm", "als": {"bcm": ["geen", "crisisteam"]}, "dan": {"vakgebied": "bcm"}, "waarom": "Er is nog geen BCM-functie, dus continuiteit is een gat dat je eerst dicht."}, {"id": "ot-substantieel", "als": {"ot": ["substantieel"]}, "dan": {"instrumenten": [{"titel": "De CSIR-tool voor bruggen, gemalen, sluizen en tunnels", "url": "https://security-commons-nl.github.io/csir-assessment-tool/"}]}, "waarom": "Je hebt objecten met industriele automatisering, en daarvoor is de CSIR het kader."}, {"id": "startend", "als": {"capaciteit": ["geen"], "volwassenheid": ["startend"]}, "dan": {"situatie": "eerste-honderd-dagen"}, "waarom": "Je begint met informatiebeveiliging, dus de route van de eerste honderd dagen past."}]</script>
+<div class="profielbalk" id="profielbalk" hidden></div>
 <h3 class="groep">Aanpakken, sjablonen en naslag</h3>
 <div class="grid">
 
-  <a class="item" href="val-ik-onder-de-cbw/" data-vak="governance" data-zoek="val ik onder de cbw? klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de cyberbeveiligingswet valt. loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. rekent in de browser, er gaat niets naar een server. sjabloon governance cbw nis2" data-barrieres="">
+  <a class="item" href="val-ik-onder-de-cbw/" data-vak="governance" data-zoek="val ik onder de cbw? klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de cyberbeveiligingswet valt. loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. rekent in de browser, er gaat niets naar een server. sjabloon governance cbw nis2" data-barrieres="" data-normen="Cbw|NIS2">
     <span class="itemtop">
       <span class="itemtitle">Val ik onder de Cbw?</span>
       <span class="tag tag-live">live</span>
@@ -113,7 +124,7 @@ footer a{color:var(--muted)}
     <div class="meta">sjabloon · peildatum 2026-08-31 · concept · route: CISO stap 2</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span></div>
   </a>
-  <a class="item" href="cbw-meldplicht-inrichten/" data-vak="governance" data-zoek="de cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio hoe een gemeente de meldplicht en de registratieplicht onder de cyberbeveiligingswet in de praktijk regelt. een vastgestelde meldplichtprocedure met de drie drempelwaarden voor een significant incident (vier uur uitval, niet in de begroting op te vangen, ernstig letsel), de klok vanaf kennisname (24 uur waarschuwen, 72 uur melden, eindverslag na een maand), de informatieplicht aan inwoners, melden namens meerdere gemeenten met mandaat, en vier invulsjablonen. daarnaast de registratie bij het ncsc veld voor veld, met de redenering per antwoord. aanpak governance cbw nis2 bio2" data-barrieres="">
+  <a class="item" href="cbw-meldplicht-inrichten/" data-vak="governance" data-zoek="de cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio hoe een gemeente de meldplicht en de registratieplicht onder de cyberbeveiligingswet in de praktijk regelt. een vastgestelde meldplichtprocedure met de drie drempelwaarden voor een significant incident (vier uur uitval, niet in de begroting op te vangen, ernstig letsel), de klok vanaf kennisname (24 uur waarschuwen, 72 uur melden, eindverslag na een maand), de informatieplicht aan inwoners, melden namens meerdere gemeenten met mandaat, en vier invulsjablonen. daarnaast de registratie bij het ncsc veld voor veld, met de redenering per antwoord. aanpak governance cbw nis2 bio2" data-barrieres="" data-normen="Cbw|NIS2|BIO2">
     <span class="itemtop">
       <span class="itemtitle">De Cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio</span>
       <span class="tag tag-live">live</span>
@@ -122,7 +133,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-20 · in gebruik · route: CISO stap 4</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="cbw-uitleggen-aan-het-mt/" data-vak="governance" data-zoek="de cyberbeveiligingswet uitgelegd aan het mt een sessie van twee uur voor het managementteam of directieteam van een gemeente over de cyberbeveiligingswet, naast de certificaattraining van het college. eerst de wet en de plichten op een rij, dan de tien vereisten van de zorgplicht, elk op een plek in de gemeente die iedereen herkent, van het gemaal tot de keukentafel. bij elk vereiste dezelfde drie vragen: welk risico, wie koos, waar staat het. een sjabloon met invulvelden en een eigen deel waar staan we nu. lesmateriaal governance cbw nis2 bio2" data-barrieres="">
+  <a class="item" href="cbw-uitleggen-aan-het-mt/" data-vak="governance" data-zoek="de cyberbeveiligingswet uitgelegd aan het mt een sessie van twee uur voor het managementteam of directieteam van een gemeente over de cyberbeveiligingswet, naast de certificaattraining van het college. eerst de wet en de plichten op een rij, dan de tien vereisten van de zorgplicht, elk op een plek in de gemeente die iedereen herkent, van het gemaal tot de keukentafel. bij elk vereiste dezelfde drie vragen: welk risico, wie koos, waar staat het. een sjabloon met invulvelden en een eigen deel waar staan we nu. lesmateriaal governance cbw nis2 bio2" data-barrieres="" data-normen="Cbw|NIS2|BIO2">
     <span class="itemtop">
       <span class="itemtitle">De Cyberbeveiligingswet uitgelegd aan het MT</span>
       <span class="tag tag-live">live</span>
@@ -131,7 +142,7 @@ footer a{color:var(--muted)}
     <div class="meta">lesmateriaal · peildatum 2026-10-29 · concept</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="val-ik-onder-de-wwke/" data-vak="governance" data-zoek="valt een gemeente onder de wwke? de wet weerbaarheid kritieke entiteiten (wwke, de nederlandse uitwerking van de cer-richtlijn) geldt sinds 15 augustus 2026. een gemeente staat niet in de bijlage, want de sector overheid noemt alleen de centrale overheid, en zonder aanwijzing door een minister gelden er geen verplichtingen. twee routes verdienen wel een expliciete toets (wegbeheer en afvalwater), en één spoor verdient monitoring: een minister kan een extra sector aanwijzen. met de knip naar de cyberbeveiligingswet. referentie governance wwke cer cbw" data-barrieres="">
+  <a class="item" href="val-ik-onder-de-wwke/" data-vak="governance" data-zoek="valt een gemeente onder de wwke? de wet weerbaarheid kritieke entiteiten (wwke, de nederlandse uitwerking van de cer-richtlijn) geldt sinds 15 augustus 2026. een gemeente staat niet in de bijlage, want de sector overheid noemt alleen de centrale overheid, en zonder aanwijzing door een minister gelden er geen verplichtingen. twee routes verdienen wel een expliciete toets (wegbeheer en afvalwater), en één spoor verdient monitoring: een minister kan een extra sector aanwijzen. met de knip naar de cyberbeveiligingswet. referentie governance wwke cer cbw" data-barrieres="" data-normen="Wwke|CER|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Valt een gemeente onder de Wwke?</span>
       <span class="tag tag-live">live</span>
@@ -140,7 +151,7 @@ footer a{color:var(--muted)}
     <div class="meta">referentie · peildatum 2026-10-20 · concept</div>
     <div class="normen"><span class="norm">Wwke</span><span class="norm">CER</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="aanbieder-onder-de-ai-act/" data-vak="governance" data-zoek="ben ik aanbieder onder de ai act? klikbare toets waarmee een gemeente per ai-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met ce-markering. levert een classificatiebesluit met onderbouwing. rekent in de browser. sjabloon governance ai act" data-barrieres="">
+  <a class="item" href="aanbieder-onder-de-ai-act/" data-vak="governance" data-zoek="ben ik aanbieder onder de ai act? klikbare toets waarmee een gemeente per ai-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met ce-markering. levert een classificatiebesluit met onderbouwing. rekent in de browser. sjabloon governance ai act" data-barrieres="" data-normen="AI Act">
     <span class="itemtop">
       <span class="itemtitle">Ben ik aanbieder onder de AI Act?</span>
       <span class="tag tag-live">live</span>
@@ -149,7 +160,7 @@ footer a{color:var(--muted)}
     <div class="meta">sjabloon · peildatum 2026-09-25 · concept</div>
     <div class="normen"><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="beleidsset-informatiebeveiliging/" data-vak="governance" data-zoek="beleidsset informatiebeveiliging op bio 2.0, op maat gemaakt met contextvragen een beleidsset informatiebeveiliging voor de 21 bio 2.0-domeinen die je op maat maakt. beantwoord een paar contextvragen, zoals wie je it beheert, waar je systemen draaien en of je onder de cbw valt, en de generator stelt per domein een conceptbeleid samen met de regels die bij jouw organisatie passen. elke regel noemt de maatregel die hij invult, elk stuk heeft een controleraamwerk, en een test bewijst dat elke set alle 117 overheidsmaatregelen en 40 iso-beheersmaatregelen dekt, bij elk antwoord. zonder antwoorden lees je alle varianten naast elkaar. beleid governance bio2 iso 27001 iso 27002 cbw" data-barrieres="">
+  <a class="item" href="beleidsset-informatiebeveiliging/" data-vak="governance" data-zoek="beleidsset informatiebeveiliging op bio 2.0, op maat gemaakt met contextvragen een beleidsset informatiebeveiliging voor de 21 bio 2.0-domeinen die je op maat maakt. beantwoord een paar contextvragen, zoals wie je it beheert, waar je systemen draaien en of je onder de cbw valt, en de generator stelt per domein een conceptbeleid samen met de regels die bij jouw organisatie passen. elke regel noemt de maatregel die hij invult, elk stuk heeft een controleraamwerk, en een test bewijst dat elke set alle 117 overheidsmaatregelen en 40 iso-beheersmaatregelen dekt, bij elk antwoord. zonder antwoorden lees je alle varianten naast elkaar. beleid governance bio2 iso 27001 iso 27002 cbw" data-barrieres="" data-normen="BIO2|ISO 27001|ISO 27002|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</span>
       <span class="tag tag-live">live</span>
@@ -158,7 +169,7 @@ footer a{color:var(--muted)}
     <div class="meta">beleid · peildatum 2026-10-14 · concept · route: ISO stap 4, Eerste honderd dagen stap 6</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">ISO 27002</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="quantumveilig-per-laag/" data-vak="governance" data-zoek="quantumveilig per laag, wat bestuur, directie, ciso, it en inkoop nu doen wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. met per laag een set platen om het gesprek te openen. aanpak governance bio2 cbw nis2 avg" data-barrieres="">
+  <a class="item" href="quantumveilig-per-laag/" data-vak="governance" data-zoek="quantumveilig per laag, wat bestuur, directie, ciso, it en inkoop nu doen wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. met per laag een set platen om het gesprek te openen. aanpak governance bio2 cbw nis2 avg" data-barrieres="" data-normen="BIO2|Cbw|NIS2|AVG">
     <span class="itemtop">
       <span class="itemtitle">Quantumveilig per laag, wat bestuur, directie, CISO, IT en inkoop nu doen</span>
       <span class="tag tag-live">live</span>
@@ -167,7 +178,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-28 · concept · route: Bestuurder stap 5</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="bio2-implementeren/" data-vak="governance" data-zoek="bio 2.0 invoeren, een plan van aanpak met urenraming hoe een samenwerking van gemeenten de invoering van bio 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema&#x27;s met de afdeling die eigenaar is. met de randvoorwaarden en de zes projectrisico&#x27;s die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen. aanpak governance bio2 iso 27001 cbw" data-barrieres="">
+  <a class="item" href="bio2-implementeren/" data-vak="governance" data-zoek="bio 2.0 invoeren, een plan van aanpak met urenraming hoe een samenwerking van gemeenten de invoering van bio 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema&#x27;s met de afdeling die eigenaar is. met de randvoorwaarden en de zes projectrisico&#x27;s die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen. aanpak governance bio2 iso 27001 cbw" data-barrieres="" data-normen="BIO2|ISO 27001|Cbw">
     <span class="itemtop">
       <span class="itemtitle">BIO 2.0 invoeren, een plan van aanpak met urenraming</span>
       <span class="tag tag-live">live</span>
@@ -176,7 +187,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-14 · concept · route: Eerste honderd dagen stap 5</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="bio2-deel1-in-het-ims/" data-vak="governance" data-zoek="bio 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen bio 2.0 deel 1 vraagt een managementsysteem volgens iso 27001, en de bio zegt zelf dat je security, privacy en continuïteit in één systeem mag onderbrengen met aparte maatregelensets. deze aanpak laat zien hoe dat werkt, beantwoordt het bezwaar dat de drie disciplines niet te verenigen zijn, brengt de vijftien producten uit een gangbaar plan van aanpak terug tot negen artefacten, geeft een dekkingsmatrix per eis van deel 1 en de zeven beslispunten die je moet doorhakken. met sjablonen voor contextanalyse, risicomanagementbeleid, doelstellingen en kpi&#x27;s, intern auditprogramma en de procedure voor afwijkingen en correctieve maatregelen. aanpak governance bio2 iso 27001 cbw iso 22301 avg" data-barrieres="">
+  <a class="item" href="bio2-deel1-in-het-ims/" data-vak="governance" data-zoek="bio 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen bio 2.0 deel 1 vraagt een managementsysteem volgens iso 27001, en de bio zegt zelf dat je security, privacy en continuïteit in één systeem mag onderbrengen met aparte maatregelensets. deze aanpak laat zien hoe dat werkt, beantwoordt het bezwaar dat de drie disciplines niet te verenigen zijn, brengt de vijftien producten uit een gangbaar plan van aanpak terug tot negen artefacten, geeft een dekkingsmatrix per eis van deel 1 en de zeven beslispunten die je moet doorhakken. met sjablonen voor contextanalyse, risicomanagementbeleid, doelstellingen en kpi&#x27;s, intern auditprogramma en de procedure voor afwijkingen en correctieve maatregelen. aanpak governance bio2 iso 27001 cbw iso 22301 avg" data-barrieres="" data-normen="BIO2|ISO 27001|Cbw|ISO 22301|AVG">
     <span class="itemtop">
       <span class="itemtitle">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</span>
       <span class="tag tag-live">live</span>
@@ -185,7 +196,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-20 · concept · hoort bij: BIO 2.0 invoeren, een plan van aanpak met urenraming</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">Cbw</span><span class="norm">ISO 22301</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="risicogestuurd-managementsysteem/" data-vak="governance" data-zoek="grc voor security, privacy en continuïteit: één risicogestuurde pdca-ronde wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. een grc-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een ai-assistent als lezer binnen vaste regels. met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register. aanpak governance bio2 iso 27001 avg iso 22301 cbw" data-barrieres="owner treatment">
+  <a class="item" href="risicogestuurd-managementsysteem/" data-vak="governance" data-zoek="grc voor security, privacy en continuïteit: één risicogestuurde pdca-ronde wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. een grc-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een ai-assistent als lezer binnen vaste regels. met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register. aanpak governance bio2 iso 27001 avg iso 22301 cbw" data-barrieres="owner treatment" data-normen="BIO2|ISO 27001|AVG|ISO 22301|Cbw">
     <span class="itemtop">
       <span class="itemtitle">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</span>
       <span class="tag tag-live">live</span>
@@ -194,7 +205,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · versie 2026-10 · concept · barriere: Leg leveranciersrisico’s voor aan de risicohouder, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · verdieping · route: CISO stap 6</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">AVG</span><span class="norm">ISO 22301</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="ims-rapportage/" data-vak="governance" data-zoek="rapporteren over security, privacy en continuïteit uit één bronrapportage een halfjaarlijkse ims-rapportage over informatiebeveiliging, privacy en bedrijfscontinuïteit samen, uit één bronrapportage met drie leesniveaus, die in januari ook de directiebeoordeling is, zodat directie, stuurgroep, college en raad hetzelfde stuk lezen en alleen de diepte verschilt. met een matrix van negen kpi&#x27;s (opzet, bestaan en werking per domein), de regel dat onbekend geen nul is, een vaste cyclus van plan tot afsluiting met acht kwaliteitsregels, en sjablonen voor bronrapportage, expert view en overdracht naar het volgende halfjaar. aanpak governance bio2 iso 27001 iso 22301 avg" data-barrieres="">
+  <a class="item" href="ims-rapportage/" data-vak="governance" data-zoek="rapporteren over security, privacy en continuïteit uit één bronrapportage een halfjaarlijkse ims-rapportage over informatiebeveiliging, privacy en bedrijfscontinuïteit samen, uit één bronrapportage met drie leesniveaus, die in januari ook de directiebeoordeling is, zodat directie, stuurgroep, college en raad hetzelfde stuk lezen en alleen de diepte verschilt. met een matrix van negen kpi&#x27;s (opzet, bestaan en werking per domein), de regel dat onbekend geen nul is, een vaste cyclus van plan tot afsluiting met acht kwaliteitsregels, en sjablonen voor bronrapportage, expert view en overdracht naar het volgende halfjaar. aanpak governance bio2 iso 27001 iso 22301 avg" data-barrieres="" data-normen="BIO2|ISO 27001|ISO 22301|AVG">
     <span class="itemtop">
       <span class="itemtitle">Rapporteren over security, privacy en continuïteit uit één bronrapportage</span>
       <span class="tag tag-live">live</span>
@@ -203,7 +214,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-20 · concept · hoort bij: GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">ISO 22301</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="ai-beleid/" data-vak="governance" data-zoek="ai-beleid van een regionale samenwerking compleet ai-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, ai-geletterdheid. acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. beleid governance ai act avg bio2" data-barrieres="">
+  <a class="item" href="ai-beleid/" data-vak="governance" data-zoek="ai-beleid van een regionale samenwerking compleet ai-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, ai-geletterdheid. acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. beleid governance ai act avg bio2" data-barrieres="" data-normen="AI Act|AVG|BIO2">
     <span class="itemtop">
       <span class="itemtitle">AI-beleid van een regionale samenwerking</span>
       <span class="tag tag-live">live</span>
@@ -212,7 +223,7 @@ footer a{color:var(--muted)}
     <div class="meta">beleid · versie concept 1.0, 2026-08 · concept</div>
     <div class="normen"><span class="norm">AI Act</span><span class="norm">AVG</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="beleid-als-code/" data-vak="governance" data-zoek="beleid als code, met een ai-agent die configuratie beheert onder menselijke goedkeuring de klassieke keten van wet naar beleid naar configuratie faalt in de middelste laag, want beleidstekst heeft zelden het detail om een configuratie af te dwingen. policy-as-code draait de pijl om: de configuratie in een repository is de bron van waarheid, en de leesbare beleidsteksten, beheerdocumenten en de bewijsmapping voor de auditor worden eruit gegenereerd, zodat configuratiebeheer en wijzigingsbeheer de beleidscyclus worden. met een model van vier lagen, een indeling van de repository, zes spelregels voor agentic ai met systeemtoegang (alleen configuratie, eigen identiteit, plan en apply met menselijke goedkeuring), de volgorde privacy en medezeggenschap, en een pilot op een logplatform. aanpak governance bio2 cbw avg ai act" data-barrieres="">
+  <a class="item" href="beleid-als-code/" data-vak="governance" data-zoek="beleid als code, met een ai-agent die configuratie beheert onder menselijke goedkeuring de klassieke keten van wet naar beleid naar configuratie faalt in de middelste laag, want beleidstekst heeft zelden het detail om een configuratie af te dwingen. policy-as-code draait de pijl om: de configuratie in een repository is de bron van waarheid, en de leesbare beleidsteksten, beheerdocumenten en de bewijsmapping voor de auditor worden eruit gegenereerd, zodat configuratiebeheer en wijzigingsbeheer de beleidscyclus worden. met een model van vier lagen, een indeling van de repository, zes spelregels voor agentic ai met systeemtoegang (alleen configuratie, eigen identiteit, plan en apply met menselijke goedkeuring), de volgorde privacy en medezeggenschap, en een pilot op een logplatform. aanpak governance bio2 cbw avg ai act" data-barrieres="" data-normen="BIO2|Cbw|AVG|AI Act">
     <span class="itemtop">
       <span class="itemtitle">Beleid als code, met een AI-agent die configuratie beheert onder menselijke goedkeuring</span>
       <span class="tag tag-live">live</span>
@@ -221,7 +232,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-20 · concept</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">AVG</span><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="hulpmiddelen-toegang-apparatuur-en-leveranciers/" data-vak="governance" data-zoek="zes hulpmiddelen voor apparatuur, toegang en leveranciers losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. een reglement voor it-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een assurance-verklaring (isae 3402 of soc 2) van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor microsoft defender met een raci tussen gemeente en beheerpartij. per hulpmiddel staat erbij bij welke bio 2.0-maatregel het hoort. sjabloon governance bio2 avg" data-barrieres="technicalvendor edr">
+  <a class="item" href="hulpmiddelen-toegang-apparatuur-en-leveranciers/" data-vak="governance" data-zoek="zes hulpmiddelen voor apparatuur, toegang en leveranciers losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. een reglement voor it-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een assurance-verklaring (isae 3402 of soc 2) van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor microsoft defender met een raci tussen gemeente en beheerpartij. per hulpmiddel staat erbij bij welke bio 2.0-maatregel het hoort. sjabloon governance bio2 avg" data-barrieres="technicalvendor edr" data-normen="BIO2|AVG">
     <span class="itemtop">
       <span class="itemtitle">Zes hulpmiddelen voor apparatuur, toegang en leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -243,6 +254,83 @@ footer a{color:var(--muted)}
   <li>Wet- en regelgeving en de vertaling naar de eigen organisatie</li>
 </ul>
 <p><a class="cta" href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Bijdrage aanbieden</a></p>
+<script>
+(function () {
+  var balk = document.getElementById('profielbalk');
+  var blok = document.getElementById('profielregels');
+  if (!balk || !blok) return;
+  var regels = [], profiel = {};
+  try { regels = JSON.parse(blok.textContent) || []; } catch (e) { return; }
+  try { profiel = JSON.parse(localStorage.getItem('commons-profiel') || '{}') || {}; } catch (e) { profiel = {}; }
+  if (!Object.keys(profiel).length) return;
+  var uit = false;
+  try { uit = sessionStorage.getItem('commons-profiel-sortering') === 'uit'; } catch (e) {}
+
+  function lijst(w) { return Array.isArray(w) ? w : (w == null ? [] : [w]); }
+  function geldt(r) {
+    return Object.keys(r.als || {}).some(function (vraag) {
+      var antw = lijst(profiel[vraag]);
+      return (r.als[vraag] || []).some(function (a) { return antw.indexOf(a) !== -1; });
+    });
+  }
+  var actief = regels.filter(geldt);
+  if (!actief.length) return;
+
+  function woorden(s) { return (s || '').split(' ').filter(function (x) { return x; }); }
+  function raakt(kaart, r) {
+    var d = r.dan || {};
+    var normen = (kaart.getAttribute('data-normen') || '').split('|');
+    var bar = woorden(kaart.getAttribute('data-barrieres'));
+    if (d.vakgebied && kaart.getAttribute('data-vak') === d.vakgebied) return true;
+    if ((d.normen || []).some(function (n) { return normen.indexOf(n) !== -1; })) return true;
+    if ((d.barrieres || []).some(function (b) { return bar.indexOf(b) !== -1; })) return true;
+    return false;
+  }
+
+  var grids = [].slice.call(document.querySelectorAll('.grid'));
+  var eerst = 0;
+  grids.forEach(function (grid) {
+    var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+    var passend = [];
+    kaarten.forEach(function (k) {
+      var r = actief.filter(function (x) { return raakt(k, x); })[0];
+      if (r) passend.push({ kaart: k, regel: r });
+    });
+    if (!passend.length || uit) return;
+    // Eerst de passende kaarten in hun eigen volgorde, dan de rest in de volgorde van de redactie.
+    var voor = passend.map(function (p) { return p.kaart; });
+    passend.forEach(function (p) {
+      var et = document.createElement('span');
+      et.className = 'profieletiket';
+      et.textContent = 'Past bij je profiel: ' + p.regel.waarom;
+      p.kaart.appendChild(et);
+    });
+    voor.concat(kaarten.filter(function (k) { return voor.indexOf(k) === -1; }))
+      .forEach(function (k) { grid.appendChild(k); });
+    eerst += passend.length;
+  });
+
+  function regel(tekst) { var p = document.createElement('p'); p.textContent = tekst; balk.appendChild(p); return p; }
+  function link(p, tekst, href) { var a = document.createElement('a'); a.href = href; a.textContent = tekst; p.appendChild(a); }
+  function knop(p, tekst, f) { var b = document.createElement('button'); b.type = 'button'; b.textContent = tekst; b.addEventListener('click', f); p.appendChild(b); }
+
+  var kop = regel(uit ? 'Sorteren op je profiel staat uit voor deze sessie. '
+                      : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
+                               : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
+  link(kop, 'Profiel aanpassen', '/profiel/');
+  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+    try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
+    location.reload();
+  });
+  actief.forEach(function (r) {
+    var d = r.dan || {};
+    var doel = d.situatie || d.route;
+    if (doel) { var p = regel(r.waarom + ' '); link(p, 'Naar de route', 'https://security-commons-nl.github.io/#route-' + doel); }
+    (d.instrumenten || []).forEach(function (i) { var p = regel(r.waarom + ' '); link(p, i.titel, i.url); });
+  });
+  balk.hidden = false;
+})();
+</script>
 
 <footer>
   <p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> ·

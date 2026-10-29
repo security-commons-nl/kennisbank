@@ -1206,5 +1206,91 @@ class Routes(Basis):
         self.assertIn("routes.json ontbreekt", self.meldingen)
 
 
+class Profielregels(Basis):
+    """profielregels.json (plan het profiel): elke regel wijst naar iets bestaands, en de kaart draagt de normen."""
+
+    SCHEMA = {"vragen": [{"id": "cbw", "antwoorden": [{"id": "essentieel"}, {"id": "niet"}]},
+                         {"id": "detectie", "antwoorden": [{"id": "geen"}, {"id": "eigen-soc"}]}]}
+
+    def zet(self, regels: list) -> None:
+        (self.map / "profiel.json").write_text(json.dumps(self.SCHEMA), encoding="utf-8")
+        (self.map / "profielregels.json").write_text(json.dumps({"regels": regels}), encoding="utf-8")
+        (self.map / "routes.json").write_text(json.dumps({"routes": [{"id": "eerste-honderd-dagen", "rol": "x", "vraag": "?", "stappen": []}]}), encoding="utf-8")
+        build._profielregels_cache = None
+        build._routes_cache = None
+
+    def tearDown(self) -> None:
+        build._profielregels_cache = None
+        build._routes_cache = None
+        super().tearDown()
+
+    def items(self) -> dict:
+        fm = {"titel": "x", "normen": ["Cbw", "BIO2"], "barrieres": [], "_vak": "security", "_map": self.map / "security" / "x"}
+        return {"security": [fm], "privacy": [], "bcm": [], "governance": []}
+
+    def regel(self, **over) -> dict:
+        r = {"id": "r", "als": {"cbw": ["essentieel"]}, "dan": {"normen": ["Cbw"]},
+             "waarom": "Je valt onder de Cyberbeveiligingswet, dus dit gaat voor."}
+        r.update(over)
+        return r
+
+    def test_een_kloppende_regel_geeft_geen_fout(self):
+        self.zet([self.regel(), self.regel(id="s", dan={"situatie": "eerste-honderd-dagen"})])
+        build.controleer_profielregels(self.items())
+        self.assertEqual(self.meldingen, "")
+
+    def test_onbekende_vraag(self):
+        self.zet([self.regel(als={"bestaatniet": ["ja"]})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("vraag 'bestaatniet' staat niet in profiel.json", self.meldingen)
+
+    def test_onbekend_antwoord(self):
+        self.zet([self.regel(als={"cbw": ["belangrijk"]})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("antwoord 'belangrijk' bestaat niet", self.meldingen)
+
+    def test_norm_zonder_stuk(self):
+        self.zet([self.regel(dan={"normen": ["Wpg"]})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("norm 'Wpg' staat in geen enkel stuk", self.meldingen)
+
+    def test_situatie_die_niet_bestaat(self):
+        self.zet([self.regel(dan={"situatie": "na-een-incident"})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("situatie 'na-een-incident' staat niet in routes.json", self.meldingen)
+
+    def test_dan_moet_ergens_naar_wijzen(self):
+        self.zet([self.regel(dan={})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("'dan' wijst nergens naar", self.meldingen)
+
+    def test_waarom_is_een_zin(self):
+        self.zet([self.regel(waarom="kort")])
+        build.controleer_profielregels(self.items())
+        self.assertIn("'waarom' is een zin", self.meldingen)
+
+    def test_dubbele_id(self):
+        self.zet([self.regel(), self.regel()])
+        build.controleer_profielregels(self.items())
+        self.assertIn("id komt twee keer voor", self.meldingen)
+
+    def test_instrument_moet_op_de_site_staan(self):
+        self.zet([self.regel(dan={"instrumenten": [{"titel": "x", "url": "https://example.org/"}]})])
+        build.controleer_profielregels(self.items())
+        self.assertIn("instrument heeft een titel en een adres op de site nodig", self.meldingen)
+
+    def test_kaart_draagt_de_normen_exact(self):
+        fm = {"titel": "x", "samenvatting": "y", "type": "aanpak", "_vak": "security", "normen": ["Cbw", "ISO 27001"],
+              "_weergave": "live", "_link": "security/x/", "status": "concept"}
+        self.assertIn('data-normen="Cbw|ISO 27001"', build.kaart(fm, "", False))
+
+    def test_regels_staan_als_data_op_de_pagina(self):
+        self.zet([self.regel()])
+        blok = build.profielregels_blok()
+        self.assertIn('id="profielregels"', blok)
+        self.assertIn('id="profielbalk" hidden', blok)
+        self.assertIn('"cbw-plicht"' if False else '"id": "r"', blok)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

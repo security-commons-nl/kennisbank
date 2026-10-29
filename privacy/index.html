@@ -98,10 +98,21 @@ footer a{color:var(--muted)}
 <h2>Wat hier staat</h2>
 <p class="h2sub">9 stukken. Alle openen direct in de browser.</p>
 
+<style>
+.profielbalk{border:1px solid #c9dbe9;background:#f2f7fb;border-radius:8px;padding:9px 13px;margin:0 0 14px;font-size:14px}
+.profielbalk[hidden]{display:none}
+.profielbalk p{margin:0 0 4px}
+.profielbalk p:last-child{margin-bottom:0}
+.profielbalk a{color:var(--accent)}
+.profielbalk button{font:inherit;font-size:13px;margin-left:6px;padding:1px 8px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:5px;cursor:pointer}
+.profieletiket{display:block;margin-top:6px;font-size:12px;color:#1f5d3a;background:#eef7f1;border:1px solid #cfe6d7;border-radius:4px;padding:2px 7px}
+</style>
+<script type="application/json" id="profielregels">[{"id": "cbw-plicht", "als": {"cbw": ["essentieel", "belangrijk"]}, "dan": {"normen": ["Cbw", "NIS2"]}, "waarom": "Je valt onder de Cyberbeveiligingswet, dus de zorgplicht en de meldplicht gaan voor."}, {"id": "politiegegevens", "als": {"politiegegevens": ["ja"]}, "dan": {"normen": ["Wpg"]}, "waarom": "Je verwerkt politiegegevens, dus naast de AVG geldt de Wet politiegegevens."}, {"id": "gevoelige-domeinen", "als": {"gevoelig": ["sociaal", "jeugd", "gezondheid"]}, "dan": {"vakgebied": "privacy"}, "waarom": "Je verwerkt bijzondere persoonsgegevens, dus de privacystukken tellen het eerst."}, {"id": "geen-detectie", "als": {"detectie": ["geen"]}, "dan": {"barrieres": ["soc", "edr"]}, "waarom": "Zonder structurele detectie zie je een aanval pas als het te laat is."}, {"id": "uitbesteed-beheer", "als": {"beheer": ["regie", "uitbesteed"]}, "dan": {"barrieres": ["technicalvendor", "dependencies", "upstream"]}, "waarom": "Je beheer ligt bij een leverancier, dus de afspraken in de keten bepalen je weerbaarheid."}, {"id": "geen-bcm", "als": {"bcm": ["geen", "crisisteam"]}, "dan": {"vakgebied": "bcm"}, "waarom": "Er is nog geen BCM-functie, dus continuiteit is een gat dat je eerst dicht."}, {"id": "ot-substantieel", "als": {"ot": ["substantieel"]}, "dan": {"instrumenten": [{"titel": "De CSIR-tool voor bruggen, gemalen, sluizen en tunnels", "url": "https://security-commons-nl.github.io/csir-assessment-tool/"}]}, "waarom": "Je hebt objecten met industriele automatisering, en daarvoor is de CSIR het kader."}, {"id": "startend", "als": {"capaciteit": ["geen"], "volwassenheid": ["startend"]}, "dan": {"situatie": "eerste-honderd-dagen"}, "waarom": "Je begint met informatiebeveiliging, dus de route van de eerste honderd dagen past."}]</script>
+<div class="profielbalk" id="profielbalk" hidden></div>
 <h3 class="groep">Aanpakken, sjablonen en naslag</h3>
 <div class="grid">
 
-  <a class="item" href="datalekken-afhandelen/" data-vak="privacy" data-zoek="datalekken afhandelen, met afwegingskader en meldformulier een procedure voor datalekken in negen stappen, van melding tot evaluatie, met per stap wie het doet en wie eindverantwoordelijk is. met een afwegingskader van acht vragen voor de keuze melden bij de autoriteit persoonsgegevens en bij de betrokkene, de vragen voor het meldformulier in het servicedesksysteem, een brief om de betrokkene te informeren en een sjabloon voor de kwartaalevaluatie. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="datalekken-afhandelen/" data-vak="privacy" data-zoek="datalekken afhandelen, met afwegingskader en meldformulier een procedure voor datalekken in negen stappen, van melding tot evaluatie, met per stap wie het doet en wie eindverantwoordelijk is. met een afwegingskader van acht vragen voor de keuze melden bij de autoriteit persoonsgegevens en bij de betrokkene, de vragen voor het meldformulier in het servicedesksysteem, een brief om de betrokkene te informeren en een sjabloon voor de kwartaalevaluatie. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Datalekken afhandelen, met afwegingskader en meldformulier</span>
       <span class="tag tag-live">live</span>
@@ -110,7 +121,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 6</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="rechten-van-betrokkenen/" data-vak="privacy" data-zoek="verzoeken van betrokkenen afhandelen, met 25 standaardbrieven een procedure voor alle rechten van betrokkenen onder de avg en de wpg, met zes stappen van ontvangst tot evaluatie, een uitwerking per recht en tips voor verzoeken onder de wpg. met 25 brieven voor elke fase van een inzage- of verwijderverzoek (identificatie, verduidelijking, uitstel, besluit, beëindiging), het overzicht van persoonsgegevens dat bij een besluit hoort, en een privacyverklaring voor medewerkers. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="rechten-van-betrokkenen/" data-vak="privacy" data-zoek="verzoeken van betrokkenen afhandelen, met 25 standaardbrieven een procedure voor alle rechten van betrokkenen onder de avg en de wpg, met zes stappen van ontvangst tot evaluatie, een uitwerking per recht en tips voor verzoeken onder de wpg. met 25 brieven voor elke fase van een inzage- of verwijderverzoek (identificatie, verduidelijking, uitstel, besluit, beëindiging), het overzicht van persoonsgegevens dat bij een besluit hoort, en een privacyverklaring voor medewerkers. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Verzoeken van betrokkenen afhandelen, met 25 standaardbrieven</span>
       <span class="tag tag-live">live</span>
@@ -119,7 +130,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 5</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="dpia-in-vijf-stappen/" data-vak="privacy" data-zoek="een dpia in vijf stappen, met sjablonen een lichte dpia-werkwijze voor gemeenten. de kennishouder beschrijft het proces zelf, privacy officer en security officer schuiven aan in drie overleggen, en de proceseigenaar beslist over de maatregelen. met een compact sjabloon van tien hoofdstukken, voorgevulde teksten voor camera&#x27;s op grond van gerechtvaardigd belang, een vragenlijst en een security-assessment van de leverancier. aanpak privacy avg" data-barrieres="">
+  <a class="item" href="dpia-in-vijf-stappen/" data-vak="privacy" data-zoek="een dpia in vijf stappen, met sjablonen een lichte dpia-werkwijze voor gemeenten. de kennishouder beschrijft het proces zelf, privacy officer en security officer schuiven aan in drie overleggen, en de proceseigenaar beslist over de maatregelen. met een compact sjabloon van tien hoofdstukken, voorgevulde teksten voor camera&#x27;s op grond van gerechtvaardigd belang, een vragenlijst en een security-assessment van de leverancier. aanpak privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Een DPIA in vijf stappen, met sjablonen</span>
       <span class="tag tag-live">live</span>
@@ -128,7 +139,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-09-26 · in gebruik · route: Privacy officer stap 3</div>
     <div class="normen"><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacy-eisen-bij-de-start/" data-vak="privacy" data-zoek="privacy-eisen bij een nieuw proces, project, aanbesteding of website drie stappenplannen in zes stappen (nieuw proces, gewijzigd proces, nieuw project) met doorlooptijden per stap, een standaardset van twaalf privacy-eisen voor het programma van eisen bij een aanbesteding plus zeven eisen voor zelfontwikkeling, en een checklist van negen punten voor een privacyvriendelijke website met een jaarlijkse controle van de cookiebanner. aanpak privacy avg" data-barrieres="">
+  <a class="item" href="privacy-eisen-bij-de-start/" data-vak="privacy" data-zoek="privacy-eisen bij een nieuw proces, project, aanbesteding of website drie stappenplannen in zes stappen (nieuw proces, gewijzigd proces, nieuw project) met doorlooptijden per stap, een standaardset van twaalf privacy-eisen voor het programma van eisen bij een aanbesteding plus zeven eisen voor zelfontwikkeling, en een checklist van negen punten voor een privacyvriendelijke website met een jaarlijkse controle van de cookiebanner. aanpak privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Privacy-eisen bij een nieuw proces, project, aanbesteding of website</span>
       <span class="tag tag-live">live</span>
@@ -137,7 +148,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 1</div>
     <div class="normen"><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacy-overeenkomsten/" data-vak="privacy" data-zoek="privacyovereenkomsten sluiten en controleren een procedure in vijf stappen voor alle privacyovereenkomsten (verwerkersovereenkomst, gezamenlijke verantwoordelijkheid, gegevensuitwisseling): rol bepalen, opstellen, reviewen, archiveren en jaarlijks controleren, met een extra checklist voor wpg-verwerkers. met eigen sjablonen voor een gegevensuitwisselingsovereenkomst tussen zelfstandige verantwoordelijken en een interne brp-gegevensleveringsovereenkomst, een ingevulde bijlage met beveiligingsmaatregelen en een toelichting op de bijlagen. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="privacy-overeenkomsten/" data-vak="privacy" data-zoek="privacyovereenkomsten sluiten en controleren een procedure in vijf stappen voor alle privacyovereenkomsten (verwerkersovereenkomst, gezamenlijke verantwoordelijkheid, gegevensuitwisseling): rol bepalen, opstellen, reviewen, archiveren en jaarlijks controleren, met een extra checklist voor wpg-verwerkers. met eigen sjablonen voor een gegevensuitwisselingsovereenkomst tussen zelfstandige verantwoordelijken en een interne brp-gegevensleveringsovereenkomst, een ingevulde bijlage met beveiligingsmaatregelen en een toelichting op de bijlagen. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Privacyovereenkomsten sluiten en controleren</span>
       <span class="tag tag-live">live</span>
@@ -146,7 +157,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 4</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="register-van-verwerkingen-beheren/" data-vak="privacy" data-zoek="het register van verwerkingen beheren en publiceren hoe een privacyteam vier registers van verwerkingen centraal beheert en publiceert, met de proceseigenaar als eindverantwoordelijke voor de actualiteit en een kennishouder die twee keer per jaar een controlemail krijgt. met een raci over elf taken en een invulhulp per veld, van risicoclassificatie en dpia-status tot algoritme en doorgifte buiten de eer. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="register-van-verwerkingen-beheren/" data-vak="privacy" data-zoek="het register van verwerkingen beheren en publiceren hoe een privacyteam vier registers van verwerkingen centraal beheert en publiceert, met de proceseigenaar als eindverantwoordelijke voor de actualiteit en een kennishouder die twee keer per jaar een controlemail krijgt. met een raci over elf taken en een invulhulp per veld, van risicoclassificatie en dpia-status tot algoritme en doorgifte buiten de eer. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Het register van verwerkingen beheren en publiceren</span>
       <span class="tag tag-live">live</span>
@@ -155,7 +166,7 @@ footer a{color:var(--muted)}
     <div class="meta">aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 2</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="wet-politiegegevens/" data-vak="privacy" data-zoek="wet politiegegevens bij de gemeente: dpia, verbeterplan en privacyverklaring drie stukken voor gemeenten met boa&#x27;s: een dpia-sjabloon dat de wpg-artikelen naast de avg-structuur zet, een sjabloon voor een verbeterplan na een interne of externe wpg-audit, en een ingevulde privacyverklaring die per boa-domein uitlegt welke werkprocessen politiegegevens verwerken en welke gegevens dat zijn. sjabloon privacy wpg avg" data-barrieres="">
+  <a class="item" href="wet-politiegegevens/" data-vak="privacy" data-zoek="wet politiegegevens bij de gemeente: dpia, verbeterplan en privacyverklaring drie stukken voor gemeenten met boa&#x27;s: een dpia-sjabloon dat de wpg-artikelen naast de avg-structuur zet, een sjabloon voor een verbeterplan na een interne of externe wpg-audit, en een ingevulde privacyverklaring die per boa-domein uitlegt welke werkprocessen politiegegevens verwerken en welke gegevens dat zijn. sjabloon privacy wpg avg" data-barrieres="" data-normen="Wpg|AVG">
     <span class="itemtop">
       <span class="itemtitle">Wet politiegegevens bij de gemeente: DPIA, verbeterplan en privacyverklaring</span>
       <span class="tag tag-live">live</span>
@@ -164,7 +175,7 @@ footer a{color:var(--muted)}
     <div class="meta">sjabloon · peildatum 2026-10-12 · in gebruik</div>
     <div class="normen"><span class="norm">Wpg</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacybeleid-en-handboek/" data-vak="privacy" data-zoek="privacybeleid en privacyhandboek van een regionale samenwerking het hele privacybeleid van een samenwerking van gemeenten in vijf lagen: een strategisch privacybeleid met besturingsmodel, het actuele privacybeleid (met hoofdstukken over de wpg en ai), een addendum waarmee de gemeenteraad het beleid voor zichzelf vaststelt, een beleid privacy by design met acht maatregelen en een formulier, en een privacyhandboek dat per onderwerp zegt wat een medewerker moet doen. beleid privacy avg uavg wpg" data-barrieres="">
+  <a class="item" href="privacybeleid-en-handboek/" data-vak="privacy" data-zoek="privacybeleid en privacyhandboek van een regionale samenwerking het hele privacybeleid van een samenwerking van gemeenten in vijf lagen: een strategisch privacybeleid met besturingsmodel, het actuele privacybeleid (met hoofdstukken over de wpg en ai), een addendum waarmee de gemeenteraad het beleid voor zichzelf vaststelt, een beleid privacy by design met acht maatregelen en een formulier, en een privacyhandboek dat per onderwerp zegt wat een medewerker moet doen. beleid privacy avg uavg wpg" data-barrieres="" data-normen="AVG|UAVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Privacybeleid en privacyhandboek van een regionale samenwerking</span>
       <span class="tag tag-live">live</span>
@@ -173,7 +184,7 @@ footer a{color:var(--muted)}
     <div class="meta">beleid · peildatum 2026-10-12 · in gebruik</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">UAVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="dpia-uitvoeren/" data-vak="privacy" data-zoek="een dpia uitvoeren: wat er al ligt voor een dpia hoef je niets zelf te bouwen. het rijk heeft een invulhulp die de plichttoets uitrekent en het rijksmodel invult, de informatiebeveiligingsdienst heeft een handreiking met sjablonen en een bibliotheek met 27 uitgevoerde gemeentelijke dpia&#x27;s om van te lenen. deze wegwijzer zet ze in de volgorde waarin je ze gebruikt. referentie privacy avg" data-barrieres="">
+  <a class="item" href="dpia-uitvoeren/" data-vak="privacy" data-zoek="een dpia uitvoeren: wat er al ligt voor een dpia hoef je niets zelf te bouwen. het rijk heeft een invulhulp die de plichttoets uitrekent en het rijksmodel invult, de informatiebeveiligingsdienst heeft een handreiking met sjablonen en een bibliotheek met 27 uitgevoerde gemeentelijke dpia&#x27;s om van te lenen. deze wegwijzer zet ze in de volgorde waarin je ze gebruikt. referentie privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Een DPIA uitvoeren: wat er al ligt</span>
       <span class="tag tag-live">live</span>
@@ -197,6 +208,83 @@ footer a{color:var(--muted)}
   <li>Trainingsmateriaal privacy</li>
 </ul>
 <p><a class="cta" href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Bijdrage aanbieden</a></p>
+<script>
+(function () {
+  var balk = document.getElementById('profielbalk');
+  var blok = document.getElementById('profielregels');
+  if (!balk || !blok) return;
+  var regels = [], profiel = {};
+  try { regels = JSON.parse(blok.textContent) || []; } catch (e) { return; }
+  try { profiel = JSON.parse(localStorage.getItem('commons-profiel') || '{}') || {}; } catch (e) { profiel = {}; }
+  if (!Object.keys(profiel).length) return;
+  var uit = false;
+  try { uit = sessionStorage.getItem('commons-profiel-sortering') === 'uit'; } catch (e) {}
+
+  function lijst(w) { return Array.isArray(w) ? w : (w == null ? [] : [w]); }
+  function geldt(r) {
+    return Object.keys(r.als || {}).some(function (vraag) {
+      var antw = lijst(profiel[vraag]);
+      return (r.als[vraag] || []).some(function (a) { return antw.indexOf(a) !== -1; });
+    });
+  }
+  var actief = regels.filter(geldt);
+  if (!actief.length) return;
+
+  function woorden(s) { return (s || '').split(' ').filter(function (x) { return x; }); }
+  function raakt(kaart, r) {
+    var d = r.dan || {};
+    var normen = (kaart.getAttribute('data-normen') || '').split('|');
+    var bar = woorden(kaart.getAttribute('data-barrieres'));
+    if (d.vakgebied && kaart.getAttribute('data-vak') === d.vakgebied) return true;
+    if ((d.normen || []).some(function (n) { return normen.indexOf(n) !== -1; })) return true;
+    if ((d.barrieres || []).some(function (b) { return bar.indexOf(b) !== -1; })) return true;
+    return false;
+  }
+
+  var grids = [].slice.call(document.querySelectorAll('.grid'));
+  var eerst = 0;
+  grids.forEach(function (grid) {
+    var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+    var passend = [];
+    kaarten.forEach(function (k) {
+      var r = actief.filter(function (x) { return raakt(k, x); })[0];
+      if (r) passend.push({ kaart: k, regel: r });
+    });
+    if (!passend.length || uit) return;
+    // Eerst de passende kaarten in hun eigen volgorde, dan de rest in de volgorde van de redactie.
+    var voor = passend.map(function (p) { return p.kaart; });
+    passend.forEach(function (p) {
+      var et = document.createElement('span');
+      et.className = 'profieletiket';
+      et.textContent = 'Past bij je profiel: ' + p.regel.waarom;
+      p.kaart.appendChild(et);
+    });
+    voor.concat(kaarten.filter(function (k) { return voor.indexOf(k) === -1; }))
+      .forEach(function (k) { grid.appendChild(k); });
+    eerst += passend.length;
+  });
+
+  function regel(tekst) { var p = document.createElement('p'); p.textContent = tekst; balk.appendChild(p); return p; }
+  function link(p, tekst, href) { var a = document.createElement('a'); a.href = href; a.textContent = tekst; p.appendChild(a); }
+  function knop(p, tekst, f) { var b = document.createElement('button'); b.type = 'button'; b.textContent = tekst; b.addEventListener('click', f); p.appendChild(b); }
+
+  var kop = regel(uit ? 'Sorteren op je profiel staat uit voor deze sessie. '
+                      : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
+                               : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
+  link(kop, 'Profiel aanpassen', '/profiel/');
+  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+    try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
+    location.reload();
+  });
+  actief.forEach(function (r) {
+    var d = r.dan || {};
+    var doel = d.situatie || d.route;
+    if (doel) { var p = regel(r.waarom + ' '); link(p, 'Naar de route', 'https://security-commons-nl.github.io/#route-' + doel); }
+    (d.instrumenten || []).forEach(function (i) { var p = regel(r.waarom + ' '); link(p, i.titel, i.url); });
+  });
+  balk.hidden = false;
+})();
+</script>
 
 <footer>
   <p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> ·

@@ -79,7 +79,7 @@ NL = chr(10)
 # tooling (.git, .pytest_cache, .venv) en telt nooit als inhoud.
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 # `.git` is in een git-worktree een bestand in plaats van een map; het is tooling, geen inhoud.
-ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore", "profiel.json",
+ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore", "profiel.json", "profielregels.json",
                      ".nojekyll", "handelingsperspectief.json", "llms.txt", "sitemap.xml", "bronnen.json", ".git", "routes.json"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
@@ -870,6 +870,177 @@ def routes_blok(vak: str, items: list[dict]) -> str:
             + "\n".join(blokken) + "\n\n")
 
 
+# ----------------------------------------------------------------------------- profielregels (plan het profiel)
+# Als het profiel dit zegt, dan tellen deze stukken het eerst. De regels staan in profielregels.json op de root,
+# naast profiel.json. Ze sorteren en wijzen, ze verbergen niets. Elke regel moet naar iets bestaands wijzen:
+# een norm die in een stuk staat, een vakgebied, een barriere die een stuk draagt, een route of situatie uit
+# routes.json, of een instrument op de site. Een regel die naar niets wijst is een fout, geen lege belofte.
+PROFIEL_DAN = ("normen", "vakgebied", "barrieres", "instrumenten", "route", "situatie")
+_profielregels_cache: dict | None = None
+
+
+def profielregels() -> dict:
+    global _profielregels_cache
+    if _profielregels_cache is None:
+        pad = ROOT / "profielregels.json"
+        _profielregels_cache = json.loads(pad.read_text(encoding="utf-8")) if pad.exists() else {"regels": []}
+    return _profielregels_cache
+
+
+def controleer_profielregels(items: dict[str, list[dict]]) -> None:
+    pad = ROOT / "profielregels.json"
+    if not pad.exists():
+        return
+    schema_pad = ROOT / "profiel.json"
+    if not schema_pad.exists():
+        fout(pad, "C2", "profielregels.json zonder profiel.json op de root")
+        return
+    vragen = {v["id"]: {a["id"] for a in v["antwoorden"]} for v in json.loads(schema_pad.read_text(encoding="utf-8"))["vragen"]}
+    alle = [fm for vak in items for fm in items[vak]]
+    normen = {str(n) for fm in alle for n in (fm.get("normen") or [])}
+    gedragen = {b for fm in alle for b in (fm.get("barrieres") or [])}
+    gezien = set()
+    for nr, r in enumerate(profielregels().get("regels") or [], 1):
+        rid = r.get("id") or f"regel {nr}"
+        waar = f"regel '{rid}'"
+        if rid in gezien:
+            fout(pad, "C2", f"{waar}: id komt twee keer voor")
+        gezien.add(rid)
+        als = r.get("als") or {}
+        if not als:
+            fout(pad, "C2", f"{waar}: 'als' is leeg")
+        for vraag, antwoorden in als.items():
+            if vraag not in vragen:
+                fout(pad, "C2", f"{waar}: vraag '{vraag}' staat niet in profiel.json")
+                continue
+            for a in antwoorden:
+                if a not in vragen[vraag]:
+                    fout(pad, "C2", f"{waar}: antwoord '{a}' bestaat niet bij vraag '{vraag}' ({sorted(vragen[vraag])})")
+        dan = r.get("dan") or {}
+        if not any(k in dan for k in PROFIEL_DAN):
+            fout(pad, "C2", f"{waar}: 'dan' wijst nergens naar ({', '.join(PROFIEL_DAN)})")
+        for k in dan:
+            if k not in PROFIEL_DAN:
+                fout(pad, "C2", f"{waar}: onbekende sleutel '{k}' in 'dan'")
+        for n in dan.get("normen") or []:
+            if n not in normen:
+                fout(pad, "C2", f"{waar}: norm '{n}' staat in geen enkel stuk")
+        if "vakgebied" in dan and dan["vakgebied"] not in VAKGEBIEDEN:
+            fout(pad, "C2", f"{waar}: vakgebied '{dan['vakgebied']}' bestaat niet")
+        for bar in dan.get("barrieres") or []:
+            if bar not in barrieres():
+                fout(pad, "C2", f"{waar}: barriere '{bar}' staat niet in paden.json")
+            elif bar not in gedragen:
+                fout(pad, "C2", f"{waar}: geen enkel stuk draagt barriere '{bar}'")
+        for k in ("route", "situatie"):
+            if k in dan and dan[k] not in routes():
+                fout(pad, "C2", f"{waar}: {k} '{dan[k]}' staat niet in routes.json")
+        for inst in dan.get("instrumenten") or []:
+            if not (isinstance(inst, dict) and inst.get("titel") and str(inst.get("url", "")).startswith("https://security-commons-nl.github.io/")):
+                fout(pad, "C2", f"{waar}: instrument heeft een titel en een adres op de site nodig")
+        waarom = r.get("waarom")
+        if not (isinstance(waarom, str) and 20 <= len(waarom) <= 160 and waarom.strip().endswith(".")):
+            fout(pad, "C2", f"{waar}: 'waarom' is een zin van 20 tot 160 tekens die eindigt op een punt")
+
+
+def profielregels_blok() -> str:
+    """De regels als data op de pagina, plus de balk die het script vult. Zonder profiel blijft de balk leeg."""
+    data = json.dumps(profielregels().get("regels") or [], ensure_ascii=False).replace("</", "<\\/")
+    return (f'<script type="application/json" id="profielregels">{data}</script>' + NL
+            + '<div class="profielbalk" id="profielbalk" hidden></div>')
+
+
+PROFIEL_CSS = """
+.profielbalk{border:1px solid #c9dbe9;background:#f2f7fb;border-radius:8px;padding:9px 13px;margin:0 0 14px;font-size:14px}
+.profielbalk[hidden]{display:none}
+.profielbalk p{margin:0 0 4px}
+.profielbalk p:last-child{margin-bottom:0}
+.profielbalk a{color:var(--accent)}
+.profielbalk button{font:inherit;font-size:13px;margin-left:6px;padding:1px 8px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:5px;cursor:pointer}
+.profieletiket{display:block;margin-top:6px;font-size:12px;color:#1f5d3a;background:#eef7f1;border:1px solid #cfe6d7;border-radius:4px;padding:2px 7px}
+"""
+
+# Leest het profiel uit de browser (commons-profiel, ingevuld op /profiel/), past de regels toe en zet binnen
+# elke kaartengroep de passende stukken vooraan, met een etiket waarom. Verbergt niets. Zonder profiel, of met
+# de sortering uitgezet voor deze sessie, gebeurt er niets behalve een knop om hem weer aan te zetten.
+PROFIEL_JS = """
+(function () {
+  var balk = document.getElementById('profielbalk');
+  var blok = document.getElementById('profielregels');
+  if (!balk || !blok) return;
+  var regels = [], profiel = {};
+  try { regels = JSON.parse(blok.textContent) || []; } catch (e) { return; }
+  try { profiel = JSON.parse(localStorage.getItem('commons-profiel') || '{}') || {}; } catch (e) { profiel = {}; }
+  if (!Object.keys(profiel).length) return;
+  var uit = false;
+  try { uit = sessionStorage.getItem('commons-profiel-sortering') === 'uit'; } catch (e) {}
+
+  function lijst(w) { return Array.isArray(w) ? w : (w == null ? [] : [w]); }
+  function geldt(r) {
+    return Object.keys(r.als || {}).some(function (vraag) {
+      var antw = lijst(profiel[vraag]);
+      return (r.als[vraag] || []).some(function (a) { return antw.indexOf(a) !== -1; });
+    });
+  }
+  var actief = regels.filter(geldt);
+  if (!actief.length) return;
+
+  function woorden(s) { return (s || '').split(' ').filter(function (x) { return x; }); }
+  function raakt(kaart, r) {
+    var d = r.dan || {};
+    var normen = (kaart.getAttribute('data-normen') || '').split('|');
+    var bar = woorden(kaart.getAttribute('data-barrieres'));
+    if (d.vakgebied && kaart.getAttribute('data-vak') === d.vakgebied) return true;
+    if ((d.normen || []).some(function (n) { return normen.indexOf(n) !== -1; })) return true;
+    if ((d.barrieres || []).some(function (b) { return bar.indexOf(b) !== -1; })) return true;
+    return false;
+  }
+
+  var grids = [].slice.call(document.querySelectorAll('.grid'));
+  var eerst = 0;
+  grids.forEach(function (grid) {
+    var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+    var passend = [];
+    kaarten.forEach(function (k) {
+      var r = actief.filter(function (x) { return raakt(k, x); })[0];
+      if (r) passend.push({ kaart: k, regel: r });
+    });
+    if (!passend.length || uit) return;
+    // Eerst de passende kaarten in hun eigen volgorde, dan de rest in de volgorde van de redactie.
+    var voor = passend.map(function (p) { return p.kaart; });
+    passend.forEach(function (p) {
+      var et = document.createElement('span');
+      et.className = 'profieletiket';
+      et.textContent = 'Past bij je profiel: ' + p.regel.waarom;
+      p.kaart.appendChild(et);
+    });
+    voor.concat(kaarten.filter(function (k) { return voor.indexOf(k) === -1; }))
+      .forEach(function (k) { grid.appendChild(k); });
+    eerst += passend.length;
+  });
+
+  function regel(tekst) { var p = document.createElement('p'); p.textContent = tekst; balk.appendChild(p); return p; }
+  function link(p, tekst, href) { var a = document.createElement('a'); a.href = href; a.textContent = tekst; p.appendChild(a); }
+  function knop(p, tekst, f) { var b = document.createElement('button'); b.type = 'button'; b.textContent = tekst; b.addEventListener('click', f); p.appendChild(b); }
+
+  var kop = regel(uit ? 'Sorteren op je profiel staat uit voor deze sessie. '
+                      : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
+                               : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
+  link(kop, 'Profiel aanpassen', '/profiel/');
+  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+    try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
+    location.reload();
+  });
+  actief.forEach(function (r) {
+    var d = r.dan || {};
+    var doel = d.situatie || d.route;
+    if (doel) { var p = regel(r.waarom + ' '); link(p, 'Naar de route', 'https://security-commons-nl.github.io/#route-' + doel); }
+    (d.instrumenten || []).forEach(function (i) { var p = regel(r.waarom + ' '); link(p, i.titel, i.url); });
+  });
+  balk.hidden = false;
+})();
+"""
+
 # ----------------------------------------------------------------------------- genereren
 CSS = """
 :root{--bg:#f4f6f9;--card:#fff;--ink:#14202b;--muted:#4b5563;--line:#dde3ea;--accent:#154273;--accent2:#2e7d68;
@@ -1026,7 +1197,9 @@ def kaart(fm: dict, basis: str, met_vak: bool) -> str:
     zoek = " ".join(str(fm.get(v, "")) for v in ("titel", "samenvatting", "type", "_vak")).lower()
     zoek = (zoek + " " + " ".join(str(n) for n in (fm.get("normen") or [])).lower()).strip()
     bar = " ".join(fm.get("barrieres") or [])
-    return f"""  <a class="item" href="{e(link)}" data-vak="{e(fm['_vak'])}" data-zoek="{e(zoek)}" data-barrieres="{e(bar)}">
+    # data-normen: de normen exact, gescheiden door |, voor het sorteren op profiel (plan het profiel).
+    nrm = "|".join(str(n) for n in (fm.get("normen") or []))
+    return f"""  <a class="item" href="{e(link)}" data-vak="{e(fm['_vak'])}" data-zoek="{e(zoek)}" data-barrieres="{e(bar)}" data-normen="{e(nrm)}">
     <span class="itemtop">
       <span class="itemtitle">{e(fm['titel'])}</span>
       <span class="tag {tag[0]}">{tag[1]}</span>
@@ -1241,12 +1414,15 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict], elders: list[dict] | 
 {routes_blok(vak, items)}<h2>Wat hier staat</h2>
 <p class="h2sub">{e(telling)}</p>
 
+<style>{PROFIEL_CSS}</style>
+{profielregels_blok()}
 {grid}
 
 <h2>Wat hier thuishoort</h2>
 <ul class="hoort">
 {hoort}</ul>
-<p><a class="cta" href="{REPO}/issues/new/choose">Bijdrage aanbieden</a></p>"""
+<p><a class="cta" href="{REPO}/issues/new/choose">Bijdrage aanbieden</a></p>
+<script>{PROFIEL_JS}</script>"""
     return pagina(f"{sectie['titel']} · Kennisbank · Security Commons NL", sectie["lead"], f"{SITE}/{vak}/", body,
                   [("Security Commons NL", HOOFDPAGINA), ("Kennisbank", "../"), (sectie["titel"], "")])
 
@@ -1339,6 +1515,8 @@ dan is dat een uitnodiging en geen fout.</p>
 
 {balk}
 
+<style>{PROFIEL_CSS}</style>
+{profielregels_blok()}
 <div class="grid" id="direct-te-lezen">
 
 {kaarten_live}
@@ -1367,7 +1545,8 @@ schrijfrechten: GitHub maakt van je wijziging automatisch een voorstel.</p>
   De spelregels staan in het <a href="https://github.com/security-commons-nl/.github/blob/main/REDACTIESTATUUT.md">redactiestatuut</a>.
 </div>
 
-<script>{FILTER_JS}</script>"""
+<script>{FILTER_JS}</script>
+<script>{PROFIEL_JS}</script>"""
     return pagina("Kennisbank · Security Commons NL",
                   "Werkende kennis uit de publieke sector: security, privacy, continuïteit en governance. Open herbruikbaar onder EUPL-1.2.",
                   f"{SITE}/", body,
@@ -2061,6 +2240,7 @@ def main() -> int:
         items[vak] = zet_op_volgorde(vak, items[vak], sectie)
     elders = {vak: controleer_elders(vak, sectie, items) for vak, sectie in secties.items()}
     controleer_routes(items)
+    controleer_profielregels(items)
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
         for f in fouten:

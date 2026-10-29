@@ -1,0 +1,54 @@
+{
+  "toelichting": "Als het profiel dit zegt, dan tellen deze stukken het eerst (plan het profiel, stap 2). Regels sorteren en wijzen, ze verbergen nooit iets: wie geen profiel heeft, ziet de kennisbank zoals iedereen. 'als' noemt per vraag-id uit profiel.json de antwoorden waarbij de regel geldt; meer vragen in een 'als' betekent: een van beide. 'dan' wijst naar normen, een vakgebied of barrieres uit de frontmatter van de stukken, naar instrumenten op de site, of naar een route of situatie uit routes.json. 'waarom' is de zin die de lezer bij het stuk ziet. tools/build.py blokkeert op elke regel die naar iets wijst dat niet bestaat.",
+  "versie": "2026-10-29",
+  "regels": [
+    {
+      "id": "cbw-plicht",
+      "als": { "cbw": ["essentieel", "belangrijk"] },
+      "dan": { "normen": ["Cbw", "NIS2"] },
+      "waarom": "Je valt onder de Cyberbeveiligingswet, dus de zorgplicht en de meldplicht gaan voor."
+    },
+    {
+      "id": "politiegegevens",
+      "als": { "politiegegevens": ["ja"] },
+      "dan": { "normen": ["Wpg"] },
+      "waarom": "Je verwerkt politiegegevens, dus naast de AVG geldt de Wet politiegegevens."
+    },
+    {
+      "id": "gevoelige-domeinen",
+      "als": { "gevoelig": ["sociaal", "jeugd", "gezondheid"] },
+      "dan": { "vakgebied": "privacy" },
+      "waarom": "Je verwerkt bijzondere persoonsgegevens, dus de privacystukken tellen het eerst."
+    },
+    {
+      "id": "geen-detectie",
+      "als": { "detectie": ["geen"] },
+      "dan": { "barrieres": ["soc", "edr"] },
+      "waarom": "Zonder structurele detectie zie je een aanval pas als het te laat is."
+    },
+    {
+      "id": "uitbesteed-beheer",
+      "als": { "beheer": ["regie", "uitbesteed"] },
+      "dan": { "barrieres": ["technicalvendor", "dependencies", "upstream"] },
+      "waarom": "Je beheer ligt bij een leverancier, dus de afspraken in de keten bepalen je weerbaarheid."
+    },
+    {
+      "id": "geen-bcm",
+      "als": { "bcm": ["geen", "crisisteam"] },
+      "dan": { "vakgebied": "bcm" },
+      "waarom": "Er is nog geen BCM-functie, dus continuiteit is een gat dat je eerst dicht."
+    },
+    {
+      "id": "ot-substantieel",
+      "als": { "ot": ["substantieel"] },
+      "dan": { "instrumenten": [{ "titel": "De CSIR-tool voor bruggen, gemalen, sluizen en tunnels", "url": "https://security-commons-nl.github.io/csir-assessment-tool/" }] },
+      "waarom": "Je hebt objecten met industriele automatisering, en daarvoor is de CSIR het kader."
+    },
+    {
+      "id": "startend",
+      "als": { "capaciteit": ["geen"], "volwassenheid": ["startend"] },
+      "dan": { "situatie": "eerste-honderd-dagen" },
+      "waarom": "Je begint met informatiebeveiliging, dus de route van de eerste honderd dagen past."
+    }
+  ]
+}

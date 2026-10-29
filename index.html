@@ -180,9 +180,20 @@ dan is dat een uitnodiging en geen fout.</p>
   <p class="telling" id="telling" aria-live="polite">83 stukken</p>
 </div>
 
+<style>
+.profielbalk{border:1px solid #c9dbe9;background:#f2f7fb;border-radius:8px;padding:9px 13px;margin:0 0 14px;font-size:14px}
+.profielbalk[hidden]{display:none}
+.profielbalk p{margin:0 0 4px}
+.profielbalk p:last-child{margin-bottom:0}
+.profielbalk a{color:var(--accent)}
+.profielbalk button{font:inherit;font-size:13px;margin-left:6px;padding:1px 8px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:5px;cursor:pointer}
+.profieletiket{display:block;margin-top:6px;font-size:12px;color:#1f5d3a;background:#eef7f1;border:1px solid #cfe6d7;border-radius:4px;padding:2px 7px}
+</style>
+<script type="application/json" id="profielregels">[{"id": "cbw-plicht", "als": {"cbw": ["essentieel", "belangrijk"]}, "dan": {"normen": ["Cbw", "NIS2"]}, "waarom": "Je valt onder de Cyberbeveiligingswet, dus de zorgplicht en de meldplicht gaan voor."}, {"id": "politiegegevens", "als": {"politiegegevens": ["ja"]}, "dan": {"normen": ["Wpg"]}, "waarom": "Je verwerkt politiegegevens, dus naast de AVG geldt de Wet politiegegevens."}, {"id": "gevoelige-domeinen", "als": {"gevoelig": ["sociaal", "jeugd", "gezondheid"]}, "dan": {"vakgebied": "privacy"}, "waarom": "Je verwerkt bijzondere persoonsgegevens, dus de privacystukken tellen het eerst."}, {"id": "geen-detectie", "als": {"detectie": ["geen"]}, "dan": {"barrieres": ["soc", "edr"]}, "waarom": "Zonder structurele detectie zie je een aanval pas als het te laat is."}, {"id": "uitbesteed-beheer", "als": {"beheer": ["regie", "uitbesteed"]}, "dan": {"barrieres": ["technicalvendor", "dependencies", "upstream"]}, "waarom": "Je beheer ligt bij een leverancier, dus de afspraken in de keten bepalen je weerbaarheid."}, {"id": "geen-bcm", "als": {"bcm": ["geen", "crisisteam"]}, "dan": {"vakgebied": "bcm"}, "waarom": "Er is nog geen BCM-functie, dus continuiteit is een gat dat je eerst dicht."}, {"id": "ot-substantieel", "als": {"ot": ["substantieel"]}, "dan": {"instrumenten": [{"titel": "De CSIR-tool voor bruggen, gemalen, sluizen en tunnels", "url": "https://security-commons-nl.github.io/csir-assessment-tool/"}]}, "waarom": "Je hebt objecten met industriele automatisering, en daarvoor is de CSIR het kader."}, {"id": "startend", "als": {"capaciteit": ["geen"], "volwassenheid": ["startend"]}, "dan": {"situatie": "eerste-honderd-dagen"}, "waarom": "Je begint met informatiebeveiliging, dus de route van de eerste honderd dagen past."}]</script>
+<div class="profielbalk" id="profielbalk" hidden></div>
 <div class="grid" id="direct-te-lezen">
 
-  <a class="item" href="security/meten-voordat-je-ingrijpt/" data-vak="security" data-zoek="meten voordat je ingrijpt de methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. dit stuk geeft de drie uitgangspunten, de werkwijze van ist naar soll en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen. aanpak security bio2" data-barrieres="execution mail legacy session consent segment edr">
+  <a class="item" href="security/meten-voordat-je-ingrijpt/" data-vak="security" data-zoek="meten voordat je ingrijpt de methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. dit stuk geeft de drie uitgangspunten, de werkwijze van ist naar soll en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen. aanpak security bio2" data-barrieres="execution mail legacy session consent segment edr" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Meten voordat je ingrijpt</span>
       <span class="tag tag-live">live</span>
@@ -191,7 +202,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR, Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming, Blokkeer legacy authentication, Beperk tokenmisbruik met apparaatbinding en sessiebeleid, Beperk app-toestemming en richt gecontroleerde admin consent in, Beperk lateral movement met segmentatie en minimale rechten, Borg EDR, tamper protection en snelle endpointisolatie · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/ingrijpen-met-checklist/" data-vak="security" data-zoek="ingrijpen met een checklist, voordat je de knop omzet een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt, als aanvulling op het gewone wijzigingsbeheer. dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. met een leeg sjabloon, een ingevuld voorbeeld voor clickfix en de registerinstelling om windows + r uit te zetten. aanpak security bio2" data-barrieres="execution">
+  <a class="item" href="security/ingrijpen-met-checklist/" data-vak="security" data-zoek="ingrijpen met een checklist, voordat je de knop omzet een vaste vragenlijst die een team langsloopt voordat het een beveiligingsmaatregel doorvoert die gebruikers raakt, als aanvulling op het gewone wijzigingsbeheer. dreiging en impact, aanpak en mandaat, terugdraaien, communicatie en evaluatie, zodat de tweede en derde lijn zien dat de afwegingen zijn gemaakt zonder bij elk overleg te zitten. met een leeg sjabloon, een ingevuld voorbeeld voor clickfix en de registerinstelling om windows + r uit te zetten. aanpak security bio2" data-barrieres="execution" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Ingrijpen met een checklist, voordat je de knop omzet</span>
       <span class="tag tag-live">live</span>
@@ -200,7 +211,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · peildatum 2026-10-20 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR · verdieping · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/sturen-op-weerbaarheid/" data-vak="security" data-zoek="sturen op weerbaarheid in plaats van op maatregelen voor bestuur, directie en ciso: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. met het lagenmodel, een raci-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting. aanpak security bio2" data-barrieres="">
+  <a class="item" href="security/sturen-op-weerbaarheid/" data-vak="security" data-zoek="sturen op weerbaarheid in plaats van op maatregelen voor bestuur, directie en ciso: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. met het lagenmodel, een raci-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting. aanpak security bio2" data-barrieres="" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Sturen op weerbaarheid in plaats van op maatregelen</span>
       <span class="tag tag-live">live</span>
@@ -209,7 +220,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-09 · in gebruik · hoort bij: Meten voordat je ingrijpt · route: CISO stap 5, Bestuurder stap 1</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/risicoanalyse-aanvalspaden/" data-vak="security" data-zoek="risicoanalyse langs aanvalspaden methode om als ciso of iso in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. de rode cellen zijn de risicolijst. met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen. aanpak security bio2 iso 27001 nis2" data-barrieres="owner treatment">
+  <a class="item" href="security/risicoanalyse-aanvalspaden/" data-vak="security" data-zoek="risicoanalyse langs aanvalspaden methode om als ciso of iso in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. de rode cellen zijn de risicolijst. met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen. aanpak security bio2 iso 27001 nis2" data-barrieres="owner treatment" data-normen="BIO2|ISO 27001|NIS2">
     <span class="itemtop">
       <span class="itemtitle">Risicoanalyse langs aanvalspaden</span>
       <span class="tag tag-live">live</span>
@@ -218,7 +229,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-08 · concept · barriere: Leg leveranciersrisico’s voor aan de risicohouder, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · fundering</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">NIS2</span></div>
   </a>
-  <a class="item" href="security/agent-bevoegdheid/" data-vak="security" data-zoek="wiens bevoegdheid gebruikt een ai-agent? een ai-agent die een api aanroept werkt niet op de bevoegdheid van de medewerker en niet op een eigen staande bevoegdheid, maar op een gedelegeerde taakbevoegdheid met zes velden, een goedkeuringsstap voor gevoelige acties en een audit die vijf vragen beantwoordt. vertaald naar entra, copilot-agents en mcp-koppelingen op gemeentelijke systemen, met de vragen aan de leverancier en het bewijs dat je moet kunnen laten zien. aanpak security bio2 ai act" data-barrieres="">
+  <a class="item" href="security/agent-bevoegdheid/" data-vak="security" data-zoek="wiens bevoegdheid gebruikt een ai-agent? een ai-agent die een api aanroept werkt niet op de bevoegdheid van de medewerker en niet op een eigen staande bevoegdheid, maar op een gedelegeerde taakbevoegdheid met zes velden, een goedkeuringsstap voor gevoelige acties en een audit die vijf vragen beantwoordt. vertaald naar entra, copilot-agents en mcp-koppelingen op gemeentelijke systemen, met de vragen aan de leverancier en het bewijs dat je moet kunnen laten zien. aanpak security bio2 ai act" data-barrieres="" data-normen="BIO2|AI Act">
     <span class="itemtop">
       <span class="itemtitle">Wiens bevoegdheid gebruikt een AI-agent?</span>
       <span class="tag tag-live">live</span>
@@ -227,7 +238,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-09 · concept</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="security/open-source-ai-binnenhalen/" data-vak="security" data-zoek="open-source ai binnenhalen onder de cbw wie een eigen ai-voorziening bouwt uit open-source onderdelen (chatomgeving, gateway, vectordatabase, open modellen) valt met die keten onder de zorgplicht van de cyberbeveiligingswet. zes maatregelen die dat aantoonbaar maken, van componentenlijst en versie-pinning tot een wachttijd voor nieuwe versies, met de litellm-compromittering van maart 2026 als casus. aanpak security cbw bio2 iso 27001" data-barrieres="">
+  <a class="item" href="security/open-source-ai-binnenhalen/" data-vak="security" data-zoek="open-source ai binnenhalen onder de cbw wie een eigen ai-voorziening bouwt uit open-source onderdelen (chatomgeving, gateway, vectordatabase, open modellen) valt met die keten onder de zorgplicht van de cyberbeveiligingswet. zes maatregelen die dat aantoonbaar maken, van componentenlijst en versie-pinning tot een wachttijd voor nieuwe versies, met de litellm-compromittering van maart 2026 als casus. aanpak security cbw bio2 iso 27001" data-barrieres="" data-normen="Cbw|BIO2|ISO 27001">
     <span class="itemtop">
       <span class="itemtitle">Open-source AI binnenhalen onder de Cbw</span>
       <span class="tag tag-live">live</span>
@@ -236,7 +247,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-09 · concept</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">BIO2</span><span class="norm">ISO 27001</span></div>
   </a>
-  <a class="item" href="security/ai-incident-melden/" data-vak="security" data-zoek="wanneer meld je een ai-incident? bij een incident met een ai-toepassing kunnen drie meldplichten gelden: cbw, avg en ai act, elk met een eigen drempel en termijn. voor gemeenten telt onder de cbw vooral uitval van dienstverlening van vier uur of meer; een lek via een ai-assistent haalt die drempel meestal niet, maar is vaak wel een datalek. vijf scenario&#x27;s uitgewerkt, met wat je vooraf regelt. aanpak security cbw avg ai act" data-barrieres="">
+  <a class="item" href="security/ai-incident-melden/" data-vak="security" data-zoek="wanneer meld je een ai-incident? bij een incident met een ai-toepassing kunnen drie meldplichten gelden: cbw, avg en ai act, elk met een eigen drempel en termijn. voor gemeenten telt onder de cbw vooral uitval van dienstverlening van vier uur of meer; een lek via een ai-assistent haalt die drempel meestal niet, maar is vaak wel een datalek. vijf scenario&#x27;s uitgewerkt, met wat je vooraf regelt. aanpak security cbw avg ai act" data-barrieres="" data-normen="Cbw|AVG|AI Act">
     <span class="itemtop">
       <span class="itemtitle">Wanneer meld je een AI-incident?</span>
       <span class="tag tag-live">live</span>
@@ -245,7 +256,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · peildatum 2026-09-25 · concept</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">AVG</span><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="security/security-annex-leveranciers/" data-vak="security" data-zoek="security annex voor leveranciers contractbijlage informatiebeveiliging, 20 artikelen. van cloudsoevereiniteit en assurance tot fido2, just-in-time beheer, ssdlc en ai. opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in bio2. sjabloon met invulvelden, plakbaar in word. sjabloon security bio2 iso 27001 nis2 cra ai act gibit 2025" data-barrieres="technicalvendor residual">
+  <a class="item" href="security/security-annex-leveranciers/" data-vak="security" data-zoek="security annex voor leveranciers contractbijlage informatiebeveiliging, 20 artikelen. van cloudsoevereiniteit en assurance tot fido2, just-in-time beheer, ssdlc en ai. opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in bio2. sjabloon met invulvelden, plakbaar in word. sjabloon security bio2 iso 27001 nis2 cra ai act gibit 2025" data-barrieres="technicalvendor residual" data-normen="BIO2|ISO 27001|NIS2|CRA|AI Act|GIBIT 2025">
     <span class="itemtop">
       <span class="itemtitle">Security Annex voor leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -254,7 +265,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · sjabloon · versie 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10 · in gebruik · barriere: Toets technische maatregelen van kritieke leveranciers, Maak significante leveranciersrestrisico’s expliciet · fundering · route: ISO stap 7</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">NIS2</span><span class="norm">CRA</span><span class="norm">AI Act</span><span class="norm">GIBIT 2025</span></div>
   </a>
-  <a class="item" href="security/passkeys-invoeren/" data-vak="security" data-zoek="passkeys invoeren handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (fido2). waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, tap als enige herstelroute) en wat er in de praktijk tegenzat. met directiememo, faq, managersmail en herstelprocedure als sjablonen. aanpak security bio2" data-barrieres="pr fallback legacy">
+  <a class="item" href="security/passkeys-invoeren/" data-vak="security" data-zoek="passkeys invoeren handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (fido2). waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, tap als enige herstelroute) en wat er in de praktijk tegenzat. met directiememo, faq, managersmail en herstelprocedure als sjablonen. aanpak security bio2" data-barrieres="pr fallback legacy" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Passkeys invoeren</span>
       <span class="tag tag-live">live</span>
@@ -263,7 +274,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik · barriere: Dwing phishingbestendige authenticatie af, Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/blue-team-opzetten/" data-vak="security" data-zoek="een blue team opzetten handleiding in acht stappen voor de ciso of iso die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere iv-lijn. trigger en nulmeting, team op kunnen, mandaat op één a4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. met mandaatprotocol, memo&#x27;s per gremium en een uitgewerkte voorbeeldcasus als bijlagen. aanpak security bio2" data-barrieres="">
+  <a class="item" href="security/blue-team-opzetten/" data-vak="security" data-zoek="een blue team opzetten handleiding in acht stappen voor de ciso of iso die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere iv-lijn. trigger en nulmeting, team op kunnen, mandaat op één a4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. met mandaatprotocol, memo&#x27;s per gremium en een uitgewerkte voorbeeldcasus als bijlagen. aanpak security bio2" data-barrieres="" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Een blue team opzetten</span>
       <span class="tag tag-live">live</span>
@@ -272,7 +283,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · versie 2026-08 · in gebruik</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/stelselkaart-security-gremia/" data-vak="security" data-zoek="stelselkaart security-gremia wie organiseert de digitale weerbaarheid van de nederlandse overheid? open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. machineleesbaar, zodat je er je eigen weergave op kunt bouwen. dataset security nis2 cbw" data-barrieres="">
+  <a class="item" href="security/stelselkaart-security-gremia/" data-vak="security" data-zoek="stelselkaart security-gremia wie organiseert de digitale weerbaarheid van de nederlandse overheid? open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. machineleesbaar, zodat je er je eigen weergave op kunt bouwen. dataset security nis2 cbw" data-barrieres="" data-normen="NIS2|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Stelselkaart security-gremia</span>
       <span class="tag tag-live">live</span>
@@ -281,7 +292,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · dataset · peildatum 2026-08-11 · in gebruik · route: CISO stap 3, Eerste honderd dagen stap 1</div>
     <div class="normen"><span class="norm">NIS2</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="security/awareness-digitale-veiligheid/" data-vak="security" data-zoek="learning digitale veiligheid voor managers kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. publiek bekende casussen, invulbare placeholders. lesmateriaal security bio2 iso 27002" data-barrieres="">
+  <a class="item" href="security/awareness-digitale-veiligheid/" data-vak="security" data-zoek="learning digitale veiligheid voor managers kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. publiek bekende casussen, invulbare placeholders. lesmateriaal security bio2 iso 27002" data-barrieres="" data-normen="BIO2|ISO 27002">
     <span class="itemtop">
       <span class="itemtitle">Learning digitale veiligheid voor managers</span>
       <span class="tag tag-live">live</span>
@@ -290,7 +301,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · lesmateriaal · versie 2026-06 · sjabloon · route: Bestuurder stap 4</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27002</span></div>
   </a>
-  <a class="item" href="security/referenties-tooling/" data-vak="security" data-zoek="externe referenties: security-tooling en kennisbanken verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één html-bestand, web-reconnaissance, extern aanvalsoppervlak. per bron kort wat het is en wanneer je het inzet. referentie security" data-barrieres="">
+  <a class="item" href="security/referenties-tooling/" data-vak="security" data-zoek="externe referenties: security-tooling en kennisbanken verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één html-bestand, web-reconnaissance, extern aanvalsoppervlak. per bron kort wat het is en wanneer je het inzet. referentie security" data-barrieres="" data-normen="">
     <span class="itemtop">
       <span class="itemtitle">Externe referenties: security-tooling en kennisbanken</span>
       <span class="tag tag-live">live</span>
@@ -298,7 +309,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <p class="itemdesc">Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak. Per bron kort wat het is en wanneer je het inzet.</p>
     <div class="meta">security · referentie · peildatum 2026-09-09 · in gebruik</div>
   </a>
-  <a class="item" href="security/werkplekanalyse-e5/" data-vak="security" data-zoek="werkplekanalyse op het microsoft-platform meet met defender for endpoint en advanced hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. met zes kql-query&#x27;s voor powershell, win+r, mshta en clickfix, een configuratiecheck die &quot;aan&quot; onderscheidt van &quot;gekoppeld en actief&quot;, en het advies om powershell te beheersen met constrained language mode in plaats van te blokkeren. handleiding security bio2" data-barrieres="execution">
+  <a class="item" href="security/werkplekanalyse-e5/" data-vak="security" data-zoek="werkplekanalyse op het microsoft-platform meet met defender for endpoint en advanced hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. met zes kql-query&#x27;s voor powershell, win+r, mshta en clickfix, een configuratiecheck die &quot;aan&quot; onderscheidt van &quot;gekoppeld en actief&quot;, en het advies om powershell te beheersen met constrained language mode in plaats van te blokkeren. handleiding security bio2" data-barrieres="execution" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Werkplekanalyse op het Microsoft-platform</span>
       <span class="tag tag-live">live</span>
@@ -307,7 +318,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Beperk software- en scriptuitvoering met application control en ASR · fundering · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/identiteit-en-mail-meten/" data-vak="security" data-zoek="identiteit en e-mail meten voordat je afdwingt twee lagen die met microsoft 365 e5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of &quot;deels&quot; staan. toets de feitelijke inrichting van defender for office, conditional access, app-consent en legacy authentication, met per punt wat &quot;goed&quot; eruitziet. in veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek. handleiding security bio2" data-barrieres="mail legacy session consent">
+  <a class="item" href="security/identiteit-en-mail-meten/" data-vak="security" data-zoek="identiteit en e-mail meten voordat je afdwingt twee lagen die met microsoft 365 e5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of &quot;deels&quot; staan. toets de feitelijke inrichting van defender for office, conditional access, app-consent en legacy authentication, met per punt wat &quot;goed&quot; eruitziet. in veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek. handleiding security bio2" data-barrieres="mail legacy session consent" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Identiteit en e-mail meten voordat je afdwingt</span>
       <span class="tag tag-live">live</span>
@@ -316,7 +327,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Dwing een sterke e-mailbaseline af met link-, bijlage- en impersonatiebescherming, Blokkeer legacy authentication, Beperk tokenmisbruik met apparaatbinding en sessiebeleid, Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/centrale-logverzameling/" data-vak="security" data-zoek="richt centrale logverzameling in logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest. handleiding security bio2" data-barrieres="soc">
+  <a class="item" href="security/centrale-logverzameling/" data-vak="security" data-zoek="richt centrale logverzameling in logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest. handleiding security bio2" data-barrieres="soc" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Richt centrale logverzameling in</span>
       <span class="tag tag-live">live</span>
@@ -325,7 +336,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/co-managed-siem/" data-vak="security" data-zoek="kies voor een co-managed siem een siem die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. past bij organisaties die zelf securitycapaciteit hebben of opbouwen. met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security bio2" data-barrieres="soc">
+  <a class="item" href="security/co-managed-siem/" data-vak="security" data-zoek="kies voor een co-managed siem een siem die je zelf bezit maar samen met een externe partij beheert: jij houdt de regie en het eigendom van data en detectieregels, de partij brengt schaal en dekking buiten kantooruren. past bij organisaties die zelf securitycapaciteit hebben of opbouwen. met de taakverdeling, de use-cases en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security bio2" data-barrieres="soc" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Kies voor een co-managed SIEM</span>
       <span class="tag tag-live">live</span>
@@ -334,7 +345,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/uitbestede-soc/" data-vak="security" data-zoek="besteed monitoring uit aan een mssp monitoring en detectie volledig uitbesteden aan een managed security service provider, wanneer een eigen securityteam er niet is en ook niet snel komt. snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. met de scope-eisen, de sla-afspraken en het bewijs dat de opvolgtijden gehaald worden. handleiding security bio2" data-barrieres="soc">
+  <a class="item" href="security/uitbestede-soc/" data-vak="security" data-zoek="besteed monitoring uit aan een mssp monitoring en detectie volledig uitbesteden aan een managed security service provider, wanneer een eigen securityteam er niet is en ook niet snel komt. snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. met de scope-eisen, de sla-afspraken en het bewijs dat de opvolgtijden gehaald worden. handleiding security bio2" data-barrieres="soc" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Besteed monitoring uit aan een MSSP</span>
       <span class="tag tag-live">live</span>
@@ -343,7 +354,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/mdr-dienst/" data-vak="security" data-zoek="neem een mdr-dienst met een handelingsmandaat managed detection and response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. de snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt. handleiding security bio2" data-barrieres="soc">
+  <a class="item" href="security/mdr-dienst/" data-vak="security" data-zoek="neem een mdr-dienst met een handelingsmandaat managed detection and response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. de snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt. handleiding security bio2" data-barrieres="soc" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Neem een MDR-dienst met een handelingsmandaat</span>
       <span class="tag tag-live">live</span>
@@ -352,7 +363,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/regionaal-soc/" data-vak="security" data-zoek="deel een soc met andere organisaties meerdere organisaties delen een soc: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. past bij kleine en middelgrote organisaties die al samenwerken of dat willen. met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security bio2" data-barrieres="soc">
+  <a class="item" href="security/regionaal-soc/" data-vak="security" data-zoek="deel een soc met andere organisaties meerdere organisaties delen een soc: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. past bij kleine en middelgrote organisaties die al samenwerken of dat willen. met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt. handleiding security bio2" data-barrieres="soc" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Deel een SOC met andere organisaties</span>
       <span class="tag tag-live">live</span>
@@ -361,7 +372,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg 24/7 opvolging en escalatie van kritieke meldingen · alternatief · hoort bij: Richt centrale logverzameling in</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/tiered-administration/" data-vak="security" data-zoek="beheerrechten scheiden in tiers beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen. handleiding security bio2" data-barrieres="model">
+  <a class="item" href="security/tiered-administration/" data-vak="security" data-zoek="beheerrechten scheiden in tiers beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen. handleiding security bio2" data-barrieres="model" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Beheerrechten scheiden in tiers</span>
       <span class="tag tag-live">live</span>
@@ -370,7 +381,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Scheid privileged access technisch van dagelijks gebruik · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/beheerwerkplek/" data-vak="security" data-zoek="beheerwerkplek voor administratieve taken beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen. handleiding security bio2" data-barrieres="adminhard">
+  <a class="item" href="security/beheerwerkplek/" data-vak="security" data-zoek="beheerwerkplek voor administratieve taken beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen. handleiding security bio2" data-barrieres="adminhard" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Beheerwerkplek voor administratieve taken</span>
       <span class="tag tag-live">live</span>
@@ -379,7 +390,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Hard de beheerwerkplek en dwing de toegestane toegang af · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/just-in-time-beheerrechten/" data-vak="security" data-zoek="just-in-time beheerrechten permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. met de uitfasering, de noodaccounts en het activeringslogboek als bewijs. handleiding security bio2" data-barrieres="jit">
+  <a class="item" href="security/just-in-time-beheerrechten/" data-vak="security" data-zoek="just-in-time beheerrechten permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. met de uitfasering, de noodaccounts en het activeringslogboek als bewijs. handleiding security bio2" data-barrieres="jit" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Just-in-time beheerrechten</span>
       <span class="tag tag-live">live</span>
@@ -388,7 +399,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Verwijder permanente rollen en gebruik PIM/JIT · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/fido2-voor-beheerders/" data-vak="security" data-zoek="phishingbestendige mfa voor beheeraccounts een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. de zwaarste vorm van authenticatie op de zwaarste rechten. met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen. handleiding security bio2" data-barrieres="key">
+  <a class="item" href="security/fido2-voor-beheerders/" data-vak="security" data-zoek="phishingbestendige mfa voor beheeraccounts een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. de zwaarste vorm van authenticatie op de zwaarste rechten. met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen. handleiding security bio2" data-barrieres="key" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Phishingbestendige MFA voor beheeraccounts</span>
       <span class="tag tag-live">live</span>
@@ -397,7 +408,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Vereis een aparte fysieke FIDO2-key voor elevation · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/mfa-handhaving/" data-vak="security" data-zoek="mfa afdwingen en zwakke routes saneren de zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. een sterke voordeur naast een open achterdeur is geen maatregel. met de sanering en het bewijs dat er geen omweg meer is. handleiding security bio2" data-barrieres="fallback legacy">
+  <a class="item" href="security/mfa-handhaving/" data-vak="security" data-zoek="mfa afdwingen en zwakke routes saneren de zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. een sterke voordeur naast een open achterdeur is geen maatregel. met de sanering en het bewijs dat er geen omweg meer is. handleiding security bio2" data-barrieres="fallback legacy" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">MFA afdwingen en zwakke routes saneren</span>
       <span class="tag tag-live">live</span>
@@ -406,7 +417,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Verwijder zwakke fallback- en herstelroutes, Blokkeer legacy authentication · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/sessiebescherming/" data-vak="security" data-zoek="sessies beschermen tegen tokendiefstal sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. met de inrichting, de gebruikersimpact en het bewijs van dekking. handleiding security bio2" data-barrieres="session">
+  <a class="item" href="security/sessiebescherming/" data-vak="security" data-zoek="sessies beschermen tegen tokendiefstal sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. met de inrichting, de gebruikersimpact en het bewijs van dekking. handleiding security bio2" data-barrieres="session" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Sessies beschermen tegen tokendiefstal</span>
       <span class="tag tag-live">live</span>
@@ -415,7 +426,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk tokenmisbruik met apparaatbinding en sessiebeleid · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/cloudportalen-harden/" data-vak="security" data-zoek="cloud-beheerportalen dichtzetten de beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. met de inrichting en het bewijs dat de beperking geldt. handleiding security bio2" data-barrieres="consent">
+  <a class="item" href="security/cloudportalen-harden/" data-vak="security" data-zoek="cloud-beheerportalen dichtzetten de beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. met de inrichting en het bewijs dat de beperking geldt. handleiding security bio2" data-barrieres="consent" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Cloud-beheerportalen dichtzetten</span>
       <span class="tag tag-live">live</span>
@@ -424,7 +435,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/least-privilege-cloud/" data-vak="security" data-zoek="rechten in de cloud terugbrengen tot gebruik rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. verdieping op het beheersen van toegang tot cloudportalen. met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn. handleiding security bio2" data-barrieres="consent">
+  <a class="item" href="security/least-privilege-cloud/" data-vak="security" data-zoek="rechten in de cloud terugbrengen tot gebruik rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. verdieping op het beheersen van toegang tot cloudportalen. met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn. handleiding security bio2" data-barrieres="consent" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Rechten in de cloud terugbrengen tot gebruik</span>
       <span class="tag tag-live">live</span>
@@ -433,7 +444,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk app-toestemming en richt gecontroleerde admin consent in · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/logging-en-retentie/" data-vak="security" data-zoek="bewaartermijnen voor logging en forensiek beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. zonder deze laag is achteraf niet vast te stellen wie wat deed. met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest. handleiding security bio2" data-barrieres="adminmonitor">
+  <a class="item" href="security/logging-en-retentie/" data-vak="security" data-zoek="bewaartermijnen voor logging en forensiek beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. zonder deze laag is achteraf niet vast te stellen wie wat deed. met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest. handleiding security bio2" data-barrieres="adminmonitor" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Bewaartermijnen voor logging en forensiek</span>
       <span class="tag tag-live">live</span>
@@ -442,7 +453,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Monitor privileged activiteiten en rolwijzigingen · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/bastion-hosts/" data-vak="security" data-zoek="beheertoegang via een bastion host beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is. handleiding security bio2" data-barrieres="remote">
+  <a class="item" href="security/bastion-hosts/" data-vak="security" data-zoek="beheertoegang via een bastion host beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is. handleiding security bio2" data-barrieres="remote" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Beheertoegang via een bastion host</span>
       <span class="tag tag-live">live</span>
@@ -451,7 +462,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Scherm publieke beheerinterfaces af · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/aanvalsoppervlak-bewaken/" data-vak="security" data-zoek="je aanvalsoppervlak in beeld houden ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. wat je niet weet dat bestaat, patch je niet. met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft. handleiding security bio2" data-barrieres="assets">
+  <a class="item" href="security/aanvalsoppervlak-bewaken/" data-vak="security" data-zoek="je aanvalsoppervlak in beeld houden ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. wat je niet weet dat bestaat, patch je niet. met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft. handleiding security bio2" data-barrieres="assets" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Je aanvalsoppervlak in beeld houden</span>
       <span class="tag tag-live">live</span>
@@ -460,7 +471,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Ontdek en bewaak het externe aanvalsoppervlak · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/kwetsbaarheden-scannen/" data-vak="security" data-zoek="kwetsbaarheden scannen en opvolgen continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. een jaarlijkse scan is geen kwetsbaarhedenbeheer. met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan. handleiding security bio2" data-barrieres="vuln">
+  <a class="item" href="security/kwetsbaarheden-scannen/" data-vak="security" data-zoek="kwetsbaarheden scannen en opvolgen continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. een jaarlijkse scan is geen kwetsbaarhedenbeheer. met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan. handleiding security bio2" data-barrieres="vuln" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden scannen en opvolgen</span>
       <span class="tag tag-live">live</span>
@@ -469,7 +480,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/exposure-management/" data-vak="security" data-zoek="kwetsbaarheden wegen op werkelijke blootstelling niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. verdieping bovenop scannen. met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is. handleiding security bio2" data-barrieres="vuln">
+  <a class="item" href="security/exposure-management/" data-vak="security" data-zoek="kwetsbaarheden wegen op werkelijke blootstelling niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. verdieping bovenop scannen. met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is. handleiding security bio2" data-barrieres="vuln" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Kwetsbaarheden wegen op werkelijke blootstelling</span>
       <span class="tag tag-live">live</span>
@@ -478,7 +489,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/patchen-met-dekking/" data-vak="security" data-zoek="werkplekken beheerd, gehard en gepatcht patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs. handleiding security bio2" data-barrieres="patch localadmin unmanaged">
+  <a class="item" href="security/patchen-met-dekking/" data-vak="security" data-zoek="werkplekken beheerd, gehard en gepatcht patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs. handleiding security bio2" data-barrieres="patch localadmin unmanaged" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Werkplekken beheerd, gehard en gepatcht</span>
       <span class="tag tag-live">live</span>
@@ -487,7 +498,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg OS- en third-party-patching met controle op dekking, Verwijder lokale administratorrechten, Dwing toegang vanaf beheerde, compliant laptops af · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/periodiek-pentesten/" data-vak="security" data-zoek="periodiek pentesten met hertest risicogestuurd extern laten pentesten, met herstel van de relevante bevindingen en een hertest die aantoont dat ze dicht zijn. een test zonder opvolging levert een rapport op, geen beveiliging. met de scopekeuze, de opvolging en de hertest als bewijs. handleiding security bio2" data-barrieres="pentest">
+  <a class="item" href="security/periodiek-pentesten/" data-vak="security" data-zoek="periodiek pentesten met hertest risicogestuurd extern laten pentesten, met herstel van de relevante bevindingen en een hertest die aantoont dat ze dicht zijn. een test zonder opvolging levert een rapport op, geen beveiliging. met de scopekeuze, de opvolging en de hertest als bewijs. handleiding security bio2" data-barrieres="pentest" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Periodiek pentesten met hertest</span>
       <span class="tag tag-live">live</span>
@@ -496,7 +507,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Laat extern pentesten en verifieer herstel van bevindingen · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/web-en-api-testen/" data-vak="security" data-zoek="web en api testen in de ontwikkelketen beveiliging van webapplicaties en api-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel. handleiding security bio2" data-barrieres="webtest">
+  <a class="item" href="security/web-en-api-testen/" data-vak="security" data-zoek="web en api testen in de ontwikkelketen beveiliging van webapplicaties en api-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel. handleiding security bio2" data-barrieres="webtest" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Web en API testen in de ontwikkelketen</span>
       <span class="tag tag-live">live</span>
@@ -505,7 +516,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test web/API-beveiliging en herstel kwetsbaarheden · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/edr-inrichten/" data-vak="security" data-zoek="edr inrichten met dekking en isolatie endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. een edr die op de helft van de apparaten draait, is geen dekking. met de uitrol, de dekkingsmeting en de isolatietest als bewijs. handleiding security bio2" data-barrieres="edr">
+  <a class="item" href="security/edr-inrichten/" data-vak="security" data-zoek="edr inrichten met dekking en isolatie endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. een edr die op de helft van de apparaten draait, is geen dekking. met de uitrol, de dekkingsmeting en de isolatietest als bewijs. handleiding security bio2" data-barrieres="edr" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">EDR inrichten met dekking en isolatie</span>
       <span class="tag tag-live">live</span>
@@ -514,7 +525,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg EDR, tamper protection en snelle endpointisolatie · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/killchain-naast-je-controls/" data-vak="security" data-zoek="de killchain naast je controls leggen leg je controls naast de volledige aanvalsketen, van clickfix via infostealer tot exfiltratie, met de mitre-fasen erbij. per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico&#x27;s je bewust accepteert. handleiding security bio2" data-barrieres="edr execution">
+  <a class="item" href="security/killchain-naast-je-controls/" data-vak="security" data-zoek="de killchain naast je controls leggen leg je controls naast de volledige aanvalsketen, van clickfix via infostealer tot exfiltratie, met de mitre-fasen erbij. per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico&#x27;s je bewust accepteert. handleiding security bio2" data-barrieres="edr execution" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">De killchain naast je controls leggen</span>
       <span class="tag tag-live">live</span>
@@ -523,7 +534,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Borg EDR, tamper protection en snelle endpointisolatie, Beperk software- en scriptuitvoering met application control en ASR · verdieping · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/application-control/" data-vak="security" data-zoek="application- en scriptcontrol alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. met de auditfase, de uitrol en het bewijs van dekking. handleiding security bio2" data-barrieres="execution">
+  <a class="item" href="security/application-control/" data-vak="security" data-zoek="application- en scriptcontrol alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. met de auditfase, de uitrol en het bewijs van dekking. handleiding security bio2" data-barrieres="execution" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Application- en scriptcontrol</span>
       <span class="tag tag-live">live</span>
@@ -532,7 +543,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk software- en scriptuitvoering met application control en ASR · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/netwerksegmentatie/" data-vak="security" data-zoek="netwerksegmentatie het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. zo komt een aanvaller die binnen is niet vanzelf overal. met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst. handleiding security bio2" data-barrieres="segment">
+  <a class="item" href="security/netwerksegmentatie/" data-vak="security" data-zoek="netwerksegmentatie het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. zo komt een aanvaller die binnen is niet vanzelf overal. met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst. handleiding security bio2" data-barrieres="segment" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Netwerksegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -541,7 +552,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/microsegmentatie/" data-vak="security" data-zoek="microsegmentatie segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. verdieping voor wie de zones al op orde heeft. met de aanpak, de valkuilen en het bewijs van de afgedwongen regels. handleiding security bio2" data-barrieres="segment">
+  <a class="item" href="security/microsegmentatie/" data-vak="security" data-zoek="microsegmentatie segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. verdieping voor wie de zones al op orde heeft. met de aanpak, de valkuilen en het bewijs van de afgedwongen regels. handleiding security bio2" data-barrieres="segment" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Microsegmentatie</span>
       <span class="tag tag-live">live</span>
@@ -550,7 +561,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/netwerkanalyse-uit-data/" data-vak="security" data-zoek="netwerk en firewall analyseren uit data vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien. handleiding security bio2" data-barrieres="segment">
+  <a class="item" href="security/netwerkanalyse-uit-data/" data-vak="security" data-zoek="netwerk en firewall analyseren uit data vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien. handleiding security bio2" data-barrieres="segment" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Netwerk en firewall analyseren uit data</span>
       <span class="tag tag-live">live</span>
@@ -559,7 +570,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · in gebruik · barriere: Beperk lateral movement met segmentatie en minimale rechten · verdieping · hoort bij: Meten voordat je ingrijpt</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/waf-en-virtual-patching/" data-vak="security" data-zoek="waf en virtual patching een web application firewall met rate limiting en layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking. handleiding security bio2" data-barrieres="l7">
+  <a class="item" href="security/waf-en-virtual-patching/" data-vak="security" data-zoek="waf en virtual patching een web application firewall met rate limiting en layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking. handleiding security bio2" data-barrieres="l7" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">WAF en virtual patching</span>
       <span class="tag tag-live">live</span>
@@ -568,7 +579,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Richt WAF, rate limiting en Layer-7-bescherming in · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/ddos-scrubbing/" data-vak="security" data-zoek="ddos-scrubbing en robuuste dns volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante dns eronder. zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is. handleiding security bio2" data-barrieres="upstream">
+  <a class="item" href="security/ddos-scrubbing/" data-vak="security" data-zoek="ddos-scrubbing en robuuste dns volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante dns eronder. zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is. handleiding security bio2" data-barrieres="upstream" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">DDoS-scrubbing en robuuste DNS</span>
       <span class="tag tag-live">live</span>
@@ -577,7 +588,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Borg upstream DDoS-mitigatie en robuuste DNS · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/onveranderbare-backups/" data-vak="security" data-zoek="onveranderbare back-ups back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. de aanvaller zoekt tegenwoordig eerst de back-up. met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen. handleiding security bio2" data-barrieres="backup">
+  <a class="item" href="security/onveranderbare-backups/" data-vak="security" data-zoek="onveranderbare back-ups back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. de aanvaller zoekt tegenwoordig eerst de back-up. met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen. handleiding security bio2" data-barrieres="backup" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Onveranderbare back-ups</span>
       <span class="tag tag-live">live</span>
@@ -586,7 +597,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Bescherm back-ups met onveranderbaarheid en gescheiden beheer · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/hersteltest/" data-vak="security" data-zoek="hersteltest tegen rto en rpo periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. een back-up die nooit is teruggezet, is een aanname. met de opzet van de test, de rto en rpo uit de bia, en het testverslag als bewijs. handleiding security bio2" data-barrieres="restore">
+  <a class="item" href="security/hersteltest/" data-vak="security" data-zoek="hersteltest tegen rto en rpo periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. een back-up die nooit is teruggezet, is een aanname. met de opzet van de test, de rto en rpo uit de bia, en het testverslag als bewijs. handleiding security bio2" data-barrieres="restore" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Hersteltest tegen RTO en RPO</span>
       <span class="tag tag-live">live</span>
@@ -595,7 +606,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test herstel tegen de afgesproken RTO en RPO · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/crisisoefening/" data-vak="security" data-zoek="crisisoefening voor ransomware en uitval het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. met de opzet van de tabletop, de rollen en het oefenverslag als bewijs. handleiding security bio2" data-barrieres="crisis">
+  <a class="item" href="security/crisisoefening/" data-vak="security" data-zoek="crisisoefening voor ransomware en uitval het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. met de opzet van de tabletop, de rollen en het oefenverslag als bewijs. handleiding security bio2" data-barrieres="crisis" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Crisisoefening voor ransomware en uitval</span>
       <span class="tag tag-live">live</span>
@@ -604,7 +615,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/crisiscommunicatie/" data-vak="security" data-zoek="cyber-crisiscommunicatie vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. verdieping op de crisisoefening. met de rollen, de kanalen en het bewijs dat het is geoefend. handleiding security bio2" data-barrieres="crisis">
+  <a class="item" href="security/crisiscommunicatie/" data-vak="security" data-zoek="cyber-crisiscommunicatie vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. verdieping op de crisisoefening. met de rollen, de kanalen en het bewijs dat het is geoefend. handleiding security bio2" data-barrieres="crisis" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Cyber-crisiscommunicatie</span>
       <span class="tag tag-live">live</span>
@@ -613,7 +624,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Oefen het ransomware- en crisisherstelplan · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/incident-response-procedures/" data-vak="security" data-zoek="incidentprocedures die je hebt geoefend vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of bec-melding, en misbruik van een externe kwetsbaarheid. met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt. handleiding security bio2" data-barrieres="mailresponse idresponse exploitresponse">
+  <a class="item" href="security/incident-response-procedures/" data-vak="security" data-zoek="incidentprocedures die je hebt geoefend vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of bec-melding, en misbruik van een externe kwetsbaarheid. met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt. handleiding security bio2" data-barrieres="mailresponse idresponse exploitresponse" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Incidentprocedures die je hebt geoefend</span>
       <span class="tag tag-live">live</span>
@@ -622,7 +633,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Test mail-remediation en het phishing/BEC-playbook, Test response op identity- en app-compromise, Test detectie en response op externe exploits · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/procedures-informatiebeveiliging/" data-vak="security" data-zoek="acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking de procedures die een ib&amp;p-team dagelijks nodig heeft, als startpunt voor je eigen set. een incidentprocedure voor datalekken en beveiligingsincidenten met de meldplicht onder avg en cbw, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, classificatie van systemen op beschikbaarheid, integriteit en vertrouwelijkheid (biv), inzage in de mailbox van een collega, de periodieke rapportage, leveranciersmanagement en het vaststellen van strategisch beleid. per procedure staat erbij voor welke bio 2.0-maatregelen hij bewijs helpt leveren. aanpak security bio2 avg" data-barrieres="vuln exploitresponse review treatment">
+  <a class="item" href="security/procedures-informatiebeveiliging/" data-vak="security" data-zoek="acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking de procedures die een ib&amp;p-team dagelijks nodig heeft, als startpunt voor je eigen set. een incidentprocedure voor datalekken en beveiligingsincidenten met de meldplicht onder avg en cbw, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, classificatie van systemen op beschikbaarheid, integriteit en vertrouwelijkheid (biv), inzage in de mailbox van een collega, de periodieke rapportage, leveranciersmanagement en het vaststellen van strategisch beleid. per procedure staat erbij voor welke bio 2.0-maatregelen hij bewijs helpt leveren. aanpak security bio2 avg" data-barrieres="vuln exploitresponse review treatment" data-normen="BIO2|AVG">
     <span class="itemtop">
       <span class="itemtitle">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</span>
       <span class="tag tag-live">live</span>
@@ -631,7 +642,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · aanpak · peildatum 2026-10-20 · in gebruik · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching, Test detectie en response op externe exploits, Beoordeel kritieke leveranciers periodiek en risicogestuurd, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · alternatief · route: Eerste honderd dagen stap 4</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="security/ketenafhankelijkheden/" data-vak="security" data-zoek="ketenafhankelijkheden in beeld in beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. uit bronnen die je vaak al hebt. met de opbouw, het actueel houden en het overzicht als bewijs. handleiding security bio2" data-barrieres="dependencies">
+  <a class="item" href="security/ketenafhankelijkheden/" data-vak="security" data-zoek="ketenafhankelijkheden in beeld in beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. uit bronnen die je vaak al hebt. met de opbouw, het actueel houden en het overzicht als bewijs. handleiding security bio2" data-barrieres="dependencies" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Ketenafhankelijkheden in beeld</span>
       <span class="tag tag-live">live</span>
@@ -640,7 +651,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Breng kritieke systemen en leveranciers in samenhang in beeld · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/leveranciersbeoordeling/" data-vak="security" data-zoek="leveranciersbeoordeling met vaste cyclus kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt. handleiding security bio2" data-barrieres="review">
+  <a class="item" href="security/leveranciersbeoordeling/" data-vak="security" data-zoek="leveranciersbeoordeling met vaste cyclus kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt. handleiding security bio2" data-barrieres="review" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Leveranciersbeoordeling met vaste cyclus</span>
       <span class="tag tag-live">live</span>
@@ -649,7 +660,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Beoordeel kritieke leveranciers periodiek en risicogestuurd · fundering</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="security/pentest-en-exit-bij-leveranciers/" data-vak="security" data-zoek="pentest- en exitverplichtingen bij leveranciers de technische maatregelen van kritieke leveranciers toetsen in plaats van aannemen, met pentest- en exitverplichtingen in het contract. verdieping op de leveranciersbeoordeling. met de eisen, de exitafspraken en het bewijs dat er getoetst is. handleiding security bio2" data-barrieres="technicalvendor">
+  <a class="item" href="security/pentest-en-exit-bij-leveranciers/" data-vak="security" data-zoek="pentest- en exitverplichtingen bij leveranciers de technische maatregelen van kritieke leveranciers toetsen in plaats van aannemen, met pentest- en exitverplichtingen in het contract. verdieping op de leveranciersbeoordeling. met de eisen, de exitafspraken en het bewijs dat er getoetst is. handleiding security bio2" data-barrieres="technicalvendor" data-normen="BIO2">
     <span class="itemtop">
       <span class="itemtitle">Pentest- en exitverplichtingen bij leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -658,7 +669,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">security · handleiding · versie 2026-09 · concept · barriere: Toets technische maatregelen van kritieke leveranciers · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="privacy/datalekken-afhandelen/" data-vak="privacy" data-zoek="datalekken afhandelen, met afwegingskader en meldformulier een procedure voor datalekken in negen stappen, van melding tot evaluatie, met per stap wie het doet en wie eindverantwoordelijk is. met een afwegingskader van acht vragen voor de keuze melden bij de autoriteit persoonsgegevens en bij de betrokkene, de vragen voor het meldformulier in het servicedesksysteem, een brief om de betrokkene te informeren en een sjabloon voor de kwartaalevaluatie. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="privacy/datalekken-afhandelen/" data-vak="privacy" data-zoek="datalekken afhandelen, met afwegingskader en meldformulier een procedure voor datalekken in negen stappen, van melding tot evaluatie, met per stap wie het doet en wie eindverantwoordelijk is. met een afwegingskader van acht vragen voor de keuze melden bij de autoriteit persoonsgegevens en bij de betrokkene, de vragen voor het meldformulier in het servicedesksysteem, een brief om de betrokkene te informeren en een sjabloon voor de kwartaalevaluatie. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Datalekken afhandelen, met afwegingskader en meldformulier</span>
       <span class="tag tag-live">live</span>
@@ -667,7 +678,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 6</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="privacy/rechten-van-betrokkenen/" data-vak="privacy" data-zoek="verzoeken van betrokkenen afhandelen, met 25 standaardbrieven een procedure voor alle rechten van betrokkenen onder de avg en de wpg, met zes stappen van ontvangst tot evaluatie, een uitwerking per recht en tips voor verzoeken onder de wpg. met 25 brieven voor elke fase van een inzage- of verwijderverzoek (identificatie, verduidelijking, uitstel, besluit, beëindiging), het overzicht van persoonsgegevens dat bij een besluit hoort, en een privacyverklaring voor medewerkers. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="privacy/rechten-van-betrokkenen/" data-vak="privacy" data-zoek="verzoeken van betrokkenen afhandelen, met 25 standaardbrieven een procedure voor alle rechten van betrokkenen onder de avg en de wpg, met zes stappen van ontvangst tot evaluatie, een uitwerking per recht en tips voor verzoeken onder de wpg. met 25 brieven voor elke fase van een inzage- of verwijderverzoek (identificatie, verduidelijking, uitstel, besluit, beëindiging), het overzicht van persoonsgegevens dat bij een besluit hoort, en een privacyverklaring voor medewerkers. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Verzoeken van betrokkenen afhandelen, met 25 standaardbrieven</span>
       <span class="tag tag-live">live</span>
@@ -676,7 +687,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 5</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="privacy/dpia-in-vijf-stappen/" data-vak="privacy" data-zoek="een dpia in vijf stappen, met sjablonen een lichte dpia-werkwijze voor gemeenten. de kennishouder beschrijft het proces zelf, privacy officer en security officer schuiven aan in drie overleggen, en de proceseigenaar beslist over de maatregelen. met een compact sjabloon van tien hoofdstukken, voorgevulde teksten voor camera&#x27;s op grond van gerechtvaardigd belang, een vragenlijst en een security-assessment van de leverancier. aanpak privacy avg" data-barrieres="">
+  <a class="item" href="privacy/dpia-in-vijf-stappen/" data-vak="privacy" data-zoek="een dpia in vijf stappen, met sjablonen een lichte dpia-werkwijze voor gemeenten. de kennishouder beschrijft het proces zelf, privacy officer en security officer schuiven aan in drie overleggen, en de proceseigenaar beslist over de maatregelen. met een compact sjabloon van tien hoofdstukken, voorgevulde teksten voor camera&#x27;s op grond van gerechtvaardigd belang, een vragenlijst en een security-assessment van de leverancier. aanpak privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Een DPIA in vijf stappen, met sjablonen</span>
       <span class="tag tag-live">live</span>
@@ -685,7 +696,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-09-26 · in gebruik · route: Privacy officer stap 3</div>
     <div class="normen"><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacy/privacy-eisen-bij-de-start/" data-vak="privacy" data-zoek="privacy-eisen bij een nieuw proces, project, aanbesteding of website drie stappenplannen in zes stappen (nieuw proces, gewijzigd proces, nieuw project) met doorlooptijden per stap, een standaardset van twaalf privacy-eisen voor het programma van eisen bij een aanbesteding plus zeven eisen voor zelfontwikkeling, en een checklist van negen punten voor een privacyvriendelijke website met een jaarlijkse controle van de cookiebanner. aanpak privacy avg" data-barrieres="">
+  <a class="item" href="privacy/privacy-eisen-bij-de-start/" data-vak="privacy" data-zoek="privacy-eisen bij een nieuw proces, project, aanbesteding of website drie stappenplannen in zes stappen (nieuw proces, gewijzigd proces, nieuw project) met doorlooptijden per stap, een standaardset van twaalf privacy-eisen voor het programma van eisen bij een aanbesteding plus zeven eisen voor zelfontwikkeling, en een checklist van negen punten voor een privacyvriendelijke website met een jaarlijkse controle van de cookiebanner. aanpak privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Privacy-eisen bij een nieuw proces, project, aanbesteding of website</span>
       <span class="tag tag-live">live</span>
@@ -694,7 +705,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 1</div>
     <div class="normen"><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacy/privacy-overeenkomsten/" data-vak="privacy" data-zoek="privacyovereenkomsten sluiten en controleren een procedure in vijf stappen voor alle privacyovereenkomsten (verwerkersovereenkomst, gezamenlijke verantwoordelijkheid, gegevensuitwisseling): rol bepalen, opstellen, reviewen, archiveren en jaarlijks controleren, met een extra checklist voor wpg-verwerkers. met eigen sjablonen voor een gegevensuitwisselingsovereenkomst tussen zelfstandige verantwoordelijken en een interne brp-gegevensleveringsovereenkomst, een ingevulde bijlage met beveiligingsmaatregelen en een toelichting op de bijlagen. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="privacy/privacy-overeenkomsten/" data-vak="privacy" data-zoek="privacyovereenkomsten sluiten en controleren een procedure in vijf stappen voor alle privacyovereenkomsten (verwerkersovereenkomst, gezamenlijke verantwoordelijkheid, gegevensuitwisseling): rol bepalen, opstellen, reviewen, archiveren en jaarlijks controleren, met een extra checklist voor wpg-verwerkers. met eigen sjablonen voor een gegevensuitwisselingsovereenkomst tussen zelfstandige verantwoordelijken en een interne brp-gegevensleveringsovereenkomst, een ingevulde bijlage met beveiligingsmaatregelen en een toelichting op de bijlagen. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Privacyovereenkomsten sluiten en controleren</span>
       <span class="tag tag-live">live</span>
@@ -703,7 +714,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 4</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="privacy/register-van-verwerkingen-beheren/" data-vak="privacy" data-zoek="het register van verwerkingen beheren en publiceren hoe een privacyteam vier registers van verwerkingen centraal beheert en publiceert, met de proceseigenaar als eindverantwoordelijke voor de actualiteit en een kennishouder die twee keer per jaar een controlemail krijgt. met een raci over elf taken en een invulhulp per veld, van risicoclassificatie en dpia-status tot algoritme en doorgifte buiten de eer. aanpak privacy avg wpg" data-barrieres="">
+  <a class="item" href="privacy/register-van-verwerkingen-beheren/" data-vak="privacy" data-zoek="het register van verwerkingen beheren en publiceren hoe een privacyteam vier registers van verwerkingen centraal beheert en publiceert, met de proceseigenaar als eindverantwoordelijke voor de actualiteit en een kennishouder die twee keer per jaar een controlemail krijgt. met een raci over elf taken en een invulhulp per veld, van risicoclassificatie en dpia-status tot algoritme en doorgifte buiten de eer. aanpak privacy avg wpg" data-barrieres="" data-normen="AVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Het register van verwerkingen beheren en publiceren</span>
       <span class="tag tag-live">live</span>
@@ -712,7 +723,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · aanpak · peildatum 2026-10-12 · in gebruik · route: Privacy officer stap 2</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="privacy/wet-politiegegevens/" data-vak="privacy" data-zoek="wet politiegegevens bij de gemeente: dpia, verbeterplan en privacyverklaring drie stukken voor gemeenten met boa&#x27;s: een dpia-sjabloon dat de wpg-artikelen naast de avg-structuur zet, een sjabloon voor een verbeterplan na een interne of externe wpg-audit, en een ingevulde privacyverklaring die per boa-domein uitlegt welke werkprocessen politiegegevens verwerken en welke gegevens dat zijn. sjabloon privacy wpg avg" data-barrieres="">
+  <a class="item" href="privacy/wet-politiegegevens/" data-vak="privacy" data-zoek="wet politiegegevens bij de gemeente: dpia, verbeterplan en privacyverklaring drie stukken voor gemeenten met boa&#x27;s: een dpia-sjabloon dat de wpg-artikelen naast de avg-structuur zet, een sjabloon voor een verbeterplan na een interne of externe wpg-audit, en een ingevulde privacyverklaring die per boa-domein uitlegt welke werkprocessen politiegegevens verwerken en welke gegevens dat zijn. sjabloon privacy wpg avg" data-barrieres="" data-normen="Wpg|AVG">
     <span class="itemtop">
       <span class="itemtitle">Wet politiegegevens bij de gemeente: DPIA, verbeterplan en privacyverklaring</span>
       <span class="tag tag-live">live</span>
@@ -721,7 +732,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · sjabloon · peildatum 2026-10-12 · in gebruik</div>
     <div class="normen"><span class="norm">Wpg</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="privacy/privacybeleid-en-handboek/" data-vak="privacy" data-zoek="privacybeleid en privacyhandboek van een regionale samenwerking het hele privacybeleid van een samenwerking van gemeenten in vijf lagen: een strategisch privacybeleid met besturingsmodel, het actuele privacybeleid (met hoofdstukken over de wpg en ai), een addendum waarmee de gemeenteraad het beleid voor zichzelf vaststelt, een beleid privacy by design met acht maatregelen en een formulier, en een privacyhandboek dat per onderwerp zegt wat een medewerker moet doen. beleid privacy avg uavg wpg" data-barrieres="">
+  <a class="item" href="privacy/privacybeleid-en-handboek/" data-vak="privacy" data-zoek="privacybeleid en privacyhandboek van een regionale samenwerking het hele privacybeleid van een samenwerking van gemeenten in vijf lagen: een strategisch privacybeleid met besturingsmodel, het actuele privacybeleid (met hoofdstukken over de wpg en ai), een addendum waarmee de gemeenteraad het beleid voor zichzelf vaststelt, een beleid privacy by design met acht maatregelen en een formulier, en een privacyhandboek dat per onderwerp zegt wat een medewerker moet doen. beleid privacy avg uavg wpg" data-barrieres="" data-normen="AVG|UAVG|Wpg">
     <span class="itemtop">
       <span class="itemtitle">Privacybeleid en privacyhandboek van een regionale samenwerking</span>
       <span class="tag tag-live">live</span>
@@ -730,7 +741,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · beleid · peildatum 2026-10-12 · in gebruik</div>
     <div class="normen"><span class="norm">AVG</span><span class="norm">UAVG</span><span class="norm">Wpg</span></div>
   </a>
-  <a class="item" href="privacy/dpia-uitvoeren/" data-vak="privacy" data-zoek="een dpia uitvoeren: wat er al ligt voor een dpia hoef je niets zelf te bouwen. het rijk heeft een invulhulp die de plichttoets uitrekent en het rijksmodel invult, de informatiebeveiligingsdienst heeft een handreiking met sjablonen en een bibliotheek met 27 uitgevoerde gemeentelijke dpia&#x27;s om van te lenen. deze wegwijzer zet ze in de volgorde waarin je ze gebruikt. referentie privacy avg" data-barrieres="">
+  <a class="item" href="privacy/dpia-uitvoeren/" data-vak="privacy" data-zoek="een dpia uitvoeren: wat er al ligt voor een dpia hoef je niets zelf te bouwen. het rijk heeft een invulhulp die de plichttoets uitrekent en het rijksmodel invult, de informatiebeveiligingsdienst heeft een handreiking met sjablonen en een bibliotheek met 27 uitgevoerde gemeentelijke dpia&#x27;s om van te lenen. deze wegwijzer zet ze in de volgorde waarin je ze gebruikt. referentie privacy avg" data-barrieres="" data-normen="AVG">
     <span class="itemtop">
       <span class="itemtitle">Een DPIA uitvoeren: wat er al ligt</span>
       <span class="tag tag-live">live</span>
@@ -739,7 +750,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">privacy · referentie · peildatum 2026-09-25 · concept</div>
     <div class="normen"><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="bcm/kritieke-processen-vaststellen/" data-vak="bcm" data-zoek="kritieke processen en herstelprioriteiten vaststellen hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert. met een classificatieschema in vijf niveaus voor beschikbaarheid, integriteit en vertrouwelijkheid (biv), met de vertaling naar hersteltijd (rto) en dataverlies (rpo). handleiding bcm iso 22301 bio2 nis2" data-barrieres="critical">
+  <a class="item" href="bcm/kritieke-processen-vaststellen/" data-vak="bcm" data-zoek="kritieke processen en herstelprioriteiten vaststellen hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert. met een classificatieschema in vijf niveaus voor beschikbaarheid, integriteit en vertrouwelijkheid (biv), met de vertaling naar hersteltijd (rto) en dataverlies (rpo). handleiding bcm iso 22301 bio2 nis2" data-barrieres="critical" data-normen="ISO 22301|BIO2|NIS2">
     <span class="itemtop">
       <span class="itemtitle">Kritieke processen en herstelprioriteiten vaststellen</span>
       <span class="tag tag-live">live</span>
@@ -748,7 +759,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · handleiding · peildatum 2026-08-31 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast · fundering · route: ISO stap 2, Eerste honderd dagen stap 3</div>
     <div class="normen"><span class="norm">ISO 22301</span><span class="norm">BIO2</span><span class="norm">NIS2</span></div>
   </a>
-  <a class="item" href="bcm/risicosessie-per-proces/" data-vak="bcm" data-zoek="een risicosessie per kritiek proces, met de proceseigenaar aan tafel een vast format voor een sessie van anderhalf uur met de proceseigenaar per kritiek proces. in drie stappen classificeer je het proces op beschikbaarheid, integriteit en vertrouwelijkheid, breng je de applicaties in kaart die het proces draaien, en leg je de procescontext vast met een canvas: ketenpartners, piekperiodes, wetgeving, persoonsgegevens. zo voer je de bedrijfsimpactanalyse uit met de lijn in plaats van voor de lijn. de uitkomst is de basis voor herstelafspraken met it-beheer, het bedrijfscontinuïteitsplan en de risicoanalyse onder bio 2.0 en de cyberbeveiligingswet. aanpak bcm bio2 iso 22301 cbw" data-barrieres="critical dependencies">
+  <a class="item" href="bcm/risicosessie-per-proces/" data-vak="bcm" data-zoek="een risicosessie per kritiek proces, met de proceseigenaar aan tafel een vast format voor een sessie van anderhalf uur met de proceseigenaar per kritiek proces. in drie stappen classificeer je het proces op beschikbaarheid, integriteit en vertrouwelijkheid, breng je de applicaties in kaart die het proces draaien, en leg je de procescontext vast met een canvas: ketenpartners, piekperiodes, wetgeving, persoonsgegevens. zo voer je de bedrijfsimpactanalyse uit met de lijn in plaats van voor de lijn. de uitkomst is de basis voor herstelafspraken met it-beheer, het bedrijfscontinuïteitsplan en de risicoanalyse onder bio 2.0 en de cyberbeveiligingswet. aanpak bcm bio2 iso 22301 cbw" data-barrieres="critical dependencies" data-normen="BIO2|ISO 22301|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Een risicosessie per kritiek proces, met de proceseigenaar aan tafel</span>
       <span class="tag tag-live">live</span>
@@ -757,7 +768,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · aanpak · peildatum 2026-10-20 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast, Breng kritieke systemen en leveranciers in samenhang in beeld · verdieping · hoort bij: Kritieke processen en herstelprioriteiten vaststellen</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 22301</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="bcm/bia-en-risicoanalyse-sjabloon/" data-vak="bcm" data-zoek="bia en risicoanalyse per kritieke dienst, een basissjabloon een basissjabloon voor een business impact analyse en een risicoanalyse dat elke overheidslaag kan gebruiken: een blad per dienst met identificatie, impact per tijdvenster, hersteleisen, afhankelijkheden en terugval, en een risicotabel met dezelfde impactschaal. met een vergelijking van tien bestaande formats, wat elk ervan mist, en de vier keuzes die je maakt voordat je het sjabloon invult. sjabloon bcm iso 22301 bio2 cbw" data-barrieres="critical">
+  <a class="item" href="bcm/bia-en-risicoanalyse-sjabloon/" data-vak="bcm" data-zoek="bia en risicoanalyse per kritieke dienst, een basissjabloon een basissjabloon voor een business impact analyse en een risicoanalyse dat elke overheidslaag kan gebruiken: een blad per dienst met identificatie, impact per tijdvenster, hersteleisen, afhankelijkheden en terugval, en een risicotabel met dezelfde impactschaal. met een vergelijking van tien bestaande formats, wat elk ervan mist, en de vier keuzes die je maakt voordat je het sjabloon invult. sjabloon bcm iso 22301 bio2 cbw" data-barrieres="critical" data-normen="ISO 22301|BIO2|Cbw">
     <span class="itemtop">
       <span class="itemtitle">BIA en risicoanalyse per kritieke dienst, een basissjabloon</span>
       <span class="tag tag-live">live</span>
@@ -766,7 +777,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · sjabloon · peildatum 2026-10-15 · concept · barriere: Stel kritieke processen en herstelprioriteiten vast · verdieping</div>
     <div class="normen"><span class="norm">ISO 22301</span><span class="norm">BIO2</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="bcm/uitwijk-regelen/" data-vak="bcm" data-zoek="uitwijk regelen voor kritieke diensten hoe je per kritieke dienst kiest wat er gebeurt als de normale voorziening wegvalt, met de nadruk op clouddiensten, data en leveranciers. vijf stappen van de hersteleis uit de bia naar een geteste uitwijkkeuze, met de uitwijkkaart als invulformat: een rij per dienst die laat zien of de gekozen vorm de hersteltijd haalt, wat contractueel geregeld is en wanneer er voor het laatst echt is uitgeweken. handleiding bcm bio2 cbw nis2 iso 22301" data-barrieres="restore dependencies">
+  <a class="item" href="bcm/uitwijk-regelen/" data-vak="bcm" data-zoek="uitwijk regelen voor kritieke diensten hoe je per kritieke dienst kiest wat er gebeurt als de normale voorziening wegvalt, met de nadruk op clouddiensten, data en leveranciers. vijf stappen van de hersteleis uit de bia naar een geteste uitwijkkeuze, met de uitwijkkaart als invulformat: een rij per dienst die laat zien of de gekozen vorm de hersteltijd haalt, wat contractueel geregeld is en wanneer er voor het laatst echt is uitgeweken. handleiding bcm bio2 cbw nis2 iso 22301" data-barrieres="restore dependencies" data-normen="BIO2|Cbw|NIS2|ISO 22301">
     <span class="itemtop">
       <span class="itemtitle">Uitwijk regelen voor kritieke diensten</span>
       <span class="tag tag-live">live</span>
@@ -775,7 +786,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · handleiding · peildatum 2026-10-15 · concept · barriere: Test herstel tegen de afgesproken RTO en RPO, Breng kritieke systemen en leveranciers in samenhang in beeld · verdieping</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">ISO 22301</span></div>
   </a>
-  <a class="item" href="bcm/bedrijfscontinuiteitsplan-sjabloon/" data-vak="bcm" data-zoek="bedrijfscontinuïteitsplan, een compact sjabloon een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ict eruit ligt: crisisteam, herstelvolgorde, opschaling, drie fasen, scenario&#x27;s, noodcommunicatie en meldingen, met bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. voor elke bestuurslaag, met een termenlijst. met een vragenlijst per kritiek proces langs zeven bronnen van verstoring, een ingevuld voorbeeld voor het klantcontactcentrum en een proceskaart voor het gemeentelijke calamiteitenteam. sjabloon bcm cbw nis2 bio2 iso 22301" data-barrieres="crisis">
+  <a class="item" href="bcm/bedrijfscontinuiteitsplan-sjabloon/" data-vak="bcm" data-zoek="bedrijfscontinuïteitsplan, een compact sjabloon een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ict eruit ligt: crisisteam, herstelvolgorde, opschaling, drie fasen, scenario&#x27;s, noodcommunicatie en meldingen, met bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. voor elke bestuurslaag, met een termenlijst. met een vragenlijst per kritiek proces langs zeven bronnen van verstoring, een ingevuld voorbeeld voor het klantcontactcentrum en een proceskaart voor het gemeentelijke calamiteitenteam. sjabloon bcm cbw nis2 bio2 iso 22301" data-barrieres="crisis" data-normen="Cbw|NIS2|BIO2|ISO 22301">
     <span class="itemtop">
       <span class="itemtitle">Bedrijfscontinuïteitsplan, een compact sjabloon</span>
       <span class="tag tag-live">live</span>
@@ -784,7 +795,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · sjabloon · peildatum 2026-10-15 · sjabloon · barriere: Oefen het ransomware- en crisisherstelplan · verdieping</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span><span class="norm">ISO 22301</span></div>
   </a>
-  <a class="item" href="bcm/calamiteitenteam-digitaal-opzetten/" data-vak="bcm" data-zoek="een digitaal calamiteitenteam opzetten startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit bestrijdt. rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij, en de opzet van een cyber- en it-calamiteitenplan: wanneer je opschalen moet, wie activeert en hoe het team zich verhoudt tot de crisisorganisatie. te beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen. handleiding bcm nis2 bio2 iso 22301" data-barrieres="crisis">
+  <a class="item" href="bcm/calamiteitenteam-digitaal-opzetten/" data-vak="bcm" data-zoek="een digitaal calamiteitenteam opzetten startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit bestrijdt. rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij, en de opzet van een cyber- en it-calamiteitenplan: wanneer je opschalen moet, wie activeert en hoe het team zich verhoudt tot de crisisorganisatie. te beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen. handleiding bcm nis2 bio2 iso 22301" data-barrieres="crisis" data-normen="NIS2|BIO2|ISO 22301">
     <span class="itemtop">
       <span class="itemtitle">Een digitaal calamiteitenteam opzetten</span>
       <span class="tag tag-live">live</span>
@@ -793,7 +804,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · handleiding · peildatum 2026-08-31 · sjabloon · barriere: Oefen het ransomware- en crisisherstelplan · alternatief</div>
     <div class="normen"><span class="norm">NIS2</span><span class="norm">BIO2</span><span class="norm">ISO 22301</span></div>
   </a>
-  <a class="item" href="bcm/bcm-voor-de-bestuurder/" data-vak="bcm" data-zoek="bcm uitleggen aan de bestuurder een twee-pager voor de ambtelijke top over wat bedrijfscontinuïteit is, wat de cbw, de wwke en de bio2 erbij zeggen en welke drie vragen een bestuurder stelt. met een werkinstructie om er met een ai-assistent een eigen versie van te maken, en zes vormen die je op hetzelfde materiaal kunt bouwen, van een kaartje met drie vragen tot een tafeloefening van 45 minuten. aanpak bcm cbw nis2 bio2 iso 22301" data-barrieres="">
+  <a class="item" href="bcm/bcm-voor-de-bestuurder/" data-vak="bcm" data-zoek="bcm uitleggen aan de bestuurder een twee-pager voor de ambtelijke top over wat bedrijfscontinuïteit is, wat de cbw, de wwke en de bio2 erbij zeggen en welke drie vragen een bestuurder stelt. met een werkinstructie om er met een ai-assistent een eigen versie van te maken, en zes vormen die je op hetzelfde materiaal kunt bouwen, van een kaartje met drie vragen tot een tafeloefening van 45 minuten. aanpak bcm cbw nis2 bio2 iso 22301" data-barrieres="" data-normen="Cbw|NIS2|BIO2|ISO 22301">
     <span class="itemtop">
       <span class="itemtitle">BCM uitleggen aan de bestuurder</span>
       <span class="tag tag-live">live</span>
@@ -802,7 +813,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">bcm · aanpak · peildatum 2026-10-15 · concept · route: Bestuurder stap 3</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span><span class="norm">ISO 22301</span></div>
   </a>
-  <a class="item" href="governance/val-ik-onder-de-cbw/" data-vak="governance" data-zoek="val ik onder de cbw? klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de cyberbeveiligingswet valt. loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. rekent in de browser, er gaat niets naar een server. sjabloon governance cbw nis2" data-barrieres="">
+  <a class="item" href="governance/val-ik-onder-de-cbw/" data-vak="governance" data-zoek="val ik onder de cbw? klikbare toets waarmee een gemeenschappelijke regeling of zbo zelf vaststelt of zij als overheidsinstantie onder de cyberbeveiligingswet valt. loopt de vier cumulatieve criteria langs, vraagt per antwoord om het bewijsstuk, en levert geen oordeel maar een ingevuld dossier met de punten die naar een jurist moeten. rekent in de browser, er gaat niets naar een server. sjabloon governance cbw nis2" data-barrieres="" data-normen="Cbw|NIS2">
     <span class="itemtop">
       <span class="itemtitle">Val ik onder de Cbw?</span>
       <span class="tag tag-live">live</span>
@@ -811,7 +822,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · sjabloon · peildatum 2026-08-31 · concept · route: CISO stap 2</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span></div>
   </a>
-  <a class="item" href="governance/cbw-meldplicht-inrichten/" data-vak="governance" data-zoek="de cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio hoe een gemeente de meldplicht en de registratieplicht onder de cyberbeveiligingswet in de praktijk regelt. een vastgestelde meldplichtprocedure met de drie drempelwaarden voor een significant incident (vier uur uitval, niet in de begroting op te vangen, ernstig letsel), de klok vanaf kennisname (24 uur waarschuwen, 72 uur melden, eindverslag na een maand), de informatieplicht aan inwoners, melden namens meerdere gemeenten met mandaat, en vier invulsjablonen. daarnaast de registratie bij het ncsc veld voor veld, met de redenering per antwoord. aanpak governance cbw nis2 bio2" data-barrieres="">
+  <a class="item" href="governance/cbw-meldplicht-inrichten/" data-vak="governance" data-zoek="de cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio hoe een gemeente de meldplicht en de registratieplicht onder de cyberbeveiligingswet in de praktijk regelt. een vastgestelde meldplichtprocedure met de drie drempelwaarden voor een significant incident (vier uur uitval, niet in de begroting op te vangen, ernstig letsel), de klok vanaf kennisname (24 uur waarschuwen, 72 uur melden, eindverslag na een maand), de informatieplicht aan inwoners, melden namens meerdere gemeenten met mandaat, en vier invulsjablonen. daarnaast de registratie bij het ncsc veld voor veld, met de redenering per antwoord. aanpak governance cbw nis2 bio2" data-barrieres="" data-normen="Cbw|NIS2|BIO2">
     <span class="itemtop">
       <span class="itemtitle">De Cbw-meldplicht en registratieplicht inrichten, voor een gemeente of een regio</span>
       <span class="tag tag-live">live</span>
@@ -820,7 +831,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-20 · in gebruik · route: CISO stap 4</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="governance/cbw-uitleggen-aan-het-mt/" data-vak="governance" data-zoek="de cyberbeveiligingswet uitgelegd aan het mt een sessie van twee uur voor het managementteam of directieteam van een gemeente over de cyberbeveiligingswet, naast de certificaattraining van het college. eerst de wet en de plichten op een rij, dan de tien vereisten van de zorgplicht, elk op een plek in de gemeente die iedereen herkent, van het gemaal tot de keukentafel. bij elk vereiste dezelfde drie vragen: welk risico, wie koos, waar staat het. een sjabloon met invulvelden en een eigen deel waar staan we nu. lesmateriaal governance cbw nis2 bio2" data-barrieres="">
+  <a class="item" href="governance/cbw-uitleggen-aan-het-mt/" data-vak="governance" data-zoek="de cyberbeveiligingswet uitgelegd aan het mt een sessie van twee uur voor het managementteam of directieteam van een gemeente over de cyberbeveiligingswet, naast de certificaattraining van het college. eerst de wet en de plichten op een rij, dan de tien vereisten van de zorgplicht, elk op een plek in de gemeente die iedereen herkent, van het gemaal tot de keukentafel. bij elk vereiste dezelfde drie vragen: welk risico, wie koos, waar staat het. een sjabloon met invulvelden en een eigen deel waar staan we nu. lesmateriaal governance cbw nis2 bio2" data-barrieres="" data-normen="Cbw|NIS2|BIO2">
     <span class="itemtop">
       <span class="itemtitle">De Cyberbeveiligingswet uitgelegd aan het MT</span>
       <span class="tag tag-live">live</span>
@@ -829,7 +840,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · lesmateriaal · peildatum 2026-10-29 · concept</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="governance/val-ik-onder-de-wwke/" data-vak="governance" data-zoek="valt een gemeente onder de wwke? de wet weerbaarheid kritieke entiteiten (wwke, de nederlandse uitwerking van de cer-richtlijn) geldt sinds 15 augustus 2026. een gemeente staat niet in de bijlage, want de sector overheid noemt alleen de centrale overheid, en zonder aanwijzing door een minister gelden er geen verplichtingen. twee routes verdienen wel een expliciete toets (wegbeheer en afvalwater), en één spoor verdient monitoring: een minister kan een extra sector aanwijzen. met de knip naar de cyberbeveiligingswet. referentie governance wwke cer cbw" data-barrieres="">
+  <a class="item" href="governance/val-ik-onder-de-wwke/" data-vak="governance" data-zoek="valt een gemeente onder de wwke? de wet weerbaarheid kritieke entiteiten (wwke, de nederlandse uitwerking van de cer-richtlijn) geldt sinds 15 augustus 2026. een gemeente staat niet in de bijlage, want de sector overheid noemt alleen de centrale overheid, en zonder aanwijzing door een minister gelden er geen verplichtingen. twee routes verdienen wel een expliciete toets (wegbeheer en afvalwater), en één spoor verdient monitoring: een minister kan een extra sector aanwijzen. met de knip naar de cyberbeveiligingswet. referentie governance wwke cer cbw" data-barrieres="" data-normen="Wwke|CER|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Valt een gemeente onder de Wwke?</span>
       <span class="tag tag-live">live</span>
@@ -838,7 +849,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · referentie · peildatum 2026-10-20 · concept</div>
     <div class="normen"><span class="norm">Wwke</span><span class="norm">CER</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="governance/aanbieder-onder-de-ai-act/" data-vak="governance" data-zoek="ben ik aanbieder onder de ai act? klikbare toets waarmee een gemeente per ai-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met ce-markering. levert een classificatiebesluit met onderbouwing. rekent in de browser. sjabloon governance ai act" data-barrieres="">
+  <a class="item" href="governance/aanbieder-onder-de-ai-act/" data-vak="governance" data-zoek="ben ik aanbieder onder de ai act? klikbare toets waarmee een gemeente per ai-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met ce-markering. levert een classificatiebesluit met onderbouwing. rekent in de browser. sjabloon governance ai act" data-barrieres="" data-normen="AI Act">
     <span class="itemtop">
       <span class="itemtitle">Ben ik aanbieder onder de AI Act?</span>
       <span class="tag tag-live">live</span>
@@ -847,7 +858,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · sjabloon · peildatum 2026-09-25 · concept</div>
     <div class="normen"><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="governance/beleidsset-informatiebeveiliging/" data-vak="governance" data-zoek="beleidsset informatiebeveiliging op bio 2.0, op maat gemaakt met contextvragen een beleidsset informatiebeveiliging voor de 21 bio 2.0-domeinen die je op maat maakt. beantwoord een paar contextvragen, zoals wie je it beheert, waar je systemen draaien en of je onder de cbw valt, en de generator stelt per domein een conceptbeleid samen met de regels die bij jouw organisatie passen. elke regel noemt de maatregel die hij invult, elk stuk heeft een controleraamwerk, en een test bewijst dat elke set alle 117 overheidsmaatregelen en 40 iso-beheersmaatregelen dekt, bij elk antwoord. zonder antwoorden lees je alle varianten naast elkaar. beleid governance bio2 iso 27001 iso 27002 cbw" data-barrieres="">
+  <a class="item" href="governance/beleidsset-informatiebeveiliging/" data-vak="governance" data-zoek="beleidsset informatiebeveiliging op bio 2.0, op maat gemaakt met contextvragen een beleidsset informatiebeveiliging voor de 21 bio 2.0-domeinen die je op maat maakt. beantwoord een paar contextvragen, zoals wie je it beheert, waar je systemen draaien en of je onder de cbw valt, en de generator stelt per domein een conceptbeleid samen met de regels die bij jouw organisatie passen. elke regel noemt de maatregel die hij invult, elk stuk heeft een controleraamwerk, en een test bewijst dat elke set alle 117 overheidsmaatregelen en 40 iso-beheersmaatregelen dekt, bij elk antwoord. zonder antwoorden lees je alle varianten naast elkaar. beleid governance bio2 iso 27001 iso 27002 cbw" data-barrieres="" data-normen="BIO2|ISO 27001|ISO 27002|Cbw">
     <span class="itemtop">
       <span class="itemtitle">Beleidsset informatiebeveiliging op BIO 2.0, op maat gemaakt met contextvragen</span>
       <span class="tag tag-live">live</span>
@@ -856,7 +867,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · beleid · peildatum 2026-10-14 · concept · route: ISO stap 4, Eerste honderd dagen stap 6</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">ISO 27002</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="governance/quantumveilig-per-laag/" data-vak="governance" data-zoek="quantumveilig per laag, wat bestuur, directie, ciso, it en inkoop nu doen wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. met per laag een set platen om het gesprek te openen. aanpak governance bio2 cbw nis2 avg" data-barrieres="">
+  <a class="item" href="governance/quantumveilig-per-laag/" data-vak="governance" data-zoek="quantumveilig per laag, wat bestuur, directie, ciso, it en inkoop nu doen wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. met per laag een set platen om het gesprek te openen. aanpak governance bio2 cbw nis2 avg" data-barrieres="" data-normen="BIO2|Cbw|NIS2|AVG">
     <span class="itemtop">
       <span class="itemtitle">Quantumveilig per laag, wat bestuur, directie, CISO, IT en inkoop nu doen</span>
       <span class="tag tag-live">live</span>
@@ -865,7 +876,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-28 · concept · route: Bestuurder stap 5</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="governance/bio2-implementeren/" data-vak="governance" data-zoek="bio 2.0 invoeren, een plan van aanpak met urenraming hoe een samenwerking van gemeenten de invoering van bio 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema&#x27;s met de afdeling die eigenaar is. met de randvoorwaarden en de zes projectrisico&#x27;s die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen. aanpak governance bio2 iso 27001 cbw" data-barrieres="">
+  <a class="item" href="governance/bio2-implementeren/" data-vak="governance" data-zoek="bio 2.0 invoeren, een plan van aanpak met urenraming hoe een samenwerking van gemeenten de invoering van bio 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema&#x27;s met de afdeling die eigenaar is. met de randvoorwaarden en de zes projectrisico&#x27;s die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen. aanpak governance bio2 iso 27001 cbw" data-barrieres="" data-normen="BIO2|ISO 27001|Cbw">
     <span class="itemtop">
       <span class="itemtitle">BIO 2.0 invoeren, een plan van aanpak met urenraming</span>
       <span class="tag tag-live">live</span>
@@ -874,7 +885,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-14 · concept · route: Eerste honderd dagen stap 5</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="governance/bio2-deel1-in-het-ims/" data-vak="governance" data-zoek="bio 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen bio 2.0 deel 1 vraagt een managementsysteem volgens iso 27001, en de bio zegt zelf dat je security, privacy en continuïteit in één systeem mag onderbrengen met aparte maatregelensets. deze aanpak laat zien hoe dat werkt, beantwoordt het bezwaar dat de drie disciplines niet te verenigen zijn, brengt de vijftien producten uit een gangbaar plan van aanpak terug tot negen artefacten, geeft een dekkingsmatrix per eis van deel 1 en de zeven beslispunten die je moet doorhakken. met sjablonen voor contextanalyse, risicomanagementbeleid, doelstellingen en kpi&#x27;s, intern auditprogramma en de procedure voor afwijkingen en correctieve maatregelen. aanpak governance bio2 iso 27001 cbw iso 22301 avg" data-barrieres="">
+  <a class="item" href="governance/bio2-deel1-in-het-ims/" data-vak="governance" data-zoek="bio 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen bio 2.0 deel 1 vraagt een managementsysteem volgens iso 27001, en de bio zegt zelf dat je security, privacy en continuïteit in één systeem mag onderbrengen met aparte maatregelensets. deze aanpak laat zien hoe dat werkt, beantwoordt het bezwaar dat de drie disciplines niet te verenigen zijn, brengt de vijftien producten uit een gangbaar plan van aanpak terug tot negen artefacten, geeft een dekkingsmatrix per eis van deel 1 en de zeven beslispunten die je moet doorhakken. met sjablonen voor contextanalyse, risicomanagementbeleid, doelstellingen en kpi&#x27;s, intern auditprogramma en de procedure voor afwijkingen en correctieve maatregelen. aanpak governance bio2 iso 27001 cbw iso 22301 avg" data-barrieres="" data-normen="BIO2|ISO 27001|Cbw|ISO 22301|AVG">
     <span class="itemtop">
       <span class="itemtitle">BIO 2.0 deel 1 in één managementsysteem, met negen artefacten en vijf sjablonen</span>
       <span class="tag tag-live">live</span>
@@ -883,7 +894,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-20 · concept · hoort bij: BIO 2.0 invoeren, een plan van aanpak met urenraming</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">Cbw</span><span class="norm">ISO 22301</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="governance/risicogestuurd-managementsysteem/" data-vak="governance" data-zoek="grc voor security, privacy en continuïteit: één risicogestuurde pdca-ronde wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. een grc-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een ai-assistent als lezer binnen vaste regels. met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register. aanpak governance bio2 iso 27001 avg iso 22301 cbw" data-barrieres="owner treatment">
+  <a class="item" href="governance/risicogestuurd-managementsysteem/" data-vak="governance" data-zoek="grc voor security, privacy en continuïteit: één risicogestuurde pdca-ronde wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. een grc-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een ai-assistent als lezer binnen vaste regels. met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register. aanpak governance bio2 iso 27001 avg iso 22301 cbw" data-barrieres="owner treatment" data-normen="BIO2|ISO 27001|AVG|ISO 22301|Cbw">
     <span class="itemtop">
       <span class="itemtitle">GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</span>
       <span class="tag tag-live">live</span>
@@ -892,7 +903,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · versie 2026-10 · concept · barriere: Leg leveranciersrisico’s voor aan de risicohouder, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · verdieping · route: CISO stap 6</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">AVG</span><span class="norm">ISO 22301</span><span class="norm">Cbw</span></div>
   </a>
-  <a class="item" href="governance/ims-rapportage/" data-vak="governance" data-zoek="rapporteren over security, privacy en continuïteit uit één bronrapportage een halfjaarlijkse ims-rapportage over informatiebeveiliging, privacy en bedrijfscontinuïteit samen, uit één bronrapportage met drie leesniveaus, die in januari ook de directiebeoordeling is, zodat directie, stuurgroep, college en raad hetzelfde stuk lezen en alleen de diepte verschilt. met een matrix van negen kpi&#x27;s (opzet, bestaan en werking per domein), de regel dat onbekend geen nul is, een vaste cyclus van plan tot afsluiting met acht kwaliteitsregels, en sjablonen voor bronrapportage, expert view en overdracht naar het volgende halfjaar. aanpak governance bio2 iso 27001 iso 22301 avg" data-barrieres="">
+  <a class="item" href="governance/ims-rapportage/" data-vak="governance" data-zoek="rapporteren over security, privacy en continuïteit uit één bronrapportage een halfjaarlijkse ims-rapportage over informatiebeveiliging, privacy en bedrijfscontinuïteit samen, uit één bronrapportage met drie leesniveaus, die in januari ook de directiebeoordeling is, zodat directie, stuurgroep, college en raad hetzelfde stuk lezen en alleen de diepte verschilt. met een matrix van negen kpi&#x27;s (opzet, bestaan en werking per domein), de regel dat onbekend geen nul is, een vaste cyclus van plan tot afsluiting met acht kwaliteitsregels, en sjablonen voor bronrapportage, expert view en overdracht naar het volgende halfjaar. aanpak governance bio2 iso 27001 iso 22301 avg" data-barrieres="" data-normen="BIO2|ISO 27001|ISO 22301|AVG">
     <span class="itemtop">
       <span class="itemtitle">Rapporteren over security, privacy en continuïteit uit één bronrapportage</span>
       <span class="tag tag-live">live</span>
@@ -901,7 +912,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-20 · concept · hoort bij: GRC voor security, privacy en continuïteit: één risicogestuurde PDCA-ronde</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">ISO 22301</span><span class="norm">AVG</span></div>
   </a>
-  <a class="item" href="governance/ai-beleid/" data-vak="governance" data-zoek="ai-beleid van een regionale samenwerking compleet ai-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, ai-geletterdheid. acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. beleid governance ai act avg bio2" data-barrieres="">
+  <a class="item" href="governance/ai-beleid/" data-vak="governance" data-zoek="ai-beleid van een regionale samenwerking compleet ai-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, ai-geletterdheid. acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen. beleid governance ai act avg bio2" data-barrieres="" data-normen="AI Act|AVG|BIO2">
     <span class="itemtop">
       <span class="itemtitle">AI-beleid van een regionale samenwerking</span>
       <span class="tag tag-live">live</span>
@@ -910,7 +921,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · beleid · versie concept 1.0, 2026-08 · concept</div>
     <div class="normen"><span class="norm">AI Act</span><span class="norm">AVG</span><span class="norm">BIO2</span></div>
   </a>
-  <a class="item" href="governance/beleid-als-code/" data-vak="governance" data-zoek="beleid als code, met een ai-agent die configuratie beheert onder menselijke goedkeuring de klassieke keten van wet naar beleid naar configuratie faalt in de middelste laag, want beleidstekst heeft zelden het detail om een configuratie af te dwingen. policy-as-code draait de pijl om: de configuratie in een repository is de bron van waarheid, en de leesbare beleidsteksten, beheerdocumenten en de bewijsmapping voor de auditor worden eruit gegenereerd, zodat configuratiebeheer en wijzigingsbeheer de beleidscyclus worden. met een model van vier lagen, een indeling van de repository, zes spelregels voor agentic ai met systeemtoegang (alleen configuratie, eigen identiteit, plan en apply met menselijke goedkeuring), de volgorde privacy en medezeggenschap, en een pilot op een logplatform. aanpak governance bio2 cbw avg ai act" data-barrieres="">
+  <a class="item" href="governance/beleid-als-code/" data-vak="governance" data-zoek="beleid als code, met een ai-agent die configuratie beheert onder menselijke goedkeuring de klassieke keten van wet naar beleid naar configuratie faalt in de middelste laag, want beleidstekst heeft zelden het detail om een configuratie af te dwingen. policy-as-code draait de pijl om: de configuratie in een repository is de bron van waarheid, en de leesbare beleidsteksten, beheerdocumenten en de bewijsmapping voor de auditor worden eruit gegenereerd, zodat configuratiebeheer en wijzigingsbeheer de beleidscyclus worden. met een model van vier lagen, een indeling van de repository, zes spelregels voor agentic ai met systeemtoegang (alleen configuratie, eigen identiteit, plan en apply met menselijke goedkeuring), de volgorde privacy en medezeggenschap, en een pilot op een logplatform. aanpak governance bio2 cbw avg ai act" data-barrieres="" data-normen="BIO2|Cbw|AVG|AI Act">
     <span class="itemtop">
       <span class="itemtitle">Beleid als code, met een AI-agent die configuratie beheert onder menselijke goedkeuring</span>
       <span class="tag tag-live">live</span>
@@ -919,7 +930,7 @@ dan is dat een uitnodiging en geen fout.</p>
     <div class="meta">governance · aanpak · peildatum 2026-10-20 · concept</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">AVG</span><span class="norm">AI Act</span></div>
   </a>
-  <a class="item" href="governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/" data-vak="governance" data-zoek="zes hulpmiddelen voor apparatuur, toegang en leveranciers losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. een reglement voor it-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een assurance-verklaring (isae 3402 of soc 2) van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor microsoft defender met een raci tussen gemeente en beheerpartij. per hulpmiddel staat erbij bij welke bio 2.0-maatregel het hoort. sjabloon governance bio2 avg" data-barrieres="technicalvendor edr">
+  <a class="item" href="governance/hulpmiddelen-toegang-apparatuur-en-leveranciers/" data-vak="governance" data-zoek="zes hulpmiddelen voor apparatuur, toegang en leveranciers losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. een reglement voor it-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een assurance-verklaring (isae 3402 of soc 2) van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor microsoft defender met een raci tussen gemeente en beheerpartij. per hulpmiddel staat erbij bij welke bio 2.0-maatregel het hoort. sjabloon governance bio2 avg" data-barrieres="technicalvendor edr" data-normen="BIO2|AVG">
     <span class="itemtop">
       <span class="itemtitle">Zes hulpmiddelen voor apparatuur, toegang en leveranciers</span>
       <span class="tag tag-live">live</span>
@@ -1465,6 +1476,83 @@ schrijfrechten: GitHub maakt van je wijziging automatisch een voorstel.</p>
   keuze.addEventListener('change', pas);
   balk.hidden = false;
   pas();
+})();
+</script>
+<script>
+(function () {
+  var balk = document.getElementById('profielbalk');
+  var blok = document.getElementById('profielregels');
+  if (!balk || !blok) return;
+  var regels = [], profiel = {};
+  try { regels = JSON.parse(blok.textContent) || []; } catch (e) { return; }
+  try { profiel = JSON.parse(localStorage.getItem('commons-profiel') || '{}') || {}; } catch (e) { profiel = {}; }
+  if (!Object.keys(profiel).length) return;
+  var uit = false;
+  try { uit = sessionStorage.getItem('commons-profiel-sortering') === 'uit'; } catch (e) {}
+
+  function lijst(w) { return Array.isArray(w) ? w : (w == null ? [] : [w]); }
+  function geldt(r) {
+    return Object.keys(r.als || {}).some(function (vraag) {
+      var antw = lijst(profiel[vraag]);
+      return (r.als[vraag] || []).some(function (a) { return antw.indexOf(a) !== -1; });
+    });
+  }
+  var actief = regels.filter(geldt);
+  if (!actief.length) return;
+
+  function woorden(s) { return (s || '').split(' ').filter(function (x) { return x; }); }
+  function raakt(kaart, r) {
+    var d = r.dan || {};
+    var normen = (kaart.getAttribute('data-normen') || '').split('|');
+    var bar = woorden(kaart.getAttribute('data-barrieres'));
+    if (d.vakgebied && kaart.getAttribute('data-vak') === d.vakgebied) return true;
+    if ((d.normen || []).some(function (n) { return normen.indexOf(n) !== -1; })) return true;
+    if ((d.barrieres || []).some(function (b) { return bar.indexOf(b) !== -1; })) return true;
+    return false;
+  }
+
+  var grids = [].slice.call(document.querySelectorAll('.grid'));
+  var eerst = 0;
+  grids.forEach(function (grid) {
+    var kaarten = [].slice.call(grid.querySelectorAll('a.item'));
+    var passend = [];
+    kaarten.forEach(function (k) {
+      var r = actief.filter(function (x) { return raakt(k, x); })[0];
+      if (r) passend.push({ kaart: k, regel: r });
+    });
+    if (!passend.length || uit) return;
+    // Eerst de passende kaarten in hun eigen volgorde, dan de rest in de volgorde van de redactie.
+    var voor = passend.map(function (p) { return p.kaart; });
+    passend.forEach(function (p) {
+      var et = document.createElement('span');
+      et.className = 'profieletiket';
+      et.textContent = 'Past bij je profiel: ' + p.regel.waarom;
+      p.kaart.appendChild(et);
+    });
+    voor.concat(kaarten.filter(function (k) { return voor.indexOf(k) === -1; }))
+      .forEach(function (k) { grid.appendChild(k); });
+    eerst += passend.length;
+  });
+
+  function regel(tekst) { var p = document.createElement('p'); p.textContent = tekst; balk.appendChild(p); return p; }
+  function link(p, tekst, href) { var a = document.createElement('a'); a.href = href; a.textContent = tekst; p.appendChild(a); }
+  function knop(p, tekst, f) { var b = document.createElement('button'); b.type = 'button'; b.textContent = tekst; b.addEventListener('click', f); p.appendChild(b); }
+
+  var kop = regel(uit ? 'Sorteren op je profiel staat uit voor deze sessie. '
+                      : (eerst ? 'Gesorteerd op je profiel: ' + eerst + (eerst === 1 ? ' stuk' : ' stukken') + ' eerst. '
+                               : 'Je profiel raakt hier geen stukken; de volgorde is de gewone. '));
+  link(kop, 'Profiel aanpassen', '/profiel/');
+  knop(kop, uit ? 'Weer sorteren' : 'Gewone volgorde', function () {
+    try { sessionStorage.setItem('commons-profiel-sortering', uit ? 'aan' : 'uit'); } catch (e) {}
+    location.reload();
+  });
+  actief.forEach(function (r) {
+    var d = r.dan || {};
+    var doel = d.situatie || d.route;
+    if (doel) { var p = regel(r.waarom + ' '); link(p, 'Naar de route', 'https://security-commons-nl.github.io/#route-' + doel); }
+    (d.instrumenten || []).forEach(function (i) { var p = regel(r.waarom + ' '); link(p, i.titel, i.url); });
+  });
+  balk.hidden = false;
 })();
 </script>
 
