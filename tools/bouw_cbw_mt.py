@@ -582,13 +582,24 @@ padding:.8rem .9rem;background:rgba(255,255,255,.03);display:flex;flex-direction
 .drie{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem .9rem;font-size:1.05rem;max-width:40rem}
 .drie dt{color:var(--oranje);font-weight:700;white-space:nowrap}
 .drie dd{margin:0}
+.keuzevraag{font-size:1.3rem;line-height:1.35;margin:.2rem 0 .4rem;max-width:30rem}
+.keuzevraag b{display:block;color:var(--oranje);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.onthul-knop.extra{background:transparent;color:var(--licht);border:1px solid var(--licht);font-size:.9rem;
+padding:.35rem .9rem;margin-top:1rem}
+.onthul.extra{font-size:.9rem;margin-top:.6rem;line-height:1.4}
+.onthul.extra .drie{font-size:.9rem;gap:.2rem .8rem}
+.onthul.extra ul{list-style:none;padding:0;margin:.4rem 0 0}
+.onthul.extra li{font-size:.9rem;margin:.3rem 0;padding:.15rem 0 .15rem .8rem}
 .wettekst{color:var(--licht);font-size:.95rem;font-style:italic;margin:.2rem 0 0}
 .refrein{margin:1.6rem 0 0;color:var(--oranje);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
 .bron{margin:.5rem 0 0;color:var(--licht);font-size:.8rem}
 .stand{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.6rem;max-width:56rem}
 .stand.tien{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 1.4rem}
 .standregel{display:grid;grid-template-columns:auto 1fr;gap:.1rem .7rem;align-items:baseline;
-border-bottom:1px solid rgba(201,214,228,.25);padding:.35rem 0}
+border-bottom:1px solid rgba(201,214,228,.25);padding:.3rem 0;line-height:1.35}
+.stand.tien .standregel{padding:.2rem 0}
+.stand.tien .standtekst{font-size:.88rem}
+.p-stand h2{margin-bottom:.6rem}
 .standkop{font-weight:700}
 .standtekst{grid-column:2;color:var(--licht);font-size:.95rem}
 .stip{width:1rem;height:1rem;border-radius:50%;display:inline-block;align-self:center;border:2px solid var(--licht)}
@@ -637,7 +648,7 @@ document.addEventListener('keydown',function(ev){
 if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
 var t=ev.target&&ev.target.tagName;
 if(['ArrowDown','ArrowRight','PageDown',' '].indexOf(ev.key)>-1){
-var p=platen[huidig],l=p.querySelector('.onthul');
+var p=platen[huidig],l=p.querySelector('.onthul:not(.extra)');
 if(ev.key!=='PageDown'&&l&&l.hidden){onthul(p,true);}else{ga(huidig+1);}ev.preventDefault();}
 else if(['ArrowUp','ArrowLeft','PageUp'].indexOf(ev.key)>-1){ga(huidig-1);ev.preventDefault();}
 else if(ev.key==='Home'){ga(0);ev.preventDefault();}
@@ -725,14 +736,21 @@ def plaat_html(nr: int, totaal: int, plaat: dict, data: dict, invul: dict) -> st
     elif soort == "eis":
         chips = "".join(f'<span class="{"aan" if k in plaat["biv"] else ""}">{k} &middot; {BIV[k]}</span>'
                         for k in BIV)
-        drie = (f'<dl class="drie"><dt>Wat als</dt><dd>{e(plaat["watals"])}</dd>'
-                f'<dt>De keuze</dt><dd>{e(plaat["keuze"])}</dd>'
-                f'<dt>Waar gepast</dt><dd>{e(plaat["gepast"])}</dd></dl>')
-        wet = dict(plaat, onthul=[f'De wet: {plaat["wet"]}'] + plaat.get("onthul", []))
+        # Op de plaat alleen kop, kenmerken en de keuzevraag. De rest staat achter een knop: reserve voor de
+        # spreker en voor wie meer wil weten. De pijl bladert op deze platen door, de knop opent met O of klik.
+        lokaal = "".join(f'<li class="lokaal">{e(r)}</li>' for r in plaat.get("_lokaal", []))
+        extra = "".join(f"<li>{e(r)}</li>" for r in plaat.get("onthul", []))
+        uitleg = (f'<button type="button" class="onthul-knop extra" aria-expanded="false" aria-controls="o{nr}" '
+                  f'data-label="Meer uitleg">Meer uitleg</button>'
+                  f'<div class="onthul extra" id="o{nr}" hidden>'
+                  f'<dl class="drie"><dt>Wat als</dt><dd>{e(plaat["watals"])}</dd>'
+                  f'<dt>Bijvoorbeeld</dt><dd>{e(plaat["gepast"])}</dd>'
+                  f'<dt>De wet</dt><dd>{e(plaat["wet"])}</dd></dl>'
+                  f'<ul>{extra}{lokaal}</ul></div>')
         binnen = (f'<div class="raster"><div class="beeld-svg">{BEELDEN[plaat["beeld"]]()}</div>'
                   f'<div class="tekst"><p class="eiskop">Zorgplicht <b>{e(plaat["letter"])}</b> van a tot j '
-                  f'&middot; {e(plaat["proces"])}</p><h2>{kop}</h2><div class="biv">{chips}</div>{drie}'
-                  f'{onthul_html(wet, nr, "Wat de wet vraagt")}</div></div>')
+                  f'&middot; {e(plaat["proces"])}</p><h2>{kop}</h2><div class="biv">{chips}</div>'
+                  f'<p class="keuzevraag"><b>De keuze</b>{e(plaat["keuze"])}</p>{uitleg}</div></div>')
         refreinregel = f'<p class="refrein">{e(refrein)}</p>'
     elif soort == "stand":
         legenda = "".join(f"<span>{stip(k)}{e(t)}</span>" for k, t in STATUS.items())
