@@ -50,7 +50,9 @@ import huisstijl  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 ITEM = ROOT / "governance" / "beleidsset-informatiebeveiliging"
 BOUWSTENEN = ITEM / "data"
-PROFIEL = ITEM / "profiel.json"
+# Het profielschema is sinds 29-10-2026 van de hele commons en staat op de root van de kennisbank (stap 9).
+PROFIEL = ROOT / "profiel.json"
+PROFIEL_LIVE = "https://security-commons-nl.github.io/kennisbank/profiel.json"
 MAATREGELEN = BOUWSTENEN / "bio2-maatregelen.json"
 DATA = ITEM / "beleidsset.json"
 PAGINA = ITEM / "beleidsset-generator.html"
@@ -159,7 +161,8 @@ def parse_bouwsteen(tekst: str, vragen: dict, waar: str) -> dict:
 
 def laad(map_: Path = ITEM) -> dict:
     """Profiel, maatregelen en bouwstenen in één object; dit gaat ook als data naar de pagina."""
-    profiel = lees_json(map_ / "profiel.json")
+    # Een losse map (tests) mag een eigen profiel.json meebrengen; anders geldt het schema van de commons.
+    profiel = lees_json(map_ / "profiel.json" if (map_ / "profiel.json").exists() else PROFIEL)
     # Een subvraag (zoals eigen apparaten onder werkplek) wordt een gewone vraag direct na zijn hoofdvraag,
     # zodat een bouwsteen er een blok aan kan hangen en de pagina hem gewoon toont.
     vlak = []

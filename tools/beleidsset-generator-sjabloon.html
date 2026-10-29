@@ -63,7 +63,7 @@ op BIO 2.0 voor de eigen organisatie. Het formulier hierboven werkt alleen in ee
 bestanden hieronder. Werk zo:</p>
 <ol>
 <li><strong>Vraag eerst uit.</strong> Stel de contextvragen uit
-<a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/profiel.json">profiel.json</a>
+<a href="https://security-commons-nl.github.io/kennisbank/profiel.json">profiel.json</a>
 (veld <code>vragen</code>, met vaste antwoorden per vraag). Stel ze in kleine groepjes, en sla over wat de gebruiker
 al vertelde. Geen vraag is verplicht; noteer welke open blijven.</li>
 <li><strong>Vraag welke stukken.</strong> De set heeft 21 stukken: het strategisch informatiebeveiligingsbeleid en twintig
@@ -129,7 +129,16 @@ var DATA = /*DATA*/;
   var velden = document.getElementById("velden"), uitkomst = document.getElementById("uitkomst");
   var lijst = document.getElementById("lijst"), stukEl = document.getElementById("stuk");
   var set = null, gekozen = null;
-  var OPSLAG = "beleidsset-profiel";
+  // Het profiel is van de hele commons (plan de site is het product, stap 9): één bewaarnaam voor alle
+  // pagina's op dit domein, in te vullen hier of op /profiel/. Een profiel onder de oude naam van de
+  // beleidsset wordt een keer overgenomen.
+  var OPSLAG = "commons-profiel";
+  try {
+    if (!localStorage.getItem(OPSLAG) && localStorage.getItem("beleidsset-profiel")) {
+      localStorage.setItem(OPSLAG, localStorage.getItem("beleidsset-profiel"));
+      localStorage.removeItem("beleidsset-profiel");
+    }
+  } catch (e) {}
 
   function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function inline(s) {

@@ -79,7 +79,7 @@ NL = chr(10)
 # tooling (.git, .pytest_cache, .venv) en telt nooit als inhoud.
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 # `.git` is in een git-worktree een bestand in plaats van een map; het is tooling, geen inhoud.
-ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
+ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore", "profiel.json",
                      ".nojekyll", "handelingsperspectief.json", "llms.txt", "sitemap.xml", "bronnen.json", ".git", "routes.json"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
