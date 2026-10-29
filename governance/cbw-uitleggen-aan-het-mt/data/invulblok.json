@@ -1,0 +1,36 @@
+{
+  "toelichting": "Kopieer dit bestand, vul het in voor je eigen organisatie en draai: python tools/bouw_cbw_mt.py --invul jouw-invulblok.json --uit jouw-platen.html. Lege velden blijven op de platen zichtbaar als invulveld. Status is een van: groen, oranje, rood, onbekend. Een foto is een pad ten opzichte van dit bestand (jpg of png); hij gaat in de pagina zelf, dus houd hem klein.",
+  "gemeente": "",
+  "datum": "",
+  "contact": "",
+  "fotos": {
+    "gemeentehuis": "",
+    "proces": ""
+  },
+  "stand": {
+    "plichten": {
+      "registratie": {"status": "onbekend", "tekst": ""},
+      "contactpersonen": {"status": "onbekend", "tekst": ""},
+      "meldroute": {"status": "onbekend", "tekst": ""},
+      "college": {"status": "onbekend", "tekst": ""}
+    },
+    "zorgplicht": {
+      "a": {"status": "onbekend", "tekst": ""},
+      "b": {"status": "onbekend", "tekst": ""},
+      "c": {"status": "onbekend", "tekst": ""},
+      "d": {"status": "onbekend", "tekst": ""},
+      "e": {"status": "onbekend", "tekst": ""},
+      "f": {"status": "onbekend", "tekst": ""},
+      "g": {"status": "onbekend", "tekst": ""},
+      "h": {"status": "onbekend", "tekst": ""},
+      "i": {"status": "onbekend", "tekst": ""},
+      "j": {"status": "onbekend", "tekst": ""}
+    },
+    "processen": {
+      "lijst": {"status": "onbekend", "tekst": ""},
+      "eigenaren": {"status": "onbekend", "tekst": ""},
+      "hersteltijden": {"status": "onbekend", "tekst": ""},
+      "afstemming": {"status": "onbekend", "tekst": ""}
+    }
+  }
+}

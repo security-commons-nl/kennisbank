@@ -112,6 +112,9 @@ for (const [term, map] of [
   ['ims', 'ims-rapportage'], ['bronrapportage', 'ims-rapportage'], ['directiebeoordeling', 'ims-rapportage'], ['kpi', 'ims-rapportage'],
   ['policy-as-code', 'beleid-als-code'], ['beleid als code', 'beleid-als-code'], ['configuratiebeheer', 'beleid-als-code'],
   ['agentic', 'beleid-als-code'], ['logplatform', 'beleid-als-code'], ['wijzigingsbeheer', 'beleid-als-code'],
+  ['mt', 'cbw-uitleggen-aan-het-mt'], ['managementteam cbw', 'cbw-uitleggen-aan-het-mt'],
+  ['directieteam', 'cbw-uitleggen-aan-het-mt'], ['dt cbw', 'cbw-uitleggen-aan-het-mt'],
+  ['training cbw', 'cbw-uitleggen-aan-het-mt'], ['zorgplicht', 'cbw-uitleggen-aan-het-mt'],
 ]) toets(`"${term}" vindt ${map}`, vindt(term, map), zoek(term).kaarten.join(' | '));
 
 // Samenwerking met het barrierefilter.

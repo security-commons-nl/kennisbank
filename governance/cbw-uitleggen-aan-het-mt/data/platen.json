@@ -1,0 +1,343 @@
+{
+  "toelichting": "Bron van de platen bij De Cyberbeveiligingswet uitgelegd aan het MT. tools/bouw_cbw_mt.py maakt hieruit platen.html, draaiboek.md en de losse beelden in img/. Tekst tussen accolades, zoals {gemeente}, is een invulveld: zie data/invulblok.json. Een plaat met soort eis is een van de tien vereisten uit de zorgplicht.",
+  "titel": "De Cyberbeveiligingswet uitgelegd aan het MT",
+  "refrein": "Welk risico? Wie koos? Waar staat het?",
+  "antwoordlijnen": [
+    ["Zijn wij als MT aansprakelijk?", "De wet richt de plichten op de organisatie en op het bestuur: het college keurt de maatregelen goed en volgt de training. Het MT staat niet in de wet, maar voert de maatregelen uit waarvoor het college tekent. Daar zit het gewicht."],
+    ["Moeten wij ook een certificaat halen?", "Nee. De trainingsplicht met certificaat geldt de leden van het bestuur, voor een gemeente het college. Deze sessie is geen certificaattraining."],
+    ["Wat moeten onze medewerkers melden?", "Wat ze nu ook melden, bij het eigen meldpunt of de servicedesk. De wettelijke melding doet de organisatie, binnen 24 uur een waarschuwing en binnen 72 uur een melding."],
+    ["Moet alles nu meteen op orde?", "De plicht geldt nu. Wat passend is, hangt aan het risico. Begin bij de kritieke processen en leg vast wat je kiest en waarom."],
+    ["Is dit niet gewoon de BIO?", "Grotendeels wel. De regeling sector overheid wijst de BIO2 aan als norm. Nieuw is dat het nu wettelijk is, dat er een toezichthouder is, en dat het college de maatregelen goedkeurt."]
+  ],
+  "delen": [
+    {"nr": 1, "naam": "De wet"},
+    {"nr": 2, "naam": "De plichten"},
+    {"nr": 3, "naam": "De zorgplicht"},
+    {"nr": 4, "naam": "Waar staan we nu?"},
+    {"nr": 5, "naam": "Wat we vragen"}
+  ],
+  "platen": [
+    {
+      "deel": 1, "soort": "titel", "minuten": 5,
+      "kop": "De Cyberbeveiligingswet in {gemeente}",
+      "tekst": "Voor het managementteam. Wat de wet van de organisatie vraagt, en waarom alles om één vraag draait.",
+      "foto": "gemeentehuis",
+      "notitie": "Voorstellen en het doel van de sessie: na afloop weet het MT wat de wet vraagt en welke keuzes bij het MT liggen. Openingsvraag: wie heeft de wet weleens gelezen? Niemand hoeft dat, en dat is precies het punt van deze sessie."
+    },
+    {
+      "deel": 1, "soort": "zin", "minuten": 5,
+      "kop": "Het college tekent. Jullie laten het werken.",
+      "onthul": [
+        "Het college keurt de maatregelen goed en volgt een verplichte training met certificaat.",
+        "Het MT staat niet in de wet, maar voert de zorgplicht wel uit.",
+        "De CISO adviseert. Eigenaar van het risico is de lijn."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 24, eerste en vijfde lid",
+      "notitie": "Geen boeteverhaal: de training en het certificaat gelden het college, niet het MT. Wel de spiegel: het college keurt de maatregelen goed die dit MT uitvoert. Zie de antwoordlijn over aansprakelijkheid onderaan."
+    },
+    {
+      "deel": 1, "soort": "beeld", "beeld": "wetketen", "minuten": 4,
+      "kop": "Van Brussel naar de balie.",
+      "tekst": "Europa schreef de richtlijn, Nederland de wet, en de regeling wijst de norm aan.",
+      "onthul": [
+        "De Cyberbeveiligingswet geldt sinds 15 augustus 2026, zonder overgangstermijn.",
+        "Voor de overheid wijst de regeling ISO 27001 en de BIO2 aan als norm.",
+        "Een gemeente is altijd essentieel. De omvang doet er niet toe."
+      ],
+      "bron": "Cyberbeveiligingswet; Cyberbeveiligingsregeling sector overheid (Stcrt. 2026, 27679), artikel 2, 3 en 5",
+      "notitie": "Kort houden. De boodschap is dat de BIO2 niet nieuw is, maar nu een wettelijke norm. Wie al met de BIO werkte, begint niet bij nul."
+    },
+    {
+      "deel": 1, "soort": "tegels", "minuten": 5,
+      "kop": "Drie woorden om te onthouden.",
+      "tegels": [
+        {"kop": "Essentieel", "tekst": "Dat zijn jullie. Het zwaarste regime, altijd."},
+        {"kop": "Netwerk- en informatiesystemen", "tekst": "Niet alleen IT. Ook het gemaal, de brug en de verkeerslichten."},
+        {"kop": "Significant incident", "tekst": "Het incident dat je moet melden. Bijvoorbeeld vier uur uitval van de dienstverlening."}
+      ],
+      "onthul": [
+        "Significant is ook: financiële gevolgen die de begroting niet kan opvangen, of een ernstig gewonde.",
+        "Gepland onderhoud telt niet mee."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 1; Cyberbeveiligingsregeling sector overheid artikel 6, tweede en derde lid",
+      "notitie": "Het tweede woord is de eye-opener: operationele technologie valt er ook onder. Vraag wie in de kamer verantwoordelijk is voor een gemaal, een brug of verkeerslichten."
+    },
+    {
+      "deel": 1, "soort": "tegels", "minuten": 3,
+      "kop": "Wie kijkt er mee?",
+      "tegels": [
+        {"kop": "NCSC", "tekst": "Het loket. Registreren, melden en waarschuwingen ontvangen."},
+        {"kop": "RDI", "tekst": "De toezichthouder. Kan aanwijzingen geven en boetes opleggen."},
+        {"kop": "IBD", "tekst": "Van en voor gemeenten. Advies, ondersteuning en dreigingsbeelden."}
+      ],
+      "onthul": [
+        "Het NCSC levert de dienst van CSIRT voor gemeenten voorlopig, in elk geval tot eind 2026."
+      ],
+      "bron": "Kennisbank: Cbw-meldplicht inrichten; RDI, Wat betekent de Cyberbeveiligingswet voor u",
+      "notitie": "De rolverdeling zit niet in het hoofd van het MT en hoeft daar ook niet te zitten. Wel: weten dat er een toezichthouder is die vragen kan stellen."
+    },
+    {
+      "deel": 1, "soort": "beeld", "beeld": "tijdlijn", "minuten": 3,
+      "kop": "De klok loopt al.",
+      "tekst": "Zorgplicht en meldplicht gelden sinds de eerste dag.",
+      "onthul": [
+        "Wijzigt er iets in de registratie? Binnen twee weken doorgeven.",
+        "Het college heeft tot 15 augustus 2028 voor de training."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 24, derde lid, en artikel 44",
+      "notitie": "Het enige uitstel in de wet is dat van de collegetraining. De rest geldt nu."
+    },
+    {
+      "deel": 2, "soort": "tegels", "minuten": 4,
+      "kop": "Vier plichten. Eén plaat.",
+      "tegels": [
+        {"kop": "Registreren", "tekst": "Wie ben je, en wie bel je."},
+        {"kop": "Melden", "tekst": "24 uur, 72 uur, een maand."},
+        {"kop": "Besturen", "tekst": "Het college keurt goed, weet en houdt toezicht."},
+        {"kop": "Zorgen", "tekst": "Passende maatregelen, op basis van risico.", "nadruk": true}
+      ],
+      "onthul": [
+        "Drie ervan zijn een formulier of een klok. De vierde is het werk."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, 24, 25 tot en met 29 en 44",
+      "notitie": "De zorgplicht staat bewust als laatste en is gemarkeerd: daar gaat het tweede uur over."
+    },
+    {
+      "deel": 2, "soort": "beeld", "beeld": "mijnncsc", "minuten": 5,
+      "kop": "Eén loket voor registreren, melden en waarschuwingen.",
+      "onthul": [
+        "Elke gemeente registreert zelf, met eHerkenning op niveau EH2+.",
+        "Een nieuwe contactpersoon? Binnen twee weken doorgeven.",
+        "Hier komen ook de waarschuwingen binnen. Wie leest ze?"
+      ],
+      "bron": "NCSC, portaal MijnNCSC (nagebouwd ter illustratie); kennisbank: De Cbw-registratie invullen",
+      "notitie": "Vraag aan het MT: weten de opgegeven contactpersonen dat zij dat zijn? Iemand opgeven die het zelf niet weet, is de verrassing die je bij een incident niet wilt."
+    },
+    {
+      "deel": 2, "soort": "beeld", "beeld": "meldklok", "minuten": 6,
+      "kop": "Melden is een klok.",
+      "onthul": [
+        "De moeilijkste stap staat vooraan: is dit significant?",
+        "Die vraag komt ook om drie uur 's nachts.",
+        "Wie beslist bij jullie, en wie belt het college?"
+      ],
+      "bron": "Cyberbeveiligingswet artikel 25 tot en met 29; kennisbank: Cbw-meldplicht inrichten",
+      "notitie": "De klok begint bij het moment dat je weet dat er iets aan de hand is, niet bij het moment dat je het zeker weet. Laat het MT zelf zeggen wie 's nachts beslist."
+    },
+    {
+      "deel": 2, "soort": "beeld", "beeld": "refrein", "minuten": 5,
+      "kop": "Alles draait om één vraag.",
+      "tekst": "{refrein}",
+      "onthul": [
+        "De wet zegt passend en evenredig: de lat hangt aan het risico.",
+        "Niet alles hoeft. Je moet wel kunnen laten zien waarom niet.",
+        "Een keuze die nergens staat, bestaat niet voor de toezichthouder."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, eerste en tweede lid",
+      "notitie": "Dit is de sleutelplaat. Kondig aan dat deze drie vragen bij elk van de tien vereisten terugkomen, tot vervelens toe. Dat is de bedoeling: na twee uur stelt het MT ze zelf."
+    },
+    {
+      "deel": 3, "soort": "raster", "minuten": 3,
+      "kop": "De zorgplicht: tien vereisten.",
+      "tekst": "Bij elk vereiste dezelfde vraag.",
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onderdeel a tot en met j",
+      "notitie": "Niet uitleggen, alleen laten zien. De volgende tien platen nemen ze een voor een, elk op een plek in de gemeente."
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "a", "beeld": "luchtfoto", "minuten": 6,
+      "kop": "Risico's kennen",
+      "wet": "Beleid inzake risicoanalyse en beveiliging van informatiesystemen.",
+      "proces": "De hele gemeente",
+      "biv": ["B", "I", "V"],
+      "watals": "Je weet niet welke processen kritiek zijn, dus je beschermt alles een beetje.",
+      "keuze": "Welke processen tellen, en welk risico accepteren we?",
+      "gepast": "Niet elk proces is kritiek. Kies er een handvol, en schrijf op waarom.",
+      "onthul": [
+        "De regeling vraagt een overzicht van de cruciale systemen: impact hoog of zeer hoog.",
+        "De VNG-lijst met kritieke gemeentelijke processen is een goed vertrekpunt."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder a; Cyberbeveiligingsregeling sector overheid artikel 4",
+      "notitie": "De luchtfoto: elke driehoek is een plek waar het pijn doet als het misgaat. Vraag het MT welke driehoek ontbreekt. Dit vereiste is de basis onder de andere negen: zonder lijst geen keuze."
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "b", "beeld": "kcc", "minuten": 5,
+      "kop": "Incidenten afhandelen",
+      "wet": "Incidentenbehandeling.",
+      "proces": "Klantcontact en webdiensten",
+      "biv": ["B", "I"],
+      "watals": "Inwoners bellen dat de website raar doet, en de melding blijft hangen tussen drie loketten.",
+      "keuze": "Wat is voor ons een incident, en wie beslist dat het significant is?",
+      "gepast": "Een kapotte printer is geen melding aan het NCSC. Een website die gegevens lekt wel.",
+      "onthul": [
+        "Het klantcontactcentrum hoort vaak als eerste dat er iets mis is.",
+        "Zonder vaste route verdampt een signaal."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder b",
+      "notitie": "Vraag: als een KCC-medewerker vanmiddag drie vreemde telefoontjes krijgt, bij wie komt dat dan terecht?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "c", "beeld": "gemaal", "minuten": 6,
+      "kop": "Doordraaien en herstellen",
+      "wet": "Bedrijfscontinuïteit, zoals back-upbeheer en herstelplannen, en crisisbeheer.",
+      "proces": "Waterbeheer: het gemaal",
+      "biv": ["B"],
+      "watals": "Het gemaal valt stil, en het regent.",
+      "keuze": "Hoe lang mag dit proces stilliggen? En is het herstel ooit getest?",
+      "gepast": "Een gemaal: uren. Een subsidieaanvraag: weken. Dat verschil is de keuze.",
+      "onthul": [
+        "Een back-up die nooit is teruggezet, is een hoop.",
+        "De hersteltijd komt uit de impactanalyse, niet uit een aanname."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder c",
+      "notitie": "Het gemaal maakt zichtbaar dat deze wet over natte voeten gaat, niet over IT. Vraag het MT voor één eigen proces: hoeveel uur mag het eruit liggen?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "d", "beeld": "leverancier", "minuten": 5,
+      "kop": "Leveranciers",
+      "wet": "Beveiliging van de toeleveringsketen, ook in de relatie met rechtstreekse leveranciers en dienstverleners.",
+      "proces": "Uitkeringen betalen",
+      "biv": ["B", "V"],
+      "watals": "De leverancier van het uitkeringssysteem ligt eruit, op de eerste van de maand.",
+      "keuze": "Welke leveranciers toetsen we, en hoe diep?",
+      "gepast": "De leverancier van de koffieautomaat toets je niet. Die van de uitkeringen wel.",
+      "onthul": [
+        "De wet noemt de kwetsbaarheden en de kwaliteit van elke rechtstreekse leverancier.",
+        "Uitbesteden verplaatst het werk, niet de verantwoordelijkheid."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder d, en vierde lid",
+      "notitie": "Laat het MT de drie leveranciers noemen zonder wie hun afdeling morgen stilstaat. Weet iemand wat er in die contracten over beveiliging staat?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "e", "beeld": "formulier", "minuten": 5,
+      "kop": "Veilig kopen en onderhouden",
+      "wet": "Beveiliging bij verwerven, ontwikkelen en onderhouden van systemen, met de respons op kwetsbaarheden.",
+      "proces": "Online aanvragen",
+      "biv": ["V", "I"],
+      "watals": "Er zit een lek in de software achter je online formulieren.",
+      "keuze": "Welke eisen stellen we bij inkoop, en hoe snel dichten we een lek?",
+      "gepast": "Een kritiek lek in een systeem op internet: dagen. De rest: in het gewone ritme.",
+      "onthul": [
+        "Beveiliging die niet in het bestek staat, kun je achteraf niet afdwingen.",
+        "Het NCSC waarschuwt dagelijks voor lekken. Iemand moet dat lezen."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder e",
+      "notitie": "Koppel terug naar het loket van eerder: de waarschuwingen komen binnen, de vraag is wie ze leest en wie beslist dat er vandaag gepatcht wordt."
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "f", "beeld": "verkiezing", "minuten": 5,
+      "kop": "Werkt het ook?",
+      "wet": "Beleid en procedures om de effectiviteit van de maatregelen te beoordelen.",
+      "proces": "Verkiezingen",
+      "biv": ["I"],
+      "watals": "De uitslag klopt niet, en niemand had het van tevoren getest.",
+      "keuze": "Wat meten en testen we, en hoe vaak?",
+      "gepast": "Wat kritiek is, test je echt. De rest: met een steekproef.",
+      "onthul": [
+        "Een maatregel op papier is nog geen maatregel.",
+        "Een audit of oefening laat zien wat wel en niet werkt."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder f",
+      "notitie": "Verkiezingen zijn het voorbeeld waar elke gemeente al test en oefent, omdat de datum vaststaat. Vraag: welk ander proces verdient die discipline?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "g", "beeld": "keukentafel", "minuten": 5,
+      "kop": "Hygiëne en opleiding",
+      "wet": "Basispraktijken op het gebied van cyberhygiëne en opleiding op het gebied van cyberbeveiliging.",
+      "proces": "Het sociaal loket, aan de keukentafel",
+      "biv": ["V", "I"],
+      "watals": "Eén klik op een nepmail, met een laptop vol zorggegevens.",
+      "keuze": "Wie moet wat kunnen, en hoe weten we dat?",
+      "gepast": "Een basis voor iedereen. Verdieping voor wie in een kritiek proces werkt.",
+      "onthul": [
+        "Opleiding is hier een wettelijke maatregel, geen bijzaak.",
+        "De lijn bepaalt wie wat moet kunnen."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder g",
+      "notitie": "Dit is het vereiste waar het MT het meest zelf aan zet is. Vraag: weten jullie wie in jullie afdeling de bewustwordingstraining heeft gevolgd?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "h", "beeld": "envelop", "minuten": 4,
+      "kop": "Versleutelen",
+      "wet": "Beleid en procedures voor het gebruik van cryptografie en, waar van toepassing, encryptie.",
+      "proces": "Jeugdzorg",
+      "biv": ["V"],
+      "watals": "Een jeugddossier gaat onversleuteld de deur uit.",
+      "keuze": "Wat versleutelen we, en wat bewust niet?",
+      "gepast": "Een jeugddossier: altijd. Een vergaderverzoek: niet nodig.",
+      "onthul": [
+        "Versleuteling is vaak al geregeld. De vraag is of iemand weet waar, en waar niet.",
+        "Wat vandaag veilig is versleuteld, is dat over tien jaar niet vanzelf."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder h; kennisbank: Quantumveilig per laag",
+      "notitie": "Kort houden. De tweede onthulling is een brug naar quantumveilige cryptografie, alleen als er tijd is."
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "i", "beeld": "balie", "minuten": 5,
+      "kop": "Mensen, toegang en spullen",
+      "wet": "Beveiligingsaspecten ten aanzien van personeel, toegangsbeleid en beheer van assets.",
+      "proces": "Burgerzaken: paspoort en basisregistratie",
+      "biv": ["V", "I"],
+      "watals": "Een oud-collega kan nog in de basisregistratie personen.",
+      "keuze": "Wie mag waar bij, en wie haalt dat weer weg?",
+      "gepast": "Rechten op kritieke systemen: elk jaar nalopen. Bij vertrek: dezelfde dag eruit.",
+      "onthul": [
+        "Toegang wordt gegeven door de lijn. Dus ook ingetrokken door de lijn.",
+        "Van elke laptop weet je waar hij is. Van elke rechtenset ook?"
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder i",
+      "notitie": "Vraag: wie in jullie afdeling tekent voor de rechten van een nieuwe medewerker, en wie meldt het als iemand vertrekt?"
+    },
+    {
+      "deel": 3, "soort": "eis", "letter": "j", "beeld": "crisisruimte", "minuten": 5,
+      "kop": "Inloggen en elkaar bereiken",
+      "wet": "Waar gepast: multifactorauthenticatie, beveiligde spraak-, video- en tekstcommunicatie en beveiligde noodcommunicatie.",
+      "proces": "Crisisorganisatie",
+      "biv": ["B", "V"],
+      "watals": "Alles ligt plat, en het crisisteam appt via privételefoons.",
+      "keuze": "Waar is extra inlogbeveiliging nodig, en hoe bereiken we elkaar als alles plat ligt?",
+      "gepast": "Inloggen van buitenaf en beheer: altijd een tweede factor. De printer: niet per se.",
+      "onthul": [
+        "De wet zegt hier letterlijk: waar gepast. Ook dat is een keuze die je vastlegt.",
+        "Bedenk het noodkanaal voor de crisis, niet tijdens."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21, derde lid, onder j",
+      "notitie": "Sluit het rijtje af met de woorden 'waar gepast': die staan letterlijk in de wet en vatten de hele zorgplicht samen."
+    },
+    {
+      "deel": 4, "soort": "stand", "stand": "plichten", "minuten": 5,
+      "kop": "Waar staan we nu? Registreren en melden.",
+      "bron": "In te vullen door de eigen organisatie, zie data/invulblok.json",
+      "notitie": "Deze drie platen vult de eigen CISO of informatiebeveiliger in. Eerlijk is beter dan mooi: een rood vak is een startpunt."
+    },
+    {
+      "deel": 4, "soort": "stand", "stand": "zorgplicht", "minuten": 5,
+      "kop": "Waar staan we nu? De tien vereisten.",
+      "bron": "In te vullen door de eigen organisatie, zie data/invulblok.json",
+      "notitie": "Loop alleen de rode en oranje vakken langs. Per vak: wie in deze kamer kan er iets mee?"
+    },
+    {
+      "deel": 4, "soort": "stand", "stand": "processen", "minuten": 5,
+      "kop": "Waar staan we nu? Kritieke processen.",
+      "foto": "proces",
+      "bron": "In te vullen door de eigen organisatie, zie data/invulblok.json",
+      "notitie": "Hier landt het refrein: de lijst met kritieke processen is de plek waar de keuzes van vandaag worden vastgelegd."
+    },
+    {
+      "deel": 5, "soort": "vraag", "minuten": 7,
+      "kop": "Wat we van jullie vragen.",
+      "onthul": [
+        "Per kritiek proces een eigenaar, uit deze kamer.",
+        "Per proces een hersteltijd: gekozen en vastgelegd.",
+        "Elk geaccepteerd risico met een naam en een datum."
+      ],
+      "bron": "Cyberbeveiligingswet artikel 21 en 24, eerste lid",
+      "notitie": "Per punt een naam en een datum vragen. Wat zonder naam de kamer uitgaat, gebeurt niet."
+    },
+    {
+      "deel": 5, "soort": "slot", "minuten": 3,
+      "kop": "{refrein}",
+      "tekst": "Vragen, nu of later: {contact}.",
+      "notitie": "Samenvatten wie wat doet. Het refrein nog één keer hardop."
+    }
+  ]
+}
