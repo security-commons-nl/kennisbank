@@ -274,7 +274,7 @@ class EchteSet(unittest.TestCase):
         pagina = b.pagina(self.data)
         statisch = pagina.split("<script")[0]  # wat een assistent ziet die geen JavaScript draait
         self.assertIn('id="voor-ai"', statisch)
-        self.assertIn(b.LIVE + "profiel.json", statisch)
+        self.assertIn(b.PROFIEL_LIVE, statisch)
         self.assertIn(b.LIVE + "beleidsset.json", statisch)
         for s in self.data["bouwstenen"]:
             self.assertIn(b.LIVE + b.bestandsnaam(s), statisch, s["bestand"])

@@ -80,7 +80,7 @@ kennisbank zelf staan geen Word-bestanden; markdown is de bron.
 
 ## Hoe het werkt
 
-**De contextvragen.** [`profiel.json`](profiel.json) bevat zestien vragen met vaste antwoorden: wie je IT
+**De contextvragen.** [`profiel.json`](../../profiel.json) (sinds 29-10-2026 op de root van de kennisbank: het profiel is van de hele commons, en wat je hier invult geldt ook elders) bevat zestien vragen met vaste antwoorden: wie je IT
 beheert, waar systemen draaien, hoe je werkplek eruitziet, of je onder de Cbw valt, wie je omgeving bewaakt,
 of je zelf software bouwt, of je OT of politiegegevens hebt, en meer. Per vraag staat welke domeinen hij
 raakt. Geen vraag is verplicht.
@@ -138,7 +138,7 @@ staat er niet in; die is van het CIP en staat op [bio-overheid.nl](https://www.b
 
 Geef je assistent de link naar de [generatorpagina](beleidsset-generator.html). Bovenaan staat, als gewone tekst
 die ook een assistent zonder JavaScript leest, een blok *Instructies voor de assistent*: eerst de contextvragen
-uit [`profiel.json`](profiel.json) stellen, dan per gekozen stuk de leesversie ophalen, de kaders houden of weghalen
+uit [`profiel.json`](../../profiel.json) stellen, dan per gekozen stuk de leesversie ophalen, de kaders houden of weghalen
 naar de antwoorden, de invulvelden met de gebruiker invullen, en de nummers, het controleraamwerk en bijlage A
 laten staan zodat het stuk toetsbaar blijft. Wie precies dezelfde tekst wil als het formulier, rekent met
 [`beleidsset.json`](beleidsset.json) of draait `python tools/bouw_beleidsset.py --profiel antwoorden.json uitmap/`.

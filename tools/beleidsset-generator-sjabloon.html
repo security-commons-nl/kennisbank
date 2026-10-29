@@ -63,7 +63,7 @@ op BIO 2.0 voor de eigen organisatie. Het formulier hierboven werkt alleen in ee
 bestanden hieronder. Werk zo:</p>
 <ol>
 <li><strong>Vraag eerst uit.</strong> Stel de contextvragen uit
-<a href="https://security-commons-nl.github.io/kennisbank/governance/beleidsset-informatiebeveiliging/profiel.json">profiel.json</a>
+<a href="https://security-commons-nl.github.io/kennisbank/profiel.json">profiel.json</a>
 (veld <code>vragen</code>, met vaste antwoorden per vraag). Stel ze in kleine groepjes, en sla over wat de gebruiker
 al vertelde. Geen vraag is verplicht; noteer welke open blijven.</li>
 <li><strong>Vraag welke stukken.</strong> De set heeft 21 stukken: het strategisch informatiebeveiligingsbeleid en twintig
@@ -129,7 +129,23 @@ var DATA = /*DATA*/;
   var velden = document.getElementById("velden"), uitkomst = document.getElementById("uitkomst");
   var lijst = document.getElementById("lijst"), stukEl = document.getElementById("stuk");
   var set = null, gekozen = null;
-  var OPSLAG = "beleidsset-profiel";
+  // Het profiel is van de hele commons (plan de site is het product, stap 9): één bewaarnaam voor alle
+  // pagina's op dit domein, in te vullen hier of op /profiel/. Een profiel onder de oude naam van de
+  // beleidsset wordt een keer overgenomen.
+  var OPSLAG = "commons-profiel";
+  try {
+    if (!localStorage.getItem(OPSLAG) && localStorage.getItem("beleidsset-profiel")) {
+      // Alleen bekende vragen en antwoorden gaan mee; een oude, ongetoetste waarde komt niet in het gedeelde profiel.
+      var oud = JSON.parse(localStorage.getItem("beleidsset-profiel") || "{}") || {}, schoon = {};
+      DATA.profiel.vragen.forEach(function (v) {
+        var geldig = v.antwoorden.map(function (a) { return a.id; }), w = oud[v.id];
+        if (v.meerdere) { var l = (Array.isArray(w) ? w : [w]).filter(function (x) { return geldig.indexOf(x) >= 0; }); if (l.length) schoon[v.id] = l; }
+        else if (geldig.indexOf(w) >= 0) schoon[v.id] = w;
+      });
+      if (Object.keys(schoon).length) localStorage.setItem(OPSLAG, JSON.stringify(schoon));
+      localStorage.removeItem("beleidsset-profiel");
+    }
+  } catch (e) {}
 
   function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function inline(s) {
@@ -315,7 +331,15 @@ var DATA = /*DATA*/;
     var gekozenItems = [].slice.call(document.querySelectorAll("#voorstel-tabel input:checked")).map(function (x) { return voorstel.items[+x.dataset.index]; });
     if (voorstel.opdracht === "profiel") {
       var p = profiel();
-      gekozenItems.forEach(function (item) { var v = vraagVan(item.code); p[item.code] = v.meerdere ? item.antwoorden : item.antwoorden[0]; });
+      // Alleen antwoord-id's uit de vaste lijst van de vraag: het profiel is sinds 29-10-2026 van de hele commons
+      // (commons-profiel) en mag nooit vrije tekst bevatten, ook niet uit een met de hand bewerkt voorstelbestand.
+      gekozenItems.forEach(function (item) {
+        var v = vraagVan(item.code); if (!v) return;
+        var geldig = v.antwoorden.map(function (a) { return a.id; });
+        var antw = (Array.isArray(item.antwoorden) ? item.antwoorden : []).filter(function (a) { return geldig.indexOf(a) >= 0; });
+        if (!antw.length) return;
+        p[item.code] = v.meerdere ? antw : antw[0];
+      });
       zet(p);
       try { localStorage.setItem(OPSLAG, JSON.stringify(p)); } catch (e) {}
     } else {
