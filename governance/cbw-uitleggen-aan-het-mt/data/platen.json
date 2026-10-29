@@ -18,14 +18,14 @@
   ],
   "platen": [
     {
-      "deel": 1, "soort": "titel", "minuten": 5,
+      "id": "titel", "deel": 1, "soort": "titel", "minuten": 5,
       "kop": "De Cyberbeveiligingswet in {gemeente}",
       "tekst": "Voor het managementteam. Wat de wet van de organisatie vraagt, en waarom alles om één vraag draait.",
       "foto": "gemeentehuis",
       "notitie": "Voorstellen en het doel van de sessie: na afloop weet het MT wat de wet vraagt en welke keuzes bij het MT liggen. Openingsvraag: wie heeft de wet weleens gelezen? Niemand hoeft dat, en dat is precies het punt van deze sessie."
     },
     {
-      "deel": 1, "soort": "zin", "minuten": 5,
+      "id": "college", "deel": 1, "soort": "zin", "minuten": 5,
       "kop": "Het college tekent. Jullie laten het werken.",
       "onthul": [
         "Het college keurt de maatregelen goed en volgt een verplichte training met certificaat.",
@@ -48,7 +48,7 @@
       "notitie": "Kort houden. De boodschap is dat de BIO2 niet nieuw is, maar nu een wettelijke norm. Wie al met de BIO werkte, begint niet bij nul."
     },
     {
-      "deel": 1, "soort": "tegels", "minuten": 5,
+      "id": "woorden", "deel": 1, "soort": "tegels", "minuten": 5,
       "kop": "Drie woorden om te onthouden.",
       "tegels": [
         {"kop": "Essentieel", "tekst": "Dat zijn jullie. Het zwaarste regime, altijd."},
@@ -63,7 +63,7 @@
       "notitie": "Het tweede woord is de eye-opener: operationele technologie valt er ook onder. Vraag wie in de kamer verantwoordelijk is voor een gemaal, een brug of verkeerslichten."
     },
     {
-      "deel": 1, "soort": "tegels", "minuten": 3,
+      "id": "meekijkers", "deel": 1, "soort": "tegels", "minuten": 3,
       "kop": "Wie kijkt er mee?",
       "tegels": [
         {"kop": "NCSC", "tekst": "Het loket. Registreren, melden en waarschuwingen ontvangen."},
@@ -88,7 +88,7 @@
       "notitie": "Het enige uitstel in de wet is dat van de collegetraining. De rest geldt nu."
     },
     {
-      "deel": 2, "soort": "tegels", "minuten": 4,
+      "id": "plichten", "deel": 2, "soort": "tegels", "minuten": 4,
       "kop": "Vier plichten. Eén plaat.",
       "tegels": [
         {"kop": "Registreren", "tekst": "Wie ben je, en wie bel je."},
@@ -137,7 +137,7 @@
       "notitie": "Dit is de sleutelplaat. Kondig aan dat deze drie vragen bij elk van de tien vereisten terugkomen, tot vervelens toe. Dat is de bedoeling: na twee uur stelt het MT ze zelf."
     },
     {
-      "deel": 3, "soort": "raster", "minuten": 3,
+      "id": "zorgplicht", "deel": 3, "soort": "raster", "minuten": 3,
       "kop": "De zorgplicht: tien vereisten.",
       "tekst": "Bij elk vereiste dezelfde vraag.",
       "bron": "Cyberbeveiligingswet artikel 21, derde lid, onderdeel a tot en met j",
@@ -323,7 +323,7 @@
       "notitie": "Hier landt het refrein: de lijst met kritieke processen is de plek waar de keuzes van vandaag worden vastgelegd."
     },
     {
-      "deel": 5, "soort": "vraag", "minuten": 7,
+      "id": "vraag", "deel": 5, "soort": "vraag", "minuten": 7,
       "kop": "Wat we van jullie vragen.",
       "onthul": [
         "Per kritiek proces een eigenaar, uit deze kamer.",
@@ -334,7 +334,7 @@
       "notitie": "Per punt een naam en een datum vragen. Wat zonder naam de kamer uitgaat, gebeurt niet."
     },
     {
-      "deel": 5, "soort": "slot", "minuten": 3,
+      "id": "slot", "deel": 5, "soort": "slot", "minuten": 3,
       "kop": "{refrein}",
       "tekst": "Vragen, nu of later: {contact}.",
       "notitie": "Samenvatten wie wat doet. Het refrein nog één keer hardop."
