@@ -135,7 +135,14 @@ var DATA = /*DATA*/;
   var OPSLAG = "commons-profiel";
   try {
     if (!localStorage.getItem(OPSLAG) && localStorage.getItem("beleidsset-profiel")) {
-      localStorage.setItem(OPSLAG, localStorage.getItem("beleidsset-profiel"));
+      // Alleen bekende vragen en antwoorden gaan mee; een oude, ongetoetste waarde komt niet in het gedeelde profiel.
+      var oud = JSON.parse(localStorage.getItem("beleidsset-profiel") || "{}") || {}, schoon = {};
+      DATA.profiel.vragen.forEach(function (v) {
+        var geldig = v.antwoorden.map(function (a) { return a.id; }), w = oud[v.id];
+        if (v.meerdere) { var l = (Array.isArray(w) ? w : [w]).filter(function (x) { return geldig.indexOf(x) >= 0; }); if (l.length) schoon[v.id] = l; }
+        else if (geldig.indexOf(w) >= 0) schoon[v.id] = w;
+      });
+      if (Object.keys(schoon).length) localStorage.setItem(OPSLAG, JSON.stringify(schoon));
       localStorage.removeItem("beleidsset-profiel");
     }
   } catch (e) {}
