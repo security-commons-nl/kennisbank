@@ -155,6 +155,11 @@ class Inhoud(unittest.TestCase):
         for naam in ("Leiden", "Leiderdorp", "Oegstgeest", "Zoeterwoude", "IDA", "Servicepunt71"):
             self.assertNotRegex(tekst, rf"\b{naam}\b", f"'{naam}' hoort niet in de romp")
 
+    def test_elke_plaat_heeft_een_vaste_naam(self):
+        namen = [bouw.plaat_id(p) for p in DATA["platen"]]
+        self.assertEqual(len(namen), len(set(namen)), "plaatnamen zijn uniek")
+        self.assertIn("tijdlijn", namen)
+
     def test_alleen_bekende_invulvelden(self):
         velden = set(re.findall(r"\{([a-z]+)\}", bouw.DATA.read_text(encoding="utf-8")))
         self.assertTrue(velden <= set(bouw.INVULVELDEN) | {"refrein"}, velden)
@@ -200,6 +205,7 @@ class Invullen(unittest.TestCase):
         blok["fotos"]["gemeentehuis"] = "huis.png"
         blok["stand"]["zorgplicht"]["c"] = {"status": "rood", "tekst": "Herstel nooit getest"}
         blok["stand"]["plichten"]["registratie"] = {"status": "groen", "tekst": "Geregistreerd in augustus"}
+        blok["aanvullingen"] = {"tijdlijn": "Samen met de buurgemeenten", "stand-processen": ["Eigen regel"]}
         (self.map / "blok.json").write_text(json.dumps(blok), encoding="utf-8")
         self.uit = self.map / "eigen.html"
         self.assertEqual(bouw.main(["--invul", str(self.map / "blok.json"), "--uit", str(self.uit)]), 0)
@@ -217,6 +223,17 @@ class Invullen(unittest.TestCase):
         self.assertRegex(self.pagina, r'stip groen.*?Geregistreerd in augustus')
         self.assertIn('src="data:image/png;base64,', self.pagina)
         self.assertIn("[Foto: een eigen kritiek proces]", self.pagina, "een lege foto blijft een invulveld")
+
+    def test_aanvulling_in_groen_op_de_juiste_plaat(self):
+        tijdlijn = re.search(r'<section class="plaat p-beeld" id="plaat-6".*?</section>', self.pagina, re.S).group(0)
+        self.assertIn('<li class="lokaal">Samen met de buurgemeenten</li>', tijdlijn)
+        processen = re.search(r'<section class="plaat p-stand" id="plaat-24".*?</section>', self.pagina, re.S).group(0)
+        self.assertIn('<p class="lokaal">Eigen regel</p>', processen)
+        self.assertEqual(self.pagina.count('class="lokaal"'), 2, "alleen waar gevraagd")
+
+    def test_onbekende_plaat_is_een_fout(self):
+        with self.assertRaises(ValueError):
+            bouw.aanvullingen({"aanvullingen": {"bestaat-niet": "x"}}, DATA)
 
     def test_sjabloon_niet_aangeraakt(self):
         self.assertNotIn("Voorbeeldstad", (bouw.MAP / "platen.html").read_text(encoding="utf-8"))

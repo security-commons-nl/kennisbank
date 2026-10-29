@@ -79,6 +79,8 @@ vereiste geldt voor elk proces. Wie andere plekken herkenbaarder vindt, past de 
 1. Kopieer [het invulblok](data/invulblok.json) en vul in: de naam van de gemeente, de datum, een contact, en
    de stand per onderdeel (groen, oranje, rood of onbekend, met een korte toelichting). Een foto van het eigen
    gemeentehuis of van een eigen proces kan erbij; die gaat in de pagina zelf.
+   Eigen regels bij een plaat, zoals hoe de collegetraining bij jullie loopt, zet je onder `aanvullingen`; ze
+   staan in groen op de plaat, zodat zichtbaar is wat lokaal is.
 2. Draai vanuit de kennisbank:
    `python tools/bouw_cbw_mt.py --invul jouw-invulblok.json --uit jouw-platen.html`
 3. Wat leeg blijft, staat op de platen als oranje invulveld. Zo zie je meteen wat nog ontbreekt.

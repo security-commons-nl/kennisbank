@@ -1,8 +1,9 @@
 {
-  "toelichting": "Kopieer dit bestand, vul het in voor je eigen organisatie en draai: python tools/bouw_cbw_mt.py --invul jouw-invulblok.json --uit jouw-platen.html. Lege velden blijven op de platen zichtbaar als invulveld. Status is een van: groen, oranje, rood, onbekend. Een foto is een pad ten opzichte van dit bestand (jpg of png); hij gaat in de pagina zelf, dus houd hem klein.",
+  "toelichting": "Kopieer dit bestand, vul het in voor je eigen organisatie en draai: python tools/bouw_cbw_mt.py --invul jouw-invulblok.json --uit jouw-platen.html. Lege velden blijven op de platen zichtbaar als invulveld. Status is een van: groen, oranje, rood, onbekend. Een foto is een pad ten opzichte van dit bestand (jpg of png); hij gaat in de pagina zelf, dus houd hem klein. Aanvullingen zijn eigen regels per plaat, in groen op de plaat: de sleutel is de naam van de plaat (bijvoorbeeld tijdlijn, mijnncsc, eis-c, stand-processen), de waarde een regel of een lijst regels.",
   "gemeente": "",
   "datum": "",
   "contact": "",
+  "aanvullingen": {},
   "fotos": {
     "gemeentehuis": "",
     "proces": ""

@@ -558,6 +558,8 @@ background:var(--oranje);border:0;border-radius:999px;padding:.55rem 1.2rem;curs
 .onthul-knop:focus-visible,.nav button:focus-visible,.tegel-knop:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .onthul{list-style:none;padding:0;margin:1rem 0 0;max-width:46rem}
 .onthul li{border-left:4px solid var(--oranje);padding:.3rem 0 .3rem 1rem;margin:.5rem 0;font-size:1.1rem}
+.onthul li.lokaal,p.lokaal{color:#6fd39a;border-left-color:#6fd39a}
+p.lokaal{border-left:4px solid #6fd39a;padding:.3rem 0 .3rem 1rem;font-size:1.1rem}
 .raster{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:2.2rem;align-items:center}
 .beeld-svg svg{width:100%;height:auto;display:block;border-radius:16px}
 .tegels{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem;margin:.6rem 0 .4rem}
@@ -649,16 +651,42 @@ zet(0);
 """
 
 
+def plaat_id(plaat: dict) -> str:
+    """Vaste naam van een plaat, voor aanvullingen in het invulblok: een id, de letter, de stand of het beeld."""
+    if plaat.get("id"):
+        return plaat["id"]
+    if plaat["soort"] == "eis":
+        return f"eis-{plaat['letter']}"
+    if plaat["soort"] == "stand":
+        return f"stand-{plaat['stand']}"
+    return plaat["beeld"]
+
+
+def aanvullingen(invul: dict, data: dict) -> dict[str, list[str]]:
+    """Lokale aanvullingen per plaat uit het invulblok; een onbekende plaatnaam is een fout, geen stille weglating."""
+    uit = {k: ([v] if isinstance(v, str) else list(v)) for k, v in (invul.get("aanvullingen") or {}).items() if v}
+    bekend = {plaat_id(p) for p in data["platen"]}
+    onbekend = sorted(set(uit) - bekend)
+    if onbekend:
+        raise ValueError(f"aanvulling voor onbekende plaat: {', '.join(onbekend)}; kies uit {', '.join(sorted(bekend))}")
+    return uit
+
+
 def onthul_html(plaat: dict, nr: int, knoplabel: str = "Onthul") -> str:
     if not plaat.get("onthul"):
         return ""
     oid = f"o{nr}"
     lijst = "".join(f"<li>{e(r)}</li>" for r in plaat["onthul"])
+    lijst += "".join(f'<li class="lokaal">{e(r)}</li>' for r in plaat.get("_lokaal", []))
     return (f'<button type="button" class="onthul-knop" aria-expanded="false" aria-controls="{oid}" '
             f'data-label="{e(knoplabel)}">{e(knoplabel)}</button><ul class="onthul" id="{oid}" hidden>{lijst}</ul>')
 
 
 def plaat_html(nr: int, totaal: int, plaat: dict, data: dict, invul: dict) -> str:
+    lokaal = aanvullingen(invul, data).get(plaat_id(plaat), [])
+    if lokaal and plaat.get("onthul"):
+        plaat = dict(plaat, _lokaal=lokaal)
+        lokaal = []
     soort = plaat["soort"]
     refrein = data["refrein"]
     deelnaam = next(d["naam"] for d in data["delen"] if d["nr"] == plaat["deel"])
@@ -717,6 +745,8 @@ def plaat_html(nr: int, totaal: int, plaat: dict, data: dict, invul: dict) -> st
     else:
         raise ValueError(f"onbekende soort plaat: {soort}")
     anker = f'eis-{plaat["letter"]}' if soort == "eis" else f"plaat-{nr}"
+    if lokaal:
+        binnen += "".join(f'<p class="lokaal">{e(r)}</p>' for r in lokaal)
     return (f'<section class="plaat p-{soort}" id="{anker}" data-deel="Deel {plaat["deel"]}: {e(deelnaam)}" '
             f'aria-label="Plaat {nr} van {totaal}">{binnen}{refreinregel}{bron}</section>\n')
 
