@@ -1310,7 +1310,7 @@ class Profielregels(Basis):
         blok = build.profielregels_blok()
         self.assertIn('id="profielregels"', blok)
         self.assertIn('id="profielbalk" hidden', blok)
-        self.assertIn('"cbw-plicht"' if False else '"id": "r"', blok)
+        self.assertIn('"id": "r"', blok)
 
 
 if __name__ == "__main__":

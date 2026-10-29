@@ -75,6 +75,13 @@ const SEC = 'security/index.html';
 
 let r = draai(SEC, null);
 toets('het script en de regels staan op de pagina', !!r.pagina.script && r.pagina.regels.includes('cbw-plicht'));
+// De gecommitte pagina moet het script uit tools/build.py dragen; anders test dit een oude kopie (review 29-10).
+const bron = fs.readFileSync(path.join(ROOT, 'tools', 'build.py'), 'utf8').replace(/\r\n/g, '\n');
+const inBuild = (bron.match(/PROFIEL_JS = """\n([\s\S]*?)"""/) || [])[1] || '';
+toets('de pagina draagt precies het sorteerscript uit tools/build.py (niet verouderd)',
+  inBuild.trim() !== '' && r.pagina.script.replace(/\r\n/g, '\n').trim() === inBuild.trim());
+const regelsBestand = JSON.parse(fs.readFileSync(path.join(ROOT, 'profielregels.json'), 'utf8')).regels;
+toets('de pagina draagt precies de regels uit profielregels.json', JSON.stringify(JSON.parse(r.pagina.regels)) === JSON.stringify(regelsBestand));
 toets('zonder profiel: niets verplaatst, balk verborgen', JSON.stringify(r.voor) === JSON.stringify(r.na) && r.balk.hidden);
 
 r = draai(SEC, { cbw: 'essentieel' });
