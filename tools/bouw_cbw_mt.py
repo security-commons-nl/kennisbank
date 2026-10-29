@@ -186,7 +186,7 @@ def beeld_mijnncsc() -> str:
     kaarten = [("Cyberbeeld", "Je eigen netwerk in beeld", "Cyberbeeld bekijken", None),
                ("Direct naar", "Vragen en meer over de Cbw", "Ik heb een vraag", None),
                ("Flash-reports", "Actuele incidenten ontleed", "Overzicht", "waarschuwen"),
-               ("Meldingen", "Incidenten melden en bijhouden", None, "melden"),
+               ("Meldingen", "Melden en bijhouden", None, "melden"),
                ("Beveiligingsadviezen", "Wat te doen bij een nieuw lek", "Alle adviezen", None),
                ("Data-analyse", "Malware laten onderzoeken", "Mijn analyses", None)]
     for i, (kop, regel, link, pil) in enumerate(kaarten):
