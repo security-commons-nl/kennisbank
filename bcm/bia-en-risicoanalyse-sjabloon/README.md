@@ -16,9 +16,9 @@ rol: verdieping
 bronnen: [ibd-bedrijfsimpactanalyse-bia, ibd-bio2-kans-en-impact-tabellen-gemeenten, ibd-bio2-kritieke-processen-gemeenten, ibd-bepalen-bedrijfscontinuiteitsvereisten, ibd-bio-2-template-risicoanalyse-tabel, ibd-bio-handreiking-risicomanagement-voor-gemeenten, ibd-diepgaande-risicoanalyse-methode-excel, ibd-handreiking-diepgaande-risicoanalyse-methode-gemeenten]
 ---
 
-# BIA en risicoanalyse per kritieke dienst, een basissjabloon
-
 > **Lees dit sjabloon online:** [security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon](https://security-commons-nl.github.io/kennisbank/bcm/bia-en-risicoanalyse-sjabloon/)
+
+# BIA en risicoanalyse per kritieke dienst, een basissjabloon
 
 > **Barriere:** stel kritieke processen en herstelprioriteiten vast. Dit sjabloon is de invulvorm bij die
 > stap: per dienst de impact, de hersteleisen en de risico's, op een schaal die tussen organisaties

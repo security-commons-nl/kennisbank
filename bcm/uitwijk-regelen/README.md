@@ -16,9 +16,9 @@ rol: verdieping
 bronnen: [ibd-model-continuiteitsstrategie, ibd-handreiking-bedrijfscontinuiteitsbeheer, ibd-scenariokaart-3-uitval-ict, ibd-aandachtspunten-back-up-en-recovery-inclusief-saas-leveranciers, ibd-praktische-aanpak-3-2-1-back-up-regel, cip-clouddiensten, bzk-herziening-rijksbreed-cloudbeleid-2026, ciorijk-implementatiekader-risicoafweging-cloudgebruik, bzk-abdtopconsult-van-kwetsbaar-naar-weerbaar, ncsc-herstel-van-een-cyberincident]
 ---
 
-# Uitwijk regelen voor kritieke diensten
-
 > **Lees deze handleiding online:** [security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen](https://security-commons-nl.github.io/kennisbank/bcm/uitwijk-regelen/)
+
+# Uitwijk regelen voor kritieke diensten
 
 > **Barrieres:** test herstel tegen de afgesproken RTO en RPO, en breng kritieke systemen en leveranciers
 > in samenhang in beeld. Deze handleiding legt de schakel ertussen: welke uitwijk je per dienst kiest, en

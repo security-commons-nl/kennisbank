@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -23,8 +24,12 @@ RAW = "https://raw.githubusercontent.com/security-commons-nl/security-commons-nl
 def bron() -> str:
     if SIBLING.exists():
         return SIBLING.read_text(encoding="utf-8")
-    with urllib.request.urlopen(RAW, timeout=20) as r:
-        return r.read().decode("utf-8")
+    try:
+        with urllib.request.urlopen(RAW, timeout=20) as r:
+            return r.read().decode("utf-8")
+    except urllib.error.HTTPError as fout:
+        # Zolang site/routes.json nog niet op main van de site-repo staat (site-PR niet gemerged), is er geen bron.
+        raise SystemExit(f"bron niet bereikbaar ({fout.code}) op {RAW}; is de site-PR met routes.json al gemerged?")
 
 
 def genormaliseerd(tekst: str) -> str:

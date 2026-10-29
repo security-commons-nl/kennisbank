@@ -16,9 +16,9 @@ barrieres: [critical]
 rol: fundering
 ---
 
-# Kritieke processen en herstelprioriteiten vaststellen
-
 > **Lees deze handleiding online:** [security-commons-nl.github.io/kennisbank/bcm/kritieke-processen-vaststellen](https://security-commons-nl.github.io/kennisbank/bcm/kritieke-processen-vaststellen/)
+
+# Kritieke processen en herstelprioriteiten vaststellen
 
 Vraag tien mensen in een publieke organisatie welke processen kritiek zijn en je krijgt tien lijsten. Vraag
 het aan de staf en je krijgt er een die klopt maar die niemand kent. Dat tweede is het echte probleem: een
