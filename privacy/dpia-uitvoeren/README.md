@@ -6,6 +6,7 @@ normen: [AVG]
 peildatum: 2026-09-25
 herkomst: wegwijzer samengesteld door de commons; de stukken zelf zijn van het Rijk en de Informatiebeveiligingsdienst
 status: concept
+route: geen
 samenvatting: Voor een DPIA hoef je niets zelf te bouwen. Het Rijk heeft een invulhulp die de plichttoets uitrekent en het Rijksmodel invult, de Informatiebeveiligingsdienst heeft een handreiking met sjablonen en een bibliotheek met 27 uitgevoerde gemeentelijke DPIA's om van te lenen. Deze wegwijzer zet ze in de volgorde waarin je ze gebruikt.
 bronnen: [bzk-invulhulpen, bzk-par-dpia-form, ibd-dpia-handreiking, ibd-collectieve-dpias, ibd-ai-toelichting-dpia, ibd-notitie-dpia-copilot, ibd-privacy-risicomanagement]
 ---

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Vastgelegde en geoefende procedures voor de incidenttypen die je het vaakst treffen: een overgenomen account, een phishing- of BEC-melding, en misbruik van een externe kwetsbaarheid. Met de rollen, de escalatie en de oefenverslagen als bewijs dat er echt gehandeld wordt.
 barrieres: [mailresponse, idresponse, exploitresponse]
 rol: fundering

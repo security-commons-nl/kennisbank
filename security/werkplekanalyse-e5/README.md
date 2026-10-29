@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: geen
 samenvatting: Meet met Defender for Endpoint en Advanced Hunting wat er op je werkplekken feitelijk draait, en beperk daarna pas. Met zes KQL-query's voor PowerShell, Win+R, mshta en ClickFix, een configuratiecheck die "aan" onderscheidt van "gekoppeld en actief", en het advies om PowerShell te beheersen met Constrained Language Mode in plaats van te blokkeren.
 barrieres: [execution]
 rol: fundering

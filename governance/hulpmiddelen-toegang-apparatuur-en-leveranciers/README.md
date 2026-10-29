@@ -6,6 +6,7 @@ normen: [BIO2, AVG]
 peildatum: 2026-10-20
 herkomst: hulpmiddelen van het team informatiebeveiliging en privacy (IB&P) en de IT-organisatie van een regionale samenwerking van gemeenten, 2024 tot 2026
 status: sjabloon
+route: geen
 samenvatting: Losse sjablonen die je vaak nodig hebt en zelden zelf wilt schrijven. Een reglement voor IT-apparatuur en elektronische communicatie met de regels voor inzage in mail, een bruikleenovereenkomst, een geheimhoudingsverklaring voor externen, een checklist om een assurance-verklaring (ISAE 3402 of SOC 2) van een leverancier te beoordelen, een sjabloon voor een breakglass-account en een beheerplan voor Microsoft Defender met een RACI tussen gemeente en beheerpartij. Per hulpmiddel staat erbij bij welke BIO 2.0-maatregel het hoort.
 barrieres: [technicalvendor, edr]
 rol: verdieping

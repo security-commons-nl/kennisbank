@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-08
 herkomst: ontstaan uit een echt tijdelijk interventieteam in een regionale samenwerking van gemeenten; voorbeelden en cijfers in de bijlagen zijn verzonnen
 status: in gebruik
+route: geen
 samenvatting: Handleiding in acht stappen voor de CISO of ISO die een tijdelijk, defensief interventieteam wil neerzetten naast de reguliere IV-lijn. Trigger en nulmeting, team op kunnen, mandaat op één A4, de organisatie meenemen, één dreiging van begin tot eind, ritme, opschalen en afbouwen. Met mandaatprotocol, memo's per gremium en een uitgewerkte voorbeeldcasus als bijlagen.
 ---
 

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: De zwakke routes naast je sterke authenticatie opruimen: verouderde protocollen, herstelroutes en accounts die nog zonder sterke methode inloggen. Een sterke voordeur naast een open achterdeur is geen maatregel. Met de sanering en het bewijs dat er geen omweg meer is.
 barrieres: [fallback, legacy]
 rol: verdieping

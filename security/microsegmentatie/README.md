@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Segmentatie doortrekken tot op werklastniveau, zodat ook binnen een zone niet alles met alles kan praten. Verdieping voor wie de zones al op orde heeft. Met de aanpak, de valkuilen en het bewijs van de afgedwongen regels.
 barrieres: [segment]
 rol: verdieping

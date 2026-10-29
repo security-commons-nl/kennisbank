@@ -6,6 +6,7 @@ normen: [BIO2, Cbw, NIS2, ISO 22301]
 peildatum: 2026-10-15
 herkomst: opgesteld door de CISO van een gemeente voor een interbestuurlijke werkgroep bedrijfscontinuïteit
 status: concept
+route: geen
 samenvatting: Hoe je per kritieke dienst kiest wat er gebeurt als de normale voorziening wegvalt, met de
   nadruk op clouddiensten, data en leveranciers. Vijf stappen van de hersteleis uit de BIA naar een geteste
   uitwijkkeuze, met de uitwijkkaart als invulformat: een rij per dienst die laat zien of de gekozen vorm de

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Permanente beheerrollen vervangen door rechten die je per keer activeert, met een reden en een tijdslimiet. Zo is het aantal accounts met staande rechten op elk moment vrijwel nul, en levert een gestolen beheeraccount buiten een activering niets op. Met de uitfasering, de noodaccounts en het activeringslogboek als bewijs.
 barrieres: [jit]
 rol: fundering

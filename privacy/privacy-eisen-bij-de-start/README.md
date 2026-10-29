@@ -6,6 +6,7 @@ normen: [AVG]
 peildatum: 2026-10-12
 herkomst: definitieve procedures (2024-2026) en een werkinstructie van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten
 status: in gebruik
+route: [privacy-officer]
 samenvatting: Drie stappenplannen in zes stappen (nieuw proces, gewijzigd proces, nieuw project) met doorlooptijden per stap, een standaardset van twaalf privacy-eisen voor het programma van eisen bij een aanbesteding plus zeven eisen voor zelfontwikkeling, en een checklist van negen punten voor een privacyvriendelijke website met een jaarlijkse controle van de cookiebanner.
 bronnen: [ibd-handreiking-privacy-en-cookieverklaring]
 ---

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Patchen van besturingssysteem en third-party software met controle op dekking, zodat je niet alleen weet dat er gepatcht wordt maar ook op hoeveel apparaten het niet lukt. Met risicogestuurde termijnen, versnelde uitrol bij actief misbruik en de achterblijverslijst als bewijs.
 barrieres: [patch, localadmin, unmanaged]
 rol: fundering

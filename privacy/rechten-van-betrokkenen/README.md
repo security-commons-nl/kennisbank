@@ -6,6 +6,7 @@ normen: [AVG, Wpg]
 peildatum: 2026-10-12
 herkomst: vastgestelde procedure (versie 2.0) en briefsjablonen van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten
 status: in gebruik
+route: [privacy-officer]
 samenvatting: Een procedure voor alle rechten van betrokkenen onder de AVG en de Wpg, met zes stappen van ontvangst tot evaluatie, een uitwerking per recht en tips voor verzoeken onder de Wpg. Met 25 brieven voor elke fase van een inzage- of verwijderverzoek (identificatie, verduidelijking, uitstel, besluit, beëindiging), het overzicht van persoonsgegevens dat bij een besluit hoort, en een privacyverklaring voor medewerkers.
 bronnen: [ibd-handreiking-rechten-van-betrokkenen, ibd-addendum-rechten-van-betrokkenen-wet-politiegegevens]
 ---

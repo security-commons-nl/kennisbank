@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: De beheerportalen van je clouddiensten dichtzetten: wie mag erbij, vanaf welk apparaat, en met welke authenticatie. Een cloudportaal is bereikbaar vanaf elke plek ter wereld, dus de toegangsvoorwaarden zijn je enige grens. Met de inrichting en het bewijs dat de beperking geldt.
 barrieres: [consent]
 rol: fundering

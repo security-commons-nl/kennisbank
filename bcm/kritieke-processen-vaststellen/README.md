@@ -6,6 +6,7 @@ normen: [ISO 22301, BIO2, NIS2]
 peildatum: 2026-08-31
 herkomst: in gebruik bij de continuiteitsorganisatie van een gemeente
 status: in gebruik
+route: [iso, eerste-honderd-dagen]
 samenvatting: Hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke
   continuiteitseisen daarbij horen en in welke volgorde je herstelt. Met de vuistregels per proces als
   checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de

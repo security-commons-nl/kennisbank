@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Ontdekken en blijven bewaken wat er vanaf internet van je organisatie te zien is, inclusief de diensten die niemand meer kent. Wat je niet weet dat bestaat, patch je niet. Met de ontdekmethode, het eigenaarschap per dienst en het bewijs dat de lijst actueel blijft.
 barrieres: [assets]
 rol: fundering

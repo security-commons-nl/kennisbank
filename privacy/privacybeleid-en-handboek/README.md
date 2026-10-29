@@ -6,6 +6,7 @@ normen: [AVG, UAVG, Wpg]
 peildatum: 2026-10-12
 herkomst: vastgesteld beleid (2021-2025) van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten
 status: in gebruik
+route: geen
 samenvatting: Het hele privacybeleid van een samenwerking van gemeenten in vijf lagen: een strategisch privacybeleid met besturingsmodel, het actuele privacybeleid (met hoofdstukken over de Wpg en AI), een addendum waarmee de gemeenteraad het beleid voor zichzelf vaststelt, een beleid privacy by design met acht maatregelen en een formulier, en een privacyhandboek dat per onderwerp zegt wat een medewerker moet doen.
 bronnen: [ibd-voorbeeld-privacybeleid, ibd-privacybeleid, ibd-addendum-privacybeleid-wet-politiegegevens, ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid, ibd-handreiking-privacy-by-design-gebruik-ibd-instrumenten, cip-handleiding-privacy-by-design]
 ---

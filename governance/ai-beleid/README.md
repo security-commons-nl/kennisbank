@@ -6,6 +6,7 @@ normen: [AI Act, AVG, BIO2]
 versie: concept 1.0, 2026-08
 herkomst: samenwerkingsverband van vier gemeenten, geanonimiseerd met vertaalsleutel
 status: concept
+route: geen
 samenvatting: Compleet AI-beleid van vier samenwerkende gemeenten, geanonimiseerd met vertaalsleutel. Waarden met een beslismoment, governance en rollen, drielagenmodel voor tools, AI-geletterdheid. Acht hoofdstukken plus twee bijlagen, ook als markdown om aan te passen of te diffen.
 bronnen: [ibd-handreiking-ai-en-algoritmen, ibd-handelingskader-voor-generatieve-ai, bzk-handreiking-generatieve-ai, vng-kenniskaart-monitoring-ai]
 ---

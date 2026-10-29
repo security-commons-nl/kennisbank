@@ -6,6 +6,7 @@ normen: [BIO2, ISO 22301, Cbw]
 peildatum: 2026-10-20
 herkomst: sessieformat van het team informatiebeveiliging, privacy en bedrijfscontinuïteit van een regionale samenwerking van gemeenten, 2025 tot 2026, gebruikt voor twintig kritieke processen
 status: in gebruik
+route: geen
 samenvatting: Een vast format voor een sessie van anderhalf uur met de proceseigenaar per kritiek proces. In drie stappen classificeer je het proces op beschikbaarheid, integriteit en vertrouwelijkheid, breng je de applicaties in kaart die het proces draaien, en leg je de procescontext vast met een canvas: ketenpartners, piekperiodes, wetgeving, persoonsgegevens. Zo voer je de bedrijfsimpactanalyse uit met de lijn in plaats van voor de lijn. De uitkomst is de basis voor herstelafspraken met IT-beheer, het bedrijfscontinuïteitsplan en de risicoanalyse onder BIO 2.0 en de Cyberbeveiligingswet.
 barrieres: [critical, dependencies]
 rol: verdieping

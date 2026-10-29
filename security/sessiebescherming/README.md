@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Sessietokens binden aan het apparaat en de sessieduur beperken, zodat een gestolen token buiten zijn context niets waard is. Dit is de tegenmaatregel tegen cookie-replay na een adversary-in-the-middle-aanval. Met de inrichting, de gebruikersimpact en het bewijs van dekking.
 barrieres: [session]
 rol: fundering

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: geen
 samenvatting: Twee lagen die met Microsoft 365 E5 grotendeels afgedekt kunnen worden, maar in de praktijk vaak op standaard of "deels" staan. Toets de feitelijke inrichting van Defender for Office, Conditional Access, app-consent en legacy authentication, met per punt wat "goed" eruitziet. In veel gemeenten komt het merendeel van de incidenten via e-mail en identiteit binnen, niet via de werkplek.
 barrieres: [mail, legacy, session, consent]
 rol: verdieping

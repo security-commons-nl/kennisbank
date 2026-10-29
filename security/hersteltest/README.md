@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Periodiek daadwerkelijk terugzetten en meten of je de afgesproken hersteltijd en het maximale dataverlies haalt. Een back-up die nooit is teruggezet, is een aanname. Met de opzet van de test, de RTO en RPO uit de BIA, en het testverslag als bewijs.
 barrieres: [restore]
 rol: fundering

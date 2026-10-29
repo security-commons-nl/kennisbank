@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27002]
 versie: 2026-06
 herkomst: awareness-sessie zoals gegeven in een gemeentelijke organisatie, generiek gemaakt
 status: sjabloon
+route: [bestuurder]
 samenvatting: Kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. Hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. Publiek bekende casussen, invulbare placeholders.
 ---
 

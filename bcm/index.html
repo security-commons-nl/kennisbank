@@ -28,6 +28,9 @@ h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;line-height:1.15;margin:0 0 
 h2{font-size:21px;font-weight:750;margin:38px 0 6px;letter-spacing:-.02em}
 h2:first-of-type{margin-top:0}
 .h2sub{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+.route{margin:0 0 14px}
+.routestappen{margin:4px 0 6px 20px;padding:0}
+.routestappen li{margin:3px 0}
 p{margin:0 0 11px}
 a{color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
@@ -88,6 +91,12 @@ footer a{color:var(--muted)}
 
 <p class="lead">Rapportages, beleidsstukken, procedures, templates en aanpakken op het gebied van bedrijfscontinuïteit.</p>
 
+<h2 id="routes">Routes door dit vakgebied</h2>
+<p class="h2sub">Een leesroute zegt in welke volgorde je begint; dit vakgebied levert deze stappen.</p>
+<div class="route"><h3 class="groep">ISO: Wat moet ik doen, en hoe toon ik het aan?</h3><ol class="routestappen"><li>stap 2: <a href="kritieke-processen-vaststellen/">Kritieke processen en herstelprioriteiten vaststellen</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-iso">De hele route op de voorpagina</a></p></div>
+<div class="route"><h3 class="groep">Bestuurder: Hoe stuur ik op weerbaarheid?</h3><ol class="routestappen"><li>stap 3: <a href="bcm-voor-de-bestuurder/">BCM uitleggen aan de bestuurder</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-bestuurder">De hele route op de voorpagina</a></p></div>
+<div class="route"><h3 class="groep">Eerste honderd dagen: Nieuw als ISO of CISO: waar begin ik?</h3><ol class="routestappen"><li>stap 3: <a href="kritieke-processen-vaststellen/">Kritieke processen en herstelprioriteiten vaststellen</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-eerste-honderd-dagen">De hele route op de voorpagina</a></p></div>
+
 <h2>Wat hier staat</h2>
 <p class="h2sub">7 stukken. Alle openen direct in de browser.</p>
 
@@ -127,7 +136,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Een twee-pager voor de ambtelijke top over wat bedrijfscontinuïteit is, wat de Cbw, de Wwke en de BIO2 erbij zeggen en welke drie vragen een bestuurder stelt. Met een werkinstructie om er met een AI-assistent een eigen versie van te maken, en zes vormen die je op hetzelfde materiaal kunt bouwen, van een kaartje met drie vragen tot een tafeloefening van 45 minuten.</p>
-    <div class="meta">aanpak · peildatum 2026-10-15 · concept</div>
+    <div class="meta">aanpak · peildatum 2026-10-15 · concept · route: Bestuurder stap 3</div>
     <div class="normen"><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">BIO2</span><span class="norm">ISO 22301</span></div>
   </a>
 
@@ -141,7 +150,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Hoe je samen met de lijn vaststelt welke processen echt niet mogen uitvallen, welke continuiteitseisen daarbij horen en in welke volgorde je herstelt. Met de vuistregels per proces als checklist, en het deel dat meestal ontbreekt, namelijk hoe je die keuze houdbaar houdt als de organisatie verandert. Met een classificatieschema in vijf niveaus voor beschikbaarheid, integriteit en vertrouwelijkheid (BIV), met de vertaling naar hersteltijd (RTO) en dataverlies (RPO).</p>
-    <div class="meta">handleiding · peildatum 2026-08-31 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast · fundering</div>
+    <div class="meta">handleiding · peildatum 2026-08-31 · in gebruik · barriere: Stel kritieke processen en herstelprioriteiten vast · fundering · route: ISO stap 2, Eerste honderd dagen stap 3</div>
     <div class="normen"><span class="norm">ISO 22301</span><span class="norm">BIO2</span><span class="norm">NIS2</span></div>
   </a>
   <a class="item" href="uitwijk-regelen/" data-vak="bcm" data-zoek="uitwijk regelen voor kritieke diensten hoe je per kritieke dienst kiest wat er gebeurt als de normale voorziening wegvalt, met de nadruk op clouddiensten, data en leveranciers. vijf stappen van de hersteleis uit de bia naar een geteste uitwijkkeuze, met de uitwijkkaart als invulformat: een rij per dienst die laat zien of de gekozen vorm de hersteltijd haalt, wat contractueel geregeld is en wanneer er voor het laatst echt is uitgeweken. handleiding bcm bio2 cbw nis2 iso 22301" data-barrieres="restore dependencies">

@@ -6,6 +6,7 @@ normen: [Cbw, NIS2, BIO2, ISO 22301]
 peildatum: 2026-10-15
 herkomst: opgesteld door de CISO van een gemeente voor een interbestuurlijke werkgroep bedrijfscontinuïteit
 status: sjabloon
+route: geen
 samenvatting: Een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ICT eruit ligt:
   crisisteam, herstelvolgorde, opschaling, drie fasen, scenario's, noodcommunicatie en meldingen, met
   bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. Voor elke bestuurslaag, met een termenlijst.

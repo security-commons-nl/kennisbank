@@ -8,6 +8,7 @@ rol: verdieping
 versie: 2026-08
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: geen
 samenvatting: De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen.
 ---
 

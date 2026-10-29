@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, Cbw]
 peildatum: 2026-10-14
 herkomst: plan van aanpak voor de invoering van BIO 2.0, deel 1 en deel 2 (2026), van het team informatiebeveiliging en privacy van een regionale samenwerking van gemeenten; nog niet vastgesteld
 status: concept
+route: [eerste-honderd-dagen]
 samenvatting: Hoe een samenwerking van gemeenten de invoering van BIO 2.0 aanpakt, met de cijfers die in handreikingen ontbreken. Deel 1 (het managementsysteem) in zeven onderdelen met producten, eigenaar en uren per rol, samen 768 uur. Deel 2 (de maatregelen) via beleid per thema, maatregelen in de bestaande beheerprocessen met het bewijs in het ticket, een vaststellingsroute en een volgorde van 21 thema's met de afdeling die eigenaar is. Met de randvoorwaarden en de zes projectrisico's die het plan zelf noemt, en een sjabloon om je eigen plan in te vullen.
 bronnen: [ibd-bio2-handreiking-realistische-implementatie-aanpak-bria, ibd-bio2-handreiking-isms-proces-implementatie, ibd-bio2-handreiking-isms, ibd-bio2-beschrijving-isms-verantwoordelijkheden-binnen-de-gemeente, ibd-bio2-rasci-tabel-controls-informatieveiligheid-en-privacy, ibd-handreiking-bio-voor-kleine-gemeenten, cip-bio-tekst]
 ---

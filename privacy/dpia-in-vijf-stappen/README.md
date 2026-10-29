@@ -6,6 +6,7 @@ normen: [AVG]
 peildatum: 2026-09-26
 herkomst: werkwijze en sjablonen van de privacyorganisatie van een regionale samenwerking van gemeenten
 status: in gebruik
+route: [privacy-officer]
 samenvatting: Een lichte DPIA-werkwijze voor gemeenten. De kennishouder beschrijft het proces zelf, privacy officer en security officer schuiven aan in drie overleggen, en de proceseigenaar beslist over de maatregelen. Met een compact sjabloon van tien hoofdstukken, voorgevulde teksten voor camera's op grond van gerechtvaardigd belang, een vragenlijst en een security-assessment van de leverancier.
 bronnen: [bzk-invulhulpen, ibd-dpia-handreiking, ibd-collectieve-dpias]
 ---

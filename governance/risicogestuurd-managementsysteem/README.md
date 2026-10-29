@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, AVG, ISO 22301, Cbw]
 versie: 2026-10
 herkomst: ontwikkeld door de CISO van een regionale samenwerking van gemeenten, waar het register de werknaam risicoboom had; de methode en een verzonnen voorbeeld, zonder gegevens van die organisatie
 status: concept
+route: [ciso]
 barrieres: [owner, treatment]
 rol: verdieping
 samenvatting: Wat governance, risk en compliance is, waarom security, privacy en continuïteit er één stelsel voor nodig hebben, en twee manieren om dat te doen. Een GRC-tool kopen, of een risicoregister bijhouden waarin elk risico uit een aangetoonde fout in een maatregel volgt en de prioriteit wordt uitgerekend, met een AI-assistent als lezer binnen vaste regels. Met het model, een doorgerekend voorbeeld van een verzonnen gemeente, plakbare prompts en een leeg register.

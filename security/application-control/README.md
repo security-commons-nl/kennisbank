@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Alleen toegestane software en scripts laten draaien, met een trustmodel in plaats van een uitzonderingenlijst. Verdieping op de werkplekanalyse: eerst meten wat er draait, dan afdwingen. Met de auditfase, de uitrol en het bewijs van dekking.
 barrieres: [execution]
 rol: verdieping

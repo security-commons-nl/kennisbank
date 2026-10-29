@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Een web application firewall met rate limiting en Layer 7-bescherming voor je publieke diensten, die bekende aanvalspatronen blokkeert en tijd koopt wanneer een patch nog niet uitgerold kan worden. Met de overgang van detecteren naar blokkeren, het beheersen van vals-positieven en het bewijs van dekking.
 barrieres: [l7]
 rol: fundering

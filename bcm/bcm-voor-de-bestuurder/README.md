@@ -6,6 +6,7 @@ normen: [Cbw, NIS2, BIO2, ISO 22301]
 peildatum: 2026-10-15
 herkomst: opgesteld door de CISO van een gemeente voor een interbestuurlijke werkgroep bedrijfscontinuïteit
 status: concept
+route: [bestuurder]
 samenvatting: Een twee-pager voor de ambtelijke top over wat bedrijfscontinuïteit is, wat de Cbw, de Wwke en
   de BIO2 erbij zeggen en welke drie vragen een bestuurder stelt. Met een werkinstructie om er met een
   AI-assistent een eigen versie van te maken, en zes vormen die je op hetzelfde materiaal kunt bouwen, van een

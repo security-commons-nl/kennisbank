@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Het ransomware- en crisisherstelplan oefenen met de lijn erbij, inclusief isolatie, besluitvorming en de volgorde waarin je herstelt. Een plan dat nooit is geoefend, werkt niet op de dag dat het nodig is. Met de opzet van de tabletop, de rollen en het oefenverslag als bewijs.
 barrieres: [crisis]
 rol: fundering

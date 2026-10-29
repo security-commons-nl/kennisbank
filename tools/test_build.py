@@ -251,7 +251,7 @@ class Normen(Basis):
             "---\n"
             "titel: Een stuk\nvakgebied: security\ntype: aanpak\n"
             f"normen: {normen}\n"
-            "herkomst: gemeente\nstatus: in gebruik\npeildatum: 2026-09\n"
+            "herkomst: gemeente\nstatus: in gebruik\nroute: geen\npeildatum: 2026-09\n"
             "samenvatting: Een samenvatting die lang genoeg is om de controle op zestig tekens "
             "te halen.\n---\n\n# Een stuk\n", encoding="utf-8")
         (map_ / "index.html").write_text("<html><body><h1>Een stuk</h1></body></html>", encoding="utf-8")
@@ -524,6 +524,7 @@ normen: []
 peildatum: 2026-09-25
 herkomst: test
 status: concept
+route: geen
 samenvatting: Een item om het bronnenregister mee te toetsen, lang genoeg voor de kaarttekst op de site.
 bronnen: [{ids}]
 ---
@@ -1131,6 +1132,78 @@ class SitemapEnAchterstand(Basis):
         self.item("x")
         build.waarschuw_achterstand({}, {})
         self.assertEqual(self.meldingen, "")
+
+
+class Routes(Basis):
+    """Het veld route (statuut C2): verplicht, alleen bekende routes, en in twee richtingen gelijk aan routes.json."""
+
+    ROUTES = {"routes": [{"id": "iso", "rol": "ISO", "vraag": "Wat moet ik doen?", "stappen": [
+        {"titel": "Een stuk", "url": "https://security-commons-nl.github.io/kennisbank/security/een-item/", "waarom": "Omdat."},
+        {"titel": "Buiten", "url": "https://security-commons-nl.github.io/procescheck/", "waarom": "Rekent."}]}]}
+
+    def readme(self, route: str) -> str:
+        return ("---\ntitel: Een item\nvakgebied: security\ntype: aanpak\nnormen: []\npeildatum: 2026-10-29\n"
+                "herkomst: CISO van een gemeente\nstatus: concept\n" + route + "\n"
+                "samenvatting: Een samenvatting van minstens zestig tekens, want dat eist B2 van elk item in de kennisbank.\n---\n\n# Een item\n")
+
+    def setUp(self) -> None:
+        super().setUp()
+        build._routes_cache = None
+        (self.map / "routes.json").write_text(json.dumps(self.ROUTES), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        build._routes_cache = None
+        super().tearDown()
+
+    def controleer(self, route: str) -> dict:
+        map_ = self.item(self.readme(route), "<html><body>t</body></html>")
+        fm = build.controleer_item("security", map_)
+        build.controleer_routes({"security": [fm], "privacy": [], "bcm": [], "governance": []})
+        return fm
+
+    def test_route_is_verplicht(self):
+        self.controleer("")
+        self.assertIn("veld 'route' ontbreekt", self.meldingen)
+
+    def test_onbekende_route_wordt_geweigerd(self):
+        self.controleer("route: [bestaat-niet]")
+        self.assertIn("route 'bestaat-niet' bestaat niet", self.meldingen)
+
+    def test_lege_lijst_is_geen_antwoord(self):
+        self.controleer("route: []")
+        self.assertIn("of expliciet 'geen'", self.meldingen)
+
+    def test_item_in_route_moet_de_route_noemen(self):
+        self.controleer("route: geen")
+        self.assertIn("staat als stap in route 'iso'", self.meldingen)
+
+    def test_frontmatter_mag_geen_route_verzinnen(self):
+        self.ROUTES = {"routes": [{"id": "iso", "rol": "ISO", "vraag": "?", "stappen": []}]}
+        (self.map / "routes.json").write_text(json.dumps(self.ROUTES), encoding="utf-8")
+        self.controleer("route: [iso]")
+        self.assertIn("routes.json heeft dit stuk niet als stap", self.meldingen)
+
+    def test_kloppende_route_geeft_geen_fout_en_een_etiket(self):
+        fm = self.controleer("route: [iso]")
+        self.assertEqual(self.meldingen, "")
+        self.assertEqual(build.route_etiketten(fm), ["ISO stap 1"])
+        self.assertIn("route: ISO stap 1", build.meta_regel(fm, False))
+
+    def test_sectiepagina_toont_de_routes_door_het_vakgebied(self):
+        fm = self.controleer("route: [iso]")
+        sectie = {"titel": "Security", "lead": "Lead.", "kort": "kort", "hoort": ["x"]}
+        html = build.bouw_sectie("security", sectie, [fm])
+        self.assertIn("Routes door dit vakgebied", html)
+        self.assertIn("ISO: Wat moet ik doen?", html)
+        self.assertIn('stap 1: <a href="een-item/">Een stuk</a>', html)
+        self.assertNotIn("Buiten", html)
+        self.assertIn("#route-iso", html)
+        self.assertLess(html.index("Routes door dit vakgebied"), html.index("Wat hier staat"))
+
+    def test_zonder_routes_json_een_fout_geen_crash(self):
+        (self.map / "routes.json").unlink()
+        self.controleer("route: geen")
+        self.assertIn("routes.json ontbreekt", self.meldingen)
 
 
 if __name__ == "__main__":

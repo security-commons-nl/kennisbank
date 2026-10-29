@@ -6,6 +6,7 @@ normen: [Cbw, NIS2, BIO2]
 peildatum: 2026-10-29
 herkomst: opgesteld door de CISO van een regionale samenwerking van vier gemeenten, voor de managementteams van die gemeenten, naast de verplichte training van de colleges
 status: concept
+route: geen
 samenvatting: Een sessie van twee uur voor het managementteam of directieteam van een gemeente over de Cyberbeveiligingswet, naast de certificaattraining van het college. Eerst de wet en de plichten op een rij, dan de tien vereisten van de zorgplicht, elk op een plek in de gemeente die iedereen herkent, van het gemaal tot de keukentafel. Bij elk vereiste dezelfde drie vragen: welk risico, wie koos, waar staat het. Een sjabloon met invulvelden en een eigen deel Waar staan we nu.
 bronnen: [ncsc-cbw-valt-mijn-organisatie-eronder, rdi-cbw-wat-betekent-het-voor-u, do-cbw-welke-overheidsorganisaties, ibd-bio2-factsheet-informatiebeveiliging-en-de-lijnmanager, ibd-bio-handreiking-risicomanagement-voor-gemeenten]
 ---

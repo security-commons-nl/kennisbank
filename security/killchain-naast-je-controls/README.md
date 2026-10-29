@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: geen
 samenvatting: Leg je controls naast de volledige aanvalsketen, van ClickFix via infostealer tot exfiltratie, met de MITRE-fasen erbij. Per fase een chokepoint waar je knijpt of zicht krijgt, en of dat preventie, detectie of herstel is. Maakt zichtbaar waar meerdere lagen op elkaar liggen en welke restrisico's je bewust accepteert.
 barrieres: [edr, execution]
 rol: verdieping

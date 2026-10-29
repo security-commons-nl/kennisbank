@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Rechten in cloudomgevingen terugbrengen tot wat werkelijk gebruikt wordt, op basis van gemeten gebruik in plaats van aanname. Verdieping op het beheersen van toegang tot cloudportalen. Met de meetmethode, de uitfasering en het bewijs dat overtollige rechten weg zijn.
 barrieres: [consent]
 rol: verdieping

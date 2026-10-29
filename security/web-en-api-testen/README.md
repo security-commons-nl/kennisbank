@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Beveiliging van webapplicaties en API-koppelingen testen in de ontwikkelketen, met scanning op afhankelijkheden erbij, zodat kwetsbaarheden worden gevonden voordat ze live staan. Met de plek in de pijplijn, wat blokkerend is voor livegang, en het bewijs van herstel.
 barrieres: [webtest]
 rol: fundering

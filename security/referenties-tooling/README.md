@@ -6,6 +6,7 @@ normen: []
 peildatum: 2026-09-09
 herkomst: verzameld door de commons-community; geen eigen werk van security-commons-nl
 status: in gebruik
+route: geen
 samenvatting: Verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één HTML-bestand, web-reconnaissance, extern aanvalsoppervlak. Per bron kort wat het is en wanneer je het inzet.
 ---
 

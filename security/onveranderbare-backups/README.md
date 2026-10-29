@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Back-ups die niet gewijzigd of gewist kunnen worden, ook niet door een gecompromitteerd beheeraccount, met beheer dat gescheiden is van de rest. De aanvaller zoekt tegenwoordig eerst de back-up. Met de inrichting, de scheiding en het bewijs dat de onveranderbaarheid technisch is afgedwongen.
 barrieres: [backup]
 rol: fundering

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Continu scannen op kwetsbaarheden met een spoedprocedure voor wat actief wordt misbruikt, en gemeten doorlooptijden per risicoklasse. Een jaarlijkse scan is geen kwetsbaarhedenbeheer. Met de inrichting, de opvolging en het bewijs dat bevindingen ook echt dichtgaan.
 barrieres: [vuln]
 rol: fundering

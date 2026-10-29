@@ -6,6 +6,7 @@ normen: [ISO 22301, BIO2, Cbw]
 peildatum: 2026-10-15
 herkomst: opgesteld door de CISO van een gemeente voor een interbestuurlijke werkgroep bedrijfscontinuïteit
 status: concept
+route: geen
 samenvatting: Een basissjabloon voor een business impact analyse en een risicoanalyse dat elke
   overheidslaag kan gebruiken: een blad per dienst met identificatie, impact per tijdvenster, hersteleisen,
   afhankelijkheden en terugval, en een risicotabel met dezelfde impactschaal. Met een vergelijking van tien

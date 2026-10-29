@@ -26,6 +26,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. Met de stappen, de kosten en het bewijs dat je aan het eind kunt laten zien.
 {extra}---
 

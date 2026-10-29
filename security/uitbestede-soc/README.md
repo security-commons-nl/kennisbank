@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Monitoring en detectie volledig uitbesteden aan een Managed Security Service Provider, wanneer een eigen securityteam er niet is en ook niet snel komt. Snel operationeel en zonder eigen nachtrooster, maar met leveranciersafhankelijkheid en beperkte kennisopbouw. Met de scope-eisen, de SLA-afspraken en het bewijs dat de opvolgtijden gehaald worden.
 barrieres: [soc]
 rol: alternatief

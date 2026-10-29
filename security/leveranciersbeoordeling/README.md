@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Kritieke leveranciers periodiek en risicogestuurd beoordelen, met een aangewezen eigenaar en actuele onderbouwing in plaats van een ingevulde vragenlijst uit het verleden. Met de cyclus, de weging en het bewijs dat de beoordeling ook echt plaatsvindt.
 barrieres: [review]
 rol: fundering
