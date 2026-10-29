@@ -91,6 +91,9 @@ jobs:
       # beleidssjabloon, tellen accenten en koppeltekens niet, vervuilt een zoekwoord niet.
       - name: Tests van het zoekvak
         run: node tools/test_zoeken.js
+      # Sorteren op profiel (plan het profiel): het echte script op de echte kaarten en regels.
+      - name: Sorteren op profiel
+        run: node tools/test_profielsortering.js
 
       - name: Tests van de Cbw-toets
         run: node tools/test_toets_cbw.js
