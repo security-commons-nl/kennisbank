@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Beheerders krijgen aparte accounts per tier: identity en kroonjuwelen, servers en infrastructuur, werkplekken. Een account uit de ene tier kan niet inloggen op een lagere, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. Met de indeling, de logon-beperkingen en het bewijs dat de scheiding technisch is afgedwongen.
 barrieres: [model]
 rol: fundering

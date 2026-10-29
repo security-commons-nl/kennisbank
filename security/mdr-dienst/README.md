@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Managed Detection and Response combineert detectie met een responsteam dat namens jou ingrijpt: een besmette machine isoleren, een account blokkeren, binnen een vooraf afgesproken mandaat. De snelste daadwerkelijke respons zonder eigen team, maar je geeft een handelingsmandaat uit handen. Met de mandaatvraag, het oefenscenario en het bewijs dat de containment werkt.
 barrieres: [soc]
 rol: alternatief

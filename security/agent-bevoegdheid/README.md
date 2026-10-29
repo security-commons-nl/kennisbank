@@ -6,6 +6,7 @@ normen: [BIO2, AI Act]
 versie: 2026-09
 herkomst: ontwerpregel uit de praktijk van een CISO-organisatie bij een gemeente, gebouwd op een publiek gedeeld zesstappenmodel voor agent-autorisatie
 status: concept
+route: geen
 samenvatting: Een AI-agent die een API aanroept werkt niet op de bevoegdheid van de medewerker en niet op een eigen staande bevoegdheid, maar op een gedelegeerde taakbevoegdheid met zes velden, een goedkeuringsstap voor gevoelige acties en een audit die vijf vragen beantwoordt. Vertaald naar Entra, Copilot-agents en MCP-koppelingen op gemeentelijke systemen, met de vragen aan de leverancier en het bewijs dat je moet kunnen laten zien.
 ---
 

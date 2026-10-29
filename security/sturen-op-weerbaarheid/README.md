@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: [ciso, bestuurder]
 samenvatting: Voor bestuur, directie en CISO: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. Met het lagenmodel, een RACI-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting.
 pijler: meten-voordat-je-ingrijpt
 ---

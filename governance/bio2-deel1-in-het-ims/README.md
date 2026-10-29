@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, Cbw, ISO 22301, AVG]
 peildatum: 2026-10-20
 herkomst: voorstel van de CISO en vijf conceptproducten voor het managementsysteem van een regionale samenwerking van vier gemeenten (september en oktober 2026), nog niet vastgesteld
 status: concept
+route: geen
 samenvatting: BIO 2.0 deel 1 vraagt een managementsysteem volgens ISO 27001, en de BIO zegt zelf dat je security, privacy en continuïteit in één systeem mag onderbrengen met aparte maatregelensets. Deze aanpak laat zien hoe dat werkt, beantwoordt het bezwaar dat de drie disciplines niet te verenigen zijn, brengt de vijftien producten uit een gangbaar plan van aanpak terug tot negen artefacten, geeft een dekkingsmatrix per eis van deel 1 en de zeven beslispunten die je moet doorhakken. Met sjablonen voor contextanalyse, risicomanagementbeleid, doelstellingen en KPI's, intern auditprogramma en de procedure voor afwijkingen en correctieve maatregelen.
 pijler: bio2-implementeren
 ---

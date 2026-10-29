@@ -6,6 +6,7 @@ normen: [Wpg, AVG]
 peildatum: 2026-10-12
 herkomst: sjablonen (2024-2025) van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten met boa's in handhaving, leerplicht en sociale recherche
 status: in gebruik
+route: geen
 samenvatting: Drie stukken voor gemeenten met boa's: een DPIA-sjabloon dat de Wpg-artikelen naast de AVG-structuur zet, een sjabloon voor een verbeterplan na een interne of externe Wpg-audit, en een ingevulde privacyverklaring die per boa-domein uitlegt welke werkprocessen politiegegevens verwerken en welke gegevens dat zijn.
 bronnen: [ibd-beleid-wet-politiegegevens, ibd-privacyverklaring-wet-politiegegevens, ibd-werkdocument-audit-wet-politiegegevens-voor-gemeenten, ibd-voorbeeld-tijdspad-wpg-audit, ibd-het-autorisatieproces-wet-politiegegevens, ibd-register-van-verwerkingen-wpg-basis]
 ---

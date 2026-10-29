@@ -6,6 +6,7 @@ normen: [Wwke, CER, Cbw]
 peildatum: 2026-10-20
 herkomst: analyse van de CISO-organisatie van een regionale samenwerking van gemeenten op de wettekst (Stb. 2026, 188), juli 2026, voor de commons bijgewerkt op de inwerkingtreding
 status: concept
+route: geen
 samenvatting: De Wet weerbaarheid kritieke entiteiten (Wwke, de Nederlandse uitwerking van de CER-richtlijn) geldt sinds 15 augustus 2026. Een gemeente staat niet in de bijlage, want de sector overheid noemt alleen de centrale overheid, en zonder aanwijzing door een minister gelden er geen verplichtingen. Twee routes verdienen wel een expliciete toets (wegbeheer en afvalwater), en één spoor verdient monitoring: een minister kan een extra sector aanwijzen. Met de knip naar de Cyberbeveiligingswet.
 ---
 

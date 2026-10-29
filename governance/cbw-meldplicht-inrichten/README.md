@@ -6,6 +6,7 @@ normen: [Cbw, NIS2, BIO2]
 peildatum: 2026-10-20
 herkomst: vastgestelde meldplichtprocedure (versie 1.0, september 2026) en invulblad voor de registratie van een regionale samenwerking van vier gemeenten
 status: in gebruik
+route: [ciso]
 samenvatting: Hoe een gemeente de meldplicht en de registratieplicht onder de Cyberbeveiligingswet in de praktijk regelt. Een vastgestelde meldplichtprocedure met de drie drempelwaarden voor een significant incident (vier uur uitval, niet in de begroting op te vangen, ernstig letsel), de klok vanaf kennisname (24 uur waarschuwen, 72 uur melden, eindverslag na een maand), de informatieplicht aan inwoners, melden namens meerdere gemeenten met mandaat, en vier invulsjablonen. Daarnaast de registratie bij het NCSC veld voor veld, met de redenering per antwoord.
 bronnen: [do-cbw-welke-overheidsorganisaties, ncsc-cbw-valt-mijn-organisatie-eronder, rdi-cbw-wat-betekent-het-voor-u]
 ---

@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: In beeld brengen welke kritieke processen op welke systemen en leveranciers leunen, en wat er omvalt als er een uitvalt. Uit bronnen die je vaak al hebt. Met de opbouw, het actueel houden en het overzicht als bewijs.
 barrieres: [dependencies]
 rol: fundering

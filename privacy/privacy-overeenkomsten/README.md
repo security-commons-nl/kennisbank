@@ -6,6 +6,7 @@ normen: [AVG, Wpg]
 peildatum: 2026-10-12
 herkomst: definitieve procedure (2024) en eigen sjablonen van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten
 status: in gebruik
+route: [privacy-officer]
 samenvatting: Een procedure in vijf stappen voor alle privacyovereenkomsten (verwerkersovereenkomst, gezamenlijke verantwoordelijkheid, gegevensuitwisseling): rol bepalen, opstellen, reviewen, archiveren en jaarlijks controleren, met een extra checklist voor Wpg-verwerkers. Met eigen sjablonen voor een gegevensuitwisselingsovereenkomst tussen zelfstandige verantwoordelijken en een interne BRP-gegevensleveringsovereenkomst, een ingevulde bijlage met beveiligingsmaatregelen en een toelichting op de bijlagen.
 bronnen: [ibd-handreiking-standaard-verwerkersovereenkomst-gemeenten, ibd-uitgangspunten-standaard-verwerkersovereenkomst-vwo, ibd-verwerkersovereenkomst-avg-en-wpg, ibd-standard-data-processing-agreement-dpa-for-dutch-municipalities-standaard-verwerkersovereenkomst-engelse-vertaling, ibd-modelovereenkomst-voor-gezamenlijke-verantwoordelijken, ibd-factsheet-verwerker-of-verwerkingsverantwoordelijke]
 ---

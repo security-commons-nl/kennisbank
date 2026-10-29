@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Beheertaken gebeuren vanaf een apart gehard werkstation zonder e-mail en zonder browsen, zodat een phishingmail of besmette website nooit op dezelfde machine landt als de beheersessie. Met de inrichting, de uitzonderingen en het bewijs dat de toegestane toegang technisch is afgedwongen.
 barrieres: [adminhard]
 rol: fundering

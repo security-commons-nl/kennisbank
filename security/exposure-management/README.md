@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Niet elke kwetsbaarheid is even dringend: exposure management weegt bereikbaarheid, misbruik in het wild en de waarde van het systeem mee, zodat je de scanlijst omzet in een werkbare volgorde. Verdieping bovenop scannen. Met de weging, de bronnen en het bewijs dat prioriteit onderbouwd is.
 barrieres: [vuln]
 rol: verdieping

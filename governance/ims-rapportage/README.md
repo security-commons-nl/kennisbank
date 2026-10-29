@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, ISO 22301, AVG]
 peildatum: 2026-10-20
 herkomst: rapportagemodel, KPI-definities en draaiboek van het geïntegreerde managementsysteem van een regionale samenwerking van gemeenten, versie 0.5 (juli 2026), in gebruik sinds de eerste halfjaarrapportage
 status: concept
+route: geen
 samenvatting: Een halfjaarlijkse IMS-rapportage over informatiebeveiliging, privacy en bedrijfscontinuïteit samen, uit één bronrapportage met drie leesniveaus, die in januari ook de directiebeoordeling is, zodat directie, stuurgroep, college en raad hetzelfde stuk lezen en alleen de diepte verschilt. Met een matrix van negen KPI's (opzet, bestaan en werking per domein), de regel dat onbekend geen nul is, een vaste cyclus van plan tot afsluiting met acht kwaliteitsregels, en sjablonen voor bronrapportage, expert view en overdracht naar het volgende halfjaar.
 pijler: risicogestuurd-managementsysteem
 ---

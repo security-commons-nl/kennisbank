@@ -28,6 +28,9 @@ h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;line-height:1.15;margin:0 0 
 h2{font-size:21px;font-weight:750;margin:38px 0 6px;letter-spacing:-.02em}
 h2:first-of-type{margin-top:0}
 .h2sub{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+.route{margin:0 0 14px}
+.routestappen{margin:4px 0 6px 20px;padding:0}
+.routestappen li{margin:3px 0}
 p{margin:0 0 11px}
 a{color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
@@ -88,6 +91,13 @@ footer a{color:var(--muted)}
 
 <p class="lead">Rapportages, beleidsstukken, procedures, templates en aanpakken op het gebied van informatiebeveiliging.</p>
 
+<h2 id="routes">Routes door dit vakgebied</h2>
+<p class="h2sub">Een leesroute zegt in welke volgorde je begint; dit vakgebied levert deze stappen.</p>
+<div class="route"><h3 class="groep">CISO: Waar staan we, en wat moet ik regelen?</h3><ol class="routestappen"><li>stap 3: <a href="stelselkaart-security-gremia/">Wie doet wat: de stelselkaart security-gremia</a></li><li>stap 5: <a href="sturen-op-weerbaarheid/">Sturen op weerbaarheid in plaats van op maatregelen</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-ciso">De hele route op de voorpagina</a></p></div>
+<div class="route"><h3 class="groep">ISO: Wat moet ik doen, en hoe toon ik het aan?</h3><ol class="routestappen"><li>stap 7: <a href="security-annex-leveranciers/">Security Annex voor leveranciers</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-iso">De hele route op de voorpagina</a></p></div>
+<div class="route"><h3 class="groep">Bestuurder: Hoe stuur ik op weerbaarheid?</h3><ol class="routestappen"><li>stap 1: <a href="sturen-op-weerbaarheid/">Sturen op weerbaarheid in plaats van op maatregelen</a></li><li>stap 4: <a href="awareness-digitale-veiligheid/">Learning digitale veiligheid voor managers</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-bestuurder">De hele route op de voorpagina</a></p></div>
+<div class="route"><h3 class="groep">Eerste honderd dagen: Nieuw als ISO of CISO: waar begin ik?</h3><ol class="routestappen"><li>stap 1: <a href="stelselkaart-security-gremia/">Wie doet wat: de stelselkaart security-gremia</a></li><li>stap 4: <a href="procedures-informatiebeveiliging/">Acht procedures voor informatiebeveiliging, van incident tot beleidsafwijking</a></li></ol><p class="h2sub"><a href="https://security-commons-nl.github.io/#route-eerste-honderd-dagen">De hele route op de voorpagina</a></p></div>
+
 <h2>Wat hier staat</h2>
 <p class="h2sub">53 stukken. Alle openen direct in de browser.</p>
 
@@ -118,7 +128,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Voor bestuur, directie en CISO: waarom digitale weerbaarheid nu op tafel ligt, wie waarvoor verantwoordelijk is, en de keuze tussen alles dichtzetten of veilig faciliteren. Met het lagenmodel, een RACI-sjabloon, de naad tussen eigen organisatie en leveranciers, en waarom een resultaatverplichting iets anders is dan een inspanningsverplichting.</p>
-    <div class="meta">aanpak · versie 2026-09 · in gebruik · hoort bij: Meten voordat je ingrijpt</div>
+    <div class="meta">aanpak · versie 2026-09 · in gebruik · hoort bij: Meten voordat je ingrijpt · route: CISO stap 5, Bestuurder stap 1</div>
     <div class="normen"><span class="norm">BIO2</span></div>
   </a>
   <a class="item" href="risicoanalyse-aanvalspaden/" data-vak="security" data-zoek="risicoanalyse langs aanvalspaden methode om als ciso of iso in één dag tot de grootste risico&#x27;s te komen, en tot de maatregel en eigenaar per risico. niet asset voor asset met geschatte kansen, maar kroonjuwelen tegen een handvol generieke aanvalspaden, met de dekking gemeten op bewijs. de rode cellen zijn de risicolijst. met de aanvalspaden voor lokale overheid, een invulmatrix en een verzonnen voorbeeld als bijlagen. aanpak security bio2 iso 27001 nis2" data-barrieres="owner treatment">
@@ -163,7 +173,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico&#x27;s die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.</p>
-    <div class="meta">sjabloon · versie 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10 · in gebruik · barriere: Toets technische maatregelen van kritieke leveranciers, Maak significante leveranciersrestrisico’s expliciet · fundering</div>
+    <div class="meta">sjabloon · versie 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10 · in gebruik · barriere: Toets technische maatregelen van kritieke leveranciers, Maak significante leveranciersrestrisico’s expliciet · fundering · route: ISO stap 7</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27001</span><span class="norm">NIS2</span><span class="norm">CRA</span><span class="norm">AI Act</span><span class="norm">GIBIT 2025</span></div>
   </a>
   <a class="item" href="passkeys-invoeren/" data-vak="security" data-zoek="passkeys invoeren handleiding om als publieke organisatie volledig over te stappen op phishing-resistente authenticatie met passkeys (fido2). waarom het de grootste aanvalsroute afsnijdt, de negen stappen van inzicht tot borging, de keuzes die het verschil maken (geen fallback, device-bound, tap als enige herstelroute) en wat er in de praktijk tegenzat. met directiememo, faq, managersmail en herstelprocedure als sjablonen. aanpak security bio2" data-barrieres="pr fallback legacy">
@@ -190,7 +200,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Wie organiseert de digitale weerbaarheid van de Nederlandse overheid? Open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. Machineleesbaar, zodat je er je eigen weergave op kunt bouwen.</p>
-    <div class="meta">dataset · peildatum 2026-08-11 · in gebruik</div>
+    <div class="meta">dataset · peildatum 2026-08-11 · in gebruik · route: CISO stap 3, Eerste honderd dagen stap 1</div>
     <div class="normen"><span class="norm">NIS2</span><span class="norm">Cbw</span></div>
   </a>
   <a class="item" href="awareness-digitale-veiligheid/" data-vak="security" data-zoek="learning digitale veiligheid voor managers kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. publiek bekende casussen, invulbare placeholders. lesmateriaal security bio2 iso 27002" data-barrieres="">
@@ -199,7 +209,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Kant-en-klare awareness-sessie van veertig minuten voor leidinggevenden. Hoe hacks en datalekken echt beginnen, bij een mens die klikt, plakt, belt of goedkeurt, en wat je er zelf en als team tegen doet. Publiek bekende casussen, invulbare placeholders.</p>
-    <div class="meta">lesmateriaal · versie 2026-06 · sjabloon</div>
+    <div class="meta">lesmateriaal · versie 2026-06 · sjabloon · route: Bestuurder stap 4</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">ISO 27002</span></div>
   </a>
   <a class="item" href="referenties-tooling/" data-vak="security" data-zoek="externe referenties: security-tooling en kennisbanken verwijzingen naar open bronnen en tooling met een specifiek, afgebakend doel: credential-kennisbank, threat modeling in één html-bestand, web-reconnaissance, extern aanvalsoppervlak. per bron kort wat het is en wanneer je het inzet. referentie security" data-barrieres="">
@@ -216,7 +226,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">De procedures die een IB&amp;P-team dagelijks nodig heeft, als startpunt voor je eigen set. Een incidentprocedure voor datalekken en beveiligingsincidenten met de meldplicht onder AVG en Cbw, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, classificatie van systemen op beschikbaarheid, integriteit en vertrouwelijkheid (BIV), inzage in de mailbox van een collega, de periodieke rapportage, leveranciersmanagement en het vaststellen van strategisch beleid. Per procedure staat erbij voor welke BIO 2.0-maatregelen hij bewijs helpt leveren.</p>
-    <div class="meta">aanpak · peildatum 2026-10-20 · in gebruik · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching, Test detectie en response op externe exploits, Beoordeel kritieke leveranciers periodiek en risicogestuurd, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · alternatief</div>
+    <div class="meta">aanpak · peildatum 2026-10-20 · in gebruik · barriere: Borg continu kwetsbaarhedenbeheer en spoedpatching, Test detectie en response op externe exploits, Beoordeel kritieke leveranciers periodiek en risicogestuurd, Leg risicoacceptatie of maatregelen met eigenaar en termijn vast · alternatief · route: Eerste honderd dagen stap 4</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">AVG</span></div>
   </a>
 
@@ -586,7 +596,7 @@ footer a{color:var(--muted)}
       <span class="tag tag-live">live</span>
     </span>
     <p class="itemdesc">Wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. Dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. Vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. Met per laag een set platen om het gesprek te openen.</p>
-    <div class="meta">governance · aanpak · peildatum 2026-10-28 · concept</div>
+    <div class="meta">governance · aanpak · peildatum 2026-10-28 · concept · route: Bestuurder stap 5</div>
     <div class="normen"><span class="norm">BIO2</span><span class="norm">Cbw</span><span class="norm">NIS2</span><span class="norm">AVG</span></div>
   </a>
 

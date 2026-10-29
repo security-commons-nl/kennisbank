@@ -6,6 +6,7 @@ normen: [BIO2, Cbw, AVG, AI Act]
 peildatum: 2026-10-20
 herkomst: verkenning en pilotvoorstel van het team informatiebeveiliging en privacy van een regionale samenwerking van gemeenten (augustus 2026), voor de commons generiek gemaakt
 status: concept
+route: geen
 samenvatting: De klassieke keten van wet naar beleid naar configuratie faalt in de middelste laag, want beleidstekst heeft zelden het detail om een configuratie af te dwingen. Policy-as-code draait de pijl om: de configuratie in een repository is de bron van waarheid, en de leesbare beleidsteksten, beheerdocumenten en de bewijsmapping voor de auditor worden eruit gegenereerd, zodat configuratiebeheer en wijzigingsbeheer de beleidscyclus worden. Met een model van vier lagen, een indeling van de repository, zes spelregels voor agentic AI met systeemtoegang (alleen configuratie, eigen identiteit, plan en apply met menselijke goedkeuring), de volgorde privacy en medezeggenschap, en een pilot op een logplatform.
 ---
 

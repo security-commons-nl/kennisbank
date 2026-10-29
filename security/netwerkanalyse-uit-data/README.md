@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: gegeneraliseerd uit een casus bij een gemeentelijke organisatie
 status: in gebruik
+route: geen
 samenvatting: Vertrouw niet op de netwerktekening maar op de configuratie en het verkeer. Stel uit hit-counts, routeringstabellen en flow-logs vast welke regels te breed staan, of oost-west-verkeer werkelijk langs de firewall gaat en of beheertoegang beperkt is. Met de werkwijze om brede regels veilig te versmallen via schaduwregels, en het bewijs dat je aan het eind kunt laten zien.
 barrieres: [segment]
 rol: verdieping

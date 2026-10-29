@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Een aparte fysieke sleutel eisen voor beheertaken, zodat een gecompromitteerde werkplek geen beheerrechten oplevert. De zwaarste vorm van authenticatie op de zwaarste rechten. Met de uitgifte, het herstelproces en het bewijs dat de eis technisch is afgedwongen.
 barrieres: [key]
 rol: fundering

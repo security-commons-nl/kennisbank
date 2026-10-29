@@ -6,6 +6,7 @@ normen: [BIO2, AVG]
 peildatum: 2026-10-20
 herkomst: procedures van het team informatiebeveiliging en privacy (IB&P) van een regionale samenwerking van gemeenten, opgesteld 2024 tot 2025
 status: in gebruik
+route: [eerste-honderd-dagen]
 samenvatting: De procedures die een IB&P-team dagelijks nodig heeft, als startpunt voor je eigen set. Een incidentprocedure voor datalekken en beveiligingsincidenten met de meldplicht onder AVG en Cbw, cyberdreigingen en kwetsbaarheden beoordelen met een handelingskader per risiconiveau, afwijkingen van beleid aanvragen en bijhouden, classificatie van systemen op beschikbaarheid, integriteit en vertrouwelijkheid (BIV), inzage in de mailbox van een collega, de periodieke rapportage, leveranciersmanagement en het vaststellen van strategisch beleid. Per procedure staat erbij voor welke BIO 2.0-maatregelen hij bewijs helpt leveren.
 barrieres: [vuln, exploitresponse, review, treatment]
 rol: alternatief

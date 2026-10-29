@@ -7,6 +7,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Volumetrische aanvallen laten afvangen bij een upstream partij, met robuuste en redundante DNS eronder. Zonder deze laag kan een aanval je dienstverlening plat leggen ongeacht wat je zelf hebt ingericht. Met de afspraken vooraf, de opschaling en het bewijs dat de mitigatie daadwerkelijk actief is.
 barrieres: [upstream]
 rol: fundering

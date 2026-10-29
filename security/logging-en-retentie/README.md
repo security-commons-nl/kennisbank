@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Beheerhandelingen, rolwijzigingen en privileged activiteiten worden vastgelegd, lang genoeg bewaard om een incident te reconstrueren, en er wordt op gealarmeerd. Zonder deze laag is achteraf niet vast te stellen wie wat deed. Met de retentiekeuze, de alerting en het bewijs dat de escalatie is getest.
 barrieres: [adminmonitor]
 rol: fundering

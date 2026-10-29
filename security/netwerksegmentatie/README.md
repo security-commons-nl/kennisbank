@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Het netwerk opdelen in zones die aansluiten op je processen, met regels die daadwerkelijk worden afgedwongen in plaats van getekend. Zo komt een aanvaller die binnen is niet vanzelf overal. Met de zonebepaling, de handhaving en het bewijs dat de grenzen zijn getoetst.
 barrieres: [segment]
 rol: fundering

@@ -6,6 +6,7 @@ normen: [Cbw, NIS2, BIO2, ISO 22301]
 peildatum: 2026-10-15
 herkomst: opgesteld door de CISO van een gemeente voor een interbestuurlijke werkgroep bedrijfscontinuïteit
 status: sjabloon
+route: geen
 samenvatting: Een bedrijfscontinuïteitsplan dat uitgeprint werkt op de dag dat de ICT eruit ligt:
   crisisteam, herstelvolgorde, opschaling, drie fasen, scenario's, noodcommunicatie en meldingen, met
   bereikbaarheidslijst, logboek, crisiskoffer en actiekaarten. Voor elke bestuurslaag, met een termenlijst.
@@ -15,9 +16,9 @@ rol: verdieping
 bronnen: [ibd-model-continuiteitsplan, ibd-model-continuiteitsstrategie, ibd-handreiking-bedrijfscontinuiteitsbeheer, ibd-scenariokaart-1-uitval-gebouw, ibd-scenariokaart-2-uitval-door-stroomstoring, ibd-scenariokaart-3-uitval-ict, ibd-scenariokaart-7-uitval-personeel, cip-ketencommunicatiebijcrises]
 ---
 
-# Bedrijfscontinuïteitsplan, een compact sjabloon
-
 > **Lees dit sjabloon online:** [security-commons-nl.github.io/kennisbank/bcm/bedrijfscontinuiteitsplan-sjabloon](https://security-commons-nl.github.io/kennisbank/bcm/bedrijfscontinuiteitsplan-sjabloon/)
+
+# Bedrijfscontinuïteitsplan, een compact sjabloon
 
 > **Barriere:** oefen het ransomware- en crisisherstelplan. Dit is het plan zelf, in een vorm die je kunt
 > oefenen: wie besluit, in welke volgorde je herstelt, en wat je op papier nodig hebt als de systemen weg zijn.

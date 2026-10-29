@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Logs van systemen, applicaties en netwerk centraal verzamelen en bewaren, zodat je bij een incident zicht en bewijs hebt. Dit is de fundering onder elke vorm van detectie: zonder logverzameling valt er niets te monitoren, hoe je de opvolging ook organiseert. Met de stappen, het bewijs dat je aan het eind kunt laten zien, en een vergelijking van de vier routes waaruit je daarna kiest.
 barrieres: [soc]
 rol: fundering

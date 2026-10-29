@@ -51,7 +51,7 @@ ELDERS_EIND = "<!-- /elders -->"
 VAKGEBIEDEN = ["security", "privacy", "bcm", "governance"]
 TYPES = ["beleid", "sjabloon", "lesmateriaal", "dataset", "referentie", "aanpak", "rapportage", "handleiding"]
 STATUSSEN = ["concept", "in gebruik", "sjabloon", "gearchiveerd"]
-VERPLICHT = ["titel", "vakgebied", "type", "normen", "herkomst", "status", "samenvatting"]
+VERPLICHT = ["titel", "vakgebied", "type", "normen", "herkomst", "status", "samenvatting", "route"]
 TOEGESTAAN = set(VERPLICHT) | {"peildatum", "versie", "licentie", "barrieres", "rol", "pijler", "bronnen"}
 ROLLEN = ["fundering", "alternatief", "verdieping"]
 # Types die aan een barriere uit de zelfcheck mogen hangen. Een handleiding moet het, een aanpak of
@@ -80,7 +80,7 @@ NL = chr(10)
 ROOT_MAPPEN_OK = {".github", "tools", "_aanvalspaden"}
 # `.git` is in een git-worktree een bestand in plaats van een map; het is tooling, geen inhoud.
 ROOT_BESTANDEN_OK = {"README.md", "CONTRIBUTING.md", "ROADMAP.md", "LICENSE", "index.html", ".gitignore",
-                     ".nojekyll", "handelingsperspectief.json", "llms.txt", "sitemap.xml", "bronnen.json", ".git"}
+                     ".nojekyll", "handelingsperspectief.json", "llms.txt", "sitemap.xml", "bronnen.json", ".git", "routes.json"}
 
 # De barrieres komen uit paden.json in de aanvalspaden-repo. Lokaal staat die ernaast; in CI wordt hij
 # naar _aanvalspaden uitgecheckt. Een handleiding mag alleen naar een barriere verwijzen die bestaat,
@@ -520,6 +520,7 @@ def controleer_item(vak: str, map_: Path) -> dict | None:
     if isinstance(fm.get("samenvatting"), str) and len(fm["samenvatting"]) < 60:
         fout(readme, "B2", "samenvatting te kort; twee tot vier zinnen, dit wordt de kaarttekst")
     controleer_handleiding(vak, readme, fm)
+    controleer_route_veld(readme, fm)
     controleer_bronnen(readme, fm)
     for bestand in map_.rglob("*"):
         if bestand.suffix in (".md", ".html", ".txt", ".json"):
@@ -766,6 +767,109 @@ def controleer_alles() -> dict[str, list[dict]]:
     return items
 
 
+# ----------------------------------------------------------------------------- routes (statuut C2)
+# De leesroutes van de voorpagina. routes.json op de root is een kopie van site/routes.json in de
+# site-repo (tools/haal_routes.py, met --check in CI). Elk item noemt in de frontmatter zijn route(s) of
+# expliciet `route: geen`; de controle loopt in twee richtingen, zodat routes.json en de frontmatter
+# niet uit elkaar kunnen lopen.
+SITE_KENNISBANK = "https://security-commons-nl.github.io/kennisbank/"
+_routes_cache: dict | None = None
+
+
+def routes() -> dict:
+    global _routes_cache
+    if _routes_cache is None:
+        pad = ROOT / "routes.json"
+        if not pad.exists():
+            fout(pad, "C2", "routes.json ontbreekt; haal hem met tools/haal_routes.py")
+            _routes_cache = {}
+        else:
+            data = json.loads(pad.read_text(encoding="utf-8"))
+            _routes_cache = {r["id"]: r for r in data["routes"]}
+    return _routes_cache
+
+
+def route_sleutel(url: str) -> str | None:
+    """'vak/item' als de url naar een item van de kennisbank wijst, anders None."""
+    if not url.startswith(SITE_KENNISBANK):
+        return None
+    rest = url[len(SITE_KENNISBANK):].strip("/")
+    return rest if rest.count("/") == 1 else None
+
+
+def controleer_route_veld(readme: Path, fm: dict) -> None:
+    waarde = fm.get("route")
+    if waarde == "geen":
+        return
+    if not isinstance(waarde, list) or not waarde:
+        fout(readme, "C2", "route: een lijst met route-id's uit routes.json, of expliciet 'geen'")
+        return
+    for rid in waarde:
+        if rid not in routes():
+            fout(readme, "C2", f"route '{rid}' bestaat niet in routes.json ({sorted(routes())})")
+
+
+def controleer_routes(items: dict[str, list[dict]]) -> None:
+    """C2 in twee richtingen: elke stap van een route die naar een item wijst, staat in de frontmatter
+    van dat item, en elke route in een frontmatter heeft dat item als stap."""
+    per_item = {f"{fm['_vak']}/{fm['_map'].name}": fm for vak in items for fm in items[vak]}
+    verwacht: dict[str, set] = {k: set() for k in per_item}
+    for rid, r in routes().items():
+        for stap in r["stappen"]:
+            sleutel = route_sleutel(stap["url"])
+            if sleutel is None:
+                continue
+            if sleutel not in per_item:
+                fout(ROOT / "routes.json", "C2", f"route '{rid}' wijst naar '{sleutel}', dat item bestaat niet")
+                continue
+            verwacht[sleutel].add(rid)
+    for sleutel, fm in per_item.items():
+        heeft = set(fm["route"]) if isinstance(fm.get("route"), list) else set()
+        for rid in sorted(verwacht[sleutel] - heeft):
+            fout(fm["_map"] / "README.md", "C2", f"staat als stap in route '{rid}' (routes.json) maar de frontmatter noemt die route niet")
+        for rid in sorted(heeft - verwacht[sleutel]):
+            fout(fm["_map"] / "README.md", "C2", f"frontmatter noemt route '{rid}', maar routes.json heeft dit stuk niet als stap in die route")
+
+
+def route_etiketten(fm: dict) -> list[str]:
+    """'ISO stap 3' per route waar het item in staat; voor de metaregel op de kaart."""
+    uit = []
+    if "_map" not in fm or "_vak" not in fm:
+        return []
+    sleutel = f"{fm['_vak']}/{fm['_map'].name}"
+    for rid in (fm.get("route") if isinstance(fm.get("route"), list) else []):
+        r = routes().get(rid)
+        if not r:
+            continue
+        for n, stap in enumerate(r["stappen"], 1):
+            if route_sleutel(stap["url"]) == sleutel:
+                uit.append(f"{r['rol']} stap {n}")
+    return uit
+
+
+def routes_blok(vak: str, items: list[dict]) -> str:
+    """Bovenaan een vakgebied: welke leesroutes door dit vakgebied lopen, met de stappen die hier staan."""
+    sleutels = {f"{vak}/{fm['_map'].name}" for fm in items}
+    blokken = []
+    for rid, r in routes().items():
+        stappen = []
+        for n, stap in enumerate(r["stappen"], 1):
+            sleutel = route_sleutel(stap["url"])
+            if sleutel in sleutels:
+                stappen.append((n, stap["titel"], sleutel.split("/", 1)[1] + "/"))
+        if not stappen:
+            continue
+        li = "".join(f'<li>stap {n}: <a href="{e(h)}">{e(t)}</a></li>' for n, t, h in stappen)
+        blokken.append(f'<div class="route"><h3 class="groep">{e(r["rol"])}: {e(r["vraag"])}</h3>'
+                       f'<ol class="routestappen">{li}</ol>'
+                       f'<p class="h2sub"><a href="https://security-commons-nl.github.io/#route-{e(rid)}">De hele route op de voorpagina</a></p></div>')
+    if not blokken:
+        return ""
+    return ('<h2 id="routes">Routes door dit vakgebied</h2>\n'
+            '<p class="h2sub">Een leesroute zegt in welke volgorde je begint; dit vakgebied levert deze stappen.</p>\n'
+            + "\n".join(blokken) + "\n\n")
+
+
 # ----------------------------------------------------------------------------- genereren
 CSS = """
 :root{--bg:#f4f6f9;--card:#fff;--ink:#14202b;--muted:#4b5563;--line:#dde3ea;--accent:#154273;--accent2:#2e7d68;
@@ -787,6 +891,9 @@ h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;line-height:1.15;margin:0 0 
 h2{font-size:21px;font-weight:750;margin:38px 0 6px;letter-spacing:-.02em}
 h2:first-of-type{margin-top:0}
 .h2sub{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+.route{margin:0 0 14px}
+.routestappen{margin:4px 0 6px 20px;padding:0}
+.routestappen li{margin:3px 0}
 p{margin:0 0 11px}
 a{color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
@@ -894,6 +1001,10 @@ def meta_regel(fm: dict, met_vak: bool) -> str:
     # wie de frontmatter leest, en dat is niemand.
     if fm.get("pijler"):
         delen.append("hoort bij: " + titel_van_pijler(str(fm["_vak"]), str(fm["pijler"])))
+    # De route (C2): zo ziet een lezer op de kaart dat dit stuk een stap is, en in welke route.
+    etiketten = route_etiketten(fm)
+    if etiketten:
+        delen.append("route: " + ", ".join(etiketten))
     return " · ".join(e(d) for d in delen)
 
 
@@ -1127,7 +1238,7 @@ def bouw_sectie(vak: str, sectie: dict, items: list[dict], elders: list[dict] | 
 
 <p class="lead">{e(sectie['lead'])}</p>
 
-<h2>Wat hier staat</h2>
+{routes_blok(vak, items)}<h2>Wat hier staat</h2>
 <p class="h2sub">{e(telling)}</p>
 
 {grid}
@@ -1949,6 +2060,7 @@ def main() -> int:
     for vak, sectie in secties.items():
         items[vak] = zet_op_volgorde(vak, items[vak], sectie)
     elders = {vak: controleer_elders(vak, sectie, items) for vak, sectie in secties.items()}
+    controleer_routes(items)
     if fouten:
         print(f"Redactiestatuut: {len(fouten)} overtreding(en). Niets gebouwd.\n")
         for f in fouten:

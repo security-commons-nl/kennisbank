@@ -6,6 +6,7 @@ normen: [NIS2, BIO2, ISO 22301]
 peildatum: 2026-08-31
 herkomst: in gebruik bij de crisisorganisatie van een gemeente
 status: sjabloon
+route: geen
 samenvatting: Startpakket voor de organisatie die nog geen team heeft dat een digitale calamiteit
   bestrijdt. Rolverdeling, logboek, sleutelbesluiten en evaluatie, met de invulformulieren erbij, en de opzet van een cyber- en IT-calamiteitenplan: wanneer je opschalen moet, wie activeert en hoe het team zich verhoudt tot de crisisorganisatie. Te
   beleggen binnen de eigen bedrijfsvoering, dus zonder eerst de crisisorganisatie te hoeven verbouwen.

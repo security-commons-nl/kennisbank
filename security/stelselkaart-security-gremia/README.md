@@ -6,6 +6,7 @@ normen: [NIS2, Cbw]
 peildatum: 2026-08-11
 herkomst: eigen ontwikkeling security-commons-nl, na externe review uit de sector
 status: in gebruik
+route: [ciso, eerste-honderd-dagen]
 samenvatting: Wie organiseert de digitale weerbaarheid van de Nederlandse overheid? Open dataset van 83 partijen en 19 concrete diensten, met vijf visualisaties van overlap en gaten. Machineleesbaar, zodat je er je eigen weergave op kunt bouwen.
 ---
 

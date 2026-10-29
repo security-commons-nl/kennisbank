@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, ISO 27002, Cbw]
 peildatum: 2026-10-14
 herkomst: herschreven op BIO 2.0 versie 1.3 vanuit de thema-beleidsstukken (2020-2026) van het team informatiebeveiliging en privacy van een regionale samenwerking van gemeenten, aangevuld met de handreikingen van de IBD
 status: concept
+route: [iso, eerste-honderd-dagen]
 samenvatting: Een beleidsset informatiebeveiliging voor de 21 BIO 2.0-domeinen die je op maat maakt. Beantwoord een paar contextvragen, zoals wie je IT beheert, waar je systemen draaien en of je onder de Cbw valt, en de generator stelt per domein een conceptbeleid samen met de regels die bij jouw organisatie passen. Elke regel noemt de maatregel die hij invult, elk stuk heeft een controleraamwerk, en een test bewijst dat elke set alle 117 overheidsmaatregelen en 40 ISO-beheersmaatregelen dekt, bij elk antwoord. Zonder antwoorden lees je alle varianten naast elkaar.
 bronnen: [ibd-bio2-template-strategisch-informatiebeveiligings-en-privacybeleid, ibd-bio2-handreiking-strategisch-informatiebeveiligings-en-privacybeleid, ibd-bio2-rasci-tabel-controls-informatieveiligheid-en-privacy, ibd-bio2-gap-analyse, ibd-beleid-logische-toegangsbeveiliging-v1-0, ibd-dataclassificatie-bio2, ibd-encryptiebeleid-pki-gemeente-v1-0, ibd-hardening-beleid-voor-gemeenten, ibd-back-up-en-recovery-gemeente, ibd-personeelsbeleid, ibd-voorbeeld-incidentmanagement-en-response-beleid-2, ibd-wachtwoordbeleid-2]
 ---

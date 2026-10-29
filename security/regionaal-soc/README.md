@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Meerdere organisaties delen een SOC: gedeelde kosten, gedeelde schaarse expertise, en de regie blijft publiek. Past bij kleine en middelgrote organisaties die al samenwerken of dat willen. Met de governance, de verwerkersafspraken tussen deelnemers en het bewijs dat de opvolging binnen de afgesproken tijd gebeurt.
 barrieres: [soc]
 rol: alternatief

@@ -38,6 +38,9 @@ jobs:
       # De controles zelf hebben ook tests; die draaien altijd, PR en push.
       - name: Tests van het bouwscript
         run: python tools/test_build.py
+      # routes.json is een kopie van site/routes.json in de site-repo (statuut C2); de kopie mag niet achterlopen.
+      - name: Routes gelijk aan de bron
+        run: python tools/haal_routes.py --check
 
       - name: Tests van de linkcheck
         run: python tools/test_linkcheck.py

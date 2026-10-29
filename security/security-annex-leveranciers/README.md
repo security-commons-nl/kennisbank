@@ -6,6 +6,7 @@ normen: [BIO2, ISO 27001, NIS2, CRA, AI Act, GIBIT 2025]
 versie: 1.4 (herzien BIO2, AI alleen na toestemming), 2026-10
 herkomst: CISO-organisatie van een Nederlandse gemeente, gedeeld met toestemming
 status: in gebruik
+route: [iso]
 samenvatting: Contractbijlage informatiebeveiliging, 20 artikelen. Van cloudsoevereiniteit en assurance tot FIDO2, just-in-time beheer, SSDLC en AI. Opgebouwd vanuit de risico's die gemeenten nu zien (identity, werkplek, kwetsbaarheden), verankerd in BIO2. Sjabloon met invulvelden, plakbaar in Word.
 barrieres: [technicalvendor, residual]
 rol: fundering

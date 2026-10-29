@@ -6,6 +6,7 @@ normen: [AI Act]
 peildatum: 2026-09-25
 herkomst: uitgewerkt vanuit de CISO-praktijk bij gemeenten die eigen AI-toepassingen bouwen, op basis van de tekst van de AI Act na de wijziging van juli 2026
 status: concept
+route: geen
 samenvatting: Klikbare toets waarmee een gemeente per AI-toepassing vastlegt of zij aanbieder of gebruiksverantwoordelijke is, en of de toepassing hoog risico is. Wie zelf een toepassing samenstelt, ook op een ingekocht platform en ook voor intern gebruik, is aanbieder. Bij hoog risico is dat het verschil tussen een gebruikersplicht en een conformiteitsbeoordeling met CE-markering. Levert een classificatiebesluit met onderbouwing. Rekent in de browser.
 bronnen: [bzk-algoritmekader, bzk-help-update-met-ai]
 ---

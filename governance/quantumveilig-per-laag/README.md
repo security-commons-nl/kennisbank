@@ -6,6 +6,7 @@ normen: [BIO2, Cbw, NIS2, AVG]
 peildatum: 2026-10-28
 herkomst: samengesteld uit de rijksbronnen over quantumveilige cryptografie (AIVD, CWI en TNO, CIO Rijk, Digitale Overheid) door de CISO-organisatie van een gemeente, voor gebruik in de hele publieke sector
 status: concept
+route: [bestuurder]
 samenvatting: Wat een quantumcomputer kapotmaakt is niet de toekomst maar het heden, want wat je vandaag versleuteld verstuurt kan rond 2030 open op straat liggen. Dit stuk vertaalt de rijkshandreikingen naar één pagina per laag van de organisatie, van bestuur tot inkoop, met per laag wat je nu doet, wat daarna komt en wanneer het klaar moet zijn. Vijf vragen vooraf bepalen welke variant voor jouw organisatie geldt. Met per laag een set platen om het gesprek te openen.
 bronnen: [aivd-bescherm-je-nu-tegen-quantumcomputers-2026, aivd-pqc-migratie-handboek, ciorijk-rijksbreed-beleidskader-cryptografie, ciorijk-pqc-migratie-tijdpad-quantumstrategie, do-quantumveilig-bereid-je-voor, do-quantumveilig-handige-hulpmiddelen]
 ---

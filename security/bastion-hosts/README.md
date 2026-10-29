@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Beheertoegang loopt via een bastion of jump host in plaats van rechtstreeks vanaf internet, met sterke authenticatie en sessieregistratie op dat ene punt. Zo verklein je het aanvalsoppervlak tot een systeem dat je echt kunt bewaken. Met de inrichting, de alternatieven en het bewijs dat er geen directe route meer is.
 barrieres: [remote]
 rol: fundering

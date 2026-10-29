@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Vooraf vastleggen wie wat zegt tijdens een cyberincident, aan medewerkers, inwoners, pers en toezichthouder, met kanalen die werken als de eigen omgeving plat ligt. Verdieping op de crisisoefening. Met de rollen, de kanalen en het bewijs dat het is geoefend.
 barrieres: [crisis]
 rol: verdieping

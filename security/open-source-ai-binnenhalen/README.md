@@ -6,6 +6,7 @@ normen: [Cbw, BIO2, ISO 27001]
 versie: 2026-09
 herkomst: uitgewerkt vanuit de CISO-praktijk bij gemeenten die een eigen AI-voorziening op open-source componenten opzetten
 status: concept
+route: geen
 samenvatting: Wie een eigen AI-voorziening bouwt uit open-source onderdelen (chatomgeving, gateway, vectordatabase, open modellen) valt met die keten onder de zorgplicht van de Cyberbeveiligingswet. Zes maatregelen die dat aantoonbaar maken, van componentenlijst en versie-pinning tot een wachttijd voor nieuwe versies, met de LiteLLM-compromittering van maart 2026 als casus.
 ---
 

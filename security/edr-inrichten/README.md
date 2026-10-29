@@ -6,6 +6,7 @@ normen: [BIO2]
 versie: 2026-09
 herkomst: patroon uit de security-shop-catalogus van security-commons-nl, herschreven als handleiding
 status: concept
+route: geen
 samenvatting: Endpointdetectie met tamper protection en bewaakte dekking, plus de mogelijkheid om een besmet apparaat snel te isoleren. Een EDR die op de helft van de apparaten draait, is geen dekking. Met de uitrol, de dekkingsmeting en de isolatietest als bewijs.
 barrieres: [edr]
 rol: fundering
