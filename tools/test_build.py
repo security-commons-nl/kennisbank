@@ -385,6 +385,9 @@ class Llms(unittest.TestCase):
             self.skipTest("llms.txt is nog niet gebouwd; draai tools/build.py")
         # Alleen het deel met de eigen stukken; daaronder volgt de sectie Bij anderen (bronnen.json).
         eigen = pad.read_text(encoding="utf-8").split("\n## Bij anderen")[0]
+        # Het blok "Profiel, regels en routes" bovenaan wijst naar bestanden, niet naar stukken (30-10-2026).
+        blokken = eigen.split("\n## ")
+        eigen = "\n## ".join(b for b in blokken if not b.startswith("Profiel, regels en routes"))
         regels = [r for r in eigen.splitlines() if r.startswith("- [")]
         # Alleen de vakgebieden tellen. Een brede glob telde in CI ook _aanvalspaden/methode/README.md
         # mee, de repo die voor de barrieres naast de kennisbank wordt uitgecheckt.
@@ -393,6 +396,16 @@ class Llms(unittest.TestCase):
         # Zo ging het de eerste keer mis: _link draagt het vakgebied al, dus security/security/.
         for vak in build.VAKGEBIEDEN:
             self.assertNotIn(f"/{vak}/{vak}/", "\n".join(regels))
+
+    def test_llms_noemt_profiel_regels_en_routes(self):
+        """Een assistent die de kennisbank leest, moet de vragenlijst en de regel 'nooit een naam' vinden."""
+        pad = build.ROOT / "llms.txt"
+        if not pad.exists():
+            self.skipTest("llms.txt is nog niet gebouwd; draai tools/build.py")
+        tekst = pad.read_text(encoding="utf-8")
+        for bestand in ("profiel.json", "profielregels.json", "routes.json"):
+            self.assertIn(f"{build.SITE}/{bestand}", tekst, bestand)
+        self.assertIn("nooit een naam", tekst)
 
 
 class Volgorde(Basis):

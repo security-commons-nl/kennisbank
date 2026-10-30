@@ -36,7 +36,9 @@ kennisbank/
 
 De spelregels staan in het [redactiestatuut](https://github.com/security-commons-nl/.github/blob/main/REDACTIESTATUUT.md); `python tools/build.py --check` controleert ze. Kort:
 
-- **Elk stuk is een map met `README.md`** onder een vakgebied, met de acht vaste frontmatter-velden (titel, vakgebied, type, normen, peildatum of versie, herkomst, status, samenvatting). De indexpagina's worden daaruit gegenereerd.
+- **Elk stuk is een map met `README.md`** onder een vakgebied, met de negen vaste frontmatter-velden (titel, vakgebied, type, normen, peildatum of versie, herkomst, status, samenvatting, route). De indexpagina's worden daaruit gegenereerd.
+- **`route` zegt in welke leesroute het stuk een stap is** (statuut C2), of `geen`. De routes staan op de voorpagina onder "Begin bij je rol" en in `routes.json` op de root van deze repo (een kopie van de site; `python tools/haal_routes.py` haalt hem bij). Twijfel je, zet dan `route: geen`: dan staat het stuk in de catalogus en zoekbaar, maar niet op de voordeur. Wil je een stuk in een route, dan moet het daar ook als stap in `routes.json` van de site staan; de build controleert beide kanten en wordt rood als ze verschillen. Een maintainer helpt je daarbij; zeg het in je PR.
+- **Het profiel sorteert, het verbergt niet.** Een lezer met een profiel (`/profiel/`) ziet de stukken die bij zijn organisatie passen bovenaan. Dat gebeurt op de normen, het vakgebied en de barrieres in je frontmatter, via de regels in `profielregels.json`. Daarom telt een eenduidige schrijfwijze van `normen` nog meer (zie hieronder). Een nieuwe regel in `profielregels.json` mag alleen wijzen naar wat bestaat; de build controleert dat.
 - **`normen` wordt getoond en meegezocht.** De normen staan als etiket op de kaart en onder de titel van de leesversie, en het zoekvak neemt ze mee. Schrijf een norm daarom overal hetzelfde: `BIO2`, `NIS2`, `Cbw`, `AVG`, `ISO 27001`, `AI Act`. Een bekende variant (`Cyberbeveiligingswet`, `BIO 2.0`, `GDPR`) keurt `build.py` af, want twee schrijfwijzen splitsen de vindbaarheid van hetzelfde onderwerp. Een norm die nog niet voorkomt mag gewoon; er is geen gesloten lijst.
 
 - **Anonimiseer** het document: geen namen, e-mailadressen, interne systeem-URLs of andere persoonsgegevens. Gebruik de [anonimizer](https://github.com/security-commons-nl/anonimizer-local) of vervang handmatig door functieomschrijvingen.
@@ -78,6 +80,7 @@ versie: 2026-09
 herkomst: <waar het vandaan komt, als rol of organisatietype>
 status: concept
 samenvatting: <twee tot vier zinnen: welke barriere, wat je aan het eind hebt staan, welk bewijs dat oplevert>
+route: geen          # of een lijst route-id's uit routes.json, bijvoorbeeld [iso, eerste-honderd-dagen]
 barrieres: [soc]
 rol: fundering
 ---
