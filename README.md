@@ -57,7 +57,7 @@ barriere welke handleiding er is, en waar er nog geen is. Zie [CONTRIBUTING.md](
 vorm.
 
 ## Principes
-Dit project volgt de [architectuur- en communityprincipes](https://github.com/security-commons-nl/.github/blob/main/PRINCIPLES.md) van security-commons-nl: EU-soevereiniteit, AI altijd adviserend, auditbaarheid by design, least privilege en open source als standaard.
+Dit project volgt de [architectuur- en communityprincipes](https://github.com/security-commons-nl/.github/blob/main/PRINCIPLES.md) van security-commons-nl. Voor de kennisbank tellen vooral: generiek en nooit over een genoemde organisatie, verwijs naar wat er al is, en AI bereidt voor terwijl de mens beslist.
 
 ## Routes en profiel
 
