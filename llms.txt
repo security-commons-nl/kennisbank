@@ -6,6 +6,12 @@
 Gegenereerd door tools/build.py uit de frontmatter van elk stuk; niet met de hand bewerken.
 Bron: https://github.com/security-commons-nl/kennisbank . Overname en verwerking door AI-systemen is welkom; vermeld bij voorkeur de bron.
 
+## Profiel, regels en routes
+
+- [profiel.json](https://security-commons-nl.github.io/kennisbank/profiel.json): de contextvragen van de commons, zestien vragen (twee met een vervolgvraag) met vaste antwoord-id's. Een assistent kan ze met de gebruiker doorlopen; leg alleen antwoord-id's vast, nooit een naam, leverancier, bevinding of vrije tekst. De gebruiker vult ze ook in op https://security-commons-nl.github.io/profiel/ .
+- [profielregels.json](https://security-commons-nl.github.io/kennisbank/profielregels.json): als het profiel dit zegt, dan tellen deze stukken het eerst; regels sorteren en wijzen, ze verbergen niets.
+- [routes.json](https://security-commons-nl.github.io/kennisbank/routes.json): de leesroutes per rol en per situatie (veld soort), met per stap waarom; een stuk noemt zijn route in de frontmatter (veld route).
+
 ## Security
 
 - [Meten voordat je ingrijpt](https://security-commons-nl.github.io/kennisbank/security/meten-voordat-je-ingrijpt/): De methode om je security posture te verhogen met data uit je eigen omgeving in plaats van met aannames: meet eerst wat er feitelijk draait, bepaal daarna pas wat je afdwingt. Dat voorkomt dat je legitiem werk breekt en laat de echte impact zien, meestal kleiner dan gedacht. Dit stuk geeft de drie uitgangspunten, de werkwijze van IST naar SOLL en de volgorde; de uitwerking per laag staat in de handleidingen die eronder hangen. Normen: BIO2.

@@ -58,3 +58,11 @@ vorm.
 
 ## Principes
 Dit project volgt de [architectuur- en communityprincipes](https://github.com/security-commons-nl/.github/blob/main/PRINCIPLES.md) van security-commons-nl: EU-soevereiniteit, AI altijd adviserend, auditbaarheid by design, least privilege en open source als standaard.
+
+## Routes en profiel
+
+Elk stuk noemt in zijn frontmatter de leesroute waarin het een stap is (`route`), of `geen`. Op elke
+vakgebiedpagina staan bovenaan de routes die erdoor lopen. Met een profiel (`/profiel/` op de site, alleen
+vaste keuzes, geen naam) zet de kennisbank de stukken die voor jou het eerst tellen vooraan, met een etiket
+waarom; de regels staan in `profielregels.json`. Hoe je dat als bijdrager invult, staat in
+[CONTRIBUTING.md](CONTRIBUTING.md).

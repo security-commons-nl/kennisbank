@@ -2205,7 +2205,16 @@ def llms_tekst(secties: dict[str, dict], items: dict[str, list[dict]]) -> str:
               "> Werkende kennis uit de publieke sector: security, privacy, continuiteit en governance,",
               "> geanonimiseerd gedeeld door professionals. Alles herbruikbaar onder EUPL-1.2.", "",
               "Gegenereerd door tools/build.py uit de frontmatter van elk stuk; niet met de hand bewerken.",
-              f"Bron: {REPO} . Overname en verwerking door AI-systemen is welkom; vermeld bij voorkeur de bron.", ""]
+              f"Bron: {REPO} . Overname en verwerking door AI-systemen is welkom; vermeld bij voorkeur de bron.", "",
+              "## Profiel, regels en routes", "",
+              f"- [profiel.json]({SITE}/profiel.json): de contextvragen van de commons, zestien vragen (twee met een "
+              "vervolgvraag) met vaste antwoord-id's. Een assistent kan ze met de gebruiker doorlopen; leg alleen "
+              "antwoord-id's vast, nooit een naam, leverancier, bevinding of vrije tekst. De gebruiker vult ze ook in op "
+              "https://security-commons-nl.github.io/profiel/ .",
+              f"- [profielregels.json]({SITE}/profielregels.json): als het profiel dit zegt, dan tellen deze stukken "
+              "het eerst; regels sorteren en wijzen, ze verbergen niets.",
+              f"- [routes.json]({SITE}/routes.json): de leesroutes per rol en per situatie (veld soort), met per stap "
+              "waarom; een stuk noemt zijn route in de frontmatter (veld route).", ""]
     for vak in VAKGEBIEDEN:
         lijst = items.get(vak) or []
         if not lijst:
