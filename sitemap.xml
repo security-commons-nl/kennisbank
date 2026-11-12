@@ -7,6 +7,7 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/ai-incident-melden/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/application-control/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/awareness-digitale-veiligheid/</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/security/awareness-digitale-veiligheid/sessie.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/bastion-hosts/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/beheerwerkplek/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/security/blue-team-opzetten/</loc></url>
@@ -153,7 +154,10 @@
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/calamiteitenplan-opzet.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/evaluatie-vragenlijst.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/evaluatiesessie-sjabloon.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/logboek-invulblad.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/logboekformat.html</loc></url>
+  <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/rolverdeling-raci.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/scenariodenken-bob.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/sleutelbesluiten-format.html</loc></url>
   <url><loc>https://security-commons-nl.github.io/kennisbank/bcm/calamiteitenteam-digitaal-opzetten/taakkaarten.html</loc></url>

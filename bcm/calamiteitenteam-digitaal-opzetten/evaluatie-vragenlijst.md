@@ -1,6 +1,6 @@
 # Vragenlijst voor de evaluatie van een calamiteit
 
-> **Herkomst:** evaluatieformulier van de bedrijfscontinuïteitsorganisatie van een regionale samenwerking van gemeenten. Voor de commons ongewijzigd in opbouw overgenomen; het hoort naast het [evaluatiesessie-sjabloon](evaluatiesessie-sjabloon.pptx) in deze map. Het sjabloon is de sessie van een uur, deze vragenlijst is de diepere evaluatie met interviews.
+> **Herkomst:** evaluatieformulier van de bedrijfscontinuïteitsorganisatie van een regionale samenwerking van gemeenten. Voor de commons ongewijzigd in opbouw overgenomen; het hoort naast het [evaluatiesessie-sjabloon](evaluatiesessie-sjabloon.md) in deze map. Het sjabloon is de sessie van een uur, deze vragenlijst is de diepere evaluatie met interviews.
 
 **Doel.** Leren van (cyber)incidenten en acute dreigingen, en het calamiteitenmanagement en de
 bedrijfscontinuïteit verbeteren.

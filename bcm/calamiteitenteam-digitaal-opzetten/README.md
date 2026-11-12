@@ -61,7 +61,7 @@ rol de kerntaken en een checklist voor de startfase, de uitvoering en de afbouw.
 | Communicatieadviseur | Interne en externe boodschap |
 
 De verdeling van verantwoordelijkheden over de hele incidentketen staat in
-[rolverdeling-raci.xlsx](rolverdeling-raci.xlsx), van detectie tot nazorg, inclusief de rollen buiten het
+[rolverdeling-raci.md](rolverdeling-raci.md), van detectie tot nazorg, inclusief de rollen buiten het
 team zelf: functionaris gegevensbescherming, juridische zaken, afdelingshoofden, gemeentesecretaris en
 bestuur.
 
@@ -75,7 +75,7 @@ verschil tussen een evaluatie die klopt en een reconstructie achteraf uit herinn
 ook je bewijs richting toezichthouder, verzekeraar en, als het misgaat, de rechter.
 
 De opzet staat in [logboekformat.md](logboekformat.md). Het lege invulblad is
-[logboek-invulblad.xlsx](logboek-invulblad.xlsx), met vijf tabbladen: instructie, het doorlopende
+[logboek-invulblad.md](logboek-invulblad.md), met de instructie en vier onderdelen: het doorlopende
 logboek, de meldketen met de wettelijke termijnen, de sleutelbesluiten en de opkomstregistratie.
 
 Twee regels die in de praktijk het meeste schelen: overschrijf nooit een eerdere regel maar voeg een
@@ -108,7 +108,7 @@ Het kader is afgeleid van het NIPV-rapport *Scenario denken in crisisbeheersing*
 
 ## Na afloop
 
-Plan de evaluatie voordat je hem nodig hebt. [evaluatiesessie-sjabloon.pptx](evaluatiesessie-sjabloon.pptx)
+Plan de evaluatie voordat je hem nodig hebt. [evaluatiesessie-sjabloon.md](evaluatiesessie-sjabloon.md)
 is een sessie van maximaal zestig minuten in vijf stappen: uitgangspunten, de gebeurtenis beschrijven,
 wat ging goed en wat kan beter per fase (preventie, detectie, respons, herstel, communicatie), en
 maximaal vijf verbeteracties met eigenaar en datum. Dat laatste is de enige stap die telt.
@@ -118,15 +118,15 @@ werkwijze zonder dat er iets echt misgaat.
 
 ## Wat er in deze map staat
 
-- [calamiteitenplan-opzet.md](calamiteitenplan-opzet.md) — de opzet van het plan zelf: reikwijdte, niveaus, verhouding tot de crisisorganisatie, activeren en opschalen
-- [logboekformat.md](logboekformat.md) — de opzet van het logboek en de procedure voor sleutelbesluiten
-- [sleutelbesluiten-format.md](sleutelbesluiten-format.md) — invulformats voor de vier zware ingrepen
-- [taakkaarten.md](taakkaarten.md) — generieke taakkaart plus zes rolspecifieke kaarten
-- [scenariodenken-bob.md](scenariodenken-bob.md) — wanneer wel en niet vooruitdenken
-- [logboek-invulblad.xlsx](logboek-invulblad.xlsx) — leeg logboek met vijf tabbladen
-- [rolverdeling-raci.xlsx](rolverdeling-raci.xlsx) — verantwoordelijkheden over de hele incidentketen
-- [evaluatiesessie-sjabloon.pptx](evaluatiesessie-sjabloon.pptx) — evaluatiesessie in vijf stappen
-- [evaluatie-vragenlijst.md](evaluatie-vragenlijst.md) — de diepere evaluatie met interviews, binnen twee weken
+- [calamiteitenplan-opzet.md](calamiteitenplan-opzet.md): de opzet van het plan zelf: reikwijdte, niveaus, verhouding tot de crisisorganisatie, activeren en opschalen
+- [logboekformat.md](logboekformat.md): de opzet van het logboek en de procedure voor sleutelbesluiten
+- [sleutelbesluiten-format.md](sleutelbesluiten-format.md): invulformats voor de vier zware ingrepen
+- [taakkaarten.md](taakkaarten.md): generieke taakkaart plus zes rolspecifieke kaarten
+- [scenariodenken-bob.md](scenariodenken-bob.md): wanneer wel en niet vooruitdenken
+- [logboek-invulblad.md](logboek-invulblad.md): leeg logboek met instructie en vier onderdelen
+- [rolverdeling-raci.md](rolverdeling-raci.md): verantwoordelijkheden over de hele incidentketen
+- [evaluatiesessie-sjabloon.md](evaluatiesessie-sjabloon.md): evaluatiesessie in vijf stappen
+- [evaluatie-vragenlijst.md](evaluatie-vragenlijst.md): de diepere evaluatie met interviews, binnen twee weken
 
 ## Bewijs
 
