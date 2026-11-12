@@ -145,7 +145,7 @@ alternatief.
 - Bij een aanval regelt de CIO de aangifte, voor zover die nog niet is gedaan.
 - Na elke inzet: een oorzaakanalyse (IT-beheer), de risicoanalyse bijwerken (CISO), nieuwe inzichten in
   de architectuurtool vastleggen, en een evaluatie van het optreden van het team met het
-  [evaluatiesjabloon](evaluatiesessie-sjabloon.pptx).
+  [evaluatiesjabloon](evaluatiesessie-sjabloon.md).
 - Vergeet de mensen niet. Wie dagen een calamiteit heeft bestreden, heeft na afloop aandacht nodig, en
   tijdens de calamiteit ook: pauzes, eten, aflossing.
 
