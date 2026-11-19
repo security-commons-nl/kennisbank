@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Verdediging met AI,
+vijf agent-patronen voor
+beveiligingswerk</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Verdediging met AI, vijf agent-patronen voor beveiligingswerk</span></nav><!-- /kruimelpad -->
+<h1
+id="verdediging-met-ai-vijf-agent-patronen-voor-beveiligingswerk">Verdediging
+met AI, vijf agent-patronen voor beveiligingswerk</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#154273;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span><span class="norm">AI Act</span><span class="norm">Cbw</span></p><!-- /normen -->
+<p>Over AI en beveiliging bestaan vier gesprekken: de aanval <em>op</em>
+AI, de aanval <em>met</em> AI, de verdediging <em>van</em> AI en de
+verdediging <em>met</em> AI. De meeste stukken, ook in deze kennisbank,
+gaan over de verdediging van AI: hoe je een assistent of agent veilig
+inzet. Over het vierde gesprek, AI als hulp in het eigen
+beveiligingswerk, is in de publieke sector weinig uitgeschreven.
+Tegelijk heeft een CISO-organisatie bij een gemeente meer werk dan
+mensen, en veel van dat werk is lezen, vergelijken en samenvatten:
+precies wat een agent goed kan.</p>
+<p>Dit stuk beschrijft vijf patronen. Elk patroon is een taakverdeling:
+de agent bereidt voor, de mens beslist. Dat is geen voorzichtigheid voor
+de vorm. Het is de enige verdeling waarin je achteraf kunt uitleggen wie
+wat besloot, en de enige die past bij menselijk toezicht zoals de
+AI-verordening dat vraagt.</p>
+<h2 id="de-vijf-patronen">De vijf patronen<a class="anker" href="#de-vijf-patronen" aria-label="Link naar deze kop">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Patroon</th>
+<th>Wat de agent doet</th>
+<th>Wat de mens doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toets-agent</strong></td>
+<td>Toetst code of configuratie van een leverancier aan een vaste lijst
+maatregelen, rapporteert per maatregel en stelt een correctie voor</td>
+<td>Stelt de lijst vast, bespreekt de uitkomst met de leverancier,
+beslist</td>
+</tr>
+<tr>
+<td><strong>Risico-voorbereider</strong></td>
+<td>Stelt voor een beschreven toepassing kandidaat-risico's voor uit
+openbare lijsten, met per risico de bron</td>
+<td>Weegt, schrapt, vult aan, en neemt het besluit in het
+risicoregister</td>
+</tr>
+<tr>
+<td><strong>Voorschriften-navigator</strong></td>
+<td>Loopt stap voor stap de vragen van Cbw, AVG en AI-verordening langs
+en noemt per stap de bron</td>
+<td>Beantwoordt de vragen; de uitkomst is een classificatie met
+onderbouwing</td>
+</tr>
+<tr>
+<td><strong>Monitoring-agent</strong></td>
+<td>Leest logging en markeert afwijkingen tegen een vaste lijst
+signalen</td>
+<td>Beoordeelt elke markering en past de lijst aan</td>
+</tr>
+<tr>
+<td><strong>Leveranciersantwoord-toetser</strong></td>
+<td>Legt de antwoorden van een leverancier naast de gestelde eis en
+markeert waar een antwoord de vraag ontwijkt</td>
+<td>Voert het gesprek met de leverancier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toets-agent">Toets-agent<a class="anker" href="#toets-agent" aria-label="Link naar deze kop">#</a></h3>
+<p>Twee grote gemeenten lieten in een openbaar VNG-webinar een
+proefopstelling zien waarin een open-source agent de code van een
+leverancier naloopt op bekende risico's en mitigerende maatregelen,
+rapporteert en correcte code voorstelt, met een mens aan het begin en
+aan het eind. Dat is dit patroon.</p>
+<ul>
+<li><strong>Bevoegdheid:</strong> alleen lezen op de aangeleverde code
+of configuratie, in een afgeschermde omgeving. Geen toegang tot
+productie, geen schrijfrechten in de repository van de leverancier.</li>
+<li><strong>Laag:</strong> de toepassing zelf (code, configuratie), vóór
+ingebruikname of bij een release.</li>
+<li><strong>Bewijs:</strong> de lijst maatregelen waartegen getoetst is,
+met versie; het rapport per maatregel; het besluit van de mens met de
+afspraken met de leverancier.</li>
+<li><strong>Let op:</strong> de lijst bepaalt de uitkomst. Een agent die
+"geen bevindingen" meldt op een te korte lijst, geeft schijnzekerheid.
+Gebruik een openbare lijst als basis, zoals de <a
+href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 voor
+LLM-toepassingen</a> of de aansluitvoorwaarden voor algoritmen en AI
+(zie de bronnen), en vul aan met je eigen eisen.</li>
+</ul>
+<h3 id="risico-voorbereider">Risico-voorbereider<a class="anker" href="#risico-voorbereider" aria-label="Link naar deze kop">#</a></h3>
+<p>Een risicoanalyse begint met een leeg vel, en het lege vel is de
+grootste drempel. De agent vult het met kandidaat-risico's uit openbare
+lijsten (OWASP, <a href="https://atlas.mitre.org/">MITRE ATLAS</a>, de
+aansluitvoorwaarden), afgestemd op de beschreven toepassing, met bij elk
+risico de bron.</p>
+<ul>
+<li><strong>Bevoegdheid:</strong> geen toegang tot systemen; werkt op
+een beschrijving die de mens aanlevert.</li>
+<li><strong>Laag:</strong> de business en de toepassing, vóór de bouw of
+de inkoop.</li>
+<li><strong>Bewijs:</strong> de voorgestelde lijst, de lijst na weging,
+en per geschrapt risico waarom.</li>
+<li><strong>Let op:</strong> de agent kent de context niet. Wat hij niet
+voorstelt, is daarmee niet afwezig. Gebruik de uitkomst als start van
+het gesprek met de proceseigenaar, niet als de analyse zelf; zie <a
+href="../risicoanalyse-aanvalspaden/">Risicoanalyse langs
+aanvalspaden</a>.</li>
+</ul>
+<h3 id="voorschriften-navigator">Voorschriften-navigator<a class="anker" href="#voorschriften-navigator" aria-label="Link naar deze kop">#</a></h3>
+<p>Valt deze toepassing onder hoog risico, ben je aanbieder of
+gebruiksverantwoordelijke, raakt het de Cbw? De navigator stelt de
+vragen in vaste volgorde en noemt bij elke stap het artikel of de bron.
+Het is dezelfde logica als de <a
+href="../../governance/aanbieder-onder-de-ai-act/">aanbieder-toets</a>
+en het <a
+href="https://minbzk.github.io/Algoritmekader/">Algoritmekader</a>, maar
+als gesprek in plaats van een formulier.</p>
+<ul>
+<li><strong>Bevoegdheid:</strong> geen toegang tot systemen; werkt op de
+antwoorden van de mens.</li>
+<li><strong>Bewijs:</strong> de vragen, de antwoorden en de uitkomst,
+met per stap de bron.</li>
+<li><strong>Let op:</strong> een navigator die de wet samenvat in plaats
+van de vragen te stellen, gaat interpreteren. De vragen en de
+beslisregels komen uit een vaste bron; de agent leest voor en
+noteert.</li>
+</ul>
+<h3 id="monitoring-agent">Monitoring-agent<a class="anker" href="#monitoring-agent" aria-label="Link naar deze kop">#</a></h3>
+<p>Logging over AI-gebruik is volumineus en de signalen zijn nieuw: een
+connector die er gisteren niet was, een agent die buiten zijn taak
+gegevens opvraagt, uitvoer die naar buiten gaat, een model dat de
+leverancier zonder aankondiging wisselt. De monitoring-agent leest mee
+en markeert.</p>
+<ul>
+<li><strong>Bevoegdheid:</strong> alleen lezen op de logging; geen
+rechten om iets uit te zetten.</li>
+<li><strong>Laag:</strong> platform en orchestratie, doorlopend.</li>
+<li><strong>Bewijs:</strong> de lijst signalen met versie, de
+markeringen en per markering het oordeel van de mens.</li>
+<li><strong>Let op:</strong> de markeringen landen in de werkvoorraad
+van je SOC of <a href="../centrale-logverzameling/">centrale
+logverzameling</a>, niet in een apart scherm dat niemand opent. Een
+monitoring-agent mag nooit zelf blokkeren; dat is een ingreep en die
+beslist een mens, zie <a href="../ingrijpen-met-checklist/">Ingrijpen
+met een checklist</a>.</li>
+</ul>
+<h3 id="leveranciersantwoord-toetser">Leveranciersantwoord-toetser<a class="anker" href="#leveranciersantwoord-toetser" aria-label="Link naar deze kop">#</a></h3>
+<p>Een leverancier beantwoordt een vragenlijst, de annex of de
+aansluitvoorwaarden. Veel antwoorden zijn waar en toch geen antwoord:
+"wij volgen de best practices", "dat is geregeld in ons beleid". De
+agent legt elk antwoord naast de gestelde eis en markeert waar het
+antwoord de vraag ontwijkt, niet concreet is of naar een document
+verwijst dat niet is meegestuurd.</p>
+<ul>
+<li><strong>Bevoegdheid:</strong> geen toegang tot systemen; werkt op de
+eis en het antwoord.</li>
+<li><strong>Bewijs:</strong> de eisen, de antwoorden, de markeringen en
+de vervolgvragen die de mens heeft gesteld.</li>
+<li><strong>Let op:</strong> antwoorden van een leverancier kunnen
+vertrouwelijk zijn. Kies een agent die je inkoopvoorwaarden toestaan, of
+anonimiseer eerst; zie het <a href="../ai-inzet-keuzeblad/">keuzeblad
+bij de inzet van een agent</a>. Hoort bij <a
+href="../leveranciersbeoordeling/">Leveranciersbeoordeling met vaste
+cyclus</a>.</li>
+</ul>
+<h2 id="wie-keurt-de-agent">Wie keurt de agent<a class="anker" href="#wie-keurt-de-agent" aria-label="Link naar deze kop">#</a></h2>
+<p>In het webinar viel de vraag of dit niet de slager is die zijn eigen
+vlees keurt. Het antwoord is hetzelfde als bij een pentester en een
+bouwer: scheiding.</p>
+<ol type="1">
+<li><strong>Een ander model of een andere aanbieder</strong> dan wat
+getoetst wordt. Een agent die code toetst die met hetzelfde model is
+geschreven, deelt de blinde vlekken.</li>
+<li><strong>Alleen leesrechten</strong> waar dat kan. Elk patroon
+hierboven werkt zonder schrijfrechten.</li>
+<li><strong>De mens beslist</strong> op de uitkomst, met naam in het
+verslag.</li>
+<li><strong>Een steekproef met de hand</strong>, periodiek: neem een
+uitkomst en doe hem zelf over. Wijkt het af, dan is dat een bevinding
+over de agent.</li>
+<li><strong>De lijsten zijn data met een versie</strong>: de
+maatregelen, de signalen, de eisen. Wie de lijst wijzigt, wijzigt de
+uitkomst; dus de lijst heeft een eigenaar.</li>
+</ol>
+<h2 id="use-cases-een-startlijst">Use-cases, een startlijst<a class="anker" href="#use-cases-een-startlijst" aria-label="Link naar deze kop">#</a></h2>
+<p>Dit is een begin. De lijst groeit met wat organisaties zelf in
+gebruik hebben of willen proberen.</p>
+<table>
+<thead>
+<tr>
+<th>Doel</th>
+<th>Patroon</th>
+<th>Laag</th>
+<th>Wat er in gaat</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code van een leverancier toetsen vóór ingebruikname</td>
+<td>Toets-agent</td>
+<td>Toepassing</td>
+<td>Code, configuratie</td>
+<td>proef</td>
+</tr>
+<tr>
+<td>Kandidaat-risico's voor een nieuwe AI-toepassing</td>
+<td>Risico-voorbereider</td>
+<td>Business, toepassing</td>
+<td>Beschrijving van de toepassing</td>
+<td>idee</td>
+</tr>
+<tr>
+<td>Classificatie onder AI-verordening en Cbw</td>
+<td>Voorschriften-navigator</td>
+<td>Business</td>
+<td>Antwoorden op vaste vragen</td>
+<td>idee</td>
+</tr>
+<tr>
+<td>Nieuwe connectoren en agents in de tenant signaleren</td>
+<td>Monitoring-agent</td>
+<td>Platform</td>
+<td>Auditlogging</td>
+<td>idee</td>
+</tr>
+<tr>
+<td>Antwoorden op de security-annex beoordelen</td>
+<td>Leveranciersantwoord-toetser</td>
+<td>Inkoop</td>
+<td>Eisen en antwoorden</td>
+<td>idee</td>
+</tr>
+<tr>
+<td>Configuratie van cloud-beheerportalen naast een baseline leggen</td>
+<td>Toets-agent</td>
+<td>Platform</td>
+<td>Configuratie-export</td>
+<td>idee</td>
+</tr>
+</tbody>
+</table>
+<p>Heb je een use-case in gebruik of in proef, of zoek je er een? Een <a
+href="https://github.com/security-commons-nl/kennisbank/issues/new">issue
+in de kennisbank</a> is genoeg, met het doel, het patroon en wat er in
+gaat. Wat erbij komt, landt in deze tabel; wat uitgroeit tot een eigen
+aanpak, krijgt een eigen stuk. Beschrijf de use-case, niet de situatie
+van je organisatie.</p>
+<h2 id="wat-het-kost-en-wat-het-oplevert">Wat het kost en wat het
+oplevert<a class="anker" href="#wat-het-kost-en-wat-het-oplevert" aria-label="Link naar deze kop">#</a></h2>
+<p>Kosten: laag tot middel. De patronen draaien op een assistent die je
+al hebt of op een open model; het werk zit in de lijsten (maatregelen,
+signalen, eisen) en in de afspraak wie beslist. Wat het oplevert: tijd
+op lees- en vergelijkwerk, en een vaste vorm waarin je uitkomsten kunt
+laten zien. Wat het niet oplevert: een oordeel. Elke tijdwinst die
+verdwijnt in het nalopen van de agent, is een signaal dat het patroon
+niet past; weeg dat mee op het keuzeblad.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
+<p>Vóór de inzet van elk patroon: het <a
+href="../ai-inzet-keuzeblad/">keuzeblad</a>. De bevoegdheid van de
+agent: <a href="../agent-bevoegdheid/">Wiens bevoegdheid gebruikt een
+AI-agent?</a>. Als de agent op een assistent in de kantooromgeving
+draait: <a href="../copilot-configuratiekeuzes/">Copilot, de
+configuratiekeuzes</a>. De risico's van agents zelf staan in de <a
+href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP
+Top 10 voor agentic applications</a>; voor een breder kader het <a
+href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI
+Risk Management Framework</a>.</p>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #154273;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#154273}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#154273}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-ai-en-algoritmen/">Handreiking AI en Algoritmen</a> <span class="partij">· IBD</span></li><li><a href="https://aigovernance.vng.nl/knowledge_card/Instrumenten-en-kaders-voor-monitoring-en-beheer-van-AI-en-algoritmen">Instrumenten en kaders voor implementatie, monitoring en beheer van AI en algoritmen (kenniskaart VNG AI Governancekader)</a> <span class="partij">· VNG en VNG Realisatie</span></li><li><a href="https://storage.googleapis.com/aigovernance.appspot.com/assets/Aansluitvoorwaarden%20%20AI%20&amp;%20algoritmen%20-%20Gemeente%20Utrecht.pdf">Aansluitvoorwaarden voor algoritmen en AI, gemeente Utrecht (versie 0.98, via het VNG AI Governancekader)</a> <span class="partij">· VNG en VNG Realisatie</span></li><li><a href="https://minbzk.github.io/Algoritmekader/">Algoritmekader, met de beslishulp voor risicoklasse en rol onder de AI-verordening</a> <span class="partij">· BZK</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/agent-patronen-beveiliging">security/agent-patronen-beveiliging</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
