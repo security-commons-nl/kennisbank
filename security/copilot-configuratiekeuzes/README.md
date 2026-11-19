@@ -8,7 +8,7 @@ herkomst: CISO-praktijk bij gemeenten, naar aanleiding van een VNG-webinar over 
 status: concept
 route: geen
 bronnen: [ibd-notitie-dpia-copilot, ibd-handreiking-ai-en-algoritmen, vng-kenniskaart-monitoring-ai]
-samenvatting: De voorwaarden van Microsoft Copilot zijn niet te onderhandelen, de inrichting wel. Zes keuzes die je als organisatie zelf zet, met per keuze wat het afdekt en wat het kost - webzoeken via Bing aan of uit, gevoeligheidslabels en DLP, wat Copilot kan vinden (oversharing), agents en connectoren, AI-modellen van derden als subverwerker, en logging. Met de volgorde waarin je ze aanpakt en het bewijs dat je kunt laten zien.
+samenvatting: De voorwaarden van Microsoft Copilot zijn niet te onderhandelen, de inrichting wel. Zes keuzes die je als organisatie zelf zet, met per keuze wat het afdekt en wat het kost - webzoeken via Bing aan of uit, gevoeligheidslabels en DLP (ook tegen promptinjectie via externe mail), wat Copilot kan vinden (oversharing), agents en connectoren, AI-modellen van derden als subverwerker, en logging. Met de volgorde waarin je ze aanpakt en het bewijs dat je kunt laten zien.
 ---
 
 # Copilot en vergelijkbare assistenten, de configuratiekeuzes
