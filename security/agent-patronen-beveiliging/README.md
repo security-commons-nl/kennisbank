@@ -8,7 +8,7 @@ herkomst: CISO-praktijk bij gemeenten, naar aanleiding van een VNG-webinar over 
 status: concept
 route: geen
 bronnen: [ibd-handreiking-ai-en-algoritmen, vng-kenniskaart-monitoring-ai, vng-utrecht-aansluitvoorwaarden-ai, bzk-algoritmekader]
-samenvatting: Vijf patronen waarin een AI-agent het beveiligingswerk voorbereidt en een mens beslist - de toets-agent, de risico-voorbereider, de voorschriften-navigator, de monitoring-agent en de leveranciersantwoord-toetser. Per patroon wat de agent doet, wat de mens doet, welke bevoegdheid de agent krijgt en wat het bewijs is, plus het antwoord op de vraag wie de agent keurt. Met een startlijst van use-cases waar organisaties op kunnen aanvullen.
+samenvatting: Vijf patronen waarin een AI-agent op basis van een taalmodel (LLM) het beveiligingswerk voorbereidt en een mens beslist - de toets-agent, de risico-voorbereider, de voorschriften-navigator, de monitoring-agent en de leveranciersantwoord-toetser. Per patroon wat de agent doet, wat de mens doet, welke bevoegdheid de agent krijgt en wat het bewijs is, plus het antwoord op de vraag wie de agent keurt. Met een startlijst van use-cases waar organisaties op kunnen aanvullen.
 ---
 
 # Verdediging met AI, vijf agent-patronen voor beveiligingswerk
