@@ -83,6 +83,30 @@
       "post-quantum",
       "quantumveilig",
       "quantumveilige cryptografie"
+    ],
+    [
+      "ai",
+      "kunstmatige intelligentie",
+      "artificial intelligence",
+      "genai"
+    ],
+    [
+      "llm",
+      "taalmodel",
+      "large language model"
+    ],
+    [
+      "promptinjectie",
+      "prompt injection"
+    ],
+    [
+      "dlp",
+      "data loss prevention",
+      "lekpreventie"
+    ],
+    [
+      "agent",
+      "agentic"
     ]
   ],
   "bronnen": {
