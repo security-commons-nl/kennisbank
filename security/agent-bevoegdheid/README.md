@@ -116,7 +116,7 @@ Bepaal per agent welke acties gevoelig zijn en laat de rest door; de audit vangt
 Dit is het agent-hoofdstuk van [Just-in-time beheerrechten](../just-in-time-beheerrechten/) en
 [Rechten in de cloud terugbrengen tot gebruik](../least-privilege-cloud/): dezelfde principes, nu voor
 een identiteit die geen mens is. De vijf auditvragen landen in [Richt centrale logverzameling in](../centrale-logverzameling/).
-Voor het meten van AI-gebruik voordat je agents toelaat: [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/).
+Voor het meten van AI-gebruik voordat je agents toelaat: [AI-gebruik in beeld](https://security-commons-nl.github.io/ai-gebruik-in-beeld/). Vóór de inzet van een agent: het [keuzeblad](../ai-inzet-keuzeblad/); agents als hulp in het eigen beveiligingswerk: [Verdediging met AI, vijf agent-patronen](../agent-patronen-beveiliging/).
 
 ## Bronnen
 

@@ -64,7 +64,10 @@ bij het invullen.
 [AI-securitylijn](https://github.com/security-commons-nl/.github/blob/main/plannen/2026-10-15-ai-securitylijn.md)
 (issue #83) loopt tot 1 december in vier sporen: verwijzen naar wat er al is (klaar), zeven nieuwe stukken met als
 eerste de Copilot-configuratiekeuzes, materiaal van Amsterdam en Utrecht via de VNG-werkgroep, en verdediging met
-AI: agent-patronen, een use-case-lijst en een keuzeblad.
+AI: agent-patronen, een use-case-lijst en een keuzeblad. In november kwamen de Copilot-configuratiekeuzes, de vijf
+agent-patronen voor beveiligingswerk (met een startlijst van use-cases die via een issue aan te vullen is) en het
+keuzeblad bij de inzet van een agent. Open: het materiaal via de VNG-werkgroep, en de vijf overige nieuwe stukken
+(adversarial AI, rode vlaggen bij monitoring, use-cases met classificatie, Cbw voor ingekochte AI, baten en lasten).
 
 ---
 

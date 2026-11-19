@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><title>Copilot en
+vergelijkbare assistenten, de
+configuratiekeuzes</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.45;color:#111;max-width:19cm;margin:2cm auto;padding:0 1cm}
+h1{font-size:20pt;border-bottom:2px solid #1f4e79;padding-bottom:.2em;color:#1f4e79}h2{font-size:14pt;margin-top:1.5em;color:#1f4e79}
+h3{font-size:12pt;margin-top:1.2em}p{margin:.5em 0}ul,ol{margin:.3em 0 .6em 1.4em}li{margin:.15em 0}
+table{border-collapse:collapse;margin:.6em 0;font-size:10pt;width:100%}th,td{border:1px solid #c9d1dc;padding:.35em .5em;vertical-align:top;text-align:left}th{background:#f3f6fa}@media (max-width:700px){table{display:block;overflow-x:auto;width:auto;max-width:100%}}
+blockquote{margin:.6em 0;padding:.5em .9em;border-left:3px solid #e0b400;background:#fffbe9}code{font-size:10pt}
+.kop{background:#f3f6fa;border:1px solid #d0d7e2;padding:.8em 1em;font-size:10pt;margin-bottom:1.5em}
+@media print{body{margin:0;max-width:none}@page{size:A4;margin:2cm}h1,h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}</style>
+<!-- favicon --><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="32x32"><!-- /favicon --><!-- huisstijl --><meta name="viewport" content="width=device-width, initial-scale=1"><style>@media screen{:root{--inkt:#14202b;--blauw:#154273;--blauw-donker:#0d2b4d;--oranje:#e17000;--vlak:#f4f6f9;--lijn:#dde3ea;--grijs:#4b5563;--sans:system-ui,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}html{background:#fff}body{font:17px/1.65 var(--sans);color:var(--inkt);max-width:46rem;box-sizing:border-box;margin:0 auto;padding:0 1.25rem 4rem}html body .kruimel{background:var(--blauw-donker);color:#c9d6e4;margin:0 0 2.8rem;padding-top:1.05rem;padding-bottom:1.05rem;padding-left:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));padding-right:max(var(--kruimel-rand,0px),calc((100% - var(--kruimel-breedte,100%))/2));box-shadow:0 0 0 100vmax var(--blauw-donker);clip-path:inset(-100vmax -100vmax 0 -100vmax);font:14px/1.5 var(--sans)}html body .kruimel a{color:#fff;text-decoration:none}html body .kruimel a:hover{text-decoration:underline}html body .kruimel span{color:#c9d6e4}h1{font-family:var(--sans);font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--inkt);border:0;padding:0;margin:0 0 .5rem;hyphens:auto;overflow-wrap:break-word}h1::after{content:'';display:block;width:3.5rem;height:4px;border-radius:2px;background:var(--oranje);margin-top:.9rem}h2{font-family:var(--sans);font-size:1.45rem;font-weight:750;letter-spacing:-.02em;color:var(--inkt);margin:2.6rem 0 .6rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;color:var(--inkt);margin:1.7rem 0 .4rem}p{margin:.7em 0}li{margin:.3em 0}a{color:var(--blauw);text-underline-offset:2px}table{font-size:.88rem;border:1px solid var(--lijn);border-radius:8px;border-collapse:separate;border-spacing:0;margin:1em 0;display:block;overflow-x:auto;max-width:100%;width:fit-content}p,li,th,td{overflow-wrap:break-word}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%}th,td{border:0;border-bottom:1px solid var(--lijn);padding:.55em .75em}tr:last-child td{border-bottom:0}th{background:var(--vlak);font-weight:650;color:var(--inkt)}blockquote{border-left:4px solid var(--oranje);background:#fff7ef;border-radius:0 8px 8px 0;padding:.8em 1.1em;margin:1.3em 0}code{font-family:ui-monospace,Consolas,'Cascadia Mono',monospace;font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:4px}@media (max-width:620px){body{font-size:16px;padding:0 1rem 3rem}}}</style><!-- /huisstijl --><!-- ankers --><style>.anker{margin-left:.35em;color:#8a96a3;text-decoration:none;font-weight:400;opacity:0}h2:hover>.anker,h3:hover>.anker,h4:hover>.anker,li:hover>.anker,.anker:focus{opacity:1}@media (hover:none){.anker{opacity:.45}}.anker.gekopieerd::after{content:' gekopieerd';font-size:.8em}:target{scroll-margin-top:1em}li:target{background:#fff3c4}@media print{.anker{display:none}}</style><script data-ankers>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.anker');if(!a||!navigator.clipboard)return;var u=location.href.split('#')[0]+a.getAttribute('href');navigator.clipboard.writeText(u).then(function(){a.classList.add('gekopieerd');setTimeout(function(){a.classList.remove('gekopieerd')},1500)},function(){})});</script><!-- /ankers --></head>
+<body><!-- kruimelpad --><style>.kruimel{font:13px/1.5 system-ui,'Segoe UI',Arial,sans-serif;margin:0 0 1.2em;color:#5a6675}.kruimel a{color:#154273;text-decoration:none}.kruimel a:hover{text-decoration:underline}</style><nav class="kruimel" aria-label="Kruimelpad"><a href="https://security-commons-nl.github.io/">Security Commons NL</a> › <a href="../../">Kennisbank</a> › <a href="../">Security</a> › <span>Copilot en vergelijkbare assistenten, de configuratiekeuzes</span></nav><!-- /kruimelpad -->
+<h1
+id="copilot-en-vergelijkbare-assistenten-de-configuratiekeuzes">Copilot
+en vergelijkbare assistenten, de configuratiekeuzes</h1><!-- normen --><style>.normenregel{font:13px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675;margin:0 0 1.4em}.normenregel b{color:#154273;font-weight:600}.normenregel .norm{display:inline-block;background:#eef1f5;border:1px solid #d0d7e2;border-radius:4px;padding:0 7px;margin-left:5px;white-space:nowrap}</style><p class="normenregel"><b>Normen</b><span class="norm">BIO2</span><span class="norm">AVG</span><span class="norm">AI Act</span></p><!-- /normen -->
+<p>"Staat de webzoekfunctie via Bing bij jullie aan of uit, en hoe maken
+jullie die afweging?" Die vraag kwam in een VNG-webinar over de
+beveiliging van AI, en hij is typerend. De voorwaarden van een grote
+AI-assistent zijn eenzijdig: je tekent of je tekent niet. Wat je wel
+zelf bepaalt, is de inrichting. Dit stuk zet de keuzes op een rij die je
+als organisatie zelf maakt, met per keuze wat het afdekt en wat het
+kost. Het voorbeeld is Microsoft Copilot, omdat dat bij de meeste
+overheidsorganisaties al in de tenant zit; de vragen gelden voor elke
+assistent die in je kantooromgeving meedraait.</p>
+<p>Microsoft wijzigt namen, standaardwaarden en menu's vaak. De keuzes
+hieronder zijn gecontroleerd op de peildatum van dit stuk; loop ze elk
+kwartaal na.</p>
+<h2 id="eerst-welke-copilot">Eerst: welke Copilot<a class="anker" href="#eerst-welke-copilot" aria-label="Link naar deze kop">#</a></h2>
+<p>Er zijn er drie, en ze verschillen in wat ze zien en onder welke
+voorwaarden ze draaien.</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Wat hij ziet</th>
+<th>Voorwaarden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microsoft 365 Copilot</strong>, met licentie (Microsoft
+noemt hem ook Microsoft Copilot)</td>
+<td>Alles in Microsoft 365 waar de gebruiker zelf bij kan: mail, chats,
+bestanden, sites</td>
+<td>Productvoorwaarden en verwerkersovereenkomst van de tenant,
+<em>enterprise data protection</em></td>
+</tr>
+<tr>
+<td><strong>Copilot Chat</strong>, zonder extra licentie</td>
+<td>Het web en wat de gebruiker zelf in het gesprek zet of uploadt; geen
+mail of bestanden uit de tenant</td>
+<td>Ook binnen de tenantvoorwaarden en <em>enterprise data
+protection</em>, als de gebruiker met zijn werkaccount is ingelogd</td>
+</tr>
+<tr>
+<td><strong>Consumentenversie</strong>, met een persoonlijk account</td>
+<td>Wat de gebruiker erin plakt</td>
+<td>Consumentenvoorwaarden, buiten de tenant</td>
+</tr>
+</tbody>
+</table>
+<p>Het gesprek over configuratie gaat over de eerste twee. De derde
+regel je met beleid, met blokkeren op de werkplek of met beide. Weet je
+niet welke van de drie er bij jou gebruikt worden, begin dan daar: <a
+href="https://security-commons-nl.github.io/ai-gebruik-in-beeld/">AI-gebruik
+in beeld</a> meet het uit de logging die je al hebt. "Copilot staat in
+de tenant" is nog geen besluit dat het gebruikt mag worden; de
+autorisatie is een aparte stap, net als bij elke andere dienst.</p>
+<h2 id="de-zes-keuzes">De zes keuzes<a class="anker" href="#de-zes-keuzes" aria-label="Link naar deze kop">#</a></h2>
+<h3 id="1-webzoeken-via-bing">1. Webzoeken via Bing<a class="anker" href="#1-webzoeken-via-bing" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Copilot en Copilot Chat kunnen een
+antwoord aanvullen met resultaten van Bing. Copilot stuurt daarvoor een
+korte zoekvraag van een paar woorden, afgeleid uit de prompt, met het
+IP-adres van de gebruiker. Niet de hele prompt en niet het document,
+maar werkt de gebruiker in Word met een document open, dan kan de
+zoekvraag wel termen uit dat document bevatten.</p>
+<p><strong>Wat je moet weten.</strong> Voor die zoekvragen is Microsoft
+zelf verwerkingsverantwoordelijke. De verwerkersovereenkomst (DPA) en de
+EU Data Boundary gelden er niet voor; de productvoorwaarden geven wel
+aanvullende toezeggingen (niet voor advertenties, niet voor training).
+Zet je niets in, dan staat webzoeken aan.</p>
+<p><strong>Wat je zet.</strong> De beleidsregel <em>Allow web search in
+Copilot</em> in de Cloud Policy service van Microsoft 365, per gebruiker
+of groep: aan, uit, of uit in de werkmodus van Copilot en aan voor de
+webmodus en Copilot Chat. Staat het aan, dan kan de gebruiker het zelf
+nog uitzetten; staat het uit, dan niet.</p>
+<p><strong>De afweging.</strong> Uit voor groepen die met dossiers over
+personen werken (sociaal domein, handhaving, burgerzaken), aan voor de
+rest is een verdedigbare middenweg. Een fijnere weg is de DLP-regel
+onder keuze 2: webzoeken blijft aan, maar valt weg zodra een prompt
+gevoelige gegevens bevat. <strong>Kost:</strong> minder actuele
+antwoorden voor wie het uit heeft, en een extra beleidsregel om bij te
+houden.</p>
+<h3 id="2-gevoeligheidslabels-en-dlp">2. Gevoeligheidslabels en DLP<a class="anker" href="#2-gevoeligheidslabels-en-dlp" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Microsoft Purview kan een DLP-beleid op
+Copilot zelf zetten. Vier mogelijkheden: een prompt met gevoelige
+informatietypen (een BSN-patroon, een eigen type) wordt niet verwerkt;
+bij zo'n prompt valt webzoeken weg; bestanden en mails met een bepaald
+gevoeligheidslabel worden niet gebruikt voor een antwoord; en mail van
+buiten de organisatie wordt niet als bron gebruikt (bij de peildatum nog
+een preview).</p>
+<p><strong>Wat het afdekt.</strong> Lekken via de prompt, en het ophalen
+van gelabelde stukken in een antwoord. De laatste mogelijkheid dekt ook
+een deel van prompt-injectie af: een externe mail met verborgen
+instructies komt dan niet in het antwoord terecht.</p>
+<p><strong>Kost.</strong> Werkt alleen als de labels er zijn en gebruikt
+worden; een labelbeleid op papier dekt niets af. Hangt af van je
+licentie. En elke regel die vaak vuurt, wordt een melding die niemand
+leest: begin met een paar typen die er echt toe doen.</p>
+<h3 id="3-wat-copilot-kan-vinden">3. Wat Copilot kan vinden<a class="anker" href="#3-wat-copilot-kan-vinden" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Copilot met licentie ziet alles waar de
+gebruiker al bij kan. Te ruime rechten op SharePoint-sites en Teams, die
+nu niemand opvallen omdat niemand ernaar zoekt, worden met Copilot
+vindbaar. Dat heet <em>oversharing</em> en het is bij de meeste
+organisaties het grootste risico van de invoering.</p>
+<p><strong>Wat je zet.</strong> Tijdelijk: <em>Restricted Content
+Discovery</em> per SharePoint-site haalt de site uit de organisatiebrede
+zoekresultaten en uit Copilot, zonder rechten te wijzigen. Blijvend: de
+rechten zelf opruimen, te beginnen bij de sites met de gevoeligste
+inhoud.</p>
+<p><strong>Kost.</strong> De tijdelijke maatregel maakt antwoorden
+minder volledig en wordt makkelijk permanent. Zet er een einddatum op en
+koppel hem aan het opruimen. Het opruimen zelf is het echte werk; zie <a
+href="../least-privilege-cloud/">Rechten in de cloud terugbrengen tot
+gebruik</a>.</p>
+<h3 id="4-agents-en-connectoren">4. Agents en connectoren<a class="anker" href="#4-agents-en-connectoren" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Copilot kan worden uitgebreid met agents
+(in Copilot Studio of kant-en-klaar) en met connectoren die data van
+buiten Microsoft 365 binnenhalen. Een agent kan namens de gebruiker
+handelen; een connector maakt een nieuwe bron doorzoekbaar.</p>
+<p><strong>Wat je zet.</strong> In het beheercentrum van Microsoft 365
+wie agents en apps mag toevoegen, welke er beschikbaar zijn en voor wie.
+Begin met: gebruikers installeren niets zelf, beheer voegt toe na een
+korte toets.</p>
+<p><strong>De toets.</strong> Op wiens bevoegdheid handelt de agent,
+welke data haalt hij binnen, en wie keurt hem. Zie <a
+href="../agent-bevoegdheid/">Wiens bevoegdheid gebruikt een
+AI-agent?</a> en het <a href="../ai-inzet-keuzeblad/">keuzeblad bij de
+inzet van een agent</a>. <strong>Kost:</strong> een aanvraagroute en
+iemand die toetst.</p>
+<h3 id="5-ai-modellen-van-derden-als-subverwerker">5. AI-modellen van
+derden als subverwerker<a class="anker" href="#5-ai-modellen-van-derden-als-subverwerker" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Microsoft biedt in Copilot naast de
+eigen modellen ook modellen van andere aanbieders aan, waaronder de
+Claude-modellen van Anthropic, die daarvoor subverwerker van Microsoft
+zijn geworden.</p>
+<p><strong>Wat je moet weten.</strong> Op de peildatum vallen die
+modellen buiten de EU Data Boundary. Voor organisaties in de EU staan ze
+standaard uit, maar er komen aparte schakelaars bij voor afzonderlijke
+onderdelen, en een schakelaar die standaard uit staat kan door een
+beheerder met één klik aan.</p>
+<p><strong>Wat je zet.</strong> In het beheercentrum van Microsoft 365,
+onder Copilot, de instelling voor AI-aanbieders als subverwerker: aan of
+uit, en zo ja voor welke gebruikers of groepen. Leg de keuze vast als
+besluit, met de DPIA erbij, en controleer elk kwartaal of er een
+schakelaar is bijgekomen.</p>
+<h3 id="6-logging">6. Logging<a class="anker" href="#6-logging" aria-label="Link naar deze kop">#</a></h3>
+<p><strong>Wat het is.</strong> Staat auditing in de tenant aan, dan
+legt Purview Audit de interacties met Copilot vanzelf vast, inclusief de
+zoekvragen die naar Bing gingen. Gebruik van AI-toepassingen van andere
+leveranciers wordt apart en tegen betaling gelogd.</p>
+<p><strong>Wat je zet.</strong> Controleer dat auditing aan staat, stuur
+de Copilot-gebeurtenissen door naar je <a
+href="../centrale-logverzameling/">centrale logverzameling</a> en kies
+een bewaartermijn die past bij je <a
+href="../logging-en-retentie/">bewaartermijnen voor logging</a>. Bepaal
+vooraf wie de inhoud van prompts mag inzien: dat zijn gesprekken van
+medewerkers, dus de FG hoort bij die afspraak.</p>
+<p><strong>Kost.</strong> Opslag, en een afspraak over inzage. Zonder
+logging kun je bij een incident of een verzoek van een betrokkene niet
+navertellen wat er gebeurd is.</p>
+<h2 id="volgorde">Volgorde<a class="anker" href="#volgorde" aria-label="Link naar deze kop">#</a></h2>
+<ol type="1">
+<li>Meet wat er nu gebruikt wordt, alle drie de varianten.</li>
+<li>Zet de logging aan en stuur hem door, zodat alles hierna meetbaar
+is.</li>
+<li>Besluit over webzoeken, per groep.</li>
+<li>Pak oversharing aan op de sites met de gevoeligste inhoud, met een
+tijdelijke beperking waar het niet snel kan.</li>
+<li>Zet DLP op een paar gevoelige informatietypen en op de labels die je
+echt gebruikt.</li>
+<li>Sluit het zelf toevoegen van agents en connectoren af en richt een
+aanvraagroute in.</li>
+<li>Controleer elk kwartaal de subverwerkers en de nieuwe
+schakelaars.</li>
+</ol>
+<h2 id="bewijs">Bewijs<a class="anker" href="#bewijs" aria-label="Link naar deze kop">#</a></h2>
+<ul>
+<li>Het besluit over welke Copilot-varianten gebruikt mogen worden, met
+de DPIA.</li>
+<li>De ingestelde beleidsregel voor webzoeken, per groep, met de
+afweging.</li>
+<li>Het DLP-beleid voor Copilot en de lijst informatietypen en labels
+die het afdekt.</li>
+<li>De lijst sites met een tijdelijke beperking, met einddatum en
+eigenaar.</li>
+<li>De instelling voor agents, apps en subverwerkers, met de datum van
+de laatste controle.</li>
+<li>Een voorbeeld van een Copilot-gebeurtenis in de centrale
+logverzameling.</li>
+</ul>
+<h2 id="wat-dit-stuk-niet-doet">Wat dit stuk niet doet<a class="anker" href="#wat-dit-stuk-niet-doet" aria-label="Link naar deze kop">#</a></h2>
+<p>Het zegt niet welke keuze goed is: dat hangt af van wat je
+organisatie verwerkt en wat de DPIA zegt. Voor de privacybeoordeling van
+Copilot zelf heeft de IBD een notitie; zie de bronnen onderaan. En het
+dekt de voorwaarden niet af: die blijven eenzijdig. Wat je met
+inrichting niet kunt regelen, regel je in de <a
+href="../security-annex-leveranciers/">Security Annex voor
+leveranciers</a> of het hoort in de afweging of je het gebruikt.</p>
+<h2 id="hoe-dit-samenhangt">Hoe dit samenhangt<a class="anker" href="#hoe-dit-samenhangt" aria-label="Link naar deze kop">#</a></h2>
+<p>Dit stuk is de praktische kant van "verdediging van AI" voor
+organisaties die AI inkopen in plaats van zelf bouwen; wie zelf bouwt,
+kijkt bij <a href="../open-source-ai-binnenhalen/">Open-source AI
+binnenhalen onder de Cbw</a>. Meten wat er gebruikt wordt: <a
+href="https://security-commons-nl.github.io/ai-gebruik-in-beeld/">AI-gebruik
+in beeld</a>. Agents: <a href="../agent-bevoegdheid/">Wiens bevoegdheid
+gebruikt een AI-agent?</a> en het <a
+href="../ai-inzet-keuzeblad/">keuzeblad bij de inzet van een agent</a>.
+Gaat het mis: <a href="../ai-incident-melden/">Wanneer meld je een
+AI-incident?</a>.</p>
+<h2 id="documentatie-van-de-leverancier">Documentatie van de
+leverancier<a class="anker" href="#documentatie-van-de-leverancier" aria-label="Link naar deze kop">#</a></h2>
+<p>Gecontroleerd op de peildatum.</p>
+<ul>
+<li><a
+href="https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access">Webzoeken
+in Copilot en Copilot Chat: gegevens, privacy en beheer</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection">Enterprise
+data protection in Copilot</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about">DLP
+voor Microsoft 365 Copilot en Copilot Chat</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery">Restricted
+Content Discovery voor SharePoint-sites</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps">Agents
+en apps beheren in het beheercentrum</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-subprocessor">Claude-modellen
+van Anthropic als subverwerker in Copilot</a></li>
+<li><a
+href="https://learn.microsoft.com/en-us/purview/audit-copilot">Auditlogging
+voor Copilot en AI-toepassingen</a></li>
+</ul>
+<h2 id="licentie">Licentie<a class="anker" href="#licentie" aria-label="Link naar deze kop">#</a></h2>
+<p><a href="../../LICENSE">EUPL-1.2</a>.</p>
+<!-- elders --><style>.elders{font:14px/1.6 system-ui,'Segoe UI',Arial,sans-serif;margin:2.4em 0 1.2em;padding:.9em 1.1em;background:#f4f7fa;border-left:3px solid #154273;border-radius:0 3px 3px 0}.elders b.elders-kop{display:block;margin-bottom:.2em;color:#154273}.elders p.uitleg{margin:0 0 .5em;color:#5a6675;font-size:13px}.elders ul{margin:0;padding-left:1.2em}.elders li{margin:.3em 0}.elders a{color:#154273}.elders .partij{color:#5a6675}.elders .slot{display:inline-block;font-size:12px;color:#7a4b00;background:#fff4e0;border:1px solid #f0d9ad;border-radius:4px;padding:0 6px;margin-left:4px;white-space:nowrap}@media print{.elders{background:none;border-left:1px solid #999}}</style><aside class="elders"><b class="elders-kop">Wat anderen al hebben</b><p class="uitleg">Andere partijen in het stelsel over hetzelfde onderwerp. Dit stuk vult ze aan en vervangt ze niet.</p><ul><li><a href="https://www.informatiebeveiligingsdienst.nl/product/ibd-notitie-dpia-microsoft-copilot/">IBD-notitie DPIA Microsoft Copilot</a> <span class="partij">· IBD</span></li><li><a href="https://www.informatiebeveiligingsdienst.nl/product/handreiking-ai-en-algoritmen/">Handreiking AI en Algoritmen</a> <span class="partij">· IBD</span></li><li><a href="https://aigovernance.vng.nl/knowledge_card/Instrumenten-en-kaders-voor-monitoring-en-beheer-van-AI-en-algoritmen">Instrumenten en kaders voor implementatie, monitoring en beheer van AI en algoritmen (kenniskaart VNG AI Governancekader)</a> <span class="partij">· VNG en VNG Realisatie</span></li></ul></aside><!-- /elders --><!-- bronvoet --><style>.bronvoet{border-top:1px solid #d7dee7;margin:3em 0 0;padding-top:1em;font:12.5px/1.6 system-ui,'Segoe UI',Arial,sans-serif;color:#5a6675}.bronvoet a{color:#154273}@media print{.bronvoet{display:none}}</style><footer class="bronvoet"><p>Onderdeel van <a href="https://security-commons-nl.github.io/">Security Commons NL</a> · Bronbestanden van dit item: <a href="https://github.com/security-commons-nl/kennisbank/tree/main/security/copilot-configuratiekeuzes">security/copilot-configuratiekeuzes</a> · Licentie <a href="https://github.com/security-commons-nl/kennisbank/blob/main/LICENSE">EUPL-1.2</a> · <a href="https://github.com/security-commons-nl/kennisbank/issues/new/choose">Verbetering voorstellen</a></p></footer><!-- /bronvoet --></body></html>
